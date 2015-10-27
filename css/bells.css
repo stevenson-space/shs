@@ -1,0 +1,66 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+body {
+    background-color: #EEEEEE;
+    font-family: 'Open Sans', sans-serif;
+}
+/* Header */
+
+#header {
+    text-align: center;
+}
+#logo-center {
+    margin-top: 15px;
+    width: 20%;
+}
+/* Content */
+
+#colors {
+    margin-top: 50px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+#colors {
+    display: flex;
+    width: 95%;
+}
+.period {
+    text-align: center;
+    width: 25%;
+    height: 375px;
+    color: white;
+}
+.period h1 {
+    font-size: 3.1em;
+}
+@media (max-width: 736px) {
+    #logo-center {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    #colors {
+        width: 100%;
+    }
+    .period {
+        text-align: center;
+        width: 100%;
+        height: 600px;
+        color: white;
+    }
+    .period h1 {
+        font-size: 4.1em;
+    }
+    .period p {
+        font-size: 1.5em;
+    }
+    .period h2 {
+        font-size: 4.1em;
+    }
+}
+@media (max-width: 1024px) and (min-width: 736px) {
+    .period {
+        width: 50%;
+    }
+}
