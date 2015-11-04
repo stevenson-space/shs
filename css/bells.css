@@ -20,6 +20,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     display: flex;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 #colors {
