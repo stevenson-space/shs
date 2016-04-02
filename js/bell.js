@@ -15,7 +15,7 @@ $(function()
 
 	var display = {};
 
-	if(false)//!(today.getDay() % 6) || holidays.indexOf(date) != -1)
+	if(!(today.getDay() % 6) || holidays.indexOf(date) != -1)
 	{
 		display.schedule = "No school";
 		display.period = "";
