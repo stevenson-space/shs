@@ -5,7 +5,6 @@ body
     background-color: #EEEEEE;
     font-family: 'Open Sans', sans-serif;
 }
-/* Header */
 
 #header
 {
@@ -17,7 +16,6 @@ body
     margin-top: 15px;
     width: 20%;
 }
-/* Content */
 
 #colors
 {
@@ -33,7 +31,7 @@ body
 
 .tile, .tile-long
 {
-    width: 25%;
+    width: 33.33%;
     height: 150px;
     color: white;
     text-align: center;
@@ -48,11 +46,7 @@ body
 
 .tile-long
 {
-    width: 100%;
-}
-
-#mttile
-{
+    width: 50%;
     font-size: 1.5em;
 }
 
@@ -60,13 +54,22 @@ body
 {
     #logo-center
     {
-        margin-bottom: 30px;
+        margin-bottom: 0px;
         width: 50%;
     }
 
     #colors
     {
         width: 100%;
+    }
+
+    .tile-long
+    {
+        width: 90%;
+        height: 140px;
+        margin-bottom: 40px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .tile
@@ -79,6 +82,7 @@ body
         margin-left: auto;
         margin-right: auto;
     };
+
 }
 
 @media (max-width: 1024px) and (min-width: 736px)
@@ -97,13 +101,8 @@ body
     .tile
     {
         width: 50%;
-        height: 275px;
+        height: 200px;
         padding-top: 75px;
-        font-size: 3.5em;
-    }
-
-    #mttile
-    {
-        font-size: 2.5em;
+        font-size: 3.0em;
     };
 }

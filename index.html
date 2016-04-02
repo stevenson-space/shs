@@ -8,43 +8,53 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Stevenson High School</title>
     <meta name="description" content="The home page for Stevenson High School in Lincolnshire, Illinois.">
-    
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/animations.css"> 
-    
+    <link rel="stylesheet" href="css/animations.css">
+
     <link rel="icon" type="image/png" href="img/favicon.ico">
 
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-     
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-     <script src="js/colors.js"></script>
-     <script src="js/bell.js"></script>
-     <script src="js/bell2.js"></script>
 
-     <link rel="stylesheet" href="css/reset.css">
-     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="js/colors.js"></script>
+    <script src="js/bell.js"></script>
+
+    <link rel="stylesheet" href="css/reset.css">
+
 </head>
 
 <body>
 
     <div id="header">
         <a href="index.html">
-        <img id="logo-center" src="img/logo.png">
+            <img id="logo-center" src="img/logo.png">
         </a>
     </div>
 
 
-        <div id="colors">
-           
+    <div id="colors">
 
         <div class="tile-long">
+            <div id="data">
+            <h3 id="schedule"></h3>
+                <h3 id="period"></h3>
+            </div>
 
         </div>
 
-         <div class="tile hover" id="mttile">
+        <div class="tile-long">
+            <div id="data">
+                <h3 id="range"></h2>
+                <h3 id="timer"></h2>
+            </div>
+
+        </div>
+
+        <!--<div class="tile hover" id="mttile">
             <a href="bellschedules.html">
             <div id="bell">
                 <h2 id="bp"></h2>
@@ -52,31 +62,31 @@
             </div>
             </a>
             <br> 
-        </div>
+        </div>-->
 
         <div class="tile hover">
             <a href="bellschedules.html">
-            <i class="fa fa-bell itile"></i>
-            <br> Bell Schedules
+                <i class="fa fa-bell itile"></i>
+                <br> Bell Schedules
             </a>
         </div>
 
         <div class="tile hover">
             <a href="links.html">
-            <i class="fa fa-link itile"></i>
-            <br> Links
+                <i class="fa fa-link itile"></i>
+                <br> Links
             </a>
         </div>
 
         <div class="tile hover">
             <a href="docs.html">
-            <i class="fa fa-file-text itile"></i>
-            <br> Documents
+                <i class="fa fa-file-text itile"></i>
+                <br> Documents
             </a>
         </div>
 
-        </div>
-        
+    </div>
+
 </body>
 
 </html>
