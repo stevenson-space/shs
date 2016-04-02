@@ -1,21 +1,18 @@
-window.onload = function () {
+$(function() {
 
-	var colors = "1693A5 02AAB0 00CDAC F04155 FF823A 95CFB7 F56991 FF9F80 4F2958 5B7C8D 66B6AB 5896E6 95DE52".split(" ");
-	
-	
+	var colors = "#1693A5 #02AAB0 #00CDAC #F04155 #FF823A #95CFB7 #F56991 #FF9F80 #4F2958 #5B7C8D #66B6AB #5896E6 #95DE52".split(" ");
 	
 	shuffle(colors);
-	
-	var items = document.getElementById("colors").children;
-	
-	for (var i = 0; i < items.length; i++)
-	{
-		items[i].style.backgroundColor = "#" + colors[i];
-	}
+
+	$("#colors").children().each(function(index) {
+
+		$(this).css("backgroundColor", colors[index])
+
+	});
 	
 	getInfo();
 
-}
+});
 
 function shuffle(a, b, c, d) {
 
