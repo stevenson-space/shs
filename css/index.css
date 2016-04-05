@@ -10,6 +10,10 @@ body
 {
     text-align: center;
 }
+#header:hover
+{
+    cursor: pointer;   
+}
 
 #logo-center
 {
