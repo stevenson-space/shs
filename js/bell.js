@@ -1,7 +1,13 @@
-var today = new Date();
-var minutes = today.getHours()*60 + today.getMinutes();
-$(function()
+var today;
+var minutes;
+$(function() { main(); });
+
+function main()
 {
+	today = new Date();
+	minutes = today.getHours()*60 + today.getMinutes();
+
+
 	var sdow = ["8.25.2015", "9.1.2015", "9.9.2015", "9.16.2015", "9.22.2015", "9.29.2015", "10.6.2015", "10.14.2015", "10.20.2015", "10.27.2015",
 	"11.3.2015", "11.10.2015", "11.17.2015", "11.24.2015", "12.1.2015", "12.8.2015", "12.15.2015", "1.5.2016", "1.26.2016", "2.2.2016",
 	"2.17.2016", "2.23.2016", "3.1.2016", "3.9.2016", "3.15.2016", "3.22.2016", "4.5.2016", "4.12.2016", "4.19.2016", "4.26.2016", "5.3.2016",
@@ -21,7 +27,7 @@ $(function()
 		display.period = "";
 		while(!(today.getDay() % 6) || holidays.indexOf(date) != -1) today.setDate(today.getDate()+1);
 		display.range = "School resumes: " + (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
-		display.end = "";
+		display.end = false;
 	}
 	else if(sdow.indexOf(date) != -1)
 	{
@@ -30,6 +36,7 @@ $(function()
 		display.period = periodData.period;
 		display.end = periodData.end;
 		display.range = periodData.range;
+		
 	}
 	else if(latearriv.indexOf(date) != -1)
 	{
@@ -38,6 +45,7 @@ $(function()
 		display.period = periodData.period;
 		display.end = periodData.end;
 		display.range = periodData.range;
+		
 	}
 	else if(actper.indexOf(date) != -1)
 	{
@@ -68,31 +76,29 @@ $(function()
 	$("#schedule").text(display.schedule);
 	$("#period").text(display.period);
  	
- 	/*var minutesLeft = display.end - minutes - 1;
- 	var secondsLeft = 60 - today.getSeconds();
- 	var timer = function()
- 	{
- 		$("#timer").text(minutesLeft + ":" + secondsLeft);
+ 	var secondsLeft = (display.end - minutes - 1) * 60 + (60 - today.getSeconds());
+ 	var seconds;
+ 	var countdown = function(){
+ 	 	seconds = secondsLeft % 60;
+ 		$("#timer").text(Math.floor(secondsLeft / 60) + ":" + (seconds < 10 ? "0" + seconds : seconds));
+		if(secondsLeft <= 0)
+		{
+			clearInterval(timer);
+			$("#timer").text("");
+			main();		
+		}
  		secondsLeft--;
- 		if(secondsLeft < 10) secondsLeft = "0" + secondsLeft;
- 		if(secondsLeft <= 0)
- 		{
- 			secondsLeft = 59;
- 			minutesLeft--;
- 		}
- 		if(!(minutesLeft || secondsLeft))
- 		{
- 			
- 		}
  	}
- 	var timer2 = setInterval(timer, 1000);
- 	timer();*/
-
-});
+ 	if(display.end) 
+ 	{
+ 			var timer = setInterval(countdown, 1000);
+ 			countdown();
+ 	}
+}
 
 function getPeriod(starts, ends, periods)
 {
-	if(minutes < starts[0] || minutes >= ends[ends.length - 1]) return {period: "None", end: null, range: ""}
+	if(minutes < starts[0] || minutes >= ends[ends.length - 1]) return {period: "None", end: false, range: ""}
 	var last;
 	for(var i = 0; i < starts.length; i++)
 	{
