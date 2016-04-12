@@ -2,7 +2,7 @@ var today;
 var minutes;
 $(function() { main(); });
 $(document).on("scrollstop", function() { main(); });
-$(document).focus(function() { main(); });
+$(window).focus(function() { main(); });
 function main()
 {
 	today = new Date();
