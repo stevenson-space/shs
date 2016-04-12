@@ -2,10 +2,16 @@ var today;
 var minutes;
 var timer;
 $(function() { main(); });
-$(document).on("scrollstop", function() { main(); });
-$(window).focus(function() { clearInterval(timer);
-			$("#timer").text("");
-			main();		 });
+$(document).on("scrollstop", function()
+{
+	clearInterval(timer);
+	main();
+});
+$(window).focus(function()
+{ 
+	clearInterval(timer);
+	main();
+});
 function main()
 {
 	today = new Date();
