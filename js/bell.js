@@ -2,7 +2,7 @@ var today;
 var minutes;
 var timer;
 $(function() { main(); });
-$(document).on("touchup", function()
+$(window).on("scrollstop", function()
 {
 	clearInterval(timer);
 	main();
