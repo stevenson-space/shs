@@ -2,7 +2,7 @@ var today;
 var minutes;
 var timer;
 $(function() { main(); });
-$(window).on("scrollstop", function()
+$(window).on("resume", function()
 {
 	clearInterval(timer);
 	main();
@@ -12,6 +12,7 @@ $(window).focus(function()
 	clearInterval(timer);
 	main();
 });
+
 function main()
 {
 	today = new Date();
