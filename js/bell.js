@@ -1,8 +1,11 @@
 var today;
 var minutes;
+var timer;
 $(function() { main(); });
 $(document).on("scrollstop", function() { main(); });
-$(window).focus(function() { main(); });
+$(window).focus(function() { clearInterval(timer);
+			$("#timer").text("");
+			main();		 });
 function main()
 {
 	today = new Date();
@@ -92,7 +95,7 @@ function main()
  	}
  	if(display.end) 
  	{
- 			var timer = setInterval(countdown, 1000);
+ 			timer = setInterval(countdown, 1000);
  			countdown();
  	}
 }
