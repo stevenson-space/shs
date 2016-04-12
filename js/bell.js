@@ -2,7 +2,7 @@ var today;
 var minutes;
 var timer;
 $(function() { main(); });
-$(window).on("resume", function()
+$(window).on("onscroll", function()
 {
 	clearInterval(timer);
 	main();
