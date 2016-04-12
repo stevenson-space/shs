@@ -1,7 +1,8 @@
 var today;
 var minutes;
 $(function() { main(); });
-
+$(document).on("scrollstop", function() { main(); });
+$(document).on("focus", function() { main(); });
 function main()
 {
 	today = new Date();
