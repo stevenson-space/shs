@@ -25,7 +25,7 @@ function main()
 	"5.10.2016", "5.17.2016", "5.24.2016"];
 
 	var latearriv = ["8.27.2015", "12.10.2015", "9.3.2015", "9.11.2015", "9.17.2015", "10.22.2015", "11.19.2015", "1.28.2016", "2.18.2016", "3.17.2016", "4.21.2016"];
-	var actper = [];
+	var actper = ["4.13.2016"];
 	var pmasm = [];
 	var holidays = ["4.1.2016"]
 	var date = (today.getMonth() + 1) + "." + today.getDate() + "." + today.getFullYear();
