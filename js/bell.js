@@ -69,7 +69,7 @@ function main()
 	else if(pmasm.indexOf(date) != -1)
 	{
 		display.schedule = "PM Assembly";
-		var periodData = getPeriod([],[],[]);
+		var periodData = getPeriod([485,535,580,625,675,725,775,825,865],[530,575,620,670,720,770,820,860,925],["1","2","3","4","5","6","7","8","Assembly"]);
 		display.period = periodData.period;
 		display.end = periodData.end;
 		display.range = periodData.range;
