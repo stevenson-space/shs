@@ -27,7 +27,10 @@ function main()
 	var latearriv = ["8.27.2015", "12.10.2015", "9.3.2015", "9.11.2015", "9.17.2015", "10.22.2015", "11.19.2015", "1.28.2016", "2.18.2016", "3.17.2016", "4.21.2016"];
 	var actper = ["4.13.2016","5.16.2016"];
 	var pmasm = ["5.27.2016"];
-	var holidays = ["4.1.2016"]
+	var holidays = ["4.1.2016","5.30.2016"]
+
+	var finals = ["5.31.2016","6.1.2016","6.2.2016"]
+
 	var date = (today.getMonth() + 1) + "." + today.getDate() + "." + today.getFullYear();
 
 	var display = {};
@@ -73,6 +76,15 @@ function main()
 		display.period = periodData.period;
 		display.end = periodData.end;
 		display.range = periodData.range;
+	}
+	else if(finals.indexOf(date) != -1)
+	{
+		display.schedule = "Finals";
+		var periodData = getPeriod([485,585,685], [575, 675, 775],["1, 3, 8","2, 7, 6","4, 5, Makeup"])
+		display.period = periodData.period;
+		display.end = periodData.end;
+		display.range = periodData.range;
+
 	}
 	else
 	{
