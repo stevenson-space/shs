@@ -27,19 +27,25 @@ function main()
 	var latearriv = ["8.27.2015", "12.10.2015", "9.3.2015", "9.11.2015", "9.17.2015", "10.22.2015", "11.19.2015", "1.28.2016", "2.18.2016", "3.17.2016", "4.21.2016"];
 	var actper = ["4.13.2016","5.16.2016"];
 	var pmasm = ["5.27.2016"];
-	var holidays = ["4.1.2016"]
-
-	var finals = ["5.31.2016","6.1.2016","6.2.2016"]
-
+	var holidays = ["4.1.2016","6.6.2016","6.17.2016","6.24.2016","7.1.2016","7.4.2016","7.15.2016","7.22.2016","7.29.2016"];
+	
+	var finals = ["5.31.2016","6.1.2016","6.2.2016"];
+	var summer = ["6.7.2016","6.8.2016","6.9.2016","6.10.2016","6.13.2016","6.14.2016","6.15.2016","6.16.2016","6.20.2016","6.21.2016","6.22.2016","6.23.2016",
+	"6.27.2016","6.28.2016","6.29.2016","6.30.2016","7.5.2016","7.6.2016","7.7.2016","7.8.2016","7.11.2016","7.12.2016","7.13.2016","7.14.2016",
+	"7.18.2016","7.19.2016","7.20.2016","7.21.2016","7.25.2016","7.26.2016","7.27.2016","7.28.2016"];
+	
 	var date = (today.getMonth() + 1) + "." + today.getDate() + "." + today.getFullYear();
 
 	var display = {};
-
+	
 	if(!(today.getDay() % 6) || holidays.indexOf(date) != -1)
 	{
 		display.schedule = "No school";
 		display.period = "";
-		while(!(today.getDay() % 6) || holidays.indexOf(date) != -1) today.setDate(today.getDate()+1);
+		while(!(today.getDay() % 6) || holidays.indexOf(date) != -1){
+			today.setDate(today.getDate()+1);
+			date = (today.getMonth() + 1) + "." + today.getDate() + "." + today.getFullYear();
+		}
 		display.range = "School resumes: " + (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
 		display.end = false;
 	}
@@ -84,7 +90,22 @@ function main()
 		display.period = periodData.period;
 		display.end = periodData.end;
 		display.range = periodData.range;
-
+	}
+	else if(summer.indexOf(date)!= -1){
+		display.schedule = "Summer School";
+		if(localStorage.break1 && localStorage.break2) {
+			var br1 = parseInt(localStorage.break1), br2 = parseInt(localStorage.break2);
+			var periodData = getPeriod([465,br1,br1+15,br2,br2+25],[br1,br1+15,br2,br2+15,770],["School","Break 1","School","Break 2","School"]);
+			$("#clearBreaks").css("display","initial");
+		}
+		else{
+			var periodData = getPeriod([465],[770],[""]);
+			$("#clearBreaks").css("display","none");
+			setTimeout(function(){ $("#summer").css("display", "initial"); $("#summer").animate({top: "10px"},"slow"); },1000);
+		}
+		display.period = null
+		display.end = periodData.end;
+		display.range = periodData.range;
 	}
 	else
 	{
@@ -145,4 +166,20 @@ function toHours(minutes)
 	var minutes = minutes % 60;
 	if(minutes < 10) minutes = "0" + minutes;
 	return hours + ":" + minutes;
+}
+
+function setBreaks(){
+	localStorage.break1 = $("#br1 option:selected").val();
+	localStorage.break2 = $("#br2 option:selected").val();
+	$("#summer").animate({top: "-150px"},"slow");
+	setTimeout(function() { $("#summer").css("display","none"); }, 1500);
+	clearInterval(timer);
+	main();
+}
+
+function clearBreaks(){
+	localStorage.removeItem("break1");
+	localStorage.removeItem("break2");
+	clearInterval(timer);
+	main();
 }

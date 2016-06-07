@@ -54,6 +54,48 @@ body
     font-size: 1.5em;
 }
 
+#summer
+{
+    position: absolute;
+    left:10px;
+    top: -150px;
+    width: 30%;
+    height: 110px;
+    color: white;
+    text-align: center;
+    font-size:  1.2em;
+    font-weight: bold;
+    display: none;
+}
+
+#summer div
+{
+    float: left;
+    width: 50%;
+    padding-top: 10px;
+    margin-bottom: 5px;
+}
+
+#summer input
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#clearBreaks
+{
+    position: absolute;
+    right:0px;
+    top:0px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    display:none;
+}
+#clearBreaks:hover
+{
+    cursor: pointer;
+}
 @media (max-width: 736px)
 {
     #logo-center
@@ -85,7 +127,12 @@ body
         margin-bottom: 40px;
         margin-left: auto;
         margin-right: auto;
-    };
+    }
+    #summer
+    {
+        width: 95%;
+        height: 110px;
+    }
 
 }
 
@@ -108,5 +155,10 @@ body
         height: 200px;
         padding-top: 75px;
         font-size: 3.0em;
-    };
+    }
+    #summer
+    {
+        width: 40%;
+        height: 130px;
+    }
 }
