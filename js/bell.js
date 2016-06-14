@@ -95,7 +95,8 @@ function main()
 		display.schedule = "Summer School";
 		if(localStorage.break1 && localStorage.break2) {
 			var br1 = parseInt(localStorage.break1), br2 = parseInt(localStorage.break2);
-			var periodData = getPeriod([465,br1,br1+15,br2,br2+25],[br1,br1+15,br2,br2+15,770],["School","Break 1","School","Break 2","School"]);
+			var periodData = 
+getPeriod([465,br1,br1+15,br2,br2+25],[br1,br1+15,br2,br2+25,770],["School","Break 1","School","Break 2","School"]);
 			$("#clearBreaks").css("display","initial");
 		}
 		else{
