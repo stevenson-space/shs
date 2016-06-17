@@ -26,7 +26,7 @@ body {
 }
 .file {
     width: 33.33333%;
-    height: 450px;
+    height: auto;
     color: white;
     text-align: center;
     font-size: 1.0em;
