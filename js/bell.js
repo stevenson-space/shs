@@ -89,12 +89,6 @@ function main()
     }
 }
 
-//Returns the current date formatted as a string
-function getDateString(date, sep = ".")
-{
-	return (date.getMonth() + 1) + sep + date.getDate() + sep + date.getFullYear();
-}
-
 //Returns the current period
 function getPeriod(starts, ends, periods)
 {
@@ -132,6 +126,12 @@ function getPeriod(starts, ends, periods)
         end: starts[last + 1],
         range: "Next: " + toHours(starts[last + 1]) + "-" + toHours(ends[last + 1])
     }
+}
+
+//Returns the current date formatted as a string
+function getDateString(date)
+{
+    return (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
 }
 
 //Converts a minutes input into hours:minutes format
