@@ -1,129 +1,57 @@
 <!doctype html>
-
 <html lang="en">
-
 <head>
-    
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="favicon/favicon-194x194.png" sizes="194x194">
-    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="favicon/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="favicon/manifest.json">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="favicon/favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="Stevenson">
-    <meta name="application-name" content="Stevenson">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
-    <meta name="msapplication-config" content="favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Stevenson High School</title>
     <meta name="description" content="The home page for Stevenson High School in Lincolnshire, Illinois.">
+    
+    <link rel="stylesheet" href="css/style.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/animations.css">
-
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="js/colors.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/const.js"></script>
+    <script src="js/colors.min.js"></script>
     <script src="js/bell.js"></script>
-
-    <link rel="stylesheet" href="css/reset.css">
-
 </head>
 
 <body>
 
     <div id="header">
-        <img id="logo-center" src="img/logo.png" onclick="location.reload(true);">
+        <a href="index.html"><img src="img/logo.png"></a>
     </div>
+    
+    <div id="tiles">
 
-
-    <div id="colors">
-        
-        <div id="clearBreaks" onClick="clearBreaks()">Clear Breaks</div>
-        
-        <div id="summer">
-            Enter times of breaks: <br>
-            <div>
-                1st: <br>
-                <select id="br1">
-                    <option value="570">9:30</option>
-                    <option value="585">9:45</option>
-                </select>
-            </div>
-            <div>
-                2nd: <br>
-                <select id="br2">
-                    <option value="655">10:55</option>
-                    <option value="680">11:20</option>
-                </select>
-            </div>
-            <input onClick="setBreaks()" type="submit">
+        <div class="tile-wd">
+            <span id="schedule"></span>
+            <span id="period"></span>
         </div>
 
-        <div class="tile-long">
-            <div id="data">
-            <h3 id="schedule"></h3>
-                <h3 id="period"></h3>
-            </div>
 
+        <div class="tile-wd">            
+            <span id="range"></span>
+            <span id="timer"></span>
         </div>
 
-        <div class="tile-long">
-            <div id="data">
-                <h3 id="range"></h2>
-                <h3 id="timer"></h2>
-            </div>
-
-        </div>
-
-        <!--<div class="tile hover" id="mttile">
+        <div class="tile">
             <a href="bellschedules.html">
-            <div id="bell">
-                <h2 id="bp"></h2>
-                <p id="bhead"></p>
-            </div>
-            </a>
-            <br> 
-        </div>-->
-
-        <div class="tile hover">
-            <a href="bellschedules.html">
-                <i class="fa fa-bell itile"></i>
-                <br> Bell Schedules
+                <i class="fa fa-bell"></i>
+                <span>Bell Schedules</span>
             </a>
         </div>
 
-        <div class="tile hover">
+        <div class="tile">
             <a href="links.html">
-                <i class="fa fa-link itile"></i>
-                <br> Links
+                <i class="fa fa-link"></i>
+                <span>Links</span>
             </a>
         </div>
 
-        <div class="tile hover">
+        <div class="tile">
             <a href="docs.html">
-                <i class="fa fa-file-text itile"></i>
-                <br> Documents
+                <i class="fa fa-file-text"></i>
+                <span>Documents</span>
             </a>
         </div>
 

@@ -1,112 +1,80 @@
 <!doctype html>
-
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Bell Schedules</title>
-    <meta name="description" content="Stevenson High School Bell Schedules">
-    <meta name="author" content="Aditya M">
-
-    <link rel="stylesheet" href="css/bells.css">
+    <meta name="description" content="Bell Schedules for Stevenson High School">
     
-    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
 
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-     <script src="js/colors.js"></script>
-
-     <link rel="stylesheet" href="css/reset.css">
-     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="js/colors.js"></script>
 </head>
-
 <body>
 
    <div id="header">
-        <a href="index.html">
-        <img id="logo-center" src="img/logo.png">
-        </a>
+        <a href="index.html"><img src="img/logo.png"></a>
     </div>
 
+    <div id="tiles">
 
-    <div id="colors">
-
-       
-       <div class="period">
-           <h1>1</h1>
-           <p>8:05 - 9:00</p>
-           <p>SDOW: 8:05 - 9:24</p>
-           <p>Late Arrival: 10:30 - 11:05</p>
-           <p>Activity / AM Assembly: 8:05 - 8:50</p>
-           <p>PM Assembly: 8:05 - 8:50</p>
-           <p>Early Dimissal: 8:05 - 8:45</p>
+       <div class="tile-lg">
+            <span>1</span>
+   	        <p>8:30 - 9:21</p>
+   	        <p>Late Arrival: 10:30 - 11:05</p>
+   	        <p>Activity / AM Assembly: 8:30 - 9:15</p>
+   	        <p>PM Assembly: 8:30 - 9:15</p>
        </div>
-       <div class="period">
-           <h1>2</h1>
-           <p>9:05 - 9:55</p>
-           <p>SDOW: 9:29 - 10:13</p>
-           <p>Late Arrival: 11:10 - 11:45</p>
-           <p>Activity / AM Assembly: 8:55 - 9:35</p>
-           <p>PM Assembly: 8:55 - 9:35</p>
-           <p>Early Dimissal: 8:50 - 9:20</p>
+       <div class="tile-lg">
+           <span>2</span>
+           <p>9:26 - 10:13</p>
+   	       <p>Late Arrival: 11:10 - 11:40</p>
+   	       <p>Activity / AM Assembly: 9:20 - 10:01</p>
+   	       <p>PM Assembly: 9:20 - 10:01</p>
        </div>
-        <div class="period">
-           <h1>3</h1>
-           <p>10:00 - 10:50</p>
-           <p>SDOW: 10:18 - 11:02</p>
-           <p>Late Arrival: 11:45 - 12:15</p>
-           <p>Activity / AM Assembly: 10;30 - 11:10</p>
-           <p>PM Assembly: 9:40 - 10:20</p>
-           <p>Early Dimissal: 9:25 - 9:55</p>
+        <div class="tile-lg">
+           <span>3</span>
+           <p>10:18 - 11:05</p>
+   	       <p>Late Arrival: 11:45 - 12:15</p>
+   	       <p>Activity / AM Assembly: 10:54 - 11:35</p>
+   	       <p>PM Assembly: 10:06 - 10:47</p>
        </div>
-        <div class="period">
-           <h1>4</h1>
-           <p>10:55 - 11:45</p>
-           <p>SDOW: 11:07 - 11:57</p>
-           <p>Late Arrival: 12:20 - 12:55</p>
-           <p>Activity / AM Assembly: 11:15 - 12:05</p>
-           <p>PM Assembly: 10:25 - 11:10</p>
-           <p>Early Dimissal: 10:00 - 10:30</p>
+        <div class="tile-lg">
+           <span>4</span>
+           <p>11:10 - 11:57</p>
+   	       <p>Late Arrival: 12:20 - 12:55</p>
+   	       <p>Activity / AM Assembly: 11:40 - 12:21</p>
+   	       <p>PM Assembly: 10:52 - 11:33</p>
        </div>
-       <div class="period">
-           <h1>5</h1>
-           <p>11:50 - 12:40</p>
-           <p>SDOW: 12:02 - 12:52</p>
-           <p>Late Arrival: 1:00 - 1:35</p>
-           <p>Activity / AM Assembly: 12:10 - 1:00</p>
-           <p>PM Assembly: 11:15 - 12:00</p>
-           <p>Early Dimissal: 10:35 - 11:05</p>
+       <div class="tile-lg">
+           <span>5</span>
+           <p>12:02 - 12:49</p>
+   	       <p>Late Arrival: 1:00 - 1:35</p>
+   	       <p>Activity / AM Assembly: 12:26 - 1:07</p>
+   	       <p>PM Assembly: 11:38 - 12:19</p>
        </div>
-       <div class="period">
-           <h1>6</h1>
-           <p>12:45 - 1:35</p>
-           <p>SDOW: 12:57 - 1:47</p>
-           <p>Late Arrival: 1:40 - 2:15</p>
-           <p>Activity / AM Assembly: 1:05 - 1:55</p>
-           <p>PM Assembly: 12:05 - 12:50</p>
-           <p>Early Dimissal: 11:10 - 11:40</p>
+       <div class="tile-lg">
+           <span>6</span>
+           <p>12:54 - 1:41</p>
+   	       <p>Late Arrival: 1:40 - 2:15</p>
+   	       <p>Activity / AM Assembly: 1:12 - 1:53</p>
+   	       <p>PM Assembly: 12:24 - 1:05</p>
        </div>
-        <div class="period">
-           <h1>7</h1>
-           <p>1:40 - 2:30</p>
-           <p>SDOW: 1:52 - 2:36</p>
-           <p>Late Arrival: 2:20 - 2:50</p>
-           <p>Activity / AM Assembly: 2:00 - 2:40</p>
-           <p>PM Assembly: 12:55 - 1:40</p>
-           <p>Early Dimissal: 11:45 - 12:15</p>
+        <div class="tile-lg">
+           <span>7</span>
+           <p>1:46 - 2:33</p>
+   	       <p>Late Arrival: 2:20 - 2:50</p>
+   	       <p>Activity / AM Assembly: 1:58 - 2:39</p>
+   	       <p>PM Assembly: 1:10 - 1:51</p>
        </div>
-        <div class="period">
-           <h1>8</h1>
-           <p>2:35 - 3:25</p>
-           <p>SDOW: 2:41 - 3:25</p>
-           <p>Late Arrival: 2:55 - 3:25</p>
-           <p>Activity / AM Assembly: 2:45 - 3:25</p>
-           <p>PM Assembly: 1:45 - 2:30</p>
-           <p>Early Dimissal: 12:20 - 1:00</p>
+        <div class="tile-lg">
+           <span>8</span>
+           <p>2:38 - 3:25</p>
+   	       <p>Late Arrival: 2:55 - 3:25</p>
+   	       <p>Activity / AM Assembly: 2:44 - 3:25</p>
+   	       <p>PM Assembly: 1:56 - 2:37</p>
        </div>
     </div>
         

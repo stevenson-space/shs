@@ -1,0 +1,98 @@
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600"
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+
+$min-tablet-size: 768px
+$min-desktop-size: 1200px
+
+$font-stack: 'Open Sans', sans-serif
+
+$body-color: #EEEEEE//#fffdfd
+$text-color: #ffffff
+
+body
+	background-color: $body-color
+	font-family: $font-stack
+
+i, p, a, span
+	display: block
+	color: $text-color
+	margin: 0 0 //Reset default CSS margin
+	text-decoration: none
+
+
+#header
+	margin-top: 20px
+	text-align: center
+	img
+		width: 65%
+		@media (min-width: $min-tablet-size)
+			width: 40%
+		@media (min-width: $min-desktop-size)
+			width: 20%
+
+#tiles
+	//Flexbox layout
+	display: flex
+	flex-flow: row wrap
+
+	margin: 0 auto //Center container
+	margin-top: 25px
+
+	width: 100%
+	@media (min-width: $min-tablet-size)
+		width: 95% 
+	@media (min-width: $min-desktop-size)
+		width: 70%
+	
+.tile
+	//Fill the remaining space in the row
+	flex-grow: 1
+
+	//Center the text inside
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-flow: column nowrap
+
+	//Tile layout
+	width: 100%
+
+	@media (min-width: $min-tablet-size)
+		width: 50%	
+	@media (min-width: $min-desktop-size)
+		width: 33.333%
+
+	height: 250px
+	margin: 0 auto 20px auto //Top Right Bottom Left
+
+	@media (min-width: $min-tablet-size)
+		margin: 0 auto 0 auto
+
+	//Default text settings
+	text-align: center
+	p, a
+		font-size: 1em
+	span
+		font-size: 2em
+	i
+		font-size: 5em
+
+.tile-wd
+	@extend .tile
+	@media (min-width: $min-desktop-size)
+		width: 50%
+	line-height: 65px
+	height: 150px
+
+
+.tile-lg
+	@extend .tile //extend to change size
+	height: 300px
+	line-height: 30px
+	span
+		margin-bottom: auto
+		margin-top: 20px
+	a, p
+		margin-bottom: auto
+	a, p
+		font-size: 1.2em
