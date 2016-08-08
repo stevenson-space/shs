@@ -3,7 +3,7 @@ const constants =
 	latearrival: [],
 	activityperiod: [],
 	pmassembly: [],
-	holidays: [],
+	holidays: ["8/8/2016","8/9/2016","8/10/2016","8/11/2016","8/12/2016","8/13/2016","8/14/2016"],
 
 	latearrival_s: [630, 670, 705, 740, 780, 820, 860, 895],
 	latearrival_e: [665, 700, 735, 775, 815, 855, 890, 925],
