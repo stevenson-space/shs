@@ -107,7 +107,7 @@ function getPeriod(starts, ends, periods)
     {
         if (minutes >= starts[i]) //if we are into the i-th period
         {
-            last = i //this is the current last period
+            last = i //then its also the "last" period
             if (minutes < ends[i]) //if we're also before the end of the i-th period,
             					   //then this is the current period
             {
