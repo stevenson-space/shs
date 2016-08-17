@@ -44,7 +44,7 @@ function main()
     else if (constants.activityperiod.indexOf(date) != -1)
     {
         display = getPeriod(constants.activityperiod_s, constants.activityperiod_e, constants.activityperiod_p);
-        display.schedule = "Activity Period";
+        display.schedule = "Activity";
     }
     //PM Assembly
     else if (constants.pmassembly.indexOf(date) != -1)
