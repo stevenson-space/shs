@@ -4,7 +4,7 @@ var minutes, timer;
 $(main);
 //Reset timer and rerun on regained
 //focus or a touch on mobile device
-$(window).on("ontouchup focus", function() 
+$(window).on("touchend focus", function() 
 {
     clearInterval(timer);
     main();
