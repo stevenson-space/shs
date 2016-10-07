@@ -1,10 +1,25 @@
 $(function()
 {	
-	shuffle(constants.colors);
+	var colors;
+	var logo;
+	if(!constants.isHolday)
+	{
+		colors = constants.colors;
+		logo = "img/logo.png";
+	}
+	else 
+	{
+		colors = constants.holiday_colors;
+		logo = constants.holiday_logo;
+	}
+
+	$("#header-logo").attr("src",logo);
+
+	shuffle(colors);
 
 	$("#tiles").children().each(function(index)
 	{
-		$(this).css("backgroundColor", constants.colors[index])
+		$(this).css("backgroundColor", colors[index])
 	});
 });
 
