@@ -1,5 +1,5 @@
 var speed=40; // lower number for faster
-var leaves=5; // number of leaves falling at a time
+var leaves=2; // number of leaves falling at a time
 var untidy=4; // how often do you want the leaves tidied up (high number is less often)
 
 /****************************\
