@@ -19,7 +19,7 @@ $(function()
 
 	$("#tiles").children().each(function(index)
 	{
-		$(this).css("backgroundColor", colors[index])
+		$(this).css("backgroundColor", colors[index%colors.length])
 	});
 });
 
