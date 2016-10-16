@@ -5,7 +5,7 @@ $(function()
 	if(!constants.isHolday)
 	{
 		colors = constants.colors;
-		logo = "img/logo.png";
+		logo = constants.logo;
 	}
 	else 
 	{
