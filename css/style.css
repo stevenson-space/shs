@@ -1,1 +1,105 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400);@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);body{background-color:#EEE;font-family:"Open Sans",sans-serif}a,i,p,span{display:block;color:#fff;margin:0;text-decoration:none}#header{margin-top:20px;text-align:center}#header img{width:65%}@media (min-width:768px){#header img{width:40%}}@media (min-width:1200px){#header img{width:20%}}#tiles{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap;margin:0 auto;margin-top:25px;width:100%}@media (min-width:768px){#tiles{width:95%}}@media (min-width:1200px){#tiles{width:70%}}.tile,.tile-cal,.tile-cal-head,.tile-lg,.tile-wd{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-flex-flow:column nowrap;-ms-flex-flow:column nowrap;flex-flow:column nowrap;width:100%;height:250px;margin:0 auto 20px;text-align:center}@media (min-width:768px){.tile,.tile-cal,.tile-cal-head,.tile-lg,.tile-wd{width:50%}}@media (min-width:1200px){.tile,.tile-cal,.tile-cal-head,.tile-lg,.tile-wd{width:33.333%}}@media (min-width:768px){.tile,.tile-cal,.tile-cal-head,.tile-lg,.tile-wd{margin:0 auto}}.tile a,.tile p,.tile-cal a,.tile-cal p,.tile-cal-head a,.tile-cal-head p,.tile-lg a,.tile-lg p,.tile-wd a,.tile-wd p{font-size:1em}.tile span,.tile-cal span,.tile-cal-head span,.tile-lg span,.tile-wd span{font-size:2em}.tile i,.tile-cal i,.tile-cal-head i,.tile-lg i,.tile-wd i{font-size:5em}.tile-wd{line-height:65px;height:150px}@media (min-width:1200px){.tile-wd{width:50%}}.tile-lg{height:300px;line-height:30px}.tile-lg span{margin-bottom:auto;margin-top:20px}.tile-lg a,.tile-lg p{margin-bottom:auto;font-size:1.2em}.tile-cal,.tile-cal-head{height:120px;width:20%;color:#fff}.tile-cal-head{height:40px}
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";
+body {
+  background-color: #EEEEEE;
+  font-family: "Open Sans", sans-serif; }
+
+i, p, a, span {
+  display: block;
+  color: #ffffff;
+  margin: 0 0;
+  text-decoration: none; }
+
+#header {
+  margin-top: 20px;
+  text-align: center; }
+  #header img {
+    width: 65%; }
+    @media (min-width: 768px) {
+      #header img {
+        width: 40%; } }
+    @media (min-width: 1200px) {
+      #header img {
+        width: 20%; } }
+
+#tiles {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  margin-top: 25px;
+  width: 100%; }
+  @media (min-width: 768px) {
+    #tiles {
+      width: 95%; } }
+  @media (min-width: 1200px) {
+    #tiles {
+      width: 70%; } }
+
+.tile, .tile-wd, .tile-lg, .tile-cal, .tile-cal-head {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: 250px;
+  margin: 0 auto 20px auto;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .tile, .tile-wd, .tile-lg, .tile-cal, .tile-cal-head {
+      width: 50%; } }
+  @media (min-width: 1200px) {
+    .tile, .tile-wd, .tile-lg, .tile-cal, .tile-cal-head {
+      width: 25%; } }
+  @media (min-width: 768px) {
+    .tile, .tile-wd, .tile-lg, .tile-cal, .tile-cal-head {
+      margin: 0 auto 0 auto; } }
+  .tile p, .tile-wd p, .tile-lg p, .tile-cal p, .tile-cal-head p, .tile a, .tile-wd a, .tile-lg a, .tile-cal a, .tile-cal-head a {
+    font-size: 1em; }
+  .tile span, .tile-wd span, .tile-lg span, .tile-cal span, .tile-cal-head span {
+    font-size: 2em; }
+  .tile i, .tile-wd i, .tile-lg i, .tile-cal i, .tile-cal-head i {
+    font-size: 5em; }
+
+.tile-wd {
+  line-height: 65px;
+  height: 150px; }
+  @media (min-width: 1200px) {
+    .tile-wd {
+      width: 50%; } }
+
+.tile-lg {
+  height: 300px;
+  line-height: 30px; }
+  .tile-lg span {
+    margin-bottom: auto;
+    margin-top: 20px; }
+  .tile-lg a, .tile-lg p {
+    margin-bottom: auto; }
+  .tile-lg a, .tile-lg p {
+    font-size: 1.2em; }
+
+.tile-cal, .tile-cal-head {
+  height: 120px;
+  width: 20%;
+  color: white; }
+
+.tile-cal-head {
+  height: 40px; }
+
+#projector {
+  text-align: center;
+  padding: 5%; }
+  #projector span {
+    color: #474747; }
+  #projector #timer {
+    font-size: 10em;
+    color: black; }
+  #projector #range {
+    font-size: 6em; }
+  #projector #period {
+    font-size: 3em; }
+  #projector #schedule {
+    font-size: 3em; }
+
+/*# sourceMappingURL=style.css.map */
