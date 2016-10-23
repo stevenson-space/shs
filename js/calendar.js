@@ -15,14 +15,25 @@ $(function()
 		$(this).css("backgroundColor", constants.colors[index%constants.colors.length]);
 	});
 
-	//Get first monday
-	var monday = (new Date()).today().previous().monday();
+	var date = new Date()
+	date.setDate(1)
+	for(var i = 2; i <= 7; i++)
+	{
+		if (date.getDay() == 1) break;
+		date.setDate(i);
+	}
+	console.log(date)
 
+	var month = date.getMonth() + 1;
+	var day = date.getDate();
+	var year = date.getFullYear();
 
 	$(".tile-cal").each(function(index)
 	{
-		console.log(index+1);
-		$(this).text(index+1);
+		var t = day + index;
+		
+		$(this).text(t);
 	});
+
 	
 });
