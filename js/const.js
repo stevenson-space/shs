@@ -36,6 +36,6 @@ const constants =
 	holiday_colors: ["#130912","#3E1C33","#602749","#B14623","#F6921D","#dc7d02","#a100ff","#9e0000",
 					"#ffbf49","#044920","#3f6616","#560540","#EB5E00","#431356","#431356","#e6a8ff",
 					"#ffb600","#dba51e","#FF6600","#333333","#FF7619"],
-	holiday_logo: "img/halloween.png"
+	holiday_logo: "img/cubs_logo.png"
 }
 
