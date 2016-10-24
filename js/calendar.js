@@ -24,15 +24,22 @@ $(function()
 	}
 	console.log(date)
 
-	var month = date.getMonth() + 1;
-	var day = date.getDate();
-	var year = date.getFullYear();
+	//Generate dates
+	dates = []
+	for (var i = 0; i < 20; i++)
+	{
+		dates[i] = date.getDate();
+		date.setDate(date.getDate() + 1);
+		if(date.getDay() == 6) date.setDate(date.getDate() + 2);
+
+		if( constants.latearrival.indexOf(date.getMonth() + 1 + "/" + date.getDay() + "/" + date.getFullYear()) > -1) console.log("kek");
+	}
+
 
 	$(".tile-cal").each(function(index)
 	{
-		var t = day + index;
 		
-		$(this).text(t);
+		$(this).text(dates[index]);
 	});
 
 	
