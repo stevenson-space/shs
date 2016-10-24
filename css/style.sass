@@ -1,6 +1,8 @@
 @import "http://fonts.googleapis.com/css?family=Open+Sans:400"
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
 
+$default_logo_scale: false !default
+
 $min-tablet-size: 768px
 $min-desktop-size: 1200px
 
@@ -24,12 +26,18 @@ i, p, a, span
 	margin-top: 20px
 	text-align: center
 	img
-		width: 65%
-		@media (min-width: $min-tablet-size)
-			width: 40%
-		@media (min-width: $min-desktop-size)
-			width: 20%
-
+		@if $default_logo_scale
+			width: 65%
+			@media (min-width: $min-tablet-size)
+				width: 40%
+			@media (min-width: $min-desktop-size)
+				width: 20%
+		@else
+			width: 50%
+			@media (min-width: $min-tablet-size)
+				width: 27%
+			@media (min-width: $min-desktop-size)
+				width: 13%
 #tiles
 	//Flexbox layout
 	display: flex
