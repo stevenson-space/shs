@@ -35,6 +35,6 @@ const constants =
 	isHolday: true,
 	holiday_colors: ["#f44242","#c12020","#870909","#dd0404","#ff0a0a","#ff1e1e",
 		"#ba4444","#872525","#9e0024","#c42d2d","#7a0606","#ff0000","#dd0000"],
-	holiday_logo: "img/cubs_logo.png"
+	holiday_logo: "img/winter.png"
 }
 
