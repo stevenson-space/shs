@@ -30,8 +30,8 @@ const constants =
 
 	calendar_color: '#00cdac',
 	isHolday: true,
-	holiday_colors: ['#f44242','#c12020','#870909','#dd0404','#ff0a0a','#ff1e1e','#ba4444','#872525',
-					'#9e0024','#c42d2d','#7a0606','#ff0000','#dd0000'],
+	holiday_colors: ['#53c65b','#10a500','#870909','#dd0404','#008208','#ba4444','#872525',
+					'#9e0024','#c42d2d','#166d0d','#3e9e34'],
 	holiday_logo: 'img/winter.png'
 }
 
