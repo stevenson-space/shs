@@ -32,6 +32,6 @@ const constants =
 	isHolday: true,
 	holiday_colors: ['#53c65b','#10a500','#870909','#dd0404','#008208','#ba4444','#872525',
 					'#9e0024','#c42d2d','#166d0d','#3e9e34'],
-	holiday_logo: 'img/christmas.png'
+	holiday_logo: 'img/finals.png'
 }
 
