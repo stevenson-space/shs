@@ -33,12 +33,14 @@ i, p, a, span
 	margin-top: 20px
 	text-align: center
 	img
+		width: 65%  //Default logo scale below 
+		@media (min-width: $min-tablet-size)
+			width: 40%
+		@media (min-width: $min-desktop-size)
+			width: 20%
+	#header-logo
+		//Custom, only applied to header-logo
 		@if $default_logo_scale
-			width: 65%
-			@media (min-width: $min-tablet-size)
-				width: 40%
-			@media (min-width: $min-desktop-size)
-				width: 20%
 		@else
 			width: 35%
 			@media (min-width: $min-tablet-size)
