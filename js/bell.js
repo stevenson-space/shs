@@ -52,6 +52,12 @@ function main()
         display = getPeriod(constants.pmassembly_s, constants.pmassembly_e, constants.pmassembly_p);
         display.schedule = "PM Assembly";
     }
+    //Special Case - Finals!
+    else if(constants.finals.indexOf(date) != -1)
+    {
+        display = getPeriod(constants.finals_s, constants.finals_e, constants.finals_p);
+        display.schedule = "Finals";
+    }
     //Standard Schedule
     else
     {
