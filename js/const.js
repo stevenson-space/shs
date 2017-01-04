@@ -32,6 +32,7 @@ const constants =
 	colors: ['#1693A5', '#02AAB0', '#00CDAC', '#F04155', '#FF823A', '#95CFB7', '#F56991', '#FF9F80',
 		 '#4F2958', '#5B7C8D', '#66B6AB', '#5896E6', '#95DE52', '#D34747', '#2B7F7F', '#A23774',
 		 '#0B3954','#AC80A0','#064789','#63A375'],
+	logo: 'img/logo.png',
 
 	calendar_color: '#00cdac',
 	isHolday: false,
