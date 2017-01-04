@@ -34,7 +34,7 @@ const constants =
 		 '#0B3954','#AC80A0','#064789','#63A375'],
 
 	calendar_color: '#00cdac',
-	isHolday: true,
+	isHolday: false.
 	holiday_colors: ['#53c65b','#10a500','#870909','#dd0404','#008208','#ba4444','#872525',
 					'#9e0024','#c42d2d','#166d0d','#3e9e34'],
 	holiday_logo: 'img/finals.png'
