@@ -35,7 +35,7 @@ const constants =
 	logo: 'img/logo.png',
 
 	calendar_color: '#00cdac',
-	isHolday: true,
+	isHolday: false,
 	holiday_colors: ['#0061ff','#FF0000','#ffd700','#00A651','#00AEEF','#96C03D',
 					'#303188'],
 	holiday_logo: 'img/wf.png'
