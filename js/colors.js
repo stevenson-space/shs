@@ -9,7 +9,10 @@ $(function()
 	}
 	else 
 	{
-		colors = constants.holiday_colors;
+		if(constants.holiday_colors.length)
+			colors = constants.holiday_colors;
+		else
+			colors = constants.colors;
 		logo = constants.holiday_logo;
 	}
 
