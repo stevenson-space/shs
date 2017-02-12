@@ -1,20 +1,5 @@
 $(function()
 {	
-	var logo;
-	if(!constants.isHolday)
-	{
-		$("#header-logo").attr("src",constants.logo);
-	}
-	else 
-	{
-		$("#header-logo").attr("src",constants.holiday_logo);
-	}
-
-	$("#tiles").children().each(function(index)
-	{
-		$(this).css("backgroundColor", constants.colors[index%constants.colors.length]);
-	});
-
 	var date = new Date()
 	date.setDate(1)
 	for(var i = 2; i <= 7; i++)

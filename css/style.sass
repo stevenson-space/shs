@@ -1,16 +1,21 @@
 @import "http://fonts.googleapis.com/css?family=Open+Sans:400"
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
 
+//Use the default patriot logo scale
 $default_logo_scale: true !default
 
+//Viewport limits
 $min-tablet-size: 768px
 $min-desktop-size: 1200px
 
+//Font stack
 $font-stack: 'Open Sans', sans-serif
 
+//Color constants
 $body-color: #EEEEEE
 $text-color: #ffffff
 
+//Announcement tile
 #tile-announcement
 	width: 100%
 	font-size: 1.3em
@@ -23,6 +28,7 @@ body
 	background-color: $body-color
 	font-family: $font-stack
 
+//Reset text element default styles
 i, p, a, span
 	display: block
 	color: $text-color
@@ -122,10 +128,13 @@ i, p, a, span
 	height: 120px
 	width: 20%
 	color: white
+	background-color: #006134
+	outline: 1px solid black
 
 .tile-cal-head
 	@extend .tile-cal
 	height: 40px
+	background-color: #FFC51E
 
 #projector
 	text-align: center
