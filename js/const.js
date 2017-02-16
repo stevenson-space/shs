@@ -37,6 +37,31 @@ const constants =
 	calendar_color: '#00cdac',
 	isHolday: true,
 	holiday_colors: ['#830707', '#E80C0C', '#E60D51', '#E95182'],
-	holiday_logo: 'img/valentines.png'
+	holiday_logo: 'img/valentines.png',
+
+	lunches:
+	{
+    	"2": ["Baked Cheese Tortellini ", "Balsamic Garlic Chicken ", "Creamed Spinach, Baby Carrots, Rice ", "Chicken Rice Soup, Vegetarian Chili"],
+    	"3": ["Tempura Chicken Stir-Fry ", "Korean Stir-Fry Vegetable W/ Tofu ", "Vegetable Spring Rolls, Brown Rice ", "Cream of Mushroom Soup, Beef Noodle Soup"],
+    	"4": ["BBQ Pulled Chicken Sandwich ", "Turkey Breast Vesuvio ", "Roasted Cauliflower, Cous Cous Primavera ", "Tomato Basil Soup, Beef Vegetable Soup"],
+    	"5": ["Baked Chicken Parmesan ", "Baked Tilapia ", "Ratatouille, Pasta, Cous Cous ", "Potato Bacon Chowder, Tuscan Kale & Bean Soup"],
+    	"6": ["Baked Chicken Picata ", "Baked Salmon ", "Quinoa Pilaf, Lemon Pepper Green Beans ", "Cream of Potato Soup, Vegetable Rice Soup"],
+    	"9": ["Sliced Pork Marsala ", "Blacken Tilapia ", "Red Potatoes, Fresh Broccoli, Braised Red Cabbage ", "Chicken Noodle Soup, Cream of Spinach Soup"],
+    	"10": ["Home Made Beef Stew ", "Thai Chicken Stir-Fry ", "Rice, Stir-Fry Vegetables, Roasted Cauliflower ", "Cream of Tomato Soup, French Onion Soup"],
+    	"11": ["Baked Cheese Enchiladas ", "Baja Fish Quinoa Tacos ", "Cilantro Lime Rice, Roasted Corn & Black Bean Salsa ", "Chicken Tortilla Soup, Cream of Brocoli Soup"],
+    	"12": ["Chopped Steak W/ Sauteed Onions ", "Baked Turkey Meatloaf ", "Red Potatoes, Sauteed Broccolini ", "Cream of Chicken Soup, Garden Vegetable Soup"],
+    	"13": ["Three Cheese Penne ", "Brazilian Chicken Breast ", "Yellow Rice, Roasted Carrots ", "Cream of Cauliflower, Chicken Quinoa Soup"],
+    	"16": ["Baked Beef Ravioli", "Vegetable Lo Mein Stir-Fry", "Pea Pods, Egg Roll", "Chicken Rice Soup, Vegetarian Chili"],
+    	"17": ["Home Made Chicken Pot Pie ", "Thai Steak Stir-Fry ", "Fried Rice, Roasted Vegetables ", "Cream of Mushroom Soup, Beef Noodle Soup"],
+    	"18": ["BBQ Baked Chicken Breast ", "Spring Herb & Dijon Pork ", "Rice, Roasted Asparagus ", "Tomato Basil Soup, Beef Vegetable Soup"],
+    	"19": ["Home Made Beef Meatloaf ", "Spicy Whole Wheat Spaghetti ", "Balsamic Swiss Chard, Orzo, Roasted Carrots ", "Chicken Tortilla Soup, Cream of Brocoli Soup"],
+    	"20": ["Baked Pasta W/ Marnaria ", "Citrus Herb Salmon ", "Fresh Broccoli, Seasonal Fruit ", "Cream of Potato Soup, Vegetable Rice Soup"],
+    	"23": ["Roasted Turkey Breast Plate ", "Orecchiette W/ Broccoli and Chickpeas ", "Brussel Sprouts, Mashed Sweet Potatoes ", "Chicken Noodle Soup, Cream of Spinach Soup"],
+    	"24": ["Baked Battered Cod ", "Lemon Garlic Baked Chicken ", "Roasted Potatoes, Snow Peas W/ Red Peppers ", "Cream of Tomato Soup, French Onion Soup"],
+    	"25": ["Open Faced Pot Roast Sandwich ", "Baked Salmon ", "Red Potatoes, Sauteed Broccolini ", "Cream of Chicken Soup, Garden Vegetable Soup"],
+    	"26": ["Spinach Ravioli W/ Pesto Cream Sauce ", "Dijon Pork Loin ", "Roasted Asparagus, Baby Carrots,Cous Cous ", "Potato Bacon Chowder, Tuscan Kale & Bean Soup"],
+    	"27": ["Sweedish Meatballs ", "Crispy Honey BBQ Chicken Stir-Fry ", "Rice, Pasta, Fresh Broccoli ", "Cream of Cauliflower, Chicken Quinoa Soup"],
+	},
+	daysInMonth: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 }
 
