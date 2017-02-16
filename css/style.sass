@@ -107,6 +107,11 @@ i, p, a, span
 	line-height: 65px
 	height: 150px
 
+.tile-wd-tall
+	@extend .tile-wd
+	height: 250px
+	@media (min-width: $min-desktop-size)
+		height: 150px
 
 .tile-lg
 	@extend .tile //extend to change size
