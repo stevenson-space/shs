@@ -10,11 +10,30 @@ function getLunch(date)
 $(function()
 {
     var lunchStr = "";
+    var expanded = false;
     var lunch = getLunch();
     for(var i = 0; i < lunch.length; i++)
     {
         lunchStr += lunch[i] + "\n";
     }
+
+    $('#toggle-lunch-dropdown').click(function()
+    {
+        if(expanded)
+        {
+            $('#tile-lunch-dropdown').css('height', '');
+            $('#lunch-text').css('padding','');
+            $('#lunch-text').text('');
+            expanded = false;
+        }
+        else
+        {
+            $('#tile-lunch-dropdown').css('height', '350px');
+            $('#lunch-text').css('padding','5px');
+            $('#lunch-text').text(lunchStr);
+            expanded = true;
+        }
+    });
 
     
     //console.log(lunchStr);
