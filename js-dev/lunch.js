@@ -15,6 +15,8 @@ $(function()
     {
         lunchStr += lunch[i] + "\n";
     }
-    console.log(lunchStr);
-    $('#lunch').text(lunchStr);
+
+    
+    //console.log(lunchStr);
+    //$('#lunch').text(lunchStr);
 });
