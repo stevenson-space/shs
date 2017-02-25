@@ -60,7 +60,7 @@ const constants =
     	"24": ["Baked Battered Cod ", "Lemon Garlic Baked Chicken ", "Roasted Potatoes, Snow Peas W/ Red Peppers ", "Cream of Tomato Soup, French Onion Soup"],
     	"25": ["Open Faced Pot Roast Sandwich ", "Baked Salmon ", "Red Potatoes, Sauteed Broccolini ", "Cream of Chicken Soup, Garden Vegetable Soup"],
     	"26": ["Spinach Ravioli W/ Pesto Cream Sauce ", "Dijon Pork Loin ", "Roasted Asparagus, Baby Carrots,Cous Cous ", "Potato Bacon Chowder, Tuscan Kale & Bean Soup"],
-    	"27": ["Sweedish Meatballs ", "Crispy Honey BBQ Chicken Stir-Fry ", "Rice, Pasta, Fresh Broccoli ", "Cream of Cauliflower, Chicken Quinoa Soup"],
+    	"27": ["Swedish Meatballs ", "Crispy Honey BBQ Chicken Stir-Fry ", "Rice, Pasta, Fresh Broccoli ", "Cream of Cauliflower, Chicken Quinoa Soup"],
 	},
 	daysInMonth: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 }
