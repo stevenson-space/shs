@@ -52,10 +52,27 @@ function main()
         display = getPeriod(constants.pmassembly_s, constants.pmassembly_e, constants.pmassembly_p);
         display.schedule = "PM Assembly";
     }
-    //Special Case - Finals!
+    //Finals, some special checking here to get the proper day (3 cyclic)
     else if(constants.finals.indexOf(date) != -1)
     {
-        display = getPeriod(constants.finals_s, constants.finals_e, constants.finals_p);
+        //Get the proper finals period set
+        
+        //This gets td to the day before finals begins
+        var td = new Date();
+        while(constants.finals.indexOf(getDateString(td)) != -1)
+            td.setDate(td.getDate() - 1);
+
+        //So we take the distance from today to find which day of finals we're on
+        var d = new Date().getDate() - td.getDate()
+        //And assign the proper period set
+        if(d == 1)
+            finals_p = constants.finals_p1;
+        else if(d == 2)
+            finals_p = constants.finals_p2;
+        else
+            finals_p = constants.finals_p3;
+
+        display = getPeriod(constants.finals_s, constants.finals_e, finals_p);
         display.schedule = "Finals";
     }
     //Standard Schedule
@@ -66,6 +83,11 @@ function main()
     }
 
     //Update the UI
+    //Check if display.period contains the special ! character to remove the "Period" prefix
+    if(display.period[0] == "!")
+        display.period = display.period.substring(1, display.period.length);
+    else
+        display.period = "Period " + display.period;
     $("#schedule").text(display.schedule);
     $("#period").text(display.period);
     $("#range").text(display.range);
@@ -102,7 +124,7 @@ function getPeriod(starts, ends, periods)
     if (minutes < starts[0] || minutes >= ends[ends.length - 1])
 	{
 		return {
-        	period: "None",
+        	period: "!None",
         	end: false,
         	range: ""
     	}
@@ -118,7 +140,7 @@ function getPeriod(starts, ends, periods)
             					   //then this is the current period
             {
                 return {
-                    period: "Period " + periods[i],
+                    period: periods[i],
                     end: ends[i],
                     range: toHours(starts[i]) + "-" + toHours(ends[i])
                 }
