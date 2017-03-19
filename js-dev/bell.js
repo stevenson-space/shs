@@ -24,7 +24,7 @@ function main()
     if (!(today.getDay() % 6) || constants.holidays.indexOf(date) != -1)
     {
         display.schedule = "No school";
-        display.period = "";
+        display.period = "!";
         //Find the next school day
         while (!(today.getDay() % 6) || constants.holidays.indexOf(date) != -1)
         {
