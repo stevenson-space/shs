@@ -22,6 +22,7 @@ $(function()
         if(expanded)
         {
             $('#tile-lunch-dropdown').css('height', '');
+            $('#range-timer').css('height', '');
             $('#lunch-text').css('padding','');
             $('#lunch-text').text('');
             expanded = false;
@@ -29,6 +30,7 @@ $(function()
         else
         {
             $('#tile-lunch-dropdown').css('height', '350px');
+            $('#range-timer').css('height', '350px');
             $('#lunch-text').css('padding','5px');
             $('#lunch-text').text(lunchStr);
             expanded = true;

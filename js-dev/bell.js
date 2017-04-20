@@ -14,7 +14,7 @@ $(window).on("touchend focus", function()
 function main()
 {
     var today = new Date();
-    minutes = today.getHours() * 60 + today.getMinutes(); //minutes offset
+    minutes = today.getHours() * 60 + today.getMinutes(); //minutes offset from midnight
 
     var date = getDateString(today)
 
@@ -156,7 +156,7 @@ function getPeriod(starts, ends, periods)
     }
 }
 
-//Returns the current date formatted as a string
+//Returns the current date formatted as a string MM/DD/YY
 function getDateString(date)
 {
     return (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
