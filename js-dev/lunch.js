@@ -11,7 +11,20 @@ $(function()
 {
     var lunchStr = "";
     var expanded = false;
-    var lunch = getLunch();
+    var lunch;
+
+    var today = new Date();
+    if(today.getHours()*60 + today.getMinutes() > 821) //After 6th period, temp hack
+    {
+        today.setDate(today.getDate() + 1);
+        lunch = getLunch(today)
+        $('#lunch-tile-header').text("Tomorrow's Lunch");
+    }
+    else
+    {
+        lunch = getLunch();
+    }
+
     for(var i = 0; i < lunch.length; i++)
     {
         lunchStr += lunch[i] + "\n";
