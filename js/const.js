@@ -2,7 +2,7 @@ const constants =
 {
 	latearrival: [],
 	activityperiod: ['5/15/2017'],
-	pmassembly: [],
+	pmassembly: ['5/19/2017'],
 	finals: ['5/23/2017','5/24/2017','5/25/2017'],
 	holidays: [],
 
