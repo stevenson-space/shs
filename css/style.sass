@@ -41,7 +41,7 @@ i, p, a, span
 	margin-top: 20px
 	text-align: center
 	img
-		width: 65%  //Default logo scale below 
+		width: 65%  //Default logo scale below
 		@media (min-width: $min-tablet-size)
 			width: 40%
 		@media (min-width: $min-desktop-size)
@@ -65,10 +65,10 @@ i, p, a, span
 
 	width: 100%
 	@media (min-width: $min-tablet-size)
-		width: 95% 
+		width: 95%
 	@media (min-width: $min-desktop-size)
 		width: 70%
-	
+
 .tile
 	//Fill the remaining space in the row
 	flex-grow: 1
@@ -83,7 +83,7 @@ i, p, a, span
 	width: 100%
 
 	@media (min-width: $min-tablet-size)
-		width: 50%	
+		width: 50%
 	@media (min-width: $min-desktop-size)
 		width: 25%
 
@@ -95,6 +95,7 @@ i, p, a, span
 
 	//Default text settings
 	text-align: center
+	color: white
 	p, a
 		font-size: 1em
 	span
@@ -112,7 +113,7 @@ i, p, a, span
 
 .tile-lg
 	@extend .tile //extend to change size
-	
+
 	@media (min-width: $min-desktop-size)
 		width: 33.33%
 	height: 300px
@@ -129,14 +130,56 @@ i, p, a, span
 	@extend .tile
 	height: 120px
 	width: 20%
-	color: white
 	background-color: #006134
 	outline: 1px solid black
+	align-items: initial
+	justify-content: initial
+	margin: 0
+
+	.date
+		font-size: .9em
+		text-align: left
+		margin: 3px 0 0 5px
+		@media (min-width: $min-tablet-size)
+			font-size: 1.1em
+		span
+			font-size: inherit
+			display: inline
+			padding: 2px 4px
+		.today
+			background-color: white
+			border-radius: 50px
+			color: black
+
+	.event
+		font-size: .8em
+		margin-top: 10%
+		@media (min-width: $min-tablet-size)
+			font-size: 1.2em
 
 .tile-cal-head
 	@extend .tile-cal
 	height: 40px
 	background-color: #FFC51E
+	justify-content: center
+
+#tile-cal-header
+	@extend .tile-cal-head
+	width: 100%
+	flex-flow: row nowrap
+	align-items: center
+	justify-content: initial
+	font-size: 1.5em
+
+	.month
+		flex: 1
+		margin-bottom: 5px
+
+	#next, #previous
+		margin: 0 10px
+		cursor: pointer
+		i
+			font-size: 1em
 
 .tile-full
 	@extend .tile
@@ -144,10 +187,9 @@ i, p, a, span
 	height: auto
 	padding-bottom: 10px
 
-
 #ap-test-dates
 	color: white
-	
+
 	table
 		width: 95%
 		overflow-x: auto
@@ -170,7 +212,7 @@ i, p, a, span
 		font-size: 1.3em
 		padding-top: 10px
 		padding-bottom: 10px
-		
+
 
 
 #tile-lunch-dropdown
