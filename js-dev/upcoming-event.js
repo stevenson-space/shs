@@ -11,7 +11,6 @@ $(function() {
 
   var events = constants.latearrival.concat(constants.activityperiod).concat(constants.pmassembly)
     .concat(constants.finals).concat(constants.holidays);
-  console.log(events);
   var today = new Date();
   var upcoming = new Date(today.getFullYear() + 1000, 0);
   events.forEach(function(item) {
