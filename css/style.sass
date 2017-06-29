@@ -128,18 +128,20 @@ i, p, a, span
 
 .tile-cal
 	@extend .tile
-	height: 120px
+	height: 80px
 	width: 20%
 	background-color: #006134
 	outline: 1px solid black
 	align-items: initial
 	justify-content: initial
 	margin: 0
+	@media (min-width: $min-tablet-size)
+		height: 120px
 
 	.date
 		font-size: .9em
 		text-align: left
-		margin: 3px 0 0 5px
+		margin: 3px 0 0 2px
 		@media (min-width: $min-tablet-size)
 			font-size: 1.1em
 		span
@@ -152,7 +154,7 @@ i, p, a, span
 			color: black
 
 	.event
-		font-size: .8em
+		font-size: .82em
 		margin-top: 10%
 		@media (min-width: $min-tablet-size)
 			font-size: 1.2em
