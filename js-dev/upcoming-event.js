@@ -1,6 +1,8 @@
 $(function() {
   var getEvent = function(date) {
     var dateString = date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear();
+    var index = constants.calendar_events.indexOf(dateString);
+  	if(index > -1) return constants.calendar_event_names[index];
   	if(constants.latearrival.indexOf(dateString) > -1) return "Late Arrival";
   	if(constants.activityperiod.indexOf(dateString) > -1) return "Activity Period";
   	if(constants.pmassembly.indexOf(dateString) > -1) return "PM Assembly";
@@ -10,7 +12,7 @@ $(function() {
   }
 
   var events = constants.latearrival.concat(constants.activityperiod).concat(constants.pmassembly)
-    .concat(constants.finals).concat(constants.holidays);
+    .concat(constants.finals).concat(constants.holidays).concat(constants.calendar_events);
   var today = new Date();
   var upcoming = new Date(today.getFullYear() + 1000, 0);
   events.forEach(function(item) {

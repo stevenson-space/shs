@@ -39,6 +39,8 @@ function showMonth(month, year) {
 
 function getEvent(date) {
 	var dateString = date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear();
+	var index = constants.calendar_events.indexOf(dateString);
+	if(index > -1) return constants.calendar_event_names[index];
 	if(constants.latearrival.indexOf(dateString) > -1) return "Late Arrival";
 	if(constants.activityperiod.indexOf(dateString) > -1) return "Activity Period";
 	if(constants.pmassembly.indexOf(dateString) > -1) return "PM Assembly";
