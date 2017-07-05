@@ -21,7 +21,7 @@ function showMonth(month, year) {
 			event: getEvent(date)
 		});
 	}
-
+	
 	//Show dates and events on calendar
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	$("#tile-cal-header .month").text(months[month] + " " + year);
