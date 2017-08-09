@@ -1,173 +1,139 @@
-var minutes, timer;
+/**
+ * Bell.js
+ * Implements the Bell object
+ */
 
-//Run main function on document load
-$(main);
-//Reset timer and rerun on regained
-//focus or a touch on mobile device
-$(window).on("touchend focus", function() 
+//Get the corresponding period given start/stop times, their corresponding periods, and the current time
+function getPeriod(starts, ends, periods, minutesOffset)
 {
-    clearInterval(timer);
-    main();
-}); 
-
-
-function main()
-{
-    var today = new Date();
-    minutes = today.getHours() * 60 + today.getMinutes(); //minutes offset from midnight
-
-    var date = getDateString(today)
-
-    var display = {};
-
-    //Weekend and Holidays, find the next starting date
-    if (!(today.getDay() % 6) || constants.holidays.indexOf(date) != -1)
-    {
-        display.schedule = "No school";
-        display.period = "!";
-        //Find the next school day
-        while (!(today.getDay() % 6) || constants.holidays.indexOf(date) != -1)
-        {
-            today.setDate(today.getDate() + 1);
-            date = getDateString(today);
-        }
-        display.range = "School resumes: " + getDateString(today, "/");
-        display.end = false;
-    }
-    //Late Arrival
-    else if (constants.latearrival.indexOf(date) != -1)
-    {
-        display = getPeriod(constants.latearrival_s, constants.latearrival_e, constants.latearrival_p);
-        display.schedule = "Late Arrival";
-    }
-    //Activity Period
-    else if (constants.activityperiod.indexOf(date) != -1)
-    {
-        display = getPeriod(constants.activityperiod_s, constants.activityperiod_e, constants.activityperiod_p);
-        display.schedule = "Activity";
-    }
-    //PM Assembly
-    else if (constants.pmassembly.indexOf(date) != -1)
-    {
-        display = getPeriod(constants.pmassembly_s, constants.pmassembly_e, constants.pmassembly_p);
-        display.schedule = "PM Assembly";
-    }
-    //Finals, some special checking here to get the proper day (3 cyclic)
-    else if(constants.finals.indexOf(date) != -1)
-    {
-        //Get the proper finals period set
-        
-        //This gets td to the day before finals begins
-        var td = new Date();
-        while(constants.finals.indexOf(getDateString(td)) != -1)
-            td.setDate(td.getDate() - 1);
-
-        //So we take the distance from today to find which day of finals we're on
-        var d = new Date().getDate() - td.getDate()
-        //And assign the proper period set
-        if(d == 1)
-            finals_p = constants.finals_p1;
-        else if(d == 2)
-            finals_p = constants.finals_p2;
-        else
-            finals_p = constants.finals_p3;
-
-        display = getPeriod(constants.finals_s, constants.finals_e, finals_p);
-        display.schedule = "Finals";
-    }
-    //Standard Schedule
-    else
-    {
-        display = getPeriod(constants.standard_s, constants.standard_e, constants.standard_p);
-        display.schedule = "Standard Schedule";
-    }
-
-    //Update the UI
-    //Check if display.period contains the special ! character to remove the "Period" prefix
-    if(display.period[0] == "!")
-        display.period = display.period.substring(1, display.period.length);
-    else
-        display.period = "Period " + display.period;
-    $("#schedule").text(display.schedule);
-    $("#period").text(display.period);
-    $("#range").text(display.range);
-
-    //Timer
-    var secondsLeft = (display.end - minutes - 1) * 60 + (60 - today.getSeconds());
-    var seconds;
-    var countdown = function()
-    {
-        seconds = secondsLeft % 60;
-        //set timer to minutes + seconds
-        $("#timer").text(Math.floor(secondsLeft / 60) + ":" + (seconds < 10 ? "0" + seconds : seconds));
-        //reset if time has expired
-        if (secondsLeft <= 0)
-        {
-            clearInterval(timer);
-            $("#timer").text("");
-            main();
-        }
-        secondsLeft--;
-    }
-    //Only start the timer if we have an "end" value
-    if (display.end)
-    {
-        timer = setInterval(countdown, 1000);
-        countdown();
-    }
-}
-
-//Returns the current period
-function getPeriod(starts, ends, periods)
-{
-	//If school hasn't begun or has already ended
-    if (minutes < starts[0] || minutes >= ends[ends.length - 1])
+	//Check if school hasn't started or if it's already over
+	if (minutesOffset < starts[0] || minutesOffset >= ends[ends.length - 1])
 	{
 		return {
-        	period: "!None",
-        	end: false,
-        	range: ""
-    	}
+	    	inSession: false
+		}
 	}
 	//Else we can go on and find the period
-    var last;
-    for (var i = 0; i < starts.length; i++)
-    {
-        if (minutes >= starts[i]) //if we are into the i-th period
-        {
-            last = i //then its also the "last" period
-            if (minutes < ends[i]) //if we're also before the end of the i-th period,
-            					   //then this is the current period
-            {
-                return {
-                    period: periods[i],
-                    end: ends[i],
-                    range: toHours(starts[i]) + " - " + toHours(ends[i])
-                }
-            }
-        }
-    }
+	var last;
+	for (var i = 0; i < starts.length; i++)
+	{
+	    if (minutesOffset >= starts[i]) //if we are into the i-th period
+	    {
+	        last = i //then its also the "last" period
+	        if (minutesOffset < ends[i]) //if we're also before the end of the i-th period,
+	        					   //then this is the current period
+	        {
+	            return {
+	            	inSession: true,
+	                period: periods[i],
+	                start: starts[i],
+	                end: ends[i]
+	            }
+	        }
+	    }
+	}
 
-    //If we're in school but a current period is not found, we're in a passing period
-    return {
-        period: "!Passing",
-        end: starts[last + 1],
-        range: "Next: " + toHours(starts[last + 1]) + " - " + toHours(ends[last + 1])
-    }
+	//If the loop terminates without finding a period that means we must be in a passing period
+	//(after the start of a period but not before the end)
+	return {
+		inSession: true,
+	    period: "!Passing",
+	    start: ends[last],
+	    end: starts[last + 1]
+	}
 }
 
-//Returns the current date formatted as a string MM/DD/YY
-function getDateString(date)
+
+/** Bell Class **/
+class Bell
 {
-    return (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
+	constructor(date)
+	{
+		this.date = date;
+		var minutesOffset = date.getMinutesOffset();
+		var dateString = date.toLocaleString();
+		
+		//Check if we have school or not: weekends/holidays
+		if (!(date.getDay() % 6) || constants.holidays.indexOf(dateString) != -1)
+		{
+			this.school = false;
+			this.inSession = false;
+			return; //No need to run the rest of the constructor
+		}
+		//Otherwise check all the types of schedules
+		this.school = true;
+		var bellData = {}
+		//Late Arrival
+   		if (constants.latearrival.indexOf(dateString) != -1)
+   		{
+   		    bellData = getPeriod(constants.latearrival_s, constants.latearrival_e, constants.latearrival_p, minutesOffset);
+   		    bellData.schedule = "Late Arrival";
+   		}
+   		//Activity Period
+   		else if (constants.activityperiod.indexOf(dateString) != -1)
+   		{
+   		    bellData = getPeriod(constants.activityperiod_s, constants.activityperiod_e, constants.activityperiod_p, minutesOffset);
+   		    bellData.schedule = "Activity";
+   		}
+   		//PM Assembly
+   		else if (constants.pmassembly.indexOf(dateString) != -1)
+   		{
+   		    bellData = getPeriod(constants.pmassembly_s, constants.pmassembly_e, constants.pmassembly_p, minutesOffset);
+   		    bellData.schedule = "PM Assembly";
+   		}
+   		else
+   		{
+   			bellData = getPeriod(constants.standard_s, constants.standard_e, constants.standard_p, minutesOffset);
+       		bellData.schedule = "Standard Schedule";
+   		}
+
+   		this.inSession = bellData.inSession;
+   		this.schedule = bellData.schedule;
+   		this.period =
+   		{
+   			period: bellData.period,
+   			start: bellData.start,
+   			end: bellData.end,
+   		}
+
+	}
+
+	nextPeriod()
+	{
+		//Return a bell object created when the next period begins
+		this.date.setMinutesOffset(this.period.end + 5);
+		return new Bell(this.date);
+		
+	}
+
 }
 
-//Converts a minutes input into hours:minutes format
-function toHours(minutes)
+
+
+
+
+
+
+
+
+
+
+$(function()
 {
-    var hours = Math.floor(minutes / 60);
-    if (hours > 12) hours -= 12;
-    var minutes = minutes % 60;
-    if (minutes < 10) minutes = "0" + minutes;
-    return hours + ":" + minutes;
-}
+	//Add a "getMinutesOffset()"" function to the Date object
+	Date.prototype.getMinutesOffset = function()
+	{
+		//Returns minutes since midnight
+		return this.getHours()*60 + this.getMinutes();
+	}
+
+	Date.prototype.setMinutesOffset = function(minutes)
+	{
+		var hours = Number.parseInt(minutes / 60);
+		var minutes = minutes % 60;
+
+		this.setHours(hours);
+		this.setMinutes(minutes);
+	}
+
+})

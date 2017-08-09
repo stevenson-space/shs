@@ -2,7 +2,7 @@ $(function()
 {	
 
 	//Set the colors based on if it's a holiday or not
-	var colors;
+	var colors
 	if(!constants.isHolday)
 	{
 		colors = constants.colors;
@@ -17,11 +17,13 @@ $(function()
 
 	shuffle(colors);
 
-	//Assign a color to each tile
+	//Assign a color to each tile in a tiles container
 	$("#tiles").children().each(function(index)
 	{
+		//Ensure cyclic colors if we ever have more tiles than colors
 		$(this).css("backgroundColor", colors[index%colors.length])
 	});
+
 });
 
 function shuffle(a, b, c, d)
