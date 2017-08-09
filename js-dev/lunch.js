@@ -7,6 +7,16 @@ function getLunch(date)
     return constants.lunches[days % 28 + ""];
 }
 
+function getLunchString(date)
+{
+    var lunchMenu = getLunch(date);
+    var lunchString = "";
+    for(var lunchItem of lunchMenu)
+        lunchString += lunchItem + "\n";
+    return lunchString;
+}
+
+/*
 $(function()
 {
     var lunchStr = "";
@@ -58,4 +68,4 @@ $(function()
     
     //console.log(lunchStr);
     //$('#lunch').text(lunchStr);
-});
+});*/
