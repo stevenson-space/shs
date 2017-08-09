@@ -87,9 +87,7 @@ i, p, a, span
 	align-items: center
 	flex-flow: column nowrap
 
-	//Mobile tile spacing
-	//margin-left: 1px
-	//margin-right: 1px
+	//Mobile tile gap
 	margin-bottom: 15px
 	
 	//Tablets and desktops have no distance between tiles
@@ -105,7 +103,7 @@ i, p, a, span
  */
 
 /**
- * Mixins for Tiles
+ * Mixins
  */
 =width($mobile, $tablet, $desktop)
 	width: $mobile
@@ -221,4 +219,34 @@ i, p, a, span
 				margin-top: 10px
 
 
+/**
+ * End Docs
+ */
 
+ /**
+  * Bell Schedules
+  */
+ 
+.bell-period-tile
+	@extend .tile
+	+width(100%, 50%, 25%)
+	+height(250px, 250px, 250px)
+	+text($span: 3em, $p: 1.25em)
+
+/**
+ * End Bell Schedules
+ */
+
+/**
+ * Links
+ */
+
+.link-tile
+	@extend .tile
+	+width(100%, 50%, 25%)
+	+height(250px, 250px, 250px)
+	+text($span: 2em)
+
+/**
+ * End Tiles
+ */
