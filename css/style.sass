@@ -249,3 +249,89 @@ i, p, a, span
 /**
  * End Tiles
  */
+
+/**
+ * Calendar
+ */
+
+.tile-cal
+	@extend .tile
+	height: 80px
+	width: 20%
+	background-color: #006134
+	outline: 1px solid black
+	align-items: initial
+	justify-content: initial
+	margin: 0
+	@media (min-width: $min-tablet-size)
+		height: 120px
+
+	.date
+		font-size: .9em
+		text-align: left
+		margin: 3px 0 0 2px
+		@media (min-width: $min-tablet-size)
+			font-size: 1.1em
+		span
+			font-size: inherit
+			display: inline
+			padding: 0px 6px
+		.today
+			background-color: white
+			border-radius: 50px
+			color: black
+
+	.event
+		font-size: .82em
+		margin-top: 10%
+		@media (min-width: $min-tablet-size)
+			font-size: 1.2em
+
+.tile-cal-head
+	@extend .tile-cal
+	height: 40px
+	background-color: #FFC51E
+	justify-content: center
+
+#tile-cal-header
+	@extend .tile-cal-head
+	width: 100%
+	flex-flow: row nowrap
+	align-items: center
+	justify-content: initial
+	font-size: 1.5em
+
+	.month
+		flex: 1
+		margin-bottom: 5px
+
+	#next, #previous
+		margin: 0 10px
+		cursor: pointer
+		i
+			font-size: 1em
+/**
+ * End Calendar
+ */
+
+/**
+ * Projector
+ */
+
+#projector
+	display: flex
+	flex-flow: column nowrap
+	justify-content: center
+	align-items: center
+	#timer, #range, #period, #schedule
+		color: black
+		margin-top: 10px
+
+	#timer
+		font-size: 12vw
+
+	#range
+		font-size: 5vw
+
+	#period, #schedule
+		font-size: 4vw
