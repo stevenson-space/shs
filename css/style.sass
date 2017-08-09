@@ -1,5 +1,5 @@
 @import "http://fonts.googleapis.com/css?family=Open+Sans:400"
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 
 //Use the default patriot logo scale
 $default_logo_scale: true !default
@@ -114,14 +114,14 @@ i, p, a, span
 	@media (min-width: $min-desktop-size)
 		width: $desktop
 
-=tile-height($mobile, $tablet, $desktop)
+=height($mobile, $tablet, $desktop)
 	height: $mobile
 	@media (min-width: $min-tablet-size)
 		height: $tablet
 	@media (min-width: $min-desktop-size)
 		height: $desktop
 
-=tile-text($p: 1em, $a: 1em, $span: 1em, $i: 1em)
+=text($p: 1em, $a: 1em, $span: 1em, $i: 1em)
 	p
 		font-size: $p
 	a
@@ -140,15 +140,15 @@ i, p, a, span
 .homepage-wide-tile
 	@extend .tile
 	+width(100%, 50%, 33.333%)
-	+tile-height(250px, 250px, 250px)
-	+tile-text(1em, 1em, 2em, 5em)
+	+height(250px, 250px, 250px)
+	+text(1em, 1em, 2em, 5em)
 
 //Homepage Tiles (w/ Icon + Text)
 .homepage-icon-text-tile
 	@extend .tile
 	+width(100%, 50%, 25%)
-	+tile-height(250px, 250px, 250px)
-	+tile-text(1em, 1em, 2em, 5em)
+	+height(250px, 250px, 250px)
+	+text(1em, 1em, 2em, 5em)
 
 	i
 		//Space below icons
@@ -160,29 +160,65 @@ i, p, a, span
 
 	#timer-container
 		+width(100%, 100%, 50%)
-		+tile-text($span: 5em)
+		+text($span: 5em)
 
 #tile-lunch
 	flex-flow: row wrap
-	+tile-text($span: 1.1rem, $i: 2em, $p: 2em)
+	+text($span: 1.1rem, $i: 2em, $p: 2em)
 	white-space: pre-wrap
 
-	i
-		margin-top: 10px
-		width: 15%
-
 	#lunch-header
-		//width: 80%
+		height: 5%
+
+	i
+		margin-top: auto
+		width: 15%
+		height: 20%
 
 	#lunch-text
 		width: 95%
 
 #tile-upcoming
 	flex-flow: row wrap
+	+text($span: 1.1rem, $i: 2.2em, $p: 2em)
 
-
+	i
+		margin-top: 5px
+		width: 15%
 
 /*
-
  * End Homepage
  */
+
+/**
+ * Docs
+ */
+
+.doc-subject-tile
+	@extend .tile
+	+width(100%, 50%, 50%)
+	+height(300px, 300px, 250px)
+	+text(1em, 1em, 3em, 5em)
+
+	i
+		margin-top: 10px
+		margin-bottom: 10px
+
+	.subject-header
+		cursor: pointer
+
+	.class-container
+		margin-top: 20px
+		width: 100%
+		display: flex
+		flex-flow: row wrap
+		.class
+			display: none
+			margin-bottom: 20px
+			+width(100%, 100%, 50%)
+			+text($span: 2em)
+			a
+				margin-top: 10px
+
+
+
