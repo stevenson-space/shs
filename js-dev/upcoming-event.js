@@ -25,8 +25,16 @@ $(function() {
 
   if(upcoming.getFullYear() != today.getFullYear() + 1000) {
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    $("#upcoming-event").text(getEvent(upcoming));
-    $("#upcoming-event-date").text((upcoming.getFullYear() == today.getFullYear() && upcoming.getMonth() == today.getMonth()
-      && upcoming.getDate() == today.getDate() + 1)? "Tomorrow" : months[upcoming.getMonth()] + " " + upcoming.getDate());
+    var eventString = "";
+    eventString += getEvent(upcoming) + " ";
+    //$("#upcoming-event").text(getEvent(upcoming));
+    //$("#upcoming-event-date").text((upcoming.getFullYear() == today.getFullYear() && upcoming.getMonth() == today.getMonth()
+      //&& upcoming.getDate() == today.getDate() + 1)? "Tomorrow" : months[upcoming.getMonth()] + " " + upcoming.getDate());
+    
+    eventString += (upcoming.getFullYear() == today.getFullYear() && upcoming.getMonth() == today.getMonth()
+      && upcoming.getDate() == today.getDate() + 1)? "tomorrow" : months[upcoming.getMonth()] + " " + upcoming.getDate()
+
+    $('#upcoming-event-text').text(eventString);
+
   }
 });

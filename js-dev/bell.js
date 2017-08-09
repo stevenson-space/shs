@@ -142,7 +142,7 @@ function getPeriod(starts, ends, periods)
                 return {
                     period: periods[i],
                     end: ends[i],
-                    range: toHours(starts[i]) + "-" + toHours(ends[i])
+                    range: toHours(starts[i]) + " - " + toHours(ends[i])
                 }
             }
         }
@@ -150,9 +150,9 @@ function getPeriod(starts, ends, periods)
 
     //If we're in school but a current period is not found, we're in a passing period
     return {
-        period: "Passing",
+        period: "!Passing",
         end: starts[last + 1],
-        range: "Next: " + toHours(starts[last + 1]) + "-" + toHours(ends[last + 1])
+        range: "Next: " + toHours(starts[last + 1]) + " - " + toHours(ends[last + 1])
     }
 }
 

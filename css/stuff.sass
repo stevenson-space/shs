@@ -1,0 +1,150 @@
+*
+
+.tile-wd
+	@extend .tile
+	@media (min-width: $min-desktop-size)
+		width: 50%
+	line-height: 65px
+	height: 150px
+
+
+.tile-lg
+	+tile($desktop-width: 33.33%, height: 300px)
+
+	//@extend .tile //extend to change size
+
+	line-height: 30px
+	span
+		margin-bottom: auto
+		margin-top: 20px
+	a, p
+		margin-bottom: auto
+	a, p
+		font-size: 1.2em
+
+.tile-cal
+	@extend .tile
+	height: 80px
+	width: 20%
+	background-color: #006134
+	outline: 1px solid black
+	align-items: initial
+	justify-content: initial
+	margin: 0
+	@media (min-width: $min-tablet-size)
+		height: 120px
+
+	.date
+		font-size: .9em
+		text-align: left
+		margin: 3px 0 0 2px
+		@media (min-width: $min-tablet-size)
+			font-size: 1.1em
+		span
+			font-size: inherit
+			display: inline
+			padding: 0px 6px
+		.today
+			background-color: white
+			border-radius: 50px
+			color: black
+
+	.event
+		font-size: .82em
+		margin-top: 10%
+		@media (min-width: $min-tablet-size)
+			font-size: 1.2em
+
+.tile-cal-head
+	@extend .tile-cal
+	height: 40px
+	background-color: #FFC51E
+	justify-content: center
+
+#tile-cal-header
+	@extend .tile-cal-head
+	width: 100%
+	flex-flow: row nowrap
+	align-items: center
+	justify-content: initial
+	font-size: 1.5em
+
+	.month
+		flex: 1
+		margin-bottom: 5px
+
+	#next, #previous
+		margin: 0 10px
+		cursor: pointer
+		i
+			font-size: 1em
+
+.tile-full
+	@extend .tile
+	width: 100%
+	height: auto
+	padding-bottom: 10px
+
+//Announcement tile
+#tile-announcement
+	width: 100%
+	font-size: 1em
+	text-align: center
+	margin: 0 auto 20px auto
+	@media (min-width: $min-tablet-size)
+		font-size: 1.3em
+		margin: 0 auto 0 auto
+
+
+#ap-test-dates
+	color: white
+
+	table
+		width: 95%
+		overflow-x: auto
+		border-collapse: collapse
+		font-size: 0.8em
+		@media (min-width: 375px) //iPhone 6S
+			font-size: 1.0em
+		@media (min-width: $min-tablet-size)
+			font-size: 1.4em
+		td
+			height: 100px
+			outline: 1px solid white
+			padding: none
+			text-align: center
+
+#ap-test-calc, #ap-test-materials
+	height: auto
+	color: white
+	p
+		font-size: 1.3em
+		padding-top: 10px
+		padding-bottom: 10px
+
+
+
+#tile-lunch-dropdown
+	line-height: normal
+
+#lunch-text
+	font-size: 1.3em
+	line-height: 25px
+	white-space: pre-wrap
+	//padding: 5px
+
+#projector
+	text-align: center
+	padding: 5%
+	span
+		color: #474747
+	#timer
+		font-size: 10em
+		color: black
+	#range
+		font-size: 6em
+	#period
+		font-size: 3em
+	#schedule
+		font-size: 3em
+*/

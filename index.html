@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="apple-mobile-web-app-capable" content="yes">
+
     <title>Stevenson High School</title>
     <meta name="description" content="The home page for Stevenson High School in Lincolnshire, Illinois.">
 
@@ -16,19 +17,28 @@
     <link rel="icon" type="image/png" href="favicon/android-chrome-192x192.png">
     <link rel="apple-touch-icon" href="favicon/apple-touch-icon-180x180.png">
 
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script defer src="js/const.js"></script>
     <script defer src="js/logo.min.js"></script>
     <script defer src="js/colors.min.js"></script>
-    <script defer src="js/bell.min.js"></script>
+    <script defer src="js-dev/bell.js"></script>
+    <script defer src="js-dev/bell2.js"></script>
+    <script defer src="js-dev/index.js"></script>
     <script defer src="js-dev/lunch.js"></script>
     <script defer src="js-dev/upcoming-event.js"></script>
 
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-83979451-1', 'auto');
         ga('send', 'pageview');
     </script>
@@ -38,94 +48,84 @@
 <body>
 
     <div id="header">
-        <a href="index.html"><img id="header-logo"></a>
+        <a href="index.html">
+            <img id="header-logo">
+        </a>
     </div>
 
     <div id="tiles">
 
-        <div class="tile-wd" id="range-timer">
-            <span id="range"></span>
-            <span id="timer"></span>
+        <div id="tile-bell" class="homepage-wide-tile">
+
+            <div id="timer-container">
+                <span id="timer"></span>
+            </div>
+
+            <div id="bell-info-container">
+                <span id="period"></span>
+                <span id="range"></span>
+                <!-- <span id="schedule"></span> -->
+            </div>
+            
         </div>
 
-        <div class="tile-wd" id="tile-lunch-dropdown">
-            <a id="toggle-lunch-dropdown" href="#">
+        <div id="tile-lunch" class="homepage-wide-tile">
                 <i class="fa fa-cutlery"></i>
-                <span id="lunch-tile-header">Lunch</span>
-            </a>
-            <span id="lunch-text"></span>
-        </div>
-
-        <div class="tile">
-            <span id="schedule"></span>
-            <span id="period"></span>
-        </div>
-
-
-        <div class="tile">
-            <a href="bellschedules.html">
-                <i class="fa fa-bell"></i>
-                <span>Bell Schedules</span>
-            </a>
-        </div>
-
-        <div class="tile">
-            <a href="links.html">
-                <i class="fa fa-link"></i>
-                <span>Links</span>
-            </a>
-        </div>
-
-        <div class="tile">
-          <a href="calendar.html">
-            <i class="fa fa-calendar"></i>
-            <span id="upcoming-event">Calendar</span>
-            <span id="upcoming-event-date"></span>
-          </a>
-        </div>
-
-        <!-- <div class="tile">
-            <a href="gpaapcalc.html">
-                <i class="fa fa-calculator"></i>
-            <span>GPA and AP Calculator</span>
-            </a>
-        </div> -->
-
-        <!--<div class="tile">
-            <a href="docs.html">
-                <i class="fa fa-file-text"></i>
-                <span>Documents</span>
-            </a>
-        </div>-->
-
-        <div class="tile">
-            <a href="projector.html">
-                <i class="fa fa-television"></i>
-            <span>Projector Mode</span>
-            </a>
-        </div>
-
-
-
-
-
-    <!--
-        <div class="tile">
-            <a href="timers.html">
-                <i class="fa fa-clock-o"></i>
-                <span>Timers</span>
-            </a>
-        </div>
-
-        <div class="tile">
-            <a href="calendar.html">
+                <p id="lunch-header">Today's Lunch</p>
+                <span id="lunch-text"></span>
+            <!--<div id="upcoming-event-container">
                 <i class="fa fa-calendar"></i>
-                <span>Calendar</span>
-            </a>
+                <span id="upcoming-event-text"></span>
+            </div>-->
         </div>
-    -->
+
+
+        <a id="tile-upcoming" href="calendar.html" class="homepage-wide-tile">
+            <i class="fa fa-calendar"></i>
+            <p id="upcoming-header">Upcoming</p>
+        </a>
+
+        
+
+        <a id="tile-docs" href="docs.html" class="homepage-icon-text-tile">
+            <i class="fa fa-file-text"></i>
+            <span>Documents</span>
+        </a>
+
+        <a id="tile-calendar" href="calendar.html" class="homepage-icon-text-tile">
+            <i class="fa fa-calendar"></i>
+            <span>Calendar</span>
+        </a>
+
+        <a id="tile-bell-schedules" href="bellschedules.html" class="homepage-icon-text-tile">
+            <i class="fa fa-bell"></i>
+            <span>Bell Schedules</span>
+        </a>
+
+        <a id="tile-links" href="links.html" class="homepage-icon-text-tile">
+            <i class="fa fa-link"></i>
+            <span>Links</span>
+        </a>
+
+        
+
+        <a id="tile-gpacalc" href="gpacalc.html" class="homepage-icon-text-tile">
+            <i class="fa fa-calculator"></i>
+            <span>GPA Calculator</span>
+        </a>
+
+        <a id="tile-projector" href="projector.html" class="homepage-icon-text-tile">
+            <i class="fa fa-television"></i>
+            <span>Projector Mode</span>
+        </a>
+
+        <a id="tile-timers" href="timers.html" class="homepage-icon-text-tile">
+            <i class="fa fa-clock-o"></i>
+            <span>Timers</span>
+        </a>
 
     </div>
 
 </body>
+
 </html>

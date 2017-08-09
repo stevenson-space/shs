@@ -30,22 +30,27 @@ $(function()
         lunchStr += lunch[i] + "\n";
     }
 
+    $('#lunch-text').text(lunchStr);
+
     $('#toggle-lunch-dropdown').click(function()
     {
         if(expanded)
         {
-            $('#tile-lunch-dropdown').css('height', '');
-            $('#range-timer').css('height', '');
-            $('#lunch-text').css('padding','');
-            $('#lunch-text').text('');
+            //$('#tile-lunch-dropdown').css('height', '');
+            //$('#range-timer').css('height', '');
+            //$('#lunch-text').css('padding','');
+            //$('#lunch-text').text('');
+            $('#lunch-text').css('white-space', 'pre-wrap')
+            $('#tile-lunch-dropdown').prop('id', 'tile-lunch')
             expanded = false;
         }
         else
         {
-            $('#tile-lunch-dropdown').css('height', '350px');
-            $('#range-timer').css('height', '350px');
-            $('#lunch-text').css('padding','5px');
-            $('#lunch-text').text(lunchStr);
+           // $('#tile-lunch-dropdown').css('height', 'auto');
+            //$('#range-timer').css('height', '350px');
+            //$('#lunch-text').css('padding','5px');
+            
+            $('#tile-lunch').prop('id', 'tile-lunch-dropdown')
             expanded = true;
         }
     });
