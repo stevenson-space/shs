@@ -35,6 +35,8 @@ function main()
 
 		//Find the next school day/date
 		nextSchoolDay = new Date();
+		nextSchoolDay.setDate(nextSchoolDay.getDate()  + 1);
+		bell = new Bell(nextSchoolDay);
 		while(!bell.school)
 		{
 			nextSchoolDay.setDate(nextSchoolDay.getDate() + 1);
