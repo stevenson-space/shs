@@ -110,10 +110,10 @@ $(function() {
     $("#grade-options").css({display: "none", height: 0});
     currentDropdown = undefined;
   }
-  $("html").on("mousedown touchstart", hideDropDown);
+  $("html").on("click touchend", hideDropDown);
 
   //set grade for term when user clicks on a grade in the dropdown
-  $("#grade-options").children().on("mousedown touchstart", function() {
+  $("#grade-options").children().click(function() {
     if(currentDropdown) {
       var grade = $(this).text();
       currentDropdown.children("span").text(grade);
@@ -122,6 +122,10 @@ $(function() {
       userCourses[tileIndex].grades[dropdownIndex] = grades.indexOf(grade);
       recalculateGPA(tileIndex);
     }
+  });
+
+  $("#grade-options").children().on("touchend", function(e){
+    e.stopPropagation();
   });
 
   var onCourseCloseClick = function() {
@@ -226,7 +230,7 @@ $(function() {
     $tile.children(".name").click(courseNameClick);
     $tile.children(".course-level,.final").children(".option").on("mousedown touchstart", onOptionMouseDown);
     $tile.children(".course-level,.final").children(".option").on("mouseup touchend", onOptionMouseUp);
-    $tile.children(".grades").children(".term").children(".grade").on("mousedown touchstart", showDropDown);
+    $tile.children(".grades").children(".term").children(".grade").click(showDropDown);
     $tile.children(".final-grade").children("i").eq(0).click(leftArrowClick);
     $tile.children(".final-grade").children("i").eq(1).click(rightArrowClick);
 
