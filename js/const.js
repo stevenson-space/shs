@@ -45,7 +45,7 @@ const constants =
 
 	lunches:
 	{
-    	"2": ["Baked Cheese Tortellini ", "Balsamic Garlic Chicken ", "Creamed Spinach, Baby Carrots, Rice ", "Chicken Rice Soup, Vegetarian Chili"],
+    	"2": ["Baked Cheese Tortellini ", "Chicken Breast Tagine ", "Creamed Spinach, Baby Carrots, Rice ", "Chicken Rice Soup, Vegetarian Chili"],
     	"3": ["Tempura Chicken Stir-Fry ", "Korean Stir-Fry Vegetable W/ Tofu ", "Vegetable Spring Rolls, Brown Rice ", "Cream of Mushroom Soup, Beef Noodle Soup"],
     	"4": ["BBQ Pulled Chicken Sandwich ", "Turkey Breast Vesuvio ", "Roasted Cauliflower, Cous Cous Primavera ", "Tomato Basil Soup, Beef Vegetable Soup"],
     	"5": ["Baked Chicken Parmesan ", "Baked Tilapia ", "Ratatouille, Pasta, Cous Cous ", "Potato Bacon Chowder, Tuscan Kale & Bean Soup"],
