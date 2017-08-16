@@ -22,11 +22,11 @@ function main()
 	var today = new Date();
 	var bell = new Bell(today);
 
-
-	//If no school: hide the timer tile, indicate when school resumes,
-	//and get lunch for the next school day
-	if(!bell.school)
-	{
+	//If there's no school or it's already over:
+	//Hide the timer
+	//Indicate the day's schedule when school resumes and that day's lunch
+	if(!bell.school || bell.schoolOver)
+	{		
 		//Hide the timer tile
 		$('#tile-bell').hide();
 
@@ -37,11 +37,8 @@ function main()
 			nextSchoolDay.setDate(nextSchoolDay.getDate() + 1);
 			bell = new Bell(nextSchoolDay);
 		}
-		var nextDate = nextSchoolDay.toLocaleDateString();
 		var nextDay = nextSchoolDay.toLocaleDateString('en-US', { weekday: 'long' });
 		
-		//Set the upcoming event to be when school resumes
-
 
 		//Set the lunch menu for the next day school resumes
 		$('#lunch-header').text(nextDay + "'s Lunch");
@@ -49,23 +46,21 @@ function main()
 
 
 	}
-	//If school is running today not in session: Hide the timer tile,
-	//Add today's schedule to the upcoming tile, and show today's lunch
-	else if (!bell.inSession)
+	//If school just hasn't started yet:
+	//Hide the timer tile
+	//Indicate today's schedule and lunch
+	else if(!bell.schoolStarted)
 	{
 		//Hide the timer tile
 		$('#tile-bell').hide();
 
-
-		//Add today's schedule to the upcoming event tile
-		
-
 		//Show today's lunch
 		$('#lunch-text').text(getLunchString(today))
-	
 
 	}
-	//If school is running today and in session: show info, setup timer, set lunch, show upcoming events
+	//If we are in school right now:
+	//Show bell information
+	//Indicate today's schedule and lunch
 	else
 	{
 
@@ -111,6 +106,8 @@ function main()
     	//Start the timer
     	timer = setInterval(countdown, 1000);
     	countdown();
+    	
+    	
     	
 	}
 

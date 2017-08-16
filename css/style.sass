@@ -159,6 +159,10 @@ i, p, a, span
 	#timer-container
 		+width(100%, 100%, 50%)
 		+text($span: 5em)
+	
+	#schedule
+		width: 100%
+		font-size: 1.3em
 
 #tile-lunch
 	flex-flow: row wrap
@@ -177,7 +181,20 @@ i, p, a, span
 
 #tile-upcoming
 	flex-flow: row wrap
-	+text($span: 1.1rem, $i: 2.2em, $p: 2em)
+	+text($span: 1em, $i: 2.2em, $p: 2em)
+	
+
+
+	#upcoming-header
+		display: flex
+		justify-content: center
+		width: 100%
+
+	span	
+		width: 100%
+		min-height: 40px
+		height: auto
+
 
 	i
 		margin-top: 5px

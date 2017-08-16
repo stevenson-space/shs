@@ -10,7 +10,8 @@ function getPeriod(starts, ends, periods, minutesOffset)
 	if (minutesOffset < starts[0] || minutesOffset >= ends[ends.length - 1])
 	{
 		return {
-	    	inSession: false
+	    	schoolStarted: !(minutesOffset < starts[0]),
+	    	schoolOver: minutesOffset >= ends[ends.length -1]
 		}
 	}
 	//Else we can go on and find the period
@@ -27,7 +28,9 @@ function getPeriod(starts, ends, periods, minutesOffset)
 	            	inSession: true,
 	                period: periods[i],
 	                start: starts[i],
-	                end: ends[i]
+	                end: ends[i],
+	                schoolStarted: true,
+	                schoolOver: false,
 	            }
 	        }
 	    }
@@ -39,7 +42,9 @@ function getPeriod(starts, ends, periods, minutesOffset)
 		inSession: true,
 	    period: "!Passing",
 	    start: ends[last],
-	    end: starts[last + 1]
+	    end: starts[last + 1],
+	    schoolStarted: true,
+	    schoolOver: false
 	}
 }
 
@@ -50,6 +55,7 @@ class Bell
 	constructor(date)
 	{
 		this.date = date;
+		
 		var minutesOffset = date.getMinutesOffset();
 		var dateString = date.toLocaleString();
 		
@@ -57,7 +63,8 @@ class Bell
 		if (!(date.getDay() % 6) || constants.holidays.indexOf(dateString) != -1)
 		{
 			this.school = false;
-			this.inSession = false;
+			this.schoolStarted = false;
+			this.schoolOver = false;
 			return; //No need to run the rest of the constructor
 		}
 		//Otherwise check all the types of schedules
@@ -87,7 +94,8 @@ class Bell
        		bellData.schedule = "Standard Schedule";
    		}
 
-   		this.inSession = bellData.inSession;
+   		this.schoolOver = bellData.schoolOver;
+   		this.schoolStarted = bellData.schoolStarted;
    		this.schedule = bellData.schedule;
    		this.period =
    		{
@@ -107,15 +115,6 @@ class Bell
 	}
 
 }
-
-
-
-
-
-
-
-
-
 
 
 $(function()
