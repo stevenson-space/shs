@@ -22,6 +22,9 @@ function main()
 	var today = new Date();
 	var bell = new Bell(today);
 
+	//Get events
+	var events = getNextEvents();
+
 	//If there's no school or it's already over:
 	//Hide the timer
 	//Indicate the day's schedule when school resumes and that day's lunch
@@ -38,7 +41,12 @@ function main()
 			bell = new Bell(nextSchoolDay);
 		}
 		var nextDay = nextSchoolDay.toLocaleDateString('en-US', { weekday: 'long' });
-		
+
+		//Show the next day's schedule
+		$('#event1').text(bell.schedule + ' ' + nextDay);
+		//Events
+		$('#event2').text(events[0]);
+		$('#event3').text(events[1]);
 
 		//Set the lunch menu for the next day school resumes
 		$('#lunch-header').text(nextDay + "'s Lunch");
@@ -56,6 +64,10 @@ function main()
 
 		//Show today's lunch
 		$('#lunch-text').text(getLunchString(today))
+
+		$('#event1').text(bell.schedule + ' today');
+		$('#event2').text(events[0]);
+		$('#event3').text(events[1]);
 
 	}
 	//If we are in school right now:
@@ -106,6 +118,11 @@ function main()
     	//Start the timer
     	timer = setInterval(countdown, 1000);
     	countdown();
+
+
+		$('#event1').text(events[0]);
+    	$('#event2').text(events[1]);
+		$('#event3').text(events[2]);
     	
     	
     	

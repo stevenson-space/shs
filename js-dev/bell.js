@@ -57,7 +57,7 @@ class Bell
 		this.date = date;
 		
 		var minutesOffset = date.getMinutesOffset();
-		var dateString = date.toLocaleString();
+		var dateString = date.toLocaleDateString();
 		
 		//Check if we have school or not: weekends/holidays
 		if (!(date.getDay() % 6) || constants.holidays.indexOf(dateString) != -1)
@@ -80,7 +80,7 @@ class Bell
    		else if (constants.activityperiod.indexOf(dateString) != -1)
    		{
    		    bellData = getPeriod(constants.activityperiod_s, constants.activityperiod_e, constants.activityperiod_p, minutesOffset);
-   		    bellData.schedule = "Activity";
+   		    bellData.schedule = "Activity Schedule";
    		}
    		//PM Assembly
    		else if (constants.pmassembly.indexOf(dateString) != -1)

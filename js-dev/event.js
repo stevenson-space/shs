@@ -1,54 +1,51 @@
-//Returns any special "event" given a date
-//Events are either coded events or holidays
+/**
+ * Event.js
+ * Provides N events that are not the current day's schedule
+ */
+
+
 function getEvent(date)
 {
+
+
+    var todayString = new Date().toLocaleDateString();
     var dateString = date.toLocaleDateString();
 
-    //If there is a specific event for this date, return that
-    var index = constants.calendar_events.indexOf(dateString);
-    if (index > -1) return constants.calendar_event_names[index];
-
-    if (constants.latearrival.indexOf(dateString) > -1) return "Late Arrival";
-    if (constants.activityperiod.indexOf(dateString) > -1) return "Activity Period";
-    if (constants.pmassembly.indexOf(dateString) > -1) return "PM Assembly";
-    if (constants.finals.indexOf(dateString) > -1) return "Finals";
-
-    //Otherwise check to see if it's a holiday
-    if (constants.holidays.indexOf(dateString) > -1) return "No school";
+    //Possible events if the date is not today are calendar events or holidays
+    if(todayString == dateString)
+    {
+        var index = constants.calendar_events.indexOf(dateString);
+        if (index > -1) return constants.calendar_event_names[index];
+        if (constants.holidays.indexOf(dateString) > -1) return "No school";
+    }
+    else
+    {
+      if (constants.latearrival.indexOf(dateString) > -1) return "Late Arrival";
+      if (constants.activityperiod.indexOf(dateString) > -1) return "Activity Period";
+      if (constants.pmassembly.indexOf(dateString) > -1) return "PM Assembly";
+      if (constants.finals.indexOf(dateString) > -1) return "Finals";
+    }
     
-    //If neither, return null
     return null;
 }
   
-function getNextEvent(date)
+function getNextEvents()
 {
-  var date = new Date(date);
-  date.setDate(date.getDate() + 1);
-  var event = getEvent(date);
-  while(event == null)
+  var events = []
+
+  var date = new Date();
+  for(var i = 0; i < 3; i++)
   {
-    date.setDate(date.getDate() + 1);
-    event = getEvent(date);
+      var event = getEvent(date);
+      while(event == null)
+      {
+        date.setDate(date.getDate() + 1);
+        event = getEvent(date);
+      }
+      events.push(event + " - " + date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }));
+      date.setDate(date.getDate() + 1);
   }
-  var string;
-  if(date == new Date())
-    string = event + " today";
-  else
-    string = event + " " + date.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric'});
-  return {event: event, date: date, string: string};
-}
 
-function getNextEvents(amount)
-{
+  return events;
 
 }
-
-var nextEvents = [];
-
-$(function()
-{
-  d = new Date();
-  nextEvents.push(getNextEvent(d));
-  nextEvents.push(getNextEvent(nextEvents[0].date));
-  nextEvents.push(getNextEvent(nextEvents[1].date));
-})
