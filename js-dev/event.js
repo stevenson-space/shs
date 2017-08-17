@@ -6,29 +6,24 @@
 
 function getEvent(date)
 {
-
-
     var todayString = new Date().toLocaleDateString();
     var dateString = date.toLocaleDateString();
 
-    //Possible events if the date is not today are calendar events or holidays
-    if(todayString == dateString)
-    {
-        var index = constants.calendar_events.indexOf(dateString);
-        if (index > -1) return constants.calendar_event_names[index];
-        if (constants.holidays.indexOf(dateString) > -1) return "No school";
-    }
-    else
-    {
-      if (constants.latearrival.indexOf(dateString) > -1) return "Late Arrival";
-      if (constants.activityperiod.indexOf(dateString) > -1) return "Activity Period";
-      if (constants.pmassembly.indexOf(dateString) > -1) return "PM Assembly";
-      if (constants.finals.indexOf(dateString) > -1) return "Finals";
-    }
-    
+    //Check holidays and calendar events first (calendar events override all other schedules)
+    var index = constants.calendar_events.indexOf(dateString);
+    if (index > -1) return constants.calendar_event_names[index];
+    if (constants.holidays.indexOf(dateString) > -1) return "No school";
+
+    //If the specified date is not today, search schedule dates for date and return corresponding schedule
+    //We don't wan't to do this if date is today since schedule would already be displayed
+    if(todayString != dateString)
+      for(var schedule in constants.dates)
+        if(constants.dates[schedule].indexOf(dateString) > -1)
+          return schedule;
+
     return null;
 }
-  
+
 function getNextEvents()
 {
   var events = []
