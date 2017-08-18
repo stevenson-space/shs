@@ -254,7 +254,7 @@ $(function() {
   var removeCourse = function(index) {
     userCourses.splice(index, 1);
     //setting display none instead of removing in order to preserve colors
-    $(".gpa-tile").eq(index).css("display", "none");
+    $(".gpa-tile").eq(index).css("display", "none").removeClass("gpa-tile");
     recalculateOverallGPA();
   }
 

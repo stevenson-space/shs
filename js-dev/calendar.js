@@ -21,7 +21,7 @@ function showMonth(month, year) {
 			event: getEvent(date)
 		});
 	}
-	
+
 	//Show dates and events on calendar
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	$("#tile-cal-header .month").text(months[month] + " " + year);
@@ -38,14 +38,18 @@ function showMonth(month, year) {
 }
 
 function getEvent(date) {
-	var dateString = date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear();
+	var dateString = date.toLocaleDateString();
+
+	//Check holidays and calendar events first (calendar events override all other events)
+	if(constants.holidays.indexOf(dateString) > -1) return "No School";
 	var index = constants.calendar_events.indexOf(dateString);
 	if(index > -1) return constants.calendar_event_names[index];
-	if(constants.latearrival.indexOf(dateString) > -1) return "Late Arrival";
-	if(constants.activityperiod.indexOf(dateString) > -1) return "Activity Period";
-	if(constants.pmassembly.indexOf(dateString) > -1) return "PM Assembly";
-	if(constants.finals.indexOf(dateString) > -1) return "Finals";
-	if(constants.holidays.indexOf(dateString) > -1) return "No School";
+
+	//Check all other schedules
+	for(var prop in constants.dates)
+		if(constants.dates[prop].indexOf(dateString) > -1)
+			return prop;
+
 	return "";
 }
 
@@ -67,12 +71,10 @@ function previous() {
 $("#next").click(next);
 $("#previous").click(previous);
 $(document).keydown(function(e) {
-	switch (e.which) {
-		case 37:
-			previous()
-			break;
-		case 39:
-			next()
+	if(e.which == 37) {
+		previous();
+	} else if (e.which == 39) {
+		next();
 	}
 })
 

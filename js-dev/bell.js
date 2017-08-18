@@ -55,10 +55,10 @@ class Bell
 	constructor(date)
 	{
 		this.date = date;
-		
+
 		var minutesOffset = date.getMinutesOffset();
 		var dateString = date.toLocaleDateString();
-		
+
 		//Check if we have school or not: weekends/holidays
 		if (!(date.getDay() % 6) || constants.holidays.indexOf(dateString) != -1)
 		{
@@ -69,34 +69,33 @@ class Bell
 		}
 		//Otherwise check all the types of schedules
 		this.school = true;
-		var bellData = {}
-		//Late Arrival
-   		if (constants.latearrival.indexOf(dateString) != -1)
-   		{
-   		    bellData = getPeriod(constants.latearrival_s, constants.latearrival_e, constants.latearrival_p, minutesOffset);
-   		    bellData.schedule = "Late Arrival";
-   		}
-   		//Activity Period
-   		else if (constants.activityperiod.indexOf(dateString) != -1)
-   		{
-   		    bellData = getPeriod(constants.activityperiod_s, constants.activityperiod_e, constants.activityperiod_p, minutesOffset);
-   		    bellData.schedule = "Activity Schedule";
-   		}
-   		//PM Assembly
-   		else if (constants.pmassembly.indexOf(dateString) != -1)
-   		{
-   		    bellData = getPeriod(constants.pmassembly_s, constants.pmassembly_e, constants.pmassembly_p, minutesOffset);
-   		    bellData.schedule = "PM Assembly";
-   		}
-   		else
-   		{
-   			bellData = getPeriod(constants.standard_s, constants.standard_e, constants.standard_p, minutesOffset);
-       		bellData.schedule = "Standard Schedule";
-   		}
+
+		//Default schedule type
+		var schedule = "Standard Schedule";
+
+		//Iterate through the dates of each schedule type and determine the schedule
+		for(var prop in constants.dates)
+			if(constants.dates[prop].indexOf(dateString) > -1)
+				schedule = prop;
+		var periods = constants.schedules[schedule].periods
+
+		//Check if periods is a 2D array, indicating that the period names vary by day (e.g. Finals)
+		if(periods[0].constructor === Array) {
+			//Starts at -1 and adds one for every date preceding today including today
+			var day = -1;
+			while(constants.dates[schedule].indexOf(date.toLocaleDateString()) > -1) {
+				day++;
+				date.setDate(date.getDate() - 1);
+			}
+			//Sets the periods to respective set of periods
+			periods = periods[day];
+		}
+
+		var bellData = getPeriod(constants.schedules[schedule].start, constants.schedules[schedule].end, periods, minutesOffset);
 
    		this.schoolOver = bellData.schoolOver;
    		this.schoolStarted = bellData.schoolStarted;
-   		this.schedule = bellData.schedule;
+   		this.schedule = schedule;
    		this.period =
    		{
    			period: bellData.period,
@@ -111,7 +110,7 @@ class Bell
 		//Return a bell object created when the next period begins
 		this.date.setMinutesOffset(this.period.end + 5);
 		return new Bell(this.date);
-		
+
 	}
 
 }
