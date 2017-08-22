@@ -17,8 +17,9 @@ function main()
 	var today = new Date();
 	var bell = new Bell(today);
 
-	if(bell.school && bell.inSession)
+	if(bell.school && !bell.schoolOver)
 	{
+
 
 		//Show bell information
 
