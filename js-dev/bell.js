@@ -3,6 +3,14 @@
  * Implements the Bell object
  */
 
+//Returns a Date object with the specified currentDate in URL (for testing purposes)
+//or today's actual date if currentDate is not specified
+ function getCurrentDate() {
+	 var index = window.location.search.indexOf("currentDate=");
+	 var unixTime = (index > -1)? window.location.search.substring(index + "currentDate=".length) : Date.now();
+	 return new Date(parseInt(unixTime));
+ }
+
 //Get the corresponding period given start/stop times, their corresponding periods, and the current time
 function getPeriod(starts, ends, periods, minutesOffset)
 {
@@ -54,6 +62,9 @@ class Bell
 {
 	constructor(date)
 	{
+    //Setting date to a new copy of the date in order to ensure that the original
+    //date is not modified
+    date = new Date(date);
 		this.date = date;
 
 		var minutesOffset = date.getMinutesOffset();
@@ -81,7 +92,8 @@ class Bell
 
 		//Check if periods is a 2D array, indicating that the period names vary by day (e.g. Finals)
 		if(periods[0].constructor === Array) {
-			//Starts at -1 and adds one for every date preceding today including today
+			//Starts at -1 and adds 1 for every date in the array preceding today
+      //resulting in the index of today's date relative to others of the same schedule
 			var day = -1;
 			while(constants.dates[schedule].indexOf(date.toLocaleDateString()) > -1) {
 				day++;

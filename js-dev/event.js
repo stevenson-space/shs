@@ -6,7 +6,7 @@
 
 function getEvent(date)
 {
-    var todayString = new Date().toLocaleDateString();
+    var todayString = getCurrentDate().toLocaleDateString();
     var dateString = date.toLocaleDateString();
 
     //Check holidays and calendar events first (calendar events override all other schedules)
@@ -28,7 +28,7 @@ function getNextEvents()
 {
   var events = []
 
-  var date = new Date();
+  var date = getCurrentDate();
   for(var i = 0; i < 3; i++)
   {
       var event = getEvent(date);
