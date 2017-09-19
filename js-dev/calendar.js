@@ -5,9 +5,17 @@ $(function() {
 	showMonth();
 });
 
+//Returns a Date object with the specified currentDate in URL (for testing purposes)
+//or today's actual date if currentDate is not specified
+ function getCurrentDate() {
+	 var index = window.location.search.indexOf("currentDate=");
+	 var unixTime = (index > -1)? window.location.search.substring(index + "currentDate=".length) : Date.now();
+	 return new Date(parseInt(unixTime));
+ }
+
 function showMonth(month, year) {
 	//Get all dates and events in specified month
-	var today = new Date();
+	var today = getCurrentDate();
 	month = (month === undefined)? today.getMonth() : month;
 	year = (year === undefined)? today.getFullYear() : year;
 	var date = new Date(year, month);

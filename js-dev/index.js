@@ -10,16 +10,16 @@ var timer;
 $(main);
 
 //Reset timer and rerun on regained focus or a touch on mobile device
-$(window).on("touchend focus", function() 
+$(window).on("touchend focus", function()
 {
     clearInterval(timer);
     main();
-}); 
+});
 
 function main()
 {
 	//Always get the bell data for right now
-	var today = new Date();
+	var today = getCurrentDate();
 	var bell = new Bell(today);
 
 	//Get events
@@ -29,12 +29,12 @@ function main()
 	//Hide the timer
 	//Indicate the day's schedule when school resumes and that day's lunch
 	if(!bell.school || bell.schoolOver)
-	{		
+	{
 		//Hide the timer tile
 		$('#tile-bell').hide();
 
 		//Find the next school day/date
-		nextSchoolDay = new Date();
+		nextSchoolDay = getCurrentDate();
 		nextSchoolDay.setDate(nextSchoolDay.getDate()  + 1);
 		bell = new Bell(nextSchoolDay);
 		while(!bell.school)
@@ -91,7 +91,7 @@ function main()
         $("#schedule").text(bell.schedule);
     	$("#period").text(periodString);
     	//Generate a range string
-    	var d = new Date();
+    	var d = getCurrentDate();
     	d.setMinutesOffset(bell.period.start);
     	var t1 = d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}).split(" ")[0];
     	d.setMinutesOffset(bell.period.end);
@@ -125,9 +125,9 @@ function main()
 		$('#event1').text(events[0]);
     	$('#event2').text(events[1]);
 		$('#event3').text(events[2]);
-    	
-    	
-    	
+
+
+
 	}
 
 	//Check for > 6th period in order to see what lunch to display
@@ -136,19 +136,18 @@ function main()
 	if(today.getMinutesOffset() > 821) // this is a hack to check 6th period :(
 	{
 		//Find the next school day
-		nextSchoolDay = new Date();
+		var nextSchoolDay = getCurrentDate();
 		nextSchoolDay.setDate(nextSchoolDay.getDate() + 1);
-		b = new Bell(nextSchoolDay);
+		var b = new Bell(nextSchoolDay);
 		while(!b.school)
 		{
-			nextSchoolDay.setDate(nextSchoolDay.getDate() + 1);
+      nextSchoolDay.setDate(nextSchoolDay.getDate() + 1);
 			b = new Bell(nextSchoolDay);
 		}
 
 		$('#lunch-header').text(nextSchoolDay.toLocaleDateString('en-US', { weekday: 'long' }) + "'s Lunch");
 		$('#lunch-text').text(getLunchString(nextSchoolDay))
-		
-		
+
 	}
 	else //Not after 6th period
 	{
