@@ -105,8 +105,12 @@ function main()
     	var countdown = function()
     	{
     	    seconds = secondsLeft % 60;
-    	    //set timer to minutes + seconds
-    	    $("#timer").text(Math.floor(secondsLeft / 60) + ":" + (seconds < 10 ? "0" + seconds : seconds));
+          var minutes = Math.floor(secondsLeft / 60) % 60;
+          var hours = Math.floor(secondsLeft / 60 / 60);
+    	    //set timer to hours + minutes + seconds
+    	    $("#timer").text((hours > 0 ? hours + ':' : '') + //hours is only displayed if > 0
+                            (minutes < 10 && hours > 0 ? '0' : '') + minutes + ":" + //minutes always has 2 digits if hours are displayed
+                            (seconds < 10 ? '0' : '') + seconds); //ensures seconds always has 2 digits
     	    //reset if time has expired
     	    if (secondsLeft <= 0)
     	    {
