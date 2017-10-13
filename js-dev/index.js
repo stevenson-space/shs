@@ -30,8 +30,9 @@ function main()
 	//Indicate the day's schedule when school resumes and that day's lunch
 	if(!bell.school || bell.schoolOver)
 	{
-		//Hide the timer tile
+		//Hide the timer and projector mode tiles
 		$('#tile-bell').hide();
+		$('#tile-projector').hide();
 
 		//Find the next school day/date
 		nextSchoolDay = getCurrentDate();
