@@ -60,11 +60,11 @@ function getPeriod(starts, ends, periods, minutesOffset)
 /** Bell Class **/
 class Bell
 {
-	constructor(date)
+	constructor(date, ignoreHalfPeriods)
 	{
-    //Setting date to a new copy of the date in order to ensure that the original
-    //date is not modified
-    date = new Date(date);
+    	//Setting date to a new copy of the date in order to ensure that the original
+    	//date is not modified
+    	date = new Date(date);
 		this.date = date;
 
 		var minutesOffset = date.getMinutesOffset();
@@ -88,12 +88,18 @@ class Bell
 		for(var prop in constants.dates)
 			if(constants.dates[prop].indexOf(dateString) > -1)
 				schedule = prop;
-		var periods = constants.schedules[schedule].periods
+		
+
+		var halfPeriods = document.getElementById("half-periods-checkbox").checked;
+
+		var periods = constants.schedules[schedule].periods;
+
 
 		//Check if periods is a 2D array, indicating that the period names vary by day (e.g. Finals)
+		//No half-period versions for these days.
 		if(periods[0].constructor === Array) {
 			//Starts at -1 and adds 1 for every date in the array preceding today
-      //resulting in the index of today's date relative to others of the same schedule
+      		//resulting in the index of today's date relative to others of the same schedule
 			var day = -1;
 			while(constants.dates[schedule].indexOf(date.toLocaleDateString()) > -1) {
 				day++;
@@ -102,8 +108,31 @@ class Bell
 			//Sets the periods to respective set of periods
 			periods = periods[day];
 		}
+		//Otherwise, we need to check to get a half-period enabled version.
+		else
+		{
+			if(!halfPeriods && !ignoreHalfPeriods) periods = constants.schedules[schedule].periods_nh;
+			else periods = constants.schedules[schedule].periods;
+		}
 
-		var bellData = getPeriod(constants.schedules[schedule].start, constants.schedules[schedule].end, periods, minutesOffset);
+		var bellData;
+		//If displaying half periods is disabled
+		if(!halfPeriods && !ignoreHalfPeriods)
+		{
+			bellData = getPeriod(constants.schedules[schedule].start_nh, constants.schedules[schedule].end_nh, periods, minutesOffset);
+
+			///... and there is a no half-period version of this schedule, then use that version.
+			if(constants.schedules[schedule].nh_version)
+			{
+				//There is no condition where half periods are disabled and there is no schedule since that UI element
+			//should be disabled.
+			}
+		}
+		else //otherwise return the half-periods included version
+		{
+			bellData = getPeriod(constants.schedules[schedule].start, constants.schedules[schedule].end, periods, minutesOffset);
+		}
+
 
    		this.schoolOver = bellData.schoolOver;
    		this.schoolStarted = bellData.schoolStarted;

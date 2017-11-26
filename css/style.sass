@@ -154,6 +154,7 @@ i, p, a, span
 
 //Bell Info Tile
 #tile-bell
+	+height(310px, 350px, 250px)
 	flex-flow: row wrap
 
 	#timer-container
@@ -164,7 +165,64 @@ i, p, a, span
 		width: 100%
 		font-size: 1.3em
 
+	#half-period-info
+		display: flex
+		flex-flow: row wrap
+		width: 60%
+		justify-content: space-around
+		align-items: center
+		margin-top: 20px
+
+
+
+	//C&P Slider Switch Stuff
+	.switch
+		position: relative
+		display: inline-block
+		width: 60px
+		height: 34px
+		input
+			display: none
+	
+	.slider
+		position: absolute
+		cursor: pointer
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: #ccc
+		-webkit-transition: .4s
+		transition: .4s
+		&:before
+			position: absolute
+			content: ""
+			height: 26px
+			width: 26px
+			left: 4px
+			bottom: 4px
+			background-color: white
+			-webkit-transition: .4s
+			transition: .4s
+	
+	input
+		&:checked + .slider
+			background-color: #2196F3
+		&:focus + .slider
+			box-shadow: 0 0 1px #2196F3
+		&:checked + .slider:before
+			-webkit-transform: translateX(26px)
+			-ms-transform: translateX(26px)
+			transform: translateX(26px)
+	
+	
+	.slider.round
+		border-radius: 34px
+		&:before
+			border-radius: 50%
+
 #tile-lunch
+	+height(250px, 350px, 250px)
 	flex-flow: row wrap
 	+text($span: 1.1rem, $i: 2em, $p: 2em)
 	white-space: pre-wrap
@@ -182,7 +240,8 @@ i, p, a, span
 #tile-upcoming
 	flex-flow: row wrap
 	+text($span: 1em, $i: 2.2em, $p: 2em)
-
+	height: auto
+	min-height: 250px
 
 
 	#upcoming-header

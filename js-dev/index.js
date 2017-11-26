@@ -15,6 +15,11 @@ $(window).on("touchend focus", function()
     clearInterval(timer);
     main();
 });
+$("#half-periods-checkbox").change(function()
+{
+	clearInterval(timer);
+	main();
+})
 
 function main()
 {
@@ -143,18 +148,19 @@ function main()
 		//Find the next school day
 		var nextSchoolDay = getCurrentDate();
 		nextSchoolDay.setDate(nextSchoolDay.getDate() + 1);
-		var b = new Bell(nextSchoolDay);
+		var b = new Bell(nextSchoolDay, true);
 		while(!b.school)
 		{
-      nextSchoolDay.setDate(nextSchoolDay.getDate() + 1);
-			b = new Bell(nextSchoolDay);
+      		nextSchoolDay.setDate(nextSchoolDay.getDate() + 1);
+			b = new Bell(nextSchoolDay, true);
 		}
+
 
 		$('#lunch-header').text(nextSchoolDay.toLocaleDateString('en-US', { weekday: 'long' }) + "'s Lunch");
 		$('#lunch-text').text(getLunchString(nextSchoolDay))
 
 	}
-	else //Not after 6th period
+	else if(bell.school) //Not after 6th period, but we still have to be in school
 	{
 		$('#lunch-text').text(getLunchString(today))
 	}

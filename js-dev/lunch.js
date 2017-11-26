@@ -14,7 +14,15 @@ function getLunchString(date)
 {
   var lunchMenu = getLunch(date);
   var lunchString = "";
-  for(var lunchItem of lunchMenu)
-    lunchString += lunchItem + "\n";
+
+  //for(var lunchItem of lunchMenu)
+   // lunchString += lunchItem + "\n";
+
+   for(var i = 0; i < lunchMenu.length; i++)
+   {
+     lunchString += lunchMenu[i] + "\n";
+   }
+ 
+
   return lunchString;
 }
