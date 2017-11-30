@@ -88,13 +88,22 @@ class Bell
 		for(var prop in constants.dates)
 			if(constants.dates[prop].indexOf(dateString) > -1)
 				schedule = prop;
-		
+
+
+
+		var periods;
+		if(constants.schedules[schedule].nh_version)
+			periods = constants.schedules[schedule].periods_nh;
+		else
+			periods = constants.schedules[schedule].periods;
 
 		var halfPeriods = document.getElementById("half-periods-checkbox").checked;
 
-		var periods = constants.schedules[schedule].periods;
-
-
+		
+		if(constants.schedules[schedule].nh_version)
+		{
+				$("#half-period-info").hide();
+		} 
 		//Check if periods is a 2D array, indicating that the period names vary by day (e.g. Finals)
 		//No half-period versions for these days.
 		if(periods[0].constructor === Array) {
@@ -111,13 +120,19 @@ class Bell
 		//Otherwise, we need to check to get a half-period enabled version.
 		else
 		{
-			if(!halfPeriods && !ignoreHalfPeriods) periods = constants.schedules[schedule].periods_nh;
+			if( (!halfPeriods && !ignoreHalfPeriods) ||
+				constants.schedules[schedule].nh_version)
+				{
+					periods = constants.schedules[schedule].periods_nh;
+					console.log("no halfs");
+				}
 			else periods = constants.schedules[schedule].periods;
 		}
 
 		var bellData;
 		//If displaying half periods is disabled
-		if(!halfPeriods && !ignoreHalfPeriods)
+		if( (!halfPeriods && !ignoreHalfPeriods) ||
+			constants.schedules[schedule].nh_version)
 		{
 			bellData = getPeriod(constants.schedules[schedule].start_nh, constants.schedules[schedule].end_nh, periods, minutesOffset);
 
@@ -125,7 +140,7 @@ class Bell
 			if(constants.schedules[schedule].nh_version)
 			{
 				//There is no condition where half periods are disabled and there is no schedule since that UI element
-			//should be disabled.
+			  //should be disabled.
 			}
 		}
 		else //otherwise return the half-periods included version
