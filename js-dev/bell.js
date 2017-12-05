@@ -97,7 +97,7 @@ class Bell
 		else
 			periods = constants.schedules[schedule].periods;
 
-		var halfPeriods = document.getElementById("half-periods-checkbox").checked;
+		var halfPeriods = ignoreHalfPeriods ? false : document.getElementById("half-periods-checkbox").checked;
 
 		
 		if(constants.schedules[schedule].nh_version)

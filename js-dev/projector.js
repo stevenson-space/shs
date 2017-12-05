@@ -15,7 +15,7 @@ function main()
 {
 	//Always get the bell data for right now
 	var today = new Date();
-	var bell = new Bell(today);
+	var bell = new Bell(today, true);
 
 	if(bell.school && !bell.schoolOver)
 	{
