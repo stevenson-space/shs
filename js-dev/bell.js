@@ -107,6 +107,7 @@ class Bell
 		//Check if periods is a 2D array, indicating that the period names vary by day (e.g. Finals)
 		//No half-period versions for these days.
 		if(periods[0].constructor === Array) {
+			ignoreHalfPeriods = true;
 			//Starts at -1 and adds 1 for every date in the array preceding today
       		//resulting in the index of today's date relative to others of the same schedule
 			var day = -1;
