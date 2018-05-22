@@ -32,13 +32,15 @@ function getNextEvents()
   for(var i = 0; i < 3; i++)
   {
       var event = getEvent(date);
-      while(event == null)
+      while(event == null && date.getTime() - Date.now() < 365 * 24 * 60 * 60 * 1000) // within 1 year
       {
         date.setDate(date.getDate() + 1);
         event = getEvent(date);
       }
-      events.push(event + " - " + date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }));
-      date.setDate(date.getDate() + 1);
+      if (event) {
+        events.push(event + " - " + date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }));
+        date.setDate(date.getDate() + 1);
+      }
   }
 
   return events;
