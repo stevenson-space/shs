@@ -1,8 +1,4 @@
-body
-    background-color: #FFFEFE
-    margin: 0
-    
-$tablet-width: 768px
+    $tablet-width: 768px
 $desktop-width: 1024px
 @mixin tablet
     @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px})
@@ -11,38 +7,3 @@ $desktop-width: 1024px
 @mixin desktop
     @media (min-width: #{$desktop-width})
         @content
-
-#app
-    display: flex
-    flex-flow: column nowrap
-    justify-content: center
-    align-items: center
-
-#sitebar
-    height: 350px
-    width: 95%
-    //background-color: tomato
-    
-    display: flex
-    flex-flow: row nowrap
-    justify-content: space-between
-    align-items: center
-
-#sitebar-logo
-    //width: 15%
-    height: 90%
-
-.tile-container
-    width: 100%
-
-    display: flex
-    flex-flow: column nowrap
-    justify-content: center
-    align-items: center
-
-.tile
-    width: 95%
-    height: 550px
-    background-color: #86B3D9
-    border-radius: 15px
-    margin: 15px
