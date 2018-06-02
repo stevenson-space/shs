@@ -1,5 +1,9 @@
-    $tablet-width: 768px
+$tablet-width: 768px
 $desktop-width: 1024px
+
+// maximum width of actual content (the rest should be whitespace on the sides)
+$content-width: 1000px
+
 @mixin tablet
     @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px})
         @content
@@ -7,3 +11,6 @@ $desktop-width: 1024px
 @mixin desktop
     @media (min-width: #{$desktop-width})
         @content
+
+=shadow
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)

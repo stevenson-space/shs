@@ -3,7 +3,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
   entry: './dev/main.js',
   output: {
     path: path.resolve(__dirname, 'docs'),
@@ -25,9 +25,10 @@ module.exports = {
       }
     ],
   },
+  devtool: process.env.WEBPACK_SERVE ? 'cheap-eval-source-map' : 'none',
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
     }
   },
   plugins: [
@@ -37,4 +38,4 @@ module.exports = {
       { from: './dev/images/', to: 'images/' },
     ]),
   ],
-}
+};
