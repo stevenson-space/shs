@@ -44,6 +44,22 @@ export default {
     {
       name: 'Standard Schedule',
       dates: ['*'],
+      modes: [
+        {
+          name: 'Normal',
+          start: ['8:30', '9:26', '10:18', '11:10', '12:02', '12:54', '13:46', '14:38'],
+          end: ['9:21', '10:13', '11:05', '11:57', '12:49', '13:41', '14:33', '15:25'],
+          periods: ['1', '2', '3', '4', '5', '6', '7', '8'],
+        },
+        {
+          name: 'Half Periods',
+          start: [],
+          end: [],
+          // The excalamation mark (!) prevents the text "Period " from being prepended to the period
+          // "4A" evaluates to "Period 4A", "!4A" evaluates to "4A" 
+          periods: ['1A', '1B', '2A', '2B', '!Activity', '3A', '3B', '4A', '4B', '5A', '5B', '6A', '6B', '7A', '7B', '8A', '8B']
+        }
+      ]
     },
     {
       name: ''
