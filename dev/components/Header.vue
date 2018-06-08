@@ -33,6 +33,7 @@ export default {
   props: {
     color: { type: String, required: true },
     logo: { type: String, required: true },
+    date: { type: Date, required: true }
   },
   data() {
     return {

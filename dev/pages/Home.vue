@@ -1,6 +1,6 @@
 <template>
   <div>
-    <schedule-header :color="color" logo="images/patriot.png"/>
+    <schedule-header :color="color" logo="images/patriot.png" :date="date"/>
   </div>
 </template>
 
