@@ -5,6 +5,7 @@
     "build": "del-cli docs && webpack --progress --hide-modules --mode=production"
   },
   "dependencies": {
+    "npm": "^6.1.0",
     "vue": "^2.5.16"
   },
   "devDependencies": {
