@@ -1,11 +1,23 @@
 <template>
   <div>
     <schedule-header :color="color" logo="images/patriot.png" :date="date"/>
+    <card-container>
+      <card></card>
+      <card></card>
+      <card></card>
+      <card></card>
+      <card></card>
+      <card></card>
+      <card></card>
+      <card></card>
+    </card-container>
   </div>
 </template>
 
 <script>
 import ScheduleHeader from '../components/Header.vue';
+import CardContainer from '../components/CardContainer.vue';
+import Card from '../components/Card.vue' //basic card for testing purposes
 
 export default {
   data() {
@@ -37,10 +49,10 @@ export default {
       return new Date(initialDate + (currentDate - startDate));
     }
   },
-  components: { ScheduleHeader },
+  components: { ScheduleHeader, CardContainer, Card},
 }
 </script>
 
-<style>
-
+<style lang="sass" scoped>
+  
 </style>
