@@ -15,7 +15,7 @@ module.exports = {
         test: /\.sass$/,
         use: [
           'vue-style-loader',
-          'css-loader',
+          'css-loader?minimize',
           'sass-loader?indentedSyntax',
         ],
       },

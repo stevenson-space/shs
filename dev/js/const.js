@@ -38,7 +38,7 @@ Custom Date Format:
 */
 
 export default {
-  // Later dates override prior ones (so dates in "Holidays" override those in "Standard Schedule")
+  // Later dates override prior ones (so dates in "No School" override those in "Standard Schedule")
   // allowing Standard Schedule to select all days
   schedules: [
     {
@@ -62,11 +62,21 @@ export default {
       ]
     },
     {
-      name: ''
+      name: 'Temporary Schedule',
+      dates: ['6/14/2018'],
+      modes: [
+        {
+          name: 'Normal',
+          start: ['17:00', '20:24'],
+          end: ['20:24', '23:25'],
+          periods: ['1', '2'],
+        }
+      ]
     },
     {
       name: 'No School',
-      dates: ['weekends']
+      dates: ['weekends', '6/16/2018', '6/16/2018'],
+      modes: [], // leaving modes as a blank array indicates No School that day
     }
   ]
 }
