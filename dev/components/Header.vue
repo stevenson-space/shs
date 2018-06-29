@@ -3,7 +3,7 @@
     <div class="main" :style="{ backgroundColor: color }">
       <router-link class="switch-day" :to="{ path: '/', query: {date: formatDateUrl(yesterday)}}">
         <font-awesome-icon :icon="leftArrow" class="arrow"/>
-        {{ formatDate(yesterday) }}
+        <span class="text">{{ formatDate(yesterday) }}</span>
       </router-link>
 
       <div class="countdown-circle">
@@ -16,17 +16,13 @@
           {{ bell.getRange() }}
         </div>
 
-        <div class="type" v-if="inSchool || mode === 'day'">
-          {{ bell.type }}
-        </div>
-        <div class="next-day" v-else>
-          School resumes {{ nextDayString }}
-        </div>
+        <div class="type" v-if="inSchool || mode === 'day'">{{ bell.type }}</div>
+        <div class="next-day" v-else>{{ nextDayString }}</div>
       </div>
 
       <router-link class="switch-day"  :to="{ path: '/', query: { date: formatDateUrl(tomorrow) }}">
         <font-awesome-icon :icon="rightArrow" class="arrow"/>
-        {{ formatDate(tomorrow) }}
+        <span class="text">{{ formatDate(tomorrow) }}</span>
       </router-link>
     </div>
 
@@ -114,17 +110,19 @@ export default {
     nextDayString() {
       const { bell, date } = this;
       const { school, period, nextSchoolDay } = bell;
+      let str;
       if (school && period.beforeSchool) {
-        return 'today';
+        str = 'today';
       } else {
         const getEpochDay = date => Math.floor(date.getTime() / 1000 / 60 / 60 / 24);
         const dayDifference = getEpochDay(nextSchoolDay) - getEpochDay(date);
         if (dayDifference === 1) {
-          return 'tomorrow';
+          str = 'tomorrow';
         } else {
-          return this.formatDate(nextSchoolDay);
+          str = this.formatDate(nextSchoolDay);
         }
       }
+      return `School resumes ${str}`;
     },
     tomorrow() {
       const date = new Date(this.date);
@@ -148,8 +146,11 @@ export default {
       return this.toSeconds(period.split(':').map(Number));
     },
     formatDate(date) {
-      // e.g. "Wednesday, September 30"
-      return date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+      //  Wednesday,
+      // September 30
+      return date
+        .toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })
+        .replace(',', ',\n');
     },
     formatDateUrl(date) {
       // e.g. "6-11-2018"
@@ -183,16 +184,22 @@ export default {
 <style lang="sass" scoped>
 @import '../styles/style'
 
-$circle-diameter: 285px
-$logo-width: 100px
-
 .header
+  --circle-diameter: 285px
+  --logo-width: 100px
+  +mobile
+    --circle-diameter: 240px
+    --logo-width: 75px
+
   +shadow
   background-color: white
   text-align: center
 
   .main
-    height: 325px
+    height: 350px
+    +mobile
+      height: 300px
+    
     display: flex
     align-items: center
     justify-content: space-between
@@ -200,54 +207,72 @@ $logo-width: 100px
 
     .countdown-circle
       background-color: white
-      width: $circle-diameter
-      height: $circle-diameter
-      border-radius: $circle-diameter / 2
+      width: var(--circle-diameter)
+      height: var(--circle-diameter)
+      border-radius: calc(var(--circle-diameter) / 2)
 
       .logo
-        width: $logo-width
-        margin: 0 ($circle-diameter - $logo-width) / 2
+        width: var(--logo-width)
+        margin: 0 calc((var(--circle-diameter) - var(--logo-width)) / 2)
         margin-top: 15px
       
       .countdown
-        font-size: 4em
-        margin-top: -5px
+        font-size: 3.5em
+        // margin-top: -5px
         line-height: 1em
+        +mobile
+          font-size: 3em
 
       .range
         font-size: 2.5em
+        +mobile
+          font-size: 2em
 
       .type
-        // width: $circle-diameter / 1.5
-        // margin: 10px auto
-        // font-size: .9em
-        // height: 2em
-        // display: flex
-        // align-items: center
-        // justify-content: center
         margin-top: 12px
         font-size: 1.2em
+        +mobile
+          font-size: 1em
       
       .next-day
-        width: $circle-diameter / 1.5
         font-size: .85em
-        margin: 15px auto
+        margin: auto
+        height: 75px
+        display: flex
+        align-items: center
+        justify-content: center
+        white-space: pre
+        +mobile
+          font-size: .8em
+          height: 65px
 
     .switch-day
       color: white
       width: 100px
       margin: 0 15px
       text-decoration: none
+      +mobile
+        margin: 0 10px
 
       .arrow
-        font-size: 6em
+        font-size: 5em
         margin-bottom: 10px
+        +mobile
+          font-size: 4em
+
+      .text
+        display: none
+        +mobile
+          display: none
 
   .schedule
     padding: 5px
 
     .range
-      font-size: 1.25em
+      font-size: 1.1em
+
+    .type, .period
+      font-size: .9em
 
     .button
       +shadow
