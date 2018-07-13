@@ -2,27 +2,31 @@
   <div class="header">
     <div class="main" :style="{ backgroundColor: color }">
       <router-link class="switch-day" :to="{ path: '/', query: {date: formatDateUrl(yesterday)}}">
-        <font-awesome-icon :icon="leftArrow" class="arrow"/>
-        <span class="text">{{ formatDate(yesterday) }}</span>
+        <font-awesome-icon :icon="leftArrow" class="arrow-icon"/>
       </router-link>
 
-      <div class="countdown-circle">
-        <img :src="logo" class="logo">
+      <div>
+        <div class="countdown-circle">
+          <img :src="logo" class="logo">
 
-        <div class="countdown" v-if="mode === 'current'">
-          {{ countdownString }}
-        </div>
-        <div class="range" v-else>
-          {{ bell.getRange() }}
+          <div class="countdown" v-if="mode === 'current'">
+            {{ countdownString }}
+          </div>
+          <div class="range" v-else>
+            {{ bell.getRange() }}
+          </div>
+
+          <div class="type" v-if="inSchool || mode === 'day'">{{ bell.type }}</div>
+          <div class="next-day" v-else>{{ nextDayString }}</div>
         </div>
 
-        <div class="type" v-if="inSchool || mode === 'day'">{{ bell.type }}</div>
-        <div class="next-day" v-else>{{ nextDayString }}</div>
+        <div class="date">
+          {{ formatDate(date) }}
+        </div>
       </div>
 
       <router-link class="switch-day"  :to="{ path: '/', query: { date: formatDateUrl(tomorrow) }}">
-        <font-awesome-icon :icon="rightArrow" class="arrow"/>
-        <span class="text">{{ formatDate(tomorrow) }}</span>
+        <font-awesome-icon :icon="rightArrow" class="arrow-icon"/>
       </router-link>
     </div>
 
@@ -50,6 +54,18 @@ import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import Bell from '../js/bell.js';
 
+function toSeconds([hour = 0, minute = 0, second = 0]) {
+  return (((hour * 60) + minute) * 60) + second;
+}
+
+function dateToSeconds(date) {
+  return toSeconds([date.getHours(), date.getMinutes(), date.getSeconds()]);
+}
+
+function periodToSeconds(period) {
+  return toSeconds(period.split(':').map(Number));
+}
+
 export default {
   props: {
     color: { type: String, required: true },
@@ -62,7 +78,7 @@ export default {
     return {
       rightArrow: faChevronRight,
       leftArrow: faChevronLeft,
-      currentTime: this.dateToSeconds(this.date),
+      currentTime: dateToSeconds(this.date),
       interval: false,
     };
   },
@@ -84,10 +100,10 @@ export default {
           nextBell = new Bell(nextSchoolDay);
         }
         const firstPeriod = nextBell.schedule.start[0];
-        endSeconds = this.periodToSeconds(firstPeriod) + dayDifference * 24 * 60 * 60;
+        endSeconds = periodToSeconds(firstPeriod) + dayDifference * 24 * 60 * 60;
       } else {
         const { end } = bell.period;
-        endSeconds = this.periodToSeconds(end);
+        endSeconds = periodToSeconds(end);
       }
       return endSeconds - this.currentTime;
     },
@@ -136,15 +152,6 @@ export default {
     },
   },
   methods: {
-    toSeconds([hour = 0, minute = 0, second = 0]) {
-      return (((hour * 60) + minute) * 60) + second;
-    },
-    dateToSeconds(date) {
-      return this.toSeconds([date.getHours(), date.getMinutes(), date.getSeconds()]);
-    },
-    periodToSeconds(period) {
-      return this.toSeconds(period.split(':').map(Number));
-    },
     formatDate(date) {
       //  Wednesday,
       // September 30
@@ -155,7 +162,7 @@ export default {
     formatDateUrl(date) {
       // e.g. "6-11-2018"
       return date
-        .toLocaleDateString('en-US', {month: 'numeric', day: 'numeric', year: 'numeric'})
+        .toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' })
         .replace(/\//g, '-')
     }
   },
@@ -166,7 +173,7 @@ export default {
   },
   watch: {
     date() {
-      this.currentTime = this.dateToSeconds(this.date);
+      this.currentTime = dateToSeconds(this.date);
     },
     totalSecondsLeft() {
       if (this.totalSecondsLeft === 0) {
@@ -206,10 +213,13 @@ export default {
     padding: 0 calc((100% - #{$content-width}) / 2)
 
     .countdown-circle
+      +shadow
       background-color: white
       width: var(--circle-diameter)
       height: var(--circle-diameter)
       border-radius: calc(var(--circle-diameter) / 2)
+      font-weight: bold
+      color: #333
 
       .logo
         width: var(--logo-width)
@@ -242,9 +252,18 @@ export default {
         align-items: center
         justify-content: center
         white-space: pre
+        font-weight: normal
         +mobile
           font-size: .8em
           height: 65px
+    
+    .date
+      +shadow
+      background-color: white
+      border-radius: 15px
+      margin-top: 10px
+      padding: 3px
+      font-size: .9em
 
     .switch-day
       color: white
@@ -254,7 +273,7 @@ export default {
       +mobile
         margin: 0 10px
 
-      .arrow
+      .arrow-icon
         font-size: 5em
         margin-bottom: 10px
         +mobile
@@ -267,6 +286,8 @@ export default {
 
   .schedule
     padding: 5px
+    color: #333
+    letter-spacing: 1px
 
     .range
       font-size: 1.1em
@@ -282,5 +303,6 @@ export default {
       padding: 8px
       margin: 4px
       display: inline-block
+      font-weight: normal
 
 </style>

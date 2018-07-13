@@ -33,7 +33,7 @@ export default {
       initialDate: Date.now(), // relative to url specified date (set in created())
       startDate: Date.now(), // relative to real time
       currentDate: Date.now(), // relative to real time
-      color: '#000000',
+      color: '#064789',
     };
   },
   created() {
@@ -79,7 +79,7 @@ export default {
       this.resetDate();
     }
   },
-  components: { ScheduleHeader, CardContainer, Card},
+  components: { ScheduleHeader, CardContainer, Card },
 }
 </script>
 

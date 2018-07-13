@@ -80,7 +80,7 @@ class Bell {
     // check each passing period
     for (let i = 1; i < start.length; i++) {
       if (Bell.isBetweenTime(date, end[i - 1], start[i])) {
-        return createPeriod('Passing', end[i - 1], start[i]);
+        return createPeriod('!Passing', end[i - 1], start[i]);
       }
     }
 
