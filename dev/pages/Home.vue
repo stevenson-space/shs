@@ -9,6 +9,7 @@
       @countdown-done="updateDate"/>
     
     <card-container>
+      <upcoming-events-card :color="color"/>
       <card></card>
       <card></card>
       <card></card>
@@ -25,6 +26,7 @@
 import ScheduleHeader from '../components/Header.vue';
 import CardContainer from '../components/CardContainer.vue';
 import Card from '../components/Card.vue' //basic card for testing purposes
+import UpcomingEventsCard from '../components/UpcomingEventsCard.vue';
 import Bell from '../js/bell.js';
 
 export default {
@@ -79,7 +81,12 @@ export default {
       this.resetDate();
     }
   },
-  components: { ScheduleHeader, CardContainer, Card },
+  components: { 
+    ScheduleHeader, 
+    CardContainer, 
+    Card,
+    UpcomingEventsCard,
+  },
 }
 </script>
 
