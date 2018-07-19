@@ -64,7 +64,7 @@ export default {
 
   .date
     --border-width: 2px
-    font-size: .75em
+    font-size: .7em
     font-weight: bold
     line-height: 1.2em
     width: calc(var(--circle-diameter) - var(--border-width) * 2)

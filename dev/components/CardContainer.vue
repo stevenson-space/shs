@@ -16,7 +16,7 @@ export default {
 .card-container
     // width: 100%
     max-width: $content-width
-    margin: auto
+    margin: 10px auto
     display: flex
     flex-flow: row wrap
     justify-content: center

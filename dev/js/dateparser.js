@@ -55,7 +55,7 @@ function isSameDay(date1, date2) {
 }
 
 function isNthDay(date, condition) {
-  const [year, month] = [date.getYear(), date.getMonth()]
+  const [year, month] = [date.getFullYear(), date.getMonth()]
   const [index, keywords] = condition.split(' ');
 
   // using date as 0 gets the last day of the previos month

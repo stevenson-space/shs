@@ -39,11 +39,11 @@ Custom Date Format:
 
 export default {
   // Later dates override prior ones (so dates in "No School" override those in "Standard Schedule")
-  // allowing Standard Schedule to select all days
+  // allowing Standard Schedule to select all weekdays
   schedules: [
     {
       name: 'Standard Schedule',
-      dates: ['*'],
+      dates: ['weekdays'],
       modes: [
         {
           name: 'Normal',

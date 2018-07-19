@@ -12,12 +12,6 @@
       <upcoming-events-card :color="color"/>
       <card></card>
       <card></card>
-      <card></card>
-      <card></card>
-      <card></card>
-      <card></card>
-      <card></card>
-      <card></card>
     </card-container>
   </div>
 </template>
@@ -40,6 +34,12 @@ export default {
   },
   created() {
     this.resetDate();
+
+    // Sometimes the interval used in Header.vue stops when the tab leaves focus
+    // so updating the date when focus returns is necessary
+    window.addEventListener('focus', () => {
+      this.updateDate();
+    });
   },
   computed: {
     mode() {
