@@ -9,7 +9,7 @@
         v-for="(event, i) in events"
         v-bind="event"
         :direction="(i % 2 === 0) ? 'left' : 'right'"
-        :key="event.event"/>
+        :key="event.key"/>
     </div>
     <div>
       <font-awesome-icon
@@ -49,7 +49,11 @@ function getNextEvent(startDate) {
       // check if the actual schedule is different from the normal one
       const schedule = Bell.getSchedule(constants.schedules, date);
       if (schedule.name !== defaultSchedule.name) {
-        event = { date, name: schedule.name };
+        event = {
+          key: `${schedule.name} ${date.getTime()}`,
+          date,
+          name: schedule.name
+        };
         break;
       }
     }
@@ -66,19 +70,27 @@ function getNextEvent(startDate) {
 export default {
   props: {
     color: { type: String, required: true },
+    date: { type: Date, required: true },
   },
   data() {
     return {
       cardHeight: 0,
       downArrow: faChevronDown,
-      events: [],
+      placeholders: [{ key: 1 }, { key: 2 }, { key: 3 }, { key: 4 }],
+      current: [], // currently displayed events
       next: [], // preload later events to save time
-      lastDate: new Date(), // the date until which events are currently being displayed
+      lastDate: this.date, // the date until which events are currently being displayed
+      dateTimeout: null,
     }
   },
   mounted() {
-    this.$refs.card.setHeight();
     this.addEvents(4);
+  },
+  computed: {
+    events() {
+      const { current, placeholders } = this;
+      return current.length ? current : placeholders;
+    }
   },
   methods: {
     preloadNextEvents(num) {
@@ -91,10 +103,14 @@ export default {
       }
     },
     addNextEvent() {
-      if (this.next.length === 0) {
-        this.preloadNextEvents(1);
+      if (this.next.length > 0) {
+        this.current.push(this.next.shift());
+      } else {
+        setTimeout(() => {
+          this.preloadNextEvents(1);
+          this.current.push(this.next.shift());
+        }, 0);
       }
-      this.events.push(this.next.shift());
     },
     addEvents(num) {
       for (let i = 0; i < num; i++) {
@@ -102,6 +118,18 @@ export default {
       }
       this.preloadNextEvents(num);
     },
+    reset() {
+      this.current = [];
+      this.next = [];
+      this.lastDate = this.date;
+    }
+  },
+  watch: {
+    date() {
+      clearTimeout(this.dateTimeout);
+      this.reset();
+      this.dateTimeout = setTimeout(() => this.addEvents(4), 250);
+    }
   },
   components: { Card, EventChip, FontAwesomeIcon }
 }

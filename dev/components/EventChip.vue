@@ -14,8 +14,8 @@
 export default {
   props: {
     color: { type: String, required: true },
-    date: { type: Date, required: true },
-    name: { type: String, required: true },
+    date: { type: Date, default: null },
+    name: { type: String, default: '' },
     direction: {
       type: String,
       validator: str => str === 'left' || str === 'right'
@@ -23,10 +23,16 @@ export default {
   },
   computed: {
     month() {
-      return this.date.toLocaleDateString('en-US', { month: 'short' });
+      if (this.date) {
+        return this.date.toLocaleDateString('en-US', { month: 'short' });
+      }
+      return '';
     },
     day() {
-      return this.date.getDate();
+      if (this.date) {
+        return this.date.getDate();
+      }
+      return '';
     }
   }
 }

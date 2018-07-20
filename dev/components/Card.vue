@@ -37,7 +37,6 @@ export default {
     // The MutationObserver will detect when any children or descendants are added
     // and when any CSS is changed
     this.mutationObserver = new MutationObserver(() => {
-      console.log('hi');
       this.setHeight();
     });
     this.mutationObserver.observe(this.$refs.wrapper, {

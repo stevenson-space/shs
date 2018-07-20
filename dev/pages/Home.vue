@@ -9,16 +9,55 @@
       @countdown-done="updateDate"/>
     
     <card-container>
-      <upcoming-events-card :color="color"/>
+      <upcoming-events-card
+        :color="color"
+        :date="date"/>
+
+      <icon-text-card
+        :color="color"
+        :icon="icons.faBell"
+        text="Bell Schedules"
+        link="bellschedules"/>
+      
+      <icon-text-card
+        :color="color"
+        :icon="icons.faLink"
+        text="Links"
+        link="links"
+        :invert="true"/>
+      
+      <icon-text-card
+        :color="color"
+        :icon="icons.faFileAlt"
+        text="Documents"
+        link="documents"
+        :invert="true"/>
+      
+      <icon-text-card
+        :color="color"
+        :icon="icons.faCalendarAlt"
+        text="Calendar"
+        link="calendar"/>
+      
+      <icon-text-card
+        :color="color"
+        :icon="icons.faTv"
+        text="Projector Mode"
+        link="projector"/>
     </card-container>
   </div>
 </template>
 
 <script>
+import Bell from '../js/bell.js';
+
 import ScheduleHeader from '../components/Header.vue';
 import CardContainer from '../components/CardContainer.vue';
+import Card from '../components/Card.vue' //basic card for testing purposes
 import UpcomingEventsCard from '../components/UpcomingEventsCard.vue';
-import Bell from '../js/bell.js';
+import IconTextCard from '../components/IconTextCard.vue';
+
+import { faBell, faLink, faFileAlt, faCalendarAlt, faTv } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   data() {
@@ -27,6 +66,13 @@ export default {
       startDate: Date.now(), // relative to real time
       currentDate: Date.now(), // relative to real time
       color: '#064789',
+      icons: {
+        faBell,
+        faLink,
+        faFileAlt,
+        faCalendarAlt,
+        faTv
+      }
     };
   },
   created() {
@@ -79,9 +125,11 @@ export default {
     }
   },
   components: { 
-    ScheduleHeader,
-    CardContainer,
+    ScheduleHeader, 
+    CardContainer, 
+    Card,
     UpcomingEventsCard,
+    IconTextCard,
   },
 }
 </script>
