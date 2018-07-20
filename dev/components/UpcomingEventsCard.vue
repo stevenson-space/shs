@@ -1,24 +1,22 @@
 <template>
-  <card class="card" :height="cardHeight">
-    <div class="wrapper" ref="wrapper">
-      <div class="title">Upcoming Events</div>
-      <div class="events">
-        <div class="line" :style="{ backgroundColor: color }"/>
-        <event-chip
-          class="event-chip"
-          :color="color"
-          v-for="(event, i) in events"
-          v-bind="event"
-          :direction="(i % 2 === 0) ? 'left' : 'right'"
-          :key="event.event"/>
-      </div>
-      <div>
-        <font-awesome-icon
-          class="down-arrow"
-          :icon="downArrow"
-          :style="{ color }"
-          @mousedown="addEvents(3)"/>
-      </div>
+  <card class="card">
+    <div class="title">Upcoming Events</div>
+    <div class="events">
+      <div class="line" :style="{ backgroundColor: color }"/>
+      <event-chip
+        class="event-chip"
+        :color="color"
+        v-for="(event, i) in events"
+        v-bind="event"
+        :direction="(i % 2 === 0) ? 'left' : 'right'"
+        :key="event.event"/>
+    </div>
+    <div>
+      <font-awesome-icon
+        class="down-arrow"
+        :icon="downArrow"
+        :style="{ color }"
+        @mousedown="addEvents(3)"/>
     </div>
   </card>
 </template>
@@ -79,7 +77,7 @@ export default {
     }
   },
   mounted() {
-    this.setCardHeight();
+    this.$refs.card.setHeight();
     this.addEvents(4);
   },
   methods: {
@@ -97,8 +95,6 @@ export default {
         this.preloadNextEvents(1);
       }
       this.events.push(this.next.shift());
-
-      this.$nextTick(() => this.setCardHeight());      
     },
     addEvents(num) {
       for (let i = 0; i < num; i++) {
@@ -106,18 +102,12 @@ export default {
       }
       this.preloadNextEvents(num);
     },
-    setCardHeight() {
-      this.cardHeight = this.$refs.wrapper.offsetHeight;
-    }
   },
   components: { Card, EventChip, FontAwesomeIcon }
 }
 </script>
 
 <style lang="sass" scoped>
-
-.wrapper
-  overflow: auto
 
 .title
   text-align: center
