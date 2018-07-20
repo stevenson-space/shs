@@ -1,5 +1,5 @@
 <template>
-  <card class="card" :style="{ height: `${cardHeight}px` }">
+  <card class="card" :height="cardHeight">
     <div class="wrapper" ref="wrapper">
       <div class="title">Upcoming Events</div>
       <div class="events">
@@ -46,7 +46,7 @@ function getNextEvent(startDate) {
   let event = null;
   for (const date of dates(startDate)) {
     // check if there would normally be the default schedule on that date
-    // (to prevent weekends from being counted as events)
+    // (to prevent weekends from being counted as 'No School' events)
     if (testDate(date, defaultSchedule.dates)) {
       // check if the actual schedule is different from the normal one
       const schedule = Bell.getSchedule(constants.schedules, date);
@@ -116,41 +116,37 @@ export default {
 
 <style lang="sass" scoped>
 
-.card
-  transition: height .2s
-  overflow: hidden
+.wrapper
+  overflow: auto
 
-  .wrapper
-    overflow: auto
+.title
+  text-align: center
+  font-size: 1.5em
+  margin: 15px 0
+  // font-weight: bold
 
-  .title
-    text-align: center
-    font-size: 1.5em
-    margin: 15px 0
-    // font-weight: bold
+.events
+  position: relative
+  overflow: auto
+  padding-bottom: 25px
 
-  .events
-    position: relative
-    overflow: auto
-    padding-bottom: 25px
+  .line
+    --width: 3px
+    height: 100%
+    width: var(--width)
+    position: absolute
+    left: calc(100% / 2 - var(--width) / 2)
+    border-radius: 50px
 
-    .line
-      --width: 3px
-      height: 100%
-      width: var(--width)
-      position: absolute
-      left: calc(100% / 2 - var(--width) / 2)
-      border-radius: 50px
+  .event-chip
+    margin-top: 30px
 
-    .event-chip
-      margin-top: 30px
-
-  .down-arrow
-    margin: auto
-    display: block
-    margin-top: -3px
-    font-size: 1.2em
-    margin-bottom: 5px
-    cursor: pointer
+.down-arrow
+  margin: auto
+  display: block
+  margin-top: -3px
+  font-size: 1.2em
+  margin-bottom: 5px
+  cursor: pointer
 
 </style>

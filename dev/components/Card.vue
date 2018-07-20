@@ -1,12 +1,45 @@
 <template>
-  <div class="card">
+  <div class="card" ref="card" :style="style">
     <slot/>
   </div>
 </template>
 
 <script>
 export default {
-
+  props: {
+    height: { type: Number, default: null },
+  },
+  data() {
+    return {
+      margin: 15,
+      spanValue: 0,
+    };
+  },
+  computed: {
+    style() {
+      const { height, margin, spanValue } = this;
+      return {
+        height: `${height}px` || 'auto',
+        margin: `${margin}px`,
+        gridRow: `span ${spanValue}`,
+      }
+    }
+  },
+  mounted() {
+    this.setGridSpan();
+  },
+  methods: {
+    setGridSpan() {
+      const { height, margin, $refs } = this;
+      const cardHeight = height || $refs.card.offsetHeight;
+      this.spanValue = Math.ceil((cardHeight + margin * 2) / 5);
+    }
+  },
+  watch: {
+    height() {
+      this.setGridSpan();
+    }
+  }
 }
 </script>
 
@@ -14,17 +47,11 @@ export default {
 @import '../styles/style.sass'
 
 .card
-  width: 95%
-  @include tablet
-    width: 45%
-  @include desktop
-    width: 30%
-  // height: 350px
-  // background-color: #EEEEEE//#86B3D9
   background-color: white
   border-radius: 15px
-  margin: 15px
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)
+  +shadow
   position: relative
+  transition: height .2s
+  overflow: hidden
 
 </style>

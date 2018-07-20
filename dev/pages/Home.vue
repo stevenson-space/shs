@@ -10,8 +10,6 @@
     
     <card-container>
       <upcoming-events-card :color="color"/>
-      <card></card>
-      <card></card>
     </card-container>
   </div>
 </template>
@@ -19,7 +17,6 @@
 <script>
 import ScheduleHeader from '../components/Header.vue';
 import CardContainer from '../components/CardContainer.vue';
-import Card from '../components/Card.vue' //basic card for testing purposes
 import UpcomingEventsCard from '../components/UpcomingEventsCard.vue';
 import Bell from '../js/bell.js';
 
@@ -82,9 +79,8 @@ export default {
     }
   },
   components: { 
-    ScheduleHeader, 
-    CardContainer, 
-    Card,
+    ScheduleHeader,
+    CardContainer,
     UpcomingEventsCard,
   },
 }
