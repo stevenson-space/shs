@@ -22,10 +22,12 @@ export default {
     link: { type: [String, Object], default: ''},
     invert: { type: Boolean, default: false },
   },
-  data() {
-    return {
-      backgroundColor: this.invert ? 'white' : this.color,
-      foregroundColor: this.invert ? this.color : 'white',
+  computed: {
+    backgroundColor() {
+      return this.invert ? 'white' : this.color;
+    }, 
+    foregroundColor() {
+      return this.invert ? this.color : 'white';
     }
   },
   components: { Card, FontAwesomeIcon, CustomLink },
