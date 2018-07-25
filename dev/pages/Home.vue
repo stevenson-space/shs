@@ -111,8 +111,9 @@ export default {
       this.currentDate = Date.now();
     },
     resetDate() {
-      let { date, time='' } = this.$route.query;
+      let { date='', time='' } = this.$route.query;
       time = time.replace(/\./g, ':'); // lets you use "." (url safe) instead of ":" (not url safe)
+      date = date.replace(/-/g, '/'); // lets you use "-" instead of "/"
       const today = new Date();
       const todayDate = today.toLocaleDateString();
       const todayTime = today.toLocaleTimeString();

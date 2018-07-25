@@ -69,7 +69,7 @@ export default {
   border-radius: 15px
   +shadow
   position: relative
-  transition: height .2s
+  transition: height .3s
   overflow: hidden
 
   .wrapper

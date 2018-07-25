@@ -52,7 +52,7 @@ export default {
     width: calc(50% + var(--circle-radius))
     height: var(--circle-diameter)
     line-height: var(--circle-diameter)
-    border-radius: calc(var(--circle-radius))
+    border-radius: var(--circle-radius)
     position: absolute
     text-align: center
     color: white

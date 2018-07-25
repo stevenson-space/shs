@@ -6,7 +6,7 @@
       <event-chip
         class="event-chip"
         :color="color"
-        v-for="(event, i) in events"
+        v-for="(event, i) in displayedEvents"
         v-bind="event"
         :direction="(i % 2 === 0) ? 'left' : 'right'"
         :key="event.key"/>
@@ -16,7 +16,7 @@
         class="down-arrow"
         :icon="downArrow"
         :style="{ color }"
-        @mousedown="addEvents(3)"/>
+        @mousedown="showMoreEvents()"/>
     </div>
   </card>
 </template>
@@ -76,67 +76,71 @@ export default {
     return {
       cardHeight: 0,
       downArrow: faChevronDown,
-      placeholders: [{ key: 1 }, { key: 2 }, { key: 3 }, { key: 4 }],
-      current: [], // currently displayed events
-      next: [], // preload later events to save time
+      events: [],
+      numEventsInitial: 4,
+      numEventsToAdd: 3,
+      numEventsDisplayed: 0,
       lastDate: this.date, // the date until which events are currently being displayed
       dateTimeout: null,
     }
   },
   mounted() {
-    this.addEvents(4);
+    this.reset();
   },
   computed: {
-    events() {
-      const { current, placeholders } = this;
-      return current.length ? current : placeholders;
+    displayedEvents() {
+      const placeholders = Array(4).fill(0).map((_, i) => ({ key: i }));
+      const events = this.events.slice(0, this.numEventsDisplayed);
+      return events.length ? events : placeholders;
+    },
+    remainingEvents() {
+      return this.events.length - this.numEventsDisplayed;
     }
   },
   methods: {
-    preloadNextEvents(num) {
-      for (let i = 0; i < num; i++) {
-        const event = getNextEvent(this.lastDate);
-        if (event) {
-          this.lastDate = event.date;
-          this.next.push(event);
-        }
-      }
-    },
-    addNextEvent() {
-      if (this.next.length > 0) {
-        this.current.push(this.next.shift());
-      } else {
+    loadEvents(num, timeout = 0) {
+      return new Promise(resolve => {
         setTimeout(() => {
-          this.preloadNextEvents(1);
-          this.current.push(this.next.shift());
-        }, 0);
-      }
+          for (let i = 0; i < num; i++) {
+            const event = getNextEvent(this.lastDate);
+            if (event) {
+              this.lastDate = event.date;
+              this.events.push(event);
+            }
+          }
+          resolve();
+        }, timeout);
+      });
     },
-    addEvents(num) {
-      for (let i = 0; i < num; i++) {
-        this.addNextEvent();
+    showMoreEvents(num = this.numEventsToAdd) {
+      if (this.remainingEvents < num) {
+        this.loadEvents(num - this.remainingEvents);
       }
-      this.preloadNextEvents(num);
+      this.numEventsDisplayed += num;
     },
     reset() {
-      this.current = [];
-      this.next = [];
       this.lastDate = this.date;
+      this.events = [];
+      this.loadEvents(this.numEventsInitial).then(() => {
+        this.showMoreEvents(this.numEventsInitial);
+      });
+      this.loadEvents(this.numEventsToAdd * 10, 100);
     }
   },
   watch: {
-    date() {
+    $route() {
+      // the timeout is used so that the user can switch through multiple dates quickly
+      // without having to wait until the upcoming events load for each date
       clearTimeout(this.dateTimeout);
-      this.reset();
-      this.dateTimeout = setTimeout(() => this.addEvents(4), 250);
-    }
+      this.numEventsDisplayed = 0;
+      this.dateTimeout = setTimeout(this.reset, 250);
+    },
   },
   components: { Card, EventChip, FontAwesomeIcon }
 }
 </script>
 
 <style lang="sass" scoped>
-
 .title
   text-align: center
   font-size: 1.5em

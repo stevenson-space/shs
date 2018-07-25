@@ -72,14 +72,17 @@ export default {
     logo: { type: String, required: true },
     date: { type: Date, required: true },
     bell: { type: Bell, required: true },
-    mode: { type: String, required: true },
+    mode: {
+      validator: mode => mode === 'current' || mode === 'day',
+      required: true,
+    },
   },
   data() {
     return {
       rightArrow: faChevronRight,
       leftArrow: faChevronLeft,
       currentTime: dateToSeconds(this.date),
-      interval: false,
+      interval: null,
     };
   },
   computed: {
@@ -87,25 +90,32 @@ export default {
       const { bell } = this;
       return bell.school && !bell.period.afterSchool && !bell.period.beforeSchool;
     },
-    totalSecondsLeft() {
+    nextSchoolBell() {
+      return new Bell(this.bell.nextSchoolDay);
+    },
+    endTime() {
       const { bell, date } = this;
-      let endSeconds;
-      if (!this.inSchool) {
-        // return seconds left until school starts
-        const { school, period, nextSchoolDay } = bell;
-        let dayDifference = 0;
-        let nextBell = bell;
-        if (!school || period.afterSchool) { // if no school or after school, look for next school day
-          dayDifference = Math.floor((nextSchoolDay.getTime() - date.getTime()) / 1000 / 60 / 60 / 24);
-          nextBell = new Bell(nextSchoolDay);
-        }
-        const firstPeriod = nextBell.schedule.start[0];
-        endSeconds = periodToSeconds(firstPeriod) + dayDifference * 24 * 60 * 60;
-      } else {
-        const { end } = bell.period;
-        endSeconds = periodToSeconds(end);
+      if (this.inSchool) {
+        return periodToSeconds(bell.period.end);
       }
-      return endSeconds - this.currentTime;
+      // if not currently in school, return seconds left until school starts
+      const { school, period, nextSchoolDay } = bell;
+      let dayDifference = 0;
+
+      // if before school, get the seconds until the first period today 
+      let nextBell = bell;
+
+      // if no school or after school, get the first period on the next school day
+      if (!school || period.afterSchool) { 
+        dayDifference = Math.floor((nextSchoolDay.getTime() - date.getTime()) / 1000 / 60 / 60 / 24);
+        nextBell = new Bell(nextSchoolDay);
+      }
+
+      const firstPeriod = nextBell.schedule.start[0];
+      return periodToSeconds(firstPeriod) + dayDifference * 24 * 60 * 60;
+    },
+    totalSecondsLeft() {
+      return this.endTime - this.currentTime;
     },
     countdownString() {
       if (this.totalSecondsLeft > 60 * 60 * 24) { // if more than 1 day of seconds left
@@ -153,25 +163,32 @@ export default {
   },
   methods: {
     formatDate(date) {
-      //  Wednesday,
-      // September 30
+      // Wednesday, September 30
       return date
-        .toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })
-        .replace(',', ',\n');
+        .toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
     },
     formatDateUrl(date) {
       // e.g. "6-11-2018"
       return date
         .toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' })
         .replace(/\//g, '-')
+    },
+    initializeCountdown() {
+      clearInterval(this.interval);
+      if (this.mode === 'current') {
+        this.interval = setInterval(() => {
+          this.currentTime++;
+        }, 1000);
+      }
     }
   },
   mounted() {
-    this.interval = setInterval(() => {
-      this.currentTime++;
-    }, 1000);
+    this.initializeCountdown();
   },
   watch: {
+    mode() {
+      this.initializeCountdown();
+    },
     date() {
       this.currentTime = dateToSeconds(this.date);
     },
