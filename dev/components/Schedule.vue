@@ -26,7 +26,7 @@
         <font-awesome-icon
           class="show-more-icon"
           :icon="showAllModes ? faChevronUp : faChevronDown"
-          @click="toggleShowAllModes"/>
+          @mousedown="toggleShowAllModes"/>
       </div>
     </div>
   </div>
@@ -48,11 +48,24 @@ export default {
       initialHeight: 0,
       height: null,
       showAllModes: false,
+      resizeListener: null,
+      resizeTimeout: null,
     }
   },
   mounted() {
-    this.initialHeight = this.$refs.wrapper.offsetHeight;
-    this.height = this.initialHeight;
+    // initialHeight is necessary for the animation (to know end value of animation prior to doing it)
+    this.setInitialHeight();
+    this.setHeight();
+
+    this.resizeListener = () => {
+      // wait until user is finished resizing before setting height (debounce)
+      clearTimeout(this.resizeTimeout);
+      this.resizeTimeout = setTimeout(() => {
+        this.setInitialHeight();
+        this.setHeight();
+      }, 250);
+    }
+    window.addEventListener('resize', this.resizeListener);
   },
   computed: {
     style() {
@@ -63,6 +76,19 @@ export default {
     }
   },
   methods: {
+    setInitialHeight() {
+      if (!this.showAllModes) {
+        this.$nextTick(() => {
+          this.initialHeight = this.$refs.wrapper.offsetHeight;
+        }); 
+      }
+    },
+    setHeight() {
+      // wait until content updates before updating height
+      this.$nextTick(() => {
+        this.height = this.$refs.wrapper.offsetHeight;
+      });
+    },
     toggleShowAllModes() {
       const { showAllModes, initialHeight, $refs } = this;
       if (showAllModes) {
@@ -71,16 +97,17 @@ export default {
         // wait until animation finishes before hiding modes
         setTimeout(() => {
           this.showAllModes = false;
-        }, 200);
+          this.setInitialHeight(); // in case initial height changed (due to resize or something else)
+          this.setHeight();
+        }, 300); // animation duration
       } else {
         this.showAllModes = true;
-        
-        // wait until content updates before updating height
-        this.$nextTick(() => {
-          this.height = $refs.wrapper.offsetHeight;
-        });
+        this.setHeight();
       }
     }
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.resizeListener);
   },
   components: { Period, FontAwesomeIcon },
 }
@@ -92,7 +119,7 @@ export default {
 .schedule
   position: relative
   border-bottom: #BBB solid 1px
-  transition: height .2s
+  transition: height .3s // when modifying, also modify duration of setTimeout above
   overflow: hidden
 
   .wrapper
@@ -103,17 +130,22 @@ export default {
     font-weight: bold
     color: #555
     margin-left: 100px
-    height: 125px
+    // height: 125px
     line-height: 125px
+    +mobile
+      font-size: 2em
+      margin-left: 0
+      text-align: center
+      line-height: 100px
 
   .mode
     display: flex
     margin-bottom: 50px
 
     .mode-name
+      +shadow
       flex: 0 0 50px
       border-radius: 0 50px 50px 0
-      +shadow
       display: flex
       justify-content: center
       align-items: center
@@ -122,6 +154,8 @@ export default {
       border-left-width: 0
       flex-direction: column
       overflow: hidden
+      +mobile
+        flex: 0 0 40px
       
       div
         transform: rotate(-90deg)
@@ -142,6 +176,8 @@ export default {
       align-items: center
       flex-wrap: wrap
       margin: 0 50px
+      +mobile
+        margin: 0 15px
 
   .show-more-icon
     margin: 15px auto

@@ -163,9 +163,11 @@ export default {
   },
   methods: {
     formatDate(date) {
-      // Wednesday, September 30
+      // Wednesday,
+      // September 30
       return date
-        .toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+        .toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })
+        .replace(',', ',\n');
     },
     formatDateUrl(date) {
       // e.g. "6-11-2018"

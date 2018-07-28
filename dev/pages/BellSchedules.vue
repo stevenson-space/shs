@@ -36,13 +36,18 @@ export default {
   position: fixed
 
 .card
+  +shadow
   width: 80%
   max-width: 1000px
   background-color: white
   margin: auto
   position: relative
-  +shadow
   border-radius: 20px
   top: 100px
+  overflow: hidden
+  margin-bottom: 25px
+  +mobile
+    width: 90%
+    top: 50px
 
 </style>
