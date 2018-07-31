@@ -1,7 +1,6 @@
 <template>
   <div>
     <schedule-header
-      :color="color"
       logo="images/patriot.png"
       :bell="bell"
       :date="date"
@@ -9,38 +8,31 @@
       @countdown-done="updateDate"/>
     
     <card-container>
-      <upcoming-events-card
-        :color="color"
-        :date="date"/>
+      <upcoming-events-card :date="date"/>
 
       <icon-text-card
-        :color="color"
         :icon="icons.faBell"
         text="Bell Schedules"
         link="bellschedules"/>
       
       <icon-text-card
-        :color="color"
         :icon="icons.faLink"
         text="Links"
         link="links"
         :invert="true"/>
       
       <icon-text-card
-        :color="color"
         :icon="icons.faFileAlt"
         text="Documents"
         link="documents"
         :invert="true"/>
       
       <icon-text-card
-        :color="color"
         :icon="icons.faCalendarAlt"
         text="Calendar"
         link="calendar"/>
       
       <icon-text-card
-        :color="color"
         :icon="icons.faTv"
         text="Projector Mode"
         link="projector"/>
@@ -65,7 +57,6 @@ export default {
       initialDate: Date.now(), // relative to url specified date (set in created())
       startDate: Date.now(), // relative to real time
       currentDate: Date.now(), // relative to real time
-      color: '#064789',
       icons: {
         faBell,
         faLink,

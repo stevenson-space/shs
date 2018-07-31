@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="main" :style="{ backgroundColor: color }">
+    <div class="main">
       <router-link class="switch-day" :to="{ path: '/', query: {date: formatDateUrl(yesterday)}}">
         <font-awesome-icon :icon="leftArrow" class="arrow-icon"/>
       </router-link>
@@ -42,7 +42,7 @@
         </div>
       </template>
 
-      <router-link class="button" to="/" :style="{ backgroundColor: color }" v-else>
+      <router-link class="button" to="/" v-else>
         Go Back Live
       </router-link>
     </div>
@@ -68,7 +68,6 @@ function periodToSeconds(period) {
 
 export default {
   props: {
-    color: { type: String, required: true },
     logo: { type: String, required: true },
     date: { type: Date, required: true },
     bell: { type: Bell, required: true },
@@ -222,14 +221,14 @@ export default {
   text-align: center
 
   .main
+    background-color: $color
     height: 350px
-    +mobile
-      height: 300px
-    
     display: flex
     align-items: center
     justify-content: space-between
     padding: 0 calc((100% - #{$content-width}) / 2)
+    +mobile
+      height: 300px
 
     .countdown-circle
       +shadow
@@ -323,5 +322,6 @@ export default {
       margin: 4px
       display: inline-block
       font-weight: normal
+      background-color: $color
 
 </style>

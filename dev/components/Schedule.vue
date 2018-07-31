@@ -149,8 +149,7 @@ export default {
       display: flex
       justify-content: center
       align-items: center
-      // background-color: #064789
-      border: #064789 2px solid
+      border: $color 2px solid
       border-left-width: 0
       flex-direction: column
       overflow: hidden
@@ -163,10 +162,9 @@ export default {
         letter-spacing: 2px
         width: 500px
         text-align: center
-        color: #064789
+        color: $color
         font-weight: bold
         // color: white
-
 
     .periods
       min-height: 200px

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="background-block" :style="{ backgroundColor: color }"/>
+    <div class="background-block"/>
     <div class="card">
       <template v-for="schedule in schedules">
         <schedule
@@ -19,7 +19,6 @@ import Schedule from '../components/Schedule.vue';
 export default {
   data() {
     return {
-      color: '#064789',
       schedules: constants.schedules,
     }
   },
@@ -31,6 +30,7 @@ export default {
 @import '../styles/style.sass'
 
 .background-block
+  background-color: $color
   height: 250px
   width: 100%
   position: fixed

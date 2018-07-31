@@ -31,7 +31,7 @@ export default {
 //     justify-content: center
 //     align-items: center
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600')
 
 body
   background-color: white

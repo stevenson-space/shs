@@ -1,9 +1,9 @@
 <template>
   <div class="event">
-    <div class="name" :class="direction" :style="{ backgroundColor: color }">
+    <div class="name" :class="direction">
       <span>{{ name }}</span>
     </div>
-    <div class="date" :style="{ borderColor: color }">
+    <div class="date">
       <span>{{ month }}</span>
       <span>{{ day }}</span>
     </div>
@@ -13,7 +13,6 @@
 <script>
 export default {
   props: {
-    color: { type: String, required: true },
     date: { type: Date, default: null },
     name: { type: String, default: '' },
     direction: {
@@ -49,6 +48,8 @@ export default {
   margin: auto
 
   .name
+    +shadow
+    background-color: $color
     width: calc(50% + var(--circle-radius))
     height: var(--circle-diameter)
     line-height: var(--circle-diameter)
@@ -57,7 +58,6 @@ export default {
     text-align: center
     color: white
     font-size: .9em
-    +shadow
 
     &.right
       right: 0
@@ -81,7 +81,7 @@ export default {
     flex-direction: column
     justify-content: center
     align-items: center
-    border: var(--border-width) solid
+    border: $color var(--border-width) solid
     margin: auto
     position: relative
     // color: #333

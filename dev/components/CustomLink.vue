@@ -33,5 +33,6 @@ export default {
   text-decoration: none
   display: block
   overflow: auto
+  color: inherit
 
 </style>

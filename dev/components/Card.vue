@@ -9,9 +9,6 @@
 <script>
 
 export default {
-  props: {
-    color: { type: String, defualt: 'white' },
-  },
   data() {
     return {
       height: 0,
@@ -21,12 +18,11 @@ export default {
   },
   computed: {
     style() {
-      const { height, margin, spanValue, color } = this;
+      const { height, margin, spanValue } = this;
       return {
         height: `${height}px`,
         margin: `${margin}px`,
         gridRow: `span ${spanValue}`,
-        backgroundColor: color,
         mutationObserver: null,
       }
     }

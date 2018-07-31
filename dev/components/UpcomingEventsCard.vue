@@ -2,10 +2,9 @@
   <card class="card">
     <div class="title">Upcoming Events</div>
     <div class="events">
-      <div class="line" :style="{ backgroundColor: color }"/>
+      <div class="line"/>
       <event-chip
         class="event-chip"
-        :color="color"
         v-for="(event, i) in displayedEvents"
         v-bind="event"
         :direction="(i % 2 === 0) ? 'left' : 'right'"
@@ -15,7 +14,6 @@
       <font-awesome-icon
         class="down-arrow"
         :icon="downArrow"
-        :style="{ color }"
         @mousedown="showMoreEvents()"/>
     </div>
   </card>
@@ -69,7 +67,6 @@ function getNextEvent(startDate) {
 
 export default {
   props: {
-    color: { type: String, required: true },
     date: { type: Date, required: true },
   },
   data() {
@@ -124,7 +121,7 @@ export default {
       this.loadEvents(this.numEventsInitial).then(() => {
         this.showMoreEvents(this.numEventsInitial);
       });
-      this.loadEvents(this.numEventsToAdd * 10, 100);
+      this.loadEvents(this.numEventsToAdd * 10, 1000); // 1s delay to allow page to load first
     }
   },
   watch: {
@@ -141,6 +138,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import '../styles/style.sass'
+
 .title
   text-align: center
   font-size: 1.5em
@@ -159,6 +158,7 @@ export default {
     position: absolute
     left: calc(100% / 2 - var(--width) / 2)
     border-radius: 50px
+    background-color: $color
 
   .event-chip
     margin-top: 30px
@@ -170,5 +170,6 @@ export default {
   font-size: 1.2em
   margin-bottom: 5px
   cursor: pointer
+  color: $color
 
 </style>

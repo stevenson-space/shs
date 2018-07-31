@@ -36,7 +36,7 @@ export default {
 .period
   +shadow
   border-radius: 100px
-  background-color: #064789
+  background-color: $color
   display: flex
   align-items: center
   flex-grow: 1
