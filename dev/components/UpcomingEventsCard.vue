@@ -22,8 +22,6 @@
 <script>
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import constants from '../js/const.js';
-import testDate from '../js/dateparser.js';
 import Bell from '../js/bell.js';
 import Card from './Card.vue';
 import EventChip from './EventChip.vue';
@@ -36,24 +34,17 @@ function getNextEvent(startDate) {
       yield date;
     }
   }
-
-  const defaultSchedule = constants.schedules[0];
   
   let event = null;
   for (const date of dates(startDate)) {
-    // check if there would normally be the default schedule on that date
-    // (to prevent weekends from being counted as 'No School' events)
-    if (testDate(date, defaultSchedule.dates)) {
-      // check if the actual schedule is different from the normal one
-      const schedule = Bell.getSchedule(constants.schedules, date);
-      if (schedule.name !== defaultSchedule.name) {
-        event = {
-          key: `${schedule.name} ${date.getTime()}`,
-          date,
-          name: schedule.name
-        };
-        break;
-      }
+    const schedule = Bell.isSpecialSchedule(date);
+    if (schedule) {
+      event = {
+        key: `${schedule.name} ${date.getTime()}`,
+        date,
+        name: schedule.name
+      };
+      break;
     }
 
     // give up searching after 2 years
