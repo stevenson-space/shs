@@ -4,9 +4,14 @@ import constants from './const.js';
 // Look at const.js for the structure of schedules
 
 class Bell {
-  constructor(date, scheduleMode = 0) {
-    const { schedules } = constants;
-    const schedule = Bell.getSchedule(schedules, date)
+  /**
+   * Creates a new Bell object with schedule info for the given date
+   * @param {Date} date 
+   * @param {Number} [scheduleMode] defaults to the first one specified 
+   * @param {Array} [schedules] list of schedules to use (if different from those in const.js)
+   */
+  constructor(date, scheduleMode = 0, schedules = constants.schedules) {
+    const schedule = Bell.getSchedule(date, schedules)
     const actualSchedule = schedule.modes[scheduleMode];
 
     this.date = date;
@@ -22,6 +27,9 @@ class Bell {
     this.nextSchoolDay = Bell.nextSchoolDay(date);
   }
 
+  /**
+   * @return {string} human readable range for current period or day (blank if no school)
+   */
   getRange() {
     if (this.school) {
       let { start, end, beforeSchool, afterSchool } = this.period;
@@ -34,6 +42,9 @@ class Bell {
     return '';
   }
 
+  /**
+   * @return {string} name of current period (blank if not currently in school)
+   */
   getPeriodName() {
     if (this.school) {
       const { beforeSchool, afterSchool, name } = this.period;
@@ -44,9 +55,15 @@ class Bell {
     return '';
   }
 
-  static getSchedule(schedules, date) {
+  /**
+   * Get the schedule for a given date
+   * @param {Date} date
+   * @param {Array} [schedules] optional alternative list of schedules
+   * @return {Object}
+   */
+  static getSchedule(date, schedules = constants.schedules) {
     let todaySchedule = null;
-    schedules.forEach(schedule => {
+     schedules.forEach(schedule => {
       if (testDate(date, schedule.dates)) {
         todaySchedule = schedule;
       }
@@ -54,6 +71,36 @@ class Bell {
     return todaySchedule;
   }
 
+  /**
+   * Checks if the schedule for a given date is different from normal and returns the
+   * schedule if it is special
+   * @param {Date} date 
+   * @param {Object} [schedule] schedule on given date (to avoid unnecessary recalculation of schedule)
+   * @param {Array} [schedules] optional alternative list of schedules
+   * @return {Object|boolean} schedule on date if it is special, false otherwise
+   */
+  static isSpecialSchedule(date, schedule = null, schedules = constants.schedules) {
+    const defaultSchedule = schedules[0];
+
+    // check if there would normally be the default schedule on that date
+    // (e.g. to prevent weekends from being counted as a 'No School' special event)
+    if (testDate(date, defaultSchedule.dates)) {
+      // then check if the actual schedule is different from the normal one
+      schedule = schedule || Bell.getSchedule(schedules, date);
+      if (schedule.name !== defaultSchedule.name) {
+        return schedule;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Gets the current 
+   * @param {Object} schedule schedule object containing start times, end times, and period names
+   * @param {Date} date date including time
+   * @param {Array} [dates] the dates for the given schedule (only necessary if multiday schdeule like Finals)
+   * @return {Object} object containing period name, start/end time, and whether before/after school
+   */
   static getPeriod({ start, end, periods }, date, dates) {
     // Check if anything is a 2D array, indicating that it varies by day (e.g. Finals)
     // the date selectors for that schedule type are also required to get which day
@@ -87,6 +134,13 @@ class Bell {
     return createPeriod();
   }
 
+  /**
+   * Tests whether the given time falls between the given start and end times
+   * @param {Date} date Date object including the time being tested
+   * @param {string} start human readable start time string
+   * @param {string} end human readable end time string
+   * @return {boolean}
+   */
   static isBetweenTime(date, start, end) {
     const toMinutes = ([hour, minute]) => Number(hour) * 60 + Number(minute);
 
@@ -115,6 +169,11 @@ class Bell {
     return { start, end, periods };
   }
 
+  /**
+   * Formats period name appropriately
+   * @param {string} name
+   * @return {string}
+   */
   static convertPeriodName(name) {
     if (name[0] === '!') {
       return name.substring(1);
@@ -122,6 +181,11 @@ class Bell {
     return `Period ${name}`;
   }
 
+  /**
+   * Converts from military (24-hour) time to 12-hour time
+   * @param {string} time
+   * @return {string}
+   */
   static convertMilitaryTime(time) {
     let [hour, minute] = time.split(':').map(Number);
     if (hour > 12) hour -= 12;
@@ -130,8 +194,12 @@ class Bell {
     return `${hour}:${minute}`;
   }
 
-  static nextSchoolDay(date) {
-    const { schedules } = constants;
+  /**
+   * Gets the next school day after the given date (not including that date)
+   * @param {Date} date 
+   * @param {Array} schedules optional alternative list of schedules
+   */
+  static nextSchoolDay(date, schedules = constants.schedules) {
     const isSchoolDay = date => {
       const schedule = Bell.getSchedule(schedules, date);
       return schedule && schedule.modes[0];
