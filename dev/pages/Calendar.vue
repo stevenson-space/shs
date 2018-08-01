@@ -38,7 +38,6 @@ const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Fri
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
   'September', 'October', 'November', 'December'];
 
-
 const today = new Date();
 
 export default {
@@ -76,14 +75,15 @@ export default {
       const length = Math.ceil((numDaysInMonth + start) / 7) * 7;
       const dates = new Array(length).fill(null);
 
+      // set each cell to the appropriate date
       for (let i = 0; i < numDaysInMonth; i++) {
-        dates[start + i] = new Date(year, month, i + 1);
+        dates[start + i] = new Date(year, month, i + 1); // i + 1 since date is 1-indexed
       }
 
       return dates;
     },
     numCalendarRows() {
-      return this.dates.length / 7;
+      return this.dates.length / 7; // length of each row is 7 (days of week)
     }
   },
   methods: {

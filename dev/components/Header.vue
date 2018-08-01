@@ -62,6 +62,7 @@ function dateToSeconds(date) {
   return toSeconds([date.getHours(), date.getMinutes(), date.getSeconds()]);
 }
 
+// period is in the format of a human readable 24-hour time string
 function periodToSeconds(period) {
   return toSeconds(period.split(':').map(Number));
 }
@@ -86,6 +87,7 @@ export default {
   },
   computed: {
     inSchool() {
+      // To be in school, there must be school that day and we must not be before or after school
       const { bell } = this;
       return bell.school && !bell.period.afterSchool && !bell.period.beforeSchool;
     },
@@ -93,8 +95,8 @@ export default {
       return new Bell(this.bell.nextSchoolDay);
     },
     endTime() {
-      const { bell, date } = this;
-      if (this.inSchool) {
+      const { bell, date, inSchool } = this;
+      if (inSchool) {
         return periodToSeconds(bell.period.end);
       }
       // if not currently in school, return seconds left until school starts
@@ -110,17 +112,22 @@ export default {
         nextBell = new Bell(nextSchoolDay);
       }
 
+      // return the start time of the next first period + 24 hours for each day elapsed in between
       const firstPeriod = nextBell.schedule.start[0];
       return periodToSeconds(firstPeriod) + dayDifference * 24 * 60 * 60;
     },
     totalSecondsLeft() {
+      // this is seperated from endTime since totalSecondsLeft needs to be recalculated every
+      // second while endTime (which is computationally expensive) does not
       return this.endTime - this.currentTime;
     },
     countdownString() {
-      if (this.totalSecondsLeft > 60 * 60 * 24) { // if more than 1 day of seconds left
+      if (this.totalSecondsLeft > 60 * 60 * 24) {
+        // if more than 1 day of seconds left, display number of days left
         const numDays = Math.ceil(this.totalSecondsLeft / 60 / 60 / 24);
         return `${numDays} days`;
       } else {
+        // return a nicely formatted string with remaining hours, minutes, and seconds left
         const seconds = this.totalSecondsLeft % 60;
         const minutes = Math.floor(this.totalSecondsLeft / 60) % 60;
         const hours = Math.floor(this.totalSecondsLeft / 60 / 60);
@@ -133,13 +140,19 @@ export default {
       }
     },
     nextDayString() {
+      // Returns when school resumes
+      // Only displayed when not in school (either no school, before school, or after school)
       const { bell, date } = this;
       const { school, period, nextSchoolDay } = bell;
+
+      // get days since January 1, 1970
+      const getEpochDay = date => Math.floor(date.getTime() / 1000 / 60 / 60 / 24);
+
+      // if school resumes on the same day or the next day, use 'today' or 'tomorrow' instead of the date
       let str;
       if (school && period.beforeSchool) {
         str = 'today';
       } else {
-        const getEpochDay = date => Math.floor(date.getTime() / 1000 / 60 / 60 / 24);
         const dayDifference = getEpochDay(nextSchoolDay) - getEpochDay(date);
         if (dayDifference === 1) {
           str = 'tomorrow';
@@ -150,11 +163,13 @@ export default {
       return `School resumes ${str}`;
     },
     tomorrow() {
+      // Date object for the next day, used for the arrow right
       const date = new Date(this.date);
       date.setDate(date.getDate() + 1);
       return date;
     },
     yesterday() {
+      // Date object for the previous day, used for the arrow left
       const date = new Date(this.date);
       date.setDate(date.getDate() - 1);
       return date;
@@ -175,7 +190,10 @@ export default {
         .replace(/\//g, '-')
     },
     initializeCountdown() {
+      // stop any prior countdown
       clearInterval(this.interval);
+
+      // start an interval which increments the currentTime every seconds (everything else updates based on that)
       if (this.mode === 'current') {
         this.interval = setInterval(() => {
           this.currentTime++;

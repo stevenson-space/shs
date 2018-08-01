@@ -20,6 +20,7 @@ export default {
   },
   computed: {
     actualPeriod() {
+      // remove the ! mark in front of period names
       const { period } = this;
       return period[0] === '!' ? period.substring(1) : period;
     }

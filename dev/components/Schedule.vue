@@ -66,7 +66,7 @@ export default {
     }
   },
   mounted() {
-    // initialHeight is necessary for the animation (to know end value of animation prior to doing it)
+    // initialHeight is necessary for the animation (to know end value of the close animation prior to doing it)
     this.setInitialHeight();
     this.setHeight();
 
@@ -88,17 +88,24 @@ export default {
       };
     },
     multiDayModes() {
-      // format the schedule to make the start, end, and periods Arrays have the same length
+      // Reformat the schedules to make the start, end, and periods arrays all 2D arrays
+      // by duplicating any arrays that are not 2D
+      // This makes it easier later in the v-for loop
       const { modes } = this.schedule;
       const is2D = arr => Array.isArray(arr[0]);
 
       return modes.map(mode => {
-        if (this.isMultiDay(mode)) {
+        // check if the mode contains a multiday schedule
+        if (Bell.isMultiDay(mode)) {
+          // If it is multiday, any of the 3 properties (start, end, periods) could be a 2D array
+          // We need the length (number of days) of whichever property is a 2D array
           const numDays = is2D(mode.start) ? mode.start.length
             : is2D(mode.end) ? mode.end.length
             : is2D(mode.periods) ? mode.periods.length
             : 1;
           
+          // for the remaining properties that are not 2D arrays, we need to make them 2D
+          // by duplicating their array by the number of days
           const fillDays = arr => is2D(arr) ? arr : Array(numDays).fill(arr)
           return {
             start: fillDays(mode.start),
@@ -115,7 +122,9 @@ export default {
       return Bell.isMultiDay(schedule)
     },
     setInitialHeight() {
+      // can only set initialHeight if the remaining modes are closed
       if (!this.showAllModes) {
+        // wait until content updates before updating height
         this.$nextTick(() => {
           this.initialHeight = this.$refs.wrapper.offsetHeight;
         }); 
@@ -136,7 +145,7 @@ export default {
         setTimeout(() => {
           this.showAllModes = false;
           this.setInitialHeight(); // in case initial height changed (due to resize or something else)
-          this.setHeight();
+          this.setHeight(); // in case initialHeight was incorrect, reset to proper height after animation
         }, 300); // animation duration
       } else {
         this.showAllModes = true;

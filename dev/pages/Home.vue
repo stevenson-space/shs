@@ -45,7 +45,6 @@ import Bell from '../js/bell.js';
 
 import ScheduleHeader from '../components/Header.vue';
 import CardContainer from '../components/CardContainer.vue';
-import Card from '../components/Card.vue' //basic card for testing purposes
 import UpcomingEventsCard from '../components/UpcomingEventsCard.vue';
 import IconTextCard from '../components/IconTextCard.vue';
 
@@ -102,12 +101,16 @@ export default {
       this.currentDate = Date.now();
     },
     resetDate() {
+      // If date and/or time is specified in URL, reset to that date
+      // Otherwise, reset to current date
       let { date='', time='' } = this.$route.query;
       time = time.replace(/\./g, ':'); // lets you use "." (url safe) instead of ":" (not url safe)
       date = date.replace(/-/g, '/'); // lets you use "-" instead of "/"
+
       const today = new Date();
       const todayDate = today.toLocaleDateString();
       const todayTime = today.toLocaleTimeString();
+      
       this.initialDate = new Date(`${date || todayDate} ${time || todayTime}`).getTime();
     }
   },
@@ -118,8 +121,7 @@ export default {
   },
   components: { 
     ScheduleHeader, 
-    CardContainer, 
-    Card,
+    CardContainer,
     UpcomingEventsCard,
     IconTextCard,
   },

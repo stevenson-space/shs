@@ -21,6 +21,7 @@ export default {
       return Bell.getSchedule(this.date);
     },
     invert() {
+      // if the schedule for that day is special, emphasize it by inverting the colors
       return !!Bell.isSpecialSchedule(this.date, this.schedule);
     }
   },

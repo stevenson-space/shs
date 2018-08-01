@@ -17,6 +17,9 @@ export default {
   },
   computed: {
     type() {
+      // router-link will be used if href is an object or a non URL string
+      // a will be used if href is a URL string (starting with http)
+      // otherwise a plain div will be used
       const { href } = this;
       if (href) {
         return typeof href === 'object' || href.indexOf('http') !== 0 ? 'router-link' : 'a';

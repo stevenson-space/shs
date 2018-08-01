@@ -27,6 +27,7 @@ import Card from './Card.vue';
 import EventChip from './EventChip.vue';
 
 function getNextEvent(startDate) {
+  // Generator that yields sequential dates starting from the day after start
   function* dates(start) {
     for(let i = 1; true; i++) {
       const date = new Date(start);
@@ -36,14 +37,18 @@ function getNextEvent(startDate) {
   }
   
   let event = null;
+
+  // Go through dates starting from startDate until we find one with a special schedule and return that
   for (const date of dates(startDate)) {
     const schedule = Bell.isSpecialSchedule(date);
     if (schedule) {
       event = {
-        key: `${schedule.name} ${date.getTime()}`,
+        key: `${schedule.name} ${date.getTime()}`, // unique key for each event used in v-for
         date,
         name: schedule.name
       };
+
+      // need to break out of loop once an event is found since the generator will run forever
       break;
     }
 
@@ -77,8 +82,14 @@ export default {
   },
   computed: {
     displayedEvents() {
-      const placeholders = Array(4).fill(0).map((_, i) => ({ key: i }));
-      const events = this.events.slice(0, this.numEventsDisplayed);
+      // Only display numEventsDisplayed events even if the events array contains more
+      // and display blank placeholders if no events (possibly still loading)
+      const { numEventsDisplayed, numEventsInitial } = this;
+
+      // Placeholders still need unique keys to work with v-for
+      const placeholders = Array(numEventsInitial).fill(0).map((_, i) => ({ key: i }));
+
+      const events = this.events.slice(0, numEventsDisplayed);
       return events.length ? events : placeholders;
     },
     remainingEvents() {
@@ -87,11 +98,14 @@ export default {
   },
   methods: {
     loadEvents(num, timeout = 0) {
+      // Could potentially by expensive for large values of num, so load asynchronously
       return new Promise(resolve => {
         setTimeout(() => {
+          // Get the next num events and add them to the events array
           for (let i = 0; i < num; i++) {
             const event = getNextEvent(this.lastDate);
             if (event) {
+              // Update the lastDate, so that we can start searching from that point for the next event
               this.lastDate = event.date;
               this.events.push(event);
             }
@@ -101,6 +115,7 @@ export default {
       });
     },
     showMoreEvents(num = this.numEventsToAdd) {
+      // If there aren't enough preloaded events, load however many more are necessary
       if (this.remainingEvents < num) {
         this.loadEvents(num - this.remainingEvents);
       }
@@ -109,16 +124,22 @@ export default {
     reset() {
       this.lastDate = this.date;
       this.events = [];
+
+      // Initially load just the number of events necessary before any user interaction
       this.loadEvents(this.numEventsInitial).then(() => {
         this.showMoreEvents(this.numEventsInitial);
       });
-      this.loadEvents(this.numEventsToAdd * 10, 1000); // 1s delay to allow page to load first
+
+      // Then, after a 1 second delay to allow the rest of the page to laod first, preload a lot
+      // of events to avoid delays later
+      this.loadEvents(this.numEventsToAdd * 10, 1000);
     }
   },
   watch: {
     $route() {
-      // the timeout is used so that the user can switch through multiple dates quickly
+      // The timeout is used so that the user can switch through multiple dates quickly
       // without having to wait until the upcoming events load for each date
+      // Upcoming Events only begin loading after the user does not switch date for at least 250ms
       clearTimeout(this.dateTimeout);
       this.numEventsDisplayed = 0;
       this.dateTimeout = setTimeout(this.reset, 250);
