@@ -2,6 +2,9 @@ const types = ['weekend', 'weekday'];
 const daysOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 
+// Use the following instead of Date.toLocaleDateString() due to performance issues on Safari
+const toLocaleDateString = date => `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+
 /**
  * Parses the custom date, filling in any missing information using currentDate
  * since that is the only date that will eventually be compared against
@@ -23,7 +26,7 @@ function parseDate(date, currentDate) {
     parsedDate.setMonth(monthIndex);
   }
   else {
-    let [month, day, year] = currentDate.toLocaleDateString().split('/');
+    let [month, day, year] = toLocaleDateString(currentDate).split('/');
     let [m, d, y] = date.split('/');
 
     if (!d && m.length === 4) { // only one argument (m) is defined and is interpreted as year
@@ -49,8 +52,8 @@ function parseDate(date, currentDate) {
  * @returns {boolean}
  */
 function isSameDay(date1, date2) {
-  date1 = new Date(date1.toLocaleDateString()).getTime();
-  date2 = new Date(date2.toLocaleDateString()).getTime();
+  date1 = new Date(toLocaleDateString(date1)).getTime();
+  date2 = new Date(toLocaleDateString(date2)).getTime();
   return date1 === date2;
 }
 
@@ -91,7 +94,7 @@ function isNthDay(date, condition) {
  */
 function inRange(date, range) {
   // set date to be the beginning of the day to stay within the range in case it is equal to the end date (date2)
-  date = new Date(date.toLocaleDateString());
+  date = new Date(toLocaleDateString(date));
 
   const hyphen = range.indexOf('-');
   const date1 = parseDate(range.substring(0, hyphen), date).getTime();

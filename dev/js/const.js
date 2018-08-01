@@ -74,7 +74,7 @@ export default {
     },
     {
       name: 'Activity Schedule',
-      dates: [''],
+      dates: [],
       modes: [
         {
           name: 'Normal',

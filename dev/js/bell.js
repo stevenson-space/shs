@@ -86,7 +86,7 @@ class Bell {
     // (e.g. to prevent weekends from being counted as a 'No School' special event)
     if (testDate(date, defaultSchedule.dates)) {
       // then check if the actual schedule is different from the normal one
-      schedule = schedule || Bell.getSchedule(schedules, date);
+      schedule = schedule || Bell.getSchedule(date, schedules);
       if (schedule.name !== defaultSchedule.name) {
         return schedule;
       }
@@ -201,7 +201,7 @@ class Bell {
    */
   static nextSchoolDay(date, schedules = constants.schedules) {
     const isSchoolDay = date => {
-      const schedule = Bell.getSchedule(schedules, date);
+      const schedule = Bell.getSchedule(date, schedules);
       return schedule && schedule.modes[0];
     };
 
