@@ -101,11 +101,11 @@ class Bell {
    * @param {Array} [dates] the dates for the given schedule (only necessary if multiday schdeule like Finals)
    * @return {Object} object containing period name, start/end time, and whether before/after school
    */
-  static getPeriod({ start, end, periods }, date, dates) {
-    // Check if anything is a 2D array, indicating that it varies by day (e.g. Finals)
-    // the date selectors for that schedule type are also required to get which day
-    const is2D = arr => Array.isArray(arr[0]);
-    if ((is2D(start) || is2D(end) || is2D(periods)) && dates) {
+  static getPeriod(schedule, date, dates) {
+    let { start, end, periods } = schedule;
+
+    // if multiday schedule, the date selectors for that schedule type are also required to get which day
+    if (Bell.isMultiDay(schedule) && dates) {
       ({start, end, periods} = Bell.getMultiDay({start, end, periods}, date, dates));
     }
 
@@ -132,6 +132,17 @@ class Bell {
     }
 
     return createPeriod();
+  }
+
+  /**
+   * Checks if the given schedule is a multiday schedule (like Finals)
+   * @param {Object} schedule
+   * @return {boolean}
+   */
+  static isMultiDay(schedule) {
+    // Check if anything is a 2D array, indicating that it varies by day (e.g. Finals)
+    const is2D = arr => Array.isArray(arr[0]);
+    return is2D(schedule.start) || is2D(schedule.end) || is2D(schedule.periods);
   }
 
   /**

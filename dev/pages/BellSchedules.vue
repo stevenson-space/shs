@@ -2,12 +2,11 @@
   <div>
     <div class="background-block"/>
     <div class="card">
-      <template v-for="schedule in schedules">
-        <schedule
-          v-if="schedule.modes.length > 0"
-          :schedule="schedule"
-          :key="schedule.name"/>
-      </template>
+      <schedule
+        v-for="schedule in schedules"
+        v-if="schedule.modes.length > 0"
+        :schedule="schedule"
+        :key="schedule.name"/>
     </div>
   </div>
 </template>

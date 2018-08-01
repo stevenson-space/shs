@@ -13,12 +13,23 @@
         </div>
 
         <div class="periods">
-          <period
-            v-for="(period, i) in mode.periods"
-            :period="period"
-            :start="mode.start[i]"
-            :end="mode.end[i]"
-            :key="period"/>
+          <template v-if="isMultiDay(mode)">
+            <multi-day-period
+              v-for="(day, j) in multiDayModes[i].periods"
+              :periods="day"
+              :start="multiDayModes[i].start[j]"
+              :end="multiDayModes[i].end[j]"
+              :day="j + 1"
+              :key="day.toString()"/>
+          </template>
+          <template v-else>
+            <period
+              v-for="(period, j) in mode.periods"
+              :period="period"
+              :start="mode.start[j]"
+              :end="mode.end[j]"
+              :key="period"/>
+          </template>
         </div>
       </div>
 
@@ -36,6 +47,8 @@
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import Period from '../components/Period.vue';
+import MultiDayPeriod from '../components/MultiDayPeriod.vue';
+import Bell from '../js/bell.js';
 
 export default {
   props: {
@@ -73,9 +86,34 @@ export default {
       return {
         height: height !== null ? `${height}px` : 'auto',
       };
+    },
+    multiDayModes() {
+      // format the schedule to make the start, end, and periods Arrays have the same length
+      const { modes } = this.schedule;
+      const is2D = arr => Array.isArray(arr[0]);
+
+      return modes.map(mode => {
+        if (this.isMultiDay(mode)) {
+          const numDays = is2D(mode.start) ? mode.start.length
+            : is2D(mode.end) ? mode.end.length
+            : is2D(mode.periods) ? mode.periods.length
+            : 1;
+          
+          const fillDays = arr => is2D(arr) ? arr : Array(numDays).fill(arr)
+          return {
+            start: fillDays(mode.start),
+            end: fillDays(mode.end),
+            periods: fillDays(mode.periods),
+          };
+        }
+        return mode;
+      });
     }
   },
   methods: {
+    isMultiDay(schedule){
+      return Bell.isMultiDay(schedule)
+    },
     setInitialHeight() {
       if (!this.showAllModes) {
         this.$nextTick(() => {
@@ -109,7 +147,7 @@ export default {
   destroyed() {
     window.removeEventListener('resize', this.resizeListener);
   },
-  components: { Period, FontAwesomeIcon },
+  components: { Period, MultiDayPeriod, FontAwesomeIcon },
 }
 </script>
 

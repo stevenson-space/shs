@@ -110,19 +110,18 @@ export default {
         }
       ]
     },
-    // Temporarily removing Finals until BellSchedules page supports it
-    // {
-    //   name: 'Finals',
-    //   dates: ['12/19/2018-12/21/2018', '5/21/2019-5/23/2019'],
-    //   modes: [
-    //     {
-    //       name: 'Normal',
-    //       start: ['8:30', '10:10', '11:50'],
-    //       end: ['10:00', '11:40', '13:20'],
-    //       periods: [['1','2','4'], ['3','7','5'], ['8','6','!Makeup']]
-    //     }
-    //   ]
-    // },
+    {
+      name: 'Finals',
+      dates: ['12/19/2018-12/21/2018', '5/21/2019-5/23/2019'],
+      modes: [
+        {
+          name: 'Normal',
+          start: ['8:30', '10:10', '11:50'],
+          end: ['10:00', '11:40', '13:20'],
+          periods: [['1','2','4'], ['3','7','5'], ['8','6','!Makeup']]
+        }
+      ]
+    },
     {
       name: 'No School',
       dates: ['weekends', '1st monday & september', '2nd monday & october', '3rd monday & january',
