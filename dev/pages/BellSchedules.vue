@@ -12,13 +12,13 @@
 </template>
 
 <script>
-import constants from '../js/const.js';
+import schedules from '../data/schedules.json';
 import Schedule from '../components/Schedule.vue';
 
 export default {
   data() {
     return {
-      schedules: constants.schedules,
+      schedules,
     }
   },
   components: { Schedule },
