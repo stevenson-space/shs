@@ -23,8 +23,9 @@
       v-for="date in dates"
       v-if="date"
       :date="date"
-      :isToday="today.toLocaleDateString() === date.toLocaleDateString()"
-      :key="date.toString()"/>
+      :events="events[date]"
+      :isToday="date === today"
+      :key="date"/>
     <div class="calendar-cell" v-else/>
   </div>
 </template>
@@ -33,6 +34,7 @@
 import CalendarDate from '../components/CalendarDate.vue';
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import events from '../data/events.json';
 
 const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
@@ -43,9 +45,10 @@ const today = new Date();
 export default {
   data() {
     return {
+      events,
       daysOfWeek,
       months,
-      today,
+      today: today.toLocaleDateString(),
       month: today.getMonth(),
       year: today.getFullYear(),
       icons: {
@@ -77,7 +80,7 @@ export default {
 
       // set each cell to the appropriate date
       for (let i = 0; i < numDaysInMonth; i++) {
-        dates[start + i] = new Date(year, month, i + 1); // i + 1 since date is 1-indexed
+        dates[start + i] = `${month + 1}/${i + 1}/${year}`;
       }
 
       return dates;
@@ -160,6 +163,7 @@ export default {
       min-width: 30%
       // +shadow
       // height: 100%
+      user-select: none
 
       .month
         font-size: 1.2em
@@ -177,6 +181,7 @@ export default {
     line-height: 30px
     // +shadow
     // border-radius: 10px
+    user-select: none
 
   // .tile
     // background-color: blue

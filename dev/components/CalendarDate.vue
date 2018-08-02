@@ -1,9 +1,13 @@
 <template>
   <div>
     <div class="date" :class="{ today: isToday }">
-      {{ date.getDate() }}
+      {{ dateObject.getDate() }}
     </div>
-    <calendar-event :text="schedule.name" :invert="invert"/>
+    <calendar-event v-if="schedule" :text="schedule.name" :invert="true"/>
+    <calendar-event
+      v-for="event in processedEvents"
+      :text="event.name"
+      :key="event.name + event.start"/>
   </div>
 </template>
 
@@ -13,16 +17,36 @@ import CalendarEvent from '../components/CalendarEvent.vue';
 
 export default {
   props: {
-    date: { type: Date, required: true },
+    date: { type: String, required: true },
+    events: { type: Array, default: () => [] },
     isToday: { type: Boolean, default: false },
   },
   computed: {
-    schedule() {
-      return Bell.getSchedule(this.date);
+    dateObject() {
+      return new Date(this.date);
     },
-    invert() {
-      // if the schedule for that day is special, emphasize it by inverting the colors
-      return !!Bell.isSpecialSchedule(this.date, this.schedule);
+    schedule() {
+      // only show the schedule if it is special
+      return Bell.isSpecialSchedule(this.dateObject);
+    },
+    processedEvents() {
+      const { events, schedule } = this
+      const processedEvents = [];
+      events.forEach(event => {
+        // If the event just repeats the schedule type (already displayed), don't display it
+        if (event.name.indexOf(schedule.name) > -1) {
+          // However, if the event also adds information in the following format (e.g. No School - Labor Day)
+          // then keep the additional information as an event and just stip off the schedule type
+          const regex = new RegExp(`^${schedule.name} - (.+)$`);
+          if (event.name.match(regex)) {
+            event.name = event.name.replace(regex, '$1');
+            processedEvents.push(event);
+          }
+        } else {
+          processedEvents.push(event);
+        }
+      });
+      return processedEvents;
     }
   },
   components: { CalendarEvent },
@@ -41,6 +65,7 @@ export default {
   text-align: center
   line-height: 27px
   font-weight: bold
+  user-select: none
   
   &.today
     color: white

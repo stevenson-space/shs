@@ -17,13 +17,16 @@ export default {
 @import '../styles/style.sass'
 
 .event
-  font-size: .8em
+  font-size: .75em
   text-align: center
   border-radius: 100px
-  padding: 3px 5px
-  margin: 0 5px
+  padding: 3px 8px
+  margin: 0 auto
   border: $color 1px solid
   color: $color
+  margin-bottom: 7px
+  // max-width: 160px
+  width: 80%
   // +shadow
 
   &.invert
