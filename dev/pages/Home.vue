@@ -10,6 +10,8 @@
     <card-container>
       <upcoming-events-card :date="date"/>
 
+      <lunch-card :date="date" :bell="bell"/>
+
       <icon-text-card
         :icon="icons.faBell"
         text="Bell Schedules"
@@ -46,6 +48,7 @@ import Bell from '../js/bell.js';
 import ScheduleHeader from '../components/Header.vue';
 import CardContainer from '../components/CardContainer.vue';
 import UpcomingEventsCard from '../components/UpcomingEventsCard.vue';
+import LunchCard from '../components/LunchCard.vue';
 import IconTextCard from '../components/IconTextCard.vue';
 
 import { faBell, faLink, faFileAlt, faCalendarAlt, faTv } from '@fortawesome/free-solid-svg-icons';
@@ -123,6 +126,7 @@ export default {
     ScheduleHeader, 
     CardContainer,
     UpcomingEventsCard,
+    LunchCard,
     IconTextCard,
   },
 }
