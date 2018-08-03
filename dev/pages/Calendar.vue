@@ -2,6 +2,7 @@
   <div
     @keydown.right="nextMonth"
     @keydown.left="previousMonth"
+    v-hammer:swipe.horizontal="onSwipe"
     tabindex="-1"
     style="outline: none">
     <calendar-main
@@ -132,6 +133,9 @@ export default {
         this.year -= 1;
         this.month += 12;
       }
+    },
+    onSwipe(e) {
+      this[e.deltaX < 0 ? 'nextMonth' : 'previousMonth']();
     }
   },
   components: { CalendarMain, CalendarMobile },

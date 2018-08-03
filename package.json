@@ -9,7 +9,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.1.0-8",
     "@fortawesome/vue-fontawesome": "0.0.22",
     "vue": "^2.5.16",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue2-hammer": "^1.0.7"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.5.1",
