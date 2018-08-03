@@ -153,7 +153,7 @@ export default {
       }
     }
   },
-  destroyed() {
+  beforeDestroy() {
     window.removeEventListener('resize', this.resizeListener);
   },
   components: { Period, MultiDayPeriod, FontAwesomeIcon },

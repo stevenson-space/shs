@@ -1,6 +1,6 @@
 <template>
   <div class="event" :class="{ invert }">
-    {{ text }}
+    <p class="text">{{ text }}</p>
   </div>
 </template>
 
@@ -20,18 +20,24 @@ export default {
   font-size: .75em
   text-align: center
   border-radius: 100px
-  padding: 3px 8px
-  margin: 0 auto
+  // padding: 3px 8px
+  margin: 0 5px
   border: $color 1px solid
   color: $color
-  margin-bottom: 7px
+  margin-bottom: 10px
   // max-width: 160px
-  width: 80%
+  // width: 80%
   // +shadow
+  // text-overflow: ellipsis
 
   &.invert
     background-color: $color
     color: white
     +shadow
+
+  .text
+    // display: block
+    margin: 3px 10px
+    min-width: 80px
 
 </style>
