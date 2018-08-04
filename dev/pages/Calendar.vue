@@ -4,15 +4,16 @@
     @keydown.left="previousMonth"
     v-hammer:swipe.horizontal="onSwipe"
     tabindex="-1"
-    style="outline: none">
+    style="outline: none"
+    v-focus>
     <calendar-main
-      class="show-on tablet desktop"
+      class="calendar-main"
       v-bind="childProps"
       @next-month="nextMonth"
       @previous-month="previousMonth"/>
 
     <calendar-mobile
-      class="show-on mobile"
+      class="calendar-mobile"
       v-bind="childProps"
       @next-month="nextMonth"
       @previous-month="previousMonth"/>
@@ -142,3 +143,18 @@ export default {
   components: { CalendarMain, CalendarMobile },
 }
 </script>
+
+<style lang="sass" scoped>
+@import '../styles/style.sass'
+
+.calendar-main
+  +mobile
+    display: none
+
+.calendar-mobile
+  +tablet
+    display: none
+  +desktop
+    display: none
+
+</style>

@@ -3,8 +3,11 @@ import VueRouter from 'vue-router';
 import { VueHammer } from 'vue2-hammer';
 import App from './App.vue';
 import Home from './pages/Home.vue';
-import BellSchedules from './pages/BellSchedules.vue';
-import Calendar from './pages/Calendar.vue';
+
+// Dynamically import the following components so that they are not included in the main build
+// file and are instead asynchrounously loaded when the user goes to the page (to reduce file size of bundle.js)
+const BellSchedules = () => import(/* webpackChunkName: "bellschedules" */ './pages/BellSchedules.vue');
+const Calendar = () => import(/* webpackChunkName: "calendar" */ './pages/Calendar.vue');
 
 function parseUrlDateTime(route) {
   // If date and/or time is specified in URL, return that date
@@ -54,6 +57,14 @@ const router = new VueRouter({
 
 Vue.use(VueRouter);
 Vue.use(VueHammer);
+
+// Any element can add the directive 'v-focus' to automatically gain focus when created
+Vue.directive('focus', {
+  // When the the element is inserted into the DOM
+  inserted: function (el) {
+    el.focus()
+  }
+})
 
 new Vue({
   el: '#app',

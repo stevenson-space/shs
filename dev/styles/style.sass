@@ -20,19 +20,3 @@ $color: #064789
 
 =shadow
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)
-
-
-// Using this instead of display:none since we don't know what the original display was set to
-// In this, we are assuming that position was originally static (safer assumption than display:block)
-.show-on
-    position: fixed
-    top: -10000px
-    &.mobile
-        +mobile
-            position: static
-    &.tablet
-        +tablet
-            position: static
-    &.desktop
-        +desktop
-            position: static
