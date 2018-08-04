@@ -30,6 +30,7 @@ export default {
 @import '../styles/style.sass'
 
 .date
+  font-size: 16px // prevents parent from enlarging the date number (parent actually intends to enlarge CalendarEvent's text)
   margin: 5px
   display: inline-block
   border-radius: 20px

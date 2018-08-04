@@ -54,9 +54,12 @@ import IconTextCard from '../components/IconTextCard.vue';
 import { faBell, faLink, faFileAlt, faCalendarAlt, faTv } from '@fortawesome/free-solid-svg-icons';
 
 export default {
+  props: {
+    initialDate: { type: Number, default: Date.now() }
+  },
   data() {
     return {
-      initialDate: Date.now(), // relative to url specified date (set in created())
+      // initialDate: Date.now(), // relative to url specified date (set in created())
       startDate: Date.now(), // relative to real time
       currentDate: Date.now(), // relative to real time
       icons: {
@@ -69,8 +72,6 @@ export default {
     };
   },
   created() {
-    this.resetDate();
-
     // Sometimes the interval used in Header.vue stops when the tab leaves focus
     // so updating the date when focus returns is necessary
     window.addEventListener('focus', () => {
@@ -103,24 +104,6 @@ export default {
     updateDate() {
       this.currentDate = Date.now();
     },
-    resetDate() {
-      // If date and/or time is specified in URL, reset to that date
-      // Otherwise, reset to current date
-      let { date='', time='' } = this.$route.query;
-      time = time.replace(/\./g, ':'); // lets you use "." (url safe) instead of ":" (not url safe)
-      date = date.replace(/-/g, '/'); // lets you use "-" instead of "/"
-
-      const today = new Date();
-      const todayDate = today.toLocaleDateString();
-      const todayTime = today.toLocaleTimeString();
-      
-      this.initialDate = new Date(`${date || todayDate} ${time || todayTime}`).getTime();
-    }
-  },
-  watch: {
-    $route() { // when the url changes
-      this.resetDate();
-    }
   },
   components: { 
     ScheduleHeader, 

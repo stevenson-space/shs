@@ -6,10 +6,35 @@ import Home from './pages/Home.vue';
 import BellSchedules from './pages/BellSchedules.vue';
 import Calendar from './pages/Calendar.vue';
 
+function parseUrlDateTime(route) {
+  // If date and/or time is specified in URL, return that date
+  // Otherwise, return current date
+  let { date='', time='' } = route.query;
+  time = time.replace(/\./g, ':'); // lets you use "." (url safe) instead of ":" (not url safe)
+  date = date.replace(/-/g, '/'); // lets you use "-" instead of "/"
+
+  const today = new Date();
+  const todayDate = today.toLocaleDateString();
+  const todayTime = today.toLocaleTimeString();
+  
+  return new Date(`${date || todayDate} ${time || todayTime}`);
+}
+
 const routes = [
-  { path: '/', component: Home },
-  { path: '/bellschedules', component: BellSchedules },
-  { path: '/calendar', component: Calendar },
+  {
+    path: '/',
+    component: Home,
+    props: route => ({ initialDate: parseUrlDateTime(route).getTime() })
+  },
+  {
+    path: '/bellschedules',
+    component: BellSchedules
+  },
+  {
+    path: '/calendar',
+    component: Calendar,
+    props: route => ({ today: parseUrlDateTime(route) })
+  },
 ];
 
 // 'history' mode requires all urls to redirect to index.html so that Vue can handle them

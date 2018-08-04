@@ -15,8 +15,6 @@ function getLunch(date) {
     // format the lunch to make it easier to display later
     const formattedLunch = {};
     lunchNames.forEach((name, i) => {
-      console.log(lunches);
-      console.log(i);
       // lunches[i] could be a string containing multiple items separated by a comma
       formattedLunch[name] = lunches[i].split(',').map(str => str.trim());
     });

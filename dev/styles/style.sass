@@ -7,11 +7,11 @@ $content-width: 1000px
 $color: #064789
 
 @mixin mobile
-    @media (max-width: #{$tablet-width - 1px})
+    @media (max-width: #{$tablet-width - .1px})
         @content
 
 @mixin tablet
-    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px})
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - .1px})
         @content
 
 @mixin desktop
@@ -22,15 +22,17 @@ $color: #064789
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)
 
 
-// have to do hide-if-device instead of show-if-device since we don't know the original values for display
-.hide-if-device
+// Using this instead of display:none since we don't know what the original display was set to
+// In this, we are assuming that position was originally static (safer assumption than display:block)
+.show-on
+    position: fixed
+    top: -10000px
     &.mobile
         +mobile
-            display: none
+            position: static
     &.tablet
         +tablet
-            display: none
+            position: static
     &.desktop
         +desktop
-            display: none
-        
+            position: static

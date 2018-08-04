@@ -139,10 +139,10 @@ export default {
     $route() {
       // The timeout is used so that the user can switch through multiple dates quickly
       // without having to wait until the upcoming events load for each date
-      // Upcoming Events only begin loading after the user does not switch date for at least 250ms
+      // Upcoming Events only begin loading after the user does not switch date for at least 500ms
       clearTimeout(this.dateTimeout);
       this.numEventsDisplayed = 0;
-      this.dateTimeout = setTimeout(this.reset, 250);
+      this.dateTimeout = setTimeout(this.reset, 500);
     },
   },
   components: { Card, EventChip, FontAwesomeIcon }

@@ -6,13 +6,13 @@
     tabindex="-1"
     style="outline: none">
     <calendar-main
-      class="hide-if-device mobile"
+      class="show-on tablet desktop"
       v-bind="childProps"
       @next-month="nextMonth"
       @previous-month="previousMonth"/>
 
     <calendar-mobile
-      class="hide-if-device tablet desktop"
+      class="show-on mobile"
       v-bind="childProps"
       @next-month="nextMonth"
       @previous-month="previousMonth"/>
@@ -28,18 +28,19 @@ import CalendarMobile from '../components/CalendarMobile.vue';
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
   'September', 'October', 'November', 'December'];
 
-const today = new Date();
-
 export default {
+  props: {
+    today: { type: Date, default: () => new Date() },
+  },
   data() {
     return {
-      month: today.getMonth(),
-      year: today.getFullYear(),
+      month: this.today.getMonth(),
+      year: this.today.getFullYear(),
     }
   },
   computed: {
     childProps() {
-      const { month, year, dates, schedules, events } = this;
+      const { today, month, year, dates, schedules, events } = this;
 
       // combine the date, schedule, and events into one object for each date
       // to make it easier for the child components to use
