@@ -8,6 +8,7 @@ import Home from './pages/Home.vue';
 // file and are instead asynchrounously loaded when the user goes to the page (to reduce file size of bundle.js)
 const BellSchedules = () => import(/* webpackChunkName: "bellschedules" */ './pages/BellSchedules.vue');
 const Calendar = () => import(/* webpackChunkName: "calendar" */ './pages/Calendar.vue');
+const Links = () => import(/* webpackChunkName: "links" */ './pages/Links.vue');
 
 function parseUrlDateTime(route) {
   // If date and/or time is specified in URL, return that date
@@ -38,6 +39,10 @@ const routes = [
     component: Calendar,
     props: route => ({ today: parseUrlDateTime(route) })
   },
+  {
+    path: '/links',
+    component: Links,
+  }
 ];
 
 // 'history' mode requires all urls to redirect to index.html so that Vue can handle them

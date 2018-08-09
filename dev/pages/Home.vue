@@ -26,13 +26,13 @@
       <icon-text-card
         :icon="icons.faFileAlt"
         text="Documents"
-        link="documents"
-        :invert="true"/>
+        link="documents"/>
       
       <icon-text-card
         :icon="icons.faCalendarAlt"
         text="Calendar"
-        link="calendar"/>
+        link="calendar"
+        :invert="true"/>
       
       <icon-text-card
         :icon="icons.faTv"
