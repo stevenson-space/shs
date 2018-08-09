@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="background-block"/>
+
     <div class="card">
+      <home-link class="home-link" :invert="false"/>
+
       <schedule
         v-for="schedule in schedules"
         v-if="schedule.modes.length > 0"
@@ -14,6 +17,7 @@
 <script>
 import schedules from '../data/schedules.json';
 import Schedule from '../components/Schedule.vue';
+import HomeLink from '../components/HomeLink.vue';
 
 export default {
   data() {
@@ -21,7 +25,7 @@ export default {
       schedules,
     }
   },
-  components: { Schedule },
+  components: { Schedule, HomeLink },
 }
 </script>
 
@@ -34,6 +38,13 @@ export default {
   width: 100%
   position: fixed
 
+.home-link
+  position: absolute
+  right: 0
+  top: -70px
+  +mobile
+    top: -55px
+
 .card
   +shadow
   width: 80%
@@ -43,10 +54,10 @@ export default {
   position: relative
   border-radius: 20px
   top: 100px
-  overflow: hidden
+  // overflow: hidden
   margin-bottom: 25px
   +mobile
     width: 90%
-    top: 50px
+    top: 75px
 
 </style>

@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div class="title">
-      <span>Links</span>
+    <div class="header">
+      <home-link class="home-link"/>
+      <span class="title">Links</span>
     </div>
     <card-container class="container">
       <image-text-card
@@ -17,6 +18,7 @@
 <script>
 import CardContainer from '../components/CardContainer.vue';
 import ImageTextCard from '../components/ImageTextCard.vue';
+import HomeLink from '../components/HomeLink.vue';
 
 export default {
   data() {
@@ -33,20 +35,24 @@ export default {
       ]
     }
   },
-  components: { CardContainer, ImageTextCard },
+  components: {
+    CardContainer,
+    ImageTextCard,
+    HomeLink,
+  },
 }
 </script>
 
 <style lang="sass" scoped>
 @import '../styles/style.sass'
 
-.title
-  max-width: 1000px
+.header
+  max-width: $content-width
   margin: auto
-  font-size: 4em
-  line-height: 125px
-  // margin-top: 10px
-  font-weight: bold
+  position: relative
+  // line-height: 125px
+  margin-top: 10px
+  // font-size: 4em
   color: $color
   // padding-left: 200px
   // margin-right: 300px
@@ -56,15 +62,17 @@ export default {
   +mobile
     text-align: center
 
-  span
+  .title
+    line-height: 125px
+    font-size: 4em  
+    font-weight: bold
     margin-left: 50px
     +mobile
       margin-left: 0
-
-.container
-  // +shadow
-  // width: 95%
-  // border-radius: 15px
-  // padding: 10px 0
+  
+  .home-link
+    position: absolute
+    top: 10px
+    right: 10px
 
 </style>

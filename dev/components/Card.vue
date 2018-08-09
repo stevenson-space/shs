@@ -14,6 +14,8 @@ export default {
       height: 0,
       margin: 15,
       spanValue: 0,
+      mutationObserver: null,
+      debounceTimeout: null,
     };
   },
   computed: {
@@ -23,18 +25,17 @@ export default {
         height: `${height}px`,
         margin: `${margin}px`,
         gridRow: `span ${spanValue}`,
-        mutationObserver: null,
       }
     }
   },
   mounted() {
     this.setHeight();
 
+    window.addEventListener('resize', this.debounceSetHeight);
+
     // The MutationObserver will detect when any children or descendants are added
     // and when any CSS is changed
-    this.mutationObserver = new MutationObserver(() => {
-      this.setHeight();
-    });
+    this.mutationObserver = new MutationObserver(this.setHeight);
     this.mutationObserver.observe(this.$refs.wrapper, {
       attributes: true,
       childList: true,
@@ -51,10 +52,17 @@ export default {
 
       // Adjust the number of rows the card spans (necessary for the masonry layout to work)
       this.spanValue = Math.ceil((this.height + margin * 2) / 5); // 5 is row height
+    },
+    debounceSetHeight() {
+      clearTimeout(this.debounceTimeout);
+      this.debounceTimeout = setTimeout(() => this.setHeight(), 250);
     }
   },
   destroyed() {
-    this.mutationObserver.disconnect();
+    window.removeEventListener('resize', this.debounceSetHeight);
+    if (this.mutationObserver) {
+      this.mutationObserver.disconnect();
+    }
   }
 }
 </script>
