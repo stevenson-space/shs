@@ -6,20 +6,14 @@
       </router-link>
 
       <div>
-        <div class="countdown-circle">
-          <img :src="logo" class="logo">
-
-          <div class="countdown" v-if="mode === 'current'">
-            {{ countdownString }}
-          </div>
-          <div class="range" v-else>
-            {{ bell.getRange() }}
-          </div>
-
-          <div class="type" v-if="inSchool || mode === 'day'">{{ bell.type }}</div>
-          <div class="next-day" v-else>{{ nextDayString }}</div>
-        </div>
-
+        <countdown-circle
+          :mode="mode"
+          :in-school="inSchool"
+          :countdown="countdownString"
+          :range="bell.getRange()"
+          :next-day="nextDayString"
+          :schedule-type="bell.type"/>
+        
         <div class="date">
           {{ formatDate(date) }}
         </div>
@@ -29,23 +23,13 @@
         <font-awesome-icon :icon="rightArrow" class="arrow-icon"/>
       </router-link>
     </div>
-
-    <div class="schedule">
-      <template v-if="mode === 'current'">
-        <div class="range">{{ bell.getRange() }}</div>
-
-        <div class="period" v-if="inSchool">
-          {{ bell.getPeriodName() }}
-        </div>
-        <div class="type" v-else>
-          {{ bell.type }}
-        </div>
-      </template>
-
-      <router-link class="button" to="/" v-else>
-        Go Back Live
-      </router-link>
-    </div>
+    
+    <header-schedule
+      :mode="mode"
+      :in-school="inSchool"
+      :period="bell.getPeriodName()"
+      :range="bell.getRange()"
+      :schedule-type="bell.type"/>
   </div>
 </template>
 
@@ -53,6 +37,8 @@
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import Bell from '../js/bell.js';
+import CountdownCircle from '../components/CountdownCircle.vue';
+import HeaderSchedule from '../components/HeaderSchedule.vue';
 
 function toSeconds([hour = 0, minute = 0, second = 0]) {
   return (((hour * 60) + minute) * 60) + second;
@@ -69,7 +55,6 @@ function periodToSeconds(period) {
 
 export default {
   props: {
-    logo: { type: String, required: true },
     date: { type: Date, required: true },
     bell: { type: Bell, required: true },
     mode: {
@@ -187,18 +172,17 @@ export default {
       // e.g. "6-11-2018"
       return date
         .toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' })
-        .replace(/\//g, '-')
+        .replace(/\//g, '-');
     },
     initializeCountdown() {
-      // stop any prior countdown
-      clearInterval(this.interval);
-
+      this.stopCountdown();
       // start an interval which increments the currentTime every seconds (everything else updates based on that)
-      if (this.mode === 'current') {
-        this.interval = setInterval(() => {
-          this.currentTime++;
-        }, 1000);
-      }
+      this.interval = setInterval(() => {
+        this.currentTime++;
+      }, 1000);
+    },
+    stopCountdown() {
+      clearInterval(this.interval);
     }
   },
   mounted() {
@@ -206,7 +190,11 @@ export default {
   },
   watch: {
     mode() {
-      this.initializeCountdown();
+      if (this.mode === 'current') {
+        this.initializeCountdown();
+      } else {
+        this.stopCountdown();
+      }
     },
     date() {
       this.currentTime = dateToSeconds(this.date);
@@ -220,7 +208,7 @@ export default {
   destroyed() {
     clearInterval(this.interval);
   },
-  components: { FontAwesomeIcon },
+  components: { FontAwesomeIcon, CountdownCircle, HeaderSchedule },
 }
 </script>
 
@@ -228,12 +216,6 @@ export default {
 @import '../styles/style'
 
 .header
-  --circle-diameter: 285px
-  --logo-width: 100px
-  +mobile
-    --circle-diameter: 240px
-    --logo-width: 75px
-
   +shadow
   background-color: white
   text-align: center
@@ -247,51 +229,6 @@ export default {
     padding: 0 calc((100% - #{$content-width}) / 2)
     +mobile
       height: 300px
-
-    .countdown-circle
-      +shadow
-      background-color: white
-      width: var(--circle-diameter)
-      height: var(--circle-diameter)
-      border-radius: calc(var(--circle-diameter) / 2)
-      font-weight: bold
-      color: #333
-
-      .logo
-        width: var(--logo-width)
-        margin: 0 calc((var(--circle-diameter) - var(--logo-width)) / 2)
-        margin-top: 15px
-      
-      .countdown
-        font-size: 3.5em
-        // margin-top: -5px
-        line-height: 1em
-        +mobile
-          font-size: 3em
-
-      .range
-        font-size: 2.5em
-        +mobile
-          font-size: 2em
-
-      .type
-        margin-top: 12px
-        font-size: 1.2em
-        +mobile
-          font-size: 1em
-      
-      .next-day
-        font-size: .85em
-        margin: auto
-        height: 75px
-        display: flex
-        align-items: center
-        justify-content: center
-        white-space: pre
-        font-weight: normal
-        +mobile
-          font-size: .8em
-          height: 65px
     
     .date
       +shadow
@@ -319,27 +256,5 @@ export default {
         display: none
         +mobile
           display: none
-
-  .schedule
-    padding: 5px
-    color: #333
-    letter-spacing: 1px
-
-    .range
-      font-size: 1.1em
-
-    .type, .period
-      font-size: .9em
-
-    .button
-      +shadow
-      text-decoration: none
-      color: white
-      border-radius: 8px
-      padding: 8px
-      margin: 4px
-      display: inline-block
-      font-weight: normal
-      background-color: $color
 
 </style>

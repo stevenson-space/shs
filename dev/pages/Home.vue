@@ -1,7 +1,6 @@
 <template>
   <div>
     <schedule-header
-      logo="images/patriot.png"
       :bell="bell"
       :date="date"
       :mode="mode"
@@ -33,11 +32,6 @@
         text="Calendar"
         link="calendar"
         :invert="true"/>
-      
-      <icon-text-card
-        :icon="icons.faTv"
-        text="Projector Mode"
-        link="projector"/>
     </card-container>
   </div>
 </template>
@@ -103,6 +97,12 @@ export default {
     // instead updateDate is called evey time the countdown finishes
     updateDate() {
       this.currentDate = Date.now();
+    },
+  },
+  watch: {
+    initialDate() {
+      this.startDate = Date.now();
+      this.updateDate();
     },
   },
   components: { 

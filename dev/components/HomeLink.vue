@@ -46,14 +46,14 @@ export default {
     overflow: hidden
     // display: none
     transition: max-width .2s
-    font-size: 1.25em
+    font-size: 1.1em
   
   &:hover
     +shadow
 
     .text
       max-width: 60px
-      margin-left: 5px
+      margin: 0 5px
   
   &.invert:hover
     color: white

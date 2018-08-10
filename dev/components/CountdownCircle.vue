@@ -1,0 +1,83 @@
+<template>
+  <div class="circle">
+    <img src="images/patriot.png" class="logo">
+
+    <div class="countdown" v-if="mode === 'current'">
+      {{ countdown }}
+    </div>
+    <div class="range" v-else>
+      {{ range }}
+    </div>
+
+    <div class="type" v-if="inSchool || mode === 'day'">{{ scheduleType }}</div>
+    <div class="next-day" v-else>{{ nextDay }}</div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    mode: { type: String, required: true },
+    inSchool: { type: Boolean, required: true },
+    countdown: { type: String, required: true },
+    range: { type: String, required: true },
+    nextDay: { type: String, required: true },
+    scheduleType: { type: String, required: true },
+  }
+}
+</script>
+
+<style lang="sass" scoped>
+@import '../styles/style.sass'
+
+.circle
+  --circle-diameter: 285px
+  --logo-width: 100px
+  +mobile
+    --circle-diameter: 240px
+    --logo-width: 75px
+  
+  +shadow
+  background-color: white
+  width: var(--circle-diameter)
+  height: var(--circle-diameter)
+  border-radius: calc(var(--circle-diameter) / 2)
+  font-weight: bold
+  color: #333
+
+  .logo
+    width: var(--logo-width)
+    margin: 0 calc((var(--circle-diameter) - var(--logo-width)) / 2)
+    margin-top: 15px
+  
+  .countdown
+    font-size: 3.5em
+    // margin-top: -5px
+    line-height: 1em
+    +mobile
+      font-size: 3em
+
+  .range
+    font-size: 2.5em
+    +mobile
+      font-size: 2em
+
+  .type
+    margin-top: 12px
+    font-size: 1.2em
+    +mobile
+      font-size: 1em
+  
+  .next-day
+    font-size: .85em
+    margin: auto
+    height: 75px
+    display: flex
+    align-items: center
+    justify-content: center
+    white-space: pre
+    font-weight: normal
+    +mobile
+      font-size: .8em
+      height: 65px
+</style>
