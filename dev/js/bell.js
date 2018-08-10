@@ -12,7 +12,7 @@ class Bell {
     const schedule = Bell.getSchedule(date, schedules);
     const actualSchedule = schedule.modes[scheduleMode];
 
-    this.date = date;
+    // this.date = date;
     this.school = !!actualSchedule;
     this.type = schedule.name // "Standard Schedule", "Late Arrival", "No School", ...
     this.schedule = actualSchedule;

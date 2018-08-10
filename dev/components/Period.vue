@@ -1,5 +1,5 @@
 <template>
-  <div class="period">
+  <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">
     <div class="circle">{{ actualPeriod }}</div>
     <div class="range">
       <div class="time">{{ convertMilitaryTime(start) }}</div>
@@ -17,6 +17,8 @@ export default {
     period: { type: String, required: true },
     start: { type: String, required: true },
     end: { type: String, required: true },
+    invert: { type: Boolean, default: false },
+    forceMobileLayout: { type: Boolean, default: false },
   },
   computed: {
     actualPeriod() {
@@ -40,21 +42,14 @@ export default {
   background-color: $color
   display: flex
   align-items: center
+  justify-content: space-between
   flex-grow: 1
   margin: 5px
-  justify-content: space-between
   padding: 2px
-  +mobile
-    width: calc(100% - 14px); // 2 * 5px (margin) + 2 * 2px (padding) = 14px
-  +tablet
-    width: calc(50% - 14px)
-  +desktop
-    border-radius: 15px
-    padding: 0
-    flex-direction: column
-    min-width: 70px
-    height: 100px
-    justify-content: center
+  width: calc(100% - 14px); // 2 * 5px (margin) + 2 * 2px (padding) = 14px
+  &.not-mobile
+    +tablet
+      width: calc(50% - 14px)
 
   .circle
     min-width: 15px
@@ -68,26 +63,50 @@ export default {
     color: #333
     margin: 5px 10px
     padding: 8px
-    +desktop
-      padding: 10px
   
   .range
     color: white
     text-align: center
     flex-grow: 1
     font-size: 1.1em
-    +desktop
-      margin: 0
-      flex-grow: 0
-      font-size: 1em
 
     .time
       display: inline-block
-      +desktop
-        display: block
 
-    .dash
-      +desktop
-        display: none
+  &.invert
+    box-shadow: none
+    background-color: white
+    border: $color 1px solid
+
+    .circle
+      // background-color: $color
+      color: $color
+    
+    .range
+      color: black
+
+  &.not-mobile
+    +desktop
+      width: auto
+      border-radius: 15px
+      padding: 0
+      flex-direction: column
+      min-width: 70px
+      height: 100px
+      justify-content: center
+
+      .circle
+        padding: 10px
+
+      .range
+        margin: 0
+        flex-grow: 0
+        font-size: 1em
+      
+        .time
+          display: block
+        
+        .dash
+          display: none
 
 </style>
