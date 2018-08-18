@@ -29,7 +29,10 @@
       :in-school="inSchool"
       :period="bell.getPeriodName()"
       :range="bell.getRange()"
-      :schedule-type="bell.type"/>
+      :schedule-type="bell.type"
+      :schedule-modes="scheduleModeNames"
+      :schedule-mode="scheduleMode"
+      @schedule-mode-change="$emit('schedule-mode-change', $event)"/>
   </div>
 </template>
 
@@ -61,6 +64,7 @@ export default {
       validator: mode => mode === 'current' || mode === 'day',
       required: true,
     },
+    scheduleMode: { type: Number, required: true },
   },
   data() {
     return {
@@ -159,6 +163,10 @@ export default {
       date.setDate(date.getDate() - 1);
       return date;
     },
+    scheduleModeNames() {
+      const modes = this.bell.scheduleModes;
+      return modes.map(mode => mode.name);
+    }
   },
   methods: {
     formatDate(date) {

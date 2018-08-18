@@ -4,7 +4,9 @@
       :bell="bell"
       :date="date"
       :mode="mode"
-      @countdown-done="updateDate"/>
+      :schedule-mode="scheduleMode"
+      @countdown-done="updateDate"
+      @schedule-mode-change="scheduleMode = $event"/>
     
     <card-container>
       <lunch-card :date="date" :bell="bell"/>
@@ -65,7 +67,8 @@ export default {
         faFileAlt,
         faCalendarAlt,
         faTv
-      }
+      },
+      scheduleMode: 0,
     };
   },
   created() {

@@ -16,6 +16,7 @@ class Bell {
     this.school = !!actualSchedule;
     this.type = schedule.name // "Standard Schedule", "Late Arrival", "No School", ...
     this.schedule = actualSchedule;
+    this.scheduleModes = schedule.modes;
 
     if (actualSchedule) { // if there is school today (actualSchedule is undefined when no school)
       this.mode = actualSchedule.name // "Normal", "Half Periods", ...
