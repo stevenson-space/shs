@@ -1,3 +1,4 @@
+$tablet-small-width: 600px // 7-inch tablets
 $tablet-width: 768px
 $desktop-width: 1024px
 
@@ -5,6 +6,14 @@ $desktop-width: 1024px
 $content-width: 1000px
 
 $color: #064789
+
+@mixin mobile-small
+    @media (max-width: #{$tablet-small-width - .1px})
+        @content
+
+@mixin tablet-small
+    @media (min-width: #{$tablet-small-width}) and (max-width: #{$desktop-width - .1px})
+        @content
 
 @mixin mobile
     @media (max-width: #{$tablet-width - .1px})

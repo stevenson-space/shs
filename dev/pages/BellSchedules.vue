@@ -48,7 +48,7 @@ export default {
 .card
   +shadow
   width: 80%
-  max-width: 1000px
+  max-width: $content-width
   background-color: white
   margin: auto
   position: relative

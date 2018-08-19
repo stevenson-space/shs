@@ -33,7 +33,7 @@ export default {
 .circle
   --circle-diameter: 285px
   --logo-width: 100px
-  +mobile
+  +mobile-small
     --circle-diameter: 230px
     --logo-width: 70px
   
@@ -54,18 +54,18 @@ export default {
     font-size: 3.5em
     // margin-top: -5px
     line-height: 1em
-    +mobile
+    +mobile-small
       font-size: 3em
 
   .range
     font-size: 2.5em
-    +mobile
+    +mobile-small
       font-size: 2em
 
   .type
     margin-top: 12px
     font-size: 1.2em
-    +mobile
+    +mobile-small
       font-size: 1em
   
   .next-day
@@ -77,7 +77,7 @@ export default {
     justify-content: center
     white-space: pre
     font-weight: normal
-    +mobile
+    +mobile-small
       font-size: .8em
       height: 65px
 

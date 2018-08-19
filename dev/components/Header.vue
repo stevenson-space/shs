@@ -246,7 +246,7 @@ export default {
     right: 0
     margin: 7px
     display: none
-    +mobile
+    +mobile-small
       display: block
 
   .main
@@ -256,7 +256,7 @@ export default {
     align-items: center
     justify-content: space-between
     padding: 0 calc((100% - #{$content-width}) / 2)
-    +mobile
+    +mobile-small
       height: 280px
       &.extra-padding
         padding-top: 30px
@@ -268,7 +268,7 @@ export default {
       margin-top: 10px
       padding: 3px
       font-size: .9em
-      +mobile
+      +mobile-small
         margin-top: 7px
 
     .switch-day
@@ -276,18 +276,13 @@ export default {
       width: 100px
       margin: 0 15px
       text-decoration: none
-      +mobile
+      +mobile-small
         margin: 0 5px
 
       .arrow-icon
         font-size: 5em
         margin-bottom: 10px
-        +mobile
+        +mobile-small
           font-size: 3.5em
-
-      .text
-        display: none
-        +mobile
-          display: none
 
 </style>

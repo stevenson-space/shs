@@ -24,7 +24,7 @@ export default {
     grid-auto-rows: 5px
 
     grid-template-columns: 1fr
-    +tablet
+    +tablet-small
       grid-template-columns: 1fr 1fr
     +desktop
       grid-template-columns: 1fr 1fr 1fr

@@ -101,7 +101,6 @@ export default {
         setTimeout(() => {
           this.$emit('input', optionIndex);
         }, 100);
-        
       }
     }
   },

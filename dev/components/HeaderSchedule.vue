@@ -64,7 +64,7 @@ export default {
   .schedule-select
     &.hidden
       visibility: hidden
-    +mobile
+    +mobile-small
       display: none
 
   .center
