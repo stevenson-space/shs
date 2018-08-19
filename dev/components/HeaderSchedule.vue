@@ -1,6 +1,10 @@
 <template>
   <div class="schedule">
-    <dropdown class="dropdown hidden" :options="scheduleModes" :value="scheduleMode"/>
+    <dropdown
+      v-show="scheduleModes.length > 1"
+      class="schedule-select hidden"
+      :options="scheduleModes"
+      :value="scheduleMode"/>
 
     <div class="center">
       <template v-if="mode === 'current'">
@@ -20,7 +24,8 @@
     </div>
 
     <dropdown
-      class="dropdown"
+      v-show="scheduleModes.length > 1"
+      class="schedule-select"
       :options="scheduleModes"
       :value="scheduleMode"
       @input="$emit('schedule-mode-change', $event)"/>
@@ -56,8 +61,8 @@ export default {
   max-width: $content-width
   margin: auto
 
-  .dropdown
-    .hidden
+  .schedule-select
+    &.hidden
       visibility: hidden
     +mobile
       display: none

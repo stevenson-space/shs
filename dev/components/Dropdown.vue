@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="container"
-    v-if="remainingOptions.length > 0"
-    @blur="closeDropdown"
-    tabindex="-1">
+  <div class="container" @blur="closeDropdown" tabindex="-1">
     <div class="dropdown" :class="{ selected: open }" @click="toggleDropdown">
       <span>{{ options[value] }}</span>
       <font-awesome-icon
@@ -41,7 +37,7 @@ export default {
   data() {
     return {
       faCaretDown,
-      optionShifts: this.options.map(() => 0),
+      optionShifts: Array(this.options.length).fill(0),
       open: false,
       arrowRotateAmmount: 0,
     }
@@ -107,6 +103,11 @@ export default {
         }, 100);
         
       }
+    }
+  },
+  watch: {
+    options() {
+      this.optionShifts = Array(this.options.length).fill(0);
     }
   },
   components: { FontAwesomeIcon },

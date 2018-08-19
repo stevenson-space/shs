@@ -1,6 +1,13 @@
 <template>
   <div class="header">
-    <div class="main">
+    <dropdown
+      v-show="scheduleModeNames.length > 1"
+      class="schedule-select"
+      :options="scheduleModeNames"
+      :value="scheduleMode"
+      @input="$emit('schedule-mode-change', $event)"/>
+
+    <div class="main" :class="{ 'extra-padding': scheduleModeNames.length > 1 }">
       <router-link class="switch-day" :to="{ path: '/', query: {date: formatDateUrl(yesterday)}}">
         <font-awesome-icon :icon="leftArrow" class="arrow-icon"/>
       </router-link>
@@ -40,8 +47,9 @@
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import Bell from '../js/bell.js';
-import CountdownCircle from '../components/CountdownCircle.vue';
-import HeaderSchedule from '../components/HeaderSchedule.vue';
+import CountdownCircle from './CountdownCircle.vue';
+import HeaderSchedule from './HeaderSchedule.vue';
+import Dropdown from './Dropdown.vue';
 
 function toSeconds([hour = 0, minute = 0, second = 0]) {
   return (((hour * 60) + minute) * 60) + second;
@@ -140,11 +148,11 @@ export default {
       // if school resumes on the same day or the next day, use 'today' or 'tomorrow' instead of the date
       let str;
       if (school && period.beforeSchool) {
-        str = 'today';
+        str = '\ntoday';
       } else {
         const dayDifference = getEpochDay(nextSchoolDay) - getEpochDay(date);
         if (dayDifference === 1) {
-          str = 'tomorrow';
+          str = '\ntomorrow';
         } else {
           str = this.formatDate(nextSchoolDay);
         }
@@ -216,7 +224,12 @@ export default {
   destroyed() {
     clearInterval(this.interval);
   },
-  components: { FontAwesomeIcon, CountdownCircle, HeaderSchedule },
+  components: {
+    FontAwesomeIcon,
+    CountdownCircle,
+    HeaderSchedule,
+    Dropdown
+  },
 }
 </script>
 
@@ -228,6 +241,14 @@ export default {
   background-color: white
   text-align: center
 
+  .schedule-select
+    position: absolute
+    right: 0
+    margin: 7px
+    display: none
+    +mobile
+      display: block
+
   .main
     background-color: $color
     height: 350px
@@ -236,7 +257,9 @@ export default {
     justify-content: space-between
     padding: 0 calc((100% - #{$content-width}) / 2)
     +mobile
-      height: 300px
+      height: 280px
+      &.extra-padding
+        padding-top: 30px
     
     .date
       +shadow
@@ -245,6 +268,8 @@ export default {
       margin-top: 10px
       padding: 3px
       font-size: .9em
+      +mobile
+        margin-top: 7px
 
     .switch-day
       color: white
@@ -252,13 +277,13 @@ export default {
       margin: 0 15px
       text-decoration: none
       +mobile
-        margin: 0 10px
+        margin: 0 5px
 
       .arrow-icon
         font-size: 5em
         margin-bottom: 10px
         +mobile
-          font-size: 4em
+          font-size: 3.5em
 
       .text
         display: none

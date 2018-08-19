@@ -34,8 +34,8 @@ export default {
   --circle-diameter: 285px
   --logo-width: 100px
   +mobile
-    --circle-diameter: 240px
-    --logo-width: 75px
+    --circle-diameter: 230px
+    --logo-width: 70px
   
   +shadow
   background-color: white
@@ -80,4 +80,5 @@ export default {
     +mobile
       font-size: .8em
       height: 65px
+
 </style>
