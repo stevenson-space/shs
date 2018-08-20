@@ -9,9 +9,9 @@
       @schedule-mode-change="scheduleMode = $event"/>
     
     <card-container>
-      <lunch-card :date="date" :bell="bell"/>
-
       <schedule-card :bell="bell"/>
+
+      <lunch-card :date="date" :bell="bell"/>
 
       <upcoming-events-card :date="date"/>
 

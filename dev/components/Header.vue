@@ -259,7 +259,7 @@ export default {
     +mobile-small
       height: 280px
       &.extra-padding
-        padding-top: 30px
+        padding-top: 35px
     
     .date
       +shadow
@@ -281,7 +281,7 @@ export default {
 
       .arrow-icon
         font-size: 5em
-        margin-bottom: 10px
+        margin: 50px 0
         +mobile-small
           font-size: 3.5em
 

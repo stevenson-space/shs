@@ -1,15 +1,18 @@
 <template>
-  <card class="card" v-if="bell.school">
+  <card class="card" v-if="bell.school" @height-change="scrollToCurrentPeriod">
     <div class="title">Schedule</div>
-    <period
-      class="period"
-      v-for="(period, i) in periods"
-      :start="period.start"
-      :end="period.end"
-      :period="period.name"
-      :invert="bell.period.name !== period.name"
-      :force-mobile-layout="true"
-      :key="period.name"/>
+    <div class="periods" ref="periods">
+      <period
+        class="period"
+        v-for="(period, i) in periods"
+        :start="period.start"
+        :end="period.end"
+        :period="period.name"
+        :invert="!period.isCurrent"
+        :force-mobile-layout="true"
+        :key="period.name"
+        ref="period"/>
+    </div>
   </card>
 </template>
 
@@ -24,18 +27,53 @@ export default {
   },
   computed: {
     periods() {
-      const { start, end, periods } = this.bell.schedule;
-      const result = [];
+      if (this.bell.school) {
+        const { start, end, periods } = this.bell.schedule;
+        const result = [];
 
-      periods.forEach((period, i) => {
-        result.push({
-          name: period,
-          start: start[i],
-          end: end[i],
+        periods.forEach((period, i) => {
+          result.push({
+            name: period,
+            start: start[i],
+            end: end[i],
+            isCurrent: this.bell.period && this.bell.period.name === period,
+          });
         });
+
+        return result;
+      }
+      return [];
+    }
+  },
+  methods: {
+    scrollToCurrentPeriod() {
+      // Get the html element for the current period if there is one
+      let $period = null;
+      this.periods.forEach((period, i) => {
+        if (period.isCurrent) {
+          $period = this.$refs.period[i];
+        }
       });
 
-      return result;
+      if ($period) {
+        const $container = this.$refs.periods;
+        const containerHeight = $container.offsetHeight;
+        const { offsetTop, offsetHeight } = $period.$el;
+
+        // Set the scroll so that the current period is centered
+        $container.scrollTop = offsetTop - containerHeight / 2 + offsetHeight / 2;
+      }
+    }
+  },
+  mounted() {
+    this.scrollToCurrentPeriod();
+  },
+  watch: {
+    bell() {
+      // wait until periods rerender before scrolling
+      this.$nextTick(() => {
+        this.scrollToCurrentPeriod();
+      });
     }
   },
   components: { Card, Period },
@@ -54,10 +92,25 @@ export default {
     font-size: 1.5em
     margin: 15px 0
 
-  .period
-    margin-bottom: 7px
-    font-size: .9em
-    height: 37px
+  .periods
+    height: 275px
+    overflow: auto
+    position: relative
+    +mobile
+      height: 175px
+
+    // hide scrollbar
+    -ms-overflow-style: none
+    &::-webkit-scrollbar
+      display: none
+    @-moz-document url-prefix() // firefox hack
+      width: calc(100% + 17px)
+    
+    .period
+      margin-left: 4px
+      margin-bottom: 7px
+      font-size: .9em
+      height: 37px
 
 </style>
 

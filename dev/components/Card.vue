@@ -52,6 +52,8 @@ export default {
 
       // Adjust the number of rows the card spans (necessary for the masonry layout to work)
       this.spanValue = Math.ceil((this.height + margin * 2) / 5); // 5 is row height
+
+      this.$emit('height-change');
     },
     debounceSetHeight() {
       clearTimeout(this.debounceTimeout);
@@ -79,6 +81,6 @@ export default {
   overflow: hidden
 
   .wrapper
-    overflow: auto
+    overflow: hidden
 
 </style>
