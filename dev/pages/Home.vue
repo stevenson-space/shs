@@ -1,12 +1,14 @@
 <template>
-  <div>
+  <div :class="{ 'no-overflow': fullScreenMode }">
     <schedule-header
       :bell="bell"
       :date="date"
       :mode="mode"
       :schedule-mode="scheduleMode"
       @countdown-done="updateDate"
-      @schedule-mode-change="scheduleMode = $event"/>
+      @schedule-mode-change="scheduleMode = $event"
+      :full-screen-mode="fullScreenMode"
+      @toggle-fullscreen="fullScreenMode = !fullScreenMode"/>
     
     <card-container>
       <schedule-card :bell="bell"/>
@@ -69,6 +71,7 @@ export default {
         faTv
       },
       scheduleMode: 0,
+      fullScreenMode: false,
     };
   },
   created() {
@@ -123,5 +126,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  
+.no-overflow
+  height: 100vh
+  overflow: hidden
+
 </style>

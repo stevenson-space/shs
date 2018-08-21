@@ -1,5 +1,5 @@
 <template>
-  <div class="circle">
+  <div class="circle" :class="{ 'full-screen': fullScreenMode }">
     <img src="images/patriot.png" class="logo">
 
     <div class="countdown" v-if="mode === 'current'">
@@ -23,6 +23,7 @@ export default {
     range: { type: String, required: true },
     nextDay: { type: String, required: true },
     scheduleType: { type: String, required: true },
+    fullScreenMode: { type: Boolean, default: false },
   }
 }
 </script>
@@ -80,5 +81,27 @@ export default {
     +mobile-small
       font-size: .8em
       height: 65px
+  
+  &.full-screen
+    --circle-diameter: 70vh
+    --logo-width: 20vh
+
+    // doing everything in terms of vh since circle-diameter is based on vh
+    // and everyting else depends on it for proper alignment
+    .countdown
+      font-size: 12.5vh
+      margin-top: 2vh
+
+    .range
+      font-size: 9vh
+      margin-top: 10px
+
+    .type
+      font-size: 5vh
+      margin-top: 35px
+    
+    .next-day
+      font-size: 4vh
+      margin-top: 6vh
 
 </style>

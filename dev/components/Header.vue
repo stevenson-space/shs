@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" :class="{ 'full-screen': fullScreenMode }">
     <dropdown
       v-show="scheduleModeNames.length > 1"
       class="schedule-select"
@@ -9,7 +9,7 @@
 
     <div class="main" :class="{ 'extra-padding': scheduleModeNames.length > 1 }">
       <router-link class="switch-day" :to="{ path: '/', query: {date: formatDateUrl(yesterday)}}">
-        <font-awesome-icon :icon="leftArrow" class="arrow-icon"/>
+        <font-awesome-icon :icon="icons.faChevronLeft" class="arrow-icon"/>
       </router-link>
 
       <div>
@@ -19,7 +19,8 @@
           :countdown="countdownString"
           :range="bell.getRange()"
           :next-day="nextDayString"
-          :schedule-type="bell.type"/>
+          :schedule-type="bell.type"
+          :full-screen-mode="fullScreenMode"/>
         
         <div class="date">
           {{ formatDate(date) }}
@@ -27,8 +28,12 @@
       </div>
 
       <router-link class="switch-day"  :to="{ path: '/', query: { date: formatDateUrl(tomorrow) }}">
-        <font-awesome-icon :icon="rightArrow" class="arrow-icon"/>
+        <font-awesome-icon :icon="icons.faChevronRight" class="arrow-icon"/>
       </router-link>
+
+      <div class="full-screen-icon" @click="$emit('toggle-fullscreen')" v-show="mode === 'current'">
+        <font-awesome-icon :icon="fullScreenMode ? icons.faCompress : icons.faExpand" fixed-width/>
+      </div>
     </div>
     
     <header-schedule
@@ -39,13 +44,14 @@
       :schedule-type="bell.type"
       :schedule-modes="scheduleModeNames"
       :schedule-mode="scheduleMode"
-      @schedule-mode-change="$emit('schedule-mode-change', $event)"/>
+      @schedule-mode-change="$emit('schedule-mode-change', $event)"
+      :full-screen-mode="fullScreenMode"/>
   </div>
 </template>
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faChevronLeft, faExpand, faCompress } from '@fortawesome/free-solid-svg-icons';
 import Bell from '../js/bell.js';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
@@ -73,11 +79,16 @@ export default {
       required: true,
     },
     scheduleMode: { type: Number, required: true },
+    fullScreenMode: { type: Boolean, default: false },
   },
   data() {
     return {
-      rightArrow: faChevronRight,
-      leftArrow: faChevronLeft,
+      icons: {
+        faChevronRight,
+        faChevronLeft,
+        faExpand,
+        faCompress,
+      },
       currentTime: dateToSeconds(this.date),
       interval: null,
     };
@@ -199,6 +210,9 @@ export default {
     },
     stopCountdown() {
       clearInterval(this.interval);
+    },
+    enterFullScreenMode() {
+
     }
   },
   mounted() {
@@ -238,7 +252,7 @@ export default {
 
 .header
   +shadow
-  background-color: white
+  background-color: $color
   text-align: center
 
   .schedule-select
@@ -250,12 +264,14 @@ export default {
       display: block
 
   .main
-    background-color: $color
     height: 350px
     display: flex
     align-items: center
     justify-content: space-between
-    padding: 0 calc((100% - #{$content-width}) / 2)
+    // padding: 0 calc((100% - #{$content-width}) / 2)
+    max-width: 1000px
+    margin: auto
+    position: relative
     +mobile-small
       height: 280px
       &.extra-padding
@@ -264,7 +280,7 @@ export default {
     .date
       +shadow
       background-color: white
-      border-radius: 15px
+      border-radius: 100px
       margin-top: 10px
       padding: 3px
       font-size: .9em
@@ -284,5 +300,46 @@ export default {
         margin: 50px 0
         +mobile-small
           font-size: 3.5em
+
+    .full-screen-icon
+      position: absolute
+      top: 9px
+      right: 9px
+      color: white
+      padding: 6px
+      border-radius: 100px
+      font-size: 1.75em
+      cursor: pointer
+      +mobile
+        display: none
+      &:hover
+        background-color: darken($color, 5%)
+
+  &.full-screen
+    top: 0
+    height: 100%
+    width: 100%
+    position: fixed
+    z-index: 2
+    display: flex
+    flex-direction: column
+
+    .main
+      flex-grow: 1
+      justify-content: center
+
+      .switch-day
+        display: none
+
+      .date
+        font-size: 2.75vh
+        margin-top: 25px
+        padding: 5px
+      
+      .full-screen-icon
+        position: fixed
+        top: 25px
+        right: 25px
+        font-size: 4vh
 
 </style>

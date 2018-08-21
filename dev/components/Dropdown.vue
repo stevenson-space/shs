@@ -12,7 +12,8 @@
       class="option"
       v-for="(option, i) in formattedOptions"
       :style="option.style"
-      @click="selectOption(i)">
+      @click="selectOption(i)"
+      ref="option">
       {{ option.name }}
     </div>
   </div>
@@ -29,9 +30,13 @@ export default {
     options: { type: Array, required: true },
     value: { type: Number, required: true },
     showSelectedAsOption: { type: Boolean, default: true },
-    direction: {
+    align: {
       validator: str => str === 'left' || str === 'right',
       default: 'right',
+    },
+    direction: {
+      validator: str => str === 'up' || str === 'down',
+      default: 'down',
     },
   },
   data() {
@@ -39,7 +44,10 @@ export default {
       faCaretDown,
       optionShifts: Array(this.options.length).fill(0),
       open: false,
-      arrowRotateAmmount: 0,
+      arrowRotateAmmount: this.direction === 'down' ? 0 : 180,
+      optionHeight: 30,
+      resizeListener: null,
+      resizeDebounceTimeout: null,
     }
   },
   computed: {
@@ -56,7 +64,7 @@ export default {
           transform: `translateY(${this.optionShifts[i]}px)`,
           zIndex: options.length - i, // later options should stack underneath prior ones
           opacity: Number(this.open),
-          [this.direction]: 0,
+          [this.align]: 0,
         }
       }));
     }
@@ -69,14 +77,15 @@ export default {
       const isOpen = this.open;
       this.arrowRotateAmmount += 180;
 
+      const shiftAmount = (this.direction === 'down' ? 1 : -1) * (this.optionHeight + 10);
       const staggerDuration = animationDuration / 4; // staggering animation for nicer effect
       this.options.forEach((_, i) => {
         setTimeout(() => {
           if (isOpen) {
             const j = this.options.length - i - 1; // iterating backwards;
-            this.setOptionShifts(0 + j * 40, j);
+            this.setOptionShifts(0 + j * shiftAmount, j);
           } else {
-            this.setOptionShifts(40 + i * 40, i);
+            this.setOptionShifts(shiftAmount + i * shiftAmount, i);
           }
         }, staggerDuration * i);
       });
@@ -102,11 +111,33 @@ export default {
           this.$emit('input', optionIndex);
         }, 100);
       }
+    },
+    resetOptionHeight() {
+      if (this.formattedOptions.length >= 1) {
+        this.optionHeight = this.$refs.option[0].offsetHeight || 30;
+      }
     }
+  },
+  mounted() {
+    this.resetOptionHeight();
+
+    this.resizeListener = () => {
+      clearTimeout(this.resizeDebounceTimeout);
+      this.resizeDebounceTimeout = setTimeout(this.resetOptionHeight, 250);
+    }
+    window.addEventListener('resize', this.resizeListener);
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.resizeListener);
   },
   watch: {
     options() {
       this.optionShifts = Array(this.options.length).fill(0);
+    },
+    direction() {
+      this.closeDropdown();
+      this.arrowRotateAmmount = this.direction === 'down' ? 0 : 180;
+      this.resetOptionHeight();
     }
   },
   components: { FontAwesomeIcon },

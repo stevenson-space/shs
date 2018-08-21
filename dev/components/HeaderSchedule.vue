@@ -1,34 +1,37 @@
 <template>
-  <div class="schedule">
-    <dropdown
-      v-show="scheduleModes.length > 1"
-      class="schedule-select hidden"
-      :options="scheduleModes"
-      :value="scheduleMode"/>
+  <div class="schedule" :class="{ 'full-screen': fullScreenMode }">
+    <div class="container">
+      <dropdown
+        v-show="scheduleModes.length > 1"
+        class="schedule-select hidden"
+        :options="scheduleModes"
+        :value="scheduleMode"/>
 
-    <div class="center">
-      <template v-if="mode === 'current'">
-        <div class="range">{{ range }}</div>
+      <div class="center">
+        <template v-if="mode === 'current'">
+          <div class="range">{{ range }}</div>
 
-        <div class="period" v-if="inSchool">
-          {{ period }}
-        </div>
-        <div class="type" v-else>
-          {{ scheduleType }}
-        </div>
-      </template>
+          <div class="period" v-if="inSchool">
+            {{ period }}
+          </div>
+          <div class="type" v-else>
+            {{ scheduleType }}
+          </div>
+        </template>
 
-      <router-link class="button" to="/" v-else>
-        Go Back Live
-      </router-link>
+        <router-link class="button" to="/" v-else>
+          Go Back Live
+        </router-link>
+      </div>
+
+      <dropdown
+        v-show="scheduleModes.length > 1"
+        class="schedule-select"
+        :options="scheduleModes"
+        :value="scheduleMode"
+        @input="$emit('schedule-mode-change', $event)"
+        :direction="fullScreenMode ? 'up' : 'down'"/>
     </div>
-
-    <dropdown
-      v-show="scheduleModes.length > 1"
-      class="schedule-select"
-      :options="scheduleModes"
-      :value="scheduleMode"
-      @input="$emit('schedule-mode-change', $event)"/>
   </div>
 </template>
 
@@ -44,6 +47,7 @@ export default {
     scheduleType: { type: String, required: true },
     scheduleModes: { type: Array, required: true },
     scheduleMode: { type: Number, required: true },
+    fullScreenMode: { type: Boolean, default: false },
   },
   components: { Dropdown },
 }
@@ -54,12 +58,18 @@ export default {
 
 .schedule
   padding: 5px
+  width: calc(100% - 10px) // subtract 2 * 5px (padding)
   color: #333
   letter-spacing: 1px
-  display: flex
-  align-items: center
-  max-width: $content-width
-  margin: auto
+  background-color: white
+  &.full-screen
+    font-size: 2.75vh
+  
+  .container
+    display: flex
+    align-items: center
+    max-width: $content-width
+    margin: auto
 
   .schedule-select
     &.hidden
