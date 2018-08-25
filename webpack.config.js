@@ -7,7 +7,7 @@ const devMode = !!process.env.WEBPACK_SERVE;
 
 module.exports = {
   mode: devMode ? 'development' : 'production',
-  entry: './dev/main.js',
+  entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'docs'),
     filename: 'bundle.js',
@@ -33,13 +33,15 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
+      'src': path.resolve(__dirname, 'src'), // allows you to reference src directly from anywhere (e.g. import {} from 'src/js/file')
+      'common': path.resolve(__dirname, 'src/components/common'), // easy access to common components
     }
   },
   plugins: [
     new VueLoaderPlugin(),
     new CopyWebpackPlugin([
-      './dev/index.html',
-      { from: './dev/images/', to: 'images/' },
+      './src/index.html',
+      { from: './src/images/', to: 'images/' },
     ]),
     new MiniCssExtractPlugin({
       filename: 'style.css',
