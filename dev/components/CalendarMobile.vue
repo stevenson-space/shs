@@ -121,16 +121,16 @@ export default {
         background-color: #CCC
       
       &.border
-        border: $color 1px dashed
+        border: var(--color) 1px dashed
       
       &.inverted
-        background-color: $color
+        background-color: var(--color)
         color: white
         .dot
           background-color: white
 
       .dot
-        background-color: $color
+        background-color: var(--color)
         height: 5px
         width: 5px
         border-radius: 5px

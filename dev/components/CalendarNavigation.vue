@@ -47,11 +47,11 @@ export default {
   display: flex
   align-items: center
   justify-content: space-between
-  color: $color
+  color: var(--color)
   // justify-content: space-around
   // border-bottom: $border
   // +shadow
-  // background-color: $color
+  // background-color: var(--color)
   // color: white
   // border-radius: 0 0 35px 35px
 
@@ -59,18 +59,18 @@ export default {
     cursor: pointer
     width: 50px
     font-size: 1.5em
-    // background-color: $color
+    // background-color: var(--color)
     // height: 100%
-    // color: $color
+    // color: var(--color)
 
   .text
     text-align: center
     flex-grow: 1
     // color: #333
     // color: white
-    // color: $color
+    // color: var(--color)
     background-color: white
-    // background-color: $color
+    // background-color: var(--color)
     // border-radius: 0 0 100px 100px
     // border-radius: 100px 100px 0 0
     // border-radius: 25px

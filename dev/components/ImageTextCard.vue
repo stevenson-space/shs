@@ -51,7 +51,7 @@ export default {
     // margin: 5px auto
     font-weight: bold
     // color: #444
-    // color: $color
+    // color: var(--color)
     color: white
     position: absolute
     // bottom: 65px
@@ -62,7 +62,7 @@ export default {
     display: flex
     justify-content: center
     align-items: center
-    // background-color: $color
+    // background-color: var(--color)
     // opacity: .5
   
   &:hover

@@ -49,7 +49,7 @@ export default {
 
   .name
     +shadow
-    background-color: $color
+    background-color: var(--color)
     width: calc(50% + var(--circle-radius))
     height: var(--circle-diameter)
     line-height: var(--circle-diameter)
@@ -81,7 +81,7 @@ export default {
     flex-direction: column
     justify-content: center
     align-items: center
-    border: $color var(--border-width) solid
+    border: var(--color) var(--border-width) solid
     margin: auto
     position: relative
     // color: #333

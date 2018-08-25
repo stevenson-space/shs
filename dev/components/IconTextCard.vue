@@ -29,11 +29,11 @@ export default {
 @import '../styles/style.sass'
 
 .card
-  background-color: $color
+  background-color: var(--color)
   color: white
   &.invert
     background-color: white
-    color: $color
+    color: var(--color)
 
   .icon
     display: flex

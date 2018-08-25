@@ -196,7 +196,7 @@ export default {
       display: flex
       justify-content: center
       align-items: center
-      border: $color 2px solid
+      border: var(--color) 2px solid
       border-left-width: 0
       flex-direction: column
       overflow: hidden
@@ -209,7 +209,7 @@ export default {
         letter-spacing: 2px
         width: 500px
         text-align: center
-        color: $color
+        color: var(--color)
         font-weight: bold
         // color: white
 

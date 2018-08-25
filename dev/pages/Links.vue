@@ -53,12 +53,12 @@ export default {
   // line-height: 125px
   margin-top: 10px
   // font-size: 4em
-  color: $color
+  color: var(--color)
   // padding-left: 200px
   // margin-right: 300px
   // text-align: center
   // text-decoration: underline
-  // border-bottom: $color 5px solid
+  // border-bottom: var(--color) 5px solid
   +mobile
     text-align: center
 

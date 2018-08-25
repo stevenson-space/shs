@@ -43,6 +43,6 @@ export default {
   
   &.today
     color: white
-    background-color: $color
+    background-color: var(--color)
 
 </style>

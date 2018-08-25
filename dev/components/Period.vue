@@ -39,7 +39,7 @@ export default {
 .period
   +shadow
   border-radius: 100px
-  background-color: $color
+  background-color: var(--color)
   display: flex
   align-items: center
   justify-content: space-between
@@ -76,11 +76,11 @@ export default {
   &.invert
     box-shadow: none
     background-color: white
-    border: $color 1px solid
+    border: var(--color) 1px solid
 
     .circle
-      // background-color: $color
-      color: $color
+      // background-color: var(--color)
+      color: var(--color)
     
     .range
       color: black

@@ -252,7 +252,7 @@ export default {
 
 .header
   +shadow
-  background-color: $color
+  background-color: var(--color)
   text-align: center
 
   .schedule-select
@@ -310,10 +310,23 @@ export default {
       border-radius: 100px
       font-size: 1.75em
       cursor: pointer
+      &::before
+        background-color: black
+        content: ''
+        height: 100%
+        top: 0
+        width: 100%
+        left: 0
+        position: absolute
+        opacity: .15
+        border-radius: 100px
+        visibility: hidden
       +mobile
         display: none
       &:hover
-        background-color: darken($color, 5%)
+        &::before
+          visibility: visible
+        // background-color: darken(var(--color), 5%)
 
   &.full-screen
     top: 0

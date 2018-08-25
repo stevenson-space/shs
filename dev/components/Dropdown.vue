@@ -155,8 +155,8 @@ export default {
   background-color: white
   position: relative
   // color: white
-  // background-color: $color
-  border: $color 1px solid
+  // background-color: var(--color)
+  border: var(--color) 1px solid
   display: flex
   justify-content: center
   align-items: center
@@ -187,8 +187,8 @@ export default {
   white-space: nowrap
   cursor: pointer
   user-select: none
-  // border: $color 1px solid
-  // background-color: $color
+  // border: var(--color) 1px solid
+  // background-color: var(--color)
   // color: white
   &:hover
     background-color: #eee

@@ -33,7 +33,7 @@ export default {
 @import '../styles/style.sass'
 
 .background-block
-  background-color: $color
+  background-color: var(--color)
   height: 250px
   width: 100%
   position: fixed

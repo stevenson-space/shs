@@ -37,11 +37,11 @@ export default {
   margin: 15px 0
 
 .lunch
-  border-top: $color 2px solid
+  border-top: var(--color) 2px solid
   padding: 10px 0
 
   .name
-    color: $color
+    color: var(--color)
     font-weight: bold
     font-size: .75em
     text-align: center

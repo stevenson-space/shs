@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :style="{ '--color': color }">
     <router-view/>
   </div>
 </template>
@@ -7,6 +7,11 @@
 <script>
 
 export default {
+  data() {
+    return {
+      color: '#064789',
+    };
+  }
 };
 
 </script>

@@ -26,7 +26,7 @@ export default {
 @import '../styles/style.sass'
 
 .home
-  color: $color
+  color: var(--color)
   border-radius: 100px
   padding: 7px
   transition: box-shadow .2s
@@ -57,7 +57,7 @@ export default {
   
   &.invert:hover
     color: white
-    background-color: $color
+    background-color: var(--color)
 
 </style>
 

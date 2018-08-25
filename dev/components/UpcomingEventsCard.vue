@@ -170,7 +170,7 @@ export default {
     position: absolute
     left: calc(100% / 2 - var(--width) / 2)
     border-radius: 50px
-    background-color: $color
+    background-color: var(--color)
 
   .event-chip
     margin-top: 30px
@@ -182,6 +182,6 @@ export default {
   font-size: 1.2em
   margin-bottom: 5px
   cursor: pointer
-  color: $color
+  color: var(--color)
 
 </style>

@@ -29,14 +29,14 @@
         :invert="true"/>
       
       <icon-text-card
-        :icon="icons.faFileAlt"
-        text="Documents"
-        link="documents"/>
-      
-      <icon-text-card
         :icon="icons.faCalendarAlt"
         text="Calendar"
-        link="calendar"
+        link="calendar"/>
+
+      <icon-text-card
+        :icon="icons.faFileAlt"
+        text="Documents"
+        link="documents"
         :invert="true"/>
     </card-container>
   </div>

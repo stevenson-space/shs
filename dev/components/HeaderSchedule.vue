@@ -97,6 +97,6 @@ export default {
       margin: 4px
       display: inline-block
       font-weight: normal
-      background-color: $color
+      background-color: var(--color)
 
 </style>

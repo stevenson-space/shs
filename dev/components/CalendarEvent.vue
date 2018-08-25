@@ -22,8 +22,8 @@ export default {
   border-radius: 100px
   // padding: 3px 8px
   margin: 0 5px
-  border: $color 1px solid
-  color: $color
+  border: var(--color) 1px solid
+  color: var(--color)
   margin-bottom: 10px
   // max-width: 160px
   // width: 80%
@@ -31,7 +31,7 @@ export default {
   // text-overflow: ellipsis
 
   &.invert
-    background-color: $color
+    background-color: var(--color)
     color: white
     +shadow
 
