@@ -4,6 +4,7 @@
 
     <color-selector
       :colors="colors"
+      :current-color="color"
       @color-selected="colorSelected"
       ref="color-selector"/>
 
@@ -23,6 +24,9 @@ import Home from 'src/components/Home/Home.vue';
 import HomeLink from 'src/components/common/HomeLink.vue';
 
 export default {
+  props: {
+    color: { type: String, default: '' },
+  },
   data() {
     return {
       colors,

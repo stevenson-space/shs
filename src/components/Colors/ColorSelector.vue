@@ -10,10 +10,17 @@
       <div class="colors" ref="colors">
         <div
           class="color"
-          v-for="shades in colors"
-          :style="{ backgroundColor: shades[4] }"
-          @click="arrEquals(currentShades, shades) ? hideShades() : showShades(shades, $event.target)"
-          :key="shades.join(',')"/>
+          v-for="(shades, i) in colors"
+          :style="{ backgroundColor: shades[4], transition: `box-shadow ${animationDuration / 1000}s` }"
+          @click="arrEquals(currentShades, shades) ? hideShades() : showShades(shades, $refs.color[i])"
+          :class="{ selected: arrEquals(currentShades, shades) && isOpen}"
+          :key="shades.join(',')"
+          ref="color">
+          <font-awesome-icon
+            class="checkmark center-align"
+            :icon="icons.faCheck"
+            v-show="shades.indexOf(currentColor) > -1"/>
+        </div>
       </div>
 
       <font-awesome-icon class="icon" :icon="icons.faChevronRight" @click="scroll('right')"/>
@@ -32,7 +39,12 @@
           :style="{ backgroundColor: shade, height: `${shadeHeight}px` }"
           @click="shadeClicked(shade)"
           :key="shade"
-          ref="shades"/>
+          ref="shades">
+          <font-awesome-icon
+            class="checkmark center-align"
+            :icon="icons.faCheck"
+            v-show="shade === currentColor"/>
+        </div>
       </stagger-animation>
     </div>
   </div>
@@ -40,18 +52,20 @@
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faCheck } from '@fortawesome/free-solid-svg-icons';
 import StaggerAnimation from 'src/components/common/StaggerAnimation.vue';
 
 export default {
   props: {
     colors: { type: Array, required: true },
+    currentColor: { type: String, default: '' },
   },
   data() {
     return {
       icons: {
         faChevronLeft,
         faChevronRight,
+        faCheck,
       },
       currentShades: [],
       shadesLeft: 0,
@@ -72,6 +86,7 @@ export default {
       });
     },
     showShades(shades, $color) {
+      console.log($color);
       const show = () => {
         // Get position to show at (under the color that was clicked)
         const $colors = this.$refs.colors;
@@ -98,10 +113,10 @@ export default {
     },
     hideShades() {
       this.$refs.staggerAnimation.close();
+      this.isOpen = false;
 
       setTimeout(() => {
         this.currentShades = [];
-        this.isOpen = false;
       }, this.animationDuration);
     },
     shadeClicked(shade) {
@@ -127,6 +142,12 @@ export default {
 
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
+
+.center-align
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
 
 .color-selector
   --color-diameter: 85px
@@ -165,26 +186,25 @@ export default {
         font-size: 2em
 
     .colors
-      // width: 100%
-      // display: flex
-      // align-items: center
-      // +shadow
       overflow: auto
       white-space: nowrap
-      // height: calc(100% + 17px)
       +no-scrollbar(true)
 
       .color
-        height: var(--color-diameter)
         width: var(--color-diameter)
-        // flex-grow: 1
-        +shadow
+        height: var(--color-diameter)
         border-radius: 100px
         display: inline-block
         cursor: pointer
         margin: 0 5px
         z-index: 25
         position: relative
+        &.selected
+          +shadow
+
+        .checkmark
+          color: white
+          font-size: 2.5em
 
   .shades
     position: absolute
@@ -195,7 +215,10 @@ export default {
       +shadow
       margin-top: 5px
       cursor: pointer
-      // z-index: 25
+
+      .checkmark
+        color: white
+
 
 </style>
 

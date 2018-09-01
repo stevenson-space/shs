@@ -1,6 +1,6 @@
 <template>
   <div id="app" :style="{ '--color': color }">
-    <router-view/>
+    <router-view :color="color"/>
   </div>
 </template>
 
