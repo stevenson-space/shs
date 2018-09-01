@@ -96,15 +96,9 @@ export default {
     height: 275px
     overflow: auto
     position: relative
+    +no-scrollbar
     +mobile
       height: 175px
-
-    // hide scrollbar
-    -ms-overflow-style: none
-    &::-webkit-scrollbar
-      display: none
-    @-moz-document url-prefix() // firefox hack
-      width: calc(100% + 17px)
     
     .period
       margin-left: 4px

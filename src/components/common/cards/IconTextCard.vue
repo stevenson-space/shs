@@ -2,7 +2,7 @@
   <card class="card" :class="{ invert }">
     <custom-link :href="link">
       <div class="icon">
-        <font-awesome-icon :icon="icon" size="5x"/>
+        <font-awesome-icon :icon="icon" size="5x" v-bind="iconProps"/>
       </div>
       <div class="text">{{ text }}</div>
     </custom-link>
@@ -20,6 +20,7 @@ export default {
     text: { type: String, required: true },
     link: { type: [String, Object], default: ''},
     invert: { type: Boolean, default: false },
+    iconProps: { type: Object, default: () => {} },
   },
   components: { Card, FontAwesomeIcon, CustomLink },
 }

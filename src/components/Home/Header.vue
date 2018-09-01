@@ -55,7 +55,7 @@ import { faChevronRight, faChevronLeft, faExpand, faCompress } from '@fortawesom
 import Bell from 'src/js/bell.js';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
-import Dropdown from './Dropdown.vue';
+import Dropdown from 'src/components/common/Dropdown.vue';
 
 function toSeconds([hour = 0, minute = 0, second = 0]) {
   return (((hour * 60) + minute) * 60) + second;

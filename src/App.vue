@@ -5,12 +5,23 @@
 </template>
 
 <script>
+import { EventBus } from 'src/js/event-bus.js';
 
 export default {
   data() {
     return {
-      color: '#064789',
+      color: '#00796b',
     };
+  },
+  mounted() {
+    if (localStorage.color) {
+      this.color = localStorage.color;
+    }
+
+    EventBus.$on('set-color', color => {
+      this.color = color;
+      localStorage.color = color;
+    });
   }
 };
 

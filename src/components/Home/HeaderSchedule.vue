@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import Dropdown from './Dropdown.vue';
+import Dropdown from 'src/components/common/Dropdown.vue';
 
 export default {
   props: {

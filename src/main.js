@@ -9,6 +9,7 @@ import Home from 'src/components/Home/Home.vue';
 const BellSchedules = () => import(/* webpackChunkName: "bellschedules" */ 'src/components/Bell Schedules/BellSchedules.vue');
 const Calendar = () => import(/* webpackChunkName: "calendar" */ 'src/components/Calendar/Calendar.vue');
 const Links = () => import(/* webpackChunkName: "links" */ 'src/components/Links/Links.vue');
+const Colors = () => import(/* webpackChunkName: "colors" */ 'src/components/Colors/Colors.vue');
 
 function parseUrlDateTime(route) {
   // If date and/or time is specified in URL, return that date
@@ -42,6 +43,10 @@ const routes = [
   {
     path: '/links',
     component: Links,
+  },
+  {
+    path: '/colors',
+    component: Colors,
   }
 ];
 
