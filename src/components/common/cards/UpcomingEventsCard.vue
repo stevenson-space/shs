@@ -97,7 +97,7 @@ export default {
     }
   },
   methods: {
-    loadEvents(num, timeout = 0) {
+    loadEvents(num) {
       // Could potentially by expensive for large values of num, so load asynchronously
       return new Promise(resolve => {
         setTimeout(() => {
@@ -111,7 +111,7 @@ export default {
             }
           }
           resolve();
-        }, timeout);
+        }, 0);
       });
     },
     showMoreEvents(num = this.numEventsToAdd) {
@@ -132,7 +132,13 @@ export default {
 
       // Then, after a 1 second delay to allow the rest of the page to laod first, preload a lot
       // of events to avoid delays later
-      this.loadEvents(this.numEventsToAdd * 10, 1000);
+      const currentUrl = this.$route.fullPath
+      setTimeout(() => {
+        // Only load events if we're still on the same page (these events are useless if we switched days)
+        if (this.$route.fullPath === currentUrl) {
+          this.loadEvents(this.numEventsToAdd * 10);
+        }
+      }, 1000);
     }
   },
   watch: {

@@ -1,29 +1,35 @@
 <template>
   <div class="container" @blur="closeDropdown" tabindex="-1">
-    <div class="dropdown" :class="{ selected: open }" @click="toggleDropdown">
+    <div class="dropdown" :class="{ selected: open }" @click="toggleDropdown" :style="dropdownStyle">
       <span>{{ options[value] }}</span>
       <font-awesome-icon
         class="down-icon"
         :icon="faCaretDown"
-        :style="{ transform: `rotate(${arrowRotateAmmount}deg)`}"/>
+        :style="iconStyle"/>
     </div>
 
-    <div
-      class="option"
-      v-for="(option, i) in formattedOptions"
-      :style="option.style"
-      @click="selectOption(i)"
-      ref="option">
-      {{ option.name }}
-    </div>
+    <stagger-animation
+      :duration="animationDuration"
+      :direction="direction"
+      :shift-amount="optionHeight + 10"
+      :number-of-slots="formattedOptions.length"
+      ref="staggerAnimation">
+      <div
+        class="option"
+        v-for="(option, i) in formattedOptions"
+        :style="option.style"
+        @click="selectOption(i)"
+        ref="option">
+        {{ option.name }}
+      </div>
+    </stagger-animation>
   </div>
 </template>
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
-
-const animationDuration = 200; // When modifying this, also modify .option transition duration in CSS
+import StaggerAnimation from './StaggerAnimation.vue';
 
 export default {
   props: {
@@ -42,12 +48,12 @@ export default {
   data() {
     return {
       faCaretDown,
-      optionShifts: Array(this.options.length).fill(0),
       open: false,
       arrowRotateAmmount: this.direction === 'down' ? 0 : 180,
       optionHeight: 30,
       resizeListener: null,
       resizeDebounceTimeout: null,
+      animationDuration: 200,
     }
   },
   computed: {
@@ -61,12 +67,23 @@ export default {
       return this.options.map((option, i) => ({
         name: option,
         style: {
-          transform: `translateY(${this.optionShifts[i]}px)`,
-          zIndex: options.length - i, // later options should stack underneath prior ones
-          opacity: Number(this.open),
           [this.align]: 0,
         }
       }));
+    },
+    dropdownStyle() {
+      const duration = this.animationDuration / 1000;
+      return {
+        transition: `box-shadow ${duration}s, border-color ${duration}s`,
+        zIndex: this.options.length + 5,
+      }
+    },
+    iconStyle() {
+      const duration = this.animationDuration / 1000;
+      return {
+        transition: `transform ${duration}s`,
+        transform: `rotate(${this.arrowRotateAmmount}deg)`,
+      }
     }
   },
   methods: {
@@ -74,23 +91,15 @@ export default {
       this.optionShifts =  this.optionShifts.map((n, i) => (i >= start && i < end) ? value : n );
     },
     toggleDropdown() {
-      const isOpen = this.open;
       this.arrowRotateAmmount += 180;
 
-      const shiftAmount = (this.direction === 'down' ? 1 : -1) * (this.optionHeight + 10);
-      const staggerDuration = animationDuration / 4; // staggering animation for nicer effect
-      this.options.forEach((_, i) => {
-        setTimeout(() => {
-          if (isOpen) {
-            const j = this.options.length - i - 1; // iterating backwards;
-            this.setOptionShifts(0 + j * shiftAmount, j);
-          } else {
-            this.setOptionShifts(shiftAmount + i * shiftAmount, i);
-          }
-        }, staggerDuration * i);
-      });
-
-      this.open = !isOpen;
+      if (this.open) {
+        this.$refs.staggerAnimation.close();
+      } else {
+        this.$refs.staggerAnimation.open();
+      }
+  
+      this.open = !this.open;
     },
     openDropdown() {
       if (!this.open) {
@@ -140,7 +149,7 @@ export default {
       this.resetOptionHeight();
     }
   },
-  components: { FontAwesomeIcon },
+  components: { FontAwesomeIcon, StaggerAnimation },
 }
 </script>
 
@@ -164,9 +173,6 @@ export default {
   padding: 5px 12px
   cursor: pointer
   user-select: none
-  transition: box-shadow .2s, border-color .2s // keep in sync with other durations in CSS and JS
-  z-index: 25
-  user-select: none
   &.selected
     +shadow
     border-color: white
@@ -174,12 +180,10 @@ export default {
 
   .down-icon
     margin-left: 7px
-    transition: transform .2s // keep in sync with other durations
 
 .option
-  position: absolute
-  top: 0
-  transition: transform .2s, opacity .2s linear // when modifying duration, also modify in JS above
+  // position: absolute
+  // top: 0
   background-color: white
   border-radius: 100px
   +shadow

@@ -19,12 +19,21 @@
       <font-awesome-icon class="icon" :icon="icons.faChevronRight" @click="scroll('right')"/>
     </div>
 
-    <div class="shades" :style="{ left: `${shadesLeft}px`, top: `${shadesTop}px` }" v-show="currentShades">
-      <div class="shade"
-        v-for="shade in currentShades"
-        :style="{ backgroundColor: shade }"
-        @click="shadeClicked(shade)"
-        :key="shade"/>
+    <div class="shades" :style="{ left: `${shadesLeft}px`, top: `${shadesTop}px` }" >
+      <stagger-animation
+        :duration="animationDuration"
+        direction="down"
+        :shiftAmount="shadeHeight + 5"
+        :number-of-slots="currentShades.length"
+        ref="staggerAnimation">
+        <div
+          class="shade"
+          v-for="(shade, i) in currentShades"
+          :style="{ backgroundColor: shade, height: `${shadeHeight}px` }"
+          @click="shadeClicked(shade)"
+          :key="shade"
+          ref="shades"/>
+      </stagger-animation>
     </div>
   </div>
 </template>
@@ -32,6 +41,7 @@
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import StaggerAnimation from 'src/components/common/StaggerAnimation.vue';
 
 export default {
   props: {
@@ -39,36 +49,18 @@ export default {
   },
   data() {
     return {
-      // carouselStart: 0,
-      // numDisplayedColors: 10,
       icons: {
         faChevronLeft,
         faChevronRight,
       },
-      currentShades: null,
+      currentShades: [],
       shadesLeft: 0,
       shadesTop: 0,
+      shadeHeight: 25,
+      isOpen: false,
+      animationDuration: 200
     }
   },
-  // computed: {
-  //   displayedColors() {
-  //     const { colors, carouselStart, numDisplayedColors } = this;
-
-  //     const putInBounds = (index, arr) => {
-  //       while (index < 0) {
-  //         index += arr.length;
-  //       }
-  //       index %= arr.length;
-  //       return index;
-  //     };
-
-  //     const displayedColors = Array(numDisplayedColors)
-  //       .fill(0)
-  //       .map((_, i) => colors[putInBounds(i + carouselStart, colors)]);
-      
-  //     return displayedColors;
-  //   },
-  // },
   methods: {
     scroll(direction = 'right') {
       const $colors = this.$refs.colors;
@@ -80,20 +72,44 @@ export default {
       });
     },
     showShades(shades, $color) {
-      const $colors = this.$refs.colors;
-      this.shadesLeft = $color.offsetLeft - $colors.scrollLeft;
-      this.shadesTop = $color.offsetTop + $color.offsetHeight;
-      this.currentShades = shades;
+      const show = () => {
+        // Get position to show at (under the color that was clicked)
+        const $colors = this.$refs.colors;
+        this.shadesLeft = $color.offsetLeft - $colors.scrollLeft;
+        this.shadesTop = $color.offsetTop + $color.offsetHeight - this.shadeHeight;
+        
+        this.currentShades = shades;
+
+        // wait until StaggerAnimation renders the shades before opening them
+        this.$nextTick(() => {
+          this.isOpen = true;
+          this.$refs.staggerAnimation.open();
+        });
+      }
+        
+      if (this.isOpen) {
+        this.currentShades = []; // hides instantly (without animation)
+
+        // wait until StaggerAnimation actually removes the shades before showing them again
+        this.$nextTick(show);
+      } else {
+        show();
+      }
     },
     hideShades() {
-      this.currentShades = null;
+      this.$refs.staggerAnimation.close();
+
+      setTimeout(() => {
+        this.currentShades = [];
+        this.isOpen = false;
+      }, this.animationDuration);
     },
     shadeClicked(shade) {
       this.$emit('color-selected', shade);
       this.hideShades();
     },
     arrEquals(arr1, arr2) {
-      if (!arr1 || !arr2) return false;
+      if (!arr1 || !arr2 || arr1.length === 0 || arr2.length === 0) return false;
       for (let i = 0; i < arr1.length; i++) {
         if (arr1[i] !== arr2[i]) {
           return false;
@@ -104,6 +120,7 @@ export default {
   },
   components: {
     FontAwesomeIcon,
+    StaggerAnimation,
   }
 }
 </script>
@@ -166,12 +183,13 @@ export default {
         display: inline-block
         cursor: pointer
         margin: 0 5px
+        z-index: 25
+        position: relative
 
   .shades
     position: absolute
 
     .shade
-      height: 25px
       width: var(--color-diameter)
       border-radius: 100px
       +shadow
