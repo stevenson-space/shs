@@ -89,10 +89,10 @@ const constants =
 
 	lunches:
 	{
-	  "0": ["Baked Chicken Parmesan", "Blackened Tilapia", "Ratatouille, Pasta", "Potato Bacon Chowder, Tuscan Kale & Bean Soup"],
-	  "1": ["Baked Pasta with Marinara", "Citrus Herb Salmon", "Fresh Broccoli, Seasonal Fruit", "Cream of Potato Soup, Vegetable Rice Soup"],
-	  "4": ["Sliced Pork Marsala", "Baked Tilapia", "Red Potatoes, Fresh Broccoli,Braised Red Cabbage", "Chicken Noodle Soup, Cream of Spinach Soup"],
-	  "5": ["Home Made Beef Stew", "Thai Chicken Stir-Fry", "Rice, Roasted Cauliflower", "Cream of Tomato Soup, French Onion Soup"],
+	  "0": ["Chopped Steak w/ Sauteed Onions", "Baked Turkey Meatloaf", "Mashed Potatoes, Sauteed Broccolini", "Cream of Chicken, Garden Vegetable"],
+	  "1": ["Three Cheese Penne", "Biryani Chicken", "Yellow Rice, Roasted Carrots", "Cream of Cauliflower, Quinoa Soup"],
+	  "4": ["Sliced Pork Marsala", "Baked Tilapia", "Red Potatoes, Fresh Broccoli, Braised Red Cabbage", "Chicken Noodle Soup, Cream of Spinach Soup"],
+	  "5": ["Homemade Chicken Pot Pie", "Vegetable Lo-Mein Stir-Fry", "Roasted Potatoes, Roasted Vegetables, Egg Roll", "Cream of Mushroom, Mexican Chicken  Lime"],
 	  "6": ["Dijon Chicken", "Sliced BBQ Pork Loin", "Mashed Potatoes, Roasted Asparagus", "Tomato Basil, Beef Vegetable"],
 	  "7": ["Tempura Chicken Stir-Fry", "Spicy Whole Wheat Spaghetti", "Vegetable Spring Rolls, Rice, Roasted Cauliflower", "Potato Bacon Chowder, Tuscan Kale & White Bean Soup"],
 	  "8": ["Swedish Meatballs", "Dijon Crusted Salmon", "Rice, Pasta, Green Beans and Carrots", "Lemon Chicken with Rice, Vegetable"],
@@ -107,8 +107,8 @@ const constants =
 	  "21": ["Baked Chicken Parmesan", "Blackened Tilapia", "Roasted Zucchini, Pasta", "Potato Bacon Chowder, Tuscan Kale & Bean Soup"],
 	  "22": ["Baked Pasta with Marnaria", "Citrus Herb Salmon", "Fresh Broccoli, Season Fruit", "Lemon Chicken with Rice, Vegetable"],
 	  "25": ["Baked Cheese Tortellini", "Chicken Breast Tagine", "Creamed Spinach, Baby Carrots, Rice", "Chicken Rice Soup, Vegetarian Chili"],
-	  "26": ["Baked Battered Cod", "Lemon Garlic Baked Chicken", "Roasted Potatoes, Snow Peas with Red Peppers", "Cream of Mushroom Soup, Beef Noodle Soup"],
-	  "27": ["BBQ Pulled Chicken Sandwich", "Turkey Breast Vesuvio", "Roasted Cauliflower, Cous Cous Primavera", "Tomato Basil Soup, Beef Vegetable Soup"]
+	  "26": ["Spinach Ravioli w/ Pesto Cream Sauce", "Baked Salmon w/ Mango Salsa", "Cous-Cous, Sugar Snap Peas", "Chicken Tortilla, Cream of Broccoli"],
+	  "27": ["Homemade Beef Stew", "Thai Chicken Stir-Fry", "Rice, Roasted Cauliflower", "Cream of Tomato, French Onion"]
 	},
 	daysInMonth: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 }
