@@ -37,7 +37,7 @@ export default {
     value: { type: Number, required: true },
     showSelectedAsOption: { type: Boolean, default: true },
     align: {
-      validator: str => str === 'left' || str === 'right',
+      validator: str => str === 'left' || str === 'right' || str === 'center',
       default: 'right',
     },
     direction: {
@@ -64,12 +64,20 @@ export default {
     },
     formattedOptions() {
       const options = this.showSelectedAsOption ? this.options : this.remainingOptions;
-      return this.options.map((option, i) => ({
-        name: option,
-        style: {
-          [this.align]: 0,
+      return this.options.map((option, i) => {
+        const style = {};
+        if (this.align === 'center') {
+          style.left = '50%';
+          style.transform = "translateX(-50%)";
+        } else {
+          style[this.align] = 0;
         }
-      }));
+
+        return {
+          name: option,
+          style
+        };
+      });
     },
     dropdownStyle() {
       const duration = this.animationDuration / 1000;

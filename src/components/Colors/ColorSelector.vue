@@ -86,7 +86,6 @@ export default {
       });
     },
     showShades(shades, $color) {
-      console.log($color);
       const show = () => {
         // Get position to show at (under the color that was clicked)
         const $colors = this.$refs.colors;

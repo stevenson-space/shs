@@ -38,7 +38,14 @@ export default {
     setShifts(elements, value, start = 0) {
       // sets the y shift of each element in the elements array after start index 
       elements.slice(start).forEach(element => {
-        element.style.transform = `translateY(${value}px)`;
+        // If the translateY is not already set, add it to any existing transforms
+        // Otherwise, replace the existing translateY value with the new one
+        const { transform } = element.style;
+        if (transform.indexOf('translateY(') === -1) {
+          element.style.transform += ` translateY(${value}px)`;
+        } else {
+          element.style.transform = transform.replace(/^(.*translateY\()\d+(px\).*)$/, `$1${value}$2`);
+        }
       })
     },
     stagger(func) {

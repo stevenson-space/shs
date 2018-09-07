@@ -69,6 +69,7 @@ export default {
     text-align: center
     flex-grow: 1
     font-size: 1.1em
+    font-weight: bold
 
     .time
       display: inline-block
@@ -84,6 +85,7 @@ export default {
     
     .range
       color: black
+      font-weight: normal
 
   &.not-mobile
     +desktop
