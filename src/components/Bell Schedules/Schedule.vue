@@ -4,11 +4,20 @@
       <div class="schedule-name">{{ schedule.name }}</div>
 
       <div class="schedule-select" v-if="dropdownOptions.length > 1">
-        <font-awesome-icon class="icon" :icon="faChevronLeft" @click="previousMode"/>
+        <font-awesome-icon
+          class="icon"
+          :icon="faChevronLeft"
+          @click="previousMode"/>
 
-        <dropdown class="schedule-dropdown" :options="dropdownOptions" v-model="selectedMode"/>
+        <dropdown
+          class="schedule-dropdown"
+          :options="dropdownOptions"
+          v-model="selectedMode"/>
 
-        <font-awesome-icon class="icon" :icon="faChevronRight" @click="nextMode"/>
+        <font-awesome-icon
+          class="icon"
+          :icon="faChevronRight"
+          @click="nextMode"/>
       </div>
 
       <div class="periods" v-hammer:swipe.horizontal="onSwipe">
@@ -180,6 +189,15 @@ export default {
     +mobile-small
       justify-content: center
       margin-top: 5px
+    
+    .icon
+      font-size: 2em
+      color: var(--color)
+      margin: 0 25px
+      cursor: pointer
+
+    .schedule-dropdown
+      font-size: 1.1em
 
   .periods
     flex-grow: 1
