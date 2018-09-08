@@ -40,10 +40,9 @@
         :invert="true"/>
 
       <icon-text-card
-        :icon="icons.faMapMarker"
+        :icon="icons.faTint"
         text="Switch Color"
-        link="colors"
-        :iconProps="{ flip: 'vertical' }"/>
+        link="colors"/>
     </card-container>
   </div>
 </template>
@@ -58,7 +57,7 @@ import LunchCard from 'common/cards/LunchCard.vue';
 import IconTextCard from 'common/cards/IconTextCard.vue';
 import ScheduleCard from 'common/cards/ScheduleCard.vue';
 
-import { faBell, faLink, faFileAlt, faCalendarAlt, faTv, faMapMarker } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faLink, faFileAlt, faCalendarAlt, faTv, faTint } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   props: {
@@ -75,7 +74,7 @@ export default {
         faFileAlt,
         faCalendarAlt,
         faTv,
-        faMapMarker,
+        faTint
       },
       scheduleMode: 0,
       fullScreenMode: false,

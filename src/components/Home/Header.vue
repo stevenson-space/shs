@@ -1,5 +1,5 @@
 <template>
-  <div class="header" :class="{ 'full-screen': fullScreenMode }">
+  <div class="header" :class="{ 'full-screen': fullScreenMode }" :style="colors">
     <dropdown
       v-show="scheduleModeNames.length > 1"
       class="schedule-select"
@@ -31,7 +31,11 @@
         <font-awesome-icon :icon="icons.faChevronRight" class="arrow-icon"/>
       </router-link>
 
-      <div class="full-screen-icon" @click="$emit('toggle-fullscreen')" v-show="mode === 'current'">
+      <div class="icon remove-color" @click="toggleColor">
+        <font-awesome-icon :icon="colored ? icons.faTintSlash : icons.faTint" fixed-width/>
+      </div>
+
+      <div class="icon full-screen-mode" @click="$emit('toggle-fullscreen')" v-show="mode === 'current'">
         <font-awesome-icon :icon="fullScreenMode ? icons.faCompress : icons.faExpand" fixed-width/>
       </div>
     </div>
@@ -51,7 +55,7 @@
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faChevronRight, faChevronLeft, faExpand, faCompress } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faChevronLeft, faExpand, faCompress, faTint, faTintSlash } from '@fortawesome/free-solid-svg-icons';
 import Bell from 'src/js/bell.js';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
@@ -88,12 +92,22 @@ export default {
         faChevronLeft,
         faExpand,
         faCompress,
+        faTint,
+        faTintSlash,
       },
       currentTime: dateToSeconds(this.date),
       interval: null,
+      colored: true,
     };
   },
   computed: {
+    colors() {
+      const showColor = (this.colored || !this.fullScreenMode);
+      return {
+        '--header-color': showColor ? 'var(--color)' : 'white',
+        '--header-accent': showColor ? 'white' : 'var(--color)',
+      };
+    },
     inSchool() {
       // To be in school, there must be school that day and we must not be before or after school
       const { bell } = this;
@@ -211,8 +225,13 @@ export default {
     stopCountdown() {
       clearInterval(this.interval);
     },
-    enterFullScreenMode() {
-
+    toggleColor() {
+      this.colored = !this.colored;
+    }
+  },
+  created() {
+    if (localStorage.fullScreenColored === 'false') {
+      this.colored = false;
     }
   },
   mounted() {
@@ -233,6 +252,9 @@ export default {
       if (this.totalSecondsLeft === 0) {
         this.$emit('countdown-done');
       }
+    },
+    colored() {
+      localStorage.fullScreenColored = this.colored;
     }
   },
   destroyed() {
@@ -252,7 +274,7 @@ export default {
 
 .header
   +shadow
-  background-color: var(--color)
+  background-color: var(--header-color)
   text-align: center
 
   .schedule-select
@@ -301,11 +323,10 @@ export default {
         +mobile-small
           font-size: 3.5em
 
-    .full-screen-icon
+    .icon
       position: absolute
       top: 9px
-      right: 9px
-      color: white
+      color: var(--header-accent) // set in computed property 'colors'
       padding: 6px
       border-radius: 100px
       font-size: 1.75em
@@ -326,7 +347,13 @@ export default {
       &:hover
         &::before
           visibility: visible
-        // background-color: darken(var(--color), 5%)
+
+    .remove-color
+      display: none
+
+    .full-screen-mode
+      right: 9px
+    
 
   &.full-screen
     top: 0
@@ -348,11 +375,18 @@ export default {
         font-size: 2.75vh
         margin-top: 25px
         padding: 5px
-      
-      .full-screen-icon
+
+      .icon
         position: fixed
         top: 25px
-        right: 25px
         font-size: 4vh
+      
+      .remove-color
+        display: block
+        right: 75px
+      
+      .full-screen-mode
+        position: fixed
+        right: 25px
 
 </style>
