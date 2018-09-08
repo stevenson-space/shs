@@ -8,9 +8,9 @@
       @input="$emit('schedule-mode-change', $event)"/>
 
     <div class="main" :class="{ 'extra-padding': scheduleModeNames.length > 1 }">
-      <router-link class="switch-day" :to="{ path: '/', query: {date: formatDateUrl(yesterday)}}">
+      <div class="switch-day" v-hammer:tap="previousDay">
         <font-awesome-icon :icon="icons.faChevronLeft" class="arrow-icon"/>
-      </router-link>
+      </div>
 
       <div>
         <countdown-circle
@@ -27,15 +27,15 @@
         </div>
       </div>
 
-      <router-link class="switch-day"  :to="{ path: '/', query: { date: formatDateUrl(tomorrow) }}">
+      <div class="switch-day" v-hammer:tap="nextDay">
         <font-awesome-icon :icon="icons.faChevronRight" class="arrow-icon"/>
-      </router-link>
+      </div>
 
-      <div class="icon remove-color" @click="toggleColor">
+      <div class="icon remove-color" v-hammer:tap="toggleColor">
         <font-awesome-icon :icon="colored ? icons.faTintSlash : icons.faTint" fixed-width/>
       </div>
 
-      <div class="icon full-screen-mode" @click="$emit('toggle-fullscreen')" v-show="mode === 'current'">
+      <div class="icon full-screen-mode" v-hammer:tap="toggleFullScreen" v-show="mode === 'current'">
         <font-awesome-icon :icon="fullScreenMode ? icons.faCompress : icons.faExpand" fixed-width/>
       </div>
     </div>
@@ -225,6 +225,19 @@ export default {
     stopCountdown() {
       clearInterval(this.interval);
     },
+    previousDay(e) {
+      e.srcEvent.preventDefault();
+      const { formatDateUrl, yesterday, $router } = this;
+      $router.push({ path: '/', query: {date: formatDateUrl(yesterday)}});
+    },
+    nextDay(e) {
+      e.srcEvent.preventDefault();
+      const { formatDateUrl, tomorrow, $router } = this;
+      $router.push({ path: '/', query: {date: formatDateUrl(tomorrow)}});
+    },
+    toggleFullScreen(e) {
+      this.$emit('toggle-fullscreen');
+    },
     toggleColor() {
       this.colored = !this.colored;
     }
@@ -276,6 +289,7 @@ export default {
   +shadow
   background-color: var(--header-color)
   text-align: center
+  transition: background-color .3s
 
   .schedule-select
     position: absolute
@@ -313,9 +327,12 @@ export default {
       color: white
       width: 100px
       margin: 0 15px
-      text-decoration: none
+      cursor: pointer
+      border-radius: 1000px
       +mobile-small
         margin: 0 5px
+      &:active
+        +shadow
 
       .arrow-icon
         font-size: 5em
@@ -327,10 +344,11 @@ export default {
       position: absolute
       top: 9px
       color: var(--header-accent) // set in computed property 'colors'
-      padding: 6px
+      padding: 10px
       border-radius: 100px
       font-size: 1.75em
       cursor: pointer
+      transition: box-shadow .2s
       &::before
         background-color: black
         content: ''
@@ -344,9 +362,14 @@ export default {
         visibility: hidden
       +mobile
         display: none
-      &:hover
-        &::before
-          visibility: visible
+      +can-hover
+        &:hover
+          &::before
+            visibility: visible
+      +can-not-hover
+        &:active
+          &::before
+            visibility: visible
 
     .remove-color
       display: none
@@ -383,7 +406,7 @@ export default {
       
       .remove-color
         display: block
-        right: 75px
+        right: 85px
       
       .full-screen-mode
         position: fixed

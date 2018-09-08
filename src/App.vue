@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :style="{ '--color': color }">
+  <div id="app" :style="{ '--color': color }" tabindex="-1">
     <router-view :color="color"/>
   </div>
 </template>
@@ -32,5 +32,8 @@ body
   background-color: white
   margin: 0
   font-family: 'Open Sans', Helvetica, sans-serif
+
+#app
+  outline: none
 
 </style>

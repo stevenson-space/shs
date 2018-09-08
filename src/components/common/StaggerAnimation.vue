@@ -44,7 +44,7 @@ export default {
         if (transform.indexOf('translateY(') === -1) {
           element.style.transform += ` translateY(${value}px)`;
         } else {
-          element.style.transform = transform.replace(/^(.*translateY\()\d+(px\).*)$/, `$1${value}$2`);
+          element.style.transform = transform.replace(/^(.*translateY\()-?\d+(px\).*)$/, `$1${value}$2`);
         }
       })
     },
@@ -66,7 +66,7 @@ export default {
         });
       }
     },
-    open(instantly = false) {
+    open() {
       const { shiftDistance } = this;
 
       this.setOpacity(1);
@@ -74,7 +74,7 @@ export default {
         this.setShifts(elements, shiftDistance * i + shiftDistance, i);
       });
     },
-    close(instantly = false) {
+    close() {
       const { shiftDistance } = this;
 
       this.setOpacity(0);
@@ -107,7 +107,7 @@ export default {
 
           this.$slots.default.forEach((vnode, i) => {
             vnode.elm.style.transition = transition;
-            vnode.elm.classList.add('slotElement');
+            vnode.elm.classList.add('slot-element');
 
             // later elements should stack underneath prior ones
             // and add the existing z-index in case these elements should go above some other element (determined by parent)
@@ -131,7 +131,7 @@ export default {
 
 <style lang="sass" scoped>
 
-.slotElement
+.slot-element
   position: absolute
   top: 0
   opacity: 0

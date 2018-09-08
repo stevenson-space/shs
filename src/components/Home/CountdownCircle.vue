@@ -42,16 +42,19 @@ export default {
   background-color: white
   width: var(--circle-diameter)
   height: var(--circle-diameter)
-  border-radius: calc(var(--circle-diameter) / 2)
+  border-radius: 2000px
   font-weight: bold
   color: #333
+  transition: width .2s, height .2s
 
   .logo
     width: var(--logo-width)
     margin: 0 calc((var(--circle-diameter) - var(--logo-width)) / 2)
     margin-top: 15px
+    transition: margin .2s, width .2s
   
   .countdown
+    transition: margin-top .2s, font-size .2s
     font-size: 3.5em
     // margin-top: -5px
     line-height: 1em
@@ -59,17 +62,20 @@ export default {
       font-size: 3em
 
   .range
+    transition: margin-top .2s, font-size .2s
     font-size: 2.5em
     +mobile-small
       font-size: 2em
 
   .type
+    transition: margin-top .2s, font-size .2s
     margin-top: 12px
     font-size: 1.2em
     +mobile-small
       font-size: 1em
   
   .next-day
+    transition: margin-top .2s, font-size .2s
     font-size: .85em
     margin: auto
     height: 75px

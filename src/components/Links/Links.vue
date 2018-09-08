@@ -50,15 +50,8 @@ export default {
   max-width: $content-width
   margin: auto
   position: relative
-  // line-height: 125px
   margin-top: 10px
-  // font-size: 4em
   color: var(--color)
-  // padding-left: 200px
-  // margin-right: 300px
-  // text-align: center
-  // text-decoration: underline
-  // border-bottom: var(--color) 5px solid
   +mobile
     text-align: center
 
@@ -74,5 +67,8 @@ export default {
     position: absolute
     top: 10px
     right: 10px
+    +mobile-small
+      top: 0
+      right: 5px
 
 </style>

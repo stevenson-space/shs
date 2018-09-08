@@ -136,9 +136,9 @@ export default {
       setTimeout(() => {
         // Only load events if we're still on the same page (these events are useless if we switched days)
         if (this.$route.fullPath === currentUrl) {
-          this.loadEvents(this.numEventsToAdd * 10);
+          this.loadEvents(this.numEventsToAdd * 5);
         }
-      }, 1000);
+      }, 2000);
     }
   },
   watch: {
@@ -148,7 +148,7 @@ export default {
       // Upcoming Events only begin loading after the user does not switch date for at least 500ms
       clearTimeout(this.dateTimeout);
       this.numEventsDisplayed = 0;
-      this.dateTimeout = setTimeout(this.reset, 500);
+      this.dateTimeout = setTimeout(this.reset, 1000);
     },
   },
   components: { Card, EventChip, FontAwesomeIcon }

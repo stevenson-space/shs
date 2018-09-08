@@ -1,8 +1,10 @@
 <template>
-  <router-link to="/" class="home" :class="{ invert }">
-    <font-awesome-icon class="icon" :icon="faHome" fixed-width/>
-    <span class="text">Home</span>
-  </router-link>
+  <div v-hammer:tap="goHome">
+    <router-link to="/" class="home" :class="{ invert }" event="">
+      <font-awesome-icon class="icon" :icon="faHome" fixed-width/>
+      <span class="text">Home</span>
+    </router-link>
+  </div>
 </template>
 
 <script>
@@ -16,6 +18,18 @@ export default {
   data() {
     return {
       faHome,
+    }
+  },
+  methods: {
+    goHome(e) {
+      if (e.pointerType === 'touch') {
+        // if touched, show animation first before going home (computers will see animation on hover)
+        setTimeout(() => {
+          this.$router.push('/');
+        }, 200);
+      } else {
+        this.$router.push('/');
+      }
     }
   },
   components: { FontAwesomeIcon }

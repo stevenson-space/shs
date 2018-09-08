@@ -185,7 +185,8 @@ export default {
         font-size: 2em
 
     .colors
-      overflow: auto
+      overflow-x: scroll
+      -webkit-overflow-scrolling: touch;
       white-space: nowrap
       +no-scrollbar(true)
 

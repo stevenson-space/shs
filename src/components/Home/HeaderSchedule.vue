@@ -79,8 +79,6 @@ export default {
 
   .center
     flex-grow: 1
-    // +mobile
-    //   flex-grow: 0
 
     .range
       font-size: 1.1em

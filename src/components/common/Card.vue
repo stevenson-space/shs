@@ -28,8 +28,10 @@ export default {
     }
   },
   mounted() {
-    // this.$nextTick(() => this.$nextTick(() => this.setHeight()));
     this.setHeight();
+
+    // for some reason, card doesn't open to full height on first load
+    setTimeout(this.setHeight, 100);
 
     window.addEventListener('resize', this.debounceSetHeight);
 

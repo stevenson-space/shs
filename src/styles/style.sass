@@ -40,3 +40,12 @@ $content-width: 1000px
     @else
       width: calc(100% + 17px)
 
+// only applies styles on devices with proper hover functionality (not mobile)
+=can-hover
+  @media (hover: hover)
+    @content
+
+=can-not-hover
+  @media (hover: none)
+    @content
+

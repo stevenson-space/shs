@@ -1,6 +1,6 @@
 <template>
-  <div class="container" @blur="closeDropdown" tabindex="-1">
-    <div class="dropdown" :class="{ selected: open }" @click="toggleDropdown" :style="dropdownStyle">
+  <div class="dropdown" @blur="closeDropdown" tabindex="-1">
+    <div class="select-option" :class="{ selected: open }" @click="toggleDropdown" :style="dropdownStyle">
       <span>{{ options[value] }}</span>
       <font-awesome-icon
         class="down-icon"
@@ -164,45 +164,45 @@ export default {
 <style lang="sass" scoped>
 @import 'src/styles/style.sass';
 
-.container
+.dropdown
   position: relative
   outline: none
 
-.dropdown
-  background-color: white
-  position: relative
-  // color: white
-  // background-color: var(--color)
-  border: var(--color) 1px solid
-  display: flex
-  justify-content: center
-  align-items: center
-  border-radius: 100px
-  padding: 5px 12px
-  cursor: pointer
-  user-select: none
-  &.selected
+  .select-option
+    background-color: white
+    position: relative
+    // color: white
+    // background-color: var(--color)
+    border: var(--color) 1px solid
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 100px
+    padding: 5px 12px
+    cursor: pointer
+    user-select: none
+    &.selected
+      +shadow
+      border-color: white
+      // margin-right: 1px
+
+    .down-icon
+      margin-left: 7px
+
+  .option
+    // position: absolute
+    // top: 0
+    background-color: white
+    border-radius: 100px
     +shadow
-    border-color: white
-    // margin-right: 1px
-
-  .down-icon
-    margin-left: 7px
-
-.option
-  // position: absolute
-  // top: 0
-  background-color: white
-  border-radius: 100px
-  +shadow
-  padding: 5px 12px
-  white-space: nowrap
-  cursor: pointer
-  user-select: none
-  // border: var(--color) 1px solid
-  // background-color: var(--color)
-  // color: white
-  &:hover
-    background-color: #eee
+    padding: 5px 12px
+    white-space: nowrap
+    cursor: pointer
+    user-select: none
+    // border: var(--color) 1px solid
+    // background-color: var(--color)
+    // color: white
+    &:hover
+      background-color: #eee
 
 </style>

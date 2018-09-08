@@ -43,7 +43,9 @@ export default {
     }
   },
   mounted() {
-    this.setPreviewHeight();
+    this.$nextTick(() => {
+      this.setPreviewHeight();
+    });
   },
   components: { ColorSelector, Home, HomeLink },
 }
