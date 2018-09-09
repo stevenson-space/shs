@@ -73,7 +73,6 @@ export default {
   },
   data() {
     return {
-      // initialDate: Date.now(), // relative to url specified date (set in created())
       startDate: Date.now(), // relative to real time
       currentDate: Date.now(), // relative to real time
       icons: {

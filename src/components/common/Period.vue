@@ -80,7 +80,6 @@ export default {
     border: var(--color) 1px solid
 
     .circle
-      // background-color: var(--color)
       color: var(--color)
     
     .range

@@ -54,12 +54,9 @@ export default {
 .calendar
   --num-rows: 5 // changed through JavaScript to 5 or 6 depending on the month
   height: 100vh
-  // height: 98vh
   display: grid
   grid-template-columns: repeat(7, 1fr)
   grid-template-rows: 50px 30px repeat(var(--num-rows), 1fr)
-  // grid-gap: 5px
-  // margin: 1vh
 
   .calendar-navigation
     grid-column: span 7
@@ -71,10 +68,7 @@ export default {
   .dayOfWeek
     font-size: .9em
     text-align: center
-    // border-left: $border
     line-height: 30px
-    // +shadow
-    // border-radius: 10px
     user-select: none
 
 </style>

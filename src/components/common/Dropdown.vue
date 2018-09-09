@@ -171,8 +171,6 @@ export default {
   .select-option
     background-color: white
     position: relative
-    // color: white
-    // background-color: var(--color)
     border: var(--color) 1px solid
     display: flex
     justify-content: center
@@ -184,14 +182,11 @@ export default {
     &.selected
       +shadow
       border-color: white
-      // margin-right: 1px
 
     .down-icon
       margin-left: 7px
 
   .option
-    // position: absolute
-    // top: 0
     background-color: white
     border-radius: 100px
     +shadow
@@ -199,9 +194,6 @@ export default {
     white-space: nowrap
     cursor: pointer
     user-select: none
-    // border: var(--color) 1px solid
-    // background-color: var(--color)
-    // color: white
     &:hover
       background-color: #eee
 

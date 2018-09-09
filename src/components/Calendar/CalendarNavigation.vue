@@ -48,37 +48,18 @@ export default {
   align-items: center
   justify-content: space-between
   color: var(--color)
-  // justify-content: space-around
-  // border-bottom: $border
-  // +shadow
-  // background-color: var(--color)
-  // color: white
-  // border-radius: 0 0 35px 35px
 
   .icon
     cursor: pointer
     width: 50px
     font-size: 1.5em
-    // background-color: var(--color)
-    // height: 100%
-    // color: var(--color)
 
   .text
     text-align: center
     flex-grow: 1
-    // color: #333
-    // color: white
-    // color: var(--color)
     background-color: white
-    // background-color: var(--color)
-    // border-radius: 0 0 100px 100px
-    // border-radius: 100px 100px 0 0
-    // border-radius: 25px
     font-weight: bold
     padding: 5px 15px
-    // min-width: 30%
-    // +shadow
-    // height: 100%
     user-select: none
 
     .month
@@ -87,6 +68,5 @@ export default {
       
     .year
       font-size: .7em
-      // font-weight: bold
 
 </style>

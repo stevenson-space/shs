@@ -39,7 +39,7 @@ export default {
     },
     setPreviewHeight() {
       const colorSelector = this.$refs['color-selector'];
-      this.previewHeight = `calc(100vh - ${colorSelector.$el.offsetHeight}px - 50px)`
+      this.previewHeight = `calc(100vh - ${colorSelector.$el.offsetHeight}px - 20px)`
     }
   },
   mounted() {
@@ -56,9 +56,11 @@ export default {
 
 .home-link
   position: absolute
-  top: 5px
-  right: 10px
+  top: 10px
+  right: 25px
   z-index: 2
+  +mobile
+    right: 5px
   
 .preview
   width: 80%
@@ -66,11 +68,10 @@ export default {
   height: 500px
   overflow: auto
   margin: auto
-  margin-top: 25px
+  margin-top: 10px
   border-radius: 25px
   transition: box-shadow .2s
   min-width: 320px
-  // cursor: pointer
   &:hover
     +shadow
   +mobile
@@ -86,12 +87,11 @@ export default {
     border-radius: 25px
     overflow: hidden
 
-    // This is placed over Home to prevent anything in Home from being clickable
+    // This is placed over the Home preview to prevent anything in the preview from being clickable
     &::before
       position: absolute
       height: 100%
       width: 100%
-      // background-color: blue
       top: 0
       left: 0
       content: ''

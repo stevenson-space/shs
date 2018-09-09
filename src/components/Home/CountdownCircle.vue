@@ -56,7 +56,6 @@ export default {
   .countdown
     transition: margin-top .2s, font-size .2s
     font-size: 3.5em
-    // margin-top: -5px
     line-height: 1em
     +mobile-small
       font-size: 3em

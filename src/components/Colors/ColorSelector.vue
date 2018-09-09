@@ -1,9 +1,5 @@
 <template>
   <div class="color-selector" @blur="hideShades" tabindex="-1">
-    <div class="text" @mousedown="hideShades">
-      Choose a <span class="colored">color</span>
-    </div>
-
     <div class="container" @click.self="hideShades">
       <font-awesome-icon class="icon" :icon="icons.faChevronLeft" @click="scroll('left')"/>
 
@@ -153,28 +149,18 @@ export default {
   outline: none
   position: relative
   z-index: 1
-  +mobile
+  margin: 0 25px
+  +tablet-small
+    --color-diameter: 70px
+  +mobile-small
     --color-diameter: 55px
-
-  .text
-    font-size: 3em
-    margin-left: 25px
-    margin-bottom: 25px
-    font-weight: bold
-    +mobile
-      font-size: 2.4em
-      margin-left: 0
-      margin-top: 35px
-      text-align: center
-
-    .colored
-      color: var(--color)
+    margin: 0
 
   .container
     display: flex
     height: calc(var(--color-diameter) + 10px)
     overflow: hidden
-    margin-top: 5px
+    padding-top: 60px
 
     .icon
       font-size: 3em
@@ -218,7 +204,6 @@ export default {
 
       .checkmark
         color: white
-
 
 </style>
 

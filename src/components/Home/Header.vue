@@ -304,7 +304,6 @@ export default {
     display: flex
     align-items: center
     justify-content: space-between
-    // padding: 0 calc((100% - #{$content-width}) / 2)
     max-width: 1000px
     margin: auto
     position: relative

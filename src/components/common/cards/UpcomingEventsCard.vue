@@ -162,7 +162,6 @@ export default {
   text-align: center
   font-size: 1.5em
   margin: 15px 0
-  // font-weight: bold
 
 .events
   position: relative

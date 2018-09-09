@@ -83,7 +83,6 @@ export default {
 @import 'src/styles/style.sass'
 
 .calendar
-  // height: 50%
   padding-bottom: 5px
   +shadow
 
@@ -100,7 +99,6 @@ export default {
   .dates
     display: grid
     grid-template-columns: repeat(7, 1fr)
-    // height: 100%
 
     .date
       display: flex

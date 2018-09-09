@@ -58,7 +58,6 @@ export default {
     display: block
     max-width: 0
     overflow: hidden
-    // display: none
     transition: max-width .2s
     font-size: 1.1em
   

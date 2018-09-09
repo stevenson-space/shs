@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="bellschedules">
     <div class="background-block"/>
+    
+    <home-link class="home-link" :invert="false"/>
 
     <div class="card">
-      <home-link class="home-link" :invert="false"/>
-
       <schedule
         v-for="schedule in schedules"
         v-if="schedule.modes.length > 0"
@@ -32,32 +32,37 @@ export default {
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 
-.background-block
-  background-color: var(--color)
-  height: 250px
-  width: 100%
-  position: fixed
-
-.home-link
-  position: absolute
-  right: 0
-  top: -70px
-  +mobile
-    top: -55px
-
-.card
-  +shadow
+.bellschedules
   width: 80%
   max-width: $content-width
-  background-color: white
   margin: auto
   position: relative
-  border-radius: 20px
-  top: 100px
-  // overflow: hidden
-  margin-bottom: 25px
   +mobile
     width: 90%
-    top: 75px
+
+  .background-block
+    background-color: var(--color)
+    height: 250px
+    width: 100%
+    position: fixed
+    left: 0
+
+  .home-link
+    position: absolute
+    right: 0
+    top: 30px
+    +mobile
+      top: 20px
+
+  .card
+    +shadow
+    background-color: white
+    position: relative
+    border-radius: 20px
+    top: 100px
+    overflow: hidden
+    margin-bottom: 25px
+    +mobile
+      top: 75px
 
 </style>

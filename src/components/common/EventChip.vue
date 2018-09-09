@@ -84,5 +84,5 @@ export default {
     border: var(--color) var(--border-width) solid
     margin: auto
     position: relative
-    // color: #333
+
 </style>
