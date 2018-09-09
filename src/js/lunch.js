@@ -1,6 +1,6 @@
 import lunch from 'src/data/lunch.json';
 
-const lunchNames = ['Comfort Food', 'Mindful', 'Sides', 'Soups'];
+const lunchNames = ['Comfort Food', 'Mindful', 'Sides', 'Soups', 'International Theme Station'];
 
 function getLunch(date) {
   // get the number of days since epoch time
