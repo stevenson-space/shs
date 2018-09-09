@@ -34,15 +34,23 @@
         link="calendar"/>
 
       <icon-text-card
-        :icon="icons.faFileAlt"
-        text="Documents"
-        link="documents"
+        :icon="icons.faCalculator"
+        text="GPA Calculator"
+        link="old/gpacalc.html"
+        :link-props="{ type: 'a' }"
         :invert="true"/>
 
       <icon-text-card
         :icon="icons.faTint"
         text="Switch Color"
         link="colors"/>
+
+      <icon-text-card
+        :icon="icons.faFileAlt"
+        text="Documents"
+        link="old/docs-encrypted.html"
+        :link-props="{ type: 'a' }"
+        :invert="true"/>
     </card-container>
   </div>
 </template>
@@ -57,7 +65,7 @@ import LunchCard from 'common/cards/LunchCard.vue';
 import IconTextCard from 'common/cards/IconTextCard.vue';
 import ScheduleCard from 'common/cards/ScheduleCard.vue';
 
-import { faBell, faLink, faFileAlt, faCalendarAlt, faTv, faTint } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faLink, faFileAlt, faCalendarAlt, faTv, faTint, faCalculator } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   props: {
@@ -74,7 +82,8 @@ export default {
         faFileAlt,
         faCalendarAlt,
         faTv,
-        faTint
+        faTint,
+        faCalculator,
       },
       scheduleMode: 0,
       fullScreenMode: false,

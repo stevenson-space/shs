@@ -43,6 +43,7 @@ module.exports = {
     new CopyWebpackPlugin([
       './src/index.html',
       { from: './src/images/', to: 'images/' },
+      { from: './src/old/', to: 'old/' },
     ]),
     new MiniCssExtractPlugin({
       filename: 'style.css',

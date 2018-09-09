@@ -1,6 +1,6 @@
 <template>
   <card class="card" :class="{ invert }">
-    <custom-link :href="link">
+    <custom-link :href="link" v-bind="linkProps">
       <div class="icon">
         <font-awesome-icon :icon="icon" size="5x" v-bind="iconProps"/>
       </div>
@@ -19,6 +19,7 @@ export default {
     icon: { type: Object, required: true },
     text: { type: String, required: true },
     link: { type: [String, Object], default: ''},
+    linkProps: { type: Object, default: () => ({}) },
     invert: { type: Boolean, default: false },
     iconProps: { type: Object, default: () => {} },
   },

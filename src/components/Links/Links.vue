@@ -10,6 +10,7 @@
         :image="`images/links/${link.name}.png`"
         :text="link.name"
         :link="link.url"
+        :link-props="{ newTab: true }"
         :key="link.url"/>
     </card-container>
   </div>

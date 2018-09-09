@@ -1,6 +1,6 @@
 <template>
   <card class="card" ref="card">
-    <custom-link :href="link">
+    <custom-link :href="link" v-bind="linkProps">
       <img class="image" :src="image" @load="setHeight"/>
       <div class="text">{{ text }}</div>
     </custom-link>
@@ -16,6 +16,7 @@ export default {
     image: { type: String, required: true },
     text: { type: String, required: true },
     link: { type: [String, Object], required: true },
+    linkProps: { type: Object, default: () => ({}) },
   },
   methods: {
     setHeight() {
