@@ -43,8 +43,10 @@ module.exports = {
     new CopyWebpackPlugin([
       './src/index.html',
       './src/_redirects',
+      './src/favicon/favicon.ico',
       { from: './src/images/', to: 'images/' },
       { from: './src/old/', to: 'old/' },
+      { from: './src/favicon', to: 'favicon/' },
     ]),
     new MiniCssExtractPlugin({
       filename: 'style.css',
