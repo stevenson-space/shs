@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { VueHammer } from 'vue2-hammer';
+import VueAnalytics from 'vue-analytics';
 import App from 'src/App.vue';
 import Home from 'src/components/Home/Home.vue';
 
@@ -78,6 +79,10 @@ const router = new VueRouter({
 
 Vue.use(VueRouter);
 Vue.use(VueHammer);
+Vue.use(VueAnalytics, {
+  id: 'UA-83979451-1',
+  router,
+});
 
 // Any element can add the directive 'v-focus' to automatically gain focus when created
 Vue.directive('focus', {
