@@ -227,13 +227,20 @@ export default {
     },
     previousDay(e) {
       e.srcEvent.preventDefault();
-      const { formatDateUrl, yesterday, $router } = this;
-      $router.push({ path: '/', query: {date: formatDateUrl(yesterday)}});
+      this.switchDay(this.yesterday);
     },
     nextDay(e) {
       e.srcEvent.preventDefault();
-      const { formatDateUrl, tomorrow, $router } = this;
-      $router.push({ path: '/', query: {date: formatDateUrl(tomorrow)}});
+      this.switchDay(this.tomorrow);
+    },
+    switchDay(date) {
+      const { formatDateUrl, $router, mode } = this;
+      const options = { path: '/', query: { date: formatDateUrl(date) } };
+
+      // We only want to record a history entry if we're going from the current date to another date
+      // Otherwise, we just want to replace the URL so that pressing the back button once
+      // returns the user to the current date
+      $router[mode === 'current' ? 'push' : 'replace'](options);
     },
     toggleFullScreen(e) {
       this.$emit('toggle-fullscreen');

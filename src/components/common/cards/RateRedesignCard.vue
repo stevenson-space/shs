@@ -58,7 +58,7 @@ export default {
 @import 'src/styles/style.sass'
 
 .rate-redesign-card
-  padding: 8px 20px
+  padding: 5px 20px
   font-weight: bold
   color: var(--color)
   display: flex
