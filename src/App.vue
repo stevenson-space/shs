@@ -13,7 +13,7 @@ export default {
       color: '#00796b',
     };
   },
-  mounted() {
+  created() {
     if (localStorage.color) {
       this.color = localStorage.color;
       this.$ga.query('set', 'dimension1', localStorage.color)

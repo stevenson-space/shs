@@ -1,6 +1,16 @@
 <template>
   <div>
-    <home-link class="home-link"/>
+    <div class="header">
+      <div
+        class="custom-color"
+        contenteditable="true"
+        spellcheck="false"
+        @keydown.enter="$event.target.blur()"
+        @blur="colorSelected($event.target.innerText)"
+        ref="custom-color"/>
+
+      <home-link class="home-link"/>
+    </div>
 
     <color-selector
       :colors="colors"
@@ -17,11 +27,17 @@
 </template>
 
 <script>
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
+import { faPencilAlt, faEdit } from '@fortawesome/free-solid-svg-icons'
 import colors from 'src/data/colors.json';
 import { EventBus } from 'src/js/event-bus.js';
 import ColorSelector from './ColorSelector.vue';
 import Home from 'src/components/Home/Home.vue';
 import HomeLink from 'src/components/common/HomeLink.vue';
+
+const isValidColor = color => {
+  return /^#([0-9a-f]{3}){1,2}$/i.test(color);
+}
 
 export default {
   props: {
@@ -29,39 +45,69 @@ export default {
   },
   data() {
     return {
+      faPencilAlt,
       colors,
       previewHeight: 0,
     }
   },
   methods: {
     colorSelected(color) {
-      EventBus.$emit('set-color', color);
+      if (color !== this.color && isValidColor(color)) {
+        EventBus.$emit('set-color', color);
+      }
+      this.setCustomColorText()
     },
     setPreviewHeight() {
       const colorSelector = this.$refs['color-selector'];
       this.previewHeight = `calc(100vh - ${colorSelector.$el.offsetHeight}px - 20px)`
-    }
+    },
+    setCustomColorText() {
+      this.$nextTick(() => {
+        this.$refs['custom-color'].innerHTML = this.color;
+      });
+    },
+    log: a=>console.log(a),
   },
   mounted() {
     this.$nextTick(() => {
       this.setPreviewHeight();
     });
+    this.setCustomColorText();
   },
-  components: { ColorSelector, Home, HomeLink },
+  watch: {
+    color() {
+      this.setCustomColorText();
+    }
+  },
+  components: {
+    FontAwesomeIcon,
+    ColorSelector,
+    Home,
+    HomeLink
+  },
 }
 </script>
 
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 
-.home-link
-  position: absolute
-  top: 10px
-  right: 25px
-  z-index: 2
+.header
+  width: 80%
+  max-width: $content-width
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin: 10px auto
   +mobile
-    right: 5px
-  
+    width: 90%
+
+  .custom-color
+    color: var(--color)
+    font-weight: bold
+    font-size: 1.2em
+    margin-left: 5px
+    padding: 5px 10px
+
 .preview
   width: 80%
   max-width: $content-width

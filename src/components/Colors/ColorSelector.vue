@@ -160,7 +160,6 @@ export default {
     display: flex
     height: calc(var(--color-diameter) + 10px)
     overflow: hidden
-    padding-top: 60px
 
     .icon
       font-size: 3em
@@ -191,6 +190,8 @@ export default {
         .checkmark
           color: white
           font-size: 2.5em
+          +mobile
+            font-size: 2em
 
   .shades
     position: absolute
