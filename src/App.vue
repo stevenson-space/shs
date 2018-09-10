@@ -16,11 +16,15 @@ export default {
   mounted() {
     if (localStorage.color) {
       this.color = localStorage.color;
+      this.$ga.query('set', 'dimension1', localStorage.color)
+    } else {
+      this.$ga.query('set', 'dimension1', 'unset')
     }
 
     EventBus.$on('set-color', color => {
       this.color = color;
       localStorage.color = color;
+      this.$ga.query('set', 'dimension1', color);
     });
   }
 };

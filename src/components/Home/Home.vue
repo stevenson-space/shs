@@ -51,6 +51,8 @@
         link="old/docs-encrypted.html"
         :link-props="{ type: 'a' }"
         :invert="true"/>
+
+      <rate-redesign-card/>
     </card-container>
   </div>
 </template>
@@ -64,6 +66,7 @@ import UpcomingEventsCard from 'common/cards/UpcomingEventsCard.vue';
 import LunchCard from 'common/cards/LunchCard.vue';
 import IconTextCard from 'common/cards/IconTextCard.vue';
 import ScheduleCard from 'common/cards/ScheduleCard.vue';
+import RateRedesignCard from 'common/cards/RateRedesignCard.vue';
 
 import { faBell, faLink, faFileAlt, faCalendarAlt, faTv, faTint, faCalculator } from '@fortawesome/free-solid-svg-icons';
 
@@ -135,6 +138,7 @@ export default {
     LunchCard,
     IconTextCard,
     ScheduleCard,
+    RateRedesignCard,
   },
 }
 </script>

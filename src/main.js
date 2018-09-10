@@ -82,6 +82,15 @@ Vue.use(VueHammer);
 Vue.use(VueAnalytics, {
   id: 'UA-83979451-1',
   router,
+  autoTracking: {
+    pageviewTemplate($route) {
+      // filter out any query strings before sending path to Google Analytics
+      // ($route.path doesn't include query strings or hasheds, $route.fullPath does)
+      return {
+        page: $route.path,
+      }
+    }
+  }
 });
 
 // Any element can add the directive 'v-focus' to automatically gain focus when created
