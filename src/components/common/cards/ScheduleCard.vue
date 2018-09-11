@@ -94,11 +94,12 @@ export default {
 
   .periods
     height: 275px
-    overflow: auto
+    overflow-y: scroll
+    -webkit-overflow-scrolling: touch;
     position: relative
     +no-scrollbar
-    +mobile
-      height: 175px
+    // +mobile
+      // height: 175px
     
     .period
       margin-left: 4px

@@ -40,8 +40,9 @@ export default {
       this.rate(false);
     },
     rate(good) {
-      localStorage.hasRatedRedesign = 1;
-      this.$ga.event('Rate', good ? 'good' : 'bad');
+      const rating = good ? 'good' : 'bad'
+      localStorage.hasRatedRedesign = rating;
+      this.$ga.event('Rate', rating);
       setTimeout(() => this.show = false, 100);
     }
   },
