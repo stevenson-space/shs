@@ -113,6 +113,13 @@ export default {
                 event.name = event.name.replace(/^[\W]+|[\W]+$/g, '');
               }
             });
+
+            // After the trimming and removal of the schedule type, if all that is left is a word/phrase
+            // that does not add any useful information, remove it
+            const boringWords = ['schedule'];
+            boringWords.forEach(word => {
+              events = events.filter(event => !event.name.match(new RegExp(`^${word}$`, 'i')));
+            });
           }
 
           return events;
