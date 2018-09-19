@@ -15,10 +15,9 @@
     <color-selector
       :colors="colors"
       :current-color="color"
-      @color-selected="colorSelected"
-      ref="color-selector"/>
+      @color-selected="colorSelected"/>
 
-    <div class="preview" :style=" { height: previewHeight }">
+    <div class="preview" :style=" { height: previewHeight }" ref="preview">
       <router-link to="/" class="wrapper">
         <home/>
       </router-link>
@@ -58,8 +57,9 @@ export default {
       this.setCustomColorText()
     },
     setPreviewHeight() {
-      const colorSelector = this.$refs['color-selector'];
-      this.previewHeight = `calc(100vh - ${colorSelector.$el.offsetHeight}px - 20px)`
+      const { offsetTop } = this.$refs.preview;
+      const marginBottom = 20;
+      this.previewHeight = `calc(100vh - ${offsetTop}px - ${marginBottom}px)`;
     },
     setCustomColorText() {
       this.$nextTick(() => {
