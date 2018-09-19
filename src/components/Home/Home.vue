@@ -51,8 +51,6 @@
         link="old/docs-encrypted.html"
         :link-props="{ type: 'a' }"
         :invert="true"/>
-
-      <rate-redesign-card/>
     </card-container>
   </div>
 </template>
