@@ -18,9 +18,9 @@
       @color-selected="colorSelected"/>
 
     <div class="preview" :style=" { height: previewHeight }" ref="preview">
-      <router-link to="/" class="wrapper">
+      <div class="wrapper">
         <home/>
-      </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -118,8 +118,6 @@ export default {
   border-radius: 25px
   transition: box-shadow .2s
   min-width: 320px
-  &:hover
-    +shadow
   +mobile
     width: 90%
     +shadow

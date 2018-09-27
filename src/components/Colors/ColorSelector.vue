@@ -66,7 +66,7 @@ export default {
       currentShades: [],
       shadesLeft: 0,
       shadesTop: 0,
-      shadeHeight: 25,
+      shadeHeight: 35,
       isOpen: false,
       animationDuration: 200
     }
