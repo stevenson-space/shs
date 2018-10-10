@@ -17,6 +17,8 @@
 
       <upcoming-events-card :date="date"/>
 
+      <club-ad-card v-if="date.toLocaleDateString() === '10/10/2018'"/>
+
       <icon-text-card
         :icon="icons.faBell"
         text="Bell Schedules"
@@ -64,7 +66,7 @@ import UpcomingEventsCard from 'common/cards/UpcomingEventsCard.vue';
 import LunchCard from 'common/cards/LunchCard.vue';
 import IconTextCard from 'common/cards/IconTextCard.vue';
 import ScheduleCard from 'common/cards/ScheduleCard.vue';
-import RateRedesignCard from 'common/cards/RateRedesignCard.vue';
+import ClubAdCard from 'common/cards/ClubAdCard.vue';
 
 import { faBell, faLink, faFileAlt, faCalendarAlt, faTv, faTint, faCalculator } from '@fortawesome/free-solid-svg-icons';
 
@@ -136,7 +138,7 @@ export default {
     LunchCard,
     IconTextCard,
     ScheduleCard,
-    RateRedesignCard,
+    ClubAdCard,
   },
 }
 </script>
