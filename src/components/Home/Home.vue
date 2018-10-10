@@ -13,11 +13,11 @@
     <card-container>
       <schedule-card :bell="bell"/>
 
+      <club-ad-card v-if="date.toLocaleDateString() === '10/10/2018'"/>
+
       <lunch-card :date="date" :bell="bell"/>
 
       <upcoming-events-card :date="date"/>
-
-      <club-ad-card v-if="date.toLocaleDateString() === '10/10/2018'"/>
 
       <icon-text-card
         :icon="icons.faBell"
