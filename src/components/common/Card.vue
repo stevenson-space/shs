@@ -31,7 +31,7 @@ export default {
     this.setHeight();
 
     // for some reason, card doesn't open to full height on first load
-    setTimeout(this.setHeight, 100);
+    setTimeout(this.setHeight, 250);
 
     window.addEventListener('resize', this.debounceSetHeight);
 
