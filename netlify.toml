@@ -1,10 +1,6 @@
-[build]
+[context.gh-pages]
   publish = "docs/"
   command = "npm run build"
-
-[context.old]
-  publish = "/"
-  command = ""
 
 [[redirects]]
   from = "/*"
