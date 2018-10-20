@@ -52,7 +52,6 @@ module.exports = {
     new VueLoaderPlugin(),
     new CopyWebpackPlugin([
       './src/index.html',
-      './src/netlify.toml',
       './src/favicon/favicon.ico',
       { from: './src/images/', to: 'images/' },
       { from: './src/old/', to: 'old/' },
