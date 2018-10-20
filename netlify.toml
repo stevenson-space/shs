@@ -1,0 +1,12 @@
+[build]
+  publish = "docs/"
+  command = "npm run build"
+
+[context.old]
+  publish = "/"
+  command = ""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
