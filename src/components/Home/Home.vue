@@ -13,9 +13,9 @@
     <card-container>
       <schedule-card :bell="bell"/>
 
-      <club-ad-card v-if="date.toLocaleDateString() === '10/17/2018'"/>
-
       <lunch-card :date="date" :bell="bell"/>
+
+      <hackathon-ad-card v-if="date.getTime() < 1541829600000"/>
 
       <upcoming-events-card :date="date"/>
 
@@ -66,7 +66,7 @@ import UpcomingEventsCard from 'common/cards/UpcomingEventsCard.vue';
 import LunchCard from 'common/cards/LunchCard.vue';
 import IconTextCard from 'common/cards/IconTextCard.vue';
 import ScheduleCard from 'common/cards/ScheduleCard.vue';
-import ClubAdCard from 'common/cards/ClubAdCard.vue';
+import HackathonAdCard from 'common/cards/HackathonAdCard.vue';
 
 import { faBell, faLink, faFileAlt, faCalendarAlt, faTv, faTint, faCalculator } from '@fortawesome/free-solid-svg-icons';
 
@@ -138,7 +138,7 @@ export default {
     LunchCard,
     IconTextCard,
     ScheduleCard,
-    ClubAdCard,
+    HackathonAdCard,
   },
 }
 </script>
