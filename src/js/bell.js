@@ -8,19 +8,19 @@ class Bell {
    * @param {Number} [scheduleMode] defaults to the first one specified 
    * @param {Array} [schedules] list of schedules to use (if different from those in schedules.json)
    */
-  constructor(date, scheduleMode = 0, schedules = defaultSchedules) {
-    const schedule = Bell.getSchedule(date, schedules);
-    const actualSchedule = schedule.modes[scheduleMode];
+  constructor(date, schedules, scheduleMode = '') {
+    const scheduleType = Bell.getScheduleType(date, schedules);
+    const schedule = Bell.getSchedule(scheduleType.modes, scheduleMode);
 
     // this.date = date;
-    this.school = !!actualSchedule;
-    this.type = schedule.name // "Standard Schedule", "Late Arrival", "No School", ...
-    this.schedule = actualSchedule;
-    this.scheduleModes = schedule.modes;
+    this.school = !!schedule;
+    this.type = scheduleType.name // "Standard Schedule", "Late Arrival", "No School", ...
+    this.schedule = schedule;
+    this.modes = scheduleType.modes;
 
-    if (actualSchedule) { // if there is school today (actualSchedule is undefined when no school)
-      this.mode = actualSchedule.name // "Normal", "Half Periods", ...
-      this.period = Bell.getPeriod(actualSchedule, date, schedule.dates);
+    if (schedule) { // if there is school today (schedule is undefined when no school)
+      this.mode = schedule.name // "Normal", "Half Periods", ...
+      this.period = Bell.getPeriod(schedule, date, scheduleType.dates);
     }
 
     this.nextSchoolDay = Bell.nextSchoolDay(date);
@@ -55,12 +55,15 @@ class Bell {
   }
 
   /**
-   * Get the schedule for a given date
+   * Get the schedule object for the specified date's schedule type
+   * 
+   * Note: contains multiple schedules (1 for each schedule mode)
+   * 
    * @param {Date} date
    * @param {Array} [schedules] optional alternative list of schedules
    * @return {Object}
    */
-  static getSchedule(date, schedules = defaultSchedules) {
+  static getScheduleType(date, schedules = defaultSchedules) {
     let todaySchedule = null;
      schedules.forEach(schedule => {
       if (testDate(date, schedule.dates)) {
@@ -68,6 +71,21 @@ class Bell {
       }
     });
     return todaySchedule;
+  }
+
+  /**
+   * Get the actual schedule from the set of schedule modes
+   * @param {*} schedule 
+   * @param {*} scheduleMode 
+   */
+  static getSchedule(scheduleModes, scheduleMode) {
+    let schedule = scheduleModes[0]; // default to first schedule in array
+    scheduleModes.forEach(mode => {
+      if (mode.name == scheduleMode) {
+        schedule = mode; 
+      }
+    });
+    return schedule;
   }
 
   /**
@@ -85,7 +103,7 @@ class Bell {
     // (e.g. to prevent weekends from being counted as a 'No School' special event)
     if (testDate(date, defaultSchedule.dates)) {
       // then check if the actual schedule is different from the normal one
-      schedule = schedule || Bell.getSchedule(date, schedules);
+      schedule = schedule || Bell.getScheduleType(date, schedules);
       if (schedule.name !== defaultSchedule.name) {
         return schedule;
       }
@@ -217,7 +235,7 @@ class Bell {
     const isSchoolDay = date => {
       // Day is school day only if a schedule exists for that day and that schedule contains
       // at least one mode
-      const schedule = Bell.getSchedule(date, schedules);
+      const schedule = Bell.getScheduleType(date, schedules);
       return schedule && schedule.modes[0];
     };
 

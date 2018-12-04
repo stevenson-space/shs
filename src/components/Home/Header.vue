@@ -1,20 +1,19 @@
 <template>
   <div class="header" :class="{ 'full-screen': fullScreenMode }" :style="colors">
     <dropdown
-      v-show="scheduleModeNames.length > 1"
+      v-show="scheduleModes.length > 1"
       class="schedule-select"
-      :options="scheduleModeNames"
-      :value="scheduleMode"
-      @input="$emit('schedule-mode-change', $event)"/>
+      :options="scheduleModes"
+      :value="scheduleModes.indexOf(scheduleMode)"
+      @input="$store.commit('setScheduleMode', scheduleModes[$event])"/>
 
-    <div class="main" :class="{ 'extra-padding': scheduleModeNames.length > 1 }">
+    <div class="main" :class="{ 'extra-padding': scheduleModes.length > 1 }">
       <div class="switch-day" v-hammer:tap="previousDay">
         <font-awesome-icon :icon="icons.faChevronLeft" class="arrow-icon"/>
       </div>
 
       <div>
         <countdown-circle
-          :mode="mode"
           :in-school="inSchool"
           :countdown="countdownString"
           :range="bell.getRange()"
@@ -41,14 +40,11 @@
     </div>
     
     <header-schedule
-      :mode="mode"
       :in-school="inSchool"
       :period="bell.getPeriodName()"
       :range="bell.getRange()"
       :schedule-type="bell.type"
-      :schedule-modes="scheduleModeNames"
-      :schedule-mode="scheduleMode"
-      @schedule-mode-change="$emit('schedule-mode-change', $event)"
+      :schedule-modes="scheduleModes"
       :full-screen-mode="fullScreenMode"/>
   </div>
 </template>
@@ -60,6 +56,7 @@ import Bell from 'src/js/bell.js';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
 import Dropdown from 'src/components/common/Dropdown.vue';
+import { mapGetters, mapState } from 'vuex';
 
 function toSeconds([hour = 0, minute = 0, second = 0]) {
   return (((hour * 60) + minute) * 60) + second;
@@ -76,13 +73,13 @@ function periodToSeconds(period) {
 
 export default {
   props: {
-    date: { type: Date, required: true },
-    bell: { type: Bell, required: true },
-    mode: {
-      validator: mode => mode === 'current' || mode === 'day',
-      required: true,
-    },
-    scheduleMode: { type: Number, required: true },
+    // date: { type: Date, required: true },
+    // bell: { type: Bell, required: true },
+    // mode: {
+    //   validator: mode => mode === 'current' || mode === 'day',
+    //   required: true,
+    // },
+    // scheduleMode: { type: Number, required: true },
     fullScreenMode: { type: Boolean, default: false },
   },
   data() {
@@ -95,12 +92,21 @@ export default {
         faTint,
         faTintSlash,
       },
-      currentTime: dateToSeconds(this.date),
+      currentTime: 0,
       interval: null,
       colored: true,
     };
   },
   computed: {
+    // this automatically gets the following properties from the store and adds them as computed properties
+    ...mapState([
+      'mode',
+      'scheduleMode',
+    ]),
+    ...mapGetters([
+      'date',
+      'bell',
+    ]),
     colors() {
       const showColor = (this.colored || !this.fullScreenMode);
       return {
@@ -112,9 +118,6 @@ export default {
       // To be in school, there must be school that day and we must not be before or after school
       const { bell } = this;
       return bell.school && !bell.period.afterSchool && !bell.period.beforeSchool;
-    },
-    nextSchoolBell() {
-      return new Bell(this.bell.nextSchoolDay);
     },
     endTime() {
       const { bell, date, inSchool } = this;
@@ -129,7 +132,7 @@ export default {
       let nextBell = bell;
 
       // if no school or after school, get the first period on the next school day
-      if (!school || period.afterSchool) { 
+      if (!school || period.afterSchool) {
         dayDifference = Math.floor((nextSchoolDay.getTime() - date.getTime()) / 1000 / 60 / 60 / 24);
         nextBell = new Bell(nextSchoolDay);
       }
@@ -196,8 +199,8 @@ export default {
       date.setDate(date.getDate() - 1);
       return date;
     },
-    scheduleModeNames() {
-      const modes = this.bell.scheduleModes;
+    scheduleModes() {
+      const { modes } = this.bell;
       return modes.map(mode => mode.name);
     }
   },
@@ -255,6 +258,7 @@ export default {
     }
   },
   created() {
+    this.currentTime = dateToSeconds(this.date);
     if (localStorage.fullScreenColored === 'false') {
       this.colored = false;
     }
@@ -275,7 +279,7 @@ export default {
     },
     totalSecondsLeft() {
       if (this.totalSecondsLeft === 0) {
-        this.$emit('countdown-done');
+        this.$store.dispatch('countdownDone');
       }
     },
     colored() {

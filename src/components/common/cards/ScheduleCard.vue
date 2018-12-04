@@ -21,11 +21,13 @@ import Bell from 'src/js/bell.js';
 import Card from 'common/Card.vue';
 import Period from 'common/Period.vue';
 
+import { mapGetters } from 'vuex';
+
 export default {
-  props: {
-    bell: { type: Bell, required: true },
-  },
   computed: {
+    ...mapGetters([
+      'bell',
+    ]),
     periods() {
       if (this.bell.school) {
         const { start, end, periods } = this.bell.schedule;

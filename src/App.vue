@@ -5,27 +5,21 @@
 </template>
 
 <script>
-import { EventBus } from 'src/js/event-bus.js';
+import initializeStore from 'src/store/initializeStore.js';
+import { mapState } from 'vuex';
 
 export default {
-  data() {
-    return {
-      color: '#00796b',
-    };
-  },
+  computed: mapState([
+    'color',
+  ]),
   created() {
-    if (localStorage.color) {
-      this.color = localStorage.color;
-      this.$ga.query('set', 'dimension1', localStorage.color)
-    } else {
-      this.$ga.query('set', 'dimension1', 'unset')
+    initializeStore(this.$store);
+    this.$store.commit('setMode', this.$route);
+  },
+  watch: {
+    $route() {
+      this.$store.commit('setMode', this.$route);
     }
-
-    EventBus.$on('set-color', color => {
-      this.color = color;
-      localStorage.color = color;
-      this.$ga.query('set', 'dimension1', color);
-    });
   }
 };
 

@@ -1,11 +1,13 @@
 <template>
   <div class="schedule" :class="{ 'full-screen': fullScreenMode }">
     <div class="container">
+
+      <!-- This dropdown is just here for alignment purposes and is not displayed -->
       <dropdown
         v-show="scheduleModes.length > 1"
         class="schedule-select hidden"
         :options="scheduleModes"
-        :value="scheduleMode"/>
+        :value="scheduleModes.indexOf(scheduleMode)"/>
 
       <div class="center">
         <template v-if="mode === 'current'">
@@ -28,8 +30,8 @@
         v-show="scheduleModes.length > 1"
         class="schedule-select"
         :options="scheduleModes"
-        :value="scheduleMode"
-        @input="$emit('schedule-mode-change', $event)"
+        :value="scheduleModes.indexOf(scheduleMode)"
+        @input="$store.commit('setScheduleMode', scheduleModes[$event])"
         :direction="fullScreenMode ? 'up' : 'down'"/>
     </div>
   </div>
@@ -37,18 +39,21 @@
 
 <script>
 import Dropdown from 'src/components/common/Dropdown.vue';
+import { mapState } from 'vuex';
 
 export default {
   props: {
-    mode: { type: String, required: true },
     inSchool: { type: Boolean, required: true },
     range: { type: String, required: true },
     period: { type: String, required: true },
     scheduleType: { type: String, required: true },
     scheduleModes: { type: Array, required: true },
-    scheduleMode: { type: Number, required: true },
     fullScreenMode: { type: Boolean, default: false },
   },
+  computed: mapState([
+    'mode',
+    'scheduleMode',
+  ]),
   components: { Dropdown },
 }
 </script>

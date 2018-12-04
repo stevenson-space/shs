@@ -135,6 +135,12 @@ export default {
       }
     }
   },
+  created() {
+    // if the initial index is out of bounds, choose the first index by default
+    if (this.value < 0 || this.value >= this.options.length - 1) {
+      this.$emit('input', 0);
+    }
+  },
   mounted() {
     this.resetOptionHeight();
 

@@ -2,6 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { VueHammer } from 'vue2-hammer';
 import VueAnalytics from 'vue-analytics';
+
+import store from 'src/store/index.js';
 import App from 'src/App.vue';
 import Home from 'src/components/Home/Home.vue';
 
@@ -85,7 +87,7 @@ Vue.use(VueAnalytics, {
   autoTracking: {
     pageviewTemplate($route) {
       // filter out any query strings before sending path to Google Analytics
-      // ($route.path doesn't include query strings or hasheds, $route.fullPath does)
+      // ($route.path doesn't include query strings or hashes, $route.fullPath does)
       return {
         page: $route.path,
       }
@@ -105,4 +107,5 @@ new Vue({
   el: '#app',
   render: h => h(App),
   router,
+  store,
 });
