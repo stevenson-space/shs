@@ -12,11 +12,12 @@ class Bell {
     const schedule = Bell.getSchedule(date, schedules);
     const actualSchedule = schedule.modes[scheduleMode];
 
-    // this.date = date;
+    this.date = date;
     this.school = !!actualSchedule;
     this.type = schedule.name // "Standard Schedule", "Late Arrival", "No School", ...
     this.schedule = actualSchedule;
     this.scheduleModes = schedule.modes;
+    this.dates = schedule.dates;
 
     if (actualSchedule) { // if there is school today (actualSchedule is undefined when no school)
       this.mode = actualSchedule.name // "Normal", "Half Periods", ...
