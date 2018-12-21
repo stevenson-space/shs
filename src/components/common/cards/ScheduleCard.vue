@@ -30,7 +30,12 @@ export default {
     ]),
     periods() {
       if (this.bell.school) {
-        const { start, end, periods } = this.bell.schedule;
+        let { start, end, periods } = this.bell.schedule;
+
+        if (Bell.isMultiDay(this.bell.schedule)) {
+          ({ start, end, periods } = Bell.getMultiDay({ start, end, periods }, this.bell.date, this.bell.dates));
+        }
+
         const result = [];
 
         periods.forEach((period, i) => {
@@ -95,7 +100,7 @@ export default {
     margin: 15px 0
 
   .periods
-    height: 275px
+    max-height: 275px
     overflow-y: scroll
     -webkit-overflow-scrolling: touch;
     position: relative
