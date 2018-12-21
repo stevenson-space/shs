@@ -35,7 +35,6 @@ export default new Vuex.Store({
     bell(state, getters) {
       return new Bell(getters.date, state.schedules, state.scheduleMode);
     }
-
   },
   mutations,
   actions,

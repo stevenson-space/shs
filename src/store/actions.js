@@ -1,7 +1,7 @@
 export default {
   pageLoaded({ commit }, route) {
     commit('setMode', route);
-    commit('setInitialDate', route);
+    commit('setUrlDate', route);
     commit('setStartTime');
     commit('setCurrentTime');
   },

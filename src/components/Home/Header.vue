@@ -73,13 +73,6 @@ function periodToSeconds(period) {
 
 export default {
   props: {
-    // date: { type: Date, required: true },
-    // bell: { type: Bell, required: true },
-    // mode: {
-    //   validator: mode => mode === 'current' || mode === 'day',
-    //   required: true,
-    // },
-    // scheduleMode: { type: Number, required: true },
     fullScreenMode: { type: Boolean, default: false },
   },
   data() {
@@ -278,7 +271,7 @@ export default {
       this.currentTime = dateToSeconds(this.date);
     },
     totalSecondsLeft() {
-      if (this.totalSecondsLeft === 0) {
+      if (this.totalSecondsLeft <= 0) {
         this.$store.dispatch('countdownDone');
       }
     },

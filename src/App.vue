@@ -1,6 +1,6 @@
 <template>
   <div id="app" :style="{ '--color': color }" tabindex="-1">
-    <router-view :color="color"/>
+    <router-view/>
   </div>
 </template>
 
@@ -14,11 +14,11 @@ export default {
   ]),
   created() {
     initializeStore(this.$store);
-    this.$store.commit('setMode', this.$route);
+    this.$store.dispatch('pageLoaded', this.$route);
   },
   watch: {
     $route() {
-      this.$store.commit('setMode', this.$route);
+      this.$store.dispatch('pageLoaded', this.$route);
     }
   }
 };

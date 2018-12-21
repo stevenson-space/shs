@@ -1,7 +1,7 @@
 import defaultSchedules from 'src/data/schedules.json';
 import { query } from 'vue-analytics';
 
-export default function(store, ga) {
+export default function(store) {
   if (localStorage.color) {
     store.commit('setColor', localStorage.color);
     query('set', 'dimension1', localStorage.color)

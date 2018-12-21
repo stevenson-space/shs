@@ -25,25 +25,10 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-function parseUrlDateTime(route) {
-  // If date and/or time is specified in URL, return that date
-  // Otherwise, return current date
-  let { date='', time='' } = route.query;
-  time = time.replace(/\./g, ':'); // lets you use "." (url safe) instead of ":" (not url safe)
-  date = date.replace(/-/g, '/'); // lets you use "-" instead of "/"
-
-  const today = new Date();
-  const todayDate = today.toLocaleDateString();
-  const todayTime = today.toLocaleTimeString();
-  
-  return new Date(`${date || todayDate} ${time || todayTime}`);
-}
-
 const routes = [
   {
     path: '/',
     component: Home,
-    props: route => ({ initialDate: parseUrlDateTime(route).getTime() })
   },
   {
     path: '/bellschedules',
@@ -52,7 +37,6 @@ const routes = [
   {
     path: '/calendar',
     component: Calendar,
-    props: route => ({ today: parseUrlDateTime(route) })
   },
   {
     path: '/links',

@@ -21,7 +21,8 @@ class Bell {
 
     if (schedule) { // if there is school today (schedule is undefined when no school)
       this.mode = schedule.name // "Normal", "Half Periods", ...
-      this.period = Bell.getPeriod(schedule, date, scheduleType.dates);
+      this.schedule = Bell.processMultiDay(schedule, date, scheduleType.dates);
+      this.period = Bell.getPeriod(this.schedule, date);
     }
 
     this.nextSchoolDay = Bell.nextSchoolDay(date);
@@ -119,14 +120,8 @@ class Bell {
    * @param {Array} [dates] the dates for the given schedule (only necessary if multiday schdeule like Finals)
    * @return {Object} object containing period name, start/end time, and whether before/after school
    */
-  static getPeriod(schedule, date, dates) {
-    let { start, end, periods } = schedule;
-
-    // if multiday schedule, the date selectors for that schedule type are also required
-    // in order to get which consecutive day the current date is
-    if (Bell.isMultiDay(schedule) && dates) {
-      ({start, end, periods} = Bell.getMultiDay({start, end, periods}, date, dates));
-    }
+  static getPeriod(schedule, date) {
+    const { start, end, periods } = schedule;
 
     const createPeriod = (name, startTime, endTime) => ({
       beforeSchool: Bell.isBetweenTime(date, '0:00', start[0]),
@@ -200,6 +195,20 @@ class Bell {
     periods = is2D(periods) ? periods[i] : periods;
 
     return { start, end, periods };
+  }
+
+  static processMultiDay(schedule, date, dates) {
+    const newSchedule = JSON.parse(JSON.stringify(schedule)); // duplicate schedule (don't want to modify original)
+    if (Bell.isMultiDay(schedule)) {
+      // if it is a multiday schedule get the start, end, and periods corresponding to the day
+      const {start, end, periods} = Bell.getMultiDay(schedule, date, dates);
+
+      // replace the original start, end, periods (could be arrays) with the ones for today
+      newSchedule.start = start;
+      newSchedule.end = end;
+      newSchedule.periods = periods;
+    }
+    return newSchedule;
   }
 
   /**

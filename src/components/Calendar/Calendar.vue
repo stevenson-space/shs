@@ -30,14 +30,17 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
   'September', 'October', 'November', 'December'];
 
 export default {
-  props: {
-    today: { type: Date, default: () => new Date() },
-  },
   data() {
     return {
-      month: this.today.getMonth(),
-      year: this.today.getFullYear(),
+      today: new Date(),
+      month: 0,
+      year: 0,
     }
+  },
+  created() {
+    this.today = this.$store.getters.date;
+    this.month = this.today.getMonth();
+    this.year = this.today.getFullYear();
   },
   computed: {
     childProps() {

@@ -26,14 +26,14 @@ export default {
     localStorage.color = color;
     query('set', 'dimension1', color);
   },
-  setInitialDate(state, route) {
-    state.initialDate = parseUrlDateTime(route);
+  setUrlDate(state, route) {
+    state.urlDate = parseUrlDateTime(route);
   },
   setStartTime(state) {
-    state.startDate = Date.now();
+    state.startTime = Date.now();
   },
   setCurrentTime(state) {
-    state.setCurrentDate = Date.now();
+    state.currentTime = Date.now();
   },
   setSchedules(state, schedules) {
     state.schedules = schedules;
