@@ -1,8 +1,11 @@
 import lunch from 'src/data/lunch.json';
 
-const lunchNames = ['Comfort Food', 'Mindful', 'Sides', 'Soups', 'International Theme Station'];
-
 function getLunch(date) {
+  const lunchNames = ['Comfort Food', 'Mindful', 'Sides', 'Soups', 'International Theme Station'];
+  if (date.getDay() == 1) { // is monday
+    lunchNames.splice(2, 0, 'Meatless Monday');
+  }
+
   // get the number of days since epoch time
   const minutesSinceEpoch = (date.getTime() / 1000 / 60) - date.getTimezoneOffset();
   const daysSinceEpoch = Math.floor(minutesSinceEpoch / 60 / 24);
