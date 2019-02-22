@@ -4,21 +4,29 @@
       <img class="logo" src="images/shsHacks.png">
       <div class="text">
         <div class="name">shsHacks</div>
-        <div class="register">Register by 8:59pm today!</div>
+        <div class="register">Deadline: 8:59pm</div>
       </div>
+      <font-awesome-icon :icon="faExternalLinkAlt" class="link-icon"/>
     </a>
 
     <div class="line"/>
 
-    <div class="deregister">Please click <a class="link" href="https://goo.gl/forms/K0f8b5yYHJqYiRHz1" target="_blank">here</a> if you registered but can't attend</div>
+    <div class="deregister">Please click <a class="emphasize" href="https://goo.gl/forms/K0f8b5yYHJqYiRHz1" target="_blank">here</a> if you registered but can <span class="emphasize">NOT</span> attend</div>
   </card>
 </template>
 
 <script>
 import Card from 'common/Card.vue';
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  components: { Card },
+  data() {
+    return { 
+      faExternalLinkAlt
+    }
+  },
+  components: { Card, FontAwesomeIcon },
 }
 </script>
 
@@ -42,7 +50,12 @@ export default {
       font-size: 1.4em
 
     .register
-      font-size: .85em
+      font-size: .75em
+
+  .link-icon
+    margin-right: 15px
+    font-size: 1.25em
+    color: var(--color)
 
 .line
   height: 2px
@@ -50,13 +63,14 @@ export default {
   width: 100%
 
 .deregister
-  font-size: .75em
+  font-size: .7em
   text-align: center
   margin: 7px 0
 
-  .link
+  .emphasize
     color: var(--color)
     font-weight: bold
+    font-size: 1.25em
 
 </style>
 
