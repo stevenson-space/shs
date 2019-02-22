@@ -11,11 +11,11 @@
       @toggle-fullscreen="fullScreenMode = !fullScreenMode"/>
     
     <card-container>
+      <shs-hacks-card/>
+
       <schedule-card :bell="bell"/>
 
       <lunch-card :date="date" :bell="bell"/>
-
-      <hackathon-ad-card v-if="date.getTime() < 1541829600000"/>
 
       <upcoming-events-card :date="date"/>
 
@@ -66,7 +66,7 @@ import UpcomingEventsCard from 'common/cards/UpcomingEventsCard.vue';
 import LunchCard from 'common/cards/LunchCard.vue';
 import IconTextCard from 'common/cards/IconTextCard.vue';
 import ScheduleCard from 'common/cards/ScheduleCard.vue';
-import HackathonAdCard from 'common/cards/HackathonAdCard.vue';
+import ShsHacksCard from 'common/cards/ShsHacksCard.vue';
 
 import { faBell, faLink, faFileAlt, faCalendarAlt, faTv, faTint, faCalculator } from '@fortawesome/free-solid-svg-icons';
 
@@ -138,7 +138,7 @@ export default {
     LunchCard,
     IconTextCard,
     ScheduleCard,
-    HackathonAdCard,
+    ShsHacksCard,
   },
 }
 </script>
