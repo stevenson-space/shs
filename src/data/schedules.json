@@ -97,7 +97,7 @@
   },
   {
     "name": "No School",
-    "dates": ["weekends", "1st monday & september", "2nd monday & october", "3rd monday & january", "3rd monday & february", "1st monday & march",
+    "dates": ["weekends", "1st monday & september", "2nd monday & october", "3rd monday & january", "3rd monday & february",
       "9/10/2018", "9/19/2018", "11/22/2018-11/23/2018", "12/24/2018-1/7/2019", "3/1/2019", "3/25/2019-3/29/2019", "4/19/2019"],
     "modes": []
   }
