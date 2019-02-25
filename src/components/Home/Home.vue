@@ -11,8 +11,6 @@
       @toggle-fullscreen="fullScreenMode = !fullScreenMode"/>
     
     <card-container>
-      <shs-hacks-card/>
-
       <schedule-card :bell="bell"/>
 
       <lunch-card :date="date" :bell="bell"/>
