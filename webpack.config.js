@@ -11,7 +11,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'docs'),
-    filename: 'bundle.js',
+    filename: 'build.js',
     chunkFilename: '[name].js',
   },
   module: {

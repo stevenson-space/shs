@@ -6,7 +6,7 @@ import App from 'src/App.vue';
 import Home from 'src/components/Home/Home.vue';
 
 // Dynamically import the following components so that they are not included in the main build
-// file and are instead asynchrounously loaded when the user goes to the page (to reduce file size of bundle.js)
+// file and are instead asynchrounously loaded when the user goes to the page (to reduce file size of build.js)
 const BellSchedules = () => import(/* webpackChunkName: "bellschedules" */ 'src/components/Bell Schedules/BellSchedules.vue');
 const Calendar = () => import(/* webpackChunkName: "calendar" */ 'src/components/Calendar/Calendar.vue');
 const Links = () => import(/* webpackChunkName: "links" */ 'src/components/Links/Links.vue');
