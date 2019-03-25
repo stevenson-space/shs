@@ -12,17 +12,6 @@ const Calendar = () => import(/* webpackChunkName: "calendar" */ 'src/components
 const Links = () => import(/* webpackChunkName: "links" */ 'src/components/Links/Links.vue');
 const Colors = () => import(/* webpackChunkName: "colors" */ 'src/components/Colors/Colors.vue');
 
-// Register service worker to enable offline viewing
-// if ('serviceWorker' in navigator) {
-//   window.addEventListener('load', () => {
-//     navigator.serviceWorker.register('/service-worker.js').then(registration => {
-//       console.log('SW registered: ', registration);
-//     }).catch(registrationError => {
-//       console.log('SW registration failed: ', registrationError);
-//     });
-//   });
-// }
-
 // Unregister all service workers
 if(window.navigator && navigator.serviceWorker) {
   navigator.serviceWorker.getRegistrations().then(function(registrations) {
