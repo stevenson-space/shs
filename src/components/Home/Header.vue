@@ -325,7 +325,7 @@ export default {
         padding-top: 35px
     
     .date
-      +shadow
+      // +shadow
       background-color: white
       border-radius: 100px
       margin-top: 10px
@@ -368,19 +368,19 @@ export default {
         width: 100%
         left: 0
         position: absolute
-        opacity: .15
+        opacity: 0
         border-radius: 100px
-        visibility: hidden
+        transition: opacity .2s
       +mobile
         display: none
       +can-hover
         &:hover
           &::before
-            visibility: visible
+            opacity: .15
       +can-not-hover
         &:active
           &::before
-            visibility: visible
+            opacity: .15
 
     .remove-color
       display: none

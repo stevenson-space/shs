@@ -38,7 +38,7 @@ export default {
     --circle-diameter: 230px
     --logo-width: 70px
   
-  +shadow
+  // +shadow
   background-color: white
   width: var(--circle-diameter)
   height: var(--circle-diameter)
