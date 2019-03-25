@@ -55,6 +55,7 @@ module.exports = {
       { from: './src/images/', to: 'images/' },
       { from: './src/old/', to: 'old/' },
       { from: './src/favicon', to: 'favicon/' },
+      './src/service-worker.js',
     ]),
     new MiniCssExtractPlugin({
       filename: 'style.css',
