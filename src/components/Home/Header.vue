@@ -4,7 +4,7 @@
       v-show="scheduleModes.length > 1"
       class="schedule-select"
       :options="scheduleModes"
-      :value="scheduleModes.indexOf(scheduleMode)"
+      :value="scheduleModes.indexOf(bell.mode)"
       @input="$store.commit('setScheduleMode', scheduleModes[$event])"/>
 
     <div class="main" :class="{ 'extra-padding': scheduleModes.length > 1 }">
@@ -94,7 +94,6 @@ export default {
     // this automatically gets the following properties from the store and adds them as computed properties
     ...mapState([
       'mode',
-      'scheduleMode',
     ]),
     ...mapGetters([
       'date',

@@ -7,7 +7,7 @@
         v-show="scheduleModes.length > 1"
         class="schedule-select hidden"
         :options="scheduleModes"
-        :value="scheduleModes.indexOf(scheduleMode)"/>
+        :value="scheduleModes.indexOf(bell.mode)"/>
 
       <div class="center">
         <template v-if="mode === 'current'">
@@ -30,7 +30,7 @@
         v-show="scheduleModes.length > 1"
         class="schedule-select"
         :options="scheduleModes"
-        :value="scheduleModes.indexOf(scheduleMode)"
+        :value="scheduleModes.indexOf(bell.mode)"
         @input="$store.commit('setScheduleMode', scheduleModes[$event])"
         :direction="fullScreenMode ? 'up' : 'down'"/>
     </div>
@@ -39,7 +39,7 @@
 
 <script>
 import Dropdown from 'src/components/common/Dropdown.vue';
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   props: {
@@ -50,10 +50,14 @@ export default {
     scheduleModes: { type: Array, required: true },
     fullScreenMode: { type: Boolean, default: false },
   },
-  computed: mapState([
-    'mode',
-    'scheduleMode',
-  ]),
+  computed: {
+    ...mapState([
+      'mode',
+    ]),
+    ...mapGetters([
+      'bell'
+    ]),
+  },
   components: { Dropdown },
 }
 </script>
