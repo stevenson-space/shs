@@ -12,6 +12,7 @@
     </div>
     <div>
       <font-awesome-icon
+        v-show="!eventsExhausted"
         class="down-arrow"
         :icon="downArrow"
         @mousedown="showMoreEvents()"/>
@@ -54,8 +55,9 @@ function getNextEvent(startDate) {
       break;
     }
 
-    // give up searching after 2 years
-    if (date.getYear() - startDate.getYear() >= 2) {
+    // give up searching after ~3 months
+    if (date.getTime() - startDate.getTime() >= 1000 * 60 * 60 * 24 * 30 * 3) {
+      console.log(date, startDate);
       break;
     }
   }
@@ -74,10 +76,11 @@ export default {
       numEventsDisplayed: 0,
       lastDate: this.date, // the date until which events are currently being displayed
       dateTimeout: null,
+      eventsExhausted: false,
     }
   },
   mounted() {
-    this.reset();
+    setTimeout(this.reset, 250);
   },
   computed: {
     ...mapGetters([
@@ -94,33 +97,33 @@ export default {
       const events = this.events.slice(0, numEventsDisplayed);
       return events.length ? events : placeholders;
     },
-    remainingEvents() {
-      return this.events.length - this.numEventsDisplayed;
-    }
   },
   methods: {
     loadEvents(num) {
-      // Could potentially by expensive for large values of num, so load asynchronously
-      return new Promise(resolve => {
-        setTimeout(() => {
-          // Get the next num events and add them to the events array
-          for (let i = 0; i < num; i++) {
-            const event = getNextEvent(this.lastDate);
-            if (event) {
-              // Update the lastDate, so that we can start searching from that point for the next event
-              this.lastDate = event.date;
-              this.events.push(event);
+      // Could potentially be expensive for large values of num, so load asynchronously
+      return new Promise((resolve, reject) => {
+        if (!this.eventsExhausted) {
+          setTimeout(() => {
+            // Get the next num events and add them to the events array
+            for (let i = 0; i < num && !this.eventsExhausted; i++) {
+              const event = getNextEvent(this.lastDate);
+              if (event) {
+                // Update the lastDate, so that we can start searching from that point for the next event
+                this.lastDate = event.date;
+                this.events.push(event);
+              } else {
+                this.eventsExhausted = true;
+              }
             }
-          }
-          resolve();
-        }, 0);
+            resolve();
+          }, 0);
+        } else {
+          reject('No more events left');
+        }
       });
     },
     showMoreEvents(num = this.numEventsToAdd) {
-      // If there aren't enough preloaded events, load however many more are necessary
-      if (this.remainingEvents < num) {
-        this.loadEvents(num - this.remainingEvents);
-      }
+      this.loadEvents(num);
       this.numEventsDisplayed += num;
     },
     reset() {
@@ -131,16 +134,6 @@ export default {
       this.loadEvents(this.numEventsInitial).then(() => {
         this.showMoreEvents(this.numEventsInitial);
       });
-
-      // Then, after a 1 second delay to allow the rest of the page to laod first, preload a lot
-      // of events to avoid delays later
-      const currentUrl = this.$route.fullPath
-      setTimeout(() => {
-        // Only load events if we're still on the same page (these events are useless if we switched days)
-        if (this.$route.fullPath === currentUrl) {
-          this.loadEvents(this.numEventsToAdd * 5);
-        }
-      }, 2000);
     }
   },
   watch: {

@@ -48,6 +48,9 @@ module.exports = {
       new TerserPlugin({
         terserOptions: {
           safari10: true,
+          compress: {
+            drop_console: true,
+          },
         },
       }),
     ],

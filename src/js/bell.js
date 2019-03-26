@@ -1,6 +1,7 @@
 import testDate from './dateparser.js';
 import defaultSchedules from 'src/data/schedules.json';
 
+var num = [0, 0, 0, 0, 0];
 class Bell {
   /**
    * Creates a new Bell object with schedule info for the given date
@@ -8,7 +9,8 @@ class Bell {
    * @param {Array} [schedules] list of schedules to use (if different from those in schedules.json)
    * @param {Number} [scheduleMode] defaults to the first one specified 
    */
-  constructor(date, schedules, scheduleMode = '') {
+  constructor(date, schedules = defaultSchedules, scheduleMode = '') {
+    console.log('Attempting creation of new Bell with:', date, schedules, scheduleMode);
     const scheduleType = Bell.getScheduleType(date, schedules);
     const schedule = Bell.getSchedule(scheduleType.modes, scheduleMode);
 
@@ -26,6 +28,8 @@ class Bell {
     }
 
     this.nextSchoolDay = Bell.nextSchoolDay(date);
+
+    console.log('New bell created:', this);
   }
 
   /**
@@ -66,6 +70,7 @@ class Bell {
    * @return {Object}
    */
   static getScheduleType(date, schedules = defaultSchedules) {
+    // console.log('getScheduleType: ' + ++num[0]);
     let todaySchedule = null;
      schedules.forEach(schedule => {
       if (testDate(date, schedule.dates)) {
@@ -100,6 +105,8 @@ class Bell {
    */
   static isSpecialSchedule(date, schedule = null, schedules = defaultSchedules) {
     const defaultSchedule = schedules[0];
+
+    console.log('isSpecialSchedule: ' + ++num[1], date);
 
     // check if there would normally be the default schedule on that date
     // (e.g. to prevent weekends from being counted as a 'No School' special event)
