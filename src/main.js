@@ -2,6 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { VueHammer } from 'vue2-hammer';
 import VueAnalytics from 'vue-analytics';
+
+import store from 'src/store/index.js';
 import App from 'src/App.vue';
 import Home from 'src/components/Home/Home.vue';
 
@@ -21,25 +23,10 @@ if(window.navigator && navigator.serviceWorker) {
   });
 }
 
-function parseUrlDateTime(route) {
-  // If date and/or time is specified in URL, return that date
-  // Otherwise, return current date
-  let { date='', time='' } = route.query;
-  time = time.replace(/\./g, ':'); // lets you use "." (url safe) instead of ":" (not url safe)
-  date = date.replace(/-/g, '/'); // lets you use "-" instead of "/"
-
-  const today = new Date();
-  const todayDate = today.toLocaleDateString();
-  const todayTime = today.toLocaleTimeString();
-  
-  return new Date(`${date || todayDate} ${time || todayTime}`);
-}
-
 const routes = [
   {
     path: '/',
     component: Home,
-    props: route => ({ initialDate: parseUrlDateTime(route).getTime() })
   },
   {
     path: '/bellschedules',
@@ -48,7 +35,6 @@ const routes = [
   {
     path: '/calendar',
     component: Calendar,
-    props: route => ({ today: parseUrlDateTime(route) })
   },
   {
     path: '/links',
@@ -83,7 +69,7 @@ Vue.use(VueAnalytics, {
   autoTracking: {
     pageviewTemplate($route) {
       // filter out any query strings before sending path to Google Analytics
-      // ($route.path doesn't include query strings or hasheds, $route.fullPath does)
+      // ($route.path doesn't include query strings or hashes, $route.fullPath does)
       return {
         page: $route.path,
       }
@@ -103,4 +89,5 @@ new Vue({
   el: '#app',
   render: h => h(App),
   router,
+  store,
 });

@@ -5,23 +5,24 @@ class Bell {
   /**
    * Creates a new Bell object with schedule info for the given date
    * @param {Date} date
-   * @param {Number} [scheduleMode] defaults to the first one specified 
    * @param {Array} [schedules] list of schedules to use (if different from those in schedules.json)
+   * @param {Number} [scheduleMode] defaults to the first one specified 
    */
-  constructor(date, scheduleMode = 0, schedules = defaultSchedules) {
-    const schedule = Bell.getSchedule(date, schedules);
-    const actualSchedule = schedule.modes[scheduleMode];
+  constructor(date, schedules, scheduleMode = '') {
+    const scheduleType = Bell.getScheduleType(date, schedules);
+    const schedule = Bell.getSchedule(scheduleType.modes, scheduleMode);
 
     this.date = date;
-    this.school = !!actualSchedule;
-    this.type = schedule.name // "Standard Schedule", "Late Arrival", "No School", ...
-    this.schedule = actualSchedule;
-    this.scheduleModes = schedule.modes;
-    this.dates = schedule.dates;
+    this.school = !!schedule;
+    this.type = scheduleType.name // "Standard Schedule", "Late Arrival", "No School", ...
+    this.schedule = schedule;
+    this.modes = scheduleType.modes;
+    this.dates = scheduleType.dates;
 
-    if (actualSchedule) { // if there is school today (actualSchedule is undefined when no school)
-      this.mode = actualSchedule.name // "Normal", "Half Periods", ...
-      this.period = Bell.getPeriod(actualSchedule, date, schedule.dates);
+    if (schedule) { // if there is school today (schedule is undefined when no school)
+      this.mode = schedule.name // "Normal", "Half Periods", ...
+      this.schedule = Bell.processMultiDay(schedule, date, scheduleType.dates);
+      this.period = Bell.getPeriod(this.schedule, date);
     }
 
     this.nextSchoolDay = Bell.nextSchoolDay(date);
@@ -56,12 +57,15 @@ class Bell {
   }
 
   /**
-   * Get the schedule for a given date
+   * Get the schedule object for the specified date's schedule type
+   * 
+   * Note: contains multiple schedules (1 for each schedule mode)
+   * 
    * @param {Date} date
    * @param {Array} [schedules] optional alternative list of schedules
    * @return {Object}
    */
-  static getSchedule(date, schedules = defaultSchedules) {
+  static getScheduleType(date, schedules = defaultSchedules) {
     let todaySchedule = null;
      schedules.forEach(schedule => {
       if (testDate(date, schedule.dates)) {
@@ -69,6 +73,21 @@ class Bell {
       }
     });
     return todaySchedule;
+  }
+
+  /**
+   * Get the actual schedule from the set of schedule modes
+   * @param {*} schedule 
+   * @param {*} scheduleMode 
+   */
+  static getSchedule(scheduleModes, scheduleMode) {
+    let schedule = scheduleModes[0]; // default to first schedule in array
+    scheduleModes.forEach(mode => {
+      if (mode.name == scheduleMode) {
+        schedule = mode; 
+      }
+    });
+    return schedule;
   }
 
   /**
@@ -86,7 +105,7 @@ class Bell {
     // (e.g. to prevent weekends from being counted as a 'No School' special event)
     if (testDate(date, defaultSchedule.dates)) {
       // then check if the actual schedule is different from the normal one
-      schedule = schedule || Bell.getSchedule(date, schedules);
+      schedule = schedule || Bell.getScheduleType(date, schedules);
       if (schedule.name !== defaultSchedule.name) {
         return schedule;
       }
@@ -101,14 +120,8 @@ class Bell {
    * @param {Array} [dates] the dates for the given schedule (only necessary if multiday schdeule like Finals)
    * @return {Object} object containing period name, start/end time, and whether before/after school
    */
-  static getPeriod(schedule, date, dates) {
-    let { start, end, periods } = schedule;
-
-    // if multiday schedule, the date selectors for that schedule type are also required
-    // in order to get which consecutive day the current date is
-    if (Bell.isMultiDay(schedule) && dates) {
-      ({start, end, periods} = Bell.getMultiDay({start, end, periods}, date, dates));
-    }
+  static getPeriod(schedule, date) {
+    const { start, end, periods } = schedule;
 
     const createPeriod = (name, startTime, endTime) => ({
       beforeSchool: Bell.isBetweenTime(date, '0:00', start[0]),
@@ -184,6 +197,20 @@ class Bell {
     return { start, end, periods };
   }
 
+  static processMultiDay(schedule, date, dates) {
+    const newSchedule = JSON.parse(JSON.stringify(schedule)); // duplicate schedule (don't want to modify original)
+    if (Bell.isMultiDay(schedule)) {
+      // if it is a multiday schedule get the start, end, and periods corresponding to the day
+      const {start, end, periods} = Bell.getMultiDay(schedule, date, dates);
+
+      // replace the original start, end, periods (could be arrays) with the ones for today
+      newSchedule.start = start;
+      newSchedule.end = end;
+      newSchedule.periods = periods;
+    }
+    return newSchedule;
+  }
+
   /**
    * Adds 'Period' to the period name if necessary
    * @param {string} name
@@ -218,7 +245,7 @@ class Bell {
     const isSchoolDay = date => {
       // Day is school day only if a schedule exists for that day and that schedule contains
       // at least one mode
-      const schedule = Bell.getSchedule(date, schedules);
+      const schedule = Bell.getScheduleType(date, schedules);
       return schedule && schedule.modes[0];
     };
 

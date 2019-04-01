@@ -17,22 +17,19 @@
 </template>
 
 <script>
-import Bell from 'src/js/bell.js';
 import Card from 'common/Card.vue';
 import Period from 'common/Period.vue';
 
+import { mapGetters } from 'vuex';
+
 export default {
-  props: {
-    bell: { type: Bell, required: true },
-  },
   computed: {
+    ...mapGetters([
+      'bell',
+    ]),
     periods() {
       if (this.bell.school) {
-        let { start, end, periods } = this.bell.schedule;
-
-        if (Bell.isMultiDay(this.bell.schedule)) {
-          ({ start, end, periods } = Bell.getMultiDay({ start, end, periods }, this.bell.date, this.bell.dates));
-        }
+        const { start, end, periods } = this.bell.schedule;
 
         const result = [];
 

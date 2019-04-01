@@ -14,12 +14,14 @@
 import getLunch from 'src/js/lunch.js';
 import Card from 'common/Card.vue';
 
+import { mapGetters } from 'vuex';
+
 export default {
-  props: {
-    date: { type: Date, required: true },
-    bell: { type: Object, required: true },
-  },
   computed: {
+    ...mapGetters([
+      'bell',
+      'date',
+    ]),
     lunch() {
       return getLunch(this.date);
     }

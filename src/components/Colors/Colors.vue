@@ -29,19 +29,17 @@
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faPencilAlt, faEdit } from '@fortawesome/free-solid-svg-icons'
 import colors from 'src/data/colors.json';
-import { EventBus } from 'src/js/event-bus.js';
 import ColorSelector from './ColorSelector.vue';
 import Home from 'src/components/Home/Home.vue';
 import HomeLink from 'src/components/common/HomeLink.vue';
+
+import { mapState } from "vuex";
 
 const isValidColor = color => {
   return /^#([0-9a-f]{3}){1,2}$/i.test(color);
 }
 
 export default {
-  props: {
-    color: { type: String, default: '' },
-  },
   data() {
     return {
       faPencilAlt,
@@ -49,12 +47,14 @@ export default {
       previewHeight: 0,
     }
   },
+  computed: mapState([
+    'color',
+  ]),
   methods: {
     colorSelected(color) {
       if (color !== this.color && isValidColor(color)) {
-        EventBus.$emit('set-color', color);
+        this.$store.commit('setColor', color);
       }
-      this.setCustomColorText()
     },
     setPreviewHeight() {
       const { offsetTop } = this.$refs.preview;

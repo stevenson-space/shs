@@ -26,6 +26,8 @@ import Bell from 'src/js/bell.js';
 import Card from 'common/Card.vue';
 import EventChip from 'common/EventChip.vue';
 
+import { mapGetters } from 'vuex';
+
 function getNextEvent(startDate) {
   // Generator that yields sequential dates starting from the day after start
   function* dates(start) {
@@ -62,9 +64,6 @@ function getNextEvent(startDate) {
 }
 
 export default {
-  props: {
-    date: { type: Date, required: true },
-  },
   data() {
     return {
       cardHeight: 0,
@@ -81,6 +80,9 @@ export default {
     this.reset();
   },
   computed: {
+    ...mapGetters([
+      'date',
+    ]),
     displayedEvents() {
       // Only display numEventsDisplayed events even if the events array contains more
       // and display blank placeholders if no events (possibly still loading)

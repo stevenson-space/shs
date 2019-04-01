@@ -15,16 +15,20 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   props: {
-    mode: { type: String, required: true },
     inSchool: { type: Boolean, required: true },
     countdown: { type: String, required: true },
     range: { type: String, required: true },
     nextDay: { type: String, required: true },
     scheduleType: { type: String, required: true },
     fullScreenMode: { type: Boolean, default: false },
-  }
+  },
+  computed: mapState([
+    'mode',
+  ]),
 }
 </script>
 
