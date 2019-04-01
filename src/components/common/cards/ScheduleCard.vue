@@ -1,6 +1,6 @@
 <template>
-  <card class="card" v-if="bell.school" @height-change="scrollToCurrentPeriod">
-    <div class="title">Schedule</div>
+  <card class="card" v-if="schedule || bell.school" @height-change="scrollToCurrentPeriod">
+    <div class="title">{{ title }}</div>
     <div class="periods" ref="periods">
       <period
         class="period"
@@ -23,13 +23,17 @@ import Period from 'common/Period.vue';
 import { mapGetters } from 'vuex';
 
 export default {
+  props: {
+    schedule: { type: Object, default: null },
+    title: { type: String, default: 'Schedule'}
+  },
   computed: {
     ...mapGetters([
       'bell',
     ]),
     periods() {
-      if (this.bell.school) {
-        const { start, end, periods } = this.bell.schedule;
+      if (this.schedule || this.bell.school) {
+        const { start, end, periods } = this.schedule || this.bell.schedule;
 
         const result = [];
 
@@ -38,7 +42,7 @@ export default {
             name: period,
             start: start[i],
             end: end[i],
-            isCurrent: this.bell.period && this.bell.period.name === period,
+            isCurrent: this.schedule ? false : (this.bell.period && this.bell.period.name === period),
           });
         });
 
@@ -110,4 +114,3 @@ export default {
       height: 37px
 
 </style>
-

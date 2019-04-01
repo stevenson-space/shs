@@ -55,9 +55,8 @@ function getNextEvent(startDate) {
       break;
     }
 
-    // give up searching after ~3 months
+    // give up searching after ~3 months of no events
     if (date.getTime() - startDate.getTime() >= 1000 * 60 * 60 * 24 * 30 * 3) {
-      console.log(date, startDate);
       break;
     }
   }
@@ -129,11 +128,7 @@ export default {
     reset() {
       this.lastDate = this.date;
       this.events = [];
-
-      // Initially load just the number of events necessary before any user interaction
-      this.loadEvents(this.numEventsInitial).then(() => {
-        this.showMoreEvents(this.numEventsInitial);
-      });
+      this.showMoreEvents(this.numEventsInitial);
     }
   },
   watch: {
@@ -179,7 +174,7 @@ export default {
   margin: auto
   display: block
   margin-top: -3px
-  font-size: 1.2em
+  font-size: 1.75em
   margin-bottom: 5px
   cursor: pointer
   color: var(--color)

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import mutations from "src/store/mutations.js";
+import mutations from 'src/store/mutations.js';
 import actions from 'src/store/actions.js';
 
 import Bell from 'src/js/bell.js';
