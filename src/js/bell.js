@@ -247,6 +247,16 @@ class Bell {
   }
 
   /**
+   * Returns an integer representation of the time during the day (usually for comparison purposes)
+   * @param {string} time 
+   * @return {number}
+   */
+  static timeToNumber(time) {
+    const [hours, minutes] = time.split(':').map(Number);
+    return hours * 60 + minutes;
+  }
+
+  /**
    * Gets the next school day after the given date (not including that date)
    * @param {Date} date 
    * @param {Array} schedules optional alternative list of schedules

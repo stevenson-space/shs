@@ -43,11 +43,6 @@ import ScrollSelector from 'common/ScrollSelector.vue';
 import Checkbox from 'common/Checkbox.vue';
 import Bell from 'src/js/bell.js';
 
-const timeToNumber = time => { // military time
-  const [hours, minutes] = time.split(':').map(Number);
-  return hours * 60 + minutes;
-}
-
 export default {
   data() {
     return {
@@ -85,7 +80,7 @@ export default {
     pickTime(options = [], selectedTime = '1:00') {
       return new Promise((resolve, reject) => {
         this.options = options.slice(0); // make a copy to prevent modification of the original
-        this.options.sort((a, b) => timeToNumber(a.time) - timeToNumber(b.time));
+        this.options.sort((a, b) => Bell.timeToNumber(a.time) - Bell.timeToNumber(b.time));
         this.setOthersChecked = true;
 
         this.show = true;

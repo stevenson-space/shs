@@ -3,8 +3,8 @@
     <home-link class="home-link"/>
 
     <div class="header">
-      <div class="title">
-        <div class="text">Untitled Schedule</div>
+      <div class="title" @click="editingScheduleName = true">
+        <div class="text" :contenteditable="editingScheduleName" @blur="scheduleName = $event.target.innerText">{{ scheduleName }}</div>
         <font-awesome-icon :icon="icons.faPencilAlt" class="icon"/>
       </div>
 
@@ -57,6 +57,8 @@ import Bell from 'src/js/bell.js';
 export default {
   data() {
     return {
+      scheduleName: 'Untitled Schedule',
+      editingScheduleName: false,
       schedules: null, // will be set in created()
       showDeleteAllPopup: false,
       icons: {
@@ -142,7 +144,9 @@ export default {
       return result;
     },
     sortPeriods() {
-
+      this.schedules.forEach(schedule => {
+        schedule.periods.sort((a, b) => Bell.timeToNumber(a.start) - Bell.timeToNumber(b.start));
+      });
     },
     updateName(schedule, period, name, updateOthers) {
       name = this.getNameWithoutConflicts(name);
@@ -154,8 +158,8 @@ export default {
             if (period.name === oldName) {
               period.name = name;
             }
-          })
-        })
+          });
+        });
       } else {
         this.schedules[schedule].periods[period].name = name;
       }

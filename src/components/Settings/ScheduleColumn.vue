@@ -93,11 +93,8 @@ export default {
       font-size: .8em
       margin-left: 5px
 
-  // .periods
-  //   margin-top: 20px
-
   .period
-    margin: 20px 40px
+    margin: 15px 40px
 
   .space
     flex: 1
