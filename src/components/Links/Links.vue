@@ -26,13 +26,14 @@ export default {
     return {
       links: [
         { name: 'D125', url: 'https://www.d125.org/' },
-        { name: 'Patriot Dollars', url: 'https://d125-sp.blackboard.com/eaccounts/%28S%28r2hohbnbliid2we2awrnv4hq%29%29/AnonymousHome.aspx' },
         { name: 'Infinite Campus', url: 'https://infinitecampus.d125.org/campus/portal/aes.jsp' },
+        { name: 'Canvas', url: 'https://d125.instructure.com/' },
         { name: 'Powerschool Learning', url: 'https://d125.learning.powerschool.com/do/account/login' },
-        { name: 'Tableau', url: 'http://tableau.d125.org/#/signin?destination=%2F' },
-        { name: 'Testing Center', url: 'https://docs.google.com/forms/d/e/1FAIpQLSdMoby5m1oNCMi_VgINPE-FDqPqjH5XlvgdDXUFxS4lJbb4Ng/viewform' },
         { name: 'Naviance', url: 'https://student.naviance.com/aeshs' },
+        { name: 'Peer Tutors', url: 'https://peertutorshs.wixsite.com/shspt#comp-jtxrtfbz' },
         { name: 'Google Classroom', url: 'https://classroom.google.com/' },
+        { name: 'Testing Center', url: 'https://docs.google.com/forms/d/e/1FAIpQLSdMoby5m1oNCMi_VgINPE-FDqPqjH5XlvgdDXUFxS4lJbb4Ng/viewform' },
+        { name: 'Patriot Dollars', url: 'https://d125-sp.blackboard.com/eaccounts/%28S%28r2hohbnbliid2we2awrnv4hq%29%29/AnonymousHome.aspx' },
       ]
     }
   },
