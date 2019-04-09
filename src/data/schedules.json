@@ -96,6 +96,30 @@
     ]
   },
   {
+    "name": "Special",
+    "dates": ["4/9/2019"],
+    "modes": [
+      {
+        "name": "Freshman",
+        "start": ["8:30"],
+        "end": ["12:15"],
+        "periods": ["!A World of Difference"]
+      },
+      {
+        "name": "Sophomore",
+        "start": ["8:30"],
+        "end": ["12:30"],
+        "periods": ["!PSAT 10"]
+      },
+      {
+        "name": "Junior",
+        "start": ["8:30"],
+        "end": ["13:30"],
+        "periods": ["!SAT"]
+      }
+    ]
+  },
+  {
     "name": "No School",
     "dates": ["weekends", "1st monday & september", "2nd monday & october", "3rd monday & january", "3rd monday & february",
       "9/10/2018", "9/19/2018", "11/22/2018-11/23/2018", "12/24/2018-1/7/2019", "3/1/2019", "3/25/2019-3/29/2019", "4/19/2019"],

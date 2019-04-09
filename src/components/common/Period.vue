@@ -1,6 +1,6 @@
 <template>
   <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">
-    <div class="circle">{{ actualPeriod }}</div>
+    <div class="circle" :style="{ fontSize: periodFontSize }">{{ actualPeriod }}</div>
     <div class="range">
       <div class="time">{{ convertMilitaryTime(start) }}</div>
       <span class="dash"> – </span>
@@ -25,6 +25,9 @@ export default {
       // remove the ! mark in front of period names
       const { period } = this;
       return period[0] === '!' ? period.substring(1) : period;
+    },
+    periodFontSize() {
+      return this.period.length > 10 ? '1em' : '1.3em';
     }
   },
   methods: {
@@ -58,11 +61,13 @@ export default {
     border-radius: 20px
     background-color: white
     text-align: center
-    font-size: 1.3em
     font-weight: bold
     color: #333
     margin: 5px 10px
     padding: 8px
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
   
   .range
     color: white
@@ -70,6 +75,7 @@ export default {
     flex-grow: 1
     font-size: 1.1em
     font-weight: bold
+    min-width: 110px
 
     .time
       display: inline-block
