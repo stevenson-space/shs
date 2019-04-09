@@ -15,16 +15,14 @@
 </template>
 
 <script>
-import schedules from 'src/data/schedules.json';
+import { mapState } from "vuex";
 import Schedule from './Schedule.vue';
 import HomeLink from 'common/HomeLink.vue';
 
 export default {
-  data() {
-    return {
-      schedules,
-    }
-  },
+  computed: mapState([
+    'schedules',
+  ]),
   components: { Schedule, HomeLink },
 }
 </script>

@@ -3,13 +3,21 @@
     <home-link class="home-link"/>
 
     <div class="header">
-      <div class="title" @click="editingScheduleName = true">
-        <div class="text" :contenteditable="editingScheduleName" @blur="scheduleName = $event.target.innerText">{{ scheduleName }}</div>
+      <div class="title" @click="editScheduleName">
+        <div
+          class="text"
+          :contenteditable="editingScheduleName"
+          @blur="setScheduleName($event.target.innerText)"
+          @keypress.enter.prevent="setScheduleName($event.target.innerText)"
+          ref="schedule-name"
+        >{{ scheduleName }}</div>
+
         <font-awesome-icon :icon="icons.faPencilAlt" class="icon"/>
       </div>
 
       <div class="buttons">
-        <div class="button" @click="addPeriod">
+        <div class="button" @click="save">Save Schedule</div>
+        <div class="button inverse" @click="addPeriod">
           <font-awesome-icon class="icon" :icon="icons.faPlus"/>
           Add Period To All
         </div>
@@ -46,15 +54,19 @@
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faPlus, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import { mapState } from 'vuex';
 
 import HomeLink from 'common/HomeLink.vue';
 import ScheduleColumn from './ScheduleColumn.vue';
 import TimePicker from './TimePicker.vue';
 import ConfirmPopup from 'common/ConfirmPopup.vue';
-import defaultSchedules from 'src/data/schedules.json';
 import Bell from 'src/js/bell.js';
 
 export default {
+  props: {
+    mode: { type: String, validator: val => ['add', 'edit'].includes(val), default: 'add'},
+    scheduleToEdit: { type: String, default: null },
+  },
   data() {
     return {
       scheduleName: 'Untitled Schedule',
@@ -67,22 +79,53 @@ export default {
       }
     }
   },
+  computed: mapState({
+    existingSchedules: 'schedules'
+  }),
   created() {
     // filtering out multiday schedules for now (too complex...), and no school days (indicated by modes.length === 0)
-    const schedules = defaultSchedules.filter(schedule => {
+    const schedules = this.existingSchedules.filter(schedule => {
       if (schedule.modes.length === 0 || Bell.isMultiDay(schedule.modes[0])) {
         return false;
       }
       return true;
     });
 
-    this.schedules = schedules.map(schedule => ({
-      name: schedule.name,
-      isEnabled: true,
-      periods: [],
-    }));
+    if (this.mode == 'add') {
+      this.schedules = schedules.map(schedule => ({
+        name: schedule.name,
+        isEnabled: true,
+        periods: [],
+      }));
 
-    this.addPeriod();
+      this.addPeriod();
+    }
+    else { // we assume mode == 'edit' and pre populate the page based on the existing mode
+      this.scheduleName = this.scheduleToEdit;
+      this.schedules = schedules.map(schedule => {
+        const result = {
+          name: schedule.name,
+          isEnabled: false,
+          periods: [],
+        }
+
+        const modeNames = schedule.modes.map(mode => mode.name);
+        const index = modeNames.indexOf(this.scheduleToEdit);
+        if (index > -1) {
+          result.isEnabled = true;
+          for (let i = 0; i < schedule.modes[index].periods.length; i++) {
+            result.periods.push({
+              start: schedule.modes[index].start[i],
+              end: schedule.modes[index].end[i],
+              name: schedule.modes[index].periods[i],
+            });
+          }
+        }
+
+        return result;
+      });
+    }
+    
   },
   methods: {
     pickTimeFor(schedule, period, time) {
@@ -93,7 +136,7 @@ export default {
       const timePicker = this.$refs['time-picker'];
 
       const options = []
-      defaultSchedules[schedule].modes.forEach(scheduleMode => {
+      this.existingSchedules[schedule].modes.forEach(scheduleMode => {
         scheduleMode.periods.forEach((period, i) => {
           options.push({
             text: Bell.formatPeriodName(period), 
@@ -108,14 +151,13 @@ export default {
 
       const userPeriod = this.schedules[schedule].periods[period];
       timePicker.pickTime(options, userPeriod[time]).then(result => {
-        console.log(result);
         userPeriod[time] = result.time;
         if (result.setOthers) {
           this.setOthers(userPeriod.name, result.name, result.scheduleMode, time);
         }
         this.sortPeriods();
       }, message => {
-        console.log(message);
+        // don't need to do anything if the user cancels
       });
     },
     setOthers(userPeriodName, periodName, scheduleMode, time) { // time is 'start' or 'end'
@@ -132,7 +174,7 @@ export default {
     },
     searchScheduleForTime(periodName, scheduleMode, time, schedule) { // time is 'start' or 'end'
       let result = null;
-      defaultSchedules[schedule].modes.forEach(mode => {
+      this.existingSchedules[schedule].modes.forEach(mode => {
         if (mode.name === scheduleMode) {
           mode.periods.forEach((period, i) => {
             if (period === periodName) {
@@ -149,7 +191,7 @@ export default {
       });
     },
     updateName(schedule, period, name, updateOthers) {
-      name = this.getNameWithoutConflicts(name);
+      name = this.getNameWithoutConflicts(name, this.doesNameExist);
 
       var oldName = this.schedules[schedule].periods[period].name;
       if (updateOthers) {
@@ -165,7 +207,7 @@ export default {
       }
     },
     addPeriod(toSchedule) {
-      const name = this.getNameWithoutConflicts(this.getRandomCourseName());
+      const name = this.getNameWithoutConflicts(this.getRandomCourseName(), this.doesNameExist);
       const getPeriod = () => ({ name, start: '23:59', end: '23:59' }); // function, so that a different object is created every time
       
       if (Number.isInteger(toSchedule)) { // add it to all schedules
@@ -178,9 +220,9 @@ export default {
 
       this.sortPeriods();
     },
-    getNameWithoutConflicts(name) {
+    getNameWithoutConflicts(name, doesNameExistFunction) {
       let newName = name;
-      for(let i = 2; this.doesNameExist(newName); i++) {
+      for(let i = 2; doesNameExistFunction(newName); i++) {
         newName = name + ' ' + i;
       }
       return newName;
@@ -215,6 +257,53 @@ export default {
         schedule.periods = [];
       });
       this.showDeleteAllPopup = false;
+    },
+    editScheduleName() {
+      this.editingScheduleName = true;
+      this.$nextTick(() => { // wait until contenteditable is set to true
+        window.getSelection().selectAllChildren(this.$refs['schedule-name']);
+      })
+    },
+    setScheduleName(name) {
+      if (name != this.scheduleName) {
+        let existingSchedulesNames = new Set();
+        this.existingSchedules.forEach(schedule => {
+          schedule.modes.map(mode => mode.name).forEach(name => existingSchedulesNames.add(name));
+        });
+        this.scheduleName = this.getNameWithoutConflicts(name, testName => existingSchedulesNames.has(testName));
+      }
+
+      window.getSelection().removeAllRanges();
+      this.editingScheduleName = false;
+    },
+    save() {
+      const formatSchedule = periods => {
+        const schedule = { name: this.scheduleName, start: [], end: [], periods: [] };
+        periods.forEach(period => {
+          schedule.start.push(period.start);
+          schedule.end.push(period.end);
+          schedule.periods.push(period.name);
+        });
+        return schedule;
+      }
+
+      this.schedules.forEach(schedule => {
+        if (schedule.isEnabled) {
+          this.$store.commit('addScheduleMode', {
+            scheduleType: schedule.name,
+            scheduleToAdd: formatSchedule(schedule.periods),
+            scheduleToReplace: this.mode == 'edit' ? this.scheduleToEdit : null,
+          });
+        }
+        else if (this.mode == 'edit') { // if in edit mode and the user unchecks isEnabled, we need to delete the mode
+          this.$store.commit('removeScheduleMode', {
+            scheduleType: schedule.name,
+            scheduleToRemove: this.scheduleToEdit,
+          });
+        }
+      });
+
+      this.$router.push('/settings');
     }
   },
   components: {
@@ -250,6 +339,9 @@ export default {
     // justify-content: space-between
     align-items: center
     cursor: pointer
+
+    .text
+      padding: 5px
 
     .icon
       font-size: .7em

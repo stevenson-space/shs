@@ -1,4 +1,5 @@
 import { query } from 'vue-analytics';
+import defaultSchedules from 'src/data/schedules.json';
 
 function parseUrlDateTime(route) {
   // If date and/or time is specified in URL, return that date
@@ -35,10 +36,38 @@ export default {
   setCurrentTime(state) {
     state.currentTime = Date.now();
   },
-  setSchedules(state, schedules) {
-    state.schedules = schedules;
-  },
   setScheduleMode(state, scheduleMode) {
     state.scheduleMode = scheduleMode;
+  },
+  setSchedules(state, schedules) {
+    state.schedules = schedules;
+    localStorage.schedules = JSON.stringify(schedules);
+  },
+  addScheduleMode(state, { scheduleType, scheduleToAdd, scheduleToReplace }) {
+    state.schedules.forEach(schedule => {
+      if (schedule.name === scheduleType) {
+        const replaceIndex = schedule.modes.map(mode => mode.name).indexOf(scheduleToReplace);
+        if (scheduleToReplace && replaceIndex > -1) {
+          schedule.modes.splice(replaceIndex, 1, scheduleToAdd);
+        } else {
+          schedule.modes.push(scheduleToAdd);
+        }
+      }
+    });
+    localStorage.schedules = JSON.stringify(state.schedules);
+  },
+  removeScheduleMode(state, { scheduleType, scheduleToRemove }) {
+    state.schedules.forEach(schedule => {
+      if (schedule.name === scheduleType) {
+        const removeIndex = schedule.modes.map(mode => mode.name).indexOf(scheduleToRemove);
+        if (removeIndex > -1) {
+          schedule.modes.splice(1, 1);
+        }
+      }
+    })
+  },
+  resetSchedules(state) {
+    state.schedules = defaultSchedules;
+    localStorage.schedules = JSON.stringify(defaultSchedules);
   }
 }

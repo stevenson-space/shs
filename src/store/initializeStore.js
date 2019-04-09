@@ -9,9 +9,19 @@ export default function(store) {
     query('set', 'dimension1', 'unset');
   }
 
-  store.commit('setSchedules', defaultSchedules);
+  const localSchedules = localStorage.schedules ? tryParseJSON(localStorage.schedules) : null
+  const schedules = Array.isArray(localSchedules) ? localSchedules : defaultSchedules;
+  store.commit('setSchedules', schedules);
 
   if (localStorage.defaultSchedule) {
     store.commit('setScheduleMode', localStorage.defaultSchedule);
+  }
+}
+
+function tryParseJSON(json) {
+  try {
+    return JSON.parse(json);
+  } catch (e) {
+    return null;
   }
 }

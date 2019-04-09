@@ -34,8 +34,8 @@
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faCog, faListAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { mapState } from "vuex";
 
-import schedules from 'src/data/schedules.json';
 import Card from 'common/Card.vue';
 import ScheduleCard from 'common/cards/ScheduleCard.vue';
 
@@ -55,12 +55,11 @@ export default {
         faPlus,
       },
       sidenavLinks,
-      schedules,
     }
   },
-  created() {
-    console.log('Settings');
-  },
+  computed: mapState([
+    'schedules',
+  ]),
   components: {
     FontAwesomeIcon,
     Card,

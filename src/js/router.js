@@ -49,6 +49,11 @@ const routes = [
   {
     path: '/add-schedule',
     component: AddSchedule,
+  },
+  {
+    path: '/edit-schedule/:scheduleToEdit',
+    component: AddSchedule,
+    props: route => ({ scheduleToEdit: route.params.scheduleToEdit, mode: 'edit' }),
   }
 ];
 
