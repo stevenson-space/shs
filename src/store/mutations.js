@@ -58,13 +58,14 @@ export default {
   },
   removeScheduleMode(state, { scheduleType, scheduleToRemove }) {
     state.schedules.forEach(schedule => {
-      if (schedule.name === scheduleType) {
+      if (!scheduleType || schedule.name === scheduleType) {
         const removeIndex = schedule.modes.map(mode => mode.name).indexOf(scheduleToRemove);
         if (removeIndex > -1) {
-          schedule.modes.splice(1, 1);
+          schedule.modes.splice(removeIndex, 1);
         }
       }
-    })
+    });
+    localStorage.schedules = JSON.stringify(state.schedules);
   },
   resetSchedules(state) {
     state.schedules = defaultSchedules;

@@ -1,9 +1,10 @@
 <template>
-  <popup :show="show" @close="$emit('cancel')">
+  <popup :show="show || showAlt" @close="cancel">
     <slot/>
+    <div class="text" v-show="text">{{ text }}</div>
     <div class="buttons">
-      <div class="button" @click="$emit('cancel')">{{ cancelText }}</div>
-      <div class="button inverse" @click="$emit('ok')">{{ okText }}</div>
+      <div class="button" @click="cancel">{{ cancelText }}</div>
+      <div class="button inverse" @click="ok">{{ okText }}</div>
     </div>
   </popup>
 </template>
@@ -11,11 +12,53 @@
 <script>
 import Popup from 'common/Popup.vue';
 
+// 2 ways to use this component:
+//   - Method 1: use the 'show' prop to display and hide,
+//               use the slot to control content
+//               use the 'cancel' and 'ok' events to do something based on user action
+//   - Method 2: use a reference to this component and call the 'displayPopup' method with the text as the parameter,
+//               which returns a Promise (success or fail depending on user action)
+
 export default {
   props: {
-    show: { type: Boolean, required: true },
+    show: { type: Boolean, default: false },
     okText: { type: String, default: 'OK' },
     cancelText: { type: String, default: 'Cancel' },
+  },
+  data() {
+    return {
+      showAlt: false,
+      text: '',
+      promiseResolve: () => {},
+      promiseReject: () => {},
+    }
+  },
+  methods: {
+    ok() {
+      this.$emit('ok');
+      this.promiseResolve();
+      this.reset();
+    },
+    cancel() {
+      this.$emit('cancel');
+      this.promiseReject('Canceled');
+      this.reset();
+    },
+    reset() {
+      this.promiseResolve = () => {};
+      this.promiseReject = () => {};
+      this.showAlt = false;
+      this.text = '';
+    },
+    displayPopup(text) {
+      return new Promise((resolve, reject) => {
+        this.text = text;
+        this.promiseResolve = resolve;
+        this.promiseReject = reject;
+
+        this.showAlt = true;
+      });
+    }
   },
   components: {
     Popup,
@@ -24,6 +67,13 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+
+.text
+  max-width: 300px
+  padding: 20px 35px
+  font-size: 1.2em
+  text-align: center
+  font-weight: bold
 
 .buttons
   display: flex

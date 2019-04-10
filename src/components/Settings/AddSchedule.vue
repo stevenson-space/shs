@@ -69,27 +69,30 @@ export default {
   },
   data() {
     return {
-      scheduleName: 'Untitled Schedule',
+      scheduleName: '',
       editingScheduleName: false,
       schedules: null, // will be set in created()
       showDeleteAllPopup: false,
       icons: {
         faPlus,
         faPencilAlt,
-      }
+      },
+      dirty: false, // true if the data has been modified without having been saved yet
+      beforeUnloadHandler: null,
     }
   },
   computed: mapState({
     existingSchedules: 'schedules'
   }),
   created() {
+    // setting scheduleName to 'Untitled Schedule' here in case a schedule already exists with
+    // that name (setScheduleName checks existing schedules and modifies name accordingly)
+    this.setScheduleName('Untitled Schedule');
+
     // filtering out multiday schedules for now (too complex...), and no school days (indicated by modes.length === 0)
-    const schedules = this.existingSchedules.filter(schedule => {
-      if (schedule.modes.length === 0 || Bell.isMultiDay(schedule.modes[0])) {
-        return false;
-      }
-      return true;
-    });
+    const schedules = this.existingSchedules.filter(schedule => 
+      schedule.modes.length > 0 && !Bell.isMultiDay(schedule.modes[0])
+    );
 
     if (this.mode == 'add') {
       this.schedules = schedules.map(schedule => ({
@@ -101,6 +104,7 @@ export default {
       this.addPeriod();
     }
     else { // we assume mode == 'edit' and pre populate the page based on the existing mode
+      const removeExclamationMark = periodName => periodName[0] == '!' ? periodName.substring(1) : periodName;
       this.scheduleName = this.scheduleToEdit;
       this.schedules = schedules.map(schedule => {
         const result = {
@@ -117,7 +121,7 @@ export default {
             result.periods.push({
               start: schedule.modes[index].start[i],
               end: schedule.modes[index].end[i],
-              name: schedule.modes[index].periods[i],
+              name: removeExclamationMark(schedule.modes[index].periods[i]),
             });
           }
         }
@@ -125,7 +129,43 @@ export default {
         return result;
       });
     }
-    
+
+    this.$nextTick(() => {
+      this.dirty = false; // reset dirty to false after initializing schedules (the watcher will set dirty to true)
+    })
+
+    this.beforeUnloadHandler = event => {
+      if (this.dirty) {
+        event.returnValue = 'Are you sure you want to leave without saving?';
+      }
+    };
+    window.addEventListener('beforeunload', this.beforeUnloadHandler);
+  },
+  destroyed() {
+    window.removeEventListener('beforeunload', this.beforeUnloadHandler);
+  },
+  watch: {
+    schedules: {
+      deep: true,
+      handler() {
+        this.dirty = true;
+      }
+    },
+    scheduleName() {
+      this.dirty = true;
+    }
+  },
+  beforeRouteLeave(to, from, next) {
+    if (this.dirty) {
+      const answer = window.confirm('Are you sure you want to leave without saving?');
+      if (answer) {
+        next();
+      } else {
+        next(false); // prevent user from leaving page
+      }
+    } else {
+      next();
+    }
   },
   methods: {
     pickTimeFor(schedule, period, time) {
@@ -282,7 +322,9 @@ export default {
         periods.forEach(period => {
           schedule.start.push(period.start);
           schedule.end.push(period.end);
-          schedule.periods.push(period.name);
+
+          // if the period name is not a number, then we want the exclamation mark to prevent inserting 'Period ' before the name when displayed
+          schedule.periods.push( (isNaN(parseInt(period.name)) ? '!' : '') + period.name);
         });
         return schedule;
       }
@@ -303,6 +345,7 @@ export default {
         }
       });
 
+      this.dirty = false;
       this.$router.push('/settings');
     }
   },
@@ -321,7 +364,7 @@ export default {
 .home-link
   position: absolute
   top: 10px
-  right: 10px
+  right: 20px
 
 .header
   width: 95%

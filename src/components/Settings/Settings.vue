@@ -9,18 +9,36 @@
     </div>
 
     <div class="main">
+      <home-link class="home-link"/>
+
       <div class="schedule">
         <a id="schedule"></a>
-        <div class="title">Schedules</div>
+
+        <div class="section-heading">
+          <div class="title">Schedules</div>
+          <rounded-button @click="restoreSchedules" text="Restore to Defaults" :icon="icons.faHistory"/>
+        </div>
+
         <div class="schedule-cards">
           <schedule-card
-            v-for="schedule in schedules[0].modes"
+            v-for="schedule in scheduleModes"
             class="card"
             :schedule="schedule"
             :title="schedule.name"
-            :key="schedule.name"/>
+            :key="schedule.name">
+              <div class="actions">
+                <div class="action" @click="deleteSchedule(schedule.name)">
+                  <font-awesome-icon :icon="icons.faTrashAlt"/> Delete
+                </div>
+                
+                <div class="action" @click="editSchedule(schedule.name)">
+                  <font-awesome-icon :icon="icons.faPencilAlt"/> Edit
+                </div>
+              </div>
+          </schedule-card>
+
           <card>
-            <div class="add-new-card">
+            <div class="add-new-card" @click="$router.push('/add-schedule')">
               <font-awesome-icon :icon="icons.faPlus"/>
               <div class="text">Add Custom</div>
             </div>
@@ -28,16 +46,22 @@
         </div>
       </div>
     </div>
+
+    <confirm-popup ref="confirm-popup"/>
   </div>
 </template>
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faCog, faListAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faListAlt, faPlus, faPencilAlt, faTrashAlt, faHistory } from '@fortawesome/free-solid-svg-icons';
 import { mapState } from "vuex";
 
+import Bell from 'src/js/bell.js';
 import Card from 'common/Card.vue';
 import ScheduleCard from 'common/cards/ScheduleCard.vue';
+import ConfirmPopup from 'common/ConfirmPopup.vue';
+import RoundedButton from 'common/RoundedButton.vue';
+import HomeLink from 'common/HomeLink.vue';
 
 const sidenavLinks = [
   { text: 'Schedules', link: '#schedules', icon: faListAlt },
@@ -53,17 +77,64 @@ export default {
       icons: {
         faCog,
         faPlus,
+        faPencilAlt,
+        faTrashAlt,
+        faHistory,
       },
       sidenavLinks,
     }
   },
-  computed: mapState([
-    'schedules',
-  ]),
+  computed: {
+    ...mapState([
+      'schedules',
+    ]),
+    scheduleModes() {
+      const scheduleModes = [];
+      const addedModeNames = new Set();
+
+      // filtering out multiday schedules for now (too complex...), and no school days (indicated by modes.length === 0)
+      const filteredSchedules = this.schedules.filter(schedule => 
+        schedule.modes.length > 0 && !Bell.isMultiDay(schedule.modes[0])
+      );
+
+      filteredSchedules.forEach(schedule => {
+        schedule.modes.forEach(mode => {
+          if (!addedModeNames.has(mode.name)) {
+            scheduleModes.push(mode);
+            addedModeNames.add(mode.name);
+          }
+        });
+      });
+
+      return scheduleModes;
+    }
+  },
+  methods: {
+    deleteSchedule(name) {
+      this.$refs['confirm-popup'].displayPopup(`Are you sure you want to delete the schedule '${name}'`)
+        .then(() => {
+          this.$store.commit('removeScheduleMode', { scheduleToRemove: name });
+        }, () => {
+          // don't need to do anything if the user cancels
+        })
+    },
+    editSchedule(name) {
+      this.$router.push({ name: 'editSchedules', params: { scheduleToEdit: name } });
+    },
+    restoreSchedules() {
+      this.$refs['confirm-popup'].displayPopup('Are you sure you want to erase your changes')
+        .then(() => {
+          this.$store.commit('resetSchedules');
+        }, () => {});
+    }
+  },
   components: {
     FontAwesomeIcon,
     Card,
-    ScheduleCard
+    ScheduleCard,
+    ConfirmPopup,
+    RoundedButton,
+    HomeLink,
   }
 }
 </script>
@@ -115,6 +186,11 @@ export default {
     display: flex
     margin-left: var(--sidenav-width)
 
+    .home-link
+      position: absolute
+      right: 20px
+      top: 10px
+
     .schedule
       margin-top: 100px
       width: 100%
@@ -122,14 +198,20 @@ export default {
       +tablet
         padding-left: 50px
 
-      .title
-        font-size: 2.75em
-        // margin-left: 150px
-        font-weight: bold
-        // color: var(--color)
+      .section-heading
         border-bottom: #555 3px solid
-        // border-bottom: var(--color) 3px solid
-        color: #555
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding-right: 10px
+
+        .title
+          font-size: 2.75em
+          // margin-left: 150px
+          font-weight: bold
+          // color: var(--color)
+          // border-bottom: var(--color) 3px solid
+          color: #555
 
       .schedule-cards
         // display: flex
@@ -146,6 +228,20 @@ export default {
           // flex: 1
           // min-width: 250px
           zoom: .8
+
+          .actions
+            display: flex
+            padding: 10px 0 5px 0
+            border-top: 1.5px solid var(--color)
+            // margin-top: 5px
+
+            .action
+              flex: 1
+              text-align: center
+              font-size: 1.25em
+              color: var(--color)
+              font-weight: bold
+              cursor: pointer
         
         .add-new-card
           height: 200px

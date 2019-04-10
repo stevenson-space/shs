@@ -13,6 +13,7 @@
         :key="period.name"
         ref="period"/>
     </div>
+    <slot/>
   </card>
 </template>
 
