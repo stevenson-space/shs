@@ -1,7 +1,17 @@
 <template>
   <div class="settings">
-    <div class="sidenav">
+    <div class="hamburger-menu" @click="showSidenav = true">
+      <font-awesome-icon :icon="icons.faBars"/>
+    </div>
+
+    <div class="sidenav-background" :class="{ show: showSidenav }" @click="showSidenav = false"/>
+    <div class="sidenav" :class="{ show: showSidenav }">
+      <div class="close-arrow" @click="showSidenav = false">
+        <font-awesome-icon :icon="icons.faArrowLeft"/>
+      </div>
+
       <div class="title"><font-awesome-icon :icon="icons.faCog"/> Settings</div>
+
       <a v-for="item in sidenavLinks" class="link" :href="item.link">
         <font-awesome-icon :icon="item.icon" class="icon"/>
         <span class="text">{{ item.text }}</span>
@@ -53,7 +63,7 @@
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faCog, faListAlt, faPlus, faPencilAlt, faTrashAlt, faHistory } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faListAlt, faPlus, faPencilAlt, faTrashAlt, faHistory, faBars, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { mapState } from "vuex";
 
 import Bell from 'src/js/bell.js';
@@ -80,8 +90,11 @@ export default {
         faPencilAlt,
         faTrashAlt,
         faHistory,
+        faBars,
+        faArrowLeft,
       },
       sidenavLinks,
+      showSidenav: false,
     }
   },
   computed: {
@@ -148,21 +161,54 @@ export default {
   +tablet
     --sidenav-width: 250px
 
+  .hamburger-menu
+    cursor: pointer
+    font-size: 1.5em
+    padding: 10px
+    position: absolute
+    left: 10px
+    color: var(--color)
+
+  .sidenav-background
+    background-color: rgb(0, 0, 0)
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    opacity: 0
+    z-index: -1
+    &.show
+      opacity: .65
+      z-index: 2
+
   .sidenav
     width: var(--sidenav-width)
     height: 100vh
     background-color: #333
     position: fixed
     background-color: var(--color)
+    transition: transform .2s
+    z-index: 5
+    +mobile
+      transform: translateX(calc(-1 * var(--sidenav-width)))
+      &.show
+        transform: translateX(0)
+
+    .close-arrow
+      color: white
+      font-size: 1.5em
+      padding: 10px 15px
+      cursor: pointer
 
     .title
       color: white
-      line-height: 100px
       text-align: center
       font-size: 2.25em
       font-weight: bold
       letter-spacing: 1px
       margin-bottom: 50px
+      margin-top: 10px
       // border-bottom: 3px solid white
 
     .link
@@ -185,6 +231,8 @@ export default {
   .main
     display: flex
     margin-left: var(--sidenav-width)
+    +mobile
+      margin-left: 0
 
     .home-link
       position: absolute
@@ -197,6 +245,8 @@ export default {
       padding-left: 150px
       +tablet
         padding-left: 50px
+      +mobile
+        padding-left: 20px
 
       .section-heading
         border-bottom: #555 3px solid
@@ -212,6 +262,8 @@ export default {
           // color: var(--color)
           // border-bottom: var(--color) 3px solid
           color: #555
+          +mobile
+            font-size: 2em
 
       .schedule-cards
         // display: flex
