@@ -7,6 +7,15 @@ import router from 'src/js/router.js'
 import store from 'src/store/index.js';
 import App from 'src/App.vue';
 
+// Unregister all service workers
+if(window.navigator && navigator.serviceWorker) {
+  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+    for(let registration of registrations) {
+      registration.unregister();
+    }
+  });
+}
+
 Vue.use(VueRouter);
 Vue.use(VueHammer);
 Vue.use(VueAnalytics, {

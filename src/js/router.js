@@ -10,16 +10,7 @@ const Links = () => import(/* webpackChunkName: "links" */ 'src/components/Links
 const Colors = () => import(/* webpackChunkName: "colors" */ 'src/components/Colors/Colors.vue');
 const Settings = () => import(/* webpackChunkName: "settings" */ 'src/components/Settings/Settings.vue');
 
-const AddSchedule = () => import(/* webpackChunkName: "addSchedule" */ 'src/components/Settings/AddSchedule.vue');
-
-// Unregister all service workers
-if(window.navigator && navigator.serviceWorker) {
-  navigator.serviceWorker.getRegistrations().then(function(registrations) {
-    for(let registration of registrations) {
-      registration.unregister();
-    }
-  });
-}
+const AddSchedule = () => import(/* webpackChunkName: "addSchedule" */ 'src/components/Settings/Add Schedule/AddSchedule.vue');
 
 const routes = [
   {
