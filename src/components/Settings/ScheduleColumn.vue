@@ -8,7 +8,7 @@
     </div>
 
     <checkbox :value="isEnabled" @input="$emit($event ? 'enable' : 'disable')">
-      This schedule applies on days of type "{{name}}"
+      <span class="enable-checkbox-text">This schedule applies on days of type "{{name}}"</span>
     </checkbox>
 
     <schedule-column-period
@@ -83,15 +83,8 @@ export default {
       font-size: .85em
       margin-right: 5px
 
-  .enable
-    display: flex
-    justify-content: center
-    align-items: center
-    margin-top: 5px
-
-    .text
-      font-size: .8em
-      margin-left: 5px
+  .enable-checkbox-text
+    font-size: .95em
 
   .period
     margin: 15px 40px

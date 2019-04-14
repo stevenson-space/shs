@@ -4,13 +4,17 @@
 
     <div class="header">
       <div class="title" @click="editScheduleName">
-        <div
-          class="text"
-          :contenteditable="editingScheduleName"
-          @blur="setScheduleName($event.target.innerText)"
-          @keypress.enter.prevent="setScheduleName($event.target.innerText)"
-          ref="schedule-name"
-        >{{ scheduleName }}</div>
+        <input
+          v-show="editingScheduleName"
+          class="schedule-name-input"
+          :value="scheduleName"
+          @blur="setScheduleName($event.target.value)"
+          @keypress.enter.prevent="setScheduleName($event.target.value)"
+          @click.stop=""
+          maxlength="20"
+          ref="schedule-name-input">
+        
+        <div class="text" v-show="!editingScheduleName">{{ scheduleName }}</div>
 
         <font-awesome-icon :icon="icons.faPencilAlt" class="icon"/>
       </div>
@@ -23,11 +27,14 @@
         </div>
         <div class="button inverse" @click="showDeleteAllPopup = true">Delete All</div>
       </div>
+
+      <div class="mobile-disclaimer">
+        For an easier experience, please use your iPad or a computer to create/edit the schedule and
+        <router-link class="link" to="/settings#transfer">transfer</router-link> it to this device
+      </div>
     </div>
 
     <div class="main">
-      <div class="add-period">
-      </div>
 
       <div class="columns">
         <schedule-column
@@ -300,12 +307,14 @@ export default {
     },
     editScheduleName() {
       this.editingScheduleName = true;
-      this.$nextTick(() => { // wait until contenteditable is set to true
-        window.getSelection().selectAllChildren(this.$refs['schedule-name']);
+      this.$nextTick(() => { // wait until the input appears (v-show = "editingScheduleName")
+        this.$refs['schedule-name-input'].focus();
+        // this.$refs['schedule-name-input'].select();
+        this.$refs['schedule-name-input'].setSelectionRange(0, 9999);
       })
     },
     setScheduleName(name) {
-      if (name != this.scheduleName) {
+      if (name && name != this.scheduleName) {
         let existingSchedulesNames = new Set();
         this.existingSchedules.forEach(schedule => {
           schedule.modes.map(mode => mode.name).forEach(name => existingSchedulesNames.add(name));
@@ -313,7 +322,6 @@ export default {
         this.scheduleName = this.getNameWithoutConflicts(name, testName => existingSchedulesNames.has(testName));
       }
 
-      window.getSelection().removeAllRanges();
       this.editingScheduleName = false;
     },
     save() {
@@ -361,6 +369,7 @@ export default {
 
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
+
 .home-link
   position: absolute
   top: 10px
@@ -383,20 +392,37 @@ export default {
     align-items: center
     cursor: pointer
 
+    +mobile-small
+      font-size: 1.75em
+      margin-left: 5px
+
+    .schedule-name-input
+      font-size: 1em
+      font-family: inherit
+      font-weight: inherit
+      color: inherit
+      max-width: calc(100vw - 55px) // 55px is the hardcoded space that the icon + margins take up
+
     .text
       padding: 5px
+      max-width: calc(100vw - 55px) // 55px is the hardcoded space that the icon + margins take up
+      overflow: hidden
+      text-overflow: ellipses
+
 
     .icon
       font-size: .7em
       margin-left: 25px
       color: #bbb
+      +mobile-small
+        margin-left: 10px
 
   .buttons
     display: flex
     flex-direction: column
     align-items: flex-end
     margin-right: 20px
-    margin-bottom: 25px
+    margin-bottom: 10px
     
     .button
       background-color: var(--color)
@@ -406,7 +432,7 @@ export default {
       cursor: pointer
       font-weight: bold
       user-select: none
-      margin: 5px 0
+      margin: 3px 0
       display: flex
       align-items: center
       &.inverse
@@ -418,8 +444,20 @@ export default {
         font-size: .85em
         margin-right: 5px
 
+  .mobile-disclaimer
+    font-size: .668em
+    text-align: center
+    display: none
+    +mobile-small
+      display: block
+
+    .link
+      color: var(--color)
+      font-weight: bold
+      font-size: 1.2em
+
 .main
-  margin-top: 50px
+  margin-top: 25px
 
   .columns
     display: flex

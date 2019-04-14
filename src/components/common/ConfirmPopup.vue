@@ -67,13 +67,18 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import 'src/styles/style.sass'
 
 .text
-  max-width: 300px
-  padding: 20px 35px
+  max-width: 400px
+  padding: 20px 30px
   font-size: 1.2em
   text-align: center
   font-weight: bold
+  box-sizing: border-box
+  overflow-wrap: break-word
+  +mobile-small
+    max-width: calc(100vw - 40px)
 
 .buttons
   display: flex

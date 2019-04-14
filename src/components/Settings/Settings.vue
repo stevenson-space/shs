@@ -12,7 +12,7 @@
 
       <div class="title"><font-awesome-icon :icon="icons.faCog"/> Settings</div>
 
-      <a v-for="item in sidenavLinks" class="link" :href="item.link">
+      <a v-for="item in sidenavLinks" class="link" :href="item.link" @click="showSidenav = false">
         <font-awesome-icon :icon="item.icon" class="icon"/>
         <span class="text">{{ item.text }}</span>
       </a>
@@ -21,12 +21,15 @@
     <div class="main">
       <home-link class="home-link"/>
 
-      <div class="schedule">
-        <a id="schedule"></a>
+      <div class="schedules">
+        <a id="schedules"></a>
 
         <div class="section-heading">
           <div class="title">Schedules</div>
-          <rounded-button @click="restoreSchedules" text="Restore to Defaults" :icon="icons.faHistory"/>
+          <switch-by-device>
+            <rounded-button @click="restoreSchedules" text="Restore to Defaults" :icon="icons.faHistory"/>
+            <rounded-button slot="mobile" @click="restoreSchedules" text="Restore" :icon="icons.faHistory"/>
+          </switch-by-device>
         </div>
 
         <div class="schedule-cards">
@@ -72,6 +75,7 @@ import ScheduleCard from 'common/cards/ScheduleCard.vue';
 import ConfirmPopup from 'common/ConfirmPopup.vue';
 import RoundedButton from 'common/RoundedButton.vue';
 import HomeLink from 'common/HomeLink.vue';
+import SwitchByDevice from 'common/SwitchByDevice.vue';
 
 const sidenavLinks = [
   { text: 'Schedules', link: '#schedules', icon: faListAlt },
@@ -122,6 +126,11 @@ export default {
       return scheduleModes;
     }
   },
+  watch: {
+    $route() { // when the hash changes
+      // this.showSidenav = false;
+    }
+  },
   methods: {
     deleteSchedule(name) {
       this.$refs['confirm-popup'].displayPopup(`Are you sure you want to delete the schedule '${name}'`)
@@ -148,6 +157,7 @@ export default {
     ConfirmPopup,
     RoundedButton,
     HomeLink,
+    SwitchByDevice,
   }
 }
 </script>
@@ -160,6 +170,8 @@ export default {
   --sidenav-width: 325px
   +tablet
     --sidenav-width: 250px
+  +mobile
+    --sidenav-width: 275px
 
   .hamburger-menu
     cursor: pointer
@@ -191,7 +203,7 @@ export default {
     transition: transform .2s
     z-index: 5
     +mobile
-      transform: translateX(calc(-1 * var(--sidenav-width)))
+      transform: translateX(calc(-1 * var(--sidenav-width) - 5px))
       &.show
         transform: translateX(0)
 
@@ -200,6 +212,9 @@ export default {
       font-size: 1.5em
       padding: 10px 15px
       cursor: pointer
+      display: none
+      +mobile
+        display: inline-block
 
     .title
       color: white
@@ -208,7 +223,9 @@ export default {
       font-weight: bold
       letter-spacing: 1px
       margin-bottom: 50px
-      margin-top: 10px
+      margin-top: 30px
+      +mobile
+        margin-top: 10px
       // border-bottom: 3px solid white
 
     .link
@@ -220,6 +237,8 @@ export default {
       background-color: rgba(255, 255, 255, .2)
       +tablet
         padding-left: 35px
+      +mobile
+        padding-left: 50px
 
       .icon
         font-size: 1.3em
@@ -229,8 +248,9 @@ export default {
         margin-left: 25px
 
   .main
-    display: flex
+    // display: flex
     margin-left: var(--sidenav-width)
+    padding-top: 100px
     +mobile
       margin-left: 0
 
@@ -238,11 +258,14 @@ export default {
       position: absolute
       right: 20px
       top: 10px
+      +mobile
+        right: 10px
 
-    .schedule
-      margin-top: 100px
+    .schedules
+      // margin-top: 100px
       width: 100%
       padding-left: 150px
+      box-sizing: border-box
       +tablet
         padding-left: 50px
       +mobile
@@ -274,6 +297,8 @@ export default {
           grid-template-columns: 1fr 1fr 1fr
         @media screen and (max-width: 1150px)
           grid-template-columns: 1fr 1fr
+        @media screen and (max-width: 500px)
+          grid-template-columns: 1fr
 
         .card
           // width: 23%

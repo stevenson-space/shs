@@ -27,7 +27,7 @@ export default {
     }
   },
   mounted() {
-    this.optionHeight = this.$refs['option'][0].offsetHeight;
+    this.optionHeight = this.$refs['option'][0].getBoundingClientRect().height;
     this.$nextTick(() => {
       this.scrollToSelected();
     });
