@@ -187,7 +187,6 @@ export default {
       border: var(--color) thin solid
       margin: 10px 10px
       padding: 5px 10px
-      // font-size: 1em
       cursor: pointer
       min-width: 200px
       &.selected

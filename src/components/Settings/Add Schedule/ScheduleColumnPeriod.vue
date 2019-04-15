@@ -114,7 +114,6 @@ export default {
     top: 5px
 
   .title
-    // text-align: center
     font-size: 1.4em
     margin-bottom: 15px
     display: flex

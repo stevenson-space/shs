@@ -388,7 +388,6 @@ export default {
     font-weight: bold
     margin-left: 10px
     display: flex
-    // justify-content: space-between
     align-items: center
     cursor: pointer
 

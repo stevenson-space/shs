@@ -12,9 +12,14 @@
 
       <div class="title"><font-awesome-icon :icon="icons.faCog"/> Settings</div>
 
-      <a v-for="item in sidenavLinks" class="link" :href="item.link" @click="showSidenav = false">
-        <font-awesome-icon :icon="item.icon" class="icon"/>
-        <span class="text">{{ item.text }}</span>
+      <a
+        v-for="(item, index) in sidenavLinks"
+        class="link"
+        :href="item.link"
+        @click="showSidenav = false"
+        :class="{ selected: index == selectedLinkIndex }">
+          <font-awesome-icon :icon="item.icon" class="icon" v-bind="item.iconProps || {}"/>
+          <span class="text">{{ item.text }}</span>
       </a>
     </div>
 
@@ -28,13 +33,14 @@
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faCog, faBars, faArrowLeft, faListAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faBars, faArrowLeft, faListAlt, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 
 import HomeLink from 'common/HomeLink.vue';
 import Schedules from './Schedules.vue';
 
 const sidenavLinks = [
   { text: 'Schedules', link: '#schedules', icon: faListAlt },
+  { text: 'Transfer', link: '#transfer', icon: faExchangeAlt, iconProps: { rotation: 90 } },
 ]
 
 export default {
@@ -47,6 +53,7 @@ export default {
       },
       sidenavLinks,
       showSidenav: false,
+      selectedLinkIndex: 0,
     }
   },
   components: {
@@ -74,6 +81,9 @@ export default {
     position: absolute
     left: 10px
     color: var(--color)
+    display: none
+    +mobile
+      display: block
 
   .sidenav-background
     background-color: rgb(0, 0, 0)
@@ -91,9 +101,9 @@ export default {
   .sidenav
     width: var(--sidenav-width)
     height: 100vh
-    background-color: #333
     position: fixed
-    background-color: var(--color)
+    background-color: white
+    border-right: #ddd solid thin
     transition: transform .2s
     z-index: 5
     +mobile
@@ -102,7 +112,7 @@ export default {
         transform: translateX(0)
 
     .close-arrow
-      color: white
+      color: var(--color)
       font-size: 1.5em
       padding: 10px 15px
       cursor: pointer
@@ -111,28 +121,29 @@ export default {
         display: inline-block
 
     .title
-      color: white
+      color: var(--color)
       text-align: center
       font-size: 2.25em
       font-weight: bold
       letter-spacing: 1px
-      margin-bottom: 50px
-      margin-top: 30px
+      margin-bottom: 10px
+      padding: 30px 0
+      border-bottom: #ddd solid thin
       +mobile
-        margin-top: 10px
-      // border-bottom: 3px solid white
+        padding-top: 5px
 
     .link
       text-decoration: none
-      color: white
+      color: #333
       padding: 15px
       padding-left: 70px
       display: block
-      background-color: rgba(255, 255, 255, .2)
       +tablet
         padding-left: 35px
       +mobile
         padding-left: 50px
+      &.selected
+        background-color: rgba(0, 0, 0, .075)
 
       .icon
         font-size: 1.3em

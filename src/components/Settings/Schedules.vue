@@ -1,11 +1,9 @@
 <template>
-  <div class="schedules">
-    <section-heading title="Schedules">
-      <switch-by-device>
-        <rounded-button @click="restoreSchedules" text="Restore to Defaults" :icon="icons.faHistory"/>
-        <rounded-button slot="mobile" @click="restoreSchedules" text="Restore" :icon="icons.faHistory"/>
-      </switch-by-device>
-    </section-heading>
+  <settings-section title="Schedules">
+    <switch-by-device slot="heading-content">
+      <rounded-button @click="restoreSchedules" text="Restore to Defaults" :icon="icons.faHistory"/>
+      <rounded-button slot="mobile" @click="restoreSchedules" text="Restore" :icon="icons.faHistory"/>
+    </switch-by-device>
 
     <div class="schedule-cards">
       <schedule-card
@@ -34,7 +32,7 @@
     </div>
 
     <confirm-popup ref="confirm-popup"/>
-  </div>
+  </settings-section>
 </template>
 
 <script>
@@ -44,7 +42,7 @@ import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faPlus, faPencilAlt, faTrashAlt, faHistory } from '@fortawesome/free-solid-svg-icons'
 
 import Bell from 'src/js/bell.js';
-import SectionHeading from './SectionHeading.vue';
+import SettingsSection from './SettingsSection.vue';
 import SwitchByDevice from 'common/SwitchByDevice.vue';
 import RoundedButton from 'common/RoundedButton.vue';
 import ScheduleCard from 'common/cards/ScheduleCard.vue';
@@ -108,7 +106,7 @@ export default {
   },
   components: {
     FontAwesomeIcon,
-    SectionHeading,
+    SettingsSection,
     SwitchByDevice,
     RoundedButton,
     ScheduleCard,
@@ -121,55 +119,46 @@ export default {
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 
-.schedules
-  width: 100%
-  padding-left: 150px
-  box-sizing: border-box
-  +tablet
-    padding-left: 50px
-  +mobile
-    padding-left: 20px
+.schedule-cards
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr
+  @media screen and (max-width: 1535px)
+    grid-template-columns: 1fr 1fr 1fr
+  @media screen and (max-width: 1150px)
+    grid-template-columns: 1fr 1fr
+  @media screen and (max-width: 500px)
+    grid-template-columns: 1fr
 
-  .schedule-cards
-    display: grid
-    grid-template-columns: 1fr 1fr 1fr 1fr
-    @media screen and (max-width: 1535px)
-      grid-template-columns: 1fr 1fr 1fr
-    @media screen and (max-width: 1150px)
-      grid-template-columns: 1fr 1fr
-    @media screen and (max-width: 500px)
-      grid-template-columns: 1fr
+  .card
+    zoom: .8
 
-    .card
-      zoom: .8
-
-      .actions
-        display: flex
-        padding: 10px 0 5px 0
-        border-top: 1.5px solid var(--color)
-
-        .action
-          flex: 1
-          text-align: center
-          font-size: 1.25em
-          color: var(--color)
-          font-weight: bold
-          cursor: pointer
-    
-    .add-new-card
-      height: 200px
+    .actions
       display: flex
-      justify-content: center
-      align-items: center
-      flex-direction: column
-      font-size: 2.8em
-      color: var(--color)
-      cursor: pointer
-      
-      .text
-        margin-top: 15px
+      padding: 10px 0 5px 0
+      border-top: 1.5px solid var(--color)
+
+      .action
+        flex: 1
+        text-align: center
+        font-size: 1.25em
+        color: var(--color)
         font-weight: bold
-        font-size: .75em
+        cursor: pointer
+  
+  .add-new-card
+    height: 200px
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    font-size: 2.8em
+    color: var(--color)
+    cursor: pointer
+    
+    .text
+      margin-top: 15px
+      font-weight: bold
+      font-size: .75em
 
 </style>
 
