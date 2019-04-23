@@ -25,6 +25,7 @@ export default {
   width: 100%
   padding-left: 100px
   box-sizing: border-box
+  margin-bottom: 50px
   +tablet
     padding-left: 50px
   +mobile

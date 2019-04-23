@@ -27,6 +27,7 @@
       <home-link class="home-link"/>
 
       <schedules id="schedules"/>
+      <transfer id="transfer"/>
     </div>
   </div>
 </template>
@@ -37,6 +38,7 @@ import { faCog, faBars, faArrowLeft, faListAlt, faExchangeAlt } from '@fortaweso
 
 import HomeLink from 'common/HomeLink.vue';
 import Schedules from './Schedules.vue';
+import Transfer from './Transfer.vue';
 
 const sidenavLinks = [
   { text: 'Schedules', link: '#schedules', icon: faListAlt },
@@ -60,6 +62,7 @@ export default {
     FontAwesomeIcon,
     HomeLink,
     Schedules,
+    Transfer,
   }
 }
 </script>

@@ -3,14 +3,15 @@
     <slot/>
     <div class="text" v-show="text">{{ text }}</div>
     <div class="buttons">
-      <div class="button" @click="cancel">{{ cancelText }}</div>
-      <div class="button inverse" @click="ok">{{ okText }}</div>
+      <rounded-button class="button" @click="cancel" :text="cancelText" :circular="false"/>
+      <rounded-button class="button" @click="ok" :text="okText" :circular="false" :invert="true"/>
     </div>
   </popup>
 </template>
 
 <script>
 import Popup from 'common/Popup.vue';
+import RoundedButton from 'common/RoundedButton.vue';
 
 // 2 ways to use this component:
 //   - Method 1: use the 'show' prop to display and hide,
@@ -62,6 +63,7 @@ export default {
   },
   components: {
     Popup,
+    RoundedButton,
   }
 }
 </script>
@@ -87,21 +89,7 @@ export default {
   margin-bottom: 10px
 
   .button
-    border: var(--color) 1.5px solid
-    border-radius: 7px
-    padding: 5px 15px
     margin: 0 10px
-    // background-color: var(--color)
-    // color: white
-    // font-size: 1.1em
-    font-weight: bold
-    cursor: pointer
-    color: var(--color)
-
-    &.inverse
-      // border: none
-      background-color: var(--color)
-      color: white
 
 </style>
 

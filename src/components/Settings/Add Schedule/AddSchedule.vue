@@ -20,12 +20,9 @@
       </div>
 
       <div class="buttons">
-        <div class="button" @click="save">Save Schedule</div>
-        <div class="button inverse" @click="addPeriod">
-          <font-awesome-icon class="icon" :icon="icons.faPlus"/>
-          Add Period To All
-        </div>
-        <div class="button inverse" @click="showDeleteAllPopup = true">Delete All</div>
+        <rounded-button class="button" @click="save" :invert="true" text="Save Schedule"/>
+        <rounded-button class="button" @click="addPeriod" :icon="icons.faPlus" text="Add Period to All"/>
+        <rounded-button class="button" @click="showDeleteAllPopup = true" text="Delete All"/>
       </div>
 
       <div class="mobile-disclaimer">
@@ -63,11 +60,12 @@ import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faPlus, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { mapState } from 'vuex';
 
+import Bell from 'src/js/bell.js';
 import HomeLink from 'common/HomeLink.vue';
 import ScheduleColumn from './ScheduleColumn.vue';
 import TimePicker from './TimePicker.vue';
 import ConfirmPopup from 'common/ConfirmPopup.vue';
-import Bell from 'src/js/bell.js';
+import RoundedButton from 'common/RoundedButton.vue';
 
 export default {
   props: {
@@ -363,6 +361,7 @@ export default {
     TimePicker,
     ConfirmPopup,
     FontAwesomeIcon,
+    RoundedButton,
   }
 }
 </script>
@@ -424,24 +423,7 @@ export default {
     margin-bottom: 10px
     
     .button
-      background-color: var(--color)
-      color: white
-      border-radius: 100px
-      padding: 5px 10px
-      cursor: pointer
-      font-weight: bold
-      user-select: none
       margin: 3px 0
-      display: flex
-      align-items: center
-      &.inverse
-        border: var(--color) 1.5px solid
-        background-color: white
-        color: var(--color)
-
-      .icon
-        font-size: .85em
-        margin-right: 5px
 
   .mobile-disclaimer
     font-size: .668em
