@@ -13,12 +13,24 @@
         <checkbox v-model="sendData.schedules">Schedules</checkbox>
       </div>
     </confirm-popup>
+    
+    <popup :show="popupToShow == 2">
+        Uploading...
+    </popup>
+    
+    <confirm-popup :show="popupToShow == 3" cancelText="">
+        {{ code }}
+    </confirm-popup>
+    
+    <confirm-popup :show="popupToShow == 4" cancelText="">
+        Error: {{ errorMessage }}
+    </confirm-popup>
   </settings-section>
 </template>
 
 <script>
 import { faUpload, faDownload } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
+import superagent from 'superagent';
 
 import SettingsSection from './SettingsSection.vue';
 import RoundedButton from 'common/RoundedButton.vue';
@@ -33,13 +45,15 @@ export default {
         faUpload,
         faDownload
       },
-      popupToShow: 0, // 0 - none, 1 - choose what to send, 2 - uploading..., 3 - display code
+      popupToShow: 0, // 0 - none, 1 - choose what to send, 2 - uploading..., 3 - display code, 4 - display error if error
       sendData: {
         color: true,
         // year: true,
         // defaultSchedule: true,
         schedules: true,
-      }
+      },
+      code: '',
+      errorMessage: '',
     };
   },
   methods: {
@@ -47,27 +61,29 @@ export default {
     showSendPopup() { this.popupToShow = 1 },
     showUploadingPopup() { this.popupToShow = 2 },
     showCodePopup() { this.popupToShow = 3 },
+    showErrorPopup() { this.popupToShow = 4 },
     send() {
       this.showUploadingPopup();
       
       let data = {};
       if (this.sendData.color) {
-        data.color = this.$state.color;
+        data.color = this.$store.state.color;
       }
       if (this.sendData.schedules) {
-        data.schedules = this.$state.schedules;
+        data.schedules = this.$store.state.schedules;
       }
-
-      // The following does not work yet because dpaste is not available over https
-      // axios.post('http://dpaste.com/api/v2/', {
-      //   content: JSON.stringify(data),
-      //   syntax: 'json',
-      //   expiry_days: 1,
-      // }).then(response => {
-      //   console.log(response);
-      // }).catch(error => {
-      //   console.log(error);
-      // });
+      
+      superagent
+        .post('https://cranky-jennings-b82188.netlify.com/send')
+        .send({ content: JSON.stringify(data), syntax: 'json', expiry_days: 1})
+        .type('form')
+        .then(response => {
+            console.log(response)
+            const url = response.text;
+            this.code = url.slice(url.lastIndexOf('/') + 1).trim().replace(/[^a-zA-Z0-9]/g, '');
+            this.showCodePopup();
+        })
+        .catch(error => this.errorMessage = error.message.split('\n')[0])
     }
   },
   components: {

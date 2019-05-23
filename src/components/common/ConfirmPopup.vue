@@ -3,8 +3,8 @@
     <slot/>
     <div class="text" v-show="text">{{ text }}</div>
     <div class="buttons">
-      <rounded-button class="button" @click="cancel" :text="cancelText" :circular="false"/>
-      <rounded-button class="button" @click="ok" :text="okText" :circular="false" :invert="true"/>
+      <rounded-button class="button" v-if="cancelText" @click="cancel" :text="cancelText" :circular="false"/>
+      <rounded-button class="button" v-if="okText" @click="ok" :text="okText" :circular="false" :invert="true"/>
     </div>
   </popup>
 </template>
