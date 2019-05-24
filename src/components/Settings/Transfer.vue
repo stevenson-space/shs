@@ -4,8 +4,9 @@
       <rounded-button text="Send Data" class="button" :icon="icons.faUpload" @click="showSendPopup"/>
       <rounded-button text="Recieve Data" class="button" :icon="icons.faDownload"/>
     </div>
+
     <confirm-popup :show="popupToShow == 1" @cancel="hidePopup" @ok="send" ok-text="Send">
-      <div class="show-popup">
+      <div class="send-popup">
         <div class="title">Choose what to send:</div>
         <checkbox v-model="sendData.color">Color</checkbox>
         <!-- <checkbox v-model="sendData.year">Year</checkbox>
@@ -15,21 +16,28 @@
     </confirm-popup>
     
     <popup :show="popupToShow == 2">
-        Uploading...
+        <div class="loading-popup">
+          <font-awesome-icon :icon="icons.faSpinner" pulse/>
+          &nbsp;&nbsp;Loading
+        </div>
     </popup>
     
-    <confirm-popup :show="popupToShow == 3" cancelText="">
-        {{ code }}
+    <confirm-popup :show="popupToShow == 3" cancelText="" okText="Done" @ok="hidePopup">
+        <div class="code-popup">
+          Click on <span class="color">Recieve Data</span> on the other device and enter this code:
+          <div class="code">{{ code }}</div>
+        </div>
     </confirm-popup>
     
-    <confirm-popup :show="popupToShow == 4" cancelText="">
-        Error: {{ errorMessage }}
+    <confirm-popup :show="popupToShow == 4" cancelText="" @ok="hidePopup" @cancel="hidePopup">
+        <div class="error-popup">Error: {{ errorMessage }}</div>
     </confirm-popup>
   </settings-section>
 </template>
 
 <script>
-import { faUpload, faDownload } from '@fortawesome/free-solid-svg-icons';
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
+import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import superagent from 'superagent';
 
 import SettingsSection from './SettingsSection.vue';
@@ -43,17 +51,18 @@ export default {
     return {
       icons: {
         faUpload,
-        faDownload
+        faDownload,
+        faSpinner,
       },
-      popupToShow: 0, // 0 - none, 1 - choose what to send, 2 - uploading..., 3 - display code, 4 - display error if error
+      popupToShow: 0, // 0 - none, 1 - choose what to send, 2 - loading..., 3 - display code, 4 - display error if error
       sendData: {
         color: true,
         // year: true,
         // defaultSchedule: true,
         schedules: true,
       },
-      code: '',
-      errorMessage: '',
+      code: 'ABCDEFG',
+      errorMessage: 'Failed to access internet for numerous unidentifiable reasons',
     };
   },
   methods: {
@@ -83,7 +92,10 @@ export default {
             this.code = url.slice(url.lastIndexOf('/') + 1).trim().replace(/[^a-zA-Z0-9]/g, '');
             this.showCodePopup();
         })
-        .catch(error => this.errorMessage = error.message.split('\n')[0])
+        .catch(error => {
+          this.errorMessage = error.message.split('\n')[0];
+          this.showErrorPopup();
+        });
     }
   },
   components: {
@@ -92,6 +104,7 @@ export default {
     Popup,
     Checkbox,
     ConfirmPopup,
+    FontAwesomeIcon,
   }
 }
 </script>
@@ -103,13 +116,13 @@ export default {
   align-items: center
   height: 150px
   justify-content: center
-  font-size: 1.4em
+  font-size: 1.3em
 
   .button
     width: 200px
     margin: 0 25px
 
-.show-popup
+.send-popup
   margin: 15px 25px
   width: 200px
   text-align: left
@@ -123,5 +136,29 @@ export default {
     font-weight: bold
     color: #333
     font-size: 1.15em
+
+.loading-popup
+  margin: 25px
+  font-size: 1.1em
+
+.code-popup
+  margin: 15px 25px 10px 25px
+  max-width: 300px
+  text-align: center
+
+  .color, .code
+    color: var(--color)
+    font-weight: bold
+
+  .code
+    margin-top: 5px
+    font-size: 1.75em
+    letter-spacing: 3px
+
+.error-popup
+  color: red
+  margin: 15px 25px
+  font-weight: bold
+  max-width: 300px
 
 </style>
