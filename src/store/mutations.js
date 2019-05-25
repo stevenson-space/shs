@@ -15,6 +15,9 @@ function parseUrlDateTime(route) {
   return new Date(`${date || todayDate} ${time || todayTime}`);
 }
 
+// For each variable that is saved to localStorage, there must be a setter with the appropriate name
+// (e.g. color -> setColor) in order to ensure that transfer works
+
 export default {
   setMode(state, route) {
     // if 'date' url parameter is specified, 'day' mode is triggered

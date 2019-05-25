@@ -1,36 +1,62 @@
 <template>
   <settings-section title="Transfer">
     <div class="buttons">
-      <rounded-button text="Send Data" class="button" :icon="icons.faUpload" @click="showSendPopup"/>
-      <rounded-button text="Recieve Data" class="button" :icon="icons.faDownload"/>
+      <rounded-button text="Send Data" class="button" :icon="icons.faUpload" @click="showPopup(popups.send)"/>
+      <rounded-button text="Receive Data" class="button" :icon="icons.faDownload" @click="showPopup(popups.receive)"/>
     </div>
 
-    <confirm-popup :show="popupToShow == 1" @cancel="hidePopup" @ok="send" ok-text="Send">
+    <confirm-popup :show="popupToShow == popups.send" @cancel="cancel" @ok="send" ok-text="Send">
       <div class="send-popup">
         <div class="title">Choose what to send:</div>
-        <checkbox v-model="sendData.color">Color</checkbox>
-        <!-- <checkbox v-model="sendData.year">Year</checkbox>
-        <checkbox v-model="sendData.defaultSchedule">Default Schedule</checkbox> -->
-        <checkbox v-model="sendData.schedules">Schedules</checkbox>
+
+        <checkbox
+          v-for="(_, setting) in shouldSendSetting"
+          v-model="shouldSendSetting[setting]"
+          :key="setting">
+          {{ settingToName(setting) }}
+        </checkbox>
       </div>
     </confirm-popup>
     
-    <popup :show="popupToShow == 2">
+    <confirm-popup :show="popupToShow == popups.code" cancelText="" okText="Done" @ok="cancel">
+        <div class="code-popup">
+          Click on <span class="color">Receive Data</span> on the other device and enter this code:
+          <div class="code">{{ code }}</div>
+        </div>
+    </confirm-popup>
+
+    <confirm-popup :show="popupToShow == popups.receive" @cancel="cancel" @ok="receive" ok-text="Receive">
+      <div class="receive-popup">
+        <div class="title">Enter code:</div>
+        <div>(Click <span class="color">Send</span> on other device to get code)</div>
+        <input v-model="receiveCode">
+      </div>
+    </confirm-popup>
+
+    <confirm-popup :show="popupToShow == popups.save" @cancel="cancel" @ok="save" ok-text="Save">
+      <div class="save-popup">
+        <div class="title">Choose what to save:</div>
+
+        <checkbox
+          v-for="(_, setting) in shouldSaveSetting"
+          v-model="shouldSaveSetting[setting]"
+          :key="setting">
+          {{ settingToName(setting) }}
+        </checkbox>
+
+        <div class="warning">Warning: Any existing data will be lost</div>
+      </div>
+    </confirm-popup>
+
+    <popup :show="popupToShow == popups.loading">
         <div class="loading-popup">
           <font-awesome-icon :icon="icons.faSpinner" pulse/>
           &nbsp;&nbsp;Loading
         </div>
     </popup>
     
-    <confirm-popup :show="popupToShow == 3" cancelText="" okText="Done" @ok="hidePopup">
-        <div class="code-popup">
-          Click on <span class="color">Recieve Data</span> on the other device and enter this code:
-          <div class="code">{{ code }}</div>
-        </div>
-    </confirm-popup>
-    
-    <confirm-popup :show="popupToShow == 4" cancelText="" @ok="hidePopup" @cancel="hidePopup">
-        <div class="error-popup">Error: {{ errorMessage }}</div>
+    <confirm-popup :show="popupToShow == popups.error" cancelText="" @ok="cancel" @cancel="cancel">
+        <div class="error-popup">{{ errorMessage }}</div>
     </confirm-popup>
   </settings-section>
 </template>
@@ -39,12 +65,30 @@
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import superagent from 'superagent';
+import Vue from 'vue';
 
 import SettingsSection from './SettingsSection.vue';
 import RoundedButton from 'common/RoundedButton.vue';
 import Popup from 'common/Popup.vue';
 import ConfirmPopup from 'common/ConfirmPopup.vue';
 import Checkbox from 'common/Checkbox.vue';
+
+// Note: setting refers to the name (e.g. 'color'), data inclued the content (e.g. '#FA32F5' or {'color' : '#FA32F5'})
+
+const tranferableSettings = [ // the following strings should be direct properties of $store.state
+  'color',
+  'schedules',
+]
+
+const popups = {
+  none: 0,
+  send: 1,
+  code: 2,
+  receive: 3,
+  save: 4,
+  loading: 5,
+  error: 6,
+}
 
 export default {
   data() {
@@ -54,32 +98,49 @@ export default {
         faDownload,
         faSpinner,
       },
-      popupToShow: 0, // 0 - none, 1 - choose what to send, 2 - loading..., 3 - display code, 4 - display error if error
-      sendData: {
-        color: true,
-        // year: true,
-        // defaultSchedule: true,
-        schedules: true,
-      },
-      code: 'ABCDEFG',
-      errorMessage: 'Failed to access internet for numerous unidentifiable reasons',
+      popups,
+      popupToShow: 0, // using a single variable to control appearance of all popups to ensure only one is displayed at any point
+      shouldSendSetting: {}, // initialized in created()
+      code: '',
+      errorMessage: '',
+      receiveCode: '',
+      receivedData: null,
+      shouldSaveSetting: {} // initialized after data is received
     };
   },
+  created() {
+    // Initialize each property of shouldSendSetting to true (meaning that all send checkboxes will be checked initially)
+    tranferableSettings.forEach(str => {
+      Vue.set(this.shouldSendSetting, str, true); // need use Vue.set since we're adding dynamic properties to a tracked object
+    });
+  },
   methods: {
-    hidePopup() { this.popupToShow = 0 },
-    showSendPopup() { this.popupToShow = 1 },
-    showUploadingPopup() { this.popupToShow = 2 },
-    showCodePopup() { this.popupToShow = 3 },
-    showErrorPopup() { this.popupToShow = 4 },
+    settingToName(setting) { // convert setting to readable name ('defaultSchedule' to 'Default Schedule')
+      const separatedWords = setting.replace(/([a-z])([A-Z])/g, '$1 $2'); // 'defaultScheduleSomething' to 'default Schedule Something'
+      return separatedWords[0].toUpperCase() + separatedWords.slice(1); // capitalize first letter
+    },
+    showPopup(popup) {
+      this.popupToShow = popup;
+    },
+    cancel() {
+      // reset most things (usually unnecessary since they'll be overwritten anyway, but just in case)
+      this.code = '';
+      this.errorMessage = '';
+      this.receiveCode = '';
+      this.receivedData = null;
+      this.shouldSaveSetting = {};
+
+      this.popupToShow = popups.none;
+    },
     send() {
-      this.showUploadingPopup();
-      
+      this.showPopup(popups.loading);
+
+      // Get the data for each selected option to send
       let data = {};
-      if (this.sendData.color) {
-        data.color = this.$store.state.color;
-      }
-      if (this.sendData.schedules) {
-        data.schedules = this.$store.state.schedules;
+      for (let [setting, shouldSend] of Object.entries(this.shouldSendSetting)) {
+        if (shouldSend) {
+          data[setting] = this.$store.state[setting];
+        }
       }
       
       superagent
@@ -87,15 +148,70 @@ export default {
         .send({ content: JSON.stringify(data), syntax: 'json', expiry_days: 1})
         .type('form')
         .then(response => {
-            console.log(response)
-            const url = response.text;
-            this.code = url.slice(url.lastIndexOf('/') + 1).trim().replace(/[^a-zA-Z0-9]/g, '');
-            this.showCodePopup();
+          console.log(response)
+          const url = response.text;
+          const code = url.slice(url.lastIndexOf('/') + 1).trim().replace(/[^a-zA-Z0-9]/g, '');
+          this.code = code.toLowerCase(); // converting to lower case to make it easier to type (will convert back when receiving)
+          this.showPopup(popups.code);
         })
         .catch(error => {
-          this.errorMessage = error.message.split('\n')[0];
-          this.showErrorPopup();
+          this.errorMessage = "Error: Please check your internet"
+          this.showPopup(popups.error);
         });
+    },
+    receive() {
+      this.showPopup(popups.loading);
+
+      superagent
+        .get('https://cranky-jennings-b82188.netlify.com/recieve')
+        .query({ filename: this.receiveCode.toUpperCase() + '.txt' })
+        .then(response => {
+          console.log(response);
+
+          try {
+            const data = JSON.parse(response.text);
+
+            // all of the settings in data must be present in transferableSettings for data to be valid
+            let isValid = true;
+            const settings = Object.keys(data);
+            settings.forEach(setting => {
+              if (!tranferableSettings.includes(setting)) isValid = false;
+            });
+
+            if (isValid) {
+              this.receivedData = data;
+
+              this.shouldSaveSetting = {}; // reset it in case there was a previous received data with different settings
+              settings.forEach(setting => { // default to saving all settings present in data
+                Vue.set(this.shouldSaveSetting, setting, true); // need use Vue.set since we're adding dynamic properties to a tracked object
+              });
+
+              this.showPopup(popups.save);
+            } else {
+              this.errorMessage = "Error: Invalid code"
+              this.showPopup(popups.error);
+            }
+
+          } catch(e) {
+            this.errorMessage = "Error: Invalid code"
+            this.showPopup(popups.error);
+          }
+        })
+        .catch(error => {
+          this.errorMessage = "Error: Invalid code or no internet";
+          this.showPopup(popups.error);
+        })
+    },
+    save() {
+      if (this.receivedData) {
+        for (let [setting, data] of Object.entries(this.receivedData)) {
+          if (this.shouldSaveSetting[setting]) {
+            const mutation = 'set' + setting[0].toUpperCase() + setting.slice(1); // 'defaultSchedule' -> 'setDefaultSchedule'
+            this.$store.commit(mutation, data);
+          }
+        }
+      }
+      this.cancel();
     }
   },
   components: {
@@ -113,18 +229,20 @@ export default {
 
 .buttons
   display: flex
-  align-items: center
-  height: 150px
+  // align-items: center
+  // height: 150px
   justify-content: center
   font-size: 1.3em
+  flex-flow: row wrap
+  margin: 20px 0
 
   .button
     width: 200px
-    margin: 0 25px
+    margin: 10px 25px
 
-.send-popup
+.send-popup, .save-popup
   margin: 15px 25px
-  width: 200px
+  width: 225px
   text-align: left
   display: flex
   flex-direction: column
@@ -135,11 +253,16 @@ export default {
     width: 100%
     font-weight: bold
     color: #333
-    font-size: 1.15em
+    font-size: 1.2em
 
-.loading-popup
-  margin: 25px
-  font-size: 1.1em
+  .warning
+    font-size: .76em
+    color: red
+    text-align: center
+    margin-top: 15px
+    width: 100%
+    font-weight: bold
+    
 
 .code-popup
   margin: 15px 25px 10px 25px
@@ -154,6 +277,34 @@ export default {
     margin-top: 5px
     font-size: 1.75em
     letter-spacing: 3px
+
+.receive-popup
+  margin: 15px 25px
+  text-align: center
+  font-size: .79em
+  
+  .title
+    font-size: 1.75em
+    margin-bottom: 3px
+
+  .color
+    color: var(--color)
+    font-weight: bold
+
+  input
+    margin-top: 12px
+    border-radius: 5px
+    border: thin solid #bbb
+    font-size: 2em
+    width: 150px
+    letter-spacing: 2px
+    font-weight: bold
+    color: var(--color)
+    text-align: center
+
+.loading-popup
+  margin: 25px
+  font-size: 1.1em
 
 .error-popup
   color: red
