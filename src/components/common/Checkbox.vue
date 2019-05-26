@@ -55,6 +55,7 @@ export default {
     .check
       transform: scale(0)
       transition: transform .2s
+      position: absolute
 
     &.checked
       border-width: 10px

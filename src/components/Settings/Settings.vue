@@ -13,7 +13,7 @@
       <div class="title"><font-awesome-icon :icon="icons.faCog"/> Settings</div>
 
       <a
-        v-for="(item, index) in sidenavLinks"
+        v-for="(item, index) in sidenavItems"
         class="link"
         :href="item.link"
         @click="showSidenav = false"
@@ -28,6 +28,8 @@
 
       <schedules id="schedules"/>
       <transfer id="transfer"/>
+
+      <div class="extra-space"/>
     </div>
   </div>
 </template>
@@ -40,7 +42,7 @@ import HomeLink from 'common/HomeLink.vue';
 import Schedules from './Schedules.vue';
 import Transfer from './Transfer.vue';
 
-const sidenavLinks = [
+const sidenavItems = [
   { text: 'Schedules', link: '#schedules', icon: faListAlt },
   { text: 'Transfer', link: '#transfer', icon: faExchangeAlt, iconProps: { rotation: 90 } },
 ]
@@ -53,10 +55,24 @@ export default {
         faBars,
         faArrowLeft,
       },
-      sidenavLinks,
+      sidenavItems,
       showSidenav: false,
       selectedLinkIndex: 0,
+      scrollListener: null,
     }
+  },
+  created() {
+    this.scrollListener = () => {
+      const scrollY = window.scrollY + 100; // +100 effectively moves the threshold to 100px below the top
+      sidenavItems.forEach((sidenavItem, index) => {
+        const element = document.querySelector(sidenavItem.link);
+        if (scrollY > element.offsetTop) { // don't need to check if less than bottom of section, because next pass through for loop will overwrite selectedLinkIndex
+          this.selectedLinkIndex = index;
+        }
+      });
+    }
+
+    window.addEventListener('scroll', this.scrollListener);
   },
   components: {
     FontAwesomeIcon,
@@ -167,5 +183,8 @@ export default {
       top: 10px
       +mobile
         right: 10px
+    
+    .extra-space
+      height: calc(100vh - 150px) // ensure that the last section will be scrollable to the top
 
 </style>

@@ -148,7 +148,6 @@ export default {
         .send({ content: JSON.stringify(data), syntax: 'json', expiry_days: 1})
         .type('form')
         .then(response => {
-          console.log(response)
           const url = response.text;
           const code = url.slice(url.lastIndexOf('/') + 1).trim().replace(/[^a-zA-Z0-9]/g, '');
           this.code = code.toLowerCase(); // converting to lower case to make it easier to type (will convert back when receiving)
@@ -166,8 +165,6 @@ export default {
         .get('https://cranky-jennings-b82188.netlify.com/recieve')
         .query({ filename: this.receiveCode.toUpperCase() + '.txt' })
         .then(response => {
-          console.log(response);
-
           try {
             const data = JSON.parse(response.text);
 
