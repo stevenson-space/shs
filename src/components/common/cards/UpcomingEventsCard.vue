@@ -1,5 +1,5 @@
 <template>
-  <card class="card">
+  <card class="card" v-if="!(events.length === 0 && eventsExhausted)">
     <div class="title">Upcoming Events</div>
     <div class="events">
       <div class="line"/>
@@ -128,6 +128,7 @@ export default {
     reset() {
       this.lastDate = this.date;
       this.events = [];
+      this.eventsExhausted = false;
       this.showMoreEvents(this.numEventsInitial);
     }
   },

@@ -51,6 +51,7 @@ export default {
     transition: border-width .2s
     cursor: pointer
     min-width: 20px
+    position: relative
 
     .check
       transform: scale(0)
