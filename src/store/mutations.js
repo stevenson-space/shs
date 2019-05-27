@@ -73,5 +73,13 @@ export default {
   resetSchedules(state) {
     state.schedules = defaultSchedules;
     localStorage.schedules = JSON.stringify(defaultSchedules);
+  },
+  setDefaultSchedule(state, schedule) {
+    state.defaultSchedule = schedule;
+    localStorage.defaultSchedule = schedule;
+  },
+  setGrade(state, grade) {
+    state.grade = grade;
+    localStorage.grade = grade;
   }
 }

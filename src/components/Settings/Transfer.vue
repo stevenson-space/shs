@@ -77,6 +77,8 @@ import Checkbox from 'common/Checkbox.vue';
 
 const tranferableSettings = [ // the following strings should be direct properties of $store.state
   'color',
+  'defaultSchedule',
+  'grade',
   'schedules',
 ]
 
@@ -223,11 +225,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-
 .buttons
   display: flex
-  // align-items: center
-  // height: 150px
   justify-content: center
   font-size: 1.3em
   flex-flow: row wrap

@@ -14,7 +14,12 @@ export default function(store) {
   store.commit('setSchedules', schedules);
 
   if (localStorage.defaultSchedule) {
+    store.commit('setDefaultSchedule', localStorage.defaultSchedule);
     store.commit('setScheduleMode', localStorage.defaultSchedule);
+  }
+
+  if (localStorage.grade) {
+    store.commit('setGrade', localStorage.grade);
   }
 }
 

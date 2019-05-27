@@ -23,6 +23,9 @@ export default new Vuex.Store({
     // such that urlDate.getTime() + (currentTime - startTime) will equal the current time relative to the URL specified time
 
     schedules: {},
+    defaultSchedule: 'Normal', // actually the default schedule mode
+
+    grade: 'None',
   },
   getters: {
     date(state) {

@@ -18,7 +18,7 @@
         :href="item.link"
         @click="showSidenav = false"
         :class="{ selected: index == selectedLinkIndex }">
-          <font-awesome-icon :icon="item.icon" class="icon" v-bind="item.iconProps || {}"/>
+          <font-awesome-icon :icon="item.icon" class="icon" v-bind="item.iconProps || {}" fixed-width/>
           <span class="text">{{ item.text }}</span>
       </a>
     </div>
@@ -26,23 +26,26 @@
     <div class="main">
       <home-link class="home-link"/>
 
+      <general id="general"/>
       <schedules id="schedules"/>
       <transfer id="transfer"/>
 
-      <div class="extra-space"/>
+      <div class="extra-space" :style="{ height: `${extraSpaceHeight}px` }"/>
     </div>
   </div>
 </template>
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faCog, faBars, faArrowLeft, faListAlt, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faBars, faArrowLeft, faListAlt, faExchangeAlt, faUserCog } from '@fortawesome/free-solid-svg-icons';
 
 import HomeLink from 'common/HomeLink.vue';
+import General from './General.vue';
 import Schedules from './Schedules.vue';
 import Transfer from './Transfer.vue';
 
 const sidenavItems = [
+  { text: 'General', link: '#general', icon: faUserCog },
   { text: 'Schedules', link: '#schedules', icon: faListAlt },
   { text: 'Transfer', link: '#transfer', icon: faExchangeAlt, iconProps: { rotation: 90 } },
 ]
@@ -59,6 +62,7 @@ export default {
       showSidenav: false,
       selectedLinkIndex: 0,
       scrollListener: null,
+      extraSpaceHeight: window.innerHeight, // ensure that the last section is scrollable to the top (will be adjusted in mounted())
     }
   },
   created() {
@@ -74,9 +78,20 @@ export default {
 
     window.addEventListener('scroll', this.scrollListener);
   },
+  mounted() {
+    const lastSection = document.querySelector(sidenavItems[sidenavItems.length - 1].link);
+    let lastSectionHeight = lastSection.getBoundingClientRect().height;
+    lastSectionHeight += parseInt(window.getComputedStyle(lastSection).getPropertyValue('margin-top'));
+    lastSectionHeight += parseInt(window.getComputedStyle(lastSection).getPropertyValue('margin-bottom'));
+    this.extraSpaceHeight = window.innerHeight - lastSectionHeight;
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.scrollListener);
+  },
   components: {
     FontAwesomeIcon,
     HomeLink,
+    General,
     Schedules,
     Transfer,
   }
@@ -115,7 +130,7 @@ export default {
     z-index: -1
     &.show
       opacity: .65
-      z-index: 2
+      z-index: 19
 
   .sidenav
     width: var(--sidenav-width)
@@ -124,7 +139,7 @@ export default {
     background-color: white
     border-right: #ddd solid thin
     transition: transform .2s
-    z-index: 5
+    z-index: 20
     +mobile
       transform: translateX(calc(-1 * var(--sidenav-width) - 5px))
       &.show
@@ -183,8 +198,5 @@ export default {
       top: 10px
       +mobile
         right: 10px
-    
-    .extra-space
-      height: calc(100vh - 150px) // ensure that the last section will be scrollable to the top
 
 </style>
