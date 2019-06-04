@@ -66,7 +66,6 @@ export default {
         this.$refs['custom-color'].innerHTML = this.color;
       });
     },
-    log: a=>console.log(a),
   },
   mounted() {
     this.$nextTick(() => {

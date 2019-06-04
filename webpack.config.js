@@ -11,6 +11,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'docs'),
+    publicPath: '/',
     filename: 'build.js',
     chunkFilename: '[name].js',
   },
@@ -48,6 +49,9 @@ module.exports = {
       new TerserPlugin({
         terserOptions: {
           safari10: true,
+          compress: {
+            drop_console: true,
+          },
         },
       }),
     ],

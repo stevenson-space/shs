@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import mutations from "src/store/mutations.js";
+import mutations from 'src/store/mutations.js';
 import actions from 'src/store/actions.js';
 
 import Bell from 'src/js/bell.js';
@@ -14,7 +14,7 @@ export default new Vuex.Store({
     mode: 'current',
 
     scheduleMode: '',
-    color: '#00796b',
+    color: '#1b5e20',
 
     // date indicates Date object, time indicates epoch time in milliseconds
     urlDate: new Date(), // relative to URL specified time (will be set when URL changes)
@@ -23,6 +23,9 @@ export default new Vuex.Store({
     // such that urlDate.getTime() + (currentTime - startTime) will equal the current time relative to the URL specified time
 
     schedules: {},
+    defaultSchedule: 'Normal', // actually the default schedule mode
+
+    grade: 'None',
   },
   getters: {
     date(state) {

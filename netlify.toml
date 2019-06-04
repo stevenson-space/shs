@@ -6,3 +6,14 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/send/*"
+  to = "http://dpaste.com/api/v2/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/recieve"
+  query = {filename = ":filename"}
+  to = "http://dpaste.com/:filename"
+  status = 200

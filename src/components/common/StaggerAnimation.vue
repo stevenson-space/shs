@@ -7,7 +7,7 @@
 <script>
 export default {
   props: {
-    duration: { type: Number, required: true },
+    duration: { type: Number, required: true }, // duration is in milliseconds
     shiftAmount: { type: Number, required: true },
     numberOfSlots: { type: Number, default: 0 }, // used if slots will be changed after initial render
     direction: {
@@ -101,8 +101,8 @@ export default {
             prefix = `${currentTransition}, `;
           }
 
-          const duration = this.duration / 1000;
-          const transition = `${prefix}transform ${duration}s, opacity ${duration}s linear`;
+          const durationSeconds = this.duration / 1000;
+          const transition = `${prefix}transform ${durationSeconds}s, opacity ${durationSeconds}s linear`;
 
 
           this.$slots.default.forEach((vnode, i) => {

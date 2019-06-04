@@ -1,6 +1,6 @@
 <template>
-  <div class="dropdown" @blur="closeDropdown" tabindex="-1">
-    <div class="select-option" :class="{ selected: open }" @click="toggleDropdown" :style="dropdownStyle">
+  <div class="dropdown" @blur="closeDropdown" tabindex="-1" :class="{ selected: open }">
+    <div class="select-option" @click="toggleDropdown" :style="dropdownStyle">
       <span>{{ options[value] }}</span>
       <font-awesome-icon
         class="down-icon"
@@ -16,9 +16,9 @@
       ref="staggerAnimation">
       <div
         class="option"
-        v-for="(option, i) in formattedOptions"
+        v-for="option in formattedOptions"
         :style="option.style"
-        @click="selectOption(i)"
+        @click="selectOption(option.index)"
         ref="option">
         {{ option.name }}
       </div>
@@ -48,7 +48,7 @@ export default {
   data() {
     return {
       faCaretDown,
-      open: false,
+      open: false, // open is true even when dropdown is partially open, false only when dropdown is completely closed
       arrowRotateAmmount: this.direction === 'down' ? 0 : 180,
       optionHeight: 30,
       resizeListener: null,
@@ -64,7 +64,7 @@ export default {
     },
     formattedOptions() {
       const options = this.showSelectedAsOption ? this.options : this.remainingOptions;
-      return this.options.map((option, i) => {
+      return options.map((option, i) => {
         const style = {};
         if (this.align === 'center') {
           style.left = '50%';
@@ -75,7 +75,8 @@ export default {
 
         return {
           name: option,
-          style
+          style,
+          index: this.options.indexOf(option), // if we're using this.remainingOptions, the original indexes are lost
         };
       });
     },
@@ -103,11 +104,11 @@ export default {
 
       if (this.open) {
         this.$refs.staggerAnimation.close();
+        setTimeout(() => this.open = false, this.animationDuration); // wait for dropdown to completely close first
       } else {
         this.$refs.staggerAnimation.open();
+        this.open = true;
       }
-  
-      this.open = !this.open;
     },
     openDropdown() {
       if (!this.open) {
@@ -137,7 +138,7 @@ export default {
   },
   created() {
     // if the initial index is out of bounds, choose the first index by default
-    if (this.value < 0 || this.value >= this.options.length - 1) {
+    if (this.value < 0 || this.value >= this.options.length) {
       this.$emit('input', 0);
     }
   },
@@ -173,6 +174,14 @@ export default {
 .dropdown
   position: relative
   outline: none
+  white-space: nowrap // need everything to be on one line for proper animation
+
+  &.selected
+    z-index: 50 // when this dropdown is selected, it should be place above everything else (except Popup)
+
+    .select-option
+      +shadow
+      border-color: white
 
   .select-option
     background-color: white
@@ -185,9 +194,6 @@ export default {
     padding: 5px 12px
     cursor: pointer
     user-select: none
-    &.selected
-      +shadow
-      border-color: white
 
     .down-icon
       margin-left: 7px

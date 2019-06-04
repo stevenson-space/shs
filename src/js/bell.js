@@ -8,7 +8,7 @@ class Bell {
    * @param {Array} [schedules] list of schedules to use (if different from those in schedules.json)
    * @param {Number} [scheduleMode] defaults to the first one specified 
    */
-  constructor(date, schedules, scheduleMode = '') {
+  constructor(date, schedules = defaultSchedules, scheduleMode = '') {
     const scheduleType = Bell.getScheduleType(date, schedules);
     const schedule = Bell.getSchedule(scheduleType.modes, scheduleMode);
 
@@ -234,6 +234,26 @@ class Bell {
     if (hour === 0) hour = 12;
     if (minute < 10) minute = '0' + minute;
     return `${hour}:${minute}`;
+  }
+
+  /**
+   * Returns the suffix ('AM' or 'PM') given a time in 24-hour format
+   * @param {string} time 
+   * @return {string}
+   */
+  static getSuffix(time) {
+    const [hours, _] = time.split(':').map(Number);
+    return hours < 12 ? 'AM' : 'PM';
+  }
+
+  /**
+   * Returns an integer representation of the time during the day (usually for comparison purposes)
+   * @param {string} time 
+   * @return {number}
+   */
+  static timeToNumber(time) {
+    const [hours, minutes] = time.split(':').map(Number);
+    return hours * 60 + minutes;
   }
 
   /**
