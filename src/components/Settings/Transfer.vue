@@ -146,7 +146,7 @@ export default {
       }
       
       superagent
-        .post('https://cranky-jennings-b82188.netlify.com/send')
+        .post('/send') // look at /netlify.toml (Netlify is proxying to http://dpaste.com)
         .send({ content: JSON.stringify(data), syntax: 'json', expiry_days: 1})
         .type('form')
         .then(response => {
@@ -164,7 +164,7 @@ export default {
       this.showPopup(popups.loading);
 
       superagent
-        .get('https://cranky-jennings-b82188.netlify.com/recieve')
+        .get('/recieve') // look at /netlify.toml (Netlify is proxying to http://dpaste.com)
         .query({ filename: this.receiveCode.toUpperCase() + '.txt' })
         .then(response => {
           try {

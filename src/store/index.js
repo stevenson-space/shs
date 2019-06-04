@@ -14,7 +14,7 @@ export default new Vuex.Store({
     mode: 'current',
 
     scheduleMode: '',
-    color: '#00796b',
+    color: '#1b5e20',
 
     // date indicates Date object, time indicates epoch time in milliseconds
     urlDate: new Date(), // relative to URL specified time (will be set when URL changes)
