@@ -25,7 +25,7 @@ class Bell {
       this.period = Bell.getPeriod(this.schedule, date);
     }
 
-    this.nextSchoolDay = Bell.nextSchoolDay(date);
+    this.nextSchoolDay = Bell.nextSchoolDay(date, schedules);
   }
 
   /**
@@ -88,29 +88,6 @@ class Bell {
       }
     });
     return schedule;
-  }
-
-  /**
-   * Checks if the schedule for a given date is different from normal and returns the
-   * schedule if it is special
-   * @param {Date} date 
-   * @param {Object} [schedule] schedule on given date (to avoid unnecessary recalculation of schedule)
-   * @param {Array} [schedules] optional alternative list of schedules
-   * @return {Object|boolean} schedule on date if it is special, false otherwise
-   */
-  static isSpecialSchedule(date, schedule = null, schedules = defaultSchedules) {
-    const defaultSchedule = schedules[0];
-
-    // check if there would normally be the default schedule on that date
-    // (e.g. to prevent weekends from being counted as a 'No School' special event)
-    if (testDate(date, defaultSchedule.dates)) {
-      // then check if the actual schedule is different from the normal one
-      schedule = schedule || Bell.getScheduleType(date, schedules);
-      if (schedule.name !== defaultSchedule.name) {
-        return schedule;
-      }
-    }
-    return false;
   }
 
   /**

@@ -1,6 +1,7 @@
 [
   {
     "name": "Standard Schedule",
+    "isSpecial": false,
     "dates": ["weekdays"],
     "modes": [
       {
@@ -19,6 +20,7 @@
   },
   {
     "name": "Summer",
+    "isSpecial": false,
     "dates": ["5/27/2019-8/9/2019"],
     "modes": [
       {
@@ -31,6 +33,7 @@
   },
   {
     "name": "Late Arrival",
+    "isSpecial": true,
     "dates": ["8/23/2018", "8/31/2018", "9/13/2018", "10/18/2018", "11/8/2018", "11/26/2018", "11/29/2018", "1/17/2019", "2/14/2019", "3/14/2019", "4/25/2019"],
     "modes": [
       {
@@ -43,6 +46,7 @@
   },
   {
     "name": "Activity Period",
+    "isSpecial": true,
     "dates": ["8/15/2018", "9/5/2018", "10/3/2018", "10/31/2018", "11/28/2018", "1/14/2019", "2/6/2019", "3/20/2019", "4/18/2019", "5/1/2019"],
     "modes": [
       {
@@ -61,6 +65,7 @@
   },
   {
     "name": "PM Assembly",
+    "isSpecial": true,
     "dates": ["9/21/2018", "11/21/2018", "2/22/2019", "5/17/2019"],
     "modes": [
       {
@@ -79,6 +84,7 @@
   },
   {
     "name": "Early Dismissal",
+    "isSpecial": true,
     "dates": ["11/21/2018"],
     "modes": [
       {
@@ -97,6 +103,7 @@
   },
   {
     "name": "Finals",
+    "isSpecial": true,
     "dates": ["12/19/2018-12/21/2018", "5/22/2019-5/24/2019"],
     "modes": [
       {
@@ -109,8 +116,15 @@
   },
   {
     "name": "No School",
-    "dates": ["weekends", "1st monday & september", "2nd monday & october", "3rd monday & january", "3rd monday & february",
+    "isSpecial": true,
+    "dates": ["1st monday & september", "2nd monday & october", "3rd monday & january", "3rd monday & february",
       "5/27/2019-5/31/2019", "6/3/2019", "friday & 6/14/2019-7/26/2019 & !7/12/2019", "7/4/2019", "7/29/2019-8/9/2019"],
+    "modes": []
+  },
+  {
+    "name": "No School (Weekend)",
+    "isSpecial": false,
+    "dates": ["weekends"],
     "modes": []
   }
 ]

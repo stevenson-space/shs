@@ -32,7 +32,7 @@ export default {
 
 .bellschedules
   width: 80%
-  max-width: $content-width
+  max-width: $content-width + 60px // hardcoded value :( to make standard schedule periods all fit in one line
   margin: auto
   position: relative
   +mobile

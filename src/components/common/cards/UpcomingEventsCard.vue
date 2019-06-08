@@ -43,8 +43,8 @@ function getNextEvent(startDate) {
 
   // Go through dates starting from startDate until we find one with a special schedule and return that
   for (const date of dates(startDate)) {
-    const schedule = Bell.isSpecialSchedule(date);
-    if (schedule) {
+    const schedule = Bell.getScheduleType(date);
+    if (schedule && schedule.isSpecial) {
       event = {
         key: `${schedule.name} ${date.getTime()}`, // unique key for each event used in v-for
         date,

@@ -86,8 +86,10 @@ export default {
       // Get the schedule for each date currently displayed on the calendar
       return this.dates.map(date => {
         if (date) {
-          // We only care about the schedule if it is special
-          return Bell.isSpecialSchedule(new Date(date)) || undefined;
+          const schedule = Bell.getScheduleType(new Date(date));
+
+          // We only care about the schedule if it is special ("Late Arrival", "No School", etc.)
+          return (schedule && schedule.isSpecial) ? schedule : undefined;
         }
         return undefined;
       });

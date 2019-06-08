@@ -31,21 +31,27 @@ function tryParseJSON(json) {
   }
 }
 
-// Merges localStorage schedules and defaultSchedules together in case changes have been made to defaultSchedules
+// Merges localStorage schedules and defaultSchedules (from server) together in case changes have been made to defaultSchedules
 // (for example, when dates are updated or a new schedule type is added)
+// Assumptions: user cannot modify schedule types (only modes), so schedule types will always match server
 function setSchedules(store, schedules) {
   const scheduleTypes = schedules.map(schedule => schedule.name);
 
-  // can't combine this and the following forEach because adding new schedules changes the indexes
+  // Replace all local dates with ones from the server (defaultSchedules) in case modifications were made
   defaultSchedules.forEach(schedule => {
     const index = scheduleTypes.indexOf(schedule.name)
-    if (index > -1) { // update the schedule dates just in case new dates were added
+    if (index > -1) {
       schedules[index].dates = schedule.dates;
     }
-  })
+  });
 
+  // Delete any schedules in the local copy that aren't found in the sever copy
+  const defaultScheduleTypes = defaultSchedules.map(schedule => schedule.name);
+  schedules = schedules.filter(schedule => defaultScheduleTypes.includes(schedule.name));
+
+  // Add any new schedules that were added to the server copy to the local one
   defaultSchedules.forEach((schedule, index) => {
-    if (scheduleTypes.indexOf(schedule.name) === -1) { // means new schedule type was added
+    if (!scheduleTypes.includes(schedule.name)) { // means new schedule type was added (found in server copy but not in local)
       schedules.splice(index, 0, schedule); // add the new schedule to schedules in the correct index
     }
   });
