@@ -176,8 +176,9 @@ export default {
   outline: none
   white-space: nowrap // need everything to be on one line for proper animation
 
+  z-index: 0
   &.selected
-    z-index: 50 // when this dropdown is selected, it should be place above everything else (except Popup)
+    z-index: 50 // when this dropdown is selected, it should be placed above everything else (except Popup)
 
     .select-option
       +shadow

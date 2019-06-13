@@ -1,17 +1,38 @@
 <template>
-  <div class="navigation">
-    <font-awesome-icon class="icon" :icon="icons.faChevronLeft" @click="$emit('previous-month')"/>
+  <div class="calendar-navigation">
+    <div class="mobile-row">
+      <dropdown
+        v-show="filterCategories.length > 1"
+        class="filter-dropdown"
+        :options="filterCategories"
+        :value="selectedFilter"
+        :show-selected-as-option="false"
+        align="left"
+        @input="selectFilter($event)"/>
 
-    <home-link class="hidden"/>
-
-    <div class="text">
-      <div class="month">{{ month }}</div>
-      <div class="year">{{ year }}</div>
+      <home-link class="home"/>      
     </div>
+    <div class="main">
+      <dropdown
+        v-show="filterCategories.length > 1"
+        class="filter-dropdown"
+        :options="filterCategories"
+        :value="selectedFilter"
+        :show-selected-as-option="false"
+        align="left"
+        @input="selectFilter($event)"/>
 
-    <home-link/>
+      <font-awesome-icon class="icon" :icon="icons.faChevronLeft" @click="$emit('previous-month')"/>
 
-    <font-awesome-icon class="icon" :icon="icons.faChevronRight" @click="$emit('next-month')"/>
+      <div class="text">
+        <div class="month">{{ month }}</div>
+        <div class="year">{{ year }}</div>
+      </div>
+
+      <font-awesome-icon class="icon" :icon="icons.faChevronRight" @click="$emit('next-month')"/>
+
+      <home-link class="home"/>
+    </div>
   </div>
 </template>
 
@@ -19,11 +40,13 @@
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import HomeLink from 'common/HomeLink.vue';
+import Dropdown from 'common/Dropdown.vue';
 
 export default {
   props: {
     month: { type: String, required: true },
     year: { type: Number, required: true },
+    filterCategories: { type: Array, default: () => [] },
   },
   data() {
     return {
@@ -31,42 +54,73 @@ export default {
         faChevronLeft,
         faChevronRight,
       },
+      selectedFilter: 0,
     };
   },
-  components: { FontAwesomeIcon, HomeLink },
+  methods: {
+    selectFilter(index) {
+      this.selectedFilter = index;
+      this.$emit('filter-selected', this.filterCategories[index]);
+    }
+  },
+  watch: {
+    month() { this.selectFilter(0); },
+    year() { this.selectFilter(0); },
+  },
+  components: { FontAwesomeIcon, HomeLink, Dropdown },
 }
 </script>
 
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 
-.hidden
-  visibility: hidden
-
-.navigation
-  display: flex
-  align-items: center
-  justify-content: space-between
-  color: var(--color)
-
-  .icon
-    cursor: pointer
-    width: 50px
-    font-size: 1.5em
-
-  .text
-    text-align: center
-    flex-grow: 1
-    background-color: white
+.calendar-navigation
+  .filter-dropdown
+    position: absolute
+    left: 10px
+    color: #444
     font-weight: bold
-    padding: 5px 15px
-    user-select: none
+    +mobile
+      top: 6px
+  
+  .home
+    position: absolute
+    right: 5px
 
-    .month
-      font-size: 1.2em
-      letter-spacing: 2px
-      
-    .year
-      font-size: .7em
+  .mobile-row
+    height: 40px
+    display: none
+    +mobile
+      display: block
+    
+  .main
+    display: flex
+    align-items: center
+    justify-content: center
+    color: var(--color)
+
+    .filter-dropdown, .home
+      +mobile
+        display: none
+
+    .icon
+      cursor: pointer
+      width: 50px
+      font-size: 1.5em
+
+    .text
+      text-align: center
+      background-color: white
+      font-weight: bold
+      padding: 5px 15px
+      user-select: none
+      width: 275px
+
+      .month
+        font-size: 1.2em
+        letter-spacing: 2px
+        
+      .year
+        font-size: .7em
 
 </style>

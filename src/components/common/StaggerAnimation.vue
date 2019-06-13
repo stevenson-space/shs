@@ -86,32 +86,18 @@ export default {
       });
     },
     setSlotStyles() {
-      // The following is super dirty, but necessary for animations
-
-      // wait until slots render before setting styles
-      this.$nextTick(() => {
+      this.$nextTick(() => { // wait until slots render before setting styles
         if (this.slotCount > 0) {
-
-          let prefix = '';
-
-          // if the transition property already contains a value, we want to keep the existing transitions
-          // in addition to adding the new transform and opacity transitions
-          let currentTransition = getComputedStyle(this.$slots.default[0].elm).transition;
-          if (currentTransition && currentTransition !== 'all 0s ease 0s') {
-            prefix = `${currentTransition}, `;
-          }
-
+          // The following gets rid of any existing transitions, so if parent needs to transition something, use containers
           const durationSeconds = this.duration / 1000;
-          const transition = `${prefix}transform ${durationSeconds}s, opacity ${durationSeconds}s linear`;
-
+          const transition = `transform ${durationSeconds}s, opacity ${durationSeconds}s linear`;
 
           this.$slots.default.forEach((vnode, i) => {
             vnode.elm.style.transition = transition;
             vnode.elm.classList.add('slot-element');
 
             // later elements should stack underneath prior ones
-            // and add the existing z-index in case these elements should go above some other element (determined by parent)
-            vnode.elm.style.zIndex = (this.$slots.default.length - i) + (Number(getComputedStyle(vnode.elm).zIndex) || 0);
+            vnode.elm.style.zIndex = (this.$slots.default.length - i);
           });
         }
       });

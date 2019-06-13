@@ -58,7 +58,7 @@ export default {
     min-width: 15px
     height: 15px
     line-height: 15px
-    border-radius: 20px
+    border-radius: 15px
     background-color: white
     text-align: center
     font-weight: bold
@@ -101,9 +101,6 @@ export default {
       min-width: 70px
       height: 100px
       justify-content: center
-
-      .circle
-        padding: 10px
 
       .range
         margin: 0

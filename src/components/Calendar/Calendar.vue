@@ -9,22 +9,58 @@
     <calendar-main
       class="calendar-main"
       v-bind="childProps"
+      @filter-selected="filter = $event"
       @next-month="nextMonth"
-      @previous-month="previousMonth"/>
+      @previous-month="previousMonth"
+      @event-click="displayedEvent = $event"/>
 
     <calendar-mobile
       class="calendar-mobile"
       v-bind="childProps"
+      @filter-selected="filter = $event"
       @next-month="nextMonth"
-      @previous-month="previousMonth"/>
+      @previous-month="previousMonth"
+      @event-click="displayedEvent = $event"/>
+
+    <popup :show="!!displayedEvent.name" @close="displayedEvent = {}">
+      <div class="event-details">
+        <div class="date">{{ formatDate(displayedEvent.start) }}</div>
+
+        <div class="title">{{ displayedEvent.name }}</div>
+
+        <div class="time">
+          <font-awesome-icon class="icon" :icon="icons.faClock" fixed-width/>&nbsp;
+
+          <span v-if="displayedEvent.allDay">All Day</span>
+
+          <span v-else-if="displayedEvent.start && displayedEvent.end">
+            {{ formatTime(displayedEvent.start) }}&nbsp; – &nbsp;{{ formatTime(displayedEvent.end) }}
+          </span>
+
+          <span v-else>{{ formatTime(displayedEvent.start) }}</span>
+        </div>
+
+        <div class="location" v-show="displayedEvent.location">
+          <font-awesome-icon class="icon" :icon="icons.faMapMarkerAlt" fixed-width/>
+          &nbsp;{{ displayedEvent.location }}
+        </div>
+
+        <div class="description">{{ displayedEvent.description }}</div>
+      </div>
+    </popup>
   </div>
 </template>
 
 <script>
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-regular-svg-icons';
+
 import Bell from 'src/js/bell.js';
 import allEvents from 'src/data/events.json';
 import CalendarMain from './CalendarMain.vue';
 import CalendarMobile from './CalendarMobile.vue';
+import Popup from 'common/Popup.vue';
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
   'September', 'October', 'November', 'December'];
@@ -32,9 +68,15 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 export default {
   data() {
     return {
+      icons: {
+        faMapMarkerAlt,
+        faClock,
+      },
       today: new Date(),
       month: 0,
       year: 0,
+      displayedEvent: {},
+      filter: 'All',
     }
   },
   created() {
@@ -44,7 +86,7 @@ export default {
   },
   computed: {
     childProps() {
-      const { today, month, year, dates, schedules, events } = this;
+      const { today, month, year, dates, schedules, categories, filteredEvents } = this;
 
       // combine the date, schedule, and events into one object for each date
       // to make it easier for the child components to use
@@ -52,13 +94,14 @@ export default {
         isToday: date === today.toLocaleDateString(),
         date: new Date(date).getDate(),
         schedule: schedules[i],
-        events: events[i],
+        events: filteredEvents[i],
       } : null);
 
       return {
         month: months[month],
         year,
         dates: combined,
+        filterCategories: categories
       };
     },
     dates() {
@@ -131,6 +174,27 @@ export default {
         }
         return [];
       });
+    },
+    categories() {
+      const categories = new Set(['All']); // using Set to prevent duplicates
+      const allEvents = this.events.reduce((allEvents, dayEvents) => allEvents.concat(dayEvents), []);
+      allEvents.forEach(event => {
+          if (event.categories) {
+            event.categories.forEach(category => {
+              categories.add(category);
+            });
+          }
+      });
+      return Array.from(categories);
+    },
+    filteredEvents() {
+      if (this.filter == 'All') {
+        return this.events;
+      }
+
+      return this.events.map(dayEvents => {
+        return dayEvents.filter(event => event.categories && event.categories.includes(this.filter));
+      });
     }
   },
   methods: {
@@ -150,9 +214,20 @@ export default {
     },
     onSwipe(e) {
       this[e.deltaX < 0 ? 'nextMonth' : 'previousMonth']();
+    },
+    formatTime(ms) {
+      return (new Date(ms)).toLocaleTimeString('en-US', { hour: '2-digit', minute:'2-digit' });
+    },
+    formatDate(ms) {
+      return (new Date(ms)).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric'});
     }
   },
-  components: { CalendarMain, CalendarMobile },
+  components: {
+    CalendarMain,
+    CalendarMobile,
+    Popup,
+    FontAwesomeIcon,
+  },
 }
 </script>
 
@@ -168,5 +243,50 @@ export default {
     display: none
   +desktop
     display: none
+
+.event-details
+  max-width: 500px
+  padding: 20px 30px
+  box-sizing: border-box
+  user-select: text
+  width: calc(100vw - 40px)
+  max-height: calc(100vh - 100px)
+  overflow: auto
+  -webkit-overflow-scrolling: touch;
+
+  .date
+    // text-align: right
+    font-size: .9em
+    font-weight: bold
+    color: var(--color)
+
+  .title
+    font-size: 1.4em
+    // text-align: center
+    font-weight: bold
+    color: #333
+    margin-top: 3px
+
+  .time
+    // text-align: center
+    font-size: 1.05em
+    // font-weight: bold
+    margin-top: 15px
+
+  .location
+    // text-align: center
+    margin-top: 20px
+
+  .icon
+    color: var(--color)
+    font-size: 1.25em
+
+  .description
+    margin-top: 15px
+    font-size: .9em
+    // max-height: 250px
+    // overflow: auto
+    // -webkit-overflow-scrolling: touch;
+
 
 </style>

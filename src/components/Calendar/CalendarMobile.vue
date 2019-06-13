@@ -5,6 +5,8 @@
         class="calendar-navigation"
         :month="month"
         :year="year"
+        :filter-categories="filterCategories"
+        @filter-selected="$emit('filter-selected', $event)"
         @previous-month="$emit('previous-month')"
         @next-month="$emit('next-month')"/>
 
@@ -29,10 +31,11 @@
     </div>
 
     <calendar-date
-      class="calendar-date"
+      class="calendar-cell"
       v-for="date in selectedDates"
       v-if="date"
       v-bind="date"
+      @event-click="$emit('event-click', $event)"
       :key="date.date"/>
   </div>
 </template>
@@ -47,6 +50,7 @@ export default {
     month: { type: String, required: true },
     year: { type: Number, required: true },
     dates: { type: Array, required: true },
+    filterCategories: { type: Array, default: () => [] },
   },
   data() {
     return {
@@ -138,7 +142,7 @@ export default {
         &.show
           display: block
 
-.calendar-date
+.calendar-cell
   margin-top: 10px
   font-size: 1.2em
 

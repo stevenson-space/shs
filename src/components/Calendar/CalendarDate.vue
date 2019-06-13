@@ -5,8 +5,10 @@
     </div>
     <calendar-event v-if="schedule" :text="schedule.name" :invert="true"/>
     <calendar-event
+      class="event"
       v-for="event in events"
       :text="event.name"
+      @click.native="$emit('event-click', event)"
       :key="event.name + event.start"/>
   </div>
 </template>
@@ -44,5 +46,8 @@ export default {
   &.today
     color: white
     background-color: var(--color)
+
+.event
+  cursor: pointer
 
 </style>

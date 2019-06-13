@@ -4,6 +4,8 @@
       class="calendar-navigation"
       :month="month"
       :year="year"
+      :filter-categories="filterCategories"
+      @filter-selected="$emit('filter-selected', $event)"
       @previous-month="$emit('previous-month')"
       @next-month="$emit('next-month')"/>
 
@@ -16,6 +18,7 @@
       v-for="date in dates"
       v-if="date"
       v-bind="date"
+      @event-click="$emit('event-click', $event)"
       :key="date.date"/>
     <div class="calendar-cell" v-else/>
   </div>
@@ -32,6 +35,7 @@ export default {
     month: { type: String, required: true },
     year: { type: Number, required: true },
     dates: { type: Array, required: true },
+    filterCategories: { type: Array, default: () => [] },
   },
   data() {
     return {
@@ -53,10 +57,10 @@ export default {
 
 .calendar
   --num-rows: 5 // changed through JavaScript to 5 or 6 depending on the month
-  height: 100vh
+  min-height: 100vh
   display: grid
   grid-template-columns: repeat(7, 1fr)
-  grid-template-rows: 50px 30px repeat(var(--num-rows), 1fr)
+  grid-template-rows: 50px 30px repeat(var(--num-rows), auto)
 
   .calendar-navigation
     grid-column: span 7
@@ -64,6 +68,7 @@ export default {
   .calendar-cell
     border-top: 1px solid #BBB
     border-left: 1px solid #BBB
+    min-height: 100px
 
   .dayOfWeek
     font-size: .9em

@@ -164,11 +164,7 @@ export default {
   position: relative
   border-bottom: #BBB solid 1px
   transition: height .3s
-  overflow: hidden
   text-align: center
-
-  .wrapper
-    overflow: auto
 
   .schedule-name
     text-align: left
@@ -195,6 +191,7 @@ export default {
       color: var(--color)
       margin: 0 25px
       cursor: pointer
+      z-index: 1 // the adjacent dropdown's hidden options sometimes overlay this icon
 
     .schedule-dropdown
       font-size: 1.1em
