@@ -147,20 +147,44 @@ export default {
           // If there is a special schedule, we need to remove or modify any events that contain the same information
           if (schedules[i]) {
 
-            // Remove any events that are exact duplicates of the schedule type
-            events = events.filter(event => event.name.trim() !== schedules[i].name);
+            // schedules[i].eventAliases contains equivalent names for the schedule type (e.g. "Non-Attendance Day" for "No School")
+            const scheduleIndicatingWords = [schedules[i].name].concat(schedules[i].eventAliases || []);
+
+            // Sort it so that the longest strings come first in case the strings overlap
+            // for example, in ['PM Assembly', 'PM Assembly Schedule'] we would want 'PM Assembly Schedule' to be replaced in event.name
+            scheduleIndicatingWords.sort((a, b) => b.length - a.length);
+
+            // Remove any events that are exact duplicates of the schedule type or equivalent
+            events = events.filter(event => !scheduleIndicatingWords.includes(event.name.trim()));
 
             // If any of the removed events contain extra information in addition to the schedule type
             // then remove the schedule type, leaving just the extra information
-            events.forEach(event => {
-              if (event.name.indexOf(schedules[i].name) > -1) {
-                // Inefficiently, but cleanly remove schedule type
-                event.name = event.name.split(schedules[i].name).join('');
+            for (let i = events.length - 1; i >= 0; i--) {
+              const event = events[i];
+              scheduleIndicatingWords.forEach(words => {
+                if (event.name.indexOf(words) > -1) {
+                  // Inefficiently, but cleanly remove schedule type
+                  event.name = event.name.split(words).join('');
 
-                // Trim any non word characters on the sides (spaces, hyphens, ...)
-                event.name = event.name.replace(/^[\W]+|[\W]+$/g, '');
-              }
-            });
+                  // Trim any non word characters on the sides (spaces, hyphens, ...)
+                  event.name = event.name.replace(/^[\W]+|[\W]+$/g, '');
+
+                  // Check to make sure none of the other events contain the same information as the extra info in this event
+                  const eventNames = events.map(event => event.name);
+                  eventNames.splice(i, 1); // remove this event from the list of event names
+
+                  let isInfoAlreadyPresent = false;
+                  eventNames.forEach(name => {
+                    if (name.indexOf(event.name) > -1) isInfoAlreadyPresent = true;
+                  });
+
+                  // If the same information as what's left in this event is present in another event, remove this event
+                  if (isInfoAlreadyPresent) {
+                    events.splice(i, 1);
+                  }
+                }
+              });
+            }
 
             // After the trimming and removal of the schedule type, if all that is left is a word/phrase
             // that does not add any useful information, remove it
