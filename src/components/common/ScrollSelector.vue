@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-selector" :style="{height: `${optionHeight * (2 * numOptionsAbove + 1)}px`}">
+  <div class="scroll-selector" :style="{ height: `${optionHeight * (2 * numOptionsAbove + 1)}px`, fontSize }">
     <div v-for="i in Array(numOptionsAbove)" :style="{ height: `${optionHeight}px`}"/>
 
     <div
@@ -20,6 +20,7 @@ export default {
     options: { type: Array, required: true },
     value: { type: String, required: true },
     numOptionsAbove: { type: Number, default: 1 }, // the number of options to be displayed above the selected option to indicate scrollability
+    fontSize: { type: String, default: '1em' }, // this property must be used to set font-size because optionHeight depends upon it
   },
   data() {
     return {
@@ -27,7 +28,8 @@ export default {
     }
   },
   mounted() {
-    this.optionHeight = this.$refs['option'][0].getBoundingClientRect().height;
+    this.setOptionHeight();
+
     this.$nextTick(() => {
       this.scrollToSelected();
     });
@@ -51,11 +53,17 @@ export default {
           top: this.$refs['option'][index].offsetTop - (this.optionHeight * this.numOptionsAbove),
         });
       }
-    }
+    },
+    setOptionHeight() {
+      this.optionHeight = this.$refs['option'][0].getBoundingClientRect().height;
+    },
   },
   watch: {
     value() {
       this.scrollToSelected();
+    },
+    fontSize() {
+      this.setOptionHeight();
     }
   }
 }
@@ -67,7 +75,6 @@ export default {
 .scroll-selector
   height: 90px
   overflow: auto
-  font-size: 1.5em
   text-align: center
   position: relative
   +no-scrollbar

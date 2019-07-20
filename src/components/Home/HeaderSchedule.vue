@@ -21,8 +21,8 @@
           </div>
         </template>
 
-        <router-link class="button" to="/" v-else>
-          Go Back Live
+        <router-link to="/" v-else>
+          <rounded-button class="button" text="Go Back Live" :circular="false" :invert="true"/>
         </router-link>
       </div>
 
@@ -38,8 +38,9 @@
 </template>
 
 <script>
-import Dropdown from 'src/components/common/Dropdown.vue';
 import { mapState, mapGetters } from 'vuex';
+import Dropdown from 'common/Dropdown.vue';
+import RoundedButton from 'common/RoundedButton.vue';
 
 export default {
   props: {
@@ -58,7 +59,7 @@ export default {
       'bell'
     ]),
   },
-  components: { Dropdown },
+  components: { Dropdown, RoundedButton },
 }
 </script>
 
@@ -98,12 +99,6 @@ export default {
     .button
       +shadow
       text-decoration: none
-      color: white
-      border-radius: 8px
-      padding: 8px
-      margin: 4px
       display: inline-block
-      font-weight: normal
-      background-color: var(--color)
 
 </style>

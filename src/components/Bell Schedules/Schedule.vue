@@ -4,20 +4,10 @@
       <div class="schedule-name">{{ schedule.name }}</div>
 
       <div class="schedule-select" v-if="dropdownOptions.length > 1">
-        <font-awesome-icon
-          class="icon"
-          :icon="faChevronLeft"
-          @click="previousMode"/>
-
         <dropdown
           class="schedule-dropdown"
           :options="dropdownOptions"
           v-model="selectedMode"/>
-
-        <font-awesome-icon
-          class="icon"
-          :icon="faChevronRight"
-          @click="nextMode"/>
       </div>
 
       <div class="periods" v-hammer:swipe.horizontal="onSwipe">
@@ -38,6 +28,7 @@ import Bell from 'src/js/bell.js';
 import Period from 'common/Period.vue';
 import MultiDayPeriod from './MultiDayPeriod.vue';
 import Dropdown from 'common/Dropdown.vue';
+import ScrollSelector from 'common/ScrollSelector.vue';
 
 export default {
   props: {
@@ -66,6 +57,7 @@ export default {
     window.addEventListener('resize', this.resizeListener);
   },
   computed: {
+    selectedModeString() { return this.dropdownOptions[this.selectedMode]},
     style() {
       const { height } = this;
       return {
@@ -153,6 +145,7 @@ export default {
     Period,
     MultiDayPeriod,
     Dropdown,
+    ScrollSelector
   },
 }
 </script>
@@ -184,17 +177,11 @@ export default {
     justify-content: flex-end
     +mobile-small
       justify-content: center
-      margin-top: 5px
-    
-    .icon
-      font-size: 2em
-      color: var(--color)
-      margin: 0 25px
-      cursor: pointer
-      z-index: 1 // the adjacent dropdown's hidden options sometimes overlay this icon
 
     .schedule-dropdown
-      font-size: 1.1em
+      margin: 0 75px
+      +mobile
+        margin: 0 40px
 
   .periods
     flex-grow: 1
@@ -202,8 +189,8 @@ export default {
     justify-content: space-around
     align-items: center
     flex-wrap: wrap
-    margin: 25px 50px
+    padding: 25px 50px
     +mobile
-      margin: 10px 15px
+      padding: 10px 15px
 
 </style>

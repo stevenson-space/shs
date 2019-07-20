@@ -2,14 +2,16 @@
   <div class="bellschedules">
     <div class="background-block"/>
     
-    <home-link class="home-link" :invert="false"/>
+    <div class="main">
+      <home-link class="home-link" :invert="false"/>
 
-    <div class="card">
-      <schedule
-        v-for="schedule in schedules"
-        v-if="schedule.modes.length > 0"
-        :schedule="schedule"
-        :key="schedule.name"/>
+      <div class="card">
+        <schedule
+          v-for="schedule in schedules"
+          v-if="schedule.modes.length > 0"
+          :schedule="schedule"
+          :key="schedule.name"/>
+      </div>
     </div>
   </div>
 </template>
@@ -31,36 +33,37 @@ export default {
 @import 'src/styles/style.sass'
 
 .bellschedules
-  width: 80%
-  max-width: $content-width + 80px // hardcoded value :( to make standard schedule periods all fit in one line (on my display)
-  margin: auto
-  position: relative
-  +mobile
-    width: 90%
-
   .background-block
     background-color: var(--color)
     height: 250px
     width: 100%
-    position: fixed
     left: 0
-
-  .home-link
     position: absolute
-    right: 0
-    top: 30px
-    +mobile
-      top: 20px
 
-  .card
-    +shadow
-    background-color: white
+  .main
+    width: 80%
+    max-width: $content-width + 80px // hardcoded value :( to make standard schedule periods all fit in one line (on my display)
+    margin: auto
     position: relative
-    border-radius: 20px
-    top: 100px
-    overflow: hidden
-    margin-bottom: 25px
     +mobile
-      top: 75px
+      width: 90%
+
+    .home-link
+      position: absolute
+      right: 0
+      top: 30px
+      +mobile
+        top: 20px
+
+    .card
+      +shadow
+      background-color: white
+      position: relative
+      border-radius: 20px
+      top: 100px
+      overflow: hidden
+      margin-bottom: 25px
+      +mobile
+        top: 75px
 
 </style>

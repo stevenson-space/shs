@@ -175,6 +175,8 @@ export default {
   position: relative
   outline: none
   white-space: nowrap // need everything to be on one line for proper animation
+  font-weight: bold
+  color: #444
 
   z-index: 0
   &.selected
@@ -195,6 +197,7 @@ export default {
     padding: 5px 12px
     cursor: pointer
     user-select: none
+    -webkit-tap-highlight-color: transparent;
 
     .down-icon
       margin-left: 7px

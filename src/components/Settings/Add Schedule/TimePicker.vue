@@ -2,10 +2,10 @@
   <confirm-popup :show="show" @cancel="cancel" @ok="done" ok-text="Select">
     <div class="time-picker">
       <div class="time-selector">
-        <scroll-selector :options="hours" v-model="selectedTime.hour"/>
+        <scroll-selector :options="hours" v-model="selectedTime.hour" font-size="1.5em"/>
         <span class="colon">:</span>
-        <scroll-selector :options="minutes" v-model="selectedTime.minute"/>
-        <scroll-selector :options="suffixes" v-model="selectedTime.suffix"/>
+        <scroll-selector :options="minutes" v-model="selectedTime.minute" font-size="1.5em"/>
+        <scroll-selector :options="suffixes" v-model="selectedTime.suffix" font-size="1.5em"/>
       </div>
 
       <div class="separator">
