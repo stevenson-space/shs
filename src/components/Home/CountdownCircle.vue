@@ -1,6 +1,6 @@
 <template>
   <div class="circle" :class="{ 'full-screen': fullScreenMode }">
-    <img src="images/patriot.png" class="logo">
+    <img src="static/patriot.png" class="logo">
 
     <div class="countdown" v-if="mode === 'current'">
       {{ countdown }}

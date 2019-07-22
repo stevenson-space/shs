@@ -1,48 +1,50 @@
 <template>
   <card class="timer-card" :shadow="false" :border="true">
-    <div class="header">
-      <div class="icon-button sound" v-hammer:tap="() => shouldMakeSound = !shouldMakeSound">
-        <font-awesome-icon class="icon" :icon="icons.faVolumeUp" fixed-width/>
-        <!-- <font-awesome-icon :class="{ hide: shouldMakeSound }" class="icon slash" :icon="icons.faSlash"/> -->
-        <!-- <font-awesome-icon :class="{ hide: shouldMakeSound }" class="icon slash-2" :icon="icons.faSlash"/> -->
-        <div class="line" :class="{ hide: shouldMakeSound }"/>
+    <div class="fullscreen-wrapper" :class="{ enable: fullscreen }">
+      <div class="header">
+        <div class="icon-button sound" v-hammer:tap="() => shouldMakeSound = !shouldMakeSound">
+          <font-awesome-icon class="icon" :icon="icons.faVolumeUp" fixed-width/>
+          <!-- <font-awesome-icon :class="{ hide: shouldMakeSound }" class="icon slash" :icon="icons.faSlash"/> -->
+          <!-- <font-awesome-icon :class="{ hide: shouldMakeSound }" class="icon slash-2" :icon="icons.faSlash"/> -->
+          <div class="slash" :class="{ hide: shouldMakeSound }"/>
+        </div>
+        <div class="title">Timer</div>
+        <div class="icon-button"><font-awesome-icon class="icon" :icon="icons.faExpand" fixed-width/></div>
       </div>
-      <div class="title">Timer</div>
-      <div class="icon-button"><font-awesome-icon class="icon" :icon="icons.faExpand" fixed-width/></div>
+
+      <div class="container">
+        <div class="time-selector">
+          <scroll-selector :options="hours" v-model="time.hours" font-size="1.75em"/>
+          <span class="letter">h</span>
+          <span class="colon">:</span>
+          <scroll-selector :options="minutes" v-model="time.minutes" font-size="1.75em"/>
+          <span class="letter">m</span>
+          <span class="colon">:</span>
+          <scroll-selector :options="minutes" v-model="time.seconds" font-size="1.75em"/>
+          <span class="letter">s</span>
+        </div>
+
+        <div class="info-text">
+          <font-awesome-icon :icon="icons.faInfoCircle"/>
+          &nbsp;Scroll to select time
+        </div>
+
+        <div class="add-time-buttons" :class="{ disabled: !!timer }">
+          <div class="button" @click="addTime(60)">+1<span class="small">m</span></div>
+          <div class="button" @click="addTime(5 * 60)">+5<span class="small">m</span></div>
+          <div class="button" @click="addTime(10 * 60)">+10<span class="small">m</span></div>
+        </div>
+
+        <checkbox v-model="shouldNotify" label-size="1em" v-if="browserSupportsNotifications">Notify Me</checkbox>
+
+        <div class="control-buttons">
+          <rounded-button class="button" text="Reset" :circular="false" @click="reset"/>
+          <rounded-button class="button" v-bind="startStopButton" :circular="false" v-hammer:tap="startStopButton.action"/>
+        </div>
+      </div>
     </div>
 
-    <div class="container">
-      <div class="time-selector">
-        <scroll-selector :options="hours" v-model="time.hours" font-size="1.75em"/>
-        <span class="letter">h</span>
-        <span class="colon">:</span>
-        <scroll-selector :options="minutes" v-model="time.minutes" font-size="1.75em"/>
-        <span class="letter">m</span>
-        <span class="colon">:</span>
-        <scroll-selector :options="minutes" v-model="time.seconds" font-size="1.75em"/>
-        <span class="letter">s</span>
-      </div>
-
-      <div class="info-text">
-        <font-awesome-icon :icon="icons.faInfoCircle"/>
-        &nbsp;Scroll to select time
-      </div>
-
-      <div class="add-time-buttons" :class="{ disabled: !!timer }">
-        <div class="button" @click="addTime(60)">+1<span class="small">m</span></div>
-        <div class="button" @click="addTime(5 * 60)">+5<span class="small">m</span></div>
-        <div class="button" @click="addTime(10 * 60)">+10<span class="small">m</span></div>
-      </div>
-
-      <checkbox v-model="shouldNotify" label-size="1em" v-if="browserSupportsNotifications">Notify Me</checkbox>
-
-      <div class="control-buttons">
-        <rounded-button class="button" text="Reset" :circular="false" @click="reset"/>
-        <rounded-button class="button" v-bind="startStopButton" :circular="false" v-hammer:tap="startStopButton.action"/>
-      </div>
-    </div>
-
-    <confirm-popup :show="showTimerDonePopup" cancelText="" @ok="showTimerDonePopup = false">
+    <confirm-popup :show="showTimerDonePopup" cancelText="" @ok="timerDoneOk">
       <div class="timer-done-text">Timer Done!</div>
     </confirm-popup>
   </card>
@@ -80,9 +82,11 @@ export default {
         faSlash,
       },
       shouldNotify: false,
-      shouldMakeSound: false,
       browserSupportsNotifications: 'Notification' in window,
       showTimerDonePopup: false,
+      shouldMakeSound: false,
+      audio: null,
+      fullscreen: false,
     }
   },
   computed: {
@@ -128,6 +132,10 @@ export default {
         if (this.shouldNotify && Notification.permission == 'granted') {
           new Notification('Timer Done!');
         }
+        if (this.shouldMakeSound && this.audio) {
+          this.audio.currentTime = 0;
+          this.audio.play();
+        }
       }
     },
     stop() {
@@ -146,12 +154,27 @@ export default {
         const seconds = Math.min(this.timeToSeconds(this.time) + secondsToAdd, 23*60*60 + 59*60 + 59);
         this.time = this.secondsToTime(seconds);
       }
+    },
+    timerDoneOk() {
+      this.showTimerDonePopup = false;
+      if (this.audio) {
+        this.audio.pause();
+      }
     }
   },
   watch: {
     shouldNotify() {
       if (this.shouldNotify && Notification.permission != 'granted') {
         Notification.requestPermission();
+      }
+    },
+    shouldMakeSound() {
+      if (this.shouldMakeSound && !this.audio) {
+        // initially playing some blank audio while tab is in focus allows audio to be played later even when tab is in background
+        const blankAudio = new Audio('static/blank.mp3');
+        blankAudio.play();
+
+        this.audio = new Audio('static/timer.mp3');
       }
     }
   },
@@ -192,7 +215,7 @@ export default {
       +hover-darken-background
 
       &.sound
-        .line
+        .slash
           position: absolute
           top: 0
           background-color: white
@@ -203,21 +226,6 @@ export default {
           transform: rotate(45deg) translate(12px, 16px) scale(1)
           &.hide
             transform: rotate(45deg) translate(12px, 16px) scale(0)
-
-    .slash
-      font-size: 1.2em
-      transition: transform .2s
-      transform: translateX(-3px)
-      &.hide
-        transform: translateX(-3px) scale(0)
-
-    // .slash-2
-    //   font-size: 1.2em
-    //   color: var(--color)
-    //   transition: transform .2s
-    //   transform: translate(-4.5px , 2.5px)
-    //   &.hide
-    //     transform: translate(-4.5px, 2.5px) scale(0)
 
   .container
     padding: 15px
@@ -278,5 +286,12 @@ export default {
     color: #444
     +mobile-small
       font-size: 2em
+
+  .fullscreen-wrapper
+    transition: top .3s, left .3s, width .3s, height .3s
+    &.enable
+      position: fixed
+      top: 0
+
 
 </style>

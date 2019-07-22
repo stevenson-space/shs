@@ -61,7 +61,7 @@ module.exports = {
     new CopyWebpackPlugin([
       './src/index.html',
       './src/favicon/favicon.ico',
-      { from: './src/images/', to: 'images/' },
+      { from: './src/static/', to: 'static/' },
       { from: './src/old/', to: 'old/' },
       { from: './src/favicon', to: 'favicon/' },
       './src/service-worker.js',

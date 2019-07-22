@@ -1,7 +1,7 @@
 <template>
   <card>
     <a class="main-link" href="https://shshacks.io" target="_blank">
-      <img class="logo" src="images/shsHacks.png">
+      <img class="logo" src="static/shsHacks.png">
       <div class="text">
         <div class="name">shsHacks</div>
         <div class="register">Deadline: 8:59pm</div>

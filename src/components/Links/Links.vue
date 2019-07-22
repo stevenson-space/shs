@@ -4,7 +4,7 @@
     <card-container class="container">
       <image-text-card
         v-for="link in links"
-        :image="`images/links/${link.name}.png`"
+        :image="`static/links/${link.name}.png`"
         :text="link.name"
         :link="link.url"
         :link-props="{ newTab: true }"
