@@ -9,6 +9,7 @@ const Calendar = () => import(/* webpackChunkName: "calendar" */ 'src/components
 const Links = () => import(/* webpackChunkName: "links" */ 'src/components/Links/Links.vue');
 const Colors = () => import(/* webpackChunkName: "colors" */ 'src/components/Colors/Colors.vue');
 const Settings = () => import(/* webpackChunkName: "settings" */ 'src/components/Settings/Settings.vue');
+const Tools = () => import(/* webpackChunckName: "tools" */ 'src/components/Tools/Tools.vue');
 
 const AddSchedule = () => import(/* webpackChunkName: "addSchedule" */ 'src/components/Settings/Add Schedule/AddSchedule.vue');
 
@@ -46,6 +47,11 @@ const routes = [
     path: '/edit-schedule/:scheduleToEdit',
     component: AddSchedule,
     props: route => ({ scheduleToEdit: route.params.scheduleToEdit, mode: 'edit' }),
+  },
+  {
+    name: 'tools',
+    path: '/tools',
+    component: Tools,
   }
 ];
 

@@ -1,10 +1,10 @@
 <template>
-  <div class="checkbox-container" @click="$emit('input', !value)">
+  <div class="checkbox-container" v-hammer:tap="() => $emit('input', !value)">
     <div class="checkbox" :class="{ checked: value }">
       <font-awesome-icon class="check" :icon="faCheck"/>
     </div>
 
-    <div class="label" v-if="$slots.default">
+    <div class="label" v-if="$slots.default" :style="{ fontSize: labelSize }">
       <slot/>
     </div>
   </div>
@@ -17,6 +17,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 export default {
   props: {
     value: { type: Boolean, required: true },
+    labelSize: { type: String, default: '.85em' },
   },
   data() {
     return {
@@ -66,6 +67,5 @@ export default {
 
   .label
     margin-left: 10px
-    font-size: .85em
 
 </style>

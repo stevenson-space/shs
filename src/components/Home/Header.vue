@@ -356,27 +356,9 @@ export default {
       font-size: 1.75em
       cursor: pointer
       transition: box-shadow .2s
-      &::before
-        background-color: black
-        content: ''
-        height: 100%
-        top: 0
-        width: 100%
-        left: 0
-        position: absolute
-        opacity: 0
-        border-radius: 100px
-        transition: opacity .2s
+      +hover-darken-background
       +mobile
         display: none
-      +can-hover
-        &:hover
-          &::before
-            opacity: .15
-      +can-not-hover
-        &:active
-          &::before
-            opacity: .15
 
     .remove-color
       display: none

@@ -2,7 +2,7 @@
   <confirm-popup :show="show" @cancel="cancel" @ok="done" ok-text="Select">
     <div class="time-picker">
       <div class="time-selector">
-        <scroll-selector :options="hours" v-model="selectedTime.hour" font-size="1.5em"/>
+        <scroll-selector :style="{ textAlign: 'right' }" :options="hours" v-model="selectedTime.hour" font-size="1.5em"/>
         <span class="colon">:</span>
         <scroll-selector :options="minutes" v-model="selectedTime.minute" font-size="1.5em"/>
         <scroll-selector :options="suffixes" v-model="selectedTime.suffix" font-size="1.5em"/>
@@ -50,8 +50,8 @@ export default {
       options: [],
       cancel: () => {},
       done: () => {},
-      hours: Array(12).fill(0).map((_, i) => String(i + 1)), // generates ['1', '2', '3', '4', '5', ...]
-      minutes: Array(60).fill(0).map((_, i) => i).map(val => (val < 10 ? '0' : '') + val), // generates ['00', '01', '02', ...]
+      hours: Array(12).fill(0).map((_, i) => String(i + 1)), // generates [' 1', ' 2', ' 3' ..., '12']
+      minutes: Array(60).fill(0).map((_, i) => i).map(val => (val < 10 ? '0' : '') + val), // generates ['00', '01', '02', ..., '59']
       suffixes: ['AM', 'PM'],
       selectedTime: {
         hour: '1',

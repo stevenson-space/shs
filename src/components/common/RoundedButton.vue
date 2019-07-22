@@ -22,7 +22,8 @@ export default {
 <style lang="sass" scoped>
 
 .rounded-button
-  border: var(--color) 1.5px solid
+  $border-width: 1.5px
+  border: var(--color) $border-width solid
   background-color: white
   color: var(--color)
   border-radius: 7px
@@ -37,6 +38,7 @@ export default {
     background-color: var(--color)
     color: white
     border: none
+    padding: (5px + $border-width) (15px + $border-width)
   &.circular
     border-radius: 100px
     padding: 5px 10px

@@ -1,5 +1,5 @@
 <template>
-  <card class="card" v-if="!(events.length === 0 && eventsExhausted)">
+  <card class="upcoming-events-card" v-if="!(events.length === 0 && eventsExhausted)">
     <div class="title">Upcoming Events</div>
     <div class="events">
       <div class="line"/>
@@ -149,35 +149,36 @@ export default {
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 
-.title
-  text-align: center
-  font-size: 1.5em
-  margin: 15px 0
+.upcoming-events-card
+  .title
+    text-align: center
+    font-size: 1.5em
+    margin: 15px 0
 
-.events
-  position: relative
-  overflow: auto
-  padding-bottom: 25px
+  .events
+    position: relative
+    overflow: auto
+    padding-bottom: 25px
 
-  .line
-    --width: 3px
-    height: 100%
-    width: var(--width)
-    position: absolute
-    left: calc(100% / 2 - var(--width) / 2)
-    border-radius: 50px
-    background-color: var(--color)
+    .line
+      --width: 3px
+      height: 100%
+      width: var(--width)
+      position: absolute
+      left: calc(100% / 2 - var(--width) / 2)
+      border-radius: 50px
+      background-color: var(--color)
 
-  .event-chip
-    margin-top: 30px
+    .event-chip
+      margin-top: 30px
 
-.down-arrow
-  margin: auto
-  display: block
-  margin-top: -3px
-  font-size: 1.75em
-  margin-bottom: 5px
-  cursor: pointer
-  color: var(--color)
+  .down-arrow
+    margin: auto
+    display: block
+    margin-top: -3px
+    font-size: 1.75em
+    margin-bottom: 5px
+    cursor: pointer
+    color: var(--color)
 
 </style>

@@ -47,12 +47,15 @@ export default {
   },
   methods: {
     scrollToSelected() {
-      let index = this.options.indexOf(this.value);
-      if (index > -1) {
-        this.$el.scroll({
-          top: this.$refs['option'][index].offsetTop - (this.optionHeight * this.numOptionsAbove),
-        });
-      }
+      this.$nextTick(() => { // wait until this.value is updated if necessary
+        let index = this.options.indexOf(this.value);
+        if (index > -1) {
+          this.$el.scroll({
+            top: this.$refs['option'][index].offsetTop - (this.optionHeight * this.numOptionsAbove),
+            behavior: 'smooth',
+          });
+        }
+      });
     },
     setOptionHeight() {
       this.optionHeight = this.$refs['option'][0].getBoundingClientRect().height;
@@ -83,7 +86,7 @@ export default {
   .option
     color: #bbb
     cursor: pointer
-    padding: 0 15px
+    padding: 0 5px
 
     &.selected
       color: black

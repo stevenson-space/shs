@@ -40,16 +40,22 @@
         link="colors"/>
 
       <icon-text-card
+        :icon="icons.faTools"
+        text="Tools"
+        link="tools"
+        :invert="true"/>
+
+      <icon-text-card
         :icon="icons.faFileAlt"
         text="Documents"
         link="old/docs-encrypted.html"
-        :link-props="{ type: 'a' }"
-        :invert="true"/>
+        :link-props="{ type: 'a' }"/>
 
       <icon-text-card
         :icon="icons.faCog"
         text="Settings"
-        link="settings"/>
+        link="settings"
+        :invert="true"/>
     </card-container>
   </div>
 </template>
@@ -65,7 +71,7 @@ import IconTextCard from 'common/cards/IconTextCard.vue';
 import ScheduleCard from 'common/cards/ScheduleCard.vue';
 import ShsHacksCard from 'common/cards/ShsHacksCard.vue';
 
-import { faBell, faLink, faFileAlt, faCalendarAlt, faTv, faTint, faCalculator, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faLink, faFileAlt, faCalendarAlt, faTv, faTint, faCalculator, faCog, faTools } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   data() {
@@ -79,6 +85,7 @@ export default {
         faTint,
         faCalculator,
         faCog,
+        faTools,
       },
       fullScreenMode: false,
     };

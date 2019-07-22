@@ -197,7 +197,7 @@ export default {
     padding: 5px 12px
     cursor: pointer
     user-select: none
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent
 
     .down-icon
       margin-left: 7px

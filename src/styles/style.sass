@@ -47,3 +47,26 @@ $content-width: 1000px
   @media (hover: none)
     @content
 
+=hover-darken-background
+  &::before
+    background-color: black
+    content: ''
+    height: 100%
+    top: 0
+    width: 100%
+    left: 0
+    position: absolute
+    opacity: 0
+    border-radius: 100px
+    transition: opacity .2s
+  +can-hover
+    &:hover
+      &::before
+        opacity: .15
+  +can-not-hover
+    &:active
+      &::before
+        opacity: .15
+  svg
+    position: relative // this ensures that icon inside doesn't also darken for some reason
+

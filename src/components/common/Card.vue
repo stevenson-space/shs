@@ -1,5 +1,5 @@
 <template>
-  <div class="card" ref="card" :style="style">
+  <div class="card" :class="{ shadow, border }" ref="card" :style="style">
     <div class="wrapper" ref="wrapper">
       <slot/>
     </div>
@@ -8,6 +8,10 @@
 
 <script>
 export default {
+  props: {
+    shadow: { type: Boolean, default: true },
+    border: { type: Boolean, default: false },
+  },
   data() {
     return {
       height: 0,
@@ -77,10 +81,14 @@ export default {
 .card
   background-color: white
   border-radius: 15px
-  +shadow
   position: relative
   transition: height .3s
   overflow: hidden
+  &.shadow
+    +shadow
+  &.border
+    border: #999 1px solid
+    // border: var(--color) 1.5px solid
 
   .wrapper
     overflow: hidden
