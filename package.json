@@ -2,7 +2,8 @@
   "name": "shs",
   "scripts": {
     "dev": "del-cli docs && webpack-serve ./webpack.config.js --open",
-    "build": "del-cli docs && webpack --progress --hide-modules --mode=production"
+    "build": "del-cli docs && webpack --progress --hide-modules --mode=production",
+    "analyze": "del-cli docs && webpack --hide-modules --mode=production --env.analyze=true"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
@@ -34,6 +35,7 @@
     "vue-loader": "^15.2.2",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.10.0",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.0",
     "webpack-serve": "^2.0.3"
   }
