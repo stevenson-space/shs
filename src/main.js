@@ -9,7 +9,7 @@ import App from 'src/App.vue';
 
 // smooth scroll behavior polyfill (for safari)
 if (!("scrollBehavior" in document.documentElement.style)) {
-  import(/* webpackChunckName: "scroll-behavior-polyfill" */"scroll-behavior-polyfill");
+  import(/* webpackChunkName: "scroll-behavior-polyfill" */"scroll-behavior-polyfill");
 }
 
 // Unregister all service workers

@@ -1,6 +1,6 @@
 <template>
-  <card class="timer-card" :shadow="false" :border="true">
-    <div class="fullscreen-wrapper" :class="{ enable: fullscreen }">
+  <card class="timer-card" :shadow="false" :border="true" :class="{ fullscreen: isFullscreen }">
+    <div class="fullscreen-wrapper" ref="fullscreen-wrapper">
       <div class="header">
         <div class="icon-button sound" v-hammer:tap="() => shouldMakeSound = !shouldMakeSound">
           <font-awesome-icon class="icon" :icon="icons.faVolumeUp" fixed-width/>
@@ -9,7 +9,9 @@
           <div class="slash" :class="{ hide: shouldMakeSound }"/>
         </div>
         <div class="title">Timer</div>
-        <div class="icon-button"><font-awesome-icon class="icon" :icon="icons.faExpand" fixed-width/></div>
+        <div class="icon-button" v-hammer:tap="isFullscreen ? exitFullscreen : makeFullscreen">
+          <font-awesome-icon class="icon" :icon="isFullscreen ? icons.faCompress : icons.faExpand" fixed-width/>
+        </div>
       </div>
 
       <div class="container">
@@ -44,6 +46,8 @@
       </div>
     </div>
 
+    <div class="filler" ref="filler"/> <!-- fills space when the rest of the content is in full screen mode -->
+
     <confirm-popup :show="showTimerDonePopup" cancelText="" @ok="timerDoneOk">
       <div class="timer-done-text">Timer Done!</div>
     </confirm-popup>
@@ -53,6 +57,7 @@
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faInfoCircle, faExpand, faCompress, faVolumeUp, faSlash } from '@fortawesome/free-solid-svg-icons';
+import anime from "animejs";
 
 import Card from 'common/Card.vue';
 import ScrollSelector from 'common/ScrollSelector.vue';
@@ -86,7 +91,8 @@ export default {
       showTimerDonePopup: false,
       shouldMakeSound: false,
       audio: null,
-      fullscreen: false,
+      isFullscreen: false,
+      fullscreenAnimation: null,
     }
   },
   computed: {
@@ -130,7 +136,8 @@ export default {
         this.stop();
         this.showTimerDonePopup = true;
         if (this.shouldNotify && Notification.permission == 'granted') {
-          new Notification('Timer Done!');
+          const notification = new Notification('Timer Done!', { icon: 'favicon/favicon-196x196.png' });
+          notification.onclick = () => window.focus(); // focus this tab when notification is clicked on
         }
         if (this.shouldMakeSound && this.audio) {
           this.audio.currentTime = 0;
@@ -159,6 +166,41 @@ export default {
       this.showTimerDonePopup = false;
       if (this.audio) {
         this.audio.pause();
+      }
+    },
+    makeFullscreen() {
+      if (!this.isFullscreen) {
+        const $fullscreenWrapper = this.$refs['fullscreen-wrapper'];
+
+        // Purpose of filler is to maintain the card's height while the contents are in fullscreen
+        // (position: fixed items don't take up space in container)
+        // this prevents the card from unnaturally resizing when exiting full screen
+        this.$refs['filler'].style.height = $fullscreenWrapper.offsetHeight + 'px';
+
+        $fullscreenWrapper.style.position = 'fixed';
+        this.fullscreenAnimation = anime({
+          targets: $fullscreenWrapper,
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          easing: 'cubicBezier(0.25, 0.1, 0.25, 1.0)',
+          duration: 300,
+        });
+        this.isFullscreen = true;
+      }
+    },
+    exitFullscreen() {
+      if (this.isFullscreen && this.fullscreenAnimation) {
+        this.fullscreenAnimation.reverse();
+        this.fullscreenAnimation.play();
+        this.fullscreenAnimation.finished.then(() => {
+          anime.remove(this.$refs['fullscreen-wrapper']);
+          this.$refs['filler'].style.height = 0;
+          this.$refs['fullscreen-wrapper'].removeAttribute('style'); // remove all changes made to this element by javascript
+          this.fullscreenAnimation = null;
+        });
+        this.isFullscreen = false;
       }
     }
   },
@@ -193,6 +235,9 @@ export default {
 @import "src/styles/style.sass"
 
 .timer-card
+  .fullscreen-wrapper
+    background-color: white
+    
   .header
     display: flex
     background-color: var(--color)
@@ -287,11 +332,7 @@ export default {
     +mobile-small
       font-size: 2em
 
-  .fullscreen-wrapper
-    transition: top .3s, left .3s, width .3s, height .3s
-    &.enable
-      position: fixed
-      top: 0
-
+  &.fullscreen
+    
 
 </style>
