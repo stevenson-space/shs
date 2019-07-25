@@ -5,7 +5,6 @@
     </div>
 
     <div class="info-bubble">
-      Notifies you when the timer finishes even if you're on a different tab/app (requires permission)
       <slot/>
     </div>
   </div>
@@ -22,8 +21,6 @@ export default {
         faQuestionCircle
       }
     }
-  },
-  methods: {
   },
   components: { FontAwesomeIcon }
 }

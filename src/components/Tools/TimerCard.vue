@@ -4,8 +4,6 @@
       <div class="header">
         <div class="icon-button sound" v-hammer:tap="() => shouldMakeSound = !shouldMakeSound">
           <font-awesome-icon class="icon" :icon="icons.faVolumeUp" fixed-width/>
-          <!-- <font-awesome-icon :class="{ hide: shouldMakeSound }" class="icon slash" :icon="icons.faSlash"/> -->
-          <!-- <font-awesome-icon :class="{ hide: shouldMakeSound }" class="icon slash-2" :icon="icons.faSlash"/> -->
           <div class="slash" :class="{ hide: shouldMakeSound }"/>
         </div>
         <div class="title">Timer</div>
@@ -38,7 +36,8 @@
         </div>
 
         <checkbox :value="shouldNotify" @input="notifyCheckboxInput($event)" label-size="1em" v-if="browserSupportsNotifications">
-          Notify Me &nbsp;<what-is-this/>
+          Notify Me &nbsp;
+          <what-is-this>Notifies you when the timer finishes even if you're on a different tab/app (requires permission)</what-is-this>
         </checkbox>
 
         <div class="control-buttons">
@@ -98,7 +97,6 @@ export default {
       fullscreenAnimation: null,
     }
   },
-  // mounted() {window.scrollAllScrollSelectors = this.scrollAllScrollSelectors},
   computed: {
     startStopButton() {
       return {
