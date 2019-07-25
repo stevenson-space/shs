@@ -12,14 +12,7 @@ if (!("scrollBehavior" in document.documentElement.style)) {
   import(/* webpackChunkName: "scroll-behavior-polyfill" */"scroll-behavior-polyfill");
 }
 
-// Unregister all service workers
-if(window.navigator && navigator.serviceWorker) {
-  navigator.serviceWorker.getRegistrations().then(function(registrations) {
-    for(let registration of registrations) {
-      registration.unregister();
-    }
-  });
-}
+navigator.serviceWorker.register('service-worker.js');
 
 Vue.use(VueRouter);
 Vue.use(VueHammer);

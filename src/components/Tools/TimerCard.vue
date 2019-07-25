@@ -51,6 +51,7 @@
 
     <confirm-popup :show="showTimerDonePopup" cancelText="" @ok="timerDoneOk">
       <div class="timer-done-text">Timer Done!</div>
+      <!-- TODO Display negative stopwatch counting time since timer ended-->
     </confirm-popup>
   </card>
 </template>
@@ -95,7 +96,17 @@ export default {
       audio: null,
       isFullscreen: false,
       fullscreenAnimation: null,
+      serviceWorkerListener: null,
     }
+  },
+  created() {
+    this.serviceWorkerListener = event => {
+      if (event.data == 'stop-timer-done-audio' && this.audio) this.audio.pause();
+    }
+    navigator.serviceWorker.addEventListener('message', this.serviceWorkerListener);
+  },
+  beforeDestroy() {
+    navigator.serviceWorker.removeEventListener('message', this.serviceWorkerListener);
   },
   computed: {
     startStopButton() {
@@ -137,13 +148,21 @@ export default {
       this.time = this.secondsToTime(secondsLeft);
       if (secondsLeft > 0) {
         this.timer = setTimeout(this.countdown, 1000);
-      } else {
+      } else { // Timer Done
         this.stop();
         this.showTimerDonePopup = true;
+        
         if (this.shouldNotify && Notification.permission == 'granted') {
-          const notification = new Notification('Timer Done!', { icon: 'favicon/favicon-196x196.png' });
-          notification.onclick = () => window.focus(); // focus this tab when notification is clicked on
+          // using service workers instead of normal notifications because android requires it (and desktop still supports it too)
+          navigator.serviceWorker.ready.then(registration => {
+            registration.showNotification('Timer Done!', {
+              tag: 'timer',
+              icon: 'favicon/favicon-196x196.png',
+              renotify: true
+            });
+          });
         }
+
         if (this.shouldMakeSound && this.audio) {
           this.audio.currentTime = 0;
           this.audio.play();
@@ -242,7 +261,7 @@ export default {
       for (let i = 1; i <= 3; i++) {
         this.$refs[`scroll-selector-${i}`].scrollToSelected();
       }
-    }
+    },
   },
   watch: {
     shouldMakeSound() {
