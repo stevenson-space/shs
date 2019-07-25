@@ -179,8 +179,8 @@ export default {
       this.stop();
       this.time = this.secondsToTime(this.initialTimeSeconds);
     },
-    addTime(secondsToAdd, force = false) {
-      if (!this.timer || force) { // typically only want to add time if the timer is not currently running
+    addTime(secondsToAdd) {
+      if (!this.timer) { // typically only want to add time if the timer is not currently running
         // don't let the time go over 23:59:59 because that's the maximum time that can be displayed
         const seconds = Math.min(this.timeToSeconds(this.time) + secondsToAdd, 23*60*60 + 59*60 + 59);
         this.time = this.secondsToTime(seconds);

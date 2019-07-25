@@ -40,8 +40,7 @@ export default {
     color: var(--color)
     font-size: 1.05em
     padding: 2px
-
-
+  
   .info-bubble
     font-size: .85em
     position: fixed
