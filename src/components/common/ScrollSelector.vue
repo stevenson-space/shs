@@ -29,10 +29,9 @@ export default {
   },
   mounted() {
     this.setOptionHeight();
-
-    this.$nextTick(() => {
-      this.scrollToSelected();
-    });
+    setTimeout(this.setOptionHeight, 100); // just in case
+    
+    this.$nextTick(this.scrollToSelected);
 
     let scrollTimeout = null;
     this.$el.addEventListener('scroll', () => {
@@ -66,7 +65,7 @@ export default {
       this.scrollToSelected();
     },
     fontSize() {
-      this.setOptionHeight();
+      this.$nextTick(this.setOptionHeight);
     }
   }
 }

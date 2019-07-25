@@ -1,5 +1,5 @@
 <template>
-  <div class="checkbox-container" v-hammer:tap="() => $emit('input', !value)">
+  <div class="checkbox-container" @click="$emit('input', !value)">
     <div class="checkbox" :class="{ checked: value }">
       <font-awesome-icon class="check" :icon="faCheck"/>
     </div>
@@ -37,6 +37,7 @@ export default {
   cursor: pointer
   justify-content: center
   user-select: none
+  -webkit-tap-highlight-color: transparent
 
   .checkbox
     color: white

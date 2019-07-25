@@ -16,13 +16,13 @@
 
       <div class="container">
         <div class="time-selector">
-          <scroll-selector :options="hours" v-model="time.hours" font-size="1.75em"/>
+          <scroll-selector :options="hours" v-model="time.hours" :font-size="fontSize" ref="scroll-selector-1"/>
           <span class="letter">h</span>
           <span class="colon">:</span>
-          <scroll-selector :options="minutes" v-model="time.minutes" font-size="1.75em"/>
+          <scroll-selector :options="minutes" v-model="time.minutes" :font-size="fontSize" ref="scroll-selector-2"/>
           <span class="letter">m</span>
           <span class="colon">:</span>
-          <scroll-selector :options="minutes" v-model="time.seconds" font-size="1.75em"/>
+          <scroll-selector :options="minutes" v-model="time.seconds" :font-size="fontSize" ref="scroll-selector-3"/>
           <span class="letter">s</span>
         </div>
 
@@ -37,7 +37,9 @@
           <div class="button" @click="addTime(10 * 60)">+10<span class="small">m</span></div>
         </div>
 
-        <checkbox v-model="shouldNotify" label-size="1em" v-if="browserSupportsNotifications">Notify Me</checkbox>
+        <checkbox :value="shouldNotify" @input="notifyCheckboxInput($event)" label-size="1em" v-if="browserSupportsNotifications">
+          Notify Me &nbsp;<what-is-this/>
+        </checkbox>
 
         <div class="control-buttons">
           <rounded-button class="button" text="Reset" :circular="false" @click="reset"/>
@@ -64,6 +66,7 @@ import ScrollSelector from 'common/ScrollSelector.vue';
 import RoundedButton from 'common/RoundedButton.vue';
 import Checkbox from 'common/Checkbox.vue';
 import ConfirmPopup from 'common/ConfirmPopup.vue';
+import WhatIsThis from 'common/WhatIsThis.vue';
 
 export default {
   data() {
@@ -95,6 +98,7 @@ export default {
       fullscreenAnimation: null,
     }
   },
+  // mounted() {window.scrollAllScrollSelectors = this.scrollAllScrollSelectors},
   computed: {
     startStopButton() {
       return {
@@ -102,6 +106,9 @@ export default {
         action: this.timer ? this.stop : this.start,
         invert: !!this.timer,
       }
+    },
+    fontSize() {
+      return this.isFullscreen ? (window.innerWidth >= 786 ? '5em' : '3em') : '1.75em';
     }
   },
   methods: {
@@ -187,6 +194,15 @@ export default {
           easing: 'cubicBezier(0.25, 0.1, 0.25, 1.0)',
           duration: 300,
         });
+
+        // sometimes the time scroll selectors change value when switching to/from fullscreen,
+        // so we reset the time to it's prior value
+        const { seconds, minutes, hours } = this.time; // need to do this so we get actual values instead of reference
+        this.fullscreenAnimation.finished.then(() => {
+          this.time = { seconds, minutes, hours };
+          this.scrollAllScrollSelectors() // ios doesn't automatically scroll for some reason
+        });
+
         this.isFullscreen = true;
       }
     },
@@ -194,22 +210,43 @@ export default {
       if (this.isFullscreen && this.fullscreenAnimation) {
         this.fullscreenAnimation.reverse();
         this.fullscreenAnimation.play();
+
+        const { seconds, minutes, hours } = this.time; // need to do this so we get actual values instead of reference
+
         this.fullscreenAnimation.finished.then(() => {
           anime.remove(this.$refs['fullscreen-wrapper']);
           this.$refs['filler'].style.height = 0;
           this.$refs['fullscreen-wrapper'].removeAttribute('style'); // remove all changes made to this element by javascript
           this.fullscreenAnimation = null;
+
+          // sometimes the time scroll selectors change value when switching to/from fullscreen,
+          // so we reset the time to it's prior value
+          this.time = { seconds, minutes, hours };
+          this.scrollAllScrollSelectors(); // ios doesn't automatically scroll for some reason
         });
+
         this.isFullscreen = false;
+      }
+    },
+    notifyCheckboxInput(shouldNotify) {
+      if (shouldNotify && Notification.permission != 'granted') {
+        if (Notification.permission == 'denied') alert('Please allow notifications to enable this option');
+        else {
+          Notification.requestPermission().then(() => {
+            this.shouldNotify = Notification.permission == 'granted';
+          });
+        }
+      } else {
+        this.shouldNotify = shouldNotify;
+      }
+    },
+    scrollAllScrollSelectors() { // this forcibly scrolls all the scroll selectors to the selected value
+      for (let i = 1; i <= 3; i++) {
+        this.$refs[`scroll-selector-${i}`].scrollToSelected();
       }
     }
   },
   watch: {
-    shouldNotify() {
-      if (this.shouldNotify && Notification.permission != 'granted') {
-        Notification.requestPermission();
-      }
-    },
     shouldMakeSound() {
       if (this.shouldMakeSound && !this.audio) {
         // initially playing some blank audio while tab is in focus allows audio to be played later even when tab is in background
@@ -227,6 +264,7 @@ export default {
     FontAwesomeIcon,
     Checkbox,
     ConfirmPopup,
+    WhatIsThis,
   },
 }
 </script>
@@ -333,6 +371,50 @@ export default {
       font-size: 2em
 
   &.fullscreen
-    
+    .header
+      padding: 10px 20px
+      font-size: 1.5em
+
+      .icon-button.sound .slash
+        height: 3.6px
+        width: 36px
+        transform: rotate(45deg) translate(12px, 17px) scale(1)
+        &.hide
+          transform: rotate(45deg) translate(12px, 17px) scale(0)
+
+    .time-selector
+      .letter
+        margin-top: 40px
+        font-size: 1.5em
+        +mobile
+          font-size: 1.25em
+          margin-top: 20px
+      .colon
+        font-size: 5em
+        +mobile
+          font-size: 3em
+
+    .info-text
+      // display: none
+      margin: 15px 0
+
+    .add-time-buttons
+      font-size: 2em
+      margin-top: 20px
+      +mobile
+        font-size: 1.7em
+        margin-top: 10px
+      .button
+        padding: 3px 10px
+        margin: 0 20px
+        +mobile
+          margin: 0 10px
+
+    .control-buttons
+      font-size: 1.25em
+      margin-top: 30px
+      +mobile
+        margin-top: 25px
+      
 
 </style>
