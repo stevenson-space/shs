@@ -1,28 +1,29 @@
 <template>
   <div>
-    <home-link class="home-link"/>
+    <home-link class="home-link" />
 
     <div class="header">
       <div class="title" @click="editScheduleName">
         <input
           v-show="editingScheduleName"
+          ref="schedule-name-input"
           class="schedule-name-input"
           :value="scheduleName"
+          maxlength="20"
           @blur="setScheduleName($event.target.value)"
           @keypress.enter.prevent="setScheduleName($event.target.value)"
           @click.stop=""
-          maxlength="20"
-          ref="schedule-name-input">
-        
-        <div class="text" v-show="!editingScheduleName">{{ scheduleName }}</div>
+        >
 
-        <font-awesome-icon :icon="icons.faPencilAlt" class="icon"/>
+        <div v-show="!editingScheduleName" class="text">{{ scheduleName }}</div>
+
+        <font-awesome-icon :icon="icons.faPencilAlt" class="icon" />
       </div>
 
       <div class="buttons">
-        <rounded-button class="button" @click="save" :invert="true" text="Save Schedule"/>
-        <rounded-button class="button" @click="addPeriod" :icon="icons.faPlus" text="Add Period to All"/>
-        <rounded-button class="button" @click="showDeleteAllPopup = true" text="Delete All"/>
+        <rounded-button class="button" :invert="true" text="Save Schedule" @click="save" />
+        <rounded-button class="button" :icon="icons.faPlus" text="Add Period to All" @click="addPeriod" />
+        <rounded-button class="button" text="Delete All" @click="showDeleteAllPopup = true" />
       </div>
 
       <div class="mobile-disclaimer">
@@ -32,10 +33,10 @@
     </div>
 
     <div class="main">
-
       <div class="columns">
         <schedule-column
           v-for="(schedule, i) in schedules"
+          :key="schedule.name"
           class="column"
           v-bind="schedule"
           @enable="schedules[i].isEnabled = true"
@@ -44,11 +45,11 @@
           @update-name="updateName(i, $event.period, $event.name, $event.updateOthers)"
           @delete-period="deletePeriod(i, $event.period, $event.deleteOthers)"
           @add-period="addPeriod(i)"
-          :key="schedule.name"/>
+        />
       </div>
     </div>
 
-    <time-picker ref="time-picker"/>
+    <time-picker ref="time-picker" />
     <confirm-popup :show="showDeleteAllPopup" @cancel="showDeleteAllPopup = false" @ok="deleteAllPeriods">
       <div class="delete-all-popup">Are you sure you want to delete all periods?</div>
     </confirm-popup>
@@ -60,16 +61,24 @@ import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faPlus, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { mapState } from 'vuex';
 
-import Bell from 'src/js/bell.js';
+import Bell from 'src/js/bell';
 import HomeLink from 'common/HomeLink.vue';
-import ScheduleColumn from './ScheduleColumn.vue';
-import TimePicker from './TimePicker.vue';
 import ConfirmPopup from 'common/ConfirmPopup.vue';
 import RoundedButton from 'common/RoundedButton.vue';
+import ScheduleColumn from './ScheduleColumn.vue';
+import TimePicker from './TimePicker.vue';
 
 export default {
+  components: {
+    HomeLink,
+    ScheduleColumn,
+    TimePicker,
+    ConfirmPopup,
+    FontAwesomeIcon,
+    RoundedButton,
+  },
   props: {
-    mode: { type: String, validator: val => ['add', 'edit'].includes(val), default: 'add'},
+    mode: { type: String, validator: val => ['add', 'edit'].includes(val), default: 'add' },
     scheduleToEdit: { type: String, default: null },
   },
   data() {
@@ -84,22 +93,33 @@ export default {
       },
       dirty: false, // true if the data has been modified without having been saved yet
       beforeUnloadHandler: null,
-    }
+    };
   },
   computed: mapState({
-    existingSchedules: 'schedules'
+    existingSchedules: 'schedules',
   }),
+  watch: {
+    schedules: {
+      deep: true,
+      handler() {
+        this.dirty = true;
+      },
+    },
+    scheduleName() {
+      this.dirty = true;
+    },
+  },
   created() {
     // setting scheduleName to 'Untitled Schedule' here in case a schedule already exists with
     // that name (setScheduleName checks existing schedules and modifies name accordingly)
     this.setScheduleName('Untitled Schedule');
 
     // filtering out multiday schedules for now (too complex...), and no school days (indicated by modes.length === 0)
-    const schedules = this.existingSchedules.filter(schedule => 
-      schedule.modes.length > 0 && !Bell.isMultiDay(schedule.modes[0])
+    const schedules = this.existingSchedules.filter(
+      schedule => schedule.modes.length > 0 && !Bell.isMultiDay(schedule.modes[0]),
     );
 
-    if (this.mode == 'add') {
+    if (this.mode === 'add') {
       this.schedules = schedules.map(schedule => ({
         name: schedule.name,
         isEnabled: true,
@@ -107,16 +127,15 @@ export default {
       }));
 
       this.addPeriod();
-    }
-    else { // we assume mode == 'edit' and pre populate the page based on the existing mode
-      const removeExclamationMark = periodName => periodName[0] == '!' ? periodName.substring(1) : periodName;
+    } else { // we assume mode == 'edit' and pre populate the page based on the existing mode
+      const removeExclamationMark = periodName => (periodName[0] === '!' ? periodName.substring(1) : periodName);
       this.scheduleName = this.scheduleToEdit;
-      this.schedules = schedules.map(schedule => {
+      this.schedules = schedules.map((schedule) => {
         const result = {
           name: schedule.name,
           isEnabled: false,
           periods: [],
-        }
+        };
 
         const modeNames = schedule.modes.map(mode => mode.name);
         const index = modeNames.indexOf(this.scheduleToEdit);
@@ -137,9 +156,9 @@ export default {
 
     this.$nextTick(() => {
       this.dirty = false; // reset dirty to false after initializing schedules (the watcher will set dirty to true)
-    })
+    });
 
-    this.beforeUnloadHandler = event => {
+    this.beforeUnloadHandler = (event) => {
       if (this.dirty) {
         event.returnValue = 'Are you sure you want to leave without saving?';
       }
@@ -149,20 +168,9 @@ export default {
   destroyed() {
     window.removeEventListener('beforeunload', this.beforeUnloadHandler);
   },
-  watch: {
-    schedules: {
-      deep: true,
-      handler() {
-        this.dirty = true;
-      }
-    },
-    scheduleName() {
-      this.dirty = true;
-    }
-  },
   beforeRouteLeave(to, from, next) {
     if (this.dirty) {
-      const answer = window.confirm('Are you sure you want to leave without saving?');
+      const answer = window.confirm('Are you sure you want to leave without saving?'); // eslint-disable-line no-alert
       if (answer) {
         next();
       } else {
@@ -180,36 +188,36 @@ export default {
 
       const timePicker = this.$refs['time-picker'];
 
-      const options = []
-      this.existingSchedules[schedule].modes.forEach(scheduleMode => {
-        scheduleMode.periods.forEach((period, i) => {
+      const options = [];
+      this.existingSchedules[schedule].modes.forEach((scheduleMode) => {
+        scheduleMode.periods.forEach((periodName, i) => {
           options.push({
-            text: Bell.formatPeriodName(period), 
+            text: Bell.formatPeriodName(periodName),
             time: scheduleMode[time][i],
 
             // only 'text' and 'time are used by the timePicker, 'scheduleMode' and 'name' are metadata that we will use later
             scheduleMode: scheduleMode.name,
-            name: period,
+            name: periodName,
           });
         });
       });
 
       const userPeriod = this.schedules[schedule].periods[period];
-      timePicker.pickTime(options, userPeriod[time]).then(result => {
+      timePicker.pickTime(options, userPeriod[time]).then((result) => {
         userPeriod[time] = result.time;
         if (result.setOthers) {
           this.setOthers(userPeriod.name, result.name, result.scheduleMode, time);
         }
         this.sortPeriods();
-      }, message => {
+      }, () => {
         // don't need to do anything if the user cancels
       });
     },
     setOthers(userPeriodName, periodName, scheduleMode, time) { // time is 'start' or 'end'
       this.schedules.forEach((userSchedule, i) => {
-        userSchedule.periods.forEach(period => {
-          if (period.name == userPeriodName) {
-            let newTime = this.searchScheduleForTime(periodName, scheduleMode, time, i);
+        userSchedule.periods.forEach((period) => {
+          if (period.name === userPeriodName) {
+            const newTime = this.searchScheduleForTime(periodName, scheduleMode, time, i);
             if (newTime) {
               period[time] = newTime;
             }
@@ -219,11 +227,11 @@ export default {
     },
     searchScheduleForTime(periodName, scheduleMode, time, schedule) { // time is 'start' or 'end'
       let result = null;
-      this.existingSchedules[schedule].modes.forEach(mode => {
+      this.existingSchedules[schedule].modes.forEach((mode) => {
         if (mode.name === scheduleMode) {
           mode.periods.forEach((period, i) => {
             if (period === periodName) {
-              result = mode[time][i]
+              result = mode[time][i];
             }
           });
         }
@@ -231,34 +239,34 @@ export default {
       return result;
     },
     sortPeriods() {
-      this.schedules.forEach(schedule => {
+      this.schedules.forEach((schedule) => {
         schedule.periods.sort((a, b) => Bell.timeToNumber(a.start) - Bell.timeToNumber(b.start));
       });
     },
-    updateName(schedule, period, name, updateOthers) {
+    updateName(scheduleIndex, periodIndex, name, updateOthers) {
       name = this.getNameWithoutConflicts(name, this.doesNameExist);
 
-      var oldName = this.schedules[schedule].periods[period].name;
+      const oldName = this.schedules[scheduleIndex].periods[periodIndex].name;
       if (updateOthers) {
-        this.schedules.forEach(schedule => {
-          schedule.periods.forEach(period => {
+        this.schedules.forEach((schedule) => {
+          schedule.periods.forEach((period) => {
             if (period.name === oldName) {
               period.name = name;
             }
           });
         });
       } else {
-        this.schedules[schedule].periods[period].name = name;
+        this.schedules[scheduleIndex].periods[periodIndex].name = name;
       }
     },
     addPeriod(toSchedule) {
       const name = this.getNameWithoutConflicts(this.getRandomCourseName(), this.doesNameExist);
       const getPeriod = () => ({ name, start: '23:59', end: '23:59' }); // function, so that a different object is created every time
-      
+
       if (Number.isInteger(toSchedule)) { // add it to all schedules
         this.schedules[toSchedule].periods.push(getPeriod());
       } else {
-        this.schedules.forEach(schedule => {
+        this.schedules.forEach((schedule) => {
           schedule.periods.push(getPeriod());
         });
       }
@@ -267,16 +275,16 @@ export default {
     },
     getNameWithoutConflicts(name, doesNameExistFunction) {
       let newName = name;
-      for(let i = 2; doesNameExistFunction(newName); i++) {
-        newName = name + ' ' + i;
+      for (let i = 2; doesNameExistFunction(newName); i++) {
+        newName = `${name} ${i}`;
       }
       return newName;
     },
     doesNameExist(name) {
       let result = false;
-      this.schedules.forEach(schedule => {
-        schedule.periods.forEach(period => {
-          if (period.name == name) {
+      this.schedules.forEach((schedule) => {
+        schedule.periods.forEach((period) => {
+          if (period.name === name) {
             result = true;
           }
         });
@@ -284,21 +292,23 @@ export default {
       return result;
     },
     getRandomCourseName() {
-      const courses = ['English', 'Chemistry', 'Physics', 'Biology', 'Math', 'History', 'Computer Science', 'Engineering'];
+      const courses = [
+        'English', 'Chemistry', 'Physics', 'Biology', 'Math', 'History', 'Computer Science', 'Engineering',
+      ];
       return courses[Math.floor(Math.random() * courses.length)];
     },
-    deletePeriod(schedule, period, deleteOthers) {
+    deletePeriod(scheduleIndex, periodIndex, deleteOthers) {
       if (deleteOthers) {
-        const periodName = this.schedules[schedule].periods[period].name;
-        this.schedules.forEach(schedule => {
+        const periodName = this.schedules[scheduleIndex].periods[periodIndex].name;
+        this.schedules.forEach((schedule) => {
           schedule.periods = schedule.periods.filter(period => period.name !== periodName);
         });
       } else {
-        this.schedules[schedule].periods.splice(period, 1);
+        this.schedules[scheduleIndex].periods.splice(periodIndex, 1);
       }
     },
     deleteAllPeriods() {
-      this.schedules.forEach(schedule => {
+      this.schedules.forEach((schedule) => {
         schedule.periods = [];
       });
       this.showDeleteAllPopup = false;
@@ -309,13 +319,13 @@ export default {
         this.$refs['schedule-name-input'].focus();
         // this.$refs['schedule-name-input'].select();
         this.$refs['schedule-name-input'].setSelectionRange(0, 9999);
-      })
+      });
     },
     setScheduleName(name) {
-      if (name && name != this.scheduleName) {
-        let existingSchedulesNames = new Set();
-        this.existingSchedules.forEach(schedule => {
-          schedule.modes.map(mode => mode.name).forEach(name => existingSchedulesNames.add(name));
+      if (name && name !== this.scheduleName) {
+        const existingSchedulesNames = new Set();
+        this.existingSchedules.forEach((schedule) => {
+          schedule.modes.map(mode => mode.name).forEach(scheduleName => existingSchedulesNames.add(scheduleName));
         });
         this.scheduleName = this.getNameWithoutConflicts(name, testName => existingSchedulesNames.has(testName));
       }
@@ -323,27 +333,27 @@ export default {
       this.editingScheduleName = false;
     },
     save() {
-      const formatSchedule = periods => {
+      const formatSchedule = (periods) => {
         const schedule = { name: this.scheduleName, start: [], end: [], periods: [] };
-        periods.forEach(period => {
+        periods.forEach((period) => {
           schedule.start.push(period.start);
           schedule.end.push(period.end);
 
-          // if the period name is not a number, then we want the exclamation mark to prevent inserting 'Period ' before the name when displayed
-          schedule.periods.push( (isNaN(parseInt(period.name)) ? '!' : '') + period.name);
+          // if the period name is not a number (or doesn't start with a number, e.g 'Period 1A'), then we want the
+          // exclamation mark to prevent inserting 'Period ' before the name when displayed (parseInt('1A') -> 1)
+          schedule.periods.push((Number.isNaN(parseInt(period.name)) ? '!' : '') + period.name);
         });
         return schedule;
-      }
+      };
 
-      this.schedules.forEach(schedule => {
+      this.schedules.forEach((schedule) => {
         if (schedule.isEnabled) {
           this.$store.commit('addScheduleMode', {
             scheduleType: schedule.name,
             scheduleToAdd: formatSchedule(schedule.periods),
-            scheduleToReplace: this.mode == 'edit' ? this.scheduleToEdit : null,
+            scheduleToReplace: this.mode === 'edit' ? this.scheduleToEdit : null,
           });
-        }
-        else if (this.mode == 'edit') { // if in edit mode and the user unchecks isEnabled, we need to delete the mode
+        } else if (this.mode === 'edit') { // if in edit mode and the user unchecks isEnabled, we need to delete the mode
           this.$store.commit('removeScheduleMode', {
             scheduleType: schedule.name,
             scheduleToRemove: this.scheduleToEdit,
@@ -353,17 +363,9 @@ export default {
 
       this.dirty = false;
       this.$router.push('/settings');
-    }
+    },
   },
-  components: {
-    HomeLink,
-    ScheduleColumn,
-    TimePicker,
-    ConfirmPopup,
-    FontAwesomeIcon,
-    RoundedButton,
-  }
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -421,7 +423,7 @@ export default {
     align-items: flex-end
     margin-right: 20px
     margin-bottom: 10px
-    
+
     .button
       margin: 3px 0
 
@@ -456,4 +458,3 @@ export default {
   font-weight: bold
 
 </style>
-

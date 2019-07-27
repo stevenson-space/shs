@@ -1,18 +1,20 @@
 <template>
   <div
-    @keydown.right="nextMonth"
-    @keydown.left="previousMonth"
     v-hammer:swipe.horizontal="onSwipe"
+    v-focus
     tabindex="-1"
     style="outline: none"
-    v-focus>
+    @keydown.right="nextMonth"
+    @keydown.left="previousMonth"
+  >
     <calendar-main
       class="calendar-main"
       v-bind="childProps"
       @filter-selected="filter = $event"
       @next-month="nextMonth"
       @previous-month="previousMonth"
-      @event-click="displayedEvent = $event"/>
+      @event-click="displayedEvent = $event"
+    />
 
     <calendar-mobile
       class="calendar-mobile"
@@ -20,7 +22,8 @@
       @filter-selected="filter = $event"
       @next-month="nextMonth"
       @previous-month="previousMonth"
-      @event-click="displayedEvent = $event"/>
+      @event-click="displayedEvent = $event"
+    />
 
     <popup :show="!!displayedEvent.name" @close="displayedEvent = {}">
       <div class="event-details">
@@ -29,7 +32,7 @@
         <div class="title">{{ displayedEvent.name }}</div>
 
         <div class="time">
-          <font-awesome-icon class="icon" :icon="icons.faClock" fixed-width/>&nbsp;
+          <font-awesome-icon class="icon" :icon="icons.faClock" fixed-width />&nbsp;
 
           <span v-if="displayedEvent.allDay">All Day</span>
 
@@ -40,8 +43,8 @@
           <span v-else>{{ formatTime(displayedEvent.start) }}</span>
         </div>
 
-        <div class="location" v-show="displayedEvent.location">
-          <font-awesome-icon class="icon" :icon="icons.faMapMarkerAlt" fixed-width/>
+        <div v-show="displayedEvent.location" class="location">
+          <font-awesome-icon class="icon" :icon="icons.faMapMarkerAlt" fixed-width />
           &nbsp;{{ displayedEvent.location }}
         </div>
 
@@ -56,16 +59,22 @@ import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 
-import Bell from 'src/js/bell.js';
+import Bell from 'src/js/bell';
 import allEvents from 'src/data/events.json';
+import Popup from 'common/Popup.vue';
 import CalendarMain from './CalendarMain.vue';
 import CalendarMobile from './CalendarMobile.vue';
-import Popup from 'common/Popup.vue';
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
   'September', 'October', 'November', 'December'];
 
 export default {
+  components: {
+    CalendarMain,
+    CalendarMobile,
+    Popup,
+    FontAwesomeIcon,
+  },
   data() {
     return {
       icons: {
@@ -77,12 +86,7 @@ export default {
       year: 0,
       displayedEvent: {},
       filter: 'All',
-    }
-  },
-  created() {
-    this.today = this.$store.getters.date;
-    this.month = this.today.getMonth();
-    this.year = this.today.getFullYear();
+    };
   },
   computed: {
     childProps() {
@@ -90,18 +94,19 @@ export default {
 
       // combine the date, schedule, and events into one object for each date
       // to make it easier for the child components to use
-      const combined = dates.map((date, i) => date ? {
+      const combined = dates.map((date, i) => (date ? {
         isToday: date === today.toLocaleDateString(),
         date: new Date(date).getDate(),
+        dateString: date,
         schedule: schedules[i],
         events: filteredEvents[i],
-      } : null);
+      } : i));
 
       return {
         month: months[month],
         year,
         dates: combined,
-        filterCategories: categories
+        filterCategories: categories,
       };
     },
     dates() {
@@ -127,7 +132,7 @@ export default {
     },
     schedules() {
       // Get the schedule for each date currently displayed on the calendar
-      return this.dates.map(date => {
+      return this.dates.map((date) => {
         if (date) {
           const schedule = Bell.getScheduleType(new Date(date));
 
@@ -146,7 +151,6 @@ export default {
 
           // If there is a special schedule, we need to remove or modify any events that contain the same information
           if (schedules[i]) {
-
             // schedules[i].eventAliases contains equivalent names for the schedule type (e.g. "Non-Attendance Day" for "No School")
             const scheduleIndicatingWords = [schedules[i].name].concat(schedules[i].eventAliases || []);
 
@@ -159,9 +163,9 @@ export default {
 
             // If any of the removed events contain extra information in addition to the schedule type
             // then remove the schedule type, leaving just the extra information
-            for (let i = events.length - 1; i >= 0; i--) {
-              const event = events[i];
-              scheduleIndicatingWords.forEach(words => {
+            for (let j = events.length - 1; j >= 0; j--) {
+              const event = events[j];
+              for (const words of scheduleIndicatingWords) {
                 if (event.name.indexOf(words) > -1) {
                   // Inefficiently, but cleanly remove schedule type
                   event.name = event.name.split(words).join('');
@@ -170,26 +174,26 @@ export default {
                   event.name = event.name.replace(/^[\W]+|[\W]+$/g, '');
 
                   // Check to make sure none of the other events contain the same information as the extra info in this event
-                  const eventNames = events.map(event => event.name);
-                  eventNames.splice(i, 1); // remove this event from the list of event names
+                  const eventNames = events.map(e => e.name);
+                  eventNames.splice(j, 1); // remove this event from the list of event names
 
                   let isInfoAlreadyPresent = false;
-                  eventNames.forEach(name => {
+                  eventNames.forEach((name) => {
                     if (name.indexOf(event.name) > -1) isInfoAlreadyPresent = true;
                   });
 
                   // If the same information as what's left in this event is present in another event, remove this event
                   if (isInfoAlreadyPresent) {
-                    events.splice(i, 1);
+                    events.splice(j, 1);
                   }
                 }
-              });
+              }
             }
 
             // After the trimming and removal of the schedule type, if all that is left is a word/phrase
             // that does not add any useful information, remove it
             const boringWords = ['schedule'];
-            boringWords.forEach(word => {
+            boringWords.forEach((word) => {
               events = events.filter(event => !event.name.match(new RegExp(`^${word}$`, 'i')));
             });
           }
@@ -201,25 +205,32 @@ export default {
     },
     categories() {
       const categories = new Set(['All']); // using Set to prevent duplicates
-      const allEvents = this.events.reduce((allEvents, dayEvents) => allEvents.concat(dayEvents), []);
-      allEvents.forEach(event => {
-          if (event.categories) {
-            event.categories.forEach(category => {
-              categories.add(category);
-            });
-          }
+      const combinedEvents = this.events.reduce((combined, dayEvents) => combined.concat(dayEvents), []);
+      combinedEvents.forEach((event) => {
+        if (event.categories) {
+          event.categories.forEach((category) => {
+            categories.add(category);
+          });
+        }
       });
       return Array.from(categories);
     },
     filteredEvents() {
-      if (this.filter == 'All') {
+      if (this.filter === 'All') {
         return this.events;
       }
 
-      return this.events.map(dayEvents => {
-        return dayEvents.filter(event => event.categories && event.categories.includes(this.filter));
-      });
-    }
+      return this.events.map(
+        dayEvents => dayEvents.filter(
+          event => event.categories && event.categories.includes(this.filter),
+        ),
+      );
+    },
+  },
+  created() {
+    this.today = this.$store.getters.date;
+    this.month = this.today.getMonth();
+    this.year = this.today.getFullYear();
   },
   methods: {
     nextMonth() {
@@ -240,19 +251,13 @@ export default {
       this[e.deltaX < 0 ? 'nextMonth' : 'previousMonth']();
     },
     formatTime(ms) {
-      return (new Date(ms)).toLocaleTimeString('en-US', { hour: '2-digit', minute:'2-digit' });
+      return (new Date(ms)).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
     },
     formatDate(ms) {
-      return (new Date(ms)).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric'});
-    }
+      return (new Date(ms)).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    },
   },
-  components: {
-    CalendarMain,
-    CalendarMobile,
-    Popup,
-    FontAwesomeIcon,
-  },
-}
+};
 </script>
 
 <style lang="sass" scoped>

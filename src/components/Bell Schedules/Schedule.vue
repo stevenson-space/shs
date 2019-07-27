@@ -1,21 +1,23 @@
 <template>
   <div class="schedule" :style="style">
-    <div class="wrapper" ref="wrapper">
+    <div ref="wrapper" class="wrapper">
       <div class="schedule-name">{{ schedule.name }}</div>
 
-      <div class="schedule-select" v-if="dropdownOptions.length > 1">
+      <div v-if="dropdownOptions.length > 1" class="schedule-select">
         <dropdown
+          v-model="selectedMode"
           class="schedule-dropdown"
           :options="dropdownOptions"
-          v-model="selectedMode"/>
+        />
       </div>
 
-      <div class="periods" v-hammer:swipe.horizontal="onSwipe">
+      <div v-hammer:swipe.horizontal="onSwipe" class="periods">
         <component
           :is="isMultiDay ? 'MultiDayPeriod' : 'Period'"
           v-for="period in periods"
+          :key="period._id"
           v-bind="period"
-          :key="period._id"/>
+        />
       </div>
     </div>
   </div>
@@ -24,13 +26,20 @@
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import Bell from 'src/js/bell.js';
+import Bell from 'src/js/bell';
 import Period from 'common/Period.vue';
-import MultiDayPeriod from './MultiDayPeriod.vue';
 import Dropdown from 'common/Dropdown.vue';
 import ScrollSelector from 'common/ScrollSelector.vue';
+import MultiDayPeriod from './MultiDayPeriod.vue';
 
 export default {
+  components: {
+    FontAwesomeIcon,
+    Period,
+    MultiDayPeriod,
+    Dropdown,
+    ScrollSelector,
+  },
   props: {
     schedule: { type: Object, required: true },
   },
@@ -42,22 +51,10 @@ export default {
       selectedMode: 0,
       resizeListener: null,
       resizeTimeout: null,
-    }
-  },
-  mounted() {
-    this.setHeight();
-
-    this.resizeListener = () => {
-      // wait until user is finished resizing before setting height (debounce)
-      clearTimeout(this.resizeTimeout);
-      this.resizeTimeout = setTimeout(() => {
-        this.setHeight();
-      }, 250);
-    }
-    window.addEventListener('resize', this.resizeListener);
+    };
   },
   computed: {
-    selectedModeString() { return this.dropdownOptions[this.selectedMode]},
+    selectedModeString() { return this.dropdownOptions[this.selectedMode]; },
     style() {
       const { height } = this;
       return {
@@ -82,7 +79,27 @@ export default {
     },
     dropdownOptions() {
       return this.schedule.modes.map(mode => mode.name);
-    }
+    },
+  },
+  watch: {
+    selectedMode() {
+      this.setHeight();
+    },
+  },
+  mounted() {
+    this.setHeight();
+
+    this.resizeListener = () => {
+      // wait until user is finished resizing before setting height (debounce)
+      clearTimeout(this.resizeTimeout);
+      this.resizeTimeout = setTimeout(() => {
+        this.setHeight();
+      }, 250);
+    };
+    window.addEventListener('resize', this.resizeListener);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.resizeListener);
   },
   methods: {
     setHeight() {
@@ -109,7 +126,7 @@ export default {
 
         // for the remaining properties that are not 2D arrays, we need to make them 2D
         // by duplicating their array by the number of days
-        const fillDays = arr => is2D(arr) ? arr : Array(numDays).fill(arr)
+        const fillDays = arr => (is2D(arr) ? arr : Array(numDays).fill(arr));
         return {
           name: mode.name,
           start: fillDays(mode.start),
@@ -130,24 +147,9 @@ export default {
     },
     onSwipe(e) {
       this[e.deltaX < 0 ? 'nextMode' : 'previousMode']();
-    }
+    },
   },
-  watch: {
-    selectedMode() {
-      this.setHeight();
-    }
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.resizeListener);
-  },
-  components: {
-    FontAwesomeIcon,
-    Period,
-    MultiDayPeriod,
-    Dropdown,
-    ScrollSelector
-  },
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -171,7 +173,7 @@ export default {
       margin-left: 0
       text-align: center
       padding: 25px 0 10px 0
-  
+
   .schedule-select
     display: flex
     justify-content: flex-end

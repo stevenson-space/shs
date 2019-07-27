@@ -10,7 +10,7 @@ export default {
     text: { type: String, required: true },
     invert: { type: Boolean, default: false },
   },
-}
+};
 </script>
 
 <style lang="sass" scoped>

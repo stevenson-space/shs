@@ -1,9 +1,9 @@
 <template>
   <card v-show="bell.school && bell.type != 'Summer'">
     <div class="title">Lunch</div>
-    <div class="lunch" v-for="(items, name) in lunch" :key="name">
+    <div v-for="(items, name) in lunch" :key="name" class="lunch">
       <div class="name">{{ name }}</div>
-      <div class="item" v-for="item in items" :key="item">
+      <div v-for="item in items" :key="item" class="item">
         {{ item }}
       </div>
     </div>
@@ -11,12 +11,13 @@
 </template>
 
 <script>
-import getLunch from 'src/js/lunch.js';
+import getLunch from 'src/js/lunch';
 import Card from 'common/Card.vue';
 
 import { mapGetters } from 'vuex';
 
 export default {
+  components: { Card },
   computed: {
     ...mapGetters([
       'bell',
@@ -24,10 +25,9 @@ export default {
     ]),
     lunch() {
       return getLunch(this.date);
-    }
+    },
   },
-  components: { Card },
-}
+};
 </script>
 
 <style lang="sass" scoped>

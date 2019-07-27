@@ -1,17 +1,19 @@
+/* eslint-disable no-param-reassign */
+
 import { query } from 'vue-analytics';
 import defaultSchedules from 'src/data/schedules.json';
 
 function parseUrlDateTime(route) {
   // If date and/or time is specified in URL, return that date
   // Otherwise, return current date
-  let { date='', time='' } = route.query;
+  let { date = '', time = '' } = route.query;
   time = time.replace(/\./g, ':'); // lets you use "." (url safe) instead of ":" (not url safe)
   date = date.replace(/-/g, '/'); // lets you use "-" instead of "/"
 
   const today = new Date();
   const todayDate = today.toLocaleDateString();
   const todayTime = today.toLocaleTimeString();
-  
+
   return new Date(`${date || todayDate} ${time || todayTime}`);
 }
 
@@ -47,7 +49,7 @@ export default {
     localStorage.schedules = JSON.stringify(schedules);
   },
   addScheduleMode(state, { scheduleType, scheduleToAdd, scheduleToReplace }) {
-    state.schedules.forEach(schedule => {
+    state.schedules.forEach((schedule) => {
       if (schedule.name === scheduleType) {
         const replaceIndex = schedule.modes.map(mode => mode.name).indexOf(scheduleToReplace);
         if (scheduleToReplace && replaceIndex > -1) {
@@ -60,7 +62,7 @@ export default {
     localStorage.schedules = JSON.stringify(state.schedules);
   },
   removeScheduleMode(state, { scheduleType, scheduleToRemove }) {
-    state.schedules.forEach(schedule => {
+    state.schedules.forEach((schedule) => {
       if (!scheduleType || schedule.name === scheduleType) {
         const removeIndex = schedule.modes.map(mode => mode.name).indexOf(scheduleToRemove);
         if (removeIndex > -1) {
@@ -81,5 +83,5 @@ export default {
   setGrade(state, grade) {
     state.grade = grade;
     localStorage.grade = grade;
-  }
-}
+  },
+};

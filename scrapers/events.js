@@ -1,9 +1,10 @@
+/* eslint-disable */
 const fs = require('fs');
 const superagent = require('superagent');
 const path = require('path');
 
 const eventsFilepath = path.resolve(__dirname, '../src/data/events.json');
-const calendarId = 'AF5167036E214C99B84D252995DB9199'
+const calendarId = 'AF5167036E214C99B84D252995DB9199';
 const url = `https://www.d125.org/data/calendar/icalcache/feed_${calendarId}.ics`;
 
 const oldEvents = require(eventsFilepath);
@@ -17,13 +18,13 @@ async function main() {
     .map(processAllDay)
     .map(processText)
     .map(processUnnecessary);
-  
+
   const sortedEvents = sortEventsByDate(events);
   const orderedEvents = orderEvents(sortedEvents);
   const combinedEvents = combine(oldEvents, orderedEvents);
   const json = JSON.stringify(combinedEvents, null, 2);
 
-  fs.writeFile(eventsFilepath, json, err => {
+  fs.writeFile(eventsFilepath, json, (err) => {
     if (err) console.log(err);
   });
 
@@ -34,7 +35,7 @@ function getEvents(icsUrl) {
   return new Promise((resolve, reject) => {
     superagent
       .get(icsUrl)
-      .then(res => {
+      .then((res) => {
         const events = parseICS(res.text);
         resolve(events);
       })
@@ -51,10 +52,10 @@ function parseICS(ics) {
     .replace(/\\n/g, ''); // remove escaped new lines
 
   const eventStrings = truncatedICS.split(`\n${eventEnd}\n${eventStart}\n`);
-  const events = eventStrings.map(eventString => {
+  const events = eventStrings.map((eventString) => {
     const properties = eventString.split('\n');
     const event = {};
-    properties.forEach(property => {
+    properties.forEach((property) => {
       const colonIndex = property.indexOf(':');
       const index = colonIndex > -1 ? colonIndex : property.length;
       event[property.substring(0, index)] = property.substring(index + 1);
@@ -79,7 +80,7 @@ function removeProperties(event, properties) {
 function parseDate(date, inUTC = false) {
   const year = Number(date.substr(0, 4));
   const month = Number(date.substr(4, 2)) - 1; // - 1 since month is 0-indexed in JavaScript
-  const day= Number(date.substr(6, 2));
+  const day = Number(date.substr(6, 2));
   const hour = Number(date.substr(9, 2));
   const minute = Number(date.substr(11, 2));
   const second = Number(date.substr(13, 2));
@@ -92,15 +93,15 @@ function parseDate(date, inUTC = false) {
 function fixBrokenDescription(event) {
   const validProperties = ['ORGANIZER', 'DTSTART', 'DTEND', 'TZNAME', 'LOCATION', 'UID', 'DTSTAMP', 'SUMMARY',
     'DESCRIPTION', 'PRIORITY', 'CLASS', 'DTSTART;VALUE=DATE', 'DTEND;VALUE=DATE', 'CATEGORIES'];
-  
+
   let description = '';
   const propertiesToRemove = ['DESCRIPTION'];
   for (const property in event) {
     if (!validProperties.includes(property)) {
-      description += '\n' + property;
+      description += `\n${property}`;
       propertiesToRemove.push(property);
       if (event[property]) {
-        description += ':' + event[property];
+        description += `:${event[property]}`;
       }
     }
   }
@@ -124,7 +125,7 @@ function processAllDay(event) {
   if (event['DTSTART;VALUE=DATE']) {
     const processedEvent = removeProperties(event, ['DTSTART;VALUE=DATE', 'DTEND;VALUE=DATE', 'TZNAME']);
     processedEvent.allDay = true;
-    processedEvent.start = parseDate(event['DTSTART;VALUE=DATE'] + '000000');
+    processedEvent.start = parseDate(`${event['DTSTART;VALUE=DATE']}000000`);
     // if (event['DTEND;VALUE=DATE']) processedEvent.end = parseDate(event['DTEND;VALUE=DATE'] + '000000', false);
     return processedEvent;
   }
@@ -146,7 +147,7 @@ function processUnnecessary(event) {
 
 function sortEventsByDate(events) {
   const sortedEvents = {};
-  events.forEach(event => {
+  events.forEach((event) => {
     const date = new Date(event.start).toLocaleDateString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' });
     if (!sortedEvents[date]) {
       sortedEvents[date] = [];
@@ -163,7 +164,7 @@ function orderEvents(events) {
     const date2 = new Date(b).getTime();
     return date1 - date2;
   });
-  orderedKeys.forEach(key => {
+  orderedKeys.forEach((key) => {
     orderedEvents[key] = events[key];
   });
   return orderedEvents;
@@ -176,7 +177,7 @@ function combine(events, newEvents) {
     let same = true;
 
     // checking if newEvents and events contain the same event names for each date
-    eventsKeys.forEach(key => {
+    eventsKeys.forEach((key) => {
       if (!arrEqual(extractProperty(events[key], 'name'), extractProperty(newEvents[key], 'name'))) {
         same = false;
       }
@@ -188,11 +189,11 @@ function combine(events, newEvents) {
     }
   }
 
-  newEventsKeys.forEach(key => {
+  newEventsKeys.forEach((key) => {
     if (!events[key]) { // if events doesn't have a certain date, set the value for that date to that of newEvents
       events[key] = newEvents[key];
     } else {
-      newEvents[key].forEach(event => {
+      newEvents[key].forEach((event) => {
         const index = indexOfEventInList(event, events[key]);
         if (index > -1) { // if there is already an event with the same name
           events[key].splice(index, 1, event); // replace event in case description (or time, location, ...) was changed
@@ -231,7 +232,7 @@ function findSpecialDays(events) {
     'Activity Period': ['Activity Period'],
     'PM Assembly': ['PM Assembly Schedule'],
     'Early Dismissal': ['Early Dismissal'],
-    'Finals': ['Semester Exams', 'Final Exams'],
+    Finals: ['Semester Exams', 'Final Exams'],
 
     // 'No School' isn't included because all the days marked 'No School' are recurring holidays that are already handled in schedules.json
     'No School': ['Non-Attendance Day', 'Winter Break', 'Spring Break'],
@@ -241,14 +242,14 @@ function findSpecialDays(events) {
   Object.keys(specialSchedules).forEach(scheduleType => scheduleDates[scheduleType] = []);
 
   for (const [date, dayEvents] of Object.entries(events)) {
-    dayEvents.forEach(event => {
+    dayEvents.forEach((event) => {
       for (const [scheduleType, eventNames] of Object.entries(specialSchedules)) {
         let eventIsSpecialSchedule = false;
-        eventNames.forEach(eventNamePart => {
+        eventNames.forEach((eventNamePart) => {
           if (event.name.indexOf(eventNamePart) > -1) {
             eventIsSpecialSchedule = true;
           }
-        })
+        });
         if (eventIsSpecialSchedule) {
           scheduleDates[scheduleType].push(date);
         }
@@ -256,7 +257,7 @@ function findSpecialDays(events) {
     });
   }
 
-  console.log('Paste the following date arrays into schedules.json under the appropriate schedules:\n')
+  console.log('Paste the following date arrays into schedules.json under the appropriate schedules:\n');
   for (const [scheduleType, dates] of Object.entries(scheduleDates)) {
     const combinedDates = combineDaySequences(dates);
     console.log(`${scheduleType}: ["${combinedDates.join('", "')}"]`);

@@ -1,20 +1,21 @@
 <template>
   <div class="checkbox-container" @click="$emit('input', !value)">
     <div class="checkbox" :class="{ checked: value }">
-      <font-awesome-icon class="check" :icon="faCheck"/>
+      <font-awesome-icon class="check" :icon="faCheck" />
     </div>
 
-    <div class="label" v-if="$slots.default" :style="{ fontSize: labelSize }">
-      <slot/>
+    <div v-if="$slots.default" class="label" :style="{ fontSize: labelSize }">
+      <slot />
     </div>
   </div>
 </template>
 
 <script>
-import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default {
+  components: { FontAwesomeIcon },
   props: {
     value: { type: Boolean, required: true },
     labelSize: { type: String, default: '.85em' },
@@ -22,10 +23,9 @@ export default {
   data() {
     return {
       faCheck,
-    }
+    };
   },
-  components: { FontAwesomeIcon },
-}
+};
 </script>
 
 <style lang="sass" scoped>

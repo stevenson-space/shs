@@ -1,31 +1,32 @@
 <template>
   <settings-section title="Transfer">
     <div class="buttons">
-      <rounded-button text="Send Data" class="button" :icon="icons.faUpload" @click="showPopup(popups.send)"/>
-      <rounded-button text="Receive Data" class="button" :icon="icons.faDownload" @click="showPopup(popups.receive)"/>
+      <rounded-button text="Send Data" class="button" :icon="icons.faUpload" @click="showPopup(popups.send)" />
+      <rounded-button text="Receive Data" class="button" :icon="icons.faDownload" @click="showPopup(popups.receive)" />
     </div>
 
-    <confirm-popup :show="popupToShow == popups.send" @cancel="cancel" @ok="send" ok-text="Send">
+    <confirm-popup :show="popupToShow == popups.send" ok-text="Send" @cancel="cancel" @ok="send">
       <div class="send-popup">
         <div class="title">Choose what to send:</div>
 
         <checkbox
           v-for="(_, setting) in shouldSendSetting"
+          :key="setting"
           v-model="shouldSendSetting[setting]"
-          :key="setting">
+        >
           {{ settingToName(setting) }}
         </checkbox>
       </div>
     </confirm-popup>
-    
-    <confirm-popup :show="popupToShow == popups.code" cancelText="" okText="Done" @ok="cancel">
-        <div class="code-popup">
-          Click on <span class="color">Receive Data</span> on the other device and enter this code:
-          <div class="code">{{ code }}</div>
-        </div>
+
+    <confirm-popup :show="popupToShow == popups.code" cancel-text="" ok-text="Done" @ok="cancel">
+      <div class="code-popup">
+        Click on <span class="color">Receive Data</span> on the other device and enter this code:
+        <div class="code">{{ code }}</div>
+      </div>
     </confirm-popup>
 
-    <confirm-popup :show="popupToShow == popups.receive" @cancel="cancel" @ok="receive" ok-text="Receive">
+    <confirm-popup :show="popupToShow == popups.receive" ok-text="Receive" @cancel="cancel" @ok="receive">
       <div class="receive-popup">
         <div class="title">Enter code:</div>
         <div>(Click <span class="color">Send</span> on other device to get code)</div>
@@ -33,14 +34,15 @@
       </div>
     </confirm-popup>
 
-    <confirm-popup :show="popupToShow == popups.save" @cancel="cancel" @ok="save" ok-text="Save">
+    <confirm-popup :show="popupToShow == popups.save" ok-text="Save" @cancel="cancel" @ok="save">
       <div class="save-popup">
         <div class="title">Choose what to save:</div>
 
         <checkbox
           v-for="(_, setting) in shouldSaveSetting"
+          :key="setting"
           v-model="shouldSaveSetting[setting]"
-          :key="setting">
+        >
           {{ settingToName(setting) }}
         </checkbox>
 
@@ -49,14 +51,14 @@
     </confirm-popup>
 
     <popup :show="popupToShow == popups.loading">
-        <div class="loading-popup">
-          <font-awesome-icon :icon="icons.faSpinner" pulse/>
-          &nbsp;&nbsp;Loading
-        </div>
+      <div class="loading-popup">
+        <font-awesome-icon :icon="icons.faSpinner" pulse />
+        &nbsp;&nbsp;Loading
+      </div>
     </popup>
-    
-    <confirm-popup :show="popupToShow == popups.error" cancelText="" @ok="cancel" @cancel="cancel">
-        <div class="error-popup">{{ errorMessage }}</div>
+
+    <confirm-popup :show="popupToShow == popups.error" cancel-text="" @ok="cancel" @cancel="cancel">
+      <div class="error-popup">{{ errorMessage }}</div>
     </confirm-popup>
   </settings-section>
 </template>
@@ -67,11 +69,11 @@ import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-ico
 import superagent from 'superagent';
 import Vue from 'vue';
 
-import SettingsSection from './SettingsSection.vue';
 import RoundedButton from 'common/RoundedButton.vue';
 import Popup from 'common/Popup.vue';
 import ConfirmPopup from 'common/ConfirmPopup.vue';
 import Checkbox from 'common/Checkbox.vue';
+import SettingsSection from './SettingsSection.vue';
 
 // Note: setting refers to the name (e.g. 'color'), data inclued the content (e.g. '#FA32F5' or {'color' : '#FA32F5'})
 
@@ -80,7 +82,7 @@ const tranferableSettings = [ // the following strings should be direct properti
   'defaultSchedule',
   'grade',
   'schedules',
-]
+];
 
 const popups = {
   none: 0,
@@ -90,9 +92,17 @@ const popups = {
   save: 4,
   loading: 5,
   error: 6,
-}
+};
 
 export default {
+  components: {
+    SettingsSection,
+    RoundedButton,
+    Popup,
+    Checkbox,
+    ConfirmPopup,
+    FontAwesomeIcon,
+  },
   data() {
     return {
       icons: {
@@ -107,12 +117,12 @@ export default {
       errorMessage: '',
       receiveCode: '',
       receivedData: null,
-      shouldSaveSetting: {} // initialized after data is received
+      shouldSaveSetting: {}, // initialized after data is received
     };
   },
   created() {
     // Initialize each property of shouldSendSetting to true (meaning that all send checkboxes will be checked initially)
-    tranferableSettings.forEach(str => {
+    tranferableSettings.forEach((str) => {
       Vue.set(this.shouldSendSetting, str, true); // need use Vue.set since we're adding dynamic properties to a tracked object
     });
   },
@@ -138,25 +148,25 @@ export default {
       this.showPopup(popups.loading);
 
       // Get the data for each selected option to send
-      let data = {};
-      for (let [setting, shouldSend] of Object.entries(this.shouldSendSetting)) {
+      const data = {};
+      for (const [setting, shouldSend] of Object.entries(this.shouldSendSetting)) {
         if (shouldSend) {
           data[setting] = this.$store.state[setting];
         }
       }
-      
+
       superagent
         .post('/send') // look at /netlify.toml (Netlify is proxying to http://dpaste.com)
-        .send({ content: JSON.stringify(data), syntax: 'json', expiry_days: 1})
+        .send({ content: JSON.stringify(data), syntax: 'json', expiry_days: 1 })
         .type('form')
-        .then(response => {
+        .then((response) => {
           const url = response.text;
           const code = url.slice(url.lastIndexOf('/') + 1).trim().replace(/[^a-zA-Z0-9]/g, '');
           this.code = code.toLowerCase(); // converting to lower case to make it easier to type (will convert back when receiving)
           this.showPopup(popups.code);
         })
-        .catch(error => {
-          this.errorMessage = "Error: Please check your internet"
+        .catch(() => {
+          this.errorMessage = 'Error: Please check your internet';
           this.showPopup(popups.error);
         });
     },
@@ -165,15 +175,15 @@ export default {
 
       superagent
         .get('/recieve') // look at /netlify.toml (Netlify is proxying to http://dpaste.com)
-        .query({ filename: this.receiveCode.toUpperCase() + '.txt' })
-        .then(response => {
+        .query({ filename: `${this.receiveCode.toUpperCase()}.txt` })
+        .then((response) => {
           try {
             const data = JSON.parse(response.text);
 
             // all of the settings in data must be present in transferableSettings for data to be valid
             let isValid = true;
             const settings = Object.keys(data);
-            settings.forEach(setting => {
+            settings.forEach((setting) => {
               if (!tranferableSettings.includes(setting)) isValid = false;
             });
 
@@ -181,47 +191,38 @@ export default {
               this.receivedData = data;
 
               this.shouldSaveSetting = {}; // reset it in case there was a previous received data with different settings
-              settings.forEach(setting => { // default to saving all settings present in data
+              settings.forEach((setting) => { // default to saving all settings present in data
                 Vue.set(this.shouldSaveSetting, setting, true); // need use Vue.set since we're adding dynamic properties to a tracked object
               });
 
               this.showPopup(popups.save);
             } else {
-              this.errorMessage = "Error: Invalid code"
+              this.errorMessage = 'Error: Invalid code';
               this.showPopup(popups.error);
             }
-
-          } catch(e) {
-            this.errorMessage = "Error: Invalid code"
+          } catch (e) {
+            this.errorMessage = 'Error: Invalid code';
             this.showPopup(popups.error);
           }
         })
-        .catch(error => {
-          this.errorMessage = "Error: Invalid code or no internet";
+        .catch(() => {
+          this.errorMessage = 'Error: Invalid code or no internet';
           this.showPopup(popups.error);
-        })
+        });
     },
     save() {
       if (this.receivedData) {
-        for (let [setting, data] of Object.entries(this.receivedData)) {
+        for (const [setting, data] of Object.entries(this.receivedData)) {
           if (this.shouldSaveSetting[setting]) {
-            const mutation = 'set' + setting[0].toUpperCase() + setting.slice(1); // 'defaultSchedule' -> 'setDefaultSchedule'
+            const mutation = `set${setting[0].toUpperCase()}${setting.slice(1)}`; // 'defaultSchedule' -> 'setDefaultSchedule'
             this.$store.commit(mutation, data);
           }
         }
       }
       this.cancel();
-    }
+    },
   },
-  components: {
-    SettingsSection,
-    RoundedButton,
-    Popup,
-    Checkbox,
-    ConfirmPopup,
-    FontAwesomeIcon,
-  }
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -258,7 +259,7 @@ export default {
     margin-top: 15px
     width: 100%
     font-weight: bold
-    
+
 
 .code-popup
   margin: 15px 25px 10px 25px
@@ -278,7 +279,7 @@ export default {
   margin: 15px 25px
   text-align: center
   font-size: .79em
-  
+
   .title
     font-size: 1.75em
     margin-bottom: 3px

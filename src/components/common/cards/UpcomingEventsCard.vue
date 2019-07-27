@@ -1,21 +1,23 @@
 <template>
-  <card class="upcoming-events-card" v-if="!(events.length === 0 && eventsExhausted)">
+  <card v-if="!(events.length === 0 && eventsExhausted)" class="upcoming-events-card">
     <div class="title">Upcoming Events</div>
     <div class="events">
-      <div class="line"/>
+      <div class="line" />
       <event-chip
-        class="event-chip"
         v-for="(event, i) in displayedEvents"
+        :key="event.key"
+        class="event-chip"
         v-bind="event"
         :direction="(i % 2 === 0) ? 'left' : 'right'"
-        :key="event.key"/>
+      />
     </div>
     <div>
       <font-awesome-icon
         v-show="!eventsExhausted"
         class="down-arrow"
         :icon="downArrow"
-        @mousedown="showMoreEvents()"/>
+        @mousedown="showMoreEvents()"
+      />
     </div>
   </card>
 </template>
@@ -23,7 +25,7 @@
 <script>
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import Bell from 'src/js/bell.js';
+import Bell from 'src/js/bell';
 import Card from 'common/Card.vue';
 import EventChip from 'common/EventChip.vue';
 
@@ -32,13 +34,13 @@ import { mapGetters } from 'vuex';
 function getNextEvent(startDate) {
   // Generator that yields sequential dates starting from the day after start
   function* dates(start) {
-    for(let i = 1; true; i++) {
+    for (let i = 1; true; i++) {
       const date = new Date(start);
       date.setDate(date.getDate() + i);
       yield date;
     }
   }
-  
+
   let event = null;
 
   // Go through dates starting from startDate until we find one with a special schedule and return that
@@ -48,7 +50,7 @@ function getNextEvent(startDate) {
       event = {
         key: `${schedule.name} ${date.getTime()}`, // unique key for each event used in v-for
         date,
-        name: schedule.name
+        name: schedule.name,
       };
 
       // need to break out of loop once an event is found since the generator will run forever
@@ -65,6 +67,7 @@ function getNextEvent(startDate) {
 }
 
 export default {
+  components: { Card, EventChip, FontAwesomeIcon },
   data() {
     return {
       cardHeight: 0,
@@ -76,10 +79,7 @@ export default {
       lastDate: this.date, // the date until which events are currently being displayed
       dateTimeout: null,
       eventsExhausted: false,
-    }
-  },
-  mounted() {
-    setTimeout(this.reset, 250);
+    };
   },
   computed: {
     ...mapGetters([
@@ -96,6 +96,19 @@ export default {
       const events = this.events.slice(0, numEventsDisplayed);
       return events.length ? events : placeholders;
     },
+  },
+  watch: {
+    $route() {
+      // The timeout is used so that the user can switch through multiple dates quickly
+      // without having to wait until the upcoming events load for each date
+      // Upcoming Events only begin loading after the user does not switch date for at least 500ms
+      clearTimeout(this.dateTimeout);
+      this.numEventsDisplayed = 0;
+      this.dateTimeout = setTimeout(this.reset, 1000);
+    },
+  },
+  mounted() {
+    setTimeout(this.reset, 250);
   },
   methods: {
     loadEvents(num) {
@@ -117,7 +130,7 @@ export default {
             resolve();
           }, 0);
         } else {
-          reject('No more events left');
+          reject(Error('No more events left'));
         }
       });
     },
@@ -130,20 +143,9 @@ export default {
       this.events = [];
       this.eventsExhausted = false;
       this.showMoreEvents(this.numEventsInitial);
-    }
-  },
-  watch: {
-    $route() {
-      // The timeout is used so that the user can switch through multiple dates quickly
-      // without having to wait until the upcoming events load for each date
-      // Upcoming Events only begin loading after the user does not switch date for at least 500ms
-      clearTimeout(this.dateTimeout);
-      this.numEventsDisplayed = 0;
-      this.dateTimeout = setTimeout(this.reset, 1000);
     },
   },
-  components: { Card, EventChip, FontAwesomeIcon }
-}
+};
 </script>
 
 <style lang="sass" scoped>

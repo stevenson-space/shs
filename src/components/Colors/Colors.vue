@@ -2,54 +2,67 @@
   <div>
     <div class="header">
       <div
+        ref="custom-color"
         class="custom-color"
         contenteditable="true"
         spellcheck="false"
         @keydown.enter="$event.target.blur()"
         @blur="colorSelected($event.target.innerText)"
-        ref="custom-color"/>
+      />
 
-      <home-link class="home-link"/>
+      <home-link class="home-link" />
     </div>
 
     <color-selector
       :colors="colors"
       :current-color="color"
-      @color-selected="colorSelected"/>
+      @color-selected="colorSelected"
+    />
 
-    <div class="preview" :style=" { height: previewHeight }" ref="preview">
+    <div ref="preview" class="preview" :style=" { height: previewHeight }">
       <div class="wrapper">
-        <home/>
+        <home />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faPencilAlt, faEdit } from '@fortawesome/free-solid-svg-icons'
 import colors from 'src/data/colors.json';
-import ColorSelector from './ColorSelector.vue';
 import Home from 'src/components/Home/Home.vue';
 import HomeLink from 'src/components/common/HomeLink.vue';
 
-import { mapState } from "vuex";
+import { mapState } from 'vuex';
+import ColorSelector from './ColorSelector.vue';
 
-const isValidColor = color => {
-  return /^#([0-9a-f]{3}){1,2}$/i.test(color);
-}
+const isValidColor = color => /^#([0-9a-f]{3}){1,2}$/i.test(color);
 
 export default {
+  components: {
+    ColorSelector,
+    Home,
+    HomeLink,
+  },
   data() {
     return {
-      faPencilAlt,
       colors,
       previewHeight: 0,
-    }
+    };
   },
   computed: mapState([
     'color',
   ]),
+  watch: {
+    color() {
+      this.setCustomColorText();
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.setPreviewHeight();
+    });
+    this.setCustomColorText();
+  },
   methods: {
     colorSelected(color) {
       if (color !== this.color && isValidColor(color)) {
@@ -67,24 +80,7 @@ export default {
       });
     },
   },
-  mounted() {
-    this.$nextTick(() => {
-      this.setPreviewHeight();
-    });
-    this.setCustomColorText();
-  },
-  watch: {
-    color() {
-      this.setCustomColorText();
-    }
-  },
-  components: {
-    FontAwesomeIcon,
-    ColorSelector,
-    Home,
-    HomeLink
-  },
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -120,7 +116,7 @@ export default {
   +mobile
     width: 90%
     +shadow
-  
+
   .wrapper
     position: relative
     z-index: 0
@@ -141,4 +137,3 @@ export default {
       z-index: 26
 
 </style>
-

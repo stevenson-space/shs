@@ -1,7 +1,7 @@
 <template>
-  <div class="popup" v-if="show" @click="$emit('close')">
+  <div v-if="show" class="popup" @click="$emit('close')">
     <div class="content" @click.stop="">
-      <slot/>
+      <slot />
     </div>
   </div>
 </template>
@@ -10,8 +10,8 @@
 export default {
   props: {
     show: { type: Boolean, required: true },
-  }
-}
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -34,4 +34,3 @@ export default {
     margin: 0 10px
 
 </style>
-

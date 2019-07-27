@@ -1,45 +1,50 @@
 <template>
-  <div class="color-selector" @blur="hideShades" tabindex="-1">
+  <div class="color-selector" tabindex="-1" @blur="hideShades">
     <div class="container" @click.self="hideShades">
-      <font-awesome-icon class="icon" :icon="icons.faChevronLeft" @click="scroll('left')"/>
+      <font-awesome-icon class="icon" :icon="icons.faChevronLeft" @click="scroll('left')" />
 
-      <div class="colors" ref="colors">
+      <div ref="colors" class="colors">
         <div
-          class="color"
           v-for="(shades, i) in colors"
-          :style="{ backgroundColor: shades[4], transition: `box-shadow ${animationDuration / 1000}s` }"
-          @click="arrEquals(currentShades, shades) ? hideShades() : showShades(shades, $refs.color[i])"
-          :class="{ selected: arrEquals(currentShades, shades) && isOpen}"
           :key="shades.join(',')"
-          ref="color">
+          ref="color"
+          class="color"
+          :style="{ backgroundColor: shades[4], transition: `box-shadow ${animationDuration / 1000}s` }"
+          :class="{ selected: arrEquals(currentShades, shades) && isOpen}"
+          @click="arrEquals(currentShades, shades) ? hideShades() : showShades(shades, $refs.color[i])"
+        >
           <font-awesome-icon
+            v-show="shades.indexOf(currentColor) > -1"
             class="checkmark center-align"
             :icon="icons.faCheck"
-            v-show="shades.indexOf(currentColor) > -1"/>
+          />
         </div>
       </div>
 
-      <font-awesome-icon class="icon" :icon="icons.faChevronRight" @click="scroll('right')"/>
+      <font-awesome-icon class="icon" :icon="icons.faChevronRight" @click="scroll('right')" />
     </div>
 
-    <div class="shades" :style="{ left: `${shadesLeft}px`, top: `${shadesTop}px` }" >
+    <div class="shades" :style="{ left: `${shadesLeft}px`, top: `${shadesTop}px` }">
       <stagger-animation
+        ref="staggerAnimation"
         :duration="animationDuration"
         direction="down"
-        :shiftAmount="shadeHeight + 5"
+        :shift-amount="shadeHeight + 5"
         :number-of-slots="currentShades.length"
-        ref="staggerAnimation">
+      >
         <div
+          v-for="shade in currentShades"
+          :key="shade"
+          ref="shades"
           class="shade"
-          v-for="(shade, i) in currentShades"
           :style="{ backgroundColor: shade, height: `${shadeHeight}px` }"
           @click="shadeClicked(shade)"
-          :key="shade"
-          ref="shades">
+        >
           <font-awesome-icon
+            v-show="shade === currentColor"
             class="checkmark center-align"
             :icon="icons.faCheck"
-            v-show="shade === currentColor"/>
+          />
         </div>
       </stagger-animation>
     </div>
@@ -52,6 +57,10 @@ import { faChevronLeft, faChevronRight, faCheck } from '@fortawesome/free-solid-
 import StaggerAnimation from 'src/components/common/StaggerAnimation.vue';
 
 export default {
+  components: {
+    FontAwesomeIcon,
+    StaggerAnimation,
+  },
   props: {
     colors: { type: Array, required: true },
     currentColor: { type: String, default: '' },
@@ -68,8 +77,8 @@ export default {
       shadesTop: 0,
       shadeHeight: 35,
       isOpen: false,
-      animationDuration: 200
-    }
+      animationDuration: 200,
+    };
   },
   methods: {
     scroll(direction = 'right') {
@@ -87,7 +96,7 @@ export default {
         const $colors = this.$refs.colors;
         this.shadesLeft = $color.offsetLeft - $colors.scrollLeft;
         this.shadesTop = $color.offsetTop + $color.offsetHeight - this.shadeHeight;
-        
+
         this.currentShades = shades;
 
         // wait until StaggerAnimation renders the shades before opening them
@@ -95,8 +104,8 @@ export default {
           this.isOpen = true;
           this.$refs.staggerAnimation.open();
         });
-      }
-        
+      };
+
       if (this.isOpen) {
         this.currentShades = []; // hides instantly (without animation)
 
@@ -128,11 +137,7 @@ export default {
       return true;
     },
   },
-  components: {
-    FontAwesomeIcon,
-    StaggerAnimation,
-  }
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -207,4 +212,3 @@ export default {
         color: white
 
 </style>
-

@@ -8,44 +8,48 @@
         :filter-categories="filterCategories"
         @filter-selected="$emit('filter-selected', $event)"
         @previous-month="$emit('previous-month')"
-        @next-month="$emit('next-month')"/>
+        @next-month="$emit('next-month')"
+      />
 
       <div class="daysOfWeek">
-        <div class="day" v-for="day in daysOfWeek" :key="day">{{ day }}</div>
+        <div v-for="day in daysOfWeek" :key="day" class="day">{{ day }}</div>
       </div>
 
       <div class="dates">
-        <div
-          v-for="(date, i) in dates"
-          v-if="date"
-          class="date"
-          :class="{ inverted: date.isToday, border: !!date.schedule, selected: i === selected }"
-          @mousedown="selected = i"
-          :key="date.date">
-          <span>{{ date.date }}</span>
-          <div class="dot" :class="{ show: date.events.length > 0}"/>
-        </div>
+        <template v-for="(date, i) in dates">
+          <div
+            v-if="typeof date === 'object'"
+            :key="date.dateString"
+            class="date"
+            :class="{ inverted: date.isToday, border: !!date.schedule, selected: i === selected }"
+            @mousedown="selected = i"
+          >
+            <span>{{ date.date }}</span>
+            <div class="dot" :class="{ show: date.events.length > 0}" />
+          </div>
 
-        <div v-else/>
+          <!-- when date is not an object, there should be a blank space (the value of date is an integer index) -->
+          <div v-else :key="date" />
+        </template>
       </div>
     </div>
 
     <calendar-date
+      v-for="date in selectedDates.filter(date => typeof date === 'object')"
+      :key="date.dateString"
       class="calendar-cell"
-      v-for="date in selectedDates"
-      v-if="date"
       v-bind="date"
       @event-click="$emit('event-click', $event)"
-      :key="date.date"/>
+    />
   </div>
 </template>
 
 <script>
-import events from 'src/data/events.json';
 import CalendarNavigation from './CalendarNavigation.vue';
 import CalendarDate from './CalendarDate.vue';
 
 export default {
+  components: { CalendarNavigation, CalendarDate },
   props: {
     month: { type: String, required: true },
     year: { type: Number, required: true },
@@ -56,20 +60,12 @@ export default {
     return {
       daysOfWeek: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
       selected: 26,
-    }
+    };
   },
   computed: {
     selectedDates() {
       return this.dates.slice(this.selected);
-    }
-  },
-  created() {
-    // Initialize selected date to today
-    this.dates.forEach((date, i) => {
-      if (date && date.isToday) {
-        this.selected = i;
-      }
-    });
+    },
   },
   watch: {
     month() {
@@ -77,10 +73,17 @@ export default {
     },
     year() {
       this.selected = 0;
-    }
+    },
   },
-  components: { CalendarNavigation, CalendarDate },
-}
+  created() {
+    // Initialize selected date to today
+    this.dates.forEach((date, i) => {
+      if (typeof date === 'object' && date.isToday) {
+        this.selected = i;
+      }
+    });
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -121,10 +124,10 @@ export default {
 
       &.selected
         background-color: #CCC
-      
+
       &.border
         border: var(--color) 1px dashed
-      
+
       &.inverted
         background-color: var(--color)
         color: white

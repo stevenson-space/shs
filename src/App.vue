@@ -1,26 +1,26 @@
 <template>
   <div id="app" :style="{ '--color': color }" tabindex="-1">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
-import initializeStore from 'src/store/initializeStore.js';
+import initializeStore from 'src/store/initializeStore';
 import { mapState } from 'vuex';
 
 export default {
   computed: mapState([
     'color',
   ]),
+  watch: {
+    $route() {
+      this.$store.dispatch('pageLoaded', this.$route);
+    },
+  },
   created() {
     initializeStore(this.$store);
     this.$store.dispatch('pageLoaded', this.$route);
   },
-  watch: {
-    $route() {
-      this.$store.dispatch('pageLoaded', this.$route);
-    }
-  }
 };
 
 </script>

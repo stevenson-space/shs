@@ -1,19 +1,20 @@
 <template>
-  <card class="card" v-if="schedule || bell.school" @height-change="scrollToCurrentPeriod">
+  <card v-if="schedule || bell.school" class="card" @height-change="scrollToCurrentPeriod">
     <div class="title">{{ title }}</div>
-    <div class="periods" ref="periods">
+    <div ref="periods" class="periods">
       <period
+        v-for="period in periods"
+        :key="period.name"
+        ref="period"
         class="period"
-        v-for="(period, i) in periods"
         :start="period.start"
         :end="period.end"
         :period="period.name"
         :invert="!period.isCurrent"
         :force-mobile-layout="true"
-        :key="period.name"
-        ref="period"/>
+      />
     </div>
-    <slot/>
+    <slot />
   </card>
 </template>
 
@@ -24,9 +25,10 @@ import Period from 'common/Period.vue';
 import { mapGetters } from 'vuex';
 
 export default {
+  components: { Card, Period },
   props: {
     schedule: { type: Object, default: null },
-    title: { type: String, default: 'Schedule'}
+    title: { type: String, default: 'Schedule' },
   },
   computed: {
     ...mapGetters([
@@ -50,7 +52,18 @@ export default {
         return result;
       }
       return [];
-    }
+    },
+  },
+  watch: {
+    bell() {
+      // wait until periods rerender before scrolling
+      this.$nextTick(() => {
+        this.scrollToCurrentPeriod();
+      });
+    },
+  },
+  mounted() {
+    this.scrollToCurrentPeriod();
   },
   methods: {
     scrollToCurrentPeriod() {
@@ -70,21 +83,9 @@ export default {
         // Set the scroll so that the current period is centered
         $container.scrollTop = offsetTop - containerHeight / 2 + offsetHeight / 2;
       }
-    }
+    },
   },
-  mounted() {
-    this.scrollToCurrentPeriod();
-  },
-  watch: {
-    bell() {
-      // wait until periods rerender before scrolling
-      this.$nextTick(() => {
-        this.scrollToCurrentPeriod();
-      });
-    }
-  },
-  components: { Card, Period },
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -107,7 +108,7 @@ export default {
     +no-scrollbar
     // +mobile
       // height: 175px
-    
+
     .period
       margin-left: 4px
       margin-bottom: 7px

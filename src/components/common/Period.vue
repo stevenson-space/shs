@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Bell from 'src/js/bell.js';
+import Bell from 'src/js/bell';
 
 export default {
   props: {
@@ -28,12 +28,12 @@ export default {
     },
     periodFontSize() {
       return this.period.length > 10 ? '1em' : '1.3em';
-    }
+    },
   },
   methods: {
     convertMilitaryTime: Bell.convertMilitaryTime,
-  }
-}
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -68,7 +68,7 @@ export default {
     overflow: hidden
     white-space: nowrap
     text-overflow: ellipsis
-  
+
   .range
     color: white
     text-align: center
@@ -87,7 +87,7 @@ export default {
 
     .circle
       color: var(--color)
-    
+
     .range
       color: black
       font-weight: normal
@@ -106,10 +106,10 @@ export default {
         margin: 0
         flex-grow: 0
         font-size: 1em
-      
+
         .time
           display: block
-        
+
         .dash
           display: none
 

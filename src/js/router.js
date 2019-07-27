@@ -4,14 +4,14 @@ import Home from 'src/components/Home/Home.vue';
 
 // Dynamically import the following components so that they are not included in the main build
 // file and are instead asynchrounously loaded when the user goes to the page (to reduce file size of build.js)
-const BellSchedules = () => import(/* webpackChunkName: "bellschedules" */ 'src/components/Bell Schedules/BellSchedules.vue');
+const BellSchedules = () => import(/* webpackChunkName: "bellschedules" */ 'src/components/Bell Schedules/BellSchedules.vue'); // eslint-disable-line max-len
 const Calendar = () => import(/* webpackChunkName: "calendar" */ 'src/components/Calendar/Calendar.vue');
 const Links = () => import(/* webpackChunkName: "links" */ 'src/components/Links/Links.vue');
 const Colors = () => import(/* webpackChunkName: "colors" */ 'src/components/Colors/Colors.vue');
 const Settings = () => import(/* webpackChunkName: "settings" */ 'src/components/Settings/Settings.vue');
 const Tools = () => import(/* webpackChunkName: "tools" */ 'src/components/Tools/Tools.vue');
 
-const AddSchedule = () => import(/* webpackChunkName: "addSchedule" */ 'src/components/Settings/Add Schedule/AddSchedule.vue');
+const AddSchedule = () => import(/* webpackChunkName: "addSchedule" */ 'src/components/Settings/Add Schedule/AddSchedule.vue'); // eslint-disable-line max-len
 
 const routes = [
   {
@@ -20,7 +20,7 @@ const routes = [
   },
   {
     path: '/bellschedules',
-    component: BellSchedules
+    component: BellSchedules,
   },
   {
     path: '/calendar',
@@ -52,7 +52,7 @@ const routes = [
     name: 'tools',
     path: '/tools',
     component: Tools,
-  }
+  },
 ];
 
 // 'history' mode requires all urls to redirect to index.html so that Vue can handle them
@@ -61,13 +61,12 @@ const router = new VueRouter({
   routes,
   // If savedPosition exists from previous visit to that page, then scroll to that position
   // Otherwise, scroll to top (basically how modern browsers normally handle scrolling)
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
-      return savedPosition
-    } else {
-      return { x: 0, y: 0 }
+      return savedPosition;
     }
-  }
+    return { x: 0, y: 0 };
+  },
 });
 
 export default router;

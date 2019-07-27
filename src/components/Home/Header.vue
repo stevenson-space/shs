@@ -5,11 +5,12 @@
       class="schedule-select"
       :options="scheduleModes"
       :value="scheduleModes.indexOf(bell.mode)"
-      @input="$store.commit('setScheduleMode', scheduleModes[$event])"/>
+      @input="$store.commit('setScheduleMode', scheduleModes[$event])"
+    />
 
     <div class="main" :class="{ 'extra-padding': scheduleModes.length > 1 }">
-      <div class="switch-day" v-hammer:tap="previousDay">
-        <font-awesome-icon :icon="icons.faChevronLeft" class="arrow-icon"/>
+      <div v-hammer:tap="previousDay" class="switch-day">
+        <font-awesome-icon :icon="icons.faChevronLeft" class="arrow-icon" />
       </div>
 
       <div>
@@ -19,44 +20,54 @@
           :range="bell.getRange()"
           :next-day="nextDayString"
           :schedule-type="bell.type"
-          :full-screen-mode="fullScreenMode"/>
-        
+          :full-screen-mode="fullScreenMode"
+        />
+
         <div class="date">
           {{ formatDate(date) }}
         </div>
       </div>
 
-      <div class="switch-day" v-hammer:tap="nextDay">
-        <font-awesome-icon :icon="icons.faChevronRight" class="arrow-icon"/>
+      <div v-hammer:tap="nextDay" class="switch-day">
+        <font-awesome-icon :icon="icons.faChevronRight" class="arrow-icon" />
       </div>
 
-      <div class="icon remove-color" v-hammer:tap="toggleColor">
-        <font-awesome-icon :icon="colored ? icons.faTintSlash : icons.faTint" fixed-width/>
+      <div v-hammer:tap="toggleColor" class="icon remove-color">
+        <font-awesome-icon :icon="colored ? icons.faTintSlash : icons.faTint" fixed-width />
       </div>
 
-      <div class="icon full-screen-mode" v-hammer:tap="toggleFullScreen" v-show="mode === 'current'">
-        <font-awesome-icon :icon="fullScreenMode ? icons.faCompress : icons.faExpand" fixed-width/>
+      <div v-show="mode === 'current'" v-hammer:tap="toggleFullScreen" class="icon full-screen-mode">
+        <font-awesome-icon :icon="fullScreenMode ? icons.faCompress : icons.faExpand" fixed-width />
       </div>
     </div>
-    
+
     <header-schedule
       :in-school="inSchool"
       :period="bell.getPeriodName()"
       :range="bell.getRange()"
       :schedule-type="bell.type"
       :schedule-modes="scheduleModes"
-      :full-screen-mode="fullScreenMode"/>
+      :full-screen-mode="fullScreenMode"
+    />
   </div>
 </template>
 
 <script>
+import { mapGetters, mapState } from 'vuex';
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faChevronRight, faChevronLeft, faExpand, faCompress, faTint, faTintSlash } from '@fortawesome/free-solid-svg-icons';
-import Bell from 'src/js/bell.js';
+import {
+  faChevronRight,
+  faChevronLeft,
+  faExpand,
+  faCompress,
+  faTint,
+  faTintSlash,
+} from '@fortawesome/free-solid-svg-icons';
+
+import Bell from 'src/js/bell';
+import Dropdown from 'src/components/common/Dropdown.vue';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
-import Dropdown from 'src/components/common/Dropdown.vue';
-import { mapGetters, mapState } from 'vuex';
 
 function toSeconds([hour = 0, minute = 0, second = 0]) {
   return (((hour * 60) + minute) * 60) + second;
@@ -72,6 +83,12 @@ function periodToSeconds(period) {
 }
 
 export default {
+  components: {
+    FontAwesomeIcon,
+    CountdownCircle,
+    HeaderSchedule,
+    Dropdown,
+  },
   props: {
     fullScreenMode: { type: Boolean, default: false },
   },
@@ -120,7 +137,7 @@ export default {
       const { school, period, nextSchoolDay } = bell;
       let dayDifference = 0;
 
-      // if before school, get the seconds until the first period today 
+      // if before school, get the seconds until the first period today
       let nextBell = bell;
 
       // if no school or after school, get the first period on the next school day
@@ -143,18 +160,17 @@ export default {
         // if more than 1 day of seconds left, display number of days left
         const numDays = Math.ceil(this.totalSecondsLeft / 60 / 60 / 24);
         return `${numDays} days`;
-      } else {
-        // return a nicely formatted string with remaining hours, minutes, and seconds left
-        const seconds = this.totalSecondsLeft % 60;
-        const minutes = Math.floor(this.totalSecondsLeft / 60) % 60;
-        const hours = Math.floor(this.totalSecondsLeft / 60 / 60);
-
-        const h = ((hours > 0) ? `${hours}:` : ''); // hours is only displayed if > 0
-        const mm = `${((minutes < 10 && hours > 0) ? '0' : '')}${minutes}:`; // minutes always has 2 digits if hours are displayed
-        const ss = `${((seconds < 10) ? '0' : '')}${seconds}`; // seconds always has 2 digits
-
-        return `${h}${mm}${ss}`;
       }
+      // return a nicely formatted string with remaining hours, minutes, and seconds left
+      const seconds = this.totalSecondsLeft % 60;
+      const minutes = Math.floor(this.totalSecondsLeft / 60) % 60;
+      const hours = Math.floor(this.totalSecondsLeft / 60 / 60);
+
+      const h = ((hours > 0) ? `${hours}:` : ''); // hours is only displayed if > 0
+      const mm = `${((minutes < 10 && hours > 0) ? '0' : '')}${minutes}:`; // minutes always has 2 digits if hours are displayed
+      const ss = `${((seconds < 10) ? '0' : '')}${seconds}`; // seconds always has 2 digits
+
+      return `${h}${mm}${ss}`;
     },
     nextDayString() {
       // Returns when school resumes
@@ -163,7 +179,7 @@ export default {
       const { school, period, nextSchoolDay } = bell;
 
       // get days since January 1, 1970
-      const getEpochDay = date => Math.floor(date.getTime() / 1000 / 60 / 60 / 24);
+      const getEpochDay = ofDate => Math.floor(ofDate.getTime() / 1000 / 60 / 60 / 24);
 
       // if school resumes on the same day or the next day, use 'today' or 'tomorrow' instead of the date
       let str;
@@ -194,7 +210,39 @@ export default {
     scheduleModes() {
       const { modes } = this.bell;
       return modes.map(mode => mode.name);
+    },
+  },
+  watch: {
+    mode() {
+      if (this.mode === 'current') {
+        this.initializeCountdown();
+      } else {
+        this.stopCountdown();
+      }
+    },
+    date() {
+      this.currentTime = dateToSeconds(this.date);
+    },
+    totalSecondsLeft() {
+      if (this.totalSecondsLeft <= 0) {
+        this.$store.dispatch('countdownDone');
+      }
+    },
+    colored() {
+      localStorage.fullScreenColored = this.colored;
+    },
+  },
+  created() {
+    this.currentTime = dateToSeconds(this.date);
+    if (localStorage.fullScreenColored === 'false') {
+      this.colored = false;
     }
+  },
+  mounted() {
+    this.initializeCountdown();
+  },
+  destroyed() {
+    clearInterval(this.interval);
   },
   methods: {
     formatDate(date) {
@@ -232,7 +280,7 @@ export default {
       const { formatDateUrl, $router, mode } = this;
       if (formatDateUrl(date) === formatDateUrl(new Date())) {
         // if switching to today, switch to the normal view for today (mode === 'current')
-        $router.push({ path: '/' })
+        $router.push({ path: '/' });
       } else {
         const options = { path: '/', query: { date: formatDateUrl(date) } };
 
@@ -242,52 +290,14 @@ export default {
         $router[mode === 'current' ? 'push' : 'replace'](options);
       }
     },
-    toggleFullScreen(e) {
+    toggleFullScreen() {
       this.$emit('toggle-fullscreen');
     },
     toggleColor() {
       this.colored = !this.colored;
-    }
-  },
-  created() {
-    this.currentTime = dateToSeconds(this.date);
-    if (localStorage.fullScreenColored === 'false') {
-      this.colored = false;
-    }
-  },
-  mounted() {
-    this.initializeCountdown();
-  },
-  watch: {
-    mode() {
-      if (this.mode === 'current') {
-        this.initializeCountdown();
-      } else {
-        this.stopCountdown();
-      }
     },
-    date() {
-      this.currentTime = dateToSeconds(this.date);
-    },
-    totalSecondsLeft() {
-      if (this.totalSecondsLeft <= 0) {
-        this.$store.dispatch('countdownDone');
-      }
-    },
-    colored() {
-      localStorage.fullScreenColored = this.colored;
-    }
   },
-  destroyed() {
-    clearInterval(this.interval);
-  },
-  components: {
-    FontAwesomeIcon,
-    CountdownCircle,
-    HeaderSchedule,
-    Dropdown
-  },
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -319,7 +329,7 @@ export default {
       height: 280px
       &.extra-padding
         padding-top: 35px
-    
+
     .date
       // +shadow
       background-color: white
@@ -365,7 +375,7 @@ export default {
 
     .full-screen-mode
       right: 9px
-    
+
 
   &.full-screen
     top: 0
@@ -392,11 +402,11 @@ export default {
         position: fixed
         top: 25px
         font-size: 4vh
-      
+
       .remove-color
         display: block
         right: 85px
-      
+
       .full-screen-mode
         position: fixed
         right: 25px

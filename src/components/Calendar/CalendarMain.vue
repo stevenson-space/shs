@@ -7,30 +7,36 @@
       :filter-categories="filterCategories"
       @filter-selected="$emit('filter-selected', $event)"
       @previous-month="$emit('previous-month')"
-      @next-month="$emit('next-month')"/>
+      @next-month="$emit('next-month')"
+    />
 
-    <div class="dayOfWeek calendar-cell" v-for="dayOfWeek in daysOfWeek">
+    <div v-for="dayOfWeek in daysOfWeek" :key="dayOfWeek" class="dayOfWeek calendar-cell">
       {{ dayOfWeek }}
     </div>
 
-    <calendar-date
-      class="calendar-cell"
-      v-for="date in dates"
-      v-if="date"
-      v-bind="date"
-      @event-click="$emit('event-click', $event)"
-      :key="date.date"/>
-    <div class="calendar-cell" v-else/>
+    <template v-for="date in dates">
+      <calendar-date
+        v-if="typeof date === 'object'"
+        :key="date.dateString"
+        class="calendar-cell with-data"
+        v-bind="date"
+        @event-click="$emit('event-click', $event)"
+      />
+
+      <!-- when date is not an object, there should be a blank calendar cell (the value of date is an integer index) -->
+      <div v-else :key="date" class="calendar-cell" />
+    </template>
   </div>
 </template>
 
 <script>
 import CalendarDate from './CalendarDate.vue';
-import CalendarNavigation from './CalendarNavigation.vue'
+import CalendarNavigation from './CalendarNavigation.vue';
 
 const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 export default {
+  components: { CalendarDate, CalendarNavigation },
   props: {
     month: { type: String, required: true },
     year: { type: Number, required: true },
@@ -40,16 +46,15 @@ export default {
   data() {
     return {
       daysOfWeek,
-      
-    }
+
+    };
   },
   computed: {
     numCalendarRows() {
       return this.dates.length / 7; // length of each row is 7 (days of week)
-    }
+    },
   },
-  components: { CalendarDate, CalendarNavigation },
-}
+};
 </script>
 
 <style lang="sass" scoped>

@@ -6,9 +6,9 @@
 
       <div class="chips">
         <div class="chip">Today</div>
-        <div class="space"/>
+        <div class="space" />
         <div class="chip">3:30 – 5:00</div>
-        <div class="space"/>
+        <div class="space" />
         <div class="chip">Link Lab</div>
       </div>
 
@@ -25,7 +25,7 @@ import Card from 'common/Card.vue';
 
 export default {
   components: { Card },
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -39,7 +39,7 @@ export default {
     font-size: 1.1em
     font-weight: bold
     line-height: 45px
-  
+
   .text
     line-height: 40px
     font-size: 1.1em
@@ -61,10 +61,9 @@ export default {
       padding: 2px 5px
       font-weight: bold
       flex-grow: 3
-  
+
   .extra-text
     font-size: .8em
     margin-bottom: 10px
 
 </style>
-

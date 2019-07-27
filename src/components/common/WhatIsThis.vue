@@ -1,11 +1,11 @@
 <template>
   <div class="what-is-this" @click.stop="">
     <div class="icon">
-      <font-awesome-icon :icon="icons.faQuestionCircle" fixed-width/>
+      <font-awesome-icon :icon="icons.faQuestionCircle" fixed-width />
     </div>
 
     <div class="info-bubble">
-      <slot/>
+      <slot />
     </div>
   </div>
 </template>
@@ -15,15 +15,15 @@ import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 export default {
+  components: { FontAwesomeIcon },
   data() {
     return {
       icons: {
-        faQuestionCircle
-      }
-    }
+        faQuestionCircle,
+      },
+    };
   },
-  components: { FontAwesomeIcon }
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -40,7 +40,7 @@ export default {
     color: var(--color)
     font-size: 1.05em
     padding: 2px
-  
+
   .info-bubble
     font-size: .85em
     position: fixed

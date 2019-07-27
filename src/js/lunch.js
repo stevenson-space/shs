@@ -2,7 +2,7 @@ import lunch from 'src/data/lunch.json';
 
 function getLunch(date) {
   const lunchNames = ['Comfort Food', 'Mindful', 'Sides', 'Soups', 'International Theme Station'];
-  if (date.getDay() == 1) { // is monday
+  if (date.getDay() === 1) { // is monday
     lunchNames.splice(2, 0, 'Meatless Monday');
   }
 

@@ -1,7 +1,7 @@
 <template>
-  <div class="card" :class="{ shadow, border }" ref="card" :style="style">
-    <div class="wrapper" ref="wrapper">
-      <slot/>
+  <div ref="card" class="card" :class="{ shadow, border }" :style="style">
+    <div ref="wrapper" class="wrapper">
+      <slot />
     </div>
   </div>
 </template>
@@ -28,8 +28,8 @@ export default {
         height: `${height}px`,
         margin: `${margin}px`,
         gridRow: `span ${spanValue}`,
-      }
-    }
+      };
+    },
   },
   mounted() {
     this.setHeight();
@@ -49,6 +49,12 @@ export default {
       attributeFilter: ['style'],
     });
   },
+  destroyed() {
+    window.removeEventListener('resize', this.debounceSetHeight);
+    if (this.mutationObserver) {
+      this.mutationObserver.disconnect();
+    }
+  },
   methods: {
     // call setHeight() manually from parent component whenever the content (slot) height changes
     // and the change is undetectable by MutationObserver
@@ -64,15 +70,9 @@ export default {
     debounceSetHeight() {
       clearTimeout(this.debounceTimeout);
       this.debounceTimeout = setTimeout(() => this.setHeight(), 250);
-    }
+    },
   },
-  destroyed() {
-    window.removeEventListener('resize', this.debounceSetHeight);
-    if (this.mutationObserver) {
-      this.mutationObserver.disconnect();
-    }
-  }
-}
+};
 </script>
 
 <style lang="sass" scoped>

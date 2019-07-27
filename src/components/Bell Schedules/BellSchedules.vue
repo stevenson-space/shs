@@ -1,32 +1,32 @@
 <template>
   <div class="bellschedules">
-    <div class="background-block"/>
-    
+    <div class="background-block" />
+
     <div class="main">
-      <home-link class="home-link" :invert="false"/>
+      <home-link class="home-link" :invert="false" />
 
       <div class="card">
         <schedule
-          v-for="schedule in schedules"
-          v-if="schedule.modes.length > 0"
+          v-for="schedule in schedules.filter(schedule => schedule.modes.length > 0)"
+          :key="schedule.name"
           :schedule="schedule"
-          :key="schedule.name"/>
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
-import Schedule from './Schedule.vue';
+import { mapState } from 'vuex';
 import HomeLink from 'common/HomeLink.vue';
+import Schedule from './Schedule.vue';
 
 export default {
+  components: { Schedule, HomeLink },
   computed: mapState([
     'schedules',
   ]),
-  components: { Schedule, HomeLink },
-}
+};
 </script>
 
 <style lang="sass" scoped>

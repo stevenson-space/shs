@@ -1,12 +1,12 @@
 <template>
-  <a class="link" :href="href" :target="target" v-if="linkType === 'a'">
-    <slot/>
+  <a v-if="linkType === 'a'" class="link" :href="href" :target="target">
+    <slot />
   </a>
-  <router-link class="link" :to="href" :target="target" v-else-if="linkType === 'router-link'">
-    <slot/>
+  <router-link v-else-if="linkType === 'router-link'" class="link" :to="href" :target="target">
+    <slot />
   </router-link>
   <div v-else>
-    <slot/>
+    <slot />
   </div>
 </template>
 
@@ -30,14 +30,14 @@ export default {
       if (href) {
         return typeof href === 'object' || href.indexOf('http') !== 0 ? 'router-link' : 'a';
       }
-      
+
       return 'none';
     },
     target() {
       return this.newTab ? '_blank' : '_self';
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="sass" scoped>

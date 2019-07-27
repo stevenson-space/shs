@@ -2,20 +2,20 @@
   <div class="circle" :class="{ 'full-screen': fullScreenMode }">
     <img src="static/patriot.png" class="logo">
 
-    <div class="countdown" v-if="mode === 'current'">
+    <div v-if="mode === 'current'" class="countdown">
       {{ countdown }}
     </div>
-    <div class="range" v-else>
+    <div v-else class="range">
       {{ range }}
     </div>
 
-    <div class="type" v-if="inSchool || mode === 'day'">{{ scheduleType }}</div>
-    <div class="next-day" v-else>{{ nextDay }}</div>
+    <div v-if="inSchool || mode === 'day'" class="type">{{ scheduleType }}</div>
+    <div v-else class="next-day">{{ nextDay }}</div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex';
 
 export default {
   props: {
@@ -29,7 +29,7 @@ export default {
   computed: mapState([
     'mode',
   ]),
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -41,7 +41,7 @@ export default {
   +mobile-small
     --circle-diameter: 230px
     --logo-width: 70px
-  
+
   // +shadow
   background-color: white
   width: var(--circle-diameter)
@@ -56,7 +56,7 @@ export default {
     margin: 0 calc((var(--circle-diameter) - var(--logo-width)) / 2)
     margin-top: 15px
     transition: margin .2s, width .2s
-  
+
   .countdown
     transition: margin-top .2s, font-size .2s
     font-size: 3.5em
@@ -76,7 +76,7 @@ export default {
     font-size: 1.2em
     +mobile-small
       font-size: 1em
-  
+
   .next-day
     transition: margin-top .2s, font-size .2s
     font-size: .85em
@@ -90,7 +90,7 @@ export default {
     +mobile-small
       font-size: .8em
       height: 65px
-  
+
   &.full-screen
     --circle-diameter: 70vh
     --logo-width: 20vh
@@ -108,7 +108,7 @@ export default {
     .type
       font-size: 5vh
       margin-top: 35px
-    
+
     .next-day
       font-size: 4vh
       margin-top: 6vh

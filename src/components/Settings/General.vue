@@ -2,27 +2,34 @@
   <settings-section title="General">
     <div class="dropdown-row">
       <span class="title">Default Schedule:</span>
-      <dropdown class="dropdown-select" :options="allModes" :value="defaultMode" @input="updateDefaultSchedule"/>
+      <dropdown class="dropdown-select" :options="allModes" :value="defaultMode" @input="updateDefaultSchedule" />
     </div>
 
     <div class="dropdown-row">
       <span class="title">Grade:</span>
-      <dropdown class="dropdown-select" :options="grades" :value="selectedGrade" @input="updateGrade" :show-selected-as-option="false"/>
+      <dropdown
+        class="dropdown-select"
+        :options="grades"
+        :value="selectedGrade"
+        :show-selected-as-option="false"
+        @input="updateGrade"
+      />
     </div>
   </settings-section>
 </template>
 
 <script>
-import SettingsSection from './SettingsSection.vue';
 import Dropdown from 'common/Dropdown.vue';
 
-import { mapState } from "vuex";
+import { mapState } from 'vuex';
+import SettingsSection from './SettingsSection.vue';
 
 export default {
+  components: { SettingsSection, Dropdown },
   data() {
     return {
       grades: ['None', 'Freshman', 'Sophomore', 'Junior', 'Senior'],
-    }
+    };
   },
   computed: {
     ...mapState([
@@ -32,7 +39,7 @@ export default {
     ]),
     allModes() {
       return this.schedules.reduce((arr, schedule) => {
-        schedule.modes.forEach(mode => {
+        schedule.modes.forEach((mode) => {
           if (!arr.includes(mode.name)) arr.push(mode.name);
         });
         return arr;
@@ -45,7 +52,7 @@ export default {
     selectedGrade() {
       const grade = this.grades.indexOf(this.grade);
       return grade === -1 ? 0 : grade;
-    }
+    },
   },
   methods: {
     updateDefaultSchedule(scheduleIndex) {
@@ -53,13 +60,9 @@ export default {
     },
     updateGrade(gradeIndex) {
       this.$store.commit('setGrade', this.grades[gradeIndex]);
-    }
+    },
   },
-  components: {
-    SettingsSection,
-    Dropdown,
-  },
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -76,4 +79,3 @@ export default {
     font-size: 1.15em
 
 </style>
-

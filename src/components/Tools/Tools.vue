@@ -1,8 +1,8 @@
 <template>
   <div>
-    <plain-header title="Tools"/>
+    <plain-header title="Tools" />
     <card-container>
-      <timer-card/>
+      <timer-card />
     </card-container>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
     CardContainer,
     TimerCard,
   },
-}
+};
 </script>
 
 <style lang="sass" scoped>

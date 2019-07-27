@@ -1,36 +1,38 @@
 <template>
   <div class="settings">
     <div class="hamburger-menu" @click="showSidenav = true">
-      <font-awesome-icon :icon="icons.faBars"/>
+      <font-awesome-icon :icon="icons.faBars" />
     </div>
 
-    <div class="sidenav-background" :class="{ show: showSidenav }" @click="showSidenav = false"/>
+    <div class="sidenav-background" :class="{ show: showSidenav }" @click="showSidenav = false" />
     <div class="sidenav" :class="{ show: showSidenav }">
       <div class="close-arrow" @click="showSidenav = false">
-        <font-awesome-icon :icon="icons.faArrowLeft"/>
+        <font-awesome-icon :icon="icons.faArrowLeft" />
       </div>
 
-      <div class="title"><font-awesome-icon :icon="icons.faCog"/> Settings</div>
+      <div class="title"><font-awesome-icon :icon="icons.faCog" /> Settings</div>
 
       <a
         v-for="(item, index) in sidenavItems"
+        :key="item.text"
         class="link"
         :href="item.link"
+        :class="{ selected: index == selectedLinkIndex }"
         @click="showSidenav = false"
-        :class="{ selected: index == selectedLinkIndex }">
-          <font-awesome-icon :icon="item.icon" class="icon" v-bind="item.iconProps || {}" fixed-width/>
-          <span class="text">{{ item.text }}</span>
+      >
+        <font-awesome-icon :icon="item.icon" class="icon" v-bind="item.iconProps || {}" fixed-width />
+        <span class="text">{{ item.text }}</span>
       </a>
     </div>
 
     <div class="main">
-      <home-link class="home-link"/>
+      <home-link class="home-link" />
 
-      <general id="general"/>
-      <schedules id="schedules"/>
-      <transfer id="transfer"/>
+      <general id="general" />
+      <schedules id="schedules" />
+      <transfer id="transfer" />
 
-      <div class="extra-space" :style="{ height: `${extraSpaceHeight}px` }"/>
+      <div class="extra-space" :style="{ height: `${extraSpaceHeight}px` }" />
     </div>
   </div>
 </template>
@@ -48,9 +50,16 @@ const sidenavItems = [
   { text: 'General', link: '#general', icon: faUserCog },
   { text: 'Schedules', link: '#schedules', icon: faListAlt },
   { text: 'Transfer', link: '#transfer', icon: faExchangeAlt, iconProps: { rotation: 90 } },
-]
+];
 
 export default {
+  components: {
+    FontAwesomeIcon,
+    HomeLink,
+    General,
+    Schedules,
+    Transfer,
+  },
   data() {
     return {
       icons: {
@@ -63,7 +72,7 @@ export default {
       selectedLinkIndex: 0,
       scrollListener: null,
       extraSpaceHeight: window.innerHeight, // ensure that the last section is scrollable to the top (will be adjusted in mounted())
-    }
+    };
   },
   created() {
     this.scrollListener = () => {
@@ -74,7 +83,7 @@ export default {
           this.selectedLinkIndex = index;
         }
       });
-    }
+    };
 
     window.addEventListener('scroll', this.scrollListener);
   },
@@ -88,14 +97,7 @@ export default {
   destroyed() {
     window.removeEventListener('scroll', this.scrollListener);
   },
-  components: {
-    FontAwesomeIcon,
-    HomeLink,
-    General,
-    Schedules,
-    Transfer,
-  }
-}
+};
 </script>
 
 <style lang="sass" scoped>

@@ -1,6 +1,6 @@
 <template>
   <div class="stagger-animation">
-    <slot/>
+    <slot />
   </div>
 </template>
 
@@ -13,17 +13,17 @@ export default {
     direction: {
       validator: str => (str === 'up' || str === 'down'),
       required: true,
-    }
+    },
   },
   data() {
     return {
       tempTransition: '',
-    }
+    };
   },
   computed: {
     shiftDistance() {
       // reverse the direction of shiftAmount if the direction is up
-      const directions = { 'down': 1, 'up': -1 };
+      const directions = { down: 1, up: -1 };
       const shiftAmount = (directions[this.direction] || 0) * this.shiftAmount;
       return shiftAmount;
     },
@@ -32,12 +32,20 @@ export default {
     },
     staggerDuration() {
       return (this.duration / this.slotCount) / 2;
-    }
+    },
+  },
+  watch: {
+    numberOfSlots() {
+      this.setSlotStyles();
+    },
+  },
+  mounted() {
+    this.setSlotStyles();
   },
   methods: {
     setShifts(elements, value, start = 0) {
-      // sets the y shift of each element in the elements array after start index 
-      elements.slice(start).forEach(element => {
+      // sets the y shift of each element in the elements array after start index
+      elements.slice(start).forEach((element) => {
         // If the translateY is not already set, add it to any existing transforms
         // Otherwise, replace the existing translateY value with the new one
         const { transform } = element.style;
@@ -46,7 +54,7 @@ export default {
         } else {
           element.style.transform = transform.replace(/^(.*translateY\()-?\d+(px\).*)$/, `$1${value}$2`);
         }
-      })
+      });
     },
     stagger(func) {
       if (this.slotCount > 0) {
@@ -61,7 +69,7 @@ export default {
     },
     setOpacity(value) {
       if (this.slotCount > 0) {
-        this.$slots.default.forEach(vnode => {
+        this.$slots.default.forEach((vnode) => {
           vnode.elm.style.opacity = value;
         });
       }
@@ -101,18 +109,9 @@ export default {
           });
         }
       });
-    }
+    },
   },
-  mounted() {
-    const { duration } = this;
-    this.setSlotStyles();
-  },
-  watch: {
-    numberOfSlots() {
-      this.setSlotStyles();
-    }
-  }
-}
+};
 </script>
 
 <style lang="sass" scoped>

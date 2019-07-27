@@ -3,11 +3,11 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const devMode = !!process.env.WEBPACK_SERVE;
 
-module.exports = env => {
+module.exports = (env) => {
   const options = {
     mode: devMode ? 'development' : 'production',
     entry: './src/main.js',
@@ -35,16 +35,16 @@ module.exports = env => {
           test: /\.js$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
-        }
+        },
       ],
     },
     devtool: devMode ? 'cheap-eval-source-map' : 'none',
     resolve: {
       alias: {
-        'vue$': 'vue/dist/vue.esm.js',
-        'src': path.resolve(__dirname, 'src'), // allows you to reference src directly from anywhere (e.g. import {} from 'src/js/file')
-        'common': path.resolve(__dirname, 'src/components/common'), // easy access to common components
-      }
+        vue$: 'vue/dist/vue.esm.js',
+        src: path.resolve(__dirname, 'src'), // allows you to reference src directly from anywhere (e.g. import {} from 'src/js/file')
+        common: path.resolve(__dirname, 'src/components/common'), // easy access to common components
+      },
     },
     optimization: {
       minimizer: [
@@ -80,4 +80,4 @@ module.exports = env => {
   }
 
   return options;
-}
+};

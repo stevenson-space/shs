@@ -1,25 +1,32 @@
 <template>
-  <confirm-popup :show="show" @cancel="cancel" @ok="done" ok-text="Select">
+  <confirm-popup :show="show" ok-text="Select" @cancel="cancel" @ok="done">
     <div class="time-picker">
       <div class="time-selector">
-        <scroll-selector :style="{ textAlign: 'right' }" :options="hours" v-model="selectedTime.hour" font-size="1.5em"/>
+        <scroll-selector
+          v-model="selectedTime.hour"
+          :style="{ textAlign: 'right' }"
+          :options="hours"
+          font-size="1.5em"
+        />
         <span class="colon">:</span>
-        <scroll-selector :options="minutes" v-model="selectedTime.minute" font-size="1.5em"/>
-        <scroll-selector :options="suffixes" v-model="selectedTime.suffix" font-size="1.5em"/>
+        <scroll-selector v-model="selectedTime.minute" :options="minutes" font-size="1.5em" />
+        <scroll-selector v-model="selectedTime.suffix" :options="suffixes" font-size="1.5em" />
       </div>
 
       <div class="separator">
-        <div class="line"/>
+        <div class="line" />
         <div class="text">or select an existing period</div>
-        <div class="line"/>
+        <div class="line" />
       </div>
 
       <div class="options">
         <div
-          class="option"
           v-for="option in options"
+          :key="`${option.text}-${option.time}`"
+          class="option"
           :class="{ selected: option === selectedPeriod }"
-          @click="choosePeriod(option)">
+          @click="choosePeriod(option)"
+        >
           <div class="text">{{ option.text }}</div>
           <div class="time">
             {{ convertMilitaryTime(option.time) }}
@@ -27,12 +34,12 @@
           </div>
         </div>
       </div>
-      
-      <checkbox class="set-others" v-model="setOthersChecked" v-show="mode === 'period'">
+
+      <checkbox v-show="mode === 'period'" v-model="setOthersChecked" class="set-others">
         <div class="text">Also set periods with the same name in other schedule types</div>
       </checkbox>
 
-      <div class="separator"><div class="line"/></div>
+      <div class="separator"><div class="line" /></div>
     </div>
   </confirm-popup>
 </template>
@@ -41,9 +48,14 @@
 import ConfirmPopup from 'common/ConfirmPopup.vue';
 import ScrollSelector from 'common/ScrollSelector.vue';
 import Checkbox from 'common/Checkbox.vue';
-import Bell from 'src/js/bell.js';
+import Bell from 'src/js/bell';
 
 export default {
+  components: {
+    ConfirmPopup,
+    ScrollSelector,
+    Checkbox,
+  },
   data() {
     return {
       show: false,
@@ -61,7 +73,7 @@ export default {
       mode: 'time', // can be 'time' or 'period'
       selectedPeriod: null,
       setOthersChecked: true,
-    }
+    };
   },
   computed: {
     time() {
@@ -69,61 +81,12 @@ export default {
         return this.selectedPeriod ? {
           ...this.selectedPeriod,
           setOthers: this.setOthersChecked,
-         } : '0:00';
+        } : '0:00';
       }
 
       // we assume mode === 'time'
       return { time: this.getSelectedTime() };
-    }
-  },
-  methods: {
-    pickTime(options = [], selectedTime = '1:00') {
-      return new Promise((resolve, reject) => {
-        this.options = options.slice(0); // make a copy to prevent modification of the original
-        this.options.sort((a, b) => Bell.timeToNumber(a.time) - Bell.timeToNumber(b.time));
-        this.setOthersChecked = true;
-
-        this.show = true;
-
-        this.setSelectedTime(selectedTime);
-
-        this.cancel = () => {
-          reject('User Canceled');
-          this.show = false;
-        }
-
-        this.done = () => {
-          resolve(this.time);
-          this.show = false;
-        }
-      });
     },
-    choosePeriod(period) {
-      this.selectedPeriod = period;
-      this.setSelectedTime(period.time);
-      this.mode = 'period';
-    },
-    getSelectedTime() {
-      let hours = Number(this.selectedTime.hour);
-      if(this.selectedTime.suffix == "PM" && hours < 12) hours += 12;
-      if(this.selectedTime.suffix == "AM" && hours === 12) hours -= 12;
-      
-      return hours + ':' + this.selectedTime.minute;
-    },
-    setSelectedTime(time) {
-      let [hours, minutes] = time.split(':');
-      hours = Number(hours);
-
-      let suffix = hours >= 12 ? 'PM' : 'AM';
-      hours = (hours > 12)? hours -12 : hours;
-      hours = (hours == 0)? 12 : hours;
-
-      this.selectedTime.hour = String(hours);
-      this.selectedTime.minute = minutes;
-      this.selectedTime.suffix = suffix;
-    },
-    convertMilitaryTime: Bell.convertMilitaryTime,
-    getSuffix: Bell.getSuffix,
   },
   watch: {
     selectedTime: {
@@ -134,14 +97,59 @@ export default {
         }
       },
       deep: true,
-    }
+    },
   },
-  components: {
-    ConfirmPopup,
-    ScrollSelector,
-    Checkbox,
-  }
-}
+  methods: {
+    pickTime(options = [], selectedTime = '1:00') {
+      // options is an array of objects of the format { time: String ("12:45"), text: String }
+      return new Promise((resolve, reject) => {
+        this.options = options.slice(0); // make a copy to prevent modification of the original
+        this.options.sort((a, b) => Bell.timeToNumber(a.time) - Bell.timeToNumber(b.time));
+        this.setOthersChecked = true;
+
+        this.show = true;
+
+        this.setSelectedTime(selectedTime);
+
+        this.cancel = () => {
+          reject(Error('User Canceled'));
+          this.show = false;
+        };
+
+        this.done = () => {
+          resolve(this.time);
+          this.show = false;
+        };
+      });
+    },
+    choosePeriod(period) {
+      this.selectedPeriod = period;
+      this.setSelectedTime(period.time);
+      this.mode = 'period';
+    },
+    getSelectedTime() {
+      let hours = Number(this.selectedTime.hour);
+      if (this.selectedTime.suffix === 'PM' && hours < 12) hours += 12;
+      if (this.selectedTime.suffix === 'AM' && hours === 12) hours -= 12;
+
+      return `${hours}:${this.selectedTime.minute}`;
+    },
+    setSelectedTime(time) {
+      let [hours, minutes] = time.split(':'); // eslint-disable-line prefer-const
+      hours = Number(hours);
+
+      const suffix = hours >= 12 ? 'PM' : 'AM';
+      hours = (hours > 12) ? hours - 12 : hours;
+      hours = (hours === 0) ? 12 : hours;
+
+      this.selectedTime.hour = String(hours);
+      this.selectedTime.minute = minutes;
+      this.selectedTime.suffix = suffix;
+    },
+    convertMilitaryTime: Bell.convertMilitaryTime,
+    getSuffix: Bell.getSuffix,
+  },
+};
 </script>
 
 <style lang="sass" scoped>

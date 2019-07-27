@@ -1,28 +1,28 @@
 <template>
   <div class="schedule" :class="{ 'full-screen': fullScreenMode }">
     <div class="container">
-
       <!-- This dropdown is just here for alignment purposes and is not displayed -->
       <dropdown
         v-show="scheduleModes.length > 1"
         class="schedule-select hidden"
         :options="scheduleModes"
-        :value="scheduleModes.indexOf(bell.mode)"/>
+        :value="scheduleModes.indexOf(bell.mode)"
+      />
 
       <div class="center">
         <template v-if="mode === 'current'">
           <div class="range">{{ range }}</div>
 
-          <div class="period" v-if="inSchool">
+          <div v-if="inSchool" class="period">
             {{ period }}
           </div>
-          <div class="type" v-else>
+          <div v-else class="type">
             {{ scheduleType }}
           </div>
         </template>
 
-        <router-link to="/" v-else>
-          <rounded-button class="button" text="Go Back Live" :circular="false" :invert="true"/>
+        <router-link v-else to="/">
+          <rounded-button class="button" text="Go Back Live" :circular="false" :invert="true" />
         </router-link>
       </div>
 
@@ -31,8 +31,9 @@
         class="schedule-select"
         :options="scheduleModes"
         :value="scheduleModes.indexOf(bell.mode)"
+        :direction="fullScreenMode ? 'up' : 'down'"
         @input="$store.commit('setScheduleMode', scheduleModes[$event])"
-        :direction="fullScreenMode ? 'up' : 'down'"/>
+      />
     </div>
   </div>
 </template>
@@ -43,6 +44,7 @@ import Dropdown from 'common/Dropdown.vue';
 import RoundedButton from 'common/RoundedButton.vue';
 
 export default {
+  components: { Dropdown, RoundedButton },
   props: {
     inSchool: { type: Boolean, required: true },
     range: { type: String, required: true },
@@ -56,11 +58,10 @@ export default {
       'mode',
     ]),
     ...mapGetters([
-      'bell'
+      'bell',
     ]),
   },
-  components: { Dropdown, RoundedButton },
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -74,7 +75,7 @@ export default {
   background-color: white
   &.full-screen
     font-size: 2.75vh
-  
+
   .container
     display: flex
     align-items: center

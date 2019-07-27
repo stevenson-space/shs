@@ -1,31 +1,33 @@
 <template>
   <card class="timer-card" :shadow="false" :border="true" :class="{ fullscreen: isFullscreen }">
-    <div class="fullscreen-wrapper" ref="fullscreen-wrapper">
+    <div ref="fullscreen-wrapper" class="fullscreen-wrapper">
       <div class="header">
-        <div class="icon-button sound" v-hammer:tap="() => shouldMakeSound = !shouldMakeSound">
-          <font-awesome-icon class="icon" :icon="icons.faVolumeUp" fixed-width/>
-          <div class="slash" :class="{ hide: shouldMakeSound }"/>
+        <div v-hammer:tap="() => shouldMakeSound = !shouldMakeSound" class="icon-button sound">
+          <font-awesome-icon class="icon" :icon="icons.faVolumeUp" fixed-width />
+          <div class="slash" :class="{ hide: shouldMakeSound }" />
         </div>
+
         <div class="title">Timer</div>
-        <div class="icon-button" v-hammer:tap="isFullscreen ? exitFullscreen : makeFullscreen">
-          <font-awesome-icon class="icon" :icon="isFullscreen ? icons.faCompress : icons.faExpand" fixed-width/>
+
+        <div v-hammer:tap="isFullscreen ? exitFullscreen : makeFullscreen" class="icon-button">
+          <font-awesome-icon class="icon" :icon="isFullscreen ? icons.faCompress : icons.faExpand" fixed-width />
         </div>
       </div>
 
       <div class="container">
         <div class="time-selector">
-          <scroll-selector :options="hours" v-model="time.hours" :font-size="fontSize" ref="scroll-selector-1"/>
+          <scroll-selector ref="scroll-selector-1" v-model="time.hours" :options="hours" :font-size="fontSize" />
           <span class="letter">h</span>
           <span class="colon">:</span>
-          <scroll-selector :options="minutes" v-model="time.minutes" :font-size="fontSize" ref="scroll-selector-2"/>
+          <scroll-selector ref="scroll-selector-2" v-model="time.minutes" :options="minutes" :font-size="fontSize" />
           <span class="letter">m</span>
           <span class="colon">:</span>
-          <scroll-selector :options="minutes" v-model="time.seconds" :font-size="fontSize" ref="scroll-selector-3"/>
+          <scroll-selector ref="scroll-selector-3" v-model="time.seconds" :options="minutes" :font-size="fontSize" />
           <span class="letter">s</span>
         </div>
 
         <div class="info-text">
-          <font-awesome-icon :icon="icons.faInfoCircle"/>
+          <font-awesome-icon :icon="icons.faInfoCircle" />
           &nbsp;Scroll to select time
         </div>
 
@@ -35,23 +37,40 @@
           <div class="button" @click="addTime(10 * 60)">+10<span class="small">m</span></div>
         </div>
 
-        <checkbox :value="shouldNotify" @input="notifyCheckboxInput($event)" label-size="1em" v-if="browserSupportsNotifications">
-          Notify Me &nbsp;
-          <what-is-this>Notifies you when the timer finishes even if you're on a different tab/app (requires permission)</what-is-this>
+        <checkbox
+          v-if="browserSupportsNotifications"
+          :value="shouldNotify"
+          label-size="1em"
+          @input="notifyCheckboxInput($event)"
+        >
+          <span>Notify Me &nbsp;</span>
+
+          <what-is-this>
+            Notifies you when the timer finishes even if you're on a different tab/app (requires permission)
+          </what-is-this>
         </checkbox>
 
         <div class="control-buttons">
-          <rounded-button class="button" text="Reset" :circular="false" @click="reset"/>
-          <rounded-button class="button" v-bind="startStopButton" :circular="false" v-hammer:tap="startStopButton.action"/>
+          <rounded-button class="button" text="Reset" :circular="false" @click="reset" />
+          <rounded-button
+            v-hammer:tap="startStopButton.action"
+            class="button"
+            v-bind="startStopButton"
+            :circular="false"
+          />
         </div>
       </div>
     </div>
 
-    <div class="filler" ref="filler"/> <!-- fills space when the rest of the content is in full screen mode -->
+    <div ref="filler" class="filler" /> <!-- fills space when the rest of the content is in full screen mode -->
 
-    <confirm-popup :show="showTimerDonePopup" cancelText="" @ok="timerDoneOk">
+    <confirm-popup :show="showTimerDonePopup" cancel-text="" @ok="timerDoneOk">
       <div class="timer-done-text">Timer Done!</div>
       <!-- TODO Display negative stopwatch counting time since timer ended-->
+    </confirm-popup>
+
+    <confirm-popup :show="showAllowNotificationsPopup" cancel-text="" @ok="showAllowNotificationsPopup = false">
+      <div class="allow-notifications-text">Please allow notifications to enable this option</div>
     </confirm-popup>
   </card>
 </template>
@@ -59,7 +78,7 @@
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faInfoCircle, faExpand, faCompress, faVolumeUp, faSlash } from '@fortawesome/free-solid-svg-icons';
-import anime from "animejs";
+import anime from 'animejs';
 
 import Card from 'common/Card.vue';
 import ScrollSelector from 'common/ScrollSelector.vue';
@@ -69,6 +88,15 @@ import ConfirmPopup from 'common/ConfirmPopup.vue';
 import WhatIsThis from 'common/WhatIsThis.vue';
 
 export default {
+  components: {
+    Card,
+    ScrollSelector,
+    RoundedButton,
+    FontAwesomeIcon,
+    Checkbox,
+    ConfirmPopup,
+    WhatIsThis,
+  },
   data() {
     return {
       hours: Array(24).fill(0).map((_, i) => i).map(val => (val < 10 ? '0' : '') + val), // generates ['00', '01', '02', ..., '23']
@@ -97,16 +125,8 @@ export default {
       isFullscreen: false,
       fullscreenAnimation: null,
       serviceWorkerListener: null,
-    }
-  },
-  created() {
-    this.serviceWorkerListener = event => {
-      if (event.data == 'stop-timer-done-audio' && this.audio) this.audio.pause();
-    }
-    navigator.serviceWorker.addEventListener('message', this.serviceWorkerListener);
-  },
-  beforeDestroy() {
-    navigator.serviceWorker.removeEventListener('message', this.serviceWorkerListener);
+      showAllowNotificationsPopup: false,
+    };
   },
   computed: {
     startStopButton() {
@@ -114,27 +134,55 @@ export default {
         text: this.timer ? 'Stop' : 'Start',
         action: this.timer ? this.stop : this.start,
         invert: !!this.timer,
-      }
+      };
     },
     fontSize() {
-      return this.isFullscreen ? (window.innerWidth >= 786 ? '5em' : '3em') : '1.75em';
+      if (this.isFullscreen) {
+        return (window.innerWidth >= 786 ? '5em' : '3em');
+      }
+      return '1.75em';
+    },
+  },
+  watch: {
+    shouldMakeSound() {
+      if (this.shouldMakeSound && !this.audio) {
+        // initially playing some blank audio while tab is in focus allows audio to be played later even when tab is in background
+        const blankAudio = new Audio('static/blank.mp3');
+        blankAudio.play();
+
+        this.audio = new Audio('static/timer.mp3');
+      }
+    },
+  },
+  created() {
+    if (navigator.serviceWorker) {
+      this.serviceWorkerListener = (event) => {
+        if (event.data === 'stop-timer-done-audio' && this.audio) this.audio.pause();
+      };
+      navigator.serviceWorker.addEventListener('message', this.serviceWorkerListener);
+    }
+  },
+  beforeDestroy() {
+    if (this.serviceWorkerListener) {
+      navigator.serviceWorker.removeEventListener('message', this.serviceWorkerListener);
     }
   },
   methods: {
-    timeToSeconds({hours, minutes, seconds}) {
+    timeToSeconds({ hours, minutes, seconds }) {
       return Number(hours) * 60 * 60 + Number(minutes) * 60 + Number(seconds);
     },
-    normalizeTime(time) { //convert time object with numbers to strings with the extra '0' if num < 10
-      Object.keys(time).forEach(key => {
-        time[key] = (time[key] < 10 ? '0' : '') + time[key];
+    normalizeTime(time) { // convert time object with numbers to strings with the extra '0' if num < 10
+      const normalizedTime = {};
+      Object.keys(time).forEach((key) => {
+        normalizedTime[key] = (time[key] < 10 ? '0' : '') + time[key];
       });
-      return time;
+      return normalizedTime;
     },
     secondsToTime(seconds, normalize = true) {
-      seconds = Math.max(seconds, 0); // in case seconds is negative for some reason
+      const s = Math.max(seconds, 0); // in case seconds is negative for some reason
       const time = {};
-      time.hours = Math.floor(seconds / (60 * 60));
-      time.minutes = Math.floor((seconds - time.hours * 60 * 60) / 60);
+      time.hours = Math.floor(s / (60 * 60));
+      time.minutes = Math.floor((s - time.hours * 60 * 60) / 60);
       time.seconds = seconds - time.hours * 60 * 60 - time.minutes * 60;
       return normalize ? this.normalizeTime(time) : time;
     },
@@ -144,21 +192,21 @@ export default {
       this.countdown();
     },
     countdown() {
-      let secondsLeft = Math.round((this.endTime - Date.now()) / 1000);
+      const secondsLeft = Math.round((this.endTime - Date.now()) / 1000);
       this.time = this.secondsToTime(secondsLeft);
       if (secondsLeft > 0) {
         this.timer = setTimeout(this.countdown, 1000);
       } else { // Timer Done
         this.stop();
         this.showTimerDonePopup = true;
-        
-        if (this.shouldNotify && Notification.permission == 'granted') {
+
+        if (this.shouldNotify && Notification.permission === 'granted' && navigator.serviceWorker) {
           // using service workers instead of normal notifications because android requires it (and desktop still supports it too)
-          navigator.serviceWorker.ready.then(registration => {
+          navigator.serviceWorker.ready.then((registration) => {
             registration.showNotification('Timer Done!', {
               tag: 'timer',
               icon: 'favicon/favicon-196x196.png',
-              renotify: true
+              renotify: true,
             });
           });
         }
@@ -182,7 +230,7 @@ export default {
     addTime(secondsToAdd) {
       if (!this.timer) { // typically only want to add time if the timer is not currently running
         // don't let the time go over 23:59:59 because that's the maximum time that can be displayed
-        const seconds = Math.min(this.timeToSeconds(this.time) + secondsToAdd, 23*60*60 + 59*60 + 59);
+        const seconds = Math.min(this.timeToSeconds(this.time) + secondsToAdd, (23 * 60 * 60) + (59 * 60) + 59);
         this.time = this.secondsToTime(seconds);
       }
     },
@@ -199,7 +247,7 @@ export default {
         // Purpose of filler is to maintain the card's height while the contents are in fullscreen
         // (position: fixed items don't take up space in container)
         // this prevents the card from unnaturally resizing when exiting full screen
-        this.$refs['filler'].style.height = $fullscreenWrapper.offsetHeight + 'px';
+        this.$refs.filler.style.height = `${$fullscreenWrapper.offsetHeight}px`;
 
         $fullscreenWrapper.style.position = 'fixed';
         this.fullscreenAnimation = anime({
@@ -217,7 +265,7 @@ export default {
         const { seconds, minutes, hours } = this.time; // need to do this so we get actual values instead of reference
         this.fullscreenAnimation.finished.then(() => {
           this.time = { seconds, minutes, hours };
-          this.scrollAllScrollSelectors() // ios doesn't automatically scroll for some reason
+          this.scrollAllScrollSelectors(); // ios doesn't automatically scroll for some reason
         });
 
         this.isFullscreen = true;
@@ -232,7 +280,7 @@ export default {
 
         this.fullscreenAnimation.finished.then(() => {
           anime.remove(this.$refs['fullscreen-wrapper']);
-          this.$refs['filler'].style.height = 0;
+          this.$refs.filler.style.height = 0;
           this.$refs['fullscreen-wrapper'].removeAttribute('style'); // remove all changes made to this element by javascript
           this.fullscreenAnimation = null;
 
@@ -246,11 +294,11 @@ export default {
       }
     },
     notifyCheckboxInput(shouldNotify) {
-      if (shouldNotify && Notification.permission != 'granted') {
-        if (Notification.permission == 'denied') alert('Please allow notifications to enable this option');
+      if (shouldNotify && Notification.permission !== 'granted') {
+        if (Notification.permission === 'denied') this.showAllowNotificationsPopup = true;
         else {
           Notification.requestPermission().then(() => {
-            this.shouldNotify = Notification.permission == 'granted';
+            this.shouldNotify = Notification.permission === 'granted';
           });
         }
       } else {
@@ -263,27 +311,7 @@ export default {
       }
     },
   },
-  watch: {
-    shouldMakeSound() {
-      if (this.shouldMakeSound && !this.audio) {
-        // initially playing some blank audio while tab is in focus allows audio to be played later even when tab is in background
-        const blankAudio = new Audio('static/blank.mp3');
-        blankAudio.play();
-
-        this.audio = new Audio('static/timer.mp3');
-      }
-    }
-  },
-  components: {
-    Card,
-    ScrollSelector,
-    RoundedButton,
-    FontAwesomeIcon,
-    Checkbox,
-    ConfirmPopup,
-    WhatIsThis,
-  },
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -292,7 +320,7 @@ export default {
 .timer-card
   .fullscreen-wrapper
     background-color: white
-    
+
   .header
     display: flex
     background-color: var(--color)
@@ -338,7 +366,7 @@ export default {
 
     .letter
       margin-top: 6px
-    
+
     .colon
       font-size: 1.75em
       margin: 0 5px 0 10px
@@ -375,7 +403,7 @@ export default {
     display: flex
     justify-content: space-evenly
     margin-top: 25px
-    
+
     .button
       margin: 0 10px
 
@@ -386,6 +414,10 @@ export default {
     color: #444
     +mobile-small
       font-size: 2em
+
+  .allow-notifications-text
+    margin: 20px 30px
+    font-size: 1.1em
 
   &.fullscreen
     .header
@@ -432,6 +464,5 @@ export default {
       margin-top: 30px
       +mobile
         margin-top: 25px
-      
 
 </style>

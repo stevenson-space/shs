@@ -7,5 +7,5 @@ export default {
   },
   countdownDone({ commit }) {
     commit('setCurrentTime');
-  }
-}
+  },
+};

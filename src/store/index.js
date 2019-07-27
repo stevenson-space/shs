@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import mutations from 'src/store/mutations.js';
-import actions from 'src/store/actions.js';
+import mutations from 'src/store/mutations';
+import actions from 'src/store/actions';
 
-import Bell from 'src/js/bell.js';
+import Bell from 'src/js/bell';
 
 Vue.use(Vuex);
 
@@ -37,7 +37,7 @@ export default new Vuex.Store({
     },
     bell(state, getters) {
       return new Bell(getters.date, state.schedules, state.scheduleMode);
-    }
+    },
   },
   mutations,
   actions,

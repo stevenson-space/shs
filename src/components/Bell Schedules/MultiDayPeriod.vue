@@ -2,12 +2,13 @@
   <div class="day">
     <h2>Day {{ day }}</h2>
     <period
-      class="period"
       v-for="(period, i) in periods"
+      :key="period"
+      class="period"
       :period="period"
       :start="start[i]"
       :end="end[i]"
-      :key="period"/>
+    />
   </div>
 </template>
 
@@ -15,14 +16,14 @@
 import Period from 'common/Period.vue';
 
 export default {
+  components: { Period },
   props: {
     periods: { type: Array, required: true },
     start: { type: Array, required: true },
     end: { type: Array, required: true },
     day: { type: Number, required: true },
   },
-  components: { Period },
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -31,7 +32,7 @@ export default {
 .day
   flex-grow: 1
   margin: 0 10px
-  
+
   h2
     text-align: center
 

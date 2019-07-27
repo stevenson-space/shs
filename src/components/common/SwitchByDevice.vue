@@ -1,9 +1,9 @@
 <template>
   <div class="switch-by-device">
-    <div class="thing" :class="defaultThingClasses"><slot/></div>
-    <div class="thing mobile"><slot name="mobile"/></div>
-    <div class="thing tablet"><slot name="tablet"/></div>
-    <div class="thing desktop"><slot name="desktop"/></div>
+    <div class="thing" :class="defaultThingClasses"><slot /></div>
+    <div class="thing mobile"><slot name="mobile" /></div>
+    <div class="thing tablet"><slot name="tablet" /></div>
+    <div class="thing desktop"><slot name="desktop" /></div>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     defaultThingClasses() {
       const classes = ['mobile', 'tablet', 'desktop'];
 
-      Object.keys(this.$slots).forEach(slotName => {
+      Object.keys(this.$slots).forEach((slotName) => {
         const index = classes.indexOf(slotName);
         if (index > -1) {
           classes.splice(index, 1); // remove that class
@@ -21,9 +21,9 @@ export default {
       });
 
       return classes;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -45,4 +45,3 @@ export default {
       display: initial
 
 </style>
-

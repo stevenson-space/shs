@@ -2,35 +2,40 @@
   <div class="schedule-column">
     <div class="title">{{ name }}</div>
 
-    <rounded-button class="add-period-button" @click="$emit('add-period')" :icon="icons.faPlus" text="Add Period"/>
+    <rounded-button class="add-period-button" :icon="icons.faPlus" text="Add Period" @click="$emit('add-period')" />
 
     <checkbox :value="isEnabled" @input="$emit($event ? 'enable' : 'disable')">
-      <span class="enable-checkbox-text">This schedule applies on days of type "{{name}}"</span>
+      <span class="enable-checkbox-text">This schedule applies on days of type "{{ name }}"</span>
     </checkbox>
 
     <schedule-column-period
-      v-show="isEnabled"
       v-for="(period, i) in periods"
+      v-show="isEnabled"
+      :key="period.name"
       class="period"
       v-bind="period"
       @pick-time="$emit('pick-time', { period: i, time: $event })"
       @update-name="$emit('update-name', { name: $event.name, updateOthers: $event.updateOthers, period: i })"
       @delete-period="$emit('delete-period', { period: i, deleteOthers: $event })"
-      :key="period.name"/>
+    />
 
-    <div class="space"/>
+    <div class="space" />
   </div>
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
-import ScheduleColumnPeriod from './ScheduleColumnPeriod.vue';
 import Checkbox from 'common/Checkbox.vue';
 import RoundedButton from 'common/RoundedButton.vue';
+import ScheduleColumnPeriod from './ScheduleColumnPeriod.vue';
 
 export default {
+  components: {
+    ScheduleColumnPeriod,
+    Checkbox,
+    RoundedButton,
+  },
   props: {
     name: { type: String, required: true },
     isEnabled: { type: Boolean, required: true },
@@ -39,17 +44,11 @@ export default {
   data() {
     return {
       icons: {
-        faPlus
-      }
-    }
+        faPlus,
+      },
+    };
   },
-  components: {
-    FontAwesomeIcon,
-    ScheduleColumnPeriod,
-    Checkbox,
-    RoundedButton,
-  }
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -78,4 +77,3 @@ export default {
     flex: 1
 
 </style>
-

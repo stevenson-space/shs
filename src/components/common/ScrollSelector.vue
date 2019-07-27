@@ -1,16 +1,21 @@
 <template>
   <div class="scroll-selector" :style="{ height: `${optionHeight * (2 * numOptionsAbove + 1)}px`, fontSize }">
-    <div v-for="i in Array(numOptionsAbove)" :style="{ height: `${optionHeight}px`}"/>
+    <!-- eslint-disable-next-line vue/require-v-for-key vue/no-unused-vars-->
+    <div v-for="_ in Array(numOptionsAbove)" :style="{ height: `${optionHeight}px`}" />
 
     <div
-      class="option"
       v-for="option in options"
       ref="option"
+      :key="option"
+      class="option"
       :class="{ selected: option === value }"
       @click="$emit('input', option)"
-    >{{ option }}</div>
+    >
+      {{ option }}
+    </div>
 
-    <div v-for="i in Array(numOptionsAbove)" :style="{ height: `${optionHeight}px`}"/>
+    <!-- eslint-disable-next-line vue/require-v-for-key vue/no-unused-vars-->
+    <div v-for="_ in Array(numOptionsAbove)" :style="{ height: `${optionHeight}px`}" />
   </div>
 </template>
 
@@ -25,12 +30,20 @@ export default {
   data() {
     return {
       optionHeight: 0,
-    }
+    };
+  },
+  watch: {
+    value() {
+      this.scrollToSelected();
+    },
+    fontSize() {
+      this.$nextTick(this.setOptionHeight);
+    },
   },
   mounted() {
     this.setOptionHeight();
     setTimeout(this.setOptionHeight, 100); // just in case
-    
+
     this.$nextTick(this.scrollToSelected);
 
     let scrollTimeout = null;
@@ -42,33 +55,25 @@ export default {
         this.$emit('input', this.options[selectedIndex]);
         this.scrollToSelected();
       }, 100);
-    })
+    });
   },
   methods: {
     scrollToSelected() {
       this.$nextTick(() => { // wait until this.value is updated if necessary
-        let index = this.options.indexOf(this.value);
+        const index = this.options.indexOf(this.value);
         if (index > -1) {
           this.$el.scroll({
-            top: this.$refs['option'][index].offsetTop - (this.optionHeight * this.numOptionsAbove),
+            top: this.$refs.option[index].offsetTop - (this.optionHeight * this.numOptionsAbove),
             behavior: 'smooth',
           });
         }
       });
     },
     setOptionHeight() {
-      this.optionHeight = this.$refs['option'][0].getBoundingClientRect().height;
+      this.optionHeight = this.$refs.option[0].getBoundingClientRect().height;
     },
   },
-  watch: {
-    value() {
-      this.scrollToSelected();
-    },
-    fontSize() {
-      this.$nextTick(this.setOptionHeight);
-    }
-  }
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -92,4 +97,3 @@ export default {
       // font-weight: bold
 
 </style>
-

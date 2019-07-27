@@ -1,7 +1,7 @@
 <template>
-  <card class="card" ref="card">
+  <card ref="card" class="card">
     <custom-link :href="link" v-bind="linkProps">
-      <img class="image" :src="image" @load="setHeight"/>
+      <img class="image" :src="image" @load="setHeight">
       <div class="text">{{ text }}</div>
     </custom-link>
   </card>
@@ -12,6 +12,7 @@ import Card from 'common/Card.vue';
 import CustomLink from 'common/CustomLink.vue';
 
 export default {
+  components: { Card, CustomLink },
   props: {
     image: { type: String, required: true },
     text: { type: String, required: true },
@@ -21,10 +22,9 @@ export default {
   methods: {
     setHeight() {
       this.$refs.card.setHeight();
-    }
+    },
   },
-  components: { Card, CustomLink },
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -53,11 +53,11 @@ export default {
     display: flex
     justify-content: center
     align-items: center
-  
+
   &:hover
     .image
       opacity: 1
-    
+
     .text
       display: none
 

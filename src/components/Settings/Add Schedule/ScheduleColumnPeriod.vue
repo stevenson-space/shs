@@ -1,10 +1,10 @@
 <template>
   <div class="schedule-column-period" :class="{ closed: closed, open: !closed }">
-    <font-awesome-icon :icon="icons.faTimes" class="delete" @click="deletePopup"/>
+    <font-awesome-icon :icon="icons.faTimes" class="delete" @click="deletePopup" />
 
     <div class="title" @click="editNamePopup">
-      <div class="text" ref="title-text">{{ name }}</div>
-      <font-awesome-icon :icon="icons.faPencilAlt" class="icon"/>
+      <div ref="title-text" class="text">{{ name }}</div>
+      <font-awesome-icon :icon="icons.faPencilAlt" class="icon" />
     </div>
     <div class="times">
       <div class="time" @click="$emit('pick-time', 'start')">
@@ -20,7 +20,14 @@
 
     <confirm-popup :show="editingName" @cancel="editingName = false" @ok="editName">
       <div class="edit-popup">
-        <div contenteditable="true" class="edit-name" ref="edit-name" @keypress.enter.prevent="editName">{{ name }}</div>
+        <div
+          ref="edit-name"
+          contenteditable="true"
+          class="edit-name"
+          @keypress.enter.prevent="editName"
+        >
+          {{ name }}
+        </div>
         <checkbox v-model="editOthers">Also update other periods with the same name</checkbox>
       </div>
     </confirm-popup>
@@ -35,13 +42,18 @@
 </template>
 
 <script>
-import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faPencilAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
-import Bell from 'src/js/bell.js';
+import Bell from 'src/js/bell';
 import ConfirmPopup from 'common/ConfirmPopup.vue';
 import Checkbox from 'common/Checkbox.vue';
 
 export default {
+  components: {
+    FontAwesomeIcon,
+    ConfirmPopup,
+    Checkbox,
+  },
   props: {
     name: { type: String, required: true },
     start: { type: String, required: true },
@@ -58,7 +70,7 @@ export default {
         faPencilAlt,
         faTimes,
       },
-    }
+    };
   },
   methods: {
     convertMilitaryTime: Bell.convertMilitaryTime,
@@ -82,14 +94,9 @@ export default {
     },
     deletePeriod() {
       this.$emit('delete-period', this.deleteOthers);
-    }
+    },
   },
-  components: {
-    FontAwesomeIcon,
-    ConfirmPopup,
-    Checkbox,
-  }
-}
+};
 </script>
 
 <style lang="sass" scoped>

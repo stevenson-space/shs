@@ -2,10 +2,10 @@
   <div class="settings-section">
     <div class="heading">
       <div class="title">{{ title }}</div>
-      <slot name="heading-content"/>
+      <slot name="heading-content" />
     </div>
 
-    <slot/>
+    <slot />
   </div>
 </template>
 
@@ -13,8 +13,8 @@
 export default {
   props: {
     title: { type: String, required: true },
-  }
-}
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -30,7 +30,7 @@ export default {
     padding-left: 50px
   +mobile
     padding-left: 20px
-  
+
   .heading
     border-bottom: #555 3px solid
     display: flex

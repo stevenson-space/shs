@@ -17,8 +17,9 @@ export default {
     name: { type: String, default: '' },
     direction: {
       type: String,
-      validator: str => str === 'left' || str === 'right'
-    }
+      validator: str => str === 'left' || str === 'right',
+      default: 'left',
+    },
   },
   computed: {
     month() {
@@ -32,9 +33,9 @@ export default {
         return this.date.getDate();
       }
       return '';
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -63,7 +64,7 @@ export default {
       right: 0
       span
         margin-left: var(--circle-radius)
-    
+
     &.left
       span
         margin-right: var(--circle-radius)

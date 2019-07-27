@@ -1,4 +1,4 @@
-/* 
+/*
 Custom Date Format:
   - whitespace agnostic
   - case-insensitive
@@ -12,7 +12,7 @@ Custom Date Format:
 
   Keywords:
     - Type: "weekend", "weekday"
-    - Days of Week: "Monday", "Tuesday", ... 
+    - Days of Week: "Monday", "Tuesday", ...
     - Months: "January", "February", ...
     (all keywords may include an optional "s" at the end, e.g. "weekends")
 
@@ -39,7 +39,8 @@ Custom Date Format:
 
 const types = ['weekend', 'weekday'];
 const daysOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
+  'august', 'september', 'october', 'november', 'december'];
 
 // Use the following instead of Date.toLocaleDateString() due to performance issues on Safari
 const toLocaleDateString = date => `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
@@ -51,10 +52,13 @@ const toLocaleDateString = date => `${date.getMonth() + 1}/${date.getDate()}/${d
  * @param {Date} testDate today's date (or whichever date is being tested)
  * @returns {Date}
  */
+
+/* eslint-disable no-shadow */
 function parseDate(date, testDate) {
   const dayIndex = daysOfWeek.indexOf(date);
   const monthIndex = months.indexOf(date);
 
+  /* eslint-disable brace-style */
   // Initialize parsedDate to testDate (will be modified later)
   let parsedDate = new Date(testDate);
   if (date === '*') {
@@ -73,8 +77,8 @@ function parseDate(date, testDate) {
     parsedDate.setMonth(monthIndex);
   }
   else {
-    let [month, day, year] = toLocaleDateString(testDate).split('/');
-    let [m, d, y] = date.split('/');
+    const [month, day, year] = toLocaleDateString(testDate).split('/');
+    const [m, d, y] = date.split('/');
 
     if (!d && m.length === 4) { // only one argument (m) is defined and is interpreted as year
       parsedDate = new Date(`${month}/${day}/${m}`);
@@ -89,13 +93,15 @@ function parseDate(date, testDate) {
       parsedDate = new Date(date);
     }
   }
+  /* eslint-enable brace-style */
   return parsedDate;
 }
+/* eslint-enable no-shadow */
 
 /**
  * Checks if two dates are the same day (not necessarily the same time)
- * @param {Date} date1 
- * @param {Date} date2 
+ * @param {Date} date1
+ * @param {Date} date2
  * @returns {boolean}
  */
 function isSameDay(date1, date2) {
@@ -106,7 +112,7 @@ function isSameDay(date1, date2) {
 }
 
 function isNthDay(date, condition) {
-  const [year, month] = [date.getFullYear(), date.getMonth()]
+  const [year, month] = [date.getFullYear(), date.getMonth()];
   const [index, keywords] = condition.split(' ');
 
   // using date as 0 gets the last day of the previos month
@@ -119,7 +125,7 @@ function isNthDay(date, condition) {
     // Determine if date matches that day
     for (let i = lastDay; i >= 1; i--) {
       const date2 = new Date(year, month, i);
-      
+
       // Keywords could contain any of the normal operators (or, and, range, ...)
       // so need to go through each step again starting with 'or' to determine if date2 matches keywords
       if (processOr(date2, keywords)) {
@@ -152,8 +158,8 @@ function isNthDay(date, condition) {
 
 /**
  * Tests if the date is within the specified range (inclusive)
- * @param {Date} date 
- * @param {string} range 
+ * @param {Date} date
+ * @param {string} range
  * @returns {boolean}
  */
 function inRange(date, range) {
@@ -198,7 +204,7 @@ function processNot(date, selector) {
 function processOr(date, selector) {
   // checks if date matches any of the conditions split by |
   const conditions = selector.split('|');
-  for (let condition of conditions) {
+  for (const condition of conditions) {
     // processNot will then handle any !s
     if (processNot(date, condition)) {
       // short circuits after first condition that matches date
@@ -231,7 +237,7 @@ function testDate(date, selectors) {
   // Goes through each selector and determines whether date matches any of them
   for (let selector of selectors) {
     const keywords = [...types, ...daysOfWeek, ...months].join(')|(?:');
-    const keywordsRegex = new RegExp(`((?:${keywords}))s?`, 'g')
+    const keywordsRegex = new RegExp(`((?:${keywords}))s?`, 'g');
     selector = selector
       .replace(/\s/g, '') // remove all whitespace
       .toLowerCase()

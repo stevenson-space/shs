@@ -1,13 +1,13 @@
 <template>
   <div class="card-container">
-    <slot/>
+    <slot />
   </div>
 </template>
 
 <script>
 export default {
 
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -28,5 +28,5 @@ export default {
     grid-template-columns: 1fr 1fr
   +desktop
     grid-template-columns: 1fr 1fr 1fr
-    
+
 </style>

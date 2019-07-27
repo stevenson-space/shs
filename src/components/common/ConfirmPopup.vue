@@ -1,10 +1,10 @@
 <template>
   <popup :show="show || showAlt" @close="cancel">
-    <slot/>
-    <div class="text" v-show="text">{{ text }}</div>
+    <slot />
+    <div v-show="text" class="text">{{ text }}</div>
     <div class="buttons">
-      <rounded-button class="button" v-if="cancelText" @click="cancel" :text="cancelText" :circular="false"/>
-      <rounded-button class="button" v-if="okText" @click="ok" :text="okText" :circular="false" :invert="true"/>
+      <rounded-button v-if="cancelText" class="button" :text="cancelText" :circular="false" @click="cancel" />
+      <rounded-button v-if="okText" class="button" :text="okText" :circular="false" :invert="true" @click="ok" />
     </div>
   </popup>
 </template>
@@ -21,6 +21,10 @@ import RoundedButton from 'common/RoundedButton.vue';
 //               which returns a Promise (success or fail depending on user action)
 
 export default {
+  components: {
+    Popup,
+    RoundedButton,
+  },
   props: {
     show: { type: Boolean, default: false },
     okText: { type: String, default: 'OK' },
@@ -32,7 +36,7 @@ export default {
       text: '',
       promiseResolve: () => {},
       promiseReject: () => {},
-    }
+    };
   },
   methods: {
     ok() {
@@ -59,13 +63,9 @@ export default {
 
         this.showAlt = true;
       });
-    }
+    },
   },
-  components: {
-    Popup,
-    RoundedButton,
-  }
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -92,4 +92,3 @@ export default {
     margin: 0 10px
 
 </style>
-

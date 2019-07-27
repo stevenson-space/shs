@@ -3,29 +3,29 @@
     <div class="date" :class="{ today: isToday }">
       {{ date }}
     </div>
-    <calendar-event v-if="schedule" :text="schedule.name" :invert="true"/>
+    <calendar-event v-if="schedule" :text="schedule.name" :invert="true" />
     <calendar-event
-      class="event"
       v-for="event in events"
+      :key="event.name + event.start"
+      class="event"
       :text="event.name"
       @click.native="$emit('event-click', event)"
-      :key="event.name + event.start"/>
+    />
   </div>
 </template>
 
 <script>
-import Bell from 'src/js/bell.js';
 import CalendarEvent from './CalendarEvent.vue';
 
 export default {
+  components: { CalendarEvent },
   props: {
     date: { type: Number, required: true },
     schedule: { type: Object, default: null },
     events: { type: Array, required: true },
     isToday: { type: Boolean, default: false },
   },
-  components: { CalendarEvent },
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -42,7 +42,7 @@ export default {
   line-height: 27px
   font-weight: bold
   user-select: none
-  
+
   &.today
     color: white
     background-color: var(--color)

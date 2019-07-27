@@ -6,12 +6,15 @@
         <div class="name">shsHacks</div>
         <div class="register">Deadline: 8:59pm</div>
       </div>
-      <font-awesome-icon :icon="faExternalLinkAlt" class="link-icon"/>
+      <font-awesome-icon :icon="faExternalLinkAlt" class="link-icon" />
     </a>
 
-    <div class="line"/>
+    <div class="line" />
 
-    <div class="deregister">Please click <a class="emphasize" href="https://goo.gl/forms/K0f8b5yYHJqYiRHz1" target="_blank">here</a> if you registered but can <span class="emphasize">NOT</span> attend</div>
+    <div class="deregister">
+      Please click <a class="emphasize" href="https://goo.gl/forms/K0f8b5yYHJqYiRHz1" target="_blank">here</a>
+      &nbsp;if you registered but can <span class="emphasize">NOT</span> attend
+    </div>
   </card>
 </template>
 
@@ -21,13 +24,13 @@ import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  data() {
-    return { 
-      faExternalLinkAlt
-    }
-  },
   components: { Card, FontAwesomeIcon },
-}
+  data() {
+    return {
+      faExternalLinkAlt,
+    };
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -73,4 +76,3 @@ export default {
     font-size: 1.25em
 
 </style>
-

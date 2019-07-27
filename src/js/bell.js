@@ -1,12 +1,12 @@
-import testDate from './dateparser.js';
 import defaultSchedules from 'src/data/schedules.json';
+import testDate from './dateparser';
 
 class Bell {
   /**
    * Creates a new Bell object with schedule info for the given date
    * @param {Date} date
    * @param {Array} [schedules] list of schedules to use (if different from those in schedules.json)
-   * @param {Number} [scheduleMode] defaults to the first one specified 
+   * @param {Number} [scheduleMode] defaults to the first one specified
    */
   constructor(date, schedules = defaultSchedules, scheduleMode = '') {
     const scheduleType = Bell.getScheduleType(date, schedules);
@@ -14,13 +14,13 @@ class Bell {
 
     this.date = date;
     this.school = !!schedule;
-    this.type = scheduleType.name // "Standard Schedule", "Late Arrival", "No School", ...
+    this.type = scheduleType.name; // "Standard Schedule", "Late Arrival", "No School", ...
     this.schedule = schedule;
     this.modes = scheduleType.modes;
     this.dates = scheduleType.dates;
 
     if (schedule) { // if there is school today (schedule is undefined when no school)
-      this.mode = schedule.name // "Normal", "Half Periods", ...
+      this.mode = schedule.name; // "Normal", "Half Periods", ...
       this.schedule = Bell.processMultiDay(schedule, date, scheduleType.dates);
       this.period = Bell.getPeriod(this.schedule, date);
     }
@@ -33,10 +33,11 @@ class Bell {
    */
   getRange() {
     if (this.school) {
-      let { start, end, beforeSchool, afterSchool } = this.period;
+      let { start, end } = this.period;
+      const { beforeSchool, afterSchool } = this.period;
       if (beforeSchool || afterSchool) { // show range for entire day
-        start = this.schedule.start[0];
-        end = this.schedule.end.slice(-1)[0]; // last element
+        [start] = this.schedule.start; // get first element
+        [end] = this.schedule.end.slice(-1); // get last element
       }
       return `${Bell.convertMilitaryTime(start)} – ${Bell.convertMilitaryTime(end)}`;
     }
@@ -58,16 +59,16 @@ class Bell {
 
   /**
    * Get the schedule object for the specified date's schedule type
-   * 
+   *
    * Note: contains multiple schedules (1 for each schedule mode)
-   * 
+   *
    * @param {Date} date
    * @param {Array} [schedules] optional alternative list of schedules
    * @return {Object}
    */
   static getScheduleType(date, schedules = defaultSchedules) {
     let todaySchedule = null;
-     schedules.forEach(schedule => {
+    schedules.forEach((schedule) => {
       if (testDate(date, schedule.dates)) {
         todaySchedule = schedule;
       }
@@ -77,14 +78,14 @@ class Bell {
 
   /**
    * Get the actual schedule from the set of schedule modes
-   * @param {*} schedule 
-   * @param {*} scheduleMode 
+   * @param {*} schedule
+   * @param {*} scheduleMode
    */
   static getSchedule(scheduleModes, scheduleMode) {
     let schedule = scheduleModes[0]; // default to first schedule in array
-    scheduleModes.forEach(mode => {
-      if (mode.name == scheduleMode) {
-        schedule = mode; 
+    scheduleModes.forEach((mode) => {
+      if (mode.name === scheduleMode) {
+        schedule = mode;
       }
     });
     return schedule;
@@ -161,7 +162,8 @@ class Bell {
 
     // Goes through up to 365 days preceding today to determine the index of today
     // relative to all consecutive dates with the same schedule
-    for (var i = -1; i < 365 && testDate(newDate, dates); i++) {
+    let i;
+    for (i = -1; i < 365 && testDate(newDate, dates); i++) {
       newDate.setDate(newDate.getDate() - 1);
     }
 
@@ -178,7 +180,7 @@ class Bell {
     const newSchedule = JSON.parse(JSON.stringify(schedule)); // duplicate schedule (don't want to modify original)
     if (Bell.isMultiDay(schedule)) {
       // if it is a multiday schedule get the start, end, and periods corresponding to the day
-      const {start, end, periods} = Bell.getMultiDay(schedule, date, dates);
+      const { start, end, periods } = Bell.getMultiDay(schedule, date, dates);
 
       // replace the original start, end, periods (could be arrays) with the ones for today
       newSchedule.start = start;
@@ -209,23 +211,23 @@ class Bell {
     let [hour, minute] = time.split(':').map(Number);
     if (hour > 12) hour -= 12;
     if (hour === 0) hour = 12;
-    if (minute < 10) minute = '0' + minute;
+    if (minute < 10) minute = `0${minute}`;
     return `${hour}:${minute}`;
   }
 
   /**
    * Returns the suffix ('AM' or 'PM') given a time in 24-hour format
-   * @param {string} time 
+   * @param {string} time
    * @return {string}
    */
   static getSuffix(time) {
-    const [hours, _] = time.split(':').map(Number);
+    const [hours] = time.split(':').map(Number);
     return hours < 12 ? 'AM' : 'PM';
   }
 
   /**
    * Returns an integer representation of the time during the day (usually for comparison purposes)
-   * @param {string} time 
+   * @param {string} time
    * @return {number}
    */
   static timeToNumber(time) {
@@ -235,23 +237,23 @@ class Bell {
 
   /**
    * Gets the next school day after the given date (not including that date)
-   * @param {Date} date 
+   * @param {Date} date
    * @param {Array} schedules optional alternative list of schedules
    */
   static nextSchoolDay(date, schedules = defaultSchedules) {
-    const isSchoolDay = date => {
+    const isSchoolDay = (dateToCheck) => {
       // Day is school day only if a schedule exists for that day and that schedule contains
       // at least one mode
-      const schedule = Bell.getScheduleType(date, schedules);
+      const schedule = Bell.getScheduleType(dateToCheck, schedules);
       return schedule && schedule.modes[0];
     };
 
     // Initialize the date to the next day
-    let newDate = new Date(date);
+    const newDate = new Date(date);
     newDate.setDate(newDate.getDate() + 1);
 
     // Keep adding a day until a school day is found
-    while(!isSchoolDay(newDate)) { // TODO: Prevent infinite loop
+    while (!isSchoolDay(newDate)) { // TODO: Prevent infinite loop
       newDate.setDate(newDate.getDate() + 1);
     }
 

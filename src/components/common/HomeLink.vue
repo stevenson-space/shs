@@ -1,7 +1,7 @@
 <template>
-  <div class="home-link" v-hammer:tap="goHome">
+  <div v-hammer:tap="goHome" class="home-link">
     <router-link to="/" class="home" :class="{ invert }" event="">
-      <font-awesome-icon class="icon" :icon="faHome" fixed-width/>
+      <font-awesome-icon class="icon" :icon="faHome" fixed-width />
       <span class="text">Home</span>
     </router-link>
   </div>
@@ -12,13 +12,14 @@ import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 export default {
+  components: { FontAwesomeIcon },
   props: {
     invert: { type: Boolean, default: true },
   },
   data() {
     return {
       faHome,
-    }
+    };
   },
   methods: {
     goHome(e) {
@@ -30,10 +31,9 @@ export default {
       } else {
         this.$router.push('/');
       }
-    }
+    },
   },
-  components: { FontAwesomeIcon }
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -61,17 +61,16 @@ export default {
       overflow: hidden
       transition: max-width .2s
       font-size: 1.1em
-    
+
     &:hover
       +shadow
 
       .text
         max-width: 60px
         margin: 0 5px
-    
+
     &.invert:hover
       color: white
       background-color: var(--color)
 
 </style>
-

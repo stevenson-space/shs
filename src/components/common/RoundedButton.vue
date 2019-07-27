@@ -1,22 +1,22 @@
 <template>
   <div class="rounded-button" :class="{ invert, circular }" @click="$emit('click')">
-    <font-awesome-icon v-if="icon" class="icon" :icon="icon"/>
+    <font-awesome-icon v-if="icon" class="icon" :icon="icon" />
     {{ text }}
   </div>
 </template>
 
 <script>
-import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 
 export default {
+  components: { FontAwesomeIcon },
   props: {
     text: { type: String, default: 'Button' },
     icon: { type: Object, default: null },
     invert: { type: Boolean, default: false },
     circular: { type: Boolean, default: true },
   },
-  components: { FontAwesomeIcon },
-}
+};
 </script>
 
 <style lang="sass" scoped>

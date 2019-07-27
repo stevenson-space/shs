@@ -8,9 +8,10 @@
         :value="selectedFilter"
         :show-selected-as-option="false"
         align="left"
-        @input="selectFilter($event)"/>
+        @input="selectFilter($event)"
+      />
 
-      <home-link class="home"/>      
+      <home-link class="home" />
     </div>
     <div class="main">
       <dropdown
@@ -20,18 +21,19 @@
         :value="selectedFilter"
         :show-selected-as-option="false"
         align="left"
-        @input="selectFilter($event)"/>
+        @input="selectFilter($event)"
+      />
 
-      <font-awesome-icon class="icon" :icon="icons.faChevronLeft" @click="$emit('previous-month')"/>
+      <font-awesome-icon class="icon" :icon="icons.faChevronLeft" @click="$emit('previous-month')" />
 
       <div class="text">
         <div class="month">{{ month }}</div>
         <div class="year">{{ year }}</div>
       </div>
 
-      <font-awesome-icon class="icon" :icon="icons.faChevronRight" @click="$emit('next-month')"/>
+      <font-awesome-icon class="icon" :icon="icons.faChevronRight" @click="$emit('next-month')" />
 
-      <home-link class="home"/>
+      <home-link class="home" />
     </div>
   </div>
 </template>
@@ -43,6 +45,7 @@ import HomeLink from 'common/HomeLink.vue';
 import Dropdown from 'common/Dropdown.vue';
 
 export default {
+  components: { FontAwesomeIcon, HomeLink, Dropdown },
   props: {
     month: { type: String, required: true },
     year: { type: Number, required: true },
@@ -57,18 +60,17 @@ export default {
       selectedFilter: 0,
     };
   },
-  methods: {
-    selectFilter(index) {
-      this.selectedFilter = index;
-      this.$emit('filter-selected', this.filterCategories[index]);
-    }
-  },
   watch: {
     month() { this.selectFilter(0); },
     year() { this.selectFilter(0); },
   },
-  components: { FontAwesomeIcon, HomeLink, Dropdown },
-}
+  methods: {
+    selectFilter(index) {
+      this.selectedFilter = index;
+      this.$emit('filter-selected', this.filterCategories[index]);
+    },
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -82,7 +84,7 @@ export default {
     font-weight: bold
     +mobile
       top: 6px
-  
+
   .home
     position: absolute
     right: 5px
@@ -92,7 +94,7 @@ export default {
     display: none
     +mobile
       display: block
-    
+
   .main
     display: flex
     align-items: center
@@ -119,7 +121,7 @@ export default {
       .month
         font-size: 1.2em
         letter-spacing: 2px
-        
+
       .year
         font-size: .7em
 
