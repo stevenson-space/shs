@@ -183,7 +183,7 @@ export default {
   font-weight: bold
   color: #444
 
-  z-index: 0
+  z-index: 1
   &.selected
     z-index: 50 // when this dropdown is selected, it should be placed above everything else (except Popup)
 

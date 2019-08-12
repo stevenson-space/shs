@@ -33,9 +33,12 @@ export default {
 .card
   background-color: var(--color)
   color: white
+  transition: transform .4s
   &.invert
     background-color: white
     color: var(--color)
+  &:hover
+    transform: scale(1.05)
 
   .icon
     display: flex

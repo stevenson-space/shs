@@ -11,11 +11,17 @@
         :direction="(i % 2 === 0) ? 'left' : 'right'"
       />
     </div>
-    <div>
+    <div class="arrow-container">
       <font-awesome-icon
-        v-show="!eventsExhausted"
-        class="down-arrow"
-        :icon="downArrow"
+        v-show="numEventsDisplayed > numEventsInitial"
+        class="collapse arrow"
+        :icon="icons.faChevronUp"
+        @mousedown="collapse"
+      />
+      <font-awesome-icon
+        v-show="!eventsExhausted || numEventsDisplayed < events.length"
+        class="expand arrow"
+        :icon="icons.faChevronDown"
         @mousedown="showMoreEvents()"
       />
     </div>
@@ -23,7 +29,7 @@
 </template>
 
 <script>
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import Bell from 'src/js/bell';
 import Card from 'common/Card.vue';
@@ -71,7 +77,10 @@ export default {
   data() {
     return {
       cardHeight: 0,
-      downArrow: faChevronDown,
+      icons: {
+        faChevronDown,
+        faChevronUp,
+      },
       events: [],
       numEventsInitial: 4,
       numEventsToAdd: 3,
@@ -135,8 +144,13 @@ export default {
       });
     },
     showMoreEvents(num = this.numEventsToAdd) {
-      this.loadEvents(num);
+      if (!this.eventsExhausted) {
+        this.loadEvents(num);
+      }
       this.numEventsDisplayed += num;
+    },
+    collapse() {
+      this.numEventsDisplayed = this.numEventsInitial;
     },
     reset() {
       this.lastDate = this.date;
@@ -174,13 +188,14 @@ export default {
     .event-chip
       margin-top: 30px
 
-  .down-arrow
-    margin: auto
-    display: block
-    margin-top: -3px
-    font-size: 1.75em
-    margin-bottom: 5px
-    cursor: pointer
-    color: var(--color)
+  .arrow-container
+    display: flex
+    justify-content: center
+
+    .arrow
+      margin: -3px 10px 5px 10px
+      font-size: 1.75em
+      cursor: pointer
+      color: var(--color)
 
 </style>
