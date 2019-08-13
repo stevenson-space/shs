@@ -1,5 +1,5 @@
 <template>
-  <card v-show="bell.school && bell.type != 'Summer'">
+  <card v-show="bell.school && bell.type != 'Summer' && lunch">
     <div class="title">Lunch</div>
     <div v-for="(items, name) in lunch" :key="name" class="lunch">
       <div class="name">{{ name }}</div>

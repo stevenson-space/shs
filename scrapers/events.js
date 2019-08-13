@@ -1,4 +1,3 @@
-/* eslint-disable */
 const fs = require('fs');
 const superagent = require('superagent');
 const path = require('path');
