@@ -100,7 +100,7 @@
       "end": 1563557400000,
       "location": "West Building",
       "name": "Benchmark Exams for Incoming Freshmen and Transfer Students",
-      "description": "visit d125.org/benchmark for details",
+      "description": "visit  d125.org/benchmark  for details",
       "categories": [
         "Testing Day"
       ]
@@ -115,6 +115,15 @@
       "categories": [
         "Summer School"
       ]
+    },
+    {
+      "start": 1564058700000,
+      "end": 1564077000000,
+      "name": "Summer School Ends",
+      "description": "Attendance is mandatory on the last day of summer school.",
+      "categories": [
+        "Summer School"
+      ]
     }
   ],
   "7/26/2019": [
@@ -123,7 +132,7 @@
       "end": 1564162200000,
       "location": "West Building",
       "name": "Benchmark Exams for Incoming Freshmen and Transfer Students",
-      "description": "visit d125.org/benchmark for details",
+      "description": "visit  d125.org/benchmark  for details",
       "categories": [
         "Testing Day"
       ]
@@ -131,41 +140,51 @@
   ],
   "8/5/2019": [
     {
-      "allDay": true,
-      "start": 1564981200000,
+      "start": 1565010000000,
+      "end": 1565035200000,
       "name": "Senior Orientation Day",
-      "description": ""
+      "description": "Orientation sessions will be held between 8-11 a.m. and noon-3 p.m.  Visit the orientation page for details ."
     }
   ],
   "8/6/2019": [
     {
-      "allDay": true,
-      "start": 1565067600000,
+      "start": 1565096400000,
+      "end": 1565121600000,
       "name": "Junior Orientation Day",
-      "description": ""
+      "description": "Orientation sessions will be held between 8-11 a.m. and noon-3 p.m.  Visit the orientation page for details ."
     }
   ],
   "8/8/2019": [
     {
-      "allDay": true,
-      "start": 1565240400000,
+      "start": 1565269200000,
+      "end": 1565294400000,
       "name": "Sophomore Orientation Day",
-      "description": ""
+      "description": "Orientation sessions will be held between 8-11 a.m. and noon-3 p.m.  Visit the orientation page for details ."
     },
     {
-      "allDay": true,
-      "start": 1565240400000,
+      "start": 1565272800000,
+      "end": 1565280000000,
       "location": "Room 5044",
       "name": "Transfer Student Orientation Day",
-      "description": "For new Stevenson students in grades 10, 11 or 12. Transfer students are paired with a Transfer Buddy, a current Stevenson student who has volunteered to escort the transfer student around the school. The Transfer Buddy will show new students where their classrooms are located, and other important locations, such as Learning Centers, Student Support Team offices and bathrooms. Students who enroll after the school year starts will also be assigned a Transfer Buddy to help with orientation. "
+      "description": "For new Stevenson students in grades 10, 11 or 12.  Visit the orientation page for details .\n\nFor new Stevenson students in grades 10, 11 or 12. Transfer students are paired with a Transfer Buddy, a current Stevenson student who has volunteered to escort the transfer student around the school. The Transfer Buddy will show new students where their classrooms are located, and other important locations, such as Learning Centers, Student Support Team offices and bathrooms. Students who enroll after the school year starts will also be assigned a Transfer Buddy to help with orientation."
+    },
+    {
+      "start": 1565272800000,
+      "end": 1565283600000,
+      "location": "Dance Studio 2010",
+      "name": "Dance Placement Reassessments",
+      "description": "This session is for:\n * Transfer students\n* Students who added dance to their schedule after last spring's placement sessions\n* Students who already registered but believe their skill set has significantly improved over the summer\n\nThis dance placement reassessment is to accommodate transfer students and those who added dance to their schedule after last spring's placement sessions. Those already registered who believe their skill set has significantly improved over summer or since their initial assessment may also attend.\n\n Please follow this link  to complete a short Google Form if you plan to attend. If you already filled out the form when it was a \"Save the Date,\" you do not need to resubmit your information.",
+      "categories": [
+        "Fine Arts"
+      ]
     }
   ],
   "8/9/2019": [
     {
-      "allDay": true,
-      "start": 1565326800000,
+      "start": 1565357400000,
+      "end": 1565382300000,
       "name": "Freshman Orientation Day",
-      "description": "All ninth-grade students participate in Freshman Orientation Day."
+      "description": "All ninth-grade students participate in Freshman Orientation Day.\n Visit the orientation page for details .\n\n Click here for the Freshman Orientation Day packet ."
     }
   ],
   "8/12/2019": [
@@ -173,7 +192,7 @@
       "allDay": true,
       "start": 1565586000000,
       "name": "Fall Sports Begin",
-      "description": "",
+      "description": "Check individual sport pages for tryout information, including cheerleading, Patriettes and hockey.",
       "categories": [
         "Athletics"
       ]
@@ -196,10 +215,11 @@
       ]
     },
     {
-      "start": 1565827200000,
-      "location": "TBD",
+      "start": 1565825400000,
+      "end": 1565830800000,
+      "location": "Recital Hall (PAC)",
       "name": "Transfer Parent Evening",
-      "description": "Parents of transfer students are invited to Transfer Parent Evening where they will learn all about Stevenson High School, from academics, to athletics, to resources. Bring your questions. If the student enrolls after this date, always feel free to contact the student's counselor with any questions. "
+      "description": "Open to parents of transfer students in grades 10-12.\n\nParents of transfer students in grades 10-12 are invited to Transfer Parent Evening where they will learn all about Stevenson High School, from academics, to athletics, to resources. Bring your questions. If the student enrolls after this date, always feel free to contact the student's counselor with any questions."
     }
   ],
   "8/15/2019": [
@@ -209,6 +229,16 @@
       "location": "Performing Arts Center",
       "name": "Musical Auditions Clinic",
       "description": "",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "start": 1565901000000,
+      "end": 1565904600000,
+      "location": "Performing Arts Center",
+      "name": "Musical Auditions Vocal Workshop",
+      "description": "This workshop will help students in their vocal preparation for the Aug. 19 auditions.\n\n Visit the Theatre page  for audition details",
       "categories": [
         "Fine Arts"
       ]
@@ -227,8 +257,20 @@
     },
     {
       "start": 1566000000000,
+      "end": 1566007200000,
+      "location": "Wood Commons (West Building)",
       "name": "Freshman Mixer",
-      "description": ""
+      "description": "Free lock-in event for ninth-graders. Drop-off and pick-up will only be available in parking lot E, by the Sports Center entrance. Use the Port Clinton Road entrance.\n\nAll ninth-grade students are invited to the annual Freshman Mixer on Friday, Aug. 16, sponsored by the Patriot Parent Association and Stevenson's Student Activities Division. The lock-in event runs from 7-9 p.m. The evening will feature a DJ, snacks and prizes. Admission is free for freshmen who show their Stevenson ID. Drop-off and pick-up will only be available in parking lot E, by the Sports Center entrance. Use the Port Clinton Road entrance for easiest access. Want to volunteer at the Freshman Mixer? Contact Yulee Lee ( yuleelee@gmail.com ) or Robin Babbo ( robinbabbo@gmail.com )."
+    },
+    {
+      "start": 1565987400000,
+      "end": 1565992800000,
+      "location": "Performing Arts Center",
+      "name": "Musical Auditions Dance Workshop",
+      "description": "Learn important moves and techniques that will be part of the dance audition on Tuesday, Aug. 20.\n\n Visit the Theatre page  for audition details",
+      "categories": [
+        "Fine Arts"
+      ]
     }
   ],
   "8/19/2019": [
@@ -287,6 +329,12 @@
       "categories": [
         "Fine Arts"
       ]
+    },
+    {
+      "start": 1566432000000,
+      "end": 1566442800000,
+      "name": "Parent Open House Night #1",
+      "description": "The first of two parent open house nights, this evening is intended for families whose student has a last name beginning with the letters A-L. However, anyone may attend either open house night.\n\n2019 Open House Nights  \n  \n    Wednesday, Aug. 21 / Last Names A-L / 7-9:30 p.m.\n  Thursday, Aug. 29 / Last Names M-Z / 7-9:30 p.m.  \n  \n    Have a schedule conflict on one of the nights? No problem! Attend on the other date\n    \n  Each year, Stevenson High School holds Open House evenings for parents. These evenings provide faculty and staff with the opportunity to meet parents of SHS students, inform them about the curriculum in the courses their children are taking, and showcasing many of the resources offered to students and families.\n  \n  During Open House,  parents will visit each of their student's classrooms and meet their child’s teachers . All parents will receive a letter from the school that includes a blank schedule for the evening, listing the times for each class period. Parents should have their students fill in his/her courses, room numbers, and teachers’ names prior to attending Open House. Parents may also choose to print their student’s schedule   through Infinite Campus . Parents should bring this schedule with them. \n  \n     Parents of freshmen and transfer students  also will have the opportunity to hear from their counselor from 6:15-6:45 p.m. Counselors will discuss their roles and answer questions. Each student’s counselor is listed on the schedule distributed during orientation in August. The counselor also may be found through Infinite Campus. Counselor locations are listed below.\n                                     West Building                                     East Building                             \n                          Amy Grove                 Room 2900                  Griffin Dwyer                  Room 7052           \n                          Mary Jones                 Room 2818                  Ray Tad-y                 Room 7054           \n                          Sarah Kellogg                 Room 2628                  Patty Martin                 Room 7058           \n                          Megan Kelly                 Room 2630                   Lisa Scanio                 Room 7060           \n                          Irina Kogan                 Room 2624                  Carol Seeger                 Room 7062           \n                          Lindsay Perkins                 Room 2622"
     }
   ],
   "8/22/2019": [
@@ -294,7 +342,7 @@
       "allDay": true,
       "start": 1566450000000,
       "name": "Late Arrival",
-      "description": "The morning after a parent open house night is always a late-arrival day. Classes begin at 10:30 a.m. Bus routes start at 9:20. ",
+      "description": "The morning after a parent open house night is always a late-arrival day. Classes begin at 10:30 a.m. Bus routes start at 9:20.\n ",
       "categories": [
         "Late Arrival",
         "Early Dismissal"
@@ -305,6 +353,16 @@
       "start": 1566450000000,
       "name": "Musical Callbacks",
       "description": "",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "start": 1566473400000,
+      "end": 1566489600000,
+      "location": "Strawberry Fields",
+      "name": "Band Fundraiser",
+      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
       "categories": [
         "Fine Arts"
       ]
@@ -336,7 +394,7 @@
       "start": 1567123200000,
       "end": 1567134000000,
       "name": "Parent Open House Night #2",
-      "description": "The second of two parent open house nights, this evening is intended for families whose student has a last name beginning with the letters M-Z. However, anyone may attend either open house night."
+      "description": "The second of two parent open house nights, this evening is intended for families whose student has a last name beginning with the letters M-Z. However, anyone may attend either open house night.\n\n2019 Open House Nights  \n  \n    Wednesday, Aug. 21 / Last Names A-L / 7-9:30 p.m.\n  Thursday, Aug. 29 / Last Names M-Z / 7-9:30 p.m.  \n  \n    Have a schedule conflict on one of the nights? No problem! Attend on the other date\n    \n  Each year, Stevenson High School holds Open House evenings for parents. These evenings provide faculty and staff with the opportunity to meet parents of SHS students, inform them about the curriculum in the courses their children are taking, and showcasing many of the resources offered to students and families.\n  \n  During Open House,  parents will visit each of their student's classrooms and meet their child’s teachers . All parents will receive a letter from the school that includes a blank schedule for the evening, listing the times for each class period. Parents should have their students fill in his/her courses, room numbers, and teachers’ names prior to attending Open House. Parents may also choose to print their student’s schedule   through Infinite Campus . Parents should bring this schedule with them. \n  \n     Parents of freshmen and transfer students  also will have the opportunity to hear from their counselor from 6:15-6:45 p.m. Counselors will discuss their roles and answer questions. Each student’s counselor is listed on the schedule distributed during orientation in August. The counselor also may be found through Infinite Campus. Counselor locations are listed below.\n                                     West Building                                     East Building                             \n                          Amy Grove                 Room 2900                  Griffin Dwyer                  Room 7052           \n                          Mary Jones                 Room 2818                  Ray Tad-y                 Room 7054           \n                          Sarah Kellogg                 Room 2628                  Patty Martin                 Room 7058           \n                          Megan Kelly                 Room 2630                   Lisa Scanio                 Room 7060           \n                          Irina Kogan                 Room 2624                  Carol Seeger                 Room 7062           \n                          Lindsay Perkins                 Room 2622"
     }
   ],
   "8/30/2019": [
@@ -347,6 +405,16 @@
       "description": "The morning after a parent open house night is always a late-arrival day. Classes begin at 10:30 a.m. Bus routes start at 9:20.",
       "categories": [
         "Late Arrival"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1567141200000,
+      "location": "Panera - Riverwoods",
+      "name": "String Parents Association Fundraiser",
+      "description": "The fundraiser runs from open to close.\n\n Bring this flyer  or show an electronic version to the cashier when you place an order, and Panera will donate a portion of the proceeds from your purchase.\n\nPanera is located at 2001 Milwaukee Ave. in Riverwoods.",
+      "categories": [
+        "Fine Arts"
       ]
     }
   ],
@@ -377,7 +445,7 @@
       "allDay": true,
       "start": 1567832400000,
       "name": "Streetfest",
-      "description": "The annual Streetfest is a fundraiser for local charities.",
+      "description": "The annual Streetfest is a fundraiser for local charities.\n\nStreetfest 2019 will benefit three local charities: KIDSS for Kids, Kan-Win, and Turning The Page. The event theme is \"Making Magic.\"\n\n ",
       "categories": [
         "Clubs and Activities"
       ]
@@ -441,6 +509,16 @@
       "categories": [
         "Fine Arts"
       ]
+    },
+    {
+      "start": 1568408400000,
+      "end": 1568430000000,
+      "location": "Culver's (BG and Lincolnshire)",
+      "name": "Band Fundraiser",
+      "description": "Culver's will donate 25% of sales to the SHS band program. Mention \"SHS Band\" when ordering.\n\nCulver's of Lincolnshire: 405 Milwaukee Ave.\n\nCulver's of Buffalo Grove: 450 McHenry Rd.",
+      "categories": [
+        "Fine Arts"
+      ]
     }
   ],
   "9/14/2019": [
@@ -490,8 +568,9 @@
     {
       "start": 1568851200000,
       "end": 1568858400000,
+      "location": "West Auditorium",
       "name": "CPN Presents: LIKE Movie and Discussion",
-      "description": "LIKE is  a documentary exploring the impact of social media  on our lives and the effects of technology on the brain. The film's goal is to help people, especially students, take control of their social media use, create balance in their lives, and become more caring toward one another. Event sponsored by the Community Parent Network, a program of the Stevenson Foundation.",
+      "description": "Join the Community Parent Network to watch and discuss LIKE, a documentary that explores the impact of social media on our lives.\n\n \n\nLIKE is  a documentary exploring the impact of social media  on our lives and the effects of technology on the brain. The film's goal is to help people, especially students, take control of their social media use, create balance in their lives, and become more caring toward one another. Event sponsored by the Community Parent Network, a program of the Stevenson Foundation. Free admission.",
       "categories": [
         "Foundation Events"
       ]
@@ -505,6 +584,17 @@
       "description": "",
       "categories": [
         "Clubs and Activities"
+      ]
+    },
+    {
+      "start": 1568937600000,
+      "end": 1568941200000,
+      "location": "Visiting Artist Gallery (West Building)",
+      "name": "ARTalk with Jill King",
+      "description": "Open to the public\n\nVisiting Artist of the Month Jill King will discuss her work and her career during the first ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.jillkingstudio.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "categories": [
+        "Foundation Events",
+        "Fine Arts"
       ]
     }
   ],
@@ -644,8 +734,9 @@
     {
       "start": 1571356800000,
       "end": 1571364000000,
+      "location": "Performing Arts Center",
       "name": "CPN Presents: An Evening With Michele Borba",
-      "description": "The Community Parent Network, a program of the Stevenson Foundation, sponsors \"An Evening With \"Unselfie\" Author Michele Borba.\" Parents are grappling with technology- and digitally-driven challenges that no previous generation has faced. Borba will offer proven strategies to help parents raise successful, happy, compassionate and socially responsible children in a hyper-competitive, plugged-in world.",
+      "description": "Dr. Michele Borba, author of \"Unselfie,\" will examine how to raise caring, successful kids in a plugged-in, trophy-driven world. Free.\n\nThe  Community Parent Network , a program of the Stevenson Foundation, sponsors \"An Evening With \"Unselfie\" Author Michele Borba.\" Parents are grappling with technology- and digitally-driven challenges that no previous generation has faced. Borba will offer proven strategies to help parents raise successful, happy, compassionate and socially responsible children in a hyper-competitive society.",
       "categories": [
         "Foundation Events"
       ]
@@ -767,6 +858,17 @@
       "description": "Classes begin at 10:30 a.m. Buses start their routes at 9:20.",
       "categories": [
         "Late Arrival"
+      ]
+    },
+    {
+      "start": 1573779600000,
+      "end": 1573783200000,
+      "location": "Visiting Artist Gallery (West Building)",
+      "name": "ARTalk with Bert Leveille",
+      "description": "Open to the public\n\nVisiting Artist of the Month Bert Leveille will discuss her work and her career during the third ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.bertleveille.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "categories": [
+        "Foundation Events",
+        "Fine Arts"
       ]
     }
   ],
@@ -1732,6 +1834,17 @@
       "categories": [
         "Late Arrival"
       ]
+    },
+    {
+      "start": 1584057600000,
+      "end": 1584061200000,
+      "location": "Visiting Artist Gallery (West Building)",
+      "name": "ARTalk with Donna Hickman",
+      "description": "Open to the public\n\nVisiting Artist of the Month Donna Hickman, a former Stevenson art teacher, will discuss her work and her career during the fifth ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.donnastewarthickman.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "categories": [
+        "Foundation Events",
+        "Fine Arts"
+      ]
     }
   ],
   "3/13/2020": [
@@ -2422,7 +2535,136 @@
       "allDay": true,
       "start": 1590123600000,
       "name": "Class of 2020 Graduation",
-      "description": "\n"
+      "description": ""
+    }
+  ],
+  "7/28/2019": [
+    {
+      "start": 1564290000000,
+      "end": 1564372800000,
+      "name": "Last Day for Online Registration",
+      "description": "After Sunday, only in-person registration will be available.\n\nOnline registration for the 2019-20 school year ends the evening of Sunday, July 28. After that date, parents must register in Room 2426 between 8 a,m. and 3 p.m. Monday through Friday. Parking in Lot B is recommended for easiest access to the registration office, which is located on the second floor of the West Building.\n\n See our registration page for information on residency documents and medical forms .\n\nOnline registration for fall athletics will still be available after July 28.  Use this link for athletic registration . Athletes should register before Aug. 7. Tryouts and practices for fall sports begin Monday, Aug. 12."
+    }
+  ],
+  "7/29/2019": [
+    {
+      "allDay": true,
+      "start": 1564376400000,
+      "name": "Summer Band Rehearsals Begin",
+      "description": "",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "8/17/2019": [
+    {
+      "start": 1566054000000,
+      "end": 1566072000000,
+      "location": "Sunset Foods",
+      "name": "Football Team Corn Roast Fundraiser",
+      "description": "Enjoy fresh roasted corn from Didier Farms while supporting Patriot football.\n\nThe football program will hold its annual corn roast fundraiser from 10 a.m. to 3 p.m. Saturday and Sunday at Sunset Foods, 4190 Illinois Route 83 (at the corner of 83 and Aptakisic Road) in Long Grove. Fresh roasted corn from Didier Farms will be available.",
+      "categories": [
+        "Athletics"
+      ]
+    }
+  ],
+  "8/18/2019": [
+    {
+      "start": 1566140400000,
+      "end": 1566158400000,
+      "location": "Sunset Foods",
+      "name": "Football Team Corn Roast Fundraiser",
+      "description": "Enjoy fresh roasted corn from Didier Farms while supporting Patriot football.\n\nThe football program will hold its annual corn roast fundraiser from 10 a.m. to 3 p.m. Saturday and Sunday at Sunset Foods, 4190 Illinois Route 83 (at the corner of 83 and Aptakisic Road) in Long Grove. Fresh roasted corn from Didier Farms will be available.",
+      "categories": [
+        "Athletics"
+      ]
+    }
+  ],
+  "9/6/2019": [
+    {
+      "start": 1567814400000,
+      "end": 1567816200000,
+      "location": "Stadium",
+      "name": "Night of Champions",
+      "description": "The Stevenson High School Athletic Department will recognize team and individual division, conference, Lake County, regional, sectional and state champions from the 2018-19 school year at its ninth annual Night of Champions event prior to the home football game against Neuqua Valley on Friday, Sept. 6.\n\nAthletes on the teams listed below are asked to check in with their ID at the east or west admission gates to receive complimentary admission to the game. The schedule for the evening is as follows:\n\n4:30 p.m. - Gates open for admission\n5 p.m. - JV football game vs. Neuqua Valley\n6:45 p.m. - Organization of procession for teams/individuals in the southeast corner of the Stadium. Honored athletes will receive their \"Night of Champions\" T-shirt at this time.\n7 p.m. - Night of Champions procession\n7:30 p.m. - Varsity football game vs. Neuqua Valley\n\nThe following teams and individuals will be honored:\n\n Allied Basketball\n IHSA third place State\n\n Boys Basketball\n NSC champions, IHSA Regional Champions, IHSA Sectional Champions\n\n Boys Fencing\n Overall Great Lakes Conference Champions: Sabre, Illinois Champions\\; Nikita Vasilyev - Individual Champion\n\n Boys Golf\n NSC Champions, IHSA second place State\\; Conan Pan - Individual Champion\n\n Boys Swimming and Diving\n NSC Champions, Lake County Champions, IHSA sectional champions\\; Individual Champions: Nathan Gates, Jake Kim, Richard Lee, Beno Maya, Ethan Ross, Max Ryaguzov, Joseph Song, Joshua Song, Topher Stensby, Foster Swanson, Jack White, Ari Zaritsky, Jack Zhang\n\n Boys Tennis\n NSC Champions, IHSA sectional champions, IHSA third Place State\\; Individual Champions: Payton Adkisson, Andy Dong, Kevin Fei, Thomas Gong, Eric Perkowski, Arjun Sheelvanth, Nicholas Stec, Daniel Tulchinskiy, Gabriel Visotsky, Aswath Viswanathan\n\n Boys Track and Field\n NSC Champions\\; Individual Champions: Anand Batbaatar, Jimmy Davis, Shane Johnson, Maema Njongmeta, Jahleel Perrin, David Smolensky, Jordan Vincent, Chris Xie\n\n Boys Volleyball\n NSC Champions\n\n Boys Water Polo\n NSC Champions, IHSA Sectional Champions\n\n Boys Wrestling\n Individual Champions: Tommy Frezza, Max Gomez\n\n Cheerleading\n NSC champions, IHSA Sectional Champions, IHSA third place State\n\n Girls Badminton\n NSC Champions, IHSA Sectional Champions, IHSA second place State\\; Individual Champions: Jyotsna Harikrishna, Emily Hu, Benna Li, Veronica Liu, Kaitlyn Lu, Roshini Merneedi, Giuli Nagai, Shibani Ram, Thivya Sivarajah, Megan Wei, Jennifer Yang, Jasmine Zhang, Julie Zhu\n\n Girls Cross Country \nIndividual Champion: Natalie Sorenson\n\n Girls Fencing\n Great Lakes Conference Champions, Illinois Champions\\; Individual Champions: Geeta Jh",
+      "categories": [
+        "Athletics"
+      ]
+    }
+  ],
+  "9/9/2019": [
+    {
+      "start": 1568073600000,
+      "end": 1568079000000,
+      "location": "Wauconda High School Auditorium",
+      "name": "Collegiate Athlete Night",
+      "description": "Student-athletes of all grades who aspire to play college sports, and their parents and guardians, are invited to this free event.\n\nThe evening will provide insight into recruiting and academic requirements. Wauconda High School is located at 555 N. Main St., Wauconda, IL 60084.  Google Map ",
+      "categories": [
+        "Athletics"
+      ]
+    }
+  ],
+  "9/27/2019": [
+    {
+      "start": 1569628800000,
+      "end": 1569636000000,
+      "location": "Performing Arts Center",
+      "name": "Foundation Event: Catapult",
+      "description": "An America's Got Talent finalist from Season 8, Catapult is a magical production that features incredible dancers who work behind a screen to create shadow silhouettes of shapes from the world around us. Be amazed as you watch their bodies transform into a mountain, an elephant, a dragon, even a helicopter! You'll never figure out how they do it, and you won't know what they will create next -- you'll be surprised and delighted again and again.\n\nTickets are $20 per person.  Click here to purchase tickets .\n\nAll tickets will be waiting at will-call the evening of the performance.\nSeating is assigned on a first-come, first-serve basis.\n\n  \n\nGroups of ten (10) or more are eligible to receive a 10% discount. \nPlease call Ashley Bunzol at  847-415-4472  to learn more.\n\n ",
+      "categories": [
+        "Foundation Events"
+      ]
+    }
+  ],
+  "10/10/2019": [
+    {
+      "start": 1570752000000,
+      "end": 1570755600000,
+      "location": "Visiting Artist Gallery (West Building)",
+      "name": "ARTalk with Carissa Meier",
+      "description": "Open to the public\n\nVisiting Artist of the Month Carissa Meier will discuss her work and her career during the second ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.carissameier.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "categories": [
+        "Foundation Events",
+        "Fine Arts"
+      ]
+    }
+  ],
+  "10/27/2019": [
+    {
+      "allDay": true,
+      "start": 1572152400000,
+      "location": "West Auditorium",
+      "name": "Children's Play",
+      "description": "",
+      "categories": [
+        "Foundation Events"
+      ]
+    }
+  ],
+  "1/25/2020": [
+    {
+      "start": 1580002200000,
+      "end": 1580009400000,
+      "location": "Performing Arts Center",
+      "name": "Foundation Event: Happy Together",
+      "description": "Married musical stars Michael and Angela Ingersoll hilariously share the spotlight singing oldies but goodies. He's the beloved star from  Jersey Boys  (original San Francisco, Los Angeles, and Chicago casts) and the PBS retro-rock group Under the Streetlamp. She's the Emmy nominee known for her astonishing portrayals of Judy Garland ( End of the Rainbow \\;  Get Happy  on PBS). Enjoy Chicago Tribune's \"Dynamic Power Couple\" for shenanigans and signature songs including \"Save the Last Dance For Me,\" \"Over the Rainbow,\" and \"I've Had the Time of My Life.\"\n\n ",
+      "categories": [
+        "Foundation Events"
+      ]
+    }
+  ],
+  "4/30/2020": [
+    {
+      "start": 1588291200000,
+      "end": 1588294800000,
+      "location": "Visiting Artist Gallery (West Building)",
+      "name": "ARTalk with Christine Rojek",
+      "description": "Open to the public\n\nVisiting Artist of the Month Christine Rojek will discuss her work and her career during the sixth and final ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.christinerojek.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "categories": [
+        "Foundation Events",
+        "Fine Arts"
+      ]
     }
   ]
 }

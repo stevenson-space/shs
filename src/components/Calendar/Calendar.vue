@@ -313,6 +313,7 @@ export default {
   .description
     margin-top: 15px
     font-size: .9em
+    white-space: pre-line
     // max-height: 250px
     // overflow: auto
     // -webkit-overflow-scrolling: touch;

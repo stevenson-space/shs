@@ -23,8 +23,11 @@ async function main() {
   const combinedEvents = combine(oldEvents, orderedEvents);
   const json = JSON.stringify(combinedEvents, null, 2);
 
+  console.log('Done updating events. Saving...\n');
+
   fs.writeFile(eventsFilepath, json, (err) => {
     if (err) console.log(err);
+    else console.log('\nEvents saved.\n')
   });
 
   findSpecialDays(combinedEvents);
@@ -48,7 +51,6 @@ function parseICS(ics) {
   const truncatedICS = ics.substring(ics.indexOf(eventStart) + eventStart.length, ics.lastIndexOf(eventEnd))
     .replace(/\r\n/g, '\n') // normalize new lines
     .replace(/\\,/g, ',') // unescape commas
-    .replace(/\\n/g, ''); // remove escaped new lines
 
   const eventStrings = truncatedICS.split(`\n${eventEnd}\n${eventStart}\n`);
   const events = eventStrings.map((eventString) => {
@@ -135,7 +137,11 @@ function processText(event) {
   const processedEvent = removeProperties(event, ['ORGANIZER', 'LOCATION', 'SUMMARY', 'DESCRIPTION', 'CATEGORIES']);
   processedEvent.location = event.LOCATION;
   processedEvent.name = event.SUMMARY;
-  processedEvent.description = event.DESCRIPTION;
+  processedEvent.description = event.DESCRIPTION
+    .replace(/\\n/g, '\n') // replace escaped newlines with real ones
+    .replace(/^\n+/, '') // remove any newlines at the beginning
+    .replace(/\n+$/, '') // remove any newlines at the end
+    .replace(/\n{3,}/g, '\n\n'); // replace any streches of newlines >= 3 with 2 newlines
   if (event.CATEGORIES) processedEvent.categories = Array.from(new Set(event.CATEGORIES.split(','))); // remove duplicates
   return processedEvent;
 }
@@ -256,7 +262,8 @@ function findSpecialDays(events) {
     });
   }
 
-  console.log('Paste the following date arrays into schedules.json under the appropriate schedules:\n');
+  // TODO: Automate updating date arrays for schedules, checking existing dates first
+  console.log('If necessary, paste the following date arrays into schedules.json under the appropriate schedules:\n');
   for (const [scheduleType, dates] of Object.entries(scheduleDates)) {
     const combinedDates = combineDaySequences(dates);
     console.log(`${scheduleType}: ["${combinedDates.join('", "')}"]`);
