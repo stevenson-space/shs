@@ -25,45 +25,16 @@
       @event-click="displayedEvent = $event"
     />
 
-    <popup :show="!!displayedEvent.name" @close="displayedEvent = {}">
-      <div class="event-details">
-        <div class="date">{{ formatDate(displayedEvent.start) }}</div>
-
-        <div class="title">{{ displayedEvent.name }}</div>
-
-        <div class="time">
-          <font-awesome-icon class="icon" :icon="icons.faClock" fixed-width />&nbsp;
-
-          <span v-if="displayedEvent.allDay">All Day</span>
-
-          <span v-else-if="displayedEvent.start && displayedEvent.end">
-            {{ formatTime(displayedEvent.start) }}&nbsp; – &nbsp;{{ formatTime(displayedEvent.end) }}
-          </span>
-
-          <span v-else>{{ formatTime(displayedEvent.start) }}</span>
-        </div>
-
-        <div v-show="displayedEvent.location" class="location">
-          <font-awesome-icon class="icon" :icon="icons.faMapMarkerAlt" fixed-width />
-          &nbsp;{{ displayedEvent.location }}
-        </div>
-
-        <div class="description">{{ displayedEvent.description }}</div>
-      </div>
-    </popup>
+    <event-popup :event="displayedEvent" :show="!!displayedEvent.name" @close="displayedEvent = {}" />
   </div>
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { faClock } from '@fortawesome/free-regular-svg-icons';
-
 import Bell from 'src/js/bell';
 import allEvents from 'src/data/events.json';
-import Popup from 'common/Popup.vue';
 import CalendarMain from './CalendarMain.vue';
 import CalendarMobile from './CalendarMobile.vue';
+import EventPopup from './EventPopup.vue';
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
   'September', 'October', 'November', 'December'];
@@ -72,15 +43,10 @@ export default {
   components: {
     CalendarMain,
     CalendarMobile,
-    Popup,
-    FontAwesomeIcon,
+    EventPopup,
   },
   data() {
     return {
-      icons: {
-        faMapMarkerAlt,
-        faClock,
-      },
       today: new Date(),
       month: 0,
       year: 0,
@@ -250,12 +216,6 @@ export default {
     onSwipe(e) {
       this[e.deltaX < 0 ? 'nextMonth' : 'previousMonth']();
     },
-    formatTime(ms) {
-      return (new Date(ms)).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-    },
-    formatDate(ms) {
-      return (new Date(ms)).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-    },
   },
 };
 </script>
@@ -272,51 +232,5 @@ export default {
     display: none
   +desktop
     display: none
-
-.event-details
-  max-width: 500px
-  padding: 20px 30px
-  box-sizing: border-box
-  user-select: text
-  width: calc(100vw - 40px)
-  max-height: calc(100vh - 100px)
-  overflow: auto
-  -webkit-overflow-scrolling: touch;
-
-  .date
-    // text-align: right
-    font-size: .9em
-    font-weight: bold
-    color: var(--color)
-
-  .title
-    font-size: 1.4em
-    // text-align: center
-    font-weight: bold
-    color: #333
-    margin-top: 3px
-
-  .time
-    // text-align: center
-    font-size: 1.05em
-    // font-weight: bold
-    margin-top: 15px
-
-  .location
-    // text-align: center
-    margin-top: 20px
-
-  .icon
-    color: var(--color)
-    font-size: 1.25em
-
-  .description
-    margin-top: 15px
-    font-size: .9em
-    white-space: pre-line
-    // max-height: 250px
-    // overflow: auto
-    // -webkit-overflow-scrolling: touch;
-
 
 </style>
