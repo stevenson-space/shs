@@ -7,10 +7,19 @@ const oldLunch = require('../src/data/lunch.json');
 
 const today = new Date();
 
+function exitWithError(errMessage) {
+  console.log(errMessage);
+  process.exit(1);
+}
+function exitWithErrorIf(condition, errMessage) {
+  if (condition) exitWithError(errMessage);
+}
+
 // calculates the number of days since epoch time
 const toDays = date => parseInt((date.getTime() / 1000 / 60 - date.getTimezoneOffset()) / 60 / 24);
 
-axios.get('https://www.d125.org/students/food-servicelunch-menu/latest-menu').then(response => {
+const url = 'https://www.d125.org/students/food-servicelunch-menu/latest-men'
+axios.get(url).then(response => {
   const lunchObject = {};
   let numLunches = 0;
 
@@ -24,6 +33,10 @@ axios.get('https://www.d125.org/students/food-servicelunch-menu/latest-menu').th
       let dateText = $(this).children('header').text().trim();
       dateText = dateText.split('-')[0].trim(); // get rid of any other text ('Monday, Aug 12 - First Day of School' -> 'Monday, Aug 12')
       dateText = dateText.slice(dateText.indexOf(',') + 1).trim() + ' ' + today.getFullYear(); // remove day of week and add year ('Monday, Aug 12' -> 'Aug 12 2019')
+
+      const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+      exitWithErrorIf(!dateText.match(new RegExp(`^${months.join('|')}\\s+\\d{1,2}\\s+\\d{4}`, 'i')), `"${dateText}" failed to pass date check`);
+      
       const date = new Date(dateText);
 
 
@@ -102,4 +115,4 @@ axios.get('https://www.d125.org/students/food-servicelunch-menu/latest-menu').th
       + `\n - ${exampleDates.join('\n - ')}`);
     console.log('or any other date that is obtained by adding a multiple of 28 days to the ones above.\n');
   }
-});
+}, err => exitWithError(`Request to "${url}" failed because:\n${err}`));
