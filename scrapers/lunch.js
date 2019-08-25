@@ -18,7 +18,7 @@ function exitWithErrorIf(condition, errMessage) {
 // calculates the number of days since epoch time
 const toDays = date => parseInt((date.getTime() / 1000 / 60 - date.getTimezoneOffset()) / 60 / 24);
 
-const url = 'https://www.d125.org/students/food-servicelunch-menu/latest-men'
+const url = 'https://www.d125.org/students/food-servicelunch-menu/latest-menu'
 axios.get(url).then(response => {
   const lunchObject = {};
   let numLunches = 0;
