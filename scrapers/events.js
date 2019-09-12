@@ -5,11 +5,20 @@ const path = require("path");
 
 
 const eventsFilepath = path.resolve(__dirname, "../src/data/events.json");
+const calendarURL = 'https://www.d125.org/data/calendar/icalcache/feed_AF5167036E214C99B84D252995DB9199.ics';
+
+function exitWithError(errMessage) {
+  console.log(errMessage);
+  process.exit(1);
+}
+function exitWithErrorIf(condition, errMessage) {
+  if (condition) exitWithError(errMessage);
+}
 
 
 superagent
   .get(
-    'https://www.d125.org/data/calendar/icalcache/feed_AF5167036E214C99B84D252995DB9199.ics',
+    calendarURL,
   )
   .then((res) => {
     const calendar = new ical.Component(ical.parse(res.text));
@@ -50,8 +59,11 @@ superagent
       processedEvents[key].push(processedEvent);
     });
 
+    exitWithErrorIf(Object.keys(processedEvents).length == 0, "Fetched 0 events");
+
     fs.writeFile(eventsFilepath, JSON.stringify(processedEvents, null, 2), (err) => {
       if (err) console.log(err);
       else console.log('\nEvents saved.\n');
     });
-  });
+  })
+  .catch(err => exitWithError(`Request to "${calendarURL}" failed because:\n${err}`))
