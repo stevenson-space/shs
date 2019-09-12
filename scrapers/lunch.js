@@ -54,15 +54,19 @@ axios.get(url).then(response => {
 
       const lunchesText = $(this).children('.fsElementContent').text().trim();
 
-      const lunches = {};
+      // sometimes the website just displays a blank day without any lunch (on no school days for example)
+      // in which case, we don't want to do anything
+      if (lunchesText) {
+        const lunches = {};
 
-      lunchesText.split('\n').forEach(lunchItem => {
-        const [lunchType, lunch] = lunchItem.split(':');
-        lunches[lunchType] = lunch.split(',').map(x => x.trim());
-      });
+        lunchesText.split('\n').forEach(lunchItem => {
+          const [lunchType, lunch] = lunchItem.split(':');
+          lunches[lunchType] = lunch.split(',').map(x => x.trim());
+        });
 
-      // set the respective date on cycle of 28 days to the lunch
-      lunchObject[String(toDays(date) % 28)] = lunches;
+        // set the respective date on cycle of 28 days to the lunch
+        lunchObject[String(toDays(date) % 28)] = lunches;
+      }
     }
   });
 
