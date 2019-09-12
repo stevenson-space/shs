@@ -173,7 +173,7 @@ export default {
       const categories = new Set(['All']); // using Set to prevent duplicates
       const combinedEvents = this.events.reduce((combined, dayEvents) => combined.concat(dayEvents), []);
       combinedEvents.forEach((event) => {
-        if (event.categories) {
+        if (event.categories != null) {
           event.categories.forEach((category) => {
             categories.add(category);
           });
@@ -188,7 +188,7 @@ export default {
 
       return this.events.map(
         dayEvents => dayEvents.filter(
-          event => event.categories && event.categories.includes(this.filter),
+          event => event.categories != null && event.categories.includes(this.filter),
         ),
       );
     },

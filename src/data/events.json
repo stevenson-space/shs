@@ -1,244 +1,34 @@
 {
-  "5/17/2019": [
-    {
-      "start": 1558099800000,
-      "end": 1558121820000,
-      "name": "PM Assembly Schedule/Spring Fling",
-      "description": "\n"
-    }
-  ],
-  "5/20/2019": [
-    {
-      "allDay": true,
-      "start": 1558328400000,
-      "name": "End of Six-Week Grading Period",
-      "description": ""
-    }
-  ],
-  "5/21/2019": [
-    {
-      "allDay": true,
-      "start": 1558414800000,
-      "name": "Final Exams - Day 1",
-      "description": ""
-    }
-  ],
-  "5/22/2019": [
-    {
-      "allDay": true,
-      "start": 1558501200000,
-      "name": "Final Exams - Day 2",
-      "description": ""
-    }
-  ],
-  "5/23/2019": [
-    {
-      "allDay": true,
-      "start": 1558587600000,
-      "name": "Final Exams - Day 3",
-      "description": ""
-    },
-    {
-      "start": 1558632600000,
-      "end": 1558656000000,
-      "location": "Navy Pier, Chicago",
-      "name": "Senior Class Party",
-      "description": ""
-    }
-  ],
-  "5/24/2019": [
-    {
-      "start": 1558702800000,
-      "end": 1558717200000,
-      "name": "Graduation Rehearsal",
-      "description": ""
-    },
-    {
-      "start": 1558735200000,
-      "end": 1558742400000,
-      "location": "Sears Centre Arena, Hoffman Estates",
-      "name": "Graduation Ceremony",
-      "description": ""
-    }
-  ],
-  "6/4/2019": [
-    {
-      "start": 1559652300000,
-      "end": 1559670600000,
-      "name": "Summer School Semester 1 Begins",
-      "description": "\n",
-      "categories": [
-        "Summer School"
-      ]
-    }
-  ],
-  "6/27/2019": [
-    {
-      "start": 1561639500000,
-      "end": 1561657800000,
-      "name": "Summer School Semester 1 Ends",
-      "description": "",
-      "categories": [
-        "Summer School"
-      ]
-    }
-  ],
-  "7/1/2019": [
-    {
-      "start": 1561985100000,
-      "end": 1562003400000,
-      "name": "Summer School Semester 2 Begins",
-      "description": "",
-      "categories": [
-        "Summer School"
-      ]
-    }
-  ],
-  "7/19/2019": [
-    {
-      "start": 1563541200000,
-      "end": 1563557400000,
-      "location": "West Building",
-      "name": "Benchmark Exams for Incoming Freshmen and Transfer Students",
-      "description": "visit  d125.org/benchmark  for details",
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "7/25/2019": [
-    {
-      "start": 1564058700000,
-      "end": 1564077000000,
-      "name": "Summer School Semester 2 Ends",
-      "description": "",
-      "categories": [
-        "Summer School"
-      ]
-    },
-    {
-      "start": 1564058700000,
-      "end": 1564077000000,
-      "name": "Summer School Ends",
-      "description": "Attendance is mandatory on the last day of summer school.",
-      "categories": [
-        "Summer School"
-      ]
-    }
-  ],
-  "7/26/2019": [
-    {
-      "start": 1564146000000,
-      "end": 1564162200000,
-      "location": "West Building",
-      "name": "Benchmark Exams for Incoming Freshmen and Transfer Students",
-      "description": "visit  d125.org/benchmark  for details",
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "8/5/2019": [
-    {
-      "start": 1565010000000,
-      "end": 1565035200000,
-      "name": "Senior Orientation Day",
-      "description": "Orientation sessions will be held between 8-11 a.m. and noon-3 p.m.  Visit the orientation page for details ."
-    }
-  ],
-  "8/6/2019": [
-    {
-      "start": 1565096400000,
-      "end": 1565121600000,
-      "name": "Junior Orientation Day",
-      "description": "Orientation sessions will be held between 8-11 a.m. and noon-3 p.m.  Visit the orientation page for details ."
-    }
-  ],
-  "8/8/2019": [
-    {
-      "start": 1565269200000,
-      "end": 1565294400000,
-      "name": "Sophomore Orientation Day",
-      "description": "Orientation sessions will be held between 8-11 a.m. and noon-3 p.m.  Visit the orientation page for details ."
-    },
-    {
-      "start": 1565272800000,
-      "end": 1565280000000,
-      "location": "Room 5044",
-      "name": "Transfer Student Orientation Day",
-      "description": "For new Stevenson students in grades 10, 11 or 12.  Visit the orientation page for details .\n\nFor new Stevenson students in grades 10, 11 or 12. Transfer students are paired with a Transfer Buddy, a current Stevenson student who has volunteered to escort the transfer student around the school. The Transfer Buddy will show new students where their classrooms are located, and other important locations, such as Learning Centers, Student Support Team offices and bathrooms. Students who enroll after the school year starts will also be assigned a Transfer Buddy to help with orientation."
-    },
-    {
-      "start": 1565272800000,
-      "end": 1565283600000,
-      "location": "Dance Studio 2010",
-      "name": "Dance Placement Reassessments",
-      "description": "This session is for:\n * Transfer students\n* Students who added dance to their schedule after last spring's placement sessions\n* Students who already registered but believe their skill set has significantly improved over the summer\n\nThis dance placement reassessment is to accommodate transfer students and those who added dance to their schedule after last spring's placement sessions. Those already registered who believe their skill set has significantly improved over summer or since their initial assessment may also attend.\n\n Please follow this link  to complete a short Google Form if you plan to attend. If you already filled out the form when it was a \"Save the Date,\" you do not need to resubmit your information.",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "8/9/2019": [
-    {
-      "start": 1565357400000,
-      "end": 1565382300000,
-      "name": "Freshman Orientation Day",
-      "description": "All ninth-grade students participate in Freshman Orientation Day.\n Visit the orientation page for details .\n\n Click here for the Freshman Orientation Day packet ."
-    }
-  ],
-  "8/12/2019": [
-    {
-      "allDay": true,
-      "start": 1565586000000,
-      "name": "Fall Sports Begin",
-      "description": "Check individual sport pages for tryout information, including cheerleading, Patriettes and hockey.",
-      "categories": [
-        "Athletics"
-      ]
-    },
-    {
-      "start": 1565616600000,
-      "end": 1565641500000,
-      "name": "First Day of School",
-      "description": ""
-    }
-  ],
   "8/14/2019": [
     {
+      "allDay": false,
       "start": 1565795160000,
       "end": 1565797740000,
       "name": "Activity Period",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
     },
     {
+      "allDay": false,
       "start": 1565825400000,
       "end": 1565830800000,
-      "location": "Recital Hall (PAC)",
       "name": "Transfer Parent Evening",
-      "description": "Open to parents of transfer students in grades 10-12.\n\nParents of transfer students in grades 10-12 are invited to Transfer Parent Evening where they will learn all about Stevenson High School, from academics, to athletics, to resources. Bring your questions. If the student enrolls after this date, always feel free to contact the student's counselor with any questions."
+      "description": "Open to parents of transfer students in grades 10-12.\n\n\n\nParents of transfer students in grades 10-12 are invited to Transfer Parent Evening where they will learn all about Stevenson High School, from academics, to athletics, to resources. Bring your questions. If the student enrolls after this date, always feel free to contact the student's counselor with any questions.",
+      "location": "Recital Hall (PAC)",
+      "categories": []
     }
   ],
   "8/15/2019": [
     {
-      "allDay": true,
-      "start": 1565845200000,
-      "location": "Performing Arts Center",
-      "name": "Musical Auditions Clinic",
-      "description": "",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
+      "allDay": false,
       "start": 1565901000000,
       "end": 1565904600000,
-      "location": "Performing Arts Center",
       "name": "Musical Auditions Vocal Workshop",
-      "description": "This workshop will help students in their vocal preparation for the Aug. 19 auditions.\n\n Visit the Theatre page  for audition details",
+      "description": "This workshop will help students in their vocal preparation for the Aug. 19 auditions.\n\n\n\n Visit the Theatre page  for audition details",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -246,30 +36,49 @@
   ],
   "8/16/2019": [
     {
-      "allDay": true,
-      "start": 1565931600000,
+      "allDay": false,
+      "start": 1565987400000,
+      "end": 1565992800000,
+      "name": "Musical Auditions Dance Workshop",
+      "description": "Learn important moves and techniques that will be part of the dance audition on Tuesday, Aug. 20.\n\n\n\n Visit the Theatre page  for audition details",
       "location": "Performing Arts Center",
-      "name": "Musical Auditions Clinic",
-      "description": "",
       "categories": [
         "Fine Arts"
       ]
     },
     {
+      "allDay": false,
       "start": 1566000000000,
       "end": 1566007200000,
-      "location": "Wood Commons (West Building)",
       "name": "Freshman Mixer",
-      "description": "Free lock-in event for ninth-graders. Drop-off and pick-up will only be available in parking lot E, by the Sports Center entrance. Use the Port Clinton Road entrance.\n\nAll ninth-grade students are invited to the annual Freshman Mixer on Friday, Aug. 16, sponsored by the Patriot Parent Association and Stevenson's Student Activities Division. The lock-in event runs from 7-9 p.m. The evening will feature a DJ, snacks and prizes. Admission is free for freshmen who show their Stevenson ID. Drop-off and pick-up will only be available in parking lot E, by the Sports Center entrance. Use the Port Clinton Road entrance for easiest access. Want to volunteer at the Freshman Mixer? Contact Yulee Lee ( yuleelee@gmail.com ) or Robin Babbo ( robinbabbo@gmail.com )."
-    },
+      "description": "Free lock-in event for ninth-graders. Drop-off and pick-up will only be available in parking lot E, by the Sports Center entrance. Use the Port Clinton Road entrance.\n\n\n\nAll ninth-grade students are invited to the annual Freshman Mixer on Friday, Aug. 16, sponsored by the Patriot Parent Association and Stevenson's Student Activities Division. The lock-in event runs from 7-9 p.m. The evening will feature a DJ, snacks and prizes. Admission is free for freshmen who show their Stevenson ID. Drop-off and pick-up will only be available in parking lot E, by the Sports Center entrance. Use the Port Clinton Road entrance for easiest access. Want to volunteer at the Freshman Mixer? Contact Yulee Lee ( yuleelee@gmail.com ) or Robin Babbo ( robinbabbo@gmail.com ).",
+      "location": "Wood Commons (West Building)",
+      "categories": []
+    }
+  ],
+  "8/17/2019": [
     {
-      "start": 1565987400000,
-      "end": 1565992800000,
-      "location": "Performing Arts Center",
-      "name": "Musical Auditions Dance Workshop",
-      "description": "Learn important moves and techniques that will be part of the dance audition on Tuesday, Aug. 20.\n\n Visit the Theatre page  for audition details",
+      "allDay": false,
+      "start": 1566054000000,
+      "end": 1566072000000,
+      "name": "Football Team Corn Roast Fundraiser",
+      "description": "Enjoy fresh roasted corn from Didier Farms while supporting Patriot football.\n\n\n\nThe football program will hold its annual corn roast fundraiser from 10 a.m. to 3 p.m. Saturday and Sunday at Sunset Foods, 4190 Illinois Route 83 (at the corner of 83 and Aptakisic Road) in Long Grove. Fresh roasted corn from Didier Farms will be available.",
+      "location": "Sunset Foods",
       "categories": [
-        "Fine Arts"
+        "Athletics"
+      ]
+    }
+  ],
+  "8/18/2019": [
+    {
+      "allDay": false,
+      "start": 1566140400000,
+      "end": 1566158400000,
+      "name": "Football Team Corn Roast Fundraiser",
+      "description": "Enjoy fresh roasted corn from Didier Farms while supporting Patriot football.\n\n\n\nThe football program will hold its annual corn roast fundraiser from 10 a.m. to 3 p.m. Saturday and Sunday at Sunset Foods, 4190 Illinois Route 83 (at the corner of 83 and Aptakisic Road) in Long Grove. Fresh roasted corn from Didier Farms will be available.",
+      "location": "Sunset Foods",
+      "categories": [
+        "Athletics"
       ]
     }
   ],
@@ -277,8 +86,10 @@
     {
       "allDay": true,
       "start": 1566190800000,
+      "end": 1566277200000,
       "name": "Musical Auditions",
       "description": "",
+      "location": null,
       "categories": [
         "Fine Arts"
       ]
@@ -288,8 +99,10 @@
     {
       "allDay": true,
       "start": 1566277200000,
+      "end": 1566363600000,
       "name": "Dance Auditions",
       "description": "",
+      "location": null,
       "categories": [
         "Fine Arts"
       ]
@@ -297,26 +110,32 @@
     {
       "allDay": true,
       "start": 1566277200000,
+      "end": 1566363600000,
       "name": "Musical Auditions",
       "description": "",
+      "location": null,
       "categories": [
         "Fine Arts"
       ]
     },
     {
-      "allDay": true,
-      "start": 1566277200000,
-      "location": "TBD",
+      "allDay": false,
+      "start": 1566306900000,
+      "end": 1566306900000,
       "name": "Transfer Student Resource Fair",
-      "description": "At this event, transfer students meet with various groups at the school, including co-curricular coordinators, intramural coordinators, and the leaders of SPINS (Stevenson Patriots In New Situations). SPINS is a social group for transfer students who meet throughout the school year to go bowling, play whirlyball and other activities. SPINS is free of charge, except for stopping for food. Whenever a student enrolls, he/she is invited to join SPINS."
+      "description": "Breakfast will be served\n\n\n\nAt this event, transfer students meet with various groups at the school, including co-curricular coordinators, intramural coordinators, and the leaders of SPINS (Stevenson Patriots In New Situations). SPINS is a social group for transfer students who meet throughout the school year to go bowling, play whirlyball and other activities. SPINS is free of charge, except for stopping for food. Whenever a student enrolls, he/she is invited to join SPINS.",
+      "location": "Room 2104",
+      "categories": []
     }
   ],
   "8/21/2019": [
     {
       "allDay": true,
       "start": 1566363600000,
+      "end": 1566450000000,
       "name": "Dance Auditions",
       "description": "",
+      "location": null,
       "categories": [
         "Fine Arts"
       ]
@@ -324,25 +143,32 @@
     {
       "allDay": true,
       "start": 1566363600000,
+      "end": 1566450000000,
       "name": "Musical Callbacks",
       "description": "",
+      "location": null,
       "categories": [
         "Fine Arts"
       ]
     },
     {
+      "allDay": false,
       "start": 1566432000000,
       "end": 1566442800000,
       "name": "Parent Open House Night #1",
-      "description": "The first of two parent open house nights, this evening is intended for families whose student has a last name beginning with the letters A-L. However, anyone may attend either open house night.\n\n2019 Open House Nights  \n  \n    Wednesday, Aug. 21 / Last Names A-L / 7-9:30 p.m.\n  Thursday, Aug. 29 / Last Names M-Z / 7-9:30 p.m.  \n  \n    Have a schedule conflict on one of the nights? No problem! Attend on the other date\n    \n  Each year, Stevenson High School holds Open House evenings for parents. These evenings provide faculty and staff with the opportunity to meet parents of SHS students, inform them about the curriculum in the courses their children are taking, and showcasing many of the resources offered to students and families.\n  \n  During Open House,  parents will visit each of their student's classrooms and meet their child’s teachers . All parents will receive a letter from the school that includes a blank schedule for the evening, listing the times for each class period. Parents should have their students fill in his/her courses, room numbers, and teachers’ names prior to attending Open House. Parents may also choose to print their student’s schedule   through Infinite Campus . Parents should bring this schedule with them. \n  \n     Parents of freshmen and transfer students  also will have the opportunity to hear from their counselor from 6:15-6:45 p.m. Counselors will discuss their roles and answer questions. Each student’s counselor is listed on the schedule distributed during orientation in August. The counselor also may be found through Infinite Campus. Counselor locations are listed below.\n                                     West Building                                     East Building                             \n                          Amy Grove                 Room 2900                  Griffin Dwyer                  Room 7052           \n                          Mary Jones                 Room 2818                  Ray Tad-y                 Room 7054           \n                          Sarah Kellogg                 Room 2628                  Patty Martin                 Room 7058           \n                          Megan Kelly                 Room 2630                   Lisa Scanio                 Room 7060           \n                          Irina Kogan                 Room 2624                  Carol Seeger                 Room 7062           \n                          Lindsay Perkins                 Room 2622"
+      "description": "The first of two parent open house nights, this evening is intended for families whose student has a last name beginning with the letters A-L. However, anyone may attend either open house night.\n\n\n2019 Open House Nights  \n  \n    Wednesday, Aug. 21 / Last Names A-L / 7-9:30 p.m.\n  Thursday, Aug. 29 / Last Names M-Z / 7-9:30 p.m.  \n  \n    Have a schedule conflict on one of the nights? No problem! Attend on the other date\n    \n  Each year, Stevenson High School holds Open House evenings for parents. These evenings provide faculty and staff with the opportunity to meet parents of SHS students, inform them about the curriculum in the courses their children are taking, and showcasing many of the resources offered to students and families.\n  \n  During Open House,  parents will visit each of their student's classrooms and meet their child's teachers . All parents received a letter from the school that includes a blank schedule for the evening, listing the times for each class period. Parents should have their students fill in his/her courses, room numbers, and teachers' names prior to attending Open House. Parents may also choose to print their student's schedule   through Infinite Campus . Parents should bring this schedule with them. \n  \n     Parents of freshmen and transfer students  also will have the opportunity to hear from their counselor from 6:15-6:45 p.m. Counselors will discuss their roles and answer questions. Each student's counselor is listed on the schedule distributed during orientation in August. The counselor also may be found through Infinite Campus. Counselor locations are listed below.\n                                           West Building                                     East Building                             \n                          Amy Grove                 Room 2900                  Griffin Dwyer                  Room 7052           \n                          Mary Jones/Jennifer Falk                 Room 2818                  Ray Tad-y                 Room 7054           \n                          Sarah Kellogg                 Room 2628                  Patty Martin                 Room 7058           \n                          Megan Kelly                 Room 2630                   Lisa Scanio                 Room 7060           \n                          Irina Kogan                 Room 2624                  Carol Seeger                 Room 7062           \n                          Lindsay Perkins                 Room 2622\n              \n                                Terese Sullivan\n              \n              <",
+      "location": null,
+      "categories": []
     }
   ],
   "8/22/2019": [
     {
       "allDay": true,
       "start": 1566450000000,
+      "end": 1566536400000,
       "name": "Late Arrival",
-      "description": "The morning after a parent open house night is always a late-arrival day. Classes begin at 10:30 a.m. Bus routes start at 9:20.\n ",
+      "description": "The morning after a parent open house night is always a late-arrival day. Classes begin at 10:30 a.m. Bus routes start at 9:20.",
+      "location": null,
       "categories": [
         "Late Arrival",
         "Early Dismissal"
@@ -351,18 +177,21 @@
     {
       "allDay": true,
       "start": 1566450000000,
+      "end": 1566536400000,
       "name": "Musical Callbacks",
       "description": "",
+      "location": null,
       "categories": [
         "Fine Arts"
       ]
     },
     {
+      "allDay": false,
       "start": 1566473400000,
       "end": 1566489600000,
-      "location": "Strawberry Fields",
       "name": "Band Fundraiser",
-      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
+      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
+      "location": "Strawberry Field",
       "categories": [
         "Fine Arts"
       ]
@@ -370,20 +199,45 @@
   ],
   "8/26/2019": [
     {
+      "allDay": true,
+      "start": 1566795600000,
+      "end": 1566882000000,
+      "name": "Fall Play Ticket Sales Begin",
+      "description": "Tickets for the fall play, \"The Transition of Doodle Pequeño,\" go on sale Monday, Aug. 26.  Tickets are available online  and at the Patriot Superstore.\n\n\n\n\n\n\n\n\n\n\nThe play will be performed at 7 p.m. Thursday, Sept. 12, 4:15 and 7 p.m. Friday, Sept. 13, and 2 and 7 p.m. Saturday, Sept. 14. All performances will be held in the Black Box Theater, by the Sports Center entrance.\n\n\nTickets are $6. All tickets are general admission.  Click here to purchase tickets online . For those purchasing tickets at the Superstore, Patriot Dollars, checks, cash and credit cards (not Discover) will be accepted for payment. The Superstore is open one-half hour before school begins and during the lunch periods on school days.",
+      "location": null,
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
       "start": 1566864000000,
       "end": 1566867600000,
-      "location": "Performing Arts Center",
       "name": "College Night for Senior Families",
-      "description": ""
+      "description": "Open to all parents and guardians of seniors at SHS\n\n\n\nThe College Career Center will hold its annual Senior Parent Night from 7-8:30 p.m. Monday, Aug. 26, in the Performing Arts Center. The event is free and open to all parents and guardians of seniors at Stevenson.\n\nDuring the presentation, postsecondary counselors Sara English and Sarah Kellogg will discuss how to apply to colleges. Topics to be covered include types of applications (Common App, for example), admission plans (including Early Decision), deadlines, obtaining a transcript, standardized test scores, letters of recommendation, essays and scholarships. The presentation will be using a web-based program called Peardeck, so families are encouraged to bring their SHS iPads or an electronic device connected to a Gmail address.\n\nThere will be a special session for parents and guardians of students with IEP/504 plans from 6:30-6:50 p.m. in Room 6110 of the new East Building addition.",
+      "location": "Performing Arts Center",
+      "categories": []
     }
   ],
   "8/28/2019": [
     {
+      "allDay": false,
+      "start": 1567029600000,
+      "end": 1567040400000,
+      "name": "Football Fundraiser",
+      "description": "The SHS football moms are sponsoring this event.\n\n\n\nThe Lincolnshire Culver's is located at 405 Milwaukee Ave.",
+      "location": "Lincolnshire Culver's",
+      "categories": [
+        "Athletics"
+      ]
+    },
+    {
+      "allDay": false,
       "start": 1567036800000,
       "end": 1567044000000,
-      "location": "Stadium",
       "name": "Band Exhibition Night",
       "description": "",
+      "location": "Stadium",
       "categories": [
         "Fine Arts"
       ]
@@ -391,18 +245,23 @@
   ],
   "8/29/2019": [
     {
+      "allDay": false,
       "start": 1567123200000,
       "end": 1567134000000,
       "name": "Parent Open House Night #2",
-      "description": "The second of two parent open house nights, this evening is intended for families whose student has a last name beginning with the letters M-Z. However, anyone may attend either open house night.\n\n2019 Open House Nights  \n  \n    Wednesday, Aug. 21 / Last Names A-L / 7-9:30 p.m.\n  Thursday, Aug. 29 / Last Names M-Z / 7-9:30 p.m.  \n  \n    Have a schedule conflict on one of the nights? No problem! Attend on the other date\n    \n  Each year, Stevenson High School holds Open House evenings for parents. These evenings provide faculty and staff with the opportunity to meet parents of SHS students, inform them about the curriculum in the courses their children are taking, and showcasing many of the resources offered to students and families.\n  \n  During Open House,  parents will visit each of their student's classrooms and meet their child’s teachers . All parents will receive a letter from the school that includes a blank schedule for the evening, listing the times for each class period. Parents should have their students fill in his/her courses, room numbers, and teachers’ names prior to attending Open House. Parents may also choose to print their student’s schedule   through Infinite Campus . Parents should bring this schedule with them. \n  \n     Parents of freshmen and transfer students  also will have the opportunity to hear from their counselor from 6:15-6:45 p.m. Counselors will discuss their roles and answer questions. Each student’s counselor is listed on the schedule distributed during orientation in August. The counselor also may be found through Infinite Campus. Counselor locations are listed below.\n                                     West Building                                     East Building                             \n                          Amy Grove                 Room 2900                  Griffin Dwyer                  Room 7052           \n                          Mary Jones                 Room 2818                  Ray Tad-y                 Room 7054           \n                          Sarah Kellogg                 Room 2628                  Patty Martin                 Room 7058           \n                          Megan Kelly                 Room 2630                   Lisa Scanio                 Room 7060           \n                          Irina Kogan                 Room 2624                  Carol Seeger                 Room 7062           \n                          Lindsay Perkins                 Room 2622"
+      "description": "The second of two parent open house nights, this evening is intended for families whose student has a last name beginning with the letters M-Z. However, anyone may attend either open house night.\n\n\n2019 Open House Nights  \n  \n    Wednesday, Aug. 21 / Last Names A-L / 7-9:30 p.m.\n  Thursday, Aug. 29 / Last Names M-Z / 7-9:30 p.m.  \n  \n    Have a schedule conflict on one of the nights? No problem! Attend on the other date\n    \n  Each year, Stevenson High School holds Open House evenings for parents. These evenings provide faculty and staff with the opportunity to meet parents of SHS students, inform them about the curriculum in the courses their children are taking, and showcasing many of the resources offered to students and families.\n  \n  During Open House,  parents will visit each of their student's classrooms and meet their child's teachers . All parents will receive a letter from the school that includes a blank schedule for the evening, listing the times for each class period. Parents should have their students fill in his/her courses, room numbers, and teachers' names prior to attending Open House. Parents may also choose to print their student's schedule   through Infinite Campus . Parents should bring this schedule with them. \n  \n     Parents of freshmen and transfer students  also will have the opportunity to hear from their counselor from 6:15-6:45 p.m. Counselors will discuss their roles and answer questions. Each student's counselor is listed on the schedule distributed during orientation in August. The counselor also may be found through Infinite Campus. Counselor locations are listed below.\n                                     West Building                                     East Building                             \n                          Amy Grove                 Room 2900                  Griffin Dwyer                  Room 7052           \n                          Mary Jones                 Room 2818                  Ray Tad-y                 Room 7054           \n                          Sarah Kellogg                 Room 2628                  Patty Martin                 Room 7058           \n                          Megan Kelly                 Room 2630                   Lisa Scanio                 Room 7060           \n                          Irina Kogan                 Room 2624                  Carol Seeger                 Room 7062           \n                          Lindsay Perkins                 Room 2622\n              \n                                Terese Sullivan\n              \n                               Room 7064",
+      "location": null,
+      "categories": []
     }
   ],
   "8/30/2019": [
     {
       "allDay": true,
       "start": 1567141200000,
+      "end": 1567227600000,
       "name": "Late Arrival",
       "description": "The morning after a parent open house night is always a late-arrival day. Classes begin at 10:30 a.m. Bus routes start at 9:20.",
+      "location": null,
       "categories": [
         "Late Arrival"
       ]
@@ -410,42 +269,144 @@
     {
       "allDay": true,
       "start": 1567141200000,
-      "location": "Panera - Riverwoods",
+      "end": 1567227600000,
       "name": "String Parents Association Fundraiser",
-      "description": "The fundraiser runs from open to close.\n\n Bring this flyer  or show an electronic version to the cashier when you place an order, and Panera will donate a portion of the proceeds from your purchase.\n\nPanera is located at 2001 Milwaukee Ave. in Riverwoods.",
+      "description": "The fundraiser runs from open to close.\n\n\n\n Bring this flyer  or show an electronic version to the cashier when you place an order, and Panera will donate a portion of the proceeds from your purchase.\n\nPanera is located at 2001 Milwaukee Ave. in Riverwoods.",
+      "location": "Panera - Riverwoods",
       "categories": [
         "Fine Arts"
       ]
+    },
+    {
+      "allDay": false,
+      "start": 1567164600000,
+      "end": 1567180800000,
+      "name": "Band Fundraiser",
+      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
+      "location": "Strawberry Field",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1567179000000,
+      "end": 1567196700000,
+      "name": "Late Arrival",
+      "description": "Classes begin at 10:30 a.m. Bus routes start at 9:20.",
+      "location": null,
+      "categories": []
     }
   ],
   "9/2/2019": [
     {
       "allDay": true,
       "start": 1567400400000,
+      "end": 1567486800000,
       "name": "Labor Day - Non-Attendance Day",
       "description": "",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
     }
   ],
+  "9/3/2019": [
+    {
+      "allDay": false,
+      "start": 1567555200000,
+      "end": 1567562400000,
+      "name": "Just the Guys Auditions",
+      "description": "Download the audition packet",
+      "location": "Choir Room",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
   "9/4/2019": [
     {
+      "allDay": false,
       "start": 1567609560000,
       "end": 1567612140000,
       "name": "Activity Period",
-      "description": "",
+      "description": "Seniors have a mandatory meeting with their counselor during Activity Period. Seven clubs will meet, too.\n\n\n\nMeetings with counselors will take place in the following locations:\n\n\n\n        Dwyer  7044-7046 \n  Falk  West Auditorium (2206) \n  Grove  Black Box/Studio Theater (2204) \n  Hauswirth (Kellogg)  West Auditorium (2206) \n  Kelly  Testing Center (1200-1202) \n  Kogan  2500-2502 \n  Lee  2104 \n  Martin  7066-7068 \n  Perkins  West Auditorium (2206) \n  Puglisi  8036-8040 \n  Scanio  Recital Hall (4100) \n  Seeger  Recital Hall (4100) \n  Sullivan  6110 \n  Tad-y  6116-6118 \n  Timm  8046-8048 \n  Varghese  Black Box/Studio Theater (2204) \n  Vazquez  West Auditorium (2206) \n  Walton  2104 \n  \nThe following clubs are scheduled to meet:\n\nStudent Congress - West Faculty Dining Room\n\nJunior Class Board - Lower Sports Center Lobby\n\nStudents Helping Soldiers - 5044\n\nFreshman Class Board - Performing Arts Center\n\nImprov Team - Wrestling Room\n\nAnimal Welfare Club Eboard - 1508\n\nSophomore Class Board Exec Board - College Career Center (1123)",
+      "location": null,
       "categories": [
         "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1567638900000,
+      "end": 1567644300000,
+      "name": "Jazz Etc. Auditions",
+      "description": "Tenor/bass at 6:15 p.m.\nSoprano/alto at 7 p.m.\n Download the audition packet \n\n\n\n\nWednesday Sept 4: Jazz Etc. Tenor/Bass @ 6:15pm; Soprano/Alto @ 7:00pm (Alice Nuteson director)",
+      "location": "Choir Room",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "9/5/2019": [
+    {
+      "allDay": false,
+      "start": 1567716300000,
+      "end": 1567720800000,
+      "name": "Children's Play Audition Workshop",
+      "description": "Get prepared for next week's auditions\n\n\n\nThe audition workshop for the Stevenson Foundation's fall children's play, \"Corduroy,\" will be held from 3:45-5 p.m. Thursday, Sept. 5 in the West Auditorium. The workshop will be an opportunity for students to meet the director, Laura Wesslund, play theatre games, learn more about the play, and ask questions about the auditions. Auditions for the play take place from 3:45-5 p.m. Tuesday and Wednesday, Sept. 10 and 11 in the West Auditorium. Come prepared with a monologue on Sept. 10. Visit  www.d125.org/auditions  for the audition sign-up form and audition packet. The play will be performed at noon and 2 p.m. Sunday, Oct. 27.",
+      "location": "West Auditorium",
+      "categories": [
+        "Foundation Events",
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1567726200000,
+      "end": 1567726200000,
+      "name": "Ladyjazz Auditions",
+      "description": "Download the audition packet",
+      "location": "Choir Room",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "9/6/2019": [
+    {
+      "allDay": false,
+      "start": 1567814400000,
+      "end": 1567816200000,
+      "name": "Night of Champions",
+      "description": "Honoring team and individual champions from the 2018-19 school year.\n\n\n\nThe Stevenson High School Athletic Department will recognize team and individual division, conference, Lake County, regional, sectional and state champions from the 2018-19 school year at its ninth annual Night of Champions event prior to the home football game against Neuqua Valley on Friday, Sept. 6.\n\nAthletes on the teams listed below are asked to check in with their ID at the east or west admission gates to receive complimentary admission to the game. The schedule for the evening is as follows:\n\n4:30 p.m. - Gates open for admission\n5 p.m. - JV football game vs. Neuqua Valley\n6:45 p.m. - Organization of procession for teams/individuals in the southeast corner of the Stadium. Honored athletes will receive their \"Night of Champions\" T-shirt at this time.\n7 p.m. - Night of Champions procession\n7:30 p.m. - Varsity football game vs. Neuqua Valley\n\nThe following teams and individuals will be honored:\n\n Allied Basketball\n IHSA third place State\n\n Boys Basketball\n NSC champions, IHSA Regional Champions, IHSA Sectional Champions\n\n Boys Fencing\n Overall Great Lakes Conference Champions: Sabre, Illinois Champions; Nikita Vasilyev - Individual Champion\n\n Boys Golf\n NSC Champions, IHSA second place State; Conan Pan - Individual Champion\n\n Boys Swimming and Diving\n NSC Champions, Lake County Champions, IHSA sectional champions; Individual Champions: Nathan Gates, Jake Kim, Richard Lee, Beno Maya, Ethan Ross, Max Ryaguzov, Joseph Song, Joshua Song, Topher Stensby, Foster Swanson, Jack White, Ari Zaritsky, Jack Zhang\n\n Boys Tennis\n NSC Champions, IHSA sectional champions, IHSA third Place State; Individual Champions: Payton Adkisson, Andy Dong, Kevin Fei, Thomas Gong, Eric Perkowski, Arjun Sheelvanth, Nicholas Stec, Daniel Tulchinskiy, Gabriel Visotsky, Aswath Viswanathan\n\n Boys Track and Field\n NSC Champions; Individual Champions: Anand Batbaatar, Jimmy Davis, Shane Johnson, Maema Njongmeta, Jahleel Perrin, David Smolensky, Jordan Vincent, Chris Xie\n\n Boys Volleyball\n NSC Champions\n\n Boys Water Polo\n NSC Champions, IHSA Sectional Champions\n\n Boys Wrestling\n Individual Champions: Tommy Frezza, Max Gomez\n\n Cheerleading\n NSC champions, IHSA Sectional Champions, IHSA third place State\n\n Girls Badminton\n NSC Champions, IHSA Sectional Champions, IHSA second place State; Individual Champions: Jyotsna Harikrishna, Emily Hu, Benna Li, Veronica Liu, Kaitlyn Lu, Roshini Merneedi, Giuli Nagai, Shibani Ram, Thivya Sivarajah, Megan Wei, Jennifer Yang, Jasmine Zhang, Julie Zhu\n\n Girls Cross Country \nIndividual Champion: Natalie Sorenson\n\n Girls Fencing\n Great Lakes Conference Champions, Illinois Champions; Individual Champions: Geeta Jh",
+      "location": "Stadium",
+      "categories": [
+        "Athletics"
       ]
     }
   ],
   "9/7/2019": [
     {
-      "allDay": true,
-      "start": 1567832400000,
+      "allDay": false,
+      "start": 1567897200000,
+      "end": 1567908000000,
       "name": "Streetfest",
-      "description": "The annual Streetfest is a fundraiser for local charities.\n\nStreetfest 2019 will benefit three local charities: KIDSS for Kids, Kan-Win, and Turning The Page. The event theme is \"Making Magic.\"\n\n ",
+      "description": "The annual Streetfest will benefit three local charities: KIDSS for Kids, Kan-Win, and Turning The Page.  Read more about Streetfest. \n\n\n\nThe National Honor Society's annual Streetfest charity fundraiser will be held from 6-9 p.m. Saturday, Sept. 7 in parking lot E at Stevenson. Admission is $10.\n    \nThis year's theme is \"Making Magic in the Community.\" Food trucks, games and entertainment will be part of the evening, which benefits three Chicago-area charities:\n    \n K.I.D.S.S. for Kids:  This organization, whose name stands for Kindness Is Doing Something Special For Kids, raises money for the Department of Family Services programs at Ann and Robert H. Lurie Children's Hospital of Chicago to address the emotional, social and spiritual needs of hospitalized children and their families. These programs include art therapy, recreation, tutoring, preparation for medical procedures, family resources, culturally appropriate care, pastoral care, bereavement counseling and much more. Learn more about K.I.D.S.S. for Kids at  http://kidssforkids.org .\n    \n KAN-WIN:  This group's mission is to eradicate all forms of violence against women, including domestic violence and sexual assault, by empowering Asian-American survivors and engaging the community through culturally competent services, community education and outreach, and advocacy. KAN-WIN's services are designed to empower immigrant survivors to tackle the unique and complex challenges they face and transition from crisis to long-term empowerment. Through intensive wrap around services, KAN-WIN strives to provide a one-stop shop for survivors to minimize the risk of chasing for help. Learn more about KAN-WIN at  www.kanwin.org .\n    \n Turning the Page:  This non-profit links public schools, families and communities to ensure students receive valuable educational resources and a high-quality public education. Turning the Page, founded in Washington D.C. in 1998, features Carpe Librum (\"seize the book\") pop-up book stores that sell gently used books, CDs, DVDs, and records, with the profits supporting the program's initiatives. In 2015, Turning the Page expanded its operations to Chicago's North Lawndale neighborhood. Learn more about Turning the Page at  https://turningthepage.org .",
+      "location": "Parking Lot E",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "9/9/2019": [
+    {
+      "allDay": true,
+      "start": 1568005200000,
+      "end": 1568091600000,
+      "name": "Homecoming Dance Ticket Sales Begin",
+      "description": "Early bird pricing Sept. 9-10 only. Ticket sales end at 3:30 p.m. Sept. 20.  Details \n\n\n\nHomecoming Dance ticket sales begin Monday, Sept. 9. Ticket prices are:\n       \t* Early bird ticket pricing ($20) is in effect Sept. 9-10.\n  \t* Regular ticket sales ($25) will end at 3:30 p.m. Friday, Sept. 20.\n  \t* Tickets at the door ($40) are available to SHS students only.\n       \nTickets can be purchased here:\n   https://www.eventbrite.com/e/stevenson-homecoming-dance-2019-tickets-70273336441 \n    \nStudents must use their Stevenson email address as the access code.\n    \n Information on Non-SHS Students as Guests \n  Tickets for non-Stevenson students are $25, and can only be purchased by completing this form:\n    \n https://signnow.com/s/xOLEC756?form=true \n    \nThe form will be open before Sept. 9. Non-SHS student ticket sales will end Wednesday, Sept. 18. Tickets will not be sold at the door to non-SHS students.\n    \nBefore completing the form, students will need email addresses for the following:\n       \t* Their parent/guardian\n  \t* Their dean at Stevenson\n  \t* Their guest's parent/guardian\n  \t* Their guest's dean (if the guest is in high school)\n       \nAll form information will be digital and will be emailed to the individuals listed, so email address accuracy is vital. Once students have received notification that their form has been approved, they will have the option to purchase a Non-SHS Homecoming Dance ticket.\n    \nThe theme of this year's Homecoming is \"UP.\" For more information,  visit the Homecoming page .",
+      "location": "Online Only",
       "categories": [
         "Clubs and Activities"
       ]
@@ -453,24 +414,44 @@
   ],
   "9/10/2019": [
     {
-      "allDay": true,
-      "start": 1568091600000,
-      "location": "West Auditorium",
+      "allDay": false,
+      "start": 1568148300000,
+      "end": 1568152800000,
       "name": "Children's Play Auditions",
-      "description": "",
+      "description": "See audition information  on the Theatre page .",
+      "location": "West Auditorium",
       "categories": [
         "Foundation Events",
         "Fine Arts"
       ]
+    },
+    {
+      "allDay": false,
+      "start": 1568152800000,
+      "end": 1568167200000,
+      "name": "Patriettes Fundraiser",
+      "description": "Mention Patriettes when ordering.\n\n\n\nThe varsity Patriettes are holding a fundraiser from 5-9 p.m. Tuesday, Sept. 10 at Chipotle, 950 Milwaukee Ave., in Lincolnshire. Mention Patriettes when ordering, and one-third of the proceeds will be donated to the team.",
+      "location": "Chipotle - Lincolnshire",
+      "categories": []
     }
   ],
   "9/11/2019": [
     {
-      "allDay": true,
-      "start": 1568178000000,
-      "location": "West Auditorium",
+      "allDay": false,
+      "start": 1568206800000,
+      "end": 1568208300000,
+      "name": "9/11 Remembrance Ceremony",
+      "description": "Sponsored by Students Helping Soldiers",
+      "location": "Garden of Peace, Hope and Remembrance",
+      "categories": []
+    },
+    {
+      "allDay": false,
+      "start": 1568234700000,
+      "end": 1568239200000,
       "name": "Children's Play Auditions",
-      "description": "",
+      "description": "See audition information  on the Theatre page .",
+      "location": "West Auditorium",
       "categories": [
         "Foundation Events",
         "Fine Arts"
@@ -481,19 +462,42 @@
     {
       "allDay": true,
       "start": 1568264400000,
+      "end": 1568350800000,
       "name": "Late Arrival - Teacher Planning",
       "description": "Classes will begin at 10:30 a.m. Buses will begin their routes at 9:20.",
+      "location": null,
       "categories": [
         "Late Arrival",
         "Early Dismissal"
       ]
     },
     {
+      "allDay": false,
+      "start": 1568287800000,
+      "end": 1568304000000,
+      "name": "Band Fundraiser",
+      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
+      "location": "Strawberry Field",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1568332800000,
+      "end": 1568338200000,
+      "name": "\"Not My Kid?!!\"",
+      "description": "Stress, vaping and other realities of teenage life will be addressed.\n\n\n\nStress, vaping and other realities of teenage life will be addressed during the annual \"Not My Kid?!!\" presentation at 7 p.m. Thursday, Sept. 12 in the West Auditorium. The event is free and open to the public, but registration is requested by Sept. 11  through this link . \"Not My Kid?!!\" is sponsored by  Catalyst , a student club, and the  Stand Strong Coalition .\n\nA panel of experts will delve into topics relevant to parenting teenagers. Among the topics are these:\n * The teen brain, and why teens act the way they do\n* Helping teens deal with stress\n* Understanding what teens are exposed to in terms of vaping, alcohol and marijuana\n* Details on the new marijuana laws and how they will impact teens\n* Helping teens navigate social situations such as Homecoming and after-parties\n* Information on social hosting laws and local curfew rules\n \nIn addition, there will be a mock teen bedroom offering parents possible indicators of teen drug/alcohol use and showing popular hiding places for teens. The mock bedroom will be open until 9 p.m.\n\nPanelists scheduled for the evening include:\n * Lake County State's Attorney Mike Nerheim\n* Dr. Susan Sirota, a local pediatrician and assistant professor at Northwestern University's Feinberg School of Medicine\n* Principal Troy Gobble\n* Substance Abuse Prevention Coordinator Dr. Cristina Cortesi\n* Officer Bethany Brown, a Lincolnshire police officer and one of Stevenson's school resource officers\n* A family member impacted by alcohol and drug use\n* A current drug-free SHS senior.",
+      "location": "West Auditorium",
+      "categories": []
+    },
+    {
+      "allDay": false,
       "start": 1568332800000,
       "end": 1568340000000,
-      "location": "Black Box Theatre",
       "name": "Fall Play: The Transition of Doodle Pequeno",
-      "description": "Gabriel Jason Dean's play follows two boys who become friends in spite of their differences.",
+      "description": "SOLD OUT - No tickets available  \n\n\n\nGabriel Jason Dean's play follows two boys who become friends in spite of their differences.",
+      "location": "Black Box Theatre",
       "categories": [
         "Fine Arts"
       ]
@@ -501,33 +505,67 @@
   ],
   "9/13/2019": [
     {
-      "start": 1568419200000,
-      "end": 1568426400000,
-      "location": "Black Box Theatre",
-      "name": "Fall Play: The Transition of Doodle Pequeno",
-      "description": "Gabriel Jason Dean's play follows two boys who become friends in spite of their differences.",
+      "allDay": true,
+      "start": 1568350800000,
+      "end": 1568437200000,
+      "name": "Students Helping Soldiers Fundraiser Ends",
+      "description": "Buy coupons for Nothing Bundt Cake Bundtinis, and 20% of the sale goes to the club.\n\n Click here to order .",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1568408400000,
+      "end": 1568430000000,
+      "name": "Band Fundraiser",
+      "description": "Culver's will donate 25% of sales to the SHS band program. Mention \"SHS Band\" when ordering.\n\n\n\nCulver's of Lincolnshire: 405 Milwaukee Ave.\n\nCulver's of Buffalo Grove: 450 McHenry Rd.",
+      "location": "Culver's (BG and Lincolnshire)",
       "categories": [
         "Fine Arts"
       ]
     },
     {
-      "start": 1568408400000,
-      "end": 1568430000000,
-      "location": "Culver's (BG and Lincolnshire)",
-      "name": "Band Fundraiser",
-      "description": "Culver's will donate 25% of sales to the SHS band program. Mention \"SHS Band\" when ordering.\n\nCulver's of Lincolnshire: 405 Milwaukee Ave.\n\nCulver's of Buffalo Grove: 450 McHenry Rd.",
+      "allDay": false,
+      "start": 1568409300000,
+      "end": 1568415600000,
+      "name": "Fall Play: The Transition of Doodle Pequeno",
+      "description": "Performances at 4:15 p.m. and 7 p.m. on Friday, Sept. 13\n\n\n\nGabriel Jason Dean's play follows two boys who become friends in spite of their differences.",
+      "location": "Black Box Theatre",
       "categories": [
         "Fine Arts"
       ]
+    },
+    {
+      "allDay": false,
+      "start": 1568419200000,
+      "end": 1568426400000,
+      "name": "Fall Play: The Transition of Doodle Pequeno",
+      "description": "SOLD OUT - No tickets available  \n\n\n\nGabriel Jason Dean's play follows two boys who become friends in spite of their differences.",
+      "location": "Black Box Theatre",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1568420100000,
+      "end": 1568426400000,
+      "name": "Touchdown for Troops/Military Appreciation Night",
+      "description": "Active and retired military personnel will be honored.\n\n\n\nActive and retired military personnel will be honored during the annual Touchdown for Troops/Military Appreciation Night on Friday, Sept. 13 in the Stadium. A pre-game ceremony at 7:15 p.m. will honor military members on hand, followed by the varsity football game between Stevenson and Libertyville. Touchdown for Troops/Military Appreciation Night is sponsored by Students Helping Soldiers and Nothing Bundt Cakes.",
+      "location": "Stadium",
+      "categories": []
     }
   ],
   "9/14/2019": [
     {
+      "allDay": false,
       "start": 1568505600000,
       "end": 1568512800000,
-      "location": "Black Box Theatre",
       "name": "Fall Play: The Transition of Doodle Pequeno",
-      "description": "Gabriel Jason Dean's play follows two boys who become friends in spite of their differences.",
+      "description": "SOLD OUT - No tickets available  \n\n\n\nGabriel Jason Dean's play follows two boys who become friends in spite of their differences.",
+      "location": "Black Box Theatre",
       "categories": [
         "Fine Arts"
       ]
@@ -537,8 +575,10 @@
     {
       "allDay": true,
       "start": 1568610000000,
+      "end": 1568696400000,
       "name": "Homecoming Week",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -548,10 +588,32 @@
     {
       "allDay": true,
       "start": 1568696400000,
+      "end": 1568782800000,
+      "name": "Baseball Fundraiser",
+      "description": "Lincolnshire location only",
+      "location": "Culver's",
+      "categories": []
+    },
+    {
+      "allDay": true,
+      "start": 1568696400000,
+      "end": 1568782800000,
       "name": "Homecoming Week",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1568757600000,
+      "end": 1568768400000,
+      "name": "Boys Cross Country Fundraiser",
+      "description": "Show the flyer and 20% of the proceeds goes to the team.",
+      "location": "Portillo's - Vernon Hills",
+      "categories": [
+        "Athletics"
       ]
     }
   ],
@@ -559,18 +621,21 @@
     {
       "allDay": true,
       "start": 1568782800000,
+      "end": 1568869200000,
       "name": "Homecoming Week",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
     },
     {
+      "allDay": false,
       "start": 1568851200000,
       "end": 1568858400000,
-      "location": "West Auditorium",
       "name": "CPN Presents: LIKE Movie and Discussion",
-      "description": "Join the Community Parent Network to watch and discuss LIKE, a documentary that explores the impact of social media on our lives.\n\n \n\nLIKE is  a documentary exploring the impact of social media  on our lives and the effects of technology on the brain. The film's goal is to help people, especially students, take control of their social media use, create balance in their lives, and become more caring toward one another. Event sponsored by the Community Parent Network, a program of the Stevenson Foundation. Free admission.",
+      "description": "Join the Community Parent Network to watch and discuss LIKE, a documentary that explores the impact of social media on our lives.\n\n \n\n\n\n\n\nLIKE is  a documentary exploring the impact of social media  on our lives and the effects of technology on the brain. The film's goal is to help people, especially students, take control of their social media use, create balance in their lives, and become more caring toward one another. Event sponsored by the Community Parent Network, a program of the Stevenson Foundation. Free admission.",
+      "location": "West Auditorium",
       "categories": [
         "Foundation Events"
       ]
@@ -580,18 +645,21 @@
     {
       "allDay": true,
       "start": 1568869200000,
+      "end": 1568955600000,
       "name": "Homecoming Week",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
     },
     {
+      "allDay": false,
       "start": 1568937600000,
       "end": 1568941200000,
-      "location": "Visiting Artist Gallery (West Building)",
       "name": "ARTalk with Jill King",
-      "description": "Open to the public\n\nVisiting Artist of the Month Jill King will discuss her work and her career during the first ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.jillkingstudio.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "description": "Open to the public\n\n\n\n\nVisiting Artist of the Month Jill King will discuss her work and her career during the first ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.jillkingstudio.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "location": "Visiting Artist Gallery (West Building)",
       "categories": [
         "Foundation Events",
         "Fine Arts"
@@ -602,8 +670,10 @@
     {
       "allDay": true,
       "start": 1568955600000,
+      "end": 1569042000000,
       "name": "End of Six-Week Grading Period",
       "description": "",
+      "location": null,
       "categories": [
         "End of Six Weeks"
       ]
@@ -611,8 +681,10 @@
     {
       "allDay": true,
       "start": 1568955600000,
+      "end": 1569042000000,
       "name": "Homecoming Week",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -622,8 +694,10 @@
     {
       "allDay": true,
       "start": 1569042000000,
+      "end": 1569128400000,
       "name": "Homecoming Dance",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -631,11 +705,12 @@
   ],
   "9/24/2019": [
     {
+      "allDay": false,
       "start": 1569369600000,
       "end": 1569376800000,
-      "location": "Performing Arts Center",
       "name": "Choral Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -643,11 +718,38 @@
   ],
   "9/26/2019": [
     {
+      "allDay": false,
       "start": 1569542400000,
       "end": 1569549600000,
-      "location": "Performing Arts Center",
       "name": "Orchestra Concert",
       "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "9/27/2019": [
+    {
+      "allDay": false,
+      "start": 1569628800000,
+      "end": 1569636000000,
+      "name": "Foundation Event: Catapult",
+      "description": "An America's Got Talent finalist from Season 8, Catapult is a magical production that features incredible dancers who work behind a screen to create shadow silhouettes of shapes from the world around us. Be amazed as you watch their bodies transform into a mountain, an elephant, a dragon, even a helicopter! You'll never figure out how they do it, and you won't know what they will create next -- you'll be surprised and delighted again and again.\n\nTickets are $20 per person.  Click here to purchase tickets .\n\nAll tickets will be waiting at will-call the evening of the performance.\nSeating is assigned on a first-come, first-serve basis.\n\n  \n\nGroups of ten (10) or more are eligible to receive a 10% discount. \nPlease call Ashley Bunzol at  847-415-4472  to learn more.",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Foundation Events"
+      ]
+    }
+  ],
+  "9/28/2019": [
+    {
+      "allDay": false,
+      "start": 1569686400000,
+      "end": 1569726000000,
+      "name": "String Parents Fundraiser",
+      "description": "Show this flyer , and 20% of sale will be donated to the strings program.",
+      "location": "California Pizza Kitchen",
       "categories": [
         "Fine Arts"
       ]
@@ -657,8 +759,10 @@
     {
       "allDay": true,
       "start": 1569819600000,
+      "end": 1569906000000,
       "name": "Non-Attendance Day",
       "description": "",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -666,10 +770,12 @@
   ],
   "10/2/2019": [
     {
+      "allDay": false,
       "start": 1570028760000,
       "end": 1570031340000,
       "name": "Activity Period",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -679,8 +785,10 @@
     {
       "allDay": true,
       "start": 1570251600000,
+      "end": 1570338000000,
       "name": "World's Fair",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -690,21 +798,50 @@
     {
       "allDay": true,
       "start": 1570338000000,
+      "end": 1570424400000,
       "name": "World's Fair",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
+    }
+  ],
+  "10/8/2019": [
+    {
+      "allDay": false,
+      "start": 1570572000000,
+      "end": 1570586400000,
+      "name": "Baseball Fundraiser",
+      "description": "Lincolnshire location only. Mention SHS Baseball when ordering.\n\n\n\nChipotle is located at 950 Milwaukee Ave.",
+      "location": "Chipotle",
+      "categories": []
     }
   ],
   "10/9/2019": [
     {
       "allDay": true,
       "start": 1570597200000,
+      "end": 1570683600000,
       "name": "Non-Attendance Day",
       "description": "",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
+      ]
+    }
+  ],
+  "10/10/2019": [
+    {
+      "allDay": false,
+      "start": 1570752000000,
+      "end": 1570755600000,
+      "name": "ARTalk with Carissa Meier",
+      "description": "Open to the public\n\n\n\n\nVisiting Artist of the Month Carissa Meier will discuss her work and her career during the second ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.carissameier.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "location": "Visiting Artist Gallery (West Building)",
+      "categories": [
+        "Foundation Events",
+        "Fine Arts"
       ]
     }
   ],
@@ -712,8 +849,10 @@
     {
       "allDay": true,
       "start": 1571029200000,
+      "end": 1571115600000,
       "name": "No School - Columbus Day",
       "description": "",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -723,8 +862,10 @@
     {
       "allDay": true,
       "start": 1571202000000,
+      "end": 1571288400000,
       "name": "PSAT Testing for Juniors (Proposed Date)",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -732,23 +873,12 @@
   ],
   "10/17/2019": [
     {
+      "allDay": false,
       "start": 1571356800000,
       "end": 1571364000000,
-      "location": "Performing Arts Center",
       "name": "CPN Presents: An Evening With Michele Borba",
-      "description": "Dr. Michele Borba, author of \"Unselfie,\" will examine how to raise caring, successful kids in a plugged-in, trophy-driven world. Free.\n\nThe  Community Parent Network , a program of the Stevenson Foundation, sponsors \"An Evening With \"Unselfie\" Author Michele Borba.\" Parents are grappling with technology- and digitally-driven challenges that no previous generation has faced. Borba will offer proven strategies to help parents raise successful, happy, compassionate and socially responsible children in a hyper-competitive society.",
-      "categories": [
-        "Foundation Events"
-      ]
-    }
-  ],
-  "10/20/2019": [
-    {
-      "allDay": true,
-      "start": 1571547600000,
-      "location": "West Auditorium",
-      "name": "Children's Play",
-      "description": "",
+      "description": "Dr. Michele Borba, author of \"Unselfie,\" will examine how to raise caring, successful kids in a plugged-in, trophy-driven world. Free.\n\n\n\nThe  Community Parent Network , a program of the Stevenson Foundation, sponsors \"An Evening With \"Unselfie\" Author Michele Borba.\" Parents are grappling with technology- and digitally-driven challenges that no previous generation has faced. Borba will offer proven strategies to help parents raise successful, happy, compassionate and socially responsible children in a hyper-competitive society.",
+      "location": "Performing Arts Center",
       "categories": [
         "Foundation Events"
       ]
@@ -758,8 +888,10 @@
     {
       "allDay": true,
       "start": 1571893200000,
+      "end": 1571979600000,
       "name": "Late Arrival - Staff Development",
       "description": "Classes will begin at 10:30. Buses start their routes at 9:20.",
+      "location": null,
       "categories": [
         "Late Arrival"
       ]
@@ -767,10 +899,23 @@
     {
       "allDay": true,
       "start": 1571893200000,
+      "end": 1571979600000,
       "name": "Yearbook Picture Re-Takes",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1571916600000,
+      "end": 1571931000000,
+      "name": "String Parents Association Fundraiser",
+      "description": "Enjoy a late-start breakfast. Mention Stevenson when ordering. Proceeds will benefit the SHS strings program.",
+      "location": "Strawberry Field Pancakes and Cafe",
+      "categories": [
+        "Fine Arts"
       ]
     }
   ],
@@ -778,20 +923,36 @@
     {
       "allDay": true,
       "start": 1571979600000,
+      "end": 1572066000000,
       "name": "Yearbook Picture Re-Takes",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
     }
   ],
+  "10/27/2019": [
+    {
+      "allDay": true,
+      "start": 1572152400000,
+      "end": 1572238800000,
+      "name": "Children's Play",
+      "description": "",
+      "location": "West Auditorium",
+      "categories": [
+        "Foundation Events"
+      ]
+    }
+  ],
   "10/28/2019": [
     {
+      "allDay": false,
       "start": 1572307200000,
       "end": 1572314400000,
-      "location": "Recital Hall",
       "name": "Chamber Band Concert",
       "description": "",
+      "location": "Recital Hall",
       "categories": [
         "Fine Arts"
       ]
@@ -799,10 +960,12 @@
   ],
   "10/30/2019": [
     {
+      "allDay": false,
       "start": 1572447960000,
       "end": 1572450540000,
       "name": "Activity Period",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -812,19 +975,34 @@
     {
       "allDay": true,
       "start": 1572584400000,
+      "end": 1572670800000,
       "name": "End of Six-Week Grading Period",
       "description": "",
+      "location": null,
       "categories": [
         "End of Six Weeks"
       ]
+    }
+  ],
+  "11/5/2019": [
+    {
+      "allDay": false,
+      "start": 1572994800000,
+      "end": 1573005600000,
+      "name": "Baseball Fundraiser",
+      "description": "Show the flyer and 20% of sale goes to the team.",
+      "location": "Portillo's - Vernon Hills",
+      "categories": []
     }
   ],
   "11/6/2019": [
     {
       "allDay": true,
       "start": 1573020000000,
+      "end": 1573106400000,
       "name": "Screens for Teens (EKG Testing)",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -834,8 +1012,10 @@
     {
       "allDay": true,
       "start": 1573106400000,
+      "end": 1573192800000,
       "name": "Career Expo",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -843,8 +1023,10 @@
     {
       "allDay": true,
       "start": 1573106400000,
+      "end": 1573192800000,
       "name": "Screens for Teens (EKG Testing)",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -852,20 +1034,34 @@
   ],
   "11/14/2019": [
     {
+      "allDay": false,
+      "start": 1573734600000,
+      "end": 1573750800000,
+      "name": "Band Fundraiser",
+      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
+      "location": "Strawberry Field",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
       "start": 1573749000000,
       "end": 1573766700000,
       "name": "Late Arrival - Teacher Planning",
       "description": "Classes begin at 10:30 a.m. Buses start their routes at 9:20.",
+      "location": null,
       "categories": [
         "Late Arrival"
       ]
     },
     {
+      "allDay": false,
       "start": 1573779600000,
       "end": 1573783200000,
-      "location": "Visiting Artist Gallery (West Building)",
       "name": "ARTalk with Bert Leveille",
-      "description": "Open to the public\n\nVisiting Artist of the Month Bert Leveille will discuss her work and her career during the third ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.bertleveille.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "description": "Open to the public\n\n\n\n\nVisiting Artist of the Month Bert Leveille will discuss her work and her career during the third ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.bertleveille.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "location": "Visiting Artist Gallery (West Building)",
       "categories": [
         "Foundation Events",
         "Fine Arts"
@@ -874,11 +1070,12 @@
   ],
   "11/15/2019": [
     {
+      "allDay": false,
       "start": 1573866000000,
       "end": 1573876800000,
-      "location": "Performing Arts Center",
       "name": "Musical: Chicago (High School Edition)",
-      "description": "\"Chicago: High School Edition\" is a toned-down version of the satirical take on corruption in Chicago during the Jazz Age of the 1920s. Based on a script by Fred Ebb, Bob Fosse, John Kander and Maurine Dallas Watkins, Chicago is the longest-running American musical in Broadway history. Its film adaptation won the Academy Award for Best Picture in 2002. ",
+      "description": "\"Chicago: High School Edition\" is a toned-down version of the satirical take on corruption in Chicago during the Jazz Age of the 1920s. Based on a script by Fred Ebb, Bob Fosse, John Kander and Maurine Dallas Watkins, Chicago is the longest-running American musical in Broadway history. Its film adaptation won the Academy Award for Best Picture in 2002.",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -886,11 +1083,12 @@
   ],
   "11/16/2019": [
     {
+      "allDay": false,
       "start": 1573952400000,
       "end": 1573963200000,
-      "location": "Performing Arts Center",
       "name": "Musical: Chicago (High School Edition)",
-      "description": "\"Chicago: High School Edition\" is a toned-down version of the satirical take on corruption in Chicago during the Jazz Age of the 1920s. Based on a script by Fred Ebb, Bob Fosse, John Kander and Maurine Dallas Watkins, Chicago is the longest-running American musical in Broadway history. Its film adaptation won the Academy Award for Best Picture in 2002. ",
+      "description": "\"Chicago: High School Edition\" is a toned-down version of the satirical take on corruption in Chicago during the Jazz Age of the 1920s. Based on a script by Fred Ebb, Bob Fosse, John Kander and Maurine Dallas Watkins, Chicago is the longest-running American musical in Broadway history. Its film adaptation won the Academy Award for Best Picture in 2002.",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -898,11 +1096,12 @@
   ],
   "11/17/2019": [
     {
+      "allDay": false,
       "start": 1574020800000,
       "end": 1574031600000,
-      "location": "Performing Arts Center",
       "name": "Musical: Chicago (High School Edition)",
-      "description": "\"Chicago: High School Edition\" is a toned-down version of the satirical take on corruption in Chicago during the Jazz Age of the 1920s. Based on a script by Fred Ebb, Bob Fosse, John Kander and Maurine Dallas Watkins, Chicago is the longest-running American musical in Broadway history. Its film adaptation won the Academy Award for Best Picture in 2002. ",
+      "description": "\"Chicago: High School Edition\" is a toned-down version of the satirical take on corruption in Chicago during the Jazz Age of the 1920s. Based on a script by Fred Ebb, Bob Fosse, John Kander and Maurine Dallas Watkins, Chicago is the longest-running American musical in Broadway history. Its film adaptation won the Academy Award for Best Picture in 2002.",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -910,10 +1109,12 @@
   ],
   "11/20/2019": [
     {
+      "allDay": false,
       "start": 1574265960000,
       "end": 1574268540000,
       "name": "Activity Period",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -921,11 +1122,12 @@
   ],
   "11/21/2019": [
     {
+      "allDay": false,
       "start": 1574384400000,
       "end": 1574391600000,
-      "location": "West Auditorium",
       "name": "Guitar Concert",
       "description": "",
+      "location": "West Auditorium",
       "categories": [
         "Fine Arts"
       ]
@@ -935,8 +1137,10 @@
     {
       "allDay": true,
       "start": 1574834400000,
+      "end": 1574920800000,
       "name": "Early Dismissal",
       "description": "Classes will be dismissed at 2:37 p.m.",
+      "location": null,
       "categories": [
         "Early Dismissal"
       ]
@@ -946,8 +1150,10 @@
     {
       "allDay": true,
       "start": 1574920800000,
+      "end": 1575007200000,
       "name": "No School - Thanksgiving",
       "description": "",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -957,8 +1163,10 @@
     {
       "allDay": true,
       "start": 1575007200000,
+      "end": 1575093600000,
       "name": "No School - Thanksgiving Break",
       "description": "",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -966,10 +1174,12 @@
   ],
   "12/2/2019": [
     {
+      "allDay": false,
       "start": 1575302760000,
       "end": 1575305340000,
       "name": "Activity Period",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -979,17 +1189,21 @@
     {
       "allDay": true,
       "start": 1575352800000,
-      "location": "West Auditorium",
+      "end": 1575439200000,
       "name": "Winter Play Auditions",
       "description": "",
+      "location": "West Auditorium",
       "categories": [
         "Fine Arts"
       ]
     },
     {
+      "allDay": false,
       "start": 1575383400000,
+      "end": 1575383400000,
       "name": "Give-A-Thon Collection Day",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -999,9 +1213,10 @@
     {
       "allDay": true,
       "start": 1575439200000,
-      "location": "Forum and Room 2104",
+      "end": 1575525600000,
       "name": "Winter Artfest",
       "description": "",
+      "location": "Forum and Room 2104",
       "categories": [
         "Fine Arts"
       ]
@@ -1009,9 +1224,10 @@
     {
       "allDay": true,
       "start": 1575439200000,
-      "location": "West Auditorium",
+      "end": 1575525600000,
       "name": "Winter Play Auditions",
       "description": "",
+      "location": "West Auditorium",
       "categories": [
         "Fine Arts"
       ]
@@ -1021,8 +1237,10 @@
     {
       "allDay": true,
       "start": 1575525600000,
+      "end": 1575612000000,
       "name": "Late Arrival - Staff Development",
       "description": "Classes begin at 10:30 a.m. Bus routes start at 9:20.",
+      "location": null,
       "categories": [
         "Late Arrival"
       ]
@@ -1030,9 +1248,21 @@
     {
       "allDay": true,
       "start": 1575525600000,
-      "location": "Forum and Room 2104",
+      "end": 1575612000000,
       "name": "Winter Artfest",
       "description": "",
+      "location": "Forum and Room 2104",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1575549000000,
+      "end": 1575565200000,
+      "name": "Band Fundraiser",
+      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
+      "location": "Strawberry Field",
       "categories": [
         "Fine Arts"
       ]
@@ -1040,31 +1270,34 @@
   ],
   "12/6/2019": [
     {
+      "allDay": false,
       "start": 1575639000000,
       "end": 1575641700000,
-      "location": "West Auditorium",
       "name": "Prominent Patriot Ceremony",
       "description": "First-semester Prominent Patriot nominees will be honored, and the winner of the Prominent Patriot Award for first semester will be announced.",
+      "location": "West Auditorium",
       "categories": [
         "Clubs and Activities"
       ]
     },
     {
+      "allDay": false,
       "start": 1575680400000,
       "end": 1575687600000,
-      "location": "Performing Arts Center",
       "name": "Dance Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
     },
     {
+      "allDay": false,
       "start": 1575680400000,
       "end": 1575687600000,
-      "location": "West Auditorium",
       "name": "Improv Performance",
       "description": "",
+      "location": "West Auditorium",
       "categories": [
         "Clubs and Activities"
       ]
@@ -1072,11 +1305,12 @@
   ],
   "12/7/2019": [
     {
+      "allDay": false,
       "start": 1575766800000,
       "end": 1575774000000,
-      "location": "Performing Arts Center",
       "name": "Dance Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -1084,11 +1318,12 @@
   ],
   "12/9/2019": [
     {
+      "allDay": false,
       "start": 1575939600000,
       "end": 1575946800000,
-      "location": "Performing Arts Center",
       "name": "Band Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -1096,11 +1331,12 @@
   ],
   "12/10/2019": [
     {
+      "allDay": false,
       "start": 1576026000000,
       "end": 1576033200000,
-      "location": "Performing Arts Center",
       "name": "Band Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -1108,11 +1344,23 @@
   ],
   "12/12/2019": [
     {
+      "allDay": true,
+      "start": 1576130400000,
+      "end": 1576216800000,
+      "name": "Baseball Fundraiser",
+      "description": "Use the special barcode when ordering.",
+      "location": "City BBQ - Vernon Hills",
+      "categories": [
+        "Athletics"
+      ]
+    },
+    {
+      "allDay": false,
       "start": 1576198800000,
       "end": 1576206000000,
-      "location": "Performing Arts Center",
       "name": "Choral Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -1120,11 +1368,12 @@
   ],
   "12/13/2019": [
     {
+      "allDay": false,
       "start": 1576285200000,
       "end": 1576292400000,
-      "location": "Room 2104",
       "name": "Jazz Cafe",
       "description": "",
+      "location": "Room 2104",
       "categories": [
         "Fine Arts"
       ]
@@ -1132,11 +1381,12 @@
   ],
   "12/14/2019": [
     {
+      "allDay": false,
       "start": 1576371600000,
       "end": 1576378800000,
-      "location": "Black Box Theatre",
       "name": "Acting 3 Class Performance",
       "description": "",
+      "location": "Black Box Theatre",
       "categories": [
         "Fine Arts"
       ]
@@ -1144,11 +1394,12 @@
   ],
   "12/16/2019": [
     {
+      "allDay": false,
       "start": 1576544400000,
       "end": 1576551600000,
-      "location": "Performing Arts Center",
       "name": "Orchestra Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -1158,8 +1409,10 @@
     {
       "allDay": true,
       "start": 1576562400000,
+      "end": 1576648800000,
       "name": "End of Six-Week Grading Period",
       "description": "",
+      "location": null,
       "categories": [
         "End of Six Weeks"
       ]
@@ -1169,8 +1422,10 @@
     {
       "allDay": true,
       "start": 1576648800000,
+      "end": 1576735200000,
       "name": "Semester Exams - Day 1",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -1180,8 +1435,10 @@
     {
       "allDay": true,
       "start": 1576735200000,
+      "end": 1576821600000,
       "name": "Semester Exams - Day 2",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -1191,8 +1448,10 @@
     {
       "allDay": true,
       "start": 1576821600000,
+      "end": 1576908000000,
       "name": "Semester Exams - Day 3",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -1202,88 +1461,120 @@
     {
       "allDay": true,
       "start": 1577080800000,
+      "end": 1577167200000,
       "name": "Winter Break",
-      "description": "runs through Jan. 6, 2020"
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
     }
   ],
   "12/24/2019": [
     {
       "allDay": true,
       "start": 1577167200000,
+      "end": 1577253600000,
       "name": "Winter Break",
-      "description": "runs through Jan. 6, 2020"
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
     }
   ],
   "12/25/2019": [
     {
       "allDay": true,
       "start": 1577253600000,
+      "end": 1577340000000,
       "name": "Winter Break",
-      "description": "runs through Jan. 6, 2020"
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
     }
   ],
   "12/26/2019": [
     {
       "allDay": true,
       "start": 1577340000000,
+      "end": 1577426400000,
       "name": "Winter Break",
-      "description": "runs through Jan. 6, 2020"
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
     }
   ],
   "12/27/2019": [
     {
       "allDay": true,
       "start": 1577426400000,
+      "end": 1577512800000,
       "name": "Winter Break",
-      "description": "runs through Jan. 6, 2020"
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
     }
   ],
   "12/30/2019": [
     {
       "allDay": true,
       "start": 1577685600000,
+      "end": 1577772000000,
       "name": "Winter Break",
-      "description": "runs through Jan. 6, 2020"
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
     }
   ],
   "12/31/2019": [
     {
       "allDay": true,
       "start": 1577772000000,
+      "end": 1577858400000,
       "name": "Winter Break",
-      "description": "runs through Jan. 6, 2020"
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
     }
   ],
   "1/1/2020": [
     {
       "allDay": true,
       "start": 1577858400000,
+      "end": 1577944800000,
       "name": "Winter Break",
-      "description": "runs through Jan. 6, 2020"
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
     }
   ],
   "1/2/2020": [
     {
       "allDay": true,
       "start": 1577944800000,
+      "end": 1578031200000,
       "name": "Winter Break",
-      "description": "runs through Jan. 6, 2020"
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
     }
   ],
   "1/3/2020": [
     {
       "allDay": true,
       "start": 1578031200000,
+      "end": 1578117600000,
       "name": "Winter Break",
-      "description": "runs through Jan. 6, 2020"
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
     }
   ],
   "1/6/2020": [
     {
       "allDay": true,
       "start": 1578290400000,
+      "end": 1578376800000,
       "name": "No School - Teacher Institute Day",
       "description": "",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -1291,17 +1582,21 @@
   ],
   "1/7/2020": [
     {
+      "allDay": false,
       "start": 1578407400000,
       "end": 1578432300000,
       "name": "Second Semester Begins",
-      "description": ""
+      "description": "",
+      "location": null,
+      "categories": []
     },
     {
+      "allDay": false,
       "start": 1578445200000,
       "end": 1578452400000,
-      "location": "Performing Arts Center",
       "name": "Incoming Freshman Parent Night #1",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Parent Calendar"
       ]
@@ -1309,11 +1604,12 @@
   ],
   "1/9/2020": [
     {
+      "allDay": false,
       "start": 1578618000000,
       "end": 1578625200000,
-      "location": "Performing Arts Center",
       "name": "Incoming Freshman Parent Night #2",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Parent Calendar"
       ]
@@ -1323,8 +1619,10 @@
     {
       "allDay": true,
       "start": 1578722400000,
+      "end": 1578808800000,
       "name": "Benchmark Exams for Incoming Freshmen",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -1332,20 +1630,23 @@
   ],
   "1/13/2020": [
     {
+      "allDay": false,
       "start": 1578931560000,
       "end": 1578934140000,
       "name": "Activity Period",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
     },
     {
+      "allDay": false,
       "start": 1578963600000,
       "end": 1578970800000,
-      "location": "Performing Arts Center",
       "name": "Consortium Choral Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -1353,11 +1654,12 @@
   ],
   "1/14/2020": [
     {
+      "allDay": false,
       "start": 1579050000000,
       "end": 1579057200000,
-      "location": "Performing Arts Center",
       "name": "Consortium Orchestra Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -1365,11 +1667,12 @@
   ],
   "1/15/2020": [
     {
+      "allDay": false,
       "start": 1579136400000,
       "end": 1579143600000,
-      "location": "Performing Arts Center",
       "name": "Incoming Freshman Parent Night #3",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Parent Calendar"
       ]
@@ -1379,18 +1682,32 @@
     {
       "allDay": true,
       "start": 1579154400000,
+      "end": 1579240800000,
       "name": "Late Arrival - Teacher Planning",
       "description": "Classes begin at 10:30 a.m. Bus routes start at 9:20.",
+      "location": null,
       "categories": [
         "Late Arrival"
       ]
     },
     {
+      "allDay": false,
+      "start": 1579177800000,
+      "end": 1579194000000,
+      "name": "Band Fundraiser",
+      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
+      "location": "Strawberry Field",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
       "start": 1579222800000,
       "end": 1579230000000,
-      "location": "Performing Arts Center",
       "name": "Consortium Band Festival",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -1400,8 +1717,10 @@
     {
       "allDay": true,
       "start": 1579240800000,
+      "end": 1579327200000,
       "name": "Fine Arts Tour of Sender Schools",
       "description": "",
+      "location": null,
       "categories": [
         "Fine Arts"
       ]
@@ -1411,8 +1730,10 @@
     {
       "allDay": true,
       "start": 1579500000000,
+      "end": 1579586400000,
       "name": "No School - Martin Luther King Jr. Day",
       "description": "",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -1420,11 +1741,12 @@
   ],
   "1/23/2020": [
     {
+      "allDay": false,
       "start": 1579816800000,
       "end": 1579827600000,
-      "location": "Room 2104",
       "name": "Incoming Freshman Course Selection Evening Night #1",
       "description": "",
+      "location": "Room 2104",
       "categories": [
         "Parent Calendar"
       ]
@@ -1432,33 +1754,49 @@
   ],
   "1/24/2020": [
     {
+      "allDay": false,
       "start": 1579914000000,
       "end": 1579921200000,
-      "location": "Performing Arts Center",
       "name": "S-Factor Singing Competition",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Clubs and Activities"
       ]
     }
   ],
+  "1/25/2020": [
+    {
+      "allDay": false,
+      "start": 1580002200000,
+      "end": 1580009400000,
+      "name": "Foundation Event: Happy Together",
+      "description": "Married musical stars Michael and Angela Ingersoll hilariously share the spotlight singing oldies but goodies. He's the beloved star from  Jersey Boys  (original San Francisco, Los Angeles, and Chicago casts) and the PBS retro-rock group Under the Streetlamp. She's the Emmy nominee known for her astonishing portrayals of Judy Garland ( End of the Rainbow ;  Get Happy  on PBS). Enjoy Chicago Tribune's \"Dynamic Power Couple\" for shenanigans and signature songs including \"Save the Last Dance For Me,\" \"Over the Rainbow,\" and \"I've Had the Time of My Life.\"",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Foundation Events"
+      ]
+    }
+  ],
   "1/28/2020": [
     {
+      "allDay": false,
       "start": 1580248800000,
       "end": 1580259600000,
-      "location": "Room 2104",
       "name": "Incoming Freshman Course Selection Evening Night #2",
       "description": "",
+      "location": "Room 2104",
       "categories": [
         "Parent Calendar"
       ]
     },
     {
+      "allDay": false,
       "start": 1580259600000,
       "end": 1580266800000,
-      "location": "Recital Hall",
       "name": "Baroque Ensemble Concert",
       "description": "",
+      "location": "Recital Hall",
       "categories": [
         "Fine Arts"
       ]
@@ -1468,9 +1806,10 @@
     {
       "allDay": true,
       "start": 1580277600000,
-      "location": "Dance Studio 2010",
+      "end": 1580364000000,
       "name": "Incoming Freshman Dance Auditions",
       "description": "",
+      "location": "Dance Studio 2010",
       "categories": [
         "Fine Arts"
       ]
@@ -1480,8 +1819,10 @@
     {
       "allDay": true,
       "start": 1580364000000,
+      "end": 1580450400000,
       "name": "Dance Auditions for Current Students",
       "description": "",
+      "location": null,
       "categories": [
         "Fine Arts"
       ]
@@ -1489,19 +1830,21 @@
     {
       "allDay": true,
       "start": 1580364000000,
-      "location": "Dance Studio 2010",
+      "end": 1580450400000,
       "name": "Incoming Freshman Dance Auditions",
       "description": "",
+      "location": "Dance Studio 2010",
       "categories": [
         "Fine Arts"
       ]
     },
     {
+      "allDay": false,
       "start": 1580432400000,
       "end": 1580439600000,
-      "location": "Little Theatre (PAC)",
       "name": "Freshman-Sophomore Play: Puffs",
       "description": "The freshman-sophomore play features the Harry Potter parody, \"Puffs, Or: Seven Increasingly Eventful Years at a Certain School of Magic and Magic,\" by Matt Cox. \"For seven years a certain boy wizard went to a certain Wizard School and conquered evil. This, however, is not his story,\" reads the play's website. \"This is the story of the Puffs ... who just happened to be there too. A tale for anyone who has never been destined to save the world.\"",
+      "location": "Little Theatre (PAC)",
       "categories": [
         "Fine Arts"
       ]
@@ -1509,11 +1852,12 @@
   ],
   "1/31/2020": [
     {
+      "allDay": false,
       "start": 1580518800000,
       "end": 1580526000000,
-      "location": "Little Theatre (PAC)",
       "name": "Freshman-Sophomore Play: Puffs",
       "description": "The freshman-sophomore play features the Harry Potter parody, \"Puffs, Or: Seven Increasingly Eventful Years at a Certain School of Magic and Magic,\" by Matt Cox. \"For seven years a certain boy wizard went to a certain Wizard School and conquered evil. This, however, is not his story,\" reads the play's website. \"This is the story of the Puffs ... who just happened to be there too. A tale for anyone who has never been destined to save the world.\"",
+      "location": "Little Theatre (PAC)",
       "categories": [
         "Fine Arts"
       ]
@@ -1521,11 +1865,12 @@
   ],
   "2/1/2020": [
     {
+      "allDay": false,
       "start": 1580605200000,
       "end": 1580612400000,
-      "location": "Little Theatre (PAC)",
       "name": "Freshman-Sophomore Play: Puffs",
       "description": "The freshman-sophomore play features the Harry Potter parody, \"Puffs, Or: Seven Increasingly Eventful Years at a Certain School of Magic and Magic,\" by Matt Cox. \"For seven years a certain boy wizard went to a certain Wizard School and conquered evil. This, however, is not his story,\" reads the play's website. \"This is the story of the Puffs ... who just happened to be there too. A tale for anyone who has never been destined to save the world.\"",
+      "location": "Little Theatre (PAC)",
       "categories": [
         "Fine Arts"
       ]
@@ -1535,8 +1880,10 @@
     {
       "allDay": true,
       "start": 1580796000000,
+      "end": 1580882400000,
       "name": "Odyssey Fine Arts Festival",
       "description": "",
+      "location": null,
       "categories": [
         "Fine Arts"
       ]
@@ -1546,8 +1893,10 @@
     {
       "allDay": true,
       "start": 1580882400000,
+      "end": 1580968800000,
       "name": "Odyssey Fine Arts Festival",
       "description": "",
+      "location": null,
       "categories": [
         "Fine Arts"
       ]
@@ -1555,10 +1904,12 @@
   ],
   "2/6/2020": [
     {
+      "allDay": false,
       "start": 1581037200000,
       "end": 1581044400000,
       "name": "CPN Presents: Mindfulness for Parents",
       "description": "The Community Parent Network, a program of the Stevenson Foundation, sponsors \"Mindfulness for Parents.\" Mindfulness, or being present in the moment, is necessary in parenting. Join Ramaa Krishnan to learn how to slow down, and give space for some \"being\" instead of always \"doing.\"",
+      "location": null,
       "categories": [
         "Foundation Events"
       ]
@@ -1566,11 +1917,12 @@
   ],
   "2/10/2020": [
     {
+      "allDay": false,
       "start": 1581382800000,
       "end": 1581390000000,
-      "location": "Performing Arts Center",
       "name": "Consortium Jazz Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -1578,11 +1930,12 @@
   ],
   "2/11/2020": [
     {
+      "allDay": false,
       "start": 1581469200000,
       "end": 1581476400000,
-      "location": "Recital Hall (PAC)",
       "name": "Orchestra Chamber Concert",
       "description": "",
+      "location": "Recital Hall (PAC)",
       "categories": [
         "Fine Arts"
       ]
@@ -1590,21 +1943,38 @@
   ],
   "2/12/2020": [
     {
+      "allDay": false,
       "start": 1581523560000,
       "end": 1581526140000,
       "name": "Activity Period",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
     },
     {
+      "allDay": false,
       "start": 1581555600000,
       "end": 1581562800000,
-      "location": "Performing Arts Center",
       "name": "Choral Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "2/13/2020": [
+    {
+      "allDay": false,
+      "start": 1581642000000,
+      "end": 1581645600000,
+      "name": "ARTalk with Nadine Royster",
+      "description": "Open to the public\n\n\n\nVisiting Artist of the Month Nadine Royster will discuss her work and her career during the fourth ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.yadiart.com .\n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "location": "Visiting Artist Gallery (West Building)",
+      "categories": [
+        "Foundation Events",
         "Fine Arts"
       ]
     }
@@ -1613,18 +1983,21 @@
     {
       "allDay": true,
       "start": 1581660000000,
+      "end": 1581746400000,
       "name": "End of Six-Week Grading Period",
       "description": "",
+      "location": null,
       "categories": [
         "End of Six Weeks"
       ]
     },
     {
+      "allDay": false,
       "start": 1581728400000,
       "end": 1581735600000,
-      "location": "Performing Arts Center",
       "name": "Mr. SHS Contest",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Clubs and Activities"
       ]
@@ -1634,8 +2007,10 @@
     {
       "allDay": true,
       "start": 1581919200000,
+      "end": 1582005600000,
       "name": "No School - Presidents Day",
       "description": "",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -1645,8 +2020,10 @@
     {
       "allDay": true,
       "start": 1582005600000,
+      "end": 1582092000000,
       "name": "Winterfest Week",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -1656,8 +2033,10 @@
     {
       "allDay": true,
       "start": 1582092000000,
+      "end": 1582178400000,
       "name": "Winterfest Week",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -1667,8 +2046,10 @@
     {
       "allDay": true,
       "start": 1582178400000,
+      "end": 1582264800000,
       "name": "Late Arrival - Staff Development",
       "description": "Classes begin at 10:30 a.m. Bus routes start at 9:20.",
+      "location": null,
       "categories": [
         "Late Arrival"
       ]
@@ -1676,10 +2057,23 @@
     {
       "allDay": true,
       "start": 1582178400000,
+      "end": 1582264800000,
       "name": "Winterfest Week",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1582201800000,
+      "end": 1582218000000,
+      "name": "Band Fundraiser",
+      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
+      "location": "Strawberry Field",
+      "categories": [
+        "Fine Arts"
       ]
     }
   ],
@@ -1687,14 +2081,19 @@
     {
       "allDay": true,
       "start": 1582264800000,
+      "end": 1582351200000,
       "name": "PM Assembly Schedule",
-      "description": "The school will follow a PM Assembly schedule on this day to accommodate the Winterfest pep rally at 2:42 p.m."
+      "description": "The school will follow a PM Assembly schedule on this day to accommodate the Winterfest pep rally at 2:42 p.m.",
+      "location": null,
+      "categories": []
     },
     {
       "allDay": true,
       "start": 1582264800000,
+      "end": 1582351200000,
       "name": "Winterfest Week",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -1704,8 +2103,10 @@
     {
       "allDay": true,
       "start": 1582351200000,
+      "end": 1582437600000,
       "name": "Winterfest Dance",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -1713,10 +2114,12 @@
   ],
   "2/26/2020": [
     {
+      "allDay": false,
       "start": 1582733160000,
       "end": 1582735740000,
       "name": "Activity Period",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -1724,11 +2127,12 @@
   ],
   "2/27/2020": [
     {
+      "allDay": false,
       "start": 1582851600000,
       "end": 1582858800000,
-      "location": "Recital Hall (PAC)",
       "name": "Chamber Guitar Concert",
       "description": "",
+      "location": "Recital Hall (PAC)",
       "categories": [
         "Fine Arts"
       ]
@@ -1738,8 +2142,10 @@
     {
       "allDay": true,
       "start": 1582869600000,
+      "end": 1582956000000,
       "name": "Institute Day - No School",
       "description": "",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -1749,8 +2155,10 @@
     {
       "allDay": true,
       "start": 1583128800000,
+      "end": 1583215200000,
       "name": "No School - Pulaski Day (Possible Snow Make-Up Day)",
       "description": "possible snow make-up day",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -1758,11 +2166,12 @@
   ],
   "3/3/2020": [
     {
+      "allDay": false,
       "start": 1583283600000,
       "end": 1583290800000,
-      "location": "Performing Arts Center",
       "name": "Band Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -1770,11 +2179,12 @@
   ],
   "3/4/2020": [
     {
+      "allDay": false,
       "start": 1583370000000,
       "end": 1583377200000,
-      "location": "Performing Arts Center",
       "name": "Band Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -1782,11 +2192,12 @@
   ],
   "3/5/2020": [
     {
+      "allDay": false,
       "start": 1583456400000,
       "end": 1583463600000,
-      "location": "West Auditorium",
       "name": "Winter Play: The Importance of Being Earnest",
       "description": "Oscar Wilde's most popular play takes a farcical look at two bachelors trying to escape their humdrum lives in late Victorian Era-London.",
+      "location": "West Auditorium",
       "categories": [
         "Fine Arts"
       ]
@@ -1794,11 +2205,12 @@
   ],
   "3/6/2020": [
     {
+      "allDay": false,
       "start": 1583542800000,
       "end": 1583550000000,
-      "location": "West Auditorium",
       "name": "Winter Play: The Importance of Being Earnest",
       "description": "Oscar Wilde's most popular play takes a farcical look at two bachelors trying to escape their humdrum lives in late Victorian Era-London.",
+      "location": "West Auditorium",
       "categories": [
         "Fine Arts"
       ]
@@ -1808,18 +2220,21 @@
     {
       "allDay": true,
       "start": 1583560800000,
+      "end": 1583647200000,
       "name": "St. Baldrick's Fundraiser",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
     },
     {
+      "allDay": false,
       "start": 1583629200000,
       "end": 1583636400000,
-      "location": "West Auditorium",
       "name": "Winter Play: The Importance of Being Earnest",
       "description": "Oscar Wilde's most popular play takes a farcical look at two bachelors trying to escape their humdrum lives in late Victorian Era-London.",
+      "location": "West Auditorium",
       "categories": [
         "Fine Arts"
       ]
@@ -1829,18 +2244,32 @@
     {
       "allDay": true,
       "start": 1583989200000,
+      "end": 1584075600000,
       "name": "Late Arrival - Teacher Planning",
       "description": "Classes begin at 10:30 a.m. Bus routes start at 9:20.",
+      "location": null,
       "categories": [
         "Late Arrival"
       ]
     },
     {
+      "allDay": false,
+      "start": 1584012600000,
+      "end": 1584028800000,
+      "name": "Band Fundraiser",
+      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
+      "location": "Strawberry Field",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
       "start": 1584057600000,
       "end": 1584061200000,
-      "location": "Visiting Artist Gallery (West Building)",
       "name": "ARTalk with Donna Hickman",
-      "description": "Open to the public\n\nVisiting Artist of the Month Donna Hickman, a former Stevenson art teacher, will discuss her work and her career during the fifth ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.donnastewarthickman.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "description": "Open to the public\n\n\n\n\nVisiting Artist of the Month Donna Hickman, a former Stevenson art teacher, will discuss her work and her career during the fifth ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.donnastewarthickman.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "location": "Visiting Artist Gallery (West Building)",
       "categories": [
         "Foundation Events",
         "Fine Arts"
@@ -1849,11 +2278,12 @@
   ],
   "3/13/2020": [
     {
+      "allDay": false,
       "start": 1584144000000,
       "end": 1584154800000,
-      "location": "Performing Arts Center",
       "name": "Showcase",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Clubs and Activities"
       ]
@@ -1861,11 +2291,12 @@
   ],
   "3/14/2020": [
     {
+      "allDay": false,
       "start": 1584230400000,
       "end": 1584241200000,
-      "location": "Performing Arts Center",
       "name": "Showcase",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Clubs and Activities"
       ]
@@ -1875,8 +2306,10 @@
     {
       "allDay": true,
       "start": 1584334800000,
+      "end": 1584421200000,
       "name": "Auditions for One-Act Plays",
       "description": "",
+      "location": null,
       "categories": [
         "Fine Arts"
       ]
@@ -1886,8 +2319,10 @@
     {
       "allDay": true,
       "start": 1584421200000,
+      "end": 1584507600000,
       "name": "Auditions for One-Act Plays",
       "description": "",
+      "location": null,
       "categories": [
         "Fine Arts"
       ]
@@ -1895,19 +2330,23 @@
   ],
   "3/18/2020": [
     {
+      "allDay": false,
       "start": 1584543960000,
       "end": 1584546540000,
       "name": "Activity Period - Student Elections",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
     },
     {
+      "allDay": false,
       "start": 1584574200000,
       "end": 1584581400000,
       "name": "Co-Curricular Night for Incoming Freshmen",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -1915,11 +2354,12 @@
   ],
   "3/19/2020": [
     {
+      "allDay": false,
       "start": 1584662400000,
       "end": 1584669600000,
-      "location": "Performing Arts Center",
       "name": "Orchestra Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -1929,8 +2369,10 @@
     {
       "allDay": true,
       "start": 1584939600000,
+      "end": 1585026000000,
       "name": "Spring Break",
       "description": "runs through March 27, 2020",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -1940,8 +2382,10 @@
     {
       "allDay": true,
       "start": 1585026000000,
+      "end": 1585112400000,
       "name": "Spring Break",
       "description": "runs through March 27, 2020",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -1951,8 +2395,10 @@
     {
       "allDay": true,
       "start": 1585112400000,
+      "end": 1585198800000,
       "name": "Spring Break",
       "description": "runs through March 27, 2020",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -1962,8 +2408,10 @@
     {
       "allDay": true,
       "start": 1585198800000,
+      "end": 1585285200000,
       "name": "Spring Break",
       "description": "runs through March 27, 2020",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -1973,8 +2421,10 @@
     {
       "allDay": true,
       "start": 1585285200000,
+      "end": 1585371600000,
       "name": "Spring Break",
       "description": "runs through March 27, 2020",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -1984,18 +2434,21 @@
     {
       "allDay": true,
       "start": 1585890000000,
+      "end": 1585976400000,
       "name": "End of Six-Week Grading Period",
       "description": "",
+      "location": null,
       "categories": [
         "End of Six Weeks"
       ]
     },
     {
+      "allDay": false,
       "start": 1585958400000,
       "end": 1585965600000,
-      "location": "West Auditorium",
       "name": "Evening of Jazz",
       "description": "",
+      "location": "West Auditorium",
       "categories": [
         "Fine Arts"
       ]
@@ -2005,9 +2458,10 @@
     {
       "allDay": true,
       "start": 1586235600000,
-      "location": "Forum and Room 2104",
+      "end": 1586322000000,
       "name": "AP Art and Adv. Photography Show",
       "description": "",
+      "location": "Forum and Room 2104",
       "categories": [
         "Fine Arts"
       ]
@@ -2017,9 +2471,10 @@
     {
       "allDay": true,
       "start": 1586322000000,
-      "location": "Forum and Room 2104",
+      "end": 1586408400000,
       "name": "AP Art and Adv. Photography Show",
       "description": "",
+      "location": "Forum and Room 2104",
       "categories": [
         "Fine Arts"
       ]
@@ -2027,11 +2482,12 @@
   ],
   "4/9/2020": [
     {
+      "allDay": false,
       "start": 1586439000000,
       "end": 1586463900000,
-      "location": "Performing Arts Center",
       "name": "Day of Dance",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -2041,8 +2497,10 @@
     {
       "allDay": true,
       "start": 1586494800000,
+      "end": 1586581200000,
       "name": "Non-Attendance Day",
       "description": "",
+      "location": null,
       "categories": [
         "Non-Attendance Days"
       ]
@@ -2052,19 +2510,21 @@
     {
       "allDay": true,
       "start": 1586754000000,
-      "location": "Orchestra Room",
+      "end": 1586840400000,
       "name": "Incoming Freshman Strings Auditions",
       "description": "",
+      "location": "Orchestra Room",
       "categories": [
         "Fine Arts"
       ]
     },
     {
+      "allDay": false,
       "start": 1586822400000,
       "end": 1586829600000,
-      "location": "Performing Arts Center",
       "name": "Percussion Ensemble Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -2074,8 +2534,10 @@
     {
       "allDay": true,
       "start": 1586840400000,
+      "end": 1586926800000,
       "name": "SAT Testing for Juniors/PSAT Testing for Sophomores",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -2085,8 +2547,10 @@
     {
       "allDay": true,
       "start": 1586926800000,
+      "end": 1587013200000,
       "name": "PSAT Testing for Freshmen",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -2094,20 +2558,23 @@
   ],
   "4/16/2020": [
     {
+      "allDay": false,
       "start": 1587049560000,
       "end": 1587052140000,
       "name": "Activity Period",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
     },
     {
+      "allDay": false,
       "start": 1587081600000,
       "end": 1587088800000,
-      "location": "Recital Hall (PAC)",
       "name": "Small Ensemble Concert",
       "description": "",
+      "location": "Recital Hall (PAC)",
       "categories": [
         "Fine Arts"
       ]
@@ -2115,11 +2582,12 @@
   ],
   "4/17/2020": [
     {
+      "allDay": false,
       "start": 1587168000000,
       "end": 1587175200000,
-      "location": "Performing Arts Center",
       "name": "Fashion Show",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Clubs and Activities"
       ]
@@ -2127,11 +2595,12 @@
   ],
   "4/22/2020": [
     {
+      "allDay": false,
       "start": 1587600000000,
       "end": 1587607200000,
-      "location": "Performing Arts Center",
       "name": "Senior Awards Night",
       "description": "Members of the senior class will receive division-level awards and other honors during this ceremony.",
+      "location": "Performing Arts Center",
       "categories": [
         "Clubs and Activities"
       ]
@@ -2141,10 +2610,23 @@
     {
       "allDay": true,
       "start": 1587618000000,
+      "end": 1587704400000,
       "name": "Late Arrival - Staff Development",
       "description": "Classes begin at 10:30 a.m. Bus routes start at 9:20.",
+      "location": null,
       "categories": [
         "Late Arrival"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1587641400000,
+      "end": 1587657600000,
+      "name": "Band Fundraiser",
+      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
+      "location": "Strawberry Field",
+      "categories": [
+        "Fine Arts"
       ]
     }
   ],
@@ -2152,18 +2634,21 @@
     {
       "allDay": true,
       "start": 1587790800000,
+      "end": 1587877200000,
       "name": "Benchmark Exams for Incoming Freshmen",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
     },
     {
+      "allDay": false,
       "start": 1587853800000,
       "end": 1587873600000,
-      "location": "TBA",
       "name": "Prom",
       "description": "",
+      "location": "TBA",
       "categories": [
         "Clubs and Activities"
       ]
@@ -2173,9 +2658,10 @@
     {
       "allDay": true,
       "start": 1587963600000,
-      "location": "Band Room",
+      "end": 1588050000000,
       "name": "Incoming Freshman Band Auditions",
       "description": "",
+      "location": "Band Room",
       "categories": [
         "Fine Arts"
       ]
@@ -2185,9 +2671,10 @@
     {
       "allDay": true,
       "start": 1588050000000,
-      "location": "Field House",
+      "end": 1588136400000,
       "name": "Consortium Art Show and Reception",
       "description": "",
+      "location": "Field House",
       "categories": [
         "Fine Arts"
       ]
@@ -2195,42 +2682,61 @@
   ],
   "4/29/2020": [
     {
+      "allDay": false,
       "start": 1588172760000,
       "end": 1588175340000,
       "name": "Activity Period",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
     },
     {
+      "allDay": false,
       "start": 1588204800000,
       "end": 1588212000000,
-      "location": "Recital Hall (PAC)",
       "name": "Baroque Ensemble Concert",
       "description": "",
+      "location": "Recital Hall (PAC)",
       "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "4/30/2020": [
+    {
+      "allDay": false,
+      "start": 1588291200000,
+      "end": 1588294800000,
+      "name": "ARTalk with Christine Rojek",
+      "description": "Open to the public\n\n\n\n\nVisiting Artist of the Month Christine Rojek will discuss her work and her career during the sixth and final ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.christinerojek.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
+      "location": "Visiting Artist Gallery (West Building)",
+      "categories": [
+        "Foundation Events",
         "Fine Arts"
       ]
     }
   ],
   "5/1/2020": [
     {
+      "allDay": false,
       "start": 1588377600000,
       "end": 1588384800000,
-      "location": "Performing Arts Center",
       "name": "Dance Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
     },
     {
+      "allDay": false,
       "start": 1588377600000,
       "end": 1588384800000,
-      "location": "West Auditorium",
       "name": "Spring One-Acts",
       "description": "",
+      "location": "West Auditorium",
       "categories": [
         "Fine Arts"
       ]
@@ -2238,21 +2744,23 @@
   ],
   "5/2/2020": [
     {
+      "allDay": false,
       "start": 1588464000000,
       "end": 1588471200000,
-      "location": "Performing Arts Center",
       "name": "Dance Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
     },
     {
+      "allDay": false,
       "start": 1588464000000,
       "end": 1588471200000,
-      "location": "West Auditorium",
       "name": "Spring One-Acts",
       "description": "",
+      "location": "West Auditorium",
       "categories": [
         "Fine Arts"
       ]
@@ -2262,8 +2770,10 @@
     {
       "allDay": true,
       "start": 1588568400000,
+      "end": 1588654800000,
       "name": "AP Exams",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -2273,18 +2783,21 @@
     {
       "allDay": true,
       "start": 1588654800000,
+      "end": 1588741200000,
       "name": "AP Exams",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
     },
     {
+      "allDay": false,
       "start": 1588723200000,
       "end": 1588730400000,
-      "location": "Performing Arts Center",
       "name": "Choral Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -2294,8 +2807,10 @@
     {
       "allDay": true,
       "start": 1588741200000,
+      "end": 1588827600000,
       "name": "AP Exams",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -2305,18 +2820,21 @@
     {
       "allDay": true,
       "start": 1588827600000,
+      "end": 1588914000000,
       "name": "AP Exams",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
     },
     {
+      "allDay": false,
       "start": 1588896000000,
       "end": 1588903200000,
-      "location": "Performing Arts Center",
       "name": "Orchestra Awards Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -2326,18 +2844,21 @@
     {
       "allDay": true,
       "start": 1588914000000,
+      "end": 1589000400000,
       "name": "AP Exams",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
     },
     {
+      "allDay": false,
       "start": 1588982400000,
       "end": 1588989600000,
-      "location": "West Auditorium",
       "name": "Improv Performance",
       "description": "",
+      "location": "West Auditorium",
       "categories": [
         "Fine Arts",
         "Clubs and Activities"
@@ -2348,9 +2869,10 @@
     {
       "allDay": true,
       "start": 1589173200000,
-      "location": "Black Box Theatre",
+      "end": 1589259600000,
       "name": "Advanced Acting Showcase",
       "description": "",
+      "location": "Black Box Theatre",
       "categories": [
         "Fine Arts"
       ]
@@ -2358,8 +2880,10 @@
     {
       "allDay": true,
       "start": 1589173200000,
+      "end": 1589259600000,
       "name": "AP Exams",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -2369,18 +2893,21 @@
     {
       "allDay": true,
       "start": 1589259600000,
+      "end": 1589346000000,
       "name": "AP Exams",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
     },
     {
+      "allDay": false,
       "start": 1589328000000,
       "end": 1589335200000,
-      "location": "Performing Arts Center",
       "name": "Guitar Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -2390,8 +2917,10 @@
     {
       "allDay": true,
       "start": 1589346000000,
+      "end": 1589432400000,
       "name": "AP Exams",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -2399,29 +2928,32 @@
     {
       "allDay": true,
       "start": 1589346000000,
-      "location": "Dance Studio 2010",
+      "end": 1589432400000,
       "name": "Dance Company Auditions",
       "description": "",
+      "location": "Dance Studio 2010",
       "categories": [
         "Fine Arts"
       ]
     },
     {
+      "allDay": false,
       "start": 1589402700000,
       "end": 1589409000000,
-      "location": "Little Theatre (PAC)",
       "name": "Theatre Awards",
       "description": "",
+      "location": "Little Theatre (PAC)",
       "categories": [
         "Fine Arts"
       ]
     },
     {
+      "allDay": false,
       "start": 1589414400000,
       "end": 1589421600000,
-      "location": "Performing Arts Center",
       "name": "Band Concert",
       "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -2431,17 +2963,21 @@
     {
       "allDay": true,
       "start": 1589432400000,
+      "end": 1589518800000,
       "name": "AP Exams",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
     },
     {
+      "allDay": false,
       "start": 1589486400000,
-      "location": "Black Box Theatre",
+      "end": 1589486400000,
       "name": "Fall Play Auditions",
       "description": "",
+      "location": "Black Box Theatre",
       "categories": [
         "Fine Arts"
       ]
@@ -2451,8 +2987,10 @@
     {
       "allDay": true,
       "start": 1589518800000,
+      "end": 1589605200000,
       "name": "AP Exams",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -2460,27 +2998,32 @@
     {
       "allDay": true,
       "start": 1589518800000,
+      "end": 1589605200000,
       "name": "PM Assembly Schedule/Spring Fling",
       "description": "",
+      "location": null,
       "categories": [
         "Early Dismissal"
       ]
     },
     {
+      "allDay": false,
       "start": 1589574600000,
       "end": 1589590800000,
       "name": "Spring Fling",
       "description": "",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
     },
     {
+      "allDay": false,
       "start": 1589587200000,
       "end": 1589594400000,
-      "location": "West Auditorium",
       "name": "SNN Film Festival",
       "description": "",
+      "location": "West Auditorium",
       "categories": [
         "Clubs and Activities"
       ]
@@ -2490,8 +3033,10 @@
     {
       "allDay": true,
       "start": 1589778000000,
+      "end": 1589864400000,
       "name": "End of Six-Week Grading Period",
       "description": "",
+      "location": null,
       "categories": [
         "End of Six Weeks"
       ]
@@ -2501,8 +3046,10 @@
     {
       "allDay": true,
       "start": 1589864400000,
+      "end": 1589950800000,
       "name": "Final Exams - Day 1",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -2512,8 +3059,10 @@
     {
       "allDay": true,
       "start": 1589950800000,
+      "end": 1590037200000,
       "name": "Final Exams - Day 2",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -2523,8 +3072,10 @@
     {
       "allDay": true,
       "start": 1590037200000,
+      "end": 1590123600000,
       "name": "Final Exams - Day 3",
       "description": "",
+      "location": null,
       "categories": [
         "Testing Day"
       ]
@@ -2534,137 +3085,11 @@
     {
       "allDay": true,
       "start": 1590123600000,
+      "end": 1590210000000,
       "name": "Class of 2020 Graduation",
-      "description": ""
-    }
-  ],
-  "7/28/2019": [
-    {
-      "start": 1564290000000,
-      "end": 1564372800000,
-      "name": "Last Day for Online Registration",
-      "description": "After Sunday, only in-person registration will be available.\n\nOnline registration for the 2019-20 school year ends the evening of Sunday, July 28. After that date, parents must register in Room 2426 between 8 a,m. and 3 p.m. Monday through Friday. Parking in Lot B is recommended for easiest access to the registration office, which is located on the second floor of the West Building.\n\n See our registration page for information on residency documents and medical forms .\n\nOnline registration for fall athletics will still be available after July 28.  Use this link for athletic registration . Athletes should register before Aug. 7. Tryouts and practices for fall sports begin Monday, Aug. 12."
-    }
-  ],
-  "7/29/2019": [
-    {
-      "allDay": true,
-      "start": 1564376400000,
-      "name": "Summer Band Rehearsals Begin",
       "description": "",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "8/17/2019": [
-    {
-      "start": 1566054000000,
-      "end": 1566072000000,
-      "location": "Sunset Foods",
-      "name": "Football Team Corn Roast Fundraiser",
-      "description": "Enjoy fresh roasted corn from Didier Farms while supporting Patriot football.\n\nThe football program will hold its annual corn roast fundraiser from 10 a.m. to 3 p.m. Saturday and Sunday at Sunset Foods, 4190 Illinois Route 83 (at the corner of 83 and Aptakisic Road) in Long Grove. Fresh roasted corn from Didier Farms will be available.",
-      "categories": [
-        "Athletics"
-      ]
-    }
-  ],
-  "8/18/2019": [
-    {
-      "start": 1566140400000,
-      "end": 1566158400000,
-      "location": "Sunset Foods",
-      "name": "Football Team Corn Roast Fundraiser",
-      "description": "Enjoy fresh roasted corn from Didier Farms while supporting Patriot football.\n\nThe football program will hold its annual corn roast fundraiser from 10 a.m. to 3 p.m. Saturday and Sunday at Sunset Foods, 4190 Illinois Route 83 (at the corner of 83 and Aptakisic Road) in Long Grove. Fresh roasted corn from Didier Farms will be available.",
-      "categories": [
-        "Athletics"
-      ]
-    }
-  ],
-  "9/6/2019": [
-    {
-      "start": 1567814400000,
-      "end": 1567816200000,
-      "location": "Stadium",
-      "name": "Night of Champions",
-      "description": "The Stevenson High School Athletic Department will recognize team and individual division, conference, Lake County, regional, sectional and state champions from the 2018-19 school year at its ninth annual Night of Champions event prior to the home football game against Neuqua Valley on Friday, Sept. 6.\n\nAthletes on the teams listed below are asked to check in with their ID at the east or west admission gates to receive complimentary admission to the game. The schedule for the evening is as follows:\n\n4:30 p.m. - Gates open for admission\n5 p.m. - JV football game vs. Neuqua Valley\n6:45 p.m. - Organization of procession for teams/individuals in the southeast corner of the Stadium. Honored athletes will receive their \"Night of Champions\" T-shirt at this time.\n7 p.m. - Night of Champions procession\n7:30 p.m. - Varsity football game vs. Neuqua Valley\n\nThe following teams and individuals will be honored:\n\n Allied Basketball\n IHSA third place State\n\n Boys Basketball\n NSC champions, IHSA Regional Champions, IHSA Sectional Champions\n\n Boys Fencing\n Overall Great Lakes Conference Champions: Sabre, Illinois Champions\\; Nikita Vasilyev - Individual Champion\n\n Boys Golf\n NSC Champions, IHSA second place State\\; Conan Pan - Individual Champion\n\n Boys Swimming and Diving\n NSC Champions, Lake County Champions, IHSA sectional champions\\; Individual Champions: Nathan Gates, Jake Kim, Richard Lee, Beno Maya, Ethan Ross, Max Ryaguzov, Joseph Song, Joshua Song, Topher Stensby, Foster Swanson, Jack White, Ari Zaritsky, Jack Zhang\n\n Boys Tennis\n NSC Champions, IHSA sectional champions, IHSA third Place State\\; Individual Champions: Payton Adkisson, Andy Dong, Kevin Fei, Thomas Gong, Eric Perkowski, Arjun Sheelvanth, Nicholas Stec, Daniel Tulchinskiy, Gabriel Visotsky, Aswath Viswanathan\n\n Boys Track and Field\n NSC Champions\\; Individual Champions: Anand Batbaatar, Jimmy Davis, Shane Johnson, Maema Njongmeta, Jahleel Perrin, David Smolensky, Jordan Vincent, Chris Xie\n\n Boys Volleyball\n NSC Champions\n\n Boys Water Polo\n NSC Champions, IHSA Sectional Champions\n\n Boys Wrestling\n Individual Champions: Tommy Frezza, Max Gomez\n\n Cheerleading\n NSC champions, IHSA Sectional Champions, IHSA third place State\n\n Girls Badminton\n NSC Champions, IHSA Sectional Champions, IHSA second place State\\; Individual Champions: Jyotsna Harikrishna, Emily Hu, Benna Li, Veronica Liu, Kaitlyn Lu, Roshini Merneedi, Giuli Nagai, Shibani Ram, Thivya Sivarajah, Megan Wei, Jennifer Yang, Jasmine Zhang, Julie Zhu\n\n Girls Cross Country \nIndividual Champion: Natalie Sorenson\n\n Girls Fencing\n Great Lakes Conference Champions, Illinois Champions\\; Individual Champions: Geeta Jh",
-      "categories": [
-        "Athletics"
-      ]
-    }
-  ],
-  "9/9/2019": [
-    {
-      "start": 1568073600000,
-      "end": 1568079000000,
-      "location": "Wauconda High School Auditorium",
-      "name": "Collegiate Athlete Night",
-      "description": "Student-athletes of all grades who aspire to play college sports, and their parents and guardians, are invited to this free event.\n\nThe evening will provide insight into recruiting and academic requirements. Wauconda High School is located at 555 N. Main St., Wauconda, IL 60084.  Google Map ",
-      "categories": [
-        "Athletics"
-      ]
-    }
-  ],
-  "9/27/2019": [
-    {
-      "start": 1569628800000,
-      "end": 1569636000000,
-      "location": "Performing Arts Center",
-      "name": "Foundation Event: Catapult",
-      "description": "An America's Got Talent finalist from Season 8, Catapult is a magical production that features incredible dancers who work behind a screen to create shadow silhouettes of shapes from the world around us. Be amazed as you watch their bodies transform into a mountain, an elephant, a dragon, even a helicopter! You'll never figure out how they do it, and you won't know what they will create next -- you'll be surprised and delighted again and again.\n\nTickets are $20 per person.  Click here to purchase tickets .\n\nAll tickets will be waiting at will-call the evening of the performance.\nSeating is assigned on a first-come, first-serve basis.\n\n  \n\nGroups of ten (10) or more are eligible to receive a 10% discount. \nPlease call Ashley Bunzol at  847-415-4472  to learn more.\n\n ",
-      "categories": [
-        "Foundation Events"
-      ]
-    }
-  ],
-  "10/10/2019": [
-    {
-      "start": 1570752000000,
-      "end": 1570755600000,
-      "location": "Visiting Artist Gallery (West Building)",
-      "name": "ARTalk with Carissa Meier",
-      "description": "Open to the public\n\nVisiting Artist of the Month Carissa Meier will discuss her work and her career during the second ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.carissameier.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
-      "categories": [
-        "Foundation Events",
-        "Fine Arts"
-      ]
-    }
-  ],
-  "10/27/2019": [
-    {
-      "allDay": true,
-      "start": 1572152400000,
-      "location": "West Auditorium",
-      "name": "Children's Play",
-      "description": "",
-      "categories": [
-        "Foundation Events"
-      ]
-    }
-  ],
-  "1/25/2020": [
-    {
-      "start": 1580002200000,
-      "end": 1580009400000,
-      "location": "Performing Arts Center",
-      "name": "Foundation Event: Happy Together",
-      "description": "Married musical stars Michael and Angela Ingersoll hilariously share the spotlight singing oldies but goodies. He's the beloved star from  Jersey Boys  (original San Francisco, Los Angeles, and Chicago casts) and the PBS retro-rock group Under the Streetlamp. She's the Emmy nominee known for her astonishing portrayals of Judy Garland ( End of the Rainbow \\;  Get Happy  on PBS). Enjoy Chicago Tribune's \"Dynamic Power Couple\" for shenanigans and signature songs including \"Save the Last Dance For Me,\" \"Over the Rainbow,\" and \"I've Had the Time of My Life.\"\n\n ",
-      "categories": [
-        "Foundation Events"
-      ]
-    }
-  ],
-  "4/30/2020": [
-    {
-      "start": 1588291200000,
-      "end": 1588294800000,
-      "location": "Visiting Artist Gallery (West Building)",
-      "name": "ARTalk with Christine Rojek",
-      "description": "Open to the public\n\nVisiting Artist of the Month Christine Rojek will discuss her work and her career during the sixth and final ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.christinerojek.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
-      "categories": [
-        "Foundation Events",
-        "Fine Arts"
-      ]
+      "location": null,
+      "categories": []
     }
   ]
 }
