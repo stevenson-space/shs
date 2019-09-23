@@ -31,7 +31,8 @@ axios.get(url).then(response => {
 
       // parse the date from the lunch title on the website
       let dateText = $(this).children('header').text().trim();
-      dateText = dateText.split('-')[0].trim(); // get rid of any other text ('Monday, Aug 12 - First Day of School' -> 'Monday, Aug 12')
+      dateText = dateText.replace(/-/g, ','); // d125 sometimes uses hyphens instead of commas to split day and date (sometimes "Tuesday, Oct. 1", other times "Tuesday - Oct. 8")
+      dateText = dateText.split(',').slice(0, 2).join(',').trim(); // get rid of any other text ('Monday, Aug 12 , First Day of School' -> 'Monday, Aug 12')
       dateText = dateText.slice(dateText.indexOf(',') + 1).trim() + ' ' + today.getFullYear(); // remove day of week and add year ('Monday, Aug 12' -> 'Aug 12 2019')
 
       const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
@@ -79,7 +80,7 @@ axios.get(url).then(response => {
     newLunch[key] = value;
   }
 
-  fs.writeFile(path.join(__dirname, '..', 'src', 'data', 'lunch.json'), JSON.stringify(newLunch), function(err) {
+  fs.writeFile(path.join(__dirname, '..', 'src', 'data', 'lunch.json'), JSON.stringify(newLunch, null, 2), function(err) {
     if (err) {
       console.log('Error saving file:')
       console.log(err);
