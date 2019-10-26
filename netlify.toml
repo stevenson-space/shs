@@ -1,6 +1,7 @@
 [context.gh-pages]
   publish = "docs/"
   command = "npm run build"
+  TZ = "America/Chicago"
 
 [[redirects]]
   from = "/send/*"
