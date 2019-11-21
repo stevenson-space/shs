@@ -36,21 +36,19 @@ async function scrapeLunches() {
     // cheerio works basically like jQuery
     const $ = cheerio.load(response.data);
     $('#fsPageContent .fsPageLayout .fsPanelGroup .fsElementContent section.fsElement').each(function() {
-      if ($(this).text().indexOf('Chef') === -1) { // ignore the day if it is Chef's Choice
+      const lunchesText = $(this).children('.fsElementContent').text().trim();
+      const dateText = $(this).children('header').text().trim();
+
+      // we only want to attempt parsing the lunch if the text actually contains lunch items
+      // (sometime's it's empty on no school days or contains text such as "Chef's Choice" or "Breakfast all day")
+      if (lunchesText.match(/Comfort Food/i)) {
         numLunches++;
+        const date = parseDate(dateText);
 
-        const lunchesText = $(this).children('.fsElementContent').text().trim();
-
-        // sometimes the website just displays a blank day without any lunch (on no school days for example)
-        // in which case, we don't want to do anything
-        if (lunchesText) {
-          // parse the date from the lunch title on the website
-          const dateText = $(this).children('header').text().trim();
-          const date = parseDate(dateText);
-
-          // set the respective date on cycle of 28 days to the lunch
-          lunchObject[String(toDays(date) % 28)] = processLunches(lunchesText);
-        }
+        // set the respective date on cycle of 28 days to the lunch
+        lunchObject[String(toDays(date) % 28)] = processLunches(lunchesText);
+      } else {
+        console.log(`warning: skipping the day "${dateText}" due to invalid lunch text: "${lunchesText}"`);
       }
     });
 
@@ -62,6 +60,9 @@ async function scrapeLunches() {
 
 // parses date from string formatted like "Thursday, Nov. 14 - Late Arrival"
 function parseDate(dateText) {
+  // remove any text that is in parentheses
+  dateText = dateText.replace(/\(.*?\)/g, '');
+
   // normalize separators (d125 sometimes uses hyphens, other times commas)
   dateText = dateText.replace(/-/g, ',');
 
@@ -72,7 +73,7 @@ function parseDate(dateText) {
   dateText = `${dateText.slice(dateText.indexOf(',') + 1).trim()} ${today.getFullYear()}`;
 
   const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
-  exitWithErrorIf(!dateText.match(new RegExp(`^${months.join('|')}\\s+\\d{1,2}\\s+\\d{4}`, 'i')), `"${dateText}" failed to pass date check`);
+  exitWithErrorIf(!dateText.match(new RegExp(`^(${months.join('|')})\.?\\s+\\d{1,2}\\s+\\d{4}$`, 'i')), `"${dateText}" failed to pass date check`);
 
   return new Date(dateText);
 }
