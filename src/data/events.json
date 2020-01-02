@@ -1,17 +1,4 @@
 {
-  "12/2/2019": [
-    {
-      "allDay": false,
-      "start": 1575302760000,
-      "end": 1575305340000,
-      "name": "Activity Period",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
   "12/3/2019": [
     {
       "allDay": true,

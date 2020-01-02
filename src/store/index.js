@@ -26,17 +26,27 @@ export default new Vuex.Store({
     defaultSchedule: 'Normal', // actually the default schedule mode
 
     grade: 'None',
+
+    // authenticated with a student.d125.org google email
+    isAuthenticated: false,
   },
   getters: {
     date(state) {
       const { urlDate, startTime, currentTime } = state;
-      const date = new Date(urlDate.getTime() + (currentTime - startTime));
+      const date = new Date(
+        urlDate.getTime() + (currentTime - startTime),
+      );
 
       // if mode is 'day' return date at time 0:00 instead (to get range string for whole day instead for current period)
-      return (state.mode === 'current') ? date : new Date(date.toLocaleDateString());
+      return state.mode === 'current'
+        ? date
+        : new Date(date.toLocaleDateString());
     },
     bell(state, getters) {
       return new Bell(getters.date, state.schedules, state.scheduleMode);
+    },
+    isAuthenticated(state) {
+      return state.isAuthenticated;
     },
   },
   mutations,
