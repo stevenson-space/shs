@@ -107,7 +107,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
 	// check if to requires auth
 	if (to.matched.some(record => record.meta && record.meta.requiresAuth)) {
-		// check if we are logged in, and continue ahead if we are
+		// check if we are already authenticated, and continue ahead if we are
 		if (store.getters.isAuthenticated) {
 			next();
 		}
