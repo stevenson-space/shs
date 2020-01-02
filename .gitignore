@@ -2,3 +2,4 @@ node_modules/
 docs/
 stats.json
 .DS_Store
+.vscode
