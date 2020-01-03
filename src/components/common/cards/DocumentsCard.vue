@@ -1,32 +1,30 @@
 <template>
-	<card>
-		<div class="container">
-			<div class="classname">{{ className }}</div>
+  <card>
+    <div class="container">
+      <div class="classname">{{ className }}</div>
 
-			<a v-for="doc in documents" :href="doc.link">
-				{{ doc.title }}
-			</a>
+      <a v-for="doc in documents" :href="doc.link">{{ doc.title }}</a>
 
-			<div class="chips">
-				<div class="chip">Today</div>
-				<div class="space" />
-				<div class="chip">3:30 – 5:00</div>
-				<div class="space" />
-				<div class="chip">Link Lab</div>
-			</div>
-		</div>
-	</card>
+      <div class="chips">
+        <div class="chip">Today</div>
+        <div class="space" />
+        <div class="chip">3:30 – 5:00</div>
+        <div class="space" />
+        <div class="chip">Link Lab</div>
+      </div>
+    </div>
+  </card>
 </template>
 
 <script>
 import Card from "common/Card.vue";
 
 export default {
-	components: { Card },
-	props: {
-		className: { type: String, required: true },
-		documents: { type: Array[Object], required: true }
-	}
+  components: { Card },
+  props: {
+    className: { type: String, required: true },
+    documents: { type: Array[Object], required: true }
+  }
 };
 </script>
 

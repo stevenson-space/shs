@@ -1,0 +1,53 @@
+<template>
+  <card class="form-card">
+    <div class="container">
+      <div class="title">{{ title }}</div>
+      <form :name="name" method="POST" :data-netlify="netlify">
+        <!-- mandatory hidden element with the form name -->
+        <input type="hidden" name="form-name" :value="name" />
+        <slot />
+      </form>
+    </div>
+  </card>
+</template>
+
+<script>
+import Card from "common/Card.vue";
+
+export default {
+  components: { Card },
+  props: {
+    name: { type: String, required: true },
+    title: { type: String, required: false },
+    netlify: { type: Boolean, default: true }
+  }
+};
+</script>
+
+
+<style lang="sass" scoped>
+
+.form-card 
+  // span at least two columns
+  grid-column: span 2
+
+.container
+  text-align: center
+  width: 100%
+
+  .title
+    background-color: var(--color)
+    color: white
+    font-size: 1.1em
+    font-weight: bold
+    line-height: 45px
+
+
+  form
+    display: flex
+    flex-flow: column nowrap
+    justify-content: center
+    align-items: center
+    width: 100%
+
+</style>
