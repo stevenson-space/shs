@@ -1,102 +1,146 @@
 <template>
-  <div class="settings">
-    <div class="hamburger-menu" @click="showSidenav = true">
-      <font-awesome-icon :icon="icons.faBars" />
-    </div>
+	<div class="settings">
+		<div class="hamburger-menu" @click="showSidenav = true">
+			<font-awesome-icon :icon="icons.faBars" />
+		</div>
 
-    <div class="sidenav-background" :class="{ show: showSidenav }" @click="showSidenav = false" />
-    <div class="sidenav" :class="{ show: showSidenav }">
-      <div class="close-arrow" @click="showSidenav = false">
-        <font-awesome-icon :icon="icons.faArrowLeft" />
-      </div>
+		<div
+			class="sidenav-background"
+			:class="{ show: showSidenav }"
+			@click="showSidenav = false"
+		/>
+		<div class="sidenav" :class="{ show: showSidenav }">
+			<div class="close-arrow" @click="showSidenav = false">
+				<font-awesome-icon :icon="icons.faArrowLeft" />
+			</div>
 
-      <div class="title"><font-awesome-icon :icon="icons.faCog" /> Settings</div>
+			<div class="title">
+				<font-awesome-icon :icon="icons.faCog" /> Settings
+			</div>
 
-      <a
-        v-for="(item, index) in sidenavItems"
-        :key="item.text"
-        class="link"
-        :href="item.link"
-        :class="{ selected: index == selectedLinkIndex }"
-        @click="showSidenav = false"
-      >
-        <font-awesome-icon :icon="item.icon" class="icon" v-bind="item.iconProps || {}" fixed-width />
-        <span class="text">{{ item.text }}</span>
-      </a>
-    </div>
+			<a
+				v-for="(item, index) in sidenavItems"
+				:key="item.text"
+				class="link"
+				:href="item.link"
+				:class="{ selected: index == selectedLinkIndex }"
+				@click="showSidenav = false"
+			>
+				<font-awesome-icon
+					:icon="item.icon"
+					class="icon"
+					v-bind="item.iconProps || {}"
+					fixed-width
+				/>
+				<span class="text">{{ item.text }}</span>
+			</a>
+		</div>
 
-    <div class="main">
-      <home-link class="home-link" />
+		<div class="main">
+			<home-link class="home-link" />
 
-      <general id="general" />
-      <schedules id="schedules" />
-      <transfer id="transfer" />
+			<general id="general" />
+			<schedules id="schedules" />
+			<transfer id="transfer" />
+			<privacy id="privacy" />
 
-      <div class="extra-space" :style="{ height: `${extraSpaceHeight}px` }" />
-    </div>
-  </div>
+			<div
+				class="extra-space"
+				:style="{ height: `${extraSpaceHeight}px` }"
+			/>
+		</div>
+	</div>
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faCog, faBars, faArrowLeft, faListAlt, faExchangeAlt, faUserCog } from '@fortawesome/free-solid-svg-icons';
+import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
+import {
+	faCog,
+	faBars,
+	faArrowLeft,
+	faListAlt,
+	faExchangeAlt,
+	faUserCog,
+	faLock
+} from "@fortawesome/free-solid-svg-icons";
 
-import HomeLink from 'common/HomeLink.vue';
-import General from './General.vue';
-import Schedules from './Schedules.vue';
-import Transfer from './Transfer.vue';
+import HomeLink from "common/HomeLink.vue";
+import General from "./General.vue";
+import Schedules from "./Schedules.vue";
+import Transfer from "./Transfer.vue";
+import Privacy from "./Privacy.vue";
 
 const sidenavItems = [
-  { text: 'General', link: '#general', icon: faUserCog },
-  { text: 'Schedules', link: '#schedules', icon: faListAlt },
-  { text: 'Transfer', link: '#transfer', icon: faExchangeAlt, iconProps: { rotation: 90 } },
+	{ text: "General", link: "#general", icon: faUserCog },
+	{ text: "Schedules", link: "#schedules", icon: faListAlt },
+	{
+		text: "Transfer",
+		link: "#transfer",
+		icon: faExchangeAlt,
+		iconProps: { rotation: 90 }
+	},
+	{
+		text: "Privacy",
+		link: "#privacy",
+		icon: faLock
+	}
 ];
 
 export default {
-  components: {
-    FontAwesomeIcon,
-    HomeLink,
-    General,
-    Schedules,
-    Transfer,
-  },
-  data() {
-    return {
-      icons: {
-        faCog,
-        faBars,
-        faArrowLeft,
-      },
-      sidenavItems,
-      showSidenav: false,
-      selectedLinkIndex: 0,
-      scrollListener: null,
-      extraSpaceHeight: window.innerHeight, // ensure that the last section is scrollable to the top (will be adjusted in mounted())
-    };
-  },
-  created() {
-    this.scrollListener = () => {
-      const scrollY = window.scrollY + 100; // +100 effectively moves the threshold to 100px below the top
-      sidenavItems.forEach((sidenavItem, index) => {
-        const element = document.querySelector(sidenavItem.link);
-        if (scrollY > element.offsetTop) { // don't need to check if less than bottom of section, because next pass through for loop will overwrite selectedLinkIndex
-          this.selectedLinkIndex = index;
-        }
-      });
-    };
+	components: {
+		FontAwesomeIcon,
+		HomeLink,
+		General,
+		Schedules,
+		Transfer,
+		Privacy
+	},
+	data() {
+		return {
+			icons: {
+				faCog,
+				faBars,
+				faArrowLeft
+			},
+			sidenavItems,
+			showSidenav: false,
+			selectedLinkIndex: 0,
+			scrollListener: null,
+			extraSpaceHeight: window.innerHeight // ensure that the last section is scrollable to the top (will be adjusted in mounted())
+		};
+	},
+	created() {
+		this.scrollListener = () => {
+			const scrollY = window.scrollY + 100; // +100 effectively moves the threshold to 100px below the top
+			sidenavItems.forEach((sidenavItem, index) => {
+				const element = document.querySelector(sidenavItem.link);
+				if (scrollY > element.offsetTop) {
+					// don't need to check if less than bottom of section, because next pass through for loop will overwrite selectedLinkIndex
+					this.selectedLinkIndex = index;
+				}
+			});
+		};
 
-    window.addEventListener('scroll', this.scrollListener);
-  },
-  mounted() {
-    const lastSection = document.querySelector(sidenavItems[sidenavItems.length - 1].link);
-    let lastSectionHeight = lastSection.getBoundingClientRect().height;
-    lastSectionHeight += parseInt(window.getComputedStyle(lastSection).getPropertyValue('margin-top'));
-    lastSectionHeight += parseInt(window.getComputedStyle(lastSection).getPropertyValue('margin-bottom'));
-    this.extraSpaceHeight = window.innerHeight - lastSectionHeight;
-  },
-  destroyed() {
-    window.removeEventListener('scroll', this.scrollListener);
-  },
+		window.addEventListener("scroll", this.scrollListener);
+	},
+	mounted() {
+		const lastSection = document.querySelector(
+			sidenavItems[sidenavItems.length - 1].link
+		);
+		let lastSectionHeight = lastSection.getBoundingClientRect().height;
+		lastSectionHeight += parseInt(
+			window.getComputedStyle(lastSection).getPropertyValue("margin-top")
+		);
+		lastSectionHeight += parseInt(
+			window
+				.getComputedStyle(lastSection)
+				.getPropertyValue("margin-bottom")
+		);
+		this.extraSpaceHeight = window.innerHeight - lastSectionHeight;
+	},
+	destroyed() {
+		window.removeEventListener("scroll", this.scrollListener);
+	}
 };
 </script>
 
@@ -200,5 +244,4 @@ export default {
       top: 10px
       +mobile
         right: 10px
-
 </style>
