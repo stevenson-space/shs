@@ -3,14 +3,8 @@
     <div class="container">
       <div class="classname">{{ className }}</div>
 
-      <a v-for="doc in documents" :href="doc.link">{{ doc.title }}</a>
-
-      <div class="chips">
-        <div class="chip">Today</div>
-        <div class="space" />
-        <div class="chip">3:30 – 5:00</div>
-        <div class="space" />
-        <div class="chip">Link Lab</div>
+      <div class="books">
+        <a v-for="doc in documents" :href="doc.link">{{ doc.title }}</a>
       </div>
     </div>
   </card>
@@ -40,29 +34,21 @@ export default {
     font-weight: bold
     line-height: 45px
 
-  .text
-    line-height: 40px
-    font-size: 1.1em
-    margin-bottom: 5px
-
-  .chips
+  .books
     display: flex
-    justify-content: space-evenly
-    margin: 0 10px
-    margin-bottom: 10px
+    flex-flow: column nowrap
+    justify-content: center
+    align-items: center
 
-    .space
-      flex-grow: 1
+    a
+      margin-top: 5px
+      margin-bottom: 5px
 
-    .chip
-      border: 1px var(--color) solid
+      width: 90%
+
+      text-decoration: none
       color: var(--color)
-      border-radius: 100px
-      padding: 2px 5px
-      font-weight: bold
-      flex-grow: 3
 
-  .extra-text
-    font-size: .8em
-    margin-bottom: 10px
+      //word-wrap: normal
+  
 </style>

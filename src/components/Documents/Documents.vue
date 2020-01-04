@@ -3,7 +3,7 @@
     <plain-header title="Documents" />
     <card-container>
       <!-- Class cards -->
-      <documents-card class-name="AP Chemistry" :documents="docs" />
+      <documents-card v-for="(list, name) in docs" :class-name="name" :documents="list" />
       <!-- Request card -->
       <form-card :name="formName" title="Request">
         <form-card-element>Didn't find the book you were looking for? Request it below!</form-card-element>
@@ -66,7 +66,282 @@ export default {
   },
   data() {
     return {
-      docs: [{ title: "book", link: "http://google.com" }],
+      docs: {
+        "Spanish 1": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2elFIbHBLRHV6MGs"
+          },
+          {
+            title: "Core Workbook 1-5",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2Nk1MWFdnWTNXWTA"
+          },
+          {
+            title: "Core Workbook 6-10",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2TEx2OXNrRzJja2s"
+          }
+        ],
+        "Spanish 2-3x": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2QjZRTFpiNS0xWXc"
+          },
+          {
+            title: "Guided Practice",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2SUQzTUJCaGt6cW8"
+          },
+          {
+            title: "Core Workbook 1-5",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2U1Nrc2JVLVR6OFE"
+          },
+          {
+            title: "Core Workbook 6-10",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2NlA1MVlYUEhLY2c"
+          }
+        ],
+        "Spanish 3-4x": [
+          {
+            title: "Core Workbook 1-5",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2Zk4tQlBqajZvRnM"
+          },
+          {
+            title: "Core Workbook 6-10",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2dlVIRGs3TGYyVWs"
+          }
+        ],
+        "Freshman English Accelerated": [
+          {
+            title: "A Tale of Two Cities",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2Qzdib0pUTVlycTg"
+          },
+          {
+            title: "Lord of the Flies",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2ODFuOTRRR0ZhQlE"
+          },
+          {
+            title: "Of Mice and Men",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2cURIQ1oya0haN1k"
+          },
+          {
+            title: "The Alchemist",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2MnUtSktROUQ0amc"
+          },
+          {
+            title: "The Color of Water",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2TUlUblltT0VsQms"
+          },
+          {
+            title: "The Tempest",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2dWM0U2lMTWJqeFU"
+          },
+          {
+            title: "To Kill a Mockingbird",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2ZzNtRlhmVDl0c00"
+          }
+        ],
+        SAE: [
+          {
+            title: "The Bean Trees",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2M0FwbERsOERnWTg"
+          },
+          {
+            title: "The Catcher in the Rye",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2LVhRaV9TOUlTa2M"
+          },
+          {
+            title: "Fahrenheit 451",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2TG80VnM0UjhCb1k"
+          },
+          {
+            title: "Macbeth",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2TFpndGZpMEtEa1U"
+          },
+          {
+            title: "Jane Eyre",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2MVlnd1JQTTNwajQ"
+          }
+        ],
+        "AP Junior English": [
+          {
+            title: "The Picture of Dorian Gray",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2YnlMYUloeDh3N0k"
+          },
+          {
+            title: "They Say I Say",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2N294eW5uM1RibFE"
+          },
+          {
+            title: "On Writing Well",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2ajJFanh6RU15M1k"
+          },
+          {
+            title: "Othello",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2Y3N5VjNpZGsxUFU"
+          },
+          {
+            title: "The Great Gatsby",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2dWZrcmkzQlRnNXM"
+          },
+          {
+            title: "Status Anxiety",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2YkgyRzRBQnpVVWM"
+          }
+        ],
+        "AP Themes": [
+          {
+            title: "Life of Pi",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2ejA1RVRHS200bzA"
+          },
+          {
+            title: "Balzac and the Little Chinese Seamstress",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2Z1pxejVXVVhxaWc"
+          }
+        ],
+        "Geometry Honors": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2N29iUHZWZXc2MUE"
+          }
+        ],
+        "Precalculus Honors": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2aEJhdHhyZkk0eEE"
+          }
+        ],
+        "AP Calculus AB": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2TVNiODZPR3dqa1k"
+          }
+        ],
+        "AP Calculus BC": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2djdFZmZPbVFKcGM"
+          }
+        ],
+        "AP Statistics": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2U25YMUNtZFFOUkU"
+          }
+        ],
+        "Calculus III": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2UV9PVWcyZTd4bzg"
+          }
+        ],
+        "Linear Algebra": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2cUpJcWJsYVY5N1U"
+          }
+        ],
+        "AP Computer Science": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2QzExelNFZ1Y1N0k"
+          }
+        ],
+        "AP Physics 2": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2am5rTGlKaFVoT1E"
+          }
+        ],
+        "AP Chemistry": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2bTByMklUcDYyM1E"
+          }
+        ],
+        "AP Biology": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2N2JJbS1PTnpucUk"
+          }
+        ],
+        "AP Macroeconomics": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2RFJ3Z0pNQXFtU2s"
+          }
+        ],
+        "AP European History": [
+          {
+            title: "McKay Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2bUdwVUtOU1h1Y1U"
+          }
+        ],
+        "APUSH, AP American Studies": [
+          {
+            title: "Textbook - APUSH/AMSTUD",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2a0ZZYWVpUjd4QmM"
+          },
+          {
+            title: "Textbook - AMSTUD (Conversations)",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2YmJCR0dWRDQ4LXc"
+          },
+          {
+            title: "It's complicated",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2cHBPWlFDbWh1WEk"
+          }
+        ],
+        "AP Psychology": [
+          {
+            title: "Textbook",
+            link:
+              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2X2RrT3NFMEN1OHc"
+          }
+        ]
+      },
       formName: "document-request"
     };
   },
