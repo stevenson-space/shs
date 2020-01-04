@@ -2,6 +2,7 @@
   <card class="form-card">
     <div class="container">
       <div class="title">{{ title }}</div>
+      <!-- manually handle submitting, so we can emit an 'submit' event -->
       <form :name="name" method="POST" :data-netlify="netlify">
         <!-- mandatory hidden element with the form name -->
         <input type="hidden" name="form-name" :value="name" />
@@ -20,6 +21,11 @@ export default {
     name: { type: String, required: true },
     title: { type: String, required: false },
     netlify: { type: Boolean, default: true }
+  },
+  methods: {
+    onSubmit(event) {
+      event.preventDefault();
+    }
   }
 };
 </script>
