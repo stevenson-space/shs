@@ -1,11 +1,8 @@
 <template>
   <card>
-    <div class="container">
-      <div class="classname">{{ className }}</div>
-
-      <div class="books">
-        <a v-for="doc in documents" :href="doc.link">{{ doc.title }}</a>
-      </div>
+    <div class="classname">{{ className }}</div>
+    <div class="books">
+      <a v-for="doc in documents" :href="doc.link">{{ doc.title }}</a>
     </div>
   </card>
 </template>
@@ -24,31 +21,28 @@ export default {
 
 <style lang="sass" scoped>
 
-.container
+.classname
   text-align: center
+  background-color: var(--color)
+  color: white
+  font-size: 1.1em
+  font-weight: bold
+  line-height: 45px
 
-  .classname
-    background-color: var(--color)
-    color: white
-    font-size: 1.1em
-    font-weight: bold
-    line-height: 45px
+.books
+  display: flex
+  flex-flow: column nowrap
+  justify-content: center
+  align-items: center
 
-  .books
-    display: flex
-    flex-flow: column nowrap
-    justify-content: center
-    align-items: center
+  a
+    margin-top: 5px
+    margin-bottom: 5px
 
-    a
-      margin-top: 5px
-      margin-bottom: 5px
+    width: 90%
+    text-align: center
 
-      width: 90%
+    text-decoration: none
+    color: var(--color)
 
-      text-decoration: none
-      color: var(--color)
-
-      //word-wrap: normal
-  
 </style>

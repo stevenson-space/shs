@@ -155,7 +155,7 @@ export default {
               "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2ZzNtRlhmVDl0c00"
           }
         ],
-        SAE: [
+        "Sophomore Accelerated English": [
           {
             title: "The Bean Trees",
             link:

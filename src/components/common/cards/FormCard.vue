@@ -28,8 +28,8 @@ export default {
 <style lang="sass" scoped>
 
 .form-card 
-  // span at least two columns
-  grid-column: span 2
+  // span the full width of the grid
+  grid-column: 1/-1
 
 .container
   text-align: center
