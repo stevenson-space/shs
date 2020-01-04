@@ -49,6 +49,7 @@ export default {
 							.signIn({
 								// google will give us the state back in the authorization response,
 								// so we pass over the user's target
+								// note that this parameter is actually hidden from the google documentation
 								state: self.to
 							})
 							.then(
