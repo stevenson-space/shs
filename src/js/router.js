@@ -6,22 +6,22 @@ import store from '../store';
 // Dynamically import the following components so that they are not included in the main build
 // file and are instead asynchrounously loaded when the user goes to the page (to reduce file size of build.js)
 const BellSchedules = () => import(
-	  /* webpackChunkName: "bellschedules" */ 'src/components/Bell Schedules/BellSchedules.vue',
+	  /* webpackChunkName: "bellschedules" */ 'src/components/Bell Schedules/BellSchedules.vue'
 ); // eslint-disable-line max-len
 const Calendar = () => import(
-	  /* webpackChunkName: "calendar" */ 'src/components/Calendar/Calendar.vue',
+	  /* webpackChunkName: "calendar" */ 'src/components/Calendar/Calendar.vue'
 );
 const Links = () => import(/* webpackChunkName: "links" */ 'src/components/Links/Links.vue');
 const Colors = () => import(/* webpackChunkName: "colors" */ 'src/components/Colors/Colors.vue');
 const Settings = () => import(
-	  /* webpackChunkName: "settings" */ 'src/components/Settings/Settings.vue',
+	  /* webpackChunkName: "settings" */ 'src/components/Settings/Settings.vue'
 );
 const Tools = () => import(/* webpackChunkName: "tools" */ 'src/components/Tools/Tools.vue');
 const Documents = () => import(
-	  /* webpackChunkName: "tools" */ 'src/components/Documents/Documents.vue',
+	  /* webpackChunkName: "tools" */ 'src/components/Documents/Documents.vue'
 );
 const AddSchedule = () => import(
-	  /* webpackChunkName: "addSchedule" */ 'src/components/Settings/Add Schedule/AddSchedule.vue',
+	  /* webpackChunkName: "addSchedule" */ 'src/components/Settings/Add Schedule/AddSchedule.vue'
 ); // eslint-disable-line max-len
 const Login = () => import(/* webpackChunkName: "tools" */ 'src/components/Login/Login.vue');
 const routes = [
