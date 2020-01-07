@@ -95,9 +95,17 @@ export default {
       beforeUnloadHandler: null,
     };
   },
-  computed: mapState({
-    existingSchedules: 'schedules',
-  }),
+  computed: {
+    ...mapState({
+      existingSchedules: 'schedules',
+    }),
+    filteredSchedules() {
+      // filtering out multiday schedules for now (too complex...), and no school days (indicated by modes.length === 0)
+      return this.existingSchedules.filter(
+        schedule => schedule.modes.length > 0 && !Bell.isMultiDay(schedule.modes[0]),
+      );
+    },
+  },
   watch: {
     schedules: {
       deep: true,
@@ -114,13 +122,8 @@ export default {
     // that name (setScheduleName checks existing schedules and modifies name accordingly)
     this.setScheduleName('Untitled Schedule');
 
-    // filtering out multiday schedules for now (too complex...), and no school days (indicated by modes.length === 0)
-    const schedules = this.existingSchedules.filter(
-      schedule => schedule.modes.length > 0 && !Bell.isMultiDay(schedule.modes[0]),
-    );
-
     if (this.mode === 'add') {
-      this.schedules = schedules.map(schedule => ({
+      this.schedules = this.filteredSchedules.map(schedule => ({
         name: schedule.name,
         isEnabled: true,
         periods: [],
@@ -130,7 +133,7 @@ export default {
     } else { // we assume mode == 'edit' and pre populate the page based on the existing mode
       const removeExclamationMark = periodName => (periodName[0] === '!' ? periodName.substring(1) : periodName);
       this.scheduleName = this.scheduleToEdit;
-      this.schedules = schedules.map((schedule) => {
+      this.schedules = this.filteredSchedules.map((schedule) => {
         const result = {
           name: schedule.name,
           isEnabled: false,
@@ -189,7 +192,7 @@ export default {
       const timePicker = this.$refs['time-picker'];
 
       const options = [];
-      this.existingSchedules[schedule].modes.forEach((scheduleMode) => {
+      this.filteredSchedules[schedule].modes.forEach((scheduleMode) => {
         scheduleMode.periods.forEach((periodName, i) => {
           options.push({
             text: Bell.formatPeriodName(periodName),
@@ -227,7 +230,7 @@ export default {
     },
     searchScheduleForTime(periodName, scheduleMode, time, schedule) { // time is 'start' or 'end'
       let result = null;
-      this.existingSchedules[schedule].modes.forEach((mode) => {
+      this.filteredSchedules[schedule].modes.forEach((mode) => {
         if (mode.name === scheduleMode) {
           mode.periods.forEach((period, i) => {
             if (period === periodName) {
