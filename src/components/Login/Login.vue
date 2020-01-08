@@ -79,8 +79,10 @@ export default {
 				scopes: ["email"], // really only need email access
 				state: this.to // get our current destination back via the state parameter
 			});
-			// go to auth URI
-			let authURI = googleAuth.token.getUri();
+			// go to auth URI, first have to manually add the ?hd parameter though
+			var authURI = googleAuth.token.getUri({
+				query: { hd: this.hostedDomain }
+			});
 			window.location.href = authURI;
 		}
 	}
