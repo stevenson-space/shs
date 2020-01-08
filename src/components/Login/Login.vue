@@ -1,102 +1,89 @@
 <template>
-  <div v-if="loginFailed">
-    <plain-header title="Login failed" />Unfortunately, we were unable to authorize your account. The login
-    prompt may have been closed prematurely, or the account used to log in
-    was not a valid
-    <i>students.d125.org</i> account.
-    <br />Please go back and try again. If the problem persists, contact blahblah.
-  </div>
+	<div v-if="loginFailed">
+		<plain-header title="Login failed" />Unfortunately, we were unable to
+		authorize your account. The login prompt may have been closed
+		prematurely, or the account used to log in was not a valid
+		<i>students.d125.org</i> account. <br />Please go back and try again. If
+		the problem persists, contact blahblah.
+	</div>
 </template>
 
 <script>
 import { mapMutations, mapState } from "vuex";
 import PlainHeader from "common/PlainHeader.vue";
 import CardContainer from "common/CardContainer.vue";
+import ClientOAuth2 from "client-oauth2";
+import queryString from "query-string";
+import axios from "axios";
 
 export default {
-  components: { PlainHeader, CardContainer },
-  data() {
-    return {
-      to: this.$route.query.to, // target destination
-      from: this.$route.query.from, // previous page
-      loginFailed: false, // login failed (false by default)
-      googleClientID:
-        "541927545357-ui3ujp7i0rh7ni44109ca0r9fvg4tpeo.apps.googleusercontent.com",
-      hostedDomain: "students.d125.org"
-    };
-  },
-  computed: mapState({ isAuthenticated: state => state.isAuthenticated }),
-  methods: {
-    ...mapMutations(["setAuthenticated"])
-  },
-  mounted() {
-    // outer reference to this Vue component, needed to register callbacks with the google API
-    const self = this;
-    gapi.load("auth2", function() {
-      // initialize google auth2 interface
-      let auth2 = gapi.auth2.init({
-        client_id: self.googleClientID,
-        fetch_basic_profile: true, // include email (the thing we need to check)
-        ux_mode: "redirect", // redirect to a google screening page
-        hosted_domain: self.hostedDomain // UI hint for which emails to use
-      });
-      // upon initialization of the auth2 interface
-      auth2.then(
-        auth2 => {
-          // if we're not signed in, then prompt the user to sign in
-          // this will redirect away from this page, losing all state
-          if (!auth2.isSignedIn.get()) {
-            auth2
-              .signIn({
-                // google will give us the state back in the authorization response,
-                // so we pass over the user's target
-                // note that this parameter is actually hidden from the google documentation
-                state: self.to
-              })
-              .then(
-                response => {}, // we will never get a response, since the authentication is redirected
-                error => {
-                  // if something gets messed up, just set login failed to true
-                  self.loginFailed = true;
-                }
-              );
-          }
-          // if the user is already signed in or redirected back to this page after a successful
-          // google sign in, we need to verify the user and then redirect to the target page
-          else {
-            let user = auth2.currentUser.get();
-            // check that user exists, is signed in, and has the correct domain
-            if (
-              user &&
-              user.isSignedIn() &&
-              user.getHostedDomain() == self.hostedDomain
-            ) {
-              // set authentication to true
-              self.setAuthenticated(true);
-              // fetch the authentication response, containing the state we passed it
-              let authResponse = auth2.currentUser.get().getAuthResponse(true);
-              // if the user was already signed in, we can just use the query parameter given to us via
-              // the router redirect. if the user had to be redirected to google to sign in,
-              // this will be undefined, and we will use the state variable given back to us by google
-              self.$router.replace({
-                name: self.to || authResponse.state
-              });
-            }
-            // otherwise, if the user's credentials did not check out,
-            // set authentication to false and show the login failed page
-            else {
-              self.setAuthenticated(false);
-              self.loginFailed = true;
-            }
-          }
-        },
-        // uh this should never happen
-        err => {
-          self.loginFailed = true;
-        }
-      );
-    });
-  }
+	components: { PlainHeader, CardContainer },
+	data() {
+		return {
+			to: this.$route.query.to, // target destination
+			from: this.$route.query.from, // previous page
+			loginFailed: false, // login failed (false by default)
+			// google client ID
+			clientID:
+				"541927545357-ui3ujp7i0rh7ni44109ca0r9fvg4tpeo.apps.googleusercontent.com",
+			hostedDomain: "students.d125.org", // hint domain,
+			authEndpoint: "https://accounts.google.com/o/oauth2/v2/auth",
+			userEndpoint: "https://www.googleapis.com/oauth2/v2/userinfo"
+		};
+	},
+	computed: mapState({ isAuthenticated: state => state.isAuthenticated }),
+	methods: {
+		...mapMutations(["setAuthenticated"])
+	},
+	mounted() {
+		// this page is loaded when a) the user is trying to login,
+		// or b) google as redirected us back and the hash contains our state and access token
+		let hash = queryString.parse(location.hash);
+		// we got redireced by google, use the auth token to grab the user's email and verify
+		if (hash.state && hash.access_token) {
+			// fetch the user endpoint, verify the email, and redirect if it checks out
+			let self = this;
+			axios
+				.get(this.userEndpoint, {
+					params: {
+						oauth_token: hash.access_token
+					}
+				})
+				.then(function(res) {
+					let user = res.data;
+					// check their info
+					if (
+						user.id &&
+						user.email &&
+						user.hd &&
+						user.hd == self.hostedDomain
+					) {
+						self.setAuthenticated(true); // set auth to true
+						self.$router.replace({
+							name: hash.state // redirect to the destination indicated by state
+						});
+					}
+				})
+				.catch(function(err) {
+					// shouldn't really happen
+					self.loginFailed = true;
+					self.setAuthenticated(false);
+				});
+			// generate the oauth2 URI and redirect the user
+		} else {
+			let googleAuth = new ClientOAuth2({
+				clientId: this.clientID, // google client ID for oauth
+				clientSecret: process.env.GOOGLE_OAUTH_CLIENT_SECRET,
+				authorizationUri: this.authEndpoint, // google endpoint
+				redirectUri: location.origin + this.$route.path, // redirect to current URL
+				scopes: ["email"], // really only need email access
+				state: this.to // get our current destination back via the state parameter
+			});
+			// go to auth URI
+			let authURI = googleAuth.token.getUri();
+			window.location.href = authURI;
+		}
+	}
 };
 </script>
 

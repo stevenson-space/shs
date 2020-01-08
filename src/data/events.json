@@ -1,63 +1,4 @@
 {
-  "12/6/2019": [
-    {
-      "allDay": false,
-      "start": 1575639000000,
-      "end": 1575641700000,
-      "name": "Prominent Patriot Ceremony",
-      "description": "First-semester Prominent Patriot nominees will be honored, and the winner of the Prominent Patriot Award for first semester will be announced.",
-      "location": "West Auditorium",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1575669600000,
-      "end": 1575684000000,
-      "name": "HOSA Fundraiser",
-      "description": "Benefits Pediatric Cancer Research Foundation. Mention \"HOSA\" when ordering.",
-      "location": "Culver's - Lincolnshire",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1575680400000,
-      "end": 1575687600000,
-      "name": "Dance Concert",
-      "description": "Admission $6\n\n\n\nThe 2019 Winter Dance Concert, featuring the Mélange and Repertory Dance Companies and the Concert Dance class, is Friday and Saturday, Dec. 6-7 at 7 p.m. in the Performing Arts Center. Tickets are $6 and  can be purchased online  or at the door. The show features student choreography from Georgie Casaletto, Abbie Szwejbka, Elena Rouse, Jorie Knysz, Masha Khorolinsky, Magdalena Waz, Kiley Lacher, Heloise Jacobs, Leah Kochevar, Jocelyn Silk, Isabella Fontane, Ari Reinstein, Samantha Serpico, Juliette Koskela, Katie Wu, Allison Noronha,  Sammi Meyers, Hannah Stewart, and Chloe Lucido. Guest choreographers are Lauren Parets and Jordan Ryder.",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1575680400000,
-      "end": 1575687600000,
-      "name": "Improv Performance",
-      "description": "",
-      "location": "West Auditorium",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "12/7/2019": [
-    {
-      "allDay": false,
-      "start": 1575766800000,
-      "end": 1575774000000,
-      "name": "Dance Concert",
-      "description": "Admission $6\n\n\n\nThe 2019 Winter Dance Concert, featuring the Mélange and Repertory Dance Companies and the Concert Dance class, is Friday and Saturday, Dec. 6-7 at 7 p.m. in the Performing Arts Center. Tickets are $6 and  can be purchased online  or at the door. The show features student choreography from Georgie Casaletto, Abbie Szwejbka, Elena Rouse, Jorie Knysz, Masha Khorolinsky, Magdalena Waz, Kiley Lacher, Heloise Jacobs, Leah Kochevar, Jocelyn Silk, Isabella Fontane, Ari Reinstein, Samantha Serpico, Juliette Koskela, Katie Wu, Allison Noronha,  Sammi Meyers, Hannah Stewart, and Chloe Lucido. Guest choreographers are Lauren Parets and Jordan Ryder.",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
   "12/9/2019": [
     {
       "allDay": false,
@@ -357,7 +298,7 @@
       "start": 1578722400000,
       "end": 1578808800000,
       "name": "Benchmark Exams for Incoming Freshmen",
-      "description": "",
+      "description": "Visit our benchmark exams web page for details .",
       "location": null,
       "categories": [
         "Testing Day"
