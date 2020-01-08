@@ -3,3 +3,4 @@ docs/
 stats.json
 .DS_Store
 .vscode
+.env
