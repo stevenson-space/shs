@@ -25,7 +25,7 @@ export default {
 			announcements: [
 				{
 					text:
-						"<b>The login bug when attemping to access textbooks in Safari has been fixed.</b>",
+						"<b>The login bug that occurred when attemping to access textbooks in Safari has been fixed.</b>",
 					showInFullScreen: true
 				},
 				{
