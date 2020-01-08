@@ -36,7 +36,7 @@
         <form-card-element>
           <label>Contact</label>
           <p>You can optionally provide your email if you wish to be notified when your book has been added.</p>
-          <input type="email" name="contact-address" placeholder="youremail@students.d125.org" />
+          <input type="email" name="contact-address" placeholder="your@email.com" />
         </form-card-element>
         <form-card-element submit>
           <rounded-button text="Submit" />
