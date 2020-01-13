@@ -244,7 +244,7 @@ export default {
           {
             title: "Textbook",
             link:
-              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2TVNiODZPR3dqa1k"
+              "https://mega.nz/#!kNFE2Kpa!Q55iKU7lDkwRWIjwXmbTfBdIap9ajeA7-Gg7bmrF4VM"
           }
         ],
         "AP Calculus BC": [
@@ -265,7 +265,7 @@ export default {
           {
             title: "Textbook",
             link:
-              "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2UV9PVWcyZTd4bzg"
+              "https://mega.nz/#!pBFSHKIK!sjHXYpUlR03mbEXRTOjn_kMKjn5Skaupv3QXmpPHK6E"
           }
         ],
         "Linear Algebra": [
@@ -280,6 +280,13 @@ export default {
             title: "Textbook",
             link:
               "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2QzExelNFZ1Y1N0k"
+          }
+        ],
+        "AP Physics 1": [
+          {
+            title: "Textbook",
+            link:
+              "https://mega.nz/#!8UdQBQKJ!mImb8Fsk09V9YGeRRaqx9FePTgP58jWeOnE27IbQCjk"
           }
         ],
         "AP Physics 2": [
