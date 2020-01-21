@@ -3,7 +3,7 @@
     <plain-header title="Documents" />
     <card-container>
       <!-- Class cards -->
-      <documents-card v-for="(list, name) in docs" :class-name="name" :documents="list" />
+      <documents-card v-for="(list, name) in docs" :key="name" :class-name="name" :documents="list" />
       <!-- Request card -->
       <form-card :name="formName" title="Request">
         <form-card-element>Didn't find the book you were looking for? Request it below!</form-card-element>

@@ -15,30 +15,14 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
 import Dropdown from "common/Dropdown.vue";
 
 export default {
 	components: { Dropdown },
 	data() {
 		return {
-			announcements: [
-				{
-					text:
-						"<b>The login bug that occurred when attemping to access textbooks in Safari has been fixed.</b>",
-					showInFullScreen: true
-				},
-				{
-					text:
-						"Textbooks are now accessible on the documents page by signing in with your <b>students.d125.org</b> email.",
-					showInFullScreen: false
-				},
-				{
-					text:
-						"Your account details are only used for authentication. No private information, including passwords, will be stored.",
-					showInFullScreen: false
-				}
-			]
+			// [{ text: String, showInFullScreen: Boolean }]
+			announcements: [],
 		};
 	},
 	props: {
