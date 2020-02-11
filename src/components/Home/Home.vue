@@ -6,8 +6,6 @@
     />
 
     <card-container>
-      <shs-hacks-card />
-      
       <schedule-card />
 
       <lunch-card />
@@ -88,7 +86,6 @@ import UpcomingEventsCard from 'common/cards/UpcomingEventsCard.vue';
 import LunchCard from 'common/cards/LunchCard.vue';
 import IconTextCard from 'common/cards/IconTextCard.vue';
 import ScheduleCard from 'common/cards/ScheduleCard.vue';
-import ShsHacksCard from 'common/cards/ShsHacksCard.vue';
 import ScheduleHeader from './Header.vue';
 
 export default {
@@ -99,7 +96,6 @@ export default {
     LunchCard,
     IconTextCard,
     ScheduleCard,
-    ShsHacksCard,
   },
   data() {
     return {
