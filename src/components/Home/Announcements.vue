@@ -1,33 +1,38 @@
 <template>
-	<div>
-		<div v-for="announcement in announcements" class="announcements">
-			<div
-				class="announcement"
-				:class="{ 'full-screen': fullScreenMode }"
-				v-if="!(!announcement.showInFullScreen && fullScreenMode)"
-			>
-				<div class="container">
-					<div class="center" v-html="announcement.text"></div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div>
+    <div v-for="announcement in announcements" class="announcements">
+      <div
+        class="announcement"
+        :class="{ 'full-screen': fullScreenMode }"
+        v-if="!(!announcement.showInFullScreen && fullScreenMode)"
+      >
+        <div class="container">
+          <div class="center" v-html="announcement.text"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import Dropdown from "common/Dropdown.vue";
 
 export default {
-	components: { Dropdown },
-	data() {
-		return {
-			// [{ text: String, showInFullScreen: Boolean }]
-			announcements: [],
-		};
-	},
-	props: {
-		fullScreenMode: { type: Boolean, default: false }
-	}
+  components: { Dropdown },
+  data() {
+    return {
+      // [{ text: String, showInFullScreen: Boolean }]
+      announcements: [
+        {
+          text: "Winterfest 2020 will be out of this world! -StuCo Stevenson",
+          showInFullScreen: false
+        }
+      ]
+    };
+  },
+  props: {
+    fullScreenMode: { type: Boolean, default: false }
+  }
 };
 </script>
 

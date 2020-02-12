@@ -350,7 +350,8 @@ export default {
 
 .header
   +shadow
-  background-color: var(--header-color)
+  // background-color: var(--header-color)
+  background-image: url('/static/starrynight.jpg')
   text-align: center
   transition: background-color .3s
 
