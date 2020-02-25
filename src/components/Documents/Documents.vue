@@ -3,7 +3,12 @@
     <plain-header title="Documents" />
     <card-container>
       <!-- Class cards -->
-      <documents-card v-for="(list, name) in docs" :key="name" :class-name="name" :documents="list" />
+      <documents-card
+        v-for="(list, name) in docs"
+        :key="name"
+        :class-name="name"
+        :documents="list"
+      />
       <!-- Request card -->
       <form-card :name="formName" title="Request">
         <form-card-element>Didn't find the book you were looking for? Request it below!</form-card-element>
@@ -224,6 +229,11 @@ export default {
             title: "Balzac and the Little Chinese Seamstress",
             link:
               "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2Z1pxejVXVVhxaWc"
+          },
+          {
+            title: "The Stranger",
+            link:
+              "https://mega.nz/#!RB9jVYRR!d2_thGqn6ZuhjCr1_Xcq0_v_sNve7gbhAnXOmMxnjKs"
           }
         ],
         "Geometry Honors": [
