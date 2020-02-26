@@ -94,6 +94,21 @@ function parseDate(dateText) {
 		.slice(dateText.indexOf(",") + 1)
 		.trim()} ${today.getFullYear()}`;
 
+	const longMonths = [
+		"January",
+		"February",
+		"March",
+		"April",
+		"May",
+		"June",
+		"July",
+		"August",
+		"September",
+		"October",
+		"November",
+		"December"
+	];
+
 	const months = [
 		"jan",
 		"feb",
@@ -108,6 +123,10 @@ function parseDate(dateText) {
 		"nov",
 		"dec"
 	];
+
+	// replace long instances of month names to short onces
+	for (let i = 0; i < longMonths.length; i++)
+		dateText = dateText.replace(longMonths[i], months[i]);
 
 	exitWithErrorIf(
 		!dateText.match(

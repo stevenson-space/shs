@@ -1,469 +1,4 @@
 {
-  "12/9/2019": [
-    {
-      "allDay": false,
-      "start": 1575939600000,
-      "end": 1575946800000,
-      "name": "Band Concert",
-      "description": "Freshman & Honor Bands perform",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/10/2019": [
-    {
-      "allDay": false,
-      "start": 1576026000000,
-      "end": 1576033200000,
-      "name": "Band Concert",
-      "description": "Concert, Symphonic & Advanced Symphonic Bands perform",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/12/2019": [
-    {
-      "allDay": false,
-      "start": 1576168200000,
-      "end": 1576206000000,
-      "name": "Baseball Fundraiser",
-      "description": "Visit this link  for special barcode for ordering",
-      "location": "City BBQ - Vernon Hills",
-      "categories": [
-        "Athletics"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1576198800000,
-      "end": 1576206000000,
-      "name": "Choral Concert",
-      "description": "Featuring curricular and co-curricular choirs",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/13/2019": [
-    {
-      "allDay": false,
-      "start": 1576254600000,
-      "end": 1576267200000,
-      "name": "Sports Boosters Flash Sale",
-      "description": "Check out the latest SHS apparel",
-      "location": "Field House Lobby",
-      "categories": []
-    },
-    {
-      "allDay": false,
-      "start": 1576279800000,
-      "end": 1576292400000,
-      "name": "Hoops for Heroes/Military Appreciation Night",
-      "description": "Bring items for care packages.  Here's what is needed .\n\n\n\nStudents Helping Soldiers and the SHS boys and girls basketball teams are joining forces to help Operation Wild Horse, as well as active members of the military. Students Helping Soldiers members will be collecting items at the Sports Center entrance for care packages that will be sent to military members during the holidays. These items will be accepted:\n\n * Powdered drink mix (Gatorade, lemonade, etc.)\n* Protein bars\n* Beef jerky snacks\n* Candy (non-chocolate preferred)\n* Chewing gum\n* Travel-size toiletries\n* Hand warmers",
-      "location": "Sports Center",
-      "categories": []
-    },
-    {
-      "allDay": false,
-      "start": 1576285200000,
-      "end": 1576292400000,
-      "name": "Jazz Cafe",
-      "description": "with SHS jazz bands and choirs",
-      "location": "Room 2104",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/14/2019": [
-    {
-      "allDay": false,
-      "start": 1576346400000,
-      "end": 1576386000000,
-      "name": "Archery team fundraiser",
-      "description": "Mention archery when ordering.",
-      "location": "Culver's - Lincolnshire",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1576360800000,
-      "end": 1576375200000,
-      "name": "Boys Swim Team Fundraiser",
-      "description": "Mention boys swimming when ordering.",
-      "location": "Chipotle - Lincolnshire",
-      "categories": []
-    },
-    {
-      "allDay": false,
-      "start": 1576371600000,
-      "end": 1576378800000,
-      "name": "Acting 3 Class Performance",
-      "description": "Original performance of \"I Am Enough\"",
-      "location": "Black Box Theatre",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/16/2019": [
-    {
-      "allDay": false,
-      "start": 1576530000000,
-      "end": 1576549800000,
-      "name": "Band Fundraiser",
-      "description": "Show this flyer",
-      "location": "Menchie's - Lincolnshire",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1576531800000,
-      "end": 1576551600000,
-      "name": "Best Buddies fundraiser",
-      "description": "Mention Best Buddies when ordering.",
-      "location": "Culver's - Lincolnshire",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1576533600000,
-      "end": 1576555200000,
-      "name": "Band Fundraiser",
-      "description": "Show this flyer",
-      "location": "Naf Naf Grill - Lincolnshire",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1576540800000,
-      "end": 1576551600000,
-      "name": "Orchestra Concert",
-      "description": "Two concerts will be held, both with free admission. The first performance begins at 6 p.m in the Performing Arts Center followed by a 7:30 p.m. performance.",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/17/2019": [
-    {
-      "allDay": true,
-      "start": 1576562400000,
-      "end": 1576648800000,
-      "name": "End of Six-Week Grading Period",
-      "description": "",
-      "location": null,
-      "categories": [
-        "End of Six Weeks"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1576623600000,
-      "end": 1576638000000,
-      "name": "Choral Guild Fundraiser",
-      "description": "Show this flyer",
-      "location": "Chipotle - Lincolnshire",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/18/2019": [
-    {
-      "allDay": false,
-      "start": 1576679400000,
-      "end": 1576696800000,
-      "name": "Semester Exams - Day 1",
-      "description": "8:30-10:00: Period 1 Exam\n  10:10-11:40: Period 2 Exam\n  11:50-1:20: Period 4 Exam\n  1:35: Bus Pick-Up\n\nDetails at  www.d125.org/Finals",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1576681200000,
-      "end": 1576720800000,
-      "name": "String Parents Fundraiser",
-      "description": "Show this flyer",
-      "location": "Bonta - Lincolnshire",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/19/2019": [
-    {
-      "allDay": false,
-      "start": 1576765800000,
-      "end": 1576783200000,
-      "name": "Semester Exams - Day 2",
-      "description": "8:30-10:00: Period 3 Exam\n  10:10-11:40: Period 7 Exam\n  11:50-1:20: Period 5 Exam\n  1:35: Bus Pick-Up\n\nDetails at  www.d125.org/Finals",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "12/20/2019": [
-    {
-      "allDay": false,
-      "start": 1576852200000,
-      "end": 1576869600000,
-      "name": "Semester Exams - Day 3",
-      "description": "8:30-10:00: Period 8 Exam\n  10:10-11:40: Period 6 Exam\n  11:55: Bus Pick-Up\n  11:50-1:20: Make-Up Exam\n  1:35: Late Bus Pick-Up\n\nDetails at  www.d125.org/Finals",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "12/23/2019": [
-    {
-      "allDay": true,
-      "start": 1577080800000,
-      "end": 1577167200000,
-      "name": "Winter Break Begins",
-      "description": "runs through Jan. 6, 2020",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "1/6/2020": [
-    {
-      "allDay": true,
-      "start": 1578290400000,
-      "end": 1578376800000,
-      "name": "No School - Teacher Institute Day",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "1/7/2020": [
-    {
-      "allDay": false,
-      "start": 1578407400000,
-      "end": 1578432300000,
-      "name": "Second Semester Begins",
-      "description": "",
-      "location": null,
-      "categories": []
-    },
-    {
-      "allDay": false,
-      "start": 1578445200000,
-      "end": 1578452400000,
-      "name": "Incoming Freshman Parent Night #1",
-      "description": "Student last names A-H\n\n\n\n\n\nStevenson High School will hold orientation evenings for eighth-graders and their families in January.\n\nIncoming freshman families will receive information regarding the online enrollment process, which must be completed for all soon-to-be freshman students by Jan. 31. Curriculum directors and students also will share information about course offerings and co-curricular activities.\n\nDates:\n * Tuesday, Jan. 7 (Student last names A-H)\n* Thursday, Jan. 9 (Student last names I-P)\n* Wednesday, Jan. 15 (Student last names Q-Z)\n \nTimes:\n * 6 p.m. - Information packet pick-up near the Performing Arts Center. Packets will include a password for online enrollment, 2020-21  Coursebook , 2020 summer school catalog, 2020-21 Co-Curricular Guide, and health forms.\n* 6 p.m. - School tours will be available, starting at the Forum (\"Point\") entrance off parking lot B\n* 7 p.m. - Presentation in the Performing Arts Center\n \nFamilies unable to attend an Orientation Evening on their scheduled date may attend one of the other scheduled days. Families do not need to inform the school if they are attending on a different date.\n\nInterpreters in Chinese, Hindi, Korean, Russian and Spanish will be available for these events. Families requiring an interpreter are asked to email Suzanne Paloian at  spaloian@d125.org  no later than Friday, Jan. 3.\n\nFamilies with questions about the evenings or enrollment can contact Regina Anderson ( reanderson@d125.org  or  847-415-4502 ) or Suzanne Paloian ( spaloian@d125.org  or  847-415-4500 ).",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "1/9/2020": [
-    {
-      "allDay": false,
-      "start": 1578618000000,
-      "end": 1578625200000,
-      "name": "Incoming Freshman Parent Night #2",
-      "description": "Student last names I-P\n\n\n\n\n\nStevenson High School will hold orientation evenings for eighth-graders and their families in January.\n\nIncoming freshman families will receive information regarding the online enrollment process, which must be completed for all soon-to-be freshman students by Jan. 31. Curriculum directors and students also will share information about course offerings and co-curricular activities.\n\nDates:\n * Tuesday, Jan. 7 (Student last names A-H)\n* Thursday, Jan. 9 (Student last names I-P)\n* Wednesday, Jan. 15 (Student last names Q-Z)\n \nTimes:\n * 6 p.m. - Information packet pick-up near the Performing Arts Center. Packets will include a password for online enrollment, 2020-21  Coursebook , 2020 summer school catalog, 2020-21 Co-Curricular Guide, and health forms.\n* 6 p.m. - School tours will be available, starting at the Forum (\"Point\") entrance off parking lot B\n* 7 p.m. - Presentation in the Performing Arts Center\n \nFamilies unable to attend an Orientation Evening on their scheduled date may attend one of the other scheduled days. Families do not need to inform the school if they are attending on a different date.\n\nInterpreters in Chinese, Hindi, Korean, Russian and Spanish will be available for these events. Families requiring an interpreter are asked to email Suzanne Paloian at  spaloian@d125.org  no later than Friday, Jan. 3.\n\nFamilies with questions about the evenings or enrollment can contact Regina Anderson ( reanderson@d125.org  or  847-415-4502 ) or Suzanne Paloian ( spaloian@d125.org  or  847-415-4500 ).",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "1/11/2020": [
-    {
-      "allDay": true,
-      "start": 1578722400000,
-      "end": 1578808800000,
-      "name": "Benchmark Exams for Incoming Freshmen",
-      "description": "Visit our benchmark exams web page for details .",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "1/13/2020": [
-    {
-      "allDay": false,
-      "start": 1578931560000,
-      "end": 1578934140000,
-      "name": "Activity Period",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1578963600000,
-      "end": 1578970800000,
-      "name": "Consortium Choral Concert",
-      "description": "",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "1/14/2020": [
-    {
-      "allDay": false,
-      "start": 1579008600000,
-      "end": 1579012200000,
-      "name": "Building Balanced Teens",
-      "description": "Learn how to help teens manage stress - without fixing their problems.\n\n\n\n\n\n\n\n Building Balanced Teens \n Tuesday, Jan. 14, 7:30-8:30 a.m., District 125 Administration Center \nEverybody is busy these days, creating stress for the entire family. This session will address how to live a balanced life, how to manage stress, and how to help teens reset after a bad day - without fixing their problems.",
-      "location": "District Administration Center",
-      "categories": []
-    },
-    {
-      "allDay": false,
-      "start": 1579050000000,
-      "end": 1579057200000,
-      "name": "Consortium Orchestra Concert",
-      "description": "",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "1/15/2020": [
-    {
-      "allDay": false,
-      "start": 1579136400000,
-      "end": 1579143600000,
-      "name": "Incoming Freshman Parent Night #3",
-      "description": "Student last names Q-Z\n\n\n\n\n\nStevenson High School will hold orientation and course selection evenings for eighth-graders and their families in January.\n\nIncoming freshman families will receive information regarding the online enrollment process, which must be completed for all soon-to-be freshman students by Jan. 31. Curriculum directors and students also will share information about course offerings and co-curricular activities.\n\nDates:\n * Tuesday, Jan. 7 (Student last names A-H)\n* Thursday, Jan. 9 (Student last names I-P)\n* Wednesday, Jan. 15 (Student last names Q-Z)\n \nTimes:\n * 6 p.m. - Information packet pick-up near the Performing Arts Center. Packets will include a password for online enrollment, 2020-21  Coursebook , 2020 summer school catalog, 2020-21 Co-Curricular Guide, and health forms.\n* 6 p.m. - School tours will be available, starting at the Forum (\"Point\") entrance off parking lot B\n* 7 p.m. - Presentation in the Performing Arts Center\n \nFamilies unable to attend an Orientation Evening on their scheduled date may attend one of the other scheduled days. Families do not need to inform the school if they are attending on a different date.\n\nInterpreters in Chinese, Hindi, Korean, Russian and Spanish will be available for these events. Families requiring an interpreter are asked to email Suzanne Paloian at  spaloian@d125.org  no later than Friday, Jan. 3.\n\nFamilies with questions about the evenings or enrollment can contact Regina Anderson ( reanderson@d125.org  or  847-415-4502 ) or Suzanne Paloian ( spaloian@d125.org  or  847-415-4500 ).",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "1/16/2020": [
-    {
-      "allDay": true,
-      "start": 1579154400000,
-      "end": 1579240800000,
-      "name": "Late Arrival - Teacher Planning",
-      "description": "Classes begin at 10:30 a.m. Bus routes start at 9:20.",
-      "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1579177800000,
-      "end": 1579194000000,
-      "name": "Band Fundraiser",
-      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
-      "location": "Strawberry Field",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1579222800000,
-      "end": 1579230000000,
-      "name": "Consortium Band Festival",
-      "description": "",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "1/17/2020": [
-    {
-      "allDay": true,
-      "start": 1579240800000,
-      "end": 1579327200000,
-      "name": "Fine Arts Tour of Sender Schools",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "1/20/2020": [
-    {
-      "allDay": true,
-      "start": 1579500000000,
-      "end": 1579586400000,
-      "name": "No School - Martin Luther King Jr. Day",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "1/23/2020": [
-    {
-      "allDay": false,
-      "start": 1579816800000,
-      "end": 1579827600000,
-      "name": "Incoming Freshman Course Selection Evening #1",
-      "description": "Student last names A-L\n\n\n\n\n\nStevenson High School will hold course selection evenings for eighth-graders and their families in January.\n\nEighth-graders and their families will be able to meet individually with a school counselor for a brief conversation about freshman course choices. Student Services staff also will be available during these evenings to answer questions related to enrollment. Prior to the Course Selection Evenings (and after the Orientation Evenings earlier in January), families will receive a mailing from SHS sharing course recommendations for their child.\n\nDates:\n * Thursday, Jan. 23 (Student last names A-L)\n* Tuesday, Jan. 28 (Student last names M-Z)\n \nTime: 4-7 p.m.\n\nFamilies unable to attend a Course Selection Evening on their scheduled date may attend the other scheduled day. Families do not need to inform the school if they are attending on a different date.\n\nInterpreters in Chinese, Hindi, Korean, Russian and Spanish will be available for these events. Families requiring an interpreter are asked to email Suzanne Paloian at  spaloian@d125.org  no later than Friday, Jan. 3.\n\nFamilies with questions about the evenings or enrollment can contact Regina Anderson ( reanderson@d125.org  or  847-415-4502 ) or Suzanne Paloian ( spaloian@d125.org  or  847-415-4500 ).",
-      "location": "Room 2104",
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "1/24/2020": [
-    {
-      "allDay": false,
-      "start": 1579914000000,
-      "end": 1579921200000,
-      "name": "S-Factor Singing Competition",
-      "description": "",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "1/25/2020": [
-    {
-      "allDay": false,
-      "start": 1580002200000,
-      "end": 1580009400000,
-      "name": "Foundation Event: Happy Together",
-      "description": "Tickets $25 per person. Group rates available.  Click here for details .\n\n\n\n\n\nMarried musical stars Michael and Angela Ingersoll hilariously share the spotlight singing oldies but goodies. He's the beloved star from  Jersey Boys  (original San Francisco, Los Angeles, and Chicago casts) and the PBS retro-rock group Under the Streetlamp. She's the Emmy nominee known for her astonishing portrayals of Judy Garland ( End of the Rainbow ;  Get Happy  on PBS). Enjoy Chicago Tribune's \"Dynamic Power Couple\" for shenanigans and signature songs including \"Save the Last Dance For Me,\" \"Over the Rainbow,\" and \"I've Had the Time of My Life.\"",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Foundation Events"
-      ]
-    }
-  ],
   "1/28/2020": [
     {
       "allDay": false,
@@ -505,9 +40,11 @@
       "start": 1580346000000,
       "end": 1580353200000,
       "name": "Eating to Succeed",
-      "description": "Featuring SHS alumnus Alex Stoller (Class of 2010).\n\n\n\n\n\n\n\n\n\n\"I exercise, so I can eat whatever I want.\" Does this sound familiar? While that may seem reasonable, it's not the whole story. In fact, what we eat impacts everything from our size to our behavior to our moods. Learn how to make smarter food choices for you and your family. Students-only session from 5:45-6:30 p.m.\nThe Parent Engagement Series program, \"Eating to Succeed,\" will feature SHS alumnus Alex Stoller (Class of 2010).",
+      "description": "Featuring SHS alumnus Alex Stoller (Class of 2010). Students-only session from 5:45-6:30 p.m.\n\n\n\n\n\n\n\n\n\n\"I exercise, so I can eat whatever I want.\" Does this sound familiar? While that may seem reasonable, it's not the whole story. In fact, what we eat impacts everything from our size to our behavior to our moods. Learn how to make smarter food choices for you and your family. Students-only session from 5:45-6:30 p.m.\nThe Parent Engagement Series program, \"Eating to Succeed,\" will feature SHS alumnus Alex Stoller (Class of 2010).",
       "location": "West Auditorium",
-      "categories": []
+      "categories": [
+        "Parent Calendar"
+      ]
     }
   ],
   "1/30/2020": [
@@ -538,7 +75,7 @@
       "start": 1580432400000,
       "end": 1580439600000,
       "name": "Freshman-Sophomore Play: Puffs",
-      "description": "The freshman-sophomore play features the Harry Potter parody, \"Puffs, Or: Seven Increasingly Eventful Years at a Certain School of Magic and Magic,\" by Matt Cox. \"For seven years a certain boy wizard went to a certain Wizard School and conquered evil. This, however, is not his story,\" reads the play's website. \"This is the story of the Puffs ... who just happened to be there too. A tale for anyone who has never been destined to save the world.\"",
+      "description": "Click here to order tickets \n\n\n\nThe freshman-sophomore play features the parody, \"Puffs, Or: Seven Increasingly Eventful Years at a Certain School of Magic and Magic,\" by Matt Cox. \"For seven years a certain boy wizard went to a certain Wizard School and conquered evil. This, however, is not his story,\" reads the play's website. \"This is the story of the Puffs ... who just happened to be there too. A tale for anyone who has never been destined to save the world.\"",
       "location": "Little Theatre (PAC)",
       "categories": [
         "Fine Arts"
@@ -550,8 +87,8 @@
       "allDay": false,
       "start": 1580518800000,
       "end": 1580526000000,
-      "name": "Freshman-Sophomore Play: Puffs",
-      "description": "The freshman-sophomore play features the Harry Potter parody, \"Puffs, Or: Seven Increasingly Eventful Years at a Certain School of Magic and Magic,\" by Matt Cox. \"For seven years a certain boy wizard went to a certain Wizard School and conquered evil. This, however, is not his story,\" reads the play's website. \"This is the story of the Puffs ... who just happened to be there too. A tale for anyone who has never been destined to save the world.\"",
+      "name": "Freshman-Sophomore Play SOLD OUT",
+      "description": "The freshman-sophomore play features the parody, \"Puffs, Or: Seven Increasingly Eventful Years at a Certain School of Magic and Magic,\" by Matt Cox. \"For seven years a certain boy wizard went to a certain Wizard School and conquered evil. This, however, is not his story,\" reads the play's website. \"This is the story of the Puffs ... who just happened to be there too. A tale for anyone who has never been destined to save the world.\"",
       "location": "Little Theatre (PAC)",
       "categories": [
         "Fine Arts"
@@ -563,8 +100,8 @@
       "allDay": false,
       "start": 1580605200000,
       "end": 1580612400000,
-      "name": "Freshman-Sophomore Play: Puffs",
-      "description": "The freshman-sophomore play features the Harry Potter parody, \"Puffs, Or: Seven Increasingly Eventful Years at a Certain School of Magic and Magic,\" by Matt Cox. \"For seven years a certain boy wizard went to a certain Wizard School and conquered evil. This, however, is not his story,\" reads the play's website. \"This is the story of the Puffs ... who just happened to be there too. A tale for anyone who has never been destined to save the world.\"",
+      "name": "Freshman-Sophomore Play SOLD OUT",
+      "description": "The freshman-sophomore play features the parody, \"Puffs, Or: Seven Increasingly Eventful Years at a Certain School of Magic and Magic,\" by Matt Cox. \"For seven years a certain boy wizard went to a certain Wizard School and conquered evil. This, however, is not his story,\" reads the play's website. \"This is the story of the Puffs ... who just happened to be there too. A tale for anyone who has never been destined to save the world.\"",
       "location": "Little Theatre (PAC)",
       "categories": [
         "Fine Arts"
@@ -577,7 +114,7 @@
       "start": 1580832900000,
       "end": 1580851500000,
       "name": "Odyssey Fine Arts Festival",
-      "description": "",
+      "description": "Visit the Odyssey web page for details",
       "location": null,
       "categories": [
         "Fine Arts"
@@ -590,7 +127,7 @@
       "start": 1580919300000,
       "end": 1580937900000,
       "name": "Odyssey Fine Arts Festival",
-      "description": "",
+      "description": "Visit the Odyssey web page for details",
       "location": null,
       "categories": [
         "Fine Arts"
@@ -600,26 +137,22 @@
   "2/6/2020": [
     {
       "allDay": false,
+      "start": 1581009000000,
+      "end": 1581018000000,
+      "name": "Trades Expo",
+      "description": "Student can learn about careers in more than 20 trades.\n\n\n\n\n\nStudents are invited to learn about careers in a variety of trades at the Trades Expo during all lunch periods on Thursday, Feb. 6 in Room 2104. Representatives from more than 20 trades will be on hand to discuss careers in areas ranging from electrical and automotive work, to being a pharmacy technician or veterinarian's assistant. Many trades offer on-the-job training and paid education.",
+      "location": "Room 2104",
+      "categories": []
+    },
+    {
+      "allDay": false,
       "start": 1581037200000,
       "end": 1581044400000,
       "name": "CPN Presents: Mindfulness for Parents",
       "description": "Sponsored by the Community Parent Network, a program of the Stevenson Foundation.\n\n\n\n  \nMindfulness, or being present in the moment is necessary in parenting. Many parents' lives are rushed to the point that we are never fully here because we're always worrying about the next thing on the to-do list. We get stressed and anxious, easily provoked by our children into unhelpful reactions, instead of responding in a more considered way. Join Ramaa Krishna to learn how to slow down, and give space for some 'being' instead of always 'doing'. We will practice how to set aside a few minutes each day for mindfulness practice. As we allow mindfulness to seep into the rest of our daily life, we will find that we can approach parenting in a more mindful way.\n  \n  Registration requested at:\n\n https://www.eventbrite.com/e/mindfulness-for-paren...",
       "location": "Room 2104 (West Building)",
       "categories": [
-        "Foundation Events"
-      ]
-    }
-  ],
-  "2/8/2020": [
-    {
-      "allDay": false,
-      "start": 1581177600000,
-      "end": 1581195600000,
-      "name": "Day of Guitar",
-      "description": "",
-      "location": "TBA",
-      "categories": [
-        "Fine Arts"
+        "Parent Calendar"
       ]
     }
   ],
@@ -644,13 +177,15 @@
       "name": "Dare Your Teen to Dream",
       "description": "Our Parent Engagement Series series continues with strategies to support your teens' hopes and dreams.\n\n\n\n\n Dare Your Teen to Dream \n Tuesday, Feb. 11, 7:30-8:30 a.m., District 125 Administration Center \nParents and guardians want to support their teens' hopes and dreams, even if they seem to change every day. This session will offer strategies to support self-discovery and navigate the perils of passion.",
       "location": "District Administration Center",
-      "categories": []
+      "categories": [
+        "Parent Calendar"
+      ]
     },
     {
       "allDay": false,
       "start": 1581465600000,
       "end": 1581469200000,
-      "name": "Orchestra Chamber Concert",
+      "name": "Orchestra Chamber Concert - Session 1",
       "description": "",
       "location": "Recital Hall (PAC)",
       "categories": [
@@ -661,7 +196,7 @@
       "allDay": false,
       "start": 1581471000000,
       "end": 1581474600000,
-      "name": "Orchestra Chamber Concert",
+      "name": "Orchestra Chamber Concert - Session 2",
       "description": "",
       "location": "Recital Hall (PAC)",
       "categories": [
@@ -675,11 +210,20 @@
       "start": 1581523560000,
       "end": 1581526140000,
       "name": "Activity Period",
-      "description": "",
+      "description": "Students should bring their iPad to their second period class to take the Student Health and Wellness Survey.\n\n\n\nIn addition to the survey administration, the following clubs will meet during the activity period:\n * Stevenson Styler - Fashion Show Leadership Team (Room 1612)\n* Summer AP European History Trip (Room 7104)\n* Jazz Etc. (\"Bat Cave\")\n* M3 Challenge Groups (Room 1518)\n* Student Congress (West Faculty Dining Room)\n* AP Spanish with WE Service (Wrestling Room - 2111)\n* Junior Class Board (Sports Center lobby)\n* Students Helping Soldiers (Room 5044 - Multipurpose Room)\n* Best Buddies Transition E-Board (Room 8058)\n* Freshman Class Board (Lower Glass Commons)\n* Animal Welfare Club E-Board (Room 1006)",
       "location": null,
       "categories": [
         "Clubs and Activities"
       ]
+    },
+    {
+      "allDay": false,
+      "start": 1581541200000,
+      "end": 1581570000000,
+      "name": "Baseball Fundraiser",
+      "description": "Mention Stevenson baseball when ordering.\n\n\n\n\n\n\n\nThe SHS baseball team is holding a fundraiser from 3-11 p.m. Wednesday, Feb. 12 at  Woodfire Tavern , 4868 Illinois Route 83 (corner of Route 83 and Gilmer Road) in Long Grove. Mention \"Stevenson Baseball\" and 20% of the sale will be donated to the team.",
+      "location": "Woodfire Tavern",
+      "categories": []
     },
     {
       "allDay": false,
@@ -749,8 +293,19 @@
       "allDay": true,
       "start": 1582005600000,
       "end": 1582092000000,
+      "name": "Choral Guild Fundraiser",
+      "description": "Show this flyer  or mention \"Stevenson Choir\" when ordering at these locations:\n * Buffalo Grove, 11 a.m.-10 p.m.\n* Libertyville, 4-10 p.m.\n* Lake Zurich, 4-10 p.m.\n\n\n\n\n\nThe Choral Guild is holding a fundraiser on Tuesday, Feb. 18 at three area Lou Malnati's locations:\n\n- Buffalo Grove, 85 S. Buffalo Grove Rd., 11 a.m. to 10 p.m.\n\n- Libertyville, 1436 S. Milwaukee Ave., 4-10 p.m.\n\n- Lake Zurich, 225 Rand Rd., 4-10 p.m.\n\nMalnati's will donate 20% of total sales to the choir program for every order received.",
+      "location": "3 Lou Malnati's locations",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1582005600000,
+      "end": 1582092000000,
       "name": "Winterfest Week",
-      "description": "",
+      "description": "Pajama Day\n\n Order Winterfest Tickets",
       "location": null,
       "categories": [
         "Clubs and Activities"
@@ -763,7 +318,7 @@
       "start": 1582092000000,
       "end": 1582178400000,
       "name": "Winterfest Week",
-      "description": "",
+      "description": "Neon Day\n\n Order Winterfest tickets",
       "location": null,
       "categories": [
         "Clubs and Activities"
@@ -787,7 +342,7 @@
       "start": 1582178400000,
       "end": 1582264800000,
       "name": "Winterfest Week",
-      "description": "",
+      "description": "USA Day\n\n Order Winterfest Tickets",
       "location": null,
       "categories": [
         "Clubs and Activities"
@@ -796,7 +351,7 @@
     {
       "allDay": false,
       "start": 1582201800000,
-      "end": 1582218000000,
+      "end": 1582230600000,
       "name": "Band Fundraiser",
       "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
       "location": "Strawberry Field",
@@ -820,7 +375,7 @@
       "start": 1582264800000,
       "end": 1582351200000,
       "name": "Winterfest Week",
-      "description": "",
+      "description": "Class Colors/Spirit Day\n\nSeniors: Green\nJuniors: Gold\nSophomores: Blue\nFreshmen: Red\n\n Order Winterfest Tickets",
       "location": null,
       "categories": [
         "Clubs and Activities"
@@ -829,14 +384,49 @@
   ],
   "2/22/2020": [
     {
-      "allDay": true,
-      "start": 1582351200000,
-      "end": 1582437600000,
-      "name": "Winterfest Dance",
-      "description": "",
+      "allDay": false,
+      "start": 1582421400000,
+      "end": 1582432200000,
+      "name": "Winterfest Lock-In Event",
+      "description": "Doors open 7:30 p.m. Lock-in starts 8 p.m.\n\n Order Winterfest Tickets",
       "location": null,
       "categories": [
         "Clubs and Activities"
+      ]
+    }
+  ],
+  "2/25/2020": [
+    {
+      "allDay": false,
+      "start": 1582648200000,
+      "end": 1582686000000,
+      "name": "Band Fundraiser",
+      "description": "Vernon Hills location . Mention \"Stevenson Band\" when ordering.\n\n\n\n\n\nMod Pizza\n701 N. Milwaukee Ave.\nVernon Hills, IL 60061",
+      "location": "Mod Pizza",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1582668000000,
+      "end": 1582682400000,
+      "name": "Boys Lacrosse Fundraiser",
+      "description": "Mention \"Stevenson Boys Lacrosse\" when ordering",
+      "location": "Chipotle - Vernon Hills",
+      "categories": [
+        "Athletics"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1582671600000,
+      "end": 1582686000000,
+      "name": "String Parents Fundraiser",
+      "description": "Mention Stevenson when ordering.",
+      "location": "Cafe Zupas",
+      "categories": [
+        "Fine Arts"
       ]
     }
   ],
@@ -900,7 +490,9 @@
       "name": "Teen Stress Today",
       "description": "Learn how to keep stress in check for the whole family.\n\n\n\n\n\n\n\n Teen Stress Today \n Tuesday, March 3, 7:30-8:30 a.m., District 125 Administration Center \nUnderstanding and managing stress is a critical component of parenting. When parents are stressed, so are their children. This session will offer tips on keeping stress in check for the whole family.",
       "location": "District Administration Center",
-      "categories": []
+      "categories": [
+        "Parent Calendar"
+      ]
     },
     {
       "allDay": false,
@@ -933,7 +525,7 @@
       "start": 1583456400000,
       "end": 1583463600000,
       "name": "Winter Play: The Importance of Being Earnest",
-      "description": "Oscar Wilde's most popular play takes a farcical look at two bachelors trying to escape their humdrum lives in late Victorian Era-London.",
+      "description": "Click here to buy tickets  for Oscar Wilde's most popular play.\n\n\n\nOscar Wilde's most popular play takes a farcical look at two bachelors trying to escape their humdrum lives in late Victorian Era-London.",
       "location": "West Auditorium",
       "categories": [
         "Fine Arts"
@@ -946,7 +538,7 @@
       "start": 1583542800000,
       "end": 1583550000000,
       "name": "Winter Play: The Importance of Being Earnest",
-      "description": "Oscar Wilde's most popular play takes a farcical look at two bachelors trying to escape their humdrum lives in late Victorian Era-London.",
+      "description": "Click here to buy tickets  for Oscar Wilde's most popular play.\n\n\n\nOscar Wilde's most popular play takes a farcical look at two bachelors trying to escape their humdrum lives in late Victorian Era-London.",
       "location": "West Auditorium",
       "categories": [
         "Fine Arts"
@@ -955,9 +547,9 @@
   ],
   "3/7/2020": [
     {
-      "allDay": true,
-      "start": 1583560800000,
-      "end": 1583647200000,
+      "allDay": false,
+      "start": 1583604000000,
+      "end": 1583614800000,
       "name": "St. Baldrick's Fundraiser",
       "description": "",
       "location": null,
@@ -967,22 +559,24 @@
     },
     {
       "allDay": false,
-      "start": 1583614800000,
-      "end": 1583622000000,
+      "start": 1583629200000,
+      "end": 1583636400000,
       "name": "Winter Play: The Importance of Being Earnest",
-      "description": "Oscar Wilde's most popular play takes a farcical look at two bachelors trying to escape their humdrum lives in late Victorian Era-London.",
+      "description": "Click here to buy tickets  for Oscar Wilde's most popular play.\n\n\n\nOscar Wilde's most popular play takes a farcical look at two bachelors trying to escape their humdrum lives in late Victorian Era-London.",
       "location": "West Auditorium",
       "categories": [
         "Fine Arts"
       ]
-    },
+    }
+  ],
+  "3/10/2020": [
     {
       "allDay": false,
-      "start": 1583629200000,
-      "end": 1583636400000,
-      "name": "Winter Play: The Importance of Being Earnest",
-      "description": "Oscar Wilde's most popular play takes a farcical look at two bachelors trying to escape their humdrum lives in late Victorian Era-London.",
-      "location": "West Auditorium",
+      "start": 1583874000000,
+      "end": 1583888400000,
+      "name": "Band Fundraiser",
+      "description": "",
+      "location": "Panera - Lincolnshire",
       "categories": [
         "Fine Arts"
       ]
@@ -1003,7 +597,7 @@
     {
       "allDay": false,
       "start": 1584012600000,
-      "end": 1584028800000,
+      "end": 1584041400000,
       "name": "Band Fundraiser",
       "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
       "location": "Strawberry Field",
@@ -1024,26 +618,13 @@
       ]
     }
   ],
-  "3/13/2020": [
-    {
-      "allDay": false,
-      "start": 1584144000000,
-      "end": 1584154800000,
-      "name": "Showcase",
-      "description": "",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
   "3/14/2020": [
     {
       "allDay": false,
       "start": 1584230400000,
       "end": 1584241200000,
       "name": "Showcase",
-      "description": "",
+      "description": "Buy tickets",
       "location": "Performing Arts Center",
       "categories": [
         "Clubs and Activities"
@@ -1096,11 +677,21 @@
       "description": "",
       "location": null,
       "categories": [
+        "Parent Calendar",
         "Clubs and Activities"
       ]
     }
   ],
   "3/19/2020": [
+    {
+      "allDay": false,
+      "start": 1584655200000,
+      "end": 1584666000000,
+      "name": "Sophomore Class Board Fundraiser",
+      "description": "Show this flyer  when paying at the register.\n\n\n\n \n\n\n\n\nThe Sophomore Class Board is holding a fundraiser from 5-8 p.m. Thursday, March 19 at Portillo's restaurant in Vernon Hills. 20% of the sales will go to the Thirst Project, an organization dedicated to building wells and providing clean water to third world countries. Show this flyer when paying at the register.",
+      "location": "Portillo's",
+      "categories": []
+    },
     {
       "allDay": false,
       "start": 1584662400000,
@@ -1186,7 +777,9 @@
       "name": "Is It a Crisis, or Just a Problem?",
       "description": "Panel discussion on managing stress.\n\n\n\n\n\n\n\n Is It a Crisis, or Just a Problem? \n Wednesday, April 1, 7-9 p.m., Vernon Area Public Library \nNot all stress is bad. Join us for a panel discussion about how parents can help their child navigate and manage stress and anxiety, and how to know when help is needed.",
       "location": "Vernon Area Public Library",
-      "categories": []
+      "categories": [
+        "Parent Calendar"
+      ]
     }
   ],
   "4/3/2020": [
@@ -1245,7 +838,9 @@
       "name": "Journey to the Center of a Teen's Brain",
       "description": "Part of our Parent Engagement Series\n\n\n\n\n\n\n\n Journey to the Center of a Teen's Brain \n Wednesday, April 8, 7-9 p.m., Recital Hall \nParticipants will hear about mental health in the schools and the impact of social media on brain development. Find out what anxiety, depression, ADHD and autism look like in the brain, and what can parents do with this knowledge.",
       "location": "Recital Hall (PAC)",
-      "categories": []
+      "categories": [
+        "Parent Calendar"
+      ]
     }
   ],
   "4/9/2020": [
@@ -1317,7 +912,9 @@
       "name": "Doing the Right Thing",
       "description": "Parenting teens as they gain more freedom and independence.\n\n\n\n\n\n\n\n Doing the Right Thing: Supporting Responsible Decision-Making \n Tuesday, April 14, 7:30-8:30 a.m., District 125 Administration Center \nDuring summer vacation, teens have more freedom and independence. This session will focus on how parents can help support responsible decision-making by their teens, especially those about to head off to college.",
       "location": "District Administration Center",
-      "categories": []
+      "categories": [
+        "Parent Calendar"
+      ]
     }
   ],
   "4/15/2020": [
@@ -1370,6 +967,19 @@
       ]
     }
   ],
+  "4/20/2020": [
+    {
+      "allDay": false,
+      "start": 1587416400000,
+      "end": 1587434400000,
+      "name": "Band Fundraiser",
+      "description": "McAlister's Deli is located at 99 E. Townline Rd. (Route 60), two blocks west of Target.",
+      "location": "McAlister's Deli",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
   "4/22/2020": [
     {
       "allDay": false,
@@ -1398,7 +1008,7 @@
     {
       "allDay": false,
       "start": 1587641400000,
-      "end": 1587657600000,
+      "end": 1587670200000,
       "name": "Band Fundraiser",
       "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
       "location": "Strawberry Field",
@@ -1566,6 +1176,17 @@
       "location": null,
       "categories": [
         "Testing Day"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1588716000000,
+      "end": 1588730400000,
+      "name": "Band Fundraiser",
+      "description": "",
+      "location": "Prairie House Tavern",
+      "categories": [
+        "Fine Arts"
       ]
     },
     {
@@ -1755,6 +1376,17 @@
       "name": "Fall Play Auditions",
       "description": "",
       "location": "Black Box Theatre",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1589500800000,
+      "end": 1589508000000,
+      "name": "Band Concert",
+      "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
