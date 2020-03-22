@@ -158,6 +158,11 @@ export default {
             title: "To Kill a Mockingbird",
             link:
               "https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2ZzNtRlhmVDl0c00"
+          },
+          {
+            title: "The House on Mango Street",
+            link:
+              "https://mega.nz/#!9YlnhJBA!WZYibrhIlh7LsQ2TOQWoToEL3GDmfzSIKkA_nIHj-20"
           }
         ],
         "Sophomore Accelerated English": [
