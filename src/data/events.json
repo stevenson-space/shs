@@ -1,10 +1,87 @@
 {
-  "2/28/2020": [
+  "7/20/2020": [
+    {
+      "allDay": false,
+      "start": 1595291400000,
+      "end": 1595296800000,
+      "name": "Board of Education Meeting - Virtual",
+      "description": "Agenda and login instructions",
+      "location": "TBD",
+      "categories": []
+    }
+  ],
+  "7/21/2020": [
+    {
+      "allDay": false,
+      "start": 1595376000000,
+      "end": 1595383200000,
+      "name": "Reopening Plan Webinar",
+      "description": "Link to watch:\n https://zoom.us/j/99026014518",
+      "location": "Virtual",
+      "categories": []
+    }
+  ],
+  "7/23/2020": [
+    {
+      "allDay": false,
+      "start": 1595508300000,
+      "end": 1595526600000,
+      "name": "Summer School Session 2 Ends",
+      "description": "Visit the summer school page .",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "7/24/2020": [
     {
       "allDay": true,
-      "start": 1582869600000,
-      "end": 1582956000000,
-      "name": "Institute Day - No School",
+      "start": 1595566800000,
+      "end": 1595653200000,
+      "name": "Benchmark Exams",
+      "description": "See this page  for details",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "7/26/2020": [
+    {
+      "allDay": true,
+      "start": 1595739600000,
+      "end": 1595826000000,
+      "name": "Online Registration Ends",
+      "description": "Visit our  Registration page",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "8/10/2020": [
+    {
+      "allDay": true,
+      "start": 1597035600000,
+      "end": 1597122000000,
+      "name": "Students Receive Class Schedules Aug. 10-14",
+      "description": "",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "8/17/2020": [
+    {
+      "allDay": true,
+      "start": 1597640400000,
+      "end": 1597726800000,
+      "name": "First Day of School",
+      "description": "Revised date approved by school board on 7-20-20",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "9/7/2020": [
+    {
+      "allDay": true,
+      "start": 1599454800000,
+      "end": 1599541200000,
+      "name": "Labor Day - Non-Attendance Day",
       "description": "",
       "location": null,
       "categories": [
@@ -12,424 +89,24 @@
       ]
     }
   ],
-  "3/2/2020": [
+  "9/25/2020": [
     {
       "allDay": true,
-      "start": 1583128800000,
-      "end": 1583215200000,
-      "name": "No School - Pulaski Day (Possible Snow Make-Up Day)",
-      "description": "possible snow make-up day",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "3/3/2020": [
-    {
-      "allDay": false,
-      "start": 1583242200000,
-      "end": 1583245800000,
-      "name": "Teen Stress Today",
-      "description": "Learn how to keep stress in check for the whole family.\n\n\n\n\n\n\n\n Teen Stress Today \n Tuesday, March 3, 7:30-8:30 a.m., District 125 Administration Center \nUnderstanding and managing stress is a critical component of parenting. When parents are stressed, so are their children. This session will offer tips on keeping stress in check for the whole family.",
-      "location": "District Administration Center",
-      "categories": [
-        "Parent Calendar"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1583283600000,
-      "end": 1583290800000,
-      "name": "Band Concert",
-      "description": "Featuring Advanced Symphonic Band and Freshman Band",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "3/4/2020": [
-    {
-      "allDay": false,
-      "start": 1583366400000,
-      "end": 1583373600000,
-      "name": "Campaign Fair/Issues Forum",
-      "description": "Campaign fair 6-6:45 p.m. \nIssues Forum 7-8 p.m.\n\n\n\nThe SHS Political Action Club is hosting its Campaign Fair from 6-6:45 p.m. Wednesday in the Patriot Lobby outside Room 2104. The fair is intended for first-time voters to meet with candidates and campaigns prior to the March 17 primary election.\n\nAfter the Campaign Fair, the public is invited to attend the club's Issues Forum from 7-8 p.m. in Room 2104. Students will moderate a forum featuring two experts - former state Sen. Dan Biss and Ted Dabrowski, president of Wirepoints - speaking for and against the November referendum seeking to amend the Illinois Constitution to allow a graduated tax.",
-      "location": "Room 2104/Patriot Lobby",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1583370000000,
-      "end": 1583377200000,
-      "name": "Band Concert",
-      "description": "Featuring Concert Band, Symphonic Band and Honor Band",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "3/5/2020": [
-    {
-      "allDay": false,
-      "start": 1583456400000,
-      "end": 1583461800000,
-      "name": "Planning Ahead for Sophomore Families",
-      "description": "College and career night for families. \nStudents, bring your SHS iPad.\nIEP/504 special session, 6:30-6:50, Room 6110\n\n\n\nThe College Career Center will hold its annual \"Planning Your Future\" night for sophomore families at 7 p.m. Thursday, March 5 in the Performing Arts Center. Postsecondary Counselors Sara English and Dan Miller, and Career Exploration Program Manager Diane Willock, will discuss:\n * What families can expect during their junior year as they embark on the college and career exploration process.\n* Naviance, an online tool to assist Stevenson students with college planning.\n* Career planning options, including internships, job shadowing, and more.\n \nStudents are strongly encouraged to attend with their parents or guardians. Families should bring their student's school-issued iPad and network login for an interactive experience. The counselors also request that students log in to Naviance before the meeting to update their password.\n\nA special session for parents and guardians of students with IEP/504 plans will take place before the main presentation. The special session will run from 6:30-6:50 p.m. in Room 6110, which is located in the new East Building addition.",
-      "location": "Performing Arts Center",
-      "categories": []
-    },
-    {
-      "allDay": false,
-      "start": 1583456400000,
-      "end": 1583463600000,
-      "name": "Winter Play: The Importance of Being Earnest",
-      "description": "Click here to buy tickets  for Oscar Wilde's most popular play.\n\n\n\nOscar Wilde's most popular play takes a farcical look at two bachelors trying to escape their humdrum lives in late Victorian Era-London.",
-      "location": "West Auditorium",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "3/6/2020": [
-    {
-      "allDay": false,
-      "start": 1583542800000,
-      "end": 1583550000000,
-      "name": "Winter Play: The Importance of Being Earnest",
-      "description": "Click here to buy tickets  for Oscar Wilde's most popular play.\n\n\n\nOscar Wilde's most popular play takes a farcical look at two bachelors trying to escape their humdrum lives in late Victorian Era-London.",
-      "location": "West Auditorium",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "3/7/2020": [
-    {
-      "allDay": false,
-      "start": 1583629200000,
-      "end": 1583636400000,
-      "name": "Winter Play: The Importance of Being Earnest",
-      "description": "Click here to buy tickets  for Oscar Wilde's most popular play.\n\n\n\nOscar Wilde's most popular play takes a farcical look at two bachelors trying to escape their humdrum lives in late Victorian Era-London.",
-      "location": "West Auditorium",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "3/9/2020": [
-    {
-      "allDay": true,
-      "start": 1583730000000,
-      "end": 1583816400000,
-      "name": "ISA Testing - Juniors",
-      "description": "Some students will be tested Monday and the others on Tuesday; some will take the exam in the morning and some in the afternoon. Students should check their SHS email for details.\n\n\n\n\n\nAll juniors will be taking the  Illinois Science Assessment  on Monday or Tuesday, March 9 or 10. Some students will be tested Monday and the others on Tuesday; some will take the exam in the morning and some in the afternoon. Students should check their SHS email for details. Juniors will use their Stevenson iPad for the exam, and need to do the following:\n       \t* Update the iPad operating system (OS) to 13.3.1.\n  \t* Remove the ISA 2019 app.\n  \t* Install the ISA 2020 app from the Self Service app, which is already installed on the iPad.\n       \nJuniors also will need to bring these for the exam, in addition to their iPad:\n       \t* Wired headphones that plug into the iPad if they want to use text-to-speech\n  \t* Their school ID\n  \t* Non-science reading materials in case they finish early\n  \t* Calculator ( following SAT guidelines )\n       \nJuniors should make sure their iPad has 100% power prior to taking the exam. Anyone needing help can visit the SMARTdesk (Room 3014 in the Link) before 4 p.m. Friday, March 6.",
-      "location": null,
-      "categories": [
-        "Late Arrival",
-        "Early Dismissal",
-        "Non-Attendance Days",
-        "Summer School",
-        "Testing Day",
-        "End of Six Weeks"
-      ]
-    }
-  ],
-  "3/10/2020": [
-    {
-      "allDay": true,
-      "start": 1583816400000,
-      "end": 1583902800000,
-      "name": "ISA Testing - Juniors",
-      "description": "Some students will be tested Monday and the others on Tuesday; some will take the exam in the morning and some in the afternoon. Students should check their SHS email for details.\n\n\n\n\n\nAll juniors will be taking the  Illinois Science Assessment  on Monday or Tuesday, March 9 or 10. Some students will be tested Monday and the others on Tuesday; some will take the exam in the morning and some in the afternoon. Students should check their SHS email for details. Juniors will use their Stevenson iPad for the exam, and need to do the following:\n       \t* Update the iPad operating system (OS) to 13.3.1.\n  \t* Remove the ISA 2019 app.\n  \t* Install the ISA 2020 app from the Self Service app, which is already installed on the iPad.\n       \nJuniors also will need to bring these for the exam, in addition to their iPad:\n       \t* Wired headphones that plug into the iPad if they want to use text-to-speech\n  \t* Their school ID\n  \t* Non-science reading materials in case they finish early\n  \t* Calculator ( following SAT guidelines )\n       \nJuniors should make sure their iPad has 100% power prior to taking the exam. Anyone needing help can visit the SMARTdesk (Room 3014 in the Link) before 4 p.m. Friday, March 6.",
-      "location": null,
-      "categories": [
-        "Late Arrival",
-        "Early Dismissal",
-        "Non-Attendance Days",
-        "Summer School",
-        "Testing Day",
-        "End of Six Weeks"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1583874000000,
-      "end": 1583888400000,
-      "name": "Band Fundraiser",
-      "description": "Mention \"SHS Band\" when ordering.\n\n\n\n\n\nThe Panera in Vernon Hills is located at 447 N. Milwaukee Ave.",
-      "location": "Panera - Vernon Hills",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "3/12/2020": [
-    {
-      "allDay": true,
-      "start": 1583989200000,
-      "end": 1584075600000,
-      "name": "Late Arrival - Teacher Planning",
-      "description": "Classes begin at 10:30 a.m. Bus routes start at 9:20.",
-      "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1584012600000,
-      "end": 1584041400000,
-      "name": "Band Fundraiser",
-      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
-      "location": "Strawberry Field",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1584057600000,
-      "end": 1584061200000,
-      "name": "ARTalk with Donna Hickman",
-      "description": "Open to the public\n\n\n\n\nVisiting Artist of the Month Donna Hickman, a former Stevenson art teacher, will discuss her work and her career during the fifth ARTalks presentation of the 2019-20 school year. ARTalks is sponsored by the Stevenson High School Foundation and the SHS Fine Arts Division. This year's theme is \"Celebrating Women Artists.\" To see more of her work, visit  www.donnastewarthickman.com . \n\nThe Visiting Artist Gallery is located on the first floor of the West Building, just south of the Forum (point) entrance. Use parking lot B for easiest access. ARTalks are free and open to the public.  Learn more about ARTalks and Stevenson's Visiting Artist of the Month program .",
-      "location": "Visiting Artist Gallery (West Building)",
-      "categories": [
-        "Foundation Events",
-        "Fine Arts"
-      ]
-    }
-  ],
-  "3/13/2020": [
-    {
-      "allDay": true,
-      "start": 1584075600000,
-      "end": 1584162000000,
-      "name": "Non-Attendance Day",
-      "description": "",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "3/16/2020": [
-    {
-      "allDay": true,
-      "start": 1584334800000,
-      "end": 1584421200000,
-      "name": "Non-Attendance Day",
-      "description": "",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "3/17/2020": [
-    {
-      "allDay": true,
-      "start": 1584421200000,
-      "end": 1584507600000,
-      "name": "E-Learning Day",
-      "description": "",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "3/18/2020": [
-    {
-      "allDay": true,
-      "start": 1584507600000,
-      "end": 1584594000000,
-      "name": "E-Learning Day",
-      "description": "",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "3/19/2020": [
-    {
-      "allDay": true,
-      "start": 1584594000000,
-      "end": 1584680400000,
-      "name": "E-Learning Day",
-      "description": "",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "3/20/2020": [
-    {
-      "allDay": true,
-      "start": 1584680400000,
-      "end": 1584766800000,
-      "name": "E-Learning Day",
-      "description": "",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "3/23/2020": [
-    {
-      "allDay": true,
-      "start": 1584939600000,
-      "end": 1585026000000,
-      "name": "Spring Break",
-      "description": "runs through March 27, 2020",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "3/24/2020": [
-    {
-      "allDay": true,
-      "start": 1585026000000,
-      "end": 1585112400000,
-      "name": "Spring Break",
-      "description": "runs through March 27, 2020",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "3/25/2020": [
-    {
-      "allDay": true,
-      "start": 1585112400000,
-      "end": 1585198800000,
-      "name": "Spring Break",
-      "description": "runs through March 27, 2020",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "3/26/2020": [
-    {
-      "allDay": true,
-      "start": 1585198800000,
-      "end": 1585285200000,
-      "name": "Spring Break",
-      "description": "runs through March 27, 2020",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "3/27/2020": [
-    {
-      "allDay": true,
-      "start": 1585285200000,
-      "end": 1585371600000,
-      "name": "Spring Break",
-      "description": "runs through March 27, 2020",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "3/30/2020": [
-    {
-      "allDay": true,
-      "start": 1585544400000,
-      "end": 1585630800000,
-      "name": "Non-School Day/Teacher Work Day",
-      "description": "",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "3/31/2020": [
-    {
-      "allDay": false,
-      "start": 1585663200000,
-      "end": 1585683900000,
-      "name": "Remote Learning Day",
-      "description": "Remote Learning Schedule:\n\n1st Period - 9:00-9:30\n2nd Period - 9:45-10:15\n3rd Period - 10:30-11:00\n4th Period - 11:15-11:45\n5th Period - 12:00-12:30\n6th Period - 12:45-1:15\n7th Period - 1:30-2:00\n8th Period - 2:15-2:45",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "4/1/2020": [
-    {
-      "allDay": false,
-      "start": 1585749600000,
-      "end": 1585770300000,
-      "name": "Remote Learning Day",
-      "description": "Remote Learning Schedule:\n\n1st Period - 9:00-9:30\n2nd Period - 9:45-10:15\n3rd Period - 10:30-11:00\n4th Period - 11:15-11:45\n5th Period - 12:00-12:30\n6th Period - 12:45-1:15\n7th Period - 1:30-2:00\n8th Period - 2:15-2:45",
-      "location": null,
-      "categories": []
-    },
-    {
-      "allDay": false,
-      "start": 1585785600000,
-      "end": 1585792800000,
-      "name": "Supporting Our Teens' Mental Health CANCELLED",
-      "description": "This event has been cancelled.\n\n\nSupporting Our Teens' Mental Health \n Wednesday, April 1, 7-9 p.m., Vernon Area Public Library \n\n\nGet insights into how to help teens manage stress and anxiety in this moderated discussion with mental health experts including Promila Kumar of Sanjeevani, a nonprofit providing free advocacy, support, and guidance to people dealing with mental health problems; Mara Heichman, a certified professional coach; Dori Mages, licensed clinical social worker with North Shore Family Services; a counselor from Stevenson High School; and Vrushali Thakkar, Stevenson senior and mental health advocate. Co-sponsored by Stevenson High School.\n\n\n\nThis program is free and open to all. Registration is required.  Register online here , by telephone at 224-543-1485, or in person at any service desk in the library.\n-->",
-      "location": null,
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "4/2/2020": [
-    {
-      "allDay": false,
-      "start": 1585836000000,
-      "end": 1585856700000,
-      "name": "Remote Learning Day",
-      "description": "Remote Learning Schedule:\n\n1st Period - 9:00-9:30\n2nd Period - 9:45-10:15\n3rd Period - 10:30-11:00\n4th Period - 11:15-11:45\n5th Period - 12:00-12:30\n6th Period - 12:45-1:15\n7th Period - 1:30-2:00\n8th Period - 2:15-2:45",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "4/3/2020": [
-    {
-      "allDay": true,
-      "start": 1585890000000,
-      "end": 1585976400000,
+      "start": 1601010000000,
+      "end": 1601096400000,
       "name": "End of Six-Week Grading Period",
       "description": "",
       "location": null,
       "categories": [
         "End of Six Weeks"
       ]
-    },
-    {
-      "allDay": false,
-      "start": 1585922400000,
-      "end": 1585943100000,
-      "name": "Remote Learning Day",
-      "description": "Remote Learning Schedule:\n\n1st Period - 9:00-9:30\n2nd Period - 9:45-10:15\n3rd Period - 10:30-11:00\n4th Period - 11:15-11:45\n5th Period - 12:00-12:30\n6th Period - 12:45-1:15\n7th Period - 1:30-2:00\n8th Period - 2:15-2:45",
-      "location": null,
-      "categories": []
     }
   ],
-  "4/9/2020": [
-    {
-      "allDay": false,
-      "start": 1586439000000,
-      "end": 1586463900000,
-      "name": "Day of Dance POSTPONED",
-      "description": "",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "4/10/2020": [
+  "9/28/2020": [
     {
       "allDay": true,
-      "start": 1586494800000,
-      "end": 1586581200000,
+      "start": 1601269200000,
+      "end": 1601355600000,
       "name": "Non-Attendance Day",
       "description": "",
       "location": null,
@@ -438,83 +115,308 @@
       ]
     }
   ],
-  "4/13/2020": [
+  "10/12/2020": [
     {
       "allDay": true,
-      "start": 1586754000000,
-      "end": 1586840400000,
-      "name": "Incoming Freshman Strings Auditions",
+      "start": 1602478800000,
+      "end": 1602565200000,
+      "name": "No School - Columbus Day",
       "description": "",
-      "location": "Orchestra Room",
+      "location": null,
       "categories": [
-        "Fine Arts"
+        "Non-Attendance Days"
       ]
-    },
+    }
+  ],
+  "10/21/2020": [
+    {
+      "allDay": true,
+      "start": 1603256400000,
+      "end": 1603342800000,
+      "name": "Let's Talk About Your Future",
+      "description": "Spend an evening as a family discussing your student's interests, passions and goals for the future. This will be a \"no homework\" evening to provide time for conversations.",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "11/3/2020": [
+    {
+      "allDay": true,
+      "start": 1604383200000,
+      "end": 1604469600000,
+      "name": "No School - Election Day",
+      "description": "Election Day was declared a state holiday in 2020",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "11/6/2020": [
+    {
+      "allDay": true,
+      "start": 1604642400000,
+      "end": 1604728800000,
+      "name": "End of Six-Week Grading Period",
+      "description": "",
+      "location": null,
+      "categories": [
+        "End of Six Weeks"
+      ]
+    }
+  ],
+  "11/26/2020": [
+    {
+      "allDay": true,
+      "start": 1606370400000,
+      "end": 1606456800000,
+      "name": "No School - Thanksgiving Break",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "11/27/2020": [
+    {
+      "allDay": true,
+      "start": 1606456800000,
+      "end": 1606543200000,
+      "name": "No School - Thanksgiving Break",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "12/15/2020": [
+    {
+      "allDay": true,
+      "start": 1608012000000,
+      "end": 1608098400000,
+      "name": "End of Six-Week Grading Period",
+      "description": "",
+      "location": null,
+      "categories": [
+        "End of Six Weeks"
+      ]
+    }
+  ],
+  "12/17/2020": [
+    {
+      "allDay": true,
+      "start": 1608184800000,
+      "end": 1608271200000,
+      "name": "Non-Attendance Day",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "12/18/2020": [
+    {
+      "allDay": true,
+      "start": 1608271200000,
+      "end": 1608357600000,
+      "name": "Non-Attendance Day",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "12/21/2020": [
+    {
+      "allDay": true,
+      "start": 1608530400000,
+      "end": 1608616800000,
+      "name": "Winter Break",
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "12/22/2020": [
+    {
+      "allDay": true,
+      "start": 1608616800000,
+      "end": 1608703200000,
+      "name": "Winter Break",
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "12/23/2020": [
+    {
+      "allDay": true,
+      "start": 1608703200000,
+      "end": 1608789600000,
+      "name": "Winter Break",
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "12/24/2020": [
+    {
+      "allDay": true,
+      "start": 1608789600000,
+      "end": 1608876000000,
+      "name": "Winter Break",
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "12/25/2020": [
+    {
+      "allDay": true,
+      "start": 1608876000000,
+      "end": 1608962400000,
+      "name": "Winter Break",
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "12/26/2020": [
+    {
+      "allDay": true,
+      "start": 1608962400000,
+      "end": 1609048800000,
+      "name": "Winter Break",
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "12/27/2020": [
+    {
+      "allDay": true,
+      "start": 1609048800000,
+      "end": 1609135200000,
+      "name": "Winter Break",
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "12/28/2020": [
+    {
+      "allDay": true,
+      "start": 1609135200000,
+      "end": 1609221600000,
+      "name": "Winter Break",
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "12/29/2020": [
+    {
+      "allDay": true,
+      "start": 1609221600000,
+      "end": 1609308000000,
+      "name": "Winter Break",
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "12/30/2020": [
+    {
+      "allDay": true,
+      "start": 1609308000000,
+      "end": 1609394400000,
+      "name": "Winter Break",
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "12/31/2020": [
+    {
+      "allDay": true,
+      "start": 1609394400000,
+      "end": 1609480800000,
+      "name": "Winter Break",
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "1/1/2021": [
+    {
+      "allDay": true,
+      "start": 1609480800000,
+      "end": 1609567200000,
+      "name": "Winter Break",
+      "description": "runs through Jan. 6, 2020",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "1/4/2021": [
+    {
+      "allDay": true,
+      "start": 1609740000000,
+      "end": 1609826400000,
+      "name": "No School - Teacher Institute Day",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "1/5/2021": [
     {
       "allDay": false,
-      "start": 1586822400000,
-      "end": 1586829600000,
-      "name": "Percussion Ensemble Concert",
+      "start": 1609857000000,
+      "end": 1609881900000,
+      "name": "Second Semester Begins",
       "description": "",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "1/7/2021": [
+    {
+      "allDay": false,
+      "start": 1610067600000,
+      "end": 1610074800000,
+      "name": "Incoming Freshman Parent Night #1",
+      "description": "Families may attend this night or the second orientation evening on Wednesday, Jan. 13.\n\n\n\nStevenson High School will hold orientation evenings for eighth-graders and their families in January.\n\nIncoming freshman families will receive information regarding the online enrollment process, which must be completed for all soon-to-be freshman students by Jan. 31. Curriculum directors and students also will share information about course offerings and co-curricular activities.\n    \nDates:\n   * Thursday, Jan. 7\n    * Wednesday, Jan. 13\n       \nTimes:\n   * 6 p.m. - Information packet pick-up near the Performing Arts Center. Packets will include a password for online enrollment, 2021-22  Coursebook , 2021 summer school catalog, 2021-22 Co-Curricular Guide, and health forms.\n* 6 p.m. - School tours will be available, starting at the Forum (\"Point\") entrance off parking lot B\n    * 7 p.m. - Presentation in the Performing Arts Center\n   \nInterpreters in Chinese, Hindi, Korean, Russian and Spanish will be available for these events. Families requiring an interpreter are asked to email Suzanne Paloian at  spaloian@d125.org .\n\nFamilies with questions about the evenings or enrollment can contact Regina Anderson ( reanderson@d125.org  or  847-415-4502 ) or Suzanne Paloian ( spaloian@d125.org  or  847-415-4500 ).",
       "location": "Performing Arts Center",
       "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "4/14/2020": [
-    {
-      "allDay": true,
-      "start": 1586840400000,
-      "end": 1586926800000,
-      "name": "SAT Testing for Juniors/PSAT Testing for Sophomores",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1586867400000,
-      "end": 1586871000000,
-      "name": "Doing the Right Thing",
-      "description": "Parenting teens as they gain more freedom and independence.\n\n\n\n\n\n\n\n Doing the Right Thing: Supporting Responsible Decision-Making \n Tuesday, April 14, 7:30-8:30 a.m., District 125 Administration Center \nDuring summer vacation, teens have more freedom and independence. This session will focus on how parents can help support responsible decision-making by their teens, especially those about to head off to college.",
-      "location": "District Administration Center",
-      "categories": [
         "Parent Calendar"
       ]
     }
   ],
-  "4/15/2020": [
+  "1/9/2021": [
     {
       "allDay": true,
-      "start": 1586926800000,
-      "end": 1587013200000,
-      "name": "PSAT Testing for Freshmen",
-      "description": "",
+      "start": 1610172000000,
+      "end": 1610258400000,
+      "name": "Benchmark Exams for Incoming Freshmen",
+      "description": "Visit our benchmark exams web page for details .",
       "location": null,
       "categories": [
         "Testing Day"
       ]
-    },
-    {
-      "allDay": false,
-      "start": 1586995200000,
-      "end": 1587002400000,
-      "name": "Journey to the Center of a Teen's Brain",
-      "description": "Part of our Parent Engagement Series\n\n\n\n\n\n\n\n Journey to the Center of a Teen's Brain \n Wednesday, April 8, 7-9 p.m., Recital Hall \nParticipants will hear about mental health in the schools and the impact of social media on brain development. Find out what anxiety, depression, ADHD and autism look like in the brain, and what can parents do with this knowledge.",
-      "location": "Recital Hall (PAC)",
-      "categories": [
-        "Parent Calendar"
-      ]
     }
   ],
-  "4/16/2020": [
+  "1/11/2021": [
     {
       "allDay": false,
-      "start": 1587049560000,
-      "end": 1587052140000,
+      "start": 1610381160000,
+      "end": 1610383740000,
       "name": "Activity Period",
       "description": "",
       "location": null,
@@ -524,8 +426,735 @@
     },
     {
       "allDay": false,
-      "start": 1587081600000,
-      "end": 1587088800000,
+      "start": 1610413200000,
+      "end": 1610420400000,
+      "name": "Consortium Choral Concert",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "1/12/2021": [
+    {
+      "allDay": false,
+      "start": 1610499600000,
+      "end": 1610506800000,
+      "name": "Consortium Band Concert",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "1/13/2021": [
+    {
+      "allDay": false,
+      "start": 1610586000000,
+      "end": 1610593200000,
+      "name": "Incoming Freshman Parent Night #2",
+      "description": "Families may attend this night or the first orientation evening on Thursday, Jan. 7.\n\n\n\nStevenson High School will hold orientation evenings for eighth-graders and their families in January.\n\nIncoming freshman families will receive information regarding the online enrollment process, which must be completed for all soon-to-be freshman students by Jan. 31. Curriculum directors and students also will share information about course offerings and co-curricular activities.\n    \nDates:\n   * Thursday, Jan. 7\n    * Wednesday, Jan. 13\n       \nTimes:\n   * 6 p.m. - Information packet pick-up near the Performing Arts Center. Packets will include a password for online enrollment, 2021-22  Coursebook , 2021 summer school catalog, 2021-22 Co-Curricular Guide, and health forms.\n* 6 p.m. - School tours will be available, starting at the Forum (\"Point\") entrance off parking lot B\n    * 7 p.m. - Presentation in the Performing Arts Center\n   \nInterpreters in Chinese, Hindi, Korean, Russian and Spanish will be available for these events. Families requiring an interpreter are asked to email Suzanne Paloian at  spaloian@d125.org .\n\nFamilies with questions about the evenings or enrollment can contact Regina Anderson ( reanderson@d125.org  or  847-415-4502 ) or Suzanne Paloian ( spaloian@d125.org  or  847-415-4500 ).",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Parent Calendar"
+      ]
+    }
+  ],
+  "1/14/2021": [
+    {
+      "allDay": false,
+      "start": 1610641800000,
+      "end": 1610659500000,
+      "name": "Late Arrival - Team Planning",
+      "description": "Classes begin at 10:30 a.m. Bus routes start at 9:20.",
+      "location": null,
+      "categories": [
+        "Late Arrival"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1610672400000,
+      "end": 1610679600000,
+      "name": "Consortium Orchestra Concert",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "1/18/2021": [
+    {
+      "allDay": true,
+      "start": 1610949600000,
+      "end": 1611036000000,
+      "name": "No School - Martin Luther King Jr. Day",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "1/21/2021": [
+    {
+      "allDay": false,
+      "start": 1611266400000,
+      "end": 1611277200000,
+      "name": "Incoming Freshman Course Selection Evening",
+      "description": "Stevenson High School will hold its course selection evening for eighth-graders and their families on Thursday, Jan. 21.\n\nEighth-graders and their families will be able to meet individually with a school counselor for a brief conversation about freshman course choices. Student Services staff also will be available to answer questions related to enrollment. Prior to the Course Selection Evening (and after the Orientation Evenings earlier in January), families will receive a mailing from SHS sharing course recommendations for their child.\n\n\n\nInterpreters in Chinese, Hindi, Korean, Russian and Spanish will be available for these events. Families requiring an interpreter are asked to email Suzanne Paloian at  spaloian@d125.org .\n\nFamilies with questions about the evenings or enrollment can contact Regina Anderson ( reanderson@d125.org  or  847-415-4502 ) or Suzanne Paloian ( spaloian@d125.org  or  847-415-4500 ).",
+      "location": "Room 2104",
+      "categories": [
+        "Parent Calendar"
+      ]
+    }
+  ],
+  "1/22/2021": [
+    {
+      "allDay": false,
+      "start": 1611363600000,
+      "end": 1611372600000,
+      "name": "S-Factor",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "1/26/2021": [
+    {
+      "allDay": false,
+      "start": 1611707400000,
+      "end": 1611716400000,
+      "name": "Baroque Concert",
+      "description": "",
+      "location": "Recital Hall (PAC)",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "1/28/2021": [
+    {
+      "allDay": true,
+      "start": 1611813600000,
+      "end": 1611900000000,
+      "name": "Freshman-Sophomore Play",
+      "description": "",
+      "location": "TBA",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "1/29/2021": [
+    {
+      "allDay": true,
+      "start": 1611900000000,
+      "end": 1611986400000,
+      "name": "Freshman-Sophomore Play",
+      "description": "",
+      "location": "TBA",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "1/30/2021": [
+    {
+      "allDay": true,
+      "start": 1611986400000,
+      "end": 1612072800000,
+      "name": "Freshman-Sophomore Play",
+      "description": "",
+      "location": "TBA",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1611986400000,
+      "end": 1612072800000,
+      "name": "Practice SAT Exam for Juniors",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    }
+  ],
+  "2/3/2021": [
+    {
+      "allDay": false,
+      "start": 1612368360000,
+      "end": 1612370940000,
+      "name": "Activity Period",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "2/5/2021": [
+    {
+      "allDay": false,
+      "start": 1612573200000,
+      "end": 1612582200000,
+      "name": "Mr. SHS Contest",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "2/6/2021": [
+    {
+      "allDay": true,
+      "start": 1612591200000,
+      "end": 1612677600000,
+      "name": "ACT Exam at SHS",
+      "description": "Click here to register  through ACT.",
+      "location": "TBA",
+      "categories": []
+    }
+  ],
+  "2/10/2021": [
+    {
+      "allDay": false,
+      "start": 1613005200000,
+      "end": 1613012400000,
+      "name": "Orchestra Concert",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "2/12/2021": [
+    {
+      "allDay": true,
+      "start": 1613109600000,
+      "end": 1613196000000,
+      "name": "Non-Attendance Day",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "2/15/2021": [
+    {
+      "allDay": true,
+      "start": 1613368800000,
+      "end": 1613455200000,
+      "name": "No School - Presidents Day",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "2/16/2021": [
+    {
+      "allDay": true,
+      "start": 1613455200000,
+      "end": 1613541600000,
+      "name": "Winterfest Week",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "2/17/2021": [
+    {
+      "allDay": true,
+      "start": 1613541600000,
+      "end": 1613628000000,
+      "name": "Winterfest Week",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "2/18/2021": [
+    {
+      "allDay": true,
+      "start": 1613628000000,
+      "end": 1613714400000,
+      "name": "Winterfest Week",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1613665800000,
+      "end": 1613683500000,
+      "name": "Late Arrival - Staff Development",
+      "description": "Classes begin at 10:30 a.m. Bus routes start at 9:20.",
+      "location": null,
+      "categories": [
+        "Late Arrival"
+      ]
+    }
+  ],
+  "2/19/2021": [
+    {
+      "allDay": true,
+      "start": 1613714400000,
+      "end": 1613800800000,
+      "name": "End of Six-Week Grading Period",
+      "description": "",
+      "location": null,
+      "categories": [
+        "End of Six Weeks"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1613714400000,
+      "end": 1613800800000,
+      "name": "Winterfest Week",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1613745000000,
+      "end": 1613767020000,
+      "name": "PM Assembly Schedule",
+      "description": "Classes will be dismissed at 2:37 p.m. for the Winterfest pep assembly.  PM Assembly schedule \n\n\n\n PM Assembly Schedule - Sept. 25, 2020 \n  \n  Period 1 - 8:30-9:15\n  Period 2 - 9:20-10:01\n  Period 3 - 10:06-10:47\n  Period 4 - 10:52-11:33\n  Period 5 - 11:38-12:19\n  Period 6 - 12:24-1:05\n  Period 7 - 1:10-1:51\n  Period 8 - 1:56-2:37",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "2/20/2021": [
+    {
+      "allDay": false,
+      "start": 1613871000000,
+      "end": 1613881800000,
+      "name": "Winterfest Lock-In Event",
+      "description": "Doors open 7:30 p.m. Lock-in starts 8 p.m.",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "2/23/2021": [
+    {
+      "allDay": false,
+      "start": 1614128400000,
+      "end": 1614135600000,
+      "name": "Choral Concert",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "2/24/2021": [
+    {
+      "allDay": false,
+      "start": 1614182760000,
+      "end": 1614185340000,
+      "name": "Activity Period",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "2/25/2021": [
+    {
+      "allDay": true,
+      "start": 1614232800000,
+      "end": 1614319200000,
+      "name": "Chamber Guitar Concert",
+      "description": "",
+      "location": "TBA",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "2/26/2021": [
+    {
+      "allDay": true,
+      "start": 1614319200000,
+      "end": 1614405600000,
+      "name": "Institute Day - No School",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "2/27/2021": [
+    {
+      "allDay": true,
+      "start": 1614405600000,
+      "end": 1614492000000,
+      "name": "D125 Night Market",
+      "description": "Sponsored by the Chinese, Japanese and Korean clubs.",
+      "location": "Glass Commons (PAC)",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "3/2/2021": [
+    {
+      "allDay": false,
+      "start": 1614733200000,
+      "end": 1614740400000,
+      "name": "Band Concert",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "3/3/2021": [
+    {
+      "allDay": false,
+      "start": 1614819600000,
+      "end": 1614826800000,
+      "name": "Band Concert",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "3/5/2021": [
+    {
+      "allDay": false,
+      "start": 1614992400000,
+      "end": 1614999600000,
+      "name": "Winter Play",
+      "description": "",
+      "location": "TBA",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "3/6/2021": [
+    {
+      "allDay": false,
+      "start": 1615078800000,
+      "end": 1615086000000,
+      "name": "Winter Play",
+      "description": "",
+      "location": "TBA",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "3/11/2021": [
+    {
+      "allDay": false,
+      "start": 1615480200000,
+      "end": 1615497900000,
+      "name": "Late Arrival - Team Planning",
+      "description": "Classes begin at 10:30 a.m. Bus routes start at 9:20.",
+      "location": null,
+      "categories": [
+        "Late Arrival"
+      ]
+    }
+  ],
+  "3/12/2021": [
+    {
+      "allDay": false,
+      "start": 1615597200000,
+      "end": 1615608000000,
+      "name": "Showcase",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": []
+    }
+  ],
+  "3/13/2021": [
+    {
+      "allDay": true,
+      "start": 1615615200000,
+      "end": 1615701600000,
+      "name": "SAT Exam at SHS",
+      "description": "",
+      "location": "TBA",
+      "categories": []
+    }
+  ],
+  "3/15/2021": [
+    {
+      "allDay": false,
+      "start": 1615852800000,
+      "end": 1615861800000,
+      "name": "Winter Sports Awards",
+      "description": "",
+      "location": "Sports Center",
+      "categories": []
+    }
+  ],
+  "3/16/2021": [
+    {
+      "allDay": false,
+      "start": 1615939200000,
+      "end": 1615946400000,
+      "name": "Orchestra Concert",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "3/17/2021": [
+    {
+      "allDay": false,
+      "start": 1615993560000,
+      "end": 1615996140000,
+      "name": "Activity Period",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1616023800000,
+      "end": 1616031000000,
+      "name": "Co-Curricular Night for Incoming Freshmen",
+      "description": "Meet and talk with coaches, club sponsors and students.\n\n\n\n\n\nThe Co-Curricular Fair will be held on Wednesday, March 17 from 6:30-8:30 p.m. in the Field House, which is just east of the Stadium (park in lot D or B). \n\nAll incoming freshmen and their families are invited to come meet and talk with sport coaches, club sponsors and current Stevenson students involved in more than 35 sport teams, more than 140 co-curricular clubs and the many intramural programs. Take advantage of this opportunity to find out about all that Stevenson offers.",
+      "location": "Field House",
+      "categories": [
+        "Parent Calendar",
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "3/22/2021": [
+    {
+      "allDay": true,
+      "start": 1616389200000,
+      "end": 1616475600000,
+      "name": "Spring Break",
+      "description": "runs through March 27, 2020",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "3/23/2021": [
+    {
+      "allDay": true,
+      "start": 1616475600000,
+      "end": 1616562000000,
+      "name": "Spring Break",
+      "description": "runs through March 27, 2020",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "3/24/2021": [
+    {
+      "allDay": true,
+      "start": 1616562000000,
+      "end": 1616648400000,
+      "name": "Spring Break",
+      "description": "runs through March 27, 2020",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "3/25/2021": [
+    {
+      "allDay": true,
+      "start": 1616648400000,
+      "end": 1616734800000,
+      "name": "Spring Break",
+      "description": "runs through March 27, 2020",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "3/26/2021": [
+    {
+      "allDay": true,
+      "start": 1616734800000,
+      "end": 1616821200000,
+      "name": "Spring Break",
+      "description": "runs through March 27, 2020",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "4/2/2021": [
+    {
+      "allDay": true,
+      "start": 1617339600000,
+      "end": 1617426000000,
+      "name": "Non-Attendance Day",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "4/6/2021": [
+    {
+      "allDay": true,
+      "start": 1617685200000,
+      "end": 1617771600000,
+      "name": "AP Art and Adv. Photography Show",
+      "description": "",
+      "location": "Forum and Room 2104",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "4/7/2021": [
+    {
+      "allDay": true,
+      "start": 1617771600000,
+      "end": 1617858000000,
+      "name": "AP Art and Adv. Photography Show",
+      "description": "",
+      "location": "Forum and Room 2104",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "4/9/2021": [
+    {
+      "allDay": true,
+      "start": 1617944400000,
+      "end": 1618030800000,
+      "name": "End of Six-Week Grading Period",
+      "description": "",
+      "location": null,
+      "categories": [
+        "End of Six Weeks"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1617975000000,
+      "end": 1617999900000,
+      "name": "Day of Dance",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1618012800000,
+      "end": 1618020000000,
+      "name": "Evening of Jazz",
+      "description": "",
+      "location": "West Auditorium",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "4/12/2021": [
+    {
+      "allDay": false,
+      "start": 1618272000000,
+      "end": 1618279200000,
+      "name": "Percussion Ensemble Concert",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "4/13/2021": [
+    {
+      "allDay": true,
+      "start": 1618290000000,
+      "end": 1618376400000,
+      "name": "SAT Testing for Juniors",
+      "description": "required by the state of Illinois",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    }
+  ],
+  "4/14/2021": [
+    {
+      "allDay": true,
+      "start": 1618376400000,
+      "end": 1618462800000,
+      "name": "PSAT Testing for Freshmen",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    }
+  ],
+  "4/15/2021": [
+    {
+      "allDay": false,
+      "start": 1618499160000,
+      "end": 1618501740000,
+      "name": "Activity Period",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1618531200000,
+      "end": 1618538400000,
       "name": "Small Ensemble Concert",
       "description": "",
       "location": "Recital Hall (PAC)",
@@ -534,11 +1163,11 @@
       ]
     }
   ],
-  "4/17/2020": [
+  "4/16/2021": [
     {
       "allDay": false,
-      "start": 1587168000000,
-      "end": 1587175200000,
+      "start": 1618617600000,
+      "end": 1618624800000,
       "name": "Fashion Show",
       "description": "",
       "location": "Performing Arts Center",
@@ -547,37 +1176,11 @@
       ]
     }
   ],
-  "4/20/2020": [
+  "4/22/2021": [
     {
       "allDay": false,
-      "start": 1587416400000,
-      "end": 1587434400000,
-      "name": "Band Fundraiser",
-      "description": "McAlister's Deli is located at 99 E. Townline Rd. (Route 60), two blocks west of Target.",
-      "location": "McAlister's Deli",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "4/22/2020": [
-    {
-      "allDay": false,
-      "start": 1587600000000,
-      "end": 1587607200000,
-      "name": "Senior Awards Night",
-      "description": "Members of the senior class will receive division-level awards and other honors during this ceremony.",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "4/23/2020": [
-    {
-      "allDay": true,
-      "start": 1587618000000,
-      "end": 1587704400000,
+      "start": 1619105400000,
+      "end": 1619123100000,
       "name": "Late Arrival - Staff Development",
       "description": "Classes begin at 10:30 a.m. Bus routes start at 9:20.",
       "location": null,
@@ -587,22 +1190,22 @@
     },
     {
       "allDay": false,
-      "start": 1587641400000,
-      "end": 1587670200000,
-      "name": "Band Fundraiser",
-      "description": "Have breakfast before school on a late-arrival day, and help the SHS band program.\n\n\n\nStrawberry Field and Pancakes, 410 N. Milwaukee Ave., in Lincolnshire will donate 20% of funds raised during the event to the SHS band program. Mention \"SHS Band\" when ordering.",
-      "location": "Strawberry Field",
+      "start": 1619136000000,
+      "end": 1619143200000,
+      "name": "Tri-M Benefit Concert",
+      "description": "",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
     }
   ],
-  "4/25/2020": [
+  "4/24/2021": [
     {
       "allDay": true,
-      "start": 1587790800000,
-      "end": 1587877200000,
-      "name": "Benchmark Exams for Incoming Freshmen",
+      "start": 1619240400000,
+      "end": 1619326800000,
+      "name": "Benchmark Exams",
       "description": "",
       "location": null,
       "categories": [
@@ -610,9 +1213,9 @@
       ]
     },
     {
-      "allDay": false,
-      "start": 1587853800000,
-      "end": 1587873600000,
+      "allDay": true,
+      "start": 1619240400000,
+      "end": 1619326800000,
       "name": "Prom",
       "description": "",
       "location": "TBA",
@@ -621,25 +1224,12 @@
       ]
     }
   ],
-  "4/27/2020": [
+  "4/27/2021": [
     {
       "allDay": true,
-      "start": 1587963600000,
-      "end": 1588050000000,
-      "name": "Incoming Freshman Band Auditions",
-      "description": "",
-      "location": "Band Room",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "4/28/2020": [
-    {
-      "allDay": false,
-      "start": 1588080600000,
-      "end": 1588123800000,
-      "name": "Consortium Art Show and Reception",
+      "start": 1619499600000,
+      "end": 1619586000000,
+      "name": "Consortium Art Fest",
       "description": "",
       "location": "Field House",
       "categories": [
@@ -647,11 +1237,11 @@
       ]
     }
   ],
-  "4/29/2020": [
+  "4/28/2021": [
     {
       "allDay": false,
-      "start": 1588172760000,
-      "end": 1588175340000,
+      "start": 1619622360000,
+      "end": 1619624940000,
       "name": "Activity Period",
       "description": "",
       "location": null,
@@ -661,8 +1251,8 @@
     },
     {
       "allDay": false,
-      "start": 1588204800000,
-      "end": 1588212000000,
+      "start": 1619654400000,
+      "end": 1619661600000,
       "name": "Baroque Ensemble Concert",
       "description": "",
       "location": "Recital Hall (PAC)",
@@ -671,11 +1261,11 @@
       ]
     }
   ],
-  "5/1/2020": [
+  "4/30/2021": [
     {
       "allDay": false,
-      "start": 1588377600000,
-      "end": 1588384800000,
+      "start": 1619827200000,
+      "end": 1619834400000,
       "name": "Dance Concert",
       "description": "",
       "location": "Performing Arts Center",
@@ -685,8 +1275,8 @@
     },
     {
       "allDay": false,
-      "start": 1588377600000,
-      "end": 1588384800000,
+      "start": 1619827200000,
+      "end": 1619834400000,
       "name": "Spring One-Acts",
       "description": "",
       "location": "West Auditorium",
@@ -695,11 +1285,11 @@
       ]
     }
   ],
-  "5/2/2020": [
+  "5/1/2021": [
     {
       "allDay": false,
-      "start": 1588464000000,
-      "end": 1588471200000,
+      "start": 1619913600000,
+      "end": 1619920800000,
       "name": "Dance Concert",
       "description": "",
       "location": "Performing Arts Center",
@@ -709,8 +1299,8 @@
     },
     {
       "allDay": false,
-      "start": 1588464000000,
-      "end": 1588471200000,
+      "start": 1619913600000,
+      "end": 1619920800000,
       "name": "Spring One-Acts",
       "description": "",
       "location": "West Auditorium",
@@ -719,11 +1309,11 @@
       ]
     }
   ],
-  "5/4/2020": [
+  "5/3/2021": [
     {
       "allDay": true,
-      "start": 1588568400000,
-      "end": 1588654800000,
+      "start": 1620018000000,
+      "end": 1620104400000,
       "name": "AP Exams",
       "description": "",
       "location": null,
@@ -732,11 +1322,11 @@
       ]
     }
   ],
-  "5/5/2020": [
+  "5/4/2021": [
     {
       "allDay": true,
-      "start": 1588654800000,
-      "end": 1588741200000,
+      "start": 1620104400000,
+      "end": 1620190800000,
       "name": "AP Exams",
       "description": "",
       "location": null,
@@ -746,19 +1336,8 @@
     },
     {
       "allDay": false,
-      "start": 1588716000000,
-      "end": 1588730400000,
-      "name": "Band Fundraiser",
-      "description": "",
-      "location": "Prairie House Tavern",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1588723200000,
-      "end": 1588730400000,
+      "start": 1620172800000,
+      "end": 1620180000000,
       "name": "Choral Concert",
       "description": "",
       "location": "Performing Arts Center",
@@ -767,11 +1346,11 @@
       ]
     }
   ],
-  "5/6/2020": [
+  "5/5/2021": [
     {
       "allDay": true,
-      "start": 1588741200000,
-      "end": 1588827600000,
+      "start": 1620190800000,
+      "end": 1620277200000,
       "name": "AP Exams",
       "description": "",
       "location": null,
@@ -780,11 +1359,24 @@
       ]
     }
   ],
-  "5/7/2020": [
+  "5/6/2021": [
     {
       "allDay": true,
-      "start": 1588827600000,
-      "end": 1588914000000,
+      "start": 1620277200000,
+      "end": 1620363600000,
+      "name": "AP Exams",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    }
+  ],
+  "5/7/2021": [
+    {
+      "allDay": true,
+      "start": 1620363600000,
+      "end": 1620450000000,
       "name": "AP Exams",
       "description": "",
       "location": null,
@@ -794,82 +1386,34 @@
     },
     {
       "allDay": false,
-      "start": 1588896000000,
-      "end": 1588903200000,
-      "name": "Orchestra Awards Concert",
-      "description": "",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "5/8/2020": [
-    {
-      "allDay": true,
-      "start": 1588914000000,
-      "end": 1589000400000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1588982400000,
-      "end": 1588989600000,
+      "start": 1620432000000,
+      "end": 1620439200000,
       "name": "Improv Performance",
       "description": "",
       "location": "West Auditorium",
       "categories": [
-        "Fine Arts",
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "5/11/2020": [
-    {
-      "allDay": true,
-      "start": 1589173200000,
-      "end": 1589259600000,
-      "name": "Advanced Acting Showcase",
-      "description": "",
-      "location": "Black Box Theatre",
-      "categories": [
         "Fine Arts"
       ]
-    },
+    }
+  ],
+  "5/10/2021": [
     {
       "allDay": true,
-      "start": 1589173200000,
-      "end": 1589259600000,
+      "start": 1620622800000,
+      "end": 1620709200000,
       "name": "AP Exams",
       "description": "",
       "location": null,
       "categories": [
         "Testing Day"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1589239800000,
-      "end": 1589247000000,
-      "name": "Co-Curricular Night for Incoming Freshmen",
-      "description": "Meet and talk with coaches, club sponsors and students.\n\n\n\n\n\nThe Co-Curricular Fair will be held on Wednesday, March 18 from 6:30-8:30 p.m. in the Field House, which is just east of the Stadium (park in lot D or B). \n\nAll incoming freshmen and their families are invited to come meet and talk with sport coaches, club sponsors and current Stevenson students involved in more than 35 sport teams, more than 140 co-curricular clubs and the many intramural programs. Take advantage of this opportunity to find out about all that Stevenson offers.",
-      "location": null,
-      "categories": [
-        "Parent Calendar",
-        "Clubs and Activities"
       ]
     }
   ],
-  "5/12/2020": [
+  "5/11/2021": [
     {
       "allDay": true,
-      "start": 1589259600000,
-      "end": 1589346000000,
+      "start": 1620709200000,
+      "end": 1620795600000,
       "name": "AP Exams",
       "description": "",
       "location": null,
@@ -879,148 +1423,104 @@
     },
     {
       "allDay": false,
-      "start": 1589328000000,
-      "end": 1589335200000,
+      "start": 1620777600000,
+      "end": 1620784800000,
       "name": "Guitar Concert",
-      "description": "",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "5/13/2020": [
-    {
-      "allDay": true,
-      "start": 1589346000000,
-      "end": 1589432400000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1589346000000,
-      "end": 1589432400000,
-      "name": "Dance Company Auditions",
-      "description": "",
-      "location": "Dance Studio 2010",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1589402700000,
-      "end": 1589409000000,
-      "name": "Theatre Awards",
-      "description": "",
-      "location": "Little Theatre (PAC)",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1589414400000,
-      "end": 1589421600000,
-      "name": "Band Concert",
-      "description": "",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "5/14/2020": [
-    {
-      "allDay": true,
-      "start": 1589432400000,
-      "end": 1589518800000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1589488200000,
-      "end": 1589488200000,
-      "name": "Fall Play Auditions",
-      "description": "",
-      "location": "Black Box Theatre",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1589500800000,
-      "end": 1589508000000,
-      "name": "Band Concert",
-      "description": "",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "5/15/2020": [
-    {
-      "allDay": true,
-      "start": 1589518800000,
-      "end": 1589605200000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1589518800000,
-      "end": 1589605200000,
-      "name": "PM Assembly Schedule/Spring Fling",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Early Dismissal"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1589574600000,
-      "end": 1589590800000,
-      "name": "Spring Fling",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1589587200000,
-      "end": 1589594400000,
-      "name": "SNN Film Festival",
       "description": "",
       "location": "West Auditorium",
       "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "5/12/2021": [
+    {
+      "allDay": true,
+      "start": 1620795600000,
+      "end": 1620882000000,
+      "name": "AP Exams",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1620864000000,
+      "end": 1620871200000,
+      "name": "Band Concert",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "5/13/2021": [
+    {
+      "allDay": true,
+      "start": 1620882000000,
+      "end": 1620968400000,
+      "name": "AP Exams",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1620950400000,
+      "end": 1620957600000,
+      "name": "Band Concert",
+      "description": "",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "5/14/2021": [
+    {
+      "allDay": true,
+      "start": 1620968400000,
+      "end": 1621054800000,
+      "name": "AP Exams",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    }
+  ],
+  "5/21/2021": [
+    {
+      "allDay": false,
+      "start": 1621603800000,
+      "end": 1621625820000,
+      "name": "PM Assembly Schedule",
+      "description": "Classes will be dismissed at 2:37 p.m.  PM Assembly schedule \n\n\n\n PM Assembly Schedule - Sept. 25, 2020 \n  \n  Period 1 - 8:30-9:15\n  Period 2 - 9:20-10:01\n  Period 3 - 10:06-10:47\n  Period 4 - 10:52-11:33\n  Period 5 - 11:38-12:19\n  Period 6 - 12:24-1:05\n  Period 7 - 1:10-1:51\n  Period 8 - 1:56-2:37",
+      "location": null,
+      "categories": []
+    },
+    {
+      "allDay": false,
+      "start": 1621629900000,
+      "end": 1621645200000,
+      "name": "Spring Fling",
+      "description": "",
+      "location": "Various",
+      "categories": [
         "Clubs and Activities"
       ]
     }
   ],
-  "5/18/2020": [
+  "5/24/2021": [
     {
       "allDay": true,
-      "start": 1589778000000,
-      "end": 1589864400000,
+      "start": 1621832400000,
+      "end": 1621918800000,
       "name": "End of Six-Week Grading Period",
       "description": "",
       "location": null,
@@ -1029,53 +1529,71 @@
       ]
     }
   ],
-  "5/19/2020": [
+  "5/25/2021": [
     {
-      "allDay": true,
-      "start": 1589864400000,
-      "end": 1589950800000,
+      "allDay": false,
+      "start": 1621949400000,
+      "end": 1621966800000,
       "name": "Final Exams - Day 1",
-      "description": "",
+      "description": "8:30-10:00: Period 1 Exam\n  10:10-11:40: Period 2 Exam\n  11:50-1:20: Period 4 Exam\n  1:35: Bus Pick-Up\n\nDetails at  www.d125.org/Finals",
       "location": null,
       "categories": [
         "Testing Day"
       ]
     }
   ],
-  "5/20/2020": [
+  "5/26/2021": [
     {
-      "allDay": true,
-      "start": 1589950800000,
-      "end": 1590037200000,
+      "allDay": false,
+      "start": 1622035800000,
+      "end": 1622053200000,
       "name": "Final Exams - Day 2",
-      "description": "",
+      "description": "8:30-10:00: Period 3 Exam\n  10:10-11:40: Period 7 Exam\n  11:50-1:20: Period 5 Exam\n  1:35: Bus Pick-Up\n\nDetails at  www.d125.org/Finals",
       "location": null,
       "categories": [
         "Testing Day"
       ]
+    },
+    {
+      "allDay": false,
+      "start": 1622073600000,
+      "end": 1622080800000,
+      "name": "Spring Sports Awards Night",
+      "description": "",
+      "location": "Sports Center",
+      "categories": []
     }
   ],
-  "5/21/2020": [
+  "5/27/2021": [
     {
-      "allDay": true,
-      "start": 1590037200000,
-      "end": 1590123600000,
+      "allDay": false,
+      "start": 1622122200000,
+      "end": 1622139600000,
       "name": "Final Exams - Day 3",
-      "description": "",
+      "description": "8:30-10:00: Period 8 Exam\n  10:10-11:40: Period 6 Exam\n  11:55: Bus Pick-Up\n  11:50-1:20: Make-Up Exam\n  1:35: Late Bus Pick-Up\n\nDetails at  www.d125.org/Finals",
       "location": null,
       "categories": [
         "Testing Day"
       ]
-    }
-  ],
-  "5/22/2020": [
+    },
     {
-      "allDay": true,
-      "start": 1590123600000,
-      "end": 1590210000000,
-      "name": "Class of 2020 Graduation",
+      "allDay": false,
+      "start": 1622134800000,
+      "end": 1622160000000,
+      "name": "Senior Party",
       "description": "",
       "location": null,
+      "categories": []
+    }
+  ],
+  "5/28/2021": [
+    {
+      "allDay": true,
+      "start": 1622178000000,
+      "end": 1622264400000,
+      "name": "Class of 2021 Graduation",
+      "description": "",
+      "location": "Sears Centre Arena",
       "categories": []
     }
   ]
