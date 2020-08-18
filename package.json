@@ -1,7 +1,7 @@
 {
 	"name": "shs",
 	"scripts": {
-		"dev": "del-cli docs && webpack-serve ./webpack.config.js --open",
+		"dev": "del-cli docs && webpack-serve ./webpack.config.js --open ",
 		"prebuild": "node scrapers/lunch.js && node scrapers/events.js",
 		"build": "del-cli docs && webpack --progress --hide-modules --mode=production",
 		"analyze": "del-cli docs && webpack --hide-modules --mode=production --env.analyze=true"
