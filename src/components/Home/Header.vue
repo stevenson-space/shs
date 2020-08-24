@@ -45,8 +45,8 @@
 				/>
 			</div>
 
-			<div v-hammer:tap="toggleColor" class="icon remove-color">
-				<font-awesome-icon
+			<div v-hammer:tap="toggleColor" style="margin-right:30px" class="icon remove-color">
+				<font-awesome-icon 
 					:icon="colored ? icons.faTintSlash : icons.faTint"
 					fixed-width
 				/>
@@ -363,7 +363,7 @@ export default {
       display: block
 
   .main
-    height: 350px
+    height: 360px
     display: flex
     align-items: center
     justify-content: space-between
@@ -381,7 +381,7 @@ export default {
       border-radius: 100px
       margin-top: 10px
       padding: 3px
-      font-size: .9em
+      font-size: 0.95em
       +mobile-small
         margin-top: 7px
 
@@ -402,12 +402,13 @@ export default {
         +mobile-small
           font-size: 3.5em
 
+
     .icon
       position: absolute
       top: 9px
       color: var(--header-accent) // set in computed property 'colors'
-      padding: 10px
-      border-radius: 100px
+      padding: 10px 13px
+      border-radius: 200px
       font-size: 1.75em
       cursor: pointer
       transition: box-shadow .2s

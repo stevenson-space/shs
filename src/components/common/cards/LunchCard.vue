@@ -39,13 +39,13 @@ export default {
   margin: 15px 0
 
 .lunch
-  border-top: var(--color) 2px solid
+  border-top: var(--color) 1.5px solid
   padding: 10px 0
 
   .name
     color: var(--color)
     font-weight: bold
-    font-size: .75em
+    font-size: .85em
     text-align: center
 
   .item

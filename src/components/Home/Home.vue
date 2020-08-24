@@ -7,9 +7,7 @@
 
     <card-container>
       <schedule-card />
-
-      <lunch-card />
-
+      <!-- <lunch-card /> -->
       <upcoming-events-card />
 
       <icon-text-card
@@ -34,7 +32,7 @@
       <icon-text-card
         :icon="icons.faCalculator"
         text="GPA Calculator"
-        link="old/gpacalc.html"
+        link="gpaCalculator"
         :link-props="{ type: 'a' }"
         :invert="true"
       />

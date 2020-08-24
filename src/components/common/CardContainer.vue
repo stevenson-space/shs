@@ -16,6 +16,7 @@ export default {
 .card-container
   max-width: $content-width
   margin: 10px auto
+  
 
   // the following creates lots of rows, each with 5px of height
   // the card will then decide how many rows to span based on its height

@@ -77,7 +77,7 @@ export default {
       shadesTop: 0,
       shadeHeight: 35,
       isOpen: false,
-      animationDuration: 200,
+      animationDuration: 180,
     };
   },
   methods: {
