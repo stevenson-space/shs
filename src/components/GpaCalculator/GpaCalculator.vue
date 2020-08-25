@@ -13,14 +13,13 @@
             text="Add Course"
             @click="addCourse()"
           />
-          <div style="padding: 10px 0px;">Note: Each semester counts as a different course</div>
+          <div style="padding: 12px 0px;">Note: Each semester counts as a different course</div>
         </div>
       </card>
     </div>
-    <card-container style="margin-top:5px">
-      <card :wrapper="false" class v-for="(course, courseIndex) in courses" :key="courseIndex">
-        <div class="card">
-          <div class="gpa-tile" style="display:flex">
+    <card-container class="card-container">
+      <card margin="10" :wrapper="false" class v-for="(course, courseIndex) in courses" :key="courseIndex">
+          <div class="gpa-tile">
             <input
               class="name"
               maxlength="20"
@@ -36,7 +35,7 @@
               :icon="faTimes"
             />
           </div>
-          <div class style="display:flex; padding: 15px 3px">
+          <div class="course-settings-row">
             <dropdown
               style="flex:1;"
               v-show="true"
@@ -57,8 +56,8 @@
               @input="selectHasFinal(course,$event)"
             />
           </div>
-          <div style="display:flex; padding-top:15px;">
-            <div style=" flex:1 1 auto;" v-for="n in (course.hasFinal ? 4 : 3)" :key="n">
+          <div class="grade-dropdown-row">
+            <div style="flex:1;" v-for="n in (course.hasFinal ? 4 : 3)" :key="n">
               <div>
                 <div class="term">{{terms[n-1]}}</div>
                 <dropdown
@@ -75,7 +74,7 @@
           </div>
           <p class="gradeLabel">{{course.semesterGrade}}</p>
           <div class="final-gpa">{{course.gpa.toString().length == 1 ? ( course.gpa+".0") : course.gpa}}</div>
-        </div>
+        
         <br/>
       </card>
     </card-container>
@@ -232,16 +231,24 @@ export default {
 [contenteditable="true"]:focus
   outline: 0px solid transparent
 
-body
-  background-color: green
+.card-container
+  margin-top: 10px
+
+.course-settings-row
+  display: flex
+  padding: 12px 0px 0px 4px
+
+.grade-dropdown-row
+  display: flex
+  flex-wrap: wrap
+  padding-top: 15px
 
 .add-course-button
   width: 130px
-  margin: 0 auto
+  margin: 2px auto
 
 .topCard
-  max-width: 976px
-  margin: 0px 12px
+  max-width: 972px
   +desktop
     margin: 0px auto !important
 
@@ -265,29 +272,35 @@ body
   overflow: visible !important
 
 .card
+  padding: 0px 5px !important
   overflow: visible
-  margin: 0px 15px
+  margin: 0px 0px
   background-color: white
   border-radius: 10px
 
 .gradeSelector
-  padding: 4px
+  margin: 4px
 
 .gpa-tile
+  display: flex
   .close
     width: 18px
     position: absolute
-    top: 12px
-    right: 4px
+    top: 13px
+    right: 11px
     cursor: pointer
 
   .name
+    width: 100px
+    //overflow: visible
     outline: none
     border: none
+    //margin: auto
     text-align: center
     font-size: 1.6em
     flex: 1
-    padding: 12px 0px 5px 0px
+    margin: 0px 12px
+    padding: 8px 0px 5px 0px
 
 .term
   text-align: center

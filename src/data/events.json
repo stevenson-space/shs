@@ -1,48 +1,4 @@
 {
-  "7/20/2020": [
-    {
-      "allDay": false,
-      "start": 1595291400000,
-      "end": 1595296800000,
-      "name": "Board of Education Meeting - Virtual",
-      "description": "Agenda and login instructions",
-      "location": "TBD",
-      "categories": []
-    }
-  ],
-  "7/21/2020": [
-    {
-      "allDay": false,
-      "start": 1595376000000,
-      "end": 1595383200000,
-      "name": "Reopening Plan Webinar",
-      "description": "Link to watch:\n https://zoom.us/j/99026014518",
-      "location": "Virtual",
-      "categories": []
-    }
-  ],
-  "7/23/2020": [
-    {
-      "allDay": false,
-      "start": 1595508300000,
-      "end": 1595526600000,
-      "name": "Summer School Session 2 Ends",
-      "description": "Visit the summer school page .",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "7/24/2020": [
-    {
-      "allDay": true,
-      "start": 1595566800000,
-      "end": 1595653200000,
-      "name": "Benchmark Exams",
-      "description": "See this page  for details",
-      "location": null,
-      "categories": []
-    }
-  ],
   "7/26/2020": [
     {
       "allDay": true,
@@ -76,6 +32,256 @@
       "categories": []
     }
   ],
+  "8/18/2020": [
+    {
+      "allDay": false,
+      "start": 1597783500000,
+      "end": 1597787100000,
+      "name": "Math Team  First Meeting",
+      "description": "Contact pkim@d125.org for more information",
+      "location": "Via Zoom",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "8/19/2020": [
+    {
+      "allDay": false,
+      "start": 1597869000000,
+      "end": 1597872600000,
+      "name": "Kiva Club First Meeting",
+      "description": "https://www.instagram.com/p/CD7XvwSJAA0/",
+      "location": "Via Zoom",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "8/20/2020": [
+    {
+      "allDay": false,
+      "start": 1597955400000,
+      "end": 1597959000000,
+      "name": "Peer Tutoring Info Meeting",
+      "description": "https://www.instagram.com/p/CD2H0yJJ4MK/?utm_source=ig_web_copy_link",
+      "location": "Via Zoom",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "8/21/2020": [
+    {
+      "allDay": false,
+      "start": 1598042700000,
+      "end": 1598046300000,
+      "name": "Project Pen Pal Club",
+      "description": "https://www.instagram.com/p/CDmAIZUpikl/",
+      "location": "Via Zoom",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1598054400000,
+      "end": 1598054400000,
+      "name": "Choir Kick Off For Parents and Students",
+      "description": "https://www.instagram.com/stevenson_choir/",
+      "location": "Webinar",
+      "categories": [
+        "Fine Arts",
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "8/24/2020": [
+    {
+      "allDay": false,
+      "start": 1598295600000,
+      "end": 1598317200000,
+      "name": "Fall Material Pick Up Week",
+      "description": "Last Name Letters A-E\n\n\n\n https://www.d125.org/academics/remote-learning#fs-panel-6840",
+      "location": "SHS Parking Lot E",
+      "categories": []
+    },
+    {
+      "allDay": false,
+      "start": 1598302800000,
+      "end": 1598306400000,
+      "name": "Best Buddies Informational Meeting",
+      "description": "https://www.instagram.com/p/CD2UNbxJ-Xu/",
+      "location": "Via Zoom",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1598306400000,
+      "end": 1598306400000,
+      "name": "2020 Fall Musical Video Auditions",
+      "description": "All video auditions for both 2020 Fall Musicals are due by 5:00 p.m.\n\n\n\n\n\n\n https://docs.google.com/document/d/19fq3T8TVdnfjz1...",
+      "location": "Online",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "8/25/2020": [
+    {
+      "allDay": false,
+      "start": 1598374800000,
+      "end": 1598403600000,
+      "name": "Fall Material Pick-Up",
+      "description": "Last Name Letters F-K\n\n\n\n https://www.d125.org/academics/remote-learning#fs-panel-6840",
+      "location": "SHS Parking Lot E",
+      "categories": []
+    }
+  ],
+  "8/26/2020": [
+    {
+      "allDay": false,
+      "start": 1598445000000,
+      "end": 1598447700000,
+      "name": "HOSA Informational Meeting",
+      "description": "https://www.facebook.com/groups/298932026962748",
+      "location": "Via Zoom",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1598468400000,
+      "end": 1598490000000,
+      "name": "Fall Material Pick-UP",
+      "description": "Last Name Letters L-R\n\n\n\n https://www.d125.org/academics/remote-learning#fs-panel-6840",
+      "location": "SHS Parking Lot E",
+      "categories": []
+    }
+  ],
+  "8/27/2020": [
+    {
+      "allDay": false,
+      "start": 1598554800000,
+      "end": 1598576400000,
+      "name": "Fall Material Pick-Up",
+      "description": "Last Name Letters  S-Z\n\n\n\n https://www.d125.org/academics/remote-learning#fs-panel-6840",
+      "location": "SHS Parking Lot E",
+      "categories": []
+    },
+    {
+      "allDay": false,
+      "start": 1598562000000,
+      "end": 1598565600000,
+      "name": "Debate Club Informational Meeting",
+      "description": "https://www.instagram.com/aeshsdebate/",
+      "location": "Via Zoom",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "8/28/2020": [
+    {
+      "allDay": false,
+      "start": 1598623200000,
+      "end": 1598648400000,
+      "name": "Fall Material Pick-UP",
+      "description": "Make up sessions for anyone\n\n\n\n https://www.d125.org/academics/remote-learning#fs-panel-6840",
+      "location": "SHS Parking Lot E",
+      "categories": []
+    },
+    {
+      "allDay": false,
+      "start": 1598646600000,
+      "end": 1598650200000,
+      "name": "Physics Club Informational Meeting",
+      "description": "https://www.facebook.com/groups/687411538423277",
+      "location": "Via Zoom",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "8/31/2020": [
+    {
+      "allDay": true,
+      "start": 1598850000000,
+      "end": 1598936400000,
+      "name": "Co-Curricular Connection",
+      "description": "More Information To Follow",
+      "location": "Via Zoom",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1598918400000,
+      "end": 1598923800000,
+      "name": "Senior Parent Night",
+      "description": "The College Career Center will hold its annual Senior Parent Night from 7-8:30 p.m. Monday, Aug. 31 via Zoom. The event is free and open to all parents and guardians of seniors at Stevenson.\n\n\nThere will be a special session for parents and guardians of students with IEP/504 plans from 6:30-6:50 p.m. \n\n\n\n\n\nSee CCC Calendar for more information.",
+      "location": "Virtual",
+      "categories": [
+        "Parent Calendar"
+      ]
+    }
+  ],
+  "9/1/2020": [
+    {
+      "allDay": true,
+      "start": 1598936400000,
+      "end": 1599022800000,
+      "name": "Co-Curricular Connection",
+      "description": "More Information To Follow",
+      "location": "Via Zoom",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "9/2/2020": [
+    {
+      "allDay": true,
+      "start": 1599022800000,
+      "end": 1599109200000,
+      "name": "Co-Curricular Connection",
+      "description": "More Information To Follow",
+      "location": "Via Zoom",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "9/3/2020": [
+    {
+      "allDay": false,
+      "start": 1599177600000,
+      "end": 1599177600000,
+      "name": "Family Open House",
+      "description": "",
+      "location": "Virtual",
+      "categories": [
+        "Parent Calendar"
+      ]
+    }
+  ],
+  "9/4/2020": [
+    {
+      "allDay": true,
+      "start": 1599195600000,
+      "end": 1599282000000,
+      "name": "Late Arrival",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Late Arrival"
+      ]
+    }
+  ],
   "9/7/2020": [
     {
       "allDay": true,
@@ -89,6 +295,39 @@
       ]
     }
   ],
+  "9/23/2020": [
+    {
+      "allDay": true,
+      "start": 1600837200000,
+      "end": 1600923600000,
+      "name": "Photo Retake Day",
+      "description": "Time and Location TBD",
+      "location": null,
+      "categories": []
+    },
+    {
+      "allDay": true,
+      "start": 1600837200000,
+      "end": 1600923600000,
+      "name": "SAT - Seniors Only",
+      "description": "See Testing Day Details",
+      "location": "Adlai E. Stevenson High School",
+      "categories": [
+        "Testing Day"
+      ]
+    }
+  ],
+  "9/24/2020": [
+    {
+      "allDay": true,
+      "start": 1600923600000,
+      "end": 1601010000000,
+      "name": "Photo Retake Day",
+      "description": "Time and Location TBD",
+      "location": null,
+      "categories": []
+    }
+  ],
   "9/25/2020": [
     {
       "allDay": true,
@@ -100,6 +339,15 @@
       "categories": [
         "End of Six Weeks"
       ]
+    },
+    {
+      "allDay": true,
+      "start": 1601010000000,
+      "end": 1601096400000,
+      "name": "Photo Retake Day",
+      "description": "Time and Location TBD",
+      "location": null,
+      "categories": []
     }
   ],
   "9/28/2020": [
@@ -115,6 +363,19 @@
       ]
     }
   ],
+  "10/6/2020": [
+    {
+      "allDay": true,
+      "start": 1601960400000,
+      "end": 1602046800000,
+      "name": "ACT- SHS Seniors Only",
+      "description": "See Testing Details",
+      "location": "Adlai E. Stevenson High School",
+      "categories": [
+        "Testing Day"
+      ]
+    }
+  ],
   "10/12/2020": [
     {
       "allDay": true,
@@ -125,6 +386,19 @@
       "location": null,
       "categories": [
         "Non-Attendance Days"
+      ]
+    }
+  ],
+  "10/14/2020": [
+    {
+      "allDay": true,
+      "start": 1602651600000,
+      "end": 1602738000000,
+      "name": "PSAT/NMSQT",
+      "description": "See Testing Day Details",
+      "location": "Adlai E. Stevenson High School",
+      "categories": [
+        "Testing Day"
       ]
     }
   ],
@@ -826,6 +1100,17 @@
     }
   ],
   "3/2/2021": [
+    {
+      "allDay": true,
+      "start": 1614664800000,
+      "end": 1614751200000,
+      "name": "ACT- SHS Juniors Only",
+      "description": "See Testing Day Details",
+      "location": "Adlai E. Stevenson",
+      "categories": [
+        "Testing Day"
+      ]
+    },
     {
       "allDay": false,
       "start": 1614733200000,

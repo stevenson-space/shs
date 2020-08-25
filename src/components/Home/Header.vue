@@ -45,7 +45,7 @@
 				/>
 			</div>
 
-			<div v-hammer:tap="toggleColor" style="margin-right:30px" class="icon remove-color">
+			<div v-hammer:tap="toggleColor" class="icon remove-color">
 				<font-awesome-icon 
 					:icon="colored ? icons.faTintSlash : icons.faTint"
 					fixed-width
@@ -451,7 +451,7 @@ export default {
 
       .remove-color
         display: block
-        right: 85px
+        right: 110px
 
       .full-screen-mode
         position: fixed

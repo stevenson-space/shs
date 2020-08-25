@@ -29,7 +29,7 @@ export default {
     text-align: center
 
   .title
-    line-height: 150px
+    line-height: 120px
     font-size: 3.5em
     font-weight: bold
     margin-left: 10px

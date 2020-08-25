@@ -6,7 +6,7 @@ import store from "../store";
 // Dynamically import the following components so that they are not included in the main build
 // file and are instead asynchrounously loaded when the user goes to the page (to reduce file size of build.js)
 
-const GpaCalculator = () => import("src/components/GpaCalculator/GpaCalculator.vue"); 
+const GpaCalculator = () => import(/* webpackChunkName: "gpacalculator" */ "src/components/GpaCalculator/GpaCalculator.vue");
 
 const BellSchedules = () =>
 	import(

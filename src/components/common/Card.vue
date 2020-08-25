@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       height: 0,
-      margin: 12,
+      margin: 10,
       spanValue: 0,
       mutationObserver: null,
       debounceTimeout: null,
@@ -80,8 +80,6 @@ export default {
   position: relative
   transition: height .3s
   overflow: hidden
-  +desktop 
-  border-radius: 15px
   &.shadow
     +shadow
   &.border
