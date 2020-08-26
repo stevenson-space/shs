@@ -11,6 +11,7 @@
             class="add-course-button"
             :icon="faPlusCircle"
             text="Add Course"
+            invert
             @click="addCourse()"
           />
           <div style="padding: 12px 0px;">Note: Each semester counts as a different course</div>
@@ -27,7 +28,7 @@
             :value="course.name"
             :placeholder="'Course '+ (course.id)"
             @input="editCourseName(course,$event)"
-          />
+          >
           <font-awesome-icon
             @click="removeCourse(course)"
             class="close"
@@ -37,17 +38,17 @@
         </div>
         <div class="course-settings-row">
           <dropdown
-            style="flex:1;"
             v-show="true"
+            style="flex:1;"
             :options="['Regular','Accelerated','Honors/AP']"
             :value="course.level"
             align="left"
             @input="selectedCourseLevel(course,$event)"
           />
-          <div style="width:8px;"></div>
+          <div style="width:8px;" />
           <dropdown
-            style="flex:1;"
             v-show="true"
+            style="flex:1;"
             :options="['Has Final','No Final']"
             :value="course.hasFinal ? 0 : 1"
             align="left"
@@ -251,6 +252,10 @@ export default {
 
     .gpa-tile
       display: flex
+      background-color: var(--color)
+      color: white
+      border-top-right-radius: 10px
+      border-top-left-radius: 10px
 
       .name
         width: 100px
@@ -261,6 +266,8 @@ export default {
         flex: 1
         margin: 0px 12px
         padding: 8px 0px 5px 0px
+        background-color: inherit
+        color: inherit
       
       .close
         width: 18px
