@@ -185,7 +185,7 @@ export default {
 
   z-index: 1
   &.selected
-    z-index: 50 // when this dropdown is selected, it should be placed above everything else (except Popup)
+    z-index: 60 // when this dropdown is selected, it should be placed above everything else (except Popup)
 
     .select-option
       +shadow

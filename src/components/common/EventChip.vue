@@ -42,7 +42,7 @@ export default {
 @import 'src/styles/style.sass';
 
 .event
-  --circle-diameter: 35px
+  --circle-diameter: 36px
   --circle-radius: calc(var(--circle-diameter) / 2)
   width: 90%
   position: relative

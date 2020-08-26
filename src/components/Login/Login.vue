@@ -1,11 +1,12 @@
 <template>
-	<div v-if="loginFailed">
-		<plain-header title="Login failed" />Unfortunately, we were unable to
-		authorize your account. The login prompt may have been closed
-		prematurely, or the account used to log in was not a valid
-		<i>students.d125.org</i> account. <br />Please go back and try again. If
-		the problem persists, contact blahblah.
-	</div>
+  <div v-if="loginFailed">
+    <plain-header title="Login failed" />Unfortunately, we were unable to
+    authorize your account. The login prompt may have been closed
+    prematurely, or the account used to log in was not a valid
+    <i>students.d125.org</i> account.
+    <br />Please go back and try again. If
+    the problem persists, contact blahblah.
+  </div>
 </template>
 
 <script>

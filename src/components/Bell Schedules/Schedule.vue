@@ -166,7 +166,7 @@ export default {
     font-size: 2.5em
     font-weight: bold
     color: #555
-    margin-left: 100px
+    margin-left: 54px
     padding: 35px 0 15px 0
     +mobile
       font-size: 2em

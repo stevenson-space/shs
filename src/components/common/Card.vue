@@ -1,6 +1,6 @@
 <template>
   <div ref="card" class="card" :class="{ shadow, border }" :style="style">
-    <div ref="wrapper" class="wrapper">
+    <div ref="wrapper" :class="{wrapper}">
       <slot />
     </div>
   </div>
@@ -11,11 +11,12 @@ export default {
   props: {
     shadow: { type: Boolean, default: true },
     border: { type: Boolean, default: false },
+    wrapper: { type: Boolean, default: true },
   },
   data() {
     return {
       height: 0,
-      margin: 15,
+      margin: 10,
       spanValue: 0,
       mutationObserver: null,
       debounceTimeout: null,
@@ -33,12 +34,9 @@ export default {
   },
   mounted() {
     this.setHeight();
-
     // for some reason, card doesn't open to full height on first load
     setTimeout(this.setHeight, 250);
-
     window.addEventListener('resize', this.debounceSetHeight);
-
     // The MutationObserver will detect when any children or descendants are added
     // and when any CSS is changed
     this.mutationObserver = new MutationObserver(this.setHeight);
@@ -61,10 +59,8 @@ export default {
     setHeight() {
       const { margin, $refs } = this;
       this.height = $refs.wrapper.offsetHeight;
-
       // Adjust the number of rows the card spans (necessary for the masonry layout to work)
       this.spanValue = Math.ceil((this.height + margin * 2) / 5); // 5 is row height
-
       this.$emit('height-change');
     },
     debounceSetHeight() {
@@ -75,9 +71,9 @@ export default {
 };
 </script>
 
+
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
-
 .card
   background-color: white
   border-radius: 15px
@@ -88,9 +84,6 @@ export default {
     +shadow
   &.border
     border: #999 1px solid
-    // border: var(--color) 1.5px solid
-
   .wrapper
     overflow: hidden
-
 </style>

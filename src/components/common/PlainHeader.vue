@@ -29,17 +29,17 @@ export default {
     text-align: center
 
   .title
-    line-height: 125px
-    font-size: 4em
+    line-height: 120px
+    font-size: 3.5em
     font-weight: bold
-    margin-left: 50px
+    margin-left: 10px
     +mobile
       margin-left: 0
 
   .home-link
     position: absolute
     top: 10px
-    right: 10px
+    right: 15px
     +mobile-small
       top: 0
       right: 5px

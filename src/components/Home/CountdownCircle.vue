@@ -36,7 +36,7 @@ export default {
 @import 'src/styles/style.sass'
 
 .circle
-  --circle-diameter: 285px
+  --circle-diameter: 290px
   --logo-width: 100px
   +mobile-small
     --circle-diameter: 230px
@@ -79,7 +79,7 @@ export default {
 
   .next-day
     transition: margin-top .2s, font-size .2s
-    font-size: .85em
+    font-size: .95em
     margin: auto
     height: 75px
     display: flex

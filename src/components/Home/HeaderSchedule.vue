@@ -92,10 +92,10 @@ export default {
     flex-grow: 1
 
     .range
-      font-size: 1.1em
+      font-size: 1.2em
 
     .type, .period
-      font-size: .9em
+      font-size: .99em
 
     .button
       +shadow

@@ -20,9 +20,7 @@ export default {
 };
 </script>
 
-
 <style lang="sass" scoped>
-
 .form-element
   display: flex
   flex-flow: column nowrap
@@ -34,6 +32,8 @@ export default {
   width: 100%
 
   label
+    margin-left: -10px
+    padding-bottom: 5px
     width: 80%
     text-align: left
 
@@ -44,12 +44,13 @@ export default {
     margin: 5px
 
   input
+    &:focus
+      outline: none
+    padding: 0px 5px
+    border-radius: 30px
     width: 80%
     border: 1px solid var(--color)
     height: 30px
     font-size: 1em
     text-indent: 0.3em
-
-
-
 </style>
