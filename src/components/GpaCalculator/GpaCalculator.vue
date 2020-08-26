@@ -86,10 +86,10 @@ import RoundedButton from "src/components/common/RoundedButton.vue";
 class Course {
   constructor(id) {
     this.id = id;
-    this.grades = [0, 0, 0, 0];
+    this.grades = [1, 1, 1, 1];
     this.level = 0;
     this.gpa = 4.0;
-    this.finalGrade = "A+";
+    this.finalGrade = "A";
     this.hasFinal = true;
     this.name = "Course " + id;
   }
@@ -109,7 +109,7 @@ export default {
       courses: [new Course(0)],
       averageGpa: 4.0,
       courseLevels: ["Regular", "Accelerated", "Honors/AP"],
-      gradeLabels: ["F", "D-", "D", "D+", "C-", "C", "C+", "B-", "B", "B+", "A-", "A", "A+"],
+      gradeLabels: ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+","D" ,"D-", "F"],
       faTimes,
       faPlusCircle,
       terms: ["1st", "2nd", "3rd", "Final"],
