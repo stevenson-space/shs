@@ -1,6 +1,6 @@
 <template>
   <div ref="card" class="card" :class="{ shadow, border }" :style="style">
-    <div ref="wrapper" :class="{wrapper}">
+    <div ref="wrapper" class="wrapper" :style="wrapperStyle">
       <slot />
     </div>
   </div>
@@ -11,7 +11,7 @@ export default {
   props: {
     shadow: { type: Boolean, default: true },
     border: { type: Boolean, default: false },
-    wrapper: { type: Boolean, default: true },
+    wrapperStyle: { type: Object, default: () => {} },
   },
   data() {
     return {

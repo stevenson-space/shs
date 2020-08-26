@@ -2,7 +2,7 @@
   <div>
     <plain-header title="GPA Calculator" />
     <div>
-      <card class="topCard">
+      <card class="top-card">
         <div style="text-align:center">
           <h1 class="overall-gpa">
             {{averageGpa.toString() == "NaN" ? "0.0" : (averageGpa.toString().length == 1 ? (averageGpa+".0") : averageGpa)}}
@@ -17,8 +17,8 @@
         </div>
       </card>
     </div>
-    <card-container class="card-container">
-      <card margin="10" :wrapper="false" class v-for="(course, courseIndex) in courses" :key="courseIndex">
+    <card-container class="gpa-card-container">
+      <card class="gpa-card" :wrapperStyle="{ overflow: 'visible' }" v-for="(course, courseIndex) in courses" :key="courseIndex">
         <div class="gpa-tile">
           <input
             class="name"
@@ -39,7 +39,6 @@
           <dropdown
             style="flex:1;"
             v-show="true"
-            class="courseLevelSelector"
             :options="['Regular','Accelerated','Honors/AP']"
             :value="course.level"
             align="left"
@@ -49,7 +48,6 @@
           <dropdown
             style="flex:1;"
             v-show="true"
-            class="hasFinalSelector"
             :options="['Has Final','No Final']"
             :value="course.hasFinal ? 0 : 1"
             align="left"
@@ -63,7 +61,7 @@
               <dropdown
                 v-show="true"
                 :direction="course.direction"
-                class="gradeSelector"
+                class="grade-selector"
                 :options="gradeLabels"
                 :value="course.grades[n-1]"
                 align="left"
@@ -72,7 +70,7 @@
             </div>
           </div>
         </div>
-        <p class="gradeLabel">{{course.finalGrade}}</p>
+        <p class="grade-label">{{course.finalGrade}}</p>
         <div class="final-gpa">{{course.gpa.toString().length == 1 ? ( course.gpa+".0") : course.gpa}}</div>
         
         <br>
@@ -228,81 +226,75 @@ export default {
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 
-[contenteditable="true"]:focus
-  outline: 0px solid transparent
-
-.card-container
-  margin-top: 10px
-
-.course-settings-row
-  display: flex
-  padding: 12px 0px 0px 4px
-
-.grade-dropdown-row
-  display: flex
-  flex-wrap: wrap
-  padding-top: 15px
-
-.add-course-button
-  width: 130px
-  margin: 2px auto
-
-.topCard
+.top-card
   max-width: 972px
   +desktop
     margin: 0px auto !important
 
-.overall-gpa
-  margin: 4px
-  font-size: 3.5em
-  font-weight: 500
+  .overall-gpa
+    margin: 4px
+    font-size: 3.5em
+    font-weight: 500
 
-.final-gpa
-  color: var(--color)
-  font-size: 2em
-  text-align: center
+  .add-course-button
+    width: 130px
+    margin: 2px auto
 
-.gradeLabel
-  padding: 0px 0px
-  margin: 0 auto
-  text-align: center
-  font-size: 3em
+.gpa-card-container
+  margin-top: 10px
 
-.wrapper
-  overflow: visible !important
+  .gpa-card
+    overflow: visible
+    margin: 0px 0px
+    background-color: white
+    border-radius: 10px
 
-.card
-  padding: 0px 5px !important
-  overflow: visible
-  margin: 0px 0px
-  background-color: white
-  border-radius: 10px
+    .gpa-tile
+      display: flex
 
-.gradeSelector
-  margin: 4px
+      .name
+        width: 100px
+        outline: none
+        border: none
+        text-align: center
+        font-size: 1.6em
+        flex: 1
+        margin: 0px 12px
+        padding: 8px 0px 5px 0px
+      
+      .close
+        width: 18px
+        position: absolute
+        top: 13px
+        right: 11px
+        cursor: pointer
+    
+    .course-settings-row
+      margin: 0 5px
+      display: flex
+      padding: 12px 0px 0px 4px
+    
+    .grade-dropdown-row
+      margin: 0 5px
+      display: flex
+      flex-wrap: wrap
+      padding-top: 15px
 
-.gpa-tile
-  display: flex
-  .close
-    width: 18px
-    position: absolute
-    top: 13px
-    right: 11px
-    cursor: pointer
+      .term
+        text-align: center
 
-  .name
-    width: 100px
-    //overflow: visible
-    outline: none
-    border: none
-    //margin: auto
-    text-align: center
-    font-size: 1.6em
-    flex: 1
-    margin: 0px 12px
-    padding: 8px 0px 5px 0px
+      .grade-selector
+        margin: 4px
 
-.term
-  text-align: center
+    .grade-label
+      padding: 0px 0px
+      margin: 0 auto
+      text-align: center
+      font-size: 3em
+
+    .final-gpa
+      color: var(--color)
+      font-size: 2em
+      text-align: center
 </style>
 
