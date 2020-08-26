@@ -86,10 +86,10 @@ import RoundedButton from "src/components/common/RoundedButton.vue";
 class Course {
   constructor(id) {
     this.id = id;
-    this.grades = [0, 0, 0, 0];
+    this.grades = [11, 11, 11, 11];
     this.level = 0;
     this.gpa = 4.0;
-    this.finalGrade = "A+";
+    this.finalGrade = "A";
     this.hasFinal = true;
     this.name = "Course " + id;
   }
