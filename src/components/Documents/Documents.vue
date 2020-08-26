@@ -11,12 +11,10 @@
 			/>
 			<!-- Request card -->
 			<form-card :name="formName" title="Request">
-				<form-card-element
-				style="margin-bottom:-5px"
-					>Didn't find the book you were looking for? Request it
-					below!</form-card-element
-				>
-				<form-card-element >
+				<form-card-element style="margin-bottom:-5px">
+					Didn't find the book you were looking for? Request it below!
+				</form-card-element>
+				<form-card-element>
 					<label>Class</label>
 					<input
 						type="text"

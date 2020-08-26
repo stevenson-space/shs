@@ -4,9 +4,9 @@
     <div>
       <card class="topCard">
         <div style="text-align:center">
-          <h1
-            class="overall-gpa"
-          >{{averageGpa.toString() == "NaN" ? "0.0" : (averageGpa.toString().length == 1 ? (averageGpa+".0") : averageGpa)}}</h1>
+          <h1 class="overall-gpa">
+            {{averageGpa.toString() == "NaN" ? "0.0" : (averageGpa.toString().length == 1 ? (averageGpa+".0") : averageGpa)}}
+          </h1>
           <rounded-button
             class="add-course-button"
             :icon="faPlusCircle"
@@ -19,63 +19,63 @@
     </div>
     <card-container class="card-container">
       <card margin="10" :wrapper="false" class v-for="(course, courseIndex) in courses" :key="courseIndex">
-          <div class="gpa-tile">
-            <input
-              class="name"
-              maxlength="20"
-              type="text"
-              :value="course.name"
-              :placeholder="'Course '+ (course.id)"
-              @input="editCourseName(course,$event)"
-            />
-            <font-awesome-icon
-              @click="removeCourse(course)"
-              class="close"
-              size="1x"
-              :icon="faTimes"
-            />
-          </div>
-          <div class="course-settings-row">
-            <dropdown
-              style="flex:1;"
-              v-show="true"
-              class="courseLevelSelector"
-              :options="['Regular','Accelerated','Honors/AP']"
-              :value="course.selectedLevel"
-              align="left"
-              @input="selectedCourseLevel(course,$event)"
-            />
-            <div style="width:8px;"></div>
-            <dropdown
-              style="flex:1;"
-              v-show="true"
-              class="hasFinalSelector"
-              :options="['Has Final','No Final']"
-              :value="course.hasFinal ? 0 : 1"
-              align="left"
-              @input="selectHasFinal(course,$event)"
-            />
-          </div>
-          <div class="grade-dropdown-row">
-            <div style="flex:1;" v-for="n in (course.hasFinal ? 4 : 3)" :key="n">
-              <div>
-                <div class="term">{{terms[n-1]}}</div>
-                <dropdown
-                  v-show="true"
-                  :direction="course.direction"
-                  class="gradeSelector"
-                  :options="gradeLabels"
-                  :value="course.grades[n-1]"
-                  align="left"
-                  @input="selectGrade(course,n-1,$event)"
-                />
-              </div>
+        <div class="gpa-tile">
+          <input
+            class="name"
+            maxlength="20"
+            type="text"
+            :value="course.name"
+            :placeholder="'Course '+ (course.id)"
+            @input="editCourseName(course,$event)"
+          />
+          <font-awesome-icon
+            @click="removeCourse(course)"
+            class="close"
+            size="1x"
+            :icon="faTimes"
+          />
+        </div>
+        <div class="course-settings-row">
+          <dropdown
+            style="flex:1;"
+            v-show="true"
+            class="courseLevelSelector"
+            :options="['Regular','Accelerated','Honors/AP']"
+            :value="course.level"
+            align="left"
+            @input="selectedCourseLevel(course,$event)"
+          />
+          <div style="width:8px;"></div>
+          <dropdown
+            style="flex:1;"
+            v-show="true"
+            class="hasFinalSelector"
+            :options="['Has Final','No Final']"
+            :value="course.hasFinal ? 0 : 1"
+            align="left"
+            @input="selectHasFinal(course,$event)"
+          />
+        </div>
+        <div class="grade-dropdown-row">
+          <div style="flex:1;" v-for="n in (course.hasFinal ? 4 : 3)" :key="n">
+            <div>
+              <div class="term">{{terms[n-1]}}</div>
+              <dropdown
+                v-show="true"
+                :direction="course.direction"
+                class="gradeSelector"
+                :options="gradeLabels"
+                :value="course.grades[n-1]"
+                align="left"
+                @input="selectGrade(course,n-1,$event)"
+              />
             </div>
           </div>
-          <p class="gradeLabel">{{course.semesterGrade}}</p>
-          <div class="final-gpa">{{course.gpa.toString().length == 1 ? ( course.gpa+".0") : course.gpa}}</div>
+        </div>
+        <p class="gradeLabel">{{course.finalGrade}}</p>
+        <div class="final-gpa">{{course.gpa.toString().length == 1 ? ( course.gpa+".0") : course.gpa}}</div>
         
-        <br/>
+        <br>
       </card>
     </card-container>
   </div>
@@ -88,9 +88,9 @@ class Course {
   constructor(id) {
     this.id = id;
     this.grades = [0, 0, 0, 0];
-    this.selectedLevel = 0;
+    this.level = 0;
     this.gpa = 4.0;
-    this.semesterGrade = "A+";
+    this.finalGrade = "A+";
     this.hasFinal = true;
     this.name = "Course " + id;
   }
@@ -110,7 +110,7 @@ export default {
       courses: [new Course(0)],
       averageGpa: 4.0,
       courseLevels: ["Regular", "Accelerated", "Honors/AP"],
-      gradeLabels:["A+","A","A-","B+","B","B-","C+","C","C-","D+","D","D-","F",],
+      gradeLabels: ["F", "D-", "D", "D+", "C-", "C", "C+", "B-", "B", "B+", "A-", "A", "A+"],
       faTimes,
       faPlusCircle,
       terms: ["1st", "2nd", "3rd", "Final"],
@@ -150,7 +150,7 @@ export default {
     },
     selectedCourseLevel(course, i) {
       var index = this.courses.indexOf(course);
-      course.selectedLevel = i;
+      course.level = i;
       this.$set(this.courses, index, course);
       this.calculateSemesterGrades();
     },
@@ -205,8 +205,8 @@ export default {
         } else {
           gpa = 0;
         }
-        gpa += course.selectedLevel == 1 ? 0.5 : course.selectedLevel == 2 ? 1.0 : 0;
-        course.semesterGrade = grade;
+        gpa += course.level == 1 ? 0.5 : course.level == 2 ? 1.0 : 0;
+        course.finalGrade = grade;
         if (grade.includes("F")) {
           gpa = 0.0;
         }
