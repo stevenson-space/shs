@@ -362,9 +362,9 @@ export default {
 					{
 						title: "Principles of Economics (2nd Ed.)",
 						link:
-							"https://mega.nz/file/kUdyGQqB#N4LN8FGEwa13Ny2ZyDNAOxed-AHjD-hW9ZsYgs-CvYI",
+							"https://mega.nz/file/kUdyGQqB#N4LN8FGEwa13Ny2ZyDNAOxed-AHjD-hW9ZsYgs-CvYI"
 					},
-				]
+				],
 				"AP European History": [
 					{
 						title: "McKay Textbook",
