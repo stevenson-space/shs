@@ -358,6 +358,13 @@ export default {
 							"https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2RFJ3Z0pNQXFtU2s",
 					},
 				],
+				"AP Microeconomics": [
+					{
+						title: "Principles of Economics (2nd Ed.)",
+						link:
+							"https://mega.nz/file/kUdyGQqB#N4LN8FGEwa13Ny2ZyDNAOxed-AHjD-hW9ZsYgs-CvYI",
+					},
+				]
 				"AP European History": [
 					{
 						title: "McKay Textbook",
