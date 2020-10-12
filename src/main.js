@@ -7,6 +7,10 @@ import router from 'src/js/router';
 import store from 'src/store/index';
 import App from 'src/App.vue';
 
+if (Date.now() < (new Date(2020, 11, 1)).getTime()) { // if before december 1, 2020
+  import(/* webpackChunkName: "leaves" */'./js/leaves'); // add the falling leaves animation
+}
+
 // smooth scroll behavior polyfill (for safari)
 if (!('scrollBehavior' in document.documentElement.style)) {
   import(/* webpackChunkName: "scroll-behavior-polyfill" */'scroll-behavior-polyfill');
