@@ -462,7 +462,7 @@
 		]
 	},
 	{
-		"name": "Early Dismissal",
+		"name": "Early Dismissal (eL)",
 		"isSpecial": true,
 		"dates": [
 			"11/25/2020"

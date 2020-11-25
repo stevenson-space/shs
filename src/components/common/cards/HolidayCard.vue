@@ -1,7 +1,7 @@
 <template>
   <card>
     <img class="logo" src="static/thanksgiving.jpg" />
-    <div class="message">Have a happy Thanksgiving break! &nbsp;</div>
+    <div class="message">Have a happy Thanksgiving break!</div>
   </card>
 </template>
 
