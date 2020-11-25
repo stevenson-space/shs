@@ -6,6 +6,8 @@
     />
 
     <card-container>
+      <holiday-card/>
+
       <schedule-card />
       <!-- <lunch-card /> -->
       <upcoming-events-card />
@@ -85,6 +87,7 @@ import LunchCard from 'common/cards/LunchCard.vue';
 import IconTextCard from 'common/cards/IconTextCard.vue';
 import ScheduleCard from 'common/cards/ScheduleCard.vue';
 import ScheduleHeader from './Header.vue';
+import HolidayCard from '../common/cards/HolidayCard.vue';
 
 export default {
   components: {
@@ -94,8 +97,10 @@ export default {
     LunchCard,
     IconTextCard,
     ScheduleCard,
+     HolidayCard   
   },
   data() {
+
     return {
       icons: {
         faBell,
