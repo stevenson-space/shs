@@ -8,7 +8,9 @@ const oldLunch = require("../src/data/lunch.json");
 const url = "https://www.d125.org/students/food-servicelunch-menu/latest-menu";
 const today = new Date();
 
-main();
+if (today.getFullYear() > 2020) {
+	main();
+}
 
 async function main() {
 	const { lunch, numLunches } = await scrapeLunches();
