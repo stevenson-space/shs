@@ -6,7 +6,6 @@
     />
 
     <card-container>
-      <holiday-card/>
 
       <schedule-card />
       <!-- <lunch-card /> -->
