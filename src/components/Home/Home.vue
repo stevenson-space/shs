@@ -7,8 +7,8 @@
 
     <card-container>
 
+<holiday-card/>
       <schedule-card />
-      <!-- <lunch-card /> -->
       <upcoming-events-card />
 
       <icon-text-card
