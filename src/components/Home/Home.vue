@@ -6,29 +6,16 @@
     />
 
     <card-container>
-
-<holiday-card/>
+      <holiday-card />
+      <hybrid-card />
       <schedule-card />
       <upcoming-events-card />
 
-      <icon-text-card
-        :icon="icons.faBell"
-        text="Bell Schedules"
-        link="bellschedules"
-      />
+      <icon-text-card :icon="icons.faBell" text="Bell Schedules" link="bellschedules" />
 
-      <icon-text-card
-        :icon="icons.faLink"
-        text="Links"
-        link="links"
-        :invert="true"
-      />
+      <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
 
-      <icon-text-card
-        :icon="icons.faCalendarAlt"
-        text="Calendar"
-        link="calendar"
-      />
+      <icon-text-card :icon="icons.faCalendarAlt" text="Calendar" link="calendar" />
 
       <icon-text-card
         :icon="icons.faCalculator"
@@ -38,24 +25,11 @@
         :invert="true"
       />
 
-      <icon-text-card
-        :icon="icons.faTint"
-        text="Switch Color"
-        link="colors"
-      />
+      <icon-text-card :icon="icons.faTint" text="Switch Color" link="colors" />
 
-      <icon-text-card
-        :icon="icons.faTools"
-        text="Tools"
-        link="tools"
-        :invert="true"
-      />
+      <icon-text-card :icon="icons.faTools" text="Tools" link="tools" :invert="true" />
 
-      <icon-text-card
-        :icon="icons.faFileAlt"
-        text="Documents"
-        link="documents"
-      />
+      <icon-text-card :icon="icons.faFileAlt" text="Documents" link="documents" />
 
       <icon-text-card
         :icon="icons.faCog"
@@ -78,15 +52,16 @@ import {
   faCalculator,
   faCog,
   faTools,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
-import CardContainer from 'common/CardContainer.vue';
-import UpcomingEventsCard from 'common/cards/UpcomingEventsCard.vue';
-import LunchCard from 'common/cards/LunchCard.vue';
-import IconTextCard from 'common/cards/IconTextCard.vue';
-import ScheduleCard from 'common/cards/ScheduleCard.vue';
-import ScheduleHeader from './Header.vue';
-import HolidayCard from '../common/cards/HolidayCard.vue';
+import CardContainer from "common/CardContainer.vue";
+import UpcomingEventsCard from "common/cards/UpcomingEventsCard.vue";
+import LunchCard from "common/cards/LunchCard.vue";
+import IconTextCard from "common/cards/IconTextCard.vue";
+import ScheduleCard from "common/cards/ScheduleCard.vue";
+import ScheduleHeader from "./Header.vue";
+import HolidayCard from "../common/cards/HolidayCard.vue";
+import HybridCard from "../common/cards/HybridCard.vue";
 
 export default {
   components: {
@@ -96,10 +71,10 @@ export default {
     LunchCard,
     IconTextCard,
     ScheduleCard,
-     HolidayCard   
+    HolidayCard,
+    HybridCard,
   },
   data() {
-
     return {
       icons: {
         faBell,
@@ -118,8 +93,8 @@ export default {
   created() {
     // Sometimes the interval used in Header.vue stops when the tab leaves focus
     // so updating the date when focus returns is necessary
-    window.addEventListener('focus', () => {
-      this.$store.commit('setCurrentTime');
+    window.addEventListener("focus", () => {
+      this.$store.commit("setCurrentTime");
     });
   },
 };

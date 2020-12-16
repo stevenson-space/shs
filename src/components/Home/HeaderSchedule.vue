@@ -26,6 +26,7 @@
         </router-link>
       </div>
 
+
       <dropdown
         v-show="scheduleModes.length > 1"
         class="schedule-select"
@@ -44,7 +45,7 @@ import Dropdown from 'common/Dropdown.vue';
 import RoundedButton from 'common/RoundedButton.vue';
 
 export default {
-  components: { Dropdown, RoundedButton },
+  components: { Dropdown, RoundedButton},
   props: {
     inSchool: { type: Boolean, required: true },
     range: { type: String, required: true },
