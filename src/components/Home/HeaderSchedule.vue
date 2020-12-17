@@ -13,32 +13,13 @@
         <template v-if="mode === 'current'">
           <div class="range">{{ range }}</div>
 
-          <!-- <div v-if="inSchool" class="period">
+          <div v-if="inSchool" class="period">
             {{ period }}
-          </div> 
-        
-          <div v-else class="type"> 
-            {{ scheduleType }}
-          </div> -->
-          <!-- ^^ Unchanged Version ^^ -->
-         
-         <div v-if="inSchool" class="period" style="display: inline-block">
-            {{ period }}
-             <info-modal
-              style="display:inline-block;"
-              v-if="bell.type.toLowerCase().includes('hybrid')"
-            />
           </div>
 
-          <div v-else class="type" style="display: inline-block"> 
+          <div v-else class="type">
             {{ scheduleType }}
-            <info-modal
-              style="display:inline-block;"
-              v-if="bell.type.toLowerCase().includes('hybrid')"
-            />
           </div>
-         <!-- ^^ Temporary Version ^^ -->
-
         </template>
 
         <router-link v-else to="/">
@@ -60,6 +41,10 @@
         @input="$store.commit('setScheduleMode', scheduleModes[$event])"
       />
     </div>
+    <info-modal
+      style="display: inline-block"
+      v-if="bell.type.toLowerCase().includes('hybrid')"
+    />
   </div>
 </template>
 
@@ -100,7 +85,10 @@ export default {
     font-size: 2.75vh
 
   .container
-    display: flex
+
+    display: inline-block
+    // display: flex
+
     align-items: center
     max-width: $content-width
     margin: auto

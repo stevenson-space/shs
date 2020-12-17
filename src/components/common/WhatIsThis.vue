@@ -1,7 +1,10 @@
 <template>
   <div class="what-is-this" @click.stop="">
     <div class="icon">
-      <font-awesome-icon :icon="icons.faQuestionCircle" fixed-width />
+      <font-awesome-icon
+        :icon="showInfoIcon ? icons.faInfoCircle : icons.faQuestionCircle"
+        fixed-width
+      />
     </div>
 
     <div class="info-bubble">
@@ -11,15 +14,22 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
+import {
+  faQuestionCircle,
+  faInfoCircle,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default {
   components: { FontAwesomeIcon },
+  props: {
+    showInfoIcon: { type: Boolean, required: false, default: false },
+  },
   data() {
     return {
       icons: {
         faQuestionCircle,
+        faInfoCircle,
       },
     };
   },
@@ -44,7 +54,7 @@ export default {
   .info-bubble
     font-size: .85em
     position: fixed
-    width: 350px
+    width: 250px
     background-color: white
     transform: translateX(-50%) translateY(-120%)
     border-radius: 10px
@@ -62,10 +72,10 @@ export default {
 
   &:hover
     .info-bubble
+      z-index: 1
       visibility: visible
       opacity: 1
       transform: translateX(-50%) translateY(-145%)
       +mobile
         transform: translateY(-145%)
-
 </style>

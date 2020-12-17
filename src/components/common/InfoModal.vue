@@ -1,20 +1,21 @@
 <template>
-  <div class="">
+  <div>
     <font-awesome-icon
       @click="openModal()"
       :icon="icons.faQuestionCircle"
       fixed-width
+      class="infoCircle"
     />
+      <transition name="fade">
 
     <div
+    v-if="showModal"
       @click="closeModal()"
       class="modal"
-      :style="{ display: showModal ? 'block' : 'none' }"
     >
-      <div class="modal-content">
+      <div  class="modal-content">
         <h2>Schedule Information</h2>
-                <div class="divider"></div>
-
+        <div class="divider"></div>
         <p>
           "Remote Hybrid" means the schedule of hybrid learning but
           <b>only</b> online. This schedule is applicable for the weeks of Jan.
@@ -27,18 +28,29 @@
         </p>
       </div>
     </div>
+  </transition>
+
+
   </div>
 </template>
 
-
-
 <style lang="sass">
+.fade-enter-active, .fade-leave-active 
+  transition: all 0.25s
+
+.fade-enter, .fade-leave-to
+  opacity: 0
+
+.infoCircle
+ color: var(--color)
+ 
 .divider
   width: 100%
   height: 1px
   background: #E5E7E9
 
 .modal
+
   position: fixed
   z-index: 100
   left: 0
@@ -46,25 +58,18 @@
   width: 100%
   height: 100%
   overflow: auto
-  background-color: rgba(0, 0, 0, 0.5)
+  background-color: rgba(0, 0, 0, 0.4)
 
 .modal-content
-
-  border-radius: 20px
-  background-color: #fefefe
+  transition: 1s all ease-in-out
+  border-radius: 15px
+  background-color: white
   margin: 100px auto
   padding: 1px 20px 5px 20px
   width: 80%
   max-width: 500px
 
-.close
-  margin-top: 5px
-  color: #aaa
-  float: right
-  font-size: 28px
-  font-weight: bold
 </style>
-
 
 <script>
 import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
