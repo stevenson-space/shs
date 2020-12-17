@@ -1,34 +1,35 @@
 <template>
   <card v-if="show">
     <!--would like to use v-show here instead of v-if however the card does not show correctly -->
-      <div style="margin: 5px 5px">
-        <!-- <div class="">Cycle Day {{ getCycleIndex()+1 }}/12</div> -->
-        <div class="row">
-          <div>Morning</div>
-          <div>Afternoon</div>
+    <div style="margin: 5px 5px">
+      <!-- <div class="">Cycle Day {{ getCycleIndex()+1 }}/12</div> -->
+        <!-- <div class="">Index  {{ getCycleIndex() }}/11</div> -->
+      <div class="timeRow">
+        <div>Morning</div>
+        <div>Afternoon</div>
+      </div>
+      <div
+        v-for="n in getHybridSchedule()"
+        :key="n.color"
+        class="row"
+        v-show="n.atSHS[0] != n.atSHS[1]"
+        :style="{
+          background: colors[n.color],
+        }"
+      >
+        <div class="directionChip">
+          {{ n.atSHS[0] ? "SHS" : "Home" }}
         </div>
-        <div
-          v-for="n in getHybridSchedule()"
-          :key="n.color"
-          class="row"
-          v-show="n.atSHS[0] != n.atSHS[1]"
-          :style="{
-            background: colors[n.color],
-          }"
-        >
-          <div class="directionChip">
-            {{ n.atSHS[0] ? "SHS" : "Home" }}
-          </div>
-          <font-awesome-icon
-            class="arrow"
-            :style="{ left: n.atSHS[0] ? '8px' : '-8px' }"
-            :icon="icons.faArrowRight"
-          />
-          <div class="directionChip">
-            {{ n.atSHS[1] ? "SHS" : "Home" }}
-          </div>
+        <font-awesome-icon
+          class="arrow"
+          :style="{ left: n.atSHS[0] ? '8px' : '-8px' }"
+          :icon="icons.faArrowRight"
+        />
+        <div class="directionChip">
+          {{ n.atSHS[1] ? "SHS" : "Home" }}
         </div>
       </div>
+    </div>
   </card>
 </template>
 <script>
@@ -41,10 +42,9 @@ export default {
   components: { Card, FontAwesomeIcon },
   computed: {
     show: function () {
-       return this.bell.school &&
-        this.bell.schedule.name == "Hybrid" &&
-        this.getCycleIndex() >= 0;
-       ;
+      return (
+        this.bell.type == "Hybrid" && this.date.getDay() != 3 && this.bell.school && this.getCycleIndex() >= 0
+      ); 
     },
     ...mapGetters(["date", "bell"]),
   },
@@ -54,18 +54,22 @@ export default {
       var curDate = startDate;
       while (curDate <= endDate) {
         var dayOfWeek = curDate.getDay();
-        if (!(dayOfWeek == 6 || dayOfWeek == 0)) count++;
+        if (!(dayOfWeek == 6 || dayOfWeek == 0 || dayOfWeek == 3)) count++;
         curDate.setDate(curDate.getDate() + 1);
       }
       return count;
     },
     getCycleIndex() {
-      var calibration = { date: new Date("January 19, 2021"), cycleDay: 1 }; //calebration date and corresponding cyclic day (1-12)
+      var calibration = { date: new Date("January 19, 2021"), cycleDay: 2 }; //calebration date and corresponding cyclic day (1-12)
+      if (this.date < calibration.date) {
+        return -1;
+      }
       var cycleDaysSince = this.getBusinessDateCount(
         calibration.date,
         this.date
       );
-      var cyclicDay = ((cycleDaysSince - 1) % 12) + (calibration.cycleDay - 1);
+      var cyclicDay = ((cycleDaysSince - 1) + calibration.cycleDay - 1) % 12 ;
+      console.log(cyclicDay)
       return cyclicDay;
     },
     getHybridSchedule() {
@@ -74,10 +78,8 @@ export default {
       if (day.length == 2) {
         var morning = day.substring(0, 1);
         var afternoon = day.substring(1, 2);
-        var allEL = !day.includes("Y") ? "Y" : !day.includes("G") ? "G" : "B";
         schedules.push({ color: morning, atSHS: [true, false] });
         schedules.push({ color: afternoon, atSHS: [false, true] });
-        schedules.push({ color: allEL, atSHS: [false, false] });
       }
       return schedules;
     },
@@ -88,7 +90,7 @@ export default {
       icons: {
         faArrowRight,
       },
-      schedule: [
+      schedule: [ //letter represents who goes on campus, 0th index is morning, 1st index is afternoon 
         "YG",
         "BY",
         "GB",
@@ -109,11 +111,16 @@ export default {
 <style lang="sass" scoped>
 .row
   border-radius: 40px
-  margin: 8px 5px
   display: flex
   align-items: center
   justify-content: space-between
-  padding: 1px 3px
+  padding: 2px 3px
+  margin: 3px 5px 7px 5px
+
+.timeRow
+  display: flex
+  justify-content: space-between
+  margin: 4px 7px
 
 .directionChip
   margin: 2px 1px
@@ -121,7 +128,7 @@ export default {
   border-radius: 25px
   font-size: 17px
   padding: 5px 8px
-  
+
 .arrow
   position: relative
   color: white

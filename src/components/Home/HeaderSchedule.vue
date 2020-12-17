@@ -13,19 +13,43 @@
         <template v-if="mode === 'current'">
           <div class="range">{{ range }}</div>
 
-          <div v-if="inSchool" class="period">
+          <!-- <div v-if="inSchool" class="period">
             {{ period }}
-          </div>
-          <div v-else class="type">
+          </div> 
+        
+          <div v-else class="type"> 
             {{ scheduleType }}
+          </div> -->
+          <!-- ^^ Unchanged Version ^^ -->
+         
+         <div v-if="inSchool" class="period" style="display: inline-block">
+            {{ period }}
+             <info-modal
+              style="display:inline-block;"
+              v-if="bell.type.toLowerCase().includes('hybrid')"
+            />
           </div>
+
+          <div v-else class="type" style="display: inline-block"> 
+            {{ scheduleType }}
+            <info-modal
+              style="display:inline-block;"
+              v-if="bell.type.toLowerCase().includes('hybrid')"
+            />
+          </div>
+         <!-- ^^ Temporary Version ^^ -->
+
         </template>
 
         <router-link v-else to="/">
-          <rounded-button class="button" text="Go Back Live" :circular="false" :invert="true" />
+          <rounded-button
+            class="button"
+            text="Go Back Live"
+            :circular="false"
+            :invert="true"
+          />
         </router-link>
       </div>
-
 
       <dropdown
         v-show="scheduleModes.length > 1"
@@ -40,12 +64,14 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
-import Dropdown from 'common/Dropdown.vue';
-import RoundedButton from 'common/RoundedButton.vue';
+import { mapState, mapGetters } from "vuex";
+import Dropdown from "../common/Dropdown.vue";
+import RoundedButton from "common/RoundedButton.vue";
+import infoModal from "../common/InfoModal.vue";
 
 export default {
-  components: { Dropdown, RoundedButton},
+  components: { Dropdown, RoundedButton, infoModal },
+
   props: {
     inSchool: { type: Boolean, required: true },
     range: { type: String, required: true },
@@ -55,12 +81,8 @@ export default {
     fullScreenMode: { type: Boolean, default: false },
   },
   computed: {
-    ...mapState([
-      'mode',
-    ]),
-    ...mapGetters([
-      'bell',
-    ]),
+    ...mapState(["mode"]),
+    ...mapGetters(["bell"]),
   },
 };
 </script>
@@ -102,5 +124,4 @@ export default {
       +shadow
       text-decoration: none
       display: inline-block
-
 </style>
