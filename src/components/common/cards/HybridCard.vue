@@ -1,38 +1,40 @@
 <template>
   <card v-if="show">
     <!--would like to use v-show here instead of v-if however the card does not show correctly -->
-    <div style="margin: 5px 5px">
-    <div class="row">
-      <div style="width:15px"></div>
-      <div class="title">Hybrid Schedule</div>
-      <what-is-this :showInfoIcon="true">
-        Cycle Day {{ getCycleIndex() + 1 }}/12
-      </what-is-this>
-    </div>
+    <div class="container">
+      <div class="row">
+        <div style="width: 15px"></div>
+        <div class="title">Hybrid Schedule</div>
+        <what-is-this :showInfoIcon="true">
+          Day {{ getCycleIndex() + 1 }}/12
+        </what-is-this>
+      </div>
 
       <div class="timeRow">
         <div>Morning</div>
         <div>Afternoon</div>
       </div>
-      <div
-        v-for="n in getHybridSchedule()"
-        :key="n.color"
-        class="row"
-        v-show="n.atSHS[0] != n.atSHS[1]"
-        :style="{
-          background: colors[n.color],
-        }"
-      >
-        <div class="directionChip">
-          {{ n.atSHS[0] ? "SHS" : "Home" }}
-        </div>
-        <font-awesome-icon
-          class="arrow"
-          :style="{ left: n.atSHS[0] ? '8px' : '-8px' }"
-          :icon="icons.faArrowRight"
-        />
-        <div class="directionChip">
-          {{ n.atSHS[1] ? "SHS" : "Home" }}
+      <div style="padding-bottom: 3px">
+        <div
+          v-for="n in getHybridSchedule()"
+          :key="n.color"
+          class="row"
+          v-show="n.atSHS[0] != n.atSHS[1]"
+          :style="{
+            background: colors[n.color],
+          }"
+        >
+          <div class="directionChip">
+            {{ n.atSHS[0] ? "SHS" : "Home" }}
+          </div>
+          <font-awesome-icon
+            class="arrow"
+            :style="{ left: n.atSHS[0] ? '8px' : '-8px' }"
+            :icon="icons.faArrowRight"
+          />
+          <div class="directionChip">
+            {{ n.atSHS[1] ? "SHS" : "Home" }}
+          </div>
         </div>
       </div>
     </div>
@@ -120,10 +122,13 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
+.container
+  margin: 5px 5px
+
 .title
   text-align: center
   font-size: 1.5em
-  margin: 5px 0
+  margin: 3px 0
 
 .row
   border-radius: 40px
@@ -131,7 +136,7 @@ export default {
   align-items: center
   justify-content: space-between
   padding: 2px 3px
-  margin: 3px 5px 7px 5px
+  margin: 5px 6px 3px 6px
 
 .timeRow
   display: flex
@@ -143,7 +148,7 @@ export default {
   background: white
   border-radius: 25px
   font-size: 17px
-  padding: 5px 8px
+  padding: 3px 8px
 
 .arrow
   position: relative

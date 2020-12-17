@@ -14,7 +14,7 @@
       class="modal"
     >
       <div  class="modal-content">
-        <h2>Schedule Information</h2>
+        <div class="title">Schedule Information</div>
         <div class="divider"></div>
         <p>
           "Remote Hybrid" means the schedule of hybrid learning but
@@ -35,8 +35,11 @@
 </template>
 
 <style lang="sass">
+.title
+  font-size: 20px
+  padding: 5px 0px
 .fade-enter-active, .fade-leave-active 
-  transition: all 0.25s
+  transition: all 0.20s
 
 .fade-enter, .fade-leave-to
   opacity: 0
@@ -50,7 +53,6 @@
   background: #E5E7E9
 
 .modal
-
   position: fixed
   z-index: 100
   left: 0
@@ -65,7 +67,7 @@
   border-radius: 15px
   background-color: white
   margin: 100px auto
-  padding: 1px 20px 5px 20px
+  padding: 5px 10px 5px 15px
   width: 80%
   max-width: 500px
 
