@@ -2,13 +2,7 @@
   <card v-if="show">
     <!--would like to use v-show here instead of v-if however the card does not show correctly -->
     <div class="container">
-      <div class="row">
-        <div style="width: 15px"></div>
         <div class="title">Hybrid Schedule</div>
-        <what-is-this :showInfoIcon="true">
-          Day {{ getCycleIndex() + 1 }}/12
-        </what-is-this>
-      </div>
 
       <div class="timeRow">
         <div>Morning</div>
