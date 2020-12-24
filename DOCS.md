@@ -12,7 +12,6 @@
 Example:
 ```json
 [
-  ...,
   {
     "name":"Activity Period",
     "isSpecial":true,
@@ -32,7 +31,6 @@ Example:
       }
     ]
   },
-  ...
 ]
 ```
 
@@ -108,7 +106,6 @@ Example:
       "end": ["11:05","11:40","12:15","12:55","13:35","14:15","14:50","15:25"],
       "periods": ["Physics","Calculus","English","Lunch","Computer Science","Dance","U.S. History","Computer Art 1"],
     },
-    ...
   ]
 }
 ```
