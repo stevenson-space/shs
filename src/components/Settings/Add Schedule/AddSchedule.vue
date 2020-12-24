@@ -59,8 +59,9 @@
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faPlus, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
-import { mapState } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
+import { getNameWithoutConflicts } from 'src/js/util';
 import Bell from 'src/js/bell';
 import HomeLink from 'common/HomeLink.vue';
 import ConfirmPopup from 'common/ConfirmPopup.vue';
@@ -96,7 +97,7 @@ export default {
     };
   },
   computed: {
-    ...mapState({
+    ...mapGetters({
       existingSchedules: 'schedules',
     }),
     filteredSchedules() {
@@ -184,6 +185,10 @@ export default {
     }
   },
   methods: {
+    ...mapActions([
+      'addCustomScheduleMode',
+      'removeCustomScheduleMode'
+    ]),
     pickTimeFor(schedule, period, time) {
       // schedule is the index of the schedule type clicked on
       // period is the index of the period clicked on
@@ -247,7 +252,7 @@ export default {
       });
     },
     updateName(scheduleIndex, periodIndex, name, updateOthers) {
-      name = this.getNameWithoutConflicts(name, this.doesNameExist);
+      name = getNameWithoutConflicts(name, this.doesNameExist);
 
       const oldName = this.schedules[scheduleIndex].periods[periodIndex].name;
       if (updateOthers) {
@@ -263,7 +268,7 @@ export default {
       }
     },
     addPeriod(toSchedule) {
-      const name = this.getNameWithoutConflicts(this.getRandomCourseName(), this.doesNameExist);
+      const name = getNameWithoutConflicts(this.getRandomCourseName(), this.doesNameExist);
       const getPeriod = () => ({ name, start: '23:59', end: '23:59' }); // function, so that a different object is created every time
 
       if (Number.isInteger(toSchedule)) { // add it to all schedules
@@ -275,13 +280,6 @@ export default {
       }
 
       this.sortPeriods();
-    },
-    getNameWithoutConflicts(name, doesNameExistFunction) {
-      let newName = name;
-      for (let i = 2; doesNameExistFunction(newName); i++) {
-        newName = `${name} ${i}`;
-      }
-      return newName;
     },
     doesNameExist(name) {
       let result = false;
@@ -330,7 +328,7 @@ export default {
         this.existingSchedules.forEach((schedule) => {
           schedule.modes.map(mode => mode.name).forEach(scheduleName => existingSchedulesNames.add(scheduleName));
         });
-        this.scheduleName = this.getNameWithoutConflicts(name, testName => existingSchedulesNames.has(testName));
+        this.scheduleName = getNameWithoutConflicts(name, testName => existingSchedulesNames.has(testName));
       }
 
       this.editingScheduleName = false;
@@ -351,16 +349,19 @@ export default {
 
       this.schedules.forEach((schedule) => {
         if (schedule.isEnabled) {
-          this.$store.commit('addScheduleMode', {
+          this.addCustomScheduleMode({
             scheduleType: schedule.name,
             scheduleToAdd: formatSchedule(schedule.periods),
             scheduleToReplace: this.mode === 'edit' ? this.scheduleToEdit : null,
           });
-        } else if (this.mode === 'edit') { // if in edit mode and the user unchecks isEnabled, we need to delete the mode
-          this.$store.commit('removeScheduleMode', {
-            scheduleType: schedule.name,
-            scheduleToRemove: this.scheduleToEdit,
-          });
+        } else {
+          // if the user unchecks isEnabled and it's in edit mode, we need to delete the schedule mode
+          if (this.mode === 'edit') {
+            this.removeCustomScheduleMode({
+              scheduleType: schedule.name,
+              scheduleToRemove: this.scheduleToEdit,
+            });
+          }
         }
       });
 

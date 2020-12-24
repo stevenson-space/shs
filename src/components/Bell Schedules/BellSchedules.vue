@@ -17,13 +17,13 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 import HomeLink from 'common/HomeLink.vue';
 import Schedule from './Schedule.vue';
 
 export default {
   components: { Schedule, HomeLink },
-  computed: mapState([
+  computed: mapGetters([
     'schedules',
   ]),
 };

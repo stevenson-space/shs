@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import mutations from 'src/store/mutations';
 import actions from 'src/store/actions';
+import officialSchedules from 'src/data/schedules.json';
 
 import Bell from 'src/js/bell';
 
@@ -22,8 +23,8 @@ export default new Vuex.Store({
     currentTime: Date.now(), // relative to real time
     // such that urlDate.getTime() + (currentTime - startTime) will equal the current time relative to the URL specified time
 
-    schedules: {},
-    defaultSchedule: 'Normal', // actually the default schedule mode
+    customSchedules: {},
+    defaultScheduleMode: 'Normal',
 
     grade: 'None',
 
@@ -42,8 +43,27 @@ export default new Vuex.Store({
         ? date
         : new Date(date.toLocaleDateString());
     },
+    schedules(state) { // we merge the officialSchedules provided by us and the user defined customSchedules
+      const schedules = JSON.parse(JSON.stringify(officialSchedules)); // begin with copying the officialSchedules
+
+      // customSchedules is an object with `schedule type` keys and values containing a
+      // list of schedule mode objects for the corresponding schedule type
+      const { customSchedules } = state;
+      if (customSchedules) {
+        for (const schedule of schedules) {
+          const customScheduleModes = customSchedules[schedule.name];
+          if (customScheduleModes) { // if there exist custom schedules for the current schedule type
+            for (const scheduleMode of customScheduleModes) {
+              // add the scheduleMode, and also include an `isCustom` flag to later be able to distinguish them
+              schedule.modes.push({ ...scheduleMode, isCustom: true });
+            }
+          }
+        }
+      }
+      return schedules;
+    },
     bell(state, getters) {
-      return new Bell(getters.date, state.schedules, state.scheduleMode);
+      return new Bell(getters.date, getters.schedules, state.scheduleMode);
     },
     isAuthenticated(state) {
       return state.isAuthenticated;
