@@ -14,12 +14,14 @@
         :title="schedule.name"
       >
         <div class="actions">
-          <div class="action" @click="deleteSchedule(schedule.name)">
-            <font-awesome-icon :icon="icons.faTrashAlt" /> Delete
+          <div v-if="schedule.isCustom" class="action" @click="deleteSchedule(schedule.name)">
+            <font-awesome-icon :icon="icons.faTrashAlt" />
+            Delete
           </div>
 
           <div class="action" @click="editSchedule(schedule.name)">
-            <font-awesome-icon :icon="icons.faPencilAlt" /> Edit
+            <font-awesome-icon :icon="icons.faPencilAlt" />
+            {{ schedule.isCustom ? 'Edit' : 'Copy & Edit' }}
           </div>
         </div>
       </schedule-card>
@@ -37,7 +39,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faPlus, faPencilAlt, faTrashAlt, faHistory } from '@fortawesome/free-solid-svg-icons';
@@ -71,7 +73,7 @@ export default {
     };
   },
   computed: {
-    ...mapState([
+    ...mapGetters([
       'schedules',
     ]),
     scheduleModes() {
@@ -96,10 +98,13 @@ export default {
     },
   },
   methods: {
+    ...mapActions([
+      'removeCustomScheduleMode'
+    ]),
     deleteSchedule(name) {
       this.$refs['confirm-popup'].displayPopup(`Are you sure you want to delete the schedule '${name}'`)
         .then(() => {
-          this.$store.commit('removeScheduleMode', { scheduleToRemove: name });
+          this.removeCustomScheduleMode({ scheduleToRemove: name });
         }, () => {
           // don't need to do anything if the user cancels
         });

@@ -1,7 +1,8 @@
 /* eslint-disable no-param-reassign */
 
 import { query } from 'vue-analytics';
-import defaultSchedules from 'src/data/schedules.json';
+import { getNameWithoutConflicts } from 'src/js/util';
+import officialSchedules from 'src/data/schedules.json';
 
 function parseUrlDateTime(route) {
   // If date and/or time is specified in URL, return that date
@@ -44,45 +45,33 @@ export default {
   setScheduleMode(state, scheduleMode) {
     state.scheduleMode = scheduleMode;
   },
-  setSchedules(state, schedules) {
-    state.schedules = schedules;
-    localStorage.schedules = JSON.stringify(schedules);
-  },
-  addScheduleMode(state, { scheduleType, scheduleToAdd, scheduleToReplace }) {
-    state.schedules.forEach((schedule) => {
-      if (schedule.name === scheduleType) {
-        const replaceIndex = schedule.modes
-          .map(mode => mode.name)
-          .indexOf(scheduleToReplace);
-        if (scheduleToReplace && replaceIndex > -1) {
-          schedule.modes.splice(replaceIndex, 1, scheduleToAdd);
-        } else {
-          schedule.modes.push(scheduleToAdd);
-        }
+  setCustomSchedules(state, schedules) {
+    // If there are any schedule modes with the same name as an official schedule mode, we want to rename the custom one
+    const officalScheduleModeNames = new Set();
+    for (const schedule of officialSchedules) {
+      for (const scheduleMode of schedule.modes) {
+        officalScheduleModeNames.add(scheduleMode.name);
       }
-    });
-    localStorage.schedules = JSON.stringify(state.schedules);
-  },
-  removeScheduleMode(state, { scheduleType, scheduleToRemove }) {
-    state.schedules.forEach((schedule) => {
-      if (!scheduleType || schedule.name === scheduleType) {
-        const removeIndex = schedule.modes
-          .map(mode => mode.name)
-          .indexOf(scheduleToRemove);
-        if (removeIndex > -1) {
-          schedule.modes.splice(removeIndex, 1);
-        }
+    }
+    for (const scheduleModes of Object.values(schedules)) {
+      for (const scheduleMode of scheduleModes) {
+        scheduleMode.name = getNameWithoutConflicts(
+          scheduleMode.name,
+          name => officalScheduleModeNames.has(name)
+        );
       }
-    });
-    localStorage.schedules = JSON.stringify(state.schedules);
+    }
+
+    state.customSchedules = schedules;
+    localStorage.customSchedules = JSON.stringify(schedules);
   },
   resetSchedules(state) {
-    state.schedules = defaultSchedules;
-    localStorage.schedules = JSON.stringify(defaultSchedules);
+    state.customSchedules = {};
+    localStorage.customSchedules = {};
   },
-  setDefaultSchedule(state, schedule) {
-    state.defaultSchedule = schedule;
-    localStorage.defaultSchedule = schedule;
+  setDefaultScheduleMode(state, schedule) {
+    state.defaultScheduleMode = schedule;
+    localStorage.defaultScheduleMode = schedule;
   },
   setGrade(state, grade) {
     state.grade = grade;

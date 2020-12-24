@@ -79,7 +79,7 @@ import SettingsSection from './SettingsSection.vue';
 
 const tranferableSettings = [ // the following strings should be direct properties of $store.state
   'color',
-  'defaultSchedule',
+  'defaultScheduleMode',
   'grade',
   'schedules',
 ];
@@ -127,7 +127,7 @@ export default {
     });
   },
   methods: {
-    settingToName(setting) { // convert setting to readable name ('defaultSchedule' to 'Default Schedule')
+    settingToName(setting) { // convert setting to readable name ('defaultScheduleMode' to 'Default Schedule Mode')
       const separatedWords = setting.replace(/([a-z])([A-Z])/g, '$1 $2'); // 'defaultScheduleSomething' to 'default Schedule Something'
       return separatedWords[0].toUpperCase() + separatedWords.slice(1); // capitalize first letter
     },
@@ -214,7 +214,7 @@ export default {
       if (this.receivedData) {
         for (const [setting, data] of Object.entries(this.receivedData)) {
           if (this.shouldSaveSetting[setting]) {
-            const mutation = `set${setting[0].toUpperCase()}${setting.slice(1)}`; // 'defaultSchedule' -> 'setDefaultSchedule'
+            const mutation = `set${setting[0].toUpperCase()}${setting.slice(1)}`; // 'defaultScheduleMode' -> 'setDefaultScheduleMode'
             this.$store.commit(mutation, data);
           }
         }
