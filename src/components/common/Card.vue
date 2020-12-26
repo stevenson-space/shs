@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       height: 0,
-      margin: 10,
+      margin: 9,
       spanValue: 0,
       mutationObserver: null,
       debounceTimeout: null,

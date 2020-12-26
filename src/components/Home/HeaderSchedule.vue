@@ -16,13 +16,19 @@
           <div v-if="inSchool" class="period">
             {{ period }}
           </div>
+
           <div v-else class="type">
             {{ scheduleType }}
           </div>
         </template>
 
         <router-link v-else to="/">
-          <rounded-button class="button" text="Go Back Live" :circular="false" :invert="true" />
+          <rounded-button
+            class="button"
+            text="Go Back Live"
+            :circular="false"
+            :invert="true"
+          />
         </router-link>
       </div>
 
@@ -35,16 +41,22 @@
         @input="$store.commit('setScheduleMode', scheduleModes[$event])"
       />
     </div>
+    <info-modal
+      style="display: inline-block"
+      v-if="bell.type.toLowerCase().includes('hybrid')"
+    />
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
-import Dropdown from 'common/Dropdown.vue';
-import RoundedButton from 'common/RoundedButton.vue';
+import { mapState, mapGetters } from "vuex";
+import Dropdown from "../common/Dropdown.vue";
+import RoundedButton from "common/RoundedButton.vue";
+import infoModal from "../common/InfoModal.vue";
 
 export default {
-  components: { Dropdown, RoundedButton },
+  components: { Dropdown, RoundedButton, infoModal },
+
   props: {
     inSchool: { type: Boolean, required: true },
     range: { type: String, required: true },
@@ -54,12 +66,8 @@ export default {
     fullScreenMode: { type: Boolean, default: false },
   },
   computed: {
-    ...mapState([
-      'mode',
-    ]),
-    ...mapGetters([
-      'bell',
-    ]),
+    ...mapState(["mode"]),
+    ...mapGetters(["bell"]),
   },
 };
 </script>
@@ -77,7 +85,10 @@ export default {
     font-size: 2.75vh
 
   .container
-    display: flex
+
+    display: inline-block
+    // display: flex
+
     align-items: center
     max-width: $content-width
     margin: auto
@@ -101,5 +112,4 @@ export default {
       +shadow
       text-decoration: none
       display: inline-block
-
 </style>
