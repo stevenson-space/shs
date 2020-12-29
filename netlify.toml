@@ -1,7 +1,11 @@
-[context.gh-pages]
+[build]
   publish = "docs/"
   command = "npm run build"
   environment = { TZ = "America/Chicago" }
+
+[context.old]
+  publish = "/"
+  command = ""
 
 [[redirects]]
   from = "/send/*"
