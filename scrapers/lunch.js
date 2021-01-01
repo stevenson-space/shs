@@ -8,7 +8,7 @@ const oldLunch = require("../src/data/lunch.json");
 const url = "https://www.d125.org/students/food-servicelunch-menu/latest-menu";
 const today = new Date();
 
-if (today.getFullYear() > 2020) {
+if (today.getTime() > new Date('6/1/2021').getTime()) {
 	main();
 }
 
