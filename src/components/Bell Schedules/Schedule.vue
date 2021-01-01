@@ -1,7 +1,10 @@
 <template>
   <div class="schedule" :style="style">
     <div ref="wrapper" class="wrapper">
-      <div class="schedule-name">{{ schedule.name }}</div>
+      <div class="schedule-name">
+        {{ schedule.name }}
+        <hybrid-info-modal class="hybrid-info" :schedule-type="schedule.name" />
+      </div>
 
       <div v-if="dropdownOptions.length > 1" class="schedule-select">
         <dropdown
@@ -30,6 +33,7 @@ import Bell from 'src/js/bell';
 import Period from 'common/Period.vue';
 import Dropdown from 'common/Dropdown.vue';
 import ScrollSelector from 'common/ScrollSelector.vue';
+import HybridInfoModal from 'common/HybridInfoModal.vue';
 import MultiDayPeriod from './MultiDayPeriod.vue';
 
 export default {
@@ -39,6 +43,7 @@ export default {
     MultiDayPeriod,
     Dropdown,
     ScrollSelector,
+    HybridInfoModal,
   },
   props: {
     schedule: { type: Object, required: true },
@@ -54,7 +59,9 @@ export default {
     };
   },
   computed: {
-    selectedModeString() { return this.dropdownOptions[this.selectedMode]; },
+    selectedModeString() {
+      return this.dropdownOptions[this.selectedMode];
+    },
     style() {
       const { height } = this;
       return {
@@ -168,11 +175,19 @@ export default {
     color: #555
     margin-left: 54px
     padding: 35px 0 15px 0
+    display: flex
+    align-items: center
+
     +mobile
       font-size: 2em
       margin-left: 0
-      text-align: center
+      justify-content: center
       padding: 25px 0 10px 0
+
+    .hybrid-info
+      display: inline-block
+      font-size: 1.3rem
+      margin-left: 10px
 
   .schedule-select
     display: flex

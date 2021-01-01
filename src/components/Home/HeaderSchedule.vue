@@ -16,13 +16,20 @@
           <div v-if="inSchool" class="period">
             {{ period }}
           </div>
+
           <div v-else class="type">
             {{ scheduleType }}
+            <hybrid-info-modal :schedule-type="scheduleType" style="display: inline-block;" />
           </div>
         </template>
 
         <router-link v-else to="/">
-          <rounded-button class="button" text="Go Back Live" :circular="false" :invert="true" />
+          <rounded-button
+            class="button"
+            text="Go Back Live"
+            :circular="false"
+            :invert="true"
+          />
         </router-link>
       </div>
 
@@ -39,12 +46,13 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
-import Dropdown from 'common/Dropdown.vue';
-import RoundedButton from 'common/RoundedButton.vue';
+import { mapState, mapGetters } from "vuex";
+import Dropdown from "common/Dropdown.vue";
+import RoundedButton from "common/RoundedButton.vue";
+import HybridInfoModal from "common/HybridInfoModal.vue";
 
 export default {
-  components: { Dropdown, RoundedButton },
+  components: { Dropdown, RoundedButton, HybridInfoModal },
   props: {
     inSchool: { type: Boolean, required: true },
     range: { type: String, required: true },
@@ -54,12 +62,8 @@ export default {
     fullScreenMode: { type: Boolean, default: false },
   },
   computed: {
-    ...mapState([
-      'mode',
-    ]),
-    ...mapGetters([
-      'bell',
-    ]),
+    ...mapState(["mode"]),
+    ...mapGetters(["bell"]),
   },
 };
 </script>
@@ -101,5 +105,4 @@ export default {
       +shadow
       text-decoration: none
       display: inline-block
-
 </style>
