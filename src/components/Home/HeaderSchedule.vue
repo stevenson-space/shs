@@ -19,6 +19,7 @@
 
           <div v-else class="type">
             {{ scheduleType }}
+            <hybrid-info-modal :schedule-type="scheduleType" style="display: inline-block;" />
           </div>
         </template>
 
@@ -41,22 +42,17 @@
         @input="$store.commit('setScheduleMode', scheduleModes[$event])"
       />
     </div>
-    <info-modal
-      style="display: inline-block"
-      v-if="bell.type.toLowerCase().includes('hybrid')"
-    />
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters } from "vuex";
-import Dropdown from "../common/Dropdown.vue";
+import Dropdown from "common/Dropdown.vue";
 import RoundedButton from "common/RoundedButton.vue";
-import infoModal from "../common/InfoModal.vue";
+import HybridInfoModal from "common/HybridInfoModal.vue";
 
 export default {
-  components: { Dropdown, RoundedButton, infoModal },
-
+  components: { Dropdown, RoundedButton, HybridInfoModal },
   props: {
     inSchool: { type: Boolean, required: true },
     range: { type: String, required: true },
@@ -85,10 +81,7 @@ export default {
     font-size: 2.75vh
 
   .container
-
-    display: inline-block
-    // display: flex
-
+    display: flex
     align-items: center
     max-width: $content-width
     margin: auto

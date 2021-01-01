@@ -9,15 +9,20 @@
       {{ range }}
     </div>
 
-    <div v-if="inSchool || mode === 'day'" class="type">{{ scheduleType }}</div>
+    <div v-if="inSchool || mode === 'day'" class="type">
+      {{ scheduleType }}
+      <hybrid-info-modal :schedule-type="scheduleType" />
+    </div>
     <div v-else class="next-day">{{ nextDay }}</div>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
+import HybridInfoModal from 'common/HybridInfoModal.vue';
 
 export default {
+  components: { HybridInfoModal },
   props: {
     inSchool: { type: Boolean, required: true },
     countdown: { type: String, required: true },

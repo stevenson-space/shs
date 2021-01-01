@@ -7,7 +7,7 @@
 		],
 		"modes": [
 			{
-				"name": "Hybrid",
+				"name": "Normal",
 				"start": [
 					"7:45",
 					"8:35",
@@ -53,7 +53,7 @@
 		],
 		"modes": [
 			{
-				"name": "Remote Hybrid",
+				"name": "Normal",
 				"start": [
 					"8:35",
 					"9:25",

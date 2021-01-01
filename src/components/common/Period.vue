@@ -63,7 +63,7 @@ export default {
     text-align: center
     font-weight: bold
     color: #333
-    margin: 5px 4px
+    margin: 5px
     padding: 8px
     overflow: hidden
     white-space: nowrap

@@ -1,10 +1,7 @@
 <template>
   <div class="what-is-this" @click.stop="">
     <div class="icon">
-      <font-awesome-icon
-        :icon="showInfoIcon ? icons.faInfoCircle : icons.faQuestionCircle"
-        fixed-width
-      />
+      <font-awesome-icon :icon="icon" fixed-width />
     </div>
 
     <div class="info-bubble">
@@ -15,23 +12,12 @@
 
 <script>
 import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
-import {
-  faQuestionCircle,
-  faInfoCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default {
   components: { FontAwesomeIcon },
   props: {
-    showInfoIcon: { type: Boolean, required: false, default: false },
-  },
-  data() {
-    return {
-      icons: {
-        faQuestionCircle,
-        faInfoCircle,
-      },
-    };
+    icon: { type: Object, required: false, default: () => faQuestionCircle },
   },
 };
 </script>
