@@ -57,8 +57,7 @@ export default {
   computed: {
     show() {
       return (
-        this.bell.type === "Hybrid"
-        && this.date.getDay() !== 3
+        this.bell.type === "Patriot Hybrid"
         && this.bell.school
         && this.getCycleIndex() >= 0
       );
@@ -110,7 +109,7 @@ export default {
 .title
   text-align: center
   font-size: 1.5em
-  margin: 3px 0
+  margin: 10px 0
 
 .row
   border-radius: 40px
