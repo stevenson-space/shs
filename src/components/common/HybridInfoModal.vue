@@ -1,22 +1,22 @@
 <template>
-  <div v-if="scheduleType === 'Hybrid' || scheduleType === 'Remote Hybrid' || scheduleType === 'Hybrid (Wed.)'">
+  <div v-if="scheduleType === 'Patriot Hybrid' || scheduleType === 'Remote Learning'">
     <div class="info-circle" @click="openModal()">
       <font-awesome-icon :icon="icons.faQuestionCircle" fixed-width />
     </div>
 
     <transition name="fade">
       <div v-if="showModal" class="modal" @click="closeModal()">
-        <div class="modal-content">
+        <div class="modal-content" @click.stop="">
           <div class="title">Schedule Information</div>
           <div class="divider" />
           <p>
-            "Remote Hybrid" means the schedule of hybrid learning but
+            "Remote Learning" means the schedule of hybrid learning but
             <b>only</b> online. This schedule is applicable for the weeks of Jan.
-            5 and Jan. 11
+            5 and Jan. 11 and on every Wednesday.
           </p>
           <div class="divider" />
           <p>
-            "Hybrid" means simultaneous on campus and online learning based on the
+            "Patriot Hybrid" means simultaneous on campus and online learning based on the
             3 color schedule. This schedule is planned to begin Jan. 19
           </p>
         </div>
