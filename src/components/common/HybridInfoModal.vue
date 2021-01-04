@@ -1,5 +1,5 @@
 <template>
-  <div v-if="scheduleType === 'Hybrid' || scheduleType === 'Remote Hybrid'">
+  <div v-if="scheduleType === 'Hybrid' || scheduleType === 'Remote Hybrid' || scheduleType === 'Hybrid (Wed.)'">
     <div class="info-circle" @click="openModal()">
       <font-awesome-icon :icon="icons.faQuestionCircle" fixed-width />
     </div>

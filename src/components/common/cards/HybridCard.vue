@@ -51,7 +51,7 @@ export default {
       },
 
       // letter represents who goes on campus, 0th index is morning, 1st index is afternoon
-      schedule: ["YG", "BY", "GB", "YG", "BY", "GB", "YG", "BY", "GB", "YG", "BY", "GB"],
+      schedule: ["YB", "BG", "GY", "YB", "BG", "GY", "YB", "BG", "GY", "YB", "BG", "GY"],
     };
   },
   computed: {
