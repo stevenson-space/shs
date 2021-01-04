@@ -10,7 +10,7 @@
           <div class="title">Schedule Information</div>
           <div class="divider" />
           <p>
-            "Remote Hybrid" means the schedule of hybrid learning but
+            "Remote Hybrid" means the schedule similar to hybrid learning but
             <b>only</b> online. This schedule is applicable for the weeks of Jan.
             5 and Jan. 11
           </p>
