@@ -1,7 +1,6 @@
-[
-	
+[	
 	{
-		"name": "Hybrid",
+		"name": "Patriot Hybrid",
 		"isSpecial": false,
 		"dates": [
 			"Weekdays"
@@ -36,7 +35,7 @@
 					"2",
 					"3",
 					"4",
-					"Break",
+					"!Break",
 					"5",
 					"6",
 					"7",
@@ -46,11 +45,12 @@
 		]
 	},
 	{
-		"name": "Remote Hybrid",
+		"name": "Remote Learning",
 		"isSpecial": true,
 		"dates": [
 			"1/5/2021-1/8/2021",
-			"1/11/2021-1/15/2021"
+			"1/11/2021-1/15/2021",
+			"wednesdays"
 		],
 		"modes": [
 			{
@@ -82,7 +82,7 @@
 					"2",
 					"3",
 					"4",
-					"Break",
+					"!Lunch",
 					"5",
 					"6",
 					"7",
@@ -128,52 +128,6 @@
 		
 		]
 	},
-	{
-		"name": "Hybrid (Wed.)",
-		"isSpecial": false,
-		"dates": [
-			"1/18/21-1/1/2022 & Wednesday"
-		],
-		"modes": [
-			{
-				"name": "Normal",
-				"start": [
-					"8:35",
-					"9:25",
-					"10:15",
-					"11:05",
-					"11:45",
-					"12:15",
-					"13:05",
-					"13:55",
-					"14:45"
-				],
-				"end": [
-					"9:15",
-					"10:05",
-					"10:55",
-					"11:45",
-					"12:15",
-					"12:55",
-					"13:45",
-					"14:35",
-					"15:25"
-				],
-				"periods": [
-					"1",
-					"2",
-					"3",
-					"4",
-					"Lunch",
-					"5",
-					"6",
-					"7",
-					"8"
-				]
-			}
-		]
-	},
-
 	{
 		"name": "Late Arrival",
 		"isSpecial": true,
@@ -224,7 +178,7 @@
 		]
 	},
 	{
-		"name": "Finals (EL)",
+		"name": "Finals",
 		"isSpecial": true,
 		"dates": [
 			"12/14/2020-12/16/2020"

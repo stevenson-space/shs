@@ -1,7 +1,7 @@
 <template>
   <div class="event">
     <div class="name" :class="direction">
-      <span>{{ name }}</span>
+      <div class="text">{{ name }}</div>
     </div>
     <div class="date">
       <span>{{ month }}</span>
@@ -60,14 +60,21 @@ export default {
     color: white
     font-size: .9em
 
+    .text
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+
     &.right
       right: 0
-      span
-        margin-left: var(--circle-radius)
+      .text
+        margin-left: calc(2*var(--circle-radius))
+        margin-right: calc(var(--circle-radius)/3)
 
     &.left
-      span
-        margin-right: var(--circle-radius)
+      .text
+        margin-right: calc(2*var(--circle-radius))
+        margin-left: calc(var(--circle-radius)/3)
 
   .date
     --border-width: 2px
