@@ -3,6 +3,7 @@
 		"name": "Patriot Hybrid",
 		"isSpecial": false,
 		"dates": [
+			"1/20/2021",
 			"Weekdays"
 		],
 		"modes": [
@@ -50,7 +51,7 @@
 		"dates": [
 			"1/5/2021-1/8/2021",
 			"1/11/2021-1/15/2021",
-			"wednesdays"
+			"wednesdays & !1/20/2021 & !2/17/2021"
 		],
 		"modes": [
 			{

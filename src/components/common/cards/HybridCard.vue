@@ -70,13 +70,17 @@ export default {
       const curDate = startDate;
       while (curDate <= endDate) {
         const dayOfWeek = curDate.getDay();
-        if (!(dayOfWeek === 6 || dayOfWeek === 0 || dayOfWeek === 3)) count++;
+        
+        const dd = curDate.getDate() //temp
+        const mm =  curDate.getMonth() //temp
+        if (!(dd == 16 && mm == 1) && (!(dayOfWeek === 6 || dayOfWeek === 0 || dayOfWeek === 3) || (dd == 20 && mm == 0) ||  (dd == 17 && mm == 1))) count++; //TEMP: these are edge cases for the schedule
+        // if (!(dayOfWeek === 6 || dayOfWeek === 0 || dayOfWeek === 3)) count++;
         curDate.setDate(curDate.getDate() + 1);
       }
       return count;
     },
     getCycleIndex() {
-      const calibration = { date: new Date("January 19, 2021"), cycleDay: 2 }; // calibration date and corresponding cyclic day (1-12)
+      const calibration = { date: new Date("January 19, 2021"), cycleDay: 1 }; // calibration date and corresponding cyclic day (1-12)
       if (this.date < calibration.date) {
         return -1;
       }

@@ -12,7 +12,7 @@
           <p>
             "Remote Learning" means the schedule similar to "Patriot Hybrid" but
             <b>only</b> online. This schedule is applicable for the weeks of Jan.
-            5 and Jan. 11 and on every Wednesday.
+            5 and Jan. 11 and on every Wednesday except the Wednesdays of 1/20/2021 and 2/17/2021 where the "Patriot Hybrid" schedule applies.
           </p>
           <div class="divider" />
           <p>
