@@ -7,7 +7,7 @@
 
     <card-container>
       <!-- <holiday-card /> -->
-      <hybrid-card />
+      <!-- <hybrid-card /> -->
       <schedule-card />
       <upcoming-events-card />
 
