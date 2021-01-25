@@ -10,7 +10,7 @@
 
         <span v-if="event.allDay">All Day</span>
 
-        <span v-else-if="event.start && event.end">
+        <span v-else-if="event.start && event.end && event.start !== event.end">
           {{ formatTime(event.start) }}&nbsp; – &nbsp;{{ formatTime(event.end) }}
         </span>
 
@@ -87,13 +87,18 @@ export default {
   .time
     font-size: 1.05em
     margin-top: 15px
+    display: flex
+    align-items: center
 
   .location
     margin-top: 20px
+    display: flex
+    align-items: center
 
   .icon
     color: var(--color)
     font-size: 1.25em
+    margin-right: 5px
 
   .description
     margin-top: 15px
