@@ -3,7 +3,6 @@
     <div ref="wrapper" class="wrapper">
       <div class="schedule-name">
         {{ schedule.name }}
-        <hybrid-info-modal class="hybrid-info" :schedule-type="schedule.name" />
       </div>
 
       <div v-if="dropdownOptions.length > 1" class="schedule-select">

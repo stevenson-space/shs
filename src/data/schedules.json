@@ -3,7 +3,8 @@
 		"name": "Patriot Hybrid",
 		"isSpecial": false,
 		"dates": [
-			"weekdays"
+			"1/27/2021",
+			"Weekdays & !1/26/2021"
 		],
 		"modes": [
 			{
@@ -48,9 +49,8 @@
 		"name": "Remote Learning",
 		"isSpecial": true,
 		"dates": [
-			"1/5/2021-1/8/2021",
-			"1/11/2021-1/15/2021",
-			"wednesdays & 1/19/2021-5/21/2021 & !1/20/2021 & !2/17/2021"
+			"1/26/2021",
+			"wednesdays & !1/27/2021 & !1/20/2021 & !2/17/2021"
 		],
 		"modes": [
 			{
