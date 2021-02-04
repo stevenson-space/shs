@@ -1,6 +1,9 @@
 <template>
   <div class="circle" :class="{ 'full-screen': fullScreenMode }">
-    <img src="static/patriot.png" class="logo">
+    <!-- Easter Egg -->
+    <img @mouseenter="masked = !masked" :src="masked ? 'static/patriot-masked.png' : 'static/patriot.png'" class="logo">
+    
+    <!-- <img @click="masked = !masked" src='static/patriot.png' class="logo"> --> 
 
     <div v-if="mode === 'current'" class="countdown">
       {{ countdown }}
@@ -33,6 +36,11 @@ export default {
   computed: mapState([
     'mode',
   ]),
+  data: function(){
+    return{
+      masked: false
+    }
+  }
 };
 </script>
 
