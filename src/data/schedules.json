@@ -3,8 +3,7 @@
 		"name": "Patriot Hybrid",
 		"isSpecial": false,
 		"dates": [
-			"1/27/2021",
-			"Weekdays & !1/26/2021"
+			"Weekdays"
 		],
 		"modes": [
 			{
@@ -50,7 +49,8 @@
 		"isSpecial": true,
 		"dates": [
 			"1/26/2021",
-			"wednesdays & !1/27/2021 & !1/20/2021 & !2/17/2021"
+			"wednesdays & !2/17/2021",
+			"3/2/2021"
 		],
 		"modes": [
 			{
@@ -157,7 +157,6 @@
 		"dates": [
 			"1/14/2021",
 			"2/10/2021",
-			"2/18/2021",
 			"4/22/2021"
 		],
 		"modes": [
@@ -262,15 +261,14 @@
 		"isSpecial": true,
 		"dates": [
 			"1st monday & september",
-			"9/28/2020",
-			"10/9/2020",
 			"2nd monday & october",
-			"11/3/2020",
 			"4th thursday & november",
 			"friday & 11/23-11/29",
 			"12/17/2020-1/4/2021",
 			"3rd monday & january",
 			"3rd monday & february",
+			"2/26/2021",
+			"3/1/2021",
 			"3/22/2021-3/26/2021",
 			"4/2/2021"
 		],
