@@ -49,17 +49,31 @@ export default {
       icons: {
         faArrowRight,
       },
-
-      // letter represents who goes on campus, 0th index is morning, 1st index is afternoon
-      schedule: ["YB", "BG", "GY", "YB", "BG", "GY", "YB", "BG", "GY", "YB", "BG", "GY"],
     };
   },
   computed: {
+    // letter represents who goes on campus, 0th index is morning, 1st index is afternoon
+    schedule() {
+      return [
+        "YB",
+        "BG",
+        "GY",
+        "YB",
+        "BG",
+        "GY",
+        "YB",
+        "BG",
+        "GY",
+        "YB",
+        "BG",
+        "GY",
+      ];
+    },
     show() {
       return (
-        this.bell.type === "Patriot Hybrid"
-        && this.bell.school
-        && this.getCycleIndex() >= 0
+        this.bell.type === "Patriot Hybrid" &&
+        this.bell.school &&
+        this.getCycleIndex() >= 0
       );
     },
     ...mapGetters(["date", "bell"]),
@@ -70,10 +84,16 @@ export default {
       const curDate = startDate;
       while (curDate <= endDate) {
         const dayOfWeek = curDate.getDay();
-        
-        const dd = curDate.getDate() //temp
-        const mm =  curDate.getMonth() //temp
-        if (!(dd == 16 && mm == 1) && (!(dayOfWeek === 6 || dayOfWeek === 0 || dayOfWeek === 3) || (dd == 20 && mm == 0) ||  (dd == 17 && mm == 1))) count++; //TEMP: these are edge cases for the schedule
+
+        const dd = curDate.getDate(); //temp
+        const mm = curDate.getMonth(); //temp
+        if (
+          !(dd == 16 && mm == 1) &&
+          (!(dayOfWeek === 6 || dayOfWeek === 0 || dayOfWeek === 3) ||
+            (dd == 20 && mm == 0) ||
+            (dd == 17 && mm == 1))
+        )
+          count++; //TEMP: these are edge cases for the schedule
         // if (!(dayOfWeek === 6 || dayOfWeek === 0 || dayOfWeek === 3)) count++;
         curDate.setDate(curDate.getDate() + 1);
       }
@@ -86,7 +106,7 @@ export default {
       }
       const cycleDaysSince = this.getBusinessDateCount(
         calibration.date,
-        this.date,
+        this.date
       );
       const cyclicDay = (cycleDaysSince - 1 + calibration.cycleDay - 1) % 12;
       return cyclicDay;

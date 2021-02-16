@@ -1,7 +1,7 @@
 <template>
   <card v-show="showCard">
     <img class="logo" src="static/snowman.png">
-    <div class="message">Have a great winter break!</div>
+    <div class="message">Happy Snow Day!</div>
   </card>
 </template>
 
@@ -12,10 +12,10 @@ export default {
   components: { Card },
   computed: {
     showCard() {
-      // start December 14, 2020, end January 6, 2021
-      const startTime = 1607925600; // in epoch miliseconds
-      const endTime = 1609912800;
+      const startTime = 1613455260; //Use "Epoch Timestamp" from https://www.epochconverter.com/
+     const endTime = 1613541540;
       const today = new Date() / 1000;
+      console.log(today)
       return today > startTime && today < endTime;
     },
   },
