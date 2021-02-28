@@ -55,18 +55,8 @@ export default {
     // letter represents who goes on campus, 0th index is morning, 1st index is afternoon
     schedule() {
       return [
-        "YB",
-        "BG",
-        "GY",
-        "YB",
-        "BG",
-        "GY",
-        "YB",
-        "BG",
-        "GY",
-        "YB",
-        "BG",
-        "GY",
+       "GB",
+       "BG"
       ];
     },
     show() {
@@ -100,7 +90,7 @@ export default {
       return count;
     },
     getCycleIndex() {
-      const calibration = { date: new Date("January 19, 2021"), cycleDay: 1 }; // calibration date and corresponding cyclic day (1-12)
+      const calibration = { date: new Date("March 2, 2021"), cycleDay: 1 };
       if (this.date < calibration.date) {
         return -1;
       }
@@ -108,7 +98,7 @@ export default {
         calibration.date,
         this.date
       );
-      const cyclicDay = (cycleDaysSince - 1 + calibration.cycleDay - 1) % 12;
+      const cyclicDay = (cycleDaysSince - 1 + calibration.cycleDay - 1) % 2;
       return cyclicDay;
     },
     getHybridSchedule() {
