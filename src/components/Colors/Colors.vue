@@ -1,14 +1,22 @@
 <template>
   <div>
     <div class="header">
-      <div
-        ref="custom-color"
-        class="custom-color"
-        contenteditable="true"
-        spellcheck="false"
-        @keydown.enter="$event.target.blur()"
-        @blur="colorSelected($event.target.innerText)"
-      />
+      <div class="custom-color-row">
+           <RoundedButton
+        class="reset-button"
+          v-show="color != '#1b5e20'"
+          @click="colorSelected('#1b5e20')"
+          text="Reset"
+        />
+        <div
+          ref="custom-color"
+          class="custom-color"
+          contenteditable="true"
+          spellcheck="false"
+          @keydown.enter="$event.target.blur()"
+          @blur="colorSelected($event.target.innerText)"
+        />
+      </div>
 
       <home-link class="home-link" />
     </div>
@@ -28,12 +36,12 @@
 </template>
 
 <script>
-import colors from 'src/data/colors.json';
-import Home from 'src/components/Home/Home.vue';
-import HomeLink from 'src/components/common/HomeLink.vue';
-
-import { mapState } from 'vuex';
-import ColorSelector from './ColorSelector.vue';
+import colors from "src/data/colors.json";
+import Home from "src/components/Home/Home.vue";
+import HomeLink from "src/components/common/HomeLink.vue";
+import RoundedButton from "common/RoundedButton.vue";
+import { mapState } from "vuex";
+import ColorSelector from "./ColorSelector.vue";
 
 const isValidColor = color => /^#([0-9a-f]{3}){1,2}$/i.test(color);
 
@@ -42,6 +50,7 @@ export default {
     ColorSelector,
     Home,
     HomeLink,
+    RoundedButton,
   },
   data() {
     return {
@@ -49,9 +58,7 @@ export default {
       previewHeight: 0,
     };
   },
-  computed: mapState([
-    'color',
-  ]),
+  computed: mapState(["color"]),
   watch: {
     color() {
       this.setCustomColorText();
@@ -103,6 +110,11 @@ export default {
     margin-left: 5px
     padding: 5px 10px
 
+.custom-color-row
+  display: flex
+  .reset-button
+    margin-left: 10px
+
 .preview
   width: 80%
   max-width: $content-width
@@ -135,5 +147,4 @@ export default {
       left: 0
       content: ''
       z-index: 26
-
 </style>
