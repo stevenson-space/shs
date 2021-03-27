@@ -7,17 +7,10 @@
     <transition name="fade">
       <div v-if="showModal" class="modal" @click="closeModal()">
         <div class="modal-content" @click.stop="">
-          <div class="title">Schedule Information</div>
+          <div class="title"> <b>Schedules change next week to the standard schedule for optional in-person learning</b></div>
           <div class="divider" />
           <p>
-            "Remote Learning" means the schedule similar to "Patriot Hybrid" but
-            <b>only</b> online. This schedule is applicable for the weeks of Jan.
-            5 and Jan. 11 and on every Wednesday except the Wednesdays of 1/20/2021 and 2/17/2021 where the "Patriot Hybrid" schedule applies.
-          </p>
-          <div class="divider" />
-          <p>
-            "Patriot Hybrid" means simultaneous on campus and online learning based on the
-            3 color schedule. This schedule is planned to begin Jan. 19
+            There will no longer be color groups. There will also be two almost identical schedules for in-person and remote learning. The only difference between the schedules is passing period length.
           </p>
         </div>
       </div>

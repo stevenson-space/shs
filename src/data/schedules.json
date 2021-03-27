@@ -48,9 +48,7 @@
 		"name": "Remote Learning",
 		"isSpecial": true,
 		"dates": [
-			"wednesdays & !2/17/2021 & !3/3/2021",
-			"3/2/2021",
-			"2/16/2021"
+			"wednesdays &!3/31/2021"
 		],
 		"modes": [
 			{

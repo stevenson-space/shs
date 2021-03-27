@@ -81,7 +81,7 @@ export default {
           !(dd == 16 && mm == 1) &&
           (!(dayOfWeek === 6 || dayOfWeek === 0 || dayOfWeek === 3) ||
             (dd == 20 && mm == 0) ||
-            (dd == 17 && mm == 1))
+            (dd == 17 && mm == 1) ||  (dd == 31 && mm == 2))
         )
           count++; //TEMP: these are edge cases for the schedule
         // if (!(dayOfWeek === 6 || dayOfWeek === 0 || dayOfWeek === 3)) count++;
