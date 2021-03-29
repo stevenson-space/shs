@@ -14,6 +14,7 @@
 
     <div v-if="inSchool || mode === 'day'" class="type">
       {{ scheduleType }}
+      <hybrid-info-modal :schedule-type="scheduleType" />
     </div>
     <div v-else class="next-day">{{ nextDay }}</div>
   </div>
