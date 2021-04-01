@@ -19,7 +19,6 @@
 
           <div v-else class="type">
             {{ scheduleType }}
-            <hybrid-info-modal :schedule-type="scheduleType" style="display: inline-block;" />
           </div>
         </template>
 
