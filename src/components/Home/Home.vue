@@ -7,7 +7,6 @@
 
     <card-container>
       <holiday-card />
-      <hybrid-card />
       <schedule-card />
       <upcoming-events-card />
 
@@ -61,7 +60,6 @@ import IconTextCard from "common/cards/IconTextCard.vue";
 import ScheduleCard from "common/cards/ScheduleCard.vue";
 import ScheduleHeader from "./Header.vue";
 import HolidayCard from "../common/cards/HolidayCard.vue";
-import HybridCard from "../common/cards/HybridCard.vue";
 
 export default {
   components: {
@@ -71,9 +69,8 @@ export default {
     LunchCard,
     IconTextCard,
     ScheduleCard,
-    HolidayCard,
-    HybridCard,
-  },
+    HolidayCard
+ },
   data() {
     return {
       icons: {

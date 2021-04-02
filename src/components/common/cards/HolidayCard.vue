@@ -15,7 +15,6 @@ export default {
       const startTime = 1613455260; //Use "Epoch Timestamp" from https://www.epochconverter.com/
      const endTime = 1613541540;
       const today = new Date() / 1000;
-      console.log(today)
       return today > startTime && today < endTime;
     },
   },
