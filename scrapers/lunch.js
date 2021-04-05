@@ -8,7 +8,6 @@ const oldLunch = require("../src/data/lunch.json");
 
 const url = "https://www.d125.org/student-life/food-services/latest-menu";
 
-main();
 
 async function main() {
 	const { lunch, numLunches } = await scrapeLunches();
