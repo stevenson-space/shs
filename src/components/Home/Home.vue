@@ -6,8 +6,8 @@
     />
 
     <card-container>
-      <holiday-card />
       <schedule-card />
+      <lunch-card/>
       <upcoming-events-card />
 
       <icon-text-card :icon="icons.faBell" text="Bell Schedules" link="bellschedules" />
@@ -55,11 +55,11 @@ import {
 
 import CardContainer from "common/CardContainer.vue";
 import UpcomingEventsCard from "common/cards/UpcomingEventsCard.vue";
-import LunchCard from "common/cards/LunchCard.vue";
 import IconTextCard from "common/cards/IconTextCard.vue";
 import ScheduleCard from "common/cards/ScheduleCard.vue";
 import ScheduleHeader from "./Header.vue";
 import HolidayCard from "../common/cards/HolidayCard.vue";
+import LunchCard from '../common/cards/LunchCard.vue';
 
 export default {
   components: {
@@ -69,7 +69,7 @@ export default {
     LunchCard,
     IconTextCard,
     ScheduleCard,
-    HolidayCard
+    HolidayCard,
  },
   data() {
     return {

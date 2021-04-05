@@ -2,15 +2,15 @@ const fs = require("fs");
 const path = require("path");
 const axios = require("axios");
 const cheerio = require("cheerio");
-
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 const oldLunch = require("../src/data/lunch.json");
 
-const url = "https://www.d125.org/students/food-servicelunch-menu/latest-menu";
+
+const url = "https://www.d125.org/student-life/food-services/latest-menu";
 const today = new Date();
 
-if (today.getTime() > new Date('6/1/2021').getTime()) {
-	main();
-}
+main();
 
 async function main() {
 	const { lunch, numLunches } = await scrapeLunches();
@@ -36,20 +36,12 @@ async function scrapeLunches() {
 		const lunchObject = {};
 		let numLunches = 0;
 
-		// cheerio works basically like jQuery
-		const $ = cheerio.load(response.data);
-		$(
-			"#fsPageContent .fsPageLayout .fsPanelGroup .fsElementContent section.fsElement"
-		).each(function() {
-			const lunchesText = $(this)
-				.children(".fsElementContent")
-				.text()
-				.trim();
-			const dateText = $(this)
-				.children("header")
-				.text()
-				.trim();
-
+		const dom = new JSDOM(String(response.data));
+		for (var x of dom.window.document.querySelectorAll("h5")) {
+			var dateText = x.textContent
+			var lunchesText = x.nextSibling.nextSibling.textContent
+			dateText = dateText.substring(0, dateText.indexOf(" ")) + "," + dateText.substring(dateText.indexOf(" "))
+			console.log(dateText)
 			// we only want to attempt parsing the lunch if the text actually contains lunch items
 			// (sometime's it's empty on no school days or contains text such as "Chef's Choice" or "Breakfast all day")
 			if (lunchesText.match(/Comfort Food/i)) {
@@ -65,8 +57,8 @@ async function scrapeLunches() {
 					`warning: skipping the day "${dateText}" due to invalid lunch text: "${lunchesText}"`
 				);
 			}
-		});
 
+		}
 		return { lunch: lunchObject, numLunches };
 	} catch (err) {
 		exitWithError(`Request to "${url}" failed because:\n${err}`);
@@ -75,27 +67,7 @@ async function scrapeLunches() {
 
 // parses date from string formatted like "Thursday, Nov. 14 - Late Arrival"
 function parseDate(dateText) {
-	// remove any text that is in parentheses
-	dateText = dateText.replace(/\(.*?\)/g, "");
-
-	// normalize separators (d125 sometimes uses hyphens, other times commas)
-	dateText = dateText.replace(/-/g, ",");
 	console.log(dateText);
-	// replace a comma after the month with a period ('Thursday, Jan, 16' --> 'Thursday, Jan 16')
-	dateText = dateText.replace(/\,(\s[0-9])/gm, ".$1"); // replace with period and retain rest of capturing group
-
-	// get rid of any other text ('Monday, Aug 12 , First Day of School' -> 'Monday, Aug 12')
-	dateText = dateText
-		.split(",")
-		.slice(0, 2)
-		.join(",")
-		.trim();
-
-	// remove day of week and add year ('Monday, Aug 12' -> 'Aug 12 2019')
-	dateText = `${dateText
-		.slice(dateText.indexOf(",") + 1)
-		.trim()} ${today.getFullYear()}`;
-
 	const longMonths = [
 		"January",
 		"February",
@@ -111,32 +83,28 @@ function parseDate(dateText) {
 		"December"
 	];
 
-	const months = [
-		"jan",
-		"feb",
-		"mar",
-		"apr",
-		"may",
-		"jun",
-		"jul",
-		"aug",
-		"sep",
-		"oct",
-		"nov",
-		"dec"
-	];
+	var month = "";
+	for (var m of longMonths) {
+		if (dateText.includes(m)) {
+			month = m;
+			break;
+		}
+	}
 
-	// replace long instances of month names to short onces
-	for (let i = 0; i < longMonths.length; i++)
-		dateText = dateText.replace(longMonths[i], months[i]);
+	var numbers = [];
+	for (var i = 31; i >= 0; i--) {
+		numbers.push(i)
+	}
 
-	exitWithErrorIf(
-		!dateText.match(
-			new RegExp(`^(${months.join("|")})\.?\\s+\\d{1,2}\\s+\\d{4}$`, "i")
-		),
-		`"${dateText}" failed to pass date check`
-	);
-	return new Date(dateText);
+
+	for (var x of numbers) {
+		if (dateText.includes(x)) {
+			console.log("month:" + month + " day: " + x)
+			return new Date(`${month} ${x}, 2021`);
+
+		}
+	}
+
 }
 
 // Converts this:
@@ -206,14 +174,14 @@ function printMissingLunches(lunch, numLunches) {
 
 		console.log(
 			"\nThe website currently does not contain information for the following days on the " +
-				`28-day cycle: \n - ${missing.join("\n - ")}`
+			`28-day cycle: \n - ${missing.join("\n - ")}`
 		);
 		console.log(
 			"\nPlease manually add lunch information for those days when possible."
 		);
 		console.log(
 			"Possible dates that could be used to provide the missing information are: " +
-				`\n - ${exampleDates.join("\n - ")}`
+			`\n - ${exampleDates.join("\n - ")}`
 		);
 		console.log(
 			"or any other date that is obtained by adding a multiple of 28 days to the ones above.\n"
