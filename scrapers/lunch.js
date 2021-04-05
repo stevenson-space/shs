@@ -6,9 +6,7 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const oldLunch = require("../src/data/lunch.json");
 
-
 const url = "https://www.d125.org/student-life/food-services/latest-menu";
-const today = new Date();
 
 main();
 
@@ -29,6 +27,11 @@ async function main() {
 // calculates the number of days since epoch time
 const toDays = date =>
 	parseInt((date.getTime() / 1000 / 60 - date.getTimezoneOffset()) / 60 / 24);
+
+var numbers = [];
+for (var i = 31; i >= 0; i--) {
+	numbers.push(i)
+}
 
 async function scrapeLunches() {
 	try {
@@ -67,7 +70,6 @@ async function scrapeLunches() {
 
 // parses date from string formatted like "Thursday, Nov. 14 - Late Arrival"
 function parseDate(dateText) {
-	console.log(dateText);
 	const longMonths = [
 		"January",
 		"February",
@@ -91,17 +93,10 @@ function parseDate(dateText) {
 		}
 	}
 
-	var numbers = [];
-	for (var i = 31; i >= 0; i--) {
-		numbers.push(i)
-	}
-
-
 	for (var x of numbers) {
 		if (dateText.includes(x)) {
 			console.log("month:" + month + " day: " + x)
 			return new Date(`${month} ${x}, 2021`);
-
 		}
 	}
 
