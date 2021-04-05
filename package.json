@@ -15,6 +15,7 @@
 		"client-oauth2": "^4.2.5",
 		"dotenv": "^8.2.0",
 		"dotenv-webpack": "^1.7.0",
+		"jsdom": "^16.5.2",
 		"scroll-behavior-polyfill": "^2.0.10",
 		"superagent": "^5.0.5",
 		"vue": "^2.5.16",
