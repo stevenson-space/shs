@@ -4,8 +4,7 @@
       <img class="logo" src="static/shsHacks.png">
       <div class="register">
         Free-to-attend virtual hackathon,
-        <br>
-        register by <span class="color">11:59pm</span> on Saturday! &nbsp;
+        register by <span class="color">11:59pm</span> on Saturday (4/17)! &nbsp;
         <font-awesome-icon :icon="faExternalLinkAlt" class="link-icon" />
       </div>
     </a>
@@ -44,6 +43,9 @@ export default {
     font-size: .85em
     text-align: left
     padding-bottom: 10px
+    margin: 0 20px
+    line-height: 1.6em
+    text-align: center
     .color
       color: var(--color)
       font-weight: bold
