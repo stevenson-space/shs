@@ -3,7 +3,9 @@
     <a class="main-link" href="https://shshacks.io" target="_blank">
       <img class="logo" src="static/shsHacks.png">
       <div class="register">
-        Register by <span class="color">11:59pm</span> on Monday! &nbsp;
+        Free-to-attend virtual hackathon,
+        <br>
+        register by <span class="color">11:59pm</span> on Saturday! &nbsp;
         <font-awesome-icon :icon="faExternalLinkAlt" class="link-icon" />
       </div>
     </a>
@@ -35,12 +37,12 @@ export default {
   flex-direction: column
 
   .logo
-    height: 85px
+    height: 100px
     padding: 10px 5px
 
   .register
     font-size: .85em
-    text-align: center
+    text-align: left
     padding-bottom: 10px
     .color
       color: var(--color)
