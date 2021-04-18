@@ -6,7 +6,7 @@
     />
 
     <card-container>
-      <shs-hacks-card />
+      <!-- <shs-hacks-card /> -->
       <schedule-card />
       <lunch-card />
       <upcoming-events-card />
