@@ -35,14 +35,10 @@ export default {
       'bell',
     ]),
     periods() {
-      console.log(this.bell)
       if (this.schedule || this.bell.school) {
         const { start, end, periods } = this.schedule || this.bell.schedule;
-
         const result = [];
-
         periods.forEach((period, i) => {
-          console.log(period)
             if(this.bell.period.name == '!Passing' && this.bell.period.end == start[i]){
              result.push({
              name: "Passing",
