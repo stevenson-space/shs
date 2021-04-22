@@ -1,16 +1,29 @@
 <template>
-  <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">
-    <div class="circle" :style="{ fontSize: periodFontSize }">{{ actualPeriod }}</div>
+  <div
+    v-if="period != 'Passing'"
+    class="period"
+    :class="{ 'not-mobile': !forceMobileLayout, invert }"
+  >
+    <div class="circle" :style="{ fontSize: periodFontSize }">
+      {{ actualPeriod }}
+    </div>
     <div class="range">
       <div class="time">{{ convertMilitaryTime(start) }}</div>
       <span class="dash"> – </span>
       <div class="time">{{ convertMilitaryTime(end) }}</div>
     </div>
+    <div class="spacer"></div>
+  </div>
+  <div v-else>
+    <div class="passing-container">
+      <div class="line">
+        <span class="title">Up Next</span>
+      </div>
+    </div>
   </div>
 </template>
-
 <script>
-import Bell from 'src/js/bell';
+import Bell from "src/js/bell";
 
 export default {
   props: {
@@ -24,10 +37,10 @@ export default {
     actualPeriod() {
       // remove the ! mark in front of period names
       const { period } = this;
-      return period[0] === '!' ? period.substring(1) : period;
+      return period[0] === "!" ? period.substring(1) : period;
     },
     periodFontSize() {
-      return this.period.length > 10 ? '1em' : '1.3em';
+      return this.period.length > 10 ? "1em" : "1.3em";
     },
   },
   methods: {
@@ -39,6 +52,22 @@ export default {
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 
+.passing-container
+  padding: 0px 13px
+
+  .line
+    width: 100%
+    height: 13px
+    margin: 10px auto 20px auto
+    border-bottom: 1px solid grey
+    text-align: center
+
+  .title
+    font-size: 15px
+    background-color: white
+    color: grey
+    padding: 3px
+
 .period
   +shadow
   border-radius: 100px
@@ -49,7 +78,7 @@ export default {
   flex-grow: 1
   margin: 5px
   padding: 2px
-  width: calc(100% - 14px); // 2 * 5px (margin) + 2 * 2px (padding) = 14px
+  width: calc(100% - 14px) // 2 * 5px (margin) + 2 * 2px (padding) = 14px
   &.not-mobile
     +tablet
       width: calc(50% - 14px)
@@ -68,6 +97,10 @@ export default {
     overflow: hidden
     white-space: nowrap
     text-overflow: ellipsis
+
+  .spacer
+    width: 40px
+    height: 2px
 
   .range
     color: white
@@ -112,5 +145,4 @@ export default {
 
         .dash
           display: none
-
 </style>
