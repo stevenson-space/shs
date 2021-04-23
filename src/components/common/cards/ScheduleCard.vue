@@ -6,7 +6,7 @@
         v-for="period in periods"
         :key="period.name"
         ref="period"
-        class="period"
+        :class="period.name == 'Passing' ? 'passing' : 'period'"
         :start="period.start"
         :end="period.end"
         :period="period.name"
@@ -37,10 +37,17 @@ export default {
     periods() {
       if (this.schedule || this.bell.school) {
         const { start, end, periods } = this.schedule || this.bell.schedule;
-
         const result = [];
-
         periods.forEach((period, i) => {
+            if(this.bell.period.name == '!Passing' && this.bell.period.end == start[i]){
+             result.push({
+             name: "Passing",
+             start: start[i],
+             end: end[i],
+              isCurrent: true,
+             });
+            }
+
           result.push({
             name: period,
             start: start[i],
