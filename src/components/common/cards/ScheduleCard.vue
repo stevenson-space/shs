@@ -6,7 +6,7 @@
         v-for="period in periods"
         :key="period.name"
         ref="period"
-        :class="period.name == 'Passing' ? 'Passing' : 'Period'"
+        :class="period.name == 'Passing' ? 'passing' : 'period'"
         :start="period.start"
         :end="period.end"
         :period="period.name"
