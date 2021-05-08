@@ -21,7 +21,6 @@
 <script>
 import Card from 'common/Card.vue';
 import Period from 'common/Period.vue';
-
 import { mapGetters } from 'vuex';
 
 export default {
@@ -86,7 +85,6 @@ export default {
         const $container = this.$refs.periods;
         const containerHeight = $container.offsetHeight;
         const { offsetTop, offsetHeight } = $period.$el;
-
         // Set the scroll so that the current period is centered
         $container.scrollTop = offsetTop - containerHeight / 2 + offsetHeight / 2;
       }
@@ -110,11 +108,8 @@ export default {
   .periods
     max-height: 275px
     overflow-y: scroll
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch
     position: relative
-    +no-scrollbar
-    // +mobile
-      // height: 175px
 
     .period
       margin-left: 4px
