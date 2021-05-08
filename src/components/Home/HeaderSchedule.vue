@@ -48,10 +48,9 @@
 import { mapState, mapGetters } from "vuex";
 import Dropdown from "common/Dropdown.vue";
 import RoundedButton from "common/RoundedButton.vue";
-import HybridInfoModal from "common/HybridInfoModal.vue";
 
 export default {
-  components: { Dropdown, RoundedButton, HybridInfoModal },
+  components: { Dropdown, RoundedButton },
   props: {
     inSchool: { type: Boolean, required: true },
     range: { type: String, required: true },

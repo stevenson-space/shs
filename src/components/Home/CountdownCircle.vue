@@ -21,10 +21,8 @@
 
 <script>
 import { mapState } from 'vuex';
-import HybridInfoModal from 'common/HybridInfoModal.vue';
 
 export default {
-  components: { HybridInfoModal },
   props: {
     inSchool: { type: Boolean, required: true },
     countdown: { type: String, required: true },

@@ -26,31 +26,24 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import Bell from 'src/js/bell';
 import Period from 'common/Period.vue';
 import Dropdown from 'common/Dropdown.vue';
 import ScrollSelector from 'common/ScrollSelector.vue';
-import HybridInfoModal from 'common/HybridInfoModal.vue';
 import MultiDayPeriod from './MultiDayPeriod.vue';
 
 export default {
   components: {
-    FontAwesomeIcon,
     Period,
     MultiDayPeriod,
     Dropdown,
     ScrollSelector,
-    HybridInfoModal,
   },
   props: {
     schedule: { type: Object, required: true },
   },
   data() {
     return {
-      faChevronLeft,
-      faChevronRight,
       height: null,
       selectedMode: 0,
       resizeListener: null,
