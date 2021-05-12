@@ -110,6 +110,7 @@ export default {
     overflow-y: scroll
     -webkit-overflow-scrolling: touch
     position: relative
+    +no-scrollbar
 
     .period
       margin-left: 4px
