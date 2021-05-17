@@ -2,7 +2,8 @@
   <card ref="card" class="card">
     <custom-link :href="link" v-bind="linkProps">
       <img class="image" :src="image" @load="setHeight">
-      <div class="text">{{ text }}</div>
+        <div class="text-group text">{{ text }}</div>
+        <div class="text-group desc">{{ desc }}</div>
     </custom-link>
   </card>
 </template>
@@ -16,6 +17,7 @@ export default {
   props: {
     image: { type: String, required: true },
     text: { type: String, required: true },
+    desc: {type: String, required: false},
     link: { type: [String, Object], required: true },
     linkProps: { type: Object, default: () => ({}) },
   },
@@ -40,9 +42,7 @@ export default {
     opacity: .5
     transition: opacity .2s
 
-  .text
-    text-align: center
-    font-size: 2em
+  .text-group
     font-weight: bold
     color: white
     position: absolute
@@ -53,12 +53,21 @@ export default {
     display: flex
     justify-content: center
     align-items: center
+    text-align: center
+
+  .text
+    font-size: 2em
+
+  .desc
+    position: absolute
+    font-size: 15px
+    top: 40px
 
   &:hover
     .image
       opacity: 1
 
-    .text
+    .text,.desc
       display: none
 
 </style>
