@@ -81,7 +81,7 @@ const tranferableSettings = [ // the following strings should be direct properti
   'color',
   'defaultScheduleMode',
   'grade',
-  'schedules',
+  'customSchedules',
 ];
 
 const popups = {
