@@ -11,98 +11,98 @@ const url = "https://www.d125.org/student-life/food-services/latest-menu";
 main();
 
 async function main() {
-	const { lunch, numLunches } = await scrapeLunches();
-	// replace values in oldLunch with new ones from lunchObject
-	// (not just using lunchObject directly in case lunchObject is missing certain dates)
-	const newLunch = { ...oldLunch };
-	for (const [key, value] of Object.entries(lunch)) {
-		newLunch[key] = value;
-	}
-	saveLunch(newLunch);
-	printMissingLunches(lunch, numLunches);
+  const { lunch, numLunches } = await scrapeLunches();
+  // replace values in oldLunch with new ones from lunchObject
+  // (not just using lunchObject directly in case lunchObject is missing certain dates)
+  const newLunch = { ...oldLunch };
+  for (const [key, value] of Object.entries(lunch)) {
+    newLunch[key] = value;
+  }
+  saveLunch(newLunch);
+  printMissingLunches(lunch, numLunches);
 }
 
 // calculates the number of days since epoch time
 const toDays = date =>
-	parseInt((date.getTime() / 1000 / 60 - date.getTimezoneOffset()) / 60 / 24);
+  parseInt((date.getTime() / 1000 / 60 - date.getTimezoneOffset()) / 60 / 24);
 
 async function scrapeLunches() {
-	try {
-		const response = await axios.get(url);
-		const lunchObject = {};
-		let numLunches = 0;
+  try {
+    const response = await axios.get(url);
+    const lunchObject = {};
+    let numLunches = 0;
 
-		const dom = new JSDOM(String(response.data));
-		for (var x of dom.window.document.querySelectorAll("h5")) { //all day labels have an h5 tag
-			var dateText = x.textContent
-			var lunchesText = x.nextSibling.nextSibling.textContent
-			// we only want to attempt parsing the lunch if the text actually contains lunch items
-			// (sometime's it's empty on no school days or contains text such as "Chef's Choice" or "Breakfast all day")
-			if (lunchesText.match(/Comfort Food/i)) {
-				 var parsedDate = getDateInfo(dateText);
-				 var month = parsedDate.month;
-				 var day = parsedDate.day;
-				 if (month.length > 0 &&  day > 0) {
-					 numLunches++;
-					 console.log(`${month} ${day}, ${new Date().getFullYear()}`)
-					const date = new Date(`${month} ${day}, ${new Date().getFullYear()}`);
-					// set the respective date on cycle of 28 days to the lunch
-					lunchObject[String(toDays(date) % 28)] = processLunches(
-						lunchesText
-					);
-				} else {
-					console.log(
-						`warning: skipping the day "${dateText}" due to invalid date text: "${dateText}"`
-					);
-				}
-			} else {
-				console.log(
-					`warning: skipping the day "${dateText}" due to invalid lunch text: "${lunchesText}"`
-				);
-			}
-		}
-		return { lunch: lunchObject, numLunches };
-	} catch (err) {
-		exitWithError(`Request to "${url}" failed because:\n${err}`);
-	}
+    const dom = new JSDOM(String(response.data));
+    for (var x of dom.window.document.querySelectorAll("h5")) { //all day labels have an h5 tag
+      var dateText = x.textContent
+      var lunchesText = x.nextSibling.nextSibling.textContent
+      // we only want to attempt parsing the lunch if the text actually contains lunch items
+      // (sometime's it's empty on no school days or contains text such as "Chef's Choice" or "Breakfast all day")
+      if (lunchesText.match(/Comfort Food/i)) {
+         var parsedDate = getDateInfo(dateText);
+         var month = parsedDate.month;
+         var day = parsedDate.day;
+         if (month.length > 0 &&  day > 0) {
+           numLunches++;
+           console.log(`${month} ${day}, ${new Date().getFullYear()}`)
+          const date = new Date(`${month} ${day}, ${new Date().getFullYear()}`);
+          // set the respective date on cycle of 28 days to the lunch
+          lunchObject[String(toDays(date) % 28)] = processLunches(
+            lunchesText
+          );
+        } else {
+          console.log(
+            `warning: skipping the day "${dateText}" due to invalid date text: "${dateText}"`
+          );
+        }
+      } else {
+        console.log(
+          `warning: skipping the day "${dateText}" due to invalid lunch text: "${lunchesText}"`
+        );
+      }
+    }
+    return { lunch: lunchObject, numLunches };
+  } catch (err) {
+    exitWithError(`Request to "${url}" failed because:\n${err}`);
+  }
 }
 
 //gets month and day from string formatted like "April 5 - Late Arrival"
 function getDateInfo(dateText) {
-	var numbers = [];
-	for (var i = 31; i >= 0; i--) {
-		numbers.push(i)
-	}
+  var numbers = [];
+  for (var i = 31; i >= 0; i--) {
+    numbers.push(i)
+  }
 
-	const months = [
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-		"August",
-		"September",
-		"October",
-		"November",
-		"December"
-	];
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
 
-	var month = "";
-	for (var m of months) {
-		if (dateText.includes(m)) {
-			month = m;
-			break;
-		}
-	}
+  var month = "";
+  for (var m of months) {
+    if (dateText.includes(m)) {
+      month = m;
+      break;
+    }
+  }
 
-	for (var x of numbers) {
-		if (dateText.includes(x)) {
-			return {"month": month,"day": x}
-		}
-	}
-	return {"month": "","day": -1}
+  for (var x of numbers) {
+    if (dateText.includes(x)) {
+      return {"month": month,"day": x}
+    }
+  }
+  return {"month": "","day": -1}
 }
 
 // Converts this:
@@ -116,81 +116,81 @@ function getDateInfo(dateText) {
 //   "Sides": ["Brussel Sprouts", "Mashed Sweet Potatoes"]
 // }
 function processLunches(lunchesText) {
-	const lunches = {};
-	lunchesText.split("\n").forEach(lunchItem => {
-		const [lunchType, lunch] = lunchItem.split(":");
-		lunches[lunchType] = lunch.split(",").map(x => x.trim());
-	});
-	return lunches;
+  const lunches = {};
+  lunchesText.split("\n").forEach(lunchItem => {
+    const [lunchType, lunch] = lunchItem.split(":");
+    lunches[lunchType] = lunch.split(",").map(x => x.trim());
+  });
+  return lunches;
 }
 
 function saveLunch(lunch) {
-	fs.writeFile(
-		path.join(__dirname, "..", "src", "data", "lunch.json"),
-		JSON.stringify(lunch, null, 2),
-		err => {
-			if (err) {
-				exitWithError(`Error saving file:\n${err}`);
-			} else {
-				console.log("Data saved to lunch.json");
-			}
-		}
-	);
+  fs.writeFile(
+    path.join(__dirname, "..", "src", "data", "lunch.json"),
+    JSON.stringify(lunch, null, 2),
+    err => {
+      if (err) {
+        exitWithError(`Error saving file:\n${err}`);
+      } else {
+        console.log("Data saved to lunch.json");
+      }
+    }
+  );
 }
 
 function printMissingLunches(lunch, numLunches) {
-	console.log(`${numLunches}/20 dates found`);
+  console.log(`${numLunches}/20 dates found`);
 
-	// the website doesn't contain all the lunches at the moment
-	if (numLunches < 20) {
-		// the relative days on the 28-day cycle that are missing from lunches
-		const missing = [];
-		// example dates to display in order to make manually filling in the lunches easier
-		const exampleDates = [];
-		const date = new Date();
-		for (let i = 0; i < 28; i++) {
-			// if day is a weekday
-			if (date.getDay() % 6 !== 0) {
-				// day on the 28-day cycle
-				const cyclicDay = String(toDays(date) % 28);
-				// if the lunch for this day does not exist
-				if (!lunch[cyclicDay]) {
-					missing.push(cyclicDay);
-					exampleDates.push(
-						date.toLocaleDateString("en-US", {
-							weekday: "long",
-							month: "long",
-							day: "numeric",
-							year: "numeric"
-						})
-					);
-				}
-			}
+  // the website doesn't contain all the lunches at the moment
+  if (numLunches < 20) {
+    // the relative days on the 28-day cycle that are missing from lunches
+    const missing = [];
+    // example dates to display in order to make manually filling in the lunches easier
+    const exampleDates = [];
+    const date = new Date();
+    for (let i = 0; i < 28; i++) {
+      // if day is a weekday
+      if (date.getDay() % 6 !== 0) {
+        // day on the 28-day cycle
+        const cyclicDay = String(toDays(date) % 28);
+        // if the lunch for this day does not exist
+        if (!lunch[cyclicDay]) {
+          missing.push(cyclicDay);
+          exampleDates.push(
+            date.toLocaleDateString("en-US", {
+              weekday: "long",
+              month: "long",
+              day: "numeric",
+              year: "numeric"
+            })
+          );
+        }
+      }
 
-			date.setDate(date.getDate() + 1);
-		}
+      date.setDate(date.getDate() + 1);
+    }
 
-		console.log(
-			"\nThe website currently does not contain information for the following days on the " +
-			`28-day cycle: \n - ${missing.join("\n - ")}`
-		);
-		console.log(
-			"\nPlease manually add lunch information for those days when possible."
-		);
-		console.log(
-			"Possible dates that could be used to provide the missing information are: " +
-			`\n - ${exampleDates.join("\n - ")}`
-		);
-		console.log(
-			"or any other date that is obtained by adding a multiple of 28 days to the ones above.\n"
-		);
-	}
+    console.log(
+      "\nThe website currently does not contain information for the following days on the " +
+      `28-day cycle: \n - ${missing.join("\n - ")}`
+    );
+    console.log(
+      "\nPlease manually add lunch information for those days when possible."
+    );
+    console.log(
+      "Possible dates that could be used to provide the missing information are: " +
+      `\n - ${exampleDates.join("\n - ")}`
+    );
+    console.log(
+      "or any other date that is obtained by adding a multiple of 28 days to the ones above.\n"
+    );
+  }
 }
 
 function exitWithError(errMessage) {
-	console.log(errMessage);
-	process.exit(1);
+  console.log(errMessage);
+  process.exit(1);
 }
 function exitWithErrorIf(condition, errMessage) {
-	if (condition) exitWithError(errMessage);
+  if (condition) exitWithError(errMessage);
 }

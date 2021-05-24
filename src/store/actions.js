@@ -11,7 +11,7 @@ export default {
   addCustomScheduleMode({ commit, state }, { scheduleType, scheduleToAdd, scheduleToReplace }) {
     // If scheduleToReplace is not defined, then we want to just add to end of scheduleModes list
     const scheduleModes = (state.customSchedules || {})[scheduleType] || [];
-    const replaceIndex = scheduleModes.map(mode => mode.name).indexOf(scheduleToReplace);
+    const replaceIndex = scheduleModes.map((mode) => mode.name).indexOf(scheduleToReplace);
     // Notice that scheduleModes only contains schedules from customSchedules, so if scheduleToReplace is an
     // official schedule, then replaceIndex will be -1, and we'll just add the new schedule without replacing anything
     // (this is the expected behavior because official schedules can't be modified or replaced)
@@ -27,12 +27,12 @@ export default {
     // if scheduleType is not provided, then we remove scheduleToRemove for all schedule types
     for (const [type, scheduleModes] of Object.entries(state.customSchedules || {})) {
       if (!scheduleType || scheduleType === type) {
-        const removeIndex = scheduleModes.map(mode => mode.name).indexOf(scheduleToRemove);
+        const removeIndex = scheduleModes.map((mode) => mode.name).indexOf(scheduleToRemove);
         if (removeIndex > -1) {
           scheduleModes.splice(removeIndex, 1);
         }
       }
     }
     commit('setCustomSchedules', state.customSchedules);
-  }
+  },
 };

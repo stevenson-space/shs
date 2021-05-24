@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 
 import { query } from 'vue-analytics';
-import { getNameWithoutConflicts } from 'src/js/util';
-import officialSchedules from 'src/data/schedules.json';
+import { getNameWithoutConflicts } from '@/utils/util';
+import officialSchedules from '@/data/schedules.json';
 
 function parseUrlDateTime(route) {
   // If date and/or time is specified in URL, return that date
@@ -57,7 +57,7 @@ export default {
       for (const scheduleMode of scheduleModes) {
         scheduleMode.name = getNameWithoutConflicts(
           scheduleMode.name,
-          name => officalScheduleModeNames.has(name)
+          (name) => officalScheduleModeNames.has(name),
         );
       }
     }

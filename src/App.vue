@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import initializeStore from 'src/store/initializeStore';
+import initializeStore from '@/store/initializeStore';
 import { mapState } from 'vuex';
 
 export default {

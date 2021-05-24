@@ -1,5 +1,5 @@
 [build]
-  publish = "docs/"
+  publish = "dist/"
   command = "npm run build"
   environment = { TZ = "America/Chicago" }
 
