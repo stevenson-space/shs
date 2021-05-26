@@ -9,16 +9,16 @@ Vue.use(VueRouter);
 // Dynamically import the following components so that they are not included in the main build
 // file and are instead asynchrounously loaded when the user goes to the page (to reduce file size of build.js)
 
-const GpaCalculator = () => import('@/views/GpaCalculator/GpaCalculator.vue');
-const BellSchedules = () => import('@/views/Bell Schedules/BellSchedules.vue');
-const Calendar = () => import('@/views/Calendar/Calendar.vue');
-const Links = () => import('@/views/Links/Links.vue');
-const Colors = () => import('@/views/Colors/Colors.vue');
-const Settings = () => import('@/views/Settings/Settings.vue');
-const Tools = () => import('@/views/Tools/Tools.vue');
-const Documents = () => import('@/views/Documents/Documents.vue');
-const AddSchedule = () => import('@/views/Settings/Add Schedule/AddSchedule.vue');
-const Login = () => import('@/views/Login/Login.vue');
+const GpaCalculator = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
+const BellSchedules = () => import(/* webpackChunkName: "bellschedules" */'@/views/Bell Schedules/BellSchedules.vue');
+const Calendar = () => import(/* webpackChunkName: "calendar" */'@/views/Calendar/Calendar.vue');
+const Links = () => import(/* webpackChunkName: "links" */'@/views/Links/Links.vue');
+const Colors = () => import(/* webpackChunkName: "colors" */'@/views/Colors/Colors.vue');
+const Settings = () => import(/* webpackChunkName: "settings" */'@/views/Settings/Settings.vue');
+const Tools = () => import(/* webpackChunkName: "tools" */'@/views/Tools/Tools.vue');
+const Documents = () => import(/* webpackChunkName: "documents" */'@/views/Documents/Documents.vue');
+const AddSchedule = () => import(/* webpackChunkName: "addschedule" */'@/views/Settings/Add Schedule/AddSchedule.vue');
+const Login = () => import(/* webpackChunkName: "login" */'@/views/Login/Login.vue');
 
 const routes = [
   {
