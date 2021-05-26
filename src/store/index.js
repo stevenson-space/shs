@@ -1,10 +1,9 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import mutations from 'src/store/mutations';
-import actions from 'src/store/actions';
-import officialSchedules from 'src/data/schedules.json';
-
-import Bell from 'src/js/bell';
+import officialSchedules from '@/data/schedules.json';
+import Bell from '@/utils/bell';
+import mutations from './mutations';
+import actions from './actions';
 
 Vue.use(Vuex);
 
