@@ -4,7 +4,10 @@ export type ScheduleMode = string;
 
 // A schedule can be multi-day (like Finals) or single-day (like pretty much every other schedule)
 
-export type BaseSchedule = { name: ScheduleMode };
+export type BaseSchedule = {
+  name: ScheduleMode,
+  isCustom?: boolean; // whether this schedule is a custom (user-defined) one
+};
 export type SingleDayPeriods = { start: string[], end: string[], periods: string[] };
 export type SingleDaySchedule = BaseSchedule & SingleDayPeriods;
 
@@ -13,6 +16,9 @@ export type MultiDaySchedule = BaseSchedule
   & { start: MultiDayField, end: MultiDayField, periods: MultiDayField };
 
 export type Schedule = SingleDaySchedule | MultiDaySchedule;
+
+// The following is the format used to store the user-defined schedules in localStorage/state
+export type CustomSchedules = Record<string, Schedule[]>
 
 export type ScheduleType = string;
 export type ScheduleCollection = {

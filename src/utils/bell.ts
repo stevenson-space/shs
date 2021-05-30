@@ -86,7 +86,7 @@ class Bell {
    */
   static getScheduleType(date: Date, schedules: ScheduleCollection[] = defaultSchedules): ScheduleCollection {
     // notice that we're getting the last schedule that matches (in case multiple schedules match)
-    let todaySchedule: ScheduleCollection|null = null;
+    let todaySchedule: ScheduleCollection | null = null;
     schedules.forEach((schedule) => {
       if (testDate(date, schedule.dates)) {
         todaySchedule = schedule;
@@ -103,7 +103,7 @@ class Bell {
   /**
    * Get the actual schedule from the set of schedule modes
    */
-  static getSchedule(scheduleModes: Schedule[], scheduleMode: string): Schedule|null {
+  static getSchedule(scheduleModes: Schedule[], scheduleMode: string): Schedule | null {
     // default to first schedule in array (null if scheduleModes is empty, indicating no school)
     let schedule = scheduleModes.length > 0 ? scheduleModes[0] : null;
     scheduleModes.forEach((mode) => {
@@ -170,7 +170,7 @@ class Bell {
    * @return {boolean}
    */
   static isBetweenTime(date: Date, start: string, end: string): boolean {
-    const toMinutes = ([hour, minute]: (number|string)[]): number => Number(hour) * 60 + Number(minute);
+    const toMinutes = ([hour, minute]: (number | string)[]): number => Number(hour) * 60 + Number(minute);
 
     const startMinutes = toMinutes(start.split(':'));
     const endMinutes = toMinutes(end.split(':'));
@@ -232,8 +232,8 @@ class Bell {
    * @return {string}
    */
   static convertMilitaryTime(time: string): string {
-    // we specify (number|string) in the type instead of just (number) to allow reassigning `minute` to a string later
-    let [hour, minute]: (number|string)[] = time.split(':').map(Number);
+    // we specify (number | string) in the type instead of just (number) to allow reassigning `minute` to a string later
+    let [hour, minute]: (number | string)[] = time.split(':').map(Number);
     if (hour > 12) hour -= 12;
     if (hour === 0) hour = 12;
     if (minute < 10) minute = `0${minute}`;
