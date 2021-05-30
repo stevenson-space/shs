@@ -84,7 +84,7 @@ export default {
 
       // filtering out multiday schedules for now (too complex...), and no school days (indicated by modes.length === 0)
       const filteredSchedules = this.schedules.filter(
-        (schedule) => schedule.modes.length > 0 && !Bell.isMultiDay(schedule.modes[0]),
+        (schedule) => schedule.modes.length > 0 && !Bell.isMultiDaySchedule(schedule.modes[0]),
       );
 
       filteredSchedules.forEach((schedule) => {

@@ -1,21 +1,38 @@
 import defaultSchedules from '@/data/schedules.json';
 import testDate from './dateparser';
+import { ScheduleCollection, Schedule, Period, SingleDaySchedule, SingleDayPeriods, MultiDaySchedule } from './types';
+import { deepCopy, is2DArray } from './util';
+
+// A type guard that states if `school` is true, then all the properties of bell (including `mode`,
+// `schedule`, and `period`) will have values specified
+export function isBellOnSchoolDay(bell: Bell): bell is Required<Bell> {
+  return bell.school;
+}
 
 class Bell {
+  date: Date;
+  school: boolean;
+  type: string;
+  modes: Schedule[];
+  dates: string[];
+  mode?: string;
+  schedule?: SingleDaySchedule;
+  period?: Period;
+  nextSchoolDay: Date;
+
   /**
    * Creates a new Bell object with schedule info for the given date
    * @param {Date} date
    * @param {Array} [schedules] list of schedules to use (if different from those in schedules.json)
-   * @param {Number} [scheduleMode] defaults to the first one specified
+   * @param {string} [scheduleMode] defaults to the first one specified
    */
-  constructor(date, schedules = defaultSchedules, scheduleMode = '') {
+  constructor(date: Date, schedules: ScheduleCollection[] = defaultSchedules, scheduleMode = '') {
     const scheduleType = Bell.getScheduleType(date, schedules);
     const schedule = Bell.getSchedule(scheduleType.modes, scheduleMode);
 
     this.date = date;
     this.school = !!schedule;
     this.type = scheduleType.name; // "Standard Schedule", "Late Arrival", "No School", ...
-    this.schedule = schedule;
     this.modes = scheduleType.modes;
     this.dates = scheduleType.dates;
 
@@ -25,19 +42,21 @@ class Bell {
       this.period = Bell.getPeriod(this.schedule, date);
     }
 
-    this.nextSchoolDay = Bell.nextSchoolDay(date, schedules);
+    this.nextSchoolDay = Bell.getNextSchoolDay(date, schedules);
   }
 
   /**
    * @return {string} human readable range for current period or day (blank if no school)
    */
-  getRange() {
-    if (this.school) {
-      let { start, end } = this.period;
-      const { beforeSchool, afterSchool } = this.period;
-      if (beforeSchool || afterSchool) { // show range for entire day
-        [start] = this.schedule.start; // get first element
-        [end] = this.schedule.end.slice(-1); // get last element
+  getRange(): string {
+    if (isBellOnSchoolDay(this)) {
+      let start: string;
+      let end: string;
+      if (this.period.beforeSchool || this.period.afterSchool) { // show range for entire day
+        start = this.schedule.start[0];
+        end = this.schedule.end.slice(-1)[0]; // last element in `end`
+      } else {
+        ({ start, end } = this.period);
       }
       return `${Bell.convertMilitaryTime(start)} – ${Bell.convertMilitaryTime(end)}`;
     }
@@ -47,11 +66,10 @@ class Bell {
   /**
    * @return {string} name of current period (blank if not currently in school)
    */
-  getPeriodName() {
-    if (this.school) {
-      const { beforeSchool, afterSchool, name } = this.period;
-      if (!(beforeSchool || afterSchool)) {
-        return Bell.formatPeriodName(name);
+  getPeriodName(): string {
+    if (isBellOnSchoolDay(this)) {
+      if (!this.period.beforeSchool && !this.period.afterSchool) { // if not before or after school, then period must have name
+        return Bell.formatPeriodName(this.period.name);
       }
     }
     return '';
@@ -66,23 +84,28 @@ class Bell {
    * @param {Array} [schedules] optional alternative list of schedules
    * @return {Object}
    */
-  static getScheduleType(date, schedules = defaultSchedules) {
-    let todaySchedule = null;
+  static getScheduleType(date: Date, schedules: ScheduleCollection[] = defaultSchedules): ScheduleCollection {
+    // notice that we're getting the last schedule that matches (in case multiple schedules match)
+    let todaySchedule: ScheduleCollection|null = null;
     schedules.forEach((schedule) => {
       if (testDate(date, schedule.dates)) {
         todaySchedule = schedule;
       }
     });
+
+    if (todaySchedule === null) {
+      throw new Error("Error: Today's date doesn't match any schedules. Please ensure there's a default schedule specified that matches all dates.");
+    }
+
     return todaySchedule;
   }
 
   /**
    * Get the actual schedule from the set of schedule modes
-   * @param {*} schedule
-   * @param {*} scheduleMode
    */
-  static getSchedule(scheduleModes, scheduleMode) {
-    let schedule = scheduleModes[0]; // default to first schedule in array
+  static getSchedule(scheduleModes: Schedule[], scheduleMode: string): Schedule|null {
+    // default to first schedule in array (null if scheduleModes is empty, indicating no school)
+    let schedule = scheduleModes.length > 0 ? scheduleModes[0] : null;
     scheduleModes.forEach((mode) => {
       if (mode.name === scheduleMode) {
         schedule = mode;
@@ -92,18 +115,13 @@ class Bell {
   }
 
   /**
-   * Gets the period details for the given date
-   * @param {Object} schedule schedule object containing start times, end times, and period names
-   * @param {Date} date date including time
-   * @param {Array} [dates] the dates for the given schedule (only necessary if multiday schdeule like Finals)
-   * @return {Object} object containing period name, start/end time, and whether before/after school
+   * Gets the period details for the given date. The provided schedule must be single-day (you can
+   * use processMultiDaySchedule to convert a multi-day schedule to a single-day one)
    */
-  static getPeriod(schedule, date) {
+  static getPeriod(schedule: SingleDaySchedule, date: Date): Period {
     const { start, end, periods } = schedule;
 
-    const createPeriod = (name, startTime, endTime) => ({
-      beforeSchool: Bell.isBetweenTime(date, '0:00', start[0]),
-      afterSchool: Bell.isBetweenTime(date, end[end.length - 1], '24:00'),
+    const createPeriod = (name: string, startTime: string, endTime: string): Period => ({
       name,
       start: startTime,
       end: endTime,
@@ -125,19 +143,23 @@ class Bell {
     }
 
     // If not in any period or passing period, then it is before or after school
-    // and period details are unnecessary
-    return createPeriod();
+    if (Bell.isBetweenTime(date, '0:00', start[0])) {
+      return { beforeSchool: true };
+    }
+    // otherwise, Bell.isBetweenTime(date, end[end.length - 1], '24:00') must be true
+    return { afterSchool: true };
   }
 
   /**
-   * Checks if the given schedule is a multiday schedule (like Finals)
-   * @param {Object} schedule
-   * @return {boolean}
+   * Checks if the given schedule is a single-day schedule (and not a multiday one like Finals)
    */
-  static isMultiDay(schedule) {
-    // Check if anything is a 2D array, indicating that it varies by day (e.g. Finals)
-    const is2D = (arr) => Array.isArray(arr[0]);
-    return is2D(schedule.start) || is2D(schedule.end) || is2D(schedule.periods);
+  static isSingleDaySchedule(schedule: Schedule): schedule is SingleDaySchedule {
+    const is2D = is2DArray;
+    return !is2D(schedule.start) && !is2D(schedule.end) && !is2D(schedule.periods);
+  }
+
+  static isMultiDaySchedule(schedule: Schedule): schedule is MultiDaySchedule {
+    return !this.isSingleDaySchedule(schedule);
   }
 
   /**
@@ -147,8 +169,8 @@ class Bell {
    * @param {string} end 24-hour end time string (exclusive)
    * @return {boolean}
    */
-  static isBetweenTime(date, start, end) {
-    const toMinutes = ([hour, minute]) => Number(hour) * 60 + Number(minute);
+  static isBetweenTime(date: Date, start: string, end: string): boolean {
+    const toMinutes = ([hour, minute]: (number|string)[]): number => Number(hour) * 60 + Number(minute);
 
     const startMinutes = toMinutes(start.split(':'));
     const endMinutes = toMinutes(end.split(':'));
@@ -157,7 +179,7 @@ class Bell {
     return startMinutes <= dateMinutes && dateMinutes < endMinutes;
   }
 
-  static getMultiDay({ start, end, periods }, date, dates) {
+  static getMultiDay({ start, end, periods }: Schedule, date: Date, dates: string[]): SingleDayPeriods {
     const newDate = new Date(date); // prevent modifications to original date
 
     // Goes through up to 365 days preceding today to determine the index of today
@@ -168,25 +190,27 @@ class Bell {
     }
 
     // Replace all 2D arrays with the subarray corresponding to the index of today's date
-    const is2D = (arr) => Array.isArray(arr[0]);
-    start = is2D(start) ? start[i] : start;
-    end = is2D(end) ? end[i] : end;
-    periods = is2D(periods) ? periods[i] : periods;
+    start = is2DArray(start) ? start[i] : start;
+    end = is2DArray(end) ? end[i] : end;
+    periods = is2DArray(periods) ? periods[i] : periods;
 
     return { start, end, periods };
   }
 
-  static processMultiDay(schedule, date, dates) {
-    const newSchedule = JSON.parse(JSON.stringify(schedule)); // duplicate schedule (don't want to modify original)
-    if (Bell.isMultiDay(schedule)) {
-      // if it is a multiday schedule get the start, end, and periods corresponding to the day
-      const { start, end, periods } = Bell.getMultiDay(schedule, date, dates);
-
-      // replace the original start, end, periods (could be arrays) with the ones for today
-      newSchedule.start = start;
-      newSchedule.end = end;
-      newSchedule.periods = periods;
+  static processMultiDay(schedule: Schedule, date: Date, dates: string[]): SingleDaySchedule {
+    if (Bell.isSingleDaySchedule(schedule)) { // then we don't need to do anything
+      return schedule;
     }
+
+    // otherwise, it's a multi-day schedule and we create a single-day schedule corresponding to which
+    // day it is in the sequence
+    const newSchedule = deepCopy(schedule) as SingleDaySchedule;
+    const { start, end, periods } = Bell.getMultiDay(schedule, date, dates);
+
+    // replace the original start, end, periods (could be arrays) with the ones for today
+    newSchedule.start = start;
+    newSchedule.end = end;
+    newSchedule.periods = periods;
     return newSchedule;
   }
 
@@ -195,7 +219,7 @@ class Bell {
    * @param {string} name
    * @return {string}
    */
-  static formatPeriodName(name) {
+  static formatPeriodName(name: string): string {
     if (name[0] === '!') {
       return name.substring(1);
     }
@@ -207,8 +231,9 @@ class Bell {
    * @param {string} time
    * @return {string}
    */
-  static convertMilitaryTime(time) {
-    let [hour, minute] = time.split(':').map(Number);
+  static convertMilitaryTime(time: string): string {
+    // we specify (number|string) in the type instead of just (number) to allow reassigning `minute` to a string later
+    let [hour, minute]: (number|string)[] = time.split(':').map(Number);
     if (hour > 12) hour -= 12;
     if (hour === 0) hour = 12;
     if (minute < 10) minute = `0${minute}`;
@@ -220,7 +245,7 @@ class Bell {
    * @param {string} time
    * @return {string}
    */
-  static getSuffix(time) {
+  static getSuffix(time: string): string {
     const [hours] = time.split(':').map(Number);
     return hours < 12 ? 'AM' : 'PM';
   }
@@ -230,7 +255,7 @@ class Bell {
    * @param {string} time
    * @return {number}
    */
-  static timeToNumber(time) {
+  static timeToNumber(time: string): number {
     const [hours, minutes] = time.split(':').map(Number);
     return hours * 60 + minutes;
   }
@@ -240,8 +265,8 @@ class Bell {
    * @param {Date} date
    * @param {Array} schedules optional alternative list of schedules
    */
-  static nextSchoolDay(date, schedules = defaultSchedules) {
-    const isSchoolDay = (dateToCheck) => {
+  static getNextSchoolDay(date: Date, schedules: ScheduleCollection[] = defaultSchedules): Date {
+    const isSchoolDay = (dateToCheck: Date): Schedule => {
       // Day is school day only if a schedule exists for that day and that schedule contains
       // at least one mode
       const schedule = Bell.getScheduleType(dateToCheck, schedules);

@@ -43,7 +43,7 @@ const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
   'august', 'september', 'october', 'november', 'december'];
 
 // Use the following instead of Date.toLocaleDateString() due to performance issues on Safari
-const toLocaleDateString = (date) => `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+const toLocaleDateString = (date: Date) => `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
 
 /**
  * Parses the custom date, filling in any missing information using testDate
@@ -54,7 +54,7 @@ const toLocaleDateString = (date) => `${date.getMonth() + 1}/${date.getDate()}/$
  */
 
 /* eslint-disable no-shadow */
-function parseDate(date, testDate) {
+function parseDate(date: string, testDate: Date) {
   const dayIndex = daysOfWeek.indexOf(date);
   const monthIndex = months.indexOf(date);
 
@@ -104,14 +104,14 @@ function parseDate(date, testDate) {
  * @param {Date} date2
  * @returns {boolean}
  */
-function isSameDay(date1, date2) {
+function isSameDay(date1: Date, date2: Date) {
   // new Date(toLocaleDateString(date)) gets the date for time 0:00 on the same day
-  date1 = new Date(toLocaleDateString(date1)).getTime();
-  date2 = new Date(toLocaleDateString(date2)).getTime();
-  return date1 === date2;
+  const dateStart1 = new Date(toLocaleDateString(date1)).getTime();
+  const dateStart2 = new Date(toLocaleDateString(date2)).getTime();
+  return dateStart1 === dateStart2;
 }
 
-function isNthDay(date, condition) {
+function isNthDay(date: Date, condition: string) {
   const [year, month] = [date.getFullYear(), date.getMonth()];
   const [index, keywords] = condition.split(' ');
 
@@ -162,7 +162,7 @@ function isNthDay(date, condition) {
  * @param {string} range
  * @returns {boolean}
  */
-function inRange(date, range) {
+function inRange(date: Date, range: string) {
   // set date to be the beginning of the day to ignore the time and only consider the date
   date = new Date(toLocaleDateString(date));
 
@@ -175,7 +175,7 @@ function inRange(date, range) {
   return (date1 <= date.getTime()) && (date.getTime() <= date2);
 }
 
-function isSelected(date, condition) {
+function isSelected(date: Date, condition: string) {
   // determines which type of condition and uses the appropriate function to determine
   // if the given date is selected by the condition
   let selected = false;
@@ -192,7 +192,7 @@ function isSelected(date, condition) {
   return selected;
 }
 
-function processNot(date, selector) {
+function processNot(date: Date, selector: string) {
   // if selector prepended by !, removes the ! and inverts the result
   if (selector[0] === '!') {
     return !isSelected(date, selector.substring(1));
@@ -201,7 +201,7 @@ function processNot(date, selector) {
   return isSelected(date, selector);
 }
 
-function processOr(date, selector) {
+function processOr(date: Date, selector: string) {
   // checks if date matches any of the conditions split by |
   const conditions = selector.split('|');
   for (const condition of conditions) {
@@ -214,7 +214,7 @@ function processOr(date, selector) {
   return false;
 }
 
-function processAnd(date, selector) {
+function processAnd(date: Date, selector: string) {
   // checks if date matches all the conditions split by &
   const conditions = selector.split('&');
   for (const condition of conditions) {
@@ -233,7 +233,7 @@ function processAnd(date, selector) {
  * @param {Array} selectors
  * @returns {boolean}
  */
-function testDate(date, selectors) {
+function testDate(date: Date, selectors: string[]) {
   // Goes through each selector and determines whether date matches any of them
   for (let selector of selectors) {
     const keywords = [...types, ...daysOfWeek, ...months].join(')|(?:');

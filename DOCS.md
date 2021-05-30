@@ -42,15 +42,17 @@ The `dates` array specifies the dates on which they given schedule type active i
 
 Schedules also contain a `modes` array that defines all of the [schedule modes](#definitions) that apply on the given schedule type. The schedule mode object contains the properties `start` and `end` which specify the start and end times of each period in 24-hour time. `periods` contains the name of each period. By default, when the period is displayed, it will be prefixed by "Period ", but in certain cases this behavior is not desired (we don't want "Period Assembly"). To avoid this, the period can be specified with a "!" before it (e.g. "!Assembly"). Also, if there are no modes specified, it indicates that there's no school on days with that schedule type.
 
-Lastly, the `periods` array can also be a 2D array, in which case each sub-array defines the periods for the nth consecutive day of the given schedule type. For example, on the schedule type `Finals`, we have this:
+Lastly, `start`, `end`, and `periods` can also be a 2D arrays, in which case each sub-array defines the value for the nth consecutive day of the given schedule type. For example, on the schedule type `Finals`, we have this:
 ```json
+"start": ["8:30","10:10","11:50"],
+"end": ["10:00","11:40","13:20"],
 "periods": [
   ["1","2","4"],
   ["3","7","5"],
   ["8","6","!Makeup"]
 ]
 ```
-so the periods `["1","2","4"]` apply on the first day of finals, `["3","7","5"]` on the second, and so on.
+so the periods `["1","2","4"]` apply on the first day of finals, `["3","7","5"]` on the second, and so on. And although we don't have an example of this anywhere, the same applies for `start` and `end` (note that you **can** set two or all three of them to 2D arrays if you want and it'll still work as expected)
 
 ### Date Format
 
