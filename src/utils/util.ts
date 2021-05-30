@@ -7,7 +7,7 @@ export function getNameWithoutConflicts(name: string, doesNameExistFunction: (n:
 }
 
 // Returns an empty object ({}) if it can't parse the JSON
-export function tryParseJSON(json: string) {
+export function tryParseJSON(json: string): any {
   try {
     return JSON.parse(json);
   } catch (e) {
