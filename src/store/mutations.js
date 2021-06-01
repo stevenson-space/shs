@@ -33,11 +33,15 @@ export default {
     localStorage.color = color;
     query('set', 'dimension1', color);
   },
-  setTheme(state, theme) {
+  setTheme(state, data) { //'yes':'override', 'no': 'don't override'
+    var theme = data.theme
+    var choice = data.choice 
     var color = theme['suggestedColor']
-    // state.color = color
-    // localStorage.color = color
-    // query('set', 'dimension1', color);
+    if(choice == 'yes'){
+      state.color = color
+      localStorage.color = color
+      query('set', 'dimension1', color);
+    }
 
     state.theme = theme;
     localStorage.theme = JSON.stringify(theme);

@@ -9,7 +9,10 @@ export default function (store) {
   }
 
   if (localStorage.theme) {
-    store.commit('setTheme', JSON.parse(localStorage.theme));
+    var data = {};
+    data.theme = JSON.parse(localStorage.theme)
+    data.choce = 'yes'
+    store.commit('setTheme', data);
   } 
 
   store.commit('setCustomSchedules', tryParseJSON(localStorage.customSchedules));
