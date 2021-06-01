@@ -3,7 +3,7 @@
 import { query } from 'vue-analytics';
 import { getNameWithoutConflicts } from 'src/js/util';
 import officialSchedules from 'src/data/schedules.json';
-
+import themes from 'src/data/themes.json'
 function parseUrlDateTime(route) {
   // If date and/or time is specified in URL, return that date
   // Otherwise, return current date
@@ -32,6 +32,16 @@ export default {
     state.color = color;
     localStorage.color = color;
     query('set', 'dimension1', color);
+  },
+  setTheme(state, theme) {
+    var color = theme['suggestedColor']
+    // state.color = color
+    // localStorage.color = color
+    // query('set', 'dimension1', color);
+
+    state.theme = theme;
+    localStorage.theme = JSON.stringify(theme);
+   
   },
   setUrlDate(state, route) {
     state.urlDate = parseUrlDateTime(route);

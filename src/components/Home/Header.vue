@@ -141,7 +141,7 @@ export default {
 		colors() {
 			const showColor = this.colored || !this.fullScreenMode;
 			return {
-				"--header-color": showColor ? "var(--color)" : "white",
+				"--header-color": showColor ? "var(--color)" : "var(--background)",
 				"--header-accent": showColor ? "white" : "var(--color)"
 			};
 		},
@@ -377,7 +377,7 @@ export default {
 
     .date
       // +shadow
-      background-color: white
+      background-color:  var(--background)
       border-radius: 100px
       margin-top: 10px
       padding: 3px
@@ -386,7 +386,6 @@ export default {
         margin-top: 7px
 
     .switch-day
-      color: white
       width: 100px
       margin: 0 15px
       cursor: pointer
@@ -398,6 +397,7 @@ export default {
 
       .arrow-icon
         font-size: 5em
+        color: white
         margin: 50px 0
         +mobile-small
           font-size: 3.5em

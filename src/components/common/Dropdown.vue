@@ -181,7 +181,7 @@ export default {
   outline: none
   white-space: nowrap // need everything to be on one line for proper animation
   font-weight: bold
-  color: #444
+  color: var(--tertiary) !important
 
   z-index: 1
   &.selected
@@ -189,10 +189,10 @@ export default {
 
     .select-option
       +shadow
-      border-color: white
+      border-color: var(--background)
 
   .select-option
-    background-color: white
+    background-color: var(--background)
     position: relative
     border: var(--color) 1px solid
     display: flex
@@ -208,7 +208,7 @@ export default {
       margin-left: 7px
 
   .option
-    background-color: white
+    background-color: var(--background)
     border-radius: 100px
     +shadow
     padding: 5px 12px
@@ -216,6 +216,6 @@ export default {
     cursor: pointer
     user-select: none
     &:hover
-      background-color: #eee
+      background-color: var(--secondaryBackground)
 
 </style>

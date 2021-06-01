@@ -4,8 +4,8 @@
       :full-screen-mode="fullScreenMode"
       @toggle-fullscreen="fullScreenMode = !fullScreenMode"
     />
-
     <card-container>
+    <dark-mode-card />
       <holiday-card />
       <schedule-card />
       <lunch-card />
@@ -62,6 +62,7 @@ import ScheduleHeader from "./Header.vue";
 import HolidayCard from "../common/cards/HolidayCard.vue";
 import LunchCard from '../common/cards/LunchCard.vue';
 import ShsHacksCard from '../common/cards/ShsHacksCard.vue';
+import DarkModeCard from '../common/cards/DarkModeCard.vue';
 export default {
   components: {
     ScheduleHeader,
@@ -72,6 +73,7 @@ export default {
     ScheduleCard,
     HolidayCard,
     ShsHacksCard,
+    DarkModeCard,
  },
   data() {
     return {

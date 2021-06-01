@@ -93,7 +93,7 @@ export default {
     padding: 0 5px
 
     &.selected
-      color: black
+      color: var(--primary)
       // font-weight: bold
 
 </style>

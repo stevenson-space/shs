@@ -64,7 +64,7 @@ export default {
 
   .title
     font-size: 15px
-    background-color: white
+    background-color: var(--background)
     color: grey
     padding: 3px
 
@@ -88,10 +88,10 @@ export default {
     height: 15px
     line-height: 15px
     border-radius: 15px
-    background-color: white
+    background-color: var(--background)
     text-align: center
     font-weight: bold
-    color: #333
+    color: var(--secondary)
     margin: 5px
     padding: 8px
     overflow: hidden
@@ -103,7 +103,7 @@ export default {
     height: 2px
 
   .range
-    color: white
+    color: var(--background)
     text-align: center
     flex-grow: 1
     font-size: 1.1em
@@ -115,14 +115,14 @@ export default {
 
   &.invert
     box-shadow: none
-    background-color: white
+    background-color: var(--background)
     border: var(--color) 1px solid
 
     .circle
       color: var(--color)
 
     .range
-      color: black
+      color: var(--primaryColor)
       font-weight: normal
 
   &.not-mobile

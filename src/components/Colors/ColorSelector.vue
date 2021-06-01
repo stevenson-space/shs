@@ -193,7 +193,7 @@ export default {
           +shadow
 
         .checkmark
-          color: white
+          color: var(--background)
           font-size: 2.5em
           +mobile
             font-size: 2em
@@ -209,6 +209,6 @@ export default {
       cursor: pointer
 
       .checkmark
-        color: white
+        color: var(--background)
 
 </style>

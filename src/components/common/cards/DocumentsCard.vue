@@ -24,7 +24,7 @@ export default {
 .classname
   text-align: center
   background-color: var(--color)
-  color: white
+  color: var(--background)
   font-size: 1.1em
   font-weight: bold
   line-height: 45px

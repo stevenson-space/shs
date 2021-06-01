@@ -46,6 +46,7 @@ export default {
 @import 'src/styles/style.sass'
 
 .circle
+  
   --circle-diameter: 290px
   --logo-width: 100px
   +mobile-small
@@ -53,12 +54,12 @@ export default {
     --logo-width: 70px
 
   // +shadow
-  background-color: white
   width: var(--circle-diameter)
   height: var(--circle-diameter)
   border-radius: 2000px
   font-weight: bold
-  color: #333
+  background: var(--background)
+  color: var(--secondary)
   transition: width .2s, height .2s
 
   .logo

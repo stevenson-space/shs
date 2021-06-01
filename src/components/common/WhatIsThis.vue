@@ -41,7 +41,7 @@ export default {
     font-size: .85em
     position: fixed
     width: 250px
-    background-color: white
+    background-color: var(--background)
     transform: translateX(-50%) translateY(-120%)
     border-radius: 10px
     padding: 10px
@@ -50,7 +50,7 @@ export default {
     visibility: hidden
     transition: opacity .3s, transform .3s
     font-weight: bold
-    color: #333
+    color: var(--secondary)
     +mobile
       transform: translateY(-120%)
       left: 10px

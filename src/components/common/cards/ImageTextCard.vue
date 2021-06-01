@@ -34,7 +34,7 @@ export default {
 
 .card
   cursor: pointer
-  background-color: black
+  background-color: black !important
 
   .image
     width: 100%

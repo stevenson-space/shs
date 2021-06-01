@@ -36,10 +36,10 @@ export default {
 
 .announcements:nth-child(odd)
 	background-color: #f2f2f2
-	color: #333
+	color: var(--secondary)
 .announcements:nth-child(even)
-	background-color: white
-	color: #333
+	background-color: var(--background)
+	color: var(--secondary)
 
 .announcement
   padding: 5px

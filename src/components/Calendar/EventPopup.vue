@@ -81,7 +81,7 @@ export default {
   .title
     font-size: 1.4em
     font-weight: bold
-    color: #333
+    color: var(--secondary)
     margin-top: 3px
 
   .time

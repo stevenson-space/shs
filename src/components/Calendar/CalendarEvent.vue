@@ -30,7 +30,7 @@ export default {
 
   &.invert
     background-color: var(--color)
-    color: white
+    color: var(--background)
 
   .text
     margin: 3px 5px

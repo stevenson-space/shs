@@ -192,7 +192,7 @@ export default {
     width: var(--sidenav-width)
     height: 100vh
     position: fixed
-    background-color: white
+    background-color: var(--background)
     border-right: #ddd solid thin
     transition: transform .2s
     z-index: 20
@@ -224,7 +224,7 @@ export default {
 
     .link
       text-decoration: none
-      color: #333
+      color: var(--secondary)
       padding: 15px
       padding-left: 70px
       display: block

@@ -72,7 +72,7 @@ export default {
   .modal-content
     transition: 1s all ease-in-out
     border-radius: 15px
-    background-color: white
+    background-color: var(--background)
     margin: 100px auto
     padding: 5px 10px 5px 15px
     width: 80%

@@ -32,7 +32,7 @@ export default {
     padding-left: 20px
 
   .heading
-    border-bottom: #555 3px solid
+    border-bottom: var(--tertiary) 3px solid
     display: flex
     justify-content: space-between
     align-items: center
@@ -41,7 +41,7 @@ export default {
     .title
       font-size: 2.75em
       font-weight: bold
-      color: #555
+      color: var(--tertiary)
       +mobile
         font-size: 2em
 

@@ -4,8 +4,8 @@
       <div class="custom-color-row">
            <RoundedButton
         class="reset-button"
-          v-show="color != '#1b5e20'"
-          @click="colorSelected('#1b5e20')"
+          v-show="color != suggestedColor"
+          @click="colorSelected(suggestedColor)"
           text="Reset"
         />
         <div
@@ -42,7 +42,7 @@ import HomeLink from "src/components/common/HomeLink.vue";
 import RoundedButton from "common/RoundedButton.vue";
 import { mapState } from "vuex";
 import ColorSelector from "./ColorSelector.vue";
-
+// import themes from "./themes/themes.json";
 const isValidColor = color => /^#([0-9a-f]{3}){1,2}$/i.test(color);
 
 export default {
@@ -58,7 +58,12 @@ export default {
       previewHeight: 0,
     };
   },
-  computed: mapState(["color"]),
+  computed:{
+   ...mapState(["color","theme"]), 
+   suggestedColor(){
+     return this.theme["suggestedColor"]
+   }
+  },
   watch: {
     color() {
       this.setCustomColorText();

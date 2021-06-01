@@ -48,7 +48,7 @@ export default {
     text-decoration: none
     display: flex
     align-items: center
-    background-color: white
+    background-color: var(--background)
     z-index: 1
     transition: background-color .2s, color .2s
 
@@ -70,7 +70,7 @@ export default {
         margin: 0 5px
 
     &.invert:hover
-      color: white
+      color: var(--background)
       background-color: var(--color)
 
 </style>

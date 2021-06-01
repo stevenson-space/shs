@@ -29,7 +29,7 @@ export default {
   z-index: 100
 
   .content
-    background-color: white
+    background-color: var(--background)
     border-radius: 15px
     margin: 0 10px
 

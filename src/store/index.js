@@ -5,7 +5,7 @@ import actions from 'src/store/actions';
 import officialSchedules from 'src/data/schedules.json';
 
 import Bell from 'src/js/bell';
-
+import themes from 'src/data/themes.json'
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -15,8 +15,11 @@ export default new Vuex.Store({
     mode: 'current',
 
     scheduleMode: '',
-    color: '#1b5e20',
-
+    color: themes[0]['suggestedColor'],
+    theme: themes[0],
+    
+    // textColor: 'var(--background)',
+    // secondary: 'var(--background)',
     // date indicates Date object, time indicates epoch time in milliseconds
     urlDate: new Date(), // relative to URL specified time (will be set when URL changes)
     startTime: Date.now(), // relative to real time

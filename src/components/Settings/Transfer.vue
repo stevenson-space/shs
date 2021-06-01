@@ -249,7 +249,7 @@ export default {
     text-align: center
     width: 100%
     font-weight: bold
-    color: #333
+    color: var(--secondary)
     font-size: 1.2em
 
   .warning

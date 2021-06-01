@@ -1,7 +1,7 @@
 <template>
   <timed-card startTime="May 20, 2021" endTime="August 11, 2021">
     <img class="logo" src="static/summer.png">
-    <div class="message">Good luck on finals<br> Have a great summer break!</div>
+    <div class="message">Have a great summer break!</div>
   </timed-card>
 </template>
 

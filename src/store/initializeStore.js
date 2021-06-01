@@ -8,6 +8,10 @@ export default function (store) {
     query('set', 'dimension1', 'unset');
   }
 
+  if (localStorage.theme) {
+    store.commit('setTheme', JSON.parse(localStorage.theme));
+  } 
+
   store.commit('setCustomSchedules', tryParseJSON(localStorage.customSchedules));
 
   // defaultScheduleMode used to (innapropriately) be called defaultSchedule, so to preserve backwards compatibility:
