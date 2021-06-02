@@ -141,7 +141,7 @@ export default {
 		colors() {
 			const showColor = this.colored || !this.fullScreenMode;
 			return {
-				"--header-color": showColor ? "var(--color)" : "var(--background)",
+				"--header-color": showColor ? "var(--headerBackgroundColor)" : "var(--background)",
 				"--header-accent": showColor ? "white" : "var(--color)"
 			};
 		},

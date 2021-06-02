@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div v-for="announcement in announcements" class="announcements">
+		<div v-for="announcement in announcements" :key="announcement" class="announcements">
 			<div
 				class="announcement"
 				:class="{ 'full-screen': fullScreenMode }"

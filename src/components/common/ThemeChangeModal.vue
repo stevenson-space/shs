@@ -5,7 +5,7 @@
         <div class="modal-content" @click.stop="">
           <div class="title"><b>Color Conflict</b></div>
           <div class="divider" />
-          <p>Do you want to override your current selection to the suggested color for the {{ newTheme["name"] }} theme?</p>
+          <p>Do you want to override your current color selection to the suggested color for the {{ newTheme["name"] }} theme?</p>
           <div class="btn-row">
             <div class="color-circle" :style="{ background: color }"></div>
              <font-awesome-icon

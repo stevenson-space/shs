@@ -19,6 +19,7 @@ export default {
         '--color': this.color,
         '--background': this.theme["background"],
         '--secondaryBackground': this.theme["secondaryBackground"],
+        '--headerBackgroundColor': this.theme["headerBackgroundColor"],
         'color': this.theme["primary"],
         '--secondary': this.theme["secondary"],
         '--tertiary': this.theme["tertiary"],

@@ -21,6 +21,7 @@
       <home-link class="home-link" />
     </div>
 
+    <theme-selector/>
     <color-selector
       :colors="colors"
       :current-color="color"
@@ -42,7 +43,7 @@ import HomeLink from "src/components/common/HomeLink.vue";
 import RoundedButton from "common/RoundedButton.vue";
 import { mapState } from "vuex";
 import ColorSelector from "./ColorSelector.vue";
-// import themes from "./themes/themes.json";
+import ThemeSelector from "./ThemeSelector.vue";
 const isValidColor = color => /^#([0-9a-f]{3}){1,2}$/i.test(color);
 
 export default {
@@ -51,6 +52,7 @@ export default {
     Home,
     HomeLink,
     RoundedButton,
+    ThemeSelector
   },
   data() {
     return {

@@ -31,19 +31,13 @@ export default {
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 
-// .card
-//   background-color: var(--color)
-//   color: white
-//   transition: transform .4s
-//   &.invert
-//     background-color: var(--background)
-//     color: var(--color)
+
 .card
   background: var(--color) !important
   color: var(--iconTextCardColor)
   transition: transform .4s
   &.invert
-    background-color: var(--backgroundColor) !important
+    background-color: var(--background) !important
     color: var(--iconTextCardInvertColor)
   &:hover
     transform: scale(1.03)

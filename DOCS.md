@@ -109,3 +109,21 @@ Example:
   ]
 }
 ```
+
+## Themes
+```themes.json``` contains the different themes available. 
+
+| Name      | Description |
+| ----------- | ----------- |
+| name      | Name of the theme       |
+| suggestedColor|  suggested color to use with the theme - when changing themes, the user has the option to apply this color as their selected color. |
+| background  | page background color, applies to all pages|
+| secondaryBackground      | a closely related to ```background``` but provides minor contrast, used mainly for hover effects      |
+| headerBackgroundColor | the header color on the home page |
+| primary | main text color  |
+| secondary | slightly darker ```primary``` |
+| tertiary | slightly darker ```secondary``` |
+| iconTextCardColor | the text color of inverted ```IconTextCard```|
+| iconTextCardInvertColor | background color of inverted ```IconTextCard``` |
+
+Values of colors can be set to other variables like ```var(--color)``` to remove the need to duplicate colors. 

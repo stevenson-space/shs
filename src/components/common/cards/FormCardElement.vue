@@ -42,10 +42,12 @@ export default {
     font-size: 0.75em
     text-align: left
     margin: 5px
-
+    
   input
     &:focus
       outline: none
+    background: var(--background)
+    color: var(--primary)
     padding: 0px 5px
     border-radius: 30px
     width: 80%

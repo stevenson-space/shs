@@ -23,7 +23,7 @@ import { mapState } from "vuex";
 import RoundedButton from "common/RoundedButton.vue";
 import ThemeChangeModal from "../ThemeChangeModal.vue";
 export default {
-  components: { TimedCard, RoundedButton, ThemeChangeModal, ThemeChangeModal },
+  components: { TimedCard, RoundedButton, ThemeChangeModal },
   computed: {
     ...mapState(["theme"]),
     ...mapState(["color"])
@@ -64,6 +64,7 @@ export default {
   font-size: .9em
   text-align: center
   padding-bottom: 10px
+
 .button
   margin-left: 8px
   width: 40px

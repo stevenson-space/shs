@@ -71,7 +71,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 import CardContainer from "common/CardContainer.vue";
 import DocumentsCard from "common/cards/DocumentsCard.vue";
 import PlainHeader from "common/PlainHeader.vue";
