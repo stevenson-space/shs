@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
+import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '@/views/Home/Home.vue';
 
 import store from '@/store';
@@ -20,7 +20,7 @@ const Documents = () => import(/* webpackChunkName: "documents" */'@/views/Docum
 const AddSchedule = () => import(/* webpackChunkName: "addschedule" */'@/views/Settings/Add Schedule/AddSchedule.vue');
 const Login = () => import(/* webpackChunkName: "login" */'@/views/Login/Login.vue');
 
-const routes = [
+const routes: RouteConfig[] = [
   {
     path: '/',
     component: Home,

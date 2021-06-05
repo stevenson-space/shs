@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { VueHammer } from 'vue2-hammer';
-import VueAnalytics from 'vue-analytics';
+import VueAnalytics, { InstallOptions } from 'vue-analytics';
 
 import App from './App.vue';
 import router from './router';
@@ -35,7 +35,7 @@ Vue.use(VueAnalytics, {
       };
     },
   },
-});
+} as InstallOptions);
 
 // Any element can add the directive 'v-focus' to automatically gain focus when created
 Vue.directive('focus', {
