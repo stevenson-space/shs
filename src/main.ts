@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, { VNode } from 'vue';
 import { VueHammer } from 'vue2-hammer';
 import VueAnalytics, { InstallOptions } from 'vue-analytics';
 
@@ -48,5 +48,5 @@ Vue.directive('focus', {
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  render: (h): VNode => h(App),
 }).$mount('#app');
