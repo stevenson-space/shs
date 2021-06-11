@@ -264,6 +264,10 @@ export default {
             link:
               'https://mega.nz/file/8NFSWLLC#SEhMJ9n-qWpJh7FbVXckZYCrApXZCri5dwB8d_KZMUA',
           },
+          {
+            title: 'Barbara Kingsolver - The Poisonwood Bible',
+            link: 'https://mega.nz/file/pNFGjTgY#fEG0V_zdYVm3r2alTOG7GbX2X4v5OXCvXl_7UfGGc1I',
+          },
         ],
         'Geometry Honors': [
           {
@@ -422,6 +426,28 @@ export default {
             title: 'Textbook',
             link:
               'https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2X2RrT3NFMEN1OHc',
+          },
+        ],
+        'Math Team': [
+          {
+            title: "Comap - For All Practical Purposes Mathematical Literacy in Today's World - WH Freeman (2015)",
+            link: 'https://mega.nz/file/cdcQgBbD#qZIJY6R7qf5p12FlMeeTA5hNiKGTVToOZOLHT4u8g64',
+          },
+          {
+            title: 'David Patrick - Intermediate Counting and Probability (the essential parts) (The Art of Problem Solving) (2007)',
+            link: 'https://mega.nz/file/dddQTRRb#QRuK2EwvQEMcd4aU2PRg-9EKGXMaxws4iup33ztEEnk',
+          },
+          {
+            title: 'David Patrick and Naoki Sato - Intermediate Counting and Probability (Solution Manual) (The Art of Problem Solving)',
+            link: 'https://mega.nz/file/hBVASTYQ#hrbTGJxtChYfFjteNeDxviqZ3s3VA8eYKQoDx13dDbM',
+          },
+          {
+            title: 'Taxicab Geometry - An adventure in non-Euclidean geometry',
+            link: 'https://mega.nz/file/IJEQibLL#ndqOUI5CrQhqC0JPqELzN4367cr_b3D14i_ZTBUFzJ0',
+          },
+          {
+            title: 'Richard Rusczyk and Mathew Crawford - Art of Problem Solving - Intermediate Algebra',
+            link: 'https://mega.nz/file/NEcWnZaZ#BK-haz-o5F-hmJypxNNJUYB8a833NC1RpXvqGtgjX3s',
           },
         ],
       },
