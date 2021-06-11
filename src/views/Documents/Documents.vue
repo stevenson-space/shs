@@ -385,12 +385,12 @@ export default {
         ],
         'APUSH, AP American Studies': [
           {
-            title: 'Textbook - APUSH/AMSTUD',
+            title: '(Old?) Textbook - APUSH/AMSTUD',
             link:
               'https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2a0ZZYWVpUjd4QmM',
           },
           {
-            title: 'Textbook - AMSTUD (Conversations)',
+            title: '(Old?) Textbook - AMSTUD (Conversations)',
             link:
               'https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2YmJCR0dWRDQ4LXc',
           },
@@ -399,6 +399,23 @@ export default {
             link:
               'https://drive.google.com/uc?export=download&id=0B5BsvXoCCrj2cHBPWlFDbWh1WEk',
           },
+          {
+            title: 'Give Me Liberty! An American History - 6e Volume 1',
+            link: 'https://mega.nz/file/4dEBGSgT#YKmJMBWco5ilcNrolu6JMVxDcDiH2nrWtWrRFwXoVsk',
+          },
+          {
+            title: 'Give Me Liberty! An American History - 6e Volume 2',
+            link: 'https://mega.nz/file/MYFTkKaZ#zOxbAV3f81FTPGfbufyEta2kyKeBJw8TKbfr0yl7kZY',
+          },
+          {
+            title: 'Give Me Liberty! An American History (Brief Edition) - 5e Volume 1',
+            link: 'https://mega.nz/file/sJUjTSDD#vaNf7zksQxSQM7N_dnIW8dt5vtb5jtyPqEphTE3iYLE',
+          },
+          {
+            title: 'Give Me Liberty! An American History (Brief Edition) - 5e Volume 2',
+            link: 'https://mega.nz/file/QZVjlYrb#BL3EF4nVClnMe7aMHUDLciunrl8OxKhG5HkktFTZzNA',
+          },
+
         ],
         'AP Psychology': [
           {
