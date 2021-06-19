@@ -13,8 +13,9 @@
         v-bind:key="themeItem.name"
         @click.native="changeTheme(themeItem)"
         :theme="themeItem"
-        :isCurrentTheme="themeItem==theme && theme.suggestedColor == color"
+        :isCurrentTheme="themeItem.name==theme.name && themeItem.suggestedColor == color"
       />
+      
     </div>
   </div>
 </template>

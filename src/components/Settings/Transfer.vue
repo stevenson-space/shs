@@ -79,6 +79,7 @@ import SettingsSection from './SettingsSection.vue';
 
 const tranferableSettings = [ // the following strings should be direct properties of $store.state
   'color',
+  'theme',
   'defaultScheduleMode',
   'grade',
   'schedules',
