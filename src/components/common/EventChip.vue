@@ -61,6 +61,7 @@ export default {
     font-size: .9em
 
     .text
+      color: white
       white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis

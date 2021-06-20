@@ -75,7 +75,7 @@ export default {
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 .card
-  background-color: var(--bg-color) !important
+  background-color: var(--secondaryBackground) !important
   border-radius: 15px
   position: relative
   transition: height .3s

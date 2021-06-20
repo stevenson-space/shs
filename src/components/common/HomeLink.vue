@@ -70,7 +70,7 @@ export default {
         margin: 0 5px
 
     &.invert:hover
-      color: var(--background)
+      color: white
       background-color: var(--color)
 
 </style>

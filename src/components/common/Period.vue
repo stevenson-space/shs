@@ -70,8 +70,9 @@ export default {
 
 .period
   +shadow
+  background: var(--color)
   border-radius: 100px
-  background-color: var(--color)
+  // background-color: var(--color)
   display: flex
   align-items: center
   justify-content: space-between
@@ -91,7 +92,7 @@ export default {
     background-color: var(--background)
     text-align: center
     font-weight: bold
-    color: var(--secondary)
+    color: var(--primary)
     margin: 5px
     padding: 8px
     overflow: hidden
@@ -103,7 +104,7 @@ export default {
     height: 2px
 
   .range
-    color: var(--background)
+    color: white
     text-align: center
     flex-grow: 1
     font-size: 1.1em

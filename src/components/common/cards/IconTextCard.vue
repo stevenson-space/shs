@@ -37,7 +37,7 @@ export default {
   color: var(--iconTextCardColor)
   transition: transform .4s
   &.invert
-    background-color: var(--background) !important
+    background-color: var(--secondaryBackground) !important
     color: var(--iconTextCardInvertColor)
   &:hover
     transform: scale(1.03)

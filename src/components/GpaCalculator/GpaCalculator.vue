@@ -267,7 +267,7 @@ export default {
         margin: 0px 12px
         padding: 8px 0px 5px 0px
         background-color: inherit
-        color: inherit
+        color: white
       
       .close
         width: 18px

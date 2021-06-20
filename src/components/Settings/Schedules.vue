@@ -1,5 +1,6 @@
 <template>
   <settings-section title="Schedules">
+    <br>
     <switch-by-device slot="heading-content">
       <rounded-button text="Restore to Defaults" :icon="icons.faHistory" :invert="true" @click="restoreSchedules" />
       <rounded-button slot="mobile" text="Restore" :icon="icons.faHistory" :invert="true" @click="restoreSchedules" />

@@ -332,11 +332,13 @@ export default {
 
     .title
       flex: 1
+      color: white
       text-align: center
       font-weight: bold
       font-size: 1.1em
 
     .icon-button
+      color: white
       cursor: pointer
       position: relative
       padding: 7px 10px
@@ -346,7 +348,7 @@ export default {
         .slash
           position: absolute
           top: 0
-          background-color: var(--background)
+          background-color: white
           height: 3px
           width: 30px
           border-radius: 10px
