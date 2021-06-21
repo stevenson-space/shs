@@ -110,9 +110,9 @@
       "modes": [
         {
           "name": "Normal",
-          "start": ["7:45"],
-          "end": ["12:50"],
-          "periods": ["!Summer"]
+          "start": ["7:45","12:50","16:00"],
+          "end": ["12:50","16:00","20:30"],
+          "periods": ["!Morning","!Summer","!Afternoon"]
         }
       ]
     },
