@@ -1,6 +1,18 @@
-import lunches from '@/data/lunch.json';
+import untypedLunches from '@/data/lunch.json';
 
-function getLunch(date) {
+export type Lunch = {
+  'International Station': string[];
+  'Comfort Food': string[];
+  'Mindful': string[];
+  'Sides': string[];
+  'Soup': string[];
+};
+
+export type Lunches = Record<string, Lunch>;
+
+const lunches = untypedLunches as Lunches;
+
+function getLunch(date: Date): Lunch | null {
   // get the number of days since epoch time
   const minutesSinceEpoch = (date.getTime() / 1000 / 60) - date.getTimezoneOffset();
   const daysSinceEpoch = Math.floor(minutesSinceEpoch / 60 / 24);

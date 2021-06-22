@@ -1,7 +1,9 @@
 import { query } from 'vue-analytics';
+import { Store } from 'vuex';
 import { tryParseJSON } from '@/utils/util';
+import { State } from './state';
 
-export default function (store) {
+const initializeStore = (store: Store<State>): void => {
   if (localStorage.color) {
     store.commit('setColor', localStorage.color);
     query('set', 'dimension1', localStorage.color);
@@ -11,7 +13,7 @@ export default function (store) {
 
   store.commit('setCustomSchedules', tryParseJSON(localStorage.customSchedules));
 
-  // defaultScheduleMode used to (innapropriately) be called defaultSchedule, so to preserve backwards compatibility:
+  // defaultScheduleMode used to (inappropriately) be called defaultSchedule, so to preserve backwards compatibility:
   localStorage.defaultScheduleMode = localStorage.defaultSchedule; // TODO: remove during or after summer 2021
 
   if (localStorage.defaultScheduleMode) {
@@ -22,4 +24,6 @@ export default function (store) {
   if (localStorage.grade) {
     store.commit('setGrade', localStorage.grade);
   }
-}
+};
+
+export default initializeStore;

@@ -1,5 +1,5 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import Vue, { AsyncComponent } from 'vue';
+import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '@/views/Home/Home.vue';
 
 import store from '@/store';
@@ -9,18 +9,23 @@ Vue.use(VueRouter);
 // Dynamically import the following components so that they are not included in the main build
 // file and are instead asynchrounously loaded when the user goes to the page (to reduce file size of build.js)
 
-const GpaCalculator = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
-const BellSchedules = () => import(/* webpackChunkName: "bellschedules" */'@/views/Bell Schedules/BellSchedules.vue');
-const Calendar = () => import(/* webpackChunkName: "calendar" */'@/views/Calendar/Calendar.vue');
-const Links = () => import(/* webpackChunkName: "links" */'@/views/Links/Links.vue');
-const Colors = () => import(/* webpackChunkName: "colors" */'@/views/Colors/Colors.vue');
-const Settings = () => import(/* webpackChunkName: "settings" */'@/views/Settings/Settings.vue');
-const Tools = () => import(/* webpackChunkName: "tools" */'@/views/Tools/Tools.vue');
-const Documents = () => import(/* webpackChunkName: "documents" */'@/views/Documents/Documents.vue');
-const AddSchedule = () => import(/* webpackChunkName: "addschedule" */'@/views/Settings/Add Schedule/AddSchedule.vue');
-const Login = () => import(/* webpackChunkName: "login" */'@/views/Login/Login.vue');
+const GpaCalculator: AsyncComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
+const BellSchedules: AsyncComponent = () => import(/* webpackChunkName: "bellschedules" */'@/views/Bell Schedules/BellSchedules.vue');
+const Calendar: AsyncComponent = () => import(/* webpackChunkName: "calendar" */'@/views/Calendar/Calendar.vue');
+const Links: AsyncComponent = () => import(/* webpackChunkName: "links" */'@/views/Links/Links.vue');
+const Colors: AsyncComponent = () => import(/* webpackChunkName: "colors" */'@/views/Colors/Colors.vue');
+const Settings: AsyncComponent = () => import(/* webpackChunkName: "settings" */'@/views/Settings/Settings.vue');
+const Tools: AsyncComponent = () => import(/* webpackChunkName: "tools" */'@/views/Tools/Tools.vue');
+const Documents: AsyncComponent = () => import(/* webpackChunkName: "documents" */'@/views/Documents/Documents.vue');
+const AddSchedule: AsyncComponent = () => import(/* webpackChunkName: "addschedule" */'@/views/Settings/Add Schedule/AddSchedule.vue');
+const Login: AsyncComponent = () => import(/* webpackChunkName: "login" */'@/views/Login/Login.vue');
 
-const routes = [
+type EditScheduleProps = {
+  scheduleToEdit: string;
+  mode: 'all' | 'edit';
+};
+
+const routes: RouteConfig[] = [
   {
     path: '/',
     component: Home,
@@ -57,7 +62,7 @@ const routes = [
     name: 'editSchedules',
     path: '/edit-schedule/:scheduleToEdit',
     component: AddSchedule,
-    props: (route) => ({
+    props: (route): EditScheduleProps => ({
       scheduleToEdit: route.params.scheduleToEdit,
       mode: 'edit',
     }),
@@ -80,13 +85,15 @@ const routes = [
   },
 ];
 
+type Position = { x: number; y: number };
+
 // 'history' mode requires all urls to redirect to index.html so that Vue can handle them
 const router = new VueRouter({
   mode: 'history',
   routes,
   // If savedPosition exists from previous visit to that page, then scroll to that position
   // Otherwise, scroll to top (basically how modern browsers normally handle scrolling)
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition): Position {
     if (savedPosition) {
       return savedPosition;
     }

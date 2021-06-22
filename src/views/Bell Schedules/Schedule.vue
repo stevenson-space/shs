@@ -64,7 +64,7 @@ export default {
       return this.formatMultiDayMode(this.schedule.modes[this.selectedMode]);
     },
     isMultiDay() {
-      return Bell.isMultiDay(this.mode);
+      return Bell.isMultiDaySchedule(this.mode);
     },
     periods() {
       const { isMultiDay, mode: { periods, start, end } } = this;
@@ -115,7 +115,7 @@ export default {
 
       const is2D = (arr) => Array.isArray(arr[0]);
 
-      if (Bell.isMultiDay(mode)) {
+      if (Bell.isMultiDaySchedule(mode)) {
         // If it is multiday, any of the 3 properties (start, end, periods) could be a 2D array
         // We need the length (number of days) of whichever property is a 2D array
         const numDays = is2D(mode.start) ? mode.start.length

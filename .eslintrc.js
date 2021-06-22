@@ -32,6 +32,9 @@ module.exports = {
     'vue/no-unused-components': 'warn',
     'no-nested-ternary': 'off',
     'no-use-before-define': ['error', { functions: false, classes: false }],
+    'lines-between-class-members': 'off',
+    'object-curly-newline': 'off',
+    'prefer-destructuring': ['error', { array: false, object: true }],
   },
   overrides: [
     {

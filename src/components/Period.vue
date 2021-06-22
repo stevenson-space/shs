@@ -1,6 +1,5 @@
 <template>
   <div
-    v-if="period != 'Passing'"
     class="period"
     :class="{ 'not-mobile': !forceMobileLayout, invert }"
   >
@@ -13,13 +12,6 @@
       <div class="time">{{ convertMilitaryTime(end) }}</div>
     </div>
     <div class="spacer"></div>
-  </div>
-  <div v-else>
-    <div class="passing-container">
-      <div class="line">
-        <span class="title">Up Next</span>
-      </div>
-    </div>
   </div>
 </template>
 <script>
@@ -51,22 +43,6 @@ export default {
 
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
-
-.passing-container
-  padding: 0px 13px
-
-  .line
-    width: 100%
-    height: 13px
-    margin: 10px auto 20px auto
-    border-bottom: 1px solid grey
-    text-align: center
-
-  .title
-    font-size: 15px
-    background-color: white
-    color: grey
-    padding: 3px
 
 .period
   +shadow

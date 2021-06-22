@@ -1,5 +1,9 @@
-export default {
-  pageLoaded({ commit }, route) {
+import { Route } from 'vue-router';
+import { ActionTree } from 'vuex';
+import { State } from './state';
+
+const actions: ActionTree<State, State> = {
+  pageLoaded({ commit }, route: Route) {
     commit('setMode', route);
     commit('setUrlDate', route);
     commit('setStartTime');
@@ -36,3 +40,5 @@ export default {
     commit('setCustomSchedules', state.customSchedules);
   },
 };
+
+export default actions;
