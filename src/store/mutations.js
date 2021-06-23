@@ -1,9 +1,9 @@
 /* eslint-disable no-param-reassign */
 
 import { query } from 'vue-analytics';
-import { getNameWithoutConflicts } from 'src/js/util';
-import officialSchedules from 'src/data/schedules.json';
-import themes from 'src/data/themes.json'
+import { getNameWithoutConflicts } from '@/utils/util';
+import officialSchedules from '@/data/schedules.json';
+
 function parseUrlDateTime(route) {
   // If date and/or time is specified in URL, return that date
   // Otherwise, return current date
@@ -33,20 +33,20 @@ export default {
     localStorage.color = color;
     query('set', 'dimension1', color);
   },
-  setTheme(state, data) { //'yes':'override', 'no': 'don't override'
-    var theme = data.theme
-    var choice = data.choice 
-    var color = theme['suggestedColor']
-    if(choice == 'yes'){
-      state.color = color
-      localStorage.color = color
+  setTheme(state, data) { //  'yes':'override', 'no': 'don't override'
+    const { theme } = data;
+    const { choice } = data;
+    const color = theme.suggestedColor;
+    if (choice === 'yes') {
+      state.color = color;
+      localStorage.color = color;
       query('set', 'dimension1', color);
     }
 
     state.theme = theme;
     localStorage.theme = JSON.stringify(theme);
-   
   },
+
   setUrlDate(state, route) {
     state.urlDate = parseUrlDateTime(route);
   },
@@ -71,7 +71,7 @@ export default {
       for (const scheduleMode of scheduleModes) {
         scheduleMode.name = getNameWithoutConflicts(
           scheduleMode.name,
-          name => officalScheduleModeNames.has(name)
+          (name) => officalScheduleModeNames.has(name),
         );
       }
     }

@@ -1,26 +1,27 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
 import { VueHammer } from 'vue2-hammer';
 import VueAnalytics from 'vue-analytics';
 
-import router from 'src/js/router';
-import store from 'src/store/index';
-import App from 'src/App.vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+
+Vue.config.productionTip = false;
 
 if (Date.now() < (new Date(2020, 11, 1)).getTime()) { // if before december 1, 2020
-  import(/* webpackChunkName: "leaves" */'./js/leaves'); // add the falling leaves animation
+  // add the falling leaves animation
+  import('./utils/leaves'); // eslint-disable-line no-unused-expressions
 }
 
 // smooth scroll behavior polyfill (for safari)
 if (!('scrollBehavior' in document.documentElement.style)) {
-  import(/* webpackChunkName: "scroll-behavior-polyfill" */'scroll-behavior-polyfill');
+  import('scroll-behavior-polyfill'); // eslint-disable-line no-unused-expressions
 }
 
 if (navigator.serviceWorker) {
   navigator.serviceWorker.register('service-worker.js');
 }
 
-Vue.use(VueRouter);
 Vue.use(VueHammer);
 Vue.use(VueAnalytics, {
   id: 'UA-83979451-1',
@@ -44,11 +45,8 @@ Vue.directive('focus', {
   },
 });
 
-/* eslint-disable-next-line no-new */
 new Vue({
-  el: '#app',
-  render: h => h(App),
   router,
   store,
-  
-});
+  render: (h) => h(App),
+}).$mount('#app');

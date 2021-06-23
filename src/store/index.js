@@ -1,11 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import mutations from 'src/store/mutations';
-import actions from 'src/store/actions';
-import officialSchedules from 'src/data/schedules.json';
+import mutations from '@/store/mutations';
+import actions from '@/store/actions';
+import officialSchedules from '@/data/schedules.json';
 
-import Bell from 'src/js/bell';
-import themes from 'src/data/themes.json'
+import Bell from '@/utils/bell';
+import themes from '@/data/themes.json';
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -15,9 +16,8 @@ export default new Vuex.Store({
     mode: 'current',
 
     scheduleMode: '',
-    color: themes[0]['suggestedColor'],
+    color: themes[0].suggestedColor,
     theme: themes[0],
-    
     // textColor: 'var(--background)',
     // secondary: 'var(--background)',
     // date indicates Date object, time indicates epoch time in milliseconds

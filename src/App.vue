@@ -5,33 +5,33 @@
 </template>
 
 <script>
-import initializeStore from 'src/store/initializeStore';
+import initializeStore from '@/store/initializeStore';
 import { mapState } from 'vuex';
 
 export default {
   computed: {
     ...mapState([
-    'color',
-    'theme',
-  ]),
+      'color',
+      'theme',
+    ]),
     style() {
-      return{
+      return {
         '--color': this.color,
-        '--background': this.theme["background"],
-        '--secondaryBackground': this.theme["secondaryBackground"],
-        '--headerBackgroundColor': this.theme["headerBackgroundColor"],
-        'color': this.theme["primary"],
-        '--secondary': this.theme["secondary"],
-        '--tertiary': this.theme["tertiary"],
-        '--iconTextCardColor' : this.theme["iconTextCardColor"],
-        '--iconTextCardInvertColor' : this.theme["iconTextCardInvertColor"]
-      }
+        '--background': this.theme.background,
+        '--secondaryBackground': this.theme.secondaryBackground,
+        '--headerBackgroundColor': this.theme.headerBackgroundColor,
+        color: this.theme.primary,
+        '--secondary': this.theme.secondary,
+        '--tertiary': this.theme.tertiary,
+        '--iconTextCardColor': this.theme.iconTextCardColor,
+        '--iconTextCardInvertColor': this.theme.iconTextCardInvertColor,
+      };
     },
   },
-  
+
   watch: {
     theme() {
-      document.querySelector('body').style.background = this.theme["background"];
+      document.querySelector('body').style.background = this.theme.background;
     },
     $route() {
       this.$store.dispatch('pageLoaded', this.$route);
@@ -40,7 +40,7 @@ export default {
   created() {
     initializeStore(this.$store);
     this.$store.dispatch('pageLoaded', this.$route);
-    document.querySelector('body').style.background = this.theme["background"];
+    document.querySelector('body').style.background = this.theme.background;
   },
 };
 

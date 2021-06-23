@@ -9,8 +9,7 @@
         "secondary": "#333",
         "tertiary": "#555",
         "iconTextCardColor": "white",
-        "iconTextCardInvertColor": "var(--color)",
-        "lowContastTextColor": "white"
+        "iconTextCardInvertColor": "var(--color)"
     },
     {
         "name": "dark",
@@ -22,8 +21,6 @@
         "secondary": "white",
         "tertiary": "white",
         "iconTextCardColor": "white",
-        "iconTextCardInvertColor": "white",
-        "lowContastTextColor": "white"
-
+        "iconTextCardInvertColor": "white"
     }
 ]

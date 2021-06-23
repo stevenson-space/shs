@@ -1,4 +1,5 @@
 import { query } from 'vue-analytics';
+import { tryParseJSON } from '@/utils/util';
 
 export default function (store) {
   if (localStorage.color) {
@@ -29,12 +30,3 @@ export default function (store) {
     store.commit('setGrade', localStorage.grade);
   }
 }
-
-function tryParseJSON(json) {
-  try {
-    return JSON.parse(json);
-  } catch (e) {
-    return {};
-  }
-}
-

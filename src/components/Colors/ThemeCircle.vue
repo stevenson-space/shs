@@ -25,7 +25,8 @@ export default {
     },
   },
   mounted() {
-    for (var x of ["suggestedColor", "background"]) {
+    let x;
+    for (x of ['suggestedColor', 'background']) {
       this.$set(this.colors, this.colors.length, this.theme[x]);
     }
   },
