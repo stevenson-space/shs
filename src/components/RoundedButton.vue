@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-button" :class="{ invert, circular }" @click="$emit('click')">
+  <div class="rounded-button" :class="{ invert, circular, showColor }" @click="$emit('click')">
     <font-awesome-icon v-if="icon" class="icon" :icon="icon" />
     {{ text }}
   </div>
@@ -15,6 +15,7 @@ export default {
     icon: { type: Object, default: null },
     invert: { type: Boolean, default: false },
     circular: { type: Boolean, default: true },
+    showColor: { type: Boolean, default: true },
   },
 };
 </script>
@@ -23,9 +24,6 @@ export default {
 
 .rounded-button
   $border-width: 1.5px
-  border: var(--color) $border-width solid
-  background-color: var(--background)
-  color: var(--color)
   border-radius: 7px
   padding: 5px 15px
   cursor: pointer
@@ -34,6 +32,13 @@ export default {
   display: flex
   align-items: center
   justify-content: center
+  border: var(--secondary) $border-width solid
+  background-color: var(--background)
+  color: var(--secondary)
+  &.showColor
+    border: var(--color) $border-width solid
+    background-color: var(--background)
+    color: var(--color)
   &.invert
     background-color: var(--color)
     color: var(--background)

@@ -41,7 +41,7 @@ export default {
 
 .home-link
   .home
-    color: var(--color)
+    color: var(--secondary)
     border-radius: 100px
     padding: 7px
     transition: box-shadow .2s

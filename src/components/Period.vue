@@ -91,7 +91,7 @@ export default {
 
   &.invert
     box-shadow: none
-    background-color: var(--background)
+    background-color: var(--secondarybackground)
     border: var(--color) 1px solid
 
     .circle

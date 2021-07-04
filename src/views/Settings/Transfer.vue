@@ -78,11 +78,10 @@ import SettingsSection from './SettingsSection.vue';
 // Note: setting refers to the name (e.g. 'color'), data inclued the content (e.g. '#FA32F5' or {'color' : '#FA32F5'})
 
 const tranferableSettings = [ // the following strings should be direct properties of $store.state
-  'color',
+  'theme',
   'defaultScheduleMode',
   'grade',
   'customSchedules',
-  'theme',
 ];
 
 const popups = {

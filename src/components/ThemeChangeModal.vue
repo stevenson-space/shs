@@ -19,8 +19,8 @@
           </div>
           <br />
           <div class="btn-row">
-            <rounded-button class="button" text="Yes" @click="$emit('yes')" :circular="false" />
-            <rounded-button class="button" text="No" @click="$emit('no')" :circular="false" />
+            <rounded-button class="button" :showColor="false" text="No" @click="$emit('no')" :circular="false" />
+            <rounded-button class="button" :showColor="false" text="Yes" @click="$emit('yes')" :circular="false" />
           </div>
         </div>
       </div>

@@ -1,7 +1,8 @@
 <template>
   <timed-card startTime="May 20, 2021" endTime="August 11, 2021">
     <div class="row">
-      <div class="message">Introducing <b>Dark Mode</b></div>
+      <div v-if="theme.name === 'light'" class="message">Introducing <b>Dark Mode</b></div>
+      <div v-else class="message">Go back to <b>Light Mode</b></div>
       <rounded-button
         class="button"
         text="Try It"
