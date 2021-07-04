@@ -57,7 +57,7 @@ export default {
 
     .card
       +shadow
-      background-color: white
+      background-color: var(--background)
       position: relative
       border-radius: 20px
       top: 100px

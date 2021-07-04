@@ -24,7 +24,7 @@ export default {
 .rounded-button
   $border-width: 1.5px
   border: var(--color) $border-width solid
-  background-color: white
+  background-color: var(--background)
   color: var(--color)
   border-radius: 7px
   padding: 5px 15px
@@ -36,7 +36,7 @@ export default {
   justify-content: center
   &.invert
     background-color: var(--color)
-    color: white
+    color: var(--background)
     border: none
     padding: (5px + $border-width) (15px + $border-width)
   &.circular

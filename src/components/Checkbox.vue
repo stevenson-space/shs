@@ -40,7 +40,7 @@ export default {
   -webkit-tap-highlight-color: transparent
 
   .checkbox
-    color: white
+    color: var(--background)
     border: var(--color) 1.5px solid
     box-sizing: border-box
     width: 20px

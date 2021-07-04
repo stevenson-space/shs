@@ -82,6 +82,7 @@ const tranferableSettings = [ // the following strings should be direct properti
   'defaultScheduleMode',
   'grade',
   'customSchedules',
+  'theme',
 ];
 
 const popups = {
@@ -249,7 +250,7 @@ export default {
     text-align: center
     width: 100%
     font-weight: bold
-    color: #333
+    color: var(--secondary)
     font-size: 1.2em
 
   .warning

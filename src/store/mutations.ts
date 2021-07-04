@@ -73,6 +73,21 @@ const mutations: MutationTree<State> = {
     state.customSchedules = schedules;
     localStorage.customSchedules = JSON.stringify(schedules);
   },
+
+  setTheme(state, data) { //  'yes':'override', 'no': 'don't override'
+    const { theme } = data;
+    const { choice } = data;
+    const color = theme.suggestedColor;
+    if (choice === 'yes') {
+      state.color = color;
+      localStorage.color = color;
+      query('set', 'dimension1', color);
+    }
+
+    state.theme = theme;
+    localStorage.theme = JSON.stringify(theme);
+  },
+
   resetSchedules(state) {
     state.customSchedules = {};
     localStorage.customSchedules = {};

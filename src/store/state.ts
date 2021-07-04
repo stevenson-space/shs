@@ -1,4 +1,5 @@
 import { CustomSchedules } from '@/utils/types';
+import themes from '@/data/themes.json';
 
 const state = {
   // in 'current' mode, everything is configured as if the specified date is current (e.g. countdown shown)
@@ -6,8 +7,8 @@ const state = {
   mode: 'current',
 
   scheduleMode: '',
-  color: '#1b5e20',
-
+  color: themes[0].suggestedColor,
+  theme: themes[0],
   // date indicates Date object, time indicates epoch time in milliseconds
   urlDate: new Date(), // relative to URL specified time (will be set when URL changes)
   startTime: Date.now(), // relative to real time

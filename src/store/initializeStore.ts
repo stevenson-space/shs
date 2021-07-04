@@ -11,6 +11,13 @@ const initializeStore = (store: Store<State>): void => {
     query('set', 'dimension1', 'unset');
   }
 
+  if (localStorage.theme) {
+    const data = { theme: null, choice: '' };
+    data.theme = JSON.parse(localStorage.theme);
+    data.choice = 'yes';
+    store.commit('setTheme', data);
+  }
+
   store.commit('setCustomSchedules', tryParseJSON(localStorage.customSchedules));
 
   // defaultScheduleMode used to (inappropriately) be called defaultSchedule, so to preserve backwards compatibility:

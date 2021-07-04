@@ -199,7 +199,7 @@ export default {
       min-width: 200px
       &.selected
         background-color: var(--color)
-        color: white
+        color: var(--background)
 
       .suffix
         font-size: .75em
