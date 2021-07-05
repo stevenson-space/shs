@@ -1,6 +1,17 @@
 <template>
   <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">
-   <svg class="progress" v-if="(progress != 0) && !disableProgressBar && (actualPeriod.length  == 1 || actualPeriod.length  == 2) " :class="{invert}" width="40" height="40">
+    <!-- {{ count }}  -->
+    <svg
+      class="progress"
+      v-if="
+        progress != 0 &&
+        !disableProgressBar &&
+        (actualPeriod.length == 1 || actualPeriod.length == 2)
+      "
+      :class="{ invert }"
+      width="40"
+      height="40"
+    >
       <circle
         class="progress-circle"
         cx="20"
@@ -10,7 +21,7 @@
         :r="normalizedRadius"
         :style="{
           strokeDashoffset: strokeDashoffset,
-          strokeDasharray: circumference + ' ' + circumference
+          strokeDasharray: circumference + ' ' + circumference,
         }"
         fill="white"
         :stroke-width="stroke"
@@ -19,7 +30,12 @@
         {{ actualPeriod }}
       </text>
     </svg>
-        <div v-else class="circle" :class="{invert}" :style="{ fontSize: periodFontSize }">
+    <div
+      v-else
+      class="circle"
+      :class="{ invert }"
+      :style="{ fontSize: periodFontSize }"
+    >
       {{ actualPeriod }}
     </div>
     <div class="range">
@@ -32,7 +48,7 @@
 </template>
 <script>
 import Bell from "@/utils/bell";
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 
 export default {
   props: {
@@ -50,13 +66,12 @@ export default {
       normalizedRadius: 0, // don't touch
       circumference: 0, // don't touch
       currentTime: 0,
-      date: new Date()
+      date: new Date(),
+      // count:0,
     };
   },
   computed: {
-      ...mapGetters([
-      'bell',
-    ]),
+    ...mapGetters(["bell"]),
     actualPeriod() {
       // remove the ! mark in front of period names
       const { period } = this;
@@ -65,7 +80,7 @@ export default {
     periodFontSize() {
       return this.period.length > 10 ? "1em" : "1.3em";
     },
-progress() {
+    progress() {
       const start = this.start;
       const end = this.end;
       const startHours = this.start.substring(0, start.indexOf(":"));
@@ -74,37 +89,48 @@ progress() {
       const endMin = this.end.substring(end.indexOf(":") + 1);
       const currentdate = this.date;
       const startTime = Date.parse(
-        `${currentdate.getMonth() +
-          1}/${currentdate.getDate()}/${currentdate.getFullYear()} ${startHours}:${startMin}:00`
+        `${
+          currentdate.getMonth() + 1
+        }/${currentdate.getDate()}/${currentdate.getFullYear()} ${startHours}:${startMin}:00`
       );
       const endTime = Date.parse(
-        `${currentdate.getMonth() +
-          1}/${currentdate.getDate()}/${currentdate.getFullYear()} ${endHours}:${endMin}:00`
+        `${
+          currentdate.getMonth() + 1
+        }/${currentdate.getDate()}/${currentdate.getFullYear()} ${endHours}:${endMin}:00`
       );
       const todayMillis = currentdate.getTime();
+      if(todayMillis > endTime){
+        console.log("boo")
+        clearInterval(this.interval);
+      }
       if (todayMillis >= startTime && todayMillis <= endTime) {
         const periodLength = endTime - startTime;
         const elapsedTime = endTime - todayMillis;
-        return (elapsedTime / periodLength);
-      }else{
-       return 0
+        console.log('x')
+        return elapsedTime / periodLength;
+      } else {
+        console.log("foo")
+        return 0;
       }
     },
     strokeDashoffset() {
-      return this.circumference - (this.progress ) * this.circumference;
-    }
+      return this.circumference - this.progress * this.circumference;
+    },
   },
   methods: {
-    convertMilitaryTime: Bell.convertMilitaryTime
+    convertMilitaryTime: Bell.convertMilitaryTime,
   },
   created() {
     this.normalizedRadius = this.radius - this.stroke * 2;
     this.circumference = this.normalizedRadius * 2 * Math.PI;
-    clearInterval(this.interval);
-    this.interval = setInterval(() => {
-      this.date = new Date();
-    }, 1000);
-  }
+    if(!this.disableProgressBar){
+      clearInterval(this.interval);
+      this.interval = setInterval(() => {
+        this.date = new Date();
+        // this.count++
+      }, 1000);
+    }
+  },
 };
 </script>
 
@@ -122,7 +148,7 @@ progress() {
   flex-grow: 1
   margin: 7px
   padding: 2px
-  width: calc(100% - 14px) 
+  width: calc(100% - 14px)
 
   .circle
     min-width: 15px
@@ -165,11 +191,12 @@ progress() {
     transform: rotate(-90deg)
     stroke-dasharray: 189
     stroke-dashoffset: 189
-    transition: stroke-dashoffset 1s ease-in-out
+    transition: stroke-dashoffset 1s
+    transition-timing-function: linear
   .spacer
     width: 40px
     height: 2px
-    
+
   .range
     color: white
     text-align: center
@@ -177,7 +204,7 @@ progress() {
     font-size: 1.1em
     font-weight: bold
     min-width: 100px
-   
+
     .time
       display: inline-block
 
@@ -185,7 +212,7 @@ progress() {
     box-shadow: none
     background-color: white
     border: var(--color) 1px solid
-    
+
     .progress
       fill: var(--color)
     .range
