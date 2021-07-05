@@ -1,6 +1,5 @@
 <template>
   <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">
-    <!-- {{ count }}  -->
     <svg
       class="progress"
       v-if="
@@ -30,6 +29,7 @@
         {{ actualPeriod }}
       </text>
     </svg>
+
     <div
       v-else
       class="circle"
@@ -38,6 +38,7 @@
     >
       {{ actualPeriod }}
     </div>
+        <!-- {{ progress }}  -->
     <div class="range">
       <div class="time">{{ convertMilitaryTime(start) }}</div>
       <span class="dash"> – </span>
@@ -100,16 +101,16 @@ export default {
       );
       const todayMillis = currentdate.getTime();
       if(todayMillis > endTime){
-        console.log("boo")
         clearInterval(this.interval);
       }
       if (todayMillis >= startTime && todayMillis <= endTime) {
         const periodLength = endTime - startTime;
-        const elapsedTime = endTime - todayMillis;
-        console.log('x')
-        return elapsedTime / periodLength;
+        const timeLeft = endTime - todayMillis;
+        if((periodLength - timeLeft) < 1000){
+          return .000001
+        }
+        return timeLeft / periodLength;
       } else {
-        console.log("foo")
         return 0;
       }
     },
@@ -190,7 +191,7 @@ export default {
     transform-origin: center
     transform: rotate(-90deg)
     stroke-dasharray: 189
-    stroke-dashoffset: 189
+    stroke-dashoffset: 0
     transition: stroke-dashoffset 1s
     transition-timing-function: linear
   .spacer
