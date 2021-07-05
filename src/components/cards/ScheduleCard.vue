@@ -8,7 +8,6 @@
             <span class="title">Up Next</span>
           </div>
         </div>
-
         <period
           v-else
           :key="period.name"

@@ -1,6 +1,6 @@
 <template>
   <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">
-   <svg class="progress" v-if="(progress != 0) && !disableProgressBar && actualPeriod.length  == 1" :class="{invert}" width="40" height="40">
+   <svg class="progress" v-if="(progress != 0) && !disableProgressBar && (actualPeriod.length  == 1 || actualPeriod.length  == 2) " :class="{invert}" width="40" height="40">
       <circle
         class="progress-circle"
         cx="20"
@@ -19,7 +19,7 @@
         {{ actualPeriod }}
       </text>
     </svg>
-        <div v-else class="circle" :style="{ fontSize: periodFontSize }">
+        <div v-else class="circle" :class="{invert}" :style="{ fontSize: periodFontSize }">
       {{ actualPeriod }}
     </div>
     <div class="range">
@@ -65,8 +65,7 @@ export default {
     periodFontSize() {
       return this.period.length > 10 ? "1em" : "1.3em";
     },
-    //start/end 4:20,5:30
-    progress() {
+progress() {
       const start = this.start;
       const end = this.end;
       const startHours = this.start.substring(0, start.indexOf(":"));
@@ -86,7 +85,7 @@ export default {
       if (todayMillis >= startTime && todayMillis <= endTime) {
         const periodLength = endTime - startTime;
         const elapsedTime = endTime - todayMillis;
-        return (elapsedTime / periodLength) * 100;
+        return (elapsedTime / periodLength);
       }else{
        return 0
       }
@@ -99,7 +98,6 @@ export default {
     convertMilitaryTime: Bell.convertMilitaryTime
   },
   created() {
-    console.log(typeof this.date)
     this.normalizedRadius = this.radius - this.stroke * 2;
     this.circumference = this.normalizedRadius * 2 * Math.PI;
     clearInterval(this.interval);
@@ -122,7 +120,7 @@ export default {
   align-items: center
   justify-content: space-between
   flex-grow: 1
-  margin: 5px
+  margin: 7px
   padding: 2px
   width: calc(100% - 14px) 
 
@@ -140,12 +138,14 @@ export default {
     overflow: hidden
     white-space: nowrap
     text-overflow: ellipsis
+    &.invert
+      color: var(--color)
 
   &.not-mobile
     +tablet
       width: calc(50% - 14px)
   .progress
-    transform: scale(1.17) translateY(.5px)
+    transform: scale(1.17) translateY(-1px)
     background: white
     border-radius: 100px
     fill: #333
@@ -153,6 +153,7 @@ export default {
     font-size: 17px
     box-shadow: 0px 0px 6px -4px rgba(0,0,0,1)
     margin: 6px 0px
+
     &.invert
       font-size: 19px
       box-shadow: none

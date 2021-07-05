@@ -17,10 +17,12 @@
         <component
           :is="isMultiDay ? 'MultiDayPeriod' : 'Period'"
           v-for="period in periods"
+          :disableProgressBar="schedule.name != bell.type"
           :key="period._id"
           v-bind="period"
         />
       </div>
+      
     </div>
   </div>
 </template>
@@ -31,6 +33,7 @@ import Period from '@/components/Period.vue';
 import Dropdown from '@/components/Dropdown.vue';
 import ScrollSelector from '@/components/ScrollSelector.vue';
 import MultiDayPeriod from './MultiDayPeriod.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
@@ -51,6 +54,9 @@ export default {
     };
   },
   computed: {
+     ...mapGetters([
+      'bell',
+    ]),
     selectedModeString() {
       return this.dropdownOptions[this.selectedMode];
     },
