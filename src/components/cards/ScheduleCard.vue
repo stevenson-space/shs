@@ -113,7 +113,7 @@ export default {
 @import 'src/styles/style.sass'
 
 .card
-  padding: 0 10px
+  padding: 0 8px
   padding-bottom: 5px
 
   .title
@@ -147,7 +147,6 @@ export default {
     .period
       margin-left: 4px
       margin-bottom: 7px
-      font-size: .9em
-      height: 37px
+      
 
 </style>
