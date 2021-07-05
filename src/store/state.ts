@@ -20,7 +20,7 @@ const state = {
   grade: 'None',
 
   // authenticated with a student.d125.org google email
-  isAuthenticated: false,
+  isAuthenticated: process.env.NODE_ENV === 'development',
 };
 
 export type State = typeof state;
