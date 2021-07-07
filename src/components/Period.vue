@@ -38,7 +38,8 @@
     >
       {{ actualPeriod }}
     </div>
-        <!-- {{ progress }}  -->
+    <!-- {{ count }} -->
+    <!-- {{ progress }}  -->
     <div class="range">
       <div class="time">{{ convertMilitaryTime(start) }}</div>
       <span class="dash"> – </span>
@@ -68,7 +69,8 @@ export default {
       circumference: 0, // don't touch
       currentTime: 0,
       date: new Date(),
-      // count:0,
+      // count: 0,
+      delay: 500,
     };
   },
   computed: {
@@ -100,14 +102,25 @@ export default {
         }/${currentdate.getDate()}/${currentdate.getFullYear()} ${endHours}:${endMin}:00`
       );
       const todayMillis = currentdate.getTime();
-      if(todayMillis > endTime){
+      if (todayMillis > endTime) {
         clearInterval(this.interval);
+      } else {
+        if (startTime - todayMillis > 30000) {
+          var longDelay = 20000
+          if(this.delay != longDelay){
+            this.setCustomInterval(longDelay);
+          }
+        } else {
+          if(this.delay != 1000){
+            this.setCustomInterval(2000);
+          }
+        }
       }
       if (todayMillis >= startTime && todayMillis <= endTime) {
         const periodLength = endTime - startTime;
         const timeLeft = endTime - todayMillis;
-        if((periodLength - timeLeft) < 1000){
-          return .000001
+        if (periodLength - timeLeft < 1000) {
+          return 0.000001;
         }
         return timeLeft / periodLength;
       } else {
@@ -120,16 +133,21 @@ export default {
   },
   methods: {
     convertMilitaryTime: Bell.convertMilitaryTime,
+    setCustomInterval(time) {
+      console.log("Setting with time " + time);
+      this.delay = time;
+      clearInterval(this.interval);
+      this.interval = setInterval(() => {
+        this.date = new Date();
+        // this.count++;
+      }, time);
+    },
   },
   created() {
     this.normalizedRadius = this.radius - this.stroke * 2;
     this.circumference = this.normalizedRadius * 2 * Math.PI;
-    if(!this.disableProgressBar){
-      clearInterval(this.interval);
-      this.interval = setInterval(() => {
-        this.date = new Date();
-        // this.count++
-      }, 1000);
+    if (!this.disableProgressBar) {
+      this.date = new Date();
     }
   },
 };
@@ -192,7 +210,7 @@ export default {
     transform: rotate(-90deg)
     stroke-dasharray: 189
     stroke-dashoffset: 0
-    transition: stroke-dashoffset 1s
+    transition: stroke-dashoffset 2s
     transition-timing-function: linear
   .spacer
     width: 40px
