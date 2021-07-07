@@ -14,7 +14,7 @@ const initializeStore = (store: Store<State>): void => {
   if (localStorage.theme) {
     const data = { theme: null, choice: '' };
     data.theme = JSON.parse(localStorage.theme);
-    data.choice = 'yes';
+    data.choice = 'no';
     store.commit('setTheme', data);
   }
 
