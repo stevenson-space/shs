@@ -181,17 +181,14 @@ export default {
   outline: none
   white-space: nowrap // need everything to be on one line for proper animation
   font-weight: bold
-  color: #444
-  color: var(--tertiary) !important
+  color: var(--tertiary)
   z-index: 1
   &.selected
     z-index: 60 // when this dropdown is selected, it should be placed above everything else (except Popup)
     .select-option
       +shadow
-      border-color: white
       border-color: var(--background)
   .select-option
-    background-color: white
     background-color: var(--background)
     position: relative
     border: var(--color) 1px solid

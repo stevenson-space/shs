@@ -75,8 +75,7 @@ const mutations: MutationTree<State> = {
   },
 
   setTheme(state, data) { //  'yes':'override', 'no': 'don't override'
-    const { theme } = data;
-    const { choice } = data;
+    const { choice, theme } = data;
     const color = theme.suggestedColor;
     if (choice === 'yes') {
       state.color = color;

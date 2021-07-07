@@ -29,8 +29,7 @@ import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
 export default {
   components: { themeCircle, ThemeChangeModal },
   computed: {
-    ...mapState(['theme']),
-    ...mapState(['color']),
+    ...mapState(['color', 'theme']),
   },
   data() {
     return {
