@@ -4,14 +4,14 @@ import { tryParseJSON } from '@/utils/util';
 import { State } from './state';
 
 const initializeStore = (store: Store<State>): void => {
-  if (localStorage.color) {
+  if (localStorage.color && process.env.VUE_APP_EDIT_COLORS !== 'true') {
     store.commit('setColor', localStorage.color);
     query('set', 'dimension1', localStorage.color);
   } else {
     query('set', 'dimension1', 'unset');
   }
 
-  if (localStorage.theme) {
+  if (localStorage.theme && process.env.VUE_APP_EDIT_COLORS !== 'true') {
     const data = { theme: null, choice: '' };
     data.theme = JSON.parse(localStorage.theme);
     data.choice = 'no';

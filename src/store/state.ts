@@ -7,8 +7,8 @@ const state = {
   mode: 'current',
 
   scheduleMode: '',
-  color: themes[0].suggestedColor,
-  theme: themes[0],
+  color: themes[process.env.VUE_APP_EDIT_COLORS === 'true' ? themes.length - 1 : 0].suggestedColor,
+  theme: themes[process.env.VUE_APP_EDIT_COLORS === 'true' ? themes.length - 1 : 0],
   // date indicates Date object, time indicates epoch time in milliseconds
   urlDate: new Date(), // relative to URL specified time (will be set when URL changes)
   startTime: Date.now(), // relative to real time
