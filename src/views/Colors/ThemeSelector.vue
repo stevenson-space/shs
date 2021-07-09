@@ -1,7 +1,7 @@
 <template>
   <div>
     <theme-change-modal
-      :newTheme="theme.name == 'light' ? themes[1] : themes[0]"
+      :newTheme="selectedTheme"
       :showModal="showModal"
       v-on:yes="choice('yes')"
       v-on:no="choice('no')"

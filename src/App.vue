@@ -17,6 +17,7 @@ export default {
         '--background': this.theme.background,
         '--secondaryBackground': this.theme.secondaryBackground,
         '--headerBackgroundColor': this.theme.headerBackgroundColor,
+        '--headerScheduleBackgroundColor': this.theme.headerScheduleBackgroundColor,
         color: this.theme.primary,
         '--secondary': this.theme.secondary,
         '--tertiary': this.theme.tertiary,
