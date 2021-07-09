@@ -1,5 +1,6 @@
 import { CustomSchedules } from '@/utils/types';
 import themes from '@/data/themes.json';
+import themeIdeas from '@/data/themeIdeas.json';
 
 const state = {
   // in 'current' mode, everything is configured as if the specified date is current (e.g. countdown shown)
@@ -7,8 +8,8 @@ const state = {
   mode: 'current',
 
   scheduleMode: '',
-  color: themes[process.env.VUE_APP_EDIT_COLORS === 'true' ? themes.length - 1 : 0].suggestedColor,
-  theme: themes[process.env.VUE_APP_EDIT_COLORS === 'true' ? themes.length - 1 : 0],
+  color: process.env.VUE_APP_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1].suggestedColor : themes[0].suggestedColor,
+  theme: process.env.VUE_APP_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1] : themes[0],
   // date indicates Date object, time indicates epoch time in milliseconds
   urlDate: new Date(), // relative to URL specified time (will be set when URL changes)
   startTime: Date.now(), // relative to real time
