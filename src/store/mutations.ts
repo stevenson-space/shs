@@ -4,7 +4,7 @@ import { query } from 'vue-analytics';
 import { Route } from 'vue-router';
 import { MutationTree } from 'vuex';
 import { getNameWithoutConflicts } from '@/utils/util';
-import { CustomSchedules } from '@/utils/types';
+import { CustomSchedules, ThemeData } from '@/utils/types';
 import officialSchedules from '@/data/schedules.json';
 import { State } from './state';
 
@@ -74,10 +74,10 @@ const mutations: MutationTree<State> = {
     localStorage.customSchedules = JSON.stringify(schedules);
   },
 
-  setTheme(state, data) { //  'yes':'override', 'no': 'don't override'
-    const { choice, theme } = data;
+  setTheme(state, data: ThemeData) {
+    const { useThemeColor, theme } = data;
     const color = theme.suggestedColor;
-    if (choice === 'yes') {
+    if (useThemeColor) {
       state.color = color;
       localStorage.color = color;
       query('set', 'dimension1', color);

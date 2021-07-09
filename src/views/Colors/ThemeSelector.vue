@@ -3,8 +3,8 @@
     <theme-change-modal
       :newTheme="selectedTheme"
       :showModal="showModal"
-      v-on:yes="choice('yes')"
-      v-on:no="choice('no')"
+      v-on:true="choice(true)"
+      v-on:false="choice(false)"
       v-on:close="showModal = false"
     />
     <div class="theme-row">
@@ -39,11 +39,9 @@ export default {
     };
   },
   methods: {
-    choice(choice) {
-      const data = {};
+    choice(useThemeColor) {
+      const data = { theme: this.selectedTheme, useThemeColor };
       this.showModal = false;
-      data.theme = this.selectedTheme;
-      data.choice = choice;
       this.$store.commit('setTheme', data);
     },
     changeTheme(theme) {
@@ -52,7 +50,7 @@ export default {
         if (this.color !== this.theme.suggestedColor) { //  if the color you set differs from the suggested color ("color conflict")
           this.showModal = true;
         } else {
-          this.choice('yes');
+          this.choice(true);
         }
       } else {
         console.log('same theme');

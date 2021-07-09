@@ -1,6 +1,9 @@
-import { CustomSchedules } from '@/utils/types';
-import themes from '@/data/themes.json';
-import themeIdeas from '@/data/themeIdeas.json';
+import { CustomSchedules, Theme } from '@/utils/types';
+import _themeIdeas from '@/data/themeIdeas.json';
+import _themes from '@/data/themes.json';
+
+const themes: Theme[] = _themes;
+const themeIdeas: Theme[] = _themeIdeas;
 
 const state = {
   // in 'current' mode, everything is configured as if the specified date is current (e.g. countdown shown)

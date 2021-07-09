@@ -1,7 +1,7 @@
 <template>
   <div class="theme-card">
-    <div class='circle-border' :class="{'no-border': !isCurrentTheme}">
-      <div class="circle" :style="{ background: gradientString,  }"></div>
+    <div class="circle-border" :class="{ 'no-border': !isCurrentTheme }">
+      <div class="circle" :style="{ background: gradientString }"></div>
     </div>
     <div class="name">
       {{ theme.name.toUpperCase().substring(0, 1) + theme.name.substring(1) }}
@@ -21,7 +21,8 @@ export default {
   },
   computed: {
     gradientString() {
-      return `linear-gradient( -45deg, ${this.colors[0]}, ${this.colors[0]} 50%, ${this.colors[1]} 50% )`;
+      const { suggestedColor, background } = this.theme;
+      return `linear-gradient( -45deg, ${suggestedColor}, ${suggestedColor} 50%, ${background} 50% )`;
     },
   },
   mounted() {

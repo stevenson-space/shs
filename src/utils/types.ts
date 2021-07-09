@@ -33,3 +33,22 @@ export type Period =
   { beforeSchool: true, afterSchool?: false }
   | { beforeSchool?: false, afterSchool: true }
   | { beforeSchool?: false, afterSchool?: false, name: string, start: string, end: string }
+
+export type Theme = {
+  name: string;
+  suggestedColor: string;
+  background: string;
+  secondaryBackground: string;
+  headerBackgroundColor: string;
+  headerScheduleBackgroundColor: string;
+  primary: string;
+  secondary: string;
+  tertiary: string;
+  iconTextCardColor: string;
+  iconTextCardInvertColor: string;
+};
+
+export type ThemeData = {
+  theme: Theme;
+  useThemeColor: boolean; //if the suggestedColor of the theme is persisted as opposed to your set color.
+};

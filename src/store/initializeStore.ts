@@ -1,5 +1,6 @@
 import { query } from 'vue-analytics';
 import { Store } from 'vuex';
+import { ThemeData } from '@/utils/types';
 import { tryParseJSON } from '@/utils/util';
 import { State } from './state';
 
@@ -12,9 +13,7 @@ const initializeStore = (store: Store<State>): void => {
   }
 
   if (localStorage.theme && process.env.VUE_APP_EDIT_COLORS !== 'true') {
-    const data = { theme: null, choice: '' };
-    data.theme = JSON.parse(localStorage.theme);
-    data.choice = 'no';
+    const data:ThemeData = { theme: JSON.parse(localStorage.theme), useThemeColor: false };
     store.commit('setTheme', data);
   }
 

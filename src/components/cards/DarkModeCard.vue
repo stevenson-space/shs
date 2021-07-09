@@ -10,8 +10,8 @@
         @click="toggleColor()"
       />
       <theme-change-modal :newTheme="theme.name == 'light' ? themes[1] : themes[0]" :showModal="showModal"
-      v-on:yes="choice('yes')"
-      v-on:no="choice('no')"
+      v-on:true="choice(true)"
+      v-on:false="choice(false)"
       v-on:close="showModal = false" />
     </div>
   </timed-card>
@@ -37,18 +37,17 @@ export default {
     };
   },
   methods: {
-    choice(choice) {
-      const data = {};
+    choice(useThemeColor) {
+      const data = { useThemeColor };
       this.showModal = false;
       data.theme = this.theme.name === 'light' ? themes[1] : themes[0];
-      data.choice = choice;
       this.$store.commit('setTheme', data);
     },
     toggleColor() {
       if (this.color !== this.theme.suggestedColor) { //  if the color you set differs from the suggested color ("color conflict")
         this.showModal = true;
       } else {
-        this.choice('yes');
+        this.choice(true);
       }
     },
   },
