@@ -14,21 +14,11 @@ export default {
     theme: { type: Object, required: true },
     isCurrentTheme: { type: Boolean, required: true },
   },
-  data() {
-    return {
-      colors: [],
-    };
-  },
   computed: {
     gradientString() {
       const { suggestedColor, background } = this.theme;
       return `linear-gradient( -45deg, ${suggestedColor}, ${suggestedColor} 50%, ${background} 50% )`;
     },
-  },
-  mounted() {
-    for (const x of ['suggestedColor', 'background']) {
-      this.$set(this.colors, this.colors.length, this.theme[x]);
-    }
   },
 };
 </script>
