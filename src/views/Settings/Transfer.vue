@@ -216,8 +216,8 @@ export default {
         if (this.shouldSaveSetting.theme) {
           console.log('importing theme');
           console.log(`using theme's color ${!this.shouldSaveSetting.color}`);
-          this.recievedData.theme = { theme: this.recievedData.theme, useThemeColor: !this.shouldSaveSetting.color };
-          console.log({ theme: this.recievedData.theme, useThemeColor: !this.shouldSaveSetting.color });
+          this.received.theme = { theme: this.receivedData.theme, useThemeColor: !this.shouldSaveSetting.color };
+          console.log({ theme: this.receivedData.theme, useThemeColor: !this.shouldSaveSetting.color });
         } else {
           console.log('not importing theme');
         }
