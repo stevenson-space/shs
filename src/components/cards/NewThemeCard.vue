@@ -1,15 +1,15 @@
 <template>
   <timed-card startTime="May 20, 2021" endTime="August 11, 2021">
     <div class="row">
-      <div v-if="theme.name === 'light'" class="message">Introducing <b>Dark Mode</b></div>
-      <div v-else class="message">Go back to <b>Light Mode</b></div>
+      <div v-if="theme.name !== themes[themes.length - 1].name" class="message">Introducing The New <b>{{capitalize(themes[themes.length - 1].name)}} Mode</b></div>
+      <div v-else class="message">Go Back To <b>{{capitalize(themes[0].name)}} Mode</b></div>
       <rounded-button
         class="button"
         text="Try It"
         :circular="false"
         @click="toggleColor()"
       />
-      <theme-change-modal :newTheme="theme.name == 'light' ? themes[1] : themes[0]" :showModal="showModal"
+      <theme-change-modal :newTheme="getNewTheme()" :showModal="showModal"
       v-on:true="choice(true)"
       v-on:false="choice(false)"
       v-on:close="showModal = false" />
@@ -27,8 +27,7 @@ import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
 export default {
   components: { TimedCard, RoundedButton, ThemeChangeModal },
   computed: {
-    ...mapState(['theme']),
-    ...mapState(['color']),
+    ...mapState(['theme', 'color']),
   },
   data() {
     return {
@@ -40,7 +39,7 @@ export default {
     choice(useThemeColor) {
       const data = { useThemeColor };
       this.showModal = false;
-      data.theme = this.theme.name === 'light' ? themes[1] : themes[0];
+      data.theme = this.getNewTheme();
       this.$store.commit('setTheme', data);
     },
     toggleColor() {
@@ -49,6 +48,12 @@ export default {
       } else {
         this.choice(true);
       }
+    },
+    getNewTheme() {
+      return this.theme.name !== this.themes[this.themes.length - 1].name ? this.themes[this.themes.length - 1] : themes[0];
+    },
+    capitalize(str) {
+      return str.substring(0, 1).toUpperCase() + str.substring(1);
     },
   },
 };

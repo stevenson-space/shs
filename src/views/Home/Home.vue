@@ -6,7 +6,7 @@
     />
 
     <card-container>
-      <dark-mode-card />
+      <new-theme-card />
       <holiday-card />
       <schedule-card />
       <lunch-card />
@@ -61,7 +61,7 @@ import IconTextCard from '@/components/cards/IconTextCard.vue';
 import ScheduleCard from '@/components/cards/ScheduleCard.vue';
 import HolidayCard from '@/components/cards/HolidayCard.vue';
 import LunchCard from '@/components/cards/LunchCard.vue';
-import DarkModeCard from '@/components/cards/DarkModeCard.vue';
+import NewThemeCard from '@/components/cards/NewThemeCard.vue';
 import ScheduleHeader from './Header.vue';
 
 export default {
@@ -73,7 +73,7 @@ export default {
     IconTextCard,
     ScheduleCard,
     HolidayCard,
-    DarkModeCard,
+    NewThemeCard,
   },
   data() {
     return {
