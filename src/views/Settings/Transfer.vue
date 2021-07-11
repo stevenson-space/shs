@@ -214,12 +214,7 @@ export default {
     save() {
       if (this.receivedData) {
         if (this.shouldSaveSetting.theme) {
-          console.log('importing theme');
-          console.log(`using theme's color ${!this.shouldSaveSetting.color}`);
-          this.received.theme = { theme: this.receivedData.theme, useThemeColor: !this.shouldSaveSetting.color };
-          console.log({ theme: this.receivedData.theme, useThemeColor: !this.shouldSaveSetting.color });
-        } else {
-          console.log('not importing theme');
+          this.receivedData.theme = { theme: this.receivedData.theme, useThemeColor: !this.shouldSaveSetting.color };
         }
         for (const [setting, data] of Object.entries(this.receivedData)) {
           if (this.shouldSaveSetting[setting]) {
