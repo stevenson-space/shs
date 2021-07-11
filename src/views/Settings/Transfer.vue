@@ -210,7 +210,7 @@ export default {
           this.errorMessage = 'Error: Invalid code or no internet';
           this.showPopup(popups.error);
         });
-    },
+    }, 
     save() {
       if (this.receivedData) {
         if (this.shouldSaveSetting.theme) {
