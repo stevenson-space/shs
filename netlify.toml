@@ -1,6 +1,6 @@
 [build]
   publish = "dist/"
-  command = "npm run ci && npm run build"
+  command = "npm ci && npm run build"
   environment = { TZ = "America/Chicago" }
 
 [context.old]
