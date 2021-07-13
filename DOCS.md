@@ -1,7 +1,9 @@
 #### *Note: Documentation is Incomplete*
 
-# Documentation
+# Developing/Modifying a theme
+When developing a new theme, set the .env file like so: `VUE_APP_EDIT_COLORS=true`. Doing this will automatically load the **last** theme in the `themeIdeas.json` into the app. When you save the file, it will automatically apply last the theme to the app which speeds up development time greatly. When the theme is ready for production, move it to to the `themes.json`. Also note, that in development, the theme will not show up in the `/colors` page.
 
+# Schedule Documentation
 ### Definitions
 
 - **Schedule Type**: the type of schedule dependent on which day it is (i.e. `Standard Schedule`, `Late Arrival`, `Activity Period`, etc.)
