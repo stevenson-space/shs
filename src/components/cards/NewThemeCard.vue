@@ -1,7 +1,7 @@
 <template>
   <timed-card startTime="May 20, 2021" endTime="August 11, 2021">
     <div class="row">
-      <div v-if="theme.name !== themes[themes.length - 1].name" class="message">Introducing The New <b>{{capitalize(themes[themes.length - 1].name)}} Mode</b></div>
+      <div v-if="theme.name !== themes[themes.length - 1].name" class="message">Introducing <b>{{capitalize(themes[themes.length - 1].name)}} Mode</b></div>
       <div v-else class="message">Go Back To <b>{{capitalize(themes[0].name)}} Mode</b></div>
       <rounded-button
         class="button"
