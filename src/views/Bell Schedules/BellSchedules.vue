@@ -34,7 +34,7 @@ export default {
 
 .bellschedules
   .background-block
-    background-color: var(--color)
+    background-color: var(--headerBackgroundColor)
     height: 250px
     width: 100%
     left: 0
@@ -57,7 +57,7 @@ export default {
 
     .card
       +shadow
-      background-color: white
+      background-color: var(--background)
       position: relative
       border-radius: 20px
       top: 100px

@@ -181,21 +181,19 @@ export default {
   outline: none
   white-space: nowrap // need everything to be on one line for proper animation
   font-weight: bold
-  color: #444
-
+  color: var(--tertiary)
   z-index: 1
   &.selected
     z-index: 60 // when this dropdown is selected, it should be placed above everything else (except Popup)
-
     .select-option
       +shadow
-      border-color: white
-
+      border-color: var(--background)
   .select-option
-    background-color: white
+    background-color: var(--background)
     position: relative
     border: var(--color) 1px solid
     display: flex
+    margin-left: 7px
     justify-content: center
     align-items: center
     border-radius: 100px
@@ -203,12 +201,12 @@ export default {
     cursor: pointer
     user-select: none
     -webkit-tap-highlight-color: transparent
-
     .down-icon
       margin-left: 7px
 
   .option
     background-color: white
+    background-color: var(--background)
     border-radius: 100px
     +shadow
     padding: 5px 12px
@@ -217,5 +215,5 @@ export default {
     user-select: none
     &:hover
       background-color: #eee
-
+      background-color: var(--secondaryBackground)
 </style>

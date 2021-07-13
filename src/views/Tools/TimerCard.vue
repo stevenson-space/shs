@@ -321,24 +321,26 @@ export default {
 
 .timer-card
   .fullscreen-wrapper
-    background-color: white
+    background-color: var(--background)
 
   .header
     display: flex
     background-color: var(--color)
     padding: 3px 20px
-    color: white
+    color: var(--background)
     font-size: 1.25em
     align-items: center
     user-select: none
 
     .title
       flex: 1
+      color: white
       text-align: center
       font-weight: bold
       font-size: 1.1em
 
     .icon-button
+      color: white
       cursor: pointer
       position: relative
       padding: 7px 10px
@@ -377,7 +379,7 @@ export default {
     text-align: center
     font-size: .75em
     margin: 5px 0
-    color: #777
+    color: var(--secondary)
 
   .add-time-buttons
     display: flex

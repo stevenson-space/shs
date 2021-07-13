@@ -72,9 +72,9 @@ export default {
 .schedule
   padding: 5px
   width: calc(100% - 10px) // subtract 2 * 5px (padding)
-  color: #333
+  color: var(--secondary)
   letter-spacing: 1px
-  background-color: white
+  background-color: var(--headerScheduleBackgroundColor)
   &.full-screen
     font-size: 2.75vh
 

@@ -153,17 +153,14 @@ export default {
   },
 };
 </script>
-
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
-
 .settings
   --sidenav-width: 325px
   +tablet
     --sidenav-width: 250px
   +mobile
     --sidenav-width: 275px
-
   .hamburger-menu
     cursor: pointer
     font-size: 1.5em
@@ -174,7 +171,6 @@ export default {
     display: none
     +mobile
       display: block
-
   .sidenav-background
     background-color: rgb(0, 0, 0)
     position: fixed
@@ -187,12 +183,11 @@ export default {
     &.show
       opacity: .65
       z-index: 19
-
   .sidenav
     width: var(--sidenav-width)
     height: 100vh
     position: fixed
-    background-color: white
+    background-color: var(--background)
     border-right: #ddd solid thin
     transition: transform .2s
     z-index: 20
@@ -200,7 +195,6 @@ export default {
       transform: translateX(calc(-1 * var(--sidenav-width) - 5px))
       &.show
         transform: translateX(0)
-
     .close-arrow
       color: var(--color)
       font-size: 1.5em
@@ -209,7 +203,6 @@ export default {
       display: none
       +mobile
         display: inline-block
-
     .title
       color: var(--color)
       text-align: center
@@ -221,10 +214,9 @@ export default {
       border-bottom: #ddd solid thin
       +mobile
         padding-top: 5px
-
     .link
       text-decoration: none
-      color: #333
+      color: var(--secondary)
       padding: 15px
       padding-left: 70px
       display: block
@@ -234,20 +226,16 @@ export default {
         padding-left: 50px
       &.selected
         background-color: rgba(0, 0, 0, .075)
-
       .icon
         font-size: 1.3em
-
       .text
         font-size: 1.2em
         margin-left: 25px
-
   .main
     margin-left: var(--sidenav-width)
     padding-top: 100px
     +mobile
       margin-left: 0
-
     .home-link
       position: absolute
       right: 20px

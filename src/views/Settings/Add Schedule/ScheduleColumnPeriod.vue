@@ -103,7 +103,7 @@ export default {
 @import 'src/styles/style.sass'
 
 .schedule-column-period
-  background-color: white
+  background-color: var(--background)
   border-radius: 15px
   padding: 15px
   position: relative

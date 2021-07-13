@@ -112,7 +112,7 @@ export default {
 
     .text
       text-align: center
-      background-color: white
+      background-color: var(--background)
       font-weight: bold
       padding: 5px 15px
       user-select: none

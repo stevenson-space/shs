@@ -41,14 +41,14 @@ export default {
 
 .home-link
   .home
-    color: var(--color)
+    color: var(--secondary)
     border-radius: 100px
     padding: 7px
     transition: box-shadow .2s
     text-decoration: none
     display: flex
     align-items: center
-    background-color: white
+    background-color: var(--background)
     z-index: 1
     transition: background-color .2s, color .2s
 

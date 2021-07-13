@@ -44,7 +44,7 @@ export default {
   user-select: none
 
   &.today
-    color: white
+    color: var(--background)
     background-color: var(--color)
 
 .event

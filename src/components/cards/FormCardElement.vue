@@ -12,7 +12,7 @@ export default {
     submit: { type: Boolean, default: false },
   },
   methods: {
-    clicked(event) {
+    clicked() {
       // if this is the submit component, then click our simulated submit button
       if (this.submit) this.$refs.submitButton.click();
     },
@@ -46,6 +46,8 @@ export default {
   input
     &:focus
       outline: none
+    background: var(--background)
+    color: var(--primary)
     padding: 0px 5px
     border-radius: 30px
     width: 80%

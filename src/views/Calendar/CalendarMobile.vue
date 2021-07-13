@@ -97,7 +97,7 @@ export default {
     font-size: .9em
     display: flex
     justify-content: space-around
-    color: #555
+    color: var(--tertiary)
 
     .day
       width: calc(100% / 7)
@@ -130,9 +130,9 @@ export default {
 
       &.inverted
         background-color: var(--color)
-        color: white
+        color: var(--background)
         .dot
-          background-color: white
+          background-color: var(--background)
 
       .dot
         background-color: var(--color)

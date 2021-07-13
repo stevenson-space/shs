@@ -2,10 +2,10 @@
   <div>
     <div class="header">
       <div class="custom-color-row">
-           <RoundedButton
-        class="reset-button"
-          v-show="color != '#1b5e20'"
-          @click="colorSelected('#1b5e20')"
+        <RoundedButton
+          class="reset-button"
+          v-show="color != suggestedColor"
+          @click="colorSelected(suggestedColor)"
           text="Reset"
         />
         <div
@@ -21,13 +21,14 @@
       <home-link class="home-link" />
     </div>
 
+    <theme-selector />
     <color-selector
       :colors="colors"
       :current-color="color"
       @color-selected="colorSelected"
     />
 
-    <div ref="preview" class="preview" :style=" { height: previewHeight }">
+    <div ref="preview" class="preview" :style="{ height: previewHeight }">
       <div class="wrapper">
         <home />
       </div>
@@ -41,6 +42,7 @@ import Home from '@/views/Home/Home.vue';
 import HomeLink from '@/components/HomeLink.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import { mapState } from 'vuex';
+import ThemeSelector from './ThemeSelector.vue';
 import ColorSelector from './ColorSelector.vue';
 
 const isValidColor = (color) => /^#([0-9a-f]{3}){1,2}$/i.test(color);
@@ -51,6 +53,7 @@ export default {
     Home,
     HomeLink,
     RoundedButton,
+    ThemeSelector,
   },
   data() {
     return {
@@ -58,7 +61,12 @@ export default {
       previewHeight: 0,
     };
   },
-  computed: mapState(['color']),
+  computed: {
+    ...mapState(['color', 'theme']),
+    suggestedColor() {
+      return this.theme.suggestedColor;
+    },
+  },
   watch: {
     color() {
       this.setCustomColorText();

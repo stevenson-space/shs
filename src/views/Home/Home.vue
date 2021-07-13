@@ -6,6 +6,7 @@
     />
 
     <card-container>
+      <new-theme-card />
       <holiday-card />
       <schedule-card />
       <lunch-card />
@@ -60,7 +61,7 @@ import IconTextCard from '@/components/cards/IconTextCard.vue';
 import ScheduleCard from '@/components/cards/ScheduleCard.vue';
 import HolidayCard from '@/components/cards/HolidayCard.vue';
 import LunchCard from '@/components/cards/LunchCard.vue';
-import ShsHacksCard from '@/components/cards/ShsHacksCard.vue';
+import NewThemeCard from '@/components/cards/NewThemeCard.vue';
 import ScheduleHeader from './Header.vue';
 
 export default {
@@ -72,7 +73,7 @@ export default {
     IconTextCard,
     ScheduleCard,
     HolidayCard,
-    ShsHacksCard,
+    NewThemeCard,
   },
   data() {
     return {
