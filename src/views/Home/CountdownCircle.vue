@@ -65,6 +65,7 @@ export default {
     width: var(--logo-width)
     margin: 0 calc((var(--circle-diameter) - var(--logo-width)) / 2)
     margin-top: 15px
+    margin-bottom: 5px
     transition: margin .2s, width .2s
 
   .countdown
