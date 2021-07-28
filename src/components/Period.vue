@@ -1,5 +1,6 @@
 <template>
   <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">
+    <p>{{ c }}</p>
     <svg
       class="progress"
       v-if="
@@ -49,8 +50,8 @@
   </div>
 </template>
 <script>
-import Bell from "@/utils/bell";
-import { mapGetters } from "vuex";
+import Bell from '@/utils/bell';
+import { mapGetters } from 'vuex';
 
 export default {
   props: {
@@ -69,50 +70,49 @@ export default {
       circumference: 0, // don't touch
       currentTime: 0,
       date: new Date(),
-      // count: 0,
+      c: 0,
       delay: 500,
     };
   },
   computed: {
-    ...mapGetters(["bell"]),
+    ...mapGetters(['bell']),
     actualPeriod() {
       // remove the ! mark in front of period names
       const { period } = this;
-      return period[0] === "!" ? period.substring(1) : period;
+      return period[0] === '!' ? period.substring(1) : period;
     },
     periodFontSize() {
-      return this.period.length > 10 ? "1em" : "1.3em";
+      return this.period.length > 10 ? '1em' : '1.3em';
     },
     progress() {
-      const start = this.start;
-      const end = this.end;
-      const startHours = this.start.substring(0, start.indexOf(":"));
-      const startMin = this.start.substring(start.indexOf(":") + 1);
-      const endHours = this.end.substring(0, end.indexOf(":"));
-      const endMin = this.end.substring(end.indexOf(":") + 1);
+      const longDelay = 20000;
+      const { start, end } = this;
+      const startHours = this.start.substring(0, start.indexOf(':'));
+      const startMin = this.start.substring(start.indexOf(':') + 1);
+      const endHours = this.end.substring(0, end.indexOf(':'));
+      const endMin = this.end.substring(end.indexOf(':') + 1);
       const currentdate = this.date;
       const startTime = Date.parse(
         `${
           currentdate.getMonth() + 1
-        }/${currentdate.getDate()}/${currentdate.getFullYear()} ${startHours}:${startMin}:00`
+        }/${currentdate.getDate()}/${currentdate.getFullYear()} ${startHours}:${startMin}:00`,
       );
       const endTime = Date.parse(
         `${
           currentdate.getMonth() + 1
-        }/${currentdate.getDate()}/${currentdate.getFullYear()} ${endHours}:${endMin}:00`
+        }/${currentdate.getDate()}/${currentdate.getFullYear()} ${endHours}:${endMin}:00`,
       );
       const todayMillis = currentdate.getTime();
       if (todayMillis > endTime) {
         clearInterval(this.interval);
       } else {
         if (startTime - todayMillis > 30000) {
-          var longDelay = 20000
-          if(this.delay != longDelay){
+          if (this.delay !== longDelay) {
             this.setCustomInterval(longDelay);
           }
         } else {
-          if(this.delay != 1000){
-            this.setCustomInterval(2000);
+          if (this.delay !== 1000) {
+            this.setCustomInterval(1000);
           }
         }
       }
@@ -123,9 +123,8 @@ export default {
           return 0.000001;
         }
         return timeLeft / periodLength;
-      } else {
-        return 0;
       }
+      return 0;
     },
     strokeDashoffset() {
       return this.circumference - this.progress * this.circumference;
@@ -134,12 +133,12 @@ export default {
   methods: {
     convertMilitaryTime: Bell.convertMilitaryTime,
     setCustomInterval(time) {
-      console.log("Setting with time " + time);
+      console.log(`Setting with time ${time}`);
       this.delay = time;
       clearInterval(this.interval);
       this.interval = setInterval(() => {
         this.date = new Date();
-        // this.count++;
+        this.c++;
       }, time);
     },
   },
@@ -148,12 +147,13 @@ export default {
     this.circumference = this.normalizedRadius * 2 * Math.PI;
     if (!this.disableProgressBar) {
       this.date = new Date();
+      this.c++;
     }
   },
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang='sass' scoped>
 @import 'src/styles/style.sass'
 
 .period
@@ -210,7 +210,7 @@ export default {
     transform: rotate(-90deg)
     stroke-dasharray: 189
     stroke-dashoffset: 0
-    transition: stroke-dashoffset 2s
+    transition: stroke-dashoffset 1s
     transition-timing-function: linear
   .spacer
     width: 40px
