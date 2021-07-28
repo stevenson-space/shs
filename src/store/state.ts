@@ -1,4 +1,9 @@
-import { CustomSchedules } from '@/utils/types';
+import { CustomSchedules, Theme } from '@/utils/types';
+import _themeIdeas from '@/data/themeIdeas.json';
+import _themes from '@/data/themes.json';
+
+const themes: Theme[] = _themes;
+const themeIdeas: Theme[] = _themeIdeas;
 
 const state = {
   // in 'current' mode, everything is configured as if the specified date is current (e.g. countdown shown)
@@ -6,8 +11,8 @@ const state = {
   mode: 'current',
 
   scheduleMode: '',
-  color: '#1b5e20',
-
+  color: process.env.VUE_APP_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1].suggestedColor : themes[0].suggestedColor,
+  theme: process.env.VUE_APP_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1] : themes[0],
   // date indicates Date object, time indicates epoch time in milliseconds
   urlDate: new Date(), // relative to URL specified time (will be set when URL changes)
   startTime: Date.now(), // relative to real time
@@ -20,7 +25,7 @@ const state = {
   grade: 'None',
 
   // authenticated with a student.d125.org google email
-  isAuthenticated: false,
+  isAuthenticated: process.env.NODE_ENV === 'development',
 };
 
 export type State = typeof state;

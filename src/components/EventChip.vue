@@ -57,10 +57,11 @@ export default {
     border-radius: var(--circle-radius)
     position: absolute
     text-align: center
-    color: white
+    color: var(--background)
     font-size: .9em
 
     .text
+      color: white
       white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis
@@ -83,7 +84,7 @@ export default {
     line-height: 1.2em
     width: calc(var(--circle-diameter) - var(--border-width) * 2)
     height: calc(var(--circle-diameter) - var(--border-width) * 2)
-    background-color: white
+    background-color: var(--background)
     border-radius: var(--circle-radius)
     display: flex
     flex-direction: column

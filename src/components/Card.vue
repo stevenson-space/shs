@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       height: 0,
-      margin: 9,
+      margin: 7,
       spanValue: 0,
       mutationObserver: null,
       debounceTimeout: null,
@@ -74,7 +74,7 @@ export default {
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 .card
-  background-color: white
+  background-color: var(--secondaryBackground) !important
   border-radius: 15px
   position: relative
   transition: height .3s

@@ -141,7 +141,7 @@ export default {
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
       return {
-        '--header-color': showColor ? 'var(--color)' : 'white',
+        '--header-color': showColor ? 'var(--headerBackgroundColor)' : 'var(--background)',
         '--header-accent': showColor ? 'white' : 'var(--color)',
       };
     },
@@ -375,7 +375,7 @@ export default {
 
     .date
       // +shadow
-      background-color: white
+      background-color: var(--background)
       border-radius: 100px
       margin-top: 10px
       padding: 3px

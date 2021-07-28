@@ -254,7 +254,7 @@ export default {
     .gpa-tile
       display: flex
       background-color: var(--color)
-      color: white
+      color: var(--background)
       border-top-right-radius: 10px
       border-top-left-radius: 10px
 
@@ -268,7 +268,7 @@ export default {
         margin: 0px 12px
         padding: 8px 0px 5px 0px
         background-color: inherit
-        color: inherit
+        color: white
 
       .close
         width: 18px

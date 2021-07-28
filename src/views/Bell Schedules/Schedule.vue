@@ -170,7 +170,7 @@ export default {
     text-align: left
     font-size: 2.5em
     font-weight: bold
-    color: #555
+    color: var(--tertiary)
     margin-left: 54px
     padding: 35px 0 15px 0
     display: flex

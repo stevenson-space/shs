@@ -391,7 +391,7 @@ export default {
 
   .title
     font-size: 2em
-    color: #444
+    color: var(--secondary)
     font-weight: bold
     margin-left: 10px
     display: flex

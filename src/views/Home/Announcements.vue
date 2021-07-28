@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       // [{ text: String, showInFullScreen: Boolean }]
-      announcements: [],
+      announcements: [{ text: 'School Starts August 12', showInFullScreen: false }],
     };
   },
   props: {
@@ -35,11 +35,11 @@ export default {
 @import 'src/styles/style.sass'
 
 .announcements:nth-child(odd)
-  background-color: #f2f2f2
-  color: #333
+  background-color: var(--secondaryBackground)
+  color: var(--primary)
 .announcements:nth-child(even)
-  background-color: white
-  color: #333
+  background-color: var(--background)
+  color: var(--secondary)
 
 .announcement
   padding: 5px

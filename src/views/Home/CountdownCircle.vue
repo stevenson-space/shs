@@ -53,18 +53,19 @@ export default {
     --logo-width: 70px
 
   // +shadow
-  background-color: white
   width: var(--circle-diameter)
   height: var(--circle-diameter)
+  background: var(--background)
+  color: var(--secondary)
   border-radius: 2000px
   font-weight: bold
-  color: #333
   transition: width .2s, height .2s
 
   .logo
     width: var(--logo-width)
     margin: 0 calc((var(--circle-diameter) - var(--logo-width)) / 2)
     margin-top: 15px
+    margin-bottom: 5px
     transition: margin .2s, width .2s
 
   .countdown

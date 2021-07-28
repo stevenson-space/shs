@@ -1,14 +1,20 @@
 import { query } from 'vue-analytics';
 import { Store } from 'vuex';
+import { ThemeData } from '@/utils/types';
 import { tryParseJSON } from '@/utils/util';
 import { State } from './state';
 
 const initializeStore = (store: Store<State>): void => {
-  if (localStorage.color) {
+  if (localStorage.color && process.env.VUE_APP_EDIT_COLORS !== 'true') {
     store.commit('setColor', localStorage.color);
     query('set', 'dimension1', localStorage.color);
   } else {
     query('set', 'dimension1', 'unset');
+  }
+
+  if (localStorage.theme && process.env.VUE_APP_EDIT_COLORS !== 'true') {
+    const data:ThemeData = { theme: JSON.parse(localStorage.theme), useThemeColor: false };
+    store.commit('setTheme', data);
   }
 
   store.commit('setCustomSchedules', tryParseJSON(localStorage.customSchedules));

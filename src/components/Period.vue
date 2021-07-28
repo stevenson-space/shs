@@ -174,10 +174,10 @@ export default {
     height: 15px
     line-height: 15px
     border-radius: 15px
-    background-color: white
+    background-color: var(--background)
     text-align: center
     font-weight: bold
-    color: #333
+    color: var(--primary)
     margin: 5px
     padding: 8px
     overflow: hidden
@@ -229,13 +229,13 @@ export default {
 
   &.invert
     box-shadow: none
-    background-color: white
+    background-color: var(--secondarybackground)
     border: var(--color) 1px solid
 
     .progress
       fill: var(--color)
     .range
-      color: black
+      color: var(--primaryColor)
       font-weight: normal
 
   &.not-mobile

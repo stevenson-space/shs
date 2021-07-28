@@ -1,0 +1,28 @@
+[
+    {
+        "name": "light",
+        "suggestedColor": "#1b5e20",
+        "background": "white",
+        "secondaryBackground": "white",
+        "headerBackgroundColor": "var(--color)",
+        "headerScheduleBackgroundColor": "var(--background)",
+        "primary": "black",
+        "secondary": "#333",
+        "tertiary": "#555",
+        "iconTextCardColor": "white",
+        "iconTextCardInvertColor": "var(--color)"
+    },
+    {
+        "name": "dark",
+        "suggestedColor": "#b38825",
+        "background": "#23272a",
+        "headerBackgroundColor": "var(--secondaryBackground)",
+        "headerScheduleBackgroundColor": "var(--background)",
+        "secondaryBackground": "#2c2f33",
+        "primary": "white",
+        "secondary": "white",
+        "tertiary": "white",
+        "iconTextCardColor": "white",
+        "iconTextCardInvertColor": "white"
+    }
+]

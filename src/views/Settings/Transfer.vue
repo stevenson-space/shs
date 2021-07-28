@@ -79,6 +79,7 @@ import SettingsSection from './SettingsSection.vue';
 
 const tranferableSettings = [ // the following strings should be direct properties of $store.state
   'color',
+  'theme',
   'defaultScheduleMode',
   'grade',
   'customSchedules',
@@ -212,6 +213,9 @@ export default {
     },
     save() {
       if (this.receivedData) {
+        if (this.shouldSaveSetting.theme) {
+          this.receivedData.theme = { theme: this.receivedData.theme, useThemeColor: !this.shouldSaveSetting.color };
+        }
         for (const [setting, data] of Object.entries(this.receivedData)) {
           if (this.shouldSaveSetting[setting]) {
             const mutation = `set${setting[0].toUpperCase()}${setting.slice(1)}`; // 'defaultScheduleMode' -> 'setDefaultScheduleMode'
@@ -249,7 +253,7 @@ export default {
     text-align: center
     width: 100%
     font-weight: bold
-    color: #333
+    color: var(--secondary)
     font-size: 1.2em
 
   .warning
