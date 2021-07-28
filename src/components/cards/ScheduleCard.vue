@@ -146,6 +146,5 @@ export default {
     .period
       margin-left: 4px
       margin-bottom: 7px
-      
 
 </style>

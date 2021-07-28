@@ -1,7 +1,5 @@
 <template>
-  <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">
-    <p>{{ c }}</p>
-    <svg
+  <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">    <svg
       class="progress"
       v-if="
         progress != 0 &&
@@ -23,7 +21,7 @@
           strokeDashoffset: strokeDashoffset,
           strokeDasharray: circumference + ' ' + circumference,
         }"
-        fill="white"
+        fill="var(--secondaryBackground)"
         :stroke-width="stroke"
       />
       <text x="19.5" y="21" alignment-baseline="middle" text-anchor="middle">
@@ -39,8 +37,7 @@
     >
       {{ actualPeriod }}
     </div>
-    <!-- {{ count }} -->
-    <!-- {{ progress }}  -->
+    <!-- <p>{{ c }}</p> -->
     <div class="range">
       <div class="time">{{ convertMilitaryTime(start) }}</div>
       <span class="dash"> – </span>
@@ -110,7 +107,7 @@ export default {
           if (this.delay !== longDelay) {
             this.setCustomInterval(longDelay);
           }
-        } else {
+        } else if (this.actualPeriod.length === 1 || this.actualPeriod.length === 2) {
           if (this.delay !== 1000) {
             this.setCustomInterval(1000);
           }
@@ -145,10 +142,8 @@ export default {
   created() {
     this.normalizedRadius = this.radius - this.stroke * 2;
     this.circumference = this.normalizedRadius * 2 * Math.PI;
-    if (!this.disableProgressBar) {
-      this.date = new Date();
-      this.c++;
-    }
+    this.date = new Date();
+    this.c++;
   },
 };
 </script>
@@ -191,9 +186,9 @@ export default {
       width: calc(50% - 14px)
   .progress
     transform: scale(1.17) translateY(-1px)
-    background: white
+    background: var(--background)
     border-radius: 100px
-    fill: #333
+    fill: var(--tertiary)
     font-weight: bold
     font-size: 17px
     box-shadow: 0px 0px 6px -4px rgba(0,0,0,1)

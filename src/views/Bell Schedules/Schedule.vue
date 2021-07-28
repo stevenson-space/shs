@@ -22,18 +22,18 @@
           v-bind="period"
         />
       </div>
-      
+
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import Bell from '@/utils/bell';
 import Period from '@/components/Period.vue';
 import Dropdown from '@/components/Dropdown.vue';
 import ScrollSelector from '@/components/ScrollSelector.vue';
 import MultiDayPeriod from './MultiDayPeriod.vue';
-import { mapGetters } from 'vuex';
 
 export default {
   components: {
@@ -54,7 +54,7 @@ export default {
     };
   },
   computed: {
-     ...mapGetters([
+    ...mapGetters([
       'bell',
     ]),
     selectedModeString() {
