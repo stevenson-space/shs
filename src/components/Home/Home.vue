@@ -6,7 +6,7 @@
     />
 
     <card-container>
-      <!-- <shs-hacks-card /> -->
+      <holiday-card />
       <schedule-card />
       <lunch-card />
       <upcoming-events-card />
@@ -51,7 +51,7 @@ import {
   faTint,
   faCalculator,
   faCog,
-  faTools,
+  faTools
 } from "@fortawesome/free-solid-svg-icons";
 
 import CardContainer from "common/CardContainer.vue";
@@ -62,7 +62,6 @@ import ScheduleHeader from "./Header.vue";
 import HolidayCard from "../common/cards/HolidayCard.vue";
 import LunchCard from '../common/cards/LunchCard.vue';
 import ShsHacksCard from '../common/cards/ShsHacksCard.vue';
-
 export default {
   components: {
     ScheduleHeader,

@@ -1,23 +1,14 @@
 <template>
-  <card v-show="showCard">
-    <img class="logo" src="static/snowman.png">
-    <div class="message">Happy Snow Day!</div>
-  </card>
+  <timed-card startTime="May 22, 2021" endTime="August 1, 2021">
+    <img class="logo" src="static/summer.png">
+    <div class="message">Have a great summer break!</div>
+  </timed-card>
 </template>
 
 <script>
-import Card from "common/Card.vue";
-
+import TimedCard from './TimedCard.vue';
 export default {
-  components: { Card },
-  computed: {
-    showCard() {
-      const startTime = 1613455260; //Use "Epoch Timestamp" from https://www.epochconverter.com/
-     const endTime = 1613541540;
-      const today = new Date() / 1000;
-      return today > startTime && today < endTime;
-    },
-  },
+  components: { TimedCard },
 };
 </script>
 
@@ -30,7 +21,7 @@ export default {
   padding: 10px 5px
 
 .message
-  font-size: .85em
+  font-size: .9em
   text-align: center
   padding-bottom: 10px
 </style>
