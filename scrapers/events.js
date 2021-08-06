@@ -3,7 +3,6 @@ const ical = require('ical.js');
 const fs = require('fs');
 const path = require("path");
 
-
 const eventsFilepath = path.resolve(__dirname, "../src/data/events.json");
 const calendarURL = 'https://www.d125.org/data/calendar/icalcache/feed_AF5167036E214C99B84D252995DB9199.ics';
 
@@ -15,6 +14,7 @@ function exitWithErrorIf(condition, errMessage) {
   if (condition) exitWithError(errMessage);
 }
 
+process.exit(0); // TODO: temporary, until fetching events is fixed
 
 superagent
   .get(
