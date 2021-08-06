@@ -106,7 +106,7 @@
     {
       "name": "Summer",
       "isSpecial": false,
-      "dates": ["weekdays"],
+      "dates": [],
       "modes": [
         {
           "name": "Normal",
