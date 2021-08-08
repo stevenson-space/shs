@@ -4,7 +4,9 @@ const fs = require('fs');
 const path = require("path");
 
 const eventsFilepath = path.resolve(__dirname, "../src/data/events.json");
-const calendarURL = 'https://www.d125.org/data/calendar/icalcache/feed_AF5167036E214C99B84D252995DB9199.ics';
+const calendarURL = 'https://www.d125.org/data/calendar/icalcache/feed_E96D4A2A781C43699D5A4645042A0F79.ics';
+// By default, the d125.org page blocks the superagent user agent string, but any other reasonable value works.
+const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0'
 
 function exitWithError(errMessage) {
   console.log(errMessage);
@@ -14,12 +16,11 @@ function exitWithErrorIf(condition, errMessage) {
   if (condition) exitWithError(errMessage);
 }
 
-process.exit(0); // TODO: temporary, until fetching events is fixed
-
 superagent
   .get(
     calendarURL,
   )
+  .set("user-agent", userAgent)
   .then((res) => {
     const calendar = new ical.Component(ical.parse(res.text));
     const processedEvents = {};
