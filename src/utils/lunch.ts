@@ -1,7 +1,7 @@
 import untypedLunches from '@/data/lunch.json';
 
 export type Lunch = {
-  'International Station': string[];
+  'International Station'?: string[];
   'Comfort Food': string[];
   'Mindful': string[];
   'Sides': string[];
