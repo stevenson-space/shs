@@ -37,7 +37,7 @@
     >
       {{ actualPeriod }}
     </div>
-    <!-- <p>{{ c }}</p> -->
+    <!-- <p>{{ currentSeconds }}</p> -->
     <div class="range">
       <div class="time">{{ convertMilitaryTime(start) }}</div>
       <span class="dash"> – </span>
@@ -66,7 +66,6 @@ export default {
       stroke: 3, // stroke of the progress bar
       currentSeconds: 0, // seconds since 12:00am
       interval: null, // interval for updating the current seconds
-      c: 0,
     };
   },
   computed: {
@@ -96,6 +95,9 @@ export default {
     progress() {
       const { startSeconds, endSeconds, currentSeconds } = this;
       if (currentSeconds >= startSeconds && currentSeconds <= endSeconds) {
+        if (currentSeconds - startSeconds < 1) { // fancy animation when the period starts
+          return 0.00001;
+        }
         const secondsLeft = endSeconds - currentSeconds;
         const periodLength = endSeconds - startSeconds;
         return secondsLeft / periodLength;
@@ -130,7 +132,6 @@ export default {
   },
   created() {
     this.currentSeconds = dateToSeconds(this.date);
-    this.c++;
   },
   mounted() {
     this.startIntervalIfCurrentPeriod();
