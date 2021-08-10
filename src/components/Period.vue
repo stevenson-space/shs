@@ -49,6 +49,7 @@
 <script>
 import Bell from '@/utils/bell';
 import { mapGetters } from 'vuex';
+import { dateToSeconds, periodToSeconds } from '@/utils/util';
 
 export default {
   props: {
@@ -63,13 +64,13 @@ export default {
     return {
       radius: 22, // radius of the progress bar
       stroke: 3, // stroke of the progress bar
-      date: new Date(),
+      currentSeconds: 0, // seconds since 12:00am
+      interval: null, // interval for updating the current seconds
       c: 0,
-      delay: 500,
     };
   },
   computed: {
-    ...mapGetters(['bell']),
+    ...mapGetters(['date']),
 
     normalizedRadius() {
       return this.radius - this.stroke * 2;
@@ -86,45 +87,18 @@ export default {
     periodFontSize() {
       return this.period.length > 10 ? '1em' : '1.3em';
     },
+    startSeconds() {
+      return periodToSeconds(this.start);
+    },
+    endSeconds() {
+      return periodToSeconds(this.end);
+    },
     progress() {
-      const longDelay = 20000;
-      const { start, end } = this;
-      const startHours = this.start.substring(0, start.indexOf(':'));
-      const startMin = this.start.substring(start.indexOf(':') + 1);
-      const endHours = this.end.substring(0, end.indexOf(':'));
-      const endMin = this.end.substring(end.indexOf(':') + 1);
-      const currentdate = this.date;
-      const startTime = Date.parse(
-        `${
-          currentdate.getMonth() + 1
-        }/${currentdate.getDate()}/${currentdate.getFullYear()} ${startHours}:${startMin}:00`,
-      );
-      const endTime = Date.parse(
-        `${
-          currentdate.getMonth() + 1
-        }/${currentdate.getDate()}/${currentdate.getFullYear()} ${endHours}:${endMin}:00`,
-      );
-      const todayMillis = currentdate.getTime();
-      if (todayMillis > endTime) {
-        clearInterval(this.interval);
-      } else {
-        if (startTime - todayMillis > 30000) {
-          if (this.delay !== longDelay) {
-            this.setCustomInterval(longDelay);
-          }
-        } else if (this.actualPeriod.length === 1 || this.actualPeriod.length === 2) {
-          if (this.delay !== 1000) {
-            this.setCustomInterval(1000);
-          }
-        }
-      }
-      if (todayMillis >= startTime && todayMillis <= endTime) {
-        const periodLength = endTime - startTime;
-        const timeLeft = endTime - todayMillis;
-        if (periodLength - timeLeft < 1000) {
-          return 0.000001;
-        }
-        return timeLeft / periodLength;
+      const { startSeconds, endSeconds, currentSeconds } = this;
+      if (currentSeconds >= startSeconds && currentSeconds <= endSeconds) {
+        const secondsLeft = endSeconds - currentSeconds;
+        const periodLength = endSeconds - startSeconds;
+        return secondsLeft / periodLength;
       }
       return 0;
     },
@@ -134,19 +108,37 @@ export default {
   },
   methods: {
     convertMilitaryTime: Bell.convertMilitaryTime,
-    setCustomInterval(time) {
-      console.log(`Setting with time ${time}`);
-      this.delay = time;
+    stopInterval() {
       clearInterval(this.interval);
+      this.interval = null;
+    },
+    startInterval() {
+      this.stopInterval();
       this.interval = setInterval(() => {
-        this.date = new Date();
-        this.c++;
-      }, time);
+        this.currentSeconds++;
+      }, 1000);
+    },
+    startIntervalIfCurrentPeriod() {
+      this.currentSeconds = dateToSeconds(this.date);
+      const { startSeconds, endSeconds, currentSeconds } = this;
+      if (currentSeconds >= startSeconds && currentSeconds <= endSeconds) {
+        this.startInterval();
+      } else {
+        this.stopInterval();
+      }
     },
   },
   created() {
-    this.date = new Date();
+    this.currentSeconds = dateToSeconds(this.date);
     this.c++;
+  },
+  mounted() {
+    this.startIntervalIfCurrentPeriod();
+  },
+  watch: {
+    date() {
+      this.startIntervalIfCurrentPeriod();
+    },
   },
 };
 </script>
