@@ -1,5 +1,10 @@
 <template>
-  <card v-if="schedule || bell.school" class="card" @height-change="scrollToCurrentPeriod">
+  <card
+    v-if="schedule || bell.school"
+    class="card"
+    :ignoreStyleMutations="true"
+    @height-change="scrollToCurrentPeriod"
+  >
     <div class="title">{{ title }}</div>
     <div ref="periods" class="periods">
       <template v-for="period in periods">
