@@ -22,7 +22,7 @@
     {
       "name": "Late Arrival",
       "isSpecial": true,
-      "dates": [],
+      "dates": ["8/27/2021","9/2/2021","9/2/2021","9/9/2021","10/21/2021"],
       "modes": [
       {
         "name": "Normal",
@@ -35,7 +35,7 @@
     {
       "name": "Activity Period",
       "isSpecial": true,
-      "dates": [],
+      "dates": ["8/16/2021","9/13/2021","10/4/2021", "10/25/2021"],
       "modes": [
         {
           "name": "Normal",
