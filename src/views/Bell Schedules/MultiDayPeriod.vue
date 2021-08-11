@@ -4,6 +4,7 @@
     <period
       v-for="(period, i) in periods"
       :key="period"
+      :disableProgressBar="true"
       class="period"
       :period="period"
       :start="start[i]"

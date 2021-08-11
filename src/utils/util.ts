@@ -22,3 +22,18 @@ export function deepCopy<T>(obj: T): T {
 export function is2DArray(arr: unknown[]): arr is unknown[][] {
   return Array.isArray(arr[0]);
 }
+
+export function toSeconds(hour = 0, minute = 0, second = 0): number {
+  return (hour * 60 + minute) * 60 + second;
+}
+
+// Calculates the number of seconds since 12:00AM on given date, up to the time
+// on the given date
+export function dateToSeconds(date: Date): number {
+  return toSeconds(date.getHours(), date.getMinutes(), date.getSeconds());
+}
+
+// period is in the format of a human readable 24-hour time string (e.g. "13:40")
+export function periodToSeconds(period: string): number {
+  return toSeconds(...period.split(':').map(Number));
+}

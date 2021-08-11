@@ -91,22 +91,10 @@ import {
 
 import Bell from '@/utils/bell';
 import Dropdown from '@/components/Dropdown.vue';
+import { dateToSeconds, periodToSeconds } from '@/utils/util';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
 import Announcements from './Announcements.vue';
-
-function toSeconds([hour = 0, minute = 0, second = 0]) {
-  return (hour * 60 + minute) * 60 + second;
-}
-
-function dateToSeconds(date) {
-  return toSeconds([date.getHours(), date.getMinutes(), date.getSeconds()]);
-}
-
-// period is in the format of a human readable 24-hour time string
-function periodToSeconds(period) {
-  return toSeconds(period.split(':').map(Number));
-}
 
 export default {
   components: {
@@ -129,7 +117,7 @@ export default {
         faTint,
         faTintSlash,
       },
-      currentTime: 0,
+      currentTime: 0, // seconds since 12:00am
       interval: null,
       colored: true,
     };

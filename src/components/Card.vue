@@ -12,6 +12,7 @@ export default {
     shadow: { type: Boolean, default: true },
     border: { type: Boolean, default: false },
     wrapperStyle: { type: Object, default: () => {} },
+    ignoreStyleMutations: { type: Boolean, default: false }, // whether to ignore content style mutations when deciding when to recalculate height
   },
   data() {
     return {
@@ -44,7 +45,7 @@ export default {
       attributes: true,
       childList: true,
       subtree: true,
-      attributeFilter: ['style'],
+      attributeFilter: this.ignoreStyleMutations ? [] : ['style'],
     });
   },
   destroyed() {

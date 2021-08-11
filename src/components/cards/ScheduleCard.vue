@@ -1,5 +1,10 @@
 <template>
-  <card v-if="schedule || bell.school" class="card" @height-change="scrollToCurrentPeriod">
+  <card
+    v-if="schedule || bell.school"
+    class="card"
+    :ignoreStyleMutations="true"
+    @height-change="scrollToCurrentPeriod"
+  >
     <div class="title">{{ title }}</div>
     <div ref="periods" class="periods">
       <template v-for="period in periods">
@@ -8,7 +13,6 @@
             <span class="title">Up Next</span>
           </div>
         </div>
-
         <period
           v-else
           :key="period.name"
@@ -113,7 +117,7 @@ export default {
 @import 'src/styles/style.sass'
 
 .card
-  padding: 0 10px
+  padding: 0 8px
   padding-bottom: 5px
 
   .title
@@ -147,7 +151,5 @@ export default {
     .period
       margin-left: 4px
       margin-bottom: 7px
-      font-size: .9em
-      height: 37px
 
 </style>
