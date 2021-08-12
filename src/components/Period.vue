@@ -61,9 +61,8 @@ export default {
   },
   data() {
     return {
-      radius: 22,
-      stroke: 3,
-      currentTime: 0,
+      radius: 22, // radius of the progress bar
+      stroke: 3, // stroke of the progress bar
       date: new Date(),
       c: 0,
       delay: 500,
