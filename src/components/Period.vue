@@ -63,8 +63,6 @@ export default {
     return {
       radius: 22,
       stroke: 3,
-      normalizedRadius: 0, // don't touch
-      circumference: 0, // don't touch
       currentTime: 0,
       date: new Date(),
       c: 0,
@@ -73,6 +71,14 @@ export default {
   },
   computed: {
     ...mapGetters(['bell']),
+
+    normalizedRadius() {
+      return this.radius - this.stroke * 2;
+    },
+    circumference() {
+      return this.normalizedRadius * 2 * Math.PI;
+    },
+
     actualPeriod() {
       // remove the ! mark in front of period names
       const { period } = this;
@@ -140,8 +146,6 @@ export default {
     },
   },
   created() {
-    this.normalizedRadius = this.radius - this.stroke * 2;
-    this.circumference = this.normalizedRadius * 2 * Math.PI;
     this.date = new Date();
     this.c++;
   },
