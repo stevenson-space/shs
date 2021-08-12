@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       // [{ text: String, showInFullScreen: Boolean }]
-      announcements: [{ text: 'School Starts August 12', showInFullScreen: false }],
+      announcements: [{ text: 'Welcome back 🎉', showInFullScreen: false }],
     };
   },
   props: {
