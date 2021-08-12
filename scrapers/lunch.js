@@ -8,7 +8,7 @@ const { JSDOM } = jsdom;
 
 const url = "https://www.d125.org/student-life/food-services/latest-menu";
 
-main();
+// main();
 
 async function main() {
   const { lunch, numLunches } = await scrapeLunches();
