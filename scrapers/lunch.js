@@ -8,7 +8,7 @@ const { JSDOM } = jsdom;
 
 const url = "https://www.d125.org/student-life/food-services/latest-menu";
 
-// main();
+main();
 
 async function main() {
   const { lunch, numLunches } = await scrapeLunches();
@@ -16,7 +16,8 @@ async function main() {
   // (not just using lunchObject directly in case lunchObject is missing certain dates)
   const newLunch = { ...oldLunch };
   for (const [key, value] of Object.entries(lunch)) {
-    newLunch[key] = value;
+    // if the old lunch has any extra properties (i.e. "International Station"), keep those and only replace the others
+    newLunch[key] = { ...oldLunch[key], ...value };
   }
   saveLunch(newLunch);
   printMissingLunches(lunch, numLunches);
