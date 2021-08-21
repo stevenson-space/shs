@@ -144,7 +144,7 @@ export default {
 
       .title
         font-size: 15px
-        background-color: white
+        background-color: var(--secondaryBackground)
         color: grey
         padding: 3px
 

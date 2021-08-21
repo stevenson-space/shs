@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       // [{ text: String, showInFullScreen: Boolean }]
-      announcements: [{ text: 'Welcome back 🎉', showInFullScreen: false }],
+      // announcements: [{ text: 'Welcome back 🎉', showInFullScreen: false }],
     };
   },
   props: {
