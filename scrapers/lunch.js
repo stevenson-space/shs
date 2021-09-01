@@ -8,7 +8,9 @@ const { JSDOM } = jsdom;
 
 const url = "https://www.d125.org/student-life/food-services/latest-menu";
 
-main();
+// TODO: disabling for now since lunch is not available at https://www.d125.org/student-life/food-services/latest-menu anymore
+// Reenable when lunch is available on the website again, or write parser for PDF linked on https://www.d125.org/student-life/food-services
+// main();
 
 async function main() {
   const { lunch, numLunches } = await scrapeLunches();
