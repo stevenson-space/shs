@@ -9,7 +9,8 @@
       <new-theme-card />
       <holiday-card />
       <schedule-card />
-      <lunch-card />
+      <!-- TODO: uncomment following when lunch scraper is fixed -->
+      <!-- <lunch-card /> -->
       <upcoming-events-card />
 
       <icon-text-card :icon="icons.faBell" text="Bell Schedules" link="bellschedules" />
