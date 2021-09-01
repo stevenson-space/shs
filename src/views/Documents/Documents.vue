@@ -449,6 +449,10 @@ export default {
             title: 'Richard Rusczyk and Mathew Crawford - Art of Problem Solving - Intermediate Algebra',
             link: 'https://mega.nz/file/NEcWnZaZ#BK-haz-o5F-hmJypxNNJUYB8a833NC1RpXvqGtgjX3s',
           },
+          {
+            title: 'Sandor Lehoczky and Richard Rusczyk - Art of Problem Solving, Volume 1: the Basics',
+            link: 'https://mega.nz/file/dANQGZwD#QBo-_ujotFmBEUSCY7qihy5DmjWpi8N315DxTK8a-mw',
+          },
         ],
       },
       formName: 'document-request',
