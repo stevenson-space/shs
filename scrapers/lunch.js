@@ -4,6 +4,8 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const jsdom = require("jsdom");
 const oldLunch = require("../src/data/lunch.json");
+const pdf = require('pdf-parse');
+
 const { JSDOM } = jsdom;
 
 const url = "https://www.d125.org/student-life/food-services/latest-menu";
@@ -11,7 +13,20 @@ const url = "https://www.d125.org/student-life/food-services/latest-menu";
 // TODO: disabling for now since lunch is not available at https://www.d125.org/student-life/food-services/latest-menu anymore
 // Reenable when lunch is available on the website again, or write parser for PDF linked on https://www.d125.org/student-life/food-services
 // main();
+parsePDF();
 
+async function parsePDF() {
+
+    let dataBuffer = fs.readFileSync('./menu.pdf');
+ 
+    pdf(dataBuffer).then(function(data) {
+ 
+    // PDF text
+    console.log(data.text); 
+        
+});
+
+}
 async function main() {
   const { lunch, numLunches } = await scrapeLunches();
   // replace values in oldLunch with new ones from lunchObject
