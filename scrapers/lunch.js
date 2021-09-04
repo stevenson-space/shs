@@ -22,8 +22,36 @@ async function parsePDF() {
     pdf(dataBuffer).then(function(data) {
  
     // PDF text
-    console.log(data.text); 
-        
+    // console.log(data.text); 
+
+    // console.log(data.text.split("\n"))
+    
+    const categories = ["Comfort Food", "Mindful", "Sides", "Soup"];
+    let lunchData = [];
+    let temp = [];
+    const containsCategory = function(e){
+      for(var x of categories){
+        if(e.includes(x)){
+          return true
+        }
+      }
+      return false
+    }
+    data.text.split("\n").forEach(e => {
+        if(e.includes("Comfort Food")){
+          lunchData.push(temp);
+          temp = [];
+        }else if(!containsCategory(e)){
+          console.log(e)
+          console.log("SDAFSA")
+          var x = temp[temp.length > 0 ? temp.length - 1 : 0] 
+          temp[temp.length > 0 ? temp.length - 1 : 0] = ((x == undefined ? "Comfort Food:" : x) + " " + e).trim();
+
+        }else{
+          temp.push(e);
+        }
+    })
+    console.log(lunchData)
 });
 
 }
