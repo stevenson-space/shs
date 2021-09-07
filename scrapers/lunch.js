@@ -2,11 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const axios = require("axios");
 const cheerio = require("cheerio");
-const jsdom = require("jsdom");
 const oldLunch = require("../src/data/lunch.json");
 const pdf = require('pdf-parse');
-
-const url = "https://www.d125.org/student-life/food-services/latest-menu";
 
 // calculates the number of days since epoch time
 const toDays = date =>
