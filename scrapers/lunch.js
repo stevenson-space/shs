@@ -5,7 +5,6 @@ const cheerio = require("cheerio");
 const jsdom = require("jsdom");
 const oldLunch = require("../src/data/lunch.json");
 const pdf = require('pdf-parse');
-
 const { JSDOM } = jsdom;
 
 const url = "https://www.d125.org/student-life/food-services/latest-menu";
@@ -20,18 +19,23 @@ main();
 // console.log(processLunches("Comfort Food: Home Made Chicken Pot Pie Mindful: Tofu Stir Fry Sides: Lemon Pepper Green Beans, Rice Soup: Tomato Basil, Chicken Tortilla"))
 // console.log(parseLunchTable())
 async function parseLunchTable(){
-  var data = [["1 ","Late Arrival 2 ","3 "],
-              ["Comfort Food: Beef and Mushroom Stroganoff w/ pasta Mindful:Veggie Lo Mein Sides: Roasted Vegetables, Egg roll Soup: Tomato Basil, Chicken Tortilla ","Comfort Food: Home Made Chicken Pot Pie Mindful: Tofu Stir Fry Sides: Lemon Pepper Green Beans, Rice Soup: Tomato Basil, Chicken Tortilla ","Comfort Food: Baked Battered Cod Mindful: Turkey Sloppy Joe Sides: Roasted Brocolini, Roasted Wedge Potatoes Soup: Tomato Basil, Chicken Tortilla "],
-              ["6 ","7 ","8 ","Late Arrival 9 ","10 "],
-              ["Labor day No School ","Non-Attendance Day ","Comfort Food: Baked Chicken Parmesean w/ Pasta Mindful: Turkey Breast Vesuvio Sides: Roasted Zuccini, Mashed Potatoes Soup: Veggie Chili, Chicken Noodle ","Comfort Food: Roasted Italian Chicken Thigh Mindful: Maple Chili Glazed Pork Loin Sides: Brocolini, Cous Cous Primavera Soup: Veggie Chili, Chicken Noodle ","Comfort Food: 3 cheese Penne Mindful:Chicken Tinga Sides: Azteca Corn, Mexican Rice Soup: Veggie Chili, Chicken Noodle "],
-              ["13 ","14 ","15 ","16 ","17 "],
-              ["Comfort Food: Veggie Tikka Mindful: Dijon Crusted Salmon Sides: Brussel Sprouts, Rice Soup: Tomato Basil, Broccoli Cheddar ","Comfort Food: Baked Cheese Enchiladas Mindful: Thai Chicken Stir Fry Sides: Roasted Carrots, Cilantro Lime Rice Soup: Tomato Basil, Broccoli Cheddar ","Comfort Food: Chipotle & Orange Grilled Chicken Mindful: Tortilla Crusted Tilapia Sides: Sugar Snap Peas, Orzo Soup: Tomato Basil, Broccoli Cheddar ","Non-Attendance Day ","Comfort Food: Chopped Steak with Onions Mindful: Chicken w/Country Gravy Sides: Roasted Vegetables, Mashed Potatoes Soup: Tomato Basil, Broccoli Cheddar "],
-              ["20 ","21 ","22 ","23 ","24 "],
-              ["Comfort Food: Open faced Pot Roast Sandwich Mindful: Chicken Breast with Bruchetta Sides: Snow Peas, Roasted Red Potatoes Soup: Veggie Chili, Corn Chowder ","Comfort Food:Baked Beef Ravioli / Breadstick Mindful: Biryani Chicken Sides: Lemon Pepper Green Beans, Yellow Rice Soup: Veggie Chili, Corn Chowder ","Comfort Food: Dijon Chicken Mindful: Baked Herbed Cod Sides: Asparagus, Scalloped Potatoes Soup: Veggie Chili, Corn Chowder ","Comfort Food: Spicy Whole Wheat Spaghetti Mindful: Tempura Chicken Stir Fry w/ Rice Sides: Roasted Cauliflower, Spring Roll Soup: Veggie Chili, Corn Chowder ","Comfort Food: 3 cheese Penne Mindful: Chicken Marsala Sides: Roasted Vegetables, Rice Soup: Veggie Chili, Corn Chowder "],
-              ["27 ","28 ","29 ","30 "],
-              ["Comfort Food: BBQ Pulled Chicken Sandwich Mindful: Teriyaki Glazed Salmon Sides: Corn, Roasted Potatoes Soup: Tomato Basil, Chicken Tortilla ","Comfort Food: Home Made Beef Meatloaf Mindful: Chicken Picata Sides: Roasted Carrots and Broccoli, Mashed Potatoes Soup: Tomato Basil, Chicken Tortilla ","Comfort Food: Beef and Mushroom Stroganoff w/ pasta Mindful:Veggie Lo Mein Sides: Roasted Vegetables, Egg roll Soup: Tomato Basil, Chicken Tortilla ","Comfort Food: Home Made Chicken Pot Pie Mindful: Tofu Stir Fry Sides: Lemon Pepper Green Beans, Rice Soup: Tomato Basil, Chicken Tortilla "]]
+ var data = fs.readFileSync('./scrapers/lunchData.csv', 'utf8')
+    rows = data.split("\n");
+    var parsedData = rows.map(function (row) {
+      return (row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g));
+    });
+    for(var i = 0; i < parsedData.length; i++){
+      if(parsedData[i] == null){
+        parsedData.splice(i, 1);
+      }else{
+        parsedData[i] = parsedData[i].map(e=> e.replace(/"/g, '')).filter(function (x) {
+          return x != '';
+        });
+      }
+    }
+  data =  parsedData
 
-              const lunchObject = {};
+const lunchObject = {};
 var dates = [];
 var lunchText = [];
 for(var i = 0; i < data.length; i++){ //for every row
