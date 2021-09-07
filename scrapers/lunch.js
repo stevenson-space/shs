@@ -5,7 +5,6 @@ const cheerio = require("cheerio");
 const jsdom = require("jsdom");
 const oldLunch = require("../src/data/lunch.json");
 const pdf = require('pdf-parse');
-const { JSDOM } = jsdom;
 
 const url = "https://www.d125.org/student-life/food-services/latest-menu";
 
@@ -16,52 +15,51 @@ const toDays = date =>
 // TODO: disabling for now since lunch is not available at https://www.d125.org/student-life/food-services/latest-menu anymore
 // Reenable when lunch is available on the website again, or write parser for PDF linked on https://www.d125.org/student-life/food-services
 main();
-// console.log(processLunches("Comfort Food: Home Made Chicken Pot Pie Mindful: Tofu Stir Fry Sides: Lemon Pepper Green Beans, Rice Soup: Tomato Basil, Chicken Tortilla"))
-// console.log(parseLunchTable())
-async function parseLunchTable(){
- var data = fs.readFileSync('./scrapers/lunchData.csv', 'utf8')
-    rows = data.split("\n");
-    var parsedData = rows.map(function (row) {
-      return (row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g));
-    });
-    for(var i = 0; i < parsedData.length; i++){
-      if(parsedData[i] == null){
-        parsedData.splice(i, 1);
-      }else{
-        parsedData[i] = parsedData[i].map(e=> e.replace(/"/g, '')).filter(function (x) {
-          return x != '';
-        });
+
+async function parseLunchTable() {
+  var data = fs.readFileSync('./scrapers/lunchData.csv', 'utf8')
+  rows = data.split("\n");
+  var parsedData = rows.map(function (row) {
+    return (row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g));
+  });
+  for (var i = 0; i < parsedData.length; i++) {
+    if (parsedData[i] == null) {
+      parsedData.splice(i, 1);
+    } else {
+      parsedData[i] = parsedData[i].map(e => e.replace(/"/g, '')).filter(function (x) {
+        return x != '';
+      });
+    }
+  }
+  data = parsedData
+
+  const lunchObject = {};
+  var dates = [];
+  var lunchText = [];
+  for (var i = 0; i < data.length; i++) { //for every row
+    for (var j = 0; j < data[i].length; j++) { //for every column in row
+      if (i % 2 == 0) { //if it's the dates row
+        dates.push(getDateInfo(data[i][j]).day)
+      } else { // the menu row
+        lunchText.push(data[i][j])
       }
     }
-  data =  parsedData
+  }
 
-const lunchObject = {};
-var dates = [];
-var lunchText = [];
-for(var i = 0; i < data.length; i++){ //for every row
-  for(var j = 0; j < data[i].length; j++){ //for every column in row
-    if(i % 2 == 0){ //if it's the dates row
-     dates.push(getDateInfo(data[i][j]).day) 
-    }else{ // the menu row
-      lunchText.push(data[i][j]) 
+  lunchText.forEach((lunch, index) => {
+    var lunchData = processLunches(lunch);
+    var keys = Object.keys(lunchData).reverse()
+    var newLunchData = {};
+    keys.forEach(x => newLunchData[x] = lunchData[x]);
+    lunchData = newLunchData
+    if (Object.keys(lunchData).length > 0) {
+      const date = new Date();
+      date.setDate(dates[index])
+      // set the respective date on cycle of 28 days to the lunch
+      lunchObject[String(toDays(date) % 28)] = lunchData
     }
-  }
-}
-
-lunchText.forEach((lunch,index) => {
-  var lunchData = processLunches(lunch);
-  var keys = Object.keys(lunchData).reverse()
-  var newLunchData = {};
-  keys.forEach(x => newLunchData[x] = lunchData[x]);
-  lunchData = newLunchData
-  if(Object.keys(lunchData).length > 0){
-    const date = new Date();
-    date.setDate(dates[index])
-    // set the respective date on cycle of 28 days to the lunch
-    lunchObject[String(toDays(date) % 28)] = lunchData
-  }
-}) 
-return { lunch: lunchObject, numLunches: dates.length };
+  })
+  return { lunch: lunchObject, numLunches: dates.length };
 
 }
 
@@ -69,36 +67,36 @@ return { lunch: lunchObject, numLunches: dates.length };
 // parsePDF();
 async function parsePDF() {
 
-    let dataBuffer = fs.readFileSync('./menu.pdf');
- 
-    pdf(dataBuffer).then(function(data) {
- 
+  let dataBuffer = fs.readFileSync('./menu.pdf');
+
+  pdf(dataBuffer).then(function (data) {
+
     const categories = ["Comfort Food", "Mindful", "Sides", "Soup"];
     let lunchData = [];
     let temp = [];
-    const containsCategory = function(e){
-      for(var x of categories){
-        if(e.includes(x)){
+    const containsCategory = function (e) {
+      for (var x of categories) {
+        if (e.includes(x)) {
           return true
         }
       }
       return false
     }
     data.text.split("\n").forEach(e => {
-        if(e.includes("Comfort Food")){
-          lunchData.push(temp);
-          temp = [];
-        }else if(!containsCategory(e)){
-          console.log(e)
-          var x = temp[temp.length > 0 ? temp.length - 1 : 0] 
-          temp[temp.length > 0 ? temp.length - 1 : 0] = ((x == undefined ? "Comfort Food:" : x) + " " + e).trim();
+      if (e.includes("Comfort Food")) {
+        lunchData.push(temp);
+        temp = [];
+      } else if (!containsCategory(e)) {
+        console.log(e)
+        var x = temp[temp.length > 0 ? temp.length - 1 : 0]
+        temp[temp.length > 0 ? temp.length - 1 : 0] = ((x == undefined ? "Comfort Food:" : x) + " " + e).trim();
 
-        }else{
-          temp.push(e);
-        }
+      } else {
+        temp.push(e);
+      }
     })
     console.log(lunchData)
-});
+  });
 
 }
 async function main() {
@@ -163,10 +161,10 @@ function getDateInfo(dateText) {
 
   for (var x of numbers) {
     if (dateText.includes(x)) {
-      return {"day": x}
+      return { "day": x }
     }
   }
-  return {"day": -1}
+  return { "day": -1 }
 }
 
 // Converts this:
@@ -181,21 +179,21 @@ function processLunches(lunchesText) {
   const categories = ["Comfort Food", "Mindful", "Sides", "Soup"];
   var lunchStr = lunchesText;
   var lunches = {};
-  var areRemainingCategories = function(e){
-    for(var x of categories){
-      if(e.includes(x)){
+  var areRemainingCategories = function (e) {
+    for (var x of categories) {
+      if (e.includes(x)) {
         return true
       }
     }
     return false
   }
-  while(areRemainingCategories(lunchStr)){
-    for(var x of categories.reverse()){
+  while (areRemainingCategories(lunchStr)) {
+    for (var x of categories.reverse()) {
       console.log(x)
-      if(lunchStr.includes(x)){
-        var menuItem = lunchStr.substring(lunchStr.indexOf(x),lunchStr.length).trim();
+      if (lunchStr.includes(x)) {
+        var menuItem = lunchStr.substring(lunchStr.indexOf(x), lunchStr.length).trim();
         console.log("menu item ", menuItem)
-        var removedCategory = menuItem.replace(x,"").replace(":","")
+        var removedCategory = menuItem.replace(x, "").replace(":", "")
         lunches[x] = removedCategory.split(",").map(x => x.trim());
         lunchStr = lunchStr.replace(menuItem, "").trim();
       }
