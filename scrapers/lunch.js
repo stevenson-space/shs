@@ -14,7 +14,7 @@ const toDays = date =>
 main();
 
 async function parseLunchTable() {
-  var data = fs.readFileSync('./scrapers/lunchData.csv', 'utf8')
+  var data = fs.readFileSync('./scrapers/lunchData.csv', 'utf8');
   rows = data.split("\n");
   var parsedData = rows.map(function (row) {
     return (row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g));
@@ -33,6 +33,7 @@ async function parseLunchTable() {
   const lunchObject = {};
   var dates = [];
   var lunchText = [];
+
   for (var i = 0; i < data.length; i++) { //for every row
     for (var j = 0; j < data[i].length; j++) { //for every column in row
       if (i % 2 == 0) { //if it's the dates row
@@ -42,6 +43,17 @@ async function parseLunchTable() {
       }
     }
   }
+  lunchText = lunchText.map(function(e,i){
+    const internationalMenus = ["Mac & Cheese", "Mediterranean Week 🥙", "Pasta Week 🍝", "Burrito Bowl","Mac & Cheese"];
+    var date = dates[i];
+    // get week of month
+    var week = Math.floor(date / 7);
+    if(e.includes("Comfort Food")){
+      return `International Station: ${internationalMenus[week]}` + e
+    }
+    return e
+  })
+  // lunchText.forEach(e => console.log("test", e))
 
   lunchText.forEach((lunch, index) => {
     var lunchData = processLunches(lunch);
@@ -173,7 +185,7 @@ function getDateInfo(dateText) {
 //   "Sides": ["Brussel Sprouts", "Mashed Sweet Potatoes"]
 // }
 function processLunches(lunchesText) {
-  const categories = ["Comfort Food", "Mindful", "Sides", "Soup"];
+  const categories = ["International Station","Comfort Food", "Mindful", "Sides", "Soup"];
   var lunchStr = lunchesText;
   var lunches = {};
   var areRemainingCategories = function (e) {
