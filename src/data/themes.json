@@ -24,5 +24,18 @@
         "tertiary": "white",
         "iconTextCardColor": "white",
         "iconTextCardInvertColor": "white"
+    },
+    {
+        "name": "Fall",
+        "suggestedColor": "hsl(27, 75%, 47%)",
+        "background": "white",
+        "secondaryBackground": "white",
+        "headerBackgroundColor": "hsl(38, 75%, 50%)",
+        "headerScheduleBackgroundColor": "white",
+        "primary": "black",
+        "secondary": "#333",
+        "tertiary": "#555",
+        "iconTextCardColor": "white",
+        "iconTextCardInvertColor": "var(--color)"
     }
 ]
