@@ -4,7 +4,7 @@
       "Mac & Cheese"
     ],
     "Comfort Food": [
-      "Home Made Chicken Pot Pie"
+      "Beef and Mushroom Stroganoff w/ pasta"
     ],
     "Mindful": [
       "Tofu Stir Fry"
@@ -35,6 +35,44 @@
     "Soup": [
       "Tomato Basil",
       "Chicken Tortilla"
+    ]
+  },
+  "4": {
+    "International Station": [
+      "Mediterranean Week 🥙"
+    ],
+    "Comfort Food": [
+      "Cheese Tortellini"
+    ],
+    "Mindful": [
+      "Lemon Garlic Baked Chicken"
+    ],
+    "Sides": [
+      "Roasted Carrots",
+      "Roasted Red Potatoes"
+    ],
+    "Soup": [
+      "Veggie Chili",
+      "Chicken Noodle"
+    ]
+  },
+  "5": {
+    "International Station": [
+      "Mediterranean Week 🥙"
+    ],
+    "Comfort Food": [
+      "Chicken Tikka Masala"
+    ],
+    "Mindful": [
+      "Blackened Tilapia"
+    ],
+    "Sides": [
+      "Roasted Cauliflower",
+      "Rice"
+    ],
+    "Soup": [
+      "Veggie Chili",
+      "Chicken Noodle"
     ]
   },
   "6": {
@@ -80,7 +118,7 @@
       "Mediterranean Week 🥙"
     ],
     "Comfort Food": [
-      "3 cheese Penne"
+      "Baked Mostaccioli"
     ],
     "Mindful": [
       "Chicken Tinga"
@@ -151,6 +189,25 @@
       "Broccoli Cheddar"
     ]
   },
+  "14": {
+    "International Station": [
+      "Pasta Week 🍝"
+    ],
+    "Comfort Food": [
+      "Spinach Ravioli with Pesto Cream Sauce"
+    ],
+    "Mindful": [
+      "Baked Turkey Meatloaf w/ Turkey Gravy"
+    ],
+    "Sides": [
+      "Satueed Brocolini",
+      "Roasted Sweet Potatoes"
+    ],
+    "Soup": [
+      "Tomato Basil",
+      "Broccoli Cheddar"
+    ]
+  },
   "15": {
     "International Station": [
       "Pasta Week 🍝"
@@ -194,7 +251,7 @@
       "Burrito Bowl"
     ],
     "Comfort Food": [
-      "Baked Beef Ravioli / Breadstick"
+      "Baked Beef Ravioli /Breadstick"
     ],
     "Mindful": [
       "Biryani Chicken"
@@ -258,7 +315,7 @@
     ],
     "Sides": [
       "Roasted Vegetables",
-      "Rice"
+      "Scalloped Potatoes"
     ],
     "Soup": [
       "Veggie Chili",
@@ -276,8 +333,7 @@
       "Teriyaki Glazed Salmon"
     ],
     "Sides": [
-      "Corn",
-      "Roasted Potatoes"
+      "Corn Roasted Potatoes"
     ],
     "Soup": [
       "Tomato Basil",
@@ -308,7 +364,7 @@
       "Mac & Cheese"
     ],
     "Comfort Food": [
-      "Beef and Mushroom Stroganoff w/ pasta"
+      "Home Made Chicken Pot Pie"
     ],
     "Mindful": [
       "Veggie Lo Mein"
