@@ -453,6 +453,14 @@ export default {
             title: 'Sandor Lehoczky and Richard Rusczyk - Art of Problem Solving, Volume 1: the Basics',
             link: 'https://mega.nz/file/dANQGZwD#QBo-_ujotFmBEUSCY7qihy5DmjWpi8N315DxTK8a-mw',
           },
+          {
+            title: 'Richard Rusczyk -  The Art of Problem Solving Precalculus',
+            link: 'https://mega.nz/file/ZVNUEBpJ#WHVpO2-nmcvE6KpnxjMqwfatqXlvonTTvzvuewzuayw',
+          },
+          {
+            title: 'Richard Rusczyk -  The Art of Problem Solving Precalculus (Solutions)',
+            link: 'https://mega.nz/file/FRFyCbqb#tgMOapbBwzLAGNM9WSwOFD_CzT_Pg-QcrXY4bt60sMI',
+          },
         ],
       },
       formName: 'document-request',
