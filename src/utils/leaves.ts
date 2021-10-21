@@ -144,6 +144,7 @@ function autumn_leaves() {
         xp[i] += deeex;
         leafyElement.style.top = `${yp[i] - am[i] / 2 * Math.abs(Math.sin(dx[i]))}px`;
         leafyElement.style.left = `${xp[i] + am[i] * Math.sin(dx[i])}px`;
+        leafyElement.style.transform = `rotateX(${40*Math.cos(dx[i])}deg) rotateY(${40*Math.sin(dx[i])}deg) rotateZ(${20*Math.sin(dx[i])}deg)`;
       } else if (le[i] == 'falling') le[i] = 'landed';
     }
     if (leafy[i] && le[i] == 'falling') c++;

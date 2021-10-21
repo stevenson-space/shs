@@ -1,7 +1,7 @@
 <template>
   <div
     class="header"
-    :class="{ 'full-screen': fullScreenMode }"
+    :class="{ 'full-screen': fullScreenMode, 'halloween': theme.name.toLowerCase() == 'halloween'}"
     :style="colors"
   >
     <dropdown
@@ -124,7 +124,7 @@ export default {
   },
   computed: {
     // this automatically gets the following properties from the store and adds them as computed properties
-    ...mapState(['mode']),
+    ...mapState(['mode', 'theme']),
     ...mapGetters(['date', 'bell']),
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
@@ -339,6 +339,9 @@ export default {
   background-color: var(--header-color)
   text-align: center
   transition: background-color .3s
+  &.halloween
+    background: url(/static/cob-webs-left.png) left top no-repeat, url(/static/cob-webs-right.png) right top no-repeat, var(--header-color)
+    background-size: 250px
 
   .schedule-select
     position: absolute
