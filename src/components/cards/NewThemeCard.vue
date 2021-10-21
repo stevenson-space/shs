@@ -1,13 +1,13 @@
 <template>
-  <timed-card v-if="theme.name !== themes[themes.length - 1].name" startTime="Sep 17, 2021" endTime="Sep 27, 2021">
+  <timed-card v-if="theme.name !== themes[themes.length - 1].name" startTime="Oct 20, 2021" endTime="Dec 1, 2021">
     <div class="row">
-      <div class="message">The fall theme is in the air</div>
       <rounded-button
         class="button"
-        text="Try It"
+        text="Try"
         :circular="false"
         @click="toggleColor()"
       />
+      <div class="message">The Spooky Halloween Theme</div>
       <theme-change-modal :newTheme="getNewTheme()" :showModal="showModal"
       v-on:true="choice(true)"
       v-on:false="choice(false)"
@@ -69,7 +69,7 @@ export default {
   text-align: center
   padding-bottom: 10px
 .button
-  margin-left: 8px
+  margin-right: 8px
   width: 40px
   height: 10px
 </style>
