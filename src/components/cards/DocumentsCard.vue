@@ -2,7 +2,7 @@
   <card>
     <div class="classname">{{ className }}</div>
     <div class="books">
-      <a v-for="doc in documents" :href="doc.link" :key="doc.title">{{ doc.title }}</a>
+      <a v-for="doc in documents" :href="doc.link" target="_blank" :key="doc.title">{{ doc.title }}</a>
     </div>
   </card>
 </template>
