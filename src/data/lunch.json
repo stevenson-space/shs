@@ -4,18 +4,18 @@
       "Mac & Cheese"
     ],
     "Comfort Food": [
-      "Beef and Mushroom Stroganoff w/ pasta"
+      "Cheese Tortellini"
     ],
     "Mindful": [
-      "Tofu Stir Fry"
+      "Lemon Garlic Baked Chicken"
     ],
     "Sides": [
-      "Lemon Pepper Green Beans",
-      "Rice"
+      "Roasted Carrots",
+      "Roasted Red Potatoes"
     ],
     "Soup": [
-      "Tomato Basil",
-      "Chicken Tortilla"
+      "Veggie Chili",
+      "Chicken Noodle"
     ]
   },
   "1": {
@@ -23,18 +23,18 @@
       "Mac & Cheese"
     ],
     "Comfort Food": [
-      "Baked Battered Cod"
+      "Chicken Tikka Masala"
     ],
     "Mindful": [
-      "Turkey Sloppy Joe"
+      "Blackened Tilapia"
     ],
     "Sides": [
-      "Roasted Brocolini",
-      "Roasted Wedge Potatoes"
+      "Roasted Cauliflower",
+      "Rice"
     ],
     "Soup": [
-      "Tomato Basil",
-      "Chicken Tortilla"
+      "Veggie Chili",
+      "Chicken Noodle"
     ]
   },
   "4": {
@@ -315,7 +315,7 @@
     ],
     "Sides": [
       "Roasted Vegetables",
-      "Scalloped Potatoes"
+      "Mashed potato"
     ],
     "Soup": [
       "Veggie Chili",
@@ -333,7 +333,8 @@
       "Teriyaki Glazed Salmon"
     ],
     "Sides": [
-      "Corn Roasted Potatoes"
+      "Corn",
+      "Roasted Potatoes"
     ],
     "Soup": [
       "Tomato Basil",
