@@ -1,5 +1,5 @@
 <template>
-  <timed-card v-if="theme.name !== themes[themes.length - 1].name" startTime="Oct 20, 2021" endTime="Dec 1, 2021">
+  <timed-card v-if="theme.name !== themes[themes.length - 1].name" startTime="Oct 20, 2021" endTime="Nov 1, 2021">
     <div class="row">
       <rounded-button
         class="button"
