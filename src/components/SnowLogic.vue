@@ -1,4 +1,5 @@
 <template>
+<!-- Code Written By Bob Chen under an MIT license with minor changes made. https://github.com/bob-chen/vue-let-it-snow -->
   <div
     ref="wrap"
     class="snow-wrap"
@@ -22,6 +23,7 @@ export default {
   name: "let-it-snow",
   data() {
     return {
+      show: false,
       flakes: [],
       canvas: null,
       ctx: null,
@@ -38,7 +40,7 @@ export default {
   props: {
     speed: {
       type: Number,
-      default: 0,
+      default: 1,
     },
     interaction: {
       type: Boolean,
@@ -46,15 +48,15 @@ export default {
     },
     size: {
       type: Number,
-      default: 2,
+      default: 7,
     },
     count: {
       type: Number,
-      default: 200,
+      default: 20,
     },
     opacity: {
       type: Number,
-      default: 0,
+      default: 1,
     },
     color: {
       type: String,
@@ -66,11 +68,11 @@ export default {
     },
     images: {
       type: Array,
-      default: () => [],
+      default: () => ['static/snowflake.png'],
     },
     show: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
   watch: {
@@ -91,6 +93,7 @@ export default {
     },
   },
   mounted() {
+    this.show = true;
     var requestAnimationFrame =
       window.requestAnimationFrame ||
       function (callback) {
@@ -226,8 +229,8 @@ export default {
         }
       }
       flake.size = Math.random() * 3 + this.size;
-      flake.speed = Math.random() * 1 + this.speed * 0.5;
-      flake.velY = flake.speed;
+      flake.speed = Math.random() * .3 + this.speed * 0.5;
+      flake.velY = flake.speed*.5;
       flake.velX = 0;
       flake.opacity = Math.random() * 0.5 + this.opacity;
     },
@@ -257,10 +260,10 @@ export default {
         var x = Math.floor(Math.random() * this.canvas.width),
           y = Math.floor(Math.random() * this.canvas.height),
           size = Math.random() * 3 + this.size,
-          speed = Math.random() * 1 + this.speed,
+          speed = Math.random() * .3 + this.speed*.5,
           opacity = Math.random() * 0.5 + this.opacity;
         this.flakes.push({
-          speed: speed,
+          speed: speed*.5,
           velY: speed,
           velX: 0,
           x: x,

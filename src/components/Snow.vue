@@ -5,8 +5,8 @@
     v-bind="{
       windPower: 0,
       speed: 1,
-      count: 12,
-      size: 10,
+      count: 16,
+      size: 6,
       opacity: 1,
       images: ['static/snowflake.png']
     }"
