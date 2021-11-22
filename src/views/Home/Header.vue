@@ -74,6 +74,8 @@
     />
 
     <announcements :full-screen-mode="fullScreenMode" />
+    <snow v-show="theme.name.toLowerCase() == 'winter'"/>
+
   </div>
 </template>
 
@@ -91,6 +93,7 @@ import {
 
 import Bell from '@/utils/bell';
 import Dropdown from '@/components/Dropdown.vue';
+import Snow from '@/components/Snow.vue';
 import { dateToSeconds, periodToSeconds } from '@/utils/util';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
@@ -103,6 +106,7 @@ export default {
     HeaderSchedule,
     Dropdown,
     Announcements,
+    Snow,
   },
   props: {
     fullScreenMode: { type: Boolean, default: false },

@@ -50,5 +50,18 @@
         "tertiary": "white",
         "iconTextCardColor": "white",
         "iconTextCardInvertColor": "white"
+    },
+    {
+        "name": "Winter",
+        "suggestedColor": "#02647a",
+        "background": "#f2fcff",
+        "secondaryBackground": "white",
+        "headerBackgroundColor": "#02647a",
+        "headerScheduleBackgroundColor": "var(--background)",
+        "primary": "#02647a",
+        "secondary": "#02647a",
+        "tertiary": "#02647a",
+        "iconTextCardColor": "white",
+        "iconTextCardInvertColor": "var(--color)"
     }
 ]
