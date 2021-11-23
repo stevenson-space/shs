@@ -29,7 +29,6 @@ export default {
   data() {
     return {
       links: [ /* eslint-disable max-len */
-        { name: 'Health Check', url: 'https://www.admittance.app/org/d125.org' },
         { name: 'D125', url: 'https://www.d125.org/' },
         { name: 'Canvas', desc: 'Must be logged in using school google account', url: 'https://d125.instructure.com/' },
         { name: 'IRC', url: 'https://irc.d125.org' },
