@@ -7,7 +7,7 @@
         :circular="false"
         @click="toggleColor()"
       />
-      <div class="message">The New Snowy Winter Theme</div>
+      <div class="message">The New Winter Theme ☕</div>
       <theme-change-modal :newTheme="getNewTheme()" :showModal="showModal"
       v-on:true="choice(true)"
       v-on:false="choice(false)"
