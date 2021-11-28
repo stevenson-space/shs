@@ -1,5 +1,5 @@
 <template>
-  <timed-card v-if="theme.name !== themes[themes.length - 1].name" startTime="Oct 20, 2021" endTime="Nov 1, 2021">
+  <timed-card v-if="theme.name !== themes[themes.length - 1].name" startTime="Nov 16, 2021" endTime="Dec 5, 2021">
     <div class="row">
       <rounded-button
         class="button"
@@ -7,7 +7,7 @@
         :circular="false"
         @click="toggleColor()"
       />
-      <div class="message">The Spooky Halloween Theme</div>
+      <div class="message">The New Snowy Winter Theme</div>
       <theme-change-modal :newTheme="getNewTheme()" :showModal="showModal"
       v-on:true="choice(true)"
       v-on:false="choice(false)"

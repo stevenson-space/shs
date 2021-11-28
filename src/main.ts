@@ -8,7 +8,7 @@ import store from './store';
 
 Vue.config.productionTip = false;
 
-if (Date.now() < (new Date(2022, 11, 1)).getTime()) { // if before december 1, 2020
+if (Date.now() < (new Date(2020, 11, 1)).getTime()) { // if before december 1, 2020
   // add the falling leaves animation
   import('./utils/leaves'); // eslint-disable-line no-unused-expressions
 }
