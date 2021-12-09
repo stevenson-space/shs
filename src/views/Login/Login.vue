@@ -26,7 +26,7 @@ export default {
       loginFailed: false, // login failed (false by default)
       // google client ID
       clientID:
-        '1067701334969-smht944nkuqqch5r7i8ml8o0e6bdp92r.apps.googleusercontent.com',
+        '176463123594-o7fa9nss5jp84rcabsiso7131717ujm7.apps.googleusercontent.com',
       hostedDomain: 'students.d125.org', // hint domain,
       authEndpoint: 'https://accounts.google.com/o/oauth2/v2/auth',
       userEndpoint: 'https://www.googleapis.com/oauth2/v2/userinfo',
