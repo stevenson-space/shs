@@ -63,7 +63,8 @@ export default {
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 .theme-row
-    margin-left: 80px
     margin-bottom: 20px
     display: flex
+    justify-content: center
+    overflow-x: scroll
 </style>
