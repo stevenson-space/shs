@@ -66,5 +66,5 @@ export default {
     margin-bottom: 20px
     display: flex
     justify-content: center
-    overflow-x: scroll
+    overflow-x: hidden
 </style>
