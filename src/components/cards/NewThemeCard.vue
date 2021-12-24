@@ -33,7 +33,7 @@ export default {
     newTheme() { // finds a seasonal theme that within the current date
       for (const x of this.themes) {
         const { schedule } = x;
-        if (schedule.toLowerCase() !== 'always') {
+        if (schedule !== 'always') {
           const [startTime, endTime] = [
             new Date(schedule.substring(0, schedule.indexOf('-'))).getTime(),
             new Date(schedule.substring(schedule.indexOf('-') + 1)).getTime(),
