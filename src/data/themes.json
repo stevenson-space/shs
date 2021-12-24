@@ -29,7 +29,7 @@
     },
     {
         "name": "Fall",
-        "schedule": "9/22-12/21",
+        "schedule": "9/22/2021-12/21/2021",
         "message": "[Try] The New Fall Theme 🍁",
         "suggestedColor": "#d26f1e",
         "background": "white",
@@ -44,7 +44,7 @@
     },
     {
         "name": "Halloween",
-        "schedule": "10/15-11/1",
+        "schedule": "10/15/2021-11/1/2021",
         "message": "[Try] The Spooky Halloween Theme",
         "suggestedColor": "#cc611b",
         "background": "#0f0f0f",
@@ -59,7 +59,7 @@
     },
     {
         "name": "Winter",
-        "schedule": "12/21-3/20",
+        "schedule": "12/21/2021-3/20/2022",
         "message" : "[Try] The New Winter Theme ☕",
         "suggestedColor": "#02647a",
         "background": "#f2fcff",
