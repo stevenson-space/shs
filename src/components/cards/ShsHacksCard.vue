@@ -1,7 +1,7 @@
 <template>
   <card>
     <a class="main-link" href="https://shshacks.io" target="_blank">
-      <img class="logo" src="static/shsHacks.png">
+      <img class="logo" src="static/occasions/shsHacks.png">
       <div class="register">
         Free-to-attend virtual hackathon,
         register by <span class="color">11:59pm</span> on Saturday (4/17)! &nbsp;

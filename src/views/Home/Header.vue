@@ -344,7 +344,7 @@ export default {
   text-align: center
   transition: background-color .3s
   &.halloween
-    background: url(/static/cob-webs-left.png) left top no-repeat, url(/static/cob-webs-right.png) right top no-repeat, var(--header-color)
+    background: url(/static/occasions/cob-webs-left.png) left top no-repeat, url(/static/occasions/cob-webs-right.png) right top no-repeat, var(--header-color)
     background-size: 250px
     +mobile-small
       background-size: 150px

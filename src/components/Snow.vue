@@ -65,7 +65,7 @@ export default {
     },
     images: {
       type: Array,
-      default: () => ['static/snowflake.png'],
+      default: () => ['static/occasions/snowflake.png'],
     },
   },
   mounted() {
