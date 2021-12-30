@@ -29,7 +29,7 @@
     },
     {
         "name": "Fall",
-        "schedule": "9/22/2021-12/21/2021",
+        "schedule": "9/22/2021-12/1/2021",
         "message": "[Try] The New Fall Theme 🍁",
         "suggestedColor": "#d26f1e",
         "background": "white",
@@ -59,7 +59,7 @@
     },
     {
         "name": "Winter",
-        "schedule": "12/21/2021-3/20/2022",
+        "schedule": "12/1/2021-3/20/2022",
         "message" : "[Try] The New Winter Theme ☕",
         "suggestedColor": "#02647a",
         "background": "#f2fcff",

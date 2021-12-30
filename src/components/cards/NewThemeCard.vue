@@ -38,7 +38,8 @@ export default {
             new Date(schedule.substring(0, schedule.indexOf('-'))).getTime(),
             new Date(schedule.substring(schedule.indexOf('-') + 1)).getTime(),
           ];
-          if (this.date.getTime() > startTime && this.date < endTime) {
+          const currentTime = this.date.getTime();
+          if ((currentTime > startTime) && (this.date < endTime) && ((currentTime - startTime) < 6.048e8)) { // if the theme is within the start and end time, and within the first 7 days
             return x;
           }
         }
