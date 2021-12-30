@@ -11,6 +11,7 @@
       <theme-circle
         v-for="themeItem in themes"
         v-bind:key="themeItem.name"
+        v-show="showTheme(themeItem)"
         @click.native="changeTheme(themeItem)"
         :theme="themeItem"
         :isCurrentTheme="themeItem.name==theme.name && themeItem.suggestedColor == color"
@@ -23,13 +24,16 @@
 <script>
 import themeCircle from '@/views/Colors/ThemeCircle.vue';
 import themes from '@/data/themes.json';
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
 
 export default {
   components: { themeCircle, ThemeChangeModal },
   computed: {
     ...mapState(['color', 'theme']),
+    ...mapGetters([
+      'date',
+    ]),
   },
   data() {
     return {
@@ -55,6 +59,17 @@ export default {
       } else {
         console.log('same theme');
       }
+    },
+    showTheme(theme) {
+      const { schedule } = theme;
+      if (schedule === 'always') {
+        return true;
+      }
+      const [startTime, endTime] = [
+        new Date(schedule.substring(0, schedule.indexOf('-'))).getTime(),
+        new Date(schedule.substring(schedule.indexOf('-') + 1)).getTime(),
+      ];
+      return this.date.getTime() > startTime && this.date < endTime;
     },
   },
 };

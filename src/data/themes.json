@@ -1,6 +1,7 @@
 [
     {
-        "name": "light",
+        "name": "Light",
+        "schedule": "always",
         "suggestedColor": "#1b5e20",
         "background": "white",
         "secondaryBackground": "white",
@@ -13,7 +14,8 @@
         "iconTextCardInvertColor": "var(--color)"
     },
     {
-        "name": "dark",
+        "name": "Dark",
+        "schedule": "always",
         "suggestedColor": "#b38825",
         "background": "#23272a",
         "headerBackgroundColor": "var(--secondaryBackground)",
@@ -27,6 +29,8 @@
     },
     {
         "name": "Fall",
+        "schedule": "9/22/2021-12/1/2021",
+        "message": "[Try] The New Fall Theme 🍁",
         "suggestedColor": "#d26f1e",
         "background": "white",
         "secondaryBackground": "white",
@@ -40,6 +44,8 @@
     },
     {
         "name": "Halloween",
+        "schedule": "10/15/2021-11/1/2021",
+        "message": "[Try] The Spooky Halloween Theme",
         "suggestedColor": "#cc611b",
         "background": "#0f0f0f",
         "headerBackgroundColor": "#cc611b",
@@ -53,6 +59,8 @@
     },
     {
         "name": "Winter",
+        "schedule": "12/1/2021-3/20/2022",
+        "message" : "[Try] The New Winter Theme ☕",
         "suggestedColor": "#02647a",
         "background": "#f2fcff",
         "secondaryBackground": "white",

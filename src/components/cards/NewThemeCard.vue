@@ -1,5 +1,5 @@
 <template>
-  <timed-card v-if="theme.name !== themes[themes.length - 1].name" startTime="Nov 16, 2021" endTime="Dec 5, 2021">
+  <card v-if="newTheme != null && theme.name !== newTheme.name">
     <div class="row">
       <rounded-button
         class="button"
@@ -7,26 +7,45 @@
         :circular="false"
         @click="toggleColor()"
       />
-      <div class="message">The New Winter Theme ☕</div>
-      <theme-change-modal :newTheme="getNewTheme()" :showModal="showModal"
+      <div class="message">{{ newTheme.message.replace('[Try]','') }}</div>
+      <theme-change-modal :newTheme="newTheme" :showModal="showModal"
       v-on:true="choice(true)"
       v-on:false="choice(false)"
       v-on:close="showModal = false" />
     </div>
-  </timed-card>
+  </card>
 </template>
 
 <script>
 import themes from '@/data/themes.json';
-import TimedCard from '@/components/cards/TimedCard.vue';
-import { mapState } from 'vuex';
+import Card from '@/components/Card.vue';
+import { mapState, mapGetters } from 'vuex';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
 
 export default {
-  components: { TimedCard, RoundedButton, ThemeChangeModal },
+  components: { Card, RoundedButton, ThemeChangeModal },
   computed: {
     ...mapState(['theme', 'color']),
+    ...mapGetters([
+      'date',
+    ]),
+    newTheme() { // finds a seasonal theme that within the current date
+      for (const x of this.themes) {
+        const { schedule } = x;
+        if (schedule !== 'always') {
+          const [startTime, endTime] = [
+            new Date(schedule.substring(0, schedule.indexOf('-'))).getTime(),
+            new Date(schedule.substring(schedule.indexOf('-') + 1)).getTime(),
+          ];
+          const currentTime = this.date.getTime();
+          if ((currentTime > startTime) && (this.date < endTime) && ((currentTime - startTime) < 6.048e8)) { // if the theme is within the start and end time, and within the first 7 days
+            return x;
+          }
+        }
+      }
+      return null;
+    },
   },
   data() {
     return {
@@ -38,7 +57,7 @@ export default {
     choice(useThemeColor) {
       const data = { useThemeColor };
       this.showModal = false;
-      data.theme = this.getNewTheme();
+      data.theme = this.newTheme;
       this.$store.commit('setTheme', data);
     },
     toggleColor() {
@@ -47,9 +66,6 @@ export default {
       } else {
         this.choice(true);
       }
-    },
-    getNewTheme() {
-      return this.theme.name !== this.themes[this.themes.length - 1].name ? this.themes[this.themes.length - 1] : themes[0];
     },
     capitalize(str) {
       return str.substring(0, 1).toUpperCase() + str.substring(1);
