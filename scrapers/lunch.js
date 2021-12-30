@@ -14,7 +14,8 @@ const toDays = date =>
 main();
 
 async function parseLunchTable() {
-  var data = fs.readFileSync('./scrapers/lunchData.csv', 'utf8');
+  console.log()
+  var data = fs.readFileSync('lunchData.csv', 'utf8');
   rows = data.split("\n");
   var parsedData = rows.map(function (row) {
     return (row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g));
