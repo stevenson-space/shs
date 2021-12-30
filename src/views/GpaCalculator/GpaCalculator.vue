@@ -14,7 +14,7 @@
             invert
             @click="addCourse()"
           />
-          <div style="padding: 12px 0px;">Note: Each semester counts as a different course</div>
+          <div style="padding: 12px 0px;">Note: Each semester counts as a different course<br>Course names are editable</div>
         </div>
       </card>
     </div>
@@ -38,39 +38,22 @@
         </div>
         <div class="course-settings-row">
           <dropdown
-            v-show="true"
             style="flex:1;"
             :options="['Regular','Accelerated','Honors/AP']"
             :value="course.level"
             align="left"
             @input="selectedCourseLevel(course,$event)"
           />
-          <div style="width:8px;" />
-          <dropdown
-            v-show="true"
-            style="flex:1;"
-            :options="['Has Final','No Final']"
-            :value="course.hasFinal ? 0 : 1"
-            align="left"
-            @input="selectHasFinal(course,$event)"
-          />
-        </div>
-        <div class="grade-dropdown-row">
-          <div style="flex:1;" v-for="n in (course.hasFinal ? 4 : 3)" :key="n">
-            <div>
-              <div class="term">{{terms[n-1]}}</div>
-              <dropdown
-                v-show="true"
-                :direction="course.direction"
-                class="grade-selector"
-                :options="gradeLabels"
-                :value="course.grades[n-1]"
-                align="left"
-                @input="selectGrade(course,n-1,$event)"
-              />
-            </div>
+            <dropdown
+              style="flex:1;"
+              :direction="course.direction"
+              class="grade-selector"
+              :options="gradeLabels"
+              :value="course.grade"
+              align="left"
+              @input="selectGrade(course,$event)"
+            />
           </div>
-        </div>
         <p class="grade-label">{{course.finalGrade}}</p>
         <div class="final-gpa">{{course.gpa.toString().length == 1 ? ( course.gpa+".0") : course.gpa}}</div>
 
@@ -93,7 +76,7 @@ import Dropdown from '@/components/Dropdown.vue';
 class Course {
   constructor(id) {
     this.id = id;
-    this.grades = [11, 11, 11, 11];
+    this.grade = 0; // A
     this.level = 0;
     this.gpa = 4.0;
     this.finalGrade = 'A';
@@ -109,10 +92,10 @@ export default {
   data() {
     return {
       icons: { faPlusCircle },
-      courses: [new Course(0)],
+      courses: [new Course(1)],
       averageGpa: 4.0,
       courseLevels: ['Regular', 'Accelerated', 'Honors/AP'],
-      gradeLabels: ['F', 'D-', 'D', 'D+', 'C-', 'C', 'C+', 'B-', 'B', 'B+', 'A-', 'A', 'A+'],
+      gradeLabels: ['A', 'B', 'C', 'D', 'F'],
       faTimes,
       faPlusCircle,
       terms: ['1st', '2nd', '3rd', 'Final'],
@@ -121,14 +104,14 @@ export default {
   watch: {
     courses: {
       handler() {
-        localStorage.setItem('courses', JSON.stringify(this.courses));
+        localStorage.setItem('EBR_Courses', JSON.stringify(this.courses));
       },
       deep: true,
     },
   },
   mounted() {
-    if (localStorage.getItem('courses') != null) {
-      this.courses = JSON.parse(localStorage.getItem('courses'));
+    if (localStorage.getItem('EBR_Courses') != null) {
+      this.courses = JSON.parse(localStorage.getItem('EBR_Courses'));
       this.calculateSemesterGrades();
     }
   },
@@ -144,9 +127,9 @@ export default {
       this.$delete(this.courses, this.courses.indexOf(course));
       this.calculateSemesterGrades();
     },
-    selectGrade(course, termIndex, gradeIndex) {
+    selectGrade(course, gradeIndex) {
       const index = this.courses.indexOf(course);
-      course.grades[termIndex] = gradeIndex;
+      course.grade = gradeIndex;
       this.$set(this.courses, index, course);
       this.calculateSemesterGrades();
     },
@@ -163,37 +146,12 @@ export default {
       this.calculateSemesterGrades();
     },
     calculateSemesterGrades() {
-      let pointTotal = 0;
       let gpa = 0.0;
-
       for (let x = 0; x < this.courses.length; x++) { // for every course
         const course = this.courses[x];
-        pointTotal = 0;
+        const grade = this.gradeLabels[course.grade];
         gpa = 4;
 
-        for (let y = 0; y < (course.hasFinal ? 4 : 3); y++) { // for each grades
-          pointTotal += 12 - course.grades[y];
-        }
-
-        const scoresFinal = [[48, 46], [45, 42], [41, 38], [37, 34], [33, 30], [29, 26], [25, 22], [21, 18], [17, 14], [13, 10], [9, 6], [5, 3], [2, 0]];
-        const scoresNoFinal = [[36, 35], [34, 32], [31, 29], [28, 26], [25, 23], [22, 20], [19, 17], [16, 14], [13, 11], [10, 8], [7, 5], [4, 2], [1, 0]];
-        let grade = '';
-
-        for (let z = 0; z < scoresNoFinal.length; z++) {
-          if (!course.hasFinal) {
-            if (
-              pointTotal >= scoresNoFinal[z][1]
-              && pointTotal <= scoresNoFinal[z][0]
-            ) {
-              grade = this.gradeLabels[z];
-            }
-          } else if (
-            pointTotal >= scoresFinal[z][1]
-              && pointTotal <= scoresFinal[z][0]
-          ) {
-            grade = this.gradeLabels[z];
-          }
-        }
         if (grade.includes('A')) {
           gpa = 4;
         } else if (grade.includes('B')) {
