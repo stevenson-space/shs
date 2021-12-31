@@ -51,4 +51,29 @@ describe('SHS Tests', function() {
         cy.contains('D125')
         cy.contains('Testing Center')
     })
+    it('/Tools', function() {
+        cy.visit('localhost:8080')
+        cy.contains('Tools').click() //click on tools page
+        cy.get('.add-time-buttons > :nth-child(1)').click() //add time to the timer
+        cy.get('.add-time-buttons > :nth-child(2)').click()
+        cy.get('.add-time-buttons > :nth-child(3)').click()
+        cy.get(':nth-child(4) > .selected').contains("21")
+        cy.contains('Reset').click() //reset the timer
+        cy.get(':nth-child(4) > .selected').contains("05")
+        cy.get('.home').click() //go back home
+        cy.contains("Links")
+    })
+    
+    it('/Colors', function() {
+        cy.visit('localhost:8080/colors')
+        cy.get('body').should('have.css', 'background-color', 'rgb(255, 255, 255)')
+        cy.contains("Dark").click() //change theme
+        cy.get('body').should('have.css', 'background-color', 'rgb(35, 39, 42)')
+        cy.get('.custom-color').contains("#b38825")
+
+        cy.get('.color').first().click() //set a custom color
+        cy.get('.shade').first().click()
+        cy.get('.custom-color').contains("#ffcdd2")
+        cy.get('.custom-color').should('have.css', 'color', 'rgb(255, 205, 210)')
+    })
 })
