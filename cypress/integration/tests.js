@@ -120,4 +120,46 @@ describe("SHS Tests", function() {
     cy.contains("Yes").click();
     cy.get(".custom-color").contains("#b38825");
   });
+
+  specify("GPA Calculator", function() {
+    cy.visit(`${url}/gpaCalculator`);
+    var averageGPACheck = (unweighted, weighted) => cy.get(':nth-child(1) > .overall-gpa').contains(unweighted) &&  cy.get(':nth-child(2) > .overall-gpa').contains(weighted) 
+   
+    // Add Course (Accelerated, B)
+    cy.contains('Add Course').click()
+    cy.get(':nth-child(2) > .wrapper > .course-settings-row > :nth-child(1) > .select-option').click()
+    cy.get(".option").eq(9).click()
+    cy.get(':nth-child(2) > .wrapper > .course-settings-row > .grade-selector > .select-option').click()
+    cy.get(".option").eq(12).click()
+    cy.get(':nth-child(2) > .wrapper > .gpa-title-row > :nth-child(1) > .final-gpa').contains('3.00')
+    cy.get(':nth-child(2) > .wrapper > .gpa-title-row > :nth-child(2) > .final-gpa').contains('3.50')
+    averageGPACheck(3.50, 3.75)
+    
+    // Add Course (Honors/AP C, Weighted 1.5)
+    cy.contains('Add Course').click()
+    cy.get(':nth-child(3) > .wrapper > .checkbox-container > .checkbox').click() /
+    cy.get(':nth-child(3) > .wrapper > .course-settings-row > .grade-selector > .select-option').click()
+    cy.get(".option").eq(21).click()
+    cy.get(':nth-child(3) > .wrapper > .course-settings-row > :nth-child(1) > .select-option').click()
+    cy.get(".option").eq(18).click()
+    cy.get(':nth-child(3) > .wrapper > .gpa-title-row > :nth-child(1) > .final-gpa').contains('2.00')
+    cy.get(':nth-child(3) > .wrapper > .gpa-title-row > :nth-child(2) > .final-gpa').contains('3.00')
+    averageGPACheck(2.86, 3.43)
+    
+    // Add Course (Honors/AP, F)
+    cy.contains('Add Course').click()
+    cy.get(':nth-child(4) > .wrapper > .course-settings-row > .grade-selector > .select-option').click()
+    cy.get(".option").eq(31).click()
+    cy.get(':nth-child(4) > .wrapper > .course-settings-row > :nth-child(1) > .select-option').click()
+    cy.get(".option").eq(26).click()
+    cy.get(':nth-child(4) > .wrapper > .gpa-title-row > :nth-child(1) > .final-gpa').contains('0.00')
+    cy.get(':nth-child(4) > .wrapper > .gpa-title-row > :nth-child(2) > .final-gpa').contains('0.00')
+    averageGPACheck(2.22, 2.67)
+    
+    // Delete Course
+    cy.get(':nth-child(1) > .wrapper > .gpa-tile > .close').click()
+    averageGPACheck(1.71, 2.29)
+
+  })
+
 });
