@@ -4,9 +4,20 @@
     <div>
       <card class="top-card">
         <div style="text-align:center">
-          <h1 class="overall-gpa">
-            {{averageGpa.toString() == "NaN" ? "0.0" : (averageGpa.toString().length == 1 ? (averageGpa+".0") : averageGpa)}}
-          </h1>
+          <div class="gpa-title-row">
+            <div class="gpa-col">
+              <p class="weight-title"><b>Un</b>weighted</p>
+              <h1 class="overall-gpa">
+              {{averageUnweightedGpa.toString() == "NaN" ? "0.0" : (averageUnweightedGpa.toString().length == 1 ? (averageUnweightedGpa+".0") : averageUnweightedGpa)}}
+              </h1>
+              </div>
+            <div class="gpa-col">
+              <p class="weight-title">Weighted</p>
+              <h1 class="overall-gpa">
+              {{averageWeightedGpa.toString() == "NaN" ? "0.0" : (averageWeightedGpa.toString().length == 1 ? (averageWeightedGpa+".0") : averageWeightedGpa)}}
+              </h1>
+            </div>
+          </div>
           <rounded-button
             class="add-course-button"
             :icon="faPlusCircle"
@@ -55,8 +66,17 @@
             />
           </div>
         <p class="grade-label">{{course.finalGrade}}</p>
-        <div class="final-gpa">{{course.gpa.toString().length == 1 ? ( course.gpa+".0") : course.gpa}}</div>
 
+          <div class="gpa-title-row">
+            <div class="gpa-col">
+              <p class="weight-title"><b>Un</b>weighted</p>
+              <div class="final-gpa">{{course.unweightedGPA.toString().length == 1 ? ( course.unweightedGPA+".0") : course.unweightedGPA}}</div>
+            </div>
+            <div class="gpa-col">
+              <p class="weight-title">Weighted</p>
+              <div class="final-gpa">{{course.weightedGPA.toString().length == 1 ? ( course.weightedGPA+".0") : course.weightedGPA}}</div>
+            </div>
+          </div>
         <br>
       </card>
     </card-container>
@@ -78,7 +98,8 @@ class Course {
     this.id = id;
     this.grade = 0; // A
     this.level = 0;
-    this.gpa = 4.0;
+    this.unweightedGPA = 4.0;
+    this.weightedGPA = 4.0;
     this.finalGrade = 'A';
     this.hasFinal = true;
     this.name = `Course ${id}`;
@@ -93,7 +114,8 @@ export default {
     return {
       icons: { faPlusCircle },
       courses: [new Course(1)],
-      averageGpa: 4.0,
+      averageUnweightedGpa: 4.0,
+      averageWeightedGpa: 4.0,
       courseLevels: ['Regular', 'Accelerated', 'Honors/AP'],
       gradeLabels: ['A', 'B', 'C', 'D', 'F'],
       faTimes,
@@ -163,21 +185,30 @@ export default {
         } else {
           gpa = 0;
         }
-        gpa += [0, 0.5, 1][course.level];
+        let unweightedGPA = gpa;
+        let weightedGPA = gpa;
+        weightedGPA += [0, 0.5, 1][course.level];
         course.finalGrade = grade;
         if (grade.includes('F')) {
-          gpa = 0.0;
+          unweightedGPA = 0.0;
+          weightedGPA = 0.0;
         }
-        course.gpa = gpa;
+        course.unweightedGPA = unweightedGPA;
+        course.weightedGPA = weightedGPA;
         this.$set(this.courses, x, course);
       }
-      let gpaSum = 0.0;
+      let unweightedGPASum = 0.0;
+      let weightedGPASum = 0.0;
       this.courses.forEach((course) => {
-        gpaSum += parseFloat(course.gpa);
+        unweightedGPASum += parseFloat(course.unweightedGPA);
+        weightedGPASum += parseFloat(course.weightedGPA);
       });
 
-      const average = parseFloat(gpaSum) / parseFloat(this.courses.length);
-      this.averageGpa = Number(average.toFixed(2));
+      const averageUnweightedGpa = parseFloat(unweightedGPASum) / parseFloat(this.courses.length);
+      const averageWeightedGpa = parseFloat(weightedGPASum) / parseFloat(this.courses.length);
+
+      this.averageUnweightedGpa = Number(averageUnweightedGpa.toFixed(2));
+      this.averageWeightedGpa = Number(averageWeightedGpa.toFixed(2));
     },
   },
 };
@@ -185,6 +216,14 @@ export default {
 
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
+.gpa-title-row
+  display: flex
+  justify-content: center
+  gap: 25px
+
+.weight-title
+  text-align: center
+  margin-bottom: 0
 
 .top-card
   max-width: 972px
@@ -253,7 +292,7 @@ export default {
         margin: 4px
 
     .grade-label
-      padding: 0px 0px
+      padding: 10px 0 0 0
       margin: 0 auto
       text-align: center
       font-size: 3em
