@@ -10,6 +10,7 @@ Vue.use(VueRouter);
 // file and are instead asynchrounously loaded when the user goes to the page (to reduce file size of build.js)
 
 const GpaCalculator: AsyncComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
+const OldGpaCalculator: AsyncComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/OldGpaCalculator.vue');
 const BellSchedules: AsyncComponent = () => import(/* webpackChunkName: "bellschedules" */'@/views/Bell Schedules/BellSchedules.vue');
 const Calendar: AsyncComponent = () => import(/* webpackChunkName: "calendar" */'@/views/Calendar/Calendar.vue');
 const Links: AsyncComponent = () => import(/* webpackChunkName: "links" */'@/views/Links/Links.vue');
@@ -41,6 +42,10 @@ const routes: RouteConfig[] = [
   {
     path: '/GpaCalculator',
     component: GpaCalculator,
+  },
+  {
+    path: '/OldGpaCalculator',
+    component: OldGpaCalculator,
   },
   {
     path: '/links',
