@@ -9,6 +9,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@cypress/vue": "^3.1.0",
+    "@cypress/webpack-dev-server": "^1.8.0",
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/free-regular-svg-icons": "^5.9.0",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
@@ -17,6 +19,7 @@
     "axios": "^0.21.1",
     "client-oauth2": "^4.2.5",
     "core-js": "^3.6.5",
+    "cypress": "^9.2.0",
     "pdf-parse": "^1.1.1",
     "query-string": "^7.0.0",
     "scroll-behavior-polyfill": "^2.0.13",
