@@ -13,13 +13,13 @@
             <div class="gpa-col">
               <p class="weight-title"><b>Un</b>weighted</p>
               <h1 class="overall-gpa">
-              {{averageUnweightedGpa.toString() == "NaN" ? "0.0" : (averageUnweightedGpa.toString().length == 1 ? (averageUnweightedGpa+".0") : averageUnweightedGpa)}}
+                {{ averageUnweightedGpa.toFixed(2) }}
               </h1>
               </div>
             <div class="gpa-col">
               <p class="weight-title">Weighted</p>
               <h1 class="overall-gpa">
-              {{averageWeightedGpa.toString() == "NaN" ? "0.0" : (averageWeightedGpa.toString().length == 1 ? (averageWeightedGpa+".0") : averageWeightedGpa)}}
+              {{averageWeightedGpa.toFixed(2)}}
               </h1>
             </div>
           </div>
@@ -46,6 +46,7 @@
             @input="editCourseName(course,$event)"
           >
           <font-awesome-icon
+            v-show="courses.length > 1"
             @click="removeCourse(course)"
             class="close"
             size="1x"
@@ -71,15 +72,14 @@
             />
           </div>
         <p class="grade-label">{{course.finalGrade}}</p>
-
           <div class="gpa-title-row">
             <div class="gpa-col">
               <p class="weight-title"><b>Un</b>weighted</p>
-              <div class="final-gpa">{{course.unweightedGPA.toString().length == 1 ? ( course.unweightedGPA+".0") : course.unweightedGPA}}</div>
+              <div class="final-gpa">{{course.unweightedGPA.toFixed(2)}}</div>
             </div>
             <div class="gpa-col">
               <p class="weight-title">Weighted</p>
-              <div class="final-gpa">{{course.weightedGPA.toString().length == 1 ? ( course.weightedGPA+".0") : course.weightedGPA}}</div>
+              <div class="final-gpa">{{course.weightedGPA.toFixed(2)}}</div>
             </div>
           </div>
           <checkbox :value="course.weight == 1.5" v-on:input="toggleExtraWeight(course, $event)">1.5 Weight Science Class</checkbox>
@@ -170,14 +170,12 @@ export default {
       this.$set(this.courses, index, course);
       this.calculateSemesterGrades();
     },
-
     toggleExtraWeight(course, value) {
       const index = this.courses.indexOf(course);
       course.weight = (value === true ? 1.5 : 1);
       this.$set(this.courses, index, course);
       this.calculateSemesterGrades();
     },
-
     selectHasFinal(course, gradeIndex) {
       const index = this.courses.indexOf(course);
       course.hasFinal = (gradeIndex === 0);
@@ -226,11 +224,8 @@ export default {
         weightTotal += i.weight;
       });
 
-      const averageUnweightedGpa = parseFloat(unweightedGPASum) / parseFloat(weightTotal);
-      const averageWeightedGpa = parseFloat(weightedGPASum) / parseFloat(weightTotal);
-
-      this.averageUnweightedGpa = Number(averageUnweightedGpa.toFixed(2));
-      this.averageWeightedGpa = Number(averageWeightedGpa.toFixed(2));
+      this.averageUnweightedGpa = Number(parseFloat(unweightedGPASum) / parseFloat(weightTotal).toFixed(2));
+      this.averageWeightedGpa = Number((parseFloat(weightedGPASum) / parseFloat(weightTotal)).toFixed(2));
     },
   },
 };
