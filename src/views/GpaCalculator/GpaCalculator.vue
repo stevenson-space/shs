@@ -126,14 +126,14 @@ export default {
   watch: {
     courses: {
       handler() {
-        localStorage.setItem('EBR_Courses', JSON.stringify(this.courses));
+        localStorage.setItem('EBRCourses', JSON.stringify(this.courses));
       },
       deep: true,
     },
   },
   mounted() {
-    if (localStorage.getItem('EBR_Courses') != null) {
-      this.courses = JSON.parse(localStorage.getItem('EBR_Courses'));
+    if (localStorage.getItem('EBRCourses') != null) {
+      this.courses = JSON.parse(localStorage.getItem('EBRCourses'));
       this.calculateSemesterGrades();
     }
   },
