@@ -5,14 +5,14 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 })
 
 describe('SHS Tests', function() {
-    it('Home', function() {
-        // test moving between days
+    specify('Move Between Days', function() {
         cy.visit('localhost:8080/?date=1-1-2022')
         cy.contains('Saturday, January 1')
         cy.get('.main > :nth-child(3)').click()
         cy.contains('Sunday, January 2')
+    })
 
-        // test the countdown 
+    specify('Countdown', function() {
         const date = new Date("8-12-2021 13:40:55")
         cy.clock(date)
         cy.visit('http://localhost:8080')
@@ -21,15 +21,18 @@ describe('SHS Tests', function() {
         cy.get('.center > .period').contains("Passing")
         cy.tick(61000)
         cy.get('.countdown').contains("3:59")
-
-        //  that the main buttons are on the screen
+    })
+    
+    specify('Home Page Content', function() {
         cy.visit('localhost:8080')
         cy.contains('Links')
         cy.contains('Schedule')
         cy.contains('Settings')
         cy.contains("Color")
-
-        // test full screen mode
+    })
+    
+    specify('Full Screen Mode', function() {
+        cy.visit('localhost:8080')
         cy.get('.full-screen-mode').click()  // enter full screen
         cy.get('.header').should('have.css', 'background-color', 'rgb(27, 94, 32)')
         cy.get('.remove-color').click() // remote the background color
@@ -37,7 +40,15 @@ describe('SHS Tests', function() {
         cy.get('.full-screen-mode').click() // enter out of full screen 
         cy.get('.header').should('have.css', 'background-color', 'rgb(27, 94, 32)')
     })
-    it('/BellSchedules', function() {
+
+    specify('NewThemeCard', function() {
+       cy.visit('http://localhost:8080/?date=10-17-2021')
+       cy.contains("Halloween")
+       cy.visit('http://localhost:8080/?date=10-22-2021') 
+       cy.contains("Halloween").should('not.exist') // the halloween card should not show after 7 days
+    })
+
+    specify('/BellSchedules', function() {
         //test switching bell schedules
         cy.visit('localhost:8080/?date=1-1-2022')
         cy.contains('Bell Schedules').click()
@@ -47,17 +58,22 @@ describe('SHS Tests', function() {
         cy.contains("Half Periods").click()
         cy.contains("1B")
         
-        cy.get('.home').click() //return back home
+    })
+    
+    specify('HomeLink', function() {
+        cy.visit('localhost:8080/colors')
+        cy.get('.home').click() 
         cy.contains("Links")
     })
-    it('/Links', function() {
-        //Make sure links appear
+
+    specify('/Links', function() {
         cy.visit('localhost:8080/?date=1-1-2022')
         cy.contains('Links').click()
         cy.contains('D125')
         cy.contains('Testing Center')
     })
-    it('/Tools', function() {
+
+    specify('Timer', function() {
         const now = new Date()
         cy.visit('localhost:8080')
         cy.contains('Tools').click() //click on tools page
@@ -75,21 +91,21 @@ describe('SHS Tests', function() {
         cy.get(':nth-child(4) > .selected').contains("21")
     })
 
-    it('/Colors', function() {
-        //Test Changing Themes
+    specify('Changing Themes', function() {
         cy.visit('localhost:8080/colors')
         cy.get('body').should('have.css', 'background-color', 'rgb(255, 255, 255)')
         cy.contains("Dark").click() //change to dark theme
         cy.get('body').should('have.css', 'background-color', 'rgb(35, 39, 42)')
         cy.get('.custom-color').contains("#b38825")
-
-        //Test Setting a Custom Color
+    })
+    
+    specify('Setting Custom Color', function() {
+        cy.visit('localhost:8080/colors')
         cy.get('.color').first().click() 
         cy.get('.shade').first().click()
         cy.get('.custom-color').contains("#ffcdd2")
         cy.get('.custom-color').should('have.css', 'color', 'rgb(255, 205, 210)')
-        
-        //Test Color Conflict
+        cy.visit('localhost:8080/colors')
         cy.contains("Light").click() //change back to light theme
         cy.contains("Color Conflict")
         cy.contains("No").click()
