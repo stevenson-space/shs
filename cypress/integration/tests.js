@@ -4,7 +4,7 @@ Cypress.on("uncaught:exception", (err, runnable) => {
   return false;
 });
 
-const url = "localhost:8080";
+var url = "" //localhost:8080 for local development
 describe("SHS Tests", function() {
   specify("Move Between Days", function() {
     cy.visit(`${url}/?date=1-1-2022`);
@@ -16,7 +16,7 @@ describe("SHS Tests", function() {
   specify("Countdown", function() {
     const date = new Date("8-12-2021 13:40:55");
     cy.clock(date);
-    cy.visit(url);
+    cy.visit(`${url}/`);
     cy.get(".countdown").contains("0:05");
     cy.tick(5000);
     cy.get(".center > .period").contains("Passing");
@@ -25,7 +25,7 @@ describe("SHS Tests", function() {
   });
 
   specify("Home Page Content", function() {
-    cy.visit(url);
+    cy.visit(`${url}/`);
     cy.contains("Links");
     cy.contains("Schedule");
     cy.contains("Settings");
@@ -33,7 +33,7 @@ describe("SHS Tests", function() {
   });
 
   specify("Full Screen Mode", function() {
-    cy.visit(url);
+    cy.visit(`${url}/`);
     cy.get(".full-screen-mode").click(); // enter full screen
     cy.get(".header").should("have.css", "background-color", "rgb(27, 94, 32)");
     cy.get(".remove-color").click(); // remote the background color
@@ -56,8 +56,8 @@ describe("SHS Tests", function() {
     cy.contains("Standard");
     cy.contains("1B").should("not.exist");
     cy.get(":nth-child(1) > .wrapper > .schedule-select > .dropdown > .select-option").click();
-    cy.contains("Half Periods").click();
-    cy.contains("1B");
+    cy.contains("Half Periods").should('be.visible').click();
+    cy.contains("1B").should('be.visible');
   });
 
   specify("HomeLink", function() {
@@ -73,25 +73,6 @@ describe("SHS Tests", function() {
     cy.contains("Testing Center");
   });
 
-  specify("Timer", function() {
-    const now = new Date();
-    cy.visit(url);
-    cy.contains("Tools").click(); //click on tools page
-    cy.contains("Timer");
-    cy.get(".add-time-buttons > :nth-child(1)").click(); //add time to the timer
-    cy.get(".add-time-buttons > :nth-child(2)").click();
-    cy.get(".add-time-buttons > :nth-child(3)").click();
-    cy.get(":nth-child(4) > .selected").contains("21"); //check the numbers on the timer
-    cy.get(":nth-child(7) > .selected").contains("00");
-    cy.clock(now);
-    cy.contains("Start").click(); // start timer
-    cy.tick(90000); // wait 1 minute and 30 seconds
-    cy.get(":nth-child(4) > .selected").contains("19"); // minute hand
-    cy.get(":nth-child(7) > .selected").contains("30"); // second hand
-    cy.contains("Reset").click(); //reset the timer
-    cy.get(":nth-child(4) > .selected").contains("21");
-  });
-
   specify("Changing Themes", function() {
     cy.visit(`${url}/colors`);
     cy.get("body").should("have.css", "background-color", "rgb(255, 255, 255)");
@@ -105,10 +86,8 @@ describe("SHS Tests", function() {
     cy.get(".color")
       .first()
       .click();
-    cy.get(".shade")
-      .first()
-      .click();
-    cy.get(".custom-color").contains("#ffcdd2");
+    cy.get(".shade").should('be.visible').first().click();
+    cy.get(".custom-color").should('be.visible').contains("#ffcdd2");
     cy.get(".custom-color").should("have.css", "color", "rgb(255, 205, 210)");
     cy.visit(`${url}/colors`);
     cy.contains("Light").click(); //change back to light theme
@@ -128,9 +107,9 @@ describe("SHS Tests", function() {
     // Add Course (Accelerated, B)
     cy.contains('Add Course').click()
     cy.get(':nth-child(2) > .wrapper > .course-settings-row > :nth-child(1) > .select-option').click()
-    cy.get(".option").eq(9).click()
+    cy.get(".option").should('be.visible').eq(9).click()
     cy.get(':nth-child(2) > .wrapper > .course-settings-row > .grade-selector > .select-option').click()
-    cy.get(".option").eq(12).click()
+    cy.get(".option").should('be.visible').eq(12).click()
     cy.get(':nth-child(2) > .wrapper > .gpa-title-row > :nth-child(1) > .final-gpa').contains('3.00')
     cy.get(':nth-child(2) > .wrapper > .gpa-title-row > :nth-child(2) > .final-gpa').contains('3.50')
     averageGPACheck(3.50, 3.75)
@@ -139,9 +118,9 @@ describe("SHS Tests", function() {
     cy.contains('Add Course').click()
     cy.get(':nth-child(3) > .wrapper > .checkbox-container > .checkbox').click() /
     cy.get(':nth-child(3) > .wrapper > .course-settings-row > .grade-selector > .select-option').click()
-    cy.get(".option").eq(21).click()
+    cy.get(".option").should('be.visible').eq(21).click()
     cy.get(':nth-child(3) > .wrapper > .course-settings-row > :nth-child(1) > .select-option').click()
-    cy.get(".option").eq(18).click()
+    cy.get(".option").should('be.visible').eq(18).click()
     cy.get(':nth-child(3) > .wrapper > .gpa-title-row > :nth-child(1) > .final-gpa').contains('2.00')
     cy.get(':nth-child(3) > .wrapper > .gpa-title-row > :nth-child(2) > .final-gpa').contains('3.00')
     averageGPACheck(2.86, 3.43)
@@ -149,9 +128,9 @@ describe("SHS Tests", function() {
     // Add Course (Honors/AP, F)
     cy.contains('Add Course').click()
     cy.get(':nth-child(4) > .wrapper > .course-settings-row > .grade-selector > .select-option').click()
-    cy.get(".option").eq(31).click()
+    cy.get(".option").should('be.visible').eq(31).click()
     cy.get(':nth-child(4) > .wrapper > .course-settings-row > :nth-child(1) > .select-option').click()
-    cy.get(".option").eq(26).click()
+    cy.get(".option").should('be.visible').eq(26).click()
     cy.get(':nth-child(4) > .wrapper > .gpa-title-row > :nth-child(1) > .final-gpa').contains('0.00')
     cy.get(':nth-child(4) > .wrapper > .gpa-title-row > :nth-child(2) > .final-gpa').contains('0.00')
     averageGPACheck(2.22, 2.67)
@@ -161,5 +140,4 @@ describe("SHS Tests", function() {
     averageGPACheck(1.71, 2.29)
 
   })
-
 });
