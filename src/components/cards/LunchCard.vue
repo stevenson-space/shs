@@ -1,7 +1,11 @@
 <template>
   <card v-show="bell.school && bell.type != 'Summer' && lunch">
     <div class="title">Lunch</div>
-    <div v-for="(items, name) in lunch" :key="name" class="lunch">
+    <div v-if="noLunchData" class="no-data lunch">
+          No Lunch Data
+         <what-is-this>Stevenson.Space relies on quality data dispayed by Stevenson's lunch website. We will promptly restore lunch functionality once data is provided there.</what-is-this>
+    </div>
+    <div v-else v-for="(items, name) in lunch" :key="name" class="lunch">
       <div class="name">{{ name }}</div>
       <div v-for="item in items" :key="item" class="item">
         {{ item }}
@@ -13,11 +17,17 @@
 <script>
 import getLunch from '@/utils/lunch';
 import Card from '@/components/Card.vue';
+import WhatIsThis from '@/components/WhatIsThis.vue';
 
 import { mapGetters } from 'vuex';
 
 export default {
-  components: { Card },
+  components: { Card, WhatIsThis },
+  data() {
+    return {
+      noLunchData: true,
+    };
+  },
   computed: {
     ...mapGetters([
       'bell',
@@ -37,6 +47,10 @@ export default {
   text-align: center
   font-size: 1.5em
   margin: 15px 0
+
+.no-data
+  text-align: center
+  margin-bottom: 4px
 
 .lunch
   border-top: var(--color) 1.5px solid
