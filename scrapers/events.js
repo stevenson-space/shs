@@ -16,6 +16,11 @@ function exitWithErrorIf(condition, errMessage) {
   if (condition) exitWithError(errMessage);
 }
 
+// TODO: Temporarily disabling until 12pm on Jan 13, 2022 since school calendar is currently down
+if (Date.now() < 1642096800000) {
+  process.exit(0);
+}
+
 superagent
   .get(
     calendarURL,
