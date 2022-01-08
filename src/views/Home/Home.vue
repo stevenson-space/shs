@@ -6,10 +6,10 @@
     />
 
     <card-container>
+      <contribute-card />
       <new-theme-card />
       <holiday-card />
       <schedule-card />
-      <!-- TODO: uncomment following when lunch scraper is fixed -->
       <lunch-card />
       <upcoming-events-card />
 
@@ -61,6 +61,7 @@ import UpcomingEventsCard from '@/components/cards/UpcomingEventsCard.vue';
 import IconTextCard from '@/components/cards/IconTextCard.vue';
 import ScheduleCard from '@/components/cards/ScheduleCard.vue';
 import HolidayCard from '@/components/cards/HolidayCard.vue';
+import ContributeCard from '@/components/cards/ContributeCard.vue';
 import LunchCard from '@/components/cards/LunchCard.vue';
 import NewThemeCard from '@/components/cards/NewThemeCard.vue';
 import ScheduleHeader from './Header.vue';
@@ -74,6 +75,7 @@ export default {
     IconTextCard,
     ScheduleCard,
     HolidayCard,
+    ContributeCard,
     NewThemeCard,
   },
   data() {
