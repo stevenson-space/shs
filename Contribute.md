@@ -1,8 +1,5 @@
 # Student contributors needed to maintain Stevenson.Space
 
-![](./public/static/repovisualization.png "Repository Visualization")
-
-
 Stevenson.Space was created in 2016 and has been a student-run project ever since. The site doesn't run itself and requires constant maintenance, bug fixes and upgrades only made possible by its contributors. Unknown to many, the code for the website is open-sourced (publically available) and the opportunity to contribute to the website is extended to the entire Stevenson community. We are currently looking for new contributors. 
 
 
@@ -28,3 +25,8 @@ Stevenson.Space uses the following languages/technologies
 We have created an interest form found here. Please fill out the form if you are interested.
 
 ### Check out the [Wiki Documentation](https://github.com/stevenson-space/shs/wiki)
+
+&nbsp;
+
+## Also, check out the neat [Interactive Code Map](https://octo-repo-visualization.vercel.app/?repo=stevenson-space%2Fshs) to get an idea of the project's structure.
+![](./public/static/repovisualization.png "Repository Visualization")
