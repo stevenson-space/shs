@@ -38,16 +38,16 @@ async function parseLunchTable() {
     for (var j = 0; j < data[i].length; j++) { //for every column in row
       if (i % 2 == 0) { //if it's the dates row
         dates.push(getDateInfo(data[i][j]).day)
-      } else { // the menu row
+      } else { // the menu row/
         lunchText.push(data[i][j])
       }
     }
   }
   lunchText = lunchText.map(function(e,i){
-    const internationalMenus = ["Mac & Cheese", "Mediterranean Week 🥙", "Pasta Week 🍝", "Burrito Bowl","Mac & Cheese"];
+    const internationalMenus = ["Burrito Bowl", "Mac & Cheese", "Mediterranean Week 🥙", "Pasta Week 🍝","Burrito Bowl"];
     var date = dates[i];
     // get week of month
-    var week = Math.floor((date + 8) / 7);
+    var week = Math.floor((date - 3) / 7);
     if(e.includes("Comfort Food")){
       return `International Station: ${internationalMenus[week]}` + e
     }

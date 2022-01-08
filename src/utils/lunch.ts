@@ -5,7 +5,7 @@ export type Lunch = {
   'Comfort Food': string[];
   'Mindful': string[];
   'Sides': string[];
-  'Soup': string[];
+  'Soup'?: string[];
 };
 
 export type Lunches = Record<string, Lunch>;
