@@ -1,9 +1,9 @@
 <template>
-  <timed-card startTime="Jan 7, 2022" endTime="January 10, 2022">
+  <timed-card startTime="Jan 7, 2022" endTime="January 15, 2022">
      <div class="icon">
       <font-awesome-icon :icon="icons.faCode" />
      </div>
-    <div class="message"><b>stevenson.space is open source and looking <br> for developers to help maintain the site!<br><a href="">Learn More.</a></b></div>
+    <div class="message"><b>stevenson.space is open source and looking <br> for developers to help maintain the site!<br><a href="">Learn More</a></b></div>
   </timed-card>
 </template>
 
