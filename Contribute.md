@@ -22,7 +22,8 @@ stevenson.space uses the following languages/technologies
  
 # I'm interested, what next?
 
-**Please fill out the [Interest Form](https://forms.gle/A9HbQYAcSamb99YDA)**.
+**Please fill out the [Interest Form](https://forms.gle/A9HbQYAcSamb99YDA)**, you must be signed into a stevenson google account.
+
 ### Also check out the [Wiki Documentation](https://github.com/stevenson-space/shs/wiki)
 
 
