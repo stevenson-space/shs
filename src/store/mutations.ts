@@ -105,6 +105,9 @@ const mutations: MutationTree<State> = {
     // google will automatically perform token refreshes/sign ins
     // localStorage.isAuthenticated = authenticated;
   },
+  setBackgroundImages(state, data) {
+    state.backgroundImages = data;
+  },
 };
 
 export default mutations;

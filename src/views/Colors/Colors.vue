@@ -22,6 +22,7 @@
     </div>
 
     <theme-selector />
+    <background-selector-modal/>
     <color-selector
       :colors="colors"
       :current-color="color"
@@ -42,6 +43,7 @@ import Home from '@/views/Home/Home.vue';
 import HomeLink from '@/components/HomeLink.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import { mapState } from 'vuex';
+import BackgroundSelectorModal from '@/components/BackgroundSelectorModal.vue';
 import ThemeSelector from './ThemeSelector.vue';
 import ColorSelector from './ColorSelector.vue';
 
@@ -54,6 +56,7 @@ export default {
     HomeLink,
     RoundedButton,
     ThemeSelector,
+    BackgroundSelectorModal,
   },
   data() {
     return {
