@@ -52,3 +52,14 @@ export type ThemeData = {
   theme: Theme;
   useThemeColor: boolean; //if the suggestedColor of the theme is persisted as opposed to your set color.
 };
+
+export type ImageCollection = {
+  title: String;
+  images: Image[];
+};
+
+export type Image = {
+  url: String;
+  description: String; 
+  floatLocation: String;
+};

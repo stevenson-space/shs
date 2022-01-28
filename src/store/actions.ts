@@ -1,3 +1,4 @@
+import { ImageCollection, Image } from '@/utils/types';
 import { Route } from 'vue-router';
 import { ActionTree } from 'vuex';
 import { State } from './state';
@@ -45,7 +46,32 @@ const actions: ActionTree<State, State> = {
       const response = await fetch(`https://cdn.contentful.com/spaces/${process.env.VUE_APP_CONTENTFUL_SPACE_ID}/entries?access_token=${process.env.VUE_APP_CONTENTFUL_ACCESS_TOKEN}`);
       if (response.status === 200) {
         const body = await response.json();
-        commit('setBackgroundImages');
+        const imageMetadata = [];
+        for (const image of body.includes.Asset) { // associate image ids with their actual urls.
+          const imageData = { url: '', description: '', floatLocation: '' };
+          const { fields } = image;
+          imageData.url = fields.file.url;
+          imageData.description = fields.description;
+          const { tags } = image.metadata;
+          if (tags.length > 0) {
+            const firstTag = tags[0].sys.id;
+            if (['top', 'center', 'bottom'].includes(firstTag)) {
+              imageData.floatLocation = firstTag;
+            }
+          }
+          imageMetadata[image.sys.id] = imageData;
+        }
+
+        const imageCollections: Array<ImageCollection> = [];
+        for (const item of body.items) {
+          const imageCollection: ImageCollection = { title: item.fields.title, images: [] };
+          for (const imageReference of item.fields.images) {
+            imageCollection.images.push(imageMetadata[imageReference.sys.id]);
+          }
+          imageCollections.push(imageCollection);
+        }
+        console.log(imageCollections);
+        commit('setBackgroundImages', imageCollections);
       }
     }
   },
