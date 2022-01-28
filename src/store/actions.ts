@@ -57,7 +57,7 @@ const actions: ActionTree<State, State> = {
           const { tags } = image.metadata;
           if (tags.length > 0) {
             const firstTag = tags[0].sys.id;
-            if (['top', 'center', 'bottom'].includes(firstTag)) {
+            if (['left', 'right', 'top', 'bottom', 'center', 'bottomLeft', 'bottomRight', 'topLeft', 'topRight'].includes(firstTag)) {
               imageData.floatLocation = firstTag;
             }
           }
