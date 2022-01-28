@@ -43,14 +43,16 @@ const actions: ActionTree<State, State> = {
 
   async fetchBackgroundImages({ commit, state }) {
     if (!Object.keys(state.backgroundImages).includes('sys')) { // If the data hasn't already been cached into state - this is done to reduce CDN traffic
-      const response = await fetch(`https://cdn.contentful.com/spaces/${process.env.VUE_APP_CONTENTFUL_SPACE_ID}/entries?access_token=${process.env.VUE_APP_CONTENTFUL_ACCESS_TOKEN}`);
+      const response = await fetch(`${process.env.VUE_APP_CONTENTFUL_CDN_URL}/spaces/${process.env.VUE_APP_CONTENTFUL_SPACE_ID}/entries?access_token=${process.env.VUE_APP_CONTENTFUL_ACCESS_TOKEN}`);
       if (response.status === 200) {
         const body = await response.json();
         const imageMetadata = [];
         for (const image of body.includes.Asset) { // associate image ids with their actual urls.
-          const imageData = { url: '', description: '', floatLocation: '' };
+          const imageData = { url: '', description: '', floatLocation: '', id: '' };
           const { fields } = image;
-          imageData.url = fields.file.url;
+          const imageID = image.sys.id;
+          imageData.id = imageID;
+          imageData.url = `https:${fields.file.url}`;
           imageData.description = fields.description;
           const { tags } = image.metadata;
           if (tags.length > 0) {
@@ -59,7 +61,7 @@ const actions: ActionTree<State, State> = {
               imageData.floatLocation = firstTag;
             }
           }
-          imageMetadata[image.sys.id] = imageData;
+          imageMetadata[imageID] = imageData;
         }
 
         const imageCollections: Array<ImageCollection> = [];
@@ -70,7 +72,6 @@ const actions: ActionTree<State, State> = {
           }
           imageCollections.push(imageCollection);
         }
-        console.log(imageCollections);
         commit('setBackgroundImages', imageCollections);
       }
     }

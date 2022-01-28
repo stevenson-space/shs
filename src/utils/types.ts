@@ -60,6 +60,7 @@ export type ImageCollection = {
 
 export type Image = {
   url: String;
+  id: String;
   description: String; 
   floatLocation: String;
 };
