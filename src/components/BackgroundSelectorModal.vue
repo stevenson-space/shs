@@ -7,7 +7,7 @@
           <div class="title"><b>Select Background</b></div>
           <div class="button-row">
            <rounded-button class="button" :showColor="false" @click="showModal=false" text="Close" />
-           <rounded-button class="button" text="Remove Background" />
+          <rounded-button class="button" v-show="hasBackgroundImage" @click="removeBackground()" text="Remove Background" />
           </div>
           </div>
           <div v-for="collection in backgroundImages" :key="collection.title" class="image-collection">
@@ -15,16 +15,16 @@
             <div class="title">{{collection.title}}</div>
             <div class="image-row">
               <div v-for="image in collection.images" :key="image.id">
-                <img class="preview-image" @click="setBackgroundImage(image)" :src="image.url + '?w=150&h=85&fit=fill&f=center&r=7&q=50'" alt="">
-                <div class="description">{{image.description}}</div>
+                <img class="preview-image" @click="selectImage(image)" :src="image.url + '?w=180&h=100&fit=fill&f=center&r=7&q=50'" alt="">
+                <!-- <div class="description">{{image.description}}</div> -->
               </div>
             </div>
           </div>
         </div>
       </div>
     </transition>
-    <div v-else class="">
-      <rounded-button class="open-modal-button" @click="showModal=true" text="Change Background Image" />
+    <div>
+      <rounded-button class="open-modal-button" @click="showModal=true" :text="(hasBackgroundImage ? 'Change' : 'Add') +  ' Background Image'" />
     </div>
   </div>
 </template>
@@ -43,13 +43,24 @@ export default {
     };
   },
   computed: {
-    ...mapState(['backgroundImages']),
+    ...mapState(['backgroundImages', 'backgroundImage']),
+    hasBackgroundImage() {
+      return Object.keys(this.backgroundImage).includes('url');
+    },
   },
   methods: {
     ...mapActions([
       'fetchBackgroundImages',
     ]),
-    ...mapMutations(['setBackgroundImage']),
+    ...mapMutations(['setBackgroundImage', 'removeBackgroundImage']),
+    selectImage(image) {
+      this.setBackgroundImage(image);
+      this.showModal = false;
+    },
+    removeBackground() {
+      this.showModal = false;
+      this.removeBackgroundImage();
+    },
   },
   created() {
     this.fetchBackgroundImages();
@@ -73,6 +84,7 @@ export default {
     flex-flow: row wrap
     gap: 10px
     .preview-image
+      border-radius: 8px
       +shadow-light
 
 .fade-enter-active, .fade-leave-active

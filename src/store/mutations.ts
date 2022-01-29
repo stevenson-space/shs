@@ -112,6 +112,10 @@ const mutations: MutationTree<State> = {
     state.backgroundImage = image;
     localStorage.backgroundImage = JSON.stringify(image);
   },
+  removeBackgroundImage(state) {
+    localStorage.removeItem('backgroundImage');
+    state.backgroundImage = {};
+  },
 };
 
 export default mutations;
