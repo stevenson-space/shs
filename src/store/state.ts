@@ -25,6 +25,7 @@ const state = {
   grade: 'None',
 
   backgroundImages: {},
+  backgroundImage: {},
   // authenticated with a student.d125.org google email
   isAuthenticated: process.env.NODE_ENV === 'development',
 };

@@ -56,10 +56,8 @@ const actions: ActionTree<State, State> = {
           imageData.description = fields.description;
           const { tags } = image.metadata;
           if (tags.length > 0) {
-            const firstTag = tags[0].sys.id;
-            if (['left', 'right', 'top', 'bottom', 'center', 'bottomLeft', 'bottomRight', 'topLeft', 'topRight'].includes(firstTag)) {
-              imageData.floatLocation = firstTag;
-            }
+            const firstTag:string = tags[0].sys.id;
+            imageData.floatLocation = firstTag.replace('bottomLeft', 'bottom_left').replace('bottomRight', 'bottom_right').replace('topLeft', 'top_left').replace('topRight', 'top_right');
           }
           imageMetadata[imageID] = imageData;
         }

@@ -27,7 +27,7 @@
         :invert="true"
       />
 
-      <icon-text-card :icon="icons.faTint" text="Switch Color" link="colors" />
+      <icon-text-card :icon="icons.faTint" text="Switch Theme" link="colors" />
 
       <icon-text-card :icon="icons.faTools" text="Tools" link="tools" :invert="true" />
 

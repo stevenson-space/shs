@@ -20,9 +20,10 @@
 
       <home-link class="home-link" />
     </div>
-
+    <div class="background-modal-button">
+        <background-selector-modal/>
+    </div>
     <theme-selector />
-    <background-selector-modal/>
     <color-selector
       :colors="colors"
       :current-color="color"
@@ -164,4 +165,10 @@ export default {
       left: 0
       content: ''
       z-index: 26
+
+.background-modal-button
+  display: flex
+  justify-content: center
+  width: 100%
+  margin-bottom: 20px
 </style>

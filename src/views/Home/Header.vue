@@ -128,11 +128,13 @@ export default {
   },
   computed: {
     // this automatically gets the following properties from the store and adds them as computed properties
-    ...mapState(['mode', 'theme']),
+    ...mapState(['mode', 'theme', 'backgroundImage']),
     ...mapGetters(['date', 'bell']),
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
       return {
+        'background-image': `url(${this.backgroundImageURL()})`,
+        'background-position': 'top',
         '--header-color': showColor ? 'var(--headerBackgroundColor)' : 'var(--background)',
         '--header-accent': showColor ? 'white' : 'var(--color)',
       };
@@ -269,6 +271,12 @@ export default {
     clearInterval(this.interval);
   },
   methods: {
+    backgroundImageURL() {
+      if (this.fullScreenMode) {
+        return `${this.backgroundImage.url}?w=2800&h=1200&fit=fill&f=${this.backgroundImage.floatLocation}&q=50`;
+      }
+      return `${this.backgroundImage.url}?w=2000&h=360&fit=fill&f=${this.backgroundImage.floatLocation}&q=50`;
+    },
     formatDate(date) {
       // Wednesday,
       // September 30
@@ -343,11 +351,11 @@ export default {
   background-color: var(--header-color)
   text-align: center
   transition: background-color .3s
-  &.halloween
-    background: url(/static/occasions/cob-webs-left.png) left top no-repeat, url(/static/occasions/cob-webs-right.png) right top no-repeat, var(--header-color)
-    background-size: 250px
-    +mobile-small
-      background-size: 150px
+  // &.halloween
+  //   background: url(/static/occasions/cob-webs-left.png) left top no-repeat, url(/static/occasions/cob-webs-right.png) right top no-repeat, var(--header-color)
+  //   background-size: 250px
+  //   +mobile-small
+  //     background-size: 150px
 
   .schedule-select
     position: absolute

@@ -108,6 +108,9 @@ const mutations: MutationTree<State> = {
   setBackgroundImages(state, data) {
     state.backgroundImages = data;
   },
+  setBackgroundImage(state, image) {
+    state.backgroundImage = image;
+  },
 };
 
 export default mutations;
