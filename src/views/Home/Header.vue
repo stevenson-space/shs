@@ -273,9 +273,9 @@ export default {
   methods: {
     backgroundImageURL() {
       if (this.fullScreenMode) {
-        return `${this.backgroundImage.url}?w=2800&h=1200&fit=fill&f=${this.backgroundImage.floatLocation}&q=50`;
+        return `${this.backgroundImage.url}?w=2800&h=1200&fit=fill&f=${this.backgroundImage.floatLocation}`;
       }
-      return `${this.backgroundImage.url}?w=2000&h=360&fit=fill&f=${this.backgroundImage.floatLocation}&q=50`;
+      return `${this.backgroundImage.url}?w=2000&h=360&fit=fill&f=${this.backgroundImage.floatLocation}`;
     },
     formatDate(date) {
       // Wednesday,

@@ -110,6 +110,7 @@ const mutations: MutationTree<State> = {
   },
   setBackgroundImage(state, image) {
     state.backgroundImage = image;
+    localStorage.backgroundImage = JSON.stringify(image);
   },
 };
 

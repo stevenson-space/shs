@@ -30,6 +30,10 @@ const initializeStore = (store: Store<State>): void => {
   if (localStorage.grade) {
     store.commit('setGrade', localStorage.grade);
   }
+
+  if (localStorage.backgroundImage) {
+    store.commit('setBackgroundImage', JSON.parse(localStorage.backgroundImage));
+  }
 };
 
 export default initializeStore;
