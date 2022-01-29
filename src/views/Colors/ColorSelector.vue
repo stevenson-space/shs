@@ -151,6 +151,8 @@ export default {
 
 .color-selector
   --color-diameter: 85px
+  display: flex
+  justify-content: center
   outline: none
   position: relative
   z-index: 1
