@@ -22,7 +22,6 @@
           class="arrow-icon"
         />
       </div>
-
       <div>
         <countdown-circle
           :in-school="inSchool"
@@ -124,6 +123,9 @@ export default {
       currentTime: 0, // seconds since 12:00am
       interval: null,
       colored: true,
+      debouncedWidth: 0,
+      heightTimeout: null,
+      widthTimeout: null,
     };
   },
   computed: {
@@ -138,6 +140,30 @@ export default {
         '--header-color': showColor ? 'var(--headerBackgroundColor)' : 'var(--background)',
         '--header-accent': showColor ? 'white' : 'var(--color)',
       };
+    },
+    requestImageWidth() {
+      const breakpoints = [500, 1000, 1500, 2000, 2500, 3000, 4000]; // breakpoint widths in px
+      const { width } = this;
+      if (width < breakpoints[0]) {
+        return breakpoints[0];
+      }
+      for (let i = 0; i < breakpoints.length - 1; i++) {
+        if (width > breakpoints[i] && width < breakpoints[i + 1]) {
+          return breakpoints[i + 1];
+        }
+      }
+      return breakpoints[breakpoints.length - 1];
+    },
+    width: {
+      get() {
+        return this.debouncedWidth;
+      },
+      set(val) {
+        if (this.timeout) clearTimeout(this.timeout);
+        this.widthTimeout = setTimeout(() => {
+          this.debouncedWidth = val;
+        }, 1000);
+      },
     },
     inSchool() {
       // To be in school, there must be school that day and we must not be before or after school
@@ -259,23 +285,31 @@ export default {
     },
   },
   created() {
+    window.addEventListener('resize', this.resizeHandler);
     this.currentTime = dateToSeconds(this.date);
     if (localStorage.fullScreenColored === 'false') {
       this.colored = false;
     }
   },
   mounted() {
+    this.width = window.innerWidth;
     this.initializeCountdown();
   },
   destroyed() {
+    window.removeEventListener('resize', this.resizeHandler);
     clearInterval(this.interval);
   },
+
   methods: {
-    backgroundImageURL() {
-      if (this.fullScreenMode) {
-        return `${this.backgroundImage.url}?w=2800&h=1200&fit=fill&f=${this.backgroundImage.floatLocation}`;
+    resizeHandler() {
+      if (window.innerWidth > this.width) {
+        this.width = window.innerWidth;
       }
-      return `${this.backgroundImage.url}?w=2000&h=360&fit=fill&f=${this.backgroundImage.floatLocation}`;
+    },
+    backgroundImageURL() {
+      if (this.width === 0) return '';
+      const width = this.requestImageWidth;
+      return `${this.backgroundImage.url}?w=${width}&h=${this.fullScreenMode ? 1500 : 360}&fit=fill&f=${this.backgroundImage.floatLocation}&fl=progressive&q=${width <= 500 ? 70 : 85}`;
     },
     formatDate(date) {
       // Wednesday,
