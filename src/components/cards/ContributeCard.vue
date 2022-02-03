@@ -3,7 +3,7 @@
      <div class="icon">
       <font-awesome-icon :icon="icons.faCode" />
      </div>
-    <div class="message"><b>For people interested in being a committed contributor of stevenson.space, the form is due by Feb. 5. <a class="learn-more-link" href="https://github.com/stevenson-space/shs/blob/gh-pages/Contribute.md" target="_blank">Learn More</a></b></div>
+    <div class="message"><b>For people interested in being a committed contributor of stevenson.space, the interest form is due by Feb. 5. <a class="learn-more-link" href="https://github.com/stevenson-space/shs/blob/gh-pages/Contribute.md" target="_blank">Learn More</a></b></div>
   </timed-card>
 </template>
 
