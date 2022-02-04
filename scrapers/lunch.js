@@ -47,7 +47,7 @@ async function parseLunchTable() {
     const internationalMenus = ["Burrito Bowl", "Mac & Cheese", "Mediterranean Week 🥙", "Pasta Week 🍝","Burrito Bowl"];
     var date = dates[i];
     // get week of month
-    var week = Math.floor((date - 3) / 7);
+    var week = Math.floor((date - 0) / 7);
     if(e.includes("Comfort Food")){
       return `International Station: ${internationalMenus[week]}` + e
     }
