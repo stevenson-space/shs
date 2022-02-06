@@ -1,9 +1,9 @@
 <template>
-  <timed-card startTime="Jan 7, 2022" endTime="January 15, 2022">
+  <timed-card startTime="Jan 7, 2022" endTime="February 5, 2022">
      <div class="icon">
       <font-awesome-icon :icon="icons.faCode" />
      </div>
-    <div class="message"><b>stevenson.space is open source and looking <br> for developers to help maintain the site!<br><a class="learn-more-link" href="https://github.com/stevenson-space/shs/blob/gh-pages/Contribute.md" target="_blank">Learn More</a></b></div>
+    <div class="message"><b>For people interested in being a committed contributor of stevenson.space, the interest form is due by Feb. 5. <a class="learn-more-link" href="https://github.com/stevenson-space/shs/blob/gh-pages/Contribute.md" target="_blank">Learn More</a></b></div>
   </timed-card>
 </template>
 
