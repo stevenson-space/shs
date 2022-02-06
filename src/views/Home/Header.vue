@@ -309,7 +309,7 @@ export default {
     backgroundImageURL() {
       if (this.width === 0) return '';
       const width = this.requestImageWidth;
-      return `${this.backgroundImage.url}?w=${width}&h=${this.fullScreenMode ? 1500 : 360}&fit=fill&f=${this.backgroundImage.floatLocation}&fl=progressive&q=${width <= 500 ? 70 : 85}`;
+      return `${this.backgroundImage.url}?w=${width}&h=${this.fullScreenMode ? 1500 : 360}&fit=fill&f=${this.backgroundImage.floatLocation}&fl=progressive&q=${width <= 500 ? 70 : 90}`;
     },
     formatDate(date) {
       // Wednesday,

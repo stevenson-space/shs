@@ -13,10 +13,11 @@
           <div v-for="collection in backgroundImages" :key="collection.title" class="image-collection">
           <div class="divider" />
             <div class="title">{{collection.title}}</div>
+            <div class="description">{{collection.description}}</div>
             <div class="image-row">
               <div v-for="image in collection.images" :key="image.id">
                 <img class="preview-image" @click="selectImage(image)" :src="image.url + '?w=180&h=100&fit=fill&f=center&r=7&q=50'" alt="">
-                <!-- <div class="description">{{image.description}}</div> -->
+                <div class="image-description">{{image.description}}</div>
               </div>
             </div>
           </div>
@@ -77,7 +78,10 @@ export default {
   .title
     text-align: left
     font-size: 25px !important
-    margin: 5px 0
+  .description
+    text-align: left
+    font-size: 18px !important
+    margin: -5px 0 5px 0
 
   .image-row
     display: flex
@@ -86,6 +90,9 @@ export default {
     .preview-image
       border-radius: 8px
       +shadow-light
+    .image-description
+      margin-top: 2px
+      text-align: left
 
 .fade-enter-active, .fade-leave-active
   transition: all 0.20s

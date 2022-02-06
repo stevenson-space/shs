@@ -64,7 +64,7 @@ const actions: ActionTree<State, State> = {
 
         const imageCollections: Array<ImageCollection> = [];
         for (const item of body.items) {
-          const imageCollection: ImageCollection = { title: item.fields.title, images: [] };
+          const imageCollection: ImageCollection = { title: item.fields.title, description: item.fields.description, images: [] };
           for (const imageReference of item.fields.images) {
             imageCollection.images.push(imageMetadata[imageReference.sys.id]);
           }

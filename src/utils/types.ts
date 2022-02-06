@@ -55,6 +55,7 @@ export type ThemeData = {
 
 export type ImageCollection = {
   title: String;
+  description: String;
   images: Image[];
 };
 
