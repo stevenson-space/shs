@@ -33,6 +33,7 @@ export default {
     border-radius: 68px
     margin: 4px
   .circle-border
+    display: inline-block
     border: 2px solid grey
     border-radius: 80px
     margin: 0px 5px
