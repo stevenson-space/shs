@@ -71,5 +71,20 @@
         "tertiary": "#02647a",
         "iconTextCardColor": "white",
         "iconTextCardInvertColor": "var(--color)"
+    },
+    {
+        "name": "Valentine's Day",
+        "schedule": "2/8/2022-2/15/2022",
+        "message" : "[Try] The New Valentines Day Theme",
+        "suggestedColor": "hsl(0,90%,75%)",
+        "background": "#ffeded",
+        "secondaryBackground": "white",
+        "headerBackgroundColor": "hsl(0,50%,50%)",
+        "headerScheduleBackgroundColor": "white",
+        "primary": "#D73F2F",
+        "secondary": "var(--primary)",
+        "tertiary": "var(--primary)",
+        "iconTextCardColor": "white",
+        "iconTextCardInvertColor": "var(--color)"
     }
 ]

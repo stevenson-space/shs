@@ -74,7 +74,8 @@
     />
 
     <announcements :full-screen-mode="fullScreenMode" />
-    <snow v-show="theme.name.toLowerCase() == 'winter'"/>
+    <snow v-if="theme.name.toLowerCase() == 'winter'" :images="['static/occasions/snowflake.png']"/>
+    <snow v-if="theme.name.includes('Valentine')" :images="['static/occasions/heart.svg']"/>
 
   </div>
 </template>
