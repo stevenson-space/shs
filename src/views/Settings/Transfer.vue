@@ -14,7 +14,7 @@
           :key="setting"
           v-model="shouldSendSetting[setting]"
         >
-          {{ settingToName(setting) }}
+          {{ settingToName(setting) | capitalize }}
         </checkbox>
       </div>
     </confirm-popup>
@@ -129,8 +129,7 @@ export default {
   },
   methods: {
     settingToName(setting) { // convert setting to readable name ('defaultScheduleMode' to 'Default Schedule Mode')
-      const separatedWords = setting.replace(/([a-z])([A-Z])/g, '$1 $2'); // 'defaultScheduleSomething' to 'default Schedule Something'
-      return separatedWords[0].toUpperCase() + separatedWords.slice(1); // capitalize first letter
+      return setting.replace(/([a-z])([A-Z])/g, '$1 $2'); // 'defaultScheduleSomething' to 'default Schedule Something'
     },
     showPopup(popup) {
       this.popupToShow = popup;
@@ -218,7 +217,7 @@ export default {
         }
         for (const [setting, data] of Object.entries(this.receivedData)) {
           if (this.shouldSaveSetting[setting]) {
-            const mutation = `set${setting[0].toUpperCase()}${setting.slice(1)}`; // 'defaultScheduleMode' -> 'setDefaultScheduleMode'
+            const mutation = `set${this.$options.filters.capitalize(setting)}`; // 'defaultScheduleMode' -> 'setDefaultScheduleMode'
             this.$store.commit(mutation, data);
           }
         }

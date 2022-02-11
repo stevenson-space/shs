@@ -6,6 +6,8 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
+Vue.filter('capitalize', (str = ' ') => str.charAt(0).toUpperCase() + str.slice(1));
+
 Vue.config.productionTip = false;
 
 if (Date.now() < (new Date(2020, 11, 1)).getTime()) { // if before december 1, 2020
