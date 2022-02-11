@@ -14,7 +14,7 @@
 
     <div
       class="main"
-      :class="{ 'extra-padding': scheduleModes.length > 1 }"
+      :class="{ 'extra-padding': scheduleModes.length > 1, 'winterfest': theme.name.toLowerCase() == 'into the woods'}"
     >
       <div v-hammer:tap="previousDay" class="switch-day">
         <font-awesome-icon
@@ -371,6 +371,11 @@ export default {
       &.extra-padding
         padding-top: 35px
 
+    &.winterfest
+      background: url(/static/occasions/trees.png) center bottom no-repeat, var(--header-color)
+      background-size: 900px
+      +mobile-small
+        background-size: 500px
     .date
       // +shadow
       background-color: var(--background)
