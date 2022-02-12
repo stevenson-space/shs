@@ -13,13 +13,13 @@
             <div class="gpa-col">
               <p class="weight-title"><b>Un</b>weighted</p>
               <h1 class="overall-gpa">
-                {{ averageUnweightedGpa.toFixed(2) }}
+                {{ averageUnweightedGpa | roundTwo }}
               </h1>
               </div>
             <div class="gpa-col">
               <p class="weight-title">Weighted</p>
               <h1 class="overall-gpa">
-              {{averageWeightedGpa.toFixed(2)}}
+              {{ averageWeightedGpa | roundTwo }}
               </h1>
             </div>
           </div>
@@ -75,11 +75,11 @@
           <div class="gpa-title-row">
             <div class="gpa-col">
               <p class="weight-title"><b>Un</b>weighted</p>
-              <div class="final-gpa">{{course.unweightedGPA.toFixed(2)}}</div>
+              <div class="final-gpa">{{course.unweightedGPA | roundTwo}}</div>
             </div>
             <div class="gpa-col">
               <p class="weight-title">Weighted</p>
-              <div class="final-gpa">{{course.weightedGPA.toFixed(2)}}</div>
+              <div class="final-gpa">{{course.weightedGPA | roundTwo}}</div>
             </div>
           </div>
           <checkbox :value="course.weight == 1.5" v-on:input="toggleExtraWeight(course, $event)">1.5 Weight Science Class</checkbox>
@@ -224,9 +224,12 @@ export default {
         weightTotal += i.weight;
       });
 
-      this.averageUnweightedGpa = Number(parseFloat(unweightedGPASum) / parseFloat(weightTotal).toFixed(2));
-      this.averageWeightedGpa = Number((parseFloat(weightedGPASum) / parseFloat(weightTotal)).toFixed(2));
+      this.averageUnweightedGpa = Number(parseFloat(unweightedGPASum) / parseFloat(weightTotal));
+      this.averageWeightedGpa = Number(parseFloat(weightedGPASum) / parseFloat(weightTotal));
     },
+  },
+  filters: {
+    roundTwo: (x) => x.toFixed(2),
   },
 };
 </script>
