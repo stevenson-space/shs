@@ -35,7 +35,7 @@
     {
       "name": "Activity Period",
       "isSpecial": true,
-      "dates": [],
+      "dates": ["2/14/2022"],
       "modes": [
         {
           "name": "Normal",
