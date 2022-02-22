@@ -344,7 +344,7 @@ export default {
   background-color: var(--header-color)
   text-align: center
   transition: background-color .3s
-  background: url(/static/occasions/twos.png) left top repeat
+  background: url(/static/occasions/twos.png) left top repeat, var(--header-color)
   &.halloween
     background: url(/static/occasions/cob-webs-left.png) left top no-repeat, url(/static/occasions/cob-webs-right.png) right top no-repeat, var(--header-color)
     background-size: 250px
