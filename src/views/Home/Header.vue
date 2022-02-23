@@ -344,7 +344,6 @@ export default {
   background-color: var(--header-color)
   text-align: center
   transition: background-color .3s
-  background: url(/static/occasions/twos.png) left top repeat, var(--header-color)
   &.halloween
     background: url(/static/occasions/cob-webs-left.png) left top no-repeat, url(/static/occasions/cob-webs-right.png) right top no-repeat, var(--header-color)
     background-size: 250px
@@ -374,7 +373,7 @@ export default {
 
     &.winterfest
       background: url(/static/occasions/trees.png) center bottom no-repeat, var(--header-color)
-      background-size: 900px
+      background-size: 700px
       +mobile-small
         background-size: 500px
     .date
