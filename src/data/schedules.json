@@ -54,7 +54,7 @@
     {
       "name": "PM Assembly",
       "isSpecial": true,
-      "dates": [],
+      "dates": ["2/25/2022"],
       "modes": [
         {
           "name": "Normal",
