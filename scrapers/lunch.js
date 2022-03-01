@@ -44,7 +44,7 @@ async function parseLunchTable() {
     }
   }
   lunchText = lunchText.map(function(e,i){
-    const internationalMenus = ["Burrito Bowl", "Mac & Cheese", "Mediterranean Week 🥙", "Pasta Week 🍝","Burrito Bowl"];
+    const internationalMenus = ["Burrito Bowl", "Mac & Cheese", "Mediterranean Week 🥙", "Pasta Week 🍝","Pasta Week 🍝"];
     var date = dates[i];
     // get week of month
     var week = Math.floor((date - 0) / 7);
