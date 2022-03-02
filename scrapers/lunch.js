@@ -65,7 +65,7 @@ async function parseLunchTable() {
       const date = new Date();
       date.setDate(dates[index])
       // set the respective date on cycle of 28 days to the lunch
-      lunchObject[String(toDays(date) % 28)] = lunchData
+      lunchObject[String(toDays(date) % 29)] = lunchData
     }
   })
   return { lunch: lunchObject, numLunches: dates.length };
@@ -242,7 +242,7 @@ function printMissingLunches(lunch, numLunches) {
       // if day is a weekday
       if (date.getDay() % 6 !== 0) {
         // day on the 28-day cycle
-        const cyclicDay = String(toDays(date) % 28);
+        const cyclicDay = String(toDays(date) % 29);
         // if the lunch for this day does not exist
         if (!lunch[cyclicDay]) {
           missing.push(cyclicDay);
