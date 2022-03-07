@@ -101,5 +101,21 @@
         "tertiary": "white",
         "iconTextCardColor": "white",
         "iconTextCardInvertColor": "white"
+    },
+    {
+        "name": "Mars",
+        "message": "[Try] The new mars theme now!",
+        "description": "Featuring a selfie of the Curiosity rover on Mount Sharp. Credit: NASA",
+        "schedule": "3/7/2022-4/7/2022",
+        "suggestedColor": "#c1440e",
+        "background": "#f0e7e7",
+        "secondaryBackground": "white",
+        "headerBackgroundColor": "#F2F4F4",
+        "headerScheduleBackgroundColor": "#f0e7e7",
+        "primary": "black",
+        "secondary": "#333",
+        "tertiary": "#555",
+        "iconTextCardColor": "white",
+        "iconTextCardInvertColor": "var(--color)"
     }
 ]
