@@ -13,6 +13,7 @@
       v-on:false="choice(false)"
       v-on:close="showModal = false" />
     </div>
+      <div class="description">{{ newTheme.description }}</div>
   </card>
 </template>
 
@@ -84,6 +85,10 @@ export default {
   font-size: .9em
   text-align: center
   padding-bottom: 10px
+.description
+  text-align: center
+  font-size: .9em
+  padding: 5px
 .button
   margin-right: 8px
   width: 40px
