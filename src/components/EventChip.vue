@@ -47,6 +47,8 @@ export default {
   width: 90%
   position: relative
   margin: auto
+  display: flex
+  align-items: center
 
   .name
     +shadow
@@ -78,19 +80,21 @@ export default {
         margin-left: calc(var(--circle-radius)/3)
 
   .date
+    +shadow
     --border-width: 2px
-    font-size: .7em
+    font-size: .83em
     font-weight: bold
     line-height: 1.2em
-    width: calc(var(--circle-diameter) - var(--border-width) * 2)
-    height: calc(var(--circle-diameter) - var(--border-width) * 2)
+    height: 45px
+    width: 45px
+    width: calc(var(--circle-diameter)*1.13)
+    height: calc(var(--circle-diameter)*1.13)
     background-color: var(--background)
-    border-radius: var(--circle-radius)
+    border-radius: 50px
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
-    border: var(--color) var(--border-width) solid
     margin: auto
     position: relative
 
