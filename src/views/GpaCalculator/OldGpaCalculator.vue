@@ -80,7 +80,6 @@
   </div>
 </template>
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import RoundedButton from '@/components/RoundedButton.vue';
 
 import { faTimes, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
@@ -104,7 +103,7 @@ class Course {
 
 export default {
   components: {
-    RoundedButton, Card, HomeLink, PlainHeader, CardContainer, Dropdown, FontAwesomeIcon,
+    RoundedButton, Card, HomeLink, PlainHeader, CardContainer, Dropdown,
   },
   data() {
     return {

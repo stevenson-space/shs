@@ -19,11 +19,9 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  components: { FontAwesomeIcon },
   props: {
     scheduleType: { type: String, required: true },
   },

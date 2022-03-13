@@ -82,7 +82,6 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex';
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import {
   faChevronRight,
   faChevronLeft,
@@ -102,7 +101,6 @@ import Announcements from './Announcements.vue';
 
 export default {
   components: {
-    FontAwesomeIcon,
     CountdownCircle,
     HeaderSchedule,
     Dropdown,

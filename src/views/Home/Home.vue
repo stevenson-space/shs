@@ -15,7 +15,7 @@
 
       <icon-text-card :icon="icons.faBell" text="Bell Schedules" link="bellschedules" />
 
-      <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
+      <icon-text-card :icon="icons.faCoffee" text="Links" link="links" :invert="true" />
 
       <icon-text-card :icon="icons.faCalendarAlt" text="Calendar" link="calendar" />
 
@@ -53,7 +53,7 @@ import {
   faTint,
   faCalculator,
   faCog,
-  faTools,
+  faCoffee,
 } from '@fortawesome/free-solid-svg-icons';
 
 import CardContainer from '@/components/CardContainer.vue';
@@ -89,7 +89,7 @@ export default {
         faTint,
         faCalculator,
         faCog,
-        faTools,
+        faCoffee,
       },
       fullScreenMode: false,
     };

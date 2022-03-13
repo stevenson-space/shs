@@ -8,12 +8,11 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 import TimedCard from './TimedCard.vue';
 
 export default {
-  components: { TimedCard, FontAwesomeIcon },
+  components: { TimedCard },
   data() {
     return {
       icons: {

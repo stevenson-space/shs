@@ -42,7 +42,6 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faPencilAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Bell from '@/utils/bell';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
@@ -50,7 +49,6 @@ import Checkbox from '@/components/Checkbox.vue';
 
 export default {
   components: {
-    FontAwesomeIcon,
     ConfirmPopup,
     Checkbox,
   },

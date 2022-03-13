@@ -8,11 +8,9 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  components: { FontAwesomeIcon },
   props: {
     invert: { type: Boolean, default: true },
   },

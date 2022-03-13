@@ -39,13 +39,12 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import HomeLink from '@/components/HomeLink.vue';
 import Dropdown from '@/components/Dropdown.vue';
 
 export default {
-  components: { FontAwesomeIcon, HomeLink, Dropdown },
+  components: { HomeLink, Dropdown },
   props: {
     month: { type: String, required: true },
     year: { type: Number, required: true },

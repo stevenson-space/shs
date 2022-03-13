@@ -41,8 +41,6 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
-
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import {
   faPlus, faPencilAlt, faTrashAlt, faHistory,
 } from '@fortawesome/free-solid-svg-icons';
@@ -57,7 +55,6 @@ import SettingsSection from './SettingsSection.vue';
 
 export default {
   components: {
-    FontAwesomeIcon,
     SettingsSection,
     SwitchByDevice,
     RoundedButton,

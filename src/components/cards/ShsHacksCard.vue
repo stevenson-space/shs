@@ -13,11 +13,10 @@
 
 <script>
 import Card from '@/components/Card.vue';
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  components: { Card, FontAwesomeIcon },
+  components: { Card },
   data() {
     return {
       faExternalLinkAlt,

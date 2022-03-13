@@ -76,7 +76,6 @@
 </template>
 
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
   faInfoCircle, faExpand, faCompress, faVolumeUp, faSlash,
 } from '@fortawesome/free-solid-svg-icons';
@@ -94,7 +93,6 @@ export default {
     Card,
     ScrollSelector,
     RoundedButton,
-    FontAwesomeIcon,
     Checkbox,
     ConfirmPopup,
     WhatIsThis,

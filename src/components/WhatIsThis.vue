@@ -11,11 +11,9 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  components: { FontAwesomeIcon },
   props: {
     icon: { type: Object, required: false, default: () => faQuestionCircle },
   },

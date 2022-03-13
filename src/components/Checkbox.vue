@@ -11,11 +11,9 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  components: { FontAwesomeIcon },
   props: {
     value: { type: Boolean, required: true },
     labelSize: { type: String, default: '.85em' },

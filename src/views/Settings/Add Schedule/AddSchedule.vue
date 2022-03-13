@@ -57,7 +57,6 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faPlus, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { mapGetters, mapActions } from 'vuex';
 
@@ -75,7 +74,6 @@ export default {
     ScheduleColumn,
     TimePicker,
     ConfirmPopup,
-    FontAwesomeIcon,
     RoundedButton,
   },
   props: {

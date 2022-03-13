@@ -54,7 +54,6 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import {
   faCog,
   faBars,
@@ -97,7 +96,6 @@ const sidenavItems = [
 
 export default {
   components: {
-    FontAwesomeIcon,
     HomeLink,
     General,
     Schedules,

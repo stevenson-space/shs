@@ -10,12 +10,11 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import Card from '@/components/Card.vue';
 import CustomLink from '@/components/CustomLink.vue';
 
 export default {
-  components: { Card, FontAwesomeIcon, CustomLink },
+  components: { Card, CustomLink },
   props: {
     icon: { type: Object, required: true },
     text: { type: String, required: true },
