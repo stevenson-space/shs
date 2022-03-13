@@ -58,11 +58,10 @@ import {
   faGear,
   faBars,
   faArrowLeft,
-  faListAlt,
-  faExchangeAlt,
-  faUserCog,
+  faRectangleList,
+  faRightLeft,
+  faUserGear,
   faLock,
-  faAd,
   faAddressCard,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -74,12 +73,12 @@ import Privacy from './Privacy.vue';
 import Contact from './Contact.vue';
 
 const sidenavItems = [
-  { text: 'General', link: '#general', icon: faUserCog },
-  { text: 'Schedules', link: '#schedules', icon: faListAlt },
+  { text: 'General', link: '#general', icon: faUserGear },
+  { text: 'Schedules', link: '#schedules', icon: faRectangleList },
   {
     text: 'Transfer',
     link: '#transfer',
-    icon: faExchangeAlt,
+    icon: faRightLeft,
     iconProps: { rotation: 90 },
   },
   {

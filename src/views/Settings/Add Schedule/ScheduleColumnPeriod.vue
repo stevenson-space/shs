@@ -4,7 +4,7 @@
 
     <div class="title" @click="editNamePopup">
       <div ref="title-text" class="text">{{ name }}</div>
-      <font-awesome-icon :icon="icons.faPencilAlt" class="icon" />
+      <font-awesome-icon :icon="icons.faPencil" class="icon" />
     </div>
     <div class="times">
       <div class="time" @click="$emit('pick-time', 'start')">
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { faPencilAlt, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faXmark } from '@fortawesome/free-solid-svg-icons';
 import Bell from '@/utils/bell';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import Checkbox from '@/components/Checkbox.vue';
@@ -65,7 +65,7 @@ export default {
       showDeletePopup: false,
       deleteOthers: false,
       icons: {
-        faPencilAlt,
+        faPencil,
         faXmark,
       },
     };

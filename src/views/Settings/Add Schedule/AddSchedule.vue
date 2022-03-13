@@ -17,7 +17,7 @@
 
         <div v-show="!editingScheduleName" class="text">{{ scheduleName }}</div>
 
-        <font-awesome-icon :icon="icons.faPencilAlt" class="icon" />
+        <font-awesome-icon :icon="icons.faPencil" class="icon" />
       </div>
 
       <div class="buttons">
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import { faPlus, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faPencil } from '@fortawesome/free-solid-svg-icons';
 import { mapGetters, mapActions } from 'vuex';
 
 import { getNameWithoutConflicts } from '@/utils/util';
@@ -88,7 +88,7 @@ export default {
       showDeleteAllPopup: false,
       icons: {
         faPlus,
-        faPencilAlt,
+        faPencil,
       },
       dirty: false, // true if the data has been modified without having been saved yet
       beforeUnloadHandler: null,

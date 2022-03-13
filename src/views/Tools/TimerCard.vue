@@ -27,7 +27,7 @@
         </div>
 
         <div class="info-text">
-          <font-awesome-icon :icon="icons.faInfoCircle" />
+          <font-awesome-icon :icon="icons.faCircleInfo" />
           &nbsp;Scroll to select time
         </div>
 
@@ -77,7 +77,7 @@
 
 <script>
 import {
-  faInfoCircle, faExpand, faCompress, faVolumeUp, faSlash,
+  faCircleInfo, faExpand, faCompress, faVolumeUp, faSlash,
 } from '@fortawesome/free-solid-svg-icons';
 import anime from 'animejs';
 
@@ -111,7 +111,7 @@ export default {
       timer: null, // will be set to the result of setTimeout when start is clicked
       endTime: 0, // will be set to the real epoch time of when the timer should end
       icons: {
-        faInfoCircle,
+        faCircleInfo,
         faExpand,
         faCompress,
         faVolumeUp,

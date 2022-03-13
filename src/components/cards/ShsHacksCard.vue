@@ -5,7 +5,7 @@
       <div class="register">
         Free-to-attend virtual hackathon,
         register by <span class="color">11:59pm</span> on Saturday (4/17)! &nbsp;
-        <font-awesome-icon :icon="faExternalLinkAlt" class="link-icon" />
+        <font-awesome-icon :icon="faArrowUpRightFromSquare" class="link-icon" />
       </div>
     </a>
   </card>
@@ -13,13 +13,13 @@
 
 <script>
 import Card from '@/components/Card.vue';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   components: { Card },
   data() {
     return {
-      faExternalLinkAlt,
+      faArrowUpRightFromSquare,
     };
   },
 };
