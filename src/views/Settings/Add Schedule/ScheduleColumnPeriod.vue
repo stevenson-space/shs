@@ -1,6 +1,6 @@
 <template>
   <div class="schedule-column-period" :class="{ closed: closed, open: !closed }">
-    <font-awesome-icon :icon="icons.faTimes" class="delete" @click="deletePopup" />
+    <font-awesome-icon :icon="icons.faXmark" class="delete" @click="deletePopup" />
 
     <div class="title" @click="editNamePopup">
       <div ref="title-text" class="text">{{ name }}</div>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { faPencilAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faPencilAlt, faXmark } from '@fortawesome/free-solid-svg-icons';
 import Bell from '@/utils/bell';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import Checkbox from '@/components/Checkbox.vue';
@@ -66,7 +66,7 @@ export default {
       deleteOthers: false,
       icons: {
         faPencilAlt,
-        faTimes,
+        faXmark,
       },
     };
   },

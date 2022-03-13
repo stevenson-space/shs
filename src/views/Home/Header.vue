@@ -47,7 +47,7 @@
 
       <div v-hammer:tap="toggleColor" class="icon remove-color">
         <font-awesome-icon
-          :icon="colored ? icons.faTintSlash : icons.faTint"
+          :icon="colored ? icons.faDropletSlash : icons.faDroplet"
           fixed-width
         />
       </div>
@@ -87,8 +87,8 @@ import {
   faChevronLeft,
   faExpand,
   faCompress,
-  faTint,
-  faTintSlash,
+  faDroplet,
+  faDropletSlash,
 } from '@fortawesome/free-solid-svg-icons';
 
 import Bell from '@/utils/bell';
@@ -117,8 +117,8 @@ export default {
         faChevronLeft,
         faExpand,
         faCompress,
-        faTint,
-        faTintSlash,
+        faDroplet,
+        faDropletSlash,
       },
       currentTime: 0, // seconds since 12:00am
       interval: null,

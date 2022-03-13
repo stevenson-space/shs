@@ -15,7 +15,7 @@
       </div>
 
       <div class="title">
-        <font-awesome-icon :icon="icons.faCog" /> Settings
+        <font-awesome-icon :icon="icons.faGear" /> Settings
       </div>
 
       <a
@@ -55,7 +55,7 @@
 
 <script>
 import {
-  faCog,
+  faGear,
   faBars,
   faArrowLeft,
   faListAlt,
@@ -106,7 +106,7 @@ export default {
   data() {
     return {
       icons: {
-        faCog,
+        faGear,
         faBars,
         faArrowLeft,
       },
