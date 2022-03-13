@@ -40,14 +40,14 @@ export default {
 
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
-
 .event
   --circle-diameter: 36px
   --circle-radius: calc(var(--circle-diameter) / 2)
   width: 90%
   position: relative
   margin: auto
-
+  display: flex
+  align-items: center
   .name
     +shadow
     background-color: var(--color)
@@ -59,39 +59,36 @@ export default {
     text-align: center
     color: var(--background)
     font-size: .9em
-
     .text
       color: white
       white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis
-
     &.right
       right: 0
       .text
         margin-left: calc(2*var(--circle-radius))
         margin-right: calc(var(--circle-radius)/3)
-
     &.left
       .text
         margin-right: calc(2*var(--circle-radius))
         margin-left: calc(var(--circle-radius)/3)
-
   .date
+    +shadow
     --border-width: 2px
-    font-size: .7em
+    font-size: .83em
     font-weight: bold
     line-height: 1.2em
-    width: calc(var(--circle-diameter) - var(--border-width) * 2)
-    height: calc(var(--circle-diameter) - var(--border-width) * 2)
+    height: 45px
+    width: 45px
+    width: calc(var(--circle-diameter)*1.13)
+    height: calc(var(--circle-diameter)*1.13)
     background-color: var(--background)
-    border-radius: var(--circle-radius)
+    border-radius: 50px
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
-    border: var(--color) var(--border-width) solid
     margin: auto
     position: relative
-
 </style>
