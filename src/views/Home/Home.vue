@@ -32,6 +32,7 @@
       <icon-text-card :icon="icons.faTools" text="Tools" link="tools" :invert="true" />
 
       <icon-text-card :icon="icons.faFileAlt" text="Documents" link="documents" />
+      <icon-text-card :icon="icons.faQrcode" text="QR Code" link="QRCode" />
 
       <icon-text-card
         :icon="icons.faCog"
@@ -54,6 +55,7 @@ import {
   faCalculator,
   faCog,
   faTools,
+  faQrcode,
 } from '@fortawesome/free-solid-svg-icons';
 
 import CardContainer from '@/components/CardContainer.vue';
@@ -90,6 +92,7 @@ export default {
         faCalculator,
         faCog,
         faTools,
+        faQrcode,
       },
       fullScreenMode: false,
     };
