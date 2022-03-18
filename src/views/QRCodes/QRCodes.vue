@@ -30,8 +30,8 @@ export default {
   },
   data: () => {
     const options = {
-      width: 300,
-      height: 300,
+      width: 400,
+      height: 400,
       type: 'png',
       data: '',
       image: 'static/QRCodeLogo.svg',
