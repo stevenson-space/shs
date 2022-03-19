@@ -3,14 +3,14 @@
     <plain-header title='QR Codes' />
     <card class="qr-card">
       <div class="center" >
-      <div id='qr-code' :class="{ 'show' : showQR }" ref='qrCode'></div>
+      <div id="qr-code" :class="{ 'show' : showQR }" ref="qrCode"></div>
       <br>
-      <input v-model='enteredQRCode' placeholder='Enter A Valid Link' />
+      <input v-model='enteredQRCode' placeholder="Enter A Valid Link" />
       <div class="input-tip"  v-if="enteredQRCode.length > 40">Tip: For very long links, consider using <a href="https://bitly.com/" target='_blank'>Bitly</a> for a more aesthetic code</div>
       <div class="input-tip"  v-if="errorMessage.length > 0">{{ errorMessage }}</div>
       <div class="btn-row">
         <rounded-button v-if="isValidLink()" class="button" @click="generateQR" :text="showQR && options.data != enteredQRCode ? 'Re-Generate' : 'Generate'" :circular="false"/>
-        <rounded-button v-if="showQR" class="button"  @click='download' text='Download' :circular="false"/>
+        <rounded-button v-if="showQR" class="button"  @click='download' text="Download" :circular="false"/>
       </div>
       </div>
     </card>
@@ -34,7 +34,7 @@ export default {
       width: 500,
       height: 500,
       type: 'png',
-      data: '',
+      data: '', // the link
       image: 'static/QRCodeLogo.svg',
       qrOptions: {
         typeNumber: 0,
@@ -64,7 +64,7 @@ export default {
     return {
       showQR: false,
       options,
-      enteredQRCode: '',
+      enteredQRCode: 'https://github.com',
       errorMessage: '',
       qrCode: new QRCodeStyling(options),
     };
@@ -108,7 +108,10 @@ export default {
 @import 'src/styles/style.sass'
 #qr-code
   &.show
+    +shadow
     transform: scale(.5)
+    padding: 20px
+    border-radius: 50px
     margin-top: -110px
     margin-bottom: -110px
 .qr-card
@@ -125,12 +128,12 @@ export default {
     flex-direction: column
     align-items: center
     input
-      font-size: 17px
-      text-align: center
       background: none
+      text-align: center
+      border: none
+      font-size: 17px
       width: 100%
       max-width: 650px
-      border: none
       padding: 10px
       border-radius: 7px
       margin-bottom: 10px
@@ -139,10 +142,10 @@ export default {
       &:focus
         outline: none
     .button
-      width: 110px
       margin: auto
+      width: 110px
   .btn-row
-    margin-top: 8px
     display: flex
+    margin-top: 8px
     gap: 5px
 </style>
