@@ -64,7 +64,7 @@ export default {
     return {
       showQR: false,
       options,
-      enteredQRCode: 'https://github.com',
+      enteredQRCode: '',
       errorMessage: '',
       qrCode: new QRCodeStyling(options),
     };
