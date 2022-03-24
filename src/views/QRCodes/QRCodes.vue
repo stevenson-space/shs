@@ -79,7 +79,7 @@ export default {
       const linkValidator = new RegExp(linkExpression);
       const isNonEmptyURL = this.enteredQRCode.length > 0;
       if (!enteredQRCode.match(linkValidator)) {
-        this.errorMessage = isNonEmptyURL ? 'Invalid Link Format' : '';
+        this.errorMessage = isNonEmptyURL ? 'Invalid Link Format (Example: https://stevenson.space)' : '';
         return false;
       } if (enteredQRCode.length > 120) {
         this.errorMessage = isNonEmptyURL ? 'Link too long' : '';

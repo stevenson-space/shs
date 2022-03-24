@@ -6,7 +6,8 @@
     />
 
     <card-container>
-      <contribute-card />
+      <new-feature-card/>
+      <!-- <contribute-card /> -->
       <new-theme-card />
       <holiday-card />
       <schedule-card />
@@ -14,6 +15,7 @@
       <upcoming-events-card />
 
       <icon-text-card :icon="icons.faBell" text="Bell Schedules" link="bellschedules" />
+      <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="QRCode" />
 
       <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
 
@@ -32,7 +34,6 @@
       <icon-text-card :icon="icons.faTools" text="Tools" link="tools" :invert="true" />
 
       <icon-text-card :icon="icons.faFileAlt" text="Documents" link="documents" />
-      <icon-text-card :icon="icons.faQrcode" text="QR Code" link="QRCode" />
 
       <icon-text-card
         :icon="icons.faCog"
@@ -66,6 +67,7 @@ import HolidayCard from '@/components/cards/HolidayCard.vue';
 import ContributeCard from '@/components/cards/ContributeCard.vue';
 import LunchCard from '@/components/cards/LunchCard.vue';
 import NewThemeCard from '@/components/cards/NewThemeCard.vue';
+import NewFeatureCard from '@/components/cards/NewFeatureCard.vue';
 import ScheduleHeader from './Header.vue';
 
 export default {
@@ -79,6 +81,7 @@ export default {
     HolidayCard,
     ContributeCard,
     NewThemeCard,
+    NewFeatureCard,
   },
   data() {
     return {
