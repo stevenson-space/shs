@@ -1,12 +1,14 @@
 import Vue, { VNode } from 'vue';
 import { VueHammer } from 'vue2-hammer';
 import VueAnalytics, { InstallOptions } from 'vue-analytics';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import App from './App.vue';
 import router from './router';
 import store from './store';
 
 Vue.config.productionTip = false;
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 if (Date.now() < (new Date(2020, 11, 1)).getTime()) { // if before december 1, 2020
   // add the falling leaves animation

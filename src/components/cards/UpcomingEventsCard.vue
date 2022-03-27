@@ -30,7 +30,6 @@
 
 <script>
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import Bell from '@/utils/bell';
 import Card from '@/components/Card.vue';
 import EventChip from '@/components/EventChip.vue';
@@ -73,7 +72,7 @@ function getNextEvent(startDate) {
 }
 
 export default {
-  components: { Card, EventChip, FontAwesomeIcon },
+  components: { Card, EventChip },
   data() {
     return {
       cardHeight: 0,

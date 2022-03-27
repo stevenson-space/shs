@@ -1,6 +1,6 @@
 <template>
   <div>
-    <plain-header title="Tools" />
+    <plain-header title="Timer" />
     <card-container>
       <timer-card />
     </card-container>

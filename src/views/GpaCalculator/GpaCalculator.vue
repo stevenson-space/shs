@@ -25,7 +25,7 @@
           </div>
           <rounded-button
             class="add-course-button"
-            :icon="faPlusCircle"
+            :icon="icons.faPlus"
             text="Add Course"
             invert
             @click="addCourse()"
@@ -50,7 +50,7 @@
             @click="removeCourse(course)"
             class="close"
             size="1x"
-            :icon="faTimes"
+            :icon="icons.faXmark"
           />
         </div>
         <div class="course-settings-row">
@@ -89,10 +89,9 @@
   </div>
 </template>
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import RoundedButton from '@/components/RoundedButton.vue';
 
-import { faTimes, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
 import Card from '@/components/Card.vue';
 import HomeLink from '@/components/HomeLink.vue';
 import PlainHeader from '@/components/PlainHeader.vue';
@@ -116,19 +115,17 @@ class Course {
 
 export default {
   components: {
-    RoundedButton, Card, HomeLink, PlainHeader, CardContainer, Dropdown, FontAwesomeIcon, Checkbox,
+    RoundedButton, Card, HomeLink, PlainHeader, CardContainer, Dropdown, Checkbox,
 
   },
   data() {
     return {
-      icons: { faPlusCircle },
+      icons: { faPlus, faXmark },
       courses: [new Course(1)],
       averageUnweightedGpa: 4.0,
       averageWeightedGpa: 4.0,
       courseLevels: ['Regular', 'Accelerated', 'Honors/AP'],
       gradeLabels: ['A', 'B', 'C', 'D', 'F'],
-      faTimes,
-      faPlusCircle,
       terms: ['1st', '2nd', '3rd', 'Final'],
     };
   },

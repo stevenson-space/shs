@@ -31,7 +31,7 @@ export default {
       links: [ /* eslint-disable max-len */
         { name: 'D125', url: 'https://www.d125.org/' },
         { name: 'Canvas', desc: 'Must be logged in using school google account', url: 'https://d125.instructure.com/' },
-        { name: 'IRC', url: 'https://irc.d125.org' },
+        { name: 'IRC', desc: 'Must be logged in using school google account', url: 'https://irc.d125.org/login' },
         { name: 'Infinite Campus', url: 'https://infinitecampus.d125.org/campus/portal/aes.jsp' },
         { name: 'Naviance', url: 'https://student.naviance.com/aeshs' },
         { name: 'Peer Tutors', desc: 'Must be logged in using school google account', url: 'https://sites.google.com/d125.org/peer-tutors/home' },

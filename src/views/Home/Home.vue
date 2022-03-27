@@ -19,7 +19,7 @@
 
       <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
 
-      <icon-text-card :icon="icons.faCalendarAlt" text="Calendar" link="calendar" />
+      <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" />
 
       <icon-text-card
         :icon="icons.faCalculator"
@@ -29,14 +29,14 @@
         :invert="true"
       />
 
-      <icon-text-card :icon="icons.faTint" text="Switch Colors" link="colors" />
+      <icon-text-card :icon="icons.faDroplet" text="Switch Theme" link="colors" />
 
-      <icon-text-card :icon="icons.faTools" text="Tools" link="tools" :invert="true" />
+      <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
 
-      <icon-text-card :icon="icons.faFileAlt" text="Documents" link="documents" />
+      <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" />
 
       <icon-text-card
-        :icon="icons.faCog"
+        :icon="icons.faGear"
         text="Settings"
         link="settings"
         :invert="true"
@@ -49,14 +49,13 @@
 import {
   faBell,
   faLink,
-  faFileAlt,
-  faCalendarAlt,
-  faTv,
-  faTint,
+  faFileLines,
+  faCalendarDays,
+  faDroplet,
   faCalculator,
-  faCog,
   faTools,
   faQrcode,
+  faHourglass,
 } from '@fortawesome/free-solid-svg-icons';
 
 import CardContainer from '@/components/CardContainer.vue';
@@ -88,14 +87,13 @@ export default {
       icons: {
         faBell,
         faLink,
-        faFileAlt,
-        faCalendarAlt,
-        faTv,
-        faTint,
+        faFileLines,
+        faCalendarDays,
+        faDroplet,
         faCalculator,
-        faCog,
         faTools,
         faQrcode,
+        faHourglass,
       },
       fullScreenMode: false,
     };

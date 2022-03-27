@@ -32,12 +32,11 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import StaggerAnimation from './StaggerAnimation.vue';
 
 export default {
-  components: { FontAwesomeIcon, StaggerAnimation },
+  components: { StaggerAnimation },
   props: {
     options: { type: Array, required: true },
     value: { type: Number, required: true },

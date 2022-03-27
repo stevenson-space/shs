@@ -18,7 +18,7 @@
       </div>
 
       <div v-show="event.location" class="location">
-        <font-awesome-icon class="icon" :icon="icons.faMapMarkerAlt" fixed-width />
+        <font-awesome-icon class="icon" :icon="icons.faLocationDot" fixed-width />
         &nbsp;{{ event.location }}
       </div>
 
@@ -28,15 +28,13 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 
 import Popup from '@/components/Popup.vue';
 
 export default {
   components: {
-    FontAwesomeIcon,
     Popup,
   },
   props: {
@@ -46,7 +44,7 @@ export default {
   data() {
     return {
       icons: {
-        faMapMarkerAlt,
+        faLocationDot,
         faClock,
       },
     };

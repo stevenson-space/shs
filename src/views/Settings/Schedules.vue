@@ -2,8 +2,8 @@
   <settings-section title="Schedules">
    <br>
     <switch-by-device slot="heading-content">
-      <rounded-button text="Restore to Defaults" :icon="icons.faHistory" :invert="true" @click="restoreSchedules" />
-      <rounded-button slot="mobile" text="Restore" :icon="icons.faHistory" :invert="true" @click="restoreSchedules" />
+      <rounded-button text="Restore to Defaults" :icon="icons.faClockRotateLeft" :invert="true" @click="restoreSchedules" />
+      <rounded-button slot="mobile" text="Restore" :icon="icons.faClockRotateLeft" :invert="true" @click="restoreSchedules" />
     </switch-by-device>
 
     <div class="schedule-cards">
@@ -16,12 +16,12 @@
       >
         <div class="actions">
           <div v-if="schedule.isCustom" class="action" @click="deleteSchedule(schedule.name)">
-            <font-awesome-icon :icon="icons.faTrashAlt" />
+            <font-awesome-icon :icon="icons.faTrashCan" />
             Delete
           </div>
 
           <div class="action" @click="editSchedule(schedule.name)">
-            <font-awesome-icon :icon="icons.faPencilAlt" />
+            <font-awesome-icon :icon="icons.faPencil" />
             {{ schedule.isCustom ? 'Edit' : 'Copy & Edit' }}
           </div>
         </div>
@@ -41,10 +41,8 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
-
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import {
-  faPlus, faPencilAlt, faTrashAlt, faHistory,
+  faPlus, faPencil, faTrashCan, faClockRotateLeft,
 } from '@fortawesome/free-solid-svg-icons';
 
 import Bell from '@/utils/bell';
@@ -57,7 +55,6 @@ import SettingsSection from './SettingsSection.vue';
 
 export default {
   components: {
-    FontAwesomeIcon,
     SettingsSection,
     SwitchByDevice,
     RoundedButton,
@@ -69,9 +66,9 @@ export default {
     return {
       icons: {
         faPlus,
-        faPencilAlt,
-        faTrashAlt,
-        faHistory,
+        faPencil,
+        faTrashCan,
+        faClockRotateLeft,
       },
     };
   },
