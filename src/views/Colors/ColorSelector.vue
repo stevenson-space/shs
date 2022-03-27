@@ -52,13 +52,11 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faChevronLeft, faChevronRight, faCheck } from '@fortawesome/free-solid-svg-icons';
 import StaggerAnimation from '@/components/StaggerAnimation.vue';
 
 export default {
   components: {
-    FontAwesomeIcon,
     StaggerAnimation,
   },
   props: {

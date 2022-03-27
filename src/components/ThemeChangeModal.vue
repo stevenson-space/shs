@@ -29,13 +29,12 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faArrowRight, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import RoundedButton from '@/components/RoundedButton.vue';
 import { mapState } from 'vuex';
 
 export default {
-  components: { FontAwesomeIcon, RoundedButton },
+  components: { RoundedButton },
   props: {
     newTheme: { type: Object, required: true },
     showModal: { type: Boolean, required: true },

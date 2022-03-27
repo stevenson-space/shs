@@ -33,7 +33,7 @@
             @click="removeCourse(course)"
             class="close"
             size="1x"
-            :icon="faTimes"
+            :icon="faXmark"
           />
         </div>
         <div class="course-settings-row">
@@ -80,10 +80,9 @@
   </div>
 </template>
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import RoundedButton from '@/components/RoundedButton.vue';
 
-import { faTimes, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faXmark, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import Card from '@/components/Card.vue';
 import HomeLink from '@/components/HomeLink.vue';
 import PlainHeader from '@/components/PlainHeader.vue';
@@ -104,7 +103,7 @@ class Course {
 
 export default {
   components: {
-    RoundedButton, Card, HomeLink, PlainHeader, CardContainer, Dropdown, FontAwesomeIcon,
+    RoundedButton, Card, HomeLink, PlainHeader, CardContainer, Dropdown,
   },
   data() {
     return {
@@ -113,7 +112,7 @@ export default {
       averageGpa: 4.0,
       courseLevels: ['Regular', 'Accelerated', 'Honors/AP'],
       gradeLabels: ['F', 'D-', 'D', 'D+', 'C-', 'C', 'C+', 'B-', 'B', 'B+', 'A-', 'A', 'A+'],
-      faTimes,
+      faXmark,
       faPlusCircle,
       terms: ['1st', '2nd', '3rd', 'Final'],
     };

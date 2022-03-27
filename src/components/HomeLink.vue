@@ -1,24 +1,22 @@
 <template>
   <div v-hammer:tap="goHome" class="home-link">
     <router-link to="/" class="home" :class="{ invert }" event="">
-      <font-awesome-icon class="icon" :icon="faHome" fixed-width />
+      <font-awesome-icon class="icon" :icon="faHouse" fixed-width />
       <span class="text">Home</span>
     </router-link>
   </div>
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  components: { FontAwesomeIcon },
   props: {
     invert: { type: Boolean, default: true },
   },
   data() {
     return {
-      faHome,
+      faHouse,
     };
   },
   methods: {

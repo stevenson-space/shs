@@ -64,7 +64,6 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import superagent from 'superagent';
 import Vue from 'vue';
@@ -102,7 +101,6 @@ export default {
     Popup,
     Checkbox,
     ConfirmPopup,
-    FontAwesomeIcon,
   },
   data() {
     return {

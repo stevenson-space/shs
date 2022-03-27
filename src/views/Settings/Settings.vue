@@ -15,7 +15,7 @@
       </div>
 
       <div class="title">
-        <font-awesome-icon :icon="icons.faCog" /> Settings
+        <font-awesome-icon :icon="icons.faGear" /> Settings
       </div>
 
       <a
@@ -54,16 +54,14 @@
 </template>
 
 <script>
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import {
-  faCog,
+  faGear,
   faBars,
   faArrowLeft,
-  faListAlt,
-  faExchangeAlt,
-  faUserCog,
+  faRectangleList,
+  faRightLeft,
+  faUserGear,
   faLock,
-  faAd,
   faAddressCard,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -75,12 +73,12 @@ import Privacy from './Privacy.vue';
 import Contact from './Contact.vue';
 
 const sidenavItems = [
-  { text: 'General', link: '#general', icon: faUserCog },
-  { text: 'Schedules', link: '#schedules', icon: faListAlt },
+  { text: 'General', link: '#general', icon: faUserGear },
+  { text: 'Schedules', link: '#schedules', icon: faRectangleList },
   {
     text: 'Transfer',
     link: '#transfer',
-    icon: faExchangeAlt,
+    icon: faRightLeft,
     iconProps: { rotation: 90 },
   },
   {
@@ -97,7 +95,6 @@ const sidenavItems = [
 
 export default {
   components: {
-    FontAwesomeIcon,
     HomeLink,
     General,
     Schedules,
@@ -108,7 +105,7 @@ export default {
   data() {
     return {
       icons: {
-        faCog,
+        faGear,
         faBars,
         faArrowLeft,
       },
