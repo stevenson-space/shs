@@ -15,7 +15,7 @@
       <upcoming-events-card />
 
       <icon-text-card :icon="icons.faBell" text="Bell Schedules" link="bellschedules" />
-      <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="QRCode" />
+      <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr-codes" />
 
       <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
 

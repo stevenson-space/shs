@@ -3,7 +3,7 @@
      <div class="icon">
       <font-awesome-icon :icon="icons.faQrcode" />
      </div>
-    <div class="message"><b>Introducing Stevenson.Space QR Codes 🎉 </b> Gorgeously Generatable, Delightfully Downloadable, Scrumptiously Scannable.</div>
+    <div class="message"><b>Introducing Stevenson.Space QR Codes 🎉 </b><a href="/qr-codes">Try</a> them now</div>
   </timed-card>
 </template>
 
