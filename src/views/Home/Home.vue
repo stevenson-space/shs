@@ -27,7 +27,7 @@
         :invert="true"
       />
 
-      <icon-text-card :icon="icons.faDroplet" text="Switch Colors" link="colors" />
+      <icon-text-card :icon="icons.faDroplet" text="Switch Theme" link="colors" />
 
       <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
 
