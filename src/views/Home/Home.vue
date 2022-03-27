@@ -56,6 +56,7 @@ import {
   faTools,
   faQrcode,
   faHourglass,
+  faGear,
 } from '@fortawesome/free-solid-svg-icons';
 
 import CardContainer from '@/components/CardContainer.vue';
@@ -94,6 +95,7 @@ export default {
         faTools,
         faQrcode,
         faHourglass,
+        faGear,
       },
       fullScreenMode: false,
     };
