@@ -6,6 +6,8 @@
     />
 
     <card-container>
+      <!-- <contribute-card /> -->
+      <new-feature-card/>
       <contribute-card />
       <new-theme-card />
       <holiday-card />
@@ -15,6 +17,7 @@
 
       <icon-text-card :icon="icons.faBell" text="Bell Schedules" link="bellschedules" />
 
+      <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qrcodes" />
       <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
 
       <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" />
@@ -53,6 +56,7 @@ import {
   faCalculator,
   faGear,
   faHourglass,
+  faQrcode,
 } from '@fortawesome/free-solid-svg-icons';
 
 import CardContainer from '@/components/CardContainer.vue';
@@ -63,6 +67,7 @@ import HolidayCard from '@/components/cards/HolidayCard.vue';
 import ContributeCard from '@/components/cards/ContributeCard.vue';
 import LunchCard from '@/components/cards/LunchCard.vue';
 import NewThemeCard from '@/components/cards/NewThemeCard.vue';
+import NewFeatureCard from '@/components/cards/NewFeatureCard.vue';
 import ScheduleHeader from './Header.vue';
 
 export default {
@@ -76,6 +81,7 @@ export default {
     HolidayCard,
     ContributeCard,
     NewThemeCard,
+    NewFeatureCard,
   },
   data() {
     return {
@@ -88,6 +94,7 @@ export default {
         faCalculator,
         faGear,
         faHourglass,
+        faQrcode,
       },
       fullScreenMode: false,
     };
