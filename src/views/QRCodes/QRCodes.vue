@@ -5,6 +5,7 @@
       <div class="center" >
       <div id="qr-code" :class="{ 'show' : showQR }" ref="qrCode"></div>
       <br>
+      <p>For iOS devices, use Safari for the download feature</p>
       <input v-model='enteredQRCode' placeholder="Enter A Valid Link" />
       <div class="input-tip"  v-if="enteredQRCode.length > 40">Tip: For very long links, consider using <a href="https://bitly.com/" target='_blank'>Bitly</a> for a more aesthetic code</div>
       <div class="input-tip"  v-if="errorMessage.length > 0">{{ errorMessage }}</div>
