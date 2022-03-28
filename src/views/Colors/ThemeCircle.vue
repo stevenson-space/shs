@@ -28,10 +28,10 @@ export default {
 .theme-card
   text-align: center
   .circle
-    width: 68px
-    height: 68px
+    width: 65px
+    height: 65px
     border-radius: 68px
-    margin: 4px
+    margin: 2px
   .circle-border
     display: inline-block
     border: 2px solid grey
