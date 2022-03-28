@@ -91,7 +91,6 @@ export default {
     },
     generateQR() {
       if (this.isValidLink) {
-        console.log('generating new qr code');
         this.options.data = this.enteredQRCode;
         this.qrCode.update(this.options);
         this.showQR = true;
@@ -99,7 +98,7 @@ export default {
     },
     download() {
       const fileName = `QR-${this.options.data.replace('http://', '').replace('https://', '').replace('www.', '').substring(0, 12)}`;
-      this.qrCode.download({ extension: this.extension, name: fileName });
+      this.qrCode.download({ extension: this.options.type, name: fileName });
     },
   },
 };
