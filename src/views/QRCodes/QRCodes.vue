@@ -34,7 +34,7 @@ export default {
     const options = {
       width: 500,
       height: 500,
-      type: 'png',
+      type: 'jpeg',
       data: '', // the link
       image: 'static/QRCodeLogo.svg',
       qrOptions: {
