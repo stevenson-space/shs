@@ -21,14 +21,14 @@ export default {
   },
   methods: {
     goHome(e) {
-      // if (e.pointerType === 'touch') {
-      //   // if touched, show animation first before going home (computers will see animation on hover)
-      //   setTimeout(() => {
-      this.$router.push('/');
-      //   }, 200);
-      // } else {
-      //   this.$router.push('/');
-      // }
+      if (e.pointerType === 'touch') {
+        // if touched, show animation first before going home (computers will see animation on hover)
+        setTimeout(() => {
+          this.$router.push('/');
+        }, 130);
+      } else {
+        this.$router.push('/');
+      }
     },
   },
 };
