@@ -43,8 +43,8 @@ export default {
         errorCorrectionLevel: 'Q',
       },
       imageOptions: {
-        hideBackgroundDots: false,
-        imageSize: 0.3,
+        hideBackgroundDots: true,
+        imageSize: 0.35,
       },
       dotsOptions: {
         color: '#1F5D39',
