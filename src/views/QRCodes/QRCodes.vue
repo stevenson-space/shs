@@ -36,7 +36,7 @@ export default {
       height: 500,
       type: 'jpeg',
       data: '', // the link
-      image: 'static/QRCodeLogo.svg',
+      image: 'static/QRCodeLogo.png',
       qrOptions: {
         typeNumber: 0,
         mode: 'Byte',
@@ -132,13 +132,13 @@ export default {
       text-align: center
       border: none
       font-size: 17px
-      width: 100%
+      width: 90%
       max-width: 650px
       padding: 10px
       border-radius: 7px
       margin-bottom: 10px
-      +shadow-light
       border: 1px solid var(--color)
+      +shadow-light
       &:focus
         outline: none
     .button
