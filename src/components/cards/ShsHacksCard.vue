@@ -44,6 +44,7 @@ export default {
     margin: 0 20px
     line-height: 1.6em
     text-align: center
+    color: var(--primary)
     .color
       color: var(--color)
       font-weight: bold
