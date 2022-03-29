@@ -3,8 +3,7 @@
     <a class="main-link" href="https://shshacks.io" target="_blank">
       <img class="logo" src="static/occasions/shsHacks.png">
       <div class="register">
-        Free-to-attend virtual hackathon,
-        register by <span class="color">11:59pm</span> on Saturday (4/17)! &nbsp;
+        Stevenson's free-to-attend hackathon is happening this weekend. <br><span class="color">Register Now!</span>&nbsp;
         <font-awesome-icon :icon="faArrowUpRightFromSquare" class="link-icon" />
       </div>
     </a>
@@ -35,8 +34,8 @@ export default {
   flex-direction: column
 
   .logo
-    height: 100px
-    padding: 10px 5px
+    height: 150px
+    padding: 5px 5px
 
   .register
     font-size: .85em
