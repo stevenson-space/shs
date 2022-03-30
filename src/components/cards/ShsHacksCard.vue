@@ -29,14 +29,14 @@ export default {
   display: flex
   align-items: center
   text-decoration: none
-  color: black
   justify-content: center
   flex-direction: column
-
+  color: var(--primary)
   .logo
     height: 150px
-    padding: 5px 5px
-
+    margin: 10px
+    background: white
+    border-radius: 15px
   .register
     font-size: .85em
     text-align: left
@@ -44,7 +44,6 @@ export default {
     margin: 0 20px
     line-height: 1.6em
     text-align: center
-    color: var(--color)
     .color
       color: var(--color)
       font-weight: bold
