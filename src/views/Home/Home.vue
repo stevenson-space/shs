@@ -6,6 +6,7 @@
     />
 
     <card-container>
+      <april-fools-card />
       <contribute-card />
       <new-theme-card />
       <shs-hacks-card/>
@@ -65,6 +66,7 @@ import ContributeCard from '@/components/cards/ContributeCard.vue';
 import LunchCard from '@/components/cards/LunchCard.vue';
 import NewThemeCard from '@/components/cards/NewThemeCard.vue';
 import ShsHacksCard from '@/components/cards/ShsHacksCard.vue';
+import AprilFoolsCard from '@/components/cards/AprilFoolsCard.vue';
 import ScheduleHeader from './Header.vue';
 
 export default {
@@ -79,6 +81,7 @@ export default {
     ContributeCard,
     NewThemeCard,
     ShsHacksCard,
+    AprilFoolsCard,
   },
   data() {
     return {
