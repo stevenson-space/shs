@@ -9,7 +9,7 @@
       <april-fools-card />
       <contribute-card />
       <new-theme-card />
-      <shs-hacks-card/>
+      <!-- <shs-hacks-card/> -->
       <holiday-card />
       <schedule-card />
       <lunch-card />
