@@ -4,7 +4,7 @@
     <card class="qr-card">
       <color-selector
       :colors="colors"
-      :backgroundShade="3"
+      :backgroundShade="1"
       :current-color="color"
       @color-selected="colorSelected"
       />
@@ -60,18 +60,18 @@ export default {
         imageSize: 0.35,
       },
       dotsOptions: {
-        color: '#1F5D39',
+        color: '',
         type: 'rounded',
       },
       backgroundOptions: {
         color: '#ffffff',
       },
       cornersSquareOptions: {
-        color: '#1F5D39',
+        color: '',
         type: 'extra-rounded',
       },
       cornersDotOptions: {
-        color: '#1F5D39',
+        color: '',
         type: 'dot',
       },
     };
