@@ -2,35 +2,45 @@
   <div>
     <plain-header title='QR Codes' />
     <card class="qr-card">
+      <color-selector
+      :colors="colors"
+      :backgroundShade="3"
+      :current-color="color"
+      @color-selected="colorSelected"
+      />
       <div class="center" >
-      <div id="qr-code" :class="{ 'show' : showQR }" ref="qrCode"></div>
-      <br>
-      <p>For iOS devices, use Safari for the download feature</p>
-      <form @submit.prevent @submit="generateQR()">
-        <input v-model='enteredQRCode' placeholder="Enter A Valid Link" />
-      </form>
-      <div class="input-tip"  v-if="enteredQRCode.length > 40">Tip: For very long links, consider using <a href="https://bitly.com/" target='_blank'>Bitly</a> for a more aesthetic code</div>
-      <div class="input-tip"  v-if="errorMessage.length > 0">{{ errorMessage }}</div>
-      <div class="btn-row">
-        <rounded-button v-if="isValidLink()" class="button" @click="generateQR" :text="showQR && options.data != enteredQRCode ? 'Re-Generate' : 'Generate'" :circular="false"/>
-        <rounded-button v-if="showQR" class="button"  @click='download' text="Download" :circular="false"/>
-      </div>
+        <rounded-button v-if="color != defaultColor" class="reset-button"  @click='resetColor()' text="Reset Color" :circular="true"/>
+        <div id="qr-code" :class="{ 'show' : showQR }" ref="qrCode"></div>
+        <br>
+        <p>For iOS devices, use Safari for the download feature</p>
+        <form @submit.prevent @submit="generateQR()">
+          <input v-model='enteredQRCode' placeholder="Enter A Valid Link" />
+        </form>
+        <div class="input-tip"  v-if="enteredQRCode.length > 40">Tip: For very long links, consider using <a href="https://bitly.com/" target='_blank'>Bitly</a> for a more aesthetic code</div>
+        <div class="input-tip"  v-if="errorMessage.length > 0">{{ errorMessage }}</div>
+        <div class="btn-row">
+          <rounded-button v-if="isValidLink()" class="button" @click="generateQR" :text="showQR && options.data != enteredQRCode ? 'Re-Generate' : 'Generate'" :circular="false"/>
+          <rounded-button v-if="showQR" class="button"  @click='download' text="Download" :circular="false"/>
+        </div>
       </div>
     </card>
   </div>
 </template>
 
 <script>
+import colors from '@/data/QRColors.json';
 import PlainHeader from '@/components/PlainHeader.vue';
 import QRCodeStyling from 'qr-code-styling';
 import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
+import ColorSelector from '@/views/Colors/ColorSelector.vue';
 
 export default {
   components: {
     PlainHeader,
     Card,
     RoundedButton,
+    ColorSelector,
   },
   data: () => {
     const options = {
@@ -38,7 +48,7 @@ export default {
       height: 500,
       margin: 20,
       type: 'jpeg',
-      data: '', // the link
+      data: '',
       image: 'static/QRCodeLogo.png',
       qrOptions: {
         typeNumber: 0,
@@ -66,18 +76,32 @@ export default {
       },
     };
     return {
+      defaultColor: '#1F5D39',
+      color: '',
+      colors,
       showQR: false,
       options,
-      enteredQRCode: '',
+      enteredQRCode: process.env.NODE_ENV === 'development' ? 'https://test.com' : '',
       errorMessage: '',
       qrCode: new QRCodeStyling(options),
     };
   },
   mounted() {
+    const { defaultColor } = this;
+    this.color = defaultColor;
+    this.setQRColor(defaultColor);
     this.qrCode.append(this.$refs.qrCode);
   },
   methods: {
-    isValidLink() {
+    resetColor() {
+      this.color = this.defaultColor;
+    },
+    colorSelected(color) {
+      this.color = color;
+      this.setQRColor(color);
+      this.generateQR(false);
+    },
+    isValidLink(checkDifferentURL = true) { // checkDifferentURL means whether the url entered previously has to be different than the current one to validate true. For the color picker, it should skip this check.
       const { enteredQRCode } = this;
       const linkExpression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
       const linkValidator = new RegExp(linkExpression);
@@ -90,10 +114,11 @@ export default {
         return false;
       }
       this.errorMessage = '';
+      if (!checkDifferentURL) return isNonEmptyURL;
       return this.options.data !== enteredQRCode && isNonEmptyURL;
     },
-    generateQR() {
-      if (this.isValidLink()) {
+    generateQR(checkDifferentURL = true) {
+      if (this.isValidLink(checkDifferentURL)) {
         this.options.data = this.enteredQRCode;
         this.qrCode.update(this.options);
         this.showQR = true;
@@ -103,12 +128,21 @@ export default {
       const fileName = `QR-${this.options.data.replace('http://', '').replace('https://', '').replace('www.', '').substring(0, 12)}`;
       this.qrCode.download({ extension: this.options.type, name: fileName });
     },
+    setQRColor(color) {
+      const { options } = this;
+      options.dotsOptions.color = color;
+      options.cornersSquareOptions.color = color;
+      options.cornersDotOptions.color = color;
+    },
   },
 };
 </script>
 
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
+.reset-button
+  width: 100px
+  margin-top: 12px
 #qr-code
   &.show
     +shadow

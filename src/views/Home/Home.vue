@@ -19,7 +19,7 @@
 
       <icon-text-card :icon="icons.faBell" text="Bell Schedules" link="bellschedules" />
 
-      <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qrcodes" />
+      <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
       <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
 
       <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" />
