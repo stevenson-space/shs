@@ -37,7 +37,7 @@ export default {
       width: 500,
       height: 500,
       type: 'jpeg',
-      data: 'https://test.com', // the link
+      data: '', // the link
       image: 'static/QRCodeLogo.png',
       qrOptions: {
         typeNumber: 0,
