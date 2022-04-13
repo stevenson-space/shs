@@ -75,7 +75,7 @@ export default {
       shadesTop: 0,
       shadeHeight: 35,
       isOpen: false,
-      animationDuration: 180,
+      animationDuration: 150,
     };
   },
   methods: {
@@ -148,7 +148,7 @@ export default {
   transform: translate(-50%, -50%)
 
 .color-selector
-  --color-diameter: 85px
+  --color-diameter: 70px
   outline: none
   position: relative
   z-index: 1
@@ -184,7 +184,7 @@ export default {
         border-radius: 100px
         display: inline-block
         cursor: pointer
-        margin: 0 5px
+        margin: 0 4px
         z-index: 25
         position: relative
         &.selected
