@@ -95,11 +95,11 @@ export default {
   methods: {
     resetColor() {
       this.color = this.defaultColor;
+      this.setQRColor();
     },
     colorSelected(color) {
       this.color = color;
-      this.setQRColor(color);
-      this.generateQR(false);
+      this.setQRColor();
     },
     isValidLink(checkDifferentURL = true) { // checkDifferentURL means whether the url entered previously has to be different than the current one to validate true. For the color picker, it should skip this check.
       const { enteredQRCode } = this;
@@ -128,11 +128,12 @@ export default {
       const fileName = `QR-${this.options.data.replace('http://', '').replace('https://', '').replace('www.', '').substring(0, 12)}`;
       this.qrCode.download({ extension: this.options.type, name: fileName });
     },
-    setQRColor(color) {
-      const { options } = this;
+    setQRColor() {
+      const { options, color } = this;
       options.dotsOptions.color = color;
       options.cornersSquareOptions.color = color;
       options.cornersDotOptions.color = color;
+      this.generateQR(false);
     },
   },
 };
