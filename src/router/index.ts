@@ -91,7 +91,7 @@ const routes: RouteConfig[] = [
   },
   {
     name: 'QRCode',
-    path: '/qrcodes',
+    path: '/qr',
     component: QRCode,
   },
 ];
