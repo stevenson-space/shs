@@ -6,7 +6,9 @@
       <div id="qr-code" :class="{ 'show' : showQR }" ref="qrCode"></div>
       <br>
       <p>For iOS devices, use Safari for the download feature</p>
-      <input v-model='enteredQRCode' placeholder="Enter A Valid Link" />
+      <form @submit.prevent @submit="generateQR()">
+        <input v-model='enteredQRCode' placeholder="Enter A Valid Link" />
+      </form>
       <div class="input-tip"  v-if="enteredQRCode.length > 40">Tip: For very long links, consider using <a href="https://bitly.com/" target='_blank'>Bitly</a> for a more aesthetic code</div>
       <div class="input-tip"  v-if="errorMessage.length > 0">{{ errorMessage }}</div>
       <div class="btn-row">
@@ -35,7 +37,7 @@ export default {
       width: 500,
       height: 500,
       type: 'jpeg',
-      data: '', // the link
+      data: 'https://test.com', // the link
       image: 'static/QRCodeLogo.png',
       qrOptions: {
         typeNumber: 0,
@@ -90,7 +92,7 @@ export default {
       return this.options.data !== enteredQRCode && isNonEmptyURL;
     },
     generateQR() {
-      if (this.isValidLink) {
+      if (this.isValidLink()) {
         this.options.data = this.enteredQRCode;
         this.qrCode.update(this.options);
         this.showQR = true;
@@ -127,20 +129,24 @@ export default {
     display: flex
     flex-direction: column
     align-items: center
-    input
-      background: none
-      text-align: center
-      border: none
-      font-size: 17px
-      width: 90%
-      max-width: 650px
-      padding: 10px
-      border-radius: 7px
-      margin-bottom: 10px
-      border: 1px solid var(--color)
-      +shadow-light
-      &:focus
-        outline: none
+    form
+      display: flex
+      justify-content: center
+      width: 100%
+      input
+        background: none
+        text-align: center
+        border: none
+        font-size: 17px
+        width: 90%
+        max-width: 650px
+        padding: 10px
+        border-radius: 7px
+        margin-bottom: 10px
+        border: 1px solid var(--color)
+        +shadow-light
+        &:focus
+          outline: none
     .button
       margin: auto
       width: 110px
