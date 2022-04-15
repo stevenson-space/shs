@@ -81,12 +81,15 @@ export default {
       colors,
       showQR: false,
       options,
-      enteredQRCode: process.env.NODE_ENV === 'development' ? 'https://test.com' : '',
+      enteredQRCode: '',
       errorMessage: '',
       qrCode: new QRCodeStyling(options),
     };
   },
   mounted() {
+    if (process.env.NODE_ENV === 'development') {
+      this.enteredQRCode = 'https://test.com';
+    }
     const { defaultColor } = this;
     this.color = defaultColor;
     this.setQRColor(defaultColor);
