@@ -38,7 +38,7 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'vuejs-accessibility/click-events-have-key-events': 'off',
     'vuejs-accessibility/form-control-has-label': 'off',
-
+    'vuejs-accessibility/alt-text': 'off',
   },
   overrides: [
     {

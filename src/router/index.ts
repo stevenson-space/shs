@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw, RouteComponent } from 'vue-router';
+import Home from '@/views/Home/Home.vue';
 import HomeView from '../views/HomeView.vue';
 
 const GpaCalculator:RouteComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
@@ -21,8 +22,7 @@ type EditScheduleProps = {
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView,
+    component: Home,
   },
   {
     path: '/about',

@@ -30,7 +30,7 @@
 
     <div ref="preview" class="preview" :style="{ height: previewHeight }">
       <div class="wrapper">
-        <!-- <home /> -->
+        <home />
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
 
 <script>
 import colors from '@/data/colors.json';
-// import Home from '@/views/Home/Home.vue';
+import Home from '@/views/Home/Home.vue';
 import HomeLink from '@/components/HomeLink.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import { mapState } from 'vuex';
@@ -50,7 +50,7 @@ const isValidColor = (color) => /^#([0-9a-f]{3}){1,2}$/i.test(color);
 export default {
   components: {
     ColorSelector,
-    // Home,
+    Home,
     HomeLink,
     RoundedButton,
     ThemeSelector,

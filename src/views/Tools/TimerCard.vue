@@ -52,12 +52,12 @@
 
         <div class="control-buttons">
           <rounded-button class="button" text="Reset" :circular="false" @click="reset" />
-          <!-- <rounded-button
-            v-hammer:tap="startStopButton.action"
+          <rounded-button
+            @click="startStopButton.action"
             class="button"
             v-bind="startStopButton"
             :circular="false"
-          /> -->
+          />
         </div>
       </div>
     </div>
