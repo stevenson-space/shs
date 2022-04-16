@@ -39,7 +39,7 @@ const mutations: MutationTree<State> = {
   setColor(state, color) {
     state.color = color;
     localStorage.color = color;
-    set({ dimension1: color });
+    set({ color });
   },
   setUrlDate(state, route) {
     state.urlDate = parseUrlDateTime(route);
@@ -80,7 +80,7 @@ const mutations: MutationTree<State> = {
     if (useThemeColor) {
       state.color = color;
       localStorage.color = color;
-      set({ dimension1: color });
+      set({ color });
     }
 
     state.theme = theme;

@@ -7,9 +7,9 @@ import { State } from './state';
 const initializeStore = (store: Store<State>): void => {
   if (localStorage.color && process.env.VUE_APP_EDIT_COLORS !== 'true') {
     store.commit('setColor', localStorage.color);
-    set({ dimension1: localStorage.color });
+    set({ color: localStorage.color });
   } else {
-    set({ dimension1: 'unset' });
+    set({ color: 'unset' });
   }
 
   if (localStorage.theme && process.env.VUE_APP_EDIT_COLORS !== 'true') {

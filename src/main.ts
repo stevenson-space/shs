@@ -9,6 +9,6 @@ createApp(App).component('font-awesome-icon', FontAwesomeIcon)
   .use(store)
   .use(router)
   .use(VueGtag, {
-    config: { id: 'UA-83979451-1' },
+    config: { id: 'G-0MXBH7W5L0' },
   })
   .mount('#app');
