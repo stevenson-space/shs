@@ -86,9 +86,6 @@ import Checkbox from '@/components/Checkbox.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import WhatIsThis from '@/components/WhatIsThis.vue';
 
-import { blankAudioFile } from '@/assets/blank.mp3';
-import { timerAudioFile } from '@/assets/timer.mp3';
-// FIX
 export default {
   components: {
     Card,
@@ -148,10 +145,10 @@ export default {
     shouldMakeSound() {
       if (this.shouldMakeSound && !this.audio) {
         // initially playing some blank audio while tab is in focus allows audio to be played later even when tab is in background
-        const blankAudio = new Audio(blankAudioFile);
+        const blankAudio = new Audio('blank.mp3');
         blankAudio.play();
 
-        this.audio = new Audio(timerAudioFile);
+        this.audio = new Audio('timer.mp3');
       }
     },
   },

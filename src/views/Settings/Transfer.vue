@@ -34,17 +34,18 @@
       </div>
     </confirm-popup>
 
+        <p>{{shouldSaveSetting}}</p>
     <confirm-popup :show="popupToShow == popups.save" ok-text="Save" @cancel="cancel" @ok="save">
       <div class="save-popup">
         <div class="title">Choose what to save:</div>
-
-        <!-- <checkbox // FIX
+      <!-- fix -->
+        <checkbox
           v-for="(_, setting) in shouldSaveSetting"
           :key="setting"
           v-model="shouldSaveSetting[setting]"
         >
           {{ settingToName(setting) }}
-        </checkbox> -->
+        </checkbox>
 
         <div class="warning">Warning: Any existing data will be lost</div>
       </div>
@@ -65,7 +66,7 @@
 
 <script>
 import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-icons';
-import Vue from 'vue';
+// import Vue from 'vue';
 
 import RoundedButton from '@/components/RoundedButton.vue';
 import Popup from '@/components/Popup.vue';
@@ -121,6 +122,7 @@ export default {
   created() {
     // Initialize each property of shouldSendSetting to true (meaning that all send checkboxes will be checked initially)
     tranferableSettings.forEach((str) => { // FIX
+      this.shouldSendSetting[str] = true;
       // Vue.set(this.shouldSendSetting, str, true); // need use Vue.set since we're adding dynamic properties to a tracked object
     });
   },

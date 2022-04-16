@@ -77,7 +77,7 @@
               <div class="final-gpa">{{course.weightedGPA.toFixed(2)}}</div>
             </div>
           </div>
-          <checkbox :value="course.weight == 1.5" v-on:input="toggleExtraWeight(course, $event)">1.5 Weight Science Class</checkbox>
+          <checkbox :modelValue="course.weight == 1.5" v-on:update:modelValue="toggleExtraWeight(course, $event)">1.5 Weight Science Class</checkbox>
         <br>
       </card>
     </card-container>
