@@ -26,33 +26,32 @@ export default {
   flex-flow: column nowrap
   justify-content: center
   align-items: center
-
   margin-top: 10px
   margin-bottom: 10px
   width: 100%
 
-  label
-    margin-left: -10px
-    padding-bottom: 5px
-    width: 80%
-    text-align: left
+:slotted(label)
+  margin-left: -10px
+  padding-bottom: 5px
+  width: 80%
+  text-align: left
 
-  p, span
-    width: 80%
-    font-size: 0.75em
-    text-align: left
-    margin: 5px
+:slotted(p, span)
+  width: 80%
+  font-size: 0.75em
+  text-align: left
+  margin: 5px
 
-  input
-    &:focus
-      outline: none
-    background: var(--background)
-    color: var(--primary)
-    padding: 0px 5px
-    border-radius: 30px
-    width: 80%
-    border: 1px solid var(--color)
-    height: 30px
-    font-size: 1em
-    text-indent: 0.3em
+:slotted(input)
+  &:focus
+    outline: none
+  background: var(--background)
+  color: var(--primary)
+  padding: 0px 5px
+  border-radius: 30px
+  width: 80%
+  border: 1px solid var(--color)
+  height: 30px
+  font-size: 1em
+  text-indent: 0.3em
 </style>

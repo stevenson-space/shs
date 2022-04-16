@@ -1,9 +1,7 @@
 <template>
   <div class="circle" :class="{ 'full-screen': fullScreenMode }">
     <!-- Easter Egg -->
-    <!-- // FIX -->
-    <!-- <img  @click="masked = !masked" @mouseover="masked = true"  @mouseleave="masked = false" :src="masked ? 'static/patriot-masked.png' : 'static/patriot.png'" class="logo"> -->
-    <img :src="false ? require('@/assets/patriot-masked.png') : require('@/assets/patriot.png')" class="logo">
+    <img @click="masked = !masked" @mouseover="masked = !masked" :src="masked ? require('@/assets/patriot-masked.png') : require('@/assets/patriot.png')" class="logo">
     <div v-if="mode === 'current'" class="countdown">
       {{ countdown }}
     </div>

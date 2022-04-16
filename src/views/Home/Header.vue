@@ -343,7 +343,6 @@ export default {
   text-align: center
   transition: background-color .3s
   &.mars
-    // FIX
     background: url(@/assets/occasions/mars-mobile.png) center center no-repeat, var(--header-color)
     background-size: cover
     +desktop

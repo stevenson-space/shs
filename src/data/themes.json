@@ -59,7 +59,7 @@
     },
     {
         "name": "Winter",
-        "schedule": "always",
+        "schedule": "12/1/2021-3/20/2022",
         "message" : "[Try] The New Winter Theme ☕",
         "suggestedColor": "#02647a",
         "background": "#f2fcff",
@@ -74,7 +74,7 @@
     },
     {
         "name": "Valentine's Day",
-        "schedule": "always",
+        "schedule": "2/8/2022-2/15/2022",
         "message" : "[Try] The New Valentines Day Theme",
         "suggestedColor": "#f98686",
         "background": "#ffeded",
@@ -89,7 +89,7 @@
     },
     {
         "name": "Into The Woods",
-        "schedule": "always",
+        "schedule": "2/22/2022-2/27/2022",
         "message": "[Try] The New Winterfest Theme",
         "suggestedColor": "#419154",
         "background": "#0f0f0f",
@@ -106,7 +106,7 @@
         "name": "Mars",
         "message": "[Try] The new Mars theme now!",
         "description": "Featuring a selfie of the Curiosity rover on Mount Sharp. Credit: NASA",
-        "schedule": "always",
+        "schedule": "3/7/2022-4/7/2022",
         "suggestedColor": "#c1440e",
         "background": "#f0e7e7",
         "secondaryBackground": "white",
