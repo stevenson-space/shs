@@ -2,11 +2,6 @@
   <div>
     <plain-header title="GPA Calculator" />
     <div>
-    <!-- temporary until end of class of 2022-->
-    <card class="top-card" style="margin-bottom: 15px !important;">
-      <p style="text-align: center; padding: 5px;">Welcome to the new EBR version of the GPA calculator. Any data entered previously is still availale on the legacy version of the app found <a style="color: var(--color)" target="_blank" href="/OldGpaCalculator">here</a></p>
-    </card>
-    <!-- end-temporary -->
       <card class="top-card">
         <div style="text-align:center">
           <div class="gpa-title-row">

@@ -12,9 +12,7 @@ function parseUrlDateTime(route: any): Date { // FIX
   // If date and/or time is specified in URL, return that date
   // Otherwise, return current date
 
-  // let { date = '', time = '' } = route.query;
-  let date = '';
-  let time = '';
+  let { date = '', time = '' } = route.query;
 
   if (!Array.isArray(time) && !Array.isArray(date)) { // make sure multiple values weren't specified in URL for each
     time = time.replace(/\./g, ':'); // lets you use "." (url safe) instead of ":" (not url safe) //FIX
@@ -47,8 +45,7 @@ const mutations: MutationTree<State> = {
     localStorage.color = color;
     // query('set', 'dimension1', color); // FIX
   },
-  setUrlDate(state) {
-    const route = useRoute();
+  setUrlDate(state, route) {
     state.urlDate = parseUrlDateTime(route);
   },
   setStartTime(state) {

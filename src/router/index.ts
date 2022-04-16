@@ -8,10 +8,10 @@ const BellSchedules:RouteComponent = () => import(/* webpackChunkName: "bellsche
 const Calendar:RouteComponent = () => import(/* webpackChunkName: "calendar" */'@/views/Calendar/Calendar.vue');
 const Links:RouteComponent = () => import(/* webpackChunkName: "links" */'@/views/Links/Links.vue');
 const Colors:RouteComponent = () => import(/* webpackChunkName: "colors" */'@/views/Colors/Colors.vue');
-// const Settings = () => import(/* webpackChunkName: "settings" */'@/views/Settings/Settings.vue');
+const Settings:RouteComponent = () => import(/* webpackChunkName: "settings" */'@/views/Settings/Settings.vue');
 const Tools:RouteComponent = () => import(/* webpackChunkName: "tools" */'@/views/Tools/Tools.vue');
 const Documents:RouteComponent = () => import(/* webpackChunkName: "documents" */'@/views/Documents/Documents.vue');
-// const AddSchedule = () => import(/* webpackChunkName: "addschedule" */'@/views/Settings/Add Schedule/AddSchedule.vue');
+const AddSchedule:RouteComponent = () => import(/* webpackChunkName: "addschedule" */'@/views/Settings/Add Schedule/AddSchedule.vue');
 const Login:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/Login/Login.vue');
 
 type EditScheduleProps = {
@@ -25,18 +25,6 @@ const routes: Array<RouteRecordRaw> = [
     component: Home,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: 'about' */ '../views/AboutView.vue'),
-  },
-  // {
-  //   path: '/',
-  //   component: Home,
-  // },
-  {
     path: '/bellschedules',
     component: BellSchedules,
   },
@@ -48,10 +36,6 @@ const routes: Array<RouteRecordRaw> = [
     path: '/GpaCalculator',
     component: GpaCalculator,
   },
-  // { //remove - FIX
-  //   path: '/OldGpaCalculator',
-  //   component: OldGpaCalculator,
-  // },
   {
     path: '/links',
     component: Links,
@@ -60,14 +44,14 @@ const routes: Array<RouteRecordRaw> = [
     path: '/colors',
     component: Colors,
   },
-  // {
-  //   path: '/settings',
-  //   component: Settings,
-  // },
-  // {
-  //   path: '/add-schedule',
-  //   component: AddSchedule,
-  // },
+  {
+    path: '/settings',
+    component: Settings,
+  },
+  {
+    path: '/add-schedule',
+    component: AddSchedule,
+  },
   // {
   //   name: 'editSchedules',
   //   path: '/edit-schedule/:scheduleToEdit',
