@@ -1,11 +1,9 @@
 /* eslint-disable no-param-reassign */
-
-// import { query } from 'vue-analytics'; // FIX
 import officialSchedules from '@/data/schedules.json';
-import { useRoute } from 'vue-router';
 import { MutationTree } from 'vuex';
 import { CustomSchedules, ThemeData } from '@/utils/types';
 import { getNameWithoutConflicts } from '@/utils/util';
+// import { query } from 'vue-gtag';
 import { State } from './state';
 
 function parseUrlDateTime(route: any): Date { // FIX

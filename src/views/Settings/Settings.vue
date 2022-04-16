@@ -116,18 +116,17 @@ export default {
       extraSpaceHeight: window.innerHeight, // ensure that the last section is scrollable to the top (will be adjusted in mounted())
     };
   },
-  created() { // FIX
-    // this.scrollListener = () => {
-    //   const scrollY = window.scrollY + 100; // +100 effectively moves the threshold to 100px below the top
-    //   sidenavItems.forEach((sidenavItem, index) => {
-    //     const element = document.querySelector(sidenavItem.link);
-    //     if (scrollY > element.offsetTop) {
-    //       // don't need to check if less than bottom of section, because next pass through for loop will overwrite selectedLinkIndex
-    //       this.selectedLinkIndex = index;
-    //     }
-    //   });
-    // };
-
+  created() {
+    this.scrollListener = () => {
+      const scrollY = window.scrollY + 100; // +100 effectively moves the threshold to 100px below the top
+      sidenavItems.forEach((sidenavItem, index) => {
+        const element = document.querySelector(sidenavItem.link);
+        if (element.offsetTop && scrollY > element.offsetTop) {
+          // don't need to check if less than bottom of section, because next pass through for loop will overwrite selectedLinkIndex
+          this.selectedLinkIndex = index;
+        }
+      });
+    };
     window.addEventListener('scroll', this.scrollListener);
   },
   mounted() {
