@@ -5,7 +5,7 @@ import HomeView from '../views/HomeView.vue';
 // const OldGpaCalculator = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/OldGpaCalculator.vue');
 // const BellSchedules = () => import(/* webpackChunkName: "bellschedules" */'@/views/Bell Schedules/BellSchedules.vue');
 // const Calendar = () => import(/* webpackChunkName: "calendar" */'@/views/Calendar/Calendar.vue');
-// const Links = () => import(/* webpackChunkName: "links" */'@/views/Links/Links.vue');
+const Links:RouteComponent = () => import(/* webpackChunkName: "links" */'@/views/Links/Links.vue');
 // const Colors = () => import(/* webpackChunkName: "colors" */'@/views/Colors/Colors.vue');
 // const Settings = () => import(/* webpackChunkName: "settings" */'@/views/Settings/Settings.vue');
 const Tools:RouteComponent = () => import(/* webpackChunkName: "tools" */'@/views/Tools/Tools.vue');
@@ -52,10 +52,10 @@ const routes: Array<RouteRecordRaw> = [
   //   path: '/OldGpaCalculator',
   //   component: OldGpaCalculator,
   // },
-  // {
-  //   path: '/links',
-  //   component: Links,
-  // },
+  {
+    path: '/links',
+    component: Links,
+  },
   // {
   //   path: '/colors',
   //   component: Colors,
