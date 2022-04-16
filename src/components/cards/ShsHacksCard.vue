@@ -1,7 +1,7 @@
 <template>
   <card>
     <a class="main-link" href="https://shshacks.io" target="_blank">
-      <img class="logo" src="static/occasions/shsHacks.png">
+      <img class="logo" src="@/assets/occasions/shsHacks.png">
       <div class="register">
         Stevenson's free-to-attend hackathon is happening this weekend. <br><span class="color">Register Now!</span>&nbsp;
         <font-awesome-icon :icon="faArrowUpRightFromSquare" class="link-icon" />

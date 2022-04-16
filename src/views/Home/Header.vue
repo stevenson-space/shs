@@ -74,8 +74,8 @@
     />
 
     <announcements :full-screen-mode="fullScreenMode" />
-    <snow v-if="theme.name.toLowerCase() == 'winter'" :images="['static/occasions/snowflake.png']"/>
-    <snow v-if="theme.name.includes('Valentine')" :images="['static/occasions/heart.svg']"/>
+    <snow v-if="theme.name.toLowerCase() == 'winter'" :images="[require('@/assets/occasions/snowflake.png')]"/>
+    <snow v-if="theme.name.includes('Valentine')" :images="[require('@/assets/occasions/heart.svg')]"/>
 
   </div>
 </template>
@@ -344,12 +344,12 @@ export default {
   transition: background-color .3s
   &.mars
     // FIX
-    // background: url(/static/occasions/mars-mobile.png) center center no-repeat, var(--header-color)
+    background: url(@/assets/occasions/mars-mobile.png) center center no-repeat, var(--header-color)
     background-size: cover
     +desktop
-      // background: url(/static/occasions/mars-full.png) center center no-repeat, var(--header-color)
+      background: url(@/assets/occasions/mars-full.png) center center no-repeat, var(--header-color)
   &.halloween
-    // background: url(/static/occasions/cob-webs-left.png) left top no-repeat, url(/static/occasions/cob-webs-right.png) right top no-repeat, var(--header-color)
+    background: url(@/assets/occasions/cob-webs-left.png) left top no-repeat, url(@/assets/occasions/cob-webs-right.png) right top no-repeat, var(--header-color)
     background-size: 250px
     +mobile-small
       background-size: 150px

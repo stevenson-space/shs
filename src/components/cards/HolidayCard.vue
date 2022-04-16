@@ -1,6 +1,6 @@
 <template>
   <timed-card startTime="December 12, 2021" endTime="January 2, 2022">
-    <img class="logo" src="static/occasions/snowman.png">
+    <img class="logo" src="@/assets/occasions/snowman.png">
     <div class="message">Good luck on finals and have a good break!</div>
   </timed-card>
 </template>

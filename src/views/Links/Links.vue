@@ -5,7 +5,7 @@
       <image-text-card
         v-for="link in links"
         :key="link.url"
-        :image="`static/links/${link.name}.png`"
+        :image="require(`@/assets/links/${link.name}.png`)"
         :text="link.name"
         :desc="link.desc"
         :link="link.url"

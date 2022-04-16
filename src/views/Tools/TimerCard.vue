@@ -2,16 +2,14 @@
   <card class="timer-card" :shadow="false" :border="true" :class="{ fullscreen: isFullscreen }">
     <div ref="fullscreen-wrapper" class="fullscreen-wrapper">
       <div class="header">
-        <!-- <div v-hammer:tap="() => shouldMakeSound = !shouldMakeSound" class="icon-button sound">
+        <div @click="shouldMakeSound = !shouldMakeSound" class="icon-button sound">
           <font-awesome-icon class="icon" :icon="icons.faVolumeUp" fixed-width />
           <div class="slash" :class="{ hide: shouldMakeSound }" />
-        </div> -->
-
+        </div>
         <div class="title">Timer</div>
-
-        <!-- <div v-hammer:tap="isFullscreen ? exitFullscreen : makeFullscreen" class="icon-button">
+        <div @click="isFullscreen ? exitFullscreen : makeFullscreen" class="icon-button">
           <font-awesome-icon class="icon" :icon="isFullscreen ? icons.faCompress : icons.faExpand" fixed-width />
-        </div> -->
+        </div>
       </div>
 
       <div class="container">
@@ -88,6 +86,9 @@ import Checkbox from '@/components/Checkbox.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import WhatIsThis from '@/components/WhatIsThis.vue';
 
+import { blankAudioFile } from '@/assets/blank.mp3';
+import { timerAudioFile } from '@/assets/timer.mp3';
+// FIX
 export default {
   components: {
     Card,
@@ -147,10 +148,10 @@ export default {
     shouldMakeSound() {
       if (this.shouldMakeSound && !this.audio) {
         // initially playing some blank audio while tab is in focus allows audio to be played later even when tab is in background
-        const blankAudio = new Audio('static/blank.mp3');
+        const blankAudio = new Audio(blankAudioFile);
         blankAudio.play();
 
-        this.audio = new Audio('static/timer.mp3');
+        this.audio = new Audio(timerAudioFile);
       }
     },
   },
@@ -240,7 +241,7 @@ export default {
         this.audio.pause();
       }
     },
-    makeFullscreen() {
+    makeFullscreen() { // FIX
       if (!this.isFullscreen) {
         const $fullscreenWrapper = this.$refs['fullscreen-wrapper'];
 
