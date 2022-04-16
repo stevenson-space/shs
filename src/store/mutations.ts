@@ -6,12 +6,10 @@ import { getNameWithoutConflicts } from '@/utils/util';
 // import { query } from 'vue-gtag';
 import { State } from './state';
 
-function parseUrlDateTime(route: any): Date { // FIX
+function parseUrlDateTime(route: any): Date {
   // If date and/or time is specified in URL, return that date
   // Otherwise, return current date
-
   let { date = '', time = '' } = route.query;
-
   if (!Array.isArray(time) && !Array.isArray(date)) { // make sure multiple values weren't specified in URL for each
     time = time.replace(/\./g, ':'); // lets you use "." (url safe) instead of ":" (not url safe) //FIX
     date = date.replace(/-/g, '/'); // lets you use "-" instead of "/"

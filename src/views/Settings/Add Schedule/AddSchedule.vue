@@ -1,7 +1,6 @@
 <template>
   <div>
     <home-link class="home-link" />
-
     <div class="header">
       <div class="title" @click="editScheduleName">
         <input

@@ -3,7 +3,6 @@ import Home from '@/views/Home/Home.vue';
 import store from '@/store';
 
 const GpaCalculator:RouteComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
-// const OldGpaCalculator = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/OldGpaCalculator.vue');
 const BellSchedules:RouteComponent = () => import(/* webpackChunkName: "bellschedules" */'@/views/Bell Schedules/BellSchedules.vue');
 const Calendar:RouteComponent = () => import(/* webpackChunkName: "calendar" */'@/views/Calendar/Calendar.vue');
 const Links:RouteComponent = () => import(/* webpackChunkName: "links" */'@/views/Links/Links.vue');
@@ -52,15 +51,15 @@ const routes: Array<RouteRecordRaw> = [
     path: '/add-schedule',
     component: AddSchedule,
   },
-  // {
-  //   name: 'editSchedules',
-  //   path: '/edit-schedule/:scheduleToEdit',
-  //   component: AddSchedule,
-  //   props: (route): EditScheduleProps => ({
-  //     scheduleToEdit: route.params.scheduleToEdit,
-  //     mode: 'edit',
-  //   }),
-  // },
+  {
+    name: 'editSchedules',
+    path: '/edit-schedule/:scheduleToEdit',
+    component: AddSchedule,
+    props: (route): EditScheduleProps => ({
+      scheduleToEdit: typeof route.params.scheduleToEdit === 'string' ? route.params.scheduleToEdit : route.params.scheduleToEdit[0],
+      mode: 'edit',
+    }),
+  },
   {
     name: 'tools',
     path: '/tools',
