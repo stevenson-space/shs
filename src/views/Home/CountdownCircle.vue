@@ -3,6 +3,7 @@
     <!-- Easter Egg -->
     <!-- // FIX -->
     <!-- <img  @click="masked = !masked" @mouseover="masked = true"  @mouseleave="masked = false" :src="masked ? 'static/patriot-masked.png' : 'static/patriot.png'" class="logo"> -->
+    <img :src="false ? 'static/patriot-masked.png' : 'static/patriot.png'" class="logo">
     <div v-if="mode === 'current'" class="countdown">
       {{ countdown }}
     </div>

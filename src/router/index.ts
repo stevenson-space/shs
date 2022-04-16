@@ -5,7 +5,7 @@ import HomeView from '../views/HomeView.vue';
 const GpaCalculator:RouteComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
 // const OldGpaCalculator = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/OldGpaCalculator.vue');
 // const BellSchedules = () => import(/* webpackChunkName: "bellschedules" */'@/views/Bell Schedules/BellSchedules.vue');
-// const Calendar = () => import(/* webpackChunkName: "calendar" */'@/views/Calendar/Calendar.vue');
+const Calendar:RouteComponent = () => import(/* webpackChunkName: "calendar" */'@/views/Calendar/Calendar.vue');
 const Links:RouteComponent = () => import(/* webpackChunkName: "links" */'@/views/Links/Links.vue');
 const Colors:RouteComponent = () => import(/* webpackChunkName: "colors" */'@/views/Colors/Colors.vue');
 // const Settings = () => import(/* webpackChunkName: "settings" */'@/views/Settings/Settings.vue');
@@ -40,10 +40,10 @@ const routes: Array<RouteRecordRaw> = [
   //   path: '/bellschedules',
   //   component: BellSchedules,
   // },
-  // {
-  //   path: '/calendar',
-  //   component: Calendar,
-  // },
+  {
+    path: '/calendar',
+    component: Calendar,
+  },
   {
     path: '/GpaCalculator',
     component: GpaCalculator,
