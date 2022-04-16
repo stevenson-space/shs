@@ -34,7 +34,6 @@
       </div>
     </confirm-popup>
 
-        <p>{{shouldSaveSetting}}</p>
     <confirm-popup :show="popupToShow == popups.save" ok-text="Save" @cancel="cancel" @ok="save">
       <div class="save-popup">
         <div class="title">Choose what to save:</div>
@@ -144,7 +143,7 @@ export default {
 
       this.popupToShow = popups.none;
     },
-    send() {
+    async send() {
       this.showPopup(popups.loading);
 
       // Get the data for each selected option to send
@@ -155,21 +154,25 @@ export default {
         }
       }
       // FIX
-      // superagent
-      //   .post('/send') // look at /netlify.toml (Netlify is proxying to http://dpaste.com)
-      //   .send({ content: JSON.stringify(data), syntax: 'json', expiry_days: 1 })
-      //   .type('form')
-      //   .then((response) => {
-      //     const url = response.text;
-      //     const code = url.slice(url.lastIndexOf('/') + 1).trim().replace(/[^a-zA-Z0-9]/g, '');
-      //     this.code = code.toLowerCase(); // converting to lower case to make it easier to type (will convert back when receiving)
-      //     this.showPopup(popups.code);
-      //   })
-      //   .catch(() => {
-      //     this.errorMessage = 'Error: Please check your internet';
-      //     this.showPopup(popups.error);
-      //   });
+      // const response = await fetch('/send', {
+      const response = await fetch('/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `content=${encodeURIComponent(JSON.stringify(data))}&syntax=json&expiry_days=1`,
+      });
+      if (response.status === 201) {
+        const url = await response.text();
+        const code = url.slice(url.lastIndexOf('/') + 1).trim().replace(/[^a-zA-Z0-9]/g, '');
+        this.code = code.toLowerCase(); // converting to lower case to make it easier to type (will convert back when receiving)
+        this.showPopup(popups.code);
+      } else {
+        this.errorMessage = 'Error: Please check your internet';
+        this.showPopup(popups.error);
+      }
     },
+
     receive() {
       this.showPopup(popups.loading);
       // FIX
