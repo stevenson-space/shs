@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw, RouteComponent } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 
-// const GpaCalculator = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
+const GpaCalculator:RouteComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
 // const OldGpaCalculator = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/OldGpaCalculator.vue');
 // const BellSchedules = () => import(/* webpackChunkName: "bellschedules" */'@/views/Bell Schedules/BellSchedules.vue');
 // const Calendar = () => import(/* webpackChunkName: "calendar" */'@/views/Calendar/Calendar.vue');
@@ -44,10 +44,10 @@ const routes: Array<RouteRecordRaw> = [
   //   path: '/calendar',
   //   component: Calendar,
   // },
-  // {
-  //   path: '/GpaCalculator',
-  //   component: GpaCalculator,
-  // },
+  {
+    path: '/GpaCalculator',
+    component: GpaCalculator,
+  },
   // { //remove - FIX
   //   path: '/OldGpaCalculator',
   //   component: OldGpaCalculator,

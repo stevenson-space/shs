@@ -28,7 +28,8 @@ export default {
       return shiftAmount;
     },
     slotCount() {
-      return this.numberOfSlots || (this.$slots.default || []).length;
+      return 0; // FIX
+      // return this.numberOfSlots || (this.$slots.default || []).length;
     },
     staggerDuration() {
       return (this.duration / this.slotCount) / 2;
@@ -56,23 +57,23 @@ export default {
         }
       });
     },
-    stagger(func) {
-      if (this.slotCount > 0) {
-        const elements = this.$slots.default.map((vnode) => vnode.elm);
+    stagger(func) { // FIX
+      // if (this.slotCount > 0) {
+      //   const elements = this.$slots.default.map((vnode) => vnode.elm);
 
-        elements.forEach((_, i) => {
-          setTimeout(() => {
-            func(elements, i);
-          }, this.staggerDuration * i);
-        });
-      }
+      //   elements.forEach((_, i) => {
+      //     setTimeout(() => {
+      //       func(elements, i);
+      //     }, this.staggerDuration * i);
+      //   });
+      // }
     },
-    setOpacity(value) {
-      if (this.slotCount > 0) {
-        this.$slots.default.forEach((vnode) => {
-          vnode.elm.style.opacity = value;
-        });
-      }
+    setOpacity(value) { // FIX
+      // if (this.slotCount > 0) {
+      //   this.$slots.default.forEach((vnode) => {
+      //     vnode.elm.style.opacity = value;
+      //   });
+      // }
     },
     open() {
       const { shiftDistance } = this;
@@ -99,14 +100,14 @@ export default {
           // The following gets rid of any existing transitions, so if parent needs to transition something, use containers
           const durationSeconds = this.duration / 1000;
           const transition = `transform ${durationSeconds}s, opacity ${durationSeconds}s linear`;
+          // FIX
+          // this.$slots.default.forEach((vnode, i) => {
+          //   vnode.elm.style.transition = transition;
+          //   vnode.elm.classList.add('slot-element');
 
-          this.$slots.default.forEach((vnode, i) => {
-            vnode.elm.style.transition = transition;
-            vnode.elm.classList.add('slot-element');
-
-            // later elements should stack underneath prior ones
-            vnode.elm.style.zIndex = (this.$slots.default.length - i);
-          });
+          //   // later elements should stack underneath prior ones
+          //   vnode.elm.style.zIndex = (this.$slots.default.length - i);
+          // });
         }
       });
     },

@@ -37,6 +37,7 @@ module.exports = {
   'prefer-destructuring': ['error', { array: false, object: true }],
     'vue/multi-word-component-names': 'off',
     'vuejs-accessibility/click-events-have-key-events': 'off',
+    'vuejs-accessibility/form-control-has-label': 'off',
 
   },
   overrides: [
