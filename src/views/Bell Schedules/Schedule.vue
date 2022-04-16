@@ -13,7 +13,6 @@
         />
       </div>
 
-      <!-- <div v-hammer:swipe.horizontal="onSwipe" class="periods"> --> <!-- FIX -->
       <div class="periods">
         <component
           :is="isMultiDay ? 'MultiDayPeriod' : 'Period'"

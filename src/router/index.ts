@@ -18,6 +18,8 @@ type EditScheduleProps = {
   mode: 'all' | 'edit';
 };
 
+type Position = { left: number; top: number };
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -81,6 +83,12 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  scrollBehavior(to, from, savedPosition): Position {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    return { top: 0, left: 0 };
+  },
 });
 
 // ensure any page with requiresAuth set to true will redirect through the login proxy component

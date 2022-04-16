@@ -37,7 +37,6 @@
     <confirm-popup :show="popupToShow == popups.save" ok-text="Save" @cancel="cancel" @ok="save">
       <div class="save-popup">
         <div class="title">Choose what to save:</div>
-      <!-- fix -->
         <checkbox
           v-for="(_, setting) in shouldSaveSetting"
           :key="setting"
@@ -65,7 +64,6 @@
 
 <script>
 import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-icons';
-// import Vue from 'vue';
 
 import RoundedButton from '@/components/RoundedButton.vue';
 import Popup from '@/components/Popup.vue';
