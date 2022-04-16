@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw, RouteComponent } from 'vue-router';
 import Home from '@/views/Home/Home.vue';
-import HomeView from '../views/HomeView.vue';
+import store from '@/store';
 
 const GpaCalculator:RouteComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
 // const OldGpaCalculator = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/OldGpaCalculator.vue');
@@ -10,9 +10,9 @@ const Links:RouteComponent = () => import(/* webpackChunkName: "links" */'@/view
 const Colors:RouteComponent = () => import(/* webpackChunkName: "colors" */'@/views/Colors/Colors.vue');
 // const Settings = () => import(/* webpackChunkName: "settings" */'@/views/Settings/Settings.vue');
 const Tools:RouteComponent = () => import(/* webpackChunkName: "tools" */'@/views/Tools/Tools.vue');
-// const Documents = () => import(/* webpackChunkName: "documents" */'@/views/Documents/Documents.vue');
+const Documents:RouteComponent = () => import(/* webpackChunkName: "documents" */'@/views/Documents/Documents.vue');
 // const AddSchedule = () => import(/* webpackChunkName: "addschedule" */'@/views/Settings/Add Schedule/AddSchedule.vue');
-// const Login = () => import(/* webpackChunkName: "login" */'@/views/Login/Login.vue');
+const Login:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/Login/Login.vue');
 
 type EditScheduleProps = {
   scheduleToEdit: string;
@@ -82,23 +82,42 @@ const routes: Array<RouteRecordRaw> = [
     path: '/tools',
     component: Tools,
   },
-  // {
-  //   name: 'documents',
-  //   path: '/documents',
-  //   component: Documents,
-  //   meta: { requiresAuth: true },
-  // },
-  // {
-  //   name: 'login',
-  //   path: '/login',
-  //   component: Login,
-  // },
-
+  {
+    name: 'documents',
+    path: '/documents',
+    component: Documents,
+    meta: { requiresAuth: true },
+  },
+  {
+    name: 'login',
+    path: '/login',
+    component: Login,
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+// ensure any page with requiresAuth set to true will redirect through the login proxy component
+router.beforeEach((to, from, next) => {
+  // check if to requires auth
+  if (to.matched.some((record) => record.meta && record.meta.requiresAuth)) {
+    // check if we are already authenticated, and continue ahead if we are
+    // if (store.getters.isAuthenticated) {
+    if (store.getters.isAuthenticated) {
+      next();
+    } else {
+      // if not, proxy this route through the login component
+      // inform the login component where to go next
+      // next({ name: 'login', query: { to: to.name, from: from.name } });
+      next({ name: 'login' });
+    }
+  } else {
+    // otherwise, just continue through
+    next();
+  }
 });
 
 export default router;

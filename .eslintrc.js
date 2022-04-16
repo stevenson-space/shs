@@ -39,6 +39,7 @@ module.exports = {
     'vuejs-accessibility/click-events-have-key-events': 'off',
     'vuejs-accessibility/form-control-has-label': 'off',
     'vuejs-accessibility/alt-text': 'off',
+    'vuejs-accessibility/label-has-for': 'off'
   },
   overrides: [
     {
