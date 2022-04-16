@@ -12,13 +12,12 @@
 <script>
 import { mapMutations, mapState } from 'vuex';
 import PlainHeader from '@/components/PlainHeader.vue';
-import CardContainer from '@/components/CardContainer.vue';
 // import ClientOAuth2 from 'client-oauth2';
 // import queryString from 'query-string';
 import axios from 'axios';
 
 export default {
-  components: { PlainHeader, CardContainer },
+  components: { PlainHeader },
   data() {
     return {
       to: this.$route.query.to, // target destination
@@ -39,7 +38,7 @@ export default {
   mounted() {
     // this page is loaded when a) the user is trying to login,
     // or b) google as redirected us back and the hash contains our state and access token
-    console.log(window.location.hash);
+    // console.log(window.location.hash);
     const hash = '';
     // const hash = queryString.parse(window.location.hash);
     // we got redireced by google, use the auth token to grab the user's email and verify
@@ -66,7 +65,7 @@ export default {
             });
           }
         })
-        .catch((err) => {
+        .catch(() => {
           // shouldn't really happen
           this.loginFailed = true;
           this.setAuthenticated(false);

@@ -85,10 +85,8 @@
 </template>
 <script>
 import RoundedButton from '@/components/RoundedButton.vue';
-
 import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
 import Card from '@/components/Card.vue';
-import HomeLink from '@/components/HomeLink.vue';
 import PlainHeader from '@/components/PlainHeader.vue';
 import CardContainer from '@/components/CardContainer.vue';
 import Dropdown from '@/components/Dropdown.vue';
@@ -110,7 +108,7 @@ class Course {
 
 export default {
   components: {
-    RoundedButton, Card, HomeLink, PlainHeader, CardContainer, Dropdown, Checkbox,
+    RoundedButton, Card, PlainHeader, CardContainer, Dropdown, Checkbox,
 
   },
   data() {
@@ -235,7 +233,7 @@ export default {
   margin-bottom: 0
 
 .top-card
-  max-width: 972px
+  max-width: 985px
   +desktop
     margin: 0px auto !important
 

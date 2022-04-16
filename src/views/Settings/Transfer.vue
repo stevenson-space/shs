@@ -120,9 +120,8 @@ export default {
   },
   created() {
     // Initialize each property of shouldSendSetting to true (meaning that all send checkboxes will be checked initially)
-    tranferableSettings.forEach((str) => { // FIX
+    tranferableSettings.forEach((str) => {
       this.shouldSendSetting[str] = true;
-      // Vue.set(this.shouldSendSetting, str, true); // need use Vue.set since we're adding dynamic properties to a tracked object
     });
   },
   methods: {

@@ -15,13 +15,10 @@
 </template>
 
 <script>
-import Dropdown from '@/components/Dropdown.vue';
-
 export default {
-  components: { Dropdown },
   data() {
     return {
-      // [{ text: String, showInFullScreen: Boolean }]
+      // Example: [{ text: String, showInFullScreen: Boolean }]
       announcements: [],
     };
   },

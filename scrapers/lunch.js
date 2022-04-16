@@ -1,9 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-// const axios = require("axios");
-// const cheerio = require("cheerio");
 const oldLunch = require("../src/data/lunch.json");
-// const pdf = require('pdf-parse');
 
 // calculates the number of days since epoch time
 const toDays = date =>
@@ -53,7 +50,6 @@ async function parseLunchTable() {
     }
     return e
   })
-  // lunchText.forEach(e => console.log("test", e))
 
   lunchText.forEach((lunch, index) => {
     var lunchData = processLunches(lunch);
@@ -72,42 +68,6 @@ async function parseLunchTable() {
 
 }
 
-//THIS IS A WIP
-// parsePDF();
-async function parsePDF() {
-
-  let dataBuffer = fs.readFileSync('./menu.pdf');
-
-  pdf(dataBuffer).then(function (data) {
-
-    const categories = ["Comfort Food", "Mindful", "Sides", "Soup"];
-    let lunchData = [];
-    let temp = [];
-    const containsCategory = function (e) {
-      for (var x of categories) {
-        if (e.includes(x)) {
-          return true
-        }
-      }
-      return false
-    }
-    data.text.split("\n").forEach(e => {
-      if (e.includes("Comfort Food")) {
-        lunchData.push(temp);
-        temp = [];
-      } else if (!containsCategory(e)) {
-        console.log(e)
-        var x = temp[temp.length > 0 ? temp.length - 1 : 0]
-        temp[temp.length > 0 ? temp.length - 1 : 0] = ((x == undefined ? "Comfort Food:" : x) + " " + e).trim();
-
-      } else {
-        temp.push(e);
-      }
-    })
-    console.log(lunchData)
-  });
-
-}
 async function main() {
   const { lunch, numLunches } = await parseLunchTable();
   // replace values in oldLunch with new ones from lunchObject
@@ -212,8 +172,6 @@ function processLunches(lunchesText) {
   return lunches;
 }
 
-
-
 function saveLunch(lunch) {
   fs.writeFile(
     path.join(__dirname, "..", "src", "data", "lunch.json"),
@@ -280,7 +238,4 @@ function printMissingLunches(lunch, numLunches) {
 function exitWithError(errMessage) {
   console.log(errMessage);
   process.exit(1);
-}
-function exitWithErrorIf(condition, errMessage) {
-  if (condition) exitWithError(errMessage);
 }

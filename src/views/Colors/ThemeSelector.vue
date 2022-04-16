@@ -56,8 +56,6 @@ export default {
         } else {
           this.choice(true);
         }
-      } else {
-        console.log('same theme');
       }
     },
     showTheme(theme) {
