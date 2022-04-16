@@ -1,26 +1,54 @@
 <template>
-  <router-view />
+<!-- vue 2 -->
+  <div id="app" :style="style" tabindex="-1">
+    <router-view />
+  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import initializeStore from '@/store/initializeStore';
+import { mapState } from 'vuex';
 
-nav {
-  padding: 30px;
+export default {
+  computed: {
+    ...mapState(['color', 'theme']),
+    style() {
+      return {
+        '--color': this.color,
+        '--background': this.theme.background,
+        '--secondaryBackground': this.theme.secondaryBackground,
+        '--headerBackgroundColor': this.theme.headerBackgroundColor,
+        '--headerScheduleBackgroundColor': this.theme.headerScheduleBackgroundColor,
+        color: this.theme.primary,
+        '--secondary': this.theme.secondary,
+        '--tertiary': this.theme.tertiary,
+        '--iconTextCardColor': this.theme.iconTextCardColor,
+        '--iconTextCardInvertColor': this.theme.iconTextCardInvertColor,
+      };
+    },
+  },
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  watch: {
+    theme() {
+      document.querySelector('body').style.background = this.theme.background;
+    },
+    $route() {
+      this.$store.dispatch('pageLoaded', this.$route);
+    },
+  },
+  created() {
+    initializeStore(this.$store);
+    this.$store.dispatch('pageLoaded', this.$route);
+    document.querySelector('body').style.background = this.theme.background;
+  },
+};
+</script>
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+<style lang="sass">
+body
+  margin: 0
+  font-family: 'Open Sans', Helvetica, sans-serif
+
+#app
+  outline: none
 </style>
