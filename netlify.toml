@@ -13,9 +13,8 @@
   status = 200
 
 [[redirects]]
-  from = "/receive"
-  query = {filename = ":filename"}
-  to = "https://dpaste.com/:filename"
+  from = "/receive/*"
+  to = "https://dpaste.com/:splat"
   status = 200
 
 [[redirects]]

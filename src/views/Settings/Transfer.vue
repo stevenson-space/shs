@@ -175,7 +175,7 @@ export default {
       this.showPopup(popups.loading);
       let isValid = true;
 
-      const response = await fetch('/receive', {
+      const response = await fetch(`/receive/${this.receiveCode.toUpperCase()}.txt`, {
         method: 'GET',
       });
       if (response.status === 200) {
