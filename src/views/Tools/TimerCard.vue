@@ -37,7 +37,7 @@
 
         <checkbox
           v-if="browserSupportsNotifications"
-          :value="shouldNotify"
+          v-model="shouldNotify"
           label-size="1em"
           @input="notifyCheckboxInput($event)"
         >

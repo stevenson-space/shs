@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-button" :class="{ invert, circular, showColor }" @click="$emit('click')">
+  <div class="rounded-button" :class="{ invert, circular, showColor }">
     <font-awesome-icon v-if="icon" class="icon" :icon="icon" />
     {{ text }}
   </div>
