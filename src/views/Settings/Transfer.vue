@@ -153,8 +153,7 @@ export default {
           data[setting] = this.$store.state[setting];
         }
       }
-      // FIX
-      // const response = await fetch('/send', {
+
       const response = await fetch('/send', {
         method: 'POST',
         headers: {
@@ -173,45 +172,34 @@ export default {
       }
     },
 
-    receive() {
+    async receive() {
       this.showPopup(popups.loading);
-      // FIX
-      // superagent
-      // .get('/recieve') // look at /netlify.toml (Netlify is proxying to http://dpaste.com)
-      // .query({ filename: `${this.receiveCode.toUpperCase()}.txt` })
-      // .then((response) => {
-      //   try {
-      //     const data = JSON.parse(response.text);
+      let isValid = true;
 
-      //     // all of the settings in data must be present in transferableSettings for data to be valid
-      //     let isValid = true;
-      //     const settings = Object.keys(data);
-      //     settings.forEach((setting) => {
-      //       if (!tranferableSettings.includes(setting)) isValid = false;
-      //     });
-
-      //     if (isValid) {
-      //       this.receivedData = data;
-
-      //       this.shouldSaveSetting = {}; // reset it in case there was a previous received data with different settings
-      //       settings.forEach((setting) => { // default to saving all settings present in data
-      //         Vue.set(this.shouldSaveSetting, setting, true); // need use Vue.set since we're adding dynamic properties to a tracked object
-      //       });
-
-      //       this.showPopup(popups.save);
-      //     } else {
-      //       this.errorMessage = 'Error: Invalid code';
-      //       this.showPopup(popups.error);
-      //     }
-      //   } catch (e) {
-      //     this.errorMessage = 'Error: Invalid code';
-      //     this.showPopup(popups.error);
-      //   }
-      // })
-      // .catch(() => {
-      //   this.errorMessage = 'Error: Invalid code or no internet';
-      //   this.showPopup(popups.error);
-      // });
+      const response = await fetch('/receive', {
+        method: 'GET',
+      });
+      if (response.status === 200) {
+        const data = await response.json();
+        const settings = Object.keys(data);
+        settings.forEach((setting) => {
+          if (!tranferableSettings.includes(setting)) isValid = false;
+        });
+        if (isValid) {
+          this.receivedData = data;
+          this.shouldSaveSetting = {}; // reset it in case there was a previous received data with different settings
+          settings.forEach((setting) => { // default to saving all settings present in data
+            this.shouldSaveSetting[setting] = true;
+          });
+          this.showPopup(popups.save);
+        } else {
+          this.errorMessage = 'Error: Invalid code';
+          this.showPopup(popups.error);
+        }
+      } else {
+        this.errorMessage = 'Error: Invalid code or no internet';
+        this.showPopup(popups.error);
+      }
     },
     save() {
       if (this.receivedData) {
