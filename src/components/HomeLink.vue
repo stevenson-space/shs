@@ -1,5 +1,5 @@
 <template>
-  <div v-hammer:tap="goHome" class="home-link">
+  <div @click="goHome" class="home-link">
     <router-link to="/" class="home" :class="{ invert }" event="">
       <font-awesome-icon class="icon" :icon="faHouse" fixed-width />
       <span class="text">Home</span>
