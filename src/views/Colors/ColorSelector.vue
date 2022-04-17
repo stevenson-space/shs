@@ -151,6 +151,8 @@ export default {
   --color-diameter: 70px
   outline: none
   position: relative
+  justify-content: center
+  display: flex
   z-index: 1
   margin: 0 25px
   +tablet-small

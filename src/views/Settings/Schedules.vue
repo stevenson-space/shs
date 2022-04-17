@@ -1,11 +1,15 @@
 <template>
   <settings-section title="Schedules">
-   <br>
-   <!-- // FIX -->
-    <!-- <switch-by-device slot="heading-content">
-      <rounded-button text="Restore to Defaults" :icon="icons.faClockRotateLeft" :invert="true" @click="restoreSchedules" />
-      <rounded-button slot="mobile" text="Restore" :icon="icons.faClockRotateLeft" :invert="true" @click="restoreSchedules" />
-    </switch-by-device> -->
+    <template v-slot:heading-content>
+      <switch-by-device class="restore-button">
+        <template v-slot:desktop>
+          <rounded-button text="Restore to Defaults" :icon="icons.faClockRotateLeft" :invert="true" @click="restoreSchedules" />
+        </template>
+        <template v-slot>
+          <rounded-button text="Restore" :icon="icons.faClockRotateLeft" :invert="true" @click="restoreSchedules" />
+        </template>
+      </switch-by-device>
+    </template>
 
     <div class="schedule-cards">
       <schedule-card
@@ -166,5 +170,4 @@ export default {
       margin-top: 15px
       font-weight: bold
       font-size: .75em
-
 </style>
