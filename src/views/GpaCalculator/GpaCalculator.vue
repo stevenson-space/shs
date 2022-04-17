@@ -145,7 +145,8 @@ export default {
       this.calculateSemesterGrades();
     },
     removeCourse(course) {
-      this.$delete(this.courses, this.courses.indexOf(course));
+      const index = this.courses.indexOf(course);
+      if (index > -1) this.courses.splice(index, 1);
       this.calculateSemesterGrades();
     },
     selectGrade(course, gradeIndex) {
