@@ -7,7 +7,7 @@
           <div class="slash" :class="{ hide: shouldMakeSound }" />
         </div>
         <div class="title">Timer</div>
-        <div @click="isFullscreen ? exitFullscreen : makeFullscreen" class="icon-button">
+        <div @click="isFullscreen ? exitFullscreen() : makeFullscreen()" class="icon-button">
           <font-awesome-icon class="icon" :icon="isFullscreen ? icons.faCompress : icons.faExpand" fixed-width />
         </div>
       </div>

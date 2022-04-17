@@ -5,6 +5,10 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/service-workers/service-worker.js');
+}
+
 createApp(App).component('font-awesome-icon', FontAwesomeIcon)
   .use(store)
   .use(router)

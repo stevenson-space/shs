@@ -1,5 +1,5 @@
 <template>
-  <!-- <div // FIX
+  <!-- <div // FIX?
     v-hammer:swipe.horizontal="onSwipe"
     v-focus
     tabindex="-1"
