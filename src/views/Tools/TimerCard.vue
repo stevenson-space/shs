@@ -238,7 +238,7 @@ export default {
         this.audio.pause();
       }
     },
-    makeFullscreen() { // FIX
+    makeFullscreen() {
       if (!this.isFullscreen) {
         const $fullscreenWrapper = this.$refs['fullscreen-wrapper'];
 

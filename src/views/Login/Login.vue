@@ -12,12 +12,13 @@
 <script>
 import { mapMutations, mapState } from 'vuex';
 import PlainHeader from '@/components/PlainHeader.vue';
-// import ClientOAuth2 from 'client-oauth2';
-// import queryString from 'query-string';
+import CardContainer from '@/components/CardContainer.vue';
+import ClientOAuth2 from 'client-oauth2';
+import queryString from 'query-string';
 import axios from 'axios';
 
 export default {
-  components: { PlainHeader },
+  components: { PlainHeader, CardContainer },
   data() {
     return {
       to: this.$route.query.to, // target destination
@@ -38,9 +39,7 @@ export default {
   mounted() {
     // this page is loaded when a) the user is trying to login,
     // or b) google as redirected us back and the hash contains our state and access token
-    // console.log(window.location.hash);
-    const hash = '';
-    // const hash = queryString.parse(window.location.hash);
+    const hash = queryString.parse(window.location.hash);
     // we got redireced by google, use the auth token to grab the user's email and verify
     if (hash.state && hash.access_token) {
       // fetch the user endpoint, verify the email, and redirect if it checks out
@@ -65,26 +64,26 @@ export default {
             });
           }
         })
-        .catch(() => {
+        .catch((err) => {
           // shouldn't really happen
           this.loginFailed = true;
           this.setAuthenticated(false);
         });
       // generate the oauth2 URI and redirect the user
     } else {
-      // const googleAuth = new ClientOAuth2({
-      //   clientId: this.clientID, // google client ID for oauth
-      //   clientSecret: process.env.VUE_APP_GOOGLE_OAUTH_CLIENT_SECRET,
-      //   authorizationUri: this.authEndpoint, // google endpoint
-      //   redirectUri: window.location.origin + this.$route.path, // redirect to current URL
-      //   scopes: ['email'], // really only need email access
-      //   state: this.to, // get our current destination back via the state parameter
-      // });
-      // // go to auth URI, first have to manually add the ?hd parameter though
-      // const authURI = googleAuth.token.getUri({
-      //   query: { hd: this.hostedDomain },
-      // });
-      // window.location.href = authURI;
+      const googleAuth = new ClientOAuth2({
+        clientId: this.clientID, // google client ID for oauth
+        clientSecret: process.env.VUE_APP_GOOGLE_OAUTH_CLIENT_SECRET,
+        authorizationUri: this.authEndpoint, // google endpoint
+        redirectUri: window.location.origin + this.$route.path, // redirect to current URL
+        scopes: ['email'], // really only need email access
+        state: this.to, // get our current destination back via the state parameter
+      });
+      // go to auth URI, first have to manually add the ?hd parameter though
+      const authURI = googleAuth.token.getUri({
+        query: { hd: this.hostedDomain },
+      });
+      window.location.href = authURI;
     }
   },
 };
