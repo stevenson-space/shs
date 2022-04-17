@@ -102,10 +102,7 @@ router.beforeEach((to, from, next) => {
     } else {
       // if not, proxy this route through the login component
       // inform the login component where to go next
-      // next({ name: 'login', params: { to: to.name, from: from.name }});
-      next({ name: 'login' });
-
-      // next({ name: 'login' });
+      next({ name: 'login', query: { to: to.path.replace('/', '') } });
     }
   } else {
     // otherwise, just continue through
