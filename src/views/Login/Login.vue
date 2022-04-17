@@ -14,7 +14,7 @@ import { mapMutations, mapState } from 'vuex';
 import PlainHeader from '@/components/PlainHeader.vue';
 import CardContainer from '@/components/CardContainer.vue';
 import ClientOAuth2 from 'client-oauth2';
-import queryString from 'query-string';
+import queryString from 'querystring';
 import axios from 'axios';
 
 export default {
