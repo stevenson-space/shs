@@ -14,8 +14,7 @@ import { mapMutations, mapState } from 'vuex';
 import PlainHeader from '@/components/PlainHeader.vue';
 import CardContainer from '@/components/CardContainer.vue';
 import ClientOAuth2 from 'client-oauth2';
-import queryString from 'querystring';
-import axios from 'axios';
+import queryString from 'query-string';
 
 export default {
   components: { PlainHeader, CardContainer },
@@ -36,40 +35,32 @@ export default {
   methods: {
     ...mapMutations(['setAuthenticated']),
   },
-  mounted() {
+  async mounted() {
     // this page is loaded when a) the user is trying to login,
     // or b) google as redirected us back and the hash contains our state and access token
     const hash = queryString.parse(window.location.hash);
     // we got redireced by google, use the auth token to grab the user's email and verify
     if (hash.state && hash.access_token) {
       // fetch the user endpoint, verify the email, and redirect if it checks out
-      axios
-        .get(this.userEndpoint, {
-          params: {
-            oauth_token: hash.access_token,
-          },
-        })
-        .then((res) => {
-          const user = res.data;
-          // check their info
-          if (
-            user.id
-            && user.email
-            && user.hd
-            && user.hd === this.hostedDomain
-          ) {
-            this.setAuthenticated(true); // set auth to true
-            this.$router.replace({
-              name: hash.state, // redirect to the destination indicated by state
-            });
-          }
-        })
-        .catch((err) => {
-          // shouldn't really happen
-          this.loginFailed = true;
-          this.setAuthenticated(false);
-        });
-      // generate the oauth2 URI and redirect the user
+      const response = await fetch(`${this.userEndpoint}?oauth_token=${hash.access_token}`);
+      if (response.status === 200) {
+        const user = await response.json();
+        // check their info
+        if (
+          user.id
+          && user.email
+          && user.hd
+          && user.hd === this.hostedDomain
+        ) {
+          this.setAuthenticated(true); // set auth to true
+          this.$router.replace({
+            name: hash.state, // redirect to the destination indicated by state
+          });
+        }
+      } else {
+        this.loginFailed = true;
+        this.setAuthenticated(false);
+      }
     } else {
       const googleAuth = new ClientOAuth2({
         clientId: this.clientID, // google client ID for oauth

@@ -25,7 +25,7 @@ const state = {
   grade: 'None',
 
   // authenticated with a student.d125.org google email
-  isAuthenticated: process.env.NODE_ENV === 'development',
+  isAuthenticated: process.env.VUE_APP_ENV === 'development',
 };
 
 export type State = typeof state;

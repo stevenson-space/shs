@@ -146,8 +146,10 @@ export default {
     },
     removeCourse(course) {
       const index = this.courses.indexOf(course);
-      if (index > -1) this.courses.splice(index, 1);
-      this.calculateSemesterGrades();
+      if (index > -1) {
+        this.courses.splice(index, 1);
+        this.calculateSemesterGrades();
+      }
     },
     selectGrade(course, gradeIndex) {
       const index = this.courses.indexOf(course);
