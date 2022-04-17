@@ -28,12 +28,10 @@ function parseUrlDateTime(route: any): Date {
 // (e.g. color -> setColor) in order to ensure that the Transfer option in Settings works
 
 const mutations: MutationTree<State> = {
-  setMode(state) {
+  setMode(state, route) {
     // if 'date' url parameter is specified, 'day' mode is triggered
     // the 'time' url parameter is to be used for testing and forces the mode to 'current' regardless of date
-    // const { date, time } = useRoute().query;
-    const date = '';
-    const time = '';
+    const { date, time } = route.query;
     state.mode = !date || time ? 'current' : 'day';
   },
   setColor(state, color) {
