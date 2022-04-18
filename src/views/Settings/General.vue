@@ -2,7 +2,7 @@
   <settings-section title="General">
     <div class="dropdown-row">
       <span class="title">Default Schedule Mode:</span>
-      <dropdown class="dropdown-select" :options="allModes" :value="defaultMode" @input="updateDefaultScheduleMode" />
+      <dropdown class="dropdown-select" :options="allModes" :value="defaultMode" @update:modelValue="updateDefaultScheduleMode" />
     </div>
 
     <div class="dropdown-row">
@@ -10,9 +10,9 @@
       <dropdown
         class="dropdown-select"
         :options="grades"
-        :value="selectedGrade"
+        :modelValue="selectedGrade"
         :show-selected-as-option="false"
-        @input="updateGrade"
+        @update:modelValue="updateGrade"
       />
     </div>
   </settings-section>

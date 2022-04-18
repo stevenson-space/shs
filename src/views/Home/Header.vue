@@ -8,8 +8,8 @@
       v-show="scheduleModes.length > 1"
       class="schedule-select"
       :options="scheduleModes"
-      :value="scheduleModes.indexOf(bell.mode)"
-      @input="$store.commit('setScheduleMode', scheduleModes[$event])"
+      :modelValue="scheduleModes.indexOf(bell.mode)"
+      @update:modelValue="$store.commit('setScheduleMode', scheduleModes[$event])"
     />
 
     <div

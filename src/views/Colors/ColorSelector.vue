@@ -40,6 +40,7 @@
           :style="{ backgroundColor: shade, height: `${shadeHeight}px` }"
           @click="shadeClicked(shade)"
         >
+        <div style="line-height: 30px">&nbsp;</div>
           <font-awesome-icon
             v-show="shade === currentColor"
             class="checkmark center-align"
@@ -100,7 +101,7 @@ export default {
         // wait until StaggerAnimation renders the shades before opening them
         this.$nextTick(() => {
           this.isOpen = true;
-          this.$refs.staggerAnimation.open();
+          // this.$refsopen(); //fix
         });
       };
 
@@ -202,6 +203,7 @@ export default {
     position: absolute
 
     .shade
+      height: 50px
       width: var(--color-diameter)
       border-radius: 100px
       +shadow

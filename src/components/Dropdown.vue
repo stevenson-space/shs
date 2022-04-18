@@ -1,34 +1,34 @@
 <template>
   <div class="dropdown" tabindex="-1" :class="{ selected: open }" @blur="closeDropdown">
     <div class="select-option" :style="dropdownStyle" @click="toggleDropdown">
-      <span>{{ options[value] }}</span>
+      <span>{{ options[modelValue] }}</span>
       <font-awesome-icon
         class="down-icon"
         :icon="faCaretDown"
         :style="iconStyle"
       />
     </div>
-
-    <stagger-animation
-      ref="staggerAnimation"
-      :duration="animationDuration"
-      :direction="direction"
-      :shift-amount="optionHeight + 10"
-      :number-of-slots="formattedOptions.length"
-    >
-      <!-- a key causes problems in pages like Calendar because when the options change, the divs are replaced -->
-      <!-- eslint-disable-next-line vue/require-v-for-key-->
-      <div
-        v-for="option in formattedOptions"
-        ref="option"
-        class="option"
-        :style="option.style"
-        @click="selectOption(option.index)"
+      <stagger-animation
+        ref="staggerAnimation"
+        :duration="animationDuration"
+        :direction="direction"
+        :shift-amount="optionHeight + 10"
+        :number-of-slots="formattedOptions.length"
       >
-        {{ option.name }}
-      </div>
-    </stagger-animation>
-  </div>
+      <template v-if="open">
+          <div
+            v-for="option in formattedOptions"
+            :key="option"
+            ref="option"
+            class="option"
+            :style="option.style"
+            @click="selectOption(option.index)"
+          >
+            {{ option.name }}
+        </div>
+        </template>
+      </stagger-animation>
+    </div>
 </template>
 
 <script>
@@ -39,7 +39,7 @@ export default {
   components: { StaggerAnimation },
   props: {
     options: { type: Array, required: true },
-    value: { type: Number, required: true },
+    modelValue: { type: Number, required: true },
     showSelectedAsOption: { type: Boolean, default: true },
     align: {
       validator: (str) => str === 'left' || str === 'right' || str === 'center',
@@ -56,15 +56,13 @@ export default {
       open: false, // open is true even when dropdown is partially open, false only when dropdown is completely closed
       arrowRotateAmmount: this.direction === 'down' ? 0 : 180,
       optionHeight: 30,
-      resizeListener: null,
-      resizeDebounceTimeout: null,
-      animationDuration: 200,
+      animationDuration: 50,
     };
   },
   computed: {
     remainingOptions() {
       const remainingOptions = this.options.slice(0);
-      remainingOptions.splice(this.value, 1);
+      remainingOptions.splice(this.modelValue, 1);
       return remainingOptions;
     },
     formattedOptions() {
@@ -107,41 +105,20 @@ export default {
     direction() {
       this.closeDropdown();
       this.arrowRotateAmmount = this.direction === 'down' ? 0 : 180;
-      this.resetOptionHeight();
     },
   },
   created() {
     // if the initial index is out of bounds, choose the first index by default
-    if (this.value < 0 || this.value >= this.options.length) {
-      this.$emit('input', 0);
+    if (this.modelValue < 0 || this.modelValue >= this.options.length) {
+      this.$emit('update:modelValue', 0);
     }
-  },
-  mounted() {
-    this.resetOptionHeight();
-
-    this.resizeListener = () => {
-      clearTimeout(this.resizeDebounceTimeout);
-      this.resizeDebounceTimeout = setTimeout(this.resetOptionHeight, 250);
-    };
-    window.addEventListener('resize', this.resizeListener);
-  },
-  destroyed() {
-    window.removeEventListener('resize', this.resizeListener);
   },
   methods: {
     setOptionShifts(value, start = 0, end = this.optionShifts.length) {
       this.optionShifts = this.optionShifts.map((n, i) => ((i >= start && i < end) ? value : n));
     },
     toggleDropdown() {
-      this.arrowRotateAmmount += 180;
-
-      if (this.open) {
-        this.$refs.staggerAnimation.close();
-        setTimeout(() => { this.open = false; }, this.animationDuration); // wait for dropdown to completely close first
-      } else {
-        this.$refs.staggerAnimation.open();
-        this.open = true;
-      }
+      this.open = !this.open;
     },
     openDropdown() {
       if (!this.open) {
@@ -156,16 +133,10 @@ export default {
     selectOption(optionIndex) {
       if (this.open) {
         this.closeDropdown();
-
         // allow animation to start before emitting event (event may cause blocking calculations that slow down animation)
         setTimeout(() => {
-          this.$emit('input', optionIndex);
+          this.$emit('update:modelValue', optionIndex);
         }, 100);
-      }
-    },
-    resetOptionHeight() {
-      if (this.formattedOptions.length >= 1) {
-        this.optionHeight = this.$refs.option[0].offsetHeight || 30;
       }
     },
   },
@@ -209,6 +180,7 @@ export default {
     border-radius: 100px
     +shadow
     padding: 5px 12px
+    margin-left: -30px
     white-space: nowrap
     cursor: pointer
     user-select: none

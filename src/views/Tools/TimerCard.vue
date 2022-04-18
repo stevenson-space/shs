@@ -39,7 +39,7 @@
           v-if="browserSupportsNotifications"
           v-model="shouldNotify"
           label-size="1em"
-          @input="notifyCheckboxInput($event)"
+          @update:modelValue="notifyCheckboxInput($event)"
         >
           <span>Notify Me &nbsp;</span>
 

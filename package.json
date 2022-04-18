@@ -16,6 +16,7 @@
     "animejs": "^3.0.1",
     "client-oauth2": "^4.3.3",
     "eslint-plugin-vuejs-accessibility": "^1.1.1",
+    "gsap": "^3.10.3",
     "query-string": "^7.1.1",
     "querystring-es3": "^0.2.1",
     "vue": "^3.2.13",

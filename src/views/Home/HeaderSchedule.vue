@@ -6,7 +6,7 @@
         v-show="scheduleModes.length > 1"
         class="schedule-select hidden"
         :options="scheduleModes"
-        :value="scheduleModes.indexOf(bell.mode)"
+        :modelValue="scheduleModes.indexOf(bell.mode)"
       />
 
       <div class="center">
@@ -36,9 +36,9 @@
         v-show="scheduleModes.length > 1"
         class="schedule-select"
         :options="scheduleModes"
-        :value="scheduleModes.indexOf(bell.mode)"
+        :modelValue="scheduleModes.indexOf(bell.mode)"
         :direction="fullScreenMode ? 'up' : 'down'"
-        @input="$store.commit('setScheduleMode', scheduleModes[$event])"
+        @update:modelValue="$store.commit('setScheduleMode', scheduleModes[$event])"
       />
     </div>
   </div>

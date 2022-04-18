@@ -52,18 +52,18 @@
           <dropdown
             style="flex:1;"
             :options="['Regular','Accelerated','Honors/AP']"
-            :value="course.level"
+            :modelValue="course.level"
             align="left"
-            @input="selectedCourseLevel(course,$event)"
+            @update:modelValue="selectedCourseLevel(course,$event)"
           />
             <dropdown
               style="flex:1;"
               :direction="course.direction"
               class="grade-selector"
               :options="gradeLabels"
-              :value="course.grade"
+              :modelValue="course.grade"
               align="left"
-              @input="selectGrade(course,$event)"
+              @update:modelValue="selectGrade(course,$event)"
             />
           </div>
         <p class="grade-label">{{course.finalGrade}}</p>
@@ -77,7 +77,7 @@
               <div class="final-gpa">{{course.weightedGPA.toFixed(2)}}</div>
             </div>
           </div>
-          <checkbox :modelValue="course.weight == 1.5" v-on:update:modelValue="toggleExtraWeight(course, $event)">1.5 Weight Science Class</checkbox>
+          <checkbox :modelValue="course.weight == 1.5" @update:modelValue="toggleExtraWeight(course, $event)">1.5 Weight Science Class</checkbox>
         <br>
       </card>
     </card-container>
