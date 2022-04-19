@@ -3,7 +3,7 @@ import officialSchedules from '@/data/schedules.json';
 import { MutationTree } from 'vuex';
 import { CustomSchedules, ThemeData } from '@/utils/types';
 import { getNameWithoutConflicts } from '@/utils/util';
-import { set } from 'vue-gtag';
+import { set as GASet } from 'vue-gtag';
 import { State } from './state';
 
 function parseUrlDateTime(route: any): Date {
@@ -37,7 +37,9 @@ const mutations: MutationTree<State> = {
   setColor(state, color) {
     state.color = color;
     localStorage.color = color;
-    set({ dimension1: color });
+    GASet({ user_properties: {
+      dimension1: color,
+    } });
   },
   setUrlDate(state, route) {
     state.urlDate = parseUrlDateTime(route);
@@ -78,7 +80,9 @@ const mutations: MutationTree<State> = {
     if (useThemeColor) {
       state.color = color;
       localStorage.color = color;
-      set({ dimension1: color });
+      GASet({ user_properties: {
+        dimension1: color,
+      } });
     }
 
     state.theme = theme;

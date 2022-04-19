@@ -1,15 +1,19 @@
-import { set } from 'vue-gtag';
 import { Store } from 'vuex';
 import { ThemeData } from '@/utils/types';
 import { tryParseJSON } from '@/utils/util';
+import { set as GASet } from 'vue-gtag';
 import { State } from './state';
 
 const initializeStore = (store: Store<State>): void => {
   if (localStorage.color && process.env.VUE_APP_EDIT_COLORS !== 'true') {
     store.commit('setColor', localStorage.color);
-    set({ dimension1: localStorage.color });
+    GASet({ user_properties: {
+      dimension1: localStorage.color,
+    } });
   } else {
-    set({ dimension1: 'unset' });
+    GASet({ user_properties: {
+      dimension1: 'unset',
+    } });
   }
 
   if (localStorage.theme && process.env.VUE_APP_EDIT_COLORS !== 'true') {
