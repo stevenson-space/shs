@@ -8,11 +8,11 @@ const initializeStore = (store: Store<State>): void => {
   if (localStorage.color && process.env.VUE_APP_EDIT_COLORS !== 'true') {
     store.commit('setColor', localStorage.color);
     GASet({ user_properties: {
-      dimension1: localStorage.color,
+      color: localStorage.color,
     } });
   } else {
     GASet({ user_properties: {
-      dimension1: 'unset',
+      color: 'unset',
     } });
   }
 

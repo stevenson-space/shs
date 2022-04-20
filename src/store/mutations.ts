@@ -38,7 +38,7 @@ const mutations: MutationTree<State> = {
     state.color = color;
     localStorage.color = color;
     GASet({ user_properties: {
-      dimension1: color,
+      color,
     } });
   },
   setUrlDate(state, route) {
@@ -81,7 +81,7 @@ const mutations: MutationTree<State> = {
       state.color = color;
       localStorage.color = color;
       GASet({ user_properties: {
-        dimension1: color,
+        color,
       } });
     }
 
