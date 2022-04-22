@@ -10,7 +10,7 @@ export default defineStore('grades', {
     grade: 'None',
   }),
   actions: {
-    initialize(): void {
+    initializeGrade(): void {
       if (localStorage.grade) {
         this.setGrade(localStorage.grade);
       }

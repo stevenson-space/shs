@@ -6,9 +6,10 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'pinia';
 import useThemeStore from '@/stores/themes-module';
 import useScheduleStore from '@/stores/schedules-module';
-import { mapState, mapActions } from 'pinia';
+import useGradeStore from '@/stores/grade-module';
 
 export default {
   computed: {
@@ -29,7 +30,9 @@ export default {
     },
   },
   methods: {
-    ...mapActions(useScheduleStore, ['pageLoaded']),
+    ...mapActions(useScheduleStore, ['initializeSchedule', 'pageLoaded']),
+    ...mapActions(useThemeStore, ['initializeTheme']),
+    ...mapActions(useGradeStore, ['initializeGrade']),
   },
   watch: {
     theme() {
@@ -41,6 +44,10 @@ export default {
   },
   created() {
     // initializeStore(this.$store);
+    this.initializeSchedule(this.$route);
+    this.initializeTheme();
+    this.initializeGrade();
+    this.pageLoaded(this.$route);
     // this.$store.dispatch('pageLoaded', this.$route);
     document.querySelector('body').style.background = this.theme.background;
   },

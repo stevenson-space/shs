@@ -18,7 +18,7 @@ export default defineStore('themes', {
     theme: process.env.VUE_APP_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1] : themes[0],
   }),
   actions: {
-    initialize(): void {
+    initializeTheme(): void {
       if (localStorage.color && process.env.VUE_APP_EDIT_COLORS !== 'true') {
         this.setColor(localStorage.color);
         GASet({ user_properties: {

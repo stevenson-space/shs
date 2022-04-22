@@ -80,7 +80,7 @@ export default defineStore('schedules', {
     },
   },
   actions: {
-    initialize() {
+    initializeSchedule() {
       this.setCustomSchedules(tryParseJSON(localStorage.customSchedules));
       // defaultScheduleMode used to (inappropriately) be called defaultSchedule, so to preserve backwards compatibility:
       localStorage.defaultScheduleMode = localStorage.defaultSchedule; // TODO: remove during or after summer 2021
