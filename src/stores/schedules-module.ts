@@ -65,13 +65,13 @@ export default defineStore('schedules', {
       }
       return schedules;
     },
-    date(state): Date {
+    date(): Date {
       const { urlDate, startTime, currentTime } = this;
       const date = new Date(
         urlDate.getTime() + (currentTime - startTime),
       );
       // if mode is 'day' return date at time 0:00 instead (to get range string for whole day instead for current period)
-      return state.mode === 'current'
+      return this.mode === 'current'
         ? date
         : new Date(date.toLocaleDateString());
     },

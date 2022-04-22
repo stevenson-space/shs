@@ -6,16 +6,17 @@
 </template>
 
 <script>
-import initializeStore from '@/store/initializeStore';
-import schedulesModule from '@/stores/themes-module';
-import { mapState } from 'vuex';
+// import initializeStore from '@/store/initializeStore';
+import useThemeStore from '@/stores/themes-module';
+import useScheduleStore from '@/stores/schedules-module';
+import useGradesStore from '@/stores/grade-module';
+import { mapState } from 'pinia';
 
 export default {
-  setup() {
-    console.log(schedulesModule);
-  },
   computed: {
-    ...mapState(['color', 'theme']),
+    ...mapState(useThemeStore, ['theme', 'color']),
+    ...mapState(useScheduleStore, ['date']),
+    ...mapState(useGradesStore, ['grade']),
     style() {
       return {
         '--color': this.color,
@@ -41,8 +42,8 @@ export default {
     },
   },
   created() {
-    initializeStore(this.$store);
-    this.$store.dispatch('pageLoaded', this.$route);
+    // initializeStore(this.$store);
+    // this.$store.dispatch('pageLoaded', this.$route);
     document.querySelector('body').style.background = this.theme.background;
   },
 };

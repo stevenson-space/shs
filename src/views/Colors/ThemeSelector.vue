@@ -24,17 +24,23 @@
 <script>
 import themeCircle from '@/views/Colors/ThemeCircle.vue';
 import themes from '@/data/themes.json';
-import { mapState, mapGetters } from 'vuex';
+// import { mapState, mapGetters } from 'vuex';
 import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
+import useThemeStore from '@/stores/themes-module';
+import useScheduleStore from '@/stores/schedules-module';
+import { mapState, mapActions } from 'pinia';
 
 export default {
   components: { themeCircle, ThemeChangeModal },
   computed: {
-    ...mapState(['color', 'theme']),
-    ...mapGetters([
-      'date',
-    ]),
+    // ...mapState(['color', 'theme']),
+    // ...mapGetters([
+    //   'date',
+    // ]),
+    ...mapState(useThemeStore, ['theme', 'color']),
+    ...mapState(useScheduleStore, ['date']),
   },
+
   data() {
     return {
       showModal: false,
@@ -43,10 +49,11 @@ export default {
     };
   },
   methods: {
+    ...mapActions(useThemeStore, ['setTheme']),
     choice(useThemeColor) {
       const data = { theme: this.selectedTheme, useThemeColor };
       this.showModal = false;
-      this.$store.commit('setTheme', data);
+      this.setTheme(data);
     },
     changeTheme(theme) {
       if (theme !== this.theme || theme.suggestedColor !== this.color) {
