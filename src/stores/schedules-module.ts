@@ -1,9 +1,9 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
+import { RouteLocationNormalized } from 'vue-router';
 import { CustomSchedules, ScheduleCollection } from '@/utils/types';
-import officialSchedules from '@/data/schedules.json';
 import { tryParseJSON, getNameWithoutConflicts } from '@/utils/util';
 import Bell from '@/utils/bell';
-import { RouteLocation, RouteLocationNormalized } from 'vue-router';
+import officialSchedules from '@/data/schedules.json';
 
 interface State {
   customSchedules: CustomSchedules,
@@ -15,10 +15,13 @@ interface State {
   currentTime: any,
 }
 
-function parseUrlDateTime(route: any): Date {
+function parseUrlDateTime(route: RouteLocationNormalized): Date {
   // If date and/or time is specified in URL, return that date
   // Otherwise, return current date
   let { date = '', time = '' } = route.query;
+  if (!date) date = '';
+  if (!time) time = '';
+
   if (!Array.isArray(time) && !Array.isArray(date)) { // make sure multiple values weren't specified in URL for each
     time = time.replace(/\./g, ':'); // lets you use "." (url safe) instead of ":" (not url safe) //FIX
     date = date.replace(/-/g, '/'); // lets you use "-" instead of "/"
@@ -32,7 +35,7 @@ function parseUrlDateTime(route: any): Date {
   return new Date();
 }
 
-export const useAuthUserStore = defineStore('schedules', {
+export default defineStore('schedules', {
   // convert to a function
   state: (): State => ({
     customSchedules: {} as CustomSchedules,
@@ -46,7 +49,6 @@ export const useAuthUserStore = defineStore('schedules', {
   getters: {
     schedules(state) { // we merge the officialSchedules provided by us and the user defined customSchedules
       const schedules: ScheduleCollection[] = JSON.parse(JSON.stringify(officialSchedules)); // begin with copying the officialSchedules
-  
       // customSchedules is an object with `schedule type` keys and values containing a
       // list of schedule mode objects for the corresponding schedule type
       const { customSchedules } = state;
@@ -68,7 +70,6 @@ export const useAuthUserStore = defineStore('schedules', {
       const date = new Date(
         urlDate.getTime() + (currentTime - startTime),
       );
-  
       // if mode is 'day' return date at time 0:00 instead (to get range string for whole day instead for current period)
       return state.mode === 'current'
         ? date
@@ -76,12 +77,10 @@ export const useAuthUserStore = defineStore('schedules', {
     },
   },
   actions: {
-    initialize(){
+    initialize() {
       this.setCustomSchedules(tryParseJSON(localStorage.customSchedules));
-
       // defaultScheduleMode used to (inappropriately) be called defaultSchedule, so to preserve backwards compatibility:
       localStorage.defaultScheduleMode = localStorage.defaultSchedule; // TODO: remove during or after summer 2021
-    
       if (localStorage.defaultScheduleMode) {
         this.setDefaultScheduleMode(localStorage.defaultScheduleMode);
         this.setScheduleMode(localStorage.defaultScheduleMode);
@@ -91,14 +90,14 @@ export const useAuthUserStore = defineStore('schedules', {
       console.log(route);
       this.setMode(route);
       this.setUrlDate(route);
-      this.setStartTime;
-      this.setCurrentTime;
+      this.setStartTime();
+      this.setCurrentTime();
     },
     countdownDone() {
-      this.setCurrentTime;
+      this.setCurrentTime();
     },
 
-    setUrlDate(route:any) {
+    setUrlDate(route: RouteLocationNormalized) {
       this.urlDate = parseUrlDateTime(route);
     },
     setStartTime() {
@@ -120,7 +119,6 @@ export const useAuthUserStore = defineStore('schedules', {
       } else {
         scheduleModes.push(scheduleToAdd);
       }
-  
       this.setCustomSchedules({ ...this.customSchedules, [scheduleType]: scheduleModes });
     },
     removeCustomScheduleMode({ scheduleType, scheduleToRemove }:any) {
@@ -151,7 +149,6 @@ export const useAuthUserStore = defineStore('schedules', {
           );
         }
       }
-  
       this.customSchedules = schedules;
       localStorage.customSchedules = JSON.stringify(schedules);
     },
@@ -175,5 +172,5 @@ export const useAuthUserStore = defineStore('schedules', {
     bell(otherGetters: any) {
       return new Bell(otherGetters.date, otherGetters.schedules, this.scheduleMode);
     },
-  }
-})
+  },
+});

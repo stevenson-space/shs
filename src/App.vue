@@ -7,9 +7,13 @@
 
 <script>
 import initializeStore from '@/store/initializeStore';
+import schedulesModule from '@/stores/themes-module';
 import { mapState } from 'vuex';
 
 export default {
+  setup() {
+    console.log(schedulesModule);
+  },
   computed: {
     ...mapState(['color', 'theme']),
     style() {

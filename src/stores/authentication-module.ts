@@ -1,19 +1,18 @@
-import { defineStore } from 'pinia'
-import { CustomSchedules } from '@/utils/types';
+import { defineStore } from 'pinia';
 
 interface State {
-  authenticated: boolean
+  authenticated: boolean,
 }
 
-export const useAuthUserStore = defineStore('schedules', {
+export default defineStore('authentication', {
   // convert to a function
   state: (): State => ({
-    authenticated: false
+    authenticated: false,
   }),
   getters: {
     isAuthenticated(): boolean {
-        return this.authenticated;
-      },
+      return this.authenticated;
+    },
   },
   actions: {
     setAuthenticated(): void {
@@ -22,5 +21,5 @@ export const useAuthUserStore = defineStore('schedules', {
       // google will automatically perform token refreshes/sign ins
       // localStorage.isAuthenticated = authenticated;
     },
-  }
-})
+  },
+});
