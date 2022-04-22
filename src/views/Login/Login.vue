@@ -37,7 +37,7 @@ export default {
     ...mapState(useAuthenticationStore, ['authenticated']),
   },
   methods: {
-    ...mapActions(useAuthenticationStore, ['setAuthentication']),
+    ...mapActions(useAuthenticationStore, ['setAuthenticated']),
   },
   async mounted() {
     // this page is loaded when a) the user is trying to login,

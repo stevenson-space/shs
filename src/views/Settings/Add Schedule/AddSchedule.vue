@@ -57,7 +57,8 @@
 
 <script>
 import { faPlus, faPencil } from '@fortawesome/free-solid-svg-icons';
-import { mapGetters, mapActions } from 'vuex';
+import { mapState, mapActions } from 'pinia';
+import useScheduleStore from '@/stores/schedules-module';
 
 import { getNameWithoutConflicts } from '@/utils/util';
 import Bell from '@/utils/bell';
@@ -94,7 +95,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters({
+    ...mapState(useScheduleStore, {
       existingSchedules: 'schedules',
     }),
     filteredSchedules() {
