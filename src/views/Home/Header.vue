@@ -9,7 +9,7 @@
       class="schedule-select"
       :options="scheduleModes"
       :modelValue="scheduleModes.indexOf(bell.mode)"
-      @update:modelValue="$store.commit('setScheduleMode', scheduleModes[$event])"
+      @update:modelValue="setScheduleMode(scheduleModes[$event])"
     />
 
     <div
@@ -81,7 +81,9 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
+import { mapState, mapActions } from 'pinia';
+import useScheduleStore from '@/stores/schedules-module';
+import useThemeStore from '@/stores/themes-module';
 import {
   faChevronRight,
   faChevronLeft,
@@ -127,8 +129,8 @@ export default {
   },
   computed: {
     // this automatically gets the following properties from the store and adds them as computed properties
-    ...mapState(['mode', 'theme']),
-    ...mapGetters(['date', 'bell']),
+    ...mapState(useThemeStore, ['theme']),
+    ...mapState(useScheduleStore, ['mode', 'date', 'bell']),
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
       return {
@@ -248,7 +250,7 @@ export default {
     },
     totalSecondsLeft() {
       if (this.totalSecondsLeft <= 0) {
-        this.$store.dispatch('countdownDone');
+        this.countdownDone();
       }
     },
     colored() {
@@ -268,6 +270,7 @@ export default {
     clearInterval(this.interval);
   },
   methods: {
+    ...mapActions(useScheduleStore, ['countdownDone', 'setScheduleMode']),
     formatDate(date) {
       // Wednesday,
       // September 30

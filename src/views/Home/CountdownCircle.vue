@@ -17,7 +17,8 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState } from 'pinia';
+import useScheduleStore from '@/stores/schedules-module';
 
 export default {
   props: {
@@ -28,9 +29,9 @@ export default {
     scheduleType: { type: String, required: true },
     fullScreenMode: { type: Boolean, default: false },
   },
-  computed: mapState([
-    'mode',
-  ]),
+  computed: {
+    ...mapState(useScheduleStore, ['mode']),
+  },
   data() {
     return {
       masked: false,

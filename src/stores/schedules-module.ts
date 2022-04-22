@@ -75,6 +75,9 @@ export default defineStore('schedules', {
         ? date
         : new Date(date.toLocaleDateString());
     },
+    bell(otherGetters: any) {
+      return new Bell(otherGetters.date, otherGetters.schedules, this.scheduleMode);
+    },
   },
   actions: {
     initialize() {
@@ -87,7 +90,6 @@ export default defineStore('schedules', {
       }
     },
     pageLoaded(route: RouteLocationNormalized) {
-      console.log(route);
       this.setMode(route);
       this.setUrlDate(route);
       this.setStartTime();
@@ -168,9 +170,6 @@ export default defineStore('schedules', {
       // the 'time' url parameter is to be used for testing and forces the mode to 'current' regardless of date
       const { date, time } = route.query;
       this.mode = !date || time ? 'current' : 'day';
-    },
-    bell(otherGetters: any) {
-      return new Bell(otherGetters.date, otherGetters.schedules, this.scheduleMode);
     },
   },
 });

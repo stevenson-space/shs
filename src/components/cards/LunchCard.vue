@@ -18,8 +18,8 @@
 import getLunch from '@/utils/lunch';
 import Card from '@/components/Card.vue';
 import WhatIsThis from '@/components/WhatIsThis.vue';
-
-import { mapGetters } from 'vuex';
+import { mapState } from 'pinia';
+import useScheduleStore from '@/stores/schedules-module';
 
 export default {
   components: { Card, WhatIsThis },
@@ -29,10 +29,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters([
-      'bell',
-      'date',
-    ]),
+    ...mapState(useScheduleStore, ['bell', 'date']),
     lunch() {
       return getLunch(this.date);
     },

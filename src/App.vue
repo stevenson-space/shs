@@ -6,17 +6,13 @@
 </template>
 
 <script>
-// import initializeStore from '@/store/initializeStore';
 import useThemeStore from '@/stores/themes-module';
 import useScheduleStore from '@/stores/schedules-module';
-import useGradesStore from '@/stores/grade-module';
-import { mapState } from 'pinia';
+import { mapState, mapActions } from 'pinia';
 
 export default {
   computed: {
     ...mapState(useThemeStore, ['theme', 'color']),
-    ...mapState(useScheduleStore, ['date']),
-    ...mapState(useGradesStore, ['grade']),
     style() {
       return {
         '--color': this.color,
@@ -32,13 +28,15 @@ export default {
       };
     },
   },
-
+  methods: {
+    ...mapActions(useScheduleStore, ['pageLoaded']),
+  },
   watch: {
     theme() {
       document.querySelector('body').style.background = this.theme.background;
     },
     $route() {
-      this.$store.dispatch('pageLoaded', this.$route);
+      this.pageLoaded(this.$route);
     },
   },
   created() {

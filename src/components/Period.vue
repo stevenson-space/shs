@@ -48,8 +48,9 @@
 </template>
 <script>
 import Bell from '@/utils/bell';
-import { mapGetters } from 'vuex';
+import { mapState } from 'pinia';
 import { dateToSeconds, periodToSeconds } from '@/utils/util';
+import useScheduleStore from '@/stores/schedules-module';
 
 export default {
   props: {
@@ -69,8 +70,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['date']),
-
+    ...mapState(useScheduleStore, ['date']),
     normalizedRadius() {
       return this.radius - this.stroke * 2;
     },

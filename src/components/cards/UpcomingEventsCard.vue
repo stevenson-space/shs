@@ -33,8 +33,8 @@ import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import Bell from '@/utils/bell';
 import Card from '@/components/Card.vue';
 import EventChip from '@/components/EventChip.vue';
-
-import { mapGetters } from 'vuex';
+import { mapState } from 'pinia';
+import useScheduleStore from '@/stores/schedules-module';
 
 function getNextEvent(startDate) {
   // Generator that yields sequential dates starting from the day after start
@@ -90,9 +90,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters([
-      'date',
-    ]),
+    ...mapState(useScheduleStore, ['date']),
     displayedEvents() {
       // Only display numEventsDisplayed events even if the events array contains more
       // and display blank placeholders if no events (possibly still loading)

@@ -33,8 +33,9 @@
 <script>
 import Card from '@/components/Card.vue';
 import Period from '@/components/Period.vue';
-import { mapGetters } from 'vuex';
 import { isBellOnSchoolDay } from '@/utils/bell';
+import { mapState } from 'pinia';
+import useScheduleStore from '@/stores/schedules-module';
 
 export default {
   components: { Card, Period },
@@ -43,9 +44,8 @@ export default {
     title: { type: String, default: 'Schedule' },
   },
   computed: {
-    ...mapGetters([
-      'bell',
-    ]),
+    ...mapState(useScheduleStore, ['bell']),
+
     periods() {
       const convertPeriods = ({ start, end, periods }, currentPeriodName) => periods.map((period, i) => ({
         name: period,
