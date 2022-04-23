@@ -8,14 +8,9 @@ export default defineStore('authentication', {
   state: (): State => ({
     authenticated: false,
   }),
-  getters: {
-    isAuthenticated(): boolean {
-      return this.authenticated;
-    },
-  },
   actions: {
-    setAuthenticated(): void {
-      this.authenticated = false;
+    setAuthenticated(value: boolean): void {
+      this.authenticated = value;
       // explicitly do not use local storage for handling authentication
       // google will automatically perform token refreshes/sign ins
       // localStorage.isAuthenticated = authenticated;
