@@ -45,7 +45,9 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+
+import { mapState, mapActions } from 'pinia';
+import useScheduleStore from '@/stores/schedules';
 import {
   faPlus, faPencil, faTrashCan, faClockRotateLeft,
 } from '@fortawesome/free-solid-svg-icons';
@@ -78,9 +80,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters([
-      'schedules',
-    ]),
+    ...mapState(useScheduleStore, ['schedules']),
     scheduleModes() {
       const scheduleModes = [];
       const addedModeNames = new Set();
@@ -103,9 +103,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions([
-      'removeCustomScheduleMode',
-    ]),
+    ...mapActions(useScheduleStore, ['removeCustomScheduleMode', 'resetSchedules']),
     deleteSchedule(name) {
       this.$refs['confirm-popup'].displayPopup(`Are you sure you want to delete the schedule '${name}'`)
         .then(() => {
@@ -120,7 +118,7 @@ export default {
     restoreSchedules() {
       this.$refs['confirm-popup'].displayPopup('Are you sure you want to erase your changes')
         .then(() => {
-          this.$store.commit('resetSchedules');
+          this.resetSchedules();
         }, () => {});
     },
   },

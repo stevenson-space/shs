@@ -2,7 +2,7 @@
   <settings-section title="General">
     <div class="dropdown-row">
       <span class="title">Default Schedule Mode:</span>
-      <dropdown class="dropdown-select" :options="allModes" :value="defaultMode" @update:modelValue="updateDefaultScheduleMode" />
+      <dropdown class="dropdown-select" :options="allModes" :modelValue="defaultMode" @update:modelValue="updateDefaultScheduleMode" />
     </div>
 
     <div class="dropdown-row">
@@ -21,7 +21,9 @@
 <script>
 import Dropdown from '@/components/Dropdown.vue';
 
-import { mapGetters, mapState } from 'vuex';
+import useUserSettingsStore from '@/stores/user-settings';
+import useScheduleStore from '@/stores/schedules';
+import { mapState, mapActions } from 'pinia';
 import SettingsSection from './SettingsSection.vue';
 
 export default {
@@ -32,13 +34,9 @@ export default {
     };
   },
   computed: {
-    ...mapState([
-      'defaultScheduleMode',
-      'grade',
-    ]),
-    ...mapGetters([
-      'schedules',
-    ]),
+    ...mapState(useScheduleStore, ['defaultScheduleMode', 'schedules']),
+    ...mapState(useUserSettingsStore, ['grade']),
+
     allModes() {
       return this.schedules.reduce((arr, schedule) => {
         schedule.modes.forEach((mode) => {
@@ -57,11 +55,14 @@ export default {
     },
   },
   methods: {
+    ...mapActions(useScheduleStore, ['setDefaultScheduleMode']),
+    ...mapActions(useUserSettingsStore, ['setGrade']),
+
     updateDefaultScheduleMode(scheduleIndex) {
-      this.$store.commit('setDefaultScheduleMode', this.allModes[scheduleIndex]);
+      this.setDefaultScheduleMode(this.allModes[scheduleIndex]);
     },
     updateGrade(gradeIndex) {
-      this.$store.commit('setGrade', this.grades[gradeIndex]);
+      this.setGrade(this.grades[gradeIndex]);
     },
   },
 };

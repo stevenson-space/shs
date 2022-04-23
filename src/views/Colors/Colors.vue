@@ -41,7 +41,8 @@ import colors from '@/data/colors.json';
 import Home from '@/views/Home/Home.vue';
 import HomeLink from '@/components/HomeLink.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'pinia';
+import useThemeStore from '@/stores/themes';
 import ThemeSelector from './ThemeSelector.vue';
 import ColorSelector from './ColorSelector.vue';
 
@@ -62,7 +63,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['color', 'theme']),
+    ...mapState(useThemeStore, ['theme', 'color']),
     suggestedColor() {
       return this.theme.suggestedColor;
     },
@@ -79,9 +80,10 @@ export default {
     this.setCustomColorText();
   },
   methods: {
+    ...mapActions(useThemeStore, ['setColor']),
     colorSelected(color) {
       if (color !== this.color && isValidColor(color)) {
-        this.$store.commit('setColor', color);
+        this.setColor(color);
       }
     },
     setPreviewHeight() {

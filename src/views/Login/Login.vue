@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex';
+import useAuthenticationStore from '@/stores/authentication';
+import { mapActions, mapState } from 'pinia';
 import PlainHeader from '@/components/PlainHeader.vue';
 import CardContainer from '@/components/CardContainer.vue';
 import ClientOAuth2 from 'client-oauth2';
@@ -31,9 +32,12 @@ export default {
       userEndpoint: 'https://www.googleapis.com/oauth2/v2/userinfo',
     };
   },
-  computed: mapState({ isAuthenticated: (state) => state.isAuthenticated }),
+  computed: {
+    // mapState({ isAuthenticated: (state) => state.isAuthenticated }),
+    ...mapState(useAuthenticationStore, ['authenticated']),
+  },
   methods: {
-    ...mapMutations(['setAuthenticated']),
+    ...mapActions(useAuthenticationStore, ['setAuthenticated']),
   },
   async mounted() {
     // this page is loaded when a) the user is trying to login,

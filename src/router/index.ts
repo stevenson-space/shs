@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory, RouteRecordRaw, RouteComponent } from 'vue-router';
+import { createRouter, createWebHistory, RouteRecordRaw, RouteComponent, RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
 import Home from '@/views/Home/Home.vue';
-import store from '@/store';
+import useAuthenticationStore from '@/stores/authentication';
 
 const GpaCalculator:RouteComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
 const BellSchedules:RouteComponent = () => import(/* webpackChunkName: "bellschedules" */'@/views/Bell Schedules/BellSchedules.vue');
@@ -92,12 +92,13 @@ const router = createRouter({
 });
 
 // ensure any page with requiresAuth set to true will redirect through the login proxy component
-router.beforeEach((to, from, next) => {
+router.beforeEach((to:RouteLocationNormalized, from:RouteLocationNormalized, next:NavigationGuardNext) => {
   // check if to requires auth
   if (to.matched.some((record) => record.meta && record.meta.requiresAuth)) {
     // check if we are already authenticated, and continue ahead if we are
     // if (store.getters.isAuthenticated) {
-    if (store.getters.isAuthenticated) {
+    const authentionStore = useAuthenticationStore();
+    if (authentionStore.isAuthenticated) {
       next();
     } else {
       // if not, proxy this route through the login component

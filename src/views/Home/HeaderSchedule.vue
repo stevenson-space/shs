@@ -38,14 +38,15 @@
         :options="scheduleModes"
         :modelValue="scheduleModes.indexOf(bell.mode)"
         :direction="fullScreenMode ? 'up' : 'down'"
-        @update:modelValue="$store.commit('setScheduleMode', scheduleModes[$event])"
+        @update:modelValue="setScheduleMode(scheduleModes[$event])"
       />
     </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import { mapState, mapActions } from 'pinia';
+import useScheduleStore from '@/stores/schedules';
 import Dropdown from '@/components/Dropdown.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 
@@ -60,8 +61,10 @@ export default {
     fullScreenMode: { type: Boolean, default: false },
   },
   computed: {
-    ...mapState(['mode']),
-    ...mapGetters(['bell']),
+    ...mapState(useScheduleStore, ['mode', 'bell']),
+  },
+  methods: {
+    ...mapActions(useScheduleStore, ['setScheduleMode']),
   },
 };
 </script>

@@ -31,7 +31,8 @@
 <script>
 import { faArrowRight, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import RoundedButton from '@/components/RoundedButton.vue';
-import { mapState } from 'vuex';
+import useThemeStore from '@/stores/themes';
+import { mapState } from 'pinia';
 
 export default {
   components: { RoundedButton },
@@ -40,7 +41,7 @@ export default {
     showModal: { type: Boolean, required: true },
   },
   computed: {
-    ...mapState(['color']),
+    ...mapState(useThemeStore, ['color']),
   },
   data() {
     return {

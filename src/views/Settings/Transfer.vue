@@ -206,7 +206,7 @@ export default {
         for (const [setting, data] of Object.entries(this.receivedData)) {
           if (this.shouldSaveSetting[setting]) {
             const mutation = `set${setting[0].toUpperCase()}${setting.slice(1)}`; // 'defaultScheduleMode' -> 'setDefaultScheduleMode'
-            this.$store.commit(mutation, data);
+            // this.$store.commit(mutation, data); // FIX
           }
         }
       }

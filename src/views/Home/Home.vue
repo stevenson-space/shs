@@ -57,7 +57,8 @@ import {
   faGear,
   faHourglass,
 } from '@fortawesome/free-solid-svg-icons';
-
+import useScheduleStore from '@/stores/schedules';
+import { mapActions } from 'pinia';
 import CardContainer from '@/components/CardContainer.vue';
 import UpcomingEventsCard from '@/components/cards/UpcomingEventsCard.vue';
 import IconTextCard from '@/components/cards/IconTextCard.vue';
@@ -101,11 +102,14 @@ export default {
       fullScreenMode: false,
     };
   },
+  methods: {
+    ...mapActions(useScheduleStore, ['setCurrentTime']),
+  },
   created() {
     // Sometimes the interval used in Header.vue stops when the tab leaves focus
     // so updating the date when focus returns is necessary
     window.addEventListener('focus', () => {
-      this.$store.commit('setCurrentTime');
+      this.setCurrentTime();
     });
   },
 };

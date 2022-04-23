@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import { mapState } from 'pinia';
+import useScheduleStore from '@/stores/schedules';
 import Bell from '@/utils/bell';
 import allEvents from '@/data/events.json';
 import CalendarMain from './CalendarMain.vue';
@@ -202,11 +204,12 @@ export default {
     },
   },
   created() {
-    this.today = this.$store.getters.date;
+    this.today = this.date();
     this.month = this.today.getMonth();
     this.year = this.today.getFullYear();
   },
   methods: {
+    ...mapState(useScheduleStore, ['date']),
     nextMonth() {
       this.month++;
       if (this.month >= 12) {

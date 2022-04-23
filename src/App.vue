@@ -6,12 +6,14 @@
 </template>
 
 <script>
-import initializeStore from '@/store/initializeStore';
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'pinia';
+import useThemeStore from '@/stores/themes';
+import useScheduleStore from '@/stores/schedules';
+import useUserSettingsStore from '@/stores/user-settings';
 
 export default {
   computed: {
-    ...mapState(['color', 'theme']),
+    ...mapState(useThemeStore, ['theme', 'color']),
     style() {
       return {
         '--color': this.color,
@@ -27,18 +29,26 @@ export default {
       };
     },
   },
-
+  methods: {
+    ...mapActions(useScheduleStore, ['initializeSchedule', 'pageLoaded']),
+    ...mapActions(useThemeStore, ['initializeTheme']),
+    ...mapActions(useUserSettingsStore, ['initializeGrade']),
+  },
   watch: {
     theme() {
       document.querySelector('body').style.background = this.theme.background;
     },
     $route() {
-      this.$store.dispatch('pageLoaded', this.$route);
+      this.pageLoaded(this.$route);
     },
   },
   created() {
-    initializeStore(this.$store);
-    this.$store.dispatch('pageLoaded', this.$route);
+    // initializeStore(this.$store);
+    this.initializeSchedule(this.$route);
+    this.initializeTheme();
+    this.initializeGrade();
+    this.pageLoaded(this.$route);
+    // this.$store.dispatch('pageLoaded', this.$route);
     document.querySelector('body').style.background = this.theme.background;
   },
 };

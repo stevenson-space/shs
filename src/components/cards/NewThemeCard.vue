@@ -20,17 +20,17 @@
 <script>
 import themes from '@/data/themes.json';
 import Card from '@/components/Card.vue';
-import { mapState, mapGetters } from 'vuex';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
+import useScheduleStore from '@/stores/schedules';
+import useThemeStore from '@/stores/themes';
+import { mapState, mapActions } from 'pinia';
 
 export default {
   components: { Card, RoundedButton, ThemeChangeModal },
   computed: {
-    ...mapState(['theme', 'color']),
-    ...mapGetters([
-      'date',
-    ]),
+    ...mapState(useThemeStore, ['theme', 'color']),
+    ...mapState(useScheduleStore, ['date']),
     newTheme() { // finds a seasonal theme that within the current date
       for (const x of this.themes) {
         const { schedule } = x;
@@ -55,11 +55,12 @@ export default {
     };
   },
   methods: {
+    ...mapActions(useThemeStore, ['setTheme']),
     choice(useThemeColor) {
       const data = { useThemeColor };
       this.showModal = false;
       data.theme = this.newTheme;
-      this.$store.commit('setTheme', data);
+      this.setTheme(data);
     },
     toggleColor() {
       if (this.color !== this.theme.suggestedColor) { //  if the color you set differs from the suggested color ("color conflict")

@@ -28,7 +28,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapState } from 'pinia';
+import useScheduleStore from '@/stores/schedules';
 import Bell from '@/utils/bell';
 import Period from '@/components/Period.vue';
 import Dropdown from '@/components/Dropdown.vue';
@@ -54,9 +55,8 @@ export default {
     };
   },
   computed: {
-    ...mapGetters([
-      'bell',
-    ]),
+    ...mapState(useScheduleStore, ['bell']),
+
     selectedModeString() {
       return this.dropdownOptions[this.selectedMode];
     },
