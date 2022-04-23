@@ -64,6 +64,10 @@
 
 <script>
 import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { mapState, mapActions } from 'pinia';
+import useThemeStore from '@/stores/themes';
+import useScheduleStore from '@/stores/schedules';
+import useUserSettingsStore from '@/stores/user-settings';
 
 import RoundedButton from '@/components/RoundedButton.vue';
 import Popup from '@/components/Popup.vue';
@@ -122,13 +126,38 @@ export default {
       this.shouldSendSetting[str] = true;
     });
   },
+  computed: {
+    ...mapState(useThemeStore, ['theme', 'color']),
+    ...mapState(useScheduleStore, ['defaultScheduleMode', 'customSchedules']),
+    ...mapState(useUserSettingsStore, ['grade']),
+  },
   methods: {
-    settingToName(setting) { // convert setting to readable name ('defaultScheduleMode' to 'Default Schedule Mode')
+    settingToName(setting) {
       const separatedWords = setting.replace(/([a-z])([A-Z])/g, '$1 $2'); // 'defaultScheduleSomething' to 'default Schedule Something'
       return separatedWords[0].toUpperCase() + separatedWords.slice(1); // capitalize first letter
     },
     showPopup(popup) {
       this.popupToShow = popup;
+    },
+    getSetting(name) {
+      switch (name.toLowerCase()) {
+        case tranferableSettings[0]: return this.color;
+        case tranferableSettings[1]: return this.theme;
+        case tranferableSettings[2]: return this.defaultScheduleMode;
+        case tranferableSettings[3]: return this.grade;
+        case tranferableSettings[4]: return this.customSchedules;
+        default: return '';
+      }
+    },
+    setSetting(name, value) {
+      switch (name.toLowerCase()) {
+        case tranferableSettings[0]: this.color = value; break;
+        case tranferableSettings[1]: this.theme = value; break;
+        case tranferableSettings[2]: this.defaultScheduleMode = value; break;
+        case tranferableSettings[3]: this.grade = value; break;
+        case tranferableSettings[4]: this.customSchedules = value; break;
+        default: break;
+      }
     },
     cancel() {
       // reset most things (usually unnecessary since they'll be overwritten anyway, but just in case)
@@ -142,12 +171,12 @@ export default {
     },
     async send() {
       this.showPopup(popups.loading);
-
       // Get the data for each selected option to send
       const data = {};
       for (const [setting, shouldSend] of Object.entries(this.shouldSendSetting)) {
         if (shouldSend) {
-          data[setting] = this.$store.state[setting];
+          // data[setting] = this.$store.state[setting];
+          data[setting] = this.getSetting(setting);
         }
       }
 
@@ -205,8 +234,7 @@ export default {
         }
         for (const [setting, data] of Object.entries(this.receivedData)) {
           if (this.shouldSaveSetting[setting]) {
-            const mutation = `set${setting[0].toUpperCase()}${setting.slice(1)}`; // 'defaultScheduleMode' -> 'setDefaultScheduleMode'
-            // this.$store.commit(mutation, data); // FIX
+            this.setSetting(setting, data);
           }
         }
       }
