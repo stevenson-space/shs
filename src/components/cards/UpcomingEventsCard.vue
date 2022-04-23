@@ -34,7 +34,7 @@ import Bell from '@/utils/bell';
 import Card from '@/components/Card.vue';
 import EventChip from '@/components/EventChip.vue';
 import { mapState } from 'pinia';
-import useScheduleStore from '@/stores/schedules-module';
+import useScheduleStore from '@/stores/schedules';
 
 function getNextEvent(startDate) {
   // Generator that yields sequential dates starting from the day after start

@@ -21,8 +21,8 @@
 <script>
 import Dropdown from '@/components/Dropdown.vue';
 
-import useGradeStore from '@/stores/grade-module';
-import useScheduleStore from '@/stores/schedules-module';
+import useUserSettingsStore from '@/stores/user-settings';
+import useScheduleStore from '@/stores/schedules';
 import { mapState, mapActions } from 'pinia';
 import SettingsSection from './SettingsSection.vue';
 
@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     ...mapState(useScheduleStore, ['defaultScheduleMode', 'schedules']),
-    ...mapState(useGradeStore, ['grade']),
+    ...mapState(useUserSettingsStore, ['grade']),
 
     allModes() {
       return this.schedules.reduce((arr, schedule) => {
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     ...mapActions(useScheduleStore, ['setDefaultScheduleMode']),
-    ...mapActions(useGradeStore, ['setGrade']),
+    ...mapActions(useUserSettingsStore, ['setGrade']),
 
     updateDefaultScheduleMode(scheduleIndex) {
       this.setDefaultScheduleMode(this.allModes[scheduleIndex]);

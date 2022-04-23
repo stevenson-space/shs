@@ -50,7 +50,7 @@
 import Bell from '@/utils/bell';
 import { mapState } from 'pinia';
 import { dateToSeconds, periodToSeconds } from '@/utils/util';
-import useScheduleStore from '@/stores/schedules-module';
+import useScheduleStore from '@/stores/schedules';
 
 export default {
   props: {

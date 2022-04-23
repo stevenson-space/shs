@@ -57,7 +57,7 @@ import {
   faGear,
   faHourglass,
 } from '@fortawesome/free-solid-svg-icons';
-import useScheduleStore from '@/stores/schedules-module';
+import useScheduleStore from '@/stores/schedules';
 import { mapActions } from 'pinia';
 import CardContainer from '@/components/CardContainer.vue';
 import UpcomingEventsCard from '@/components/cards/UpcomingEventsCard.vue';

@@ -35,7 +35,7 @@ import Card from '@/components/Card.vue';
 import Period from '@/components/Period.vue';
 import { isBellOnSchoolDay } from '@/utils/bell';
 import { mapState } from 'pinia';
-import useScheduleStore from '@/stores/schedules-module';
+import useScheduleStore from '@/stores/schedules';
 
 export default {
   components: { Card, Period },

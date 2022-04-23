@@ -46,7 +46,7 @@
 
 <script>
 import { mapState, mapActions } from 'pinia';
-import useScheduleStore from '@/stores/schedules-module';
+import useScheduleStore from '@/stores/schedules';
 import Dropdown from '@/components/Dropdown.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 

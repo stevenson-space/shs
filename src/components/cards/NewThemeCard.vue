@@ -22,8 +22,8 @@ import themes from '@/data/themes.json';
 import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
-import useScheduleStore from '@/stores/schedules-module';
-import useThemeStore from '@/stores/themes-module';
+import useScheduleStore from '@/stores/schedules';
+import useThemeStore from '@/stores/themes';
 import { mapState, mapActions } from 'pinia';
 
 export default {

@@ -18,7 +18,7 @@
 
 <script>
 import { mapState } from 'pinia';
-import useScheduleStore from '@/stores/schedules-module';
+import useScheduleStore from '@/stores/schedules';
 import HomeLink from '@/components/HomeLink.vue';
 import Schedule from './Schedule.vue';
 

@@ -5,7 +5,6 @@ interface State {
 }
 
 export default defineStore('grades', {
-  // convert to a function
   state: (): State => ({
     grade: 'None',
   }),

@@ -42,7 +42,7 @@ import Home from '@/views/Home/Home.vue';
 import HomeLink from '@/components/HomeLink.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import { mapState, mapActions } from 'pinia';
-import useThemeStore from '@/stores/themes-module';
+import useThemeStore from '@/stores/themes';
 import ThemeSelector from './ThemeSelector.vue';
 import ColorSelector from './ColorSelector.vue';
 

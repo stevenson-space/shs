@@ -82,8 +82,8 @@
 
 <script>
 import { mapState, mapActions } from 'pinia';
-import useScheduleStore from '@/stores/schedules-module';
-import useThemeStore from '@/stores/themes-module';
+import useScheduleStore from '@/stores/schedules';
+import useThemeStore from '@/stores/themes';
 import {
   faChevronRight,
   faChevronLeft,

@@ -18,7 +18,7 @@
 
 <script>
 import { mapState } from 'pinia';
-import useScheduleStore from '@/stores/schedules-module';
+import useScheduleStore from '@/stores/schedules';
 
 export default {
   props: {

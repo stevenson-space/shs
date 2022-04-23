@@ -47,7 +47,7 @@
 <script>
 
 import { mapState, mapActions } from 'pinia';
-import useScheduleStore from '@/stores/schedules-module';
+import useScheduleStore from '@/stores/schedules';
 import {
   faPlus, faPencil, faTrashCan, faClockRotateLeft,
 } from '@fortawesome/free-solid-svg-icons';

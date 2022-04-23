@@ -12,7 +12,7 @@
         v-for="themeItem in themes"
         v-bind:key="themeItem.name"
         v-show="showTheme(themeItem)"
-        @click.native="changeTheme(themeItem)"
+        @click="changeTheme(themeItem)"
         :theme="themeItem"
         :isCurrentTheme="themeItem.name==theme.name && themeItem.suggestedColor == color"
       />
@@ -25,8 +25,8 @@
 import themeCircle from '@/views/Colors/ThemeCircle.vue';
 import themes from '@/data/themes.json';
 import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
-import useThemeStore from '@/stores/themes-module';
-import useScheduleStore from '@/stores/schedules-module';
+import useThemeStore from '@/stores/themes';
+import useScheduleStore from '@/stores/schedules';
 import { mapState, mapActions } from 'pinia';
 
 export default {

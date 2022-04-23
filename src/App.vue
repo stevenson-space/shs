@@ -7,9 +7,9 @@
 
 <script>
 import { mapState, mapActions } from 'pinia';
-import useThemeStore from '@/stores/themes-module';
-import useScheduleStore from '@/stores/schedules-module';
-import useGradeStore from '@/stores/grade-module';
+import useThemeStore from '@/stores/themes';
+import useScheduleStore from '@/stores/schedules';
+import useUserSettingsStore from '@/stores/user-settings';
 
 export default {
   computed: {
@@ -32,7 +32,7 @@ export default {
   methods: {
     ...mapActions(useScheduleStore, ['initializeSchedule', 'pageLoaded']),
     ...mapActions(useThemeStore, ['initializeTheme']),
-    ...mapActions(useGradeStore, ['initializeGrade']),
+    ...mapActions(useUserSettingsStore, ['initializeGrade']),
   },
   watch: {
     theme() {

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import useAuthenticationStore from '@/stores/authentication-module';
+import useAuthenticationStore from '@/stores/authentication';
 import { mapActions, mapState } from 'pinia';
 import PlainHeader from '@/components/PlainHeader.vue';
 import CardContainer from '@/components/CardContainer.vue';

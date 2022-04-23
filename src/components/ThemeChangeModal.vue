@@ -31,7 +31,7 @@
 <script>
 import { faArrowRight, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import RoundedButton from '@/components/RoundedButton.vue';
-import useThemeStore from '@/stores/themes-module';
+import useThemeStore from '@/stores/themes';
 import { mapState } from 'pinia';
 
 export default {

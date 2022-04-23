@@ -29,7 +29,7 @@
 
 <script>
 import { mapState } from 'pinia';
-import useScheduleStore from '@/stores/schedules-module';
+import useScheduleStore from '@/stores/schedules';
 import Bell from '@/utils/bell';
 import Period from '@/components/Period.vue';
 import Dropdown from '@/components/Dropdown.vue';

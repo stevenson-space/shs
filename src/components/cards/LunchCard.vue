@@ -19,7 +19,7 @@ import getLunch from '@/utils/lunch';
 import Card from '@/components/Card.vue';
 import WhatIsThis from '@/components/WhatIsThis.vue';
 import { mapState } from 'pinia';
-import useScheduleStore from '@/stores/schedules-module';
+import useScheduleStore from '@/stores/schedules';
 
 export default {
   components: { Card, WhatIsThis },

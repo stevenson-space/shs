@@ -5,7 +5,6 @@ interface State {
 }
 
 export default defineStore('authentication', {
-  // convert to a function
   state: (): State => ({
     authenticated: false,
   }),

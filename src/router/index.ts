@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw, RouteComponent, RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
 import Home from '@/views/Home/Home.vue';
-import useAuthenticationStore from '@/stores/authentication-module';
+import useAuthenticationStore from '@/stores/authentication';
 
 const GpaCalculator:RouteComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
 const BellSchedules:RouteComponent = () => import(/* webpackChunkName: "bellschedules" */'@/views/Bell Schedules/BellSchedules.vue');

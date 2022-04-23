@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { RouteLocationNormalized } from 'vue-router';
-import { CustomSchedules, ScheduleCollection } from '@/utils/types';
+import { CustomSchedules, ScheduleCollection, ScheduleMode, Schedule } from '@/utils/types';
 import { tryParseJSON, getNameWithoutConflicts } from '@/utils/util';
 import Bell from '@/utils/bell';
 import officialSchedules from '@/data/schedules.json';
@@ -11,8 +11,8 @@ interface State {
   scheduleMode: string,
   mode: string,
   urlDate: Date,
-  startTime: any,
-  currentTime: any,
+  startTime: number,
+  currentTime: number,
 }
 
 function parseUrlDateTime(route: RouteLocationNormalized): Date {
@@ -68,7 +68,7 @@ export default defineStore('schedules', {
     date(): Date {
       const { urlDate, startTime, currentTime } = this;
       const date = new Date(
-        urlDate.getTime() + (currentTime - startTime),
+        (urlDate.getTime()) + (currentTime - startTime),
       );
       // if mode is 'day' return date at time 0:00 instead (to get range string for whole day instead for current period)
       return this.mode === 'current'
@@ -82,8 +82,6 @@ export default defineStore('schedules', {
   actions: {
     initializeSchedule() {
       this.setCustomSchedules(tryParseJSON(localStorage.customSchedules));
-      // defaultScheduleMode used to (inappropriately) be called defaultSchedule, so to preserve backwards compatibility:
-      localStorage.defaultScheduleMode = localStorage.defaultSchedule; // TODO: remove during or after summer 2021
       if (localStorage.defaultScheduleMode) {
         this.setDefaultScheduleMode(localStorage.defaultScheduleMode);
         this.setScheduleMode(localStorage.defaultScheduleMode);
@@ -127,7 +125,7 @@ export default defineStore('schedules', {
       // if scheduleType is not provided, then we remove scheduleToRemove for all schedule types
       for (const [type, scheduleModes] of Object.entries(this.customSchedules || {})) {
         if (!scheduleType || scheduleType === type) {
-          const removeIndex = scheduleModes.map((mode:any) => mode.name).indexOf(scheduleToRemove);
+          const removeIndex = scheduleModes.map((mode) => mode.name).indexOf(scheduleToRemove);
           if (removeIndex > -1) {
             scheduleModes.splice(removeIndex, 1);
           }

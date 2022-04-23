@@ -58,9 +58,8 @@
 <script>
 import { faPlus, faPencil } from '@fortawesome/free-solid-svg-icons';
 import { mapState, mapActions } from 'pinia';
-import useScheduleStore from '@/stores/schedules-module';
-
 import { getNameWithoutConflicts } from '@/utils/util';
+import useScheduleStore from '@/stores/schedules';
 import Bell from '@/utils/bell';
 import HomeLink from '@/components/HomeLink.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
@@ -183,7 +182,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
+    ...mapActions(useScheduleStore, [
       'addCustomScheduleMode',
       'removeCustomScheduleMode',
     ]),
