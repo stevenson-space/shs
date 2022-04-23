@@ -14,7 +14,7 @@
         <br>
         <p>For iOS devices, use Safari for the download feature</p>
         <form @submit.prevent @submit="generateQR()">
-          <input v-model='enteredQRCode' placeholder="Enter A Valid Link" />
+          <input v-model='enteredQRCode' class="link-input" placeholder="Enter A Valid Link" />
         </form>
         <div class="input-tip"  v-if="enteredQRCode.length > 40">Tip: For very long links, consider using <a href="https://bitly.com/" target='_blank'>Bitly</a> for a more aesthetic code</div>
         <div class="input-tip"  v-if="errorMessage.length > 0">{{ errorMessage }}</div>
@@ -152,6 +152,7 @@ export default {
     +shadow
     transform: scale(.5)
     padding: 20px
+    background: white
     border-radius: 50px
     margin-top: -110px
     margin-bottom: -110px
@@ -182,6 +183,7 @@ export default {
         padding: 10px
         border-radius: 7px
         margin-bottom: 10px
+        color: var(--primary)
         border: 1px solid var(--color)
         +shadow-light
         &:focus
