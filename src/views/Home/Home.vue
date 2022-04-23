@@ -6,10 +6,9 @@
     />
 
     <card-container>
+      <!-- <april-fools-card /> -->
+      <sodexo-appreciation-card />
       <!-- <contribute-card /> -->
-      <april-fools-card />
-      <new-feature-card/>
-      <contribute-card />
       <new-theme-card />
       <!-- <shs-hacks-card/> -->
       <holiday-card />
@@ -19,10 +18,10 @@
 
       <icon-text-card :icon="icons.faBell" text="Bell Schedules" link="bellschedules" />
 
-      <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
       <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
 
       <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" />
+      <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
 
       <icon-text-card
         :icon="icons.faCalculator"
@@ -66,12 +65,13 @@ import UpcomingEventsCard from '@/components/cards/UpcomingEventsCard.vue';
 import IconTextCard from '@/components/cards/IconTextCard.vue';
 import ScheduleCard from '@/components/cards/ScheduleCard.vue';
 import HolidayCard from '@/components/cards/HolidayCard.vue';
-import ContributeCard from '@/components/cards/ContributeCard.vue';
+// import ContributeCard from '@/components/cards/ContributeCard.vue';
 import LunchCard from '@/components/cards/LunchCard.vue';
 import NewThemeCard from '@/components/cards/NewThemeCard.vue';
+// import ShsHacksCard from '@/components/cards/ShsHacksCard.vue';
+// import AprilFoolsCard from '@/components/cards/AprilFoolsCard.vue';
 import NewFeatureCard from '@/components/cards/NewFeatureCard.vue';
-import ShsHacksCard from '@/components/cards/ShsHacksCard.vue';
-import AprilFoolsCard from '@/components/cards/AprilFoolsCard.vue';
+import SodexoAppreciationCard from '@/components/cards/SodexoAppreciationCard.vue';
 import ScheduleHeader from './Header.vue';
 
 export default {
@@ -83,11 +83,12 @@ export default {
     IconTextCard,
     ScheduleCard,
     HolidayCard,
-    ContributeCard,
+    // ContributeCard,
     NewThemeCard,
+    // ShsHacksCard,
+    // AprilFoolsCard,
     NewFeatureCard,
-    ShsHacksCard,
-    AprilFoolsCard,
+    SodexoAppreciationCard,
   },
   data() {
     return {
