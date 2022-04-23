@@ -21,7 +21,7 @@
       <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
 
       <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" />
-      <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
+      <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" :invert="true"/>
 
       <icon-text-card
         :icon="icons.faCalculator"
