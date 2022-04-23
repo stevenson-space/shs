@@ -403,9 +403,12 @@ export default {
       font-size: 1em
       font-family: inherit
       font-weight: inherit
-      color: inherit
+      background: var(--background)
+      color: var(--primary)
       max-width: calc(100vw - 55px) // 55px is the hardcoded space that the icon + margins take up
-
+      &:focus
+        outline: none
+        border: none
     .text
       padding: 5px
       max-width: calc(100vw - 55px) // 55px is the hardcoded space that the icon + margins take up
