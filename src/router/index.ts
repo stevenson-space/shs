@@ -20,6 +20,7 @@ const Tools: AsyncComponent = () => import(/* webpackChunkName: "tools" */'@/vie
 const Documents: AsyncComponent = () => import(/* webpackChunkName: "documents" */'@/views/Documents/Documents.vue');
 const AddSchedule: AsyncComponent = () => import(/* webpackChunkName: "addschedule" */'@/views/Settings/Add Schedule/AddSchedule.vue');
 const Login: AsyncComponent = () => import(/* webpackChunkName: "login" */'@/views/Login/Login.vue');
+const QRCode: AsyncComponent = () => import(/* webpackChunkName: "login" */'@/views/QRCodes/QRCodes.vue');
 
 type EditScheduleProps = {
   scheduleToEdit: string;
@@ -87,6 +88,11 @@ const routes: RouteConfig[] = [
     name: 'login',
     path: '/login',
     component: Login,
+  },
+  {
+    name: 'QRCode',
+    path: '/qr',
+    component: QRCode,
   },
 ];
 
