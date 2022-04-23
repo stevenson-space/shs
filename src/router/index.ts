@@ -98,7 +98,7 @@ router.beforeEach((to:RouteLocationNormalized, from:RouteLocationNormalized, nex
     // check if we are already authenticated, and continue ahead if we are
     // if (store.getters.isAuthenticated) {
     const authentionStore = useAuthenticationStore();
-    if (authentionStore.isAuthenticated) {
+    if (authentionStore.authenticated) {
       next();
     } else {
       // if not, proxy this route through the login component
