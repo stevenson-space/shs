@@ -29,7 +29,7 @@
         ref="staggerAnimation"
         :duration="animationDuration"
         direction="down"
-        align="end"
+        align="left"
         :number-of-slots="currentShades.length"
         :isColorSelector="true"
       >

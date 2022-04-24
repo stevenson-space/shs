@@ -1,5 +1,4 @@
 <template>
-<!-- vue 2 -->
   <div id="app" :style="style" tabindex="-1">
     <router-view />
   </div>

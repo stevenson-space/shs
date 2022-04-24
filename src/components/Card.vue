@@ -59,10 +59,12 @@ export default {
     // and the change is undetectable by MutationObserver
     setHeight() {
       const { margin, $refs } = this;
-      this.height = $refs.wrapper.offsetHeight;
-      // Adjust the number of rows the card spans (necessary for the masonry layout to work)
-      this.spanValue = Math.ceil((this.height + margin * 2) / 5); // 5 is row height
-      this.$emit('height-change');
+      if ($refs && $refs.wrapper) {
+        this.height = $refs.wrapper.offsetHeight;
+        // Adjust the number of rows the card spans (necessary for the masonry layout to work)
+        this.spanValue = Math.ceil((this.height + margin * 2) / 5); // 5 is row height
+        this.$emit('height-change');
+      }
     },
     debounceSetHeight() {
       clearTimeout(this.debounceTimeout);

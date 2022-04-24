@@ -16,7 +16,7 @@ import gsap from 'gsap';
 
 export default {
   props: {
-    isColorSelector: { type: Boolean, required: false },
+    isColorSelector: { type: Boolean, required: false }, // if it's coming the color selector component
     align: {
       validator: (str) => str === 'left' || str === 'right' || str === 'center',
       default: 'right',
@@ -31,23 +31,21 @@ export default {
     onBeforeEnter(el) {
       el.style.opacity = 0;
     },
-    onEnter(el, done) {
+    onEnter(el) {
       gsap.to(el, {
         opacity: 1,
         height: this.isColorSelector ? '30px' : 'auto',
         marginBottom: this.isColorSelector ? '0px' : '8px',
         textAlign: 'left',
         delay: el.dataset.index * 0.01,
-        onComplete: done,
         duration: this.numberOfSlots * 0.05,
       });
     },
-    onLeave(el, done) {
+    onLeave(el) {
       gsap.to(el, {
         opacity: 0,
         duration: this.isColorSelector ? 0 : 0.2,
-        delay: ((this.numberOfSlots - 1) - el.dataset.index) * 0.02,
-        onComplete: done,
+        delay: this.isColorSelector ? 0 : ((this.numberOfSlots - 1) - el.dataset.index) * (0.2 / this.numberOfSlots),
       });
     },
   },
