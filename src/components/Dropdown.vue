@@ -12,16 +12,17 @@
         ref="staggerAnimation"
         :duration="animationDuration"
         :direction="direction"
-        :shift-amount="optionHeight + 10"
         :number-of-slots="formattedOptions.length"
+        :align="align"
       >
       <template v-if="open">
           <div
-            v-for="option in formattedOptions"
+            v-for="(option, index) in formattedOptions"
             :key="option"
             ref="option"
             class="option"
             :style="option.style"
+            :data-index="index"
             @click="selectOption(option.index)"
           >
             {{ option.name }}
@@ -54,7 +55,7 @@ export default {
     return {
       faCaretDown,
       open: false, // open is true even when dropdown is partially open, false only when dropdown is completely closed
-      arrowRotateAmmount: this.direction === 'down' ? 0 : 180,
+      arrowRotateAmount: this.direction === 'down' ? 0 : 180,
       optionHeight: 30,
       animationDuration: 50,
     };
@@ -91,10 +92,9 @@ export default {
       };
     },
     iconStyle() {
-      const duration = this.animationDuration / 1000;
       return {
-        transition: `transform ${duration}s`,
-        transform: `rotate(${this.arrowRotateAmmount}deg)`,
+        transition: 'transform .2s',
+        transform: `rotate(${this.arrowRotateAmount}deg)`,
       };
     },
   },
@@ -104,7 +104,7 @@ export default {
     },
     direction() {
       this.closeDropdown();
-      this.arrowRotateAmmount = this.direction === 'down' ? 0 : 180;
+      this.arrowRotateAmount = this.direction === 'down' ? 0 : 180;
     },
   },
   created() {
@@ -118,6 +118,7 @@ export default {
       this.optionShifts = this.optionShifts.map((n, i) => ((i >= start && i < end) ? value : n));
     },
     toggleDropdown() {
+      this.arrowRotateAmount += (this.arrowRotateAmount >= 180) ? -180 : 180;
       this.open = !this.open;
     },
     openDropdown() {
@@ -175,16 +176,15 @@ export default {
       margin-left: 7px
 
   .option
-    background-color: white
     background-color: var(--background)
     border-radius: 100px
     +shadow
     padding: 5px 12px
-    margin-left: -30px
+    margin-left: 8px
     white-space: nowrap
     cursor: pointer
     user-select: none
+    width: auto
     &:hover
-      background-color: #eee
       background-color: var(--secondaryBackground)
 </style>

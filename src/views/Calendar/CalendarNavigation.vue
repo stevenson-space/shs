@@ -79,7 +79,6 @@ export default {
   .filter-dropdown
     position: absolute
     left: 10px
-    color: #444
     font-weight: bold
     +mobile
       top: 6px

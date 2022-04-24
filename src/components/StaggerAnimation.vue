@@ -1,10 +1,11 @@
 <template>
   <TransitionGroup
     class='transition-group'
-    tag="ul"
+    tag="div"
     @before-enter="onBeforeEnter"
     @enter="onEnter"
     @leave="onLeave"
+    :style="{ 'align-items': align == 'left' ? 'flex-start' : (align == 'right' ? 'flex-end' : (align == 'center' ? 'center': 'flex-start')) }"
   >
     <slot />
   </TransitionGroup>
@@ -15,59 +16,39 @@ import gsap from 'gsap';
 
 export default {
   props: {
-    // duration: { type: Number, required: true }, // duration is in milliseconds
-    shiftAmount: { type: Number, required: true },
+    isColorSelector: { type: Boolean, required: false },
+    align: {
+      validator: (str) => str === 'left' || str === 'right' || str === 'center',
+      default: 'right',
+    },
     numberOfSlots: { type: Number, default: 0 }, // used if slots will be changed after initial render
     direction: {
       validator: (str) => (str === 'up' || str === 'down'),
       required: true,
     },
   },
-  data() {
-    return {
-      duration: 100,
-    };
-  },
-  computed: {
-    staggerDuration() {
-      return (this.duration / this.slotCount) / 2;
-    },
-  },
   methods: {
     onBeforeEnter(el) {
       el.style.opacity = 0;
-      el.style.height = 0;
     },
     onEnter(el, done) {
       gsap.to(el, {
         opacity: 1,
-        height: 'auto',
-        marginBottom: '5px',
+        height: this.isColorSelector ? '30px' : 'auto',
+        marginBottom: this.isColorSelector ? '0px' : '8px',
         textAlign: 'left',
-        // delay: el.dataset.index * 1,
+        delay: el.dataset.index * 0.01,
         onComplete: done,
+        duration: this.numberOfSlots * 0.05,
       });
     },
     onLeave(el, done) {
       gsap.to(el, {
         opacity: 0,
-        height: 0,
-        // delay: el.dataset.index * 1,
+        duration: this.isColorSelector ? 0 : 0.2,
+        delay: ((this.numberOfSlots - 1) - el.dataset.index) * 0.02,
         onComplete: done,
       });
-    },
-    open() {
-
-    },
-    close() {
-      // const { shiftDistance } = this;
-      // // this.setOpacity(0);
-      // return this.stagger((elements, i) => {
-      //   // Need to go in the reverse direction when closing (last element animates first)
-      //   // so calculate the ith element from the end
-      //   const j = elements.length - i - 1;
-      //   this.setShifts(elements, shiftDistance * j, j);
-      // });
     },
   },
 };
@@ -76,4 +57,8 @@ export default {
 <style lang="sass" scoped>
 .transition-group
   position: absolute
+  display: flex
+  flex-direction: column
+  width: 100%
+  margin-top: 10px
 </style>

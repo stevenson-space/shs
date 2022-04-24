@@ -29,21 +29,21 @@
         ref="staggerAnimation"
         :duration="animationDuration"
         direction="down"
-        :shift-amount="shadeHeight + 5"
+        align="end"
         :number-of-slots="currentShades.length"
+        :isColorSelector="true"
       >
         <div
-          v-for="shade in currentShades"
+          v-for="(shade, i) in currentShades"
           :key="shade"
-          ref="shades"
+          :data-index="i"
           class="shade"
-          :style="{ backgroundColor: shade, height: `${shadeHeight}px` }"
+          :style="{ backgroundColor: shade }"
           @click="shadeClicked(shade)"
         >
-        <div style="line-height: 30px">&nbsp;</div>
           <font-awesome-icon
             v-show="shade === currentColor"
-            class="checkmark center-align"
+            class="checkmark"
             :icon="icons.faCheck"
           />
         </div>
@@ -94,20 +94,17 @@ export default {
         // Get position to show at (under the color that was clicked)
         const $colors = this.$refs.colors;
         this.shadesLeft = $color.offsetLeft - $colors.scrollLeft;
-        this.shadesTop = $color.offsetTop + $color.offsetHeight - this.shadeHeight;
-
+        this.shadesTop = $color.offsetTop + $color.offsetHeight - this.shadeHeight + 30;
         this.currentShades = shades;
 
         // wait until StaggerAnimation renders the shades before opening them
         this.$nextTick(() => {
           this.isOpen = true;
-          // this.$refsopen(); //fix
         });
       };
 
       if (this.isOpen) {
         this.currentShades = []; // hides instantly (without animation)
-
         // wait until StaggerAnimation actually removes the shades before showing them again
         this.$nextTick(show);
       } else {
@@ -115,7 +112,6 @@ export default {
       }
     },
     hideShades() {
-      this.$refs.staggerAnimation.close();
       this.isOpen = false;
 
       setTimeout(() => {
@@ -201,9 +197,8 @@ export default {
 
   .shades
     position: absolute
-
     .shade
-      height: 50px
+      height: 30px
       width: var(--color-diameter)
       border-radius: 100px
       +shadow
@@ -212,5 +207,8 @@ export default {
 
       .checkmark
         color: var(--background)
-
+        padding-left: 29px
+        padding-top: 7px
+        +mobile
+          padding-left: 20px
 </style>
