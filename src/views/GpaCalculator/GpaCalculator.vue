@@ -83,9 +83,10 @@
     </card-container>
   </div>
 </template>
-<script>
+<script lang="ts">
 import RoundedButton from '@/components/RoundedButton.vue';
 import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { defineComponent } from 'vue';
 import Card from '@/components/Card.vue';
 import PlainHeader from '@/components/PlainHeader.vue';
 import CardContainer from '@/components/CardContainer.vue';
@@ -93,7 +94,16 @@ import Dropdown from '@/components/Dropdown.vue';
 import Checkbox from '@/components/Checkbox.vue';
 
 class Course {
-  constructor(id) {
+  id: number;
+  grade: number;
+  level: number;
+  weight: number;
+  unweightedGPA: number;
+  weightedGPA: number;
+  finalGrade: string;
+  hasFinal: boolean;
+  name: string;
+  constructor(id: number) {
     this.id = id;
     this.grade = 0; // A
     this.level = 0;
@@ -106,7 +116,7 @@ class Course {
   }
 }
 
-export default {
+export default defineComponent({
   components: {
     RoundedButton, Card, PlainHeader, CardContainer, Dropdown, Checkbox,
 
@@ -114,12 +124,12 @@ export default {
   data() {
     return {
       icons: { faPlus, faXmark },
-      courses: [new Course(1)],
-      averageUnweightedGpa: 4.0,
-      averageWeightedGpa: 4.0,
-      courseLevels: ['Regular', 'Accelerated', 'Honors/AP'],
-      gradeLabels: ['A', 'B', 'C', 'D', 'F'],
-      terms: ['1st', '2nd', '3rd', 'Final'],
+      courses: [new Course(1)] as Course[],
+      averageUnweightedGpa: 4.0 as number,
+      averageWeightedGpa: 4.0 as number,
+      courseLevels: ['Regular', 'Accelerated', 'Honors/AP'] as string[],
+      gradeLabels: ['A', 'B', 'C', 'D', 'F'] as string[],
+      terms: ['1st', '2nd', '3rd', 'Final'] as string[],
     };
   },
   watch: {
@@ -131,45 +141,46 @@ export default {
     },
   },
   mounted() {
-    if (localStorage.getItem('EBRCourses') != null) {
-      this.courses = JSON.parse(localStorage.getItem('EBRCourses'));
+    const courses: string | null = localStorage.getItem('EBRCourses');
+    if (courses) {
+      this.courses = JSON.parse(courses);
       this.calculateSemesterGrades();
     }
   },
   methods: {
-    editCourseName(course, event) {
+    editCourseName(course:Course, event:any) {
       course.name = event.target.value;
     },
     addCourse() {
       this.courses.push(new Course(this.courses.length + 1));
       this.calculateSemesterGrades();
     },
-    removeCourse(course) {
+    removeCourse(course: Course) {
       const index = this.courses.indexOf(course);
       if (index > -1) {
         this.courses.splice(index, 1);
         this.calculateSemesterGrades();
       }
     },
-    selectGrade(course, gradeIndex) {
+    selectGrade(course: Course, gradeIndex: number) {
       const index = this.courses.indexOf(course);
       course.grade = gradeIndex;
       this.courses[index] = course;
       this.calculateSemesterGrades();
     },
-    selectedCourseLevel(course, i) {
+    selectedCourseLevel(course: Course, i: number) {
       const index = this.courses.indexOf(course);
       course.level = i;
       this.courses[index] = course;
       this.calculateSemesterGrades();
     },
-    toggleExtraWeight(course, value) {
+    toggleExtraWeight(course: Course, event: any) {
       const index = this.courses.indexOf(course);
-      course.weight = (value === true ? 1.5 : 1);
+      course.weight = (event ? 1.5 : 1);
       this.courses[index] = course;
       this.calculateSemesterGrades();
     },
-    selectHasFinal(course, gradeIndex) {
+    selectHasFinal(course: Course, gradeIndex: number) {
       const index = this.courses.indexOf(course);
       course.hasFinal = (gradeIndex === 0);
       this.courses[index] = course;
@@ -208,20 +219,23 @@ export default {
       let unweightedGPASum = 0.0;
       let weightedGPASum = 0.0;
       this.courses.forEach((course) => {
-        unweightedGPASum += parseFloat(course.unweightedGPA * course.weight);
-        weightedGPASum += parseFloat(course.weightedGPA * course.weight);
+        unweightedGPASum += (course.unweightedGPA * course.weight);
+        weightedGPASum += (course.weightedGPA * course.weight);
+        // unweightedGPASum += parseFloat(course.unweightedGPA * course.weight);
+        // weightedGPASum += parseFloat(course.weightedGPA * course.weight);
       });
 
       let weightTotal = 0;
       this.courses.forEach((i) => {
         weightTotal += i.weight;
       });
-
-      this.averageUnweightedGpa = Number(parseFloat(unweightedGPASum) / parseFloat(weightTotal).toFixed(2));
-      this.averageWeightedGpa = Number((parseFloat(weightedGPASum) / parseFloat(weightTotal)).toFixed(2));
+      // this.averageUnweightedGpa = Number(parseFloat(unweightedGPASum) / parseFloat(weightTotal).toFixed(2));
+      // this.averageWeightedGpa = Number((parseFloat(weightedGPASum) / parseFloat(weightTotal)).toFixed(2));
+      this.averageUnweightedGpa = unweightedGPASum / weightTotal;
+      this.averageWeightedGpa = weightedGPASum / weightTotal;
     },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>
