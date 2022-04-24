@@ -46,7 +46,7 @@ export default {
       gsap.to(el, {
         opacity: 0,
         duration: this.isColorSelector ? 0 : 0.2,
-        delay: ((this.numberOfSlots - 1) - el.dataset.index) * 0.02,
+        delay: this.isColorSelector ? 0 : ((this.numberOfSlots - 1) - el.dataset.index) * (0.2 / this.numberOfSlots),
         onComplete: done,
       });
     },
