@@ -21,9 +21,6 @@ export default defineStore('themes', {
     initializeTheme(): void {
       if (localStorage.color && process.env.VUE_APP_EDIT_COLORS !== 'true') {
         this.setColor(localStorage.color);
-        GASet({ user_properties: {
-          color: localStorage.color,
-        } });
       } else {
         GASet({ user_properties: {
           color: 'unset',
@@ -32,6 +29,10 @@ export default defineStore('themes', {
       if (localStorage.theme && process.env.VUE_APP_EDIT_COLORS !== 'true') {
         const data:ThemeData = { theme: JSON.parse(localStorage.theme), useThemeColor: false };
         this.setTheme(data);
+      } else {
+        GASet({ user_properties: {
+          theme: 'unset',
+        } });
       }
     },
     setColor(color:string): void {
@@ -47,10 +48,10 @@ export default defineStore('themes', {
       if (useThemeColor) {
         this.color = color;
         localStorage.color = color;
-        GASet({ user_properties: {
-          color,
-        } });
       }
+      GASet({ user_properties: {
+        theme: theme.name,
+      } });
       this.theme = theme;
       localStorage.theme = JSON.stringify(theme);
     },
