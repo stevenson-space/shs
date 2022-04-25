@@ -31,7 +31,7 @@ export default {
     onBeforeEnter(el) {
       el.style.opacity = 0;
     },
-    onEnter(el) {
+    onEnter(el, done) {
       gsap.to(el, {
         opacity: 1,
         height: this.isColorSelector ? '30px' : 'auto',
@@ -39,13 +39,15 @@ export default {
         textAlign: 'left',
         delay: el.dataset.index * 0.01,
         duration: this.numberOfSlots * 0.05,
+        onComplete: done,
       });
     },
-    onLeave(el) {
+    onLeave(el, done) {
       gsap.to(el, {
         opacity: 0,
         duration: this.isColorSelector ? 0 : 0.2,
         delay: this.isColorSelector ? 0 : ((this.numberOfSlots - 1) - el.dataset.index) * (0.2 / this.numberOfSlots),
+        onComplete: done,
       });
     },
   },
