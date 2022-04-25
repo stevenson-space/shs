@@ -133,7 +133,10 @@ export default {
     ...mapState(useScheduleStore, ['mode', 'date', 'bell']),
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
+      const isGradient = this.theme.type === 'gradient';
       return {
+        ...(isGradient) && { 'background-image': this.theme.headerBackgroundColor },
+        ...(!isGradient) && { background: this.theme.headerBackgroundColor },
         '--header-color': showColor ? 'var(--headerBackgroundColor)' : 'var(--background)',
         '--header-accent': showColor ? 'white' : 'var(--color)',
       };
@@ -342,7 +345,6 @@ export default {
 
 .header
   +shadow
-  background-color: var(--header-color)
   text-align: center
   transition: background-color .3s
   &.mars

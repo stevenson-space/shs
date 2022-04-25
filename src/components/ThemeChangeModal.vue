@@ -14,7 +14,7 @@
           />
             <div
               class="color-circle"
-              :style="{ background: newTheme['suggestedColor'] }"
+              :style="circleStyle()"
             ></div>
           </div>
           <br />
@@ -52,6 +52,12 @@ export default {
     };
   },
   methods: {
+    circleStyle() {
+      if (this.newTheme.type === 'gradient') {
+        return { 'background-image': this.newTheme.headerBackgroundColor };
+      }
+      return { background: this.newTheme.suggestedColor };
+    },
     closeModal() {
       this.$emit('close');
     },

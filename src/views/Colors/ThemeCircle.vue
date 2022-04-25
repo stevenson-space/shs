@@ -3,7 +3,7 @@
     <div class="circle-border" :class="{ 'no-border': !isCurrentTheme }">
       <div class="circle" :style="{ background: gradientString }"></div>
     </div>
-    <div class="name">
+    <div class="name" v-show="!(theme.type === 'gradient' & theme.hideName)">
       {{ theme.name.toUpperCase().substring(0, 1) + theme.name.substring(1) }}
     </div>
   </div>
@@ -16,7 +16,10 @@ export default {
   },
   computed: {
     gradientString() {
-      const { suggestedColor, background } = this.theme;
+      const { suggestedColor, background, headerBackgroundColor, type } = this.theme;
+      if (type === 'gradient') {
+        return headerBackgroundColor;
+      }
       return `linear-gradient( -45deg, ${suggestedColor}, ${suggestedColor} 50%, ${background} 50% )`;
     },
   },
