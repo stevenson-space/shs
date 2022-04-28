@@ -35,4 +35,6 @@ export default {
   font-size: .9em
   padding-bottom: 10px
   line-height: 6px
+  a
+    color: var(--color)
 </style>
