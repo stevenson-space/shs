@@ -1,5 +1,5 @@
 <template>
-  <timed-card startTime="March 23, 2022" endTime="April 3, 2022">
+  <timed-card startTime="March 26, 2022" endTime="May 3, 2022">
      <div class="icon">
       <font-awesome-icon :icon="icons.faQrcode" />
      </div>

@@ -6,6 +6,7 @@
     />
 
     <card-container>
+      <new-feature-card/>
       <!-- <april-fools-card /> -->
       <sodexo-appreciation-card />
       <!-- <contribute-card /> -->
