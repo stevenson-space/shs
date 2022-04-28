@@ -10,7 +10,6 @@
     </div>
       <stagger-animation
         ref="staggerAnimation"
-        :duration="animationDuration"
         :direction="direction"
         :number-of-slots="formattedOptions.length"
         :align="align"
@@ -56,8 +55,6 @@ export default {
       faCaretDown,
       open: false, // open is true even when dropdown is partially open, false only when dropdown is completely closed
       arrowRotateAmount: this.direction === 'down' ? 0 : 180,
-      optionHeight: 30,
-      animationDuration: 50,
     };
   },
   computed: {
@@ -85,9 +82,8 @@ export default {
       });
     },
     dropdownStyle() {
-      const duration = this.animationDuration / 1000;
       return {
-        transition: `box-shadow ${duration}s, border-color ${duration}s`,
+        transition: 'box-shadow .2s, border-color .2s',
         zIndex: this.options.length + 5,
       };
     },
@@ -114,9 +110,6 @@ export default {
     }
   },
   methods: {
-    setOptionShifts(value, start = 0, end = this.optionShifts.length) {
-      this.optionShifts = this.optionShifts.map((n, i) => ((i >= start && i < end) ? value : n));
-    },
     toggleDropdown() {
       this.arrowRotateAmount += (this.arrowRotateAmount >= 180) ? -180 : 180;
       this.open = !this.open;

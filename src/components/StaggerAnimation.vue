@@ -16,7 +16,7 @@ import gsap from 'gsap';
 
 export default {
   props: {
-    isColorSelector: { type: Boolean, required: false },
+    isColorSelector: { type: Boolean, required: false }, // if it's coming the color selector component
     align: {
       validator: (str) => str === 'left' || str === 'right' || str === 'center',
       default: 'right',

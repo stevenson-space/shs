@@ -13,12 +13,11 @@
 import useAuthenticationStore from '@/stores/authentication';
 import { mapActions, mapState } from 'pinia';
 import PlainHeader from '@/components/PlainHeader.vue';
-import CardContainer from '@/components/CardContainer.vue';
 import ClientOAuth2 from 'client-oauth2';
 import queryString from 'query-string';
 
 export default {
-  components: { PlainHeader, CardContainer },
+  components: { PlainHeader },
   data() {
     return {
       to: this.$route.query.to, // target destination

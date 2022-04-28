@@ -64,7 +64,7 @@
 
 <script>
 import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-icons';
-import { mapState, mapActions } from 'pinia';
+import { mapState } from 'pinia';
 import useThemeStore from '@/stores/themes';
 import useScheduleStore from '@/stores/schedules';
 import useUserSettingsStore from '@/stores/user-settings';
@@ -166,7 +166,6 @@ export default {
       this.receiveCode = '';
       this.receivedData = null;
       this.shouldSaveSetting = {};
-
       this.popupToShow = popups.none;
     },
     async send() {
@@ -251,7 +250,6 @@ export default {
   font-size: 1.3em
   flex-flow: row wrap
   margin: 20px 0
-
   .button
     width: 200px
     margin: 10px 25px
@@ -263,14 +261,12 @@ export default {
   display: flex
   flex-direction: column
   align-items: flex-start
-
   .title
     text-align: center
     width: 100%
     font-weight: bold
     color: var(--secondary)
     font-size: 1.2em
-
   .warning
     font-size: .76em
     color: red
@@ -283,11 +279,9 @@ export default {
   margin: 15px 25px 10px 25px
   max-width: 300px
   text-align: center
-
   .color, .code
     color: var(--color)
     font-weight: bold
-
   .code
     margin-top: 5px
     font-size: 1.75em
@@ -297,15 +291,12 @@ export default {
   margin: 15px 25px
   text-align: center
   font-size: .79em
-
   .title
     font-size: 1.75em
     margin-bottom: 3px
-
   .color
     color: var(--color)
     font-weight: bold
-
   input
     margin-top: 12px
     border-radius: 5px
@@ -320,11 +311,9 @@ export default {
 .loading-popup
   margin: 25px
   font-size: 1.1em
-
 .error-popup
   color: red
   margin: 15px 25px
   font-weight: bold
   max-width: 300px
-
 </style>
