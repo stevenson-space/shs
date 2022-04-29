@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <transition name="fade" class="animateFadeUpIn">
-      <div v-if="showModal" class="modal" @click="closeModal()">
+    <div v-if="showModal">
+      <div class="modal animateFadeUpIn" @click="closeModal()">
         <div class="modal-content" @click.stop="">
           <div class="title"><b>Color Conflict</b></div>
           <div class="divider" />
@@ -24,7 +23,6 @@
           </div>
         </div>
       </div>
-    </transition>
   </div>
 </template>
 
@@ -73,10 +71,6 @@ export default {
   padding: 10px 20px
 .button
   margin: 4px
-.fade-enter-active, .fade-leave-active
-  transition: all 0.20s
-.fade-enter, .fade-leave-to
-  opacity: 0
 .info-circle
   color: var(--color)
   cursor: pointer
@@ -84,13 +78,12 @@ export default {
   position: fixed
   z-index: 100
   left: 0
-  top: 0
+  top: -50px
   width: 100%
-  height: 100%
+  height: calc(100vh + 50px)
   overflow: auto
   background-color: rgba(0, 0, 0, 0.4)
   .modal-content
-    transition: 1s all ease-in-out
     border-radius: 15px
     background-color: var(--background)
     margin: 100px auto

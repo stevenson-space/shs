@@ -15,7 +15,7 @@
       <schedule-card
         v-for="schedule in scheduleModes"
         :key="schedule.name"
-        class="card"
+        class="card animateFadeUpIn"
         :schedule="schedule"
         :title="schedule.name"
       >
@@ -129,6 +129,7 @@ export default {
 @import 'src/styles/style.sass'
 
 .schedule-cards
+  margin-top: 10px
   display: grid
   grid-template-columns: 1fr 1fr 1fr 1fr
   @media screen and (max-width: 1535px)
