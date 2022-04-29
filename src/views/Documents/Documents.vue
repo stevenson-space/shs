@@ -4,10 +4,12 @@
     <card-container>
       <!-- Class cards -->
       <documents-card
-        v-for="(list, name) in documents"
+        v-for="(list, name, index) in documents"
         :key="name"
         :class-name="name"
         :documents="list"
+        class="animateFadeUpIn"
+        :style="{ 'animation-delay': index*.008 + 's'}"
       />
       <!-- Request card -->
       <form-card :name="formName" title="Request">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <transition name="fade">
+    <transition name="fade" class="animateFadeUpIn">
       <div v-if="showModal" class="modal" @click="closeModal()">
         <div class="modal-content" @click.stop="">
           <div class="title"><b>Color Conflict</b></div>

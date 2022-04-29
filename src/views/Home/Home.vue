@@ -5,7 +5,7 @@
       @toggle-fullscreen="fullScreenMode = !fullScreenMode"
     />
 
-    <card-container>
+    <card-container class="card-container">
       <!-- <april-fools-card /> -->
       <sodexo-appreciation-card />
       <!-- <contribute-card /> -->
@@ -119,4 +119,8 @@ export default {
 .no-overflow
   height: 100vh
   overflow: hidden
+
+// @for $i from 1 to 15
+//   .card-container .card:nth-child(#{$i})
+//     animation-delay: $i * 0.011s
 </style>

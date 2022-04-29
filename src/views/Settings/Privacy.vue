@@ -22,11 +22,17 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import 'src/styles/style.sass'
 
 .iframe-container
   display: flex
   justify-content: center
   width: 100%
+  iframe
+    margin-top: 15px
+    margin-right: 10px
+    border-radius: 10px
+    +shadow-light
 
 iframe
    height: 800px

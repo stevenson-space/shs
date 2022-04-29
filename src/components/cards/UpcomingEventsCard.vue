@@ -81,7 +81,7 @@ export default {
         faChevronUp,
       },
       events: [],
-      numEventsInitial: 4,
+      numEventsInitial: 3,
       numEventsToAdd: 3,
       numEventsDisplayed: 0,
       lastDate: this.date, // the date until which events are currently being displayed

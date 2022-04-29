@@ -1,5 +1,5 @@
 <template>
-  <div v-if="show" class="popup" @click="$emit('close')">
+  <div v-if="show" class="popup animateFadeUpIn" @click="$emit('close')">
     <div class="content" @click.stop="">
       <slot />
     </div>
@@ -19,10 +19,10 @@ export default {
 .popup
   background-color: rgba(0, 0, 0, .65)
   position: fixed
-  top: 0
+  top: -50px
   left: 0
   width: 100vw
-  height: 100vh
+  height: calc(100vh + 50px)
   display: flex
   justify-content: center
   align-items: center

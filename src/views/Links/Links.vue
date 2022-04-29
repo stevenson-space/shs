@@ -3,8 +3,10 @@
     <plain-header title="Links" />
     <card-container class="container">
       <image-text-card
-        v-for="link in links"
+        v-for="(link, index) in links"
         :key="link.url"
+        class="animateFadeUpIn"
+        :style="{ 'animation-delay': index*.026 + 's'}"
         :image="require(`@/assets/links/${link.name}.png`)"
         :text="link.name"
         :desc="link.desc"
@@ -41,7 +43,3 @@ export default {
   },
 };
 </script>
-
-<style lang="sass" scoped>
-
-</style>
