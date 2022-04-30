@@ -16,7 +16,6 @@
         :theme="themeItem"
         :isCurrentTheme="themeItem.name==theme.name && themeItem.suggestedColor == color"
       />
-
     </div>
   </div>
 </template>

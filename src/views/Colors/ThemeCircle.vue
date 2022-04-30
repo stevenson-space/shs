@@ -2,6 +2,7 @@
   <div class="theme-card">
     <div class="circle-border" :class="{ 'no-border': !isCurrentTheme }">
       <div class="circle" :style="{ background: gradientString }"></div>
+      <div v-if="theme.type === 'gradient'" class="theme-inlay" :style="{ background: theme.background }"></div>
     </div>
     <div class="name" v-show="!(theme.type === 'gradient' & theme.hideName)">
       {{ theme.name.toUpperCase().substring(0, 1) + theme.name.substring(1) }}
@@ -17,10 +18,7 @@ export default {
   computed: {
     gradientString() {
       const { suggestedColor, background, headerBackgroundColor, type } = this.theme;
-      if (type === 'gradient') {
-        return headerBackgroundColor;
-      }
-      return `linear-gradient( -45deg, ${suggestedColor}, ${suggestedColor} 50%, ${background} 50% )`;
+      return type === 'gradient' ? headerBackgroundColor : `linear-gradient( -45deg, ${suggestedColor}, ${suggestedColor} 50%, ${background} 50% )`;
     },
   },
 };
@@ -28,6 +26,12 @@ export default {
 
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
+.theme-inlay
+  height: 20px
+  width: 20px
+  position: absolute
+  transform: translate(24px, -44px)
+  border-radius: 20px
 .theme-card
   text-align: center
   .circle
@@ -35,6 +39,7 @@ export default {
     height: 65px
     border-radius: 68px
     margin: 2px
+    +shadow-light
   .circle-border
     display: inline-block
     border: 2px solid grey

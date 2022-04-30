@@ -135,8 +135,8 @@ export default {
       const showColor = this.colored || !this.fullScreenMode;
       const isGradient = this.theme.type === 'gradient';
       return {
-        ...(isGradient) && { 'background-image': this.theme.headerBackgroundColor },
-        ...(!isGradient) && { background: this.theme.headerBackgroundColor },
+        ...(isGradient && showColor) && { 'background-image': this.theme.headerBackgroundColor },
+        ...(!isGradient || !showColor) && { background: showColor ? this.theme.headerBackgroundColor : 'var(--background)' },
         '--header-color': showColor ? 'var(--headerBackgroundColor)' : 'var(--background)',
         '--header-accent': showColor ? 'white' : 'var(--color)',
       };
@@ -346,7 +346,7 @@ export default {
 .header
   +shadow
   text-align: center
-  transition: background-color .3s
+  transition: background-color .2s
   &.mars
     background: url(@/assets/occasions/mars-mobile.png) center center no-repeat, var(--header-color)
     background-size: cover
