@@ -37,7 +37,7 @@
       "Corn Chowder"
     ]
   },
-  "4": {
+  "3": {
     "International Station": [
       "Burrito Bowl"
     ],
@@ -56,7 +56,7 @@
       "Corn Chowder"
     ]
   },
-  "5": {
+  "4": {
     "International Station": [
       "Burrito Bowl"
     ],
@@ -75,7 +75,7 @@
       "Corn Chowder"
     ]
   },
-  "6": {
+  "5": {
     "International Station": [
       "Burrito Bowl"
     ],
@@ -94,7 +94,7 @@
       "Corn Chowder"
     ]
   },
-  "7": {
+  "6": {
     "International Station": [
       "Burrito Bowl"
     ],
@@ -102,11 +102,30 @@
       "Spicy Whole Wheat Spaghetti"
     ],
     "Mindful": [
-      "Tempura Chicken Stir Fry w/ Rice"
+      "Chicken Fajita w/ Refried Beans"
     ],
     "Sides": [
       "Roasted Cauliflower",
-      "Spring Roll"
+      "Mexican Rice"
+    ],
+    "Soup": [
+      "Veggie Chili",
+      "Corn Chowder"
+    ]
+  },
+  "7": {
+    "International Station": [
+      "Burrito Bowl"
+    ],
+    "Comfort Food": [
+      "3 Cheese Penne"
+    ],
+    "Mindful": [
+      "Beef and Broccoli"
+    ],
+    "Sides": [
+      "Stir-Fried Vegetables",
+      "Cilantro Lime Rice"
     ],
     "Soup": [
       "Veggie Chili",
@@ -151,7 +170,7 @@
       "Chicken Tortilla"
     ]
   },
-  "11": {
+  "10": {
     "International Station": [
       "Mac & Cheese"
     ],
@@ -170,7 +189,7 @@
       "Chicken Tortilla"
     ]
   },
-  "12": {
+  "11": {
     "International Station": [
       "Mac & Cheese"
     ],
@@ -189,7 +208,7 @@
       "Chicken Tortilla"
     ]
   },
-  "13": {
+  "12": {
     "International Station": [
       "Mac & Cheese"
     ],
@@ -208,7 +227,7 @@
       "Chicken Tortilla"
     ]
   },
-  "14": {
+  "13": {
     "International Station": [
       "Mac & Cheese"
     ],
@@ -221,6 +240,25 @@
     "Sides": [
       "Brocolini",
       "Cous Cous Primavera"
+    ],
+    "Soup": [
+      "Tomato Basil",
+      "Chicken Tortilla"
+    ]
+  },
+  "14": {
+    "International Station": [
+      "Mac & Cheese"
+    ],
+    "Comfort Food": [
+      "Baked Battered Cod"
+    ],
+    "Mindful": [
+      "Singapore Chicken"
+    ],
+    "Sides": [
+      "Roasted Brocolini",
+      "White Rice"
     ],
     "Soup": [
       "Tomato Basil",
@@ -246,7 +284,7 @@
       "Broccoli Cheddar"
     ]
   },
-  "18": {
+  "17": {
     "International Station": [
       "Mediterranean Week 🥙"
     ],
@@ -261,11 +299,11 @@
       "Roasted Red Potatoes"
     ],
     "Soup": [
-      "Matza Ball",
+      "Veggie Chili",
       "Chicken Noodle"
     ]
   },
-  "19": {
+  "18": {
     "International Station": [
       "Mediterranean Week 🥙"
     ],
@@ -280,11 +318,11 @@
       "Rice"
     ],
     "Soup": [
-      "Matza Ball",
+      "Veggie Chili",
       "Chicken Noodle"
     ]
   },
-  "20": {
+  "19": {
     "International Station": [
       "Mediterranean Week 🥙"
     ],
@@ -299,11 +337,11 @@
       "Mashed Potatoes"
     ],
     "Soup": [
-      "Matza Ball",
+      "Veggie Chili",
       "Chicken Noodle"
     ]
   },
-  "21": {
+  "20": {
     "International Station": [
       "Mediterranean Week 🥙"
     ],
@@ -318,7 +356,26 @@
       "Rice"
     ],
     "Soup": [
-      "Matza Ball",
+      "Veggie Chili",
+      "Chicken Noodle"
+    ]
+  },
+  "21": {
+    "International Station": [
+      "Mediterranean Week 🥙"
+    ],
+    "Comfort Food": [
+      "Baked Mostaccioli"
+    ],
+    "Mindful": [
+      "Thai Chicken Curry"
+    ],
+    "Sides": [
+      "Jasmin Rice",
+      "Snow Peas"
+    ],
+    "Soup": [
+      "Veggie Chili",
       "Chicken Noodle"
     ]
   },
@@ -339,6 +396,25 @@
     "Soup": [
       "Matza Ball",
       "Chicken Noodle"
+    ]
+  },
+  "24": {
+    "International Station": [
+      "Pasta Week 🍝"
+    ],
+    "Comfort Food": [
+      "Jerk Chicken"
+    ],
+    "Mindful": [
+      "Dijon Crusted Salmon"
+    ],
+    "Sides": [
+      "Brussel Sprouts",
+      "Rice"
+    ],
+    "Soup": [
+      "Tomato Basil",
+      "Broccoli Cheddar"
     ]
   },
   "25": {
