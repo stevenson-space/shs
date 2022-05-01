@@ -14,7 +14,7 @@ if (navigator.serviceWorker) {
 const app = createApp(App).component('font-awesome-icon', FontAwesomeIcon)
   .use(router)
   .use(VueGtag, {
-    config: { id: 'G-0MXBH7W5L0' },
+    config: { id: process.env.NODE_ENV === 'production' ? 'G-0MXBH7W5L0' : '' }, // disable GA during development
   })
   .use(createPinia());
 
