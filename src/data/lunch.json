@@ -1,42 +1,4 @@
 {
-  "0": {
-    "International Station": [
-      "Pasta Week 🍝"
-    ],
-    "Comfort Food": [
-      "Chopped Steak with Onions"
-    ],
-    "Mindful": [
-      "Chicken w/Country Gravy"
-    ],
-    "Sides": [
-      "Roasted Vegetables",
-      "Mashed Potatoes"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      "Broccoli Cheddar"
-    ]
-  },
-  "1": {
-    "International Station": [
-      "Burrito Bowl"
-    ],
-    "Comfort Food": [
-      "Spicy Whole Wheat Spaghetti"
-    ],
-    "Mindful": [
-      "Tempura Chicken Stir Fry w/ Rice"
-    ],
-    "Sides": [
-      "Roasted Caulifower",
-      "Spring Roll"
-    ],
-    "Soup": [
-      "Veggie Chill",
-      "Corn Chowder"
-    ]
-  },
   "3": {
     "International Station": [
       "Burrito Bowl"
@@ -130,44 +92,6 @@
     "Soup": [
       "Veggie Chili",
       "Corn Chowder"
-    ]
-  },
-  "8": {
-    "International Station": [
-      "Burrito Bowl"
-    ],
-    "Comfort Food": [
-      "3 Cheese Penne"
-    ],
-    "Mindful": [
-      "Chicken Marsala"
-    ],
-    "Sides": [
-      "Roasted Vegetables",
-      "Mashed potato"
-    ],
-    "Soup": [
-      "Veggie Chili",
-      "Corn Chowder"
-    ]
-  },
-  "9": {
-    "International Station": [
-      "Mac & Cheese"
-    ],
-    "Comfort Food": [
-      "Baked Battered Cod"
-    ],
-    "Mindful": [
-      "Turkey Sloppy Joe"
-    ],
-    "Sides": [
-      "Roasted Broccolini",
-      "Roasted Wedge Potatoes"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      "Chicken Tortilla"
     ]
   },
   "10": {
@@ -265,25 +189,6 @@
       "Chicken Tortilla"
     ]
   },
-  "15": {
-    "International Station": [
-      "Pasta Week 🍝"
-    ],
-    "Comfort Food": [
-      "Chopped Steak with Onions"
-    ],
-    "Mindful": [
-      "Chicken w/Country Gravy"
-    ],
-    "Sides": [
-      "Roasted Vegetables",
-      "Mashed Potatoes"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      "Broccoli Cheddar"
-    ]
-  },
   "17": {
     "International Station": [
       "Mediterranean Week 🥙"
@@ -379,28 +284,9 @@
       "Chicken Noodle"
     ]
   },
-  "22": {
-    "International Station": [
-      "Mediterranean Week 🥙"
-    ],
-    "Comfort Food": [
-      "Baked Mostaccioli"
-    ],
-    "Mindful": [
-      "Chicken Tinga"
-    ],
-    "Sides": [
-      "Azteca Corn",
-      "Mexican Rice"
-    ],
-    "Soup": [
-      "Matza Ball",
-      "Chicken Noodle"
-    ]
-  },
   "24": {
     "International Station": [
-      "Pasta Week 🍝"
+      "Pasta Week 🍝'"
     ],
     "Comfort Food": [
       "Jerk Chicken"
@@ -411,82 +297,6 @@
     "Sides": [
       "Brussel Sprouts",
       "Rice"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      "Broccoli Cheddar"
-    ]
-  },
-  "25": {
-    "International Station": [
-      "Pasta Week 🍝"
-    ],
-    "Comfort Food": [
-      "Jerk Chicken"
-    ],
-    "Mindful": [
-      "Dijon Crusted Salmon"
-    ],
-    "Sides": [
-      "Brussel Sprouts",
-      "Rice"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      "Broccoli Cheddar"
-    ]
-  },
-  "26": {
-    "International Station": [
-      "Pasta Week 🍝"
-    ],
-    "Comfort Food": [
-      "Baked Cheese Enchiladas"
-    ],
-    "Mindful": [
-      "Thai Chicken Stir Fry"
-    ],
-    "Sides": [
-      "Roasted Carrots",
-      "Cilantro Lime Rice"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      "Broccoli Cheddar"
-    ]
-  },
-  "27": {
-    "International Station": [
-      "Pasta Week 🍝"
-    ],
-    "Comfort Food": [
-      "Beef and Mushroom Stroganoff w/ Pasta"
-    ],
-    "Mindful": [
-      "Tortilla Crusted Tilapia"
-    ],
-    "Sides": [
-      "Sugar Snap Peas",
-      "Orzo"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      "Broccoli Cheddar"
-    ]
-  },
-  "28": {
-    "International Station": [
-      "Pasta Week 🍝"
-    ],
-    "Comfort Food": [
-      "Spinach Ravioli with Cream Sauce"
-    ],
-    "Mindful": [
-      "Baked Turkey Meatloaf w/ Turkey Gravy"
-    ],
-    "Sides": [
-      "Satueed Brocolini",
-      "Roasted Sweet Potatoes"
     ],
     "Soup": [
       "Tomato Basil",
