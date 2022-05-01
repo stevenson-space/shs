@@ -9,7 +9,7 @@
         :class-name="name"
         :documents="list"
         class="animateFadeUpIn"
-        :style="{ 'animation-delay': index*.008 + 's'}"
+        :style="{ 'animation-delay': index*.01 + 's'}"
       />
       <!-- Request card -->
       <form-card :name="formName" title="Request">

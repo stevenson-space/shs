@@ -30,7 +30,7 @@
       </card>
     </div>
     <card-container class="gpa-card-container">
-      <card class="gpa-card animateFadeUpIn" :wrapperStyle="{ overflow: 'visible' }" v-for="(course, courseIndex) in courses" :key="courseIndex" :style="{ 'animation-delay': (courseIndex*.03) + 's'}">
+      <card class="gpa-card animateFadeUpIn" :wrapperStyle="{ overflow: 'visible' }" v-for="(course, courseIndex) in courses" :key="courseIndex" :style="{ 'animation-delay': reduceFadeUpAnimation ? 0 : (courseIndex*.035) + 's'}">
         <div class="gpa-tile">
           <input
             class="name"
@@ -119,7 +119,6 @@ class Course {
 export default defineComponent({
   components: {
     RoundedButton, Card, PlainHeader, CardContainer, Dropdown, Checkbox,
-
   },
   data() {
     return {
@@ -130,6 +129,7 @@ export default defineComponent({
       courseLevels: ['Regular', 'Accelerated', 'Honors/AP'] as string[],
       gradeLabels: ['A', 'B', 'C', 'D', 'F'] as string[],
       terms: ['1st', '2nd', '3rd', 'Final'] as string[],
+      reduceFadeUpAnimation: false as boolean,
     };
   },
   watch: {
@@ -152,6 +152,7 @@ export default defineComponent({
       course.name = event.target.value;
     },
     addCourse() {
+      this.reduceFadeUpAnimation = true;
       this.courses.push(new Course(this.courses.length + 1));
       this.calculateSemesterGrades();
     },

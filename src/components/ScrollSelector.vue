@@ -60,7 +60,7 @@ export default {
     scrollToSelected() {
       this.$nextTick(() => { // wait until this.value is updated if necessary
         const index = this.options.indexOf(this.modelValue);
-        if (index > -1) {
+        if (index > -1 && this.$refs.option[index]) {
           this.$el.scroll({
             top: this.$refs.option[index].offsetTop - (this.optionHeight * this.numOptionsAbove),
             behavior: 'smooth',
