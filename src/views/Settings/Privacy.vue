@@ -32,7 +32,6 @@ export default {
     margin-top: 15px
     margin-right: 10px
     border-radius: 10px
-    +shadow-light
 
 iframe
    height: 800px

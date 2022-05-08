@@ -32,8 +32,10 @@ export default {
       el.style.opacity = 0;
     },
     onEnter(el, done) {
+      const { height } = el.getBoundingClientRect();
       gsap.to(el, {
         opacity: 1,
+        y: this.direction === 'down' ? 0 : (-1 * (height + 7.7) * this.numberOfSlots - (height + 15)),
         height: this.isColorSelector ? '30px' : 'auto',
         marginBottom: this.isColorSelector ? '0px' : '8px',
         textAlign: 'left',
