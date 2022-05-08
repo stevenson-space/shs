@@ -15,7 +15,7 @@
       <schedule-card
         v-for="schedule in scheduleModes"
         :key="schedule.name"
-        class="card animateFadeUpIn"
+        class="card"
         :schedule="schedule"
         :title="schedule.name"
       >
@@ -141,7 +141,7 @@ export default {
 
   .card
     zoom: .8
-
+    +animate-fade-up
     .actions
       display: flex
       padding: 10px 0 5px 0

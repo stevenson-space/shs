@@ -5,7 +5,6 @@
       <image-text-card
         v-for="(link, index) in links"
         :key="link.url"
-        class="animateFadeUpIn"
         :style="{ 'animation-delay': index*.035 + 's'}"
         :image="require(`@/assets/links/${link.name}.png`)"
         :text="link.name"

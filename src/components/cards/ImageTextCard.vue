@@ -35,7 +35,7 @@ export default {
 .card
   cursor: pointer
   background-color: black !important
-
+  +animate-fade-up
   .image
     width: 100%
     display: block

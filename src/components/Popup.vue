@@ -1,5 +1,5 @@
 <template>
-  <div v-if="show" class="popup animateFadeUpIn" @click="$emit('close')">
+  <div v-if="show" class="popup" @click="$emit('close')">
     <div class="content" @click.stop="">
       <slot />
     </div>
@@ -15,6 +15,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import 'src/styles/style.sass'
 
 .popup
   background-color: rgba(0, 0, 0, .65)
@@ -27,7 +28,7 @@ export default {
   justify-content: center
   align-items: center
   z-index: 100
-
+  +animate-fade-up
   .content
     background-color: var(--background)
     border-radius: 15px

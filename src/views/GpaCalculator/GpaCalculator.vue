@@ -30,7 +30,7 @@
       </card>
     </div>
     <card-container class="gpa-card-container">
-      <card class="gpa-card animateFadeUpIn" :wrapperStyle="{ overflow: 'visible' }" v-for="(course, courseIndex) in courses" :key="courseIndex" :style="{ 'animation-delay': reduceFadeUpAnimation ? 0 : (courseIndex*.035) + 's'}">
+      <card class="gpa-card" :wrapperStyle="{ overflow: 'visible' }" v-for="(course, courseIndex) in courses" :key="courseIndex" :style="{ 'animation-delay': reduceFadeUpAnimation ? 0 : (courseIndex*.035) + 's'}">
         <div class="gpa-tile">
           <input
             class="name"
@@ -272,6 +272,7 @@ export default defineComponent({
     margin: 0px 0px
     background-color: white
     border-radius: 10px
+    +animate-fade-up
 
     .gpa-tile
       display: flex

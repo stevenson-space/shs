@@ -1,6 +1,6 @@
 <template>
     <div v-if="showModal">
-      <div class="modal animateFadeUpIn" @click="closeModal()">
+      <div class="modal" @click="closeModal()">
         <div class="modal-content" @click.stop="">
           <div class="title"><b>Color Conflict</b></div>
           <div class="divider" />
@@ -75,6 +75,7 @@ export default {
   color: var(--color)
   cursor: pointer
 .modal
+  +animate-fade-up
   position: fixed
   z-index: 100
   left: 0

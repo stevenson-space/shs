@@ -8,7 +8,7 @@
         :key="name"
         :class-name="name"
         :documents="list"
-        class="animateFadeUpIn"
+        class="document-card"
         :style="{ 'animation-delay': index*.01 + 's'}"
       />
       <!-- Request card -->
@@ -100,4 +100,9 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+@import 'src/styles/style.sass'
+
+.document-card
+  +animate-fade-up
+  </style>
