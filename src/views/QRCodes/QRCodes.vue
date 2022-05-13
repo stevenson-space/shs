@@ -44,8 +44,8 @@ export default {
   },
   data: () => {
     const options = {
-      width: 500,
-      height: 500,
+      width: 800,
+      height: 800,
       margin: 20,
       type: 'jpeg',
       data: '',
@@ -150,12 +150,12 @@ export default {
 #qr-code
   &.show
     +shadow
-    transform: scale(.5)
+    transform: scale(.35)
     padding: 20px
     background: white
     border-radius: 50px
-    margin-top: -110px
-    margin-bottom: -110px
+    margin-top: -250px
+    margin-bottom: -260px
 .qr-card
   max-width: 972px
   padding: 20px
