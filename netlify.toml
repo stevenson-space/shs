@@ -22,3 +22,8 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/code"
+  to = "https://github.com/stevenson-space"
+  status = 200
