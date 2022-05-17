@@ -117,5 +117,20 @@
         "tertiary": "#555",
         "iconTextCardColor": "white",
         "iconTextCardInvertColor": "var(--color)"
+    },
+        {
+        "name": "Summer",
+        "schedule": "5/15/2022-9/22/2022",
+        "message": "[Try] The new summer theme now!",
+        "suggestedColor": "#77c2e6",
+        "background": "white",
+        "secondaryBackground": "white",
+        "headerBackgroundColor": "#fc9e32",
+        "headerScheduleBackgroundColor": "white",
+        "primary": "black",
+        "secondary": "#333",
+        "tertiary": "#555",
+        "iconTextCardColor": "white",
+        "iconTextCardInvertColor": "var(--color)"
     }
 ]
