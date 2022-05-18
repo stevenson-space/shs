@@ -35,7 +35,7 @@
     {
       "name": "Activity Period",
       "isSpecial": true,
-      "dates": ["4/11/2022"],
+      "dates": ["5/16/2022"],
       "modes": [
         {
           "name": "Normal",
@@ -54,7 +54,7 @@
     {
       "name": "PM Assembly",
       "isSpecial": true,
-      "dates": ["2/25/2022"],
+      "dates": ["5/20/2022"],
       "modes": [
         {
           "name": "Normal",
@@ -119,7 +119,7 @@
     {
       "name": "Summer",
       "isSpecial": false,
-      "dates": [],
+      "dates": ["5/27/2022-8/10/2022"],
       "modes": [
         {
           "name": "Normal",

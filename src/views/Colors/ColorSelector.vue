@@ -9,7 +9,7 @@
           :key="shades.join(',')"
           ref="color"
           class="color"
-          :style="{ backgroundColor: shades[4], transition: `box-shadow ${animationDuration / 1000}s` }"
+          :style="{ backgroundColor: shades[backgroundShade], transition: `box-shadow ${animationDuration / 1000}s` }"
           :class="{ selected: arrEquals(currentShades, shades) && isOpen}"
           @click="arrEquals(currentShades, shades) ? hideShades() : showShades(shades, $refs.color[i])"
         >
@@ -63,6 +63,7 @@ export default {
   props: {
     colors: { type: Array, required: true },
     currentColor: { type: String, default: '' },
+    backgroundShade: { type: Number, default: 4 },
   },
   data() {
     return {
