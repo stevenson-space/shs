@@ -24,6 +24,7 @@ const state = {
 
   grade: 'None',
 
+  confettiMode: true,
   // authenticated with a student.d125.org google email
   isAuthenticated: process.env.NODE_ENV === 'development',
 };

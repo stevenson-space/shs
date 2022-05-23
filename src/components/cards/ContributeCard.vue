@@ -1,14 +1,15 @@
 <template>
-  <timed-card startTime="Jan 7, 2022" endTime="February 5, 2022">
+  <timed-card startTime="May 22, 2022" endTime="May 31, 2022">
      <div class="icon">
-      <font-awesome-icon :icon="icons.faCode" />
+      <font-awesome-icon :icon="icons.faFilm" />
      </div>
-    <div class="message"><b>For people interested in being a committed contributor of stevenson.space, the interest form is due by Feb. 5. <a class="learn-more-link" href="https://github.com/stevenson-space/shs/blob/gh-pages/Contribute.md" target="_blank">Learn More</a></b></div>
+    <div class="message">Interested in how stevenson.space has changed over the years? Checkout <b><a class="learn-more-link" href="https://vimeo.com/712696114">Then VS Now</a></b> - a short film celebreating the progress of the open-source project.</div>
+    <div style="padding:63.45% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/712696114?h=4a6000f65f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="stevenson.space: Then VS Now"></iframe></div>
   </timed-card>
 </template>
 
 <script>
-import { faCode } from '@fortawesome/free-solid-svg-icons';
+import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import TimedCard from './TimedCard.vue';
 
 export default {
@@ -16,7 +17,7 @@ export default {
   data() {
     return {
       icons: {
-        faCode,
+        faFilm,
       },
     };
   },

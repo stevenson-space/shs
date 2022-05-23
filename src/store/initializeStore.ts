@@ -30,6 +30,10 @@ const initializeStore = (store: Store<State>): void => {
   if (localStorage.grade) {
     store.commit('setGrade', localStorage.grade);
   }
+
+  if (localStorage.confettiMode) {
+    store.commit('setConfettiMode', localStorage.confettiMode === 'true');
+  }
 };
 
 export default initializeStore;

@@ -53,6 +53,10 @@ const mutations: MutationTree<State> = {
   setScheduleMode(state, scheduleMode) {
     state.scheduleMode = scheduleMode;
   },
+  setConfettiMode(state, confettiMode) {
+    state.confettiMode = confettiMode;
+    localStorage.confettiMode = confettiMode;
+  },
   setCustomSchedules(state, schedules: CustomSchedules) {
     // If there are any schedule modes with the same name as an official schedule mode, we want to rename the custom one
     const officalScheduleModeNames = new Set();
