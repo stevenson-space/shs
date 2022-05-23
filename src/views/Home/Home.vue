@@ -7,8 +7,7 @@
 
     <card-container>
       <confetti/>
-      <contribute-card />
-      <new-feature-card/>
+      <!-- <new-feature-card/> -->
       <new-theme-card />
       <!-- <april-fools-card /> -->
       <sodexo-appreciation-card />
