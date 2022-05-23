@@ -4,7 +4,8 @@
       <font-awesome-icon :icon="icons.faFilm" />
      </div>
     <div class="message">Interested in how stevenson.space has changed over the years? Checkout <b><a class="learn-more-link" href="https://vimeo.com/712696114">Then VS Now</a></b> - a short film celebreating the progress of the open-source project.</div>
-    <div style="padding:63.45% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/712696114?h=4a6000f65f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="stevenson.space: Then VS Now"></iframe></div>
+   <p v-if="!hidden"  class="message" style="margin-top: -10px; margin-bottom: -6px; color: dark-grey;" @click="hide()">Hide</p>
+    <div v-if="!hidden" style="padding:63.45% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/712696114?h=4a6000f65f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="stevenson.space: Then VS Now"></iframe></div>
   </timed-card>
 </template>
 
@@ -16,10 +17,16 @@ export default {
   components: { TimedCard },
   data() {
     return {
+      hidden: false,
       icons: {
         faFilm,
       },
     };
+  },
+  methods: {
+    hide() {
+      this.hidden = true;
+    },
   },
 };
 </script>
