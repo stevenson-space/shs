@@ -9,6 +9,7 @@
       <confetti/>
       <!-- <new-feature-card/> -->
       <new-theme-card />
+      <contribute-card />
       <!-- <april-fools-card /> -->
       <sodexo-appreciation-card />
       <!-- <shs-hacks-card/> -->

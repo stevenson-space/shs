@@ -1,7 +1,9 @@
 <template>
-  <timed-card startTime="May 22, 2023" endTime="May 31, 2022">
+  <timed-card startTime="May 22, 2022" endTime="May 27, 2022" style="padding: 5px">
      <div class="icon">
+      <font-awesome-icon :icon="icons.faFilm" />
      </div>
+    <div class="message">Interested in how stevenson.space has changed over the years? Checkout <b><a class="learn-more-link" href="https://vimeo.com/712696114">Then VS Now</a></b> - a short film showing the progress of the open-source project.</div>
   </timed-card>
 </template>
 
@@ -18,11 +20,6 @@ export default {
         faFilm,
       },
     };
-  },
-  methods: {
-    hide() {
-      this.hidden = true;
-    },
   },
 };
 </script>
