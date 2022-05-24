@@ -1,5 +1,5 @@
 <template>
-  <timed-card startTime="May 22, 2022" endTime="May 27, 2022" style="padding: 5px">
+  <timed-card startTime="May 22, 2022" endTime="May 27, 2022" style="padding: 0px 5px">
      <div class="icon">
       <font-awesome-icon :icon="icons.faFilm" />
      </div>
