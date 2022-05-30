@@ -78,11 +78,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/login',
     component: Login,
   },
-  {
-    name: 'QRCode',
-    path: '/qr',
-    component: QRCode,
-  },
+  // {
+  //   name: 'QRCode',
+  //   path: '/qr',
+  //   component: QRCode,
+  // },
 ];
 
 const router = createRouter({
