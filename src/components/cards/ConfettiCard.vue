@@ -1,6 +1,6 @@
 <template>
   <card>
-    <p style="text-align: center;">Congratulations to the class of <b>2022</b>! To celebrate the end of a great year, we've added confetti mode. Have a great summer!<p>
+    <p style="text-align: center;">Congratulations to the class of <b>2022</b>, welcome class of <b>2026</b>! To celebrate the end of a great year, we've added confetti mode. Have a great summer!<p>
     <div class="button-row">
       <rounded-button v-if="!confettiMode" class="button" @click="start()" text="Start 🎉"></rounded-button>
       <rounded-button v-if="confettiMode" class="button" @click="stop()" text="Disable"></rounded-button>
