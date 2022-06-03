@@ -2,7 +2,7 @@
   <settings-section title="Code Contribution">
     <br />
     stevenson.space is open sourced! You can contribute on
-   <b><a href="https://github.com/stevenson-space/shs/" target='_blank'>Github</a></b> Also accessible from <b><a href="/code" target='_blank'>stevenson.space/code</a></b>.
+   <b><a href="https://github.com/stevenson-space/shs/" target='_blank'>Github</a>.</b> It's also accessible from <b><a href="/code" target='_blank'>stevenson.space/code</a></b>.
   </settings-section>
 </template>
 
