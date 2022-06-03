@@ -43,6 +43,7 @@
       <schedules id="schedules" />
       <transfer id="transfer" />
       <contact id="contact" />
+      <Code id="code" />
       <privacy id="privacy" />
 
       <div
@@ -63,6 +64,7 @@ import {
   faUserGear,
   faLock,
   faAddressCard,
+  faCode,
 } from '@fortawesome/free-solid-svg-icons';
 
 import HomeLink from '@/components/HomeLink.vue';
@@ -71,6 +73,7 @@ import Schedules from './Schedules.vue';
 import Transfer from './Transfer.vue';
 import Privacy from './Privacy.vue';
 import Contact from './Contact.vue';
+import Code from './Code.vue';
 
 const sidenavItems = [
   { text: 'General', link: '#general', icon: faUserGear },
@@ -87,6 +90,11 @@ const sidenavItems = [
     icon: faAddressCard,
   },
   {
+    text: 'Code',
+    link: '#code',
+    icon: faCode,
+  },
+  {
     text: 'Privacy Policy',
     link: '#privacy',
     icon: faLock,
@@ -101,6 +109,7 @@ export default {
     Transfer,
     Privacy,
     Contact,
+    Code,
   },
   data() {
     return {
@@ -108,6 +117,7 @@ export default {
         faGear,
         faBars,
         faArrowLeft,
+        faCode,
       },
       sidenavItems,
       showSidenav: false,
