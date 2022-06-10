@@ -23,6 +23,7 @@
     "query-string": "^7.1.1",
     "querystring-es3": "^0.2.1",
     "vue": "^3.2.13",
+    "vue-confetti": "^2.3.0",
     "vue-gtag": "^2.0.1",
     "vue-router": "^4.0.3"
   },
