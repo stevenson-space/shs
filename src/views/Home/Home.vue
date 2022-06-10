@@ -9,8 +9,6 @@
       <!-- <new-feature-card/> -->
       <!-- <april-fools-card /> -->
       <sodexo-appreciation-card />
-      <!-- <contribute-card /> -->
-      <new-theme-card />
       <!-- <shs-hacks-card/> -->
       <holiday-card />
       <schedule-card />
@@ -67,13 +65,14 @@ import UpcomingEventsCard from '@/components/cards/UpcomingEventsCard.vue';
 import IconTextCard from '@/components/cards/IconTextCard.vue';
 import ScheduleCard from '@/components/cards/ScheduleCard.vue';
 import HolidayCard from '@/components/cards/HolidayCard.vue';
-// import ContributeCard from '@/components/cards/ContributeCard.vue';
+import ContributeCard from '@/components/cards/ContributeCard.vue';
 import LunchCard from '@/components/cards/LunchCard.vue';
 import NewThemeCard from '@/components/cards/NewThemeCard.vue';
 // import ShsHacksCard from '@/components/cards/ShsHacksCard.vue';
 // import AprilFoolsCard from '@/components/cards/AprilFoolsCard.vue';
 import NewFeatureCard from '@/components/cards/NewFeatureCard.vue';
 import SodexoAppreciationCard from '@/components/cards/SodexoAppreciationCard.vue';
+import Confetti from '@/components/cards/ConfettiCard.vue';
 import ScheduleHeader from './Header.vue';
 
 export default {
@@ -85,12 +84,13 @@ export default {
     IconTextCard,
     ScheduleCard,
     HolidayCard,
-    // ContributeCard,
+    ContributeCard,
     NewThemeCard,
     // ShsHacksCard,
     // AprilFoolsCard,
     NewFeatureCard,
     SodexoAppreciationCard,
+    Confetti,
   },
   data() {
     return {

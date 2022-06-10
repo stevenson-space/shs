@@ -1,7 +1,7 @@
 <template>
   <div
     class="header"
-    :class="{ 'full-screen': fullScreenMode, 'halloween': theme.name.toLowerCase() == 'halloween', 'mars': theme.name.toLowerCase() == 'mars'}"
+    :class="{ 'full-screen': fullScreenMode, 'halloween': theme.name.toLowerCase() == 'halloween', 'mars': theme.name.toLowerCase() == 'mars', 'summer': theme.name.toLowerCase() == 'summer'}"
     :style="colors"
   >
     <dropdown
@@ -349,7 +349,12 @@ export default {
     background: url(@/assets/occasions/mars-mobile.png) center center no-repeat, var(--header-color)
     background-size: cover
     +desktop
-      background: url(@/assets/occasions/mars-full.png) center center no-repeat, var(--header-color)
+      background: url(/static/occasions/mars-full.png) center center no-repeat, var(--header-color)
+  &.summer
+    background: url(/static/occasions/beach-mobile.png) center center no-repeat, var(--header-color)
+    background-size: cover
+    +desktop
+      background: url(/static/occasions/beach-full.png) center center no-repeat, var(--header-color)
   &.halloween
     background: url(@/assets/occasions/cob-webs-left.png) left top no-repeat, url(@/assets/occasions/cob-webs-right.png) right top no-repeat, var(--header-color)
     background-size: 250px

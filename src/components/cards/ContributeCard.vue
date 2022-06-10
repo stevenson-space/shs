@@ -1,22 +1,23 @@
 <template>
-  <timed-card startTime="Jan 7, 2022" endTime="February 5, 2022">
+  <timed-card startTime="May 22, 2022" endTime="May 27, 2022" style="padding: 0px 5px">
      <div class="icon">
-      <font-awesome-icon :icon="icons.faCode" />
+      <font-awesome-icon :icon="icons.faFilm" />
      </div>
-    <div class="message"><b>For people interested in being a committed contributor of stevenson.space, the interest form is due by Feb. 5. <a class="learn-more-link" href="https://github.com/stevenson-space/shs/blob/gh-pages/Contribute.md" target="_blank">Learn More</a></b></div>
+    <div class="message">Interested in how stevenson.space has changed over the years? Checkout <b><a class="learn-more-link" href="https://vimeo.com/712696114">Then VS Now</a></b> - a short film showing the progress of the open-source project.</div>
   </timed-card>
 </template>
 
 <script>
-import { faCode } from '@fortawesome/free-solid-svg-icons';
+import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import TimedCard from './TimedCard.vue';
 
 export default {
   components: { TimedCard },
   data() {
     return {
+      hidden: false,
       icons: {
-        faCode,
+        faFilm,
       },
     };
   },
