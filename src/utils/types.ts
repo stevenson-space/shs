@@ -46,9 +46,10 @@ export type Theme = {
   tertiary: string;
   iconTextCardColor: string;
   iconTextCardInvertColor: string;
+  schedule: string;
 };
 
 export type ThemeData = {
   theme: Theme;
-  useThemeColor: boolean; //if the suggestedColor of the theme is persisted as opposed to your set color.
+  useThemeColor: boolean; // if the suggestedColor of the theme is persisted as opposed to your set color.
 };

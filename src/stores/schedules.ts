@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { RouteLocationNormalized } from 'vue-router';
-import { CustomSchedules, ScheduleCollection, ScheduleMode, Schedule } from '@/utils/types';
+import { CustomSchedules, ScheduleCollection } from '@/utils/types';
 import { tryParseJSON, getNameWithoutConflicts } from '@/utils/util';
 import Bell from '@/utils/bell';
 import officialSchedules from '@/data/schedules.json';
@@ -47,7 +47,7 @@ export default defineStore('schedules', {
     currentTime: Date.now(), // relative to real time
   }),
   getters: {
-    schedules(state) { // we merge the officialSchedules provided by us and the user defined customSchedules
+    schedules(state): ScheduleCollection[] { // we merge the officialSchedules provided by us and the user defined customSchedules
       const schedules: ScheduleCollection[] = JSON.parse(JSON.stringify(officialSchedules)); // begin with copying the officialSchedules
       // customSchedules is an object with `schedule type` keys and values containing a
       // list of schedule mode objects for the corresponding schedule type
@@ -65,6 +65,7 @@ export default defineStore('schedules', {
       }
       return schedules;
     },
+
     date(): Date {
       const { urlDate, startTime, currentTime } = this;
       const date = new Date(
@@ -75,39 +76,39 @@ export default defineStore('schedules', {
         ? date
         : new Date(date.toLocaleDateString());
     },
-    bell(otherGetters: any) {
+
+    bell(otherGetters: any): Bell {
       return new Bell(otherGetters.date, otherGetters.schedules, this.scheduleMode);
     },
   },
   actions: {
-    initializeSchedule() {
+    initializeSchedule(): void {
       this.setCustomSchedules(tryParseJSON(localStorage.customSchedules));
       if (localStorage.defaultScheduleMode) {
         this.setDefaultScheduleMode(localStorage.defaultScheduleMode);
         this.setScheduleMode(localStorage.defaultScheduleMode);
       }
     },
-    pageLoaded(route: RouteLocationNormalized) {
+    pageLoaded(route: RouteLocationNormalized): void {
       this.setMode(route);
       this.setUrlDate(route);
       this.setStartTime();
       this.setCurrentTime();
     },
-    countdownDone() {
+    countdownDone(): void {
       this.setCurrentTime();
     },
-
-    setUrlDate(route: RouteLocationNormalized) {
+    setUrlDate(route: RouteLocationNormalized): void {
       this.urlDate = parseUrlDateTime(route);
     },
-    setStartTime() {
+    setStartTime(): void {
       this.startTime = Date.now();
     },
-    setCurrentTime() {
+    setCurrentTime(): void {
       this.currentTime = Date.now();
     },
 
-    addCustomScheduleMode({ scheduleType, scheduleToAdd, scheduleToReplace }:any) {
+    addCustomScheduleMode({ scheduleType, scheduleToAdd, scheduleToReplace }:any): void {
       // If scheduleToReplace is not defined, then we want to just add to end of scheduleModes list
       const scheduleModes = (this.customSchedules || {})[scheduleType] || [];
       const replaceIndex = scheduleModes.map((mode:any) => mode.name).indexOf(scheduleToReplace);
@@ -121,7 +122,7 @@ export default defineStore('schedules', {
       }
       this.setCustomSchedules({ ...this.customSchedules, [scheduleType]: scheduleModes });
     },
-    removeCustomScheduleMode({ scheduleType, scheduleToRemove }:any) {
+    removeCustomScheduleMode({ scheduleType, scheduleToRemove }:any): void {
       // if scheduleType is not provided, then we remove scheduleToRemove for all schedule types
       for (const [type, scheduleModes] of Object.entries(this.customSchedules || {})) {
         if (!scheduleType || scheduleType === type) {
@@ -133,7 +134,7 @@ export default defineStore('schedules', {
       }
       this.setCustomSchedules(this.customSchedules);
     },
-    setCustomSchedules(schedules: CustomSchedules) {
+    setCustomSchedules(schedules: CustomSchedules): void {
       // If there are any schedule modes with the same name as an official schedule mode, we want to rename the custom one
       const officalScheduleModeNames = new Set();
       for (const schedule of officialSchedules) {
@@ -152,18 +153,18 @@ export default defineStore('schedules', {
       this.customSchedules = schedules;
       localStorage.customSchedules = JSON.stringify(schedules);
     },
-    resetSchedules() {
+    resetSchedules(): void {
       this.customSchedules = {};
       localStorage.customSchedules = {};
     },
-    setDefaultScheduleMode(schedule: string) {
+    setDefaultScheduleMode(schedule: string): void {
       this.defaultScheduleMode = schedule;
       localStorage.defaultScheduleMode = schedule;
     },
-    setScheduleMode(scheduleMode: string) {
+    setScheduleMode(scheduleMode: string): void {
       this.scheduleMode = scheduleMode;
     },
-    setMode(route: RouteLocationNormalized) {
+    setMode(route: RouteLocationNormalized): void {
       // if 'date' url parameter is specified, 'day' mode is triggered
       // the 'time' url parameter is to be used for testing and forces the mode to 'current' regardless of date
       const { date, time } = route.query;

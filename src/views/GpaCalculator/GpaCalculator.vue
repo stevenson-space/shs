@@ -38,7 +38,7 @@
             type="text"
             :value="course.name"
             :placeholder="'Course '+ (course.id)"
-            @input="editCourseName(course,$event)"
+            @input="editCourseName(course,$event.target.value)"
           >
           <font-awesome-icon
             v-show="courses.length > 1"
@@ -147,47 +147,48 @@ export default defineComponent({
       this.calculateSemesterGrades();
     }
   },
+
   methods: {
-    editCourseName(course:Course, event:any) {
-      course.name = event.target.value;
+    editCourseName(course:Course, inputValue: string): void {
+      course.name = inputValue;
     },
-    addCourse() {
+    addCourse(): void {
       this.reduceFadeUpAnimation = true;
       this.courses.push(new Course(this.courses.length + 1));
       this.calculateSemesterGrades();
     },
-    removeCourse(course: Course) {
+    removeCourse(course: Course): void {
       const index = this.courses.indexOf(course);
       if (index > -1) {
         this.courses.splice(index, 1);
         this.calculateSemesterGrades();
       }
     },
-    selectGrade(course: Course, gradeIndex: number) {
+    selectGrade(course: Course, gradeIndex: number): void {
       const index = this.courses.indexOf(course);
       course.grade = gradeIndex;
       this.courses[index] = course;
       this.calculateSemesterGrades();
     },
-    selectedCourseLevel(course: Course, i: number) {
+    selectedCourseLevel(course: Course, i: number): void {
       const index = this.courses.indexOf(course);
       course.level = i;
       this.courses[index] = course;
       this.calculateSemesterGrades();
     },
-    toggleExtraWeight(course: Course, event: any) {
+    toggleExtraWeight(course: Course, isChecked: boolean): void {
       const index = this.courses.indexOf(course);
-      course.weight = (event ? 1.5 : 1);
+      course.weight = (isChecked ? 1.5 : 1);
       this.courses[index] = course;
       this.calculateSemesterGrades();
     },
-    selectHasFinal(course: Course, gradeIndex: number) {
+    selectHasFinal(course: Course, gradeIndex: number): void {
       const index = this.courses.indexOf(course);
       course.hasFinal = (gradeIndex === 0);
       this.courses[index] = course;
       this.calculateSemesterGrades();
     },
-    calculateSemesterGrades() {
+    calculateSemesterGrades(): void {
       let gpa = 0.0;
       for (let x = 0; x < this.courses.length; x++) { // for every course
         const course = this.courses[x];
@@ -222,16 +223,12 @@ export default defineComponent({
       this.courses.forEach((course) => {
         unweightedGPASum += (course.unweightedGPA * course.weight);
         weightedGPASum += (course.weightedGPA * course.weight);
-        // unweightedGPASum += parseFloat(course.unweightedGPA * course.weight);
-        // weightedGPASum += parseFloat(course.weightedGPA * course.weight);
       });
 
       let weightTotal = 0;
       this.courses.forEach((i) => {
         weightTotal += i.weight;
       });
-      // this.averageUnweightedGpa = Number(parseFloat(unweightedGPASum) / parseFloat(weightTotal).toFixed(2));
-      // this.averageWeightedGpa = Number((parseFloat(weightedGPASum) / parseFloat(weightTotal)).toFixed(2));
       this.averageUnweightedGpa = unweightedGPASum / weightTotal;
       this.averageWeightedGpa = weightedGPASum / weightTotal;
     },

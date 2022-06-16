@@ -8,14 +8,14 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 export default {
   props: {
     theme: { type: Object, required: true },
     isCurrentTheme: { type: Boolean, required: true },
   },
   computed: {
-    gradientString() {
+    gradientString(): string {
       const { suggestedColor, background } = this.theme;
       return `linear-gradient( -45deg, ${suggestedColor}, ${suggestedColor} 50%, ${background} 50% )`;
     },
