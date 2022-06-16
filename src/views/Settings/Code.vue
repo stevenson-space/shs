@@ -11,9 +11,6 @@ import SettingsSection from './SettingsSection.vue';
 
 export default {
   components: { SettingsSection },
-  data() {
-    return {};
-  },
 };
 </script>
 
