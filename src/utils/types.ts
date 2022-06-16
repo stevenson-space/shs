@@ -53,3 +53,7 @@ export type ThemeData = {
   theme: Theme;
   useThemeColor: boolean; // if the suggestedColor of the theme is persisted as opposed to your set color.
 };
+
+export type MapStateToComputed<S> = {  // used for mapState()
+  [K in keyof S]: () => S[K]
+}

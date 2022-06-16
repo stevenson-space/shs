@@ -52,11 +52,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { faChevronLeft, faChevronRight, faCheck } from '@fortawesome/free-solid-svg-icons';
 import StaggerAnimation from '@/components/StaggerAnimation.vue';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
   components: {
     StaggerAnimation,
   },
@@ -72,7 +73,7 @@ export default {
         faChevronRight,
         faCheck,
       },
-      currentShades: [],
+      currentShades: [] as string[],
       shadesLeft: 0,
       shadesTop: 0,
       shadeHeight: 35,
@@ -82,7 +83,7 @@ export default {
   },
   methods: {
     scroll(direction = 'right') {
-      const $colors = this.$refs.colors;
+      const $colors: any = this.$refs.colors;
       const multiplier = direction === 'right' ? 1 : -1;
 
       $colors.scrollBy({
@@ -90,10 +91,10 @@ export default {
         behavior: 'smooth',
       });
     },
-    showShades(shades, $color) {
+    showShades(shades: string[], $color: any) {
       const show = () => {
         // Get position to show at (under the color that was clicked)
-        const $colors = this.$refs.colors;
+        const $colors: any = this.$refs.colors;
         this.shadesLeft = $color.offsetLeft - $colors.scrollLeft;
         this.shadesTop = $color.offsetTop + $color.offsetHeight - this.shadeHeight + 30;
         this.currentShades = shades;
@@ -119,11 +120,11 @@ export default {
         this.currentShades = [];
       }, this.animationDuration);
     },
-    shadeClicked(shade) {
+    shadeClicked(shade: string) {
       this.$emit('color-selected', shade);
       this.hideShades();
     },
-    arrEquals(arr1, arr2) {
+    arrEquals(arr1: string[], arr2: string[]) {
       if (!arr1 || !arr2 || arr1.length === 0 || arr2.length === 0) return false;
       for (let i = 0; i < arr1.length; i++) {
         if (arr1[i] !== arr2[i]) {
@@ -133,7 +134,7 @@ export default {
       return true;
     },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>

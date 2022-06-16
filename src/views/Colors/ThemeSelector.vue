@@ -21,36 +21,48 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import themeCircle from '@/views/Colors/ThemeCircle.vue';
 import themes from '@/data/themes.json';
 import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
 import useThemeStore from '@/stores/themes';
 import useScheduleStore from '@/stores/schedules';
 import { mapState, mapActions } from 'pinia';
+import { defineComponent } from 'vue';
+import { MapStateToComputed, Theme } from '@/utils/types';
 
-export default {
+type ThemeStoreState = {
+  theme: Theme;
+  color: string;
+}
+
+type ScheduleStoreState = {
+  date: Date;
+}
+
+export default defineComponent({
+
   components: { themeCircle, ThemeChangeModal },
   computed: {
-    ...mapState(useThemeStore, ['theme', 'color']),
-    ...mapState(useScheduleStore, ['date']),
+    ...(mapState(useThemeStore, ['theme', 'color']) as MapStateToComputed<ThemeStoreState>),
+    ...(mapState(useScheduleStore, ['date']) as MapStateToComputed<ScheduleStoreState>),
   },
 
   data() {
     return {
       showModal: false,
       themes,
-      selectedTheme: themes[0],
+      selectedTheme: themes[0] as Theme,
     };
   },
   methods: {
     ...mapActions(useThemeStore, ['setTheme']),
-    choice(useThemeColor) {
+    choice(useThemeColor: boolean) {
       const data = { theme: this.selectedTheme, useThemeColor };
       this.showModal = false;
       this.setTheme(data);
     },
-    changeTheme(theme) {
+    changeTheme(theme: Theme) {
       if (theme !== this.theme || theme.suggestedColor !== this.color) {
         this.selectedTheme = theme;
         if (this.color !== this.theme.suggestedColor) { //  if the color you set differs from the suggested color ("color conflict")
@@ -60,7 +72,7 @@ export default {
         }
       }
     },
-    showTheme(theme) {
+    showTheme(theme: Theme) {
       const { schedule } = theme;
       if (schedule === 'always') {
         return true;
@@ -69,10 +81,10 @@ export default {
         new Date(schedule.substring(0, schedule.indexOf('-'))).getTime(),
         new Date(schedule.substring(schedule.indexOf('-') + 1)).getTime(),
       ];
-      return this.date.getTime() > startTime && this.date < endTime;
+      return this.date.getTime() > startTime && this.date.getTime() < endTime;
     },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>
