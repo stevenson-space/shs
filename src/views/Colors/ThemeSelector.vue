@@ -57,12 +57,12 @@ export default defineComponent({
   },
   methods: {
     ...mapActions(useThemeStore, ['setTheme']),
-    choice(useThemeColor: boolean) {
+    choice(useThemeColor: boolean): void {
       const data = { theme: this.selectedTheme, useThemeColor };
       this.showModal = false;
       this.setTheme(data);
     },
-    changeTheme(theme: Theme) {
+    changeTheme(theme: Theme): void {
       if (theme !== this.theme || theme.suggestedColor !== this.color) {
         this.selectedTheme = theme;
         if (this.color !== this.theme.suggestedColor) { //  if the color you set differs from the suggested color ("color conflict")
@@ -72,7 +72,7 @@ export default defineComponent({
         }
       }
     },
-    showTheme(theme: Theme) {
+    showTheme(theme: Theme): boolean {
       const { schedule } = theme;
       if (schedule === 'always') {
         return true;

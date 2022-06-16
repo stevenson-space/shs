@@ -82,7 +82,7 @@ export default defineComponent({
     };
   },
   methods: {
-    scroll(direction = 'right') {
+    scroll(direction = 'right'): void {
       const $colors: any = this.$refs.colors;
       const multiplier = direction === 'right' ? 1 : -1;
 
@@ -91,7 +91,7 @@ export default defineComponent({
         behavior: 'smooth',
       });
     },
-    showShades(shades: string[], $color: any) {
+    showShades(shades: string[], $color: any): void {
       const show = () => {
         // Get position to show at (under the color that was clicked)
         const $colors: any = this.$refs.colors;
@@ -113,18 +113,18 @@ export default defineComponent({
         show();
       }
     },
-    hideShades() {
+    hideShades(): void {
       this.isOpen = false;
 
       setTimeout(() => {
         this.currentShades = [];
       }, this.animationDuration);
     },
-    shadeClicked(shade: string) {
+    shadeClicked(shade: string): void {
       this.$emit('color-selected', shade);
       this.hideShades();
     },
-    arrEquals(arr1: string[], arr2: string[]) {
+    arrEquals(arr1: string[], arr2: string[]): boolean {
       if (!arr1 || !arr2 || arr1.length === 0 || arr2.length === 0) return false;
       for (let i = 0; i < arr1.length; i++) {
         if (arr1[i] !== arr2[i]) {
