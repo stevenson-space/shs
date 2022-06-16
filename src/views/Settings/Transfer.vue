@@ -197,7 +197,7 @@ export default defineComponent({
 
     async receive() {
       this.showPopup(popups.loading);
-      let isValid = true;
+      const isValid = true;
 
       const response = await fetch(`/receive/${this.receiveCode.toUpperCase()}.txt`, {
         method: 'GET',
