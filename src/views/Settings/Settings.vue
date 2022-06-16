@@ -54,7 +54,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {
   faGear,
   faBars,
@@ -65,8 +65,9 @@ import {
   faLock,
   faAddressCard,
   faCode,
+  IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
-
+import { defineComponent } from 'vue';
 import HomeLink from '@/components/HomeLink.vue';
 import General from './General.vue';
 import Schedules from './Schedules.vue';
@@ -74,6 +75,12 @@ import Transfer from './Transfer.vue';
 import Privacy from './Privacy.vue';
 import Contact from './Contact.vue';
 import Code from './Code.vue';
+
+type SettingsNavItems = {
+  text: string;
+  link: string;
+  icon: IconDefinition;
+}
 
 const sidenavItems = [
   { text: 'General', link: '#general', icon: faUserGear },
@@ -99,9 +106,9 @@ const sidenavItems = [
     link: '#privacy',
     icon: faLock,
   },
-];
+] as SettingsNavItems[];
 
-export default {
+export default defineComponent({
   components: {
     HomeLink,
     General,
@@ -122,7 +129,7 @@ export default {
       sidenavItems,
       showSidenav: false,
       selectedLinkIndex: 0,
-      scrollListener: null,
+      scrollListener: null as any,
       extraSpaceHeight: window.innerHeight, // ensure that the last section is scrollable to the top (will be adjusted in mounted())
     };
   },
@@ -130,34 +137,40 @@ export default {
     this.scrollListener = () => {
       const scrollY = window.scrollY + 100; // +100 effectively moves the threshold to 100px below the top
       sidenavItems.forEach((sidenavItem, index) => {
-        const element = document.querySelector(sidenavItem.link);
+        const element: HTMLHRElement | null = document.querySelector(sidenavItem.link);
         if (element && element.offsetTop && scrollY > element.offsetTop) {
           // don't need to check if less than bottom of section, because next pass through for loop will overwrite selectedLinkIndex
           this.selectedLinkIndex = index;
         }
       });
     };
-    window.addEventListener('scroll', this.scrollListener);
+    if (this.scrollListener) {
+      window.addEventListener('scroll', this.scrollListener);
+    }
   },
   mounted() {
-    const lastSection = document.querySelector(
+    const lastSection: HTMLHRElement | null = document.querySelector(
       sidenavItems[sidenavItems.length - 1].link,
     );
-    let lastSectionHeight = lastSection.getBoundingClientRect().height;
-    lastSectionHeight += parseInt(
-      window.getComputedStyle(lastSection).getPropertyValue('margin-top'),
-    );
-    lastSectionHeight += parseInt(
-      window
-        .getComputedStyle(lastSection)
-        .getPropertyValue('margin-bottom'),
-    );
-    this.extraSpaceHeight = window.innerHeight - lastSectionHeight;
+    let lastSectionHeight = lastSection?.getBoundingClientRect().height;
+    if (lastSectionHeight && lastSection) {
+      lastSectionHeight += parseInt(
+        window.getComputedStyle(lastSection).getPropertyValue('margin-top'),
+      );
+      lastSectionHeight += parseInt(
+        window
+          .getComputedStyle(lastSection)
+          .getPropertyValue('margin-bottom'),
+      );
+      this.extraSpaceHeight = window.innerHeight - lastSectionHeight;
+    }
   },
   destroyed() {
-    window.removeEventListener('scroll', this.scrollListener);
+    if (this.scrollListener) {
+      window.removeEventListener('scroll', this.scrollListener);
+    }
   },
-};
+});
 </script>
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'

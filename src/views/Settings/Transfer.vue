@@ -62,9 +62,10 @@
   </settings-section>
 </template>
 
-<script>
+<script lang="ts">
 import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { mapState } from 'pinia';
+import { defineComponent } from 'vue';
 import useThemeStore from '@/stores/themes';
 import useScheduleStore from '@/stores/schedules';
 import useUserSettingsStore from '@/stores/user-settings';
@@ -76,14 +77,11 @@ import Checkbox from '@/components/Checkbox.vue';
 import SettingsSection from './SettingsSection.vue';
 
 // Note: setting refers to the name (e.g. 'color'), data inclued the content (e.g. '#FA32F5' or {'color' : '#FA32F5'})
+type transferableSettingOption = 'color' |'theme' |'defaultScheduleMode' | 'grade' | 'customSchedules'
 
-const tranferableSettings = [ // the following strings should be direct properties of $store.state
-  'color',
-  'theme',
-  'defaultScheduleMode',
-  'grade',
-  'customSchedules',
-];
+const transferableSettings: transferableSettingOption[] = ['color', 'theme', 'defaultScheduleMode', 'grade', 'customSchedules']; // the following strings should be direct properties of $store.state
+
+const isValidTransferableSetting = (x: string) => transferableSettings.some((setting) => x === String(setting));
 
 const popups = {
   none: 0,
@@ -95,7 +93,7 @@ const popups = {
   error: 6,
 };
 
-export default {
+export default defineComponent({
   components: {
     SettingsSection,
     RoundedButton,
@@ -112,17 +110,17 @@ export default {
       },
       popups,
       popupToShow: 0, // using a single variable to control appearance of all popups to ensure only one is displayed at any point
-      shouldSendSetting: {}, // initialized in created()
+      shouldSendSetting: {} as Record<transferableSettingOption, boolean>, // initialized in created()
       code: '',
       errorMessage: '',
       receiveCode: '',
-      receivedData: null,
-      shouldSaveSetting: {}, // initialized after data is received
+      receivedData: {} as Record<transferableSettingOption, any>,
+      shouldSaveSetting: {} as Record<transferableSettingOption, boolean>, // initialized after data is received
     };
   },
   created() {
     // Initialize each property of shouldSendSetting to true (meaning that all send checkboxes will be checked initially)
-    tranferableSettings.forEach((str) => {
+    transferableSettings.forEach((str) => {
       this.shouldSendSetting[str] = true;
     });
   },
@@ -132,30 +130,30 @@ export default {
     ...mapState(useUserSettingsStore, ['grade']),
   },
   methods: {
-    settingToName(setting) {
+    settingToName(setting: transferableSettingOption) {
       const separatedWords = setting.replace(/([a-z])([A-Z])/g, '$1 $2'); // 'defaultScheduleSomething' to 'default Schedule Something'
       return separatedWords[0].toUpperCase() + separatedWords.slice(1); // capitalize first letter
     },
-    showPopup(popup) {
+    showPopup(popup: any) {
       this.popupToShow = popup;
     },
-    getSetting(name) {
+    getSetting(name: transferableSettingOption) {
       switch (name.toLowerCase()) {
-        case tranferableSettings[0]: return this.color;
-        case tranferableSettings[1]: return this.theme;
-        case tranferableSettings[2]: return this.defaultScheduleMode;
-        case tranferableSettings[3]: return this.grade;
-        case tranferableSettings[4]: return this.customSchedules;
+        case transferableSettings[0]: return this.color;
+        case transferableSettings[1]: return this.theme;
+        case transferableSettings[2]: return this.defaultScheduleMode;
+        case transferableSettings[3]: return this.grade;
+        case transferableSettings[4]: return this.customSchedules;
         default: return '';
       }
     },
-    setSetting(name, value) {
+    setSetting(name: transferableSettingOption, value: any) {
       switch (name.toLowerCase()) {
-        case tranferableSettings[0]: this.color = value; break;
-        case tranferableSettings[1]: this.theme = value; break;
-        case tranferableSettings[2]: this.defaultScheduleMode = value; break;
-        case tranferableSettings[3]: this.grade = value; break;
-        case tranferableSettings[4]: this.customSchedules = value; break;
+        case transferableSettings[0]: this.color = value; break;
+        case transferableSettings[1]: this.theme = value; break;
+        case transferableSettings[2]: this.defaultScheduleMode = value; break;
+        case transferableSettings[3]: this.grade = value; break;
+        case transferableSettings[4]: this.customSchedules = value; break;
         default: break;
       }
     },
@@ -164,15 +162,15 @@ export default {
       this.code = '';
       this.errorMessage = '';
       this.receiveCode = '';
-      this.receivedData = null;
-      this.shouldSaveSetting = {};
+      this.receivedData = {} as Record<transferableSettingOption, any>;
+      this.shouldSaveSetting = {} as Record<transferableSettingOption, boolean>;
       this.popupToShow = popups.none;
     },
     async send() {
       this.showPopup(popups.loading);
       // Get the data for each selected option to send
-      const data = {};
-      for (const [setting, shouldSend] of Object.entries(this.shouldSendSetting)) {
+      const data = {} as Record<transferableSettingOption, any>;
+      for (const [setting, shouldSend] of Object.entries(this.shouldSendSetting) as [transferableSettingOption, any][]) {
         if (shouldSend) {
           // data[setting] = this.$store.state[setting];
           data[setting] = this.getSetting(setting);
@@ -208,13 +206,13 @@ export default {
         const data = await response.json();
         const settings = Object.keys(data);
         settings.forEach((setting) => {
-          if (!tranferableSettings.includes(setting)) isValid = false;
+          if (!isValidTransferableSetting(setting)) isValid = false;
         });
         if (isValid) {
-          this.receivedData = data;
-          this.shouldSaveSetting = {}; // reset it in case there was a previous received data with different settings
+          this.receivedData = data as Record<transferableSettingOption, any>;
+          this.shouldSaveSetting = {} as Record<transferableSettingOption, boolean>; // reset it in case there was a previous received data with different settings
           settings.forEach((setting) => { // default to saving all settings present in data
-            this.shouldSaveSetting[setting] = true;
+            this.shouldSaveSetting[setting as transferableSettingOption] = true;
           });
           this.showPopup(popups.save);
         } else {
@@ -231,7 +229,7 @@ export default {
         if (this.shouldSaveSetting.theme) {
           this.receivedData.theme = { theme: this.receivedData.theme, useThemeColor: !this.shouldSaveSetting.color };
         }
-        for (const [setting, data] of Object.entries(this.receivedData)) {
+        for (const [setting, data] of (Object.entries(this.receivedData) as [transferableSettingOption, any][])) {
           if (this.shouldSaveSetting[setting]) {
             this.setSetting(setting, data);
           }
@@ -240,7 +238,7 @@ export default {
       this.cancel();
     },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>
