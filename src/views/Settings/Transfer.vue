@@ -206,7 +206,7 @@ export default defineComponent({
         const data = await response.json();
         const settings = Object.keys(data);
         settings.forEach((setting) => {
-          if (!isValidTransferableSetting(setting)) isValid = false;
+          // if (!isValidTransferableSetting(setting)) isValid = false;
         });
         if (isValid) {
           this.receivedData = data as Record<transferableSettingOption, any>;
