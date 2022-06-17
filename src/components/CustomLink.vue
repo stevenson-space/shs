@@ -10,15 +10,17 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   props: {
     href: { type: [String, Object], required: true },
     type: { type: String, default: '' },
     newTab: { type: Boolean, default: false },
   },
   computed: {
-    linkType() {
+    linkType(): string | object {
       if (this.type) {
         return this.type;
       }
@@ -33,11 +35,11 @@ export default {
 
       return 'none';
     },
-    target() {
+    target(): string {
       return this.newTab ? '_blank' : '_self';
     },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>

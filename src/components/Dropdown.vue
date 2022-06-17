@@ -31,11 +31,12 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import StaggerAnimation from './StaggerAnimation.vue';
 
-export default {
+export default defineComponent({
   components: { StaggerAnimation },
   props: {
     options: { type: Array, required: true },
@@ -58,15 +59,15 @@ export default {
     };
   },
   computed: {
-    remainingOptions() {
+    remainingOptions(): string[] {
       const remainingOptions = this.options.slice(0);
       remainingOptions.splice(this.modelValue, 1);
       return remainingOptions;
     },
-    formattedOptions() {
-      const options = this.showSelectedAsOption ? this.options : this.remainingOptions;
+    formattedOptions(): { name: string, style: any, index: number}[] {
+      const options = (this.showSelectedAsOption ? this.options : this.remainingOptions) as string[];
       return options.map((option) => {
-        const style = {};
+        const style = {} as any;
         if (this.align === 'center') {
           style.left = '50%';
           style.transform = 'translateX(-50%)';
@@ -81,13 +82,13 @@ export default {
         };
       });
     },
-    dropdownStyle() {
+    dropdownStyle(): { transition: string, zIndex: number} {
       return {
         transition: 'box-shadow .2s, border-color .2s',
         zIndex: this.options.length + 5,
       };
     },
-    iconStyle() {
+    iconStyle(): { transition: string, transform: string} {
       return {
         transition: 'transform .2s',
         transform: `rotate(${this.arrowRotateAmount}deg)`,
@@ -95,36 +96,36 @@ export default {
     },
   },
   watch: {
-    options() {
+    options(): void {
       this.optionShifts = Array(this.options.length).fill(0);
     },
-    direction() {
+    direction(): void {
       this.closeDropdown();
       this.arrowRotateAmount = this.direction === 'down' ? 0 : 180;
     },
   },
-  created() {
+  created(): void {
     // if the initial index is out of bounds, choose the first index by default
     if (this.modelValue < 0 || this.modelValue >= this.options.length) {
       this.$emit('update:modelValue', 0);
     }
   },
   methods: {
-    toggleDropdown() {
+    toggleDropdown(): void {
       this.arrowRotateAmount += (this.arrowRotateAmount >= 180) ? -180 : 180;
       this.open = !this.open;
     },
-    openDropdown() {
+    openDropdown(): void {
       if (!this.open) {
         this.toggleDropdown();
       }
     },
-    closeDropdown() {
+    closeDropdown(): void {
       if (this.open) {
         this.toggleDropdown();
       }
     },
-    selectOption(optionIndex) {
+    selectOption(optionIndex: number): void {
       if (this.open) {
         this.closeDropdown();
         // allow animation to start before emitting event (event may cause blocking calculations that slow down animation)
@@ -134,7 +135,7 @@ export default {
       }
     },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>

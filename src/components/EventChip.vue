@@ -10,8 +10,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   props: {
     date: { type: Date, default: null },
     name: { type: String, default: '' },
@@ -22,20 +24,20 @@ export default {
     },
   },
   computed: {
-    month() {
+    month(): string {
       if (this.date) {
         return this.date.toLocaleDateString('en-US', { month: 'short' });
       }
       return '';
     },
-    day() {
+    day(): string {
       if (this.date) {
         return this.date.getDate();
       }
       return '';
     },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>
