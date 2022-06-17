@@ -56,6 +56,12 @@ interface TimePickerPeriod {
   mode: string;
 }
 
+interface TimePickerOption {
+ text: string;
+ time: string;
+ scheduleMode: string;
+ name: string;
+}
 export default defineComponent({
   components: {
     ConfirmPopup,
@@ -105,11 +111,12 @@ export default defineComponent({
     },
   },
   methods: {
-    pickTime(options = [], selectedTime = '1:00') {
+
+    pickTime(options = [] as TimePickerOption[], selectedTime = '1:00') {
       // options is an array of objects of the format { time: String ("12:45"), text: String }
       return new Promise((resolve, reject) => {
         this.options = options.slice(0); // make a copy to prevent modification of the original
-        this.options.sort((a, b) => Bell.timeToNumber(a.time) - Bell.timeToNumber(b.time));
+        this.options.sort((a:TimePickerOption, b:TimePickerOption) => Bell.timeToNumber(a.time) - Bell.timeToNumber(b.time));
         this.setOthersChecked = true;
 
         this.show = true;

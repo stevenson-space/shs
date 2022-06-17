@@ -83,7 +83,7 @@ export default defineStore('schedules', {
   },
   actions: {
     initializeSchedule(): void {
-      this.setCustomSchedules(tryParseJSON(localStorage.customSchedules));
+      this.setCustomSchedules(tryParseJSON(localStorage.customSchedules) as CustomSchedules);
       if (localStorage.defaultScheduleMode) {
         this.setDefaultScheduleMode(localStorage.defaultScheduleMode);
         this.setScheduleMode(localStorage.defaultScheduleMode);
