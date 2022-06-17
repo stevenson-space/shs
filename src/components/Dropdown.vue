@@ -55,7 +55,7 @@ export default defineComponent({
     return {
       faCaretDown,
       open: false, // open is true even when dropdown is partially open, false only when dropdown is completely closed
-      arrowRotateAmount: this.direction === 'down' ? 0 : 180,
+      arrowRotateAmount: 0,
     };
   },
   computed: {

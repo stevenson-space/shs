@@ -62,6 +62,7 @@ interface TimePickerOption {
  scheduleMode: string;
  name: string;
 }
+
 export default defineComponent({
   components: {
     ConfirmPopup,
@@ -111,7 +112,6 @@ export default defineComponent({
     },
   },
   methods: {
-
     pickTime(options = [] as TimePickerOption[], selectedTime = '1:00') {
       // options is an array of objects of the format { time: String ("12:45"), text: String }
       return new Promise((resolve, reject) => {
