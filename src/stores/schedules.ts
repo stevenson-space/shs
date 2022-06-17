@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { RouteLocationNormalized } from 'vue-router';
-import { CustomSchedules, ScheduleCollection } from '@/utils/types';
+import { CustomSchedules, Schedule, ScheduleCollection } from '@/utils/types';
 import { tryParseJSON, getNameWithoutConflicts } from '@/utils/util';
 import Bell from '@/utils/bell';
 import officialSchedules from '@/data/schedules.json';
@@ -108,10 +108,10 @@ export default defineStore('schedules', {
       this.currentTime = Date.now();
     },
 
-    addCustomScheduleMode({ scheduleType, scheduleToAdd, scheduleToReplace }:any): void {
+    addCustomScheduleMode({ scheduleType, scheduleToAdd, scheduleToReplace }: { scheduleType: string, scheduleToAdd: { start: string[], end: string[], name: string, periods: string }, scheduleToReplace: string }): void {
       // If scheduleToReplace is not defined, then we want to just add to end of scheduleModes list
-      const scheduleModes = (this.customSchedules || {})[scheduleType] || [];
-      const replaceIndex = scheduleModes.map((mode:any) => mode.name).indexOf(scheduleToReplace);
+      const scheduleModes = (this.customSchedules || {})[scheduleType] || [] as CustomSchedules[];
+      const replaceIndex = scheduleModes.map((mode: CustomSchedules) => mode.name).indexOf(scheduleToReplace);
       // Notice that scheduleModes only contains schedules from customSchedules, so if scheduleToReplace is an
       // official schedule, then replaceIndex will be -1, and we'll just add the new schedule without replacing anything
       // (this is the expected behavior because official schedules can't be modified or replaced)
@@ -122,11 +122,11 @@ export default defineStore('schedules', {
       }
       this.setCustomSchedules({ ...this.customSchedules, [scheduleType]: scheduleModes });
     },
-    removeCustomScheduleMode({ scheduleType, scheduleToRemove }:any): void {
+    removeCustomScheduleMode({ scheduleType, scheduleToRemove }: { scheduleType: string, scheduleToRemove: string}): void {
       // if scheduleType is not provided, then we remove scheduleToRemove for all schedule types
-      for (const [type, scheduleModes] of Object.entries(this.customSchedules || {})) {
+      for (const [type, scheduleModes] of Object.entries(this.customSchedules || {}) as [any, Schedule[]]) {
         if (!scheduleType || scheduleType === type) {
-          const removeIndex = scheduleModes.map((mode) => mode.name).indexOf(scheduleToRemove);
+          const removeIndex = scheduleModes.map((mode: Schedule) => mode.name).indexOf(scheduleToRemove);
           if (removeIndex > -1) {
             scheduleModes.splice(removeIndex, 1);
           }

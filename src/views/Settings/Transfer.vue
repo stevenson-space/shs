@@ -64,6 +64,7 @@
 
 <script lang="ts">
 import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { CustomSchedules, MapStateToComputed, Theme } from '@/utils/types';
 import { mapState } from 'pinia';
 import { defineComponent } from 'vue';
 import useThemeStore from '@/stores/themes';
@@ -92,6 +93,20 @@ const popups = {
   loading: 5,
   error: 6,
 };
+
+type ThemeStoreState = {
+  theme: Theme;
+  color: string;
+}
+
+type GradeStoreState = {
+  grade: string;
+}
+
+type ScheduleStoreState = {
+  defaultScheduleMode: string;
+  customSchedules: CustomSchedules;
+}
 
 export default defineComponent({
   components: {
@@ -125,25 +140,25 @@ export default defineComponent({
     });
   },
   computed: {
-    ...mapState(useThemeStore, ['theme', 'color']),
-    ...mapState(useScheduleStore, ['defaultScheduleMode', 'customSchedules']),
-    ...mapState(useUserSettingsStore, ['grade']),
+    ...(mapState(useThemeStore, ['theme', 'color']) as MapStateToComputed<ThemeStoreState>),
+    ...(mapState(useScheduleStore, ['defaultScheduleMode', 'customSchedules']) as MapStateToComputed<ScheduleStoreState>),
+    ...(mapState(useUserSettingsStore, ['grade']) as MapStateToComputed<GradeStoreState>),
   },
   methods: {
-    settingToName(setting: transferableSettingOption) {
+    settingToName(setting: transferableSettingOption): string {
       const separatedWords = setting.replace(/([a-z])([A-Z])/g, '$1 $2'); // 'defaultScheduleSomething' to 'default Schedule Something'
       return separatedWords[0].toUpperCase() + separatedWords.slice(1); // capitalize first letter
     },
-    showPopup(popup: any) {
+    showPopup(popup: any): void {
       this.popupToShow = popup;
     },
-    getSetting(name: transferableSettingOption) {
+    getSetting(name: transferableSettingOption): string | Theme | CustomSchedules {
       switch (name.toLowerCase()) {
-        case transferableSettings[0]: return this.color;
-        case transferableSettings[1]: return this.theme;
-        case transferableSettings[2]: return this.defaultScheduleMode;
-        case transferableSettings[3]: return this.grade;
-        case transferableSettings[4]: return this.customSchedules;
+        case transferableSettings[0]: return this.color as string;
+        case transferableSettings[1]: return this.theme as Theme;
+        case transferableSettings[2]: return this.defaultScheduleMode as string;
+        case transferableSettings[3]: return this.grade as string;
+        case transferableSettings[4]: return this.customSchedules as CustomSchedules;
         default: return '';
       }
     },
@@ -157,7 +172,7 @@ export default defineComponent({
         default: break;
       }
     },
-    cancel() {
+    cancel(): void {
       // reset most things (usually unnecessary since they'll be overwritten anyway, but just in case)
       this.code = '';
       this.errorMessage = '';
@@ -166,7 +181,7 @@ export default defineComponent({
       this.shouldSaveSetting = {} as Record<transferableSettingOption, boolean>;
       this.popupToShow = popups.none;
     },
-    async send() {
+    async send(): Promise<void> {
       this.showPopup(popups.loading);
       // Get the data for each selected option to send
       const data = {} as Record<transferableSettingOption, any>;
@@ -183,7 +198,7 @@ export default defineComponent({
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: `content=${encodeURIComponent(JSON.stringify(data))}&syntax=json&expiry_days=1`,
-      });
+      }) as Response;
       if (response.status === 201) {
         const url = await response.text();
         const code = url.slice(url.lastIndexOf('/') + 1).trim().replace(/[^a-zA-Z0-9]/g, '');
@@ -195,7 +210,7 @@ export default defineComponent({
       }
     },
 
-    async receive() {
+    async receive(): Promise<void> {
       this.showPopup(popups.loading);
       const isValid = true;
 
@@ -224,7 +239,7 @@ export default defineComponent({
         this.showPopup(popups.error);
       }
     },
-    save() {
+    save(): void {
       if (this.receivedData) {
         if (this.shouldSaveSetting.theme) {
           this.receivedData.theme = { theme: this.receivedData.theme, useThemeColor: !this.shouldSaveSetting.color };

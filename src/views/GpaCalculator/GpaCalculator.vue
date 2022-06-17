@@ -220,13 +220,13 @@ export default defineComponent({
       }
       let unweightedGPASum = 0.0;
       let weightedGPASum = 0.0;
-      this.courses.forEach((course) => {
+      this.courses.forEach((course: Course) => {
         unweightedGPASum += (course.unweightedGPA * course.weight);
         weightedGPASum += (course.weightedGPA * course.weight);
       });
 
       let weightTotal = 0;
-      this.courses.forEach((i) => {
+      this.courses.forEach((i: Course) => {
         weightTotal += i.weight;
       });
       this.averageUnweightedGpa = unweightedGPASum / weightTotal;
