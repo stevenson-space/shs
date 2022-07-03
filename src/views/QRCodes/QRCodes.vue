@@ -10,9 +10,26 @@
       />
       <div class="center" >
         <rounded-button v-if="color != defaultColor" class="reset-button"  @click='resetColor()' text="Reset Color" :circular="true"/>
-        <div id="qr-code" :class="{ 'show' : showQR }" ref="qrCode"></div>
+        <div v-if="showQR" id="qr-code" :class="{ 'show' : showQR }">
+           <QRCodeVue3
+          :key="componentKey"
+          :image="require('@/assets/QRCodeLogo.png')"
+          :width="options.width"
+          :height="options.height"
+          :value="options.data"
+          :qrOptions="options.qrOptions"
+          :imageOptions="options.imageOptions"
+          :dotsOptions="options.dotsOptions"
+          :backgroundOptions="{ color: '#ffffff' }"
+          :cornersSquareOptions="{ type: 'extra-rounded', color: options.dotsOptions.color }"
+          :cornersDotOptions="{ type: 'circle', color:  options.dotsOptions.color }"
+          fileExt="png"
+          myclass="my-qur"
+          imgclass="img-qr"
+        />
+        </div>
         <br>
-        <p>For iOS devices, use Safari for the download feature</p>
+        <p><b>To save: drag-and-drop the image or tap and hold (on mobile)</b></p>
         <form @submit.prevent @submit="generateQR()">
           <input v-model='enteredQRCode' class="link-input" placeholder="Enter A Valid Link" />
         </form>
@@ -20,7 +37,7 @@
         <div class="input-tip"  v-if="errorMessage.length > 0">{{ errorMessage }}</div>
         <div class="btn-row">
           <rounded-button v-if="isValidLink()" class="button" @click="generateQR" :text="showQR && options.data != enteredQRCode ? 'Re-Generate' : 'Generate'" :circular="false"/>
-          <rounded-button v-if="showQR" class="button"  @click='download' text="Download" :circular="false"/>
+          <!-- <rounded-button v-if="showQR" class="button"  @click='download' text="Download" :circular="false"/> -->
         </div>
       </div>
     </card>
@@ -30,7 +47,7 @@
 <script>
 import colors from '@/data/QRColors.json';
 import PlainHeader from '@/components/PlainHeader.vue';
-import QRCodeStyling from 'qr-code-styling';
+import QRCodeVue3 from 'qrcode-vue3';
 import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ColorSelector from '@/views/Colors/ColorSelector.vue';
@@ -41,6 +58,7 @@ export default {
     Card,
     RoundedButton,
     ColorSelector,
+    QRCodeVue3,
   },
   data: () => {
     const options = {
@@ -57,14 +75,11 @@ export default {
       },
       imageOptions: {
         hideBackgroundDots: true,
-        imageSize: 0.35,
+        imageSize: 0.4,
       },
       dotsOptions: {
-        color: '',
-        type: 'rounded',
-      },
-      backgroundOptions: {
-        color: '#ffffff',
+        type: 'extra-rounded',
+        color: '#1F5D39',
       },
       cornersSquareOptions: {
         color: '',
@@ -81,19 +96,17 @@ export default {
       colors,
       showQR: false,
       options,
+      componentKey: 0,
       enteredQRCode: '',
       errorMessage: '',
-      qrCode: new QRCodeStyling(options),
     };
   },
   mounted() {
     if (process.env.NODE_ENV === 'development') {
       this.enteredQRCode = 'https://test.com';
     }
-    const { defaultColor } = this;
-    this.color = defaultColor;
-    this.setQRColor(defaultColor);
-    this.qrCode.append(this.$refs.qrCode);
+    this.color = this.defaultColor;
+    this.setQRColor(this.defaultColor);
   },
   methods: {
     resetColor() {
@@ -122,21 +135,24 @@ export default {
     },
     generateQR(checkDifferentURL = true) {
       if (this.isValidLink(checkDifferentURL)) {
+        this.showQR = false;
         this.options.data = this.enteredQRCode;
-        this.qrCode.update(this.options);
         this.showQR = true;
       }
     },
-    download() {
-      const fileName = `QR-${this.options.data.replace('http://', '').replace('https://', '').replace('www.', '').substring(0, 12)}`;
-      this.qrCode.download({ extension: this.options.type, name: fileName });
-    },
+    // download() {
+    // const fileName = `QR-${this.options.data.replace('http://', '').replace('https://', '').replace('www.', '').substring(0, 12)}`;
+    // this.qrCode.download({ extension: this.options.type, name: fileName });
+    // },
     setQRColor() {
+      this.enteredQRCode += ' ';
+      this.showQR = false;
       const { options, color } = this;
       options.dotsOptions.color = color;
       options.cornersSquareOptions.color = color;
       options.cornersDotOptions.color = color;
       this.generateQR(false);
+      // this.componentKey += 1;
     },
   },
 };
