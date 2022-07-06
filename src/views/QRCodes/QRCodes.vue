@@ -10,11 +10,12 @@
       />
       <div class="center" >
         <rounded-button v-if="color != defaultColor" class="reset-button"  @click='resetColor()' text="Reset Color" :circular="true"/>
-        <div v-if="showQR" id="qr-code" :class="{ 'show' : showQR }">
+        <div id="qr-code" :class="{ 'show' : showQR }">
            <QRCodeVue3
           :key="componentKey"
           :image="require('@/assets/QRCodeLogo.png')"
           :width="options.width"
+          :margin="options.margin"
           :height="options.height"
           :value="options.data"
           :qrOptions="options.qrOptions"
@@ -33,8 +34,8 @@
         <form @submit.prevent @submit="generateQR()">
           <input v-model='enteredQRCode' class="link-input" placeholder="Enter A Valid Link" />
         </form>
-        <div class="input-tip"  v-if="enteredQRCode.length > 40">Tip: For very long links, consider using <a href="https://bitly.com/" target='_blank'>Bitly</a> for a more aesthetic code</div>
-        <div class="input-tip"  v-if="errorMessage.length > 0">{{ errorMessage }}</div>
+        <div class="input-tip" v-if="enteredQRCode.length > 40">Tip: For very long links, consider using <a href="https://bitly.com/" target='_blank'>Bitly</a> for a more aesthetic code</div>
+        <div class="input-tip" v-if="errorMessage.length > 0">{{ errorMessage }}</div>
         <div class="btn-row">
           <rounded-button v-if="isValidLink()" class="button" @click="generateQR" :text="showQR && options.data != enteredQRCode ? 'Re-Generate' : 'Generate'" :circular="false"/>
           <!-- <rounded-button v-if="showQR" class="button"  @click='download' text="Download" :circular="false"/> -->
@@ -64,8 +65,8 @@ export default {
     const options = {
       width: 800,
       height: 800,
-      margin: 20,
       type: 'jpeg',
+      margin: 25,
       data: '',
       image: 'static/QRCodeLogo.png',
       qrOptions: {
@@ -78,7 +79,7 @@ export default {
         imageSize: 0.4,
       },
       dotsOptions: {
-        type: 'extra-rounded',
+        type: 'dots',
         color: '#1F5D39',
       },
       cornersSquareOptions: {
@@ -145,14 +146,12 @@ export default {
     // this.qrCode.download({ extension: this.options.type, name: fileName });
     // },
     setQRColor() {
-      this.enteredQRCode += ' ';
-      this.showQR = false;
       const { options, color } = this;
       options.dotsOptions.color = color;
       options.cornersSquareOptions.color = color;
       options.cornersDotOptions.color = color;
       this.generateQR(false);
-      // this.componentKey += 1;
+      this.componentKey += 1;
     },
   },
 };
@@ -167,7 +166,8 @@ export default {
   &.show
     +shadow
     transform: scale(.35)
-    padding: 20px
+    padding: 12px
+    height: 800px
     background: white
     border-radius: 50px
     margin-top: -250px
@@ -180,7 +180,7 @@ export default {
   .input-tip
     font-size: 14px
     a
-      color: black
+      color: var(--color)
   .center
     display: flex
     flex-direction: column
