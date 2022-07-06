@@ -1,10 +1,9 @@
 <template>
-  <timed-card startTime="May 18, 2022" endTime="May 24, 2022">
+  <timed-card startTime="July 5, 2022" endTime="August 15, 2022">
     <div class="container">
-      <img class="logo" src="static/occasions/GirlconLogo.png">
       <div class="message">
-        Girlcon is a free conference aimed at empowering women in stem and it's happening this summer held @Expedia Chicago and virtually!
-        <a href="https://GirlCon.org" class="link" target="_blank">Learn more</a>
+        <br>
+        Welcome Back to Stevenson.Space! We've been hard at work upgrading to <a href="https://vuejs.org/" target="_blank">Vue 3.0</a> which is a massive undertaking. This will keep us out of technical debt and decrease load times. If you're curious, check out the <a href="https://github.com/stevenson-space/shs/pull/125/files" target="_blank">Pull Request</a>. Please report any issues you find <a target="_blank" href="https://github.com/stevenson-space/shs/issues">here</a> by clicking "New Issue" or emailing us: admin@stevenson.space. Thank you!
       </div>
     </div>
   </timed-card>
@@ -19,6 +18,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+a
+  color: var(--color)
 .container
   display: flex
   align-items: center
