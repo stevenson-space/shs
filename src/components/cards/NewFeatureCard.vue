@@ -3,7 +3,7 @@
     <div class="container">
       <div class="message">
         <br>
-        Welcome Back to Stevenson.Space! We've been hard at work upgrading to <a href="https://vuejs.org/" target="_blank">Vue 3.0</a> which is a massive undertaking. If you're curious, check out the <a href="https://github.com/stevenson-space/shs/pull/125/files" target="_blank">Pull Request</a>. Please report any issues you find <a target="_blank" href="https://github.com/stevenson-space/shs/issues">here</a> or <a href="mailto:admin@stevenson.space">emailing us</a>. Thank you!
+        Welcome Back to Stevenson.Space! We've been hard at work upgrading to <a href="https://vuejs.org/" target="_blank">Vue 3.0</a> which is a massive undertaking. If you're curious, check out the <a href="https://github.com/stevenson-space/shs/pull/125/files" target="_blank">Pull Request</a>. Please report any issues you find <a target="_blank" href="https://github.com/stevenson-space/shs/issues">here</a> or by <a href="mailto:admin@stevenson.space">email</a>. Thank you!
       </div>
     </div>
   </timed-card>

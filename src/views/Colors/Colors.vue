@@ -5,7 +5,7 @@
         <RoundedButton
           class="reset-button"
           v-show="color != suggestedColor"
-          @click="colorSelected(suggestedColor)"
+          @click="colorSelected(suggestedColor())"
           text="Reset"
         />
         <div

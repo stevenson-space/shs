@@ -7,6 +7,7 @@
 
     <card-container class="card-container">
       <new-feature-card/>
+      <new-theme-card />
       <!-- <april-fools-card /> -->
       <sodexo-appreciation-card />
       <!-- <shs-hacks-card/> -->

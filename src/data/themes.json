@@ -118,7 +118,7 @@
         "iconTextCardColor": "white",
         "iconTextCardInvertColor": "var(--color)"
     },
-        {
+    {
         "name": "Summer",
         "schedule": "5/15/2022-9/22/2022",
         "message": "[Try] The new summer theme now!",
@@ -132,5 +132,21 @@
         "tertiary": "#555",
         "iconTextCardColor": "white",
         "iconTextCardInvertColor": "var(--color)"
+    },
+    {
+        "name": "Cosmic Reef",
+        "message": "[Try] The new Cosmic theme now!",
+        "description": "Featuring a satellite galaxy of the Milky Way - the Large Magellanic Cloud, located 163,000 light-years away. Credit: Hubble Telescope, NASA",
+        "schedule": "always",
+        "suggestedColor": "#cf6236",
+        "background": "#23272a",
+        "headerBackgroundColor": "var(--secondaryBackground)",
+        "headerScheduleBackgroundColor": "var(--background)",
+        "secondaryBackground": "#2c2f33",
+        "primary": "white",
+        "secondary": "white",
+        "tertiary": "white",
+        "iconTextCardColor": "white",
+        "iconTextCardInvertColor": "white"
     }
 ]

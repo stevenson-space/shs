@@ -1,7 +1,7 @@
 <template>
   <div
     class="header"
-    :class="{ 'full-screen': fullScreenMode, 'halloween': theme.name.toLowerCase() == 'halloween', 'mars': theme.name.toLowerCase() == 'mars', 'summer': theme.name.toLowerCase() == 'summer'}"
+    :class="{ 'full-screen': fullScreenMode, 'halloween': theme.name.toLowerCase() == 'halloween', 'mars': theme.name.toLowerCase() == 'mars', 'cosmic-reef': theme.name.toLowerCase() == 'cosmic reef', 'summer': theme.name.toLowerCase() == 'summer'}"
     :style="colors"
   >
     <dropdown
@@ -348,6 +348,11 @@ export default {
     background-size: cover
     +desktop
       background: url(@/assets/occasions/mars-full.png) center center no-repeat, var(--header-color)
+  &.cosmic-reef
+    background: url(@/assets/occasions/cosmic-reef-mobile.png) center center no-repeat, var(--header-color)
+    background-size: cover
+    +desktop
+      background: url(@/assets/occasions/cosmic-reef-full.png) center center no-repeat, var(--header-color)
   &.summer
     background: url(@/assets/occasions/beach-mobile.png) center center no-repeat, var(--header-color)
     background-size: cover

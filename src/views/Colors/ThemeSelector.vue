@@ -17,6 +17,10 @@
         :isCurrentTheme="themeItem.name==theme.name && themeItem.suggestedColor == color"
       />
     </div>
+    <div v-if="theme.description" class="about-theme">
+      About <what-is-this>{{ theme.description }}</what-is-this>
+      </div>
+
   </div>
 </template>
 
@@ -24,6 +28,7 @@
 import themeCircle from '@/views/Colors/ThemeCircle.vue';
 import themes from '@/data/themes.json';
 import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
+import WhatIsThis from '@/components/WhatIsThis.vue';
 import useThemeStore from '@/stores/themes';
 import useScheduleStore from '@/stores/schedules';
 import { mapState, mapActions } from 'pinia';
@@ -40,7 +45,7 @@ type ScheduleStoreState = {
 }
 
 export default defineComponent({
-  components: { themeCircle, ThemeChangeModal },
+  components: { themeCircle, ThemeChangeModal, WhatIsThis },
   computed: {
     ...(mapState(useThemeStore, ['theme', 'color']) as MapStateToComputed<ThemeStoreState>),
     ...(mapState(useScheduleStore, ['date']) as MapStateToComputed<ScheduleStoreState>),
@@ -90,5 +95,12 @@ export default defineComponent({
     margin-bottom: 20px
     display: flex
     justify-content: center
-    overflow-x: hidden
+    flex-wrap: wrap
+    gap: 10px
+.about-theme
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 5px
+  margin: 12px 0
 </style>
