@@ -122,5 +122,4 @@ export default {
 
       .year
         font-size: .7em
-
 </style>

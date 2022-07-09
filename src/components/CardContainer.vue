@@ -4,12 +4,6 @@
   </div>
 </template>
 
-<script>
-export default {
-
-};
-</script>
-
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 

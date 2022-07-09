@@ -1,12 +1,4 @@
 <template>
-  <!-- <div // FIX?
-    v-hammer:swipe.horizontal="onSwipe"
-    v-focus
-    tabindex="-1"
-    style="outline: none"
-    @keydown.right="nextMonth"
-    @keydown.left="previousMonth"
-  > -->
   <div
     tabindex="-1"
     style="outline: none"
@@ -30,7 +22,6 @@
       @previous-month="previousMonth"
       @event-click="displayedEvent = $event"
     />
-
     <event-popup :event="displayedEvent" :show="!!displayedEvent.name" @close="displayedEvent = {}" />
   </div>
 </template>

@@ -125,8 +125,8 @@ export default defineComponent({
     font-weight: bold
     font-size: 1.2em
     margin-left: 5px
-    padding: 5px 10px
-    border-radius: 10px
+    padding: 2px 10px
+    border-radius:20px
     +shadow-light
     &:focus
       outline-color: var(--color)

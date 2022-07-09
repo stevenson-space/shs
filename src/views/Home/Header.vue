@@ -16,7 +16,6 @@
       class="main"
       :class="{ 'extra-padding': scheduleModes.length > 1, 'winterfest': theme.name.toLowerCase() == 'into the woods'}"
     >
-
       <div @click="previousDay" class="switch-day">
         <font-awesome-icon
           :icon="icons.faChevronLeft"
@@ -33,7 +32,6 @@
           :schedule-type="bell.type"
           :full-screen-mode="fullScreenMode"
         />
-
         <div class="date">
           {{ formatDate(date) }}
         </div>

@@ -9,7 +9,7 @@
       :key="event.name + event.start"
       class="event"
       :text="event.name"
-      @click.native="$emit('event-click', event)"
+      @click="$emit('event-click', event)"
     />
   </div>
 </template>

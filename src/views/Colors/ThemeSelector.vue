@@ -16,7 +16,6 @@
         :theme="themeItem"
         :isCurrentTheme="themeItem.name==theme.name && themeItem.suggestedColor == color"
       />
-
     </div>
   </div>
 </template>
@@ -41,13 +40,11 @@ type ScheduleStoreState = {
 }
 
 export default defineComponent({
-
   components: { themeCircle, ThemeChangeModal },
   computed: {
     ...(mapState(useThemeStore, ['theme', 'color']) as MapStateToComputed<ThemeStoreState>),
     ...(mapState(useScheduleStore, ['date']) as MapStateToComputed<ScheduleStoreState>),
   },
-
   data() {
     return {
       showModal: false,

@@ -70,14 +70,12 @@ import { defineComponent } from 'vue';
 import useThemeStore from '@/stores/themes';
 import useScheduleStore from '@/stores/schedules';
 import useUserSettingsStore from '@/stores/user-settings';
-
 import RoundedButton from '@/components/RoundedButton.vue';
 import Popup from '@/components/Popup.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import Checkbox from '@/components/Checkbox.vue';
 import SettingsSection from './SettingsSection.vue';
 
-// Note: setting refers to the name (e.g. 'color'), data inclued the content (e.g. '#FA32F5' or {'color' : '#FA32F5'})
 type transferableSettingOption = 'color' |'theme' |'defaultScheduleMode' | 'grade' | 'customSchedules'
 
 const transferableSettings: transferableSettingOption[] = ['color', 'theme', 'defaultScheduleMode', 'grade', 'customSchedules']; // the following strings should be direct properties of $store.state

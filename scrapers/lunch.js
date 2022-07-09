@@ -7,7 +7,6 @@ const toDays = date =>
   parseInt((date.getTime() / 1000 / 60 - date.getTimezoneOffset()) / 60 / 24);
 
 // TODO: disabling for now since lunch is not available at https://www.d125.org/student-life/food-services/latest-menu anymore
-// Reenable when lunch is available on the website again, or write parser for PDF linked on https://www.d125.org/student-life/food-services
 main();
 
 async function parseLunchTable() {

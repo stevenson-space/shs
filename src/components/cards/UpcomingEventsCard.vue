@@ -47,7 +47,6 @@ function getNextEvent(startDate) {
   }
 
   let event = null;
-
   // Go through dates starting from startDate until we find one with a special schedule and return that
   for (const date of dates(startDate)) {
     const schedule = Bell.getScheduleType(date);
@@ -57,7 +56,6 @@ function getNextEvent(startDate) {
         date,
         name: schedule.name,
       };
-
       // need to break out of loop once an event is found since the generator will run forever
       break;
     }

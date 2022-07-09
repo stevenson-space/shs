@@ -30,7 +30,6 @@
 <script>
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
-
 import Popup from '@/components/Popup.vue';
 
 export default {
@@ -102,5 +101,4 @@ export default {
     margin-top: 15px
     font-size: .9em
     white-space: pre-line
-
 </style>

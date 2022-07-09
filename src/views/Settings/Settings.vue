@@ -38,7 +38,6 @@
 
     <div class="main">
       <home-link class="home-link" />
-
       <general id="general" />
       <schedules id="schedules" />
       <transfer id="transfer" />

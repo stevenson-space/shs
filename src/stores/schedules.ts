@@ -23,7 +23,7 @@ function parseUrlDateTime(route: RouteLocationNormalized): Date {
   if (!time) time = '';
 
   if (!Array.isArray(time) && !Array.isArray(date)) { // make sure multiple values weren't specified in URL for each
-    time = time.replace(/\./g, ':'); // lets you use "." (url safe) instead of ":" (not url safe) //FIX
+    time = time.replace(/\./g, ':'); // lets you use "." (url safe) instead of ":" (not url safe)
     date = date.replace(/-/g, '/'); // lets you use "-" instead of "/"
 
     const today = new Date();
