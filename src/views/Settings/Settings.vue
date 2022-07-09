@@ -42,7 +42,7 @@
       <schedules id="schedules" />
       <transfer id="transfer" />
       <contact id="contact" />
-      <Code id="code" />
+      <code-information id="code" />
       <privacy id="privacy" />
 
       <div
@@ -73,7 +73,7 @@ import Schedules from './Schedules.vue';
 import Transfer from './Transfer.vue';
 import Privacy from './Privacy.vue';
 import Contact from './Contact.vue';
-import Code from './Code.vue';
+import CodeInformation from './CodeInformation.vue';
 
 type SettingsNavItems = {
   text: string;
@@ -115,7 +115,7 @@ export default defineComponent({
     Transfer,
     Privacy,
     Contact,
-    Code,
+    CodeInformation,
   },
   data() {
     return {
