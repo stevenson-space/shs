@@ -20,7 +20,7 @@
     "eslint-plugin-vuejs-accessibility": "^1.1.1",
     "gsap": "^3.10.3",
     "pinia": "^2.0.13",
-    "qrcode-vue3": "file:../../../Documents/GitHub/project-xenox/qrcode-vue3",
+    "qrcode-vue3": "^1.4.17",
     "query-string": "^7.1.1",
     "querystring-es3": "^0.2.1",
     "vue": "^3.2.13",
