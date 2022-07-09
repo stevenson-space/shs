@@ -5,7 +5,7 @@
       <image-text-card
         v-for="(link, index) in links"
         :key="link.url"
-        :style="{ 'animation-delay': index*.035 + 's'}"
+        :style="{ 'animation-delay': index*.04 + 's'}"
         :image="require(`@/assets/links/${link.name}.png`)"
         :text="link.name"
         :desc="link.desc"

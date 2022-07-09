@@ -386,7 +386,6 @@ export default {
       +mobile-small
         background-size: 500px
     .date
-      // +shadow
       background-color: var(--background)
       border-radius: 100px
       margin-top: 10px
