@@ -65,7 +65,7 @@
 <script lang="ts">
 import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { CustomSchedules, MapStateToComputed, Theme } from '@/utils/types';
-import { mapState } from 'pinia';
+import { mapActions, mapState } from 'pinia';
 import { defineComponent } from 'vue';
 import useThemeStore from '@/stores/themes';
 import useScheduleStore from '@/stores/schedules';
@@ -81,8 +81,6 @@ import SettingsSection from './SettingsSection.vue';
 type transferableSettingOption = 'color' |'theme' |'defaultScheduleMode' | 'grade' | 'customSchedules'
 
 const transferableSettings: transferableSettingOption[] = ['color', 'theme', 'defaultScheduleMode', 'grade', 'customSchedules']; // the following strings should be direct properties of $store.state
-
-const isValidTransferableSetting = (x: string) => transferableSettings.some((setting) => x === String(setting));
 
 const popups = {
   none: 0,
@@ -145,6 +143,10 @@ export default defineComponent({
     ...(mapState(useUserSettingsStore, ['grade']) as MapStateToComputed<GradeStoreState>),
   },
   methods: {
+    ...mapActions(useThemeStore, ['setTheme', 'setColor']),
+    ...mapActions(useScheduleStore, ['setDefaultScheduleMode', 'setCustomSchedules']),
+    ...mapActions(useUserSettingsStore, ['setGrade']),
+
     settingToName(setting: transferableSettingOption): string {
       const separatedWords = setting.replace(/([a-z])([A-Z])/g, '$1 $2'); // 'defaultScheduleSomething' to 'default Schedule Something'
       return separatedWords[0].toUpperCase() + separatedWords.slice(1); // capitalize first letter
@@ -162,13 +164,13 @@ export default defineComponent({
         default: return '';
       }
     },
-    setSetting(name: transferableSettingOption, value: any) {
+    setSetting(name: transferableSettingOption, value: any): void {
       switch (name.toLowerCase()) {
-        case transferableSettings[0]: this.color = value; break;
-        case transferableSettings[1]: this.theme = value; break;
-        case transferableSettings[2]: this.defaultScheduleMode = value; break;
-        case transferableSettings[3]: this.grade = value; break;
-        case transferableSettings[4]: this.customSchedules = value; break;
+        case transferableSettings[0]: this.setColor(value); break;
+        case transferableSettings[1]: this.setTheme(value); break;
+        case transferableSettings[2]: this.setDefaultScheduleMode(value); break;
+        case transferableSettings[3]: this.setGrade(value); break;
+        case transferableSettings[4]: this.setCustomSchedules(value); break;
         default: break;
       }
     },
@@ -212,7 +214,7 @@ export default defineComponent({
 
     async receive(): Promise<void> {
       this.showPopup(popups.loading);
-      const isValid = true;
+      let isValid = true;
 
       const response = await fetch(`/receive/${this.receiveCode.toUpperCase()}.txt`, {
         method: 'GET',
@@ -221,7 +223,7 @@ export default defineComponent({
         const data = await response.json();
         const settings = Object.keys(data);
         settings.forEach((setting) => {
-          // if (!isValidTransferableSetting(setting)) isValid = false;
+          if (!transferableSettings.some((transferableSetting) => transferableSetting === String(setting))) isValid = false; // make sure every recieved setting is acceptable
         });
         if (isValid) {
           this.receivedData = data as Record<transferableSettingOption, any>;
