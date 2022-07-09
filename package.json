@@ -20,7 +20,7 @@
     "eslint-plugin-vuejs-accessibility": "^1.2.0",
     "gsap": "^3.10.4",
     "pinia": "^2.0.14",
-    "qrcode-vue3": "^1.4.17",
+    "space-vue3-qrcode": "^1.4.19",
     "query-string": "^7.1.1",
     "querystring-es3": "^0.2.1",
     "vue": "^3.2.37",

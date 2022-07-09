@@ -48,7 +48,7 @@
 <script>
 import colors from '@/data/QRColors.json';
 import PlainHeader from '@/components/PlainHeader.vue';
-import QRCodeVue3 from 'qrcode-vue3';
+import QRCodeVue3 from 'space-vue3-qrcode';
 import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ColorSelector from '@/views/Colors/ColorSelector.vue';
