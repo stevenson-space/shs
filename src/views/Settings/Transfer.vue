@@ -64,7 +64,7 @@
 
 <script lang="ts">
 import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-icons';
-import { CustomSchedules, MapStateToComputed, Theme } from '@/utils/types';
+import { CustomSchedules, MapStateToComputed, ScheduleMode, Theme } from '@/utils/types';
 import { mapActions, mapState } from 'pinia';
 import { defineComponent } from 'vue';
 import useThemeStore from '@/stores/themes';
@@ -78,7 +78,7 @@ import SettingsSection from './SettingsSection.vue';
 
 type transferableSettingOption = 'color' |'theme' |'defaultScheduleMode' | 'grade' | 'customSchedules'
 
-const transferableSettings: transferableSettingOption[] = ['color', 'theme', 'defaultScheduleMode', 'grade', 'customSchedules']; // the following strings should be direct properties of $store.state
+const transferableSettings: transferableSettingOption[] = ['color', 'theme', 'defaultScheduleMode', 'grade', 'customSchedules'];
 
 const popups = {
   none: 0,
@@ -152,23 +152,23 @@ export default defineComponent({
     showPopup(popup: any): void {
       this.popupToShow = popup;
     },
-    getSetting(name: transferableSettingOption): string | Theme | CustomSchedules {
-      switch (name.toLowerCase()) {
-        case transferableSettings[0]: return this.color as string;
-        case transferableSettings[1]: return this.theme as Theme;
-        case transferableSettings[2]: return this.defaultScheduleMode as string;
-        case transferableSettings[3]: return this.grade as string;
-        case transferableSettings[4]: return this.customSchedules as CustomSchedules;
-        default: return '';
+    getSetting(name: transferableSettingOption): string | Theme | ScheduleMode {
+      switch (name) {
+        case 'color': return this.color as string;
+        case 'theme': return this.theme as Theme;
+        case 'defaultScheduleMode': return this.defaultScheduleMode as ScheduleMode;
+        case 'grade': return this.grade as string;
+        case 'customSchedules': return JSON.stringify(this.customSchedules);
+        default: return 'foo';
       }
     },
     setSetting(name: transferableSettingOption, value: any): void {
-      switch (name.toLowerCase()) {
-        case transferableSettings[0]: this.setColor(value); break;
-        case transferableSettings[1]: this.setTheme(value); break;
-        case transferableSettings[2]: this.setDefaultScheduleMode(value); break;
-        case transferableSettings[3]: this.setGrade(value); break;
-        case transferableSettings[4]: this.setCustomSchedules(value); break;
+      switch (name) {
+        case 'color': this.setColor(value); break;
+        case 'theme': this.setTheme(value); break;
+        case 'defaultScheduleMode': this.setDefaultScheduleMode(value); break;
+        case 'grade': this.setGrade(value); break;
+        case 'customSchedules': this.setCustomSchedules(value); break;
         default: break;
       }
     },
@@ -187,11 +187,9 @@ export default defineComponent({
       const data = {} as Record<transferableSettingOption, any>;
       for (const [setting, shouldSend] of Object.entries(this.shouldSendSetting) as [transferableSettingOption, any][]) {
         if (shouldSend) {
-          // data[setting] = this.$store.state[setting];
           data[setting] = this.getSetting(setting);
         }
       }
-
       const response = await fetch('/send', {
         method: 'POST',
         headers: {
