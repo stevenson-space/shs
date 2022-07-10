@@ -67,6 +67,7 @@ import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-ico
 import { CustomSchedules, MapStateToComputed, ScheduleMode, Theme } from '@/utils/types';
 import { mapActions, mapState } from 'pinia';
 import { defineComponent } from 'vue';
+import { tryParseJSON } from '@/utils/util';
 import useThemeStore from '@/stores/themes';
 import useScheduleStore from '@/stores/schedules';
 import useUserSettingsStore from '@/stores/user-settings';
@@ -156,9 +157,9 @@ export default defineComponent({
       switch (name) {
         case 'color': return this.color as string;
         case 'theme': return this.theme as Theme;
-        case 'defaultScheduleMode': return this.defaultScheduleMode as ScheduleMode;
+        case 'defaultScheduleMode': return this.defaultScheduleMode;
         case 'grade': return this.grade as string;
-        case 'customSchedules': return JSON.stringify(this.customSchedules);
+        case 'customSchedules': return this.customSchedules;
         default: return 'foo';
       }
     },
@@ -168,7 +169,7 @@ export default defineComponent({
         case 'theme': this.setTheme(value); break;
         case 'defaultScheduleMode': this.setDefaultScheduleMode(value); break;
         case 'grade': this.setGrade(value); break;
-        case 'customSchedules': this.setCustomSchedules(value); break;
+        case 'customSchedules': this.setCustomSchedules(tryParseJSON(value) as CustomSchedules); break;
         default: break;
       }
     },
