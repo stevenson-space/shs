@@ -169,7 +169,7 @@ export default defineComponent({
         case 'theme': this.setTheme(value); break;
         case 'defaultScheduleMode': this.setDefaultScheduleMode(value); break;
         case 'grade': this.setGrade(value); break;
-        case 'customSchedules': this.setCustomSchedules(tryParseJSON(value) as CustomSchedules); break;
+        case 'customSchedules': this.setCustomSchedules(value); break;
         default: break;
       }
     },
