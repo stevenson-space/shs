@@ -66,7 +66,7 @@ export default {
       width: 800,
       height: 800,
       type: 'jpeg',
-      margin: 25,
+      margin: 27,
       data: '',
       image: 'static/QRCodeLogo.png',
       qrOptions: {
@@ -169,7 +169,7 @@ export default {
     padding: 12px
     height: 800px
     background: white
-    border-radius: 50px
+    border-radius: 40px
     margin-top: -250px
     margin-bottom: -260px
 .qr-card

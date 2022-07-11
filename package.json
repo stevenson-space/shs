@@ -20,11 +20,10 @@
     "eslint-plugin-vuejs-accessibility": "^1.2.0",
     "gsap": "^3.10.4",
     "pinia": "^2.0.14",
-    "space-vue3-qrcode": "^1.4.19",
     "query-string": "^7.1.1",
     "querystring-es3": "^0.2.1",
+    "space-vue3-qrcode": "^1.4.19",
     "vue": "^3.2.37",
-    "vue-confetti": "^2.3.0",
     "vue-gtag": "^2.0.1",
     "vue-router": "^4.1.1"
   },

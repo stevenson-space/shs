@@ -411,7 +411,7 @@ export default {
     margin: 25px 50px
     font-size: 2.5em
     font-weight: bold
-    color: #444
+    color: var(--primary)
     +mobile-small
       font-size: 2em
 
