@@ -2,11 +2,6 @@
   <div>
     <plain-header title="GPA Calculator" />
     <div>
-    <!-- temporary until end of class of 2022-->
-    <card class="top-card" style="margin-bottom: 15px !important;">
-      <p style="text-align: center; padding: 5px;">Welcome to the new EBR version of the GPA calculator. Any data entered previously is still availale on the legacy version of the app found <a style="color: var(--color)" target="_blank" href="/OldGpaCalculator">here</a></p>
-    </card>
-    <!-- end-temporary -->
       <card class="top-card">
         <div style="text-align:center">
           <div class="gpa-title-row">
@@ -35,7 +30,7 @@
       </card>
     </div>
     <card-container class="gpa-card-container">
-      <card class="gpa-card" :wrapperStyle="{ overflow: 'visible' }" v-for="(course, courseIndex) in courses" :key="courseIndex">
+      <card class="gpa-card" :wrapperStyle="{ overflow: 'visible' }" v-for="(course, courseIndex) in courses" :key="courseIndex" :style="{ 'animation-delay': reduceFadeUpAnimation ? 0 : (courseIndex * .045 + .1) + 's'}">
         <div class="gpa-tile">
           <input
             class="name"
@@ -43,7 +38,7 @@
             type="text"
             :value="course.name"
             :placeholder="'Course '+ (course.id)"
-            @input="editCourseName(course,$event)"
+            @input="editCourseName(course,$event.target.value)"
           >
           <font-awesome-icon
             v-show="courses.length > 1"
@@ -57,18 +52,18 @@
           <dropdown
             style="flex:1;"
             :options="['Regular','Accelerated','Honors/AP']"
-            :value="course.level"
+            :modelValue="course.level"
             align="left"
-            @input="selectedCourseLevel(course,$event)"
+            @update:modelValue="selectedCourseLevel(course,$event)"
           />
             <dropdown
               style="flex:1;"
               :direction="course.direction"
               class="grade-selector"
               :options="gradeLabels"
-              :value="course.grade"
+              :modelValue="course.grade"
               align="left"
-              @input="selectGrade(course,$event)"
+              @update:modelValue="selectGrade(course,$event)"
             />
           </div>
         <p class="grade-label">{{course.finalGrade}}</p>
@@ -82,25 +77,33 @@
               <div class="final-gpa">{{course.weightedGPA.toFixed(2)}}</div>
             </div>
           </div>
-          <checkbox :value="course.weight == 1.5" v-on:input="toggleExtraWeight(course, $event)">1.5 Weight Science Class</checkbox>
+          <checkbox :modelValue="course.weight == 1.5" @update:modelValue="toggleExtraWeight(course, $event)">1.5 Weight Science Class</checkbox>
         <br>
       </card>
     </card-container>
   </div>
 </template>
-<script>
+<script lang="ts">
 import RoundedButton from '@/components/RoundedButton.vue';
-
 import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { defineComponent } from 'vue';
 import Card from '@/components/Card.vue';
-import HomeLink from '@/components/HomeLink.vue';
 import PlainHeader from '@/components/PlainHeader.vue';
 import CardContainer from '@/components/CardContainer.vue';
 import Dropdown from '@/components/Dropdown.vue';
 import Checkbox from '@/components/Checkbox.vue';
 
 class Course {
-  constructor(id) {
+  id: number;
+  grade: number;
+  level: number;
+  weight: number;
+  unweightedGPA: number;
+  weightedGPA: number;
+  finalGrade: string;
+  hasFinal: boolean;
+  name: string;
+  constructor(id: number) {
     this.id = id;
     this.grade = 0; // A
     this.level = 0;
@@ -113,20 +116,20 @@ class Course {
   }
 }
 
-export default {
+export default defineComponent({
   components: {
-    RoundedButton, Card, HomeLink, PlainHeader, CardContainer, Dropdown, Checkbox,
-
+    RoundedButton, Card, PlainHeader, CardContainer, Dropdown, Checkbox,
   },
   data() {
     return {
       icons: { faPlus, faXmark },
-      courses: [new Course(1)],
-      averageUnweightedGpa: 4.0,
-      averageWeightedGpa: 4.0,
-      courseLevels: ['Regular', 'Accelerated', 'Honors/AP'],
-      gradeLabels: ['A', 'B', 'C', 'D', 'F'],
-      terms: ['1st', '2nd', '3rd', 'Final'],
+      courses: [new Course(1)] as Course[],
+      averageUnweightedGpa: 4.0 as number,
+      averageWeightedGpa: 4.0 as number,
+      courseLevels: ['Regular', 'Accelerated', 'Honors/AP'] as string[],
+      gradeLabels: ['A', 'B', 'C', 'D', 'F'] as string[],
+      terms: ['1st', '2nd', '3rd', 'Final'] as string[],
+      reduceFadeUpAnimation: false as boolean,
     };
   },
   watch: {
@@ -138,48 +141,54 @@ export default {
     },
   },
   mounted() {
-    if (localStorage.getItem('EBRCourses') != null) {
-      this.courses = JSON.parse(localStorage.getItem('EBRCourses'));
+    const courses: string | null = localStorage.getItem('EBRCourses');
+    if (courses) {
+      this.courses = JSON.parse(courses);
       this.calculateSemesterGrades();
     }
   },
+
   methods: {
-    editCourseName(course, event) {
-      course.name = event.target.value;
+    editCourseName(course:Course, inputValue: string): void {
+      course.name = inputValue;
     },
-    addCourse() {
+    addCourse(): void {
+      this.reduceFadeUpAnimation = true;
       this.courses.push(new Course(this.courses.length + 1));
       this.calculateSemesterGrades();
     },
-    removeCourse(course) {
-      this.$delete(this.courses, this.courses.indexOf(course));
-      this.calculateSemesterGrades();
+    removeCourse(course: Course): void {
+      const index = this.courses.indexOf(course);
+      if (index > -1) {
+        this.courses.splice(index, 1);
+        this.calculateSemesterGrades();
+      }
     },
-    selectGrade(course, gradeIndex) {
+    selectGrade(course: Course, gradeIndex: number): void {
       const index = this.courses.indexOf(course);
       course.grade = gradeIndex;
-      this.$set(this.courses, index, course);
+      this.courses[index] = course;
       this.calculateSemesterGrades();
     },
-    selectedCourseLevel(course, i) {
+    selectedCourseLevel(course: Course, i: number): void {
       const index = this.courses.indexOf(course);
       course.level = i;
-      this.$set(this.courses, index, course);
+      this.courses[index] = course;
       this.calculateSemesterGrades();
     },
-    toggleExtraWeight(course, value) {
+    toggleExtraWeight(course: Course, isChecked: boolean): void {
       const index = this.courses.indexOf(course);
-      course.weight = (value === true ? 1.5 : 1);
-      this.$set(this.courses, index, course);
+      course.weight = (isChecked ? 1.5 : 1);
+      this.courses[index] = course;
       this.calculateSemesterGrades();
     },
-    selectHasFinal(course, gradeIndex) {
+    selectHasFinal(course: Course, gradeIndex: number): void {
       const index = this.courses.indexOf(course);
       course.hasFinal = (gradeIndex === 0);
-      this.$set(this.courses, index, course);
+      this.courses[index] = course;
       this.calculateSemesterGrades();
     },
-    calculateSemesterGrades() {
+    calculateSemesterGrades(): void {
       let gpa = 0.0;
       for (let x = 0; x < this.courses.length; x++) { // for every course
         const course = this.courses[x];
@@ -207,25 +216,24 @@ export default {
         }
         course.unweightedGPA = unweightedGPA;
         course.weightedGPA = weightedGPA;
-        this.$set(this.courses, x, course);
+        this.courses[x] = course;
       }
       let unweightedGPASum = 0.0;
       let weightedGPASum = 0.0;
-      this.courses.forEach((course) => {
-        unweightedGPASum += parseFloat(course.unweightedGPA * course.weight);
-        weightedGPASum += parseFloat(course.weightedGPA * course.weight);
+      this.courses.forEach((course: Course) => {
+        unweightedGPASum += (course.unweightedGPA * course.weight);
+        weightedGPASum += (course.weightedGPA * course.weight);
       });
 
       let weightTotal = 0;
-      this.courses.forEach((i) => {
+      this.courses.forEach((i: Course) => {
         weightTotal += i.weight;
       });
-
-      this.averageUnweightedGpa = Number(parseFloat(unweightedGPASum) / parseFloat(weightTotal).toFixed(2));
-      this.averageWeightedGpa = Number((parseFloat(weightedGPASum) / parseFloat(weightTotal)).toFixed(2));
+      this.averageUnweightedGpa = unweightedGPASum / weightTotal;
+      this.averageWeightedGpa = weightedGPASum / weightTotal;
     },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>
@@ -240,7 +248,7 @@ export default {
   margin-bottom: 0
 
 .top-card
-  max-width: 972px
+  max-width: 985px
   +desktop
     margin: 0px auto !important
 
@@ -261,6 +269,7 @@ export default {
     margin: 0px 0px
     background-color: white
     border-radius: 10px
+    +animate-fade-up
 
     .gpa-tile
       display: flex

@@ -15,19 +15,20 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import 'src/styles/style.sass'
 
 .popup
   background-color: rgba(0, 0, 0, .65)
   position: fixed
-  top: 0
+  top: -50px
   left: 0
   width: 100vw
-  height: 100vh
+  height: calc(100vh + 50px)
   display: flex
   justify-content: center
   align-items: center
   z-index: 100
-
+  +animate-fade-up
   .content
     background-color: var(--background)
     border-radius: 15px

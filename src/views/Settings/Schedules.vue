@@ -1,10 +1,15 @@
 <template>
   <settings-section title="Schedules">
-   <br>
-    <switch-by-device slot="heading-content">
-      <rounded-button text="Restore to Defaults" :icon="icons.faClockRotateLeft" :invert="true" @click="restoreSchedules" />
-      <rounded-button slot="mobile" text="Restore" :icon="icons.faClockRotateLeft" :invert="true" @click="restoreSchedules" />
-    </switch-by-device>
+    <template v-slot:heading-content>
+      <switch-by-device class="restore-button">
+        <template v-slot:desktop>
+          <rounded-button text="Restore to Defaults" :icon="icons.faClockRotateLeft" :invert="true" @click="restoreSchedules" />
+        </template>
+        <template v-slot>
+          <rounded-button text="Restore" :icon="icons.faClockRotateLeft" :invert="true" @click="restoreSchedules" />
+        </template>
+      </switch-by-device>
+    </template>
 
     <div class="schedule-cards">
       <schedule-card
@@ -40,7 +45,9 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+
+import { mapState, mapActions } from 'pinia';
+import useScheduleStore from '@/stores/schedules';
 import {
   faPlus, faPencil, faTrashCan, faClockRotateLeft,
 } from '@fortawesome/free-solid-svg-icons';
@@ -73,9 +80,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters([
-      'schedules',
-    ]),
+    ...mapState(useScheduleStore, ['schedules']),
     scheduleModes() {
       const scheduleModes = [];
       const addedModeNames = new Set();
@@ -98,9 +103,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions([
-      'removeCustomScheduleMode',
-    ]),
+    ...mapActions(useScheduleStore, ['removeCustomScheduleMode', 'resetSchedules']),
     deleteSchedule(name) {
       this.$refs['confirm-popup'].displayPopup(`Are you sure you want to delete the schedule '${name}'`)
         .then(() => {
@@ -115,7 +118,7 @@ export default {
     restoreSchedules() {
       this.$refs['confirm-popup'].displayPopup('Are you sure you want to erase your changes')
         .then(() => {
-          this.$store.commit('resetSchedules');
+          this.resetSchedules();
         }, () => {});
     },
   },
@@ -126,6 +129,7 @@ export default {
 @import 'src/styles/style.sass'
 
 .schedule-cards
+  margin-top: 10px
   display: grid
   grid-template-columns: 1fr 1fr 1fr 1fr
   @media screen and (max-width: 1535px)
@@ -137,7 +141,7 @@ export default {
 
   .card
     zoom: .8
-
+    +animate-fade-up
     .actions
       display: flex
       padding: 10px 0 5px 0
@@ -165,5 +169,4 @@ export default {
       margin-top: 15px
       font-weight: bold
       font-size: .75em
-
 </style>

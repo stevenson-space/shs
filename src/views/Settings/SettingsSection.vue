@@ -4,7 +4,6 @@
       <div class="title">{{ title }}</div>
       <slot name="heading-content" />
     </div>
-
     <slot />
   </div>
 </template>

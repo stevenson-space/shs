@@ -12,43 +12,59 @@
         v-for="themeItem in themes"
         v-bind:key="themeItem.name"
         v-show="showTheme(themeItem)"
-        @click.native="changeTheme(themeItem)"
+        @click="changeTheme(themeItem)"
         :theme="themeItem"
         :isCurrentTheme="themeItem.name==theme.name && themeItem.suggestedColor == color"
       />
-
     </div>
+    <div v-if="theme.description" class="about-theme">
+      About <what-is-this>{{ theme.description }}</what-is-this>
+      </div>
+
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import themeCircle from '@/views/Colors/ThemeCircle.vue';
 import themes from '@/data/themes.json';
-import { mapState, mapGetters } from 'vuex';
 import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
+import WhatIsThis from '@/components/WhatIsThis.vue';
+import useThemeStore from '@/stores/themes';
+import useScheduleStore from '@/stores/schedules';
+import { mapState, mapActions } from 'pinia';
+import { defineComponent } from 'vue';
+import { MapStateToComputed, Theme } from '@/utils/types';
 
-export default {
-  components: { themeCircle, ThemeChangeModal },
+type ThemeStoreState = {
+  theme: Theme;
+  color: string;
+}
+
+type ScheduleStoreState = {
+  date: Date;
+}
+
+export default defineComponent({
+  components: { themeCircle, ThemeChangeModal, WhatIsThis },
   computed: {
-    ...mapState(['color', 'theme']),
-    ...mapGetters([
-      'date',
-    ]),
+    ...(mapState(useThemeStore, ['theme', 'color']) as MapStateToComputed<ThemeStoreState>),
+    ...(mapState(useScheduleStore, ['date']) as MapStateToComputed<ScheduleStoreState>),
   },
   data() {
     return {
       showModal: false,
       themes,
-      selectedTheme: themes[0],
+      selectedTheme: themes[0] as Theme,
     };
   },
   methods: {
-    choice(useThemeColor) {
+    ...mapActions(useThemeStore, ['setTheme']),
+    choice(useThemeColor: boolean): void {
       const data = { theme: this.selectedTheme, useThemeColor };
       this.showModal = false;
-      this.$store.commit('setTheme', data);
+      this.setTheme(data);
     },
-    changeTheme(theme) {
+    changeTheme(theme: Theme): void {
       if (theme !== this.theme || theme.suggestedColor !== this.color) {
         this.selectedTheme = theme;
         if (this.color !== this.theme.suggestedColor) { //  if the color you set differs from the suggested color ("color conflict")
@@ -56,11 +72,9 @@ export default {
         } else {
           this.choice(true);
         }
-      } else {
-        console.log('same theme');
       }
     },
-    showTheme(theme) {
+    showTheme(theme: Theme): boolean {
       const { schedule } = theme;
       if (schedule === 'always') {
         return true;
@@ -69,10 +83,10 @@ export default {
         new Date(schedule.substring(0, schedule.indexOf('-'))).getTime(),
         new Date(schedule.substring(schedule.indexOf('-') + 1)).getTime(),
       ];
-      return this.date.getTime() > startTime && this.date < endTime;
+      return this.date.getTime() > startTime && this.date.getTime() < endTime;
     },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>
@@ -81,5 +95,12 @@ export default {
     margin-bottom: 20px
     display: flex
     justify-content: center
-    overflow-x: hidden
+    flex-wrap: wrap
+    gap: 10px
+.about-theme
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 5px
+  margin: 12px 0
 </style>

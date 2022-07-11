@@ -2,14 +2,12 @@
   <card class="timer-card" :shadow="false" :border="true" :class="{ fullscreen: isFullscreen }">
     <div ref="fullscreen-wrapper" class="fullscreen-wrapper">
       <div class="header">
-        <div v-hammer:tap="() => shouldMakeSound = !shouldMakeSound" class="icon-button sound">
+        <div @click="shouldMakeSound = !shouldMakeSound" class="icon-button sound">
           <font-awesome-icon class="icon" :icon="icons.faVolumeUp" fixed-width />
           <div class="slash" :class="{ hide: shouldMakeSound }" />
         </div>
-
         <div class="title">Timer</div>
-
-        <div v-hammer:tap="isFullscreen ? exitFullscreen : makeFullscreen" class="icon-button">
+        <div @click="isFullscreen ? exitFullscreen() : makeFullscreen()" class="icon-button">
           <font-awesome-icon class="icon" :icon="isFullscreen ? icons.faCompress : icons.faExpand" fixed-width />
         </div>
       </div>
@@ -39,9 +37,9 @@
 
         <checkbox
           v-if="browserSupportsNotifications"
-          :value="shouldNotify"
+          v-model="shouldNotify"
           label-size="1em"
-          @input="notifyCheckboxInput($event)"
+          @update:modelValue="notifyCheckboxInput($event)"
         >
           <span>Notify Me &nbsp;</span>
 
@@ -53,7 +51,7 @@
         <div class="control-buttons">
           <rounded-button class="button" text="Reset" :circular="false" @click="reset" />
           <rounded-button
-            v-hammer:tap="startStopButton.action"
+            @click="startStopButton.action"
             class="button"
             v-bind="startStopButton"
             :circular="false"
@@ -147,10 +145,10 @@ export default {
     shouldMakeSound() {
       if (this.shouldMakeSound && !this.audio) {
         // initially playing some blank audio while tab is in focus allows audio to be played later even when tab is in background
-        const blankAudio = new Audio('static/blank.mp3');
+        const blankAudio = new Audio('blank.mp3');
         blankAudio.play();
 
-        this.audio = new Audio('static/timer.mp3');
+        this.audio = new Audio('timer.mp3');
       }
     },
   },
@@ -413,7 +411,7 @@ export default {
     margin: 25px 50px
     font-size: 2.5em
     font-weight: bold
-    color: #444
+    color: var(--primary)
     +mobile-small
       font-size: 2em
 

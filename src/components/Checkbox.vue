@@ -1,6 +1,6 @@
 <template>
-  <div class="checkbox-container" @click="$emit('input', !value)">
-    <div class="checkbox" :class="{ checked: value }">
+  <div class="checkbox-container" @click="$emit('update:modelValue', !modelValue)">
+    <div class="checkbox" :class="{ checked: modelValue }">
       <font-awesome-icon class="check" :icon="faCheck" />
     </div>
 
@@ -15,7 +15,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   props: {
-    value: { type: Boolean, required: true },
+    modelValue: { type: Boolean, required: true },
     labelSize: { type: String, default: '.85em' },
   },
   data() {

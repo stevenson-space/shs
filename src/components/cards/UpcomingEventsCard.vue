@@ -33,8 +33,8 @@ import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import Bell from '@/utils/bell';
 import Card from '@/components/Card.vue';
 import EventChip from '@/components/EventChip.vue';
-
-import { mapGetters } from 'vuex';
+import { mapState } from 'pinia';
+import useScheduleStore from '@/stores/schedules';
 
 function getNextEvent(startDate) {
   // Generator that yields sequential dates starting from the day after start
@@ -47,7 +47,6 @@ function getNextEvent(startDate) {
   }
 
   let event = null;
-
   // Go through dates starting from startDate until we find one with a special schedule and return that
   for (const date of dates(startDate)) {
     const schedule = Bell.getScheduleType(date);
@@ -57,7 +56,6 @@ function getNextEvent(startDate) {
         date,
         name: schedule.name,
       };
-
       // need to break out of loop once an event is found since the generator will run forever
       break;
     }
@@ -81,7 +79,7 @@ export default {
         faChevronUp,
       },
       events: [],
-      numEventsInitial: 4,
+      numEventsInitial: 3,
       numEventsToAdd: 3,
       numEventsDisplayed: 0,
       lastDate: this.date, // the date until which events are currently being displayed
@@ -90,9 +88,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters([
-      'date',
-    ]),
+    ...mapState(useScheduleStore, ['date']),
     displayedEvents() {
       // Only display numEventsDisplayed events even if the events array contains more
       // and display blank placeholders if no events (possibly still loading)

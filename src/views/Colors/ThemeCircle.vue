@@ -8,19 +8,25 @@
     </div>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { Theme } from '@/utils/types';
+import { defineComponent, PropType } from 'vue';
+
+export default defineComponent({
   props: {
-    theme: { type: Object, required: true },
+    theme: {
+      type: Object as PropType<Theme>,
+      required: true,
+    },
     isCurrentTheme: { type: Boolean, required: true },
   },
   computed: {
-    gradientString() {
+    gradientString(): string {
       const { suggestedColor, background } = this.theme;
       return `linear-gradient( -45deg, ${suggestedColor}, ${suggestedColor} 50%, ${background} 50% )`;
     },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>

@@ -1,22 +1,22 @@
 <template>
   <div
     class="header"
-    :class="{ 'full-screen': fullScreenMode, 'halloween': theme.name.toLowerCase() == 'halloween', 'mars': theme.name.toLowerCase() == 'mars', 'summer': theme.name.toLowerCase() == 'summer'}"
+    :class="{ 'full-screen': fullScreenMode, 'halloween': theme.name.toLowerCase() == 'halloween', 'mars': theme.name.toLowerCase() == 'mars', 'cosmic-reef': theme.name.toLowerCase() == 'cosmic reef', 'summer': theme.name.toLowerCase() == 'summer'}"
     :style="colors"
   >
     <dropdown
       v-show="scheduleModes.length > 1"
       class="schedule-select"
       :options="scheduleModes"
-      :value="scheduleModes.indexOf(bell.mode)"
-      @input="$store.commit('setScheduleMode', scheduleModes[$event])"
+      :modelValue="scheduleModes.indexOf(bell.mode)"
+      @update:modelValue="setScheduleMode(scheduleModes[$event])"
     />
 
     <div
       class="main"
       :class="{ 'extra-padding': scheduleModes.length > 1, 'winterfest': theme.name.toLowerCase() == 'into the woods'}"
     >
-      <div v-hammer:tap="previousDay" class="switch-day">
+      <div @click="previousDay" class="switch-day">
         <font-awesome-icon
           :icon="icons.faChevronLeft"
           class="arrow-icon"
@@ -32,29 +32,27 @@
           :schedule-type="bell.type"
           :full-screen-mode="fullScreenMode"
         />
-
         <div class="date">
           {{ formatDate(date) }}
         </div>
       </div>
 
-      <div v-hammer:tap="nextDay" class="switch-day">
+      <div @click="nextDay" class="switch-day">
         <font-awesome-icon
           :icon="icons.faChevronRight"
           class="arrow-icon"
         />
       </div>
 
-      <div v-hammer:tap="toggleColor" class="icon remove-color">
+      <div @click="toggleColor" class="icon remove-color">
         <font-awesome-icon
           :icon="colored ? icons.faDropletSlash : icons.faDroplet"
           fixed-width
         />
       </div>
-
       <div
         v-show="mode === 'current'"
-        v-hammer:tap="toggleFullScreen"
+        @click="toggleFullScreen"
         class="icon full-screen-mode"
       >
         <font-awesome-icon
@@ -74,14 +72,16 @@
     />
 
     <announcements :full-screen-mode="fullScreenMode" />
-    <snow v-if="theme.name.toLowerCase() == 'winter'" :images="['static/occasions/snowflake.png']"/>
-    <snow v-if="theme.name.includes('Valentine')" :images="['static/occasions/heart.svg']"/>
+    <snow v-if="theme.name.toLowerCase() == 'winter'" :images="[require('@/assets/occasions/snowflake.png')]"/>
+    <snow v-if="theme.name.includes('Valentine')" :images="[require('@/assets/occasions/heart.svg')]"/>
 
   </div>
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
+import { mapState, mapActions } from 'pinia';
+import useScheduleStore from '@/stores/schedules';
+import useThemeStore from '@/stores/themes';
 import {
   faChevronRight,
   faChevronLeft,
@@ -127,8 +127,8 @@ export default {
   },
   computed: {
     // this automatically gets the following properties from the store and adds them as computed properties
-    ...mapState(['mode', 'theme']),
-    ...mapGetters(['date', 'bell']),
+    ...mapState(useThemeStore, ['theme']),
+    ...mapState(useScheduleStore, ['mode', 'date', 'bell']),
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
       return {
@@ -248,7 +248,7 @@ export default {
     },
     totalSecondsLeft() {
       if (this.totalSecondsLeft <= 0) {
-        this.$store.dispatch('countdownDone');
+        this.countdownDone();
       }
     },
     colored() {
@@ -268,6 +268,7 @@ export default {
     clearInterval(this.interval);
   },
   methods: {
+    ...mapActions(useScheduleStore, ['countdownDone', 'setScheduleMode']),
     formatDate(date) {
       // Wednesday,
       // September 30
@@ -299,12 +300,12 @@ export default {
     stopCountdown() {
       clearInterval(this.interval);
     },
-    previousDay(e) {
-      e.srcEvent.preventDefault();
+    previousDay() {
+      // e.srcEvent.preventDefault();
       this.switchDay(this.yesterday);
     },
-    nextDay(e) {
-      e.srcEvent.preventDefault();
+    nextDay() {
+      // e.srcEvent.preventDefault();
       this.switchDay(this.tomorrow);
     },
     switchDay(date) {
@@ -343,17 +344,22 @@ export default {
   text-align: center
   transition: background-color .3s
   &.mars
-    background: url(/static/occasions/mars-mobile.png) center center no-repeat, var(--header-color)
+    background: url(@/assets/occasions/mars-mobile.png) center center no-repeat, var(--header-color)
     background-size: cover
     +desktop
-      background: url(/static/occasions/mars-full.png) center center no-repeat, var(--header-color)
+      background: url(@/assets/occasions/mars-full.png) center center no-repeat, var(--header-color)
+  &.cosmic-reef
+    background: url(@/assets/occasions/cosmic-reef-mobile.png) center center no-repeat, var(--header-color)
+    background-size: cover
+    +desktop
+      background: url(@/assets/occasions/cosmic-reef-full.png) center center no-repeat, var(--header-color)
   &.summer
-    background: url(/static/occasions/beach-mobile.png) center center no-repeat, var(--header-color)
+    background: url(@/assets/occasions/beach-mobile.png) center center no-repeat, var(--header-color)
     background-size: cover
     +desktop
-      background: url(/static/occasions/beach-full.png) center center no-repeat, var(--header-color)
+      background: url(@/assets/occasions/beach-full.png) center center no-repeat, var(--header-color)
   &.halloween
-    background: url(/static/occasions/cob-webs-left.png) left top no-repeat, url(/static/occasions/cob-webs-right.png) right top no-repeat, var(--header-color)
+    background: url(@/assets/occasions/cob-webs-left.png) left top no-repeat, url(@/assets/occasions/cob-webs-right.png) right top no-repeat, var(--header-color)
     background-size: 250px
     +mobile-small
       background-size: 150px
@@ -380,12 +386,11 @@ export default {
         padding-top: 35px
 
     &.winterfest
-      background: url(/static/occasions/trees.png) center bottom no-repeat, var(--header-color)
+      // background: url(/static/occasions/trees.png) center bottom no-repeat, var(--header-color)
       background-size: 700px
       +mobile-small
         background-size: 500px
     .date
-      // +shadow
       background-color: var(--background)
       border-radius: 100px
       margin-top: 10px

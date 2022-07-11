@@ -98,7 +98,6 @@ export default {
     display: flex
     justify-content: space-around
     color: var(--tertiary)
-
     .day
       width: calc(100% / 7)
       text-align: center
@@ -141,7 +140,6 @@ export default {
         border-radius: 5px
         display: none
         margin-top: 3px
-
         &.show
           display: block
 

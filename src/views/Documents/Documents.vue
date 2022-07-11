@@ -4,10 +4,12 @@
     <card-container>
       <!-- Class cards -->
       <documents-card
-        v-for="(list, name) in documents"
+        v-for="(list, name, index) in documents"
         :key="name"
         :class-name="name"
         :documents="list"
+        class="document-card"
+        :style="{ 'animation-delay': index*.01 + 's'}"
       />
       <!-- Request card -->
       <form-card :name="formName" title="Request">
@@ -98,4 +100,9 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+@import 'src/styles/style.sass'
+
+.document-card
+  +animate-fade-up
+  </style>

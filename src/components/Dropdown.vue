@@ -1,45 +1,46 @@
 <template>
   <div class="dropdown" tabindex="-1" :class="{ selected: open }" @blur="closeDropdown">
     <div class="select-option" :style="dropdownStyle" @click="toggleDropdown">
-      <span>{{ options[value] }}</span>
+      <span>{{ options[modelValue] }}</span>
       <font-awesome-icon
         class="down-icon"
         :icon="faCaretDown"
         :style="iconStyle"
       />
     </div>
-
-    <stagger-animation
-      ref="staggerAnimation"
-      :duration="animationDuration"
-      :direction="direction"
-      :shift-amount="optionHeight + 10"
-      :number-of-slots="formattedOptions.length"
-    >
-      <!-- a key causes problems in pages like Calendar because when the options change, the divs are replaced -->
-      <!-- eslint-disable-next-line vue/require-v-for-key-->
-      <div
-        v-for="option in formattedOptions"
-        ref="option"
-        class="option"
-        :style="option.style"
-        @click="selectOption(option.index)"
+      <stagger-animation
+        ref="staggerAnimation"
+        :direction="direction"
+        :number-of-slots="formattedOptions.length"
+        :align="align"
       >
-        {{ option.name }}
-      </div>
-    </stagger-animation>
-  </div>
+      <template v-if="open">
+          <div
+            v-for="(option, index) in formattedOptions"
+            :key="option"
+            ref="option"
+            class="option"
+            :style="option.style"
+            :data-index="index"
+            @click="selectOption(option.index)"
+          >
+            {{ option.name }}
+        </div>
+        </template>
+      </stagger-animation>
+    </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import StaggerAnimation from './StaggerAnimation.vue';
 
-export default {
+export default defineComponent({
   components: { StaggerAnimation },
   props: {
     options: { type: Array, required: true },
-    value: { type: Number, required: true },
+    modelValue: { type: Number, required: true },
     showSelectedAsOption: { type: Boolean, default: true },
     align: {
       validator: (str) => str === 'left' || str === 'right' || str === 'center',
@@ -54,23 +55,19 @@ export default {
     return {
       faCaretDown,
       open: false, // open is true even when dropdown is partially open, false only when dropdown is completely closed
-      arrowRotateAmmount: this.direction === 'down' ? 0 : 180,
-      optionHeight: 30,
-      resizeListener: null,
-      resizeDebounceTimeout: null,
-      animationDuration: 200,
+      arrowRotateAmount: 0,
     };
   },
   computed: {
-    remainingOptions() {
+    remainingOptions(): string[] {
       const remainingOptions = this.options.slice(0);
-      remainingOptions.splice(this.value, 1);
+      remainingOptions.splice(this.modelValue, 1);
       return remainingOptions;
     },
-    formattedOptions() {
-      const options = this.showSelectedAsOption ? this.options : this.remainingOptions;
+    formattedOptions(): { name: string, style: any, index: number}[] {
+      const options = (this.showSelectedAsOption ? this.options : this.remainingOptions) as string[];
       return options.map((option) => {
-        const style = {};
+        const style = {} as any;
         if (this.align === 'center') {
           style.left = '50%';
           style.transform = 'translateX(-50%)';
@@ -85,91 +82,60 @@ export default {
         };
       });
     },
-    dropdownStyle() {
-      const duration = this.animationDuration / 1000;
+    dropdownStyle(): { transition: string, zIndex: number} {
       return {
-        transition: `box-shadow ${duration}s, border-color ${duration}s`,
+        transition: 'box-shadow .2s, border-color .2s',
         zIndex: this.options.length + 5,
       };
     },
-    iconStyle() {
-      const duration = this.animationDuration / 1000;
+    iconStyle(): { transition: string, transform: string} {
       return {
-        transition: `transform ${duration}s`,
-        transform: `rotate(${this.arrowRotateAmmount}deg)`,
+        transition: 'transform .2s',
+        transform: `rotate(${this.arrowRotateAmount}deg)`,
       };
     },
   },
   watch: {
-    options() {
+    options(): void {
       this.optionShifts = Array(this.options.length).fill(0);
     },
-    direction() {
+    direction(): void {
       this.closeDropdown();
-      this.arrowRotateAmmount = this.direction === 'down' ? 0 : 180;
-      this.resetOptionHeight();
+      this.arrowRotateAmount = this.direction === 'down' ? 0 : 180;
     },
   },
-  created() {
+  created(): void {
     // if the initial index is out of bounds, choose the first index by default
-    if (this.value < 0 || this.value >= this.options.length) {
-      this.$emit('input', 0);
+    if (this.modelValue < 0 || this.modelValue >= this.options.length) {
+      this.$emit('update:modelValue', 0);
     }
   },
-  mounted() {
-    this.resetOptionHeight();
-
-    this.resizeListener = () => {
-      clearTimeout(this.resizeDebounceTimeout);
-      this.resizeDebounceTimeout = setTimeout(this.resetOptionHeight, 250);
-    };
-    window.addEventListener('resize', this.resizeListener);
-  },
-  destroyed() {
-    window.removeEventListener('resize', this.resizeListener);
-  },
   methods: {
-    setOptionShifts(value, start = 0, end = this.optionShifts.length) {
-      this.optionShifts = this.optionShifts.map((n, i) => ((i >= start && i < end) ? value : n));
+    toggleDropdown(): void {
+      this.arrowRotateAmount += (this.arrowRotateAmount >= 180) ? -180 : 180;
+      this.open = !this.open;
     },
-    toggleDropdown() {
-      this.arrowRotateAmmount += 180;
-
-      if (this.open) {
-        this.$refs.staggerAnimation.close();
-        setTimeout(() => { this.open = false; }, this.animationDuration); // wait for dropdown to completely close first
-      } else {
-        this.$refs.staggerAnimation.open();
-        this.open = true;
-      }
-    },
-    openDropdown() {
+    openDropdown(): void {
       if (!this.open) {
         this.toggleDropdown();
       }
     },
-    closeDropdown() {
+    closeDropdown(): void {
       if (this.open) {
         this.toggleDropdown();
       }
     },
-    selectOption(optionIndex) {
+    selectOption(optionIndex: number): void {
       if (this.open) {
         this.closeDropdown();
-
         // allow animation to start before emitting event (event may cause blocking calculations that slow down animation)
         setTimeout(() => {
-          this.$emit('input', optionIndex);
+          this.$emit('update:modelValue', optionIndex);
         }, 100);
       }
     },
-    resetOptionHeight() {
-      if (this.formattedOptions.length >= 1) {
-        this.optionHeight = this.$refs.option[0].offsetHeight || 30;
-      }
-    },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>
@@ -204,15 +170,15 @@ export default {
       margin-left: 7px
 
   .option
-    background-color: white
     background-color: var(--background)
     border-radius: 100px
     +shadow
     padding: 5px 12px
+    margin-left: 8px
     white-space: nowrap
     cursor: pointer
     user-select: none
+    width: auto
     &:hover
-      background-color: #eee
       background-color: var(--secondaryBackground)
 </style>

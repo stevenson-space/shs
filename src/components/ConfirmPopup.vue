@@ -9,7 +9,8 @@
   </popup>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import Popup from '@/components/Popup.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 
@@ -20,7 +21,7 @@ import RoundedButton from '@/components/RoundedButton.vue';
 //   - Method 2: use a reference to this component and call the 'displayPopup' method with the text as the parameter,
 //               which returns a Promise (success or fail depending on user action)
 
-export default {
+export default defineComponent({
   components: {
     Popup,
     RoundedButton,
@@ -39,23 +40,23 @@ export default {
     };
   },
   methods: {
-    ok() {
+    ok(): void {
       this.$emit('ok');
       this.promiseResolve();
       this.reset();
     },
-    cancel() {
+    cancel(): void {
       this.$emit('cancel');
       this.promiseReject('Canceled');
       this.reset();
     },
-    reset() {
+    reset(): void {
       this.promiseResolve = () => {};
       this.promiseReject = () => {};
       this.showAlt = false;
       this.text = '';
     },
-    displayPopup(text) {
+    displayPopup(text: string): Promise<void> {
       return new Promise((resolve, reject) => {
         this.text = text;
         this.promiseResolve = resolve;
@@ -65,7 +66,7 @@ export default {
       });
     },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>
@@ -85,10 +86,10 @@ export default {
 .buttons
   display: flex
   justify-content: flex-end
-  margin: 0 10px
+  margin: 0 0px
   margin-bottom: 10px
 
   .button
-    margin: 0 10px
+    margin-right: 10px
 
 </style>

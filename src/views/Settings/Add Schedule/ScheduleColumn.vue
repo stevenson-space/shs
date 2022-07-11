@@ -4,7 +4,7 @@
 
     <rounded-button class="add-period-button" :icon="icons.faPlus" text="Add Period" @click="$emit('add-period')" />
 
-    <checkbox :value="isEnabled" @input="$emit($event ? 'enable' : 'disable')">
+    <checkbox :modelValue="isEnabled" @update:modelValue="$emit($event ? 'enable' : 'disable')">
       <span class="enable-checkbox-text">This schedule applies on days of type "{{ name }}"</span>
     </checkbox>
 

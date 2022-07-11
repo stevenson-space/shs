@@ -1,92 +1,350 @@
 {
-  "12/7/2020": [
+  "3/16/2022": [
     {
       "allDay": false,
-      "start": 1607364000000,
-      "end": 1607364000000,
-      "name": "Talking with Your Teen - Building Conversations",
-      "description": "* Working to establish a healthy and trusting parent-child relationship is important even though teens are trying to pull away from their parents and begin to assert their own independence. We will discuss strategies parents and caregivers can use in conversations with teens.\n* Monday, December 7 at 12:00 pm -zoom link:   https://zoom.us/j/91999305824",
-      "location": null,
+      "start": 1647450000000,
+      "end": 1647450000000,
+      "name": "Encouraging Compassion In Your Teen",
+      "description": "Patriot Family Programming Presents:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n Encouraging Compassion In Your Teen \n\nHow can adults cultivate compassion in their teens?\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
       "categories": [
         "Parent Calendar"
       ]
     },
     {
       "allDay": false,
-      "start": 1607385600000,
-      "end": 1607385600000,
-      "name": "SPA Meeting",
-      "description": "String Parents Association Meeting",
-      "location": "Zoom",
+      "start": 1647473400000,
+      "end": 1647480600000,
+      "name": "Co-Curricular Fair",
+      "description": "Attention Incoming Freshmen families! Come to Stevenson High School's Annual Co-Curricular Fair, where you can meet ambassadors from our 150+ clubs and 35+ sports teams all in one location.  \n\n   \n\nFor more information, visit the  Incoming Freshmen webpage .",
+      "location": "Stevenson High School | Sportscenter and West Building",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "3/17/2022": [
+    {
+      "allDay": false,
+      "start": 1647536400000,
+      "end": 1647536400000,
+      "name": "The Power of Nature",
+      "description": "Patriot Family Programming Presents:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n The Power of Nature \n\nWe will talk about how we can use our environment to benefit our emotional and physical wellbeing.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n  \n\nZoom Link:  https://zoom.us/j/94132678734   \n\nVideos of each short can be found on the SHS Family Engagement YouTube site at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "Parent Calendar"
+      ]
+    }
+  ],
+  "3/18/2022": [
+    {
+      "allDay": true,
+      "start": 1647579600000,
+      "end": 1647666000000,
+      "name": "Non-Attendance Day",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "3/21/2022": [
+    {
+      "allDay": true,
+      "start": 1647838800000,
+      "end": 1647925200000,
+      "name": "Spring Break",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "3/22/2022": [
+    {
+      "allDay": true,
+      "start": 1647925200000,
+      "end": 1648011600000,
+      "name": "Spring Break",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "3/23/2022": [
+    {
+      "allDay": true,
+      "start": 1648011600000,
+      "end": 1648098000000,
+      "name": "Spring Break",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "3/24/2022": [
+    {
+      "allDay": true,
+      "start": 1648098000000,
+      "end": 1648184400000,
+      "name": "Spring Break",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "3/25/2022": [
+    {
+      "allDay": true,
+      "start": 1648184400000,
+      "end": 1648270800000,
+      "name": "Spring Break",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "3/28/2022": [
+    {
+      "allDay": false,
+      "start": 1648486800000,
+      "end": 1648486800000,
+      "name": "Three Ways to Change When Raising a Teenager",
+      "description": "Patriot Family Programming Presents:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n Three Ways to Change When Raising a Teenager \n\nThe teen years are a time to help kids grow into the distinct individuals they will become. We will discuss parenting styles that can support this growth.\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "Parent Calendar"
+      ]
+    }
+  ],
+  "3/29/2022": [
+    {
+      "allDay": false,
+      "start": 1648573200000,
+      "end": 1648573200000,
+      "name": "Helping Teens Develop Time Management Skills",
+      "description": "Patriot Family Programming Presents:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n Helping Teens Develop Time Management Skills \n\nHow you can help your teen prioritize tasks so they are able to make better use of their time and complete school work and assignments on time.\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "Parent Calendar"
+      ]
+    }
+  ],
+  "3/30/2022": [
+    {
+      "allDay": false,
+      "start": 1648659600000,
+      "end": 1648659600000,
+      "name": "Cultivating a Sense of Belonging in the Family",
+      "description": "Patriot Family Programming Presents:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n Cultivating a Sense of Belonging in the Family \n\nA sense of belonging to family and community is essential for healthy social and emotional development. We will discuss how caregivers can reinforce a sense of belonging towards fostering a sense of altruism.\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "Parent Calendar"
+      ]
+    }
+  ],
+  "3/31/2022": [
+    {
+      "allDay": true,
+      "start": 1648702800000,
+      "end": 1648789200000,
+      "name": "ELC Butterfly Boutique Spring Candle Sale [DEADLINE]",
+      "description": "The  ELC Butterfly Boutique  is having a spring candle sale! Check out our spring special edition scents, handpicked by some of our student workers. You can use this link to place an order online. Please email Eileen Morrison with any questions,  emorrison@elced.org . Thank you!!\n\n\n\n Order online  at  https://docs.google.com/forms/d/e/1FAIpQLScj-QmCGe...",
+      "location": null,
+      "categories": [
+        "Fundraisers"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1648746000000,
+      "end": 1648746000000,
+      "name": "Social Emotional Learning in the Home",
+      "description": "Patriot Family Programming Presents:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n Social Emotional Learning in the Home \n\nHow do you prioritize connections with people outside of your immediate home? We will discuss why it is important to reach out to others during remote learning + to build connections, feel a sense of belonging, and have hope for the future.\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "Parent Calendar"
+      ]
+    }
+  ],
+  "4/1/2022": [
+    {
+      "allDay": false,
+      "start": 1648857600000,
+      "end": 1648857600000,
+      "name": "Evening of Jazz",
+      "description": "Jazz Concert featuring instrumental and vocal groups.\n\nThis is a shared concert featuring our co-curricular jazz bands and a cappella groups. A wide variety of current and classic songs will be featured!\n\nFeaturing:\n\n\n * Jazz Lab Band\n* Concert Jazz Band\n* Jazz Ensemble\n* Low~Frequency\n* Nothing But Treble\n* Polyphonics\n \n\n\nStream the event at the  SHS Fine Arts Vimeo \n\n   View the Event Program",
+      "location": "Stevenson High School | West Auditorium",
       "categories": [
         "Fine Arts"
       ]
     }
   ],
-  "12/8/2020": [
+  "4/4/2022": [
+    {
+      "allDay": true,
+      "start": 1649048400000,
+      "end": 1649134800000,
+      "name": "Anti-Racism and Inclusivity Week 2022",
+      "description": "Anti-Racism and Inclusivity Week is back! Equity-minded Stevenson clubs will be hosting a series of activities throughout the week focused on spreading the message of the importance of allyship within our school community.\n\nFor additional information about this week-long event, please visit the  Anti-Racism and Inclusivity Week web page .",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
     {
       "allDay": false,
-      "start": 1607472000000,
-      "end": 1607472000000,
-      "name": "Supporting the Development of Relationship Skills in Your Teen",
-      "description": "* You are your teen's first teacher, and the relationship you have with them is the basis of his emotional and social development. We will discuss how parents can support the development of relationship skills.\n* Tuesday, December 8 at 6:00 pm - zoom link:   https://zoom.us/j/96269202707",
-      "location": null,
+      "start": 1649091600000,
+      "end": 1649091600000,
+      "name": "Finding Time for Gratitude",
+      "description": "Patriot Family Programming Presents:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n Finding Time For Gratitude \n\nFostering gratitude in teens goes beyond teaching them to say \"thank-you\". Teaching teens about gratitude is about teaching them to appreciate everything they have, and teaching them to show generosity and empathy to others.\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\n\n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
       "categories": [
         "Parent Calendar"
       ]
     },
     {
       "allDay": false,
-      "start": 1607475600000,
-      "end": 1607475600000,
+      "start": 1649113200000,
+      "end": 1649113200000,
+      "name": "String Parents Association (SPA) Meeting",
+      "description": "SHS String Parents Association (SPA) Meetings are held virtually and begin at 6 p.m.  For more information about SPA, please visit their  webpage .\n\nZoom link is  https://zoom.us/j/98278110280",
+      "location": "Zoom",
+      "categories": [
+        "Parent Calendar",
+        "Fine Arts"
+      ]
+    }
+  ],
+  "4/5/2022": [
+    {
+      "allDay": true,
+      "start": 1649134800000,
+      "end": 1649221200000,
+      "name": "Anti-Racism and Inclusivity Week 2022",
+      "description": "Anti-Racism and Inclusivity Week is back! Equity-minded Stevenson clubs will be hosting a series of activities throughout the week focused on spreading the message of the importance of allyship within our school community.\n\nFor additional information about this week-long event, please visit the  Anti-Racism and Inclusivity Week web page .",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1649134800000,
+      "end": 1649221200000,
+      "name": "AP Art Show",
+      "description": "The show is open to the school during periods 1-8 on Tuesday, April 5th, and periods 1-7 on Wednesday, April 6th. The evening reception will take place on Tuesday, April 5th from 7-9 pm.\n\nThe Show includes work from students enrolled in AP Art, AP Photography and Digital Design, as well as students enrolled in Advanced Photography and Digital Design.\n\n\n\n AP Art: Drawing and 3D Design : Jenna Balaban, Naransolongo Batgerel, Abigail Cabrera, Jessica Callahan, Dylan Clavel, Joy Fei, Varsha Ganesh, Jazmin Gaytan, Drew Heilman, Abigail Jiang, Ishaan Joshi, Mia Korsunsky, Natalie Koziol, Madelyn Lee, Amili Paer, Deven Puttick, Hannah Robertson, Nicole Rose Vestidas, Vin Yolles, Nancy Zhang, Marharyta Zhyvozhenko, Zachary Zimbalist\n\n\n\n AP Photography and Digital Design : Aniketh Bhaskar, Braden Burns, Rachael Chen, Maya Fergus, Trisha Gannu, Andrew Krawcewicz, Yaci Li, Maja Mancewicz, Nikita Tuli, Tia Vasudeva, Eric Zhou\n\n Advance Photography and Digital Design : Skylar Beegun, Aarnav Bhagwan, Siyaa Bhargava, Katie Borgerding, Sophia Brown, Anshul Dandapani, Karina Dyakov, Ally Frank, Elan Gurevich, Zara Hashmi, Kamila Jablonski, Vibha Joshi, Ria Karwande, Santosha Pochiraju, Nick Posadas, Hannah Smith, Rachel Stavola, Srika Sudheer, Samantha Syuhanova, Sonya Todorov, Audrey Tutty, Tiffany Washington, Lizzy Yuan, Nancy Zhang\n\n\n\nThe AP Art, AP and Advanced Photography and Digital Design students would greatly appreciate your attendance at their show!",
+      "location": "Stevenson High School | Room 2104 & Upper Forum",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1649203200000,
+      "end": 1649210400000,
+      "name": "AP Art Show Reception",
+      "description": "The Show includes work from students enrolled in AP Art, AP Photography and Digital Design, as well as students enrolled in Advanced Photography and Digital Design.\n\n\n\n AP Art: Drawing and 3D Design : Jenna Balaban, Naransolongo Batgerel, Abigail Cabrera, Jessica Callahan, Dylan Clavel, Joy Fei, Varsha Ganesh, Jazmin Gaytan, Drew Heilman, Abigail Jiang, Ishaan Joshi, Mia Korsunsky, Natalie Koziol, Madelyn Lee, Amili Paer, Deven Puttick, Hannah Robertson, Nicole Rose Vestidas, Vin Yolles, Nancy Zhang, Marharyta Zhyvozhenko, Zachary Zimbalist\n\n\n\n AP Photography and Digital Design : Aniketh Bhaskar, Braden Burns, Rachael Chen, Maya Fergus, Trisha Gannu, Andrew Krawcewicz, Yaci Li, Maja Mancewicz, Nikita Tuli, Tia Vasudeva, Eric Zhou\n\n Advance Photography and Digital Design : Skylar Beegun, Aarnav Bhagwan, Siyaa Bhargava, Katie Borgerding, Sophia Brown, Anshul Dandapani, Karina Dyakov, Ally Frank, Elan Gurevich, Zara Hashmi, Kamila Jablonski, Vibha Joshi, Ria Karwande, Santosha Pochiraju, Nick Posadas, Hannah Smith, Rachel Stavola, Srika Sudheer, Samantha Syuhanova, Sonya Todorov, Audrey Tutty, Tiffany Washington, Lizzy Yuan, Nancy Zhang\n\n\n\nThe AP Art, AP and Advanced Photography and Digital Design students would greatly appreciate your attendance at their show!",
+      "location": "Stevenson High School | Room 2104 & Upper Forum",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1649203200000,
+      "end": 1649203200000,
       "name": "BPO Meeting",
-      "description": "All Band Parents are Welcome and Encouraged to Attend BPO Meetings.  Contact Secretary for Zoom Access.  shsbposecretary@gmail.com\n\n\n\n\n\n\nFor more information about the Band Parent Organization,  clear here.",
-      "location": "Zoom",
+      "description": "Band parents are welcome and encouraged to attend meetings.",
+      "location": "Midi Lab 2201",
+      "categories": [
+        "Parent Calendar"
+      ]
+    }
+  ],
+  "4/6/2022": [
+    {
+      "allDay": true,
+      "start": 1649221200000,
+      "end": 1649307600000,
+      "name": "Anti-Racism and Inclusivity Week 2022",
+      "description": "Anti-Racism and Inclusivity Week is back! Equity-minded Stevenson clubs will be hosting a series of activities throughout the week focused on spreading the message of the importance of allyship within our school community.\n\nFor additional information about this week-long event, please visit the  Anti-Racism and Inclusivity Week web page .",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1649221200000,
+      "end": 1649307600000,
+      "name": "AP Art Show",
+      "description": "The show is open to the school during periods 1-8 on Tuesday, April 5th, and periods 1-7 on Wednesday, April 6th. The evening reception will take place on Tuesday, April 5th from 7-9 pm.\n\nThe Show includes work from students enrolled in AP Art, AP Photography and Digital Design, as well as students enrolled in Advanced Photography and Digital Design.\n\n\n\n AP Art: Drawing and 3D Design : Jenna Balaban, Naransolongo Batgerel, Abigail Cabrera, Jessica Callahan, Dylan Clavel, Joy Fei, Varsha Ganesh, Jazmin Gaytan, Drew Heilman, Abigail Jiang, Ishaan Joshi, Mia Korsunsky, Natalie Koziol, Madelyn Lee, Amili Paer, Deven Puttick, Hannah Robertson, Nicole Rose Vestidas, Vin Yolles, Nancy Zhang, Marharyta Zhyvozhenko, Zachary Zimbalist\n\n\n\n AP Photography and Digital Design : Aniketh Bhaskar, Braden Burns, Rachael Chen, Maya Fergus, Trisha Gannu, Andrew Krawcewicz, Yaci Li, Maja Mancewicz, Nikita Tuli, Tia Vasudeva, Eric Zhou\n\n Advance Photography and Digital Design : Skylar Beegun, Aarnav Bhagwan, Siyaa Bhargava, Katie Borgerding, Sophia Brown, Anshul Dandapani, Karina Dyakov, Ally Frank, Elan Gurevich, Zara Hashmi, Kamila Jablonski, Vibha Joshi, Ria Karwande, Santosha Pochiraju, Nick Posadas, Hannah Smith, Rachel Stavola, Srika Sudheer, Samantha Syuhanova, Sonya Todorov, Audrey Tutty, Tiffany Washington, Lizzy Yuan, Nancy Zhang\n\n\n\nThe AP Art, AP and Advanced Photography and Digital Design students would greatly appreciate your attendance at their show!",
+      "location": "Stevenson High School | Room 2104 & Upper Forum",
       "categories": [
         "Fine Arts"
       ]
-    }
-  ],
-  "12/9/2020": [
-    {
-      "allDay": false,
-      "start": 1607520600000,
-      "end": 1607520600000,
-      "name": "Building Empathy Within the Family",
-      "description": "Empathy is at the heart of what it means to be human.  It's a foundation for acting ethically, for good relationships of many kinds, for loving well, and for professional success.  We will discuss tips for cultivating empathy.\n\n\n\n\n\n * Wednesday, December 9 at 7:30 am - zoom link:  https://zoom.us/j/99403383842",
-      "location": null,
-      "categories": [
-        "Parent Calendar"
-      ]
     },
-    {
-      "allDay": false,
-      "start": 1607562000000,
-      "end": 1607567400000,
-      "name": "College Night For Junior Families",
-      "description": "All juniors and their parents and guardians are invited to the College Career Center's annual College Night for Junior Families program via Zoom:  https://zoom.us/j/93151773439 .\n\n\n\nFamilies needing interpreter assistance can reach out to Michele Doczi, at  mdoczi@d125.org  prior to Wednesday, Dec. 2nd.\n\n  A special session for parents and guardians of students with IEP/504 plans   will take place before the main presentation. The special session will run from 6:30-6:50 p.m. via Zoom:  https://zoom.us/s/92818331243",
-      "location": null,
-      "categories": []
-    },
-    {
-      "allDay": false,
-      "start": 1607562000000,
-      "end": 1607562000000,
-      "name": "FAN Event - \"Who Gets In and Why: A Year Inside College Admissions\"",
-      "description": "Who Gets In and Why: A Year Inside College Admissions -- A FAN Webinar with Jeffrey Selingo and Melissa Korn  Register Here.",
-      "location": null,
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "12/10/2020": [
     {
       "allDay": true,
-      "start": 1607580000000,
-      "end": 1607666400000,
-      "name": "Hebrew National Honor Society  Chanukah Coat Club Fundraiser Last Day",
-      "description": "Help the Hebrew National Honor Society & JUF provide more coats and winter accessories for those who need them the most!  \n\nThis  link  is active only until Thursday 12/10/20 - Donate now before it's too cold!",
+      "start": 1649221200000,
+      "end": 1649307600000,
+      "name": "PPA Bake Sale",
+      "description": "",
+      "location": "Glass Commons & Wood Commons",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1649264400000,
+      "end": 1649264400000,
+      "name": "Tolerating Uncertainty",
+      "description": "Patriot Family Programming Presents: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n\n\n  \n\n Tolerating Uncertainty \n\nWe will discuss how to help teens cope with uncertainty.\n\n\n\n\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\n\n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "Parent Calendar"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1649284200000,
+      "end": 1649284200000,
+      "name": "2023 Stevenson Summer Travel Parent Info Night",
+      "description": "For more information, visit  Student Travel Experiences .",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "Parent Calendar"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1649289600000,
+      "end": 1649289600000,
+      "name": "Student Government Induction",
+      "description": "",
+      "location": "Stevenson High School | West Auditorium",
+      "categories": []
+    }
+  ],
+  "4/7/2022": [
+    {
+      "allDay": true,
+      "start": 1649307600000,
+      "end": 1649394000000,
+      "name": "Anti-Racism and Inclusivity Week 2022",
+      "description": "Anti-Racism and Inclusivity Week is back! Equity-minded Stevenson clubs will be hosting a series of activities throughout the week focused on spreading the message of the importance of allyship within our school community.\n\nFor additional information about this week-long event, please visit the  Anti-Racism and Inclusivity Week web page .",
       "location": null,
       "categories": [
         "Clubs and Activities"
@@ -94,479 +352,860 @@
     },
     {
       "allDay": false,
-      "start": 1607637600000,
-      "end": 1607637600000,
-      "name": "Self Care Strategies For Your Teen",
-      "description": "* Self-care is about meeting your basic needs so you can be physically and mentally healthy. We will discuss how to support healthy habits that impact a teen's brain and mental health. \n* Thursday, December 10 at 4:00 pm- zoom link:   https://zoom.us/j/91277097128",
-      "location": null,
+      "start": 1649350800000,
+      "end": 1649350800000,
+      "name": "It's Never Too Late To Foster Kindness",
+      "description": "Patriot Family Programming Presents: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n\n\n  \n\n  \n\nIt's Never Too Late To Foster Kindness\n\nKindness is a muscle that can be strengthened with practice. We will discuss how we can help our teens practice kindness.\n\n\n\n\n\n\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\n\n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
       "categories": [
         "Parent Calendar"
       ]
     },
     {
       "allDay": false,
-      "start": 1607648400000,
-      "end": 1607648400000,
-      "name": "December Virtual Band Concert",
-      "description": "This concert will feature virtual performances by each of the five levels of our band program, along with previously unseen solo and chamber performances from the rest of the semester.\nZoom Webinar:  https://zoom.us/j/96574266957",
+      "start": 1649376000000,
+      "end": 1649376000000,
+      "name": "CCC Presents: Looking Ahead for Freshmen Families Night",
+      "description": "The College Career Center invites freshman students and their parents or guardians to its annual Freshmen Family Night program at 7 p.m. on Thursday, April 7. The presentation will be offered in-person, in the PAC, as well as via Zoom/Live Stream:  https://zoom.us/j/93695815095 \n\nFamilies will learn what students can expect during the next three years as they journey toward post-high school opportunities. The program will also be interpreted in Spanish. Families needing other language interpreter assistance can reach out to Donna Wallach, at  ccc_collegecareer@d125.org  prior to Thursday, March 31st.\n\nIn addition, there will be a short pre-session for families of students with an Individual Education Plan (IEP) or 504 Plan from 6:30-6:50 p.m. in the PAC or via Zoom/Live Steam as well:  https://zoom.us/s/99329324928 \n\nIf families are unable to attend either or both events, the recordings and slides will be accessible on the CCC's website, under the Freshmen/Sophomore Focus webpage, within one week of the event.",
+      "location": "Stevenson High School | Performing Arts Center",
+      "categories": [
+        "CCC"
+      ]
+    }
+  ],
+  "4/8/2022": [
+    {
+      "allDay": true,
+      "start": 1649394000000,
+      "end": 1649480400000,
+      "name": "Anti-Racism and Inclusivity Week 2022",
+      "description": "Anti-Racism and Inclusivity Week is back! Equity-minded Stevenson clubs will be hosting a series of activities throughout the week focused on spreading the message of the importance of allyship within our school community.\n\nFor additional information about this week-long event, please visit the  Anti-Racism and Inclusivity Week web page .",
       "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1649394000000,
+      "end": 1649480400000,
+      "name": "Day of Dance",
+      "description": "Day of Dance is a performance event for all dance classes throughout the entire school day. This year's theme is Fairytales. Students will perform group choreography that they have worked on for the past 6 weeks in the PAC during their dance class period. All students, parents, and faculty are invited to watch this performance. Faculty may also bring their classes. The show will be live-streamed all day as well.\n\nFeatured Classes, Groups, or Students: All dance classes (Dance 1, 2, 3, 4, Jazz Fusion, Ballet / Jazz, Concert Dance, and Dance Leaders)\n\nAny additional notes: Throughout the day various Concert Dancers and Dance Leaders will present solos/duets\n\n\n\n\n\n   Viewing Link \n\n     Event Program",
+      "location": "Stevenson High School | Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
     }
   ],
-  "12/11/2020": [
+  "4/11/2022": [
     {
-      "allDay": true,
-      "start": 1607666400000,
-      "end": 1607752800000,
-      "name": "End of Six-Week Grading Period",
+      "allDay": false,
+      "start": 1649689560000,
+      "end": 1649692140000,
+      "name": "Activity Period - Student Activities",
       "description": "",
       "location": null,
       "categories": [
-        "End of Six Weeks"
-      ]
-    }
-  ],
-  "12/12/2020": [
-    {
-      "allDay": true,
-      "start": 1607752800000,
-      "end": 1607839200000,
-      "name": "BPO- Famous Burrito Fundraiser",
-      "description": "BPO hosting a fundraiser at  Famous Burrito  from 10:30-9 p.m. at the Wheeling Location.Take-Out Fundraiser!\n   \nDonating Back: 20%",
-      "location": null,
-      "categories": [
-        "Fine Arts"
+        "Activity Period"
       ]
     },
     {
       "allDay": false,
-      "start": 1607814000000,
-      "end": 1607817600000,
-      "name": "Acting 3 Performance of  \"Written in Quarantine\"",
-      "description": "Please join us for our Acting 3 culminating performance! Original slam poems, musings on the pandemic, improv comedy, great fun!\n\n\n\nActual show link -  https://zoom.us/j/98031145307",
-      "location": null,
+      "start": 1649696400000,
+      "end": 1649696400000,
+      "name": "Strategies To Connect With Your Teen",
+      "description": "Patriot Family Programming Presents: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n\n\n  \n\n  \n\n\n\n Strategies To Connect With Your Teen \n\nCommunication with your teen can lead to frustration for everyone. This discussion will focus on strategies to help everyone feel valued and heard.\n\n\n\n\n\n\n\n\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\n\n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
       "categories": [
-        "Fine Arts"
+        "Parent Calendar"
       ]
-    }
-  ],
-  "12/13/2020": [
+    },
     {
       "allDay": false,
-      "start": 1607907600000,
-      "end": 1607907600000,
-      "name": "December Choir Concert",
-      "description": "Virtual Choir Concert  Vimeo Stream  at 7:00 p.m.",
-      "location": null,
+      "start": 1649721600000,
+      "end": 1649721600000,
+      "name": "Choral Guild Meeting",
+      "description": "The Choral Meeting begins at 7 p.m. and will be held in room 1414.  Visit the  Choral Guild's webpage  for additional information.",
+      "location": "Room 1414",
       "categories": [
+        "Parent Calendar",
         "Fine Arts"
       ]
     }
   ],
-  "12/14/2020": [
-    {
-      "allDay": true,
-      "start": 1607925600000,
-      "end": 1608012000000,
-      "name": "Semester Exams - Day 1",
-      "description": "Final Exam Information",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    },
+  "4/12/2022": [
     {
       "allDay": false,
-      "start": 1607968800000,
-      "end": 1607994000000,
-      "name": "Fall School Materials Drop Off",
-      "description": "Drop-Off Information",
-      "location": "LOT B",
-      "categories": []
-    },
-    {
-      "allDay": false,
-      "start": 1607968800000,
-      "end": 1607968800000,
-      "name": "Helping Your Student Help Themself - Self Advocacy Skills",
-      "description": "* It is important for teens to be able to practice speaking up for themselves- caregivers can help teens learn how to self-advocate which is an important skill that supports the lifelong success\n* Zoom Link:   https://zoom.us/j/95845111303",
-      "location": null,
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "12/15/2020": [
-    {
-      "allDay": true,
-      "start": 1608012000000,
-      "end": 1608098400000,
-      "name": "Semester Exams - Day 2",
-      "description": "Final Exams Information",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1608055200000,
-      "end": 1608080400000,
-      "name": "Fall School Materials Drop Off",
-      "description": "Drop Off Information",
-      "location": "LOT B",
-      "categories": []
-    },
-    {
-      "allDay": false,
-      "start": 1608076800000,
-      "end": 1608076800000,
-      "name": "Supporting your Teen Through Making Decisions",
-      "description": "* We will discuss how adults can help teens build skills toward helping them consider options and future implications when making decisions\n* Zoom Link:   https://zoom.us/j/99793399215",
-      "location": null,
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "12/16/2020": [
-    {
-      "allDay": true,
-      "start": 1608098400000,
-      "end": 1608184800000,
-      "name": "Semester Exams - Day 3",
-      "description": "Final Exam Information",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1608125400000,
-      "end": 1608125400000,
-      "name": "Talking with Your Teen - Building Conversations",
-      "description": "* Working to establish a healthy and trusting parent-child relationship is important even though teens are trying to pull away from their parents and begin to assert their own independence. We will discuss strategies parents and caregivers can use in conversations with teens.\n* Zoom Link:  https://zoom.us/j/91963300261",
-      "location": null,
+      "start": 1649782800000,
+      "end": 1649782800000,
+      "name": "Helping Your Teen Manage Stress",
+      "description": "Patriot Family Programming Presents: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n\n\n  \n\n  \n\n\n\n  \n\n Helping Your Teen Manage Stress \n\nStress can come from being overwhelmed by the problems in our lives. Students are sometimes immobilized by their inability to see a positive outcome for a difficult situation. We will discuss talking about how to address problems one step at a time and how to deal with stress.\n\n\n\n\n\n\n\n\n\n\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\n\n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
       "categories": [
         "Parent Calendar"
       ]
     },
     {
       "allDay": false,
-      "start": 1608141600000,
-      "end": 1608166800000,
-      "name": "Fall School Materials Drop Off",
-      "description": "Drop Off Information",
-      "location": "LOT B",
-      "categories": []
-    }
-  ],
-  "12/17/2020": [
-    {
-      "allDay": true,
-      "start": 1608184800000,
-      "end": 1608271200000,
-      "name": "Non-Attendance Day",
-      "description": "",
-      "location": null,
+      "start": 1649806200000,
+      "end": 1649806200000,
+      "name": "RACE to Be Human: In-person Discussion",
+      "description": "Dr. LeViis Haney, Director of Equity, Diversity and Inclusion at Stevenson will lead an in-person follow up discussion for families who would like to discuss the ideas and topics addressed in the film. Seating will be limited to 100 participants at this discussion. If you would like to attend, please register at the link below.\n\n\n\n\n\n-----------------\n\nTrailer and Preview Page:  https://watch.eventive.org/indieflix/play/624213e9... \n\nMovie Link available April 4 through April 11:  https://watch.eventive.org/indieflix/play/624213e9... \n\nRegister for film discussion on April 12:  https://forms.gle/yJPfkB55i6CcMq2f6",
+      "location": "Stevenson High School | Room 2104",
       "categories": [
-        "Non-Attendance Days"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1608213600000,
-      "end": 1608228000000,
-      "name": "Fall School Materials Drop Off",
-      "description": "Drop Off Information",
-      "location": "LOT B",
-      "categories": []
-    }
-  ],
-  "12/18/2020": [
-    {
-      "allDay": true,
-      "start": 1608271200000,
-      "end": 1608357600000,
-      "name": "Non-Attendance Day",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "12/21/2020": [
-    {
-      "allDay": true,
-      "start": 1608530400000,
-      "end": 1608616800000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "12/22/2020": [
-    {
-      "allDay": true,
-      "start": 1608616800000,
-      "end": 1608703200000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "12/23/2020": [
-    {
-      "allDay": true,
-      "start": 1608703200000,
-      "end": 1608789600000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "12/24/2020": [
-    {
-      "allDay": true,
-      "start": 1608789600000,
-      "end": 1608876000000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "12/25/2020": [
-    {
-      "allDay": true,
-      "start": 1608876000000,
-      "end": 1608962400000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "12/26/2020": [
-    {
-      "allDay": true,
-      "start": 1608962400000,
-      "end": 1609048800000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "12/27/2020": [
-    {
-      "allDay": true,
-      "start": 1609048800000,
-      "end": 1609135200000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "12/28/2020": [
-    {
-      "allDay": true,
-      "start": 1609135200000,
-      "end": 1609221600000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "12/29/2020": [
-    {
-      "allDay": true,
-      "start": 1609221600000,
-      "end": 1609308000000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "12/30/2020": [
-    {
-      "allDay": true,
-      "start": 1609308000000,
-      "end": 1609394400000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "12/31/2020": [
-    {
-      "allDay": true,
-      "start": 1609394400000,
-      "end": 1609480800000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "1/1/2021": [
-    {
-      "allDay": true,
-      "start": 1609480800000,
-      "end": 1609567200000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "1/2/2021": [
-    {
-      "allDay": true,
-      "start": 1609567200000,
-      "end": 1609653600000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "1/3/2021": [
-    {
-      "allDay": true,
-      "start": 1609653600000,
-      "end": 1609740000000,
-      "name": "Winter Break",
-      "description": "Runs through Jan. 3, 2021\n\nSchool resumes Jan. 5, 2021",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "1/4/2021": [
-    {
-      "allDay": true,
-      "start": 1609740000000,
-      "end": 1609826400000,
-      "name": "No School - Teacher Institute Day",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1609808400000,
-      "end": 1609808400000,
-      "name": "SHS Second Semester Questions and Answers Webinar For Families",
-      "description": "Families who have questions about second-semester plans are encouraged to share them on this  Google form  and join us on our webinar at this  zoom link.",
-      "location": null,
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "1/5/2021": [
-    {
-      "allDay": false,
-      "start": 1609857000000,
-      "end": 1609881900000,
-      "name": "Second Semester Begins",
-      "description": "Check the  COVID-19 Updates page  on the Website for the Patriot Hybrid Remote Days Schedule and other pertinent information.",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "1/11/2021": [
-    {
-      "allDay": false,
-      "start": 1610382600000,
-      "end": 1610420400000,
-      "name": "Best Buddies Transition  MOD Pizza Fundraiser",
-      "description": "Best Buddies Transition is hosting a fundraiser at MOD Pizza in Buffalo Grove (1555 Deerfield Pkwy Buffalo Grove 60089).  \n\n Mention that you are supporting SHS Best Buddies Transition when ordering!",
-      "location": "All Day",
-      "categories": [
-        "Fundraisers",
         "Clubs and Activities"
       ]
     },
     {
       "allDay": false,
-      "start": 1610409600000,
-      "end": 1610409600000,
-      "name": "SPA Meeting",
-      "description": "String Parents Association Meeting",
-      "location": "Zoom",
+      "start": 1649808000000,
+      "end": 1649808000000,
+      "name": "Tri- M Benefit Concert",
+      "description": "The  Tri-M Benefit Concert  is Stevenson High School's Tri-M Honors Society's bi-annual concert. The concert highlights Tri-M members' musical talents through a variety of musical performances, including instrumental and vocal performances. All of the proceeds raised from the Benefit Concert goes towards a non-profit organization.\n\nFeatured students include members of Stevenson High School's Tri-M Honors Society, which consists of high achieving music students involved in Stevenson's Music programs. Performers are Tri-M members Jenna Chen, Sahiti Kadari, Maggie Atkinson, Tvishi Krishnakumar, Rishabh Wuppalapati, Ariela Cruz, Ashwin Vazhayil, Arjun Nair, Reese Suren, Jordan Winkelman, Aria Shum, and Michael Cheung, along with Tri-M Eboard members Eileen Kang, Abby Froyshteter, Ashwini Narayanan, and Mahitha Chaturvedula.\n\nSponsor: Alice Nuteson\n\n  \n\n-----------------\n\nDonations can be made at the following link:  https://stevenson.revtrak.net/clubs-activities/clu...\n \n\n *The link will close Sunday 4/17 \n\n Fundraising Facts: \n * 100% of the proceeds raised go towards Super Joey Chicago, a California based non-profit that supports the families of childhood cancer patients.\n* Last semester, we raised over $300 from our first semester benefit concert. This semester, we hope to surpass this goal and raise $500!\n* A Benefit Concert performer from last semester said that \"the concert was a great way to not only give back to the community through my passion, but also to connect with my fellow classmates who had a similar passion for music.\"\n* Numerous members who attended the concert said that they were astonished with the musical talent here at Stevenson!\n* Mahitha Chaturvedula, Tri-M Honors Society President, says that \"the Benefit Concert is a great way for music students to give back to the community with a personal touch and create a lasting impact on generations of music students to come.\"",
+      "location": "Stevenson High School | West Auditorium",
       "categories": [
         "Fine Arts"
       ]
     }
   ],
-  "1/12/2021": [
+  "4/13/2022": [
+    {
+      "allDay": true,
+      "start": 1649826000000,
+      "end": 1649912400000,
+      "name": "PPA Meeting",
+      "description": "Meetings will be held in the Principal's Conference Room at 7:30 p.m.",
+      "location": null,
+      "categories": [
+        "Parent Calendar"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1649826000000,
+      "end": 1649912400000,
+      "name": "PSAT 9 - Freshmen",
+      "description": "All Freshmen will be automatically registered with no fee required.\n\nStudents who have certain accommodations may test over multiple dates.\n\n\n\n Click here  for more information.",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1649826000000,
+      "end": 1649912400000,
+      "name": "SAT - Juniors",
+      "description": "This test is a graduation requirement. All Juniors will be automatically registered with no fee.\n\nStudents who have certain accommodations may test over multiple dates.\n\n\n\n\n\n Click here  for more information.",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
     {
       "allDay": false,
-      "start": 1610499600000,
-      "end": 1610499600000,
-      "name": "Virtual Strings Winter Concert",
-      "description": "",
-      "location": null,
+      "start": 1649869200000,
+      "end": 1649869200000,
+      "name": "Helping Your Teen Set Smart Goals",
+      "description": "Patriot Family Programming Presents: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n\n\n  \n\n  \n\n\n\n  \n\n  \n\n Helping Your Teen Set Smart Goals \n\nSome of the reasons we fail at our goals is because we don't have a plan. We will discuss how to support the creation of SMART goals with teens.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\n\n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "Parent Calendar"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1649889000000,
+      "end": 1649889000000,
+      "name": "Sports Booster Meeting",
+      "description": "All meetings begin at 5:30 p.m. in West Faculty Dining Room (Room 1204, by the Sports Center)",
+      "location": "West Staff Dining Room",
+      "categories": [
+        "Parent Calendar",
+        "Athletics"
+      ]
+    }
+  ],
+  "4/14/2022": [
+    {
+      "allDay": false,
+      "start": 1649955600000,
+      "end": 1649955600000,
+      "name": "Helping Your Teen Focus",
+      "description": "Patriot Family Programming Presents: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n\n\n  \n\n  \n\n\n\n  \n\n  \n\n  \n\n Helping Your Teen Focus \n\nWe will discuss the importance of teens being able to direct and sustain their attention to what they are doing.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\n\n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "Parent Calendar"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1649980800000,
+      "end": 1649980800000,
+      "name": "Small Ensemble Band Concert",
+      "description": "Description: SHS Clarinet, Saxophone, Flute, and Brass Ensembles will perform a concert.\n\nFeatured Classes:\n * SHS Clarinet\n* Saxophone\n* Flute\n* Brass Ensembles\n \nStream the event at the  SHS Fine Arts Vimeo \n\n   View the event program",
+      "location": "Stevenson High School | West Auditorium",
       "categories": [
         "Fine Arts"
       ]
     },
     {
       "allDay": false,
-      "start": 1610499600000,
-      "end": 1610499600000,
+      "start": 1649980800000,
+      "end": 1649980800000,
+      "name": "Stevenson Styler Fashion Show",
+      "description": "The  9th annual Stevenson Styler Fashion Show  is coming to the Performing Arts Center on Thursday April 14th at 7pm! Admission is $5, all proceeds will benefit  Responsibility in Fashion .\n\nWe will also be selling zero-waste small sewn items such as scrunchies and lanyards before and after the show for $3 each, of which all proceeds will be donated as well. Responsibility in Fashion is a 501(c)(3) nonprofit bringing together sustainable, conscious, ethical, circular and eco fashion organizations and government programs toward the goal of energizing and bringing innovation to the growing movement toward clean, safe and ethical fashion.\n\nThe Fashion Show leadership team is working in conjunction with Gilbane to make this event a part of the Green apple Day of Service sustainability challenge. There is a sustainability focus being put on the over 50 amazing student-designed looks made by students in the Clothing and Design classes. We will also highlight many new looks from local retailers. We hope to see you there on April 14th!",
+      "location": "Stevenson High School | Performing Arts Center",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "4/15/2022": [
+    {
+      "allDay": true,
+      "start": 1649998800000,
+      "end": 1650085200000,
+      "name": "Non-Attendance Day",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days"
+      ]
+    }
+  ],
+  "4/18/2022": [
+    {
+      "allDay": true,
+      "start": 1650258000000,
+      "end": 1650344400000,
+      "name": "Earth Week 2022",
+      "description": "Earth Week 2022 at Stevenson High School is an opportunity to celebrate our planet and help students become aware of what they can do individually and collectively to care for it. Throughout the week, there will be various service and educational opportunities that align with the  Earth Day 2022  organization's sustainability campaigns.\n\n\n\nFor additional information about this week-long event, please visit the  Earth Week 2022 @ SHS page .",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1650301200000,
+      "end": 1650301200000,
+      "name": "Supporting Your Teen Through Making Decisions",
+      "description": "Patriot Family Programming Presents: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n\n\n  \n\n  \n\n\n\n  \n\n  \n\n  \n\n  \n\n Supporting Your Teen Through Making Decisions \n\nAll students have varying degrees of strengths and challenges related to responsible decision-making. We will discuss working with students to evaluate a situation, analyze options, and consider the potential consequences of decisions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\n\n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "Parent Calendar"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1650326400000,
+      "end": 1650326400000,
+      "name": "District 125 Board of Education Meeting",
+      "description": "District 125 Board of Education meetings begin at 7:00 p.m. and are held at the District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, Ill.\n\nPlease visit the  Board of Education webpage  for additional information.",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "4/19/2022": [
+    {
+      "allDay": true,
+      "start": 1650344400000,
+      "end": 1650430800000,
+      "name": "Earth Week 2022",
+      "description": "Earth Week 2022 at Stevenson High School is an opportunity to celebrate our planet and help students become aware of what they can do individually and collectively to care for it. Throughout the week, there will be various service and educational opportunities that align with the  Earth Day 2022  organization's sustainability campaigns.\n\n\n\nFor additional information about this week-long event, please visit the  Earth Week 2022 @ SHS page .",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1650412800000,
+      "end": 1650412800000,
+      "name": "Percussion Ensemble Concert",
+      "description": "The Stevenson High School Percussion Ensemble will be having its in-person concert debut for the first time since the start of the pandemic. The students will be showcasing percussion stylings from classical to the contemporary of our instrument family.\n\nFeatured Classes:\n * This concert will feature many smaller ensemble pieces based on grade, along with three large ensemble pieces with all students involved.\n* Freshmen will have a chamber-style performance of \"Chipboard\" by Josh Gottry.\n* Sophomores and Juniors have a smaller piece played together, \"Not Far From Here,\" by Blake Tyson.\n* Seniors will be showcasing another chamber styling of \"Persistence,\" by Brian Blume.\n \nThe large ensembles are comprised of high energy pieces that involve six-foot dowels and choreography (Stick Schtick by Chris Brooks), full instrumentation with mixed time signatures (Luminescence by Nathan Daughtery) and a student-created piece that will wrap the concert (Oye Como Bap by Senior Madison Rios)\n\nAdditional Notes:\n * There will be a highlighted section on our last piece revolving around explaining the process of how the student-created piece came about, and its world debut as a percussion ensemble piece.\n* This concert is almost two years in the making!\n* There are a few songs that are being showcased that would have been played at our first concert back in 2020.\n \nStream the event at the  SHS Fine Arts Vimeo \n\n No tickets needed -- open to the public! \n\n Event program coming soon!",
+      "location": "Stevenson High School | Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "4/20/2022": [
+    {
+      "allDay": true,
+      "start": 1650430800000,
+      "end": 1650517200000,
+      "name": "Earth Week 2022",
+      "description": "Earth Week 2022 at Stevenson High School is an opportunity to celebrate our planet and help students become aware of what they can do individually and collectively to care for it. Throughout the week, there will be various service and educational opportunities that align with the  Earth Day 2022  organization's sustainability campaigns.\n\n\n\nFor additional information about this week-long event, please visit the  Earth Week 2022 @ SHS page .",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1650430800000,
+      "end": 1650430800000,
+      "name": "PPA Bake Sale",
+      "description": "",
+      "location": "Glass Commons & Wood Commons",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1650499200000,
+      "end": 1650504600000,
+      "name": "Senior Awards",
+      "description": "Note: Musical prelude starts at 6:45 p.m \n\n *Invite Only",
+      "location": "Stevenson High School | Performing Arts Center",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "4/21/2022": [
+    {
+      "allDay": true,
+      "start": 1650517200000,
+      "end": 1650603600000,
+      "name": "Earth Week 2022",
+      "description": "Earth Week 2022 at Stevenson High School is an opportunity to celebrate our planet and help students become aware of what they can do individually and collectively to care for it. Throughout the week, there will be various service and educational opportunities that align with the  Earth Day 2022  organization's sustainability campaigns.\n\n\n\nFor additional information about this week-long event, please visit the  Earth Week 2022 @ SHS page .",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1650517200000,
+      "end": 1650603600000,
+      "name": "Late Arrival",
+      "description": "See the  bell schedule page  for more information.",
+      "location": null,
+      "categories": [
+        "Late Arrival",
+        "Early Dismissal"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1650560400000,
+      "end": 1650560400000,
+      "name": "The Power of Positive Relationships",
+      "description": "Patriot Family Programming Presents: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n\n\n  \n\n  \n\n\n\n  \n\n  \n\n  \n\n  \n\n  \n\n The Power of Positive Relationships \n\nHow to have positive relationships and how to sustain positive relationships\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\n\n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "Parent Calendar"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1650585600000,
+      "end": 1650596400000,
+      "name": "NHS Induction",
+      "description": "",
+      "location": "Stevenson High School | Performing Arts Center",
+      "categories": []
+    }
+  ],
+  "4/22/2022": [
+    {
+      "allDay": true,
+      "start": 1650603600000,
+      "end": 1650690000000,
+      "name": "Earth Week 2022",
+      "description": "Earth Week 2022 at Stevenson High School is an opportunity to celebrate our planet and help students become aware of what they can do individually and collectively to care for it. Throughout the week, there will be various service and educational opportunities that align with the  Earth Day 2022  organization's sustainability campaigns.\n\n\n\nFor additional information about this week-long event, please visit the  Earth Week 2022 @ SHS page .",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "4/23/2022": [
+    {
+      "allDay": true,
+      "start": 1650690000000,
+      "end": 1650776400000,
+      "name": "Prom 2022",
+      "description": "For more information, visit the  Prom 2022 web page .\n\n Download the Prom 2022 Event Program",
+      "location": "Hyatt Regency O'Hare Chicago",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "4/25/2022": [
+    {
+      "allDay": false,
+      "start": 1650906000000,
+      "end": 1650906000000,
+      "name": "Supporting Study Habits In Your Teen",
+      "description": "Patriot Family Programming Presents: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n\n\n  \n\n  \n\n\n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n Supporting Study Habits In Your Teen \n\nIt can be tough to get work done with the distractions of phones and computers. We will discuss strategies and school resources students can use to manage their academics independently.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\n\n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "Parent Calendar"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1650931200000,
+      "end": 1650934800000,
+      "name": "Making a Healthy Transition to Stevenson - An Informative Panel",
+      "description": "Join us for an exciting night featuring expert panelists and Stevenson High School students as they prepare 8th graders to attend Stevenson next fall! All incoming freshmen and their families are invited.\n\n\n\nPanelists:\n * Troy Gobble, Principal, Stevenson High School\n* Zara Dittman, Freshman Mentor Coordinator and Spanish Teacher, Stevenson\n* Cristina Cortesi, Ph.D., Substance Abuse Prevention Coordinator, Stevenson\n* Deputy Francis Foy, Lake County Sheriff's Office\n* Hanvita Ramineni, Stevenson High School student and member of Catalyst Club\n \nParents, come learn:\n * About your student's social transition\n* How you can support the academic change\n* How to support your child's mental health during this season\n* How to recognize signs of drug/alcohol use, including vaping\n \nAt the same time, students are invited to a separate panel just for them with our Catalyst high school students. These panels will be happening simultaneously.\n\nStudents will learn how to:\n * ADJUST to the academics and manage your time\n* GET HELP when you need it - academic and emotionally\n* GROW your social circle\n* RESPOND in social situations if alcohol/drugs are offered\n* CARE for your mental and emotional health\n* MAKE the most out of your time at Stevenson\n \nAll incoming 2022-2023 Stevenson freshmen, their parents, and other interested adults are encouraged to participate in this free community program sponsored by Catalyst Club and Stand Strong Coalition.\n\n\n\nTo register for this free event for incoming freshmen and their families,  click here .",
+      "location": "Stevenson High School | Parents in Recital Hall (Room 4100) & 8th Graders in The Little Theater (Room 4200)",
+      "categories": [
+        "Parent Calendar"
+      ]
+    }
+  ],
+  "4/26/2022": [
+    {
+      "allDay": true,
+      "start": 1650949200000,
+      "end": 1651035600000,
+      "name": "Consortium Artfest",
+      "description": "",
+      "location": "Stevenson High School | Field House",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1650949200000,
+      "end": 1651035600000,
+      "name": "PSAT 10 - Sophmores",
+      "description": "All Sophomores will be automatically registered with no fee required.\n\nStudents who have certain accommodations may test over multiple dates.\n\n\n\n Click here  for more information.",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1650992400000,
+      "end": 1650992400000,
+      "name": "Helping Your Teen Develop Time Management Skills",
+      "description": "Patriot Family Programming Presents: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n\n\n  \n\n  \n\n\n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n Helping Your Teen Develop Time Management Skills \n\nHow you can help your teen prioritize tasks so they are able to make better use of their time and complete school work and assignments on time.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n-----------------\n\n Zoom Link :  https://zoom.us/j/94132678734   \n\n\n\nRecordings of each short can be found on the  SHS Family Engagement YouTube channel  at:  https://www.youtube.com/channel/UCLEcLMExmibNXFYLK_lkcQA",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "Parent Calendar"
+      ]
+    }
+  ],
+  "4/27/2022": [
+    {
+      "allDay": true,
+      "start": 1651035600000,
+      "end": 1651122000000,
+      "name": "Baroque Concert",
+      "description": "",
+      "location": "Recital Hall",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "4/28/2022": [
+    {
+      "allDay": true,
+      "start": 1651122000000,
+      "end": 1651208400000,
+      "name": "Free the Children Fundraiser - Noodles and Co.",
+      "description": "Support SHS club Free the Children by dining with Noodles and Co. on Thursday, April 28, 2022. The Lincolnshire location will be part of the fundraiser that day. Simply mention the Free the Children fundraiser and 25% of your order cost will be donated back to the organization. You can dine-in, take-out, order online, or use the mobile app. Use code GIVING25 in the fundraiser code box when ordering online or via the mobile app.\n\nTo learn more about Free the Children,  click here .",
+      "location": "Noodles and Co. | Lincolnshire, IL",
+      "categories": [
+        "Parent Calendar",
+        "Fundraisers"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1651122000000,
+      "end": 1651208400000,
+      "name": "Local Scholarship Reception",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Foundation Events"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1651122000000,
+      "end": 1651208400000,
+      "name": "One Acts Reading Series",
+      "description": "",
+      "location": "West Auditorium",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "4/29/2022": [
+    {
+      "allDay": true,
+      "start": 1651208400000,
+      "end": 1651294800000,
+      "name": "One Acts Plays",
+      "description": "",
+      "location": "West Auditorium",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1651208400000,
+      "end": 1651294800000,
+      "name": "Spring Dance Concert",
+      "description": "",
+      "location": "PAC",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1651235400000,
+      "end": 1651238700000,
+      "name": "Senior Sunrise",
+      "description": "Commitment celebration -- wear your college apparel!\n\nCome for games, breakfast, caps and gowns, photos and more!",
+      "location": "Stevenson High School | Stadium",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "4/30/2022": [
+    {
+      "allDay": true,
+      "start": 1651294800000,
+      "end": 1651381200000,
+      "name": "One Acts Plays",
+      "description": "",
+      "location": "West Auditorium",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1651294800000,
+      "end": 1651381200000,
+      "name": "Spring Dance Concert",
+      "description": "",
+      "location": "PAC",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "5/2/2022": [
+    {
+      "allDay": true,
+      "start": 1651467600000,
+      "end": 1651554000000,
+      "name": "AP Exams",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1651532400000,
+      "end": 1651532400000,
+      "name": "String Parents Association (SPA) Meeting",
+      "description": "SHS String Parents Association (SPA) Meetings are held virtually and begin at 6 p.m.  For more information about SPA, please visit their  webpage .\n\nZoom link is  https://zoom.us/j/98278110280",
+      "location": "Zoom",
+      "categories": [
+        "Parent Calendar",
+        "Fine Arts"
+      ]
+    }
+  ],
+  "5/3/2022": [
+    {
+      "allDay": true,
+      "start": 1651554000000,
+      "end": 1651640400000,
+      "name": "AP Exams",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1651554000000,
+      "end": 1651640400000,
+      "name": "Choral Concert",
+      "description": "",
+      "location": "PAC",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1651622400000,
+      "end": 1651622400000,
       "name": "BPO Meeting",
-      "description": "All Band Parents are Welcome and Encouraged to Attend BPO Meetings.  Contact Secretary for Zoom Access.  shsbposecretary@gmail.com\n\n\n\n\n\n\nFor more information about the Band Parent Organization,  clear here.",
-      "location": "TBA",
+      "description": "Band parents are welcome and encouraged to attend meetings.",
+      "location": "Midi Lab 2201",
+      "categories": [
+        "Parent Calendar"
+      ]
+    }
+  ],
+  "5/4/2022": [
+    {
+      "allDay": true,
+      "start": 1651640400000,
+      "end": 1651726800000,
+      "name": "AP Exams",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1651640400000,
+      "end": 1651726800000,
+      "name": "Music Production Showcase",
+      "description": "",
+      "location": "West Auditorium & Rm 2104",
       "categories": [
         "Fine Arts"
       ]
     }
   ],
-  "1/13/2021": [
+  "5/5/2022": [
     {
-      "allDay": false,
-      "start": 1610586000000,
-      "end": 1610593200000,
-      "name": "Incoming Freshman Family Night",
+      "allDay": true,
+      "start": 1651726800000,
+      "end": 1651813200000,
+      "name": "AP Exams",
       "description": "",
       "location": null,
       "categories": [
-        "Parent Calendar"
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1651726800000,
+      "end": 1651813200000,
+      "name": "Orchestra & Guitar Awards/Concert",
+      "description": "",
+      "location": "PAC",
+      "categories": [
+        "Fine Arts"
       ]
     }
   ],
-  "1/14/2021": [
+  "5/6/2022": [
     {
-      "allDay": false,
-      "start": 1610641800000,
-      "end": 1610659500000,
-      "name": "Late Arrival - Team Planning",
-      "description": "Classes begin at 10:30 a.m.",
+      "allDay": true,
+      "start": 1651813200000,
+      "end": 1651899600000,
+      "name": "AP Exams",
+      "description": "",
       "location": null,
       "categories": [
-        "Late Arrival"
+        "Testing Day"
+      ]
+    }
+  ],
+  "5/9/2022": [
+    {
+      "allDay": true,
+      "start": 1652072400000,
+      "end": 1652158800000,
+      "name": "2022 Fall Play Auditions",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1652072400000,
+      "end": 1652158800000,
+      "name": "AP Exams",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
       ]
     },
     {
       "allDay": false,
-      "start": 1610672400000,
-      "end": 1610672400000,
-      "name": "Virtual Strings Consortium Concert",
+      "start": 1652140800000,
+      "end": 1652140800000,
+      "name": "Choral Guild Meeting",
+      "description": "The Choral Meeting begins at 7 p.m. and will be held in room 1414.  Visit the  Choral Guild's webpage  for additional information.",
+      "location": "Room 1414",
+      "categories": [
+        "Parent Calendar",
+        "Fine Arts"
+      ]
+    }
+  ],
+  "5/10/2022": [
+    {
+      "allDay": true,
+      "start": 1652158800000,
+      "end": 1652245200000,
+      "name": "2022 Fall Play Auditions",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1652158800000,
+      "end": 1652245200000,
+      "name": "AP Exams",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    }
+  ],
+  "5/11/2022": [
+    {
+      "allDay": true,
+      "start": 1652245200000,
+      "end": 1652331600000,
+      "name": "AP Exams",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1652245200000,
+      "end": 1652331600000,
+      "name": "Band Concerts",
+      "description": "",
+      "location": "PAC",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1652245200000,
+      "end": 1652331600000,
+      "name": "Dance Company Auditions",
+      "description": "",
+      "location": "Rms. 2010/2112",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1652245200000,
+      "end": 1652331600000,
+      "name": "PPA Bake Sale",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1652308200000,
+      "end": 1652308200000,
+      "name": "Sports Booster Meeting",
+      "description": "All meetings begin at 5:30 p.m. in West Faculty Dining Room (Room 1204, by the Sports Center)",
+      "location": "West Staff Dining Room",
+      "categories": [
+        "Parent Calendar",
+        "Athletics"
+      ]
+    }
+  ],
+  "5/12/2022": [
+    {
+      "allDay": true,
+      "start": 1652331600000,
+      "end": 1652418000000,
+      "name": "AP Exams",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1652331600000,
+      "end": 1652418000000,
+      "name": "Band Concerts",
+      "description": "",
+      "location": "PAC",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1652331600000,
+      "end": 1652418000000,
+      "name": "Dance Company Auditions",
+      "description": "",
+      "location": "Rms. 2010/2112",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "5/13/2022": [
+    {
+      "allDay": true,
+      "start": 1652418000000,
+      "end": 1652504400000,
+      "name": "AP Exams",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1652418000000,
+      "end": 1652504400000,
+      "name": "Improv Performance",
+      "description": "",
+      "location": "Little Theatre",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1652418000000,
+      "end": 1652504400000,
+      "name": "Patriot Theatre Company Awards",
       "description": "",
       "location": null,
       "categories": [
@@ -574,611 +1213,271 @@
       ]
     }
   ],
-  "1/18/2021": [
-    {
-      "allDay": true,
-      "start": 1610949600000,
-      "end": 1611036000000,
-      "name": "No School - Martin Luther King Jr. Day",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "1/21/2021": [
-    {
-      "allDay": true,
-      "start": 1611208800000,
-      "end": 1611295200000,
-      "name": "Incoming Freshman Virtual Course Selection Evening",
-      "description": "Stevenson High School will hold a virtual course selection on 3 evenings. for eighth-graders and their families.\n\n\n *  Jan. 21:  Virtual Course Selection Evening (last names beginning with A-I)\n*  Jan. 26:  Virtual Course Selection Evening (last names beginning with J-R)\n*  Jan. 27:  Virtual Course Selection Evening (last names beginning with S-Z)",
-      "location": null,
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "1/26/2021": [
-    {
-      "allDay": true,
-      "start": 1611640800000,
-      "end": 1611727200000,
-      "name": "Incoming Freshman Virtual Course Selection Evening",
-      "description": "Stevenson High School will hold a virtual course selection on 3 evenings. for eighth-graders and their families.\n\n\n *  Jan. 21:  Virtual Course Selection Evening (last names beginning with A-I)\n*  Jan. 26:  Virtual Course Selection Evening (last names beginning with J-R)\n*  Jan. 27:  Virtual Course Selection Evening (last names beginning with S-Z)",
-      "location": null,
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "1/27/2021": [
-    {
-      "allDay": true,
-      "start": 1611727200000,
-      "end": 1611813600000,
-      "name": "Incoming Freshman Virtual Course Selection Evening",
-      "description": "Stevenson High School will hold a virtual course selection on 3 evenings. for eighth-graders and their families.\n\n\n *  Jan. 21:  Virtual Course Selection Evening (last names beginning with A-I)\n*  Jan. 26:  Virtual Course Selection Evening (last names beginning with J-R)\n*  Jan. 27:  Virtual Course Selection Evening (last names beginning with S-Z)",
-      "location": null,
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "1/30/2021": [
-    {
-      "allDay": true,
-      "start": 1611986400000,
-      "end": 1612072800000,
-      "name": "Practice SAT Exam for Juniors",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "2/6/2021": [
-    {
-      "allDay": true,
-      "start": 1612591200000,
-      "end": 1612677600000,
-      "name": "ACT Exam",
-      "description": "National ACT Testing.",
-      "location": "Stevenson High School",
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "2/15/2021": [
-    {
-      "allDay": true,
-      "start": 1613368800000,
-      "end": 1613455200000,
-      "name": "No School - Presidents Day",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "2/17/2021": [
+  "5/16/2022": [
     {
       "allDay": false,
-      "start": 1613579400000,
-      "end": 1613597100000,
-      "name": "Late Arrival - Staff Development",
-      "description": "Classes begin at 10:30 a.m.",
+      "start": 1652745600000,
+      "end": 1652745600000,
+      "name": "District 125 Board of Education Meeting",
+      "description": "District 125 Board of Education meetings begin at 7:00 p.m. and are held at the District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, Ill.\n\nPlease visit the  Board of Education webpage  for additional information.",
       "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    }
-  ],
-  "2/19/2021": [
-    {
-      "allDay": true,
-      "start": 1613714400000,
-      "end": 1613800800000,
-      "name": "End of Six-Week Grading Period",
-      "description": "",
-      "location": null,
-      "categories": [
-        "End of Six Weeks"
-      ]
-    }
-  ],
-  "2/26/2021": [
-    {
-      "allDay": true,
-      "start": 1614319200000,
-      "end": 1614405600000,
-      "name": "Institute Day - No School",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "3/1/2021": [
-    {
-      "allDay": true,
-      "start": 1614578400000,
-      "end": 1614664800000,
-      "name": "Non Attendance Day- Caismir Pulaski Day",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "3/2/2021": [
-    {
-      "allDay": true,
-      "start": 1614664800000,
-      "end": 1614751200000,
-      "name": "ACT- SHS Juniors Only",
-      "description": "See Testing Day Details",
-      "location": "Adlai E. Stevenson",
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "3/10/2021": [
-    {
-      "allDay": false,
-      "start": 1615393800000,
-      "end": 1615411500000,
-      "name": "Late Arrival - Staff Development",
-      "description": "Classes begin at 10:30 a.m.",
-      "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    }
-  ],
-  "3/13/2021": [
-    {
-      "allDay": true,
-      "start": 1615615200000,
-      "end": 1615701600000,
-      "name": "SAT Exam",
-      "description": "National SAT Testing.",
-      "location": "Stevenson High School",
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "3/16/2021": [
-    {
-      "allDay": true,
-      "start": 1615870800000,
-      "end": 1615957200000,
-      "name": "Co-Curricular Night for Incoming Freshmen",
-      "description": "Meet and talk with coaches, club sponsors and students.\n\n\n\n\n\nAll incoming freshmen and their families are invited to come meet and talk with sport coaches, club sponsors and current Stevenson students involved in more than 35 sport teams, more than 140 co-curricular clubs and the many intramural programs. Take advantage of this opportunity to find out about all that Stevenson offers.",
-      "location": null,
-      "categories": [
-        "Parent Calendar",
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "3/17/2021": [
-    {
-      "allDay": true,
-      "start": 1615957200000,
-      "end": 1616043600000,
-      "name": "Co-Curricular Night for Incoming Freshmen",
-      "description": "Meet and talk with coaches, club sponsors and students.\n\n\n\n\n\nAll incoming freshmen and their families are invited to come meet and talk with sport coaches, club sponsors and current Stevenson students involved in more than 35 sport teams, more than 140 co-curricular clubs and the many intramural programs. Take advantage of this opportunity to find out about all that Stevenson offers.",
-      "location": null,
-      "categories": [
-        "Parent Calendar",
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1615993560000,
-      "end": 1615996140000,
-      "name": "Activity Period",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "3/18/2021": [
-    {
-      "allDay": true,
-      "start": 1616043600000,
-      "end": 1616130000000,
-      "name": "Co-Curricular Night for Incoming Freshmen",
-      "description": "Meet and talk with coaches, club sponsors and students.\n\n\n\n\n\nAll incoming freshmen and their families are invited to come meet and talk with sport coaches, club sponsors and current Stevenson students involved in more than 35 sport teams, more than 140 co-curricular clubs and the many intramural programs. Take advantage of this opportunity to find out about all that Stevenson offers.",
-      "location": null,
-      "categories": [
-        "Parent Calendar",
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "3/22/2021": [
-    {
-      "allDay": true,
-      "start": 1616389200000,
-      "end": 1616475600000,
-      "name": "Spring Break",
-      "description": "runs through March 27, 2020",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "3/23/2021": [
-    {
-      "allDay": true,
-      "start": 1616475600000,
-      "end": 1616562000000,
-      "name": "Spring Break",
-      "description": "runs through March 27, 2020",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "3/24/2021": [
-    {
-      "allDay": true,
-      "start": 1616562000000,
-      "end": 1616648400000,
-      "name": "Spring Break",
-      "description": "runs through March 27, 2020",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "3/25/2021": [
-    {
-      "allDay": true,
-      "start": 1616648400000,
-      "end": 1616734800000,
-      "name": "Spring Break",
-      "description": "runs through March 27, 2020",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "3/26/2021": [
-    {
-      "allDay": true,
-      "start": 1616734800000,
-      "end": 1616821200000,
-      "name": "Spring Break",
-      "description": "runs through March 27, 2020",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "4/2/2021": [
-    {
-      "allDay": true,
-      "start": 1617339600000,
-      "end": 1617426000000,
-      "name": "Non-Attendance Day",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "4/9/2021": [
-    {
-      "allDay": true,
-      "start": 1617944400000,
-      "end": 1618030800000,
-      "name": "End of Six-Week Grading Period",
-      "description": "",
-      "location": null,
-      "categories": [
-        "End of Six Weeks"
-      ]
-    }
-  ],
-  "4/13/2021": [
-    {
-      "allDay": true,
-      "start": 1618290000000,
-      "end": 1618376400000,
-      "name": "PSAT Testing for Sophomores",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1618290000000,
-      "end": 1618376400000,
-      "name": "SAT Testing for Juniors",
-      "description": "required by the state of Illinois",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "4/14/2021": [
-    {
-      "allDay": true,
-      "start": 1618376400000,
-      "end": 1618462800000,
-      "name": "PSAT Testing for Freshmen",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "4/21/2021": [
-    {
-      "allDay": false,
-      "start": 1619019000000,
-      "end": 1619036700000,
-      "name": "Late Arrival - Staff Development",
-      "description": "Classes begin at 10:30 a.m.",
-      "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    }
-  ],
-  "4/24/2021": [
-    {
-      "allDay": true,
-      "start": 1619240400000,
-      "end": 1619326800000,
-      "name": "Benchmark Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "4/28/2021": [
-    {
-      "allDay": false,
-      "start": 1619622360000,
-      "end": 1619624940000,
-      "name": "Activity Period",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "5/3/2021": [
-    {
-      "allDay": true,
-      "start": 1620018000000,
-      "end": 1620104400000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "5/4/2021": [
-    {
-      "allDay": true,
-      "start": 1620104400000,
-      "end": 1620190800000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "5/5/2021": [
-    {
-      "allDay": true,
-      "start": 1620190800000,
-      "end": 1620277200000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "5/6/2021": [
-    {
-      "allDay": true,
-      "start": 1620277200000,
-      "end": 1620363600000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "5/7/2021": [
-    {
-      "allDay": true,
-      "start": 1620363600000,
-      "end": 1620450000000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "5/10/2021": [
-    {
-      "allDay": true,
-      "start": 1620622800000,
-      "end": 1620709200000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "5/11/2021": [
-    {
-      "allDay": true,
-      "start": 1620709200000,
-      "end": 1620795600000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "5/12/2021": [
-    {
-      "allDay": true,
-      "start": 1620795600000,
-      "end": 1620882000000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "5/13/2021": [
-    {
-      "allDay": true,
-      "start": 1620882000000,
-      "end": 1620968400000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "5/14/2021": [
-    {
-      "allDay": true,
-      "start": 1620968400000,
-      "end": 1621054800000,
-      "name": "AP Exams",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "5/24/2021": [
-    {
-      "allDay": true,
-      "start": 1621832400000,
-      "end": 1621918800000,
-      "name": "End of Six-Week Grading Period",
-      "description": "",
-      "location": null,
-      "categories": [
-        "End of Six Weeks"
-      ]
-    }
-  ],
-  "5/25/2021": [
-    {
-      "allDay": false,
-      "start": 1621949400000,
-      "end": 1621966800000,
-      "name": "Final Exams - Day 1",
-      "description": "8:30-10:00: Period 1 Exam\n  10:10-11:40: Period 2 Exam\n  11:50-1:20: Period 4 Exam\n  1:35: Bus Pick-Up\n\nDetails at  www.d125.org/Finals",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "5/26/2021": [
-    {
-      "allDay": false,
-      "start": 1622035800000,
-      "end": 1622053200000,
-      "name": "Final Exams - Day 2",
-      "description": "8:30-10:00: Period 3 Exam\n  10:10-11:40: Period 7 Exam\n  11:50-1:20: Period 5 Exam\n  1:35: Bus Pick-Up\n\nDetails at  www.d125.org/Finals",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "5/27/2021": [
-    {
-      "allDay": false,
-      "start": 1622122200000,
-      "end": 1622139600000,
-      "name": "Final Exams - Day 3",
-      "description": "8:30-10:00: Period 8 Exam\n  10:10-11:40: Period 6 Exam\n  11:55: Bus Pick-Up\n  11:50-1:20: Make-Up Exam\n  1:35: Late Bus Pick-Up\n\nDetails at  www.d125.org/Finals",
-      "location": null,
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "5/28/2021": [
-    {
-      "allDay": true,
-      "start": 1622178000000,
-      "end": 1622264400000,
-      "name": "Class of 2021 Graduation",
-      "description": "",
-      "location": "Sears Centre Arena",
       "categories": []
     }
   ],
-  "6/5/2021": [
+  "5/17/2022": [
+    {
+      "allDay": false,
+      "start": 1652826600000,
+      "end": 1652837400000,
+      "name": "Consortium Art Festival Evening Reception",
+      "description": "More information coming soon!",
+      "location": "Stevenson High School | Fieldhouse",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "5/23/2022": [
     {
       "allDay": true,
-      "start": 1622869200000,
-      "end": 1622955600000,
-      "name": "SAT Exam",
-      "description": "National SAT Testing.",
+      "start": 1653282000000,
+      "end": 1653368400000,
+      "name": "Concert Dance Performance",
+      "description": "",
+      "location": "West Auditorium",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1653282000000,
+      "end": 1653368400000,
+      "name": "Spring Sports Awards",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Athletics"
+      ]
+    }
+  ],
+  "5/24/2022": [
+    {
+      "allDay": true,
+      "start": 1653368400000,
+      "end": 1653454800000,
+      "name": "Finals Experience",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    }
+  ],
+  "5/25/2022": [
+    {
+      "allDay": true,
+      "start": 1653454800000,
+      "end": 1653541200000,
+      "name": "Finals Experience",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    }
+  ],
+  "5/26/2022": [
+    {
+      "allDay": true,
+      "start": 1653541200000,
+      "end": 1653627600000,
+      "name": "Finals Experience",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1653541200000,
+      "end": 1653627600000,
+      "name": "Senior Class Party",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "5/27/2022": [
+    {
+      "allDay": false,
+      "start": 1653688800000,
+      "end": 1653688800000,
+      "name": "SHS Commencement",
+      "description": "",
+      "location": "NOW Arena | Hoffman Estates, IL",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "6/4/2022": [
+    {
+      "allDay": true,
+      "start": 1654318800000,
+      "end": 1654405200000,
+      "name": "SAT Test Day",
+      "description": "Visit the  National Test Days webpage  for additional information.",
       "location": "Stevenson High School",
       "categories": [
         "Testing Day"
+      ]
+    }
+  ],
+  "6/6/2022": [
+    {
+      "allDay": false,
+      "start": 1654556400000,
+      "end": 1654556400000,
+      "name": "String Parents Association (SPA) Meeting",
+      "description": "SHS String Parents Association (SPA) Meetings are held virtually and begin at 6 p.m.  For more information about SPA, please visit their  webpage .\n\nZoom link is  https://zoom.us/j/98278110280",
+      "location": "Zoom",
+      "categories": [
+        "Parent Calendar",
+        "Fine Arts"
+      ]
+    }
+  ],
+  "6/7/2022": [
+    {
+      "allDay": false,
+      "start": 1654605900000,
+      "end": 1654624200000,
+      "name": "Summer School - Session 1 Start",
+      "description": "For more information, visit the  Summer School webpage.",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days",
+        "Summer School",
+        "Late Arrival",
+        "Early Dismissal",
+        "Activity Period",
+        "Testing Day",
+        "Orientations",
+        "Student Check-In Days"
+      ]
+    }
+  ],
+  "6/21/2022": [
+    {
+      "allDay": false,
+      "start": 1655856000000,
+      "end": 1655856000000,
+      "name": "District 125 Board of Education Meeting",
+      "description": "District 125 Board of Education meetings begin at 7:00 p.m. and are held at the District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, Ill.\n\nPlease visit the  Board of Education webpage  for additional information.",
+      "location": null,
+      "categories": []
+    }
+  ],
+  "6/30/2022": [
+    {
+      "allDay": false,
+      "start": 1656593100000,
+      "end": 1656611400000,
+      "name": "Summer School - Session 1 End",
+      "description": "For more information, visit the  Summer School webpage.",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days",
+        "Summer School",
+        "Late Arrival",
+        "Early Dismissal",
+        "Activity Period",
+        "Testing Day",
+        "Orientations",
+        "Student Check-In Days"
+      ]
+    }
+  ],
+  "7/5/2022": [
+    {
+      "allDay": false,
+      "start": 1657025100000,
+      "end": 1657043400000,
+      "name": "Summer School - Session 2 Start",
+      "description": "For more information, visit the  Summer School webpage.",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days",
+        "Summer School",
+        "Late Arrival",
+        "Early Dismissal",
+        "Activity Period",
+        "Testing Day",
+        "Orientations",
+        "Student Check-In Days"
+      ]
+    }
+  ],
+  "7/28/2022": [
+    {
+      "allDay": false,
+      "start": 1659012300000,
+      "end": 1659030600000,
+      "name": "Summer School - Session 2 End",
+      "description": "For more information, visit the  Summer School webpage.",
+      "location": null,
+      "categories": [
+        "Non-Attendance Days",
+        "Summer School",
+        "Late Arrival",
+        "Early Dismissal",
+        "Activity Period",
+        "Testing Day",
+        "Orientations",
+        "Student Check-In Days"
+      ]
+    }
+  ],
+  "8/9/2022": [
+    {
+      "allDay": false,
+      "start": 1660053600000,
+      "end": 1660064400000,
+      "name": "Dance Placement Reassessment Audition",
+      "description": "For more information on this audition and others, visit the  SHS Curricular Dance Auditions page .",
+      "location": "Stevenson High School | Dance Studio (Room 2010)",
+      "categories": [
+        "Fine Arts"
+      ]
+    }
+  ],
+  "8/16/2022": [
+    {
+      "allDay": true,
+      "start": 1660626000000,
+      "end": 1660712400000,
+      "name": "Transfer Parent/Guardian Evening",
+      "description": "More information coming soon!",
+      "location": null,
+      "categories": [
+        "Orientations"
+      ]
+    }
+  ],
+  "8/25/2022": [
+    {
+      "allDay": true,
+      "start": 1661403600000,
+      "end": 1661490000000,
+      "name": "Transfer Student Resource Fair",
+      "description": "More information coming soon!",
+      "location": null,
+      "categories": [
+        "Orientations"
       ]
     }
   ]

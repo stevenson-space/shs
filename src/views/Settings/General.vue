@@ -2,7 +2,7 @@
   <settings-section title="General">
     <div class="dropdown-row">
       <span class="title">Default Schedule Mode:</span>
-      <dropdown class="dropdown-select" :options="allModes" :value="defaultMode" @input="updateDefaultScheduleMode" />
+      <dropdown class="dropdown-select" :options="allModes" :modelValue="defaultMode" @update:modelValue="updateDefaultScheduleMode" />
     </div>
 
     <div class="dropdown-row">
@@ -10,61 +10,74 @@
       <dropdown
         class="dropdown-select"
         :options="grades"
-        :value="selectedGrade"
+        :modelValue="selectedGrade"
         :show-selected-as-option="false"
-        @input="updateGrade"
+        @update:modelValue="updateGrade"
       />
     </div>
   </settings-section>
 </template>
 
-<script>
+<script lang="ts">
+import { MapStateToComputed, Schedule, ScheduleCollection } from '@/utils/types';
+import { mapState, mapActions } from 'pinia';
 import Dropdown from '@/components/Dropdown.vue';
-
-import { mapGetters, mapState } from 'vuex';
+import useUserSettingsStore from '@/stores/user-settings';
+import useScheduleStore from '@/stores/schedules';
+import { defineComponent } from 'vue';
 import SettingsSection from './SettingsSection.vue';
 
-export default {
+type ScheduleStoreTypes = {
+  defaultScheduleMode: string;
+  schedules: ScheduleCollection[]
+}
+
+type UserSettingStoreTypes = {
+  grade: string;
+}
+
+type GradeLevels = 'None'| 'Freshman' |'Sophomore'| 'Junior'| 'Senior';
+
+export default defineComponent({
   components: { SettingsSection, Dropdown },
   data() {
     return {
-      grades: ['None', 'Freshman', 'Sophomore', 'Junior', 'Senior'],
+      grades: ['None', 'Freshman', 'Sophomore', 'Junior', 'Senior'] as GradeLevels[],
     };
   },
   computed: {
-    ...mapState([
-      'defaultScheduleMode',
-      'grade',
-    ]),
-    ...mapGetters([
-      'schedules',
-    ]),
-    allModes() {
-      return this.schedules.reduce((arr, schedule) => {
+    ...(mapState(useScheduleStore, ['defaultScheduleMode', 'schedules']) as MapStateToComputed<ScheduleStoreTypes>),
+    ...(mapState(useUserSettingsStore, ['grade']) as MapStateToComputed<UserSettingStoreTypes>),
+
+    allModes(): string[] {
+      return this.schedules.reduce((arr: string[], schedule: ScheduleCollection) => {
         schedule.modes.forEach((mode) => {
           if (!arr.includes(mode.name)) arr.push(mode.name);
         });
         return arr;
       }, []);
     },
-    defaultMode() {
-      const mode = this.allModes.indexOf(this.defaultScheduleMode);
+    defaultMode(): number | string {
+      const mode = (this.allModes as string[]).indexOf(this.defaultScheduleMode);
       return mode === -1 ? 0 : mode;
     },
-    selectedGrade() {
+    selectedGrade(): void {
       const grade = this.grades.indexOf(this.grade);
       return grade === -1 ? 0 : grade;
     },
   },
   methods: {
-    updateDefaultScheduleMode(scheduleIndex) {
-      this.$store.commit('setDefaultScheduleMode', this.allModes[scheduleIndex]);
+    ...mapActions(useScheduleStore, ['setDefaultScheduleMode']),
+    ...mapActions(useUserSettingsStore, ['setGrade']),
+
+    updateDefaultScheduleMode(scheduleIndex: number):void {
+      this.setDefaultScheduleMode(this.allModes[scheduleIndex]);
     },
-    updateGrade(gradeIndex) {
-      this.$store.commit('setGrade', this.grades[gradeIndex]);
+    updateGrade(gradeIndex: number): void {
+      this.setGrade(this.grades[gradeIndex]);
     },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>

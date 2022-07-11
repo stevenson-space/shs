@@ -1,7 +1,7 @@
 <template>
   <card ref="card" class="card">
     <custom-link :href="link" v-bind="linkProps">
-      <img class="image" :src="image" @load="setHeight">
+      <img class="image" alt="" :src="image" @load="setHeight">
         <div class="text-group text">{{ text }}</div>
         <div class="text-group desc">{{ desc }}</div>
     </custom-link>
@@ -35,7 +35,7 @@ export default {
 .card
   cursor: pointer
   background-color: black !important
-
+  +animate-fade-up
   .image
     width: 100%
     display: block

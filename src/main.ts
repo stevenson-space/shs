@@ -1,54 +1,36 @@
-import Vue, { VNode } from 'vue';
-import { VueHammer } from 'vue2-hammer';
-import VueAnalytics, { InstallOptions } from 'vue-analytics';
+import { createApp } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
+import { createPinia } from 'pinia';
+import { BrowserTracing } from '@sentry/tracing';
+import * as Sentry from '@sentry/vue';
+import VueGtag from 'vue-gtag';
 import App from './App.vue';
 import router from './router';
-import store from './store';
-
-Vue.config.productionTip = false;
-Vue.component('font-awesome-icon', FontAwesomeIcon);
-
-if (Date.now() < (new Date(2020, 11, 1)).getTime()) { // if before december 1, 2020
-  // add the falling leaves animation
-  import('./utils/leaves'); // eslint-disable-line no-unused-expressions
-}
-
-// smooth scroll behavior polyfill (for safari)
-if (!('scrollBehavior' in document.documentElement.style)) {
-  import('scroll-behavior-polyfill'); // eslint-disable-line no-unused-expressions
-}
 
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('service-worker.js');
+  navigator.serviceWorker.register('/service-workers/service-worker.js');
 }
 
-Vue.use(VueHammer);
-Vue.use(VueAnalytics, {
-  id: 'UA-83979451-1',
-  router,
-  autoTracking: {
-    pageviewTemplate($route) {
-      // filter out any query strings before sending path to Google Analytics
-      // ($route.path doesn't include query strings or hashes, $route.fullPath does)
-      return {
-        page: $route.path,
-      };
-    },
-  },
-} as InstallOptions);
+const app = createApp(App).component('font-awesome-icon', FontAwesomeIcon)
+  .use(router)
+  .use(VueGtag, {
+    config: { id: process.env.NODE_ENV === 'production' ? 'G-0MXBH7W5L0' : '' }, // disable GA during development
+  })
+  .use(createPinia());
 
-// Any element can add the directive 'v-focus' to automatically gain focus when created
-Vue.directive('focus', {
-  // When the the element is inserted into the DOM
-  inserted(el) {
-    el.focus();
-  },
+Sentry.init({
+  app,
+  dsn: 'https://c669e2d7bb9c48c3a3ec84abce8830f0@o1226632.ingest.sentry.io/6372249',
+  integrations: [
+    new BrowserTracing({
+      routingInstrumentation: Sentry.vueRouterInstrumentation(router),
+      tracingOrigins: ['stevenson.space', /^\//],
+    }),
+  ],
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
 });
 
-new Vue({
-  router,
-  store,
-  render: (h): VNode => h(App),
-}).$mount('#app');
+app.mount('#app');

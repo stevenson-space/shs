@@ -17,15 +17,16 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapState } from 'pinia';
+import useScheduleStore from '@/stores/schedules';
 import HomeLink from '@/components/HomeLink.vue';
 import Schedule from './Schedule.vue';
 
 export default {
   components: { Schedule, HomeLink },
-  computed: mapGetters([
-    'schedules',
-  ]),
+  computed: {
+    ...mapState(useScheduleStore, ['schedules']),
+  },
 };
 </script>
 

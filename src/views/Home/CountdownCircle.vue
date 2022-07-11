@@ -1,8 +1,7 @@
 <template>
   <div class="circle" :class="{ 'full-screen': fullScreenMode }">
     <!-- Easter Egg -->
-    <!-- <img  @click="masked = !masked" @mouseenter="masked = !masked" :src="masked ? 'static/patriot-masked.png' : 'static/patriot.png'" class="logo"> -->
-    <img  @click="masked = !masked" @mouseenter="masked = !masked" src="static/patriot-logo-party.png" class="logo">
+    <img @click="masked = !masked" @mouseover="masked = !masked" :src="masked ? require('@/assets/patriot-masked.png') : require('@/assets/patriot-logo-party.png')" class="logo">
     <div v-if="mode === 'current'" class="countdown">
       {{ countdown }}
     </div>
@@ -18,7 +17,8 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState } from 'pinia';
+import useScheduleStore from '@/stores/schedules';
 
 export default {
   props: {
@@ -29,9 +29,9 @@ export default {
     scheduleType: { type: String, required: true },
     fullScreenMode: { type: Boolean, default: false },
   },
-  computed: mapState([
-    'mode',
-  ]),
+  computed: {
+    ...mapState(useScheduleStore, ['mode']),
+  },
   data() {
     return {
       masked: false,

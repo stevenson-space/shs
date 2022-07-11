@@ -2,14 +2,13 @@
   <div class="scroll-selector" :style="{ height: `${optionHeight * (2 * numOptionsAbove + 1)}px`, fontSize }">
     <!-- eslint-disable-next-line vue/require-v-for-key vue/no-unused-vars-->
     <div v-for="_ in Array(numOptionsAbove)" :style="{ height: `${optionHeight}px`}" />
-
     <div
       v-for="option in options"
       ref="option"
       :key="option"
       class="option"
-      :class="{ selected: option === value }"
-      @click="$emit('input', option)"
+      :class="{ selected: option === modelValue }"
+      @click="$emit('update:modelValue', option)"
     >
       {{ option }}
     </div>
@@ -23,7 +22,7 @@
 export default {
   props: {
     options: { type: Array, required: true },
-    value: { type: String, required: true },
+    modelValue: { type: String, required: true },
     numOptionsAbove: { type: Number, default: 1 }, // the number of options to be displayed above the selected option to indicate scrollability
     fontSize: { type: String, default: '1em' }, // this property must be used to set font-size because optionHeight depends upon it
   },
@@ -33,7 +32,7 @@ export default {
     };
   },
   watch: {
-    value() {
+    modelValue() {
       this.scrollToSelected();
     },
     fontSize() {
@@ -52,7 +51,7 @@ export default {
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         const selectedIndex = Math.round(this.$el.scrollTop / this.optionHeight);
-        this.$emit('input', this.options[selectedIndex]);
+        this.$emit('update:modelValue', this.options[selectedIndex]);
         this.scrollToSelected();
       }, 100);
     });
@@ -60,8 +59,8 @@ export default {
   methods: {
     scrollToSelected() {
       this.$nextTick(() => { // wait until this.value is updated if necessary
-        const index = this.options.indexOf(this.value);
-        if (index > -1) {
+        const index = this.options.indexOf(this.modelValue);
+        if (index > -1 && this.$refs.option[index]) {
           this.$el.scroll({
             top: this.$refs.option[index].offsetTop - (this.optionHeight * this.numOptionsAbove),
             behavior: 'smooth',

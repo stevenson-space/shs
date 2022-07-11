@@ -1,7 +1,6 @@
 <template>
   <div>
     <home-link class="home-link" />
-
     <div class="header">
       <div class="title" @click="editScheduleName">
         <input
@@ -58,9 +57,9 @@
 
 <script>
 import { faPlus, faPencil } from '@fortawesome/free-solid-svg-icons';
-import { mapGetters, mapActions } from 'vuex';
-
+import { mapState, mapActions } from 'pinia';
 import { getNameWithoutConflicts } from '@/utils/util';
+import useScheduleStore from '@/stores/schedules';
 import Bell from '@/utils/bell';
 import HomeLink from '@/components/HomeLink.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
@@ -95,7 +94,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters({
+    ...mapState(useScheduleStore, {
       existingSchedules: 'schedules',
     }),
     filteredSchedules() {
@@ -183,7 +182,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
+    ...mapActions(useScheduleStore, [
       'addCustomScheduleMode',
       'removeCustomScheduleMode',
     ]),
@@ -404,9 +403,12 @@ export default {
       font-size: 1em
       font-family: inherit
       font-weight: inherit
-      color: inherit
+      background: var(--background)
+      color: var(--primary)
       max-width: calc(100vw - 55px) // 55px is the hardcoded space that the icon + margins take up
-
+      &:focus
+        outline: none
+        border: none
     .text
       padding: 5px
       max-width: calc(100vw - 55px) // 55px is the hardcoded space that the icon + margins take up

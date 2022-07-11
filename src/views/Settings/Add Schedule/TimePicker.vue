@@ -44,13 +44,26 @@
   </confirm-popup>
 </template>
 
-<script>
+<script lang="ts">
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import ScrollSelector from '@/components/ScrollSelector.vue';
 import Checkbox from '@/components/Checkbox.vue';
 import Bell from '@/utils/bell';
+import { defineComponent } from 'vue';
 
-export default {
+interface TimePickerPeriod {
+  time: string;
+  mode: string;
+}
+
+interface TimePickerOption {
+ text: string;
+ time: string;
+ scheduleMode: string;
+ name: string;
+}
+
+export default defineComponent({
   components: {
     ConfirmPopup,
     ScrollSelector,
@@ -59,31 +72,30 @@ export default {
   data() {
     return {
       show: false,
-      options: [],
+      options: [] as TimePickerPeriod[],
       cancel: () => {},
       done: () => {},
-      hours: Array(12).fill(0).map((_, i) => String(i + 1)), // generates [' 1', ' 2', ' 3' ..., '12']
-      minutes: Array(60).fill(0).map((_, i) => i).map((val) => (val < 10 ? '0' : '') + val), // generates ['00', '01', '02', ..., '59']
-      suffixes: ['AM', 'PM'],
+      hours: Array(12).fill(0).map((_, i) => String(i + 1)) as string[], // generates [' 1', ' 2', ' 3' ..., '12']
+      minutes: Array(60).fill(0).map((_, i) => i).map((val) => (val < 10 ? '0' : '') + val) as string[], // generates ['00', '01', '02', ..., '59']
+      suffixes: ['AM', 'PM'] as ('AM' | 'PM')[],
       selectedTime: {
         hour: '1',
         minute: '00',
         suffix: 'AM',
       },
       mode: 'time', // can be 'time' or 'period'
-      selectedPeriod: null,
+      selectedPeriod: {} as TimePickerPeriod | null,
       setOthersChecked: true,
     };
   },
   computed: {
-    time() {
+    time(): { time: string, mode: string, setOthers: boolean} | { time: string} | string {
       if (this.mode === 'period') {
         return this.selectedPeriod ? {
           ...this.selectedPeriod,
           setOthers: this.setOthersChecked,
         } : '0:00';
       }
-
       // we assume mode === 'time'
       return { time: this.getSelectedTime() };
     },
@@ -100,11 +112,11 @@ export default {
     },
   },
   methods: {
-    pickTime(options = [], selectedTime = '1:00') {
+    pickTime(options = [] as TimePickerOption[], selectedTime = '1:00') {
       // options is an array of objects of the format { time: String ("12:45"), text: String }
       return new Promise((resolve, reject) => {
         this.options = options.slice(0); // make a copy to prevent modification of the original
-        this.options.sort((a, b) => Bell.timeToNumber(a.time) - Bell.timeToNumber(b.time));
+        this.options.sort((a:TimePickerOption, b:TimePickerOption) => Bell.timeToNumber(a.time) - Bell.timeToNumber(b.time));
         this.setOthersChecked = true;
 
         this.show = true;
@@ -122,20 +134,20 @@ export default {
         };
       });
     },
-    choosePeriod(period) {
+    choosePeriod(period: TimePickerPeriod): void {
       this.selectedPeriod = period;
       this.setSelectedTime(period.time);
       this.mode = 'period';
     },
-    getSelectedTime() {
+    getSelectedTime(): string {
       let hours = Number(this.selectedTime.hour);
       if (this.selectedTime.suffix === 'PM' && hours < 12) hours += 12;
       if (this.selectedTime.suffix === 'AM' && hours === 12) hours -= 12;
 
       return `${hours}:${this.selectedTime.minute}`;
     },
-    setSelectedTime(time) {
-      let [hours, minutes] = time.split(':'); // eslint-disable-line prefer-const
+    setSelectedTime(time: string): void {
+      let [hours, minutes] = time.split(':') as [string | number, string | number]; // eslint-disable-line prefer-const
       hours = Number(hours);
 
       const suffix = hours >= 12 ? 'PM' : 'AM';
@@ -143,13 +155,13 @@ export default {
       hours = (hours === 0) ? 12 : hours;
 
       this.selectedTime.hour = String(hours);
-      this.selectedTime.minute = minutes;
+      this.selectedTime.minute = String(minutes);
       this.selectedTime.suffix = suffix;
     },
     convertMilitaryTime: Bell.convertMilitaryTime,
     getSuffix: Bell.getSuffix,
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>

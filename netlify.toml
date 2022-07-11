@@ -9,13 +9,12 @@
 
 [[redirects]]
   from = "/send/*"
-  to = "http://dpaste.com/api/v2/:splat"
+  to = "https://dpaste.com/api/v2/:splat"
   status = 200
 
 [[redirects]]
-  from = "/recieve"
-  query = {filename = ":filename"}
-  to = "http://dpaste.com/:filename"
+  from = "/receive/*"
+  to = "https://dpaste.com/:splat"
   status = 200
 
 [[redirects]]

@@ -5,7 +5,7 @@
         <RoundedButton
           class="reset-button"
           v-show="color != suggestedColor"
-          @click="colorSelected(suggestedColor)"
+          @click="colorSelected(suggestedColor())"
           text="Reset"
         />
         <div
@@ -36,18 +36,26 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import colors from '@/data/colors.json';
 import Home from '@/views/Home/Home.vue';
 import HomeLink from '@/components/HomeLink.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
-import { mapState } from 'vuex';
+import { defineComponent } from 'vue';
+import { MapStateToComputed, Theme } from '@/utils/types';
+import { mapState, mapActions } from 'pinia';
+import useThemeStore from '@/stores/themes';
 import ThemeSelector from './ThemeSelector.vue';
 import ColorSelector from './ColorSelector.vue';
 
-const isValidColor = (color) => /^#([0-9a-f]{3}){1,2}$/i.test(color);
+const isValidColor = (color: string) => /^#([0-9a-f]{3}){1,2}$/i.test(color);
 
-export default {
+type ThemeStoreState = {
+  theme: Theme;
+  color: string;
+}
+
+export default defineComponent({
   components: {
     ColorSelector,
     Home,
@@ -58,17 +66,14 @@ export default {
   data() {
     return {
       colors,
-      previewHeight: 0,
+      previewHeight: '',
     };
   },
   computed: {
-    ...mapState(['color', 'theme']),
-    suggestedColor() {
-      return this.theme.suggestedColor;
-    },
+    ...(mapState(useThemeStore, ['theme', 'color']) as MapStateToComputed<ThemeStoreState>),
   },
   watch: {
-    color() {
+    color(): void {
       this.setCustomColorText();
     },
   },
@@ -79,23 +84,27 @@ export default {
     this.setCustomColorText();
   },
   methods: {
-    colorSelected(color) {
+    ...mapActions(useThemeStore, ['setColor']),
+    colorSelected(color: string): void {
       if (color !== this.color && isValidColor(color)) {
-        this.$store.commit('setColor', color);
+        this.setColor(color);
       }
     },
-    setPreviewHeight() {
-      const { offsetTop } = this.$refs.preview;
+    setPreviewHeight() : void {
+      const { offsetTop } = this.$refs.preview as any;
       const marginBottom = 20;
       this.previewHeight = `calc(100vh - ${offsetTop}px - ${marginBottom}px)`;
     },
-    setCustomColorText() {
+    setCustomColorText(): void {
       this.$nextTick(() => {
-        this.$refs['custom-color'].innerHTML = this.color;
+        (this.$refs as any)['custom-color'].innerHTML = this.color;
       });
     },
+    suggestedColor(): string {
+      return this.theme.suggestedColor;
+    },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>
@@ -116,8 +125,8 @@ export default {
     font-weight: bold
     font-size: 1.2em
     margin-left: 5px
-    padding: 5px 10px
-    border-radius: 10px
+    padding: 2px 10px
+    border-radius:20px
     +shadow-light
     &:focus
       outline-color: var(--color)

@@ -5,10 +5,10 @@
         v-show="filterCategories.length > 1"
         class="filter-dropdown"
         :options="filterCategories"
-        :value="selectedFilter"
+        :modelValue="selectedFilter"
         :show-selected-as-option="false"
         align="left"
-        @input="selectFilter($event)"
+        @update:modelValue="selectFilter($event)"
       />
 
       <home-link class="home" />
@@ -18,10 +18,10 @@
         v-show="filterCategories.length > 1"
         class="filter-dropdown"
         :options="filterCategories"
-        :value="selectedFilter"
+        :modelValue="selectedFilter"
         :show-selected-as-option="false"
         align="left"
-        @input="selectFilter($event)"
+        @update:modelValue="selectFilter($event)"
       />
 
       <font-awesome-icon class="icon" :icon="icons.faChevronLeft" @click="$emit('previous-month')" />
@@ -79,7 +79,6 @@ export default {
   .filter-dropdown
     position: absolute
     left: 10px
-    color: #444
     font-weight: bold
     +mobile
       top: 6px
@@ -123,5 +122,4 @@ export default {
 
       .year
         font-size: .7em
-
 </style>

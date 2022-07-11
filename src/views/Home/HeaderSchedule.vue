@@ -6,7 +6,7 @@
         v-show="scheduleModes.length > 1"
         class="schedule-select hidden"
         :options="scheduleModes"
-        :value="scheduleModes.indexOf(bell.mode)"
+        :modelValue="scheduleModes.indexOf(bell.mode)"
       />
 
       <div class="center">
@@ -36,16 +36,17 @@
         v-show="scheduleModes.length > 1"
         class="schedule-select"
         :options="scheduleModes"
-        :value="scheduleModes.indexOf(bell.mode)"
+        :modelValue="scheduleModes.indexOf(bell.mode)"
         :direction="fullScreenMode ? 'up' : 'down'"
-        @input="$store.commit('setScheduleMode', scheduleModes[$event])"
+        @update:modelValue="setScheduleMode(scheduleModes[$event])"
       />
     </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import { mapState, mapActions } from 'pinia';
+import useScheduleStore from '@/stores/schedules';
 import Dropdown from '@/components/Dropdown.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 
@@ -60,8 +61,10 @@ export default {
     fullScreenMode: { type: Boolean, default: false },
   },
   computed: {
-    ...mapState(['mode']),
-    ...mapGetters(['bell']),
+    ...mapState(useScheduleStore, ['mode', 'bell']),
+  },
+  methods: {
+    ...mapActions(useScheduleStore, ['setScheduleMode']),
   },
 };
 </script>

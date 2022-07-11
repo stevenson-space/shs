@@ -37,7 +37,6 @@
     <confirm-popup :show="popupToShow == popups.save" ok-text="Save" @cancel="cancel" @ok="save">
       <div class="save-popup">
         <div class="title">Choose what to save:</div>
-
         <checkbox
           v-for="(_, setting) in shouldSaveSetting"
           :key="setting"
@@ -63,26 +62,24 @@
   </settings-section>
 </template>
 
-<script>
+<script lang="ts">
 import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-icons';
-import superagent from 'superagent';
-import Vue from 'vue';
-
+import { CustomSchedules, MapStateToComputed, ScheduleMode, Theme } from '@/utils/types';
+import { mapActions, mapState } from 'pinia';
+import { defineComponent } from 'vue';
+import { tryParseJSON } from '@/utils/util';
+import useThemeStore from '@/stores/themes';
+import useScheduleStore from '@/stores/schedules';
+import useUserSettingsStore from '@/stores/user-settings';
 import RoundedButton from '@/components/RoundedButton.vue';
 import Popup from '@/components/Popup.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import Checkbox from '@/components/Checkbox.vue';
 import SettingsSection from './SettingsSection.vue';
 
-// Note: setting refers to the name (e.g. 'color'), data inclued the content (e.g. '#FA32F5' or {'color' : '#FA32F5'})
+type transferableSettingOption = 'color' |'theme' |'defaultScheduleMode' | 'grade' | 'customSchedules'
 
-const tranferableSettings = [ // the following strings should be direct properties of $store.state
-  'color',
-  'theme',
-  'defaultScheduleMode',
-  'grade',
-  'customSchedules',
-];
+const transferableSettings: transferableSettingOption[] = ['color', 'theme', 'defaultScheduleMode', 'grade', 'customSchedules'];
 
 const popups = {
   none: 0,
@@ -94,7 +91,21 @@ const popups = {
   error: 6,
 };
 
-export default {
+type ThemeStoreState = {
+  theme: Theme;
+  color: string;
+}
+
+type GradeStoreState = {
+  grade: string;
+}
+
+type ScheduleStoreState = {
+  defaultScheduleMode: string;
+  customSchedules: CustomSchedules;
+}
+
+export default defineComponent({
   components: {
     SettingsSection,
     RoundedButton,
@@ -111,120 +122,137 @@ export default {
       },
       popups,
       popupToShow: 0, // using a single variable to control appearance of all popups to ensure only one is displayed at any point
-      shouldSendSetting: {}, // initialized in created()
+      shouldSendSetting: {} as Record<transferableSettingOption, boolean>, // initialized in created()
       code: '',
       errorMessage: '',
       receiveCode: '',
-      receivedData: null,
-      shouldSaveSetting: {}, // initialized after data is received
+      receivedData: {} as Record<transferableSettingOption, any>,
+      shouldSaveSetting: {} as Record<transferableSettingOption, boolean>, // initialized after data is received
     };
   },
   created() {
     // Initialize each property of shouldSendSetting to true (meaning that all send checkboxes will be checked initially)
-    tranferableSettings.forEach((str) => {
-      Vue.set(this.shouldSendSetting, str, true); // need use Vue.set since we're adding dynamic properties to a tracked object
+    transferableSettings.forEach((str) => {
+      this.shouldSendSetting[str] = true;
     });
   },
+  computed: {
+    ...(mapState(useThemeStore, ['theme', 'color']) as MapStateToComputed<ThemeStoreState>),
+    ...(mapState(useScheduleStore, ['defaultScheduleMode', 'customSchedules']) as MapStateToComputed<ScheduleStoreState>),
+    ...(mapState(useUserSettingsStore, ['grade']) as MapStateToComputed<GradeStoreState>),
+  },
   methods: {
-    settingToName(setting) { // convert setting to readable name ('defaultScheduleMode' to 'Default Schedule Mode')
+    ...mapActions(useThemeStore, ['setTheme', 'setColor']),
+    ...mapActions(useScheduleStore, ['setDefaultScheduleMode', 'setCustomSchedules']),
+    ...mapActions(useUserSettingsStore, ['setGrade']),
+
+    settingToName(setting: transferableSettingOption): string {
       const separatedWords = setting.replace(/([a-z])([A-Z])/g, '$1 $2'); // 'defaultScheduleSomething' to 'default Schedule Something'
       return separatedWords[0].toUpperCase() + separatedWords.slice(1); // capitalize first letter
     },
-    showPopup(popup) {
+    showPopup(popup: any): void {
       this.popupToShow = popup;
     },
-    cancel() {
+    getSetting(name: transferableSettingOption): string | Theme | ScheduleMode {
+      switch (name) {
+        case 'color': return this.color as string;
+        case 'theme': return this.theme as Theme;
+        case 'defaultScheduleMode': return this.defaultScheduleMode;
+        case 'grade': return this.grade as string;
+        case 'customSchedules': return this.customSchedules;
+        default: return 'foo';
+      }
+    },
+    setSetting(name: transferableSettingOption, value: any): void {
+      switch (name) {
+        case 'color': this.setColor(value); break;
+        case 'theme': this.setTheme(value); break;
+        case 'defaultScheduleMode': this.setDefaultScheduleMode(value); break;
+        case 'grade': this.setGrade(value); break;
+        case 'customSchedules': this.setCustomSchedules(value); break;
+        default: break;
+      }
+    },
+    cancel(): void {
       // reset most things (usually unnecessary since they'll be overwritten anyway, but just in case)
       this.code = '';
       this.errorMessage = '';
       this.receiveCode = '';
-      this.receivedData = null;
-      this.shouldSaveSetting = {};
-
+      this.receivedData = {} as Record<transferableSettingOption, any>;
+      this.shouldSaveSetting = {} as Record<transferableSettingOption, boolean>;
       this.popupToShow = popups.none;
     },
-    send() {
+    async send(): Promise<void> {
       this.showPopup(popups.loading);
-
       // Get the data for each selected option to send
-      const data = {};
-      for (const [setting, shouldSend] of Object.entries(this.shouldSendSetting)) {
+      const data = {} as Record<transferableSettingOption, any>;
+      for (const [setting, shouldSend] of Object.entries(this.shouldSendSetting) as [transferableSettingOption, any][]) {
         if (shouldSend) {
-          data[setting] = this.$store.state[setting];
+          data[setting] = this.getSetting(setting);
         }
       }
-
-      superagent
-        .post('/send') // look at /netlify.toml (Netlify is proxying to http://dpaste.com)
-        .send({ content: JSON.stringify(data), syntax: 'json', expiry_days: 1 })
-        .type('form')
-        .then((response) => {
-          const url = response.text;
-          const code = url.slice(url.lastIndexOf('/') + 1).trim().replace(/[^a-zA-Z0-9]/g, '');
-          this.code = code.toLowerCase(); // converting to lower case to make it easier to type (will convert back when receiving)
-          this.showPopup(popups.code);
-        })
-        .catch(() => {
-          this.errorMessage = 'Error: Please check your internet';
-          this.showPopup(popups.error);
-        });
+      const response = await fetch('/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `content=${encodeURIComponent(JSON.stringify(data))}&syntax=json&expiry_days=1`,
+      }) as Response;
+      if (response.status === 201) {
+        const url = await response.text();
+        const code = url.slice(url.lastIndexOf('/') + 1).trim().replace(/[^a-zA-Z0-9]/g, '');
+        this.code = code.toLowerCase(); // converting to lower case to make it easier to type (will convert back when receiving)
+        this.showPopup(popups.code);
+      } else {
+        this.errorMessage = 'Error: Please check your internet';
+        this.showPopup(popups.error);
+      }
     },
-    receive() {
+
+    async receive(): Promise<void> {
       this.showPopup(popups.loading);
+      let isValid = true;
 
-      superagent
-        .get('/recieve') // look at /netlify.toml (Netlify is proxying to http://dpaste.com)
-        .query({ filename: `${this.receiveCode.toUpperCase()}.txt` })
-        .then((response) => {
-          try {
-            const data = JSON.parse(response.text);
-
-            // all of the settings in data must be present in transferableSettings for data to be valid
-            let isValid = true;
-            const settings = Object.keys(data);
-            settings.forEach((setting) => {
-              if (!tranferableSettings.includes(setting)) isValid = false;
-            });
-
-            if (isValid) {
-              this.receivedData = data;
-
-              this.shouldSaveSetting = {}; // reset it in case there was a previous received data with different settings
-              settings.forEach((setting) => { // default to saving all settings present in data
-                Vue.set(this.shouldSaveSetting, setting, true); // need use Vue.set since we're adding dynamic properties to a tracked object
-              });
-
-              this.showPopup(popups.save);
-            } else {
-              this.errorMessage = 'Error: Invalid code';
-              this.showPopup(popups.error);
-            }
-          } catch (e) {
-            this.errorMessage = 'Error: Invalid code';
-            this.showPopup(popups.error);
-          }
-        })
-        .catch(() => {
-          this.errorMessage = 'Error: Invalid code or no internet';
-          this.showPopup(popups.error);
+      const response = await fetch(`/receive/${this.receiveCode.toUpperCase()}.txt`, {
+        method: 'GET',
+      });
+      if (response.status === 200) {
+        const data = await response.json();
+        const settings = Object.keys(data);
+        settings.forEach((setting) => {
+          if (!transferableSettings.some((transferableSetting) => transferableSetting === String(setting))) isValid = false; // make sure every recieved setting is acceptable
         });
+        if (isValid) {
+          this.receivedData = data as Record<transferableSettingOption, any>;
+          this.shouldSaveSetting = {} as Record<transferableSettingOption, boolean>; // reset it in case there was a previous received data with different settings
+          settings.forEach((setting) => { // default to saving all settings present in data
+            this.shouldSaveSetting[setting as transferableSettingOption] = true;
+          });
+          this.showPopup(popups.save);
+        } else {
+          this.errorMessage = 'Error: Invalid code';
+          this.showPopup(popups.error);
+        }
+      } else {
+        this.errorMessage = 'Error: Invalid code or no internet';
+        this.showPopup(popups.error);
+      }
     },
-    save() {
+    save(): void {
       if (this.receivedData) {
         if (this.shouldSaveSetting.theme) {
           this.receivedData.theme = { theme: this.receivedData.theme, useThemeColor: !this.shouldSaveSetting.color };
         }
-        for (const [setting, data] of Object.entries(this.receivedData)) {
+        for (const [setting, data] of (Object.entries(this.receivedData) as [transferableSettingOption, any][])) {
           if (this.shouldSaveSetting[setting]) {
-            const mutation = `set${setting[0].toUpperCase()}${setting.slice(1)}`; // 'defaultScheduleMode' -> 'setDefaultScheduleMode'
-            this.$store.commit(mutation, data);
+            this.setSetting(setting, data);
           }
         }
       }
       this.cancel();
     },
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>
@@ -234,7 +262,6 @@ export default {
   font-size: 1.3em
   flex-flow: row wrap
   margin: 20px 0
-
   .button
     width: 200px
     margin: 10px 25px
@@ -246,14 +273,12 @@ export default {
   display: flex
   flex-direction: column
   align-items: flex-start
-
   .title
     text-align: center
     width: 100%
     font-weight: bold
     color: var(--secondary)
     font-size: 1.2em
-
   .warning
     font-size: .76em
     color: red
@@ -266,11 +291,9 @@ export default {
   margin: 15px 25px 10px 25px
   max-width: 300px
   text-align: center
-
   .color, .code
     color: var(--color)
     font-weight: bold
-
   .code
     margin-top: 5px
     font-size: 1.75em
@@ -280,15 +303,12 @@ export default {
   margin: 15px 25px
   text-align: center
   font-size: .79em
-
   .title
     font-size: 1.75em
     margin-bottom: 3px
-
   .color
     color: var(--color)
     font-weight: bold
-
   input
     margin-top: 12px
     border-radius: 5px
@@ -303,11 +323,9 @@ export default {
 .loading-popup
   margin: 25px
   font-size: 1.1em
-
 .error-popup
   color: red
   margin: 15px 25px
   font-weight: bold
   max-width: 300px
-
 </style>

@@ -26,9 +26,6 @@ $content-width: 1000px
     @content
 
 =shadow
-  // box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)
-  // box-shadow: 0px 0px 19px -5px rgba(0,0,0,0.37)
-  // box-shadow: 0px 0px 10px -4px rgba(0,0,0,1.0)
   box-shadow: 0px 0px 10px -4px rgba(0,0,0,.6)
   
 =shadow-light
@@ -77,3 +74,17 @@ $content-width: 1000px
   svg
     position: relative // this ensures that icon inside doesn't also darken for some reason
 
+=animate-fade-up 
+    animation-duration: .5s
+    animation-fill-mode: both
+    -webkit-animation-fill-mode: both
+    opacity: 0
+    animation-name: fadeInUp
+    -webkit-animation-name: fadeInUp
+
+@keyframes fadeInUp 
+    from 
+        transform: translate3d(0,35px,0)
+    to 
+        transform: translate3d(0,0,0)
+        opacity: 1

@@ -1,7 +1,7 @@
 <template>
   <timed-card startTime="April 13, 2022" endTime="April 23, 2022">
     <div class="container">
-      <img class="logo" src="static/occasions/sodexo-appreciation.png">
+      <img class="logo" src="@/assets/occasions/sodexo-appreciation.png">
       <div class="message">
        Shoutout to the <b>131</b> Sodexo staff members that work tirelessly year-round to keep Stevenson in truly immaculate shape. Remember to give them the utmost appreciation and respect they deserve - not your mess.
       </div>

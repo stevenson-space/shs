@@ -5,11 +5,9 @@
       @toggle-fullscreen="fullScreenMode = !fullScreenMode"
     />
 
-    <card-container>
-      <confetti/>
-      <!-- <new-feature-card/> -->
+    <card-container class="card-container">
+      <new-feature-card/>
       <new-theme-card />
-      <contribute-card />
       <!-- <april-fools-card /> -->
       <sodexo-appreciation-card />
       <!-- <shs-hacks-card/> -->
@@ -18,12 +16,12 @@
       <lunch-card />
       <upcoming-events-card />
 
-      <icon-text-card :icon="icons.faBell" text="Bell Schedules" link="bellschedules" />
+      <icon-text-card :icon="icons.faBell" text="Bell Schedules" link="bellschedules" :invert="false" />
 
-      <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
+      <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true"  />
 
-      <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" />
-      <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" :invert="true"/>
+      <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" :invert="true" />
+      <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
 
       <icon-text-card
         :icon="icons.faCalculator"
@@ -61,7 +59,8 @@ import {
   faHourglass,
   faQrcode,
 } from '@fortawesome/free-solid-svg-icons';
-
+import useScheduleStore from '@/stores/schedules';
+import { mapActions } from 'pinia';
 import CardContainer from '@/components/CardContainer.vue';
 import UpcomingEventsCard from '@/components/cards/UpcomingEventsCard.vue';
 import IconTextCard from '@/components/cards/IconTextCard.vue';
@@ -110,18 +109,28 @@ export default {
       fullScreenMode: false,
     };
   },
+  methods: {
+    ...mapActions(useScheduleStore, ['setCurrentTime']),
+  },
   created() {
     // Sometimes the interval used in Header.vue stops when the tab leaves focus
     // so updating the date when focus returns is necessary
     window.addEventListener('focus', () => {
-      this.$store.commit('setCurrentTime');
+      this.setCurrentTime();
     });
   },
 };
 </script>
 
 <style lang="sass" scoped>
+@import 'src/styles/style.sass'
+
 .no-overflow
   height: 100vh
   overflow: hidden
+
+// @for $i from 1 to 15
+//   .card-container .card:nth-child(#{$i})
+//     +animate-fade-up
+//     animation-delay: $i * 0.011s
 </style>

@@ -34,7 +34,13 @@ module.exports = {
     'no-use-before-define': ['error', { functions: false, classes: false }],
     'lines-between-class-members': 'off',
     'object-curly-newline': 'off',
-    'prefer-destructuring': ['error', { array: false, object: true }],
+  'prefer-destructuring': ['error', { array: false, object: true }],
+    'vue/multi-word-component-names': 'off',
+    'vuejs-accessibility/click-events-have-key-events': 'off',
+    'vuejs-accessibility/form-control-has-label': 'off',
+    'vuejs-accessibility/alt-text': 'off',
+    'vuejs-accessibility/label-has-for': 'off',
+    'vuejs-accessibility/mouse-events-have-key-events': 'off'
   },
   overrides: [
     {

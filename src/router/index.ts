@@ -1,33 +1,28 @@
-import Vue, { AsyncComponent } from 'vue';
-import VueRouter, { RouteConfig } from 'vue-router';
+import { createRouter, createWebHistory, RouteRecordRaw, RouteComponent, RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
 import Home from '@/views/Home/Home.vue';
+import useAuthenticationStore from '@/stores/authentication';
 
-import store from '@/store';
-
-Vue.use(VueRouter);
-
-// Dynamically import the following components so that they are not included in the main build
-// file and are instead asynchrounously loaded when the user goes to the page (to reduce file size of build.js)
-
-const GpaCalculator: AsyncComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
-const OldGpaCalculator: AsyncComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/OldGpaCalculator.vue');
-const BellSchedules: AsyncComponent = () => import(/* webpackChunkName: "bellschedules" */'@/views/Bell Schedules/BellSchedules.vue');
-const Calendar: AsyncComponent = () => import(/* webpackChunkName: "calendar" */'@/views/Calendar/Calendar.vue');
-const Links: AsyncComponent = () => import(/* webpackChunkName: "links" */'@/views/Links/Links.vue');
-const Colors: AsyncComponent = () => import(/* webpackChunkName: "colors" */'@/views/Colors/Colors.vue');
-const Settings: AsyncComponent = () => import(/* webpackChunkName: "settings" */'@/views/Settings/Settings.vue');
-const Tools: AsyncComponent = () => import(/* webpackChunkName: "tools" */'@/views/Tools/Tools.vue');
-const Documents: AsyncComponent = () => import(/* webpackChunkName: "documents" */'@/views/Documents/Documents.vue');
-const AddSchedule: AsyncComponent = () => import(/* webpackChunkName: "addschedule" */'@/views/Settings/Add Schedule/AddSchedule.vue');
-const Login: AsyncComponent = () => import(/* webpackChunkName: "login" */'@/views/Login/Login.vue');
-const QRCode: AsyncComponent = () => import(/* webpackChunkName: "login" */'@/views/QRCodes/QRCodes.vue');
+const GpaCalculator:RouteComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
+const BellSchedules:RouteComponent = () => import(/* webpackChunkName: "bellschedules" */'@/views/Bell Schedules/BellSchedules.vue');
+const Calendar:RouteComponent = () => import(/* webpackChunkName: "calendar" */'@/views/Calendar/Calendar.vue');
+const Links:RouteComponent = () => import(/* webpackChunkName: "links" */'@/views/Links/Links.vue');
+const Colors:RouteComponent = () => import(/* webpackChunkName: "colors" */'@/views/Colors/Colors.vue');
+const Settings:RouteComponent = () => import(/* webpackChunkName: "settings" */'@/views/Settings/Settings.vue');
+const Tools:RouteComponent = () => import(/* webpackChunkName: "tools" */'@/views/Tools/Tools.vue');
+const Documents:RouteComponent = () => import(/* webpackChunkName: "documents" */'@/views/Documents/Documents.vue');
+const AddSchedule:RouteComponent = () => import(/* webpackChunkName: "addschedule" */'@/views/Settings/Add Schedule/AddSchedule.vue');
+const Login:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/Login/Login.vue');
+const Code:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/Code/Code.vue');
+const QRCode:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/QRCodes/QRCodes.vue');
 
 type EditScheduleProps = {
   scheduleToEdit: string;
   mode: 'all' | 'edit';
 };
 
-const routes: RouteConfig[] = [
+type Position = { left: number; top: number };
+
+const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     component: Home,
@@ -43,10 +38,6 @@ const routes: RouteConfig[] = [
   {
     path: '/GpaCalculator',
     component: GpaCalculator,
-  },
-  {
-    path: '/OldGpaCalculator',
-    component: OldGpaCalculator,
   },
   {
     path: '/links',
@@ -69,7 +60,7 @@ const routes: RouteConfig[] = [
     path: '/edit-schedule/:scheduleToEdit',
     component: AddSchedule,
     props: (route): EditScheduleProps => ({
-      scheduleToEdit: route.params.scheduleToEdit,
+      scheduleToEdit: typeof route.params.scheduleToEdit === 'string' ? route.params.scheduleToEdit : route.params.scheduleToEdit[0],
       mode: 'edit',
     }),
   },
@@ -90,39 +81,41 @@ const routes: RouteConfig[] = [
     component: Login,
   },
   {
+    name: 'code',
+    path: '/code',
+    component: Code,
+  },
+  {
     name: 'QRCode',
     path: '/qr',
     component: QRCode,
   },
 ];
 
-type Position = { x: number; y: number };
-
-// 'history' mode requires all urls to redirect to index.html so that Vue can handle them
-const router = new VueRouter({
-  mode: 'history',
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
   routes,
-  // If savedPosition exists from previous visit to that page, then scroll to that position
-  // Otherwise, scroll to top (basically how modern browsers normally handle scrolling)
   scrollBehavior(to, from, savedPosition): Position {
     if (savedPosition) {
       return savedPosition;
     }
-    return { x: 0, y: 0 };
+    return { top: 0, left: 0 };
   },
 });
 
 // ensure any page with requiresAuth set to true will redirect through the login proxy component
-router.beforeEach((to, from, next) => {
+router.beforeEach((to:RouteLocationNormalized, from:RouteLocationNormalized, next:NavigationGuardNext) => {
   // check if to requires auth
   if (to.matched.some((record) => record.meta && record.meta.requiresAuth)) {
     // check if we are already authenticated, and continue ahead if we are
-    if (store.getters.isAuthenticated) {
+    // if (store.getters.isAuthenticated) {
+    const authentionStore = useAuthenticationStore();
+    if (authentionStore.authenticated) {
       next();
     } else {
       // if not, proxy this route through the login component
       // inform the login component where to go next
-      next({ name: 'login', query: { to: to.name, from: from.name } });
+      next({ name: 'login', query: { to: to.path.replace('/', '') } });
     }
   } else {
     // otherwise, just continue through

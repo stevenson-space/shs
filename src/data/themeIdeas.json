@@ -6,6 +6,7 @@
         "secondaryBackground": "white",
         "headerBackgroundColor": "#c3e3f5",
         "headerScheduleBackgroundColor": "var(--background)",
+        "schedule": "",
         "primary": "#02647a",
         "secondary": "#02647a",
         "tertiary": "#02647a",

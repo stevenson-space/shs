@@ -3,9 +3,10 @@
     <plain-header title="Links" />
     <card-container class="container">
       <image-text-card
-        v-for="link in links"
+        v-for="(link, index) in links"
         :key="link.url"
-        :image="`static/links/${link.name}.png`"
+        :style="{ 'animation-delay': index * .045 + 's'}"
+        :image="require(`@/assets/links/${link.name}.png`)"
         :text="link.name"
         :desc="link.desc"
         :link="link.url"
@@ -36,12 +37,8 @@ export default {
         { name: 'Naviance', url: 'https://student.naviance.com/aeshs' },
         { name: 'Peer Tutors', desc: 'Must be logged in using school google account', url: 'https://sites.google.com/d125.org/peer-tutors/home' },
         { name: 'Testing Center', url: 'https://docs.google.com/forms/d/e/1FAIpQLSdMoby5m1oNCMi_VgINPE-FDqPqjH5XlvgdDXUFxS4lJbb4Ng/viewform' },
-        { name: 'Patriot Dollars', url: 'https://d125-sp.transactcampus.com/eaccounts/%28S%28hpb5gh0sgji4hrhmx2ymnvot%29%29/AnonymousHome.aspx' }], /* eslint-enable max-len */
+        { name: 'Patriot Dollars', desc: 'Patience Required', url: 'https://d125-sp.transactcampus.com/eaccounts/%28S%28hpb5gh0sgji4hrhmx2ymnvot%29%29/AnonymousHome.aspx' }], /* eslint-enable max-len */
     };
   },
 };
 </script>
-
-<style lang="sass" scoped>
-
-</style>
