@@ -10,7 +10,9 @@ import router from './router';
 if (navigator.serviceWorker) {
   try {
     navigator.serviceWorker.register('/service-workers/service-worker.js');
-  } catch (e){}
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 const app = createApp(App).component('font-awesome-icon', FontAwesomeIcon)
