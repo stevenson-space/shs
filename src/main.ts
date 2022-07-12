@@ -8,7 +8,9 @@ import App from './App.vue';
 import router from './router';
 
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('/service-workers/service-worker.js');
+  try {
+    navigator.serviceWorker.register('/service-workers/service-worker.js');
+  } catch (e){}
 }
 
 const app = createApp(App).component('font-awesome-icon', FontAwesomeIcon)

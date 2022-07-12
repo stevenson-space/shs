@@ -110,7 +110,10 @@ export default {
     setHeight() {
       // wait until content updates before updating height
       this.$nextTick(() => {
-        this.height = this.$refs.wrapper.offsetHeight;
+        const offsetHeight = this.$refs?.wrapper?.offsetHeight;
+        if (offsetHeight) {
+          this.height = offsetHeight;
+        }
       });
     },
     formatMultiDayMode(mode) {
