@@ -5,6 +5,7 @@ Beautiful and practical agenda management tool for SHS students
 - Print Bonanza - Information on all the (student available) printers in the school, their features, location, picture cutouts of what they look like, display name, notes ect.
 - Allow people to add Custom Links to the Links Page
 - Allow people to make their own themes on the site and submit them for review for possible uploading.
+- Add all the Jazzmans and other food items to a more detailed menus page
 
 ## Project setup
 ```
