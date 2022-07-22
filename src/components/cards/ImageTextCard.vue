@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     setHeight() {
-      this.$refs.card.setHeight();
+      this.$refs?.card?.setHeight();
     },
   },
 };

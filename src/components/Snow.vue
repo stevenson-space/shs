@@ -216,7 +216,7 @@ export default {
       if (this.reqId) cancelAnimationFrame(this.reqId);
 
       this.canvas = this.$refs.canvas;
-      this.ctx = this.canvas.getContext("2d");
+      this.ctx = this.canvas?.getContext("2d");
       this.canvas.width = window.innerWidth;
       this.canvas.height = window.innerHeight;
       if (this.interaction == true) {
