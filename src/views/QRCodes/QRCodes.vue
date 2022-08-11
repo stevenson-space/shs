@@ -79,7 +79,7 @@ export default {
         imageSize: 0.4,
       },
       dotsOptions: {
-        type: 'dots',
+        type: 'rounded',
         color: '#1F5D39',
       },
       cornersSquareOptions: {
