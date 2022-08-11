@@ -217,8 +217,8 @@ export default {
 
       this.canvas = this.$refs.canvas;
       this.ctx = this.canvas?.getContext("2d");
-      this.canvas.width = window.innerWidth;
-      this.canvas.height = window.innerHeight;
+      this.canvas.width = window?.innerWidth;
+      this.canvas.height = window?.innerHeight;
       if (this.interaction == true) {
         var actionFuncName =
           "ontouchstart" in document.documentElement

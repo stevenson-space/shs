@@ -17,7 +17,7 @@
         <component
           :is="isMultiDay ? 'MultiDayPeriod' : 'Period'"
           v-for="period in periods"
-          :disableProgressBar="schedule.name != bell.type"
+          :disableProgressBar="schedule?.name != bell?.type"
           :key="period._id"
           v-bind="period"
         />

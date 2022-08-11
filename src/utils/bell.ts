@@ -6,7 +6,7 @@ import { deepCopy, is2DArray } from './util';
 // A type guard that states if `school` is true, then all the properties of bell (including `mode`,
 // `schedule`, and `period`) will have values specified
 export function isBellOnSchoolDay(bell: Bell): bell is Required<Bell> {
-  return bell.school;
+  return bell?.school;
 }
 
 class Bell {

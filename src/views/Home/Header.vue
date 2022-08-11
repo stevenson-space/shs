@@ -231,6 +231,9 @@ export default {
       return date;
     },
     scheduleModes() {
+      if (!this.bell) {
+        return [];
+      }
       const { modes } = this.bell;
       return modes.map((mode) => mode.name);
     },
