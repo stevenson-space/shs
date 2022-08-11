@@ -25,7 +25,7 @@ export default {
   components: { Card, WhatIsThis },
   data() {
     return {
-      noLunchData: false,
+      noLunchData: true,
     };
   },
   computed: {
