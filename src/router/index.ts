@@ -14,6 +14,7 @@ const AddSchedule:RouteComponent = () => import(/* webpackChunkName: "addschedul
 const Login:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/Login/Login.vue');
 const Code:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/Code/Code.vue');
 const QRCode:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/QRCodes/QRCodes.vue');
+const GetHelp:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/GetHelp/GetHelp.vue');
 
 type EditScheduleProps = {
   scheduleToEdit: string;
@@ -89,6 +90,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'QRCode',
     path: '/qr',
     component: QRCode,
+  },
+  {
+    name: 'GetHelp',
+    path: '/getHelp',
+    component: GetHelp,
   },
 ];
 
