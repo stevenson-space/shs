@@ -1,6 +1,16 @@
 <template>
   <card v-if="!(events.length === 0 && eventsExhausted)" class="upcoming-events-card">
-    <div class="title">Upcoming Events</div>
+    <div class="title">
+      <div>Upcoming Events</div>
+      <!-- eslint-disable-next-line vuejs-accessibility/anchor-has-content -->
+      <a class="get-help-icon" href="#" @click="showHelpPopup = true"><font-awesome-icon :icon="icons.faFlag" /></a>
+    </div>
+    <confirm-popup :show="showHelpPopup" ok-text="Get Help" @cancel="cancel" @ok="ok">
+      <div class="send-popup">
+        <div class="popup-title">Are these upcoming events not accurate?</div>
+        <p>Let us know by pressing "Get Help" and submitting your feedback.</p>
+      </div>
+    </confirm-popup>
     <div class="events">
       <div class="line" />
       <event-chip
@@ -29,10 +39,11 @@
 </template>
 
 <script>
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp, faFlag } from '@fortawesome/free-solid-svg-icons';
 import Bell from '@/utils/bell';
 import Card from '@/components/Card.vue';
 import EventChip from '@/components/EventChip.vue';
+import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import { mapState } from 'pinia';
 import useScheduleStore from '@/stores/schedules';
 
@@ -70,15 +81,17 @@ function getNextEvent(startDate) {
 }
 
 export default {
-  components: { Card, EventChip },
+  components: { Card, EventChip, ConfirmPopup },
   data() {
     return {
       cardHeight: 0,
       icons: {
         faChevronDown,
         faChevronUp,
+        faFlag,
       },
       events: [],
+      showHelpPopup: false,
       numEventsInitial: 3,
       numEventsToAdd: 3,
       numEventsDisplayed: 0,
@@ -115,6 +128,13 @@ export default {
     setTimeout(this.reset, 250);
   },
   methods: {
+    cancel() {
+      this.showHelpPopup = false;
+    },
+    ok() {
+      window.open('/getHelp?referrer=true');
+      this.showHelpPopup = false;
+    },
     loadEvents(num) {
       // Could potentially be expensive for large values of num, so load asynchronously
       return new Promise((resolve, reject) => {
@@ -162,9 +182,34 @@ export default {
 
 .upcoming-events-card
   .title
+    display: flex
     text-align: center
+    justify-content: center
+    align-items: center
     font-size: 1.5em
     margin: 15px 0
+
+    .get-help-icon
+      position: absolute
+      right: 0
+      margin-right: 10px
+      margin-top: 3px
+      font-size: .8em
+      color: var(--iconTextCardInvertColor)
+
+  .send-popup, .save-popup
+    margin: 15px 25px
+    width: 225px
+    text-align: left
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    .popup-title
+      text-align: center
+      width: 100%
+      font-weight: bold
+      color: var(--secondary)
+      font-size: 1.2em
 
   .events
     position: relative
