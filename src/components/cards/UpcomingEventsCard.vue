@@ -192,7 +192,7 @@ export default {
     .get-help-icon
       position: absolute
       right: 0
-      margin-right: 15px
+      margin-right: 20px
       margin-top: 2px
       font-size: .8em
       color: var(--iconTextCardInvertColor)
