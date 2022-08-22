@@ -7,7 +7,7 @@
     </div>
     <confirm-popup :show="showHelpPopup" ok-text="Get Help" @cancel="cancel" @ok="ok">
       <div class="send-popup">
-        <div class="popup-title">Are these upcoming events not accurate?</div>
+        <div class="popup-title">Things not looking right?</div>
         <p>Let us know by pressing "Get Help" and submitting your feedback.</p>
       </div>
     </confirm-popup>
