@@ -6,33 +6,33 @@
      "International Station": ["Burrito Bowl"]
   },
   "7": {
-    "Comfort Food": ["Baked Beef Ravioli / Breadstick"],
-    "Mindful": ["Biryani Chicken "],
-    "Sides": ["Lemon Pepper Green Bean", "Yellow Rice"],
-    "International Station": ["Burrito Bowl"]
+    "Comfort Food": ["Homemade Beef Meatloaf with Gravy"],
+    "Mindful": ["Chicken Piccata"],
+    "Sides": ["Roasted Carrots & Broccoli", "Mashed Potatoes"],
+    "International Station": ["Mac & Cheese"]
   },
   "8": {
-    "Comfort Food": ["Dijon Chicken"],
-    "Mindful": ["Baked Herbed Cod"],
-    "Sides": ["Asparagus","Scalloped Potatoes"],
-    "International Station": ["Burrito Bowl"]
+    "Comfort Food": ["Chipotle & Orange Grilled Chicken"],
+    "Mindful": ["Veggie Lo-Mein"],
+    "Sides": ["Roasted Broccolini", "Egg Roll"],
+    "International Station": ["Mac & Cheese"]
   },
   "9": {
-    "Comfort Food":["Tempura Chicken Stir Fry "],
-    "Mindful": ["Baked Pork Chop W/ Pan Sauce"],
-    "Sides": ["Roasted Cauliflower", "Rice"],
-    "International Station": ["Burrito Bowl"]
+    "Comfort Food":["Beef and Mushroom Stroganoff with Pasta"],
+    "Mindful": ["Tofu Stir Fry"],
+    "Sides": ["Lemon Pepper Green Beans", "Rice"],
+    "International Station": ["Mac & Cheese"]
   },
   "10": {
     "Comfort Food": ["3 Cheese Penne"],
     "Mindful": ["Chicken Marsala"],
     "Sides": ["Roasted Vegetables","Herbed Polenta"],
-    "International Station": ["Burrito Bowl"]
+    "International Station": ["Mac & Cheese"]
   },
   "11": {
-    "Comfort Food": ["BBQ Pulled Chicken Sandwich"],
-    "Mindful": ["Teriyaki Glazed Salmon"],
-    "Sides": ["Corn","Roasted Potatoes"],
+    "Comfort Food": ["Baked Battered Cod"],
+    "Mindful": ["Turkey Sloppy Joe"],
+    "Sides": ["Roasted Vegetables", "Roasted Wedge Potatoes"],
     "International Station": ["Mac & Cheese"]
   }
 }
