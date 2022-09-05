@@ -6,64 +6,48 @@ const oldLunch = require("../src/data/lunch.json");
 const toDays = date =>
   parseInt((date.getTime() / 1000 / 60 - date.getTimezoneOffset()) / 60 / 24);
 
-// TODO: disabling for now since lunch is not available at https://www.d125.org/student-life/food-services/latest-menu anymore
 main();
+
+// https://sebhastian.com/javascript-csv-to-array/
+function csvToArray(str, delimiter = ",") {
+  const headers = str.slice(0, str.indexOf("\n")).split(delimiter);
+
+  const rows = str.slice(str.indexOf("\n") + 1).split("\n");
+
+  const replaceAllCommas = (str) => {
+    let copy = str; 
+    while(copy.includes('%COMMA%')){
+      copy = copy.replace("%COMMA%", ',');;
+    }
+    return copy
+  }
+
+  const arr = rows.map(function (row) {
+    const values = row.split(delimiter);
+    const el = headers.reduce(function (object, header, index) {
+      if(['Comfort Food', 'Mindful', 'Sides', 'International Station', 'Soup', 'Paninis', 'Day Number'].includes(header)){
+        object[header] = replaceAllCommas(values[index]).split(',');
+      }
+      return object;
+    }, {});
+    return el;
+  });
+  // return the array
+  return arr;
+}
 
 async function parseLunchTable() {
   var data = fs.readFileSync(__dirname + '/lunchData.csv', 'utf8');
-  rows = data.split("\n");
-  var parsedData = rows.map(function (row) {
-    return (row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g));
-  });
-  for (var i = 0; i < parsedData.length; i++) {
-    if (parsedData[i] == null) {
-      parsedData.splice(i, 1);
-    } else {
-      parsedData[i] = parsedData[i].map(e => e.replace(/"/g, '')).filter(function (x) {
-        return x != '';
-      });
-    }
-  }
-  data = parsedData
+  // rows = data.split("\n");
 
   const lunchObject = {};
-  var dates = [];
-  var lunchText = [];
 
-  for (var i = 0; i < data.length; i++) { //for every row
-    for (var j = 0; j < data[i].length; j++) { //for every column in row
-      if (i % 2 == 0) { //if it's the dates row
-        dates.push(getDateInfo(data[i][j]).day)
-      } else { // the menu row/
-        lunchText.push(data[i][j])
-      }
-    }
-  }
-  lunchText = lunchText.map(function(e,i){
-    const internationalMenus = ["Burrito Bowl", "Mac & Cheese", "Mediterranean Week 🥙", "Pasta Week 🍝","Pasta Week 🍝"];
-    var date = dates[i];
-    // get week of month
-    var week = Math.floor((date - 2) / 7);
-    if(e.includes("Comfort Food")){
-      return `International Station: ${internationalMenus[week]}` + e
-    }
-    return e
+  
+  csvToArray(data).forEach((menu, index) => {
+    lunchObject[menu['Day Number'][0]] = menu;
+    delete menu['Day Number']
   })
-
-  lunchText.forEach((lunch, index) => {
-    var lunchData = processLunches(lunch);
-    var keys = Object.keys(lunchData).reverse()
-    var newLunchData = {};
-    keys.forEach(x => newLunchData[x] = lunchData[x]);
-    lunchData = newLunchData
-    if (Object.keys(lunchData).length > 0) {
-      const date = new Date();
-      date.setDate(dates[index])
-      // set the respective date on cycle of 28 days to the lunch
-      lunchObject[String(toDays(date) % 29)] = lunchData
-    }
-  })
-  return { lunch: lunchObject, numLunches: dates.length };
+  return { lunch: lunchObject, numLunches: data.split("\n").length -1 }; // subtract the 1 from the length because it's the header
 
 }
 
@@ -77,98 +61,6 @@ async function main() {
   }
   saveLunch(newLunch);
   printMissingLunches(lunch, numLunches);
-}
-
-// async function scrapeLunches() {
-//   try {
-//     const response = await axios.get(url);
-//     const lunchObject = {};
-//     let numLunches = 0;
-
-//     const dom = new JSDOM(String(response.data));
-//     for (var x of dom.window.document.querySelectorAll("h5")) { //all day labels have an h5 tag
-//       var dateText = x.textContent
-//       var lunchesText = x.nextSibling.nextSibling.textContent
-//       // we only want to attempt parsing the lunch if the text actually contains lunch items
-//       // (sometime's it's empty on no school days or contains text such as "Chef's Choice" or "Breakfast all day")
-//       if (lunchesText.match(/Comfort Food/i)) {
-//          var parsedDate = getDateInfo(dateText);
-//          var month = parsedDate.month;
-//          var day = parsedDate.day;
-//          if (month.length > 0 &&  day > 0) {
-//            numLunches++;
-//            console.log(`${month} ${day}, ${new Date().getFullYear()}`)
-//           const date = new Date(`${month} ${day}, ${new Date().getFullYear()}`);
-//           // set the respective date on cycle of 28 days to the lunch
-//           lunchObject[String(toDays(date) % 28)] = processLunches(
-//             lunchesText
-//           );
-//         } else {
-//           console.log(
-//             `warning: skipping the day "${dateText}" due to invalid date text: "${dateText}"`
-//           );
-//         }
-//       } else {
-//         console.log(
-//           `warning: skipping the day "${dateText}" due to invalid lunch text: "${lunchesText}"`
-//         );
-//       }
-//     }
-//     return { lunch: lunchObject, numLunches };
-//   } catch (err) {
-//     exitWithError(`Request to "${url}" failed because:\n${err}`);
-//   }
-// }
-
-//gets month and day from string formatted like "April 5 - Late Arrival"
-function getDateInfo(dateText) {
-  var numbers = [];
-  for (var i = 31; i >= 0; i--) {
-    numbers.push(i)
-  }
-
-  for (var x of numbers) {
-    if (dateText.includes(x)) {
-      return { "day": x }
-    }
-  }
-  return { "day": -1 }
-}
-
-// Converts this:
-// "Comfort Food: Home Made Chicken Pot Pie Mindful: Tofu Stir Fry Sides: Lemon Pepper Green Beans, Rice Soup: Tomato Basil, Chicken Tortilla" 
-
-// to this:
-// {
-//   "Comfort Food": ["Roasted Turkey Breast Plate"],
-//   "Sides": ["Brussel Sprouts", "Mashed Sweet Potatoes"]
-// }
-function processLunches(lunchesText) {
-  const categories = ["International Station","Comfort Food", "Mindful", "Sides", "Soup"];
-  var lunchStr = lunchesText;
-  var lunches = {};
-  var areRemainingCategories = function (e) {
-    for (var x of categories) {
-      if (e.includes(x)) {
-        return true
-      }
-    }
-    return false
-  }
-  while (areRemainingCategories(lunchStr)) {
-    for (var x of categories.reverse()) {
-      console.log(x)
-      if (lunchStr.includes(x)) {
-        var menuItem = lunchStr.substring(lunchStr.indexOf(x), lunchStr.length).trim();
-        console.log("menu item ", menuItem)
-        var removedCategory = menuItem.replace(x, "").replace(":", "")
-        lunches[x] = removedCategory.split(",").map(x => x.trim());
-        lunchStr = lunchStr.replace(menuItem, "").trim();
-      }
-    }
-    return lunches
-  }
-  return lunches;
 }
 
 function saveLunch(lunch) {

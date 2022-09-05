@@ -6,19 +6,20 @@ export type Lunch = {
   'Mindful': string[];
   'Sides': string[];
   'Soup'?: string[];
+  'Paninis'?: string[];
 };
 
 export type Lunches = Record<string, Lunch>;
 
-const lunches = untypedLunches as Lunches;
+const lunches = untypedLunches as any;
 
 function getLunch(date: Date): Lunch | null {
   // get the number of days since epoch time
-  const minutesSinceEpoch = (date.getTime() / 1000 / 60) - date.getTimezoneOffset();
-  const daysSinceEpoch = Math.floor(minutesSinceEpoch / 60 / 24);
+  // const minutesSinceEpoch = (date.getTime() / 1000 / 60) - date.getTimezoneOffset();
+  // const daysSinceEpoch = Math.floor(minutesSinceEpoch / 60 / 24);
 
   // lunch schedule repeats every 28 days, so get the corresponding day in the 28-day cycle
-  const lunch = lunches[String(daysSinceEpoch % 29)];
+  const lunch = lunches[date.getDate()];
 
   // If date is a weekend, lunch will be undefined
   if (lunch) {
