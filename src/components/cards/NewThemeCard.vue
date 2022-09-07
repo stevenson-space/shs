@@ -89,7 +89,7 @@ export default {
 .description
   text-align: center
   font-size: .9em
-  padding: 5px
+  padding: 5px 10px 10px 10px
 .button
   margin-right: 8px
   width: 40px
