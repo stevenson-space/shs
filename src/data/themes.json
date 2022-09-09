@@ -153,7 +153,7 @@
         "name": "Cosmic Tarantula",
         "message": "[Try] The new Cosmic theme now!",
         "description": "Thousands of never-before-seen young stars spotted in a stellar nursery called 30 Doradus. Credit: James Webb Telescope, NASA",
-        "schedule": "9/6/2022-9/6/2024",
+        "schedule": "always",
         "suggestedColor": "#3498DB",
         "background": "#23272a",
         "headerBackgroundColor": "var(--secondaryBackground)",
@@ -164,5 +164,20 @@
         "tertiary": "white",
         "iconTextCardColor": "white",
         "iconTextCardInvertColor": "white"
+    },
+    {
+        "name": "Zen",
+        "message": "[Try] The new Zen theme to celebrate the bliss of wellness week!",
+        "schedule": "9/11/2022-9/18/2022",
+        "suggestedColor": "#3B77BC",
+        "background": "white",
+        "secondaryBackground": "white",
+        "headerBackgroundColor": "var(--color)",
+        "headerScheduleBackgroundColor": "var(--background)",
+        "primary": "black",
+        "secondary": "#333",
+        "tertiary": "#555",
+        "iconTextCardColor": "white",
+        "iconTextCardInvertColor": "var(--color)"
     }
 ]

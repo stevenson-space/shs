@@ -81,17 +81,16 @@ export default {
   display: flex
   justify-content: center
   align-items: center
+  gap: 10px
+  padding: 15px
 .message
-  margin-top: 8px
   font-size: .9em
   text-align: center
-  padding-bottom: 10px
 .description
   text-align: center
   font-size: .9em
-  padding: 5px 10px 10px 10px
 .button
-  margin-right: 8px
   width: 40px
   height: 10px
+
 </style>
