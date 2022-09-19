@@ -1,6 +1,8 @@
 # [stevenson.space](https://stevenson.space)
 Beautiful and practical agenda management tool for SHS students
 
+![media-preview-image](https://user-images.githubusercontent.com/31457361/190948845-b6870bef-9186-4971-b398-47616f503c6b.png)
+
 ## Project setup
 ```
 npm install
