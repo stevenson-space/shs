@@ -166,9 +166,9 @@
         "iconTextCardInvertColor": "white"
     },
     {
-        "name": "Zen",
+        "name": "Not Windows XP",
         "message": "[Try] The new Zen theme to celebrate the bliss of wellness week!",
-        "schedule": "9/11/2022-9/18/2022",
+        "schedule": "always",
         "suggestedColor": "#3B77BC",
         "background": "white",
         "secondaryBackground": "white",

@@ -1,7 +1,7 @@
 <template>
   <div
     class="header"
-    :class="{ 'full-screen': fullScreenMode, 'halloween': theme.name.toLowerCase() == 'halloween', 'mars': theme.name.toLowerCase() == 'mars', 'cosmic-reef': theme.name.toLowerCase() == 'cosmic reef', 'cosmic-tarantula': theme.name.toLowerCase() == 'cosmic tarantula', 'summer': theme.name.toLowerCase() == 'summer', 'zen': theme.name.toLowerCase() == 'zen'}"
+    :class="{ 'full-screen': fullScreenMode, 'halloween': theme.name.toLowerCase() == 'halloween', 'mars': theme.name.toLowerCase() == 'mars', 'cosmic-reef': theme.name.toLowerCase() == 'cosmic reef', 'cosmic-tarantula': theme.name.toLowerCase() == 'cosmic tarantula', 'summer': theme.name.toLowerCase() == 'summer', 'zen': theme.name.toLowerCase() == 'zen' || theme.name.toLowerCase() == 'not windows xp'}"
     :style="colors"
   >
     <dropdown
