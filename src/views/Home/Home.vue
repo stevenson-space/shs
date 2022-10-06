@@ -13,7 +13,7 @@
       <!-- <shs-hacks-card/> -->
       <holiday-card />
       <schedule-card />
-      <lunch-card />
+      <!-- <lunch-card /> -->
       <upcoming-events-card />
 
       <icon-text-card :icon="icons.faBell" text="Bell Schedules" link="bellschedules" :invert="false" />
