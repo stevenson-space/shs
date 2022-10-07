@@ -20,6 +20,7 @@
     "client-oauth2": "^4.3.3",
     "eslint-plugin-vuejs-accessibility": "^1.2.0",
     "gsap": "^3.10.4",
+    "howler": "^2.2.3",
     "pinia": "^2.0.14",
     "query-string": "^7.1.1",
     "querystring-es3": "^0.2.1",
