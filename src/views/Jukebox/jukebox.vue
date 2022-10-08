@@ -5,7 +5,7 @@
       <div class="main">
         <home-link class="home-link" :invert="false" />
         <div class="inner-background">
-          <h1 class="title"><font-awesome-icon class="icon" :icon="faRadio" /> Meet Live</h1>
+          <h1 class="title"><font-awesome-icon class="icon" :icon="faRadio" /> Meet Jukebox</h1>
           <p class="subtitle">Discover original music from Stevenson students.</p>
           <NowPlaying />
         </div>

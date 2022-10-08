@@ -41,9 +41,7 @@ export default {
       percentFinished: 0,
       currentTimePlaying: 0,
       totalSongTime: 0,
-      currentSong: new Howl({
-        src: [''],
-      }),
+      currentSong: null,
     };
   },
   mounted() {

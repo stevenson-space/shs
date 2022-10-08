@@ -23,7 +23,7 @@
       <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" :invert="true" />
       <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
 
-      <icon-text-card :icon="icons.faRadio" text="Live" link="live" />
+      <icon-text-card :icon="icons.faRadio" text="Jukebox" link="jukebox" />
 
       <icon-text-card
         :icon="icons.faCalculator"
