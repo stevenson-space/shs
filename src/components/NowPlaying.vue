@@ -1,17 +1,17 @@
 <template>
   <div class="main">
-    <img class="album-art" src="https://c.neevacdn.net/image/fetch/s--hZWQ4USi--/https%3A//f4.bcbits.com/img/a4171388314_10.jpg?savepath=a4171388314_10.jpg" />
+    <img class="album-art" v-if="song.album != 'NO_ART'" :src="require(`@/assets/music/album/${song.album}`)" />
     <div class="song-info">
-      <p class="song-title">My Song</p>
+      <p class="song-title">{{song.name}}</p>
       <p class="song-bullet">&bull;</p>
-      <p class="song-artist">Andrew Wolf, 2025</p>
+      <p class="song-artist">{{song.artist}}, {{song.year}}</p>
     </div>
     <div class="controls">
       <button class="control-button">
         <font-awesome-icon :icon="icons.faStepBackward" />
       </button>
-      <button @click="playing ? play() : pause(); playing = !playing" class="control-button play-button">
-        <font-awesome-icon :icon="playing ? icons.faPlay : icons.faPause" />
+      <button @click="playing ? pause() : play(); playing = !playing" class="control-button play-button">
+        <font-awesome-icon :icon="playing ? icons.faPause : icons.faPlay" />
       </button>
       <button class="control-button">
         <font-awesome-icon :icon="icons.faStepForward" />
@@ -32,46 +32,64 @@ import { faStepBackward, faStepForward, faPlay, faPause } from '@fortawesome/fre
 import { Howl, Howler } from 'howler';
 
 export default {
+  props: {
+    song: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       icons: {
         faStepBackward, faStepForward, faPlay, faPause,
       },
-      playing: true,
+      playing: false,
       percentFinished: 0,
       currentTimePlaying: 0,
       totalSongTime: 0,
       currentSong: null,
+      songId: 0,
     };
+  },
+  watch: {
+    song(newSong, oldSong) {
+      console.log('asdf');
+      this.currentSong.unload();
+      this.playing = false;
+      this.percentFinished = 0;
+      this.currentTimePlaying = 0;
+      this.totalSongTime = 0;
+      this.currentSong = new Howl({
+        src: [`/music/${newSong.file}`],
+        format: ['mp3'],
+        volume: 1,
+      });
+    },
   },
   mounted() {
     this.currentSong = new Howl({
-      src: ['https://ia803105.us.archive.org/14/items/rickrolld_201911/RickRoll%27D.mp3'],
+      src: [`/music/${this.song.file}`],
       format: ['mp3'],
       volume: 1,
-      onplay: () => {
-        this.currentSong.fade(0, 1, 500);
-      },
-      onpause: () => {
-        this.currentSong.fade(1, 0, 500);
-      },
     });
-    setInterval(() => this.updateProgressBar(), 100);
   },
   methods: {
     play() {
-      this.currentSong.play();
+      if (this.songId === 0) {
+        this.songId = this.currentSong.play();
+        setInterval(() => this.updateProgressBar(), 100);
+      } else this.currentSong.play(this.songId);
       this.currentSong.fade(0, 1, 75);
     },
     async pause() {
-      this.currentSong.fade(1, 0, 200);
+      this.currentSong.fade(1, 0, 200, this.songId);
       await this.sleep(200);
       this.currentSong.pause();
     },
     updateProgressBar() {
       this.percentFinished = (this.currentSong.seek() / this.currentSong.duration()) * 100;
-      this.currentTimePlaying = this.currentSong.seek();
-      this.totalSongTime = this.currentSong.duration();
+      this.currentTimePlaying = this.currentSong.seek(this.songId);
+      this.totalSongTime = this.currentSong.duration(this.songId);
     },
     formatTime(seconds) {
       const minutes = Math.floor(seconds / 60);
@@ -91,7 +109,6 @@ export default {
 
     .progress
       display: flex
-
       .progress-text
         font-size: 0.8em
         font-weight: bold
@@ -113,7 +130,7 @@ export default {
 
     .album-art
       display: block
-      margin-top: 10px
+      margin-top: 0px
       width: 300px
       height: 300px
       object-fit: cover

@@ -5,9 +5,17 @@
       <div class="main">
         <home-link class="home-link" :invert="false" />
         <div class="inner-background">
-          <h1 class="title"><font-awesome-icon class="icon" :icon="faRadio" /> Meet Jukebox</h1>
+          <h1 class="title"><font-awesome-icon class="icon" :icon="icons.faRadio" /> Meet Jukebox</h1>
           <p class="subtitle">Discover original music from Stevenson students.</p>
-          <NowPlaying />
+          <NowPlaying :song="currentSong" />
+          <div class="song-list" v-for="(song, index) in songs" :key="index">
+            <button @click="setSongOf(index)" class="play-button">
+              <font-awesome-icon :icon="icons.faPlay" />
+            </button>
+            <p class="song-title">{{song.name}}</p>
+            <p class="song-bullet">&bull;</p>
+            <p class="song-artist">{{song.artist}}, {{song.year}}</p>
+          </div>
         </div>
       </div>
   </div>
@@ -16,16 +24,30 @@
 <script>
 import HomeLink from '@/components/HomeLink.vue';
 import NowPlaying from '@/components/NowPlaying.vue';
+import songs from '@/data/music.json';
 import {
   faRadio,
+  faPlay,
 } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   components: { HomeLink, NowPlaying },
   data() {
     return {
-      faRadio,
+      icons: {
+        faRadio, faPlay,
+      },
+      currentSong: songs[0],
+      songs,
     };
+  },
+  mounted() {
+    console.log(this.songs[0]);
+  },
+  methods: {
+    setSongOf(index) {
+      this.currentSong = this.songs[index];
+    },
   },
 };
 </script>
@@ -71,7 +93,7 @@ export default {
     .subtitle
       text-align: left
       font-size: 1.5em
-      margin: 10px 0 35px 15px
+      margin: 10px 0 0 15px
 
     .home-link
       position: absolute
@@ -79,4 +101,31 @@ export default {
       top: 30px
       +mobile
         top: 20px
+
+    .song-list
+      display: flex
+      justify-content: center
+      .play-button
+        border: 0
+        background-color: transparent
+        margin: 0
+        transition: 0.15s
+        font-size: 1em
+        margin: 3px 5px 0 0
+        color: var(--headerBackgroundColor)
+        &:hover
+          font-size: 1.2em
+          cursor: pointer
+      .song-title
+        font-size: 1em
+        font-weight: bold
+      .song-bullet
+        font-weight: bold
+        font-size: 1em
+        margin: auto 5px auto 5px
+        color: var(--secondary)
+      .song-artist
+        font-size: 1em
+        font-weight: bold
+        color: var(--secondary)
 </style>
