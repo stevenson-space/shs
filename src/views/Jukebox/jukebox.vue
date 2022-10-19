@@ -18,7 +18,7 @@
               <button class="control-button">
                 <font-awesome-icon :icon="icons.faStepBackward" />
               </button>
-              <button @click="playing ? pause() : play(); playing = !playing" class="control-button play-button">
+              <button @click="playing ? pause() : play()" class="control-button play-button">
                 <font-awesome-icon :icon="playing ? icons.faPause : icons.faPlay" />
               </button>
               <button class="control-button">
@@ -66,37 +66,54 @@ export default {
         faRadio, faPlay, faStepBackward, faStepForward, faPause,
       },
       currentSong: songs[0],
+      playing: false,
+      percentFinished: 0,
+      currentTimePlaying: 0,
+      totalSongTime: 0,
       songs,
     };
   },
   mounted() {
     const fileFormatRegex = /\.[0-9a-z]+$/i;
     for (const song of songs) {
+      console.log(song.file.match(fileFormatRegex)[0]);
       song.howler = new Howl({
         src: [`/music/${song.file}`],
-        format: [song.file.match(fileFormatRegex)[0]],
-        volume: 1,
+        format: ['.mp3'],
+        html5: true,
+        volume: 0.5,
       });
+      song.id = 0;
     }
   },
   methods: {
     setSongOf(index) {
+      this.currentSong.id = this.currentSong.howler.pause();
       this.currentSong = this.songs[index];
+      this.play();
     },
     play() {
-      this.currentSong.howler.play();
-      setInterval(() => this.updateProgressBar(), 100);
-      this.currentSong.howler.fade(0, 1, 75);
+      console.log(this.currentSong.id);
+      if (this.currentSong.id === 0) {
+        this.currentSong.id = this.currentSong.howler.play();
+      } else this.currentSong.howler.play(this.currentSong.id);
+      this.currentSong.progressBar = setInterval(() => this.updateProgressBar(), 100);
+      this.currentSong.howler.fade(0, 0.5, 1);
+      this.playing = true;
     },
     async pause() {
-      this.currentSong.howler.fade(1, 0, 200, this.songId);
+      this.playing = false;
+      clearInterval(this.currentSong.progressBar);
+      // this.currentSong.howler.fade(0.5, 0, 200, this.songId);
       await this.sleep(200);
       this.currentSong.howler.pause();
     },
     updateProgressBar() {
-      this.percentFinished = (this.currentSong.howler.seek() / this.currentSong.howler.duration()) * 100;
-      this.currentTimePlaying = this.currentSong.howler.seek();
-      this.totalSongTime = this.currentSong.howler.duration();
+      const seek = this.currentSong.howler.seek();
+      const duration = this.currentSong.howler.duration();
+      this.percentFinished = (seek / duration) * 100;
+      this.currentTimePlaying = seek;
+      this.totalSongTime = duration;
     },
     formatTime(seconds) {
       const minutes = Math.floor(seconds / 60);
@@ -165,6 +182,8 @@ export default {
       .progress
         display: flex
         .progress-text
+          margin-left: auto
+          margin-right: auto
           font-size: 0.8em
           font-weight: bold
           color: var(--textColor)
@@ -174,7 +193,7 @@ export default {
           margin: 15px auto auto auto
           positon: absolute
           text-align: center
-          background-color: var(--tertiary)
+          background-color: #BCBCBC//var(--tertiary)
           border-radius: 10px
         .progress-bar-fill
           height: 15px
@@ -233,7 +252,7 @@ export default {
           color: white
           &:hover
             color: white
-            font-size: 2.6em
+            // font-size: 2.6em
             cursor: pointer
             box-shadow: 0 0 10px 0 var(--tertiary)
 
