@@ -1,7 +1,7 @@
 <template>
   <div class="circle" :class="{ 'full-screen': fullScreenMode }">
     <!-- Easter Egg -->
-    <img @click="masked = !masked" @mouseover="masked = !masked" :src="masked ? require('@/assets/patriot-masked.png') : require('@/assets/patriot-logo-festive.png')" :class="masked ? 'logo' : 'festive-logo'">
+    <img @click="masked = !masked" @mouseover="masked = !masked" :src="masked ? require('@/assets/patriot-masked.png') : require('@/assets/patriot-logo-festive.png')" :class="masked ? 'logo' : 'logo festive-logo'">
     <div v-if="mode === 'current'" class="countdown">
       {{ countdown }}
     </div>
@@ -66,11 +66,7 @@ export default {
     margin-bottom: 5px
     transition: margin .2s, width .2s
   .festive-logo // temporary class that can be removed when the festive logo is out of season
-    width: calc(var(--logo-width) - 10px)
-    margin-left: 0 calc((var(--circle-diameter) - var(--logo-width)) / 2)
-    margin-top: 15px
-    margin-bottom: 5px
-    transition: margin .2s, width .2s
+    width: calc(var(--logo-width) - 10px) !important
   .countdown
     transition: margin-top .2s, font-size .2s
     font-size: 3.5em
