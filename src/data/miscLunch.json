@@ -1,0 +1,69 @@
+{
+    "list": [
+        {
+            "Grille": [
+                "Hamburger",
+                "Cheeseburger",
+                "Chicken Tenders",
+                "Black Bean Burger",
+                "Turkey Burger",
+                "Fries"
+            ],
+            "Pizza": [
+                "Cheese",
+                "Pepperoni",
+                "Sausage",
+                "Specialty Pizza",
+                "Cheese Bread Sticks"
+            ]
+        },
+        {
+            "PWC Jazzmans": [
+                "Acai Bowls",
+                "Salads",
+                "Grains",
+                "Wraps",
+                "Sandwitches",
+                "Fruit Cup",
+                "Yogurt",
+                "Antipasto Box",
+                "Protein Box",
+                "Bubble Tea"
+            ],
+            "Coffee and Tea": [
+                "Coffee",
+                "Latte",
+                "Mocha",
+                "Americano",
+                "Cappuccino",
+                "Hot Chocolate",
+                "Hot Tea"
+            ]
+        },
+        {
+            "Sides": [
+                "Grapes and Cheese",
+                "Fruit",
+                "Hummus",
+                "Veggie Cup",
+                "Pudding",
+                "Jell-O",
+                "Yogurt",
+                "PB&J",
+                "Hard Boiled Egg"
+            ],
+            "Beverages": [
+                "Assorted Sodas",
+                "Water",
+                "Pure Leaf Tea",
+                "Gatorade",
+                "Life Water",
+                "Naked Juice",
+                "Tropicana Juice",
+                "Izzi Juice Can",
+                "Sparkling Water",
+                "Smoothies"
+            ]
+        }
+    ]
+}
