@@ -6,7 +6,7 @@
          <what-is-this>Stevenson.Space relies on quality data dispayed by Stevenson's lunch website. We will promptly restore lunch functionality once data is provided there.</what-is-this>
     </div>
     <div v-else>
-      <div v-if="isMorning" class="lunch">
+      <div v-if="isMorning" class="breakfast">
         <div class="name">Ala Carte Breakfast</div>
         <div v-for="item in alBreakfast" :key="item" class="item">
           {{ item }}
@@ -18,14 +18,14 @@
           {{ item }}
         </div>
       </div>
-      <div v-for="(items, name) in mData" :key="name" class="exLunch">
+      <div v-for="(items, name) in miscLunch" :key="name" class="exLunch">
         <div class="name">{{ name }}</div>
         <div v-for="item in items" :key="item" class="item">
           {{ item }}
         </div>
       </div>
     </div>
-    <p>{{isExpanded}}</p>
+    <p>{{ testDate }}</p>
     <div class="arrow-container">
       <font-awesome-icon
         v-show="(expandNums < 3)"
@@ -51,6 +51,7 @@ import WhatIsThis from '@/components/WhatIsThis.vue';
 import { mapState } from 'pinia';
 import useScheduleStore from '@/stores/schedules';
 import miscData from '@/data/miscLunch.json';
+import { dateToSeconds } from '@/utils/util';
 
 export default {
   components: { Card, WhatIsThis },
@@ -70,21 +71,22 @@ export default {
     lunch() {
       return getLunch(this.date);
     },
+    testDate() {
+      return dateToSeconds(this.date);
+    },
     isMorning() {
-      const currentDate = new Date();
-      const currTime = currentDate.getHours() * 100 + currentDate.getMinutes();
-      if (currTime < 830) {
+      if (dateToSeconds(this.date) < 30600) { // 30600: Seconds to 8:30 AM
         return true;
       }
       return false;
     },
-    mData() {
-      const x = miscData.list;
-      let fList = {};
+    miscLunch() {
+      const x = miscData.menuGroups;
+      let arrangedData = {};
       for (let i = 0; i < this.expandNums; i++) {
-        fList = { ...fList, ...x[i] };
+        arrangedData = { ...arrangedData, ...x[i] };
       }
-      return fList;
+      return arrangedData;
     },
   },
   methods: {
@@ -114,6 +116,9 @@ export default {
   text-align: center
   margin-bottom: 4px
 
+.breakfast
+  border-top: var(--color) 1.5px solid
+  padding: 10px 0
 .lunch
   border-top: var(--color) 1.5px solid
   padding: 10px 0
@@ -132,6 +137,7 @@ export default {
   text-align: center
   margin: auto
   margin-top: 5px
+
 .arrow-container
   display: flex
   justify-content: center
