@@ -25,7 +25,6 @@
         </div>
       </div>
     </div>
-    <p>{{ testDate }}</p>
     <div class="arrow-container">
       <font-awesome-icon
         v-show="(expandNums < 3)"
