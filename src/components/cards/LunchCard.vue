@@ -8,7 +8,7 @@
     <div v-else>
       <div v-if="isMorning" class="breakfast">
         <div class="name">Ala Carte Breakfast</div>
-        <div v-for="item in alBreakfast" :key="item" class="item">
+        <div v-for="item in alaCarteBreakfast" :key="item" class="item">
           {{ item }}
         </div>
       </div>
@@ -62,7 +62,7 @@ export default {
         faChevronUp,
       },
       expandNums: 0,
-      alBreakfast: ['Bacon', 'Sausage', 'Potatoes', 'Eggs'],
+      alaCarteBreakfast: ['Bacon', 'Sausage', 'Potatoes', 'Eggs'],
     };
   },
   computed: {
