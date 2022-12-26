@@ -1,6 +1,31 @@
 {
     "menuGroups": [
         {
+            "Sides": [
+                "Grapes and Cheese",
+                "Fruit",
+                "Hummus",
+                "Veggie Cup",
+                "Pudding",
+                "Jell-O",
+                "Yogurt",
+                "PB&J",
+                "Hard Boiled Egg"
+            ],
+            "Beverages": [
+                "Assorted Sodas",
+                "Water",
+                "Pure Leaf Tea",
+                "Gatorade",
+                "Life Water",
+                "Naked Juice",
+                "Tropicana Juice",
+                "Izzi Juice Can",
+                "Sparkling Water",
+                "Smoothies"
+            ]
+        },
+        {
             "Grill": [
                 "Hamburger",
                 "Cheeseburger",
@@ -38,31 +63,6 @@
                 "Cappuccino",
                 "Hot Chocolate",
                 "Hot Tea"
-            ]
-        },
-        {
-            "Sides": [
-                "Grapes and Cheese",
-                "Fruit",
-                "Hummus",
-                "Veggie Cup",
-                "Pudding",
-                "Jell-O",
-                "Yogurt",
-                "PB&J",
-                "Hard Boiled Egg"
-            ],
-            "Beverages": [
-                "Assorted Sodas",
-                "Water",
-                "Pure Leaf Tea",
-                "Gatorade",
-                "Life Water",
-                "Naked Juice",
-                "Tropicana Juice",
-                "Izzi Juice Can",
-                "Sparkling Water",
-                "Smoothies"
             ]
         }
     ]
