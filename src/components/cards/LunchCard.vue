@@ -140,7 +140,6 @@ export default {
 .arrow-container
   display: flex
   justify-content: center
-
   .arrow
     margin: -3px 10px 5px 10px
     font-size: 1.75em
