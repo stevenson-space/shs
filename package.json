@@ -7,7 +7,7 @@
     "serve": "vite serve",
     "prebuild": "node scrapers/events.js",
     "build": "vite build",
-    "lint": "vue-cli-service lint"
+    "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore --fix src"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
