@@ -29,10 +29,10 @@ import themeCircle from '@/views/Colors/ThemeCircle.vue';
 import themes from '@/data/themes.json';
 import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
 import WhatIsThis from '@/components/WhatIsThis.vue';
-import useThemeStore from '@/stores/themes';
-import useScheduleStore from '@/stores/schedules';
 import { mapState, mapActions } from 'pinia';
 import { defineComponent } from 'vue';
+import useThemeStore from '@/stores/themes';
+import useScheduleStore from '@/stores/schedules';
 import { MapStateToComputed, Theme } from '@/utils/types';
 
 type ThemeStoreState = {

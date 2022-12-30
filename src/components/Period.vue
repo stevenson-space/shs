@@ -47,8 +47,8 @@
   </div>
 </template>
 <script>
-import Bell from '@/utils/bell';
 import { mapState } from 'pinia';
+import Bell from '@/utils/bell';
 import { dateToSeconds, periodToSeconds } from '@/utils/util';
 import useScheduleStore from '@/stores/schedules';
 

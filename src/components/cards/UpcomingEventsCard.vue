@@ -40,11 +40,11 @@
 
 <script>
 import { faChevronDown, faChevronUp, faFlag } from '@fortawesome/free-solid-svg-icons';
-import Bell from '@/utils/bell';
 import Card from '@/components/Card.vue';
 import EventChip from '@/components/EventChip.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import { mapState } from 'pinia';
+import Bell from '@/utils/bell';
 import useScheduleStore from '@/stores/schedules';
 
 function getNextEvent(startDate) {

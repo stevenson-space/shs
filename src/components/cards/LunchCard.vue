@@ -15,10 +15,10 @@
 </template>
 
 <script>
-import getLunch from '@/utils/lunch';
 import Card from '@/components/Card.vue';
 import WhatIsThis from '@/components/WhatIsThis.vue';
 import { mapState } from 'pinia';
+import getLunch from '@/utils/lunch';
 import useScheduleStore from '@/stores/schedules';
 
 export default {

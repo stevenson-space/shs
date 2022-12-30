@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import useAuthenticationStore from '@/stores/authentication';
 import { mapActions, mapState } from 'pinia';
 import PlainHeader from '@/components/PlainHeader.vue';
 import ClientOAuth2 from 'client-oauth2';
 import queryString from 'query-string';
+import useAuthenticationStore from '@/stores/authentication';
 
 export default {
   components: { PlainHeader },

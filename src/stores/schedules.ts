@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia';
 import { RouteLocationNormalized } from 'vue-router';
+import officialSchedules from '@/data/schedules.json';
 import { CustomSchedules, Schedule, ScheduleCollection } from '@/utils/types';
 import { tryParseJSON, getNameWithoutConflicts } from '@/utils/util';
 import Bell from '@/utils/bell';
-import officialSchedules from '@/data/schedules.json';
 
 interface State {
   customSchedules: CustomSchedules,

@@ -33,8 +33,8 @@
 <script>
 import Card from '@/components/Card.vue';
 import Period from '@/components/Period.vue';
-import { isBellOnSchoolDay } from '@/utils/bell';
 import { mapState } from 'pinia';
+import { isBellOnSchoolDay } from '@/utils/bell';
 import useScheduleStore from '@/stores/schedules';
 
 export default {
