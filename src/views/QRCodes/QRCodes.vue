@@ -13,7 +13,7 @@
         <div id="qr-code" :class="{ 'show' : showQR }">
            <QRCodeVue3
           :key="componentKey"
-          :image="require('@/assets/QRCodeLogo.png')"
+          :image="QRCodeLogo"
           :width="options.width"
           :margin="options.margin"
           :height="options.height"
@@ -52,6 +52,8 @@ import QRCodeVue3 from 'space-vue3-qrcode';
 import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ColorSelector from '@/views/Colors/ColorSelector.vue';
+
+import QRCodeLogo from '@/assets/QRCodeLogo.png';
 
 export default {
   components: {
@@ -100,6 +102,7 @@ export default {
       componentKey: 0,
       enteredQRCode: '',
       errorMessage: '',
+      QRCodeLogo,
     };
   },
   mounted() {

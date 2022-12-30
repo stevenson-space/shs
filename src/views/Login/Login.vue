@@ -67,7 +67,7 @@ export default {
     } else {
       const googleAuth = new ClientOAuth2({
         clientId: this.clientID, // google client ID for oauth
-        clientSecret: process.env.VUE_APP_GOOGLE_OAUTH_CLIENT_SECRET,
+        clientSecret: import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_SECRET,
         authorizationUri: this.authEndpoint, // google endpoint
         redirectUri: window.location.origin + this.$route.path, // redirect to current URL
         scopes: ['email'], // really only need email access

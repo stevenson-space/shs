@@ -14,12 +14,12 @@ interface State {
 
 export default defineStore('themes', {
   state: (): State => ({
-    color: process.env.VUE_APP_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1].suggestedColor : themes[0].suggestedColor,
-    theme: process.env.VUE_APP_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1] : themes[0],
+    color: import.meta.env.VITE_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1].suggestedColor : themes[0].suggestedColor,
+    theme: import.meta.env.VITE_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1] : themes[0],
   }),
   actions: {
     initializeTheme(): void {
-      if (localStorage.color && process.env.VUE_APP_EDIT_COLORS !== 'true') {
+      if (localStorage.color && import.meta.env.VITE_EDIT_COLORS !== 'true') {
         this.setColor(localStorage.color);
         GASet({ user_properties: {
           color: localStorage.color,
@@ -29,7 +29,7 @@ export default defineStore('themes', {
           color: 'unset',
         } });
       }
-      if (localStorage.theme && process.env.VUE_APP_EDIT_COLORS !== 'true') {
+      if (localStorage.theme && import.meta.env.VITE_EDIT_COLORS !== 'true') {
         const data:ThemeData = { theme: JSON.parse(localStorage.theme), useThemeColor: false };
         this.setTheme(data);
       }
