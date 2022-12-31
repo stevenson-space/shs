@@ -123,9 +123,9 @@ export default {
         faCompress,
         faDroplet,
         faDropletSlash,
-        heart,
-        snowflake,
       },
+      heart,
+      snowflake,
       currentTime: 0, // seconds since 12:00am
       interval: null,
       colored: true,
