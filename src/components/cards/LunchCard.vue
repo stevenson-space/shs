@@ -6,44 +6,37 @@
          <what-is-this>Stevenson.Space relies on quality data dispayed by Stevenson's lunch website. We will promptly restore lunch functionality once data is provided there.</what-is-this>
     </div>
     <div v-else>
-      <div v-if="isMorning" class="breakfast">
-        <div class="name">Ala Carte Breakfast</div>
-        <div v-for="item in alaCarteBreakfast" :key="item" class="item">
-          {{ item }}
-        </div>
-      </div>
       <div v-for="(items, name) in lunch" :key="name" class="lunch">
         <div class="name">{{ name }}</div>
         <div v-for="item in items" :key="item" class="item">
           {{ item }}
         </div>
       </div>
-      <div v-for="(items, name) in miscLunch" :key="name" class="exLunch">
-        <div class="name">{{ name }}</div>
-        <div v-for="item in items" :key="item" class="item">
-          {{ item }}
+    </div>
+    <div class="button-container">
+      <font-awesome-icon
+        class="expand-button"
+        :icon="expandIcon"
+        @mousedown="showModal"
+      />
+    </div>
+    <div v-show="modalShowing" id="expandedLunch" class="modal">
+      <div class="modal-content">
+        <span class="close" @mousedown="hideModal">&times;</span>
+        <div class="text-container" v-for="(items,name) in arrangedData" :key="name">
+          <div class="name">{{ name }}</div>
+          <div v-for="item in items" :key="item" class="item">
+            {{ item }}
+          </div>
         </div>
       </div>
-    </div>
-    <div class="arrow-container">
-      <font-awesome-icon
-        v-show="(expandNums < 3)"
-        :icon="icons.faChevronDown"
-        class="expand arrow"
-        @mousedown="expand"
-      />
-      <font-awesome-icon
-        v-show="(expandNums > 0)"
-        :icon="icons.faChevronUp"
-        class="collapse arrow"
-        @mousedown="condense"
-      />
     </div>
   </card>
 </template>
 
 <script>
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+// Unsure about this icon, can change later
+import { faExpand } from '@fortawesome/free-solid-svg-icons';
 import getLunch from '@/utils/lunch';
 import Card from '@/components/Card.vue';
 import WhatIsThis from '@/components/WhatIsThis.vue';
@@ -57,12 +50,9 @@ export default {
   data() {
     return {
       noLunchData: false,
-      icons: {
-        faChevronDown,
-        faChevronUp,
-      },
-      expandNums: 0,
-      alaCarteBreakfast: ['Bacon', 'Sausage', 'Potatoes', 'Eggs'],
+      expandIcon: faExpand,
+      modalShowing: false,
+      arrangedData: miscData.menuGroups,
     };
   },
   computed: {
@@ -70,34 +60,13 @@ export default {
     lunch() {
       return getLunch(this.date);
     },
-    testDate() {
-      return dateToSeconds(this.date);
-    },
-    isMorning() {
-      if (dateToSeconds(this.date) < 30600) { // 30600: Seconds to 8:30 AM
-        return true;
-      }
-      return false;
-    },
-    miscLunch() {
-      const x = miscData.menuGroups;
-      let arrangedData = {};
-      for (let i = 0; i < this.expandNums; i++) {
-        arrangedData = { ...arrangedData, ...x[i] };
-      }
-      return arrangedData;
-    },
   },
   methods: {
-    expand() {
-      if (this.expandNums < 4) {
-        this.expandNums += 1;
-      }
+    showModal() {
+      this.modalShowing = true;
     },
-    condense() {
-      if (this.expandNums > 0) {
-        this.expandNums -= 1;
-      }
+    hideModal() {
+      this.modalShowing = false;
     },
   },
 };
@@ -114,18 +83,9 @@ export default {
 .no-data
   text-align: center
   margin-bottom: 4px
-
-.breakfast
-  border-top: var(--color) 1.5px solid
-  padding: 10px 0
 .lunch
   border-top: var(--color) 1.5px solid
   padding: 10px 0
-
-.exLunch
-  border-top: var(--color) 1.5px solid
-  padding: 10px 0
-
 .name
   color: var(--color)
   font-weight: bold
@@ -137,13 +97,52 @@ export default {
   margin: auto
   margin-top: 5px
 
-.arrow-container
+.button-container
   display: flex
   justify-content: center
-  .arrow
-    margin: -3px 10px 5px 10px
-    font-size: 1.75em
-    cursor: pointer
-    color: var(--color)
+  border-top: var(--color) 1.5px solid
 
+  .expand-button
+    padding: 15px
+    height: 25px
+    width: 25px
+    transition: padding 200ms, width 200ms, height 200ms
+
+  .expand-button:hover
+    padding: 13px
+    height: 29px
+    width: 29px
+
+.modal
+  position: fixed
+  z-index: 1
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  overflow: auto
+  background-color: rgb(0,0,0)
+  background-color: rgba(0,0,0,0.4)
+
+  .modal-content
+    background-color: white
+    margin: 15% auto
+    padding: 5px 20px
+    border: 3px solid var(--color)
+    width: 80%
+
+    .close
+      font-size: 40px
+      color: black
+      opacity: 0.5
+      text-decoration: none
+      transition: opacity 300ms
+
+    .close:hover
+      opacity: 1
+      cursor: pointer
+
+    .text-container
+      border-top: var(--color) 1.5px solid
+      padding: 10px 0
 </style>
