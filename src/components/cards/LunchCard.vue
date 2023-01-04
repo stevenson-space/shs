@@ -22,7 +22,10 @@
     </div>
     <div v-show="modalShowing" id="expandedLunch" class="modal">
       <div class="modal-content">
-        <span class="close" @mousedown="hideModal">&times;</span>
+        <div class="top-bar">
+          <span class="close" @mousedown="hideModal">&times;</span>
+          <p>Expanded Menu</p>
+        </div>
         <div class="text-container" v-for="(items,name) in arrangedData" :key="name">
           <div class="name">{{ name }}</div>
           <div v-for="item in items" :key="item" class="item">
@@ -130,18 +133,28 @@ export default {
     border: 3px solid var(--color)
     width: 80%
 
-    .close
-      font-size: 40px
-      color: black
-      opacity: 0.5
-      text-decoration: none
-      transition: opacity 300ms
+    .top-bar
+      display: flex
+      .close
+        font-size: 40px
+        color: black
+        opacity: 0.5
+        text-decoration: none
+        transition: opacity 300ms
 
-    .close:hover
-      opacity: 1
-      cursor: pointer
+      .close:hover
+        opacity: 1
+        cursor: pointer
+
+      p
+        font-size: 1.5em
+        margin: 10px
+        left: 50%
+        position: absolute
+        transform: translate(-50%,0)
 
     .text-container
       border-top: var(--color) 1.5px solid
       padding: 10px 0
+
 </style>
