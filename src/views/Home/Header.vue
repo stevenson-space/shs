@@ -72,16 +72,18 @@
     />
 
     <announcements :full-screen-mode="fullScreenMode" />
-    <snow v-if="theme.name.toLowerCase() == 'winter'" :images="[require('@/assets/occasions/snowflake.png')]"/>
-    <snow v-if="theme.name.includes('Valentine')" :images="[require('@/assets/occasions/heart.svg')]"/>
+    <snow v-if="theme.name.toLowerCase() == 'winter'" :images="[snowflake]"/>
+    <snow v-if="theme.name.includes('Valentine')" :images="[heart]"/>
 
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'pinia';
-import useScheduleStore from '@/stores/schedules';
-import useThemeStore from '@/stores/themes';
+
+import heart from '@/assets/occasions/heart.svg';
+import snowflake from '@/assets/occasions/snowflake.png';
+
 import {
   faChevronRight,
   faChevronLeft,
@@ -90,10 +92,12 @@ import {
   faDroplet,
   faDropletSlash,
 } from '@fortawesome/free-solid-svg-icons';
-
-import Bell from '@/utils/bell';
 import Dropdown from '@/components/Dropdown.vue';
 import Snow from '@/components/Snow.vue';
+import useScheduleStore from '@/stores/schedules';
+import useThemeStore from '@/stores/themes';
+
+import Bell from '@/utils/bell';
 import { dateToSeconds, periodToSeconds } from '@/utils/util';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
@@ -120,6 +124,8 @@ export default {
         faDroplet,
         faDropletSlash,
       },
+      heart,
+      snowflake,
       currentTime: 0, // seconds since 12:00am
       interval: null,
       colored: true,

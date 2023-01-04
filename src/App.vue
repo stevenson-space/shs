@@ -42,7 +42,7 @@ export default {
     },
   },
   created() {
-    if (process.env.NODE_ENV === 'production') {
+    if (import.meta.env.NODE_ENV === 'production') {
       console.log("welcome to stevenson.space \n\nFun Facts:\n1. The Apollo astronauts' footprints on the moon will probably stay there for at least 100 million years\n2. Our solar system is 4.5 billion years old\n3. The sun burns around 5 billion kg of hydrogen every second and will continue to burn for the next 4+ billion years\n4. Physics C is a cool class!\n\nhttps://github.com/stevenson-space/shs");
     }
     this.initializeSchedule(this.$route);

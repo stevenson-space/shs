@@ -9,8 +9,8 @@
   </div>
 </template>
 <script lang="ts">
-import { Theme } from '@/utils/types';
 import { defineComponent, PropType } from 'vue';
+import { Theme } from '@/utils/types';
 
 export default defineComponent({
   props: {
