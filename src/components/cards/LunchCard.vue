@@ -38,7 +38,6 @@
 </template>
 
 <script>
-// Unsure about this icon, can change later
 import { faExpand } from '@fortawesome/free-solid-svg-icons';
 import getLunch from '@/utils/lunch';
 import Card from '@/components/Card.vue';
