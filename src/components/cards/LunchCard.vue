@@ -24,7 +24,7 @@
       <div class="modal-content">
         <div class="top-bar">
           <span class="close" @mousedown="hideModal">&times;</span>
-          <p>Expanded Menu</p>
+          <p>Full Menu</p>
         </div>
         <div class="text-container" v-for="(items,name) in arrangedData" :key="name">
           <div class="name">{{ name }}</div>
