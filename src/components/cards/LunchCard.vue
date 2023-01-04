@@ -43,7 +43,6 @@ import WhatIsThis from '@/components/WhatIsThis.vue';
 import { mapState } from 'pinia';
 import useScheduleStore from '@/stores/schedules';
 import miscData from '@/data/miscLunch.json';
-import { dateToSeconds } from '@/utils/util';
 
 export default {
   components: { Card, WhatIsThis },
