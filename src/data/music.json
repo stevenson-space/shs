@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Never Gonna Give You Up",
+    "artist": "Jane Doe",
+    "year": "2025",
+    "album": "NEVER_JANE_DOE.jpeg",
+    "file": "NEVER_JANE_DOE.mp3"
+  },
+  {
+    "name": "CHANGE",
+    "artist": "Jane Doe",
+    "year": "2025",
+    "album": "NO_ART",
+    "file": "CHANGE_JANE_DOE.mp3"
+  }
+]
