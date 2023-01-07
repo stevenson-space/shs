@@ -11,7 +11,6 @@
             <img class="album-art" v-if="songs[currentSongIndex].album" :src="`/music/art/${songs[currentSongIndex].album}`" />
             <div class="song-info">
               <p class="song-title">{{songs[currentSongIndex].name}}</p>
-              <p class="song-bullet">&bull;</p>
               <p class="song-artist">{{songs[currentSongIndex].artist ? songs[currentSongIndex].artist : "Anonymous"}}, {{songs[currentSongIndex].year}}</p>
             </div>
             <div class="controls">
@@ -176,7 +175,7 @@ export default {
       border-radius: 20px
       top: 100px
       overflow: hidden
-      margin-bottom: 25px
+      margin-bottom: 150px
       +mobile
         top: 75px
 
@@ -239,19 +238,16 @@ export default {
         border-radius: 10px
 
       .song-info
-        display: flex
-        justify-content: center
-
+        // display: flex
+        text-align: center
+        margin: 0 0 0 0
         .song-title
           font-size: 1.5em
           font-weight: bold
-        .song-bullet
-          font-weight: bold
-          font-size: 1.55em
-          margin: auto 10px auto 10px
-          color: var(--secondary)
+          margin-bottom: 5px
         .song-artist
           font-size: 1.5em
+          margin-top: 5px
           font-weight: bold
           color: var(--secondary)
 
