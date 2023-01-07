@@ -23,8 +23,6 @@
       <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" :invert="true" />
       <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
 
-      <icon-text-card :icon="icons.faRadio" text="Jukebox" link="jukebox" />
-
       <icon-text-card
         :icon="icons.faCalculator"
         text="GPA Calculator"
@@ -60,7 +58,6 @@ import {
   faGear,
   faHourglass,
   faQrcode,
-  faRadio,
 } from '@fortawesome/free-solid-svg-icons';
 import { mapActions } from 'pinia';
 import CardContainer from '@/components/CardContainer.vue';
@@ -108,7 +105,6 @@ export default {
         faGear,
         faHourglass,
         faQrcode,
-        faRadio,
       },
       fullScreenMode: false,
     };
