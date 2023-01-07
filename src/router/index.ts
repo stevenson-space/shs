@@ -96,11 +96,6 @@ const routes: Array<RouteRecordRaw> = [
     path: '/getHelp',
     component: GetHelp,
   },
-  {
-    name: 'Jukebox',
-    path: '/jukebox',
-    component: Jukebox,
-  },
 ];
 
 const router = createRouter({
