@@ -47,17 +47,17 @@
 <script>
 
 import { mapState, mapActions } from 'pinia';
-import useScheduleStore from '@/stores/schedules';
 import {
   faPlus, faPencil, faTrashCan, faClockRotateLeft,
 } from '@fortawesome/free-solid-svg-icons';
 
-import Bell from '@/utils/bell';
 import SwitchByDevice from '@/components/SwitchByDevice.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ScheduleCard from '@/components/cards/ScheduleCard.vue';
 import Card from '@/components/Card.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
+import Bell from '@/utils/bell';
+import useScheduleStore from '@/stores/schedules';
 import SettingsSection from './SettingsSection.vue';
 
 export default {

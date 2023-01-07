@@ -62,7 +62,6 @@ import {
   faQrcode,
   faRadio,
 } from '@fortawesome/free-solid-svg-icons';
-import useScheduleStore from '@/stores/schedules';
 import { mapActions } from 'pinia';
 import CardContainer from '@/components/CardContainer.vue';
 import UpcomingEventsCard from '@/components/cards/UpcomingEventsCard.vue';
@@ -77,6 +76,7 @@ import NewThemeCard from '@/components/cards/NewThemeCard.vue';
 import NewFeatureCard from '@/components/cards/NewFeatureCard.vue';
 import SodexoAppreciationCard from '@/components/cards/SodexoAppreciationCard.vue';
 import Confetti from '@/components/cards/ConfettiCard.vue';
+import useScheduleStore from '@/stores/schedules';
 import ScheduleHeader from './Header.vue';
 
 export default {

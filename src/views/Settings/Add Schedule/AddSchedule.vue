@@ -58,12 +58,12 @@
 <script>
 import { faPlus, faPencil } from '@fortawesome/free-solid-svg-icons';
 import { mapState, mapActions } from 'pinia';
-import { getNameWithoutConflicts } from '@/utils/util';
-import useScheduleStore from '@/stores/schedules';
-import Bell from '@/utils/bell';
 import HomeLink from '@/components/HomeLink.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
+import { getNameWithoutConflicts } from '@/utils/util';
+import useScheduleStore from '@/stores/schedules';
+import Bell from '@/utils/bell';
 import ScheduleColumn from './ScheduleColumn.vue';
 import TimePicker from './TimePicker.vue';
 

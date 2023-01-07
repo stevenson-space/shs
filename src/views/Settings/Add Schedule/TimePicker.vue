@@ -48,8 +48,8 @@
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import ScrollSelector from '@/components/ScrollSelector.vue';
 import Checkbox from '@/components/Checkbox.vue';
-import Bell from '@/utils/bell';
 import { defineComponent } from 'vue';
+import Bell from '@/utils/bell';
 
 interface TimePickerPeriod {
   time: string;

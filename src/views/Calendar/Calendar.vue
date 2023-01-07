@@ -28,9 +28,9 @@
 
 <script>
 import { mapState } from 'pinia';
+import allEvents from '@/data/events.json';
 import useScheduleStore from '@/stores/schedules';
 import Bell from '@/utils/bell';
-import allEvents from '@/data/events.json';
 import CalendarMain from './CalendarMain.vue';
 import CalendarMobile from './CalendarMobile.vue';
 import EventPopup from './EventPopup.vue';

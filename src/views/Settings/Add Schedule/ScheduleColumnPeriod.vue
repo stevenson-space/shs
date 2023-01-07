@@ -43,9 +43,9 @@
 
 <script>
 import { faPencil, faXmark } from '@fortawesome/free-solid-svg-icons';
-import Bell from '@/utils/bell';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import Checkbox from '@/components/Checkbox.vue';
+import Bell from '@/utils/bell';
 
 export default {
   components: {

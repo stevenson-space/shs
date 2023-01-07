@@ -1,21 +1,20 @@
 import { createRouter, createWebHistory, RouteRecordRaw, RouteComponent, RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
-import Home from '@/views/Home/Home.vue';
 import useAuthenticationStore from '@/stores/authentication';
 
-const GpaCalculator:RouteComponent = () => import(/* webpackChunkName: "gpacalculator" */'@/views/GpaCalculator/GpaCalculator.vue');
-const BellSchedules:RouteComponent = () => import(/* webpackChunkName: "bellschedules" */'@/views/Bell Schedules/BellSchedules.vue');
-const Calendar:RouteComponent = () => import(/* webpackChunkName: "calendar" */'@/views/Calendar/Calendar.vue');
-const Links:RouteComponent = () => import(/* webpackChunkName: "links" */'@/views/Links/Links.vue');
-const Colors:RouteComponent = () => import(/* webpackChunkName: "colors" */'@/views/Colors/Colors.vue');
-const Settings:RouteComponent = () => import(/* webpackChunkName: "settings" */'@/views/Settings/Settings.vue');
-const Tools:RouteComponent = () => import(/* webpackChunkName: "tools" */'@/views/Tools/Tools.vue');
-const Documents:RouteComponent = () => import(/* webpackChunkName: "documents" */'@/views/Documents/Documents.vue');
-const AddSchedule:RouteComponent = () => import(/* webpackChunkName: "addschedule" */'@/views/Settings/Add Schedule/AddSchedule.vue');
-const Login:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/Login/Login.vue');
-const Code:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/Code/Code.vue');
-const QRCode:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/QRCodes/QRCodes.vue');
-const GetHelp:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/GetHelp/GetHelp.vue');
-const Jukebox:RouteComponent = () => import(/* webpackChunkName: "login" */'@/views/Jukebox/jukebox.vue');
+const Home:RouteComponent = () => import('@/views/Home/Home.vue');
+const GpaCalculator:RouteComponent = () => import('@/views/GpaCalculator/GpaCalculator.vue');
+const BellSchedules:RouteComponent = () => import('@/views/Bell Schedules/BellSchedules.vue');
+const Calendar:RouteComponent = () => import('@/views/Calendar/Calendar.vue');
+const Links:RouteComponent = () => import('@/views/Links/Links.vue');
+const Colors:RouteComponent = () => import('@/views/Colors/Colors.vue');
+const Settings:RouteComponent = () => import('@/views/Settings/Settings.vue');
+const Tools:RouteComponent = () => import('@/views/Tools/Tools.vue');
+const Documents:RouteComponent = () => import('@/views/Documents/Documents.vue');
+const AddSchedule:RouteComponent = () => import('@/views/Settings/Add Schedule/AddSchedule.vue');
+const Login:RouteComponent = () => import('@/views/Login/Login.vue');
+const Code:RouteComponent = () => import('@/views/Code/Code.vue');
+const QRCode:RouteComponent = () => import('@/views/QRCodes/QRCodes.vue');
+const GetHelp:RouteComponent = () => import('@/views/GetHelp/GetHelp.vue');
 
 type EditScheduleProps = {
   scheduleToEdit: string;
@@ -105,7 +104,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition): Position {
     if (savedPosition) {

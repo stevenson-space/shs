@@ -19,12 +19,12 @@
 </template>
 
 <script lang="ts">
-import { MapStateToComputed, Schedule, ScheduleCollection } from '@/utils/types';
 import { mapState, mapActions } from 'pinia';
 import Dropdown from '@/components/Dropdown.vue';
+import { defineComponent } from 'vue';
+import { MapStateToComputed, Schedule, ScheduleCollection } from '@/utils/types';
 import useUserSettingsStore from '@/stores/user-settings';
 import useScheduleStore from '@/stores/schedules';
-import { defineComponent } from 'vue';
 import SettingsSection from './SettingsSection.vue';
 
 type ScheduleStoreTypes = {

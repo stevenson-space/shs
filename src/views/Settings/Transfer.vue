@@ -64,17 +64,17 @@
 
 <script lang="ts">
 import { faUpload, faDownload, faSpinner } from '@fortawesome/free-solid-svg-icons';
-import { CustomSchedules, MapStateToComputed, ScheduleMode, Theme } from '@/utils/types';
 import { mapActions, mapState } from 'pinia';
 import { defineComponent } from 'vue';
-import { tryParseJSON } from '@/utils/util';
-import useThemeStore from '@/stores/themes';
-import useScheduleStore from '@/stores/schedules';
-import useUserSettingsStore from '@/stores/user-settings';
 import RoundedButton from '@/components/RoundedButton.vue';
 import Popup from '@/components/Popup.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import Checkbox from '@/components/Checkbox.vue';
+import { tryParseJSON } from '@/utils/util';
+import useThemeStore from '@/stores/themes';
+import useScheduleStore from '@/stores/schedules';
+import useUserSettingsStore from '@/stores/user-settings';
+import { CustomSchedules, MapStateToComputed, ScheduleMode, Theme } from '@/utils/types';
 import SettingsSection from './SettingsSection.vue';
 
 type transferableSettingOption = 'color' |'theme' |'defaultScheduleMode' | 'grade' | 'customSchedules'
