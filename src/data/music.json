@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Test",
+    "artist": "",
+    "year": "2025",
+    "album": "",
+    "file": "TEST_ANDREW_WOLF.mp3"
+  },
+  {
+    "name": "Never Gonna Give You Up",
+    "artist": "Rick Astley",
+    "year": "2023",
+    "album": "NEVER_RICK_ASTLEY.jpeg",
+    "file": "NEVER_RICK_ASTLEY.mp3"
+  },
+  {
+    "name": "Everlong",
+    "artist": "",
+    "year": "2025",
+    "album": "",
+    "file": "EVERLONG_JANE_DOE.mp3"
+  }
+]
