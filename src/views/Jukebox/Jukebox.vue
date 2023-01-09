@@ -20,7 +20,7 @@
               <button @click="playing ? pause() : play()" class="control-button play-button">
                 <font-awesome-icon :icon="playing ? icons.faPause : icons.faPlay" />
               </button>
-              <button @click="currentSongIndex + 1 <= songs.length && setSongOf(currentSongIndex+1)" class="control-button">
+              <button @click="currentSongIndex + 1 < songs.length && setSongOf(currentSongIndex+1)" class="control-button">
                 <font-awesome-icon :icon="icons.faStepForward" />
               </button>
             </div>
@@ -100,6 +100,11 @@ export default {
         this.playing ? this.pause() : this.play();
       }
     });
+  },
+  async beforeRouteLeave(to, from, next) {
+    // stop current song when leaving page
+    await this.songs[this.currentSongIndex].howler.stop();
+    next();
   },
   methods: {
     setSongOf(index) {
@@ -221,7 +226,7 @@ export default {
           height: 15px
           width: 20%
           background-color: var(--headerBackgroundColor)
-          transition: width 0.1s ease-in-out
+          // transition: width 0.05s ease-in-out
           border-radius: 10px
         .progress-bar-handle
           background-color: var(--headerBackgroundColor)
