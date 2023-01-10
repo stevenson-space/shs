@@ -1,7 +1,7 @@
 <template>
   <div class="circle" :class="{ 'full-screen': fullScreenMode }">
     <!-- Easter Egg -->
-    <img @click="masked = !masked" @mouseover="masked = !masked" :src="masked ? maskedPatriot : festivePatriot" :class="masked ? 'logo' : 'logo festive-logo'">
+    <img @click="masked = !masked" @mouseover="masked = !masked" :src="masked ? maskedPatriot : patriot" class="logo">
     <div v-if="mode === 'current'" class="countdown">
       {{ countdown }}
     </div>
@@ -19,7 +19,7 @@
 <script>
 import { mapState } from 'pinia';
 import maskedPatriot from '@/assets/patriot-masked.png';
-import festivePatriot from '@/assets/patriot-logo-festive.png';
+import patriot from '@/assets/patriot.png';
 import useScheduleStore from '@/stores/schedules';
 
 export default {
@@ -38,7 +38,7 @@ export default {
     return {
       masked: false,
       maskedPatriot,
-      festivePatriot,
+      patriot,
     };
   },
 };
