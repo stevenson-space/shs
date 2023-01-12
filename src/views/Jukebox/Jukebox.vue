@@ -80,7 +80,7 @@ export default {
     for (const song of songs) {
       console.log(song.file.match(fileFormatRegex)[0]);
       song.howler = new Howl({
-        src: [`/music/audio/${song.file}`],
+        src: [`https://pub-a7e350998adb4442a16a5cd2728d6707.r2.dev/${song.file}`], // Cloudflare R2 instance URL
         format: ['.mp3'],
         html5: true,
         volume: 0.5,
