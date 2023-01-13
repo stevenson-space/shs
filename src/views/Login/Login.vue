@@ -12,7 +12,6 @@
 <script>
 import { mapActions, mapState } from 'pinia';
 import PlainHeader from '@/components/PlainHeader.vue';
-import queryString from 'query-string';
 import useAuthenticationStore from '@/stores/authentication';
 
 export default {
