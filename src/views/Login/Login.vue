@@ -12,7 +12,6 @@
 <script>
 import { mapActions, mapState } from 'pinia';
 import PlainHeader from '@/components/PlainHeader.vue';
-import ClientOAuth2 from 'client-oauth2';
 import queryString from 'query-string';
 import useAuthenticationStore from '@/stores/authentication';
 
@@ -27,7 +26,7 @@ export default {
       clientID:
         '176463123594-o7fa9nss5jp84rcabsiso7131717ujm7.apps.googleusercontent.com',
       hostedDomain: 'students.d125.org', // hint domain,
-      authEndpoint: 'https://accounts.google.com/o/oauth2/v2/auth',
+      authEndpoint: 'https://accounts.google.com/o/oauth2/v2/auth?',
       userEndpoint: 'https://www.googleapis.com/oauth2/v2/userinfo',
     };
   },
@@ -37,11 +36,19 @@ export default {
   },
   methods: {
     ...mapActions(useAuthenticationStore, ['setAuthenticated']),
+    reduceHash(hash) {
+      // URLSearchParams does not support hashes, so we need to build our own version
+      return hash.split('&').reduce((res, item) => {
+        const parts = item.split('=');
+        res[parts[0]] = parts[1];
+        return res;
+      }, {});
+    },
   },
   async mounted() {
     // this page is loaded when a) the user is trying to login,
     // or b) google as redirected us back and the hash contains our state and access token
-    const hash = queryString.parse(window.location.hash);
+    const hash = this.reduceHash(window.location.hash.substring(1));
     // we got redireced by google, use the auth token to grab the user's email and verify
     if (hash.state && hash.access_token) {
       // fetch the user endpoint, verify the email, and redirect if it checks out
@@ -65,18 +72,14 @@ export default {
         this.setAuthenticated(false);
       }
     } else {
-      const googleAuth = new ClientOAuth2({
-        clientId: this.clientID, // google client ID for oauth
-        authorizationUri: this.authEndpoint, // google endpoint
-        redirectUri: window.location.origin + this.$route.path, // redirect to current URL
-        scopes: ['email'], // really only need email access
-        state: this.to, // get our current destination back via the state parameter
-      });
-      // go to auth URI, first have to manually add the ?hd parameter though
-      const authURI = googleAuth.token.getUri({
-        query: { hd: this.hostedDomain },
-      });
-      window.location.href = authURI;
+      window.location.href = this.authEndpoint + new URLSearchParams({
+        client_id: this.clientID,
+        redirect_uri: window.location.origin + this.$route.path,
+        response_type: 'token',
+        scope: 'email',
+        state: this.to,
+        hd: this.hostedDomain,
+      }).toString();
     }
   },
 };
