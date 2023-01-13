@@ -179,5 +179,20 @@
         "tertiary": "#555",
         "iconTextCardColor": "white",
         "iconTextCardInvertColor": "var(--color)"
+    },
+    {
+        "name": "Minecraft",
+        "schedule": "1/12/2023-9/22/2025",
+        "message": "The new Minecraft wallpaper created by Dan Rybin!",
+        "suggestedColor": "#1b5e20",
+        "background": "white",
+        "secondaryBackground": "white",
+        "headerBackgroundColor": "var(--color)",
+        "headerScheduleBackgroundColor": "var(--background)",
+        "primary": "black",
+        "secondary": "#333",
+        "tertiary": "#555",
+        "iconTextCardColor": "white",
+        "iconTextCardInvertColor": "var(--color)"
     }
 ]
