@@ -1,9 +1,10 @@
 <template>
-  <timed-card startTime="July 5, 2022" endTime="August 12, 2022">
+  <timed-card startTime="January 18, 2023" endTime="January 31, 2023">
     <div class="container">
       <div class="message">
         <br>
-        Welcome Back to Stevenson.Space! We've been hard at work upgrading to <a href="https://vuejs.org/" target="_blank">Vue 3.0</a> which is a massive undertaking. If you're curious, check out the <a href="https://github.com/stevenson-space/shs/pull/125/files" target="_blank">Pull Request</a>. Please report any issues you find <a target="_blank" href="https://github.com/stevenson-space/shs/issues">here</a> or by <a href="mailto:admin@stevenson.space">email</a>. Thank you!
+        📻 Jukebox, a way to listen to original Stevenson student music, is coming very soon. <a href="https://docs.google.com/forms/d/1ga9PZ6JsmBpUwYB2WVmVW0sE01zKJhISgln2TC4Hgho/edit" target="_blank">Submit your music today!</a>
+        <br>
       </div>
     </div>
   </timed-card>
@@ -37,7 +38,7 @@ a
   .message
     font-size: .85em
     text-align: left
-    padding-bottom: 10px
+    padding-bottom: 20px
     margin: 0 20px
     line-height: 1.6em
     text-align: center
