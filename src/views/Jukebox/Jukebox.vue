@@ -14,7 +14,7 @@
               <p class="song-artist">{{songs[currentSongIndex].artist ? songs[currentSongIndex].artist : "Anonymous"}}, {{songs[currentSongIndex].year}}</p>
             </div>
             <div class="controls">
-              <button @click="currentSongIndex > 0 && setSongOf(currentSongIndex-1)" class="control-button">
+              <button @click="currentSongIndex > 0 && previousSong()" class="control-button">
                 <font-awesome-icon :icon="icons.faStepBackward" />
               </button>
               <button @click="playing ? pause() : play()" class="control-button play-button">
@@ -69,6 +69,7 @@ export default {
       },
       currentSongIndex: 0,
       playing: false,
+      previousSongPressed: false,
       percentFinished: 0,
       currentTimePlaying: 0,
       totalSongTime: 0,
@@ -107,6 +108,16 @@ export default {
     next();
   },
   methods: {
+    previousSong() {
+      // 1 backwards press sets song to beginning, 2 presses skips to previous song
+      if (!this.previousSongPressed) {
+        this.songs[this.currentSongIndex].howler.seek(0);
+        this.previousSongPressed = true;
+      } else {
+        this.setSongOf(this.currentSongIndex - 1);
+        this.previousSongPressed = false;
+      }
+    },
     setSongOf(index) {
       this.songs[this.currentSongIndex].howler.stop();
       this.currentSongIndex = index;
