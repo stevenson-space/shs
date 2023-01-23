@@ -1,0 +1,16 @@
+name = "music-backend"
+main = "src/index.ts"
+compatibility_date = "2023-01-20"
+
+account_id = "eb09a67d16effcedf18472e3926ce09d" # change to your CF account ID
+
+[[vars]]
+UPSTASH_REDIS_REST_URL = "https://gusc1-becoming-bedbug-30247.upstash.io" # Change to your Upstash Redis URL
+# UPSTASH_REDIS_REST_TOKEN = ""
+# AUTH_KEY_SECRET = ""
+# Our Upstash Token and Auth Key are encrypted on Cloudflare's side, but add them in here for local development
+
+[[r2_buckets]]
+binding = "MUSIC_BUCKET"
+bucket_name = "stevenson-space-music-dev" # this is the live R2 bucket - **do not change**
+preview_bucket_name = "stevenson-space-music-dev" # create your own R2 bucket with this name

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
+    "music-dev": "cd music-backend && npm run dev",
     "serve": "vite serve",
     "prebuild": "node scrapers/events.js",
     "build": "vite build",
