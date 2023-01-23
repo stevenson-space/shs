@@ -8,13 +8,13 @@
           <h1 class="title"><font-awesome-icon class="icon" :icon="icons.faRadio" /> Meet Jukebox</h1>
           <p class="subtitle">Discover original music from Stevenson students.</p>
           <div class="now-playing">
-            <img class="album-art" v-if="songs[currentSongIndex].album" :src="`/music/art/${songs[currentSongIndex].album}`" />
+            <img class="album-art" :src="songs[currentSongIndex].album ? `https://music-backend.stevenson-space.workers.dev/${songs[currentSongIndex].album}` : defaultAlbum" />
             <div class="song-info">
               <p class="song-title">{{songs[currentSongIndex].name}}</p>
               <p class="song-artist">{{songs[currentSongIndex].artist ? songs[currentSongIndex].artist : "Anonymous"}}, {{songs[currentSongIndex].year}}</p>
             </div>
             <div class="controls">
-              <button @click="currentSongIndex > 0 && previousSong()" class="control-button">
+              <button @click="previousSong()" class="control-button">
                 <font-awesome-icon :icon="icons.faStepBackward" />
               </button>
               <button @click="playing ? pause() : play()" class="control-button play-button">
@@ -37,11 +37,14 @@
             <button @click="setSongOf(index)" class="play-button">
               <font-awesome-icon :icon="icons.faPlay" />
             </button>
-            <p class="song-title">{{song.name}}</p>
+            <p @click="setSongOf(index)" class="song-title">{{song.name}}</p>
             <p class="song-bullet">&bull;</p>
             <p class="song-artist">{{song.artist ? song.artist : "Anonymous"}}, {{song.year}}</p>
           </div>
-          <p class="footer">Have a song you'd like to publish on Jukebox? <a href="https://forms.gle/AHwgziyiqdLJwVaS9" target="_blank" rel="noreferrer">Submit it here <font-awesome-icon :icon="icons.faArrowUpRightFromSquare" /></a></p>
+          <div class="footer-group">
+            <p class="footer">Have a song you'd like to publish on Jukebox? <a href="https://forms.gle/AHwgziyiqdLJwVaS9" target="_blank" rel="noreferrer">Submit it here <font-awesome-icon :icon="icons.faArrowUpRightFromSquare" /></a></p>
+            <p class="footer">Music is student-created and not endorsed by Stevenson High School</p>
+          </div>
         </div>
       </div>
   </div>
@@ -59,6 +62,7 @@ import {
   faArrowUpRightFromSquare,
 } from '@fortawesome/free-solid-svg-icons';
 import { Howl } from 'howler';
+import defaultAlbum from '@/assets/default-music-album.png';
 
 export default {
   components: { HomeLink },
@@ -69,10 +73,10 @@ export default {
       },
       currentSongIndex: 0,
       playing: false,
-      previousSongPressed: false,
       percentFinished: 0,
       currentTimePlaying: 0,
       totalSongTime: 0,
+      defaultAlbum,
       songs,
     };
   },
@@ -81,7 +85,7 @@ export default {
     for (const song of songs) {
       console.log(song.file.match(fileFormatRegex)[0]);
       song.howler = new Howl({
-        src: [`https://pub-a7e350998adb4442a16a5cd2728d6707.r2.dev/${song.file}`], // Cloudflare R2 instance URL
+        src: [`https://music-backend.stevenson-space.workers.dev/${song.file}`], // Cloudflare R2 instance URL
         format: ['.mp3'],
         html5: true,
         volume: 0.5,
@@ -110,12 +114,10 @@ export default {
   methods: {
     previousSong() {
       // 1 backwards press sets song to beginning, 2 presses skips to previous song
-      if (!this.previousSongPressed) {
+      if (this.songs[this.currentSongIndex].howler.seek() >= 10) {
         this.songs[this.currentSongIndex].howler.seek(0);
-        this.previousSongPressed = true;
-      } else {
+      } else if (this.currentSongIndex > 0) {
         this.setSongOf(this.currentSongIndex - 1);
-        this.previousSongPressed = false;
       }
     },
     setSongOf(index) {
@@ -168,6 +170,9 @@ export default {
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 
+$small: 300px
+$medium: 900px
+
 .live
   .background-block
     background-color: var(--headerBackgroundColor)
@@ -216,7 +221,7 @@ export default {
         top: 20px
 
     .now-playing
-      margin-top: 15px
+      margin-top: 25px
       .progress
         display: flex
         .progress-text
@@ -295,8 +300,14 @@ export default {
             box-shadow: 0 0 10px 0 var(--tertiary)
 
     .song-list
-      display: flex
-      justify-content: center
+      // TODO: reactivity
+      // @media screen and (max-width: $small) {
+        // display: block
+      // }
+      // @media screen and (max-width: $medium) {
+        display: flex
+        justify-content: center
+      // }
       .play-button
         border: 0
         background-color: transparent
@@ -311,6 +322,9 @@ export default {
       .song-title
         font-size: 1em
         font-weight: bold
+        &:hover
+          cursor: pointer
+          text-decoration: underline
       .song-bullet
         font-weight: bold
         font-size: 1em
@@ -320,6 +334,10 @@ export default {
         font-size: 1em
         font-weight: bold
         color: var(--secondary)
+
+    .footer-group
+      margin-left: 20px
+      padding-right: 20px
     .footer
       text-align: center
       font-weight: bold
