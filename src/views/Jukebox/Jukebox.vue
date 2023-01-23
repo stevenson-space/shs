@@ -305,8 +305,8 @@ $medium: 900px
         // display: block
       // }
       // @media screen and (max-width: $medium) {
-        display: flex
-        justify-content: center
+      display: flex
+      justify-content: center
       // }
       .play-button
         border: 0
@@ -334,7 +334,7 @@ $medium: 900px
         font-size: 1em
         font-weight: bold
         color: var(--secondary)
-
+    
     .footer-group
       margin-left: 20px
       padding-right: 20px
