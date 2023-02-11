@@ -290,9 +290,6 @@ export default {
     if (localStorage.fullScreenColored === 'false') {
       this.colored = false;
     }
-    if (localStorage.useVirtualBell === 'true') {
-      this.useVirtualBell = true;
-    }
   },
   mounted() {
     this.initializeCountdown();
@@ -366,7 +363,6 @@ export default {
     },
     toggleVirtualBell() {
       this.useVirtualBell = !this.useVirtualBell;
-      localStorage.useVirtualBell = this.useVirtualBell;
     },
   },
 };
