@@ -60,6 +60,16 @@
           fixed-width
         />
       </div>
+      <div
+        v-show="mode === 'current'"
+        @click="toggleVirtualBell"
+        class="icon virtual-bell-toggle"
+      >
+        <font-awesome-icon
+          :icon="useVirtualBell ? icons.faVolumeHigh : icons.faVolumeOff"
+          fixed-width
+        />
+      </div>
     </div>
 
     <header-schedule
@@ -83,6 +93,7 @@ import { mapState, mapActions } from 'pinia';
 
 import heart from '@/assets/occasions/heart.svg';
 import snowflake from '@/assets/occasions/snowflake.png';
+import bellAudio from '@/assets/virtual-bell.wav'
 
 import {
   faChevronRight,
@@ -91,6 +102,8 @@ import {
   faCompress,
   faDroplet,
   faDropletSlash,
+  faVolumeHigh,
+  faVolumeOff,
 } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from '@/components/Dropdown.vue';
 import Snow from '@/components/Snow.vue';
@@ -123,12 +136,15 @@ export default {
         faCompress,
         faDroplet,
         faDropletSlash,
+        faVolumeHigh,
+        faVolumeOff,
       },
       heart,
       snowflake,
       currentTime: 0, // seconds since 12:00am
       interval: null,
       colored: true,
+      useVirtualBell: false,
     };
   },
   computed: {
@@ -258,6 +274,11 @@ export default {
     totalSecondsLeft() {
       if (this.totalSecondsLeft <= 0) {
         this.countdownDone();
+        if (this.inSchool && this.useVirtualBell) {
+          const bell = new Audio(bellAudio);
+          bell.volume = 0.05;
+          bell.play();
+        }
       }
     },
     colored() {
@@ -339,6 +360,9 @@ export default {
     },
     toggleColor() {
       this.colored = !this.colored;
+    },
+    toggleVirtualBell() {
+      this.useVirtualBell = !this.useVirtualBell;
     },
   },
 };
@@ -456,6 +480,13 @@ export default {
     .remove-color
       display: none
 
+    .virtual-bell-toggle
+      right: 70px
+      +mobile
+        font-size: 1.25em
+        display: block
+        right: 9px
+
     .full-screen-mode
       right: 9px
 
@@ -485,9 +516,12 @@ export default {
         top: 25px
         font-size: 4vh
 
+      .virtual-bell-toggle
+        right: 105px
+
       .remove-color
         display: block
-        right: 110px
+        right: 190px
 
       .full-screen-mode
         position: fixed
