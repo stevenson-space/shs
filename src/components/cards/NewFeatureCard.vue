@@ -1,9 +1,9 @@
 <template>
-  <timed-card startTime="January 18, 2023" endTime="Feburary 9, 2023">
+  <timed-card startTime="Feburary 13, 2023" endTime="Feburary 18, 2023">
     <div class="container">
       <div class="message">
         <br>
-        📻 Jukebox, a way to listen to original Stevenson student music, is coming very soon. <a href="https://docs.google.com/forms/d/1ga9PZ6JsmBpUwYB2WVmVW0sE01zKJhISgln2TC4Hgho/edit" target="_blank">Submit your music today!</a>
+          🔔 No bells this week? No problem! Click the volume icon in the top right to enable the new Virtual Bell 
         <br>
       </div>
     </div>
