@@ -486,6 +486,7 @@ export default {
         font-size: 1.25em
         display: block
         right: 9px
+        top: 45px
 
     .full-screen-mode
       right: 9px
