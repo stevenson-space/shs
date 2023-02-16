@@ -7,6 +7,20 @@
     "file": "THE_BIGGER_PICTURE_NICHOLAS_MORALES.mp3"
   },
   {
+    "name": "Shot with Gun",
+    "artist": "Abhi Choudhary",
+    "year": "2025",
+    "album": "",
+    "file": "SHOT_WITH_GUN_ABHI_CHOUDHARY.mp3"
+  },
+  {
+    "name": "FRISCO",
+    "artist": "Edison Schultz",
+    "year": "2023",
+    "album": "FRISCO_EDISON_SCHULTZ.webp",
+    "file": "FRISCO_EDISON_SCHULTZ.mp3"
+  },
+  {
     "name": "Sand Dune",
     "artist": "",
     "year": "2024",
@@ -33,19 +47,5 @@
     "year": "2024",
     "album": "SLIDE_MY_WAY_SETH_ARNOLD.webp",
     "file": "SLIDE_MY_WAY_SETH_ARNOLD.mp3"
-  },
-  {
-    "name": "Never Gonna Give You Up",
-    "artist": "Rick Astley",
-    "year": "2023",
-    "album": "NEVER_RICK_ASTLEY.webp",
-    "file": "NEVER_JANE_DOE.mp3"
-  },
-  {
-    "name": "Everlong",
-    "artist": "",
-    "year": "2025",
-    "album": "",
-    "file": "EVERLONG_JANE_DOE.mp3"
   }
 ]

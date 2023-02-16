@@ -9,7 +9,7 @@ Why Cloudflare Workers?
 ## Project setup
 1. Create/login to a [Cloudflare](https://cloudflare.com) account
 2. [Create an R2 bucket](https://dash.cloudflare.com/sign-up/r2) named `stevenson-space-music-dev`
-3. [Create an Upstash Serverless Redis instance](https://docs.upstash.com/redis) - Upstash allows us to ratelimit requests in order to prevent abuse.
+3. We are currently not using ratelimiting, ignore. ~~[Create an Upstash Serverless Redis instance](https://docs.upstash.com/redis) - Upstash allows us to ratelimit requests in order to prevent abuse.~~
 4. Fill in the enviornment variables in `/wrangler.toml`
 5. Run the following commands:
 ```
