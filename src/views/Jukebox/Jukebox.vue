@@ -20,7 +20,7 @@
               <button @click="playing ? pause() : play()" class="control-button play-button">
                 <font-awesome-icon :icon="playing ? icons.faPause : icons.faPlay" />
               </button>
-              <button @click="currentSongIndex + 1 < songs.length && setSongOf(currentSongIndex+1)" class="control-button">
+              <button @click="currentSongIndex + 1 < songs.length ? setSongOf(currentSongIndex+1) : setSongOf(0)" class="control-button">
                 <font-awesome-icon :icon="icons.faStepForward" />
               </button>
             </div>
