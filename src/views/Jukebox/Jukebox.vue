@@ -334,7 +334,7 @@ $medium: 900px
         font-size: 1em
         font-weight: bold
         color: var(--secondary)
-    
+
     .footer-group
       margin-left: 20px
       padding-right: 20px

@@ -1,9 +1,9 @@
 <template>
-  <timed-card startTime="Feburary 13, 2023" endTime="Feburary 18, 2023">
+  <timed-card startTime="Feburary 15, 2023" endTime="Feburary 20, 2023">
     <div class="container">
       <div class="message">
         <br>
-          🔔 No bells this week? No problem! Click the volume icon in the top right to enable the new Virtual Bell 
+          📻 Jukebox is now live, <a href="/jukebox">visit now to discover original music by Stevenson students!</a>
         <br>
       </div>
     </div>
