@@ -1,9 +1,9 @@
 <template>
-  <timed-card startTime="Feburary 15, 2023" endTime="Feburary 20, 2023">
+  <timed-card startTime="Feburary 20, 2023" endTime="Feburary 23, 2023">
     <div class="container">
       <div class="message">
         <br>
-          📻 Jukebox is now live, <a href="/jukebox">visit now to discover original music by Stevenson students!</a>
+          🧑‍🏫 Need help studying? <a href="https://sites.google.com/d125.org/peer-tutors/content-database">Try Peer Tutors' study guides</a> with materials for over 20 courses!
         <br>
       </div>
     </div>
