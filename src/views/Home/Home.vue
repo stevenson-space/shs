@@ -6,6 +6,7 @@
     />
 
     <card-container class="card-container">
+      <countdown-card v-show="themeName === 'Summer'" untilDate="May 27, 2023" message="🌴 Summer Countdown 🐬" />
       <new-feature-card/>
       <new-theme-card />
       <!-- <april-fools-card /> -->
@@ -60,7 +61,7 @@ import {
   faGear,
   faHourglass,
   faQrcode,
-  faRadio
+  faRadio,
 } from '@fortawesome/free-solid-svg-icons';
 import { mapActions } from 'pinia';
 import CardContainer from '@/components/CardContainer.vue';
@@ -76,7 +77,9 @@ import NewThemeCard from '@/components/cards/NewThemeCard.vue';
 import NewFeatureCard from '@/components/cards/NewFeatureCard.vue';
 import SodexoAppreciationCard from '@/components/cards/SodexoAppreciationCard.vue';
 import Confetti from '@/components/cards/ConfettiCard.vue';
+import CountdownCard from '@/components/cards/CountdownCard.vue';
 import useScheduleStore from '@/stores/schedules';
+import useThemeStore from '@/stores/themes';
 import ScheduleHeader from './Header.vue';
 
 export default {
@@ -95,6 +98,7 @@ export default {
     NewFeatureCard,
     SodexoAppreciationCard,
     Confetti,
+    CountdownCard,
   },
   data() {
     return {
@@ -111,6 +115,7 @@ export default {
         faRadio,
       },
       fullScreenMode: false,
+      themeName: useThemeStore().theme.name,
     };
   },
   methods: {
