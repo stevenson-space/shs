@@ -38,7 +38,7 @@ export default {
   mounted() {
     setInterval(() => {
       this.getTimeLeft();
-    }, 1);
+    }, 1000);
   },
   methods: {
     getTimeLeft() {
