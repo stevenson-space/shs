@@ -138,8 +138,8 @@ export default {
   height: 100vh
   overflow: hidden
 
-// @for $i from 1 to 15
-//   .card-container .card:nth-child(#{$i})
-//     +animate-fade-up
-//     animation-delay: $i * 0.011s
+@for $i from 1 to 15
+  .card-container .card:nth-child(#{$i})
+    +animate-fade-up
+    animation-delay: $i * 0.011s
 </style>
