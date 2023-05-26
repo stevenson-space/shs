@@ -3,7 +3,9 @@
     <div class="container">
       <div>
         Thank you to everyone who used Stevenson.Space this year! A special thanks to Andrew Wolf
-        ('25) for so much great dev work this year. Have a great summer! 🎉
+        ('25) for so much great dev work keeping the site operational. Despite the end of year
+        celebrations, a tragic loss has occurred in the community. Please have a happy and safe
+        summer as best possible. Thank you.
       </div>
       <div style="margin-top: 5px">- Joseph Shepin ('22)</div>
     </div>
