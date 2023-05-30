@@ -7,11 +7,11 @@
 
     <card-container class="card-container">
       <end-of-year-card />
-      <countdown-card
+      <!-- <countdown-card
         v-show="themeName === 'Summer'"
         untilDate="May 27, 2023"
         message="🌴 Summer Countdown 🐬"
-      />
+      /> -->
       <new-feature-card />
       <new-theme-card />
       <!-- <april-fools-card /> -->
