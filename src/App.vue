@@ -1,55 +1,68 @@
 <template>
   <div id="app" :style="style" tabindex="-1">
     <router-view />
+    <div class="netlify-logo-wrapper">
+      <a href="https://www.netlify.com/" target="_blank">
+        <img class="netlify-logo" :src="NetlifyLogo" />
+      </a>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'pinia';
-import useThemeStore from '@/stores/themes';
-import useScheduleStore from '@/stores/schedules';
-import useUserSettingsStore from '@/stores/user-settings';
+import { mapState, mapActions } from "pinia";
+import useThemeStore from "@/stores/themes";
+import useScheduleStore from "@/stores/schedules";
+import useUserSettingsStore from "@/stores/user-settings";
+import NetlifyLogo from "@/assets/netlify-logo.svg";
 
 export default {
   computed: {
-    ...mapState(useThemeStore, ['theme', 'color']),
+    ...mapState(useThemeStore, ["theme", "color"]),
     style() {
       return {
-        '--color': this.color,
-        '--background': this.theme.background,
-        '--secondaryBackground': this.theme.secondaryBackground,
-        '--headerBackgroundColor': this.theme.headerBackgroundColor,
-        '--headerScheduleBackgroundColor': this.theme.headerScheduleBackgroundColor,
+        "--color": this.color,
+        "--background": this.theme.background,
+        "--secondaryBackground": this.theme.secondaryBackground,
+        "--headerBackgroundColor": this.theme.headerBackgroundColor,
+        "--headerScheduleBackgroundColor": this.theme.headerScheduleBackgroundColor,
         color: this.theme.primary,
-        '--secondary': this.theme.secondary,
-        '--tertiary': this.theme.tertiary,
-        '--iconTextCardColor': this.theme.iconTextCardColor,
-        '--iconTextCardInvertColor': this.theme.iconTextCardInvertColor,
+        "--secondary": this.theme.secondary,
+        "--tertiary": this.theme.tertiary,
+        "--iconTextCardColor": this.theme.iconTextCardColor,
+        "--iconTextCardInvertColor": this.theme.iconTextCardInvertColor,
       };
     },
   },
+  data() {
+    return {
+      NetlifyLogo,
+    };
+  },
   methods: {
-    ...mapActions(useScheduleStore, ['initializeSchedule', 'pageLoaded']),
-    ...mapActions(useThemeStore, ['initializeTheme']),
-    ...mapActions(useUserSettingsStore, ['initializeGrade']),
+    ...mapActions(useScheduleStore, ["initializeSchedule", "pageLoaded"]),
+    ...mapActions(useThemeStore, ["initializeTheme"]),
+    ...mapActions(useUserSettingsStore, ["initializeGrade"]),
   },
   watch: {
     theme() {
-      document.querySelector('body').style.background = this.theme.background;
+      document.querySelector("body").style.background = this.theme.background;
     },
     $route() {
       this.pageLoaded(this.$route);
     },
   },
   created() {
-    if (import.meta.env.NODE_ENV === 'production') {
-      console.log("welcome to stevenson.space \n\nFun Facts:\n1. The Apollo astronauts' footprints on the moon will probably stay there for at least 100 million years\n2. Our solar system is 4.5 billion years old\n3. The sun burns around 5 billion kg of hydrogen every second and will continue to burn for the next 4+ billion years\n4. Physics C is a cool class!\n\nhttps://github.com/stevenson-space/shs");
+    if (import.meta.env.NODE_ENV === "production") {
+      console.log(
+        "welcome to stevenson.space \n\nFun Facts:\n1. The Apollo astronauts' footprints on the moon will probably stay there for at least 100 million years\n2. Our solar system is 4.5 billion years old\n3. The sun burns around 5 billion kg of hydrogen every second and will continue to burn for the next 4+ billion years\n4. Physics C is a cool class!\n\nhttps://github.com/stevenson-space/shs"
+      );
     }
     this.initializeSchedule(this.$route);
     this.initializeTheme();
     this.initializeGrade();
     this.pageLoaded(this.$route);
-    document.querySelector('body').style.background = this.theme.background;
+    document.querySelector("body").style.background = this.theme.background;
   },
 };
 </script>
@@ -61,4 +74,14 @@ body
 
 #app
   outline: none
+
+.netlify-logo-wrapper
+  display: flex
+  align: center
+  width: full
+  justify-content: center
+  margin-top: 20px
+  margin-bottom: 15px
+  .netlify-logo
+    width: 100px
 </style>
