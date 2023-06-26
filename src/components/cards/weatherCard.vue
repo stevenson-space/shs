@@ -1,5 +1,5 @@
 <template>
-  <card v-if="weatherData != null" class="card">
+  <card v-if="weatherData" class="card">
     <div class="title">{{ title }}</div>
     <div class="weather">
       <div v-for="weather in weatherData" :key="weather.date">
@@ -62,7 +62,11 @@ export default {
   },
   mounted() {
     let currentDate = new Date();
-    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+    /**
+     * Format the date in the specified format.
+     * @param {Date} date - The date to format.
+     * @returns {string} The formatted date string.
+     */
     function formatDate(date) {
       let month = String(date.getMonth() + 1);
       if (month.length === 1) {
@@ -94,11 +98,7 @@ export default {
           };
           dailyData.push(daily);
         }
-        console.log(dailyData)
         this.weatherData = dailyData;
-      })
-      .catch((error) => {
-        console.error('Error fetching weather data:', error);
       });
   },
   methods: {
