@@ -38,6 +38,9 @@
         </div>
       </div>
     </div>
+    <a class="attribution-link" href="https://open-meteo.com/">
+      <div class="attribution">Weather data by Open-Meteo.com</div>
+    </a>
   </card>
 </template>
 
@@ -173,5 +176,10 @@ export default {
 
           .rain-text
             margin: 1px 2px
-            font-size: 0.75em
+            font-size: 1em
+
+  .attribution
+    font-size: 0.5em
+    text-align: center
+    color: var(--color)
 </style>
