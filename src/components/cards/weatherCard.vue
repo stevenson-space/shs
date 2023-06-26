@@ -1,5 +1,5 @@
 <template>
-  <card v-if="weatherData != 'noData'" class="card">
+  <card v-if="weatherData != null" class="card">
     <div class="title">{{ title }}</div>
     <div class="weather">
       <div v-for="weather in weatherData" :key="weather.date">
@@ -8,15 +8,31 @@
           <div class="info condition">
             <font-awesome-icon
               class="condition-icon"
-              :icon="faSun"
-              v-if="weather.cloudcover < 50"
+              :icon="icons.faSun"
+              v-if="weather.cloudcover < 40"
             />
+            <div v-else-if="weather.cloudcover < 60" class="condition-icon">
+              <font-awesome-icon
+              class="partly-sun"
+              :icon="icons.faSun"
+              />
+              <font-awesome-icon
+              class="partly-cloud"
+              :icon="icons.faCloud"
+              />
+            </div>
             <font-awesome-icon
               class="condition-icon"
-              :icon="faCloud"
+              :icon="icons.faCloud"
               v-else
             />
-            <p class="condition-text" v-if="weather.rain_percent>0">{{ weather.rain_percent }}%</p>
+            <div class="condition-rain" v-if="weather.rain_percent > 30">
+              <font-awesome-icon
+                :icon="icons.faTint"
+                class="rain-icon"
+              />
+              <p class="rain-text">{{ weather.rain_percent }}%</p>
+            </div>
           </div>
           <p class="info temp">{{ weather.temp_low }}°F — {{ weather.temp_high }}°F</p>
         </div>
@@ -28,7 +44,6 @@
 <script>
 import { faTint, faCloud, faSun } from '@fortawesome/free-solid-svg-icons';
 import { mapState } from 'pinia';
-import useWeatherStore from '@/stores/weather';
 import Card from '@/components/Card.vue';
 
 export default {
@@ -39,10 +54,49 @@ export default {
   data() {
     return {
       icons: { faCloud, faTint, faSun },
+      weatherData: null,
     };
   },
-  computed: {
-    ...mapState('weather', ['dailyData']),
+  mounted() {
+    let currentDate = new Date();
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+    function formatDate(date) {
+      let month = String(date.getMonth() + 1);
+      if (month.length === 1) {
+        month = `0${month}`;
+      }
+      let day = String(date.getDate());
+      if (day.length === 1) {
+        day = `0${day}`;
+      }
+      return `${date.getFullYear()}-${month}-${day}`;
+    }
+    const startDate = formatDate(currentDate);
+    const endDate = formatDate(new Date(currentDate.setDate(currentDate.getDate() + 7)));
+    currentDate = new Date();
+
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=42.26&longitude=-87.84&hourly=cloudcover&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&start_date=${startDate}&end_date=${endDate}&timezone=auto`)
+      .then((response) => response.json())
+      .then((data) => {
+        const dailyData = [];
+        for (let i = 0; i < 7; i++) {
+          const avgCloudCover = data.hourly.cloudcover.slice(i * 24, (i + 1) * 24).reduce((a, c) => a + c, 0) / 24;
+          const idate = `${currentDate.getMonth() + 1}/${currentDate.getDate() + i}`;
+          const daily = {
+            date: idate,
+            temp_high: data.daily.temperature_2m_max[i],
+            temp_low: data.daily.temperature_2m_min[i],
+            rain_percent: data.daily.precipitation_probability_max[i],
+            cloudcover: avgCloudCover,
+          };
+          dailyData.push(daily);
+        }
+        console.log(dailyData)
+        this.weatherData = dailyData;
+      })
+      .catch((error) => {
+        console.error('Error fetching weather data:', error);
+      });
   },
   methods: {
     getWeatherIcon(condition) {
@@ -78,16 +132,18 @@ export default {
         padding: 0
 
       .date
+        font-size: 1em
         position: absolute
-        left:15%
+        left:10%
 
       .temp
+        font-size: 1em
         position: absolute
-        left:65%
+        left:55%
 
       .condition
         position: absolute
-        left:50%
+        left:40%
         transform: translate(-50%, 0)
         display: grid
         place-items: center
@@ -97,7 +153,25 @@ export default {
           color: var(--color)
           margin: 1px 0
 
-        .condition-text
-          font-size: 2vh
-          margin: 1px 0
+          .partly-sun
+            position: absolute
+            font-size: 0.9em
+            left: 42%
+            top: 8%
+
+          .partly-cloud
+            font-size: 0.9em
+
+        .condition-rain
+          margin: 0
+          display: flex
+          align-items: center
+
+          .rain-icon
+            margin: 1px 2px
+            font-size: 0.75em
+
+          .rain-text
+            margin: 1px 2px
+            font-size: 0.75em
 </style>
