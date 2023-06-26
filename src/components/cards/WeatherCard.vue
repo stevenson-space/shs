@@ -64,7 +64,7 @@ export default {
     let currentDate = new Date();
     /**
      * Format the date in the specified format.
-     * @param {Date} date - The date to format.
+     * @param {Date} date - The date to format. 
      * @returns {string} The formatted date string.
      */
     function formatDate(date) {
