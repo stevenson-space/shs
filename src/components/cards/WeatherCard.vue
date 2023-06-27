@@ -2,39 +2,19 @@
   <card v-if="weatherData" class="card">
     <div class="title">{{ title }}</div>
     <div class="weather">
-      <div v-for="weather in weatherData" :key="weather.date">
+      <div v-for="weather in weatherData" :key="weather.day">
         <div class="info-container">
-          <p class="info date">{{ weather.date }}</p>
+          <p class="info date">{{ weather.day }}</p>
           <div class="info condition">
             <font-awesome-icon
               class="condition-icon"
               :icon="icons.faSun"
-              v-if="weather.cloudcover < 40"
             />
-            <div v-else-if="weather.cloudcover < 60" class="condition-icon">
-              <font-awesome-icon
-              class="partly-sun"
-              :icon="icons.faSun"
-              />
-              <font-awesome-icon
-              class="partly-cloud"
-              :icon="icons.faCloud"
-              />
-            </div>
-            <font-awesome-icon
-              class="condition-icon"
-              :icon="icons.faCloud"
-              v-else
-            />
-            <div class="condition-rain" v-if="weather.rain_percent > 30">
-              <font-awesome-icon
-                :icon="icons.faTint"
-                class="rain-icon"
-              />
-              <p class="rain-text">{{ weather.rain_percent }}%</p>
-            </div>
           </div>
-          <p class="info temp">{{ weather.temp_low }}°F — {{ weather.temp_high }}°F</p>
+          <div class="info temp">
+            <p class="temp-high">{{ weather.temp_high }}°</p>
+            <p class="temp-low">{{ weather.temp_low }}°</p>
+          </div>
         </div>
       </div>
     </div>
@@ -61,50 +41,64 @@ export default {
     };
   },
   mounted() {
-    let currentDate = new Date();
-    /**
-     * Format the date in the specified format.
-     * @param {Date} date - The date to format. 
-     * @returns {string} The formatted date string.
-     */
-    function formatDate(date) {
-      let month = String(date.getMonth() + 1);
-      if (month.length === 1) {
-        month = `0${month}`;
-      }
-      let day = String(date.getDate());
-      if (day.length === 1) {
-        day = `0${day}`;
-      }
-      return `${date.getFullYear()}-${month}-${day}`;
-    }
-    const startDate = formatDate(currentDate);
-    const endDate = formatDate(new Date(currentDate.setDate(currentDate.getDate() + 7)));
-    currentDate = new Date();
+    // localStorage.getItem('weatherDataCache')
+    const cacheKey = 'weatherDataCache';
 
-    fetch(`https://api.open-meteo.com/v1/forecast?latitude=42.26&longitude=-87.84&hourly=cloudcover&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&start_date=${startDate}&end_date=${endDate}&timezone=auto`)
-      .then((response) => response.json())
-      .then((data) => {
-        const dailyData = [];
-        for (let i = 0; i < 7; i++) {
-          const avgCloudCover = data.hourly.cloudcover.slice(i * 24, (i + 1) * 24).reduce((a, c) => a + c, 0) / 24;
-          const idate = `${currentDate.getMonth() + 1}/${currentDate.getDate() + i}`;
-          const daily = {
-            date: idate,
-            temp_high: data.daily.temperature_2m_max[i],
-            temp_low: data.daily.temperature_2m_min[i],
-            rain_percent: data.daily.precipitation_probability_max[i],
-            cloudcover: avgCloudCover,
-          };
-          dailyData.push(daily);
-        }
-        this.weatherData = dailyData;
-      });
+    let cacheData = localStorage.getItem(cacheKey);
+    if (cacheData) {
+      cacheData = JSON.parse(cacheData);
+      const currentTime = new Date().getTime();
+      const sixHours = 6 * 60 * 60 * 1000;
+      if (currentTime - cacheData.timestamp < sixHours) {
+        this.weatherData = cacheData.dailyData;
+      } else {
+        this.fetchWeatherData(cacheKey);
+      }
+    } else {
+      this.fetchWeatherData(cacheKey);
+    }
   },
   methods: {
-    getWeatherIcon(condition) {
-      const iconNames = { Sunny: faSun, Cloudy: faCloud, Rainy: faTint };
-      return iconNames[condition];
+    fetchWeatherData(cacheKey) {
+      let currentDate = new Date();
+      /**
+       * Format the date in the specified format.
+       * @param {Date} date - The date to format.
+       * @returns {string} The formatted date string.
+       */
+      function formatDate(date) {
+        let month = String(date.getMonth() + 1);
+        if (month.length === 1) {
+          month = `0${month}`;
+        }
+        let day = String(date.getDate());
+        if (day.length === 1) {
+          day = `0${day}`;
+        }
+        return `${date.getFullYear()}-${month}-${day}`;
+      }
+      const startDate = formatDate(currentDate);
+      const endDate = formatDate(new Date(currentDate.setDate(currentDate.getDate() + 7)));
+      currentDate = new Date();
+      fetch(`https://api.open-meteo.com/v1/forecast?latitude=42.26&longitude=-87.84&daily=weathercode,temperature_2m_max,temperature_2m_min&start_date=${startDate}&end_date=${endDate}&timezone=auto`)
+        .then((response) => response.json())
+        .then((data) => {
+          const dailyData = [];
+          for (let i = 0; i < 7; i++) {
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const dayOfWeek = days[(currentDate.getDay() + i) % 7];
+            const daily = {
+              day: dayOfWeek,
+              temp_high: Math.round(data.daily.temperature_2m_max[i]),
+              temp_low: Math.round(data.daily.temperature_2m_min[i]),
+              weather_code: data.daily.weathercode[i],
+            };
+            dailyData.push(daily);
+          }
+          this.weatherData = dailyData;
+          const cachedData = { timestamp: currentDate.getTime(), dailyData };
+          localStorage.setItem(cacheKey, JSON.stringify(cachedData));
+        });
     },
   },
 };
@@ -128,7 +122,7 @@ export default {
     .info-container
       display: flex
       align-items: center
-      border-top: 2px solid var(--color)
+      border-top: 1px solid var(--color)
       height: 55px
 
       .info
@@ -137,46 +131,33 @@ export default {
       .date
         font-size: 1em
         position: absolute
-        left:10%
+        left:18%
 
       .temp
-        font-size: 1em
         position: absolute
-        left:55%
+        left:60%
+        text-align: center
+
+        .temp-high
+          font-size: 1em
+          margin: 0
+
+        .temp-low
+          font-size: 0.7em
+          opacity: 52%
+          margin: 0
 
       .condition
         position: absolute
-        left:40%
+        left: 78%
         transform: translate(-50%, 0)
         display: grid
         place-items: center
 
         .condition-icon
-          font-size: 1.5em
+          font-size: 1.4em
           color: var(--color)
-          margin: 1px 0
-
-          .partly-sun
-            position: absolute
-            font-size: 0.9em
-            left: 42%
-            top: 8%
-
-          .partly-cloud
-            font-size: 0.9em
-
-        .condition-rain
-          margin: 0
-          display: flex
-          align-items: center
-
-          .rain-icon
-            margin: 1px 2px
-            font-size: 0.75em
-
-          .rain-text
-            margin: 1px 2px
-            font-size: 1em
+          margin: 0.5px 0
 
   .attribution
     font-size: 0.5em
