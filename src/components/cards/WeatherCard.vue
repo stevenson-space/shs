@@ -9,11 +9,11 @@
             <Cloudy class="condition-icon" v-if="weather.cloudcover > 70 && weather.rain_percent < 40" />
             <Rainy class="condition-icon" v-else-if="weather.cloudcover > 70 && weather.rain_percent >= 40" />
             <div class="condition-icon" v-else-if="weather.cloudcover > 30 && weather.rain_percent < 40" >
-              <Sunny class="partly-sun" />
+              <Sunny class="partly-sun-cloudy" />
               <Cloudy class="partly-cloudy" />
             </div>
             <div class="condition-icon" v-else-if="weather.cloudcover > 30 && weather.rain_percent >= 40" >
-              <Sunny class="partly-sun" />
+              <Sunny class="partly-sun-rainy" />
               <Rainy class="partly-rainy" />
             </div>
             <Sunny class="condition-icon" v-else/>
@@ -178,11 +178,17 @@ export default {
           .partly-rainy
             font-size: 1em
 
-          .partly-sun
+          .partly-sun-cloudy,
+          .partly-sun-rainy
             font-size: 0.8em
             position: absolute
             left: 35%
+
+          .partly-sun-cloudy
             bottom: 45%
+
+          .partly-sun-rainy
+            bottom: 50%
 
   .attribution
     font-size: 0.5em
