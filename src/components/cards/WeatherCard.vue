@@ -98,7 +98,10 @@ export default {
           for (let i = 0; i < 5; i++) {
             const avgCloudCover = data.hourly.cloudcover.slice(i * 24, (i + 1) * 24).reduce((a, c) => a + c, 0) / 24;
             const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const dayOfWeek = days[(currentDate.getDay() + i) % 7];
+            let dayOfWeek = 'Today';
+            if (i !== 0) {
+              dayOfWeek = days[(currentDate.getDay() + i) % 7];
+            }
             const daily = {
               day: dayOfWeek,
               temp_high: Math.round(data.daily.temperature_2m_max[i]),
