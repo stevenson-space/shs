@@ -1,9 +1,11 @@
 import { createApp } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import 'vue-ionicons/dist/ionicons.css';
 import { createPinia } from 'pinia';
 import { BrowserTracing } from '@sentry/tracing';
 import * as Sentry from '@sentry/vue';
 import VueGtag from 'vue-gtag';
+import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 
