@@ -28,6 +28,7 @@
     "vite": "^4.3.9",
     "vue": "^3.2.41",
     "vue-gtag": "^2.0.1",
+    "vue-ionicons": "^3.0.5",
     "vue-router": "^4.1.1"
   },
   "devDependencies": {

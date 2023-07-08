@@ -18,6 +18,7 @@
       <!-- <shs-hacks-card/> -->
       <holiday-card />
       <schedule-card />
+      <weather-card />
       <lunch-card />
       <upcoming-events-card />
 
@@ -71,6 +72,7 @@ import { mapActions } from "pinia";
 import CardContainer from "@/components/CardContainer.vue";
 import UpcomingEventsCard from "@/components/cards/UpcomingEventsCard.vue";
 import IconTextCard from "@/components/cards/IconTextCard.vue";
+import WeatherCard from "@/components/cards/WeatherCard.vue";
 import ScheduleCard from "@/components/cards/ScheduleCard.vue";
 import HolidayCard from "@/components/cards/HolidayCard.vue";
 import ContributeCard from "@/components/cards/ContributeCard.vue";
@@ -94,6 +96,7 @@ export default {
     LunchCard,
     IconTextCard,
     ScheduleCard,
+    WeatherCard,
     HolidayCard,
     ContributeCard,
     NewThemeCard,
