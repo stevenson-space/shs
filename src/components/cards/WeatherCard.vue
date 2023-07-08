@@ -52,7 +52,6 @@ export default {
     };
   },
   mounted() {
-    // localStorage.getItem('weatherDataCache')
     const cacheKey = 'weatherDataCache';
 
     let cacheData = localStorage.getItem(cacheKey);
@@ -91,7 +90,7 @@ export default {
       const startDate = formatDate(currentDate);
       const endDate = formatDate(new Date(currentDate.setDate(currentDate.getDate() + 5)));
       currentDate = new Date();
-      fetch(`https://api.open-meteo.com/v1/forecast?latitude=42.26&longitude=-87.84&hourly=cloudcover&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&start_date=${startDate}&end_date=${endDate}&timezone=auto`)
+      fetch(`https://api.open-meteo.com/v1/forecast?latitude=42.26&longitude=-87.84&hourly=cloudcover&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&temperature_unit=fahrenheit&start_date=${startDate}&end_date=${endDate}&timezone=auto`)
         .then((response) => response.json())
         .then((data) => {
           const dailyData = [];
