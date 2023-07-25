@@ -15,7 +15,8 @@ const Login:RouteComponent = () => import('@/views/Login/Login.vue');
 const Code:RouteComponent = () => import('@/views/Code/Code.vue');
 const QRCode:RouteComponent = () => import('@/views/QRCodes/QRCodes.vue');
 const GetHelp:RouteComponent = () => import('@/views/GetHelp/GetHelp.vue');
-const Jukebox:RouteComponent = () => import('@/views/Jukebox/Jukebox.vue');
+const Jukebox: RouteComponent = () => import('@/views/Jukebox/Jukebox.vue');
+const Pwc: RouteComponent = () => import('@/views/Pwc/Pwc.vue');
 
 type EditScheduleProps = {
   scheduleToEdit: string;
@@ -101,6 +102,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Jukebox',
     path: '/jukebox',
     component: Jukebox,
+  },
+  {
+    name: 'Pwc',
+    path: '/pwc',
+    component: Pwc,
   },
 ];
 
