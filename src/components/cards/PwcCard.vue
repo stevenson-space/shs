@@ -1,14 +1,20 @@
 <template>
-    <div class="card">
-        <h1>PWC Gym Countdown</h1>
+    <card class="card">
+        <h1 class="title">PWC Hours</h1>
         <div class="countdown">
             <p v-if="isOpen">Time remaining until closure: {{ countdownTime }}</p>
             <p v-else>Time remaining until next opening: {{ countdownTime }}</p>
         </div>
-    </div>
+    </card>
 </template>
 
-<script>export default {
+<script>
+    import Card from '@/components/Card.vue';
+
+
+export default {
+
+        components: { Card },components: { Card },
         data() {
             return {
                 openingTimes: [
@@ -129,28 +135,24 @@
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
 
+
 .card
-  padding: 10px
-  background-color: #00563F
-  color: #FFFFFF
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  min-height: 150px
-  width: 200px
-
-  .title
-    font-size: 18px
-    margin: 15px 0
-    text-align: center
+  padding: 0 8px
+  padding-bottom: 5px
 
 
-  .countdown
-    font-size: 16px
-    font-weight: bold
-    margin-top: 10px
+.title
+  font-size: 30px
+  
+  margin: 15px 0
+  text-align: center
 
-  .countdown p
-    margin: 5px 0
+
+.countdown
+  font-size: 16px
+  
+  margin-top: 10px
+
+.countdown p
+  margin: 5px 0
 </style>
