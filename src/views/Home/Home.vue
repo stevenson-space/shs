@@ -35,8 +35,6 @@
 
         <icon-text-card :icon="icons.faRadio" text="Jukebox" link="jukebox" />
 
-        <icon-text-card :icon="icons.faDumbbell" text="PWC" link="pwc" />
-
         <icon-text-card :icon="icons.faCalculator"
                         text="GPA Calculator"
                         link="gpaCalculator"
@@ -66,7 +64,6 @@ import {
   faHourglass,
   faQrcode,
   faRadio,
-  faDumbbell,
 } from "@fortawesome/free-solid-svg-icons";
 import { mapActions } from "pinia";
 import CardContainer from "@/components/CardContainer.vue";
@@ -122,7 +119,7 @@ export default {
         faHourglass,
         faQrcode,
         faRadio,
-        faDumbbell,
+        
       },
       fullScreenMode: false,
       themeName: useThemeStore().theme.name,
