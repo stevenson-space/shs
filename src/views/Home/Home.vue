@@ -19,6 +19,7 @@
         <holiday-card />
         <schedule-card />
         <weather-card />
+        <pwc-card/>
         <lunch-card />
         <upcoming-events-card />
 
@@ -70,8 +71,9 @@ import {
 import { mapActions } from "pinia";
 import CardContainer from "@/components/CardContainer.vue";
 import UpcomingEventsCard from "@/components/cards/UpcomingEventsCard.vue";
-import IconTextCard from "@/components/cards/IconTextCard.vue";
-import WeatherCard from "@/components/cards/WeatherCard.vue";
+ import IconTextCard from "@/components/cards/IconTextCard.vue";
+ import WeatherCard from "@/components/cards/WeatherCard.vue";
+ import PwcCard from "@/components/cards/PwcCard.vue";
 import ScheduleCard from "@/components/cards/ScheduleCard.vue";
 import HolidayCard from "@/components/cards/HolidayCard.vue";
 import ContributeCard from "@/components/cards/ContributeCard.vue";
@@ -96,6 +98,7 @@ export default {
     IconTextCard,
     ScheduleCard,
     WeatherCard,
+    PwcCard,
     HolidayCard,
     ContributeCard,
     NewThemeCard,
