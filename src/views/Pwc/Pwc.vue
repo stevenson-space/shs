@@ -44,11 +44,21 @@
                 return this.getTimeInMs(this.currentTime.toDateString(), closingTime.end);
             },
             nextOpeningTime() {
+                if (this.currentTime < this.currentOpeningTime) {
+                    const openingTime = this.openingTimes.find(
+                        (time) => time.day === this.currentDay
+                    );
+                    return this.getTimeInMs(this.getNextDate(this.currentDay), openingTime.start);
+
+                }
+                else {
                 const nextDay = (this.currentDay + 1) % 7;
                 const openingTime = this.openingTimes.find(
                     (time) => time.day === nextDay
                 );
                 return this.getTimeInMs(this.getNextDate(nextDay), openingTime.start);
+
+                }
             },
             isOpen() {
                 return this.currentTime >= this.currentOpeningTime && this.currentTime <= this.currentClosingTime;
