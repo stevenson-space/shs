@@ -1,11 +1,12 @@
 <template>
     <card class="card">
         <p class="title">PWC Hours</p>
+        <div class="green-line"></div>
         <div class="countdown">
             <p v-if="isOpen">{{ countdownTime }}</p>
-      <p v-else>{{ countdownTime }}</p>
-      <p v-if="isOpen" class="time-text">Time remaining until closure</p>
-      <p v-else class="time-text">Time remaining until next opening</p>
+            <p v-else>{{ countdownTime }}</p>
+            <p v-if="isOpen" class="time-text">Time remaining until closure</p>
+            <p v-else class="time-text">Time remaining until next opening</p>
         </div>
     </card>
 </template>
@@ -163,6 +164,13 @@ export default {
 .time-text 
   font-size: 12px 
   text-align: center
-  color: #333 
+  color: #333
+
+.green-line 
+  width: 100%
+  height: 1px
+  background-color: #006400
+  margin-bottom: 10px
+
 
 </style>
