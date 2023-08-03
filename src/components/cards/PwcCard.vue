@@ -1,9 +1,11 @@
 <template>
     <card class="card">
-        <h1 class="title">PWC Hours</h1>
+        <p class="title">PWC Hours</p>
         <div class="countdown">
-            <p v-if="isOpen">Time remaining until closure: {{ countdownTime }}</p>
-            <p v-else>Time remaining until next opening: {{ countdownTime }}</p>
+            <p v-if="isOpen">{{ countdownTime }}</p>
+      <p v-else>{{ countdownTime }}</p>
+      <p v-if="isOpen" class="time-text">Time remaining until closure</p>
+      <p v-else class="time-text">Time remaining until next opening</p>
         </div>
     </card>
 </template>
@@ -119,7 +121,7 @@ export default {
             },
         },
         created() {
-            // Initialize the countdown immediately
+            // Initialize countdown immediately
             this.updateCurrentTime();
 
             // Update currentTime every second
@@ -139,20 +141,28 @@ export default {
 .card
   padding: 0 8px
   padding-bottom: 5px
+  
 
 
 .title
-  font-size: 30px
-  
-  margin: 15px 0
-  text-align: center
+    margin: 15px 0
+    text-align: center
+    font-size: 20px
+    
 
 
 .countdown
-  font-size: 16px
-  
+  font-size: 20px
+  text-align: center
   margin-top: 10px
 
 .countdown p
   margin: 5px 0
+    text-align: center
+
+.time-text 
+  font-size: 12px 
+  text-align: center
+  color: #333 
+
 </style>
