@@ -2,7 +2,7 @@
   <settings-section title="General">
     <div class="dropdown-row">
       <span class="title">Show PWC Schedule:</span>
-      <dropdown class="dropdown-select" :options="['Yes', 'No']" :modelValue="selectedPWCState" @update:modelValue="updatePWCState" />
+      <dropdown class="dropdown-select" :options="['Yes', 'No']" :modelValue="this.showPWCSchedule ? 0 : 1" @update:modelValue="updatePWCState" />
     </div>
     <div class="dropdown-row">
       <span class="title">Default Schedule Mode:</span>
@@ -69,9 +69,6 @@ export default defineComponent({
     selectedGrade(): void {
       const grade = this.grades.indexOf(this.grade);
       return grade === -1 ? 0 : grade;
-    },
-    selectedPWCState(): number {
-      return this.showPWCSchedule ? 0 : 1;
     },
   },
   methods: {
