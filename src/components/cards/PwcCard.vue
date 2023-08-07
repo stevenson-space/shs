@@ -158,7 +158,7 @@ export default {
 .green-line
   width: 100%
   height: 1px
-  background-color: #006400
+  background-color: var(--color)
   margin-bottom: 10px
 
 </style>
