@@ -1,5 +1,5 @@
 <template>
-    <card class="card">
+    <card v-if="showPWCSchedule" class="card">
         <p class="title">PWC Hours</p>
         <div class="green-line"></div>
         <div class="countdown">
@@ -12,10 +12,11 @@
 </template>
 
 <script>
+import { mapState } from 'pinia';
 import Card from '@/components/Card.vue';
+import useUserSettingsStore from '@/stores/user-settings';
 
 export default {
-
   components: { Card },
   data() {
     return {
@@ -32,6 +33,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(useUserSettingsStore, ['showPWCSchedule']),
     currentTime() {
       return new Date(this.currentTimeMs);
     },
