@@ -3,8 +3,11 @@
         <p class="title">PWC Hours</p>
         <div class="green-line"></div>
         <div class="countdown">
-            <p>{{ openingStatus }}</p>
-            <p class="time-text">{{ timeStatus }}</p>
+            <p v-if="isOpen">{{ countdownTime }}</p>
+            <p v-else>{{ openingStatus }}</p>
+            
+           <p v-if="isOpen" class="time-text">Time remaining until closure</p>
+            <p v-else class="time-text">{{ timeStatus }}</p>
         </div>
     </card>
 </template>
@@ -27,7 +30,7 @@ export default {
         { day: 6, start: '10:00', end: '15:00' }, // Saturday
         { day: 0, start: '10:00', end: '15:00' }, // Sunday
       ],
-      
+        currentTimeMs: 0,
     };
   },
   computed: {
@@ -84,12 +87,34 @@ export default {
     timeStatus() {
       return this.isOpen ? 'Closes' : 'Closed';
     },
-  },
+     
+        countdownTime() {
+            const targetTime = this.isOpen
+                ? this.currentClosingTime
+                : this.nextOpeningTime;
+            const timeDiff = targetTime - this.currentTimeMs;
+            if (timeDiff <= 0) {
+                return "00:00:00";
+            }
+            const hours = String(Math.floor(timeDiff / (1000 * 60 * 60))).padStart(
+                2,
+                "0"
+            );
+            const minutes = String(
+                Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60))
+            ).padStart(2, "0");
+            const seconds = String(
+                Math.floor((timeDiff % (1000 * 60)) / 1000)
+            ).padStart(2, "0");
+            return `${hours}:${minutes}:${seconds}`;
+        },
+    },
   methods: {
     getTimeInMs(dateString, timeString) {
       const dateTimeString = `${dateString} ${timeString}`;
       return new Date(dateTimeString).getTime();
-    },
+      },
+
     getNextDate(day) {
       const today = this.currentTime.getDay();
       const difference = (day - today + 7) % 7;
