@@ -19,7 +19,7 @@
         <holiday-card />
         <schedule-card />
         <weather-card />
-        <pwc-card/>
+        <pwc-card />
         <lunch-card />
         <upcoming-events-card />
 
@@ -34,6 +34,8 @@
         <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
 
         <icon-text-card :icon="icons.faRadio" text="Jukebox" link="jukebox" />
+
+        <icon-text-card :icon="icons.faRadio" text="Jazzman's Menu" link="jazzmanMenu" />
 
         <icon-text-card :icon="icons.faCalculator"
                         text="GPA Calculator"
