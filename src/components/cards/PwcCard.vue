@@ -27,7 +27,7 @@ export default {
         { day: 6, start: '10:00', end: '15:00' }, // Saturday
         { day: 0, start: '10:00', end: '15:00' }, // Sunday
       ],
-      currentTimeMs: 0,
+      
     };
   },
   computed: {
@@ -151,7 +151,7 @@ export default {
     text-align: center
 
 .time-text
-  font-size: 12px
+  font-size: 15px
   text-align: center
   color: #333
 
