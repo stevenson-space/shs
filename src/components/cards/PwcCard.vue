@@ -109,10 +109,7 @@ export default {
     updateCurrentTime() {
       this.currentTimeMs = Date.now();
     },
-    goToHomepage() {
-      // Use Vue Router to navigate to the homepage
-      this.$router.push('/');
-    },
+    
   },
   created() {
     // Initialize countdown immediately
