@@ -31,7 +31,7 @@ export default {
   methods: {
     ...mapActions(useScheduleStore, ['initializeSchedule', 'pageLoaded']),
     ...mapActions(useThemeStore, ['initializeTheme']),
-    ...mapActions(useUserSettingsStore, ['initializeGrade']),
+    ...mapActions(useUserSettingsStore, ['initializeGrade', 'initializeShowPWCSchedule']),
   },
   watch: {
     theme() {
@@ -48,6 +48,7 @@ export default {
     this.initializeSchedule(this.$route);
     this.initializeTheme();
     this.initializeGrade();
+    this.initializeShowPWCSchedule();
     this.pageLoaded(this.$route);
     document.querySelector('body').style.background = this.theme.background;
   },

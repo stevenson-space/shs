@@ -17,9 +17,8 @@ export default defineStore('grades', {
       }
     },
     initializeShowPWCSchedule(): void {
-      if (localStorage.showPWCSchedule) {
-        this.setShowPWCSchedule(localStorage.showPWCSchedule === 'true');
-      }
+      console.log(localStorage.showPWCSchedule);
+      this.setShowPWCSchedule(localStorage.showPWCSchedule === 'true');
     },
     setGrade(grade: string): void {
       this.grade = grade;
