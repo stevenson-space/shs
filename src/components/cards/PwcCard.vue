@@ -3,10 +3,8 @@
         <p class="title">PWC Hours</p>
         <div class="green-line"></div>
         <div class="countdown">
-            <p v-if="isOpen">{{ countdownTime }}</p>
-            <p v-else>{{ countdownTime }}</p>
-            <p v-if="isOpen" class="time-text">Time remaining until closure</p>
-            <p v-else class="time-text">Time remaining until next opening</p>
+            <p>{{ openingStatus }}</p>
+            <p class="time-text">{{ timeStatus }}</p>
         </div>
     </card>
 </template>
@@ -80,25 +78,11 @@ export default {
                     && this.currentTime <= this.currentClosingTime
       );
     },
-    countdownTime() {
-      const targetTime = this.isOpen
-        ? this.currentClosingTime
-        : this.nextOpeningTime;
-      const timeDiff = targetTime - this.currentTimeMs;
-      if (timeDiff <= 0) {
-        return '00:00:00';
-      }
-      const hours = String(Math.floor(timeDiff / (1000 * 60 * 60))).padStart(
-        2,
-        '0',
-      );
-      const minutes = String(
-        Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)),
-      ).padStart(2, '0');
-      const seconds = String(
-        Math.floor((timeDiff % (1000 * 60)) / 1000),
-      ).padStart(2, '0');
-      return `${hours}:${minutes}:${seconds}`;
+    openingStatus() {
+      return this.isOpen ? 'Open' : `Opens at ${this.formatTime(this.nextOpeningTime)}`;
+    },
+    timeStatus() {
+      return this.isOpen ? 'Closes' : 'Closed';
     },
   },
   methods: {
@@ -112,6 +96,15 @@ export default {
       const nextDate = new Date(this.currentTime);
       nextDate.setDate(this.currentTime.getDate() + difference);
       return nextDate.toDateString();
+    },
+    formatTime(timeInMs) {
+      const date = new Date(timeInMs);
+      const hours = date.getHours();
+      const minutes = date.getMinutes();
+      const period = hours >= 12 ? 'pm' : 'am';
+      const formattedHours = hours % 12 || 12;
+      const formattedMinutes = String(minutes).padStart(2, '0');
+      return `${formattedHours}:${formattedMinutes} ${period}`;
     },
     updateCurrentTime() {
       this.currentTimeMs = Date.now();
@@ -133,7 +126,8 @@ export default {
   beforeDestroy() {
     clearInterval(this.timer);
   },
-}; </script>
+};
+</script>
 
 <style lang="sass" scoped>
 @import 'src/styles/style.sass'
