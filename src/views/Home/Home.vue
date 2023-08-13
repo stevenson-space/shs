@@ -19,7 +19,7 @@
         <holiday-card />
         <schedule-card />
         <weather-card />
-        <pwc-card/>
+        <pwc-card />
         <lunch-card />
         <upcoming-events-card />
 
@@ -34,6 +34,8 @@
         <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
 
         <icon-text-card :icon="icons.faRadio" text="Jukebox" link="jukebox" />
+
+        <icon-text-card :icon="icons.faMugSaucer" text="Jazzman's Menu" link="jazzmanMenu" />
 
         <icon-text-card :icon="icons.faCalculator"
                         text="GPA Calculator"
@@ -64,13 +66,14 @@ import {
   faHourglass,
   faQrcode,
   faRadio,
+  faMugSaucer,
 } from "@fortawesome/free-solid-svg-icons";
 import { mapActions } from "pinia";
 import CardContainer from "@/components/CardContainer.vue";
 import UpcomingEventsCard from "@/components/cards/UpcomingEventsCard.vue";
  import IconTextCard from "@/components/cards/IconTextCard.vue";
  import WeatherCard from "@/components/cards/WeatherCard.vue";
- import PwcCard from "@/components/cards/PwcCard.vue";
+ 
 import ScheduleCard from "@/components/cards/ScheduleCard.vue";
 import HolidayCard from "@/components/cards/HolidayCard.vue";
 import ContributeCard from "@/components/cards/ContributeCard.vue";
@@ -95,7 +98,7 @@ export default {
     IconTextCard,
     ScheduleCard,
     WeatherCard,
-    PwcCard,
+    
     HolidayCard,
     ContributeCard,
     NewThemeCard,
@@ -119,6 +122,7 @@ export default {
         faHourglass,
         faQrcode,
         faRadio,
+        faMugSaucer,
         
       },
       fullScreenMode: false,

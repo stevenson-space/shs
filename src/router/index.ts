@@ -1,21 +1,22 @@
 import { createRouter, createWebHistory, RouteRecordRaw, RouteComponent, RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
 import useAuthenticationStore from '@/stores/authentication';
 
-const Home:RouteComponent = () => import('@/views/Home/Home.vue');
-const GpaCalculator:RouteComponent = () => import('@/views/GpaCalculator/GpaCalculator.vue');
-const BellSchedules:RouteComponent = () => import('@/views/Bell Schedules/BellSchedules.vue');
-const Calendar:RouteComponent = () => import('@/views/Calendar/Calendar.vue');
-const Links:RouteComponent = () => import('@/views/Links/Links.vue');
-const Colors:RouteComponent = () => import('@/views/Colors/Colors.vue');
-const Settings:RouteComponent = () => import('@/views/Settings/Settings.vue');
-const Tools:RouteComponent = () => import('@/views/Tools/Tools.vue');
-const Documents:RouteComponent = () => import('@/views/Documents/Documents.vue');
-const AddSchedule:RouteComponent = () => import('@/views/Settings/Add Schedule/AddSchedule.vue');
-const Login:RouteComponent = () => import('@/views/Login/Login.vue');
-const Code:RouteComponent = () => import('@/views/Code/Code.vue');
-const QRCode:RouteComponent = () => import('@/views/QRCodes/QRCodes.vue');
-const GetHelp:RouteComponent = () => import('@/views/GetHelp/GetHelp.vue');
+const Home: RouteComponent = () => import('@/views/Home/Home.vue');
+const GpaCalculator: RouteComponent = () => import('@/views/GpaCalculator/GpaCalculator.vue');
+const BellSchedules: RouteComponent = () => import('@/views/Bell Schedules/BellSchedules.vue');
+const Calendar: RouteComponent = () => import('@/views/Calendar/Calendar.vue');
+const Links: RouteComponent = () => import('@/views/Links/Links.vue');
+const Colors: RouteComponent = () => import('@/views/Colors/Colors.vue');
+const Settings: RouteComponent = () => import('@/views/Settings/Settings.vue');
+const Tools: RouteComponent = () => import('@/views/Tools/Tools.vue');
+const Documents: RouteComponent = () => import('@/views/Documents/Documents.vue');
+const AddSchedule: RouteComponent = () => import('@/views/Settings/Add Schedule/AddSchedule.vue');
+const Login: RouteComponent = () => import('@/views/Login/Login.vue');
+const Code: RouteComponent = () => import('@/views/Code/Code.vue');
+const QRCode: RouteComponent = () => import('@/views/QRCodes/QRCodes.vue');
+const GetHelp: RouteComponent = () => import('@/views/GetHelp/GetHelp.vue');
 const Jukebox: RouteComponent = () => import('@/views/Jukebox/Jukebox.vue');
+const JazzmanMenu: RouteComponent = () => import('@/views/JazzmanMenu/JazzmanMenu.vue');
 
 
 type EditScheduleProps = {
@@ -103,6 +104,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/jukebox',
     component: Jukebox,
   },
+  {
+    name: 'JazzmanMenu',
+    path: '/jazzmanMenu',
+    component: JazzmanMenu,
+  },
 ];
 
 const router = createRouter({
@@ -117,7 +123,7 @@ const router = createRouter({
 });
 
 // ensure any page with requiresAuth set to true will redirect through the login proxy component
-router.beforeEach((to:RouteLocationNormalized, from:RouteLocationNormalized, next:NavigationGuardNext) => {
+router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   // check if to requires auth
   if (to.matched.some((record) => record.meta && record.meta.requiresAuth)) {
     // check if we are already authenticated, and continue ahead if we are
