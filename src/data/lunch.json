@@ -1,30 +1,24 @@
 {
-  "1": {
+  "14": {
     "Comfort Food": [
-      "Jerk Chicken"
+      "3 Cheese Penne"
     ],
     "Mindful": [
-      "Dijon Crusted Salmon"
+      "Jerk Chicken"
     ],
     "Sides": [
       "Brussel Sprouts",
-      " Rice"
+      "Scalloped Potatoes"
+    ],
+    "Soup": [
+      "Tomato Basil Bisque",
+      "Broccoli Cheddar"
     ],
     "International Station": [
       "Pasta Week"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Broccoli Cheddar"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Mushroom Goat Cheese",
-      " Caprese"
     ]
   },
-  "2": {
+  "15": {
     "Comfort Food": [
       "Veggie Chilaquiles"
     ],
@@ -33,748 +27,259 @@
     ],
     "Sides": [
       "Roasted Carrots",
-      " Cilantro Lime Rice"
+      "Cilantro Lime Rice"
+    ],
+    "Soup": [
+      "Tomato Basil Bisque",
+      "Broccoli Cheddar"
     ],
     "International Station": [
       "Pasta Week"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Broccoli Cheddar"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Mushroom Goat Cheese",
-      " Caprese"
     ]
   },
-  "3": {
+  "16": {
     "Comfort Food": [
-      "Swedish Meatballs w/ Egg Noodles"
+      "Chicken Tetrazzini"
     ],
     "Mindful": [
-      "Tortilla crusted Tilapia"
+      "Tortilla Crusted Tilapia"
     ],
     "Sides": [
       "Sugar Snap Peas",
-      " Orzo"
+      "Orzo"
+    ],
+    "Soup": [
+      "Tomato Basil Bisque",
+      "Broccoli Cheddar"
     ],
     "International Station": [
       "Pasta Week"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Broccoli Cheddar"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Mushroom Goat Cheese",
-      " Caprese"
     ]
   },
-  "4": {
+  "17": {
     "Comfort Food": [
-      "Spinach Ravioli with Cream Sauce"
+      "Cheese Ravioli with Cream Sauce"
     ],
     "Mindful": [
-      "Baked Turkey Meatloaf w/ Turkey Gravy"
+      "Baked Turkey Meatloaf w/ Chipotle BBQ"
     ],
     "Sides": [
-      "Sauteed Broccolini",
-      " Roasted Sweet Potatoes"
+      "Sautéed Brocolini",
+      "Maple Whipped Sweet Potatoes"
+    ],
+    "Soup": [
+      "Tomato Basil Bisque",
+      "Broccoli Cheddar"
     ],
     "International Station": [
       "Pasta Week"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Broccoli Cheddar"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Mushroom Goat Cheese",
-      " Caprese"
     ]
   },
-  "5": {
+  "18": {
     "Comfort Food": [
-      "Chopped Steak with Onions"
+      "Roasted Italian Chicken Thigh"
     ],
     "Mindful": [
-      "Chicken w/ Country Gravy"
+      "Baked Herbed Cod"
     ],
     "Sides": [
       "Roasted Vegetables",
-      " Mashed Potatoes"
+      "Mashed Potatoes"
+    ],
+    "Soup": [
+      "Tomato Basil Bisque",
+      "Broccoli Cheddar"
     ],
     "International Station": [
       "Pasta Week"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Broccoli Cheddar"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Mushroom Goat Cheese",
-      " Caprese"
     ]
   },
-  "6": {
+  "21": {
     "Comfort Food": [
-      "Spinach Ravioli with Cream Sauce"
+      "Open Faced Pot Roast Sandwich"
     ],
     "Mindful": [
-      "Baked Turkey Meatloaf w/ Turkey Gravy"
+      "Baked Chicken Parmesan"
     ],
     "Sides": [
-      "Sauteed Broccolini",
-      " Roasted Sweet Potatoes"
-    ],
-    "International Station": [
-      "Pasta Week"
+      "Snow Peas Pasta"
     ],
     "Soup": [
-      "Tomato Basil",
-      " Broccoli Cheddar"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Mushroom Goat Cheese",
-      " Caprese"
-    ]
-  },
-  "7": {
-    "Comfort Food": [
-      "Chopped Steak with Onions"
-    ],
-    "Mindful": [
-      "Chicken w/ Country Gravy"
-    ],
-    "Sides": [
-      "Roasted Vegetables",
-      " Mashed Potatoes"
-    ],
-    "International Station": [
-      "Pasta Week"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Broccoli Cheddar"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Mushroom Goat Cheese",
-      " Caprese"
-    ]
-  },
-  "8": {
-    "Comfort Food": [
-      "Open faced Pot Roast Sandwich"
-    ],
-    "Mindful": [
-      "Chicken Breast with Bruschetta"
-    ],
-    "Sides": [
-      "Snow Peas",
-      " Red Potatoes"
+      "Vegetarian Garden",
+      "Cream of Potato"
     ],
     "International Station": [
       "Burrito Bowl"
-    ],
-    "Soup": [
-      "Veggie Chili",
-      " Corn Chowder"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Caprese",
-      " BBQ Chicken"
     ]
   },
-  "9": {
+  "22": {
     "Comfort Food": [
-      "Baked Beef Ravioli",
-      " Breadsticks"
+      "Blackened Tilapia"
     ],
     "Mindful": [
       "Biryani Chicken"
     ],
     "Sides": [
       "Lemon Pepper Green Beans",
-      " Yellow Rice"
+      "Yellow Rice"
+    ],
+    "Soup": [
+      "Vegetarian Garden",
+      "Cream of Potato"
     ],
     "International Station": [
       "Burrito Bowl"
-    ],
-    "Soup": [
-      "Veggie Chili",
-      " Corn Chowder"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Caprese",
-      " BBQ Chicken"
-    ]
-  },
-  "10": {
-    "Comfort Food": [
-      "Dijon Chicken"
-    ],
-    "Mindful": [
-      "Baked Herbed Cod"
-    ],
-    "Sides": [
-      "Asparagus",
-      " Scalloped Potatoes"
-    ],
-    "International Station": [
-      "Burrito Bowl"
-    ],
-    "Soup": [
-      "Veggie Chili",
-      " Corn Chowder"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Caprese",
-      " BBQ Chicken"
-    ]
-  },
-  "11": {
-    "Comfort Food": [
-      "Tempura Chicken Stir Fry"
-    ],
-    "Mindful": [
-      "Baked Pork Chop w/ Pan Sauce"
-    ],
-    "Sides": [
-      "Roasted Cauliflower",
-      " Rice"
-    ],
-    "International Station": [
-      "Burrito Bowl"
-    ],
-    "Soup": [
-      "Veggie Chili",
-      " Corn Chowder"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Caprese",
-      " BBQ Chicken"
-    ]
-  },
-  "12": {
-    "Comfort Food": [
-      "Three Cheese Penne"
-    ],
-    "Mindful": [
-      "Chicken Marsala"
-    ],
-    "Sides": [
-      "Roasted Vegetables",
-      " Herbed Polenta"
-    ],
-    "International Station": [
-      "Burrito Bowl"
-    ],
-    "Soup": [
-      "Veggie Chili",
-      " Corn Chowder"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Caprese",
-      " BBQ Chicken"
-    ]
-  },
-  "13": {
-    "Comfort Food": [
-      "Tempura Chicken Stir Fry"
-    ],
-    "Mindful": [
-      "Baked Pork Chop w/ Pan Sauce"
-    ],
-    "Sides": [
-      "Roasted Cauliflower",
-      " Rice"
-    ],
-    "International Station": [
-      "Burrito Bowl"
-    ],
-    "Soup": [
-      "Veggie Chili",
-      " Corn Chowder"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Caprese",
-      " BBQ Chicken"
-    ]
-  },
-  "14": {
-    "Comfort Food": [
-      "Three Cheese Penne"
-    ],
-    "Mindful": [
-      "Chicken Marsala"
-    ],
-    "Sides": [
-      "Roasted Vegetables",
-      " Herbed Polenta"
-    ],
-    "International Station": [
-      "Burrito Bowl"
-    ],
-    "Soup": [
-      "Veggie Chili",
-      " Corn Chowder"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Caprese",
-      " BBQ Chicken"
-    ]
-  },
-  "15": {
-    "Comfort Food": [
-      "BBQ Pulled Chicken Sandwich"
-    ],
-    "Mindful": [
-      "Teriyaki Glazed Salmon"
-    ],
-    "Sides": [
-      "Corn",
-      " Roasted Potatoes"
-    ],
-    "International Station": [
-      "Mac & Cheese"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Chicken Tortilla"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Italian",
-      " Caprese"
-    ]
-  },
-  "16": {
-    "Comfort Food": [
-      "Homemade Beef Meatloaf"
-    ],
-    "Mindful": [
-      "Chicken Piccata"
-    ],
-    "Sides": [
-      "Roasted Carrots",
-      " Broccoli",
-      " Mashed Potatoes"
-    ],
-    "International Station": [
-      "Mac & Cheese"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Chicken Tortilla"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Italian",
-      " Caprese"
-    ]
-  },
-  "17": {
-    "Comfort Food": [
-      "Chipotle & Orange Grilled Chicken"
-    ],
-    "Mindful": [
-      "Veggie Lo Mein"
-    ],
-    "Sides": [
-      "Roasted Broccoli",
-      " Egg roll"
-    ],
-    "International Station": [
-      "Mac & Cheese"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Chicken Tortilla"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Italian",
-      " Caprese"
-    ]
-  },
-  "18": {
-    "Comfort Food": [
-      "Beef and Mushroom Stroganoff w/ pasta"
-    ],
-    "Mindful": [
-      "Tofu Stir Fry"
-    ],
-    "Sides": [
-      "Lemon Pepper Green Beans",
-      " Rice"
-    ],
-    "International Station": [
-      "Mac & Cheese"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Chicken Tortilla"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Italian",
-      " Caprese"
-    ]
-  },
-  "19": {
-    "Comfort Food": [
-      "Baked Battered Cod"
-    ],
-    "Mindful": [
-      "Turkey Sloppy Joe"
-    ],
-    "Sides": [
-      "Roasted Vegetables",
-      " Roasted Wedge Potatoes"
-    ],
-    "International Station": [
-      "Mac & Cheese"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Chicken Tortilla"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Italian",
-      " Caprese"
-    ]
-  },
-  "20": {
-    "Comfort Food": [
-      "Beef and Mushroom Stroganoff w/ pasta"
-    ],
-    "Mindful": [
-      "Tofu Stir Fry"
-    ],
-    "Sides": [
-      "Lemon Pepper Green Beans",
-      " Rice"
-    ],
-    "International Station": [
-      "Mac & Cheese"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Chicken Tortilla"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Italian",
-      " Caprese"
-    ]
-  },
-  "21": {
-    "Comfort Food": [
-      "Baked Battered Cod"
-    ],
-    "Mindful": [
-      "Turkey Sloppy Joe"
-    ],
-    "Sides": [
-      "Roasted Vegetables",
-      " Roasted Wedge Potatoes"
-    ],
-    "International Station": [
-      "Mac & Cheese"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Chicken Tortilla"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Italian",
-      " Caprese"
-    ]
-  },
-  "22": {
-    "Comfort Food": [
-      "Cheese Tortellini"
-    ],
-    "Mindful": [
-      "Lemon Garlic Baked Chicken"
-    ],
-    "Sides": [
-      "Roasted Carrots",
-      " Roasted Red Potatoes"
-    ],
-    "International Station": [
-      "Mediterranean Week 🥙"
-    ],
-    "Soup": [
-      "Veggie Chili",
-      " Chicken Noodle"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Chicken Balsamic",
-      " Caprese"
     ]
   },
   "23": {
     "Comfort Food": [
-      "Chicken Tikka Masala"
+      "Baked Beef Ravioli"
     ],
     "Mindful": [
-      "Blackened Tilapia"
+      "Chopped Steak w/ Onion Gravy"
     ],
     "Sides": [
-      "Roasted Cauliflower",
-      " Rice"
-    ],
-    "International Station": [
-      "Mediterranean Week 🥙"
+      "Asparagus",
+      "Scalloped Potatoes"
     ],
     "Soup": [
-      "Veggie Chili",
-      " Chicken Noodle"
+      "Vegetarian Garden",
+      "Cream of Potato"
     ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Chicken Balsamic",
-      " Caprese"
+    "International Station": [
+      "Burrito Bowl"
     ]
   },
   "24": {
     "Comfort Food": [
-      "Baked Chicken Parmesan w/ Pasta"
+      "Plant Based Chicken Stir Fry"
     ],
     "Mindful": [
-      "Turkey Breast Vesuvio"
+      "Orange Chicken"
     ],
     "Sides": [
-      "Roasted Zucchini",
-      " Mashed Potatoes"
-    ],
-    "International Station": [
-      "Mediterranean Week 🥙"
+      "Springroll Fried Rice"
     ],
     "Soup": [
-      "Veggie Chili",
-      " Chicken Noodle"
+      "Vegetarian Garden",
+      "Cream of Potato"
     ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Chicken Balsamic",
-      " Caprese"
+    "International Station": [
+      "Burrito Bowl"
     ]
   },
   "25": {
     "Comfort Food": [
-      "Baked Mostaccioli"
+      "Turkey Sloppy Joe"
     ],
     "Mindful": [
-      "Chicken Tinga"
-    ],
-    "Sides": [
-      "Azteca Corn",
-      " Mexican Rice"
-    ],
-    "International Station": [
-      "Mediterranean Week 🥙"
-    ],
-    "Soup": [
-      "Veggie Chili",
-      " Chicken Noodle"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Chicken Balsamic",
-      " Caprese"
-    ]
-  },
-  "26": {
-    "Comfort Food": [
-      "Beef and Broccoli w/ Rice"
-    ],
-    "Mindful": [
-      "Roasted Italian Chicken Thigh"
+      "Chicken With Country Gravy"
     ],
     "Sides": [
       "Roasted Vegetables",
-      " Couscous Primavera"
-    ],
-    "International Station": [
-      "Mediterranean Week 🥙"
+      "Mashed Potatoes"
     ],
     "Soup": [
-      "Veggie Chili",
-      " Chicken Noodle"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Chicken Balsamic",
-      " Caprese"
-    ]
-  },
-  "27": {
-    "Comfort Food": [
-      "Baked Mostaccioli"
-    ],
-    "Mindful": [
-      "Chicken Tinga"
-    ],
-    "Sides": [
-      "Azteca Corn",
-      " Mexican Rice"
+      "Vegetarian Garden",
+      "Cream of Potato"
     ],
     "International Station": [
-      "Mediterranean Week 🥙"
-    ],
-    "Soup": [
-      "Veggie Chili",
-      " Chicken Noodle"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Chicken Balsamic",
-      " Caprese"
+      "Burrito Bowl"
     ]
   },
   "28": {
     "Comfort Food": [
-      "Beef and Broccoli w/ Rice"
+      "BBQ Pulled Chicken Sandwich"
     ],
     "Mindful": [
-      "Roasted Italian Chicken Thigh"
+      "Chicken Marsala"
     ],
     "Sides": [
-      "Roasted Vegetables",
-      " Couscous Primavera"
-    ],
-    "International Station": [
-      "Mediterranean Week 🥙"
+      "Corn",
+      "Roasted Potatoes"
     ],
     "Soup": [
-      "Veggie Chili",
-      " Chicken Noodle"
+      "Minestrone",
+      "Chicken Gumbo"
     ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Chicken Balsamic",
-      " Caprese"
+    "International Station": [
+      "Mac & Cheese"
     ]
   },
   "29": {
     "Comfort Food": [
-      "Homemade Beef Meatloaf"
+      "Swedish Meatballs w/ Eggnoodles"
     ],
     "Mindful": [
-      "Chicken Piccata"
+      "Chicken Tikka Masala"
     ],
     "Sides": [
-      "Roasted Carrots",
-      " Broccoli",
-      " Mashed Potatoes"
+      "Roasted Zucchini",
+      "Lime Cilantro Rice"
+    ],
+    "Soup": [
+      "Minestrone",
+      "Chicken Gumbo"
     ],
     "International Station": [
       "Mac & Cheese"
-    ],
-    "Soup": [
-      "Tomato Basil",
-      " Chicken Tortilla"
-    ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Italian",
-      " Caprese"
     ]
   },
   "30": {
     "Comfort Food": [
-      "Jerk Chicken"
+      "Veggie Lo Mein"
     ],
     "Mindful": [
-      "Dijon Crusted Salmon"
+      "Chipotle Orange Chicken"
     ],
     "Sides": [
-      "Brussel Sprouts",
-      " Rice"
-    ],
-    "International Station": [
-      "Pasta Week"
+      "Roasted Brocolini",
+      "Rice Pilaf"
     ],
     "Soup": [
-      "Tomato Basil",
-      " Broccoli Cheddar"
+      "Minestrone",
+      "Chicken Gumbo"
     ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Mushroom Goat Cheese",
-      " Caprese"
+    "International Station": [
+      "Mac & Cheese"
     ]
   },
   "31": {
     "Comfort Food": [
-      "Veggie Chilaquiles"
+      "Adobo Roasted Turkey Breast"
     ],
     "Mindful": [
-      "Thai Chicken Stir Fry"
+      "Creamy Vegetable Casserole"
     ],
     "Sides": [
-      "Roasted Carrots",
-      " Cilantro Lime Rice"
-    ],
-    "International Station": [
-      "Pasta Week"
+      "Lemon Pepper Green Beans",
+      "Egg Noodles"
     ],
     "Soup": [
-      "Tomato Basil",
-      " Broccoli Cheddar"
+      "Minestrone",
+      "Chicken Gumbo"
     ],
-    "Paninis": [
-      "Three Cheese",
-      " Turkey",
-      " Mushroom Goat Cheese",
-      " Caprese"
+    "International Station": [
+      "Mac & Cheese"
+    ]
+  },
+  "1": {
+    "Comfort Food": [
+      "Baked Battered Cod"
+    ],
+    "Mindful": [
+      "Dijon Chicken"
+    ],
+    "Sides": [
+      "Roasted Vegetables",
+      "Roasted Wedge Potatoes"
+    ],
+    "Soup": [
+      "Minestrone",
+      "Chicken Gumbo"
+    ],
+    "International Station": [
+      "Mac & Cheese"
     ]
   }
 }
