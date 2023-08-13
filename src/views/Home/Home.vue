@@ -6,51 +6,48 @@
     />
 
     <card-container class="card-container">
-      <end-of-year-card />
-      <!-- <countdown-card
-        v-show="themeName === 'Summer'"
-        untilDate="May 27, 2023"
-        message="🌴 Summer Countdown 🐬"
-      /> -->
-      <new-feature-card />
-      <new-theme-card />
-      <!-- <april-fools-card /> -->
-      <!-- <shs-hacks-card/> -->
-      <holiday-card />
-      <schedule-card />
-      <weather-card />
-      <lunch-card />
-      <upcoming-events-card />
+        <end-of-year-card />
+        <!-- <countdown-card
+      v-show="themeName === 'Summer'"
+      untilDate="May 27, 2023"
+      message="🌴 Summer Countdown 🐬"
+    /> -->
+        <new-feature-card />
+        <new-theme-card />
+        <!-- <april-fools-card /> -->
+        <!-- <shs-hacks-card/> -->
+        <holiday-card />
+        <schedule-card />
+        <weather-card />
+        <pwc-card/>
+        <lunch-card />
+        <upcoming-events-card />
 
-      <icon-text-card
-        :icon="icons.faBell"
-        text="Bell Schedules"
-        link="bellschedules"
-        :invert="false"
-      />
+        <icon-text-card :icon="icons.faBell"
+                        text="Bell Schedules"
+                        link="bellschedules"
+                        :invert="false" />
 
-      <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
+        <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
 
-      <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" :invert="true" />
-      <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
+        <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" :invert="true" />
+        <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
 
-      <icon-text-card :icon="icons.faRadio" text="Jukebox" link="jukebox" />
+        <icon-text-card :icon="icons.faRadio" text="Jukebox" link="jukebox" />
 
-      <icon-text-card
-        :icon="icons.faCalculator"
-        text="GPA Calculator"
-        link="gpaCalculator"
-        :link-props="{ type: 'a' }"
-        :invert="true"
-      />
+        <icon-text-card :icon="icons.faCalculator"
+                        text="GPA Calculator"
+                        link="gpaCalculator"
+                        :link-props="{ type: 'a' }"
+                        :invert="true" />
 
-      <icon-text-card :icon="icons.faDroplet" text="Switch Theme" link="colors" />
+        <icon-text-card :icon="icons.faDroplet" text="Switch Theme" link="colors" />
 
-      <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
+        <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
 
-      <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" />
+        <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" />
 
-      <icon-text-card :icon="icons.faGear" text="Settings" link="settings" :invert="true" />
+        <icon-text-card :icon="icons.faGear" text="Settings" link="settings" :invert="true" />
     </card-container>
   </div>
 </template>
@@ -71,8 +68,9 @@ import {
 import { mapActions } from "pinia";
 import CardContainer from "@/components/CardContainer.vue";
 import UpcomingEventsCard from "@/components/cards/UpcomingEventsCard.vue";
-import IconTextCard from "@/components/cards/IconTextCard.vue";
-import WeatherCard from "@/components/cards/WeatherCard.vue";
+ import IconTextCard from "@/components/cards/IconTextCard.vue";
+ import WeatherCard from "@/components/cards/WeatherCard.vue";
+ import PwcCard from "@/components/cards/PwcCard.vue";
 import ScheduleCard from "@/components/cards/ScheduleCard.vue";
 import HolidayCard from "@/components/cards/HolidayCard.vue";
 import ContributeCard from "@/components/cards/ContributeCard.vue";
@@ -97,6 +95,7 @@ export default {
     IconTextCard,
     ScheduleCard,
     WeatherCard,
+    PwcCard,
     HolidayCard,
     ContributeCard,
     NewThemeCard,
@@ -120,6 +119,7 @@ export default {
         faHourglass,
         faQrcode,
         faRadio,
+        
       },
       fullScreenMode: false,
       themeName: useThemeStore().theme.name,

@@ -1,6 +1,10 @@
 <template>
   <settings-section title="General">
     <div class="dropdown-row">
+      <span class="title">Show PWC Schedule:</span>
+      <dropdown class="dropdown-select" :options="['Yes', 'No']" :modelValue="this.showPWCSchedule ? 0 : 1" @update:modelValue="updatePWCState" />
+    </div>
+    <div class="dropdown-row">
       <span class="title">Default Schedule Mode:</span>
       <dropdown class="dropdown-select" :options="allModes" :modelValue="defaultMode" @update:modelValue="updateDefaultScheduleMode" />
     </div>
@@ -20,8 +24,8 @@
 
 <script lang="ts">
 import { mapState, mapActions } from 'pinia';
-import Dropdown from '@/components/Dropdown.vue';
 import { defineComponent } from 'vue';
+import Dropdown from '@/components/Dropdown.vue';
 import { MapStateToComputed, Schedule, ScheduleCollection } from '@/utils/types';
 import useUserSettingsStore from '@/stores/user-settings';
 import useScheduleStore from '@/stores/schedules';
@@ -34,6 +38,7 @@ type ScheduleStoreTypes = {
 
 type UserSettingStoreTypes = {
   grade: string;
+  showPWCSchedule: boolean;
 }
 
 type GradeLevels = 'None'| 'Freshman' |'Sophomore'| 'Junior'| 'Senior';
@@ -47,7 +52,7 @@ export default defineComponent({
   },
   computed: {
     ...(mapState(useScheduleStore, ['defaultScheduleMode', 'schedules']) as MapStateToComputed<ScheduleStoreTypes>),
-    ...(mapState(useUserSettingsStore, ['grade']) as MapStateToComputed<UserSettingStoreTypes>),
+    ...(mapState(useUserSettingsStore, ['grade', 'showPWCSchedule']) as MapStateToComputed<UserSettingStoreTypes>),
 
     allModes(): string[] {
       return this.schedules.reduce((arr: string[], schedule: ScheduleCollection) => {
@@ -68,13 +73,16 @@ export default defineComponent({
   },
   methods: {
     ...mapActions(useScheduleStore, ['setDefaultScheduleMode']),
-    ...mapActions(useUserSettingsStore, ['setGrade']),
+    ...mapActions(useUserSettingsStore, ['setGrade', 'setShowPWCSchedule']),
 
     updateDefaultScheduleMode(scheduleIndex: number):void {
       this.setDefaultScheduleMode(this.allModes[scheduleIndex]);
     },
     updateGrade(gradeIndex: number): void {
       this.setGrade(this.grades[gradeIndex]);
+    },
+    updatePWCState(stateIndex: number): void {
+      this.setShowPWCSchedule(stateIndex === 0);
     },
   },
 });
