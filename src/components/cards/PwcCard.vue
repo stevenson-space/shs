@@ -1,6 +1,6 @@
 <template>
     <card v-if="showPWCSchedule" class="card">
-        <p class="title">PWC Hours</p>
+        <p class="title">PWC</p>
         <div class="green-line"></div>
         <div class="countdown">
             <p v-if="isOpen">{{ countdownTime }}</p>
@@ -29,7 +29,12 @@ export default {
         { day: 5, start: '15:30', end: '18:00' }, // Friday
         { day: 6, start: '10:00', end: '15:00' }, // Saturday
         { day: 0, start: '10:00', end: '15:00' }, // Sunday
-      ],
+        ],
+
+        closedDays: [
+            // Add dates in 'YYYY-MM-DD' format for holidays or special closures
+            '2023-12-25', // Example: December 25, 2023
+        ],
         currentTimeMs: 0,
     };
   },
@@ -41,55 +46,93 @@ export default {
     currentDay() {
       return this.currentTime.getDay();
     },
-     currentOpeningTime() {
-      const openingTime = this.openingTimes.find((time) => time.day === this.currentDay);
-      return this.getTimeInMs(this.currentTime.toISOString().substr(0, 10), openingTime.start);
+    currentOpeningTime() {
+      const openingTime = this.openingTimes.find(
+        (time) => time.day === this.currentDay,
+      );
+      return this.getTimeInMs(
+        this.currentTime.toDateString(),
+        openingTime.start,
+      );
     },
     currentClosingTime() {
-      const closingTime = this.openingTimes.find((time) => time.day === this.currentDay);
-      return this.getTimeInMs(this.currentTime.toISOString().substr(0, 10), closingTime.end);
+      const closingTime = this.openingTimes.find(
+        (time) => time.day === this.currentDay,
+      );
+      return this.getTimeInMs(
+        this.currentTime.toDateString(),
+        closingTime.end,
+      );
     },
-    nextOpeningTime() {
-      if (this.currentTime < this.currentOpeningTime) {
-        const openingTime = this.openingTimes.find((time) => time.day === this.currentDay);
-        return this.getTimeInMs(this.getNextDate(this.currentDay), openingTime.start);
-      }
-      const nextDay = (this.currentDay + 1) % 7;
-      const openingTime = this.openingTimes.find((time) => time.day === nextDay);
-      return this.getTimeInMs(this.getNextDate(nextDay), openingTime.start);
-    },
-    isOpen() {
-      return this.currentTime >= this.currentOpeningTime && this.currentTime <= this.currentClosingTime;
-    },
-    openingStatus() {
-      return this.isOpen ? 'Open' : `Opens at ${this.formatTime(this.nextOpeningTime)}`;
-    },
+      nextOpeningTime() {
+          const currentDate = this.currentTime.toISOString().substr(0, 10);
+          if (this.currentTime < this.currentOpeningTime) {
+              const openingTime = this.openingTimes.find((time) => time.day === this.currentDay);
+              return this.getTimeInMs(currentDate, openingTime.start);
+          }
+
+          let nextDay = (this.currentDay + 1) % 7;
+          while (this.closedDays.includes(this.getTimeInMs(this.getNextDate(nextDay), ''))) {
+              nextDay = (nextDay + 1) % 7;
+          }
+          const openingTime = this.openingTimes.find((time) => time.day === nextDay);
+          return this.getTimeInMs(currentDate, openingTime.start);
+      },
+      isOpen() {
+          const isClosedDay = this.closedDays.includes(this.currentTime.toISOString().substr(0, 10));
+          if (isClosedDay) {
+              return false;
+          }
+
+          return (
+              this.currentTime >= this.currentOpeningTime &&
+              this.currentTime <= this.currentClosingTime
+          );
+      },
+      openingStatus() {
+          if (this.closedDays.includes(this.currentTime.toISOString().substr(0, 10))) {
+              return 'Closed Today!';
+          }
+
+          return this.isOpen ? 'Open' : `Opens at ${this.formatTime(this.nextOpeningTime)}`;
+      },
     timeStatus() {
       return this.isOpen ? 'Closes' : 'Closed';
     },
-    countdownTime() {
-      const targetTime = this.isOpen ? this.currentClosingTime : this.nextOpeningTime;
-      const timeDiff = targetTime - this.currentTimeMs;
-      if (timeDiff <= 0) {
-        return '00:00:00';
-      }
-      const hours = String(Math.floor(timeDiff / (1000 * 60 * 60))).padStart(2, '0');
-      const minutes = String(Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-      const seconds = String(Math.floor((timeDiff % (1000 * 60)) / 1000)).padStart(2, '0');
-      return `${hours}:${minutes}:${seconds}`;
+     
+        countdownTime() {
+            const targetTime = this.isOpen
+                ? this.currentClosingTime
+                : this.nextOpeningTime;
+            const timeDiff = targetTime - this.currentTimeMs;
+            if (timeDiff <= 0) {
+                return "00:00:00";
+            }
+            const hours = String(Math.floor(timeDiff / (1000 * 60 * 60))).padStart(
+                2,
+                "0"
+            );
+            const minutes = String(
+                Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60))
+            ).padStart(2, "0");
+            const seconds = String(
+                Math.floor((timeDiff % (1000 * 60)) / 1000)
+            ).padStart(2, "0");
+            return `${hours}:${minutes}:${seconds}`;
+        },
     },
-  },
   methods: {
     getTimeInMs(dateString, timeString) {
-      const dateTimeString = `${dateString}T${timeString}`;
+      const dateTimeString = `${dateString} ${timeString}`;
       return new Date(dateTimeString).getTime();
-    },
+      },
+
     getNextDate(day) {
       const today = this.currentTime.getDay();
       const difference = (day - today + 7) % 7;
       const nextDate = new Date(this.currentTime);
       nextDate.setDate(this.currentTime.getDate() + difference);
-      return nextDate.toISOString().substr(0, 10);
+      return nextDate.toDateString();
     },
     formatTime(timeInMs) {
       const date = new Date(timeInMs);
@@ -103,6 +146,7 @@ export default {
     updateCurrentTime() {
       this.currentTimeMs = Date.now();
     },
+    
   },
   created() {
     // Initialize countdown immediately
