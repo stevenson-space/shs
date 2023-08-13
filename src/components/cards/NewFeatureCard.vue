@@ -1,9 +1,9 @@
 <template>
-  <timed-card startTime="Feburary 20, 2023" endTime="Feburary 23, 2023">
+  <timed-card startTime="August 13, 2023" endTime="August 17, 2023">
     <div class="container">
       <div class="message">
         <br>
-          🧑‍🏫 Need help studying? <a href="https://sites.google.com/d125.org/peer-tutors/content-database">Try Peer Tutors' study guides</a> with materials for over 20 courses!
+        🗺️ Find rooms easily with <a href="https://www.shsmaps.com/" target="_blank">SHSMaps</a>, a new website by Stevenson students. Import your schedule to view your routes from class to class offline, and easily share your rooms and paths for club advertisements! Your members will thank you.
         <br>
       </div>
     </div>
