@@ -1,5 +1,5 @@
 <template>
-    <card v-if="showPWCSchedule" class="card">
+    <card v-if="showPWCSchedule && shouldShowPWCCard" class="card">
         <p class="title">PWC</p>
         <div class="green-line"></div>
         <div class="countdown">
@@ -16,6 +16,7 @@
 import { mapState } from 'pinia';
 import Card from '@/components/Card.vue';
 import useUserSettingsStore from '@/stores/user-settings';
+import useScheduleStore from '@/stores/schedules';
 
 export default {
   components: { Card },
@@ -39,9 +40,18 @@ export default {
     };
   },
   computed: {
+       ...mapState(useScheduleStore, ['date']),
     ...mapState(useUserSettingsStore, ['showPWCSchedule']),
     currentTime() {
       return new Date(this.currentTimeMs);
+    },
+     shouldShowPWCCard() {
+      const scheduleDate = new Date(this.date);
+      const today = new Date();
+      
+      return scheduleDate.getDate() === today.getDate() &&
+             scheduleDate.getMonth() === today.getMonth() &&
+             scheduleDate.getFullYear() === today.getFullYear();
     },
     currentDay() {
       return this.currentTime.getDay();
