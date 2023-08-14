@@ -1,11 +1,11 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
 interface State {
-  grade: string
-  showPWCSchedule: boolean
+  grade: string;
+  showPWCSchedule: boolean;
 }
 
-export default defineStore('grades', {
+export default defineStore("grades", {
   state: (): State => ({
     grade: 'None',
     showPWCSchedule: true,
