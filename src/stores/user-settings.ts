@@ -7,8 +7,8 @@ interface State {
 
 export default defineStore("grades", {
   state: (): State => ({
-    grade: "None",
-    showPWCSchedule: false,
+    grade: 'None',
+    showPWCSchedule: true,
   }),
   actions: {
     initializeGrade(): void {
@@ -17,7 +17,10 @@ export default defineStore("grades", {
       }
     },
     initializeShowPWCSchedule(): void {
-      this.setShowPWCSchedule(localStorage.showPWCSchedule === "true");
+      console.log(localStorage.showPWCSchedule);
+      if (localStorage.showPWCSchedule) {
+        this.setShowPWCSchedule(localStorage.showPWCSchedule === 'true');
+      }
     },
     setGrade(grade: string): void {
       this.grade = grade;
