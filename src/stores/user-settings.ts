@@ -1,13 +1,13 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
 interface State {
-  grade: string
-  showPWCSchedule: boolean
+  grade: string;
+  showPWCSchedule: boolean;
 }
 
-export default defineStore('grades', {
+export default defineStore("grades", {
   state: (): State => ({
-    grade: 'None',
+    grade: "None",
     showPWCSchedule: false,
   }),
   actions: {
@@ -17,8 +17,7 @@ export default defineStore('grades', {
       }
     },
     initializeShowPWCSchedule(): void {
-      console.log(localStorage.showPWCSchedule);
-      this.setShowPWCSchedule(localStorage.showPWCSchedule === 'true');
+      this.setShowPWCSchedule(localStorage.showPWCSchedule === "true");
     },
     setGrade(grade: string): void {
       this.grade = grade;

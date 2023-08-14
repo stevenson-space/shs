@@ -1,58 +1,78 @@
 <template>
-    <div class="live">
-      <div class="background-block" />
+  <div class="live">
+    <div class="background-block" />
 
-      <div class="main">
-        <home-link class="home-link" :invert="false" />
-        <div class="inner-background">
-          <h1 class="title"><font-awesome-icon class="icon" :icon="icons.faRadio" /> Meet Jukebox</h1>
-          <p class="subtitle">Discover original music from Stevenson students.</p>
-          <div class="now-playing">
-            <img class="album-art" :src="songs[currentSongIndex].album ? `https://music-backend.stevenson-space.workers.dev/${songs[currentSongIndex].album}` : defaultAlbum" />
-            <div class="song-info">
-              <p class="song-title">{{songs[currentSongIndex].name}}</p>
-              <p class="song-artist">{{songs[currentSongIndex].artist ? songs[currentSongIndex].artist : "Anonymous"}}, {{songs[currentSongIndex].year}}</p>
-            </div>
-            <div class="controls">
-              <button @click="previousSong()" class="control-button">
-                <font-awesome-icon :icon="icons.faStepBackward" />
-              </button>
-              <button @click="playing ? pause() : play()" class="control-button play-button">
-                <font-awesome-icon :icon="playing ? icons.faPause : icons.faPlay" />
-              </button>
-              <button @click="currentSongIndex + 1 < songs.length ? setSongOf(currentSongIndex+1) : setSongOf(0)" class="control-button">
-                <font-awesome-icon :icon="icons.faStepForward" />
-              </button>
-            </div>
-            <div class="progress">
-              <p class="progress-text">{{formatTime(currentTimePlaying)}}</p>
-              <div class="progress-bar">
-                <div class="progress-bar-fill" :style="`width: ${percentFinished}%;`" />
-                <div class="progress-bar-handle" :style="`left: ${percentFinished}%;`" />
-              </div>
-              <p class="progress-text">{{formatTime(totalSongTime)}}</p>
-            </div>
+    <div class="main">
+      <home-link class="home-link" :invert="false" />
+      <div class="inner-background">
+        <h1 class="title"><font-awesome-icon class="icon" :icon="icons.faRadio" /> Meet Jukebox</h1>
+        <p class="subtitle">Discover original music from Stevenson students.</p>
+        <div class="now-playing">
+          <img
+            class="album-art"
+            :src="
+              songs[currentSongIndex].album
+                ? `https://music-backend.stevenson-space.workers.dev/${songs[currentSongIndex].album}`
+                : defaultAlbum
+            "
+          />
+          <div class="song-info">
+            <p class="song-title">{{ songs[currentSongIndex].name }}</p>
+            <p class="song-artist">
+              {{ songs[currentSongIndex].artist ? songs[currentSongIndex].artist : "Anonymous" }},
+              {{ songs[currentSongIndex].year }}
+            </p>
           </div>
-          <div class="song-list" v-for="(song, index) in songs" :key="index">
-            <button @click="setSongOf(index)" class="play-button">
-              <font-awesome-icon :icon="icons.faPlay" />
+          <div class="controls">
+            <button @click="previousSong()" class="control-button">
+              <font-awesome-icon :icon="icons.faStepBackward" />
             </button>
-            <p @click="setSongOf(index)" class="song-title">{{song.name}}</p>
-            <p class="song-bullet">&bull;</p>
-            <p class="song-artist">{{song.artist ? song.artist : "Anonymous"}}, {{song.year}}</p>
+            <button @click="playing ? pause() : play()" class="control-button play-button">
+              <font-awesome-icon :icon="playing ? icons.faPause : icons.faPlay" />
+            </button>
+            <button
+              @click="
+                currentSongIndex + 1 < songs.length ? setSongOf(currentSongIndex + 1) : setSongOf(0)
+              "
+              class="control-button"
+            >
+              <font-awesome-icon :icon="icons.faStepForward" />
+            </button>
           </div>
-          <div class="footer-group">
-            <p class="footer">Have a song you'd like to publish on Jukebox? <a href="https://forms.gle/AHwgziyiqdLJwVaS9" target="_blank" rel="noreferrer">Submit it here <font-awesome-icon :icon="icons.faArrowUpRightFromSquare" /></a></p>
-            <p class="footer">Music is student-created and not endorsed by Stevenson High School</p>
+          <div class="progress">
+            <p class="progress-text">{{ formatTime(currentTimePlaying) }}</p>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" :style="`width: ${percentFinished}%;`" />
+              <div class="progress-bar-handle" :style="`left: ${percentFinished}%;`" />
+            </div>
+            <p class="progress-text">{{ formatTime(totalSongTime) }}</p>
           </div>
         </div>
+        <div class="song-list" v-for="(song, index) in songs" :key="index">
+          <button @click="setSongOf(index)" class="play-button">
+            <font-awesome-icon :icon="icons.faPlay" />
+          </button>
+          <p @click="setSongOf(index)" class="song-title">{{ song.name }}</p>
+          <p class="song-bullet">&bull;</p>
+          <p class="song-artist">{{ song.artist ? song.artist : "Anonymous" }}, {{ song.year }}</p>
+        </div>
+        <div class="footer-group">
+          <p class="footer">
+            Have a song you'd like to publish on Jukebox?
+            <a href="https://forms.gle/AHwgziyiqdLJwVaS9" target="_blank" rel="noreferrer"
+              >Submit it here <font-awesome-icon :icon="icons.faArrowUpRightFromSquare"
+            /></a>
+          </p>
+          <p class="footer">Music is student-created and not endorsed by Stevenson High School</p>
+        </div>
       </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HomeLink from '@/components/HomeLink.vue';
-import songs from '@/data/music.json';
+import HomeLink from "@/components/HomeLink.vue";
+import songs from "@/data/music.json";
 import {
   faRadio,
   faPlay,
@@ -60,16 +80,21 @@ import {
   faStepForward,
   faPause,
   faArrowUpRightFromSquare,
-} from '@fortawesome/free-solid-svg-icons';
-import { Howl } from 'howler';
-import defaultAlbum from '@/assets/default-music-album.png';
+} from "@fortawesome/free-solid-svg-icons";
+import { Howl } from "howler";
+import defaultAlbum from "@/assets/default-music-album.png";
 
 export default {
   components: { HomeLink },
   data() {
     return {
       icons: {
-        faRadio, faPlay, faStepBackward, faStepForward, faPause, faArrowUpRightFromSquare,
+        faRadio,
+        faPlay,
+        faStepBackward,
+        faStepForward,
+        faPause,
+        faArrowUpRightFromSquare,
       },
       currentSongIndex: 0,
       playing: false,
@@ -83,10 +108,9 @@ export default {
   mounted() {
     const fileFormatRegex = /\.[0-9a-z]+$/i;
     for (const song of songs) {
-      console.log(song.file.match(fileFormatRegex)[0]);
       song.howler = new Howl({
         src: [`https://music-backend.stevenson-space.workers.dev/${song.file}`], // Cloudflare R2 instance URL
-        format: ['.mp3'],
+        format: [".mp3"],
         html5: true,
         volume: 0.5,
         onend: () => {
@@ -98,8 +122,8 @@ export default {
       });
       song.id = 0;
     }
-    document.addEventListener('keyup', (e) => {
-      if (e.key === ' ') {
+    document.addEventListener("keyup", (e) => {
+      if (e.key === " ") {
         e.preventDefault();
         // eslint-disable-next-line no-unused-expressions
         this.playing ? this.pause() : this.play();
@@ -132,11 +156,13 @@ export default {
     },
     play() {
       const currentSong = this.songs[this.currentSongIndex];
-      console.log(currentSong.id);
       if (currentSong.id === 0) {
         this.songs[this.currentSongIndex].id = currentSong.howler.play();
       } else currentSong.howler.play(currentSong.id);
-      this.songs[this.currentSongIndex].progressBar = setInterval(() => this.updateProgressBar(), 100);
+      this.songs[this.currentSongIndex].progressBar = setInterval(
+        () => this.updateProgressBar(),
+        100
+      );
       currentSong.howler.fade(0, 0.5, 1);
       this.playing = true;
     },
