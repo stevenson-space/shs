@@ -8,7 +8,7 @@ interface State {
 export default defineStore('grades', {
   state: (): State => ({
     grade: 'None',
-    showPWCSchedule: false,
+    showPWCSchedule: true,
   }),
   actions: {
     initializeGrade(): void {
