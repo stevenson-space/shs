@@ -29,7 +29,7 @@
     },
     {
         "name": "Fall",
-        "schedule": "9/22/2022-12/1/2022",
+        "schedule": "9/22/2023-12/1/2023",
         "message": "[Try] The New Fall Theme 🍁",
         "suggestedColor": "#d26f1e",
         "background": "white",
@@ -44,7 +44,7 @@
     },
     {
         "name": "Halloween",
-        "schedule": "10/15/2022-11/1/2022",
+        "schedule": "10/15/2023-11/1/2023",
         "message": "[Try] The Spooky Halloween Theme",
         "suggestedColor": "#cc611b",
         "background": "#0f0f0f",
@@ -59,7 +59,7 @@
     },
     {
         "name": "Winter",
-        "schedule": "12/1/2022-3/20/2023",
+        "schedule": "12/1/2023-3/20/2024",
         "message" : "[Try] The New Winter Theme ☕",
         "suggestedColor": "#02647a",
         "background": "#f2fcff",
@@ -74,7 +74,7 @@
     },
     {
         "name": "Valentine's Day",
-        "schedule": "2/8/2023-2/15/2023",
+        "schedule": "2/8/2024-2/15/2024",
         "message" : "[Try] The New Valentines Day Theme",
         "suggestedColor": "#f98686",
         "background": "#ffeded",
@@ -120,7 +120,7 @@
     },
     {
         "name": "Summer",
-        "schedule": "5/1/2023-9/22/2023",
+        "schedule": "5/1/2024-9/22/2024",
         "message": "[Try] The new summer theme now!",
         "suggestedColor": "#49c3d1",
         "background": "white",
