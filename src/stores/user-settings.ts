@@ -17,10 +17,11 @@ export default defineStore("grades", {
       }
     },
     initializeShowPWCSchedule(): void {
-      console.log(localStorage.showPWCSchedule);
-      //if (localStorage.showPWCSchedule) {
-        this.setShowPWCSchedule(localStorage.showPWCSchedule === 'true');
-      //}
+      //console.log(localStorage.showPWCSchedule);
+      ////if (localStorage.showPWCSchedule) {
+      //  this.setShowPWCSchedule(localStorage.showPWCSchedule === 'true');
+      ////}
+      .setShowPWCSchedule(true)
     },
     setGrade(grade: string): void {
       this.grade = grade;
