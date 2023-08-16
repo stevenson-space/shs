@@ -1,9 +1,9 @@
 <template>
   <settings-section title="General">
-    <!--<div class="dropdown-row">
+    <div class="dropdown-row">
       <span class="title">Show PWC Schedule:</span>
       <dropdown class="dropdown-select" :options="['Yes', 'No']" :modelValue="this.showPWCSchedule ? 0 : 1" @update:modelValue="updatePWCState" />
-    </div>-->
+    </div>
     <div class="dropdown-row">
       <span class="title">Default Schedule Mode:</span>
       <dropdown class="dropdown-select" :options="allModes" :modelValue="defaultMode" @update:modelValue="updateDefaultScheduleMode" />
