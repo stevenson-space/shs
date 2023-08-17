@@ -417,13 +417,13 @@
 </template>
 
 <script>
+    import Dropdown from '@/components/Dropdown.vue'; 
     import PlainHeader from '@/components/HomeLink.vue'; // Update the import path accordingly
-    import Dropdown from '@/Components/Dropdown.vue'; // Import the Dropdown component
-
+   
     export default {
         components: {
             PlainHeader,
-            Dropdown, // Register the Dropdown component
+            Dropdown,
         },
         data() {
             return {
