@@ -1,38 +1,37 @@
 <template>
     <div class="outer-container">
-        <div class="menu-dropdown">
-            <label for="menu-select">Select a Menu:</label>
-            <select id="menu-select" v-model="selectedMenu">
-                <option value="jazzmans">Jazzman's Menu</option>
-                <option value="pwc-cafe">PWC Cafe Menu</option>
-                <option value="deli">Deli Menu</option>
-                <option value="special">Special Menu</option>
-            </select>
-        </div>
+        
         <div class="menu-container">
+            <h1 class="menu-text" for="menu-select">Select a Menu:</h1>
+            <Dropdown :options="menuOptions"
+                      :modelValue="selectedMenu"
+                      align="center"
+                      direction="down"
+                      @update:modelValue="onMenuSelect" />
+
             <div>
                 <plain-header title="Menus" />
 
                 <div class="menu-board">
-                    <header class="menu-header" v-if="selectedMenu === 'jazzmans'">
+                    <header class="menu-header" v-if="selectedMenu === 'Jazzmans'">
                         <h1 class="menu-title">Jazzman's Menu</h1>
                         <div class="green-line"></div>
                     </header>
-                    <header class="menu-header" v-if="selectedMenu === 'pwc-cafe'">
+                    <header class="menu-header" v-if="selectedMenu === 'Pwc Cafe'">
                         <h1 class="menu-title">PWC Menu</h1>
                         <div class="green-line"></div>
                     </header>
-                    <header class="menu-header" v-if="selectedMenu === 'deli'">
+                    <header class="menu-header" v-if="selectedMenu === 'Deli Menu'">
                         <h1 class="menu-title">Deli Menu</h1>
                         <div class="green-line"></div>
                     </header>
-                    <header class="menu-header" v-if="selectedMenu === 'special'">
+                    <header class="menu-header" v-if="selectedMenu === 'Special Menu'">
                         <h1 class="menu-title">Special Menu</h1>
                         <div class="green-line"></div>
                     </header>
 
 
-                    <div class="menu-row" v-if="selectedMenu === 'pwc-cafe'">
+                    <div class="menu-row" v-if="selectedMenu === 'Pwc Cafe'">
                         <section class="menu-categoryFour">
                             <h2 class="category-title">Açaí Bowl</h2>
                             <div class="small-green-line"></div>
@@ -96,7 +95,7 @@
                     </div>
 
 
-                    <div class="menu-row" v-if="selectedMenu === 'special'">
+                    <div class="menu-row" v-if="selectedMenu === 'Special Menu'">
                         <section class="menu-categorySix">
                             <h2 class="category-title">Poké Bowl <br />(Monday)</h2>
                             <div class="small-green-line"></div>
@@ -193,7 +192,7 @@
                         </section>
                     </div>
 
-                    <div class="menu-row" v-if="selectedMenu === 'pwc-cafe'">
+                    <div class="menu-row" v-if="selectedMenu === 'Pwc Cafe'">
                         <section class="menu-categoryThree">
                             <h2 class="category-title">Tea/Coffee</h2>
                             <div class="small-green-line"></div>
@@ -241,7 +240,7 @@
                         </section>
                     </div>
 
-                    <div class="menu-row" v-if="selectedMenu === 'jazzmans'">
+                    <div class="menu-row" v-if="selectedMenu === 'Jazzmans'">
                         <section class="menu-category">
                             <h2 class="category-title">Classics</h2>
                             <div class="small-green-line"></div>
@@ -303,7 +302,7 @@
                         </section>
                     </div>
 
-                    <div class="menu-row" v-if="selectedMenu === 'jazzmans'">
+                    <div class="menu-row" v-if="selectedMenu === 'Jazzmans'">
                         <section class="menu-categoryTwo">
                             <h2 class="category-title">Sandwiches</h2>
                             <div class="small-green-line"></div>
@@ -351,7 +350,7 @@
                             </ul>
                         </section>
                     </div>
-                    <div class="menu-row" v-if="selectedMenu === 'deli'">
+                    <div class="menu-row" v-if="selectedMenu === 'Deli Menu'">
                         <section class="menu-categoryFive">
                             <h2 class="category-title">Bread</h2>
                             <div class="small-green-line"></div>
@@ -414,20 +413,39 @@
 
             </div>
         </div>
-        </div>
+    </div>
 </template>
 
 <script>
     import PlainHeader from '@/components/HomeLink.vue'; // Update the import path accordingly
+    import Dropdown from '@/Components/Dropdown.vue'; // Import the Dropdown component
+
     export default {
         components: {
             PlainHeader,
+            Dropdown, // Register the Dropdown component
         },
         data() {
             return {
-                selectedMenu: 'jazzmans', // Default selection
+                selectedMenu: 'Jazzmans', // Default selection
+                // Additional data for Dropdown component
+                menuOptions: [
+                    'Jazzmans',
+                    'Pwc Cafe',
+                    'Deli Menu',
+                    'Special Menu',
+                ],
+                selectedOptionIndex: 0, // Default selected index
             };
         },
+        methods: {
+            onMenuSelect(selectedIndex) {
+                this.selectedOptionIndex = selectedIndex; // Update the selected option index
+                this.selectedMenu = this.menuOptions[selectedIndex];
+      },
+            // ... Other methods
+        },
+
     };
 </script>
 
@@ -447,6 +465,9 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2)
   margin: auto
 
+.menu-text
+    text-align: center
+    font-size: 17px
 
 .menu-dropdown
     text-align: center
@@ -518,38 +539,38 @@
     justify-content: center
 
 .menu-category
-    margin-right: 70px
-    margin-left: 70px
+    margin-right: 50px
+    margin-left: 50px
     text-align: center
     flex: 1
 
 .menu-categoryTwo
-    margin-right: 70px
-    margin-left: 70px
+    margin-right: 50px
+    margin-left: 50px
     text-align: center
     flex: 1
 
 .menu-categoryThree
-    margin-right: 90px
-    margin-left: 90px
+    margin-right: 50px
+    margin-left: 50px
     text-align: center
     flex: 1
 
 .menu-categoryFour
-    margin-right: 90px
-    margin-left: 90px
+    margin-right: 50px
+    margin-left: 50px
     text-align: center
     flex: 1
 
 .menu-categoryFive
-    margin-right: 97px
-    margin-left: 97px
+    margin-right: 50px
+    margin-left: 50px
     text-align: center
     flex: 1
 
 .menu-categorySix
-    margin-right: 25px
-    margin-left: 25px
+    margin-right: 50px
+    margin-left: 50px
     text-align: center
     flex: 1
 .category-title
