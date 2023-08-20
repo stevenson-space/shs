@@ -5,7 +5,7 @@
             <h1 class="menu-text" for="menu-select">Select a Menu:</h1>
             <Dropdown :options="menuOptions"
                       :modelValue="selectedMenu"
-                      align="center"
+                      align="left"
                       direction="down"
                       @update:modelValue="onMenuSelect" />
 
