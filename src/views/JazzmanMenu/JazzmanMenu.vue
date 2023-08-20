@@ -459,7 +459,9 @@
   padding: 35px
 
 .menu-container
-  width: 80% /* Adjust the width as needed */
+  width: 80%
+  +mobile
+    width: 100%/* Adjust the width as needed */
   background-color: #ffffff
   border: 0px solid #000000
   border-radius: 10px
@@ -539,6 +541,8 @@
 .menu-row
     display: flex
     justify-content: center
+    +mobile
+     flex-direction: column
 
 .menu-category
     margin-right: 50px
