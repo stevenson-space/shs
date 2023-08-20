@@ -1,6 +1,6 @@
 <template>
     <div class="outer-container">
-        
+        <div class="gap"></div>
         <div class="menu-container">
             <h1 class="menu-text" for="menu-select">Select a Menu:</h1>
             <Dropdown :options="menuOptions"
@@ -17,7 +17,7 @@
                         <h1 class="menu-title">Jazzman's Menu</h1>
                         <div class="green-line"></div>
                     </header>
-                    <header class="menu-header" v-if="selectedMenu === 'Pwc Cafe'">
+                    <header class="menu-header" v-if="selectedMenu === 'PWC Cafe'">
                         <h1 class="menu-title">PWC Menu</h1>
                         <div class="green-line"></div>
                     </header>
@@ -31,7 +31,7 @@
                     </header>
 
 
-                    <div class="menu-row" v-if="selectedMenu === 'Pwc Cafe'">
+                    <div class="menu-row" v-if="selectedMenu === 'PWC Cafe'">
                         <section class="menu-categoryFour">
                             <h2 class="category-title">Açaí Bowl</h2>
                             <div class="small-green-line"></div>
@@ -192,7 +192,7 @@
                         </section>
                     </div>
 
-                    <div class="menu-row" v-if="selectedMenu === 'Pwc Cafe'">
+                    <div class="menu-row" v-if="selectedMenu === 'PWC Cafe'">
                         <section class="menu-categoryThree">
                             <h2 class="category-title">Tea/Coffee</h2>
                             <div class="small-green-line"></div>
@@ -431,7 +431,7 @@
                 // Additional data for Dropdown component
                 menuOptions: [
                     'Jazzmans',
-                    'Pwc Cafe',
+                    'PWC Cafe',
                     'Deli Menu',
                     'Special Menu',
                 ],
@@ -443,7 +443,7 @@
                 this.selectedOptionIndex = selectedIndex; // Update the selected option index
                 this.selectedMenu = this.menuOptions[selectedIndex];
       },
-            // ... Other methods
+           
         },
 
     };
@@ -455,11 +455,13 @@
 .outer-container 
   background-color: var(--color) /*  */
 
+.gap
+  padding: 35px
 
 .menu-container
   width: 80% /* Adjust the width as needed */
   background-color: #ffffff
-  border: 2px solid #000000
+  border: 0px solid #000000
   border-radius: 10px
   padding: 20px
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2)
@@ -502,7 +504,7 @@
 .home-link
     position: absolute
     top: 10px
-    right: 15px
+    right: 90px
     +mobile-small
       top: 0
       right: 5px
@@ -635,4 +637,6 @@
 .menu-title
     font-size: 32px
     color: var(--color) /* Phthalo green */
+
+ 
 </style>
