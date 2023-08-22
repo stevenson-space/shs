@@ -453,7 +453,10 @@
 @import 'src/styles/style.sass'
 
 .outer-container 
-  background-color: var(--color) /*  */
+  background-color: var(--color)
+  +mobile
+   width: 100%     
+
 
 .gap
   padding: 35px
@@ -461,7 +464,7 @@
 .menu-container
   width: 80%
   +mobile
-    width: 100%/* Adjust the width as needed */
+    width: 60%/* Adjust the width as needed */
   background-color: #ffffff
   border: 0px solid #000000
   border-radius: 10px
@@ -476,12 +479,15 @@
 .menu-dropdown
     text-align: center
     margin: 20px 0
+    
+     
 
 .menu-select
     padding: 5px 10px
     border: 1px solid #ccc
     border-radius: 4px
     font-size: 16px
+
 
 
 
