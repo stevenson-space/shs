@@ -460,7 +460,7 @@
 
 
 .gap
-  padding: 35px
+  padding:50px
 
 .menu-container
   width: 80%
@@ -480,6 +480,7 @@
 .menu-dropdown
     text-align: center
     margin: 20px 0
+   
     
 
 .menu-select
@@ -506,7 +507,7 @@
 
 .home-link
     position: absolute
-    top: 10px
+    top: 30px
     right: 90px
     +mobile-small
       top: 0
