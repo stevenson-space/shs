@@ -19,7 +19,7 @@
 <script>
 import { mapState } from 'pinia';
 import maskedPatriot from '@/assets/patriot-masked.png';
-import patriot from '@/assets/patriot-logo-party.png';
+import patriot from '@/assets/patriot.png';
 import useScheduleStore from '@/stores/schedules';
 
 export default {
