@@ -449,8 +449,9 @@
     };
 </script>
 
+
 <style lang="sass">
-@import 'src/styles/style.sass'
+    @import 'src/styles/style.sass'
 
 .outer-container 
   background-color: var(--color)
@@ -480,17 +481,12 @@
     text-align: center
     margin: 20px 0
     
-     
 
 .menu-select
     padding: 5px 10px
     border: 1px solid #ccc
     border-radius: 4px
     font-size: 16px
-
-
-
-
 
 .plain-header
   max-width: $content-width
@@ -502,7 +498,6 @@
     text-align: center
 
 .title
-    line-height: 120px
     font-size: 3.5em
     font-weight: bold
     margin-left: 10px
@@ -516,7 +511,6 @@
     +mobile-small
       top: 0
       right: 5px
-
 
 .menu-board
     display: flex
@@ -632,7 +626,7 @@
 .menu-categoryFive li
     margin: 5px 0
     font-size: 18px
-    color: #8c8c8c /* Dark gray text color */
+    color: #8c8c8c 
 
 .menu-categorySix ul
     list-style-type: none
@@ -641,12 +635,10 @@
 .menu-categorySix li
     margin: 5px 0
     font-size: 18px
-    color: #8c8c8c /* Dark gray text color */
+    color: #8c8c8c 
 
 
 .menu-title
     font-size: 32px
-    color: var(--color) /* Phthalo green */
-
- 
+    color: var(--color) 
 </style>
