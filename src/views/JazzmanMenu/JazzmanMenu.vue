@@ -5,7 +5,7 @@
             <h1 class="menu-text" for="menu-select">Select a Menu:</h1>
             <Dropdown :options="menuOptions"
                       :modelValue="selectedMenu"
-                      align="left"
+                      align="right"
                       direction="down"
                       @update:modelValue="onMenuSelect" />
 
@@ -469,7 +469,10 @@
   background-color: #ffffff
   border: 0px solid #000000
   border-radius: 10px
-  padding: 20px
+  padding-bottom: 20px
+  padding-right: 20px
+  padding-left: 20px
+  padding-top: 5px
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2)
   margin: auto
 
