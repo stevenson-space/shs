@@ -2,14 +2,17 @@
     <div class="outer-container">
         <div class="gap"></div>
         <div class="menu-container">
-            <h1 class="menu-text" for="menu-select">Select a Menu:</h1>
-            <Dropdown :options="menuOptions"
-                      :modelValue="selectedMenu"
-                      align="right"
-                      direction="down"
-                      @update:modelValue="onMenuSelect" />
+            
+            <div class="menu-dropdown-container">
+                <h1 class="menu-text" for="menu-select">Select a Menu:</h1>
+                <Dropdown :options="menuOptions"
+                          :modelValue="selectedMenu"
+                          align="right"
+                          direction="down"
+                          @update:modelValue="onMenuSelect" />
+                <div class="gap2"></div>
+           
 
-            <div>
                 <plain-header title="Menus" />
 
                 <div class="menu-board">
@@ -351,7 +354,7 @@
                         </section>
                     </div>
                     <div class="menu-row" v-if="selectedMenu === 'Deli Menu'">
-                        <section class="menu-categoryFive">
+                        <section class="menu-categorySeven">
                             <h2 class="category-title">Bread</h2>
                             <div class="small-green-line"></div>
                             <ul>
@@ -364,7 +367,7 @@
                             </ul>
                         </section>
 
-                        <section class="menu-categoryFive">
+                        <section class="menu-categorySeven">
                             <h2 class="category-title">Protein</h2>
                             <div class="small-green-line"></div>
                             <ul>
@@ -378,7 +381,7 @@
                             </ul>
                         </section>
 
-                        <section class="menu-categoryFive">
+                        <section class="menu-categorySeven">
                             <h2 class="category-title">Toppings</h2>
                             <div class="small-green-line"></div>
                             <ul>
@@ -395,7 +398,7 @@
                             </ul>
                         </section>
 
-                        <section class="menu-categoryFive">
+                        <section class="menu-categorySeven">
                             <h2 class="category-title">Sauce</h2>
                             <div class="small-green-line"></div>
                             <ul>
@@ -462,6 +465,22 @@
 .gap
   padding:50px
 
+.menu-dropdown-container
+  display: flex
+  align-items: center  // Vertically align contents
+  
+  margin-left:10px 0
+  flex-wrap: wrap // Allow items to wrap if they don't fit in a row
+     
+
+.menu-dropdown
+  text-align: center
+  margin: 0 10px
+
+.gap2
+  padding-left: 50px
+  padding-right: 10px
+
 .menu-container
   width: 80%
   +mobile
@@ -477,13 +496,13 @@
   margin: auto
 
 .menu-text
-    text-align: center
+    text-align: left
     font-size: 17px
 
 .menu-dropdown
     text-align: center
     margin: 20px 0
-   
+    
     
 
 .menu-select
@@ -550,25 +569,25 @@
 
 .menu-category
     margin-right: 50px
-    margin-left: 50px
+    margin-left:60px
     text-align: center
     flex: 1
 
 .menu-categoryTwo
     margin-right: 50px
-    margin-left: 50px
+    margin-left: 60px
     text-align: center
     flex: 1
 
 .menu-categoryThree
-    margin-right: 50px
-    margin-left: 50px
+    margin-right: 70px
+    margin-left: 65px
     text-align: center
     flex: 1
 
 .menu-categoryFour
-    margin-right: 50px
-    margin-left: 50px
+    margin-right: 70px
+    margin-left: 65px
     text-align: center
     flex: 1
 
@@ -583,6 +602,13 @@
     margin-left: 50px
     text-align: center
     flex: 1
+
+.menu-categorySeven
+    margin-right: 60px
+    margin-left: 94px
+    text-align: center
+    flex: 1
+
 .category-title
     font-size: 24px
     color: var(--color) /* Silver sand */
@@ -637,6 +663,15 @@
     padding-left: 0
 
 .menu-categorySix li
+    margin: 5px 0
+    font-size: 18px
+    color: #8c8c8c
+
+.menu-categorySeven ul
+    list-style-type: none
+    padding-left: 0
+
+.menu-categorySeven li
     margin: 5px 0
     font-size: 18px
     color: #8c8c8c 
