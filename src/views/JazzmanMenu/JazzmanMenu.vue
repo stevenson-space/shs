@@ -355,8 +355,8 @@
                     </div>
                     <div class="menu-row" v-if="selectedMenu === 'Deli Menu'">
                         <section class="menu-categorySeven">
-                            <h2 class="category-title">Bread</h2>
-                            <div class="small-green-line"></div>
+                            <h2 class="category-titleTwo">Bread</h2>
+                            <div class="small-green-lineTwo"></div>
                             <ul>
                                 <li>White Bread</li>
                                 <li>Wheat Bread</li>
@@ -368,8 +368,8 @@
                         </section>
 
                         <section class="menu-categorySeven">
-                            <h2 class="category-title">Protein</h2>
-                            <div class="small-green-line"></div>
+                            <h2 class="category-titleTwo">Protein</h2>
+                            <div class="small-green-lineTwo"></div>
                             <ul>
                                 <li>Roast Beef</li>
                                 <li>Turkey</li>
@@ -382,8 +382,8 @@
                         </section>
 
                         <section class="menu-categorySeven">
-                            <h2 class="category-title">Toppings</h2>
-                            <div class="small-green-line"></div>
+                            <h2 class="category-titleTwo">Toppings</h2>
+                            <div class="small-green-lineTwo"></div>
                             <ul>
                                 <li>Lettuce</li>
                                 <li>Tomato</li>
@@ -399,8 +399,8 @@
                         </section>
 
                         <section class="menu-categorySeven">
-                            <h2 class="category-title">Sauce</h2>
-                            <div class="small-green-line"></div>
+                            <h2 class="category-titleTwo">Sauce</h2>
+                            <div class="small-green-lineTwo"></div>
                             <ul>
                                 <li>Chipotle</li>
                                 <li>Mustard</li>
@@ -503,7 +503,7 @@
     text-align: center
     margin: 20px 0
     
-    
+
 
 .menu-select
     padding: 5px 10px
@@ -549,6 +549,7 @@
     text-align: center
     margin-bottom: 30px
 
+
 .green-line
     width: 60px
     height: 2px
@@ -572,6 +573,8 @@
     margin-left:60px
     text-align: center
     flex: 1
+   
+    
 
 .menu-categoryTwo
     margin-right: 50px
@@ -612,24 +615,34 @@
 .category-title
     font-size: 24px
     color: var(--color) /* Silver sand */
+    +mobile
+        font-size:19px
+        padding-right: 5px
 
 .menu-category ul
     list-style-type: none
     padding-left: 0
-
+    
+    
+    
 .menu-category li
     margin: 5px 0
     font-size: 18px
     color: #8c8c8c /* Dark gray text color */
+    +mobile
+     font-size: 12px
 
 .menu-categoryTwo ul
     list-style-type: none
     padding-left: 0
+   
 
 .menu-categoryTwo li
     margin: 5px 0
     font-size: 18px
     color: #8c8c8c /* Dark gray text color */
+    +mobile
+     font-size: 12px
 
 .menu-categoryThree ul
     list-style-type: none
@@ -639,6 +652,8 @@
     margin: 5px 0
     font-size: 18px
     color: #8c8c8c /* Dark gray text color */
+    +mobile
+     font-size: 12px
 
 .menu-categoryFour ul
     list-style-type: none
@@ -648,6 +663,8 @@
     margin: 5px 0
     font-size: 18px
     color: #8c8c8c /* Dark gray text color */
+    +mobile
+     font-size: 12px
 
 .menu-categoryFive ul
     list-style-type: none
@@ -657,6 +674,8 @@
     margin: 5px 0
     font-size: 18px
     color: #8c8c8c 
+    +mobile
+     font-size: 12px
 
 .menu-categorySix ul
     list-style-type: none
@@ -666,18 +685,40 @@
     margin: 5px 0
     font-size: 18px
     color: #8c8c8c
+    +mobile
+     font-size: 12px
 
 .menu-categorySeven ul
     list-style-type: none
-    padding-left: 0
+    padding-left: 0px
+    padding-right: 0px
 
 .menu-categorySeven li
     margin: 5px 0
     font-size: 18px
     color: #8c8c8c 
-
+    +mobile
+     font-size: 12px
+     padding-right: 25px
 
 .menu-title
     font-size: 32px
-    color: var(--color) 
+    color: var(--color)
+
+.category-titleTwo
+    font-size: 24px
+    color: var(--color) /* Silver sand */
+    +mobile
+        font-size:19px
+        padding-right:30px
+
+.small-green-lineTwo
+    width: 20px
+    height: 2px
+    background-color: #040f0f /* Phthalo green */
+    margin-left: 50px
+    margin-right: 45px
+    +mobile
+        padding-right:0px
+        padding-left:0px
 </style>
