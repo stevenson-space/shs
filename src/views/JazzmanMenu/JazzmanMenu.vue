@@ -583,32 +583,32 @@
     flex: 1
 
 .menu-categoryThree
-    margin-right: 70px
-    margin-left: 65px
+    margin-right: 50px
+    margin-left: 60x
     text-align: center
     flex: 1
 
 .menu-categoryFour
-    margin-right: 70px
-    margin-left: 65px
+    margin-right: 50px
+    margin-left: 60px
     text-align: center
     flex: 1
 
 .menu-categoryFive
     margin-right: 50px
-    margin-left: 50px
+    margin-left: 60px
     text-align: center
     flex: 1
 
 .menu-categorySix
     margin-right: 50px
-    margin-left: 50px
+    margin-left: 60px
     text-align: center
     flex: 1
 
 .menu-categorySeven
-    margin-right: 60px
-    margin-left: 94px
+    margin-right: 50px
+    margin-left: 70px
     text-align: center
     flex: 1
 
