@@ -6,12 +6,16 @@
             <div class="menu-dropdown-container">
                 <h1 class="menu-text" for="menu-select">Select a Menu:</h1>
                 <Dropdown :options="menuOptions"
-                          :modelValue="selectedMenu"
+                          :modelValue="selectedOptionIndex"
                           align="right"
                           direction="down"
-                          @update:modelValue="onMenuSelect" />
+                          @update:modelValue="onMenuSelect">
+                    <template v-slot="{ option }">
+                        {{ menuOptions[option] }}
+                    </template>
+                </Dropdown>
                 <div class="gap2"></div>
-           
+
 
                 <plain-header title="Menus" />
 
