@@ -32,7 +32,20 @@ export default {
       ],
       closedDays: [
         // Add dates in 'YYYY-MM-DD' format for holidays or special closures
-        '2023-12-25', // Example: December 25, 2023
+        '2023-10-09',
+        '2023-11-22',
+        '2023-11-23',
+        '2023-11-24',
+        '2023-12-22',
+        '2023-12-25',
+        '2023-12-26',
+        '2023-12-27',
+        '2023-12-28',
+        '2023-12-29',
+       
+
+        
+
       ],
       currentTimeMs: 0,
     };
