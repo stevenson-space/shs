@@ -2,424 +2,442 @@
     <div class="outer-container">
         <div class="gap"></div>
         <div class="menu-container">
-            
+
+
             <div class="menu-dropdown-container">
-                <h1 class="menu-text" for="menu-select">Select a Menu:</h1>
-                <Dropdown :options="menuOptions"
-                          :modelValue="selectedOptionIndex"
-                          align="right"
-                          direction="down"
-                          @update:modelValue="onMenuSelect">
-                    <template v-slot="{ option }">
-                        {{ menuOptions[option] }}
-                    </template>
-                </Dropdown>
-                <div class="gap2"></div>
+                
+                <div class="dropdown-wrapper">
+                    <h1 class="menu-text" for="menu-select">Menu:</h1>
+                    <Dropdown :options="menuOptions"
+                              :modelValue="selectedOptionIndex"
+                              align="right"
+                              direction="down"
+                              @update:modelValue="onMenuSelect">
 
 
-                <plain-header title="Menus" />
-
-                <div class="menu-board">
-                    <header class="menu-header" v-if="selectedMenu === 'Jazzmans'">
-                        <h1 class="menu-title">Jazzman's Menu</h1>
-                        <div class="green-line"></div>
-                    </header>
-                    <header class="menu-header" v-if="selectedMenu === 'PWC Cafe'">
-                        <h1 class="menu-title">PWC Menu</h1>
-                        <div class="green-line"></div>
-                    </header>
-                    <header class="menu-header" v-if="selectedMenu === 'Deli Menu'">
-                        <h1 class="menu-title">Deli Menu</h1>
-                        <div class="green-line"></div>
-                    </header>
-                    <header class="menu-header" v-if="selectedMenu === 'Special Menu'">
-                        <h1 class="menu-title">Special Menu</h1>
-                        <div class="green-line"></div>
-                    </header>
+                        <template v-slot="{ option }">
+                            {{ menuOptions[option] }}
+                        </template>
+                    </Dropdown>
+                </div>
+                    <div class="gap2"></div>
 
 
-                    <div class="menu-row" v-if="selectedMenu === 'PWC Cafe'">
-                        <section class="menu-categoryFour">
-                            <h2 class="category-title">Açaí Bowl</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Acai Sorbet</li>
-                                <li>Granola</li>
-                                <li>Chia Seeds</li>
-                                <li>Honey</li>
-                                <li>Blueberries</li>
-                                <li>Blackberries</li>
-                                <li>Strawberries</li>
-                                <li>Mango</li>
-                                <li>Kiwi</li>
-                            </ul>
-                        </section>
+                    <plain-header title="Menus" />
 
-                        <section class="menu-categoryFour">
-                            <h2 class="category-title">Drinks</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Black Milk</li>
-                                <li>Matcha Milk</li>
-                                <li>Chia Milk</li>
-                                <li>Taro Milk</li>
-                                <li>Strawberry</li>
-                                <li>Mango</li>
-                                <li>Dragon Fruit</li>
-                                <li>Green Machine</li>
-                                <li>Forever Berry</li>
-                            </ul>
-                        </section>
+                    <div class="menu-board">
+                        <header class="menu-header" v-if="selectedMenu === 'Jazzmans Menu'">
+                            <h1 class="menu-title">Jazzman's Menu</h1>
+                            <div class="green-line"></div>
+                        </header>
+                        <header class="menu-header" v-if="selectedMenu === 'PWC Cafe Menu'">
+                            <h1 class="menu-title">PWC Cafe Menu</h1>
+                            <div class="green-line"></div>
+                        </header>
+                        <header class="menu-header" v-if="selectedMenu === 'The Deli Menu'">
+                            <h1 class="menu-title">The Deli Menu</h1>
+                            <div class="green-line"></div>
+                        </header>
+                        <header class="menu-header" v-if="selectedMenu === 'Special Menu'">
+                            <h1 class="menu-title">Special Menu</h1>
+                            <div class="green-line"></div>
+                        </header>
 
 
+                        <div class="menu-row" v-if="selectedMenu === 'PWC Cafe Menu'">
+                            <section class="menu-categoryFour">
+                                <h2 class="category-title">Açaí Bowl</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Acai Sorbet</li>
+                                    <li>Granola</li>
+                                    <li>Chia Seeds</li>
+                                    <li>Honey</li>
+                                    <li>Blueberries</li>
+                                    <li>Blackberries</li>
+                                    <li>Strawberries</li>
+                                    <li>Mango</li>
+                                    <li>Kiwi</li>
+                                </ul>
+                            </section>
 
-                        <section class="menu-categoryFour">
-                            <h2 class="category-title">Salad</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Chicken Salad</li>
-                                <li>Hearts of Palm</li>
-                                <li>Tuna Salad</li>
-                                <li>Egg Salad</li>
-                                <li>Sweet Potato</li>
-                                <li>Custom Salad</li>
-                            </ul>
-                        </section>
-
-                        <section class="menu-categoryFour">
-                            <h2 class="category-title">To Go</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Antipasto Box</li>
-                                <li>Pinwheel Box</li>
-                                <li>Protein Box</li>
-                                <li>Cottage Cheese Box</li>
-                                <li>Crudite Cup</li>
-                                <li>Mixed Fruit Cup</li>
-                                <li>Fruit Yogurt</li>
-                            </ul>
-                        </section>
-                    </div>
-
-
-                    <div class="menu-row" v-if="selectedMenu === 'Special Menu'">
-                        <section class="menu-categorySix">
-                            <h2 class="category-title">Poké Bowl <br />(Monday)</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Choose Two:</li>
-                                <li>Salmon</li>
-                                <li>Tuna</li>
-                                <li>Shrimp Tempura</li>
-                                <li>Tofu</li>
-                                <li>Imitation Crab</li>
-                                <li>
-                                    -
-                                </li>
-                                <li>Toppings:</li>
-                                <li>Edamame</li>
-                                <li>Mushroom</li>
-                                <li>Cucumber</li>
-                                <li>Green Onion</li>
-                                <li>Carrot</li>
-                                <li>Lettuce</li>
-                                <li>Ginger</li>
-                                <li>Radish</li>
-                                <li>-</li>
-                                <li>Sauce:</li>
-                                <li>Spicy Mayo</li>
-                                <li>Soy Sauce</li>
-                                <li>Wasabi:</li>
-
-                            </ul>
-                        </section>
-
-                        <section class="menu-categorySix">
-                            <h2 class="category-title">Fat Rosie's Tacos (Tuesday)</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Choose Two:</li>
-                                <li>Beef</li>
-                                <li>Chicken</li>
-                                <li>Cauliflower</li>
-                                <li>
-                                    -
-                                </li>
-                                <li>Sides:</li>
-                                <li>Rice & Beans</li>
-
-                                <li>-</li>
-                                <li>Toppings;</li>
-                                <li>Cheese</li>
-                                <li>Lettuce</li>
-                                <li>Sour Cream</li>
-                                <li>Tomatoes</li>
-                                <li>-</li>
-                                <li>Sauce:</li>
-                                <li>Spicy</li>
-                                <li>Mild</li>
-                            </ul>
-                        </section>
+                            <section class="menu-categoryFour">
+                                <h2 class="category-title">Drinks</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Black Milk</li>
+                                    <li>Matcha Milk</li>
+                                    <li>Chia Milk</li>
+                                    <li>Taro Milk</li>
+                                    <li>Strawberry</li>
+                                    <li>Mango</li>
+                                    <li>Dragon Fruit</li>
+                                    <li>Green Machine</li>
+                                    <li>Forever Berry</li>
+                                </ul>
+                            </section>
 
 
 
-                        <section class="menu-categorySix">
-                            <h2 class="category-title">Chicken Wing (Wednesday)</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Choice Of:</li>
-                                <li>Boneless</li>
-                                <li>Bone-In</li>
-                                <li>-</li>
-                                <li>Sides:</li>
-                                <li>Fries</li>
-                                <li>-</li>
-                                <li>Flavor (Dry):</li>
-                                <li>Lemon Pepper</li>
-                                <li>Parmesan</li>
-                                <li>Flavor (Wet):</li>
-                                <li>Spicy</li>
-                                <li>BBQ</li>
-                            </ul>
-                        </section>
+                            <section class="menu-categoryFour">
+                                <h2 class="category-title">Salad</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Chicken Salad</li>
+                                    <li>Hearts of Palm</li>
+                                    <li>Tuna Salad</li>
+                                    <li>Egg Salad</li>
+                                    <li>Sweet Potato</li>
+                                    <li>Custom Salad</li>
+                                </ul>
+                            </section>
 
-                        <section class="menu-categorySix">
-                            <h2 class="category-title">Stevenson Sushi (Friday)</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Choose 8 Pieces:</li>
-                                <li>California</li>
-                                <li>Salmon</li>
-                                <li>Philidelphia</li>
-                                <li>Tuna Roll</li>
-                                <li>Rainbow</li>
-                                <li>Spicy Crab</li>
-                                <li>Shrimp Tempura</li>
-                            </ul>
-                        </section>
-                    </div>
+                            <section class="menu-categoryFour">
+                                <h2 class="category-title">To Go</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Antipasto Box</li>
+                                    <li>Pinwheel Box</li>
+                                    <li>Protein Box</li>
+                                    <li>Cottage Cheese Box</li>
+                                    <li>Crudite Cup</li>
+                                    <li>Mixed Fruit Cup</li>
+                                    <li>Fruit Yogurt</li>
+                                </ul>
+                            </section>
+                        </div>
 
-                    <div class="menu-row" v-if="selectedMenu === 'PWC Cafe'">
-                        <section class="menu-categoryThree">
-                            <h2 class="category-title">Tea/Coffee</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Coffee</li>
-                                <li>Latte Hot</li>
-                                <li>Latte Iced</li>
-                                <li>Latte Iced Caramel</li>
-                                <li>Mocha Hot</li>
-                                <li>Mocha Iced</li>
-                                <li>Monin Tea</li>
-                                <li>Americano</li>
-                                <li>Cappucino</li>
-                                <li>Hot Chocolate</li>
-                            </ul>
-                        </section>
 
-                        <section class="menu-categoryThree">
-                            <h2 class="category-title">Wraps</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Power Wrap</li>
-                                <li>Thai Wrap</li>
-                                <li>Veggie Wrap</li>
-                            </ul>
-                        </section>
+                        <div class="menu-row" v-if="selectedMenu === 'Special Menu'">
+                            <section class="menu-categorySix">
+                                <h2 class="category-title">Poké Bowl <br />(Monday)</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Choose Two:</li>
+                                    <li>Salmon</li>
+                                    <li>Tuna</li>
+                                    <li>Shrimp Tempura</li>
+                                    <li>Tofu</li>
+                                    <li>Imitation Crab</li>
+                                    <li>
+                                        -
+                                    </li>
+                                    <li>Toppings:</li>
+                                    <li>Edamame</li>
+                                    <li>Mushroom</li>
+                                    <li>Cucumber</li>
+                                    <li>Green Onion</li>
+                                    <li>Carrot</li>
+                                    <li>Lettuce</li>
+                                    <li>Ginger</li>
+                                    <li>Radish</li>
+                                    <li>-</li>
+                                    <li>Sauce:</li>
+                                    <li>Spicy Mayo</li>
+                                    <li>Soy Sauce</li>
+                                    <li>Wasabi:</li>
 
-                        <section class="menu-categoryThree">
-                            <h2 class="category-title">Pastries</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Caprese Puff </li>
-                                <li>Ham & Cheese </li>
-                            </ul>
-                        </section>
+                                </ul>
+                            </section>
 
-                        <section class="menu-categoryThree">
-                            <h2 class="category-title">Oats</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Autumn Harvest</li>
-                                <li>Strawberry Cheesecake</li>
-                                <li>Mango Chia</li>
-                            </ul>
-                        </section>
-                    </div>
+                            <section class="menu-categorySix">
+                                <h2 class="category-title">Fat Rosie's Tacos (Tuesday)</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Choose Two:</li>
+                                    <li>Beef</li>
+                                    <li>Chicken</li>
+                                    <li>Cauliflower</li>
+                                    <li>
+                                        -
+                                    </li>
+                                    <li>Sides:</li>
+                                    <li>Rice & Beans</li>
 
-                    <div class="menu-row" v-if="selectedMenu === 'Jazzmans'">
-                        <section class="menu-category">
-                            <h2 class="category-title">Classics</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Latte & Cappuccino</li>
-                                <li>Mocha</li>
-                                <li>Espresso</li>
-                                <li>Americano</li>
-                                <li>Regular or Decaf Coffee</li>
-                                <li>Iced Coffee</li>
-                                <li>Hot Chocolate</li>
-                                <li>Flavored Steamer</li>
-                            </ul>
-                        </section>
+                                    <li>-</li>
+                                    <li>Toppings;</li>
+                                    <li>Cheese</li>
+                                    <li>Lettuce</li>
+                                    <li>Sour Cream</li>
+                                    <li>Tomatoes</li>
+                                    <li>-</li>
+                                    <li>Sauce:</li>
+                                    <li>Spicy</li>
+                                    <li>Mild</li>
+                                </ul>
+                            </section>
 
-                        <section class="menu-categoryTwo">
-                            <h2 class="category-title">Snacks</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Chips</li>
-                                <li>Hummus & Pita</li>
-                                <li>Yogurt Parfait</li>
-                                <li>Grapes & Cheese</li>
-                                <li>Fruit Cup</li>
-                                <li>Jello</li>
-                                <li>Pasta-Salad</li>
-                                <li>Pudding</li>
-                            </ul>
-                        </section>
 
-                        <section class="menu-category">
-                            <h2 class="category-title">Tea</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Iced Blueberry Green Tea</li>
-                                <li>Hot Tea</li>
-                                <li>Hot or Iced Tea Latte</li>
 
-                                <li>Chai</li>
-                                <li>Coco Coconut</li>
-                                <li>Green Tea Matcha</li>
+                            <section class="menu-categorySix">
+                                <h2 class="category-title">Chicken Wing (Wednesday)</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Choice Of:</li>
+                                    <li>Boneless</li>
+                                    <li>Bone-In</li>
+                                    <li>-</li>
+                                    <li>Sides:</li>
+                                    <li>Fries</li>
+                                    <li>-</li>
+                                    <li>Flavor (Dry):</li>
+                                    <li>Lemon Pepper</li>
+                                    <li>Parmesan</li>
+                                    <li>Flavor (Wet):</li>
+                                    <li>Spicy</li>
+                                    <li>BBQ</li>
+                                </ul>
+                            </section>
 
-                                <li>Iced Tea</li>
-                            </ul>
-                        </section>
+                            <section class="menu-categorySix">
+                                <h2 class="category-title">Stevenson Sushi (Friday)</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Choose 8 Pieces:</li>
+                                    <li>California</li>
+                                    <li>Salmon</li>
+                                    <li>Philidelphia</li>
+                                    <li>Tuna Roll</li>
+                                    <li>Rainbow</li>
+                                    <li>Spicy Crab</li>
+                                    <li>Shrimp Tempura</li>
+                                </ul>
+                            </section>
+                        </div>
 
-                        <section class="menu-category">
-                            <h2 class="category-title">Bakery</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Muffins</li>
-                                <li>Cookies</li>
-                                <li>Turnovers</li>
-                                <li>Scones</li>
-                                <li>Brownies</li>
-                                <li>Bagels</li>
-                                <li>Cinnamon Roll</li>
-                            </ul>
-                        </section>
-                    </div>
+                        <div class="menu-row" v-if="selectedMenu === 'PWC Cafe Menu'">
+                            <section class="menu-categoryThree">
+                                <h2 class="category-title">Tea/Coffee</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Coffee</li>
+                                    <li>Latte Hot</li>
+                                    <li>Latte Iced</li>
+                                    <li>Latte Iced Caramel</li>
+                                    <li>Mocha Hot</li>
+                                    <li>Mocha Iced</li>
+                                    <li>Monin Tea</li>
+                                    <li>Americano</li>
+                                    <li>Cappucino</li>
+                                    <li>Hot Chocolate</li>
+                                </ul>
+                            </section>
 
-                    <div class="menu-row" v-if="selectedMenu === 'Jazzmans'">
-                        <section class="menu-categoryTwo">
-                            <h2 class="category-title">Sandwiches</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Turkey & Cheese</li>
-                                <li>Italian Sandwich</li>
-                                <li>Chicken Salad</li>
-                                <li>Ham & Swiss</li>
-                            </ul>
-                        </section>
+                            <section class="menu-categoryThree">
+                                <h2 class="category-title">Wraps</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Power Wrap</li>
+                                    <li>Thai Wrap</li>
+                                    <li>Veggie Wrap</li>
+                                </ul>
+                            </section>
 
-                        <section class="menu-categoryTwo">
-                            <h2 class="category-title">Wraps</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Buffalo Chicken</li>
-                                <li>Hummus & Roasted Veggie</li>
-                                <li>Chicken Caesar</li>
-                                <li>Caesar Wrap</li>
-                                <li>Turkey Bacon</li>
-                            </ul>
-                        </section>
+                            <section class="menu-categoryThree">
+                                <h2 class="category-title">Pastries</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Caprese Puff </li>
+                                    <li>Ham & Cheese </li>
+                                </ul>
+                            </section>
 
-                        <section class="menu-categoryTwo">
-                            <h2 class="category-title">Salads</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Buffalo Chicken</li>
-                                <li>Garden Salad</li>
-                                <li>Chicken Caesar</li>
-                                <li>Caesar Salad</li>
-                                <li>Quinoa Salad</li>
-                            </ul>
-                        </section>
+                            <section class="menu-categoryThree">
+                                <h2 class="category-title">Oats</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Autumn Harvest</li>
+                                    <li>Strawberry Cheesecake</li>
+                                    <li>Mango Chia</li>
+                                </ul>
+                            </section>
+                        </div>
 
-                        <section class="menu-category">
-                            <h2 class="category-title">Good Stuff</h2>
-                            <div class="small-green-line"></div>
-                            <ul>
-                                <li>Caramel Delight</li>
-                                <li>Caramel Latte</li>
-                                <li>White Chocolate Mocha</li>
-                                <li>Crème Brûlée</li>
-                                <li>Tuxedo</li>
-                            </ul>
-                        </section>
-                    </div>
-                    <div class="menu-row" v-if="selectedMenu === 'Deli Menu'">
-                        <section class="menu-categorySeven">
-                            <h2 class="category-titleTwo">Bread</h2>
-                            <div class="small-green-lineTwo"></div>
-                            <ul>
-                                <li>White Bread</li>
-                                <li>Wheat Bread</li>
-                                <li>9 Grain</li>
-                                <li>Pretzel Bun</li>
-                                <li>Kaiser Roll</li>
-                                <li>Tortilla</li>
-                            </ul>
-                        </section>
+                        <div class="menu-row" v-if="selectedMenu === 'Jazzmans Menu'">
+                            <section class="menu-category">
+                                <h2 class="category-title">Classics</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Latte & Cappuccino</li>
+                                    <li>Mocha</li>
+                                    <li>Espresso</li>
+                                    <li>Americano</li>
+                                    <li>Regular or Decaf Coffee</li>
+                                    <li>Iced Coffee</li>
+                                    <li>Hot Chocolate</li>
+                                    <li>Flavored Steamer</li>
+                                </ul>
+                            </section>
 
-                        <section class="menu-categorySeven">
-                            <h2 class="category-titleTwo">Protein</h2>
-                            <div class="small-green-lineTwo"></div>
-                            <ul>
-                                <li>Roast Beef</li>
-                                <li>Turkey</li>
-                                <li>Ham</li>
-                                <li>Salami</li>
-                                <li>BBQ Chicken</li>
-                                <li>Buffalo Chicken</li>
-                                <li>Hummus</li>
-                            </ul>
-                        </section>
+                            <section class="menu-categoryTwo">
+                                <h2 class="category-title">Snacks</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Chips</li>
+                                    <li>Hummus & Pita</li>
+                                    <li>Yogurt Parfait</li>
+                                    <li>Grapes & Cheese</li>
+                                    <li>Fruit Cup</li>
+                                    <li>Jello</li>
+                                    <li>Pasta-Salad</li>
+                                    <li>Pudding</li>
+                                </ul>
+                            </section>
 
-                        <section class="menu-categorySeven">
-                            <h2 class="category-titleTwo">Toppings</h2>
-                            <div class="small-green-lineTwo"></div>
-                            <ul>
-                                <li>Lettuce</li>
-                                <li>Tomato</li>
-                                <li>Onion</li>
-                                <li>Pickles</li>
-                                <li>Olives</li>
-                                <li>Cucumber</li>
-                                <li>Swiss Cheese</li>
-                                <li>Provolone</li>
-                                <li>Cheddar</li>
-                                <li>Pepper Jack</li>
-                            </ul>
-                        </section>
+                            <section class="menu-category">
+                                <h2 class="category-title">Tea</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Iced Blueberry Green Tea</li>
+                                    <li>Hot Tea</li>
+                                    <li>Hot or Iced Tea Latte</li>
 
-                        <section class="menu-categorySeven">
-                            <h2 class="category-titleTwo">Sauce</h2>
-                            <div class="small-green-lineTwo"></div>
-                            <ul>
-                                <li>Chipotle</li>
-                                <li>Mustard</li>
-                                <li>Ketchup</li>
-                                <li>Ranch</li>
-                                <li>Honey Mustard</li>
-                            </ul>
-                        </section>
+                                    <li>Chai</li>
+                                    <li>Coco Coconut</li>
+                                    <li>Green Tea Matcha</li>
+
+                                    <li>Iced Tea</li>
+                                </ul>
+                            </section>
+
+                            <section class="menu-category">
+                                <h2 class="category-title">Bakery</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Muffins</li>
+                                    <li>Cookies</li>
+                                    <li>Turnovers</li>
+                                    <li>Scones</li>
+                                    <li>Brownies</li>
+                                    <li>Bagels</li>
+                                    <li>Cinnamon Roll</li>
+                                </ul>
+                            </section>
+                        </div>
+
+                        <div class="menu-row" v-if="selectedMenu === 'Jazzmans Menu'">
+                            <section class="menu-categoryTwo">
+                                <h2 class="category-title">Sandwiches</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Turkey & Cheese</li>
+                                    <li>Italian Sandwich</li>
+                                    <li>Chicken Salad</li>
+                                    <li>Ham & Swiss</li>
+                                </ul>
+                            </section>
+
+                            <section class="menu-categoryTwo">
+                                <h2 class="category-title">Wraps</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Buffalo Chicken</li>
+                                    <li>Hummus & Roasted Veggie</li>
+                                    <li>Chicken Caesar</li>
+                                    <li>Caesar Wrap</li>
+                                    <li>Turkey Bacon</li>
+                                </ul>
+                            </section>
+
+                            <section class="menu-categoryTwo">
+                                <h2 class="category-title">Salads</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Buffalo Chicken</li>
+                                    <li>Garden Salad</li>
+                                    <li>Chicken Caesar</li>
+                                    <li>Caesar Salad</li>
+                                    <li>Quinoa Salad</li>
+                                </ul>
+                            </section>
+
+                            <section class="menu-category">
+                                <h2 class="category-title">Good Stuff</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Caramel Delight</li>
+                                    <li>Caramel Latte</li>
+                                    <li>White Chocolate Mocha</li>
+                                    <li>Crème Brûlée</li>
+                                    <li>Tuxedo</li>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="menu-row" v-if="selectedMenu === 'The Deli Menu'">
+                            <section class="menu-categorySeven">
+                                <h2 class="category-title">Bread Types</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>White Bread</li>
+                                    <li>Wheat Bread</li>
+                                    <li>9 Grain</li>
+                                    <li>Pretzel Bun</li>
+                                    <li>Kaiser Roll</li>
+                                    <li>Tortilla</li>
+                                </ul>
+                            </section>
+
+                            <section class="menu-categorySeven">
+                                <h2 class="category-title">Protein Types</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Roast Beef</li>
+                                    <li>Turkey</li>
+                                    <li>Ham</li>
+                                    <li>Salami</li>
+                                    <li>BBQ Chicken</li>
+                                    <li>Buffalo Chicken</li>
+                                    <li>Hummus</li>
+
+                                </ul>
+                            </section>
+
+                            <section class="menu-categorySeven">
+                                <h2 class="category-title">Toppings Types</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Lettuce</li>
+                                    <li>Tomato</li>
+                                    <li>Onion</li>
+                                    <li>Pickles</li>
+                                    <li>Olives</li>
+                                    <li>Cucumber</li>
+                                    <li>Swiss Cheese</li>
+                                    <li>Provolone</li>
+                                    <li>Cheddar</li>
+                                    <li>Pepper Jack</li>
+                                    <li class="invisible">Invisible Topping 1</li>
+                                    <li class="invisible">Invisible Topping 2</li>
+                                    <li class="invisible">Invisible Topping 3</li>
+                                    <li class="invisible">Invisible Topping 4</li>
+                                    <li class="invisible">Invisible Topping 5</li>
+                                    <li class="invisible">Invisible Topping 6</li>
+                                    <li class="invisible">Invisible Topping 7</li>
+                                    <li class="invisible">Invisible Topping 8</li>
+                                    <li class="invisible">Invisible Topping 9</li> <!--styling purposes-->
+                                </ul>
+                            </section>
+      
+                            <section class="menu-categorySeven">
+                                <h2 class="category-title">Sauce Types</h2>
+                                <div class="small-green-line"></div>
+                                <ul>
+                                    <li>Chipotle</li>
+                                    <li>Mustard</li>
+                                    <li>Ketchup</li>
+                                    <li>Ranch</li>
+                                    <li>Honey Mustard</li>
+                                    <li>Mayo</li>
+
+                                </ul>
+                            </section>
+
+                        </div>
 
                     </div>
 
                 </div>
-
             </div>
-        </div>
     </div>
 </template>
 
@@ -434,12 +452,12 @@
         },
         data() {
             return {
-                selectedMenu: 'Jazzmans', // Default selection
+                selectedMenu: 'Jazzmans Menu', // Default selection
                 // Additional data for Dropdown component
                 menuOptions: [
-                    'Jazzmans',
-                    'PWC Cafe',
-                    'Deli Menu',
+                    'Jazzmans Menu',
+                    'PWC Cafe Menu',
+                    'The Deli Menu',
                     'Special Menu',
                 ],
                 selectedOptionIndex: 0, // Default selected index
@@ -460,11 +478,25 @@
 <style lang="sass">
     @import 'src/styles/style.sass'
 
+.menu-categorySeven ul li.invisible 
+    color: #ffffff
+
 .outer-container 
   background-color: var(--color)
   +mobile
-   width: 100%     
+   width: 100%
 
+.dropdown-wrapper 
+    position: absolute 
+    top: 110px  /* Adjust the top value as needed */
+    left: 150px /* Adjust the left value as needed */
+    +mobile
+      display: flex
+      align-items: flex-start
+      justify-content: flex-start
+      left: 80px
+  
+  
 
 .gap
   padding:50px
@@ -472,7 +504,7 @@
 .menu-dropdown-container
   display: flex
   align-items: center  // Vertically align contents
-  
+  justify-content: center
   margin-left:10px 0
   flex-wrap: wrap // Allow items to wrap if they don't fit in a row
      
@@ -480,6 +512,7 @@
 .menu-dropdown
   text-align: center
   margin: 0 10px
+
 
 .gap2
   padding-left: 50px
@@ -542,8 +575,8 @@
 .menu-board
     display: flex
     flex-direction: column
-    align-items: center
-    justify-content: flex-start
+    align-items: center /* Center horizontally */
+    justify-content: center /* Center vertically */
     min-height: 100vh
     padding: 20px 0
     background-color: #fefffe /* White background */
@@ -572,49 +605,7 @@
     +mobile
      flex-direction: column
 
-.menu-category
-    margin-right: 50px
-    margin-left:60px
-    text-align: center
-    flex: 1
-   
-    
 
-.menu-categoryTwo
-    margin-right: 50px
-    margin-left: 60px
-    text-align: center
-    flex: 1
-
-.menu-categoryThree
-    margin-right: 50px
-    margin-left: 60x
-    text-align: center
-    flex: 1
-
-.menu-categoryFour
-    margin-right: 50px
-    margin-left: 60px
-    text-align: center
-    flex: 1
-
-.menu-categoryFive
-    margin-right: 50px
-    margin-left: 60px
-    text-align: center
-    flex: 1
-
-.menu-categorySix
-    margin-right: 50px
-    margin-left: 60px
-    text-align: center
-    flex: 1
-
-.menu-categorySeven
-    margin-right: 50px
-    margin-left: 70px
-    text-align: center
-    flex: 1
 
 .category-title
     font-size: 24px
@@ -703,26 +694,24 @@
     color: #8c8c8c 
     +mobile
      font-size: 12px
-     padding-right: 25px
+    
 
 .menu-title
     font-size: 32px
     color: var(--color)
 
-.category-titleTwo
-    font-size: 24px
-    color: var(--color) /* Silver sand */
-    +mobile
-        font-size:19px
-        padding-right:30px
 
-.small-green-lineTwo
-    width: 20px
-    height: 2px
-    background-color: #040f0f /* Phthalo green */
-    margin-left: 50px
-    margin-right: 45px
-    +mobile
-        padding-right:0px
-        padding-left:0px
+.menu-category,
+.menu-categoryTwo,
+.menu-categoryThree,
+.menu-categoryFour,
+.menu-categoryFive,
+.menu-categorySix,
+.menu-categorySeven
+  margin-left: 70px 
+  margin-right: 70px
+  margin-top: 10px // Adjust spacing between items
+  text-align: center // Center-align text
+
+
 </style>
