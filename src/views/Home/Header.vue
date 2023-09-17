@@ -16,7 +16,7 @@
       class="main"
       :class="{ 'extra-padding': scheduleModes.length > 1, 'winterfest': theme.name.toLowerCase() == 'into the woods'}"
     >
-      <video v-if="theme.name.toLowerCase() === 'stevenson space'" autoplay loop muted :class="'starry-night' + (fullScreenMode ? ' starry-night-full' : '')">
+      <video v-if="theme.name.toLowerCase() === 'stevenson space'" autoplay loop muted playsinline :class="'starry-night' + (fullScreenMode ? ' starry-night-full' : '')">
         <source
           :src="starryNight"
           type="video/mp4"
