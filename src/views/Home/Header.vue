@@ -16,6 +16,12 @@
       class="main"
       :class="{ 'extra-padding': scheduleModes.length > 1, 'winterfest': theme.name.toLowerCase() == 'into the woods'}"
     >
+      <video v-if="theme.name.toLowerCase() === 'stevenson space'" autoplay loop muted :class="'starry-night' + (fullScreenMode ? ' starry-night-full' : '')">
+        <source
+          :src="starryNight"
+          type="video/mp4"
+        />
+      </video>
       <div @click="previousDay" class="switch-day">
         <font-awesome-icon
           :icon="icons.faChevronLeft"
@@ -93,7 +99,8 @@ import { mapState, mapActions } from 'pinia';
 
 import heart from '@/assets/occasions/heart.svg';
 import snowflake from '@/assets/occasions/snowflake.png';
-import bellAudio from '@/assets/virtual-bell.wav'
+import bellAudio from '@/assets/virtual-bell.wav';
+import starryNight from '@/assets/occasions/starry-night-full.mp4';
 
 import {
   faChevronRight,
@@ -145,6 +152,7 @@ export default {
       interval: null,
       colored: true,
       useVirtualBell: false,
+      starryNight,
     };
   },
   computed: {
@@ -412,6 +420,19 @@ export default {
     +mobile-small
       background-size: 150px
 
+  .starry-night
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+    z-index: -3
+
+  .starry-night-full
+    position: fixed
+    height: 95% !important
+
   .schedule-select
     position: absolute
     right: 0
@@ -428,6 +449,7 @@ export default {
     max-width: 1000px
     margin: auto
     position: relative
+    z-index: 0
     +mobile-small
       height: 280px
       &.extra-padding

@@ -190,7 +190,7 @@ export default {
 .time-text
   font-size: 15px
   text-align: center
-  color: #333
+  color: var(--color)
 
 .green-line
   width: 100%
