@@ -1,7 +1,7 @@
 <template>
   <div class="circle" :class="{ 'full-screen': fullScreenMode }">
     <!-- Easter Egg -->
-    <img @click="toggled = !toggled" @mouseover="toggled = !toggled" :src="!toggled ? spacePatriot : patriot" :class="'logo' + (!toggled ? ' space-logo' : '')">
+    <img @click="toggled = !toggled" @mouseover="toggled = !toggled" :src="patriot" :class="'logo">
     <div v-if="mode === 'current'" class="countdown">
       {{ countdown }}
     </div>
@@ -18,7 +18,6 @@
 
 <script>
 import { mapState } from 'pinia';
-import spacePatriot from '@/assets/patriot-logo-space.png';
 import patriot from '@/assets/patriot.png';
 import useScheduleStore from '@/stores/schedules';
 
@@ -37,7 +36,6 @@ export default {
   data() {
     return {
       toggled: false,
-      spacePatriot,
       patriot,
     };
   },
