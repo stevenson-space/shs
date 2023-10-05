@@ -18,7 +18,7 @@
     "@sentry/tracing": "^7.16.0",
     "@sentry/vue": "^7.16.0",
     "@vitejs/plugin-vue": "^4.0.0",
-    "@vue/eslint-config-airbnb": "^6.0.0",
+    "@vue/eslint-config-airbnb": "^7.0.0",
     "animejs": "^3.2.1",
     "eslint-plugin-vuejs-accessibility": "^1.2.0",
     "gsap": "^3.11.3",
