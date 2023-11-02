@@ -31,6 +31,7 @@ import TestingCenter from '@/assets/links/Testing Center.png';
 import PatriotDollars from '@/assets/links/Patriot Dollars.png';
 import Canvas from '@/assets/links/Canvas.png';
 import SHSMaps from '@/assets/links/SHSMaps.png';
+import GiveAThon from '@/assets/links/GiveAThon.png';
 
 export default {
   components: {
@@ -47,6 +48,7 @@ export default {
         { name: 'Infinite Campus', url: 'https://infinitecampus.d125.org/campus/portal/aes.jsp', image: InfiniteCampus },
         { name: 'Naviance', url: 'https://student.naviance.com/aeshs', image: Naviance },
         { name: 'SHSMaps', url: 'https://shsmaps.com', image: SHSMaps },
+        { name: 'GiveAThon', url: 'https://shsgiveathon.com/', image: GiveAThon },
         { name: 'Peer Tutors', desc: 'Must be logged in using school google account', url: 'https://sites.google.com/d125.org/peer-tutors/content-database', image: PeerTutors },
         { name: 'Testing Center', url: 'https://docs.google.com/forms/d/e/1FAIpQLSdMoby5m1oNCMi_VgINPE-FDqPqjH5XlvgdDXUFxS4lJbb4Ng/viewform', image: TestingCenter },
         { name: 'Patriot Dollars', desc: 'Patience Required', url: 'https://get.cbord.com/d125/full/login.php', image: PatriotDollars },
