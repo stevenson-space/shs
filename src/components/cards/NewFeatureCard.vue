@@ -1,15 +1,10 @@
 <template>
-  <timed-card startTime="August 13, 2023" endTime="August 17, 2023">
+  <timed-card startTime="November 1, 2023" endTime="November 4, 2023">
     <div class="container">
-      <div class="title">Welcome Back 🎉</div>
+      <div class="title">Happy GiveAThon! 🎁</div>
       <div class="message">
-        Go check out <a href="https://www.shsmaps.com/" target="_blank">SHSMaps</a>, a new website
-        by Stevenson students. Import your schedule to view your routes from class to class offline,
-        and easily share your rooms and paths for club advertisements. Your members will thank you!
-
-        <br />
-        <br />
-        Also, you can now view the PWC schedule by enabling it in settings.
+        Go check out the <a href="https://shsgiveathon.com/" target="_blank"> GiveAThon Leaderboard</a>, a new website
+        by NHS. It's a great way to see how much money all of us have raised so far, and to compete with your friends for 1st place 🥇
       </div>
     </div>
   </timed-card>
