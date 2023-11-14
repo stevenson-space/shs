@@ -1,124 +1,103 @@
 {
   "2": {
-    "Comfort Food": ["Cheese Tortellini"],
-    "Mindful": ["Lemon Garlic Baked Chicken"],
-    "Sides": ["Roasted Carrots", "Roasted Red Potatoes"],
-    "Soup": ["French Onion", "Chicken Noodle"],
-    "International Station": ["Mediterranean 🥙"]
-  },
-  "3": {
-    "Comfort Food": ["Vegetarian Chownein"],
-    "Mindful": ["Palak Paneer"],
-    "Sides": ["Roasted Vegetables", "Yellow Rice"],
-    "Soup": ["French Onion", "Chicken Noodle"],
-    "International Station": ["Mediterranean 🥙"]
-  },
-  "4": {
-    "Comfort Food": ["Vegetarian Chow Mein"],
-    "Mindful": ["Homemade Beef Meatloaf"],
-    "Sides": ["Roasted Carrots and Broccoli", "Mashed Potatoes"],
-    "Soup": ["French Onion", "Chicken Noodle"],
-    "International Station": ["Mediterranean 🥙"]
-  },
-  "5": {
     "Comfort Food": ["Baked Mostaccioli"],
     "Mindful": ["Chicken Tinga"],
-    "Sides": ["Azteca Corn", "Mexican Rice"],
+    "Sides": ["Azteca Corn Mexican Rice"],
     "Soup": ["French Onion", "Chicken Noodle"],
-    "International Station": ["Mediterranean 🥙"]
+    "International Station": ["Mediterranean"]
+  },
+  "3": {
+    "Comfort Food": ["BBQ Pulled Chicken Sandwich"],
+    "Mindful": ["Palak Paneer"],
+    "Sides": ["Roasted Vegetables Yellow Rice"],
+    "Soup": ["French Onion", "Chicken Noodle"],
+    "International Station": ["Mediterranean"]
   },
   "6": {
-    "Comfort Food": ["Palak Paneer"],
-    "Mindful": ["Roast Turkey Breast"],
-    "Sides": ["Roasted Vegetables", "Yellow Rice"],
-    "Soup": ["French Onion", "Chicken Noodle"],
-    "International Station": ["Mediterranean 🥙"]
+    "Comfort Food": ["3 Cheese Penne"],
+    "Mindful": ["Jerk Chicken"],
+    "Sides": ["Brussel Sprouts", "Scalloped Potatoes"],
+    "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
+    "International Station": ["Pasta"]
   },
-  "10": {
+  "7": {
     "Comfort Food": ["Veggie Chilaquiles"],
     "Mindful": ["Thai Chicken Stir Fry"],
     "Sides": ["Roasted Carrots", "Cilantro Lime Rice"],
     "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
     "International Station": ["Pasta"]
   },
-  "11": {
+  "8": {
     "Comfort Food": ["Chicken Tetrazzini"],
     "Mindful": ["Tortilla Crusted Tilapia"],
     "Sides": ["Sugar Snap Peas", "Orzo"],
     "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
     "International Station": ["Pasta"]
   },
-  "12": {
+  "9": {
     "Comfort Food": ["Cheese Ravioli with Cream Sauce"],
-    "Mindful": ["Baked Turkey Meatloaf w/ Chipotle BBQ"],
-    "Sides": ["Sautéed Broccolini", "Maple Whipped Sweet Potatoes"],
+    "Mindful": ["Roasted Turkey with Gravy"],
+    "Sides": ["Brussels Sprouts", "Maple Whipped Sweet Potatoes", "Roasted Potato, Stuffing w/ Cranberry Sauce"],
     "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
     "International Station": ["Pasta"]
   },
   "13": {
-    "Comfort Food": ["Roasted Italian Chicken Thigh"],
-    "Mindful": ["Baked Herbed Cod"],
-    "Sides": ["Roasted Vegetables", "Mashed Potatoes"],
-    "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
-    "International Station": ["Pasta"]
-  },
-  "16": {
-    "Comfort Food": ["Open-Faced Pot Roast Sandwich"],
+    "Comfort Food": ["Open-faced Pot Roast Sandwich"],
     "Mindful": ["Baked Chicken Parmesan"],
     "Sides": ["Snow Peas Pasta"],
     "Soup": ["Vegetarian Garden", "Cream of Potato"],
     "International Station": ["Burrito Bowl"]
   },
-  "17": {
+  "14": {
     "Comfort Food": ["Blackened Tilapia"],
     "Mindful": ["Biryani Chicken"],
     "Sides": ["Lemon Pepper Green Beans", "Yellow Rice"],
     "Soup": ["Vegetarian Garden", "Cream of Potato"],
     "International Station": ["Burrito Bowl"]
   },
-  "18": {
-    "Comfort Food": ["Fried Chicken"],
-    "Mindful": ["Chopped Steak w/ Onion Gravy"],
-    "Sides": ["Asparagus", "Scalloped Potatoes"],
-    "Soup": ["Vegetarian Garden", "Cream of Potato"],
-    "International Station": ["Burrito Bowl"]
-  },
-  "19": {
+  "15": {
     "Comfort Food": ["Plant-Based Chicken Stir Fry"],
     "Mindful": ["Orange Chicken"],
     "Sides": ["Springroll Fried Rice"],
     "Soup": ["Vegetarian Garden", "Cream of Potato"],
     "International Station": ["Burrito Bowl"]
   },
-  "20": {
+  "16": {
+    "Comfort Food": ["Fried Chicken"],
+    "Mindful": ["Chopped Steak w/ Onion Gravy"],
+    "Sides": ["Asparagus", "Scalloped Potatoes"],
+    "Soup": ["Vegetarian Garden", "Cream of Potato"],
+    "International Station": ["Burrito Bowl"]
+  },
+  "17": {
     "Comfort Food": ["Turkey Sloppy Joe"],
     "Mindful": ["Chicken With Country Gravy"],
     "Sides": ["Roasted Vegetables", "Mashed Potatoes"],
     "Soup": ["Vegetarian Garden", "Cream of Potato"],
-    "International Station": ["Mac & Cheese"]
+    "International Station": ["Burrito Bowl Bowl"]
   },
-  "23": {
-    "Comfort Food": ["BBQ Pulled Chicken Sandwich"],
+  "20": {
+    "Comfort Food": ["Vegetarian Chownein"],
     "Mindful": ["Chicken Marsala"],
-    "Sides": ["Corn Roasted Potatoes"],
+    "Sides": ["Lemon Pepper Green Beans", "Roasted Potatoes"],
     "Soup": ["Minestrone", "Chicken Gumbo"],
     "International Station": ["Mac & Cheese"]
   },
-  "24": {
+  "21": {
     "Comfort Food": ["Swedish Meatballs w/ Egg Noodles"],
     "Mindful": ["Chicken Tikka Masala"],
     "Sides": ["Roasted Zucchini Lime Cilantro Rice"],
     "Soup": ["Minestrone", "Chicken Gumbo"],
     "International Station": ["Mac & Cheese"]
   },
-  "25": {
+  "22": {
     "Comfort Food": ["Veggie Lo Mein"],
     "Mindful": ["Chipotle Orange Chicken"],
     "Sides": ["Roasted Broccolini Rice Pilaf"],
     "Soup": ["Minestrone", "Chicken Gumbo"],
     "International Station": ["Mac & Cheese"]
   },
-  "26": {
+  "23": {
     "Comfort Food": ["Adobo Roasted Turkey Breast"],
     "Mindful": ["Creamy Vegetable Casserole"],
     "Sides": ["Lemon Pepper Green Beans", "Egg Noodles"],
@@ -126,24 +105,38 @@
     "International Station": ["Mac & Cheese"]
   },
   "27": {
-    "Comfort Food": ["Baked Battered Cod"],
-    "Mindful": ["Dijon Chicken"],
-    "Sides": ["Roasted Vegetables", "Roasted Wedge Potatoes"],
-    "Soup": ["Minestrone", "Chicken Gumbo"],
-    "International Station": ["Mac & Cheese"]
-  },
-  "30": {
     "Comfort Food": ["Cheese Tortellini"],
     "Mindful": ["Lemon Garlic Baked Chicken"],
     "Sides": ["Roasted Carrots", "Roasted Red Potatoes"],
     "Soup": ["French Onion", "Chicken Noodle"],
-    "International Station": ["Mediterranean 🥙"]
+    "International Station": ["Mediterranean"]
   },
-  "31": {
+  "28": {
     "Comfort Food": ["Tofu Stir Fry"],
     "Mindful": ["Chicken Coconut Curry"],
-    "Sides": ["Roasted Cauliflower", "Rice"],
+    "Sides": ["Roasted Cauliflower Rice"],
     "Soup": ["French Onion", "Chicken Noodle"],
-    "International Station": ["Mediterranean 🥙"]
+    "International Station": ["Mediterranean"]
+  },
+  "29": {
+    "Comfort Food": ["Home Made Beef Meatloaf"],
+    "Mindful": ["Roast Turkey Breast"],
+    "Sides": ["Roasted Carrots and Broccoli", "Mashed Potatoes"],
+    "Soup": ["French Onion", "Chicken Noodle"],
+    "International Station": ["Mediterranean"]
+  },
+  "30": {
+    "Comfort Food": ["Baked Mostaccioli"],
+    "Mindful": ["Chicken Tinga"],
+    "Sides": ["Azteca Corn Mexican Rice"],
+    "Soup": ["French Onion", "Chicken Noodle"],
+    "International Station": ["Mediterranean"]
+  },
+  "1": {
+    "Comfort Food": ["BBQ Pulled Chicken Sandwich"],
+    "Mindful": ["Palak Paneer"],
+    "Sides": ["Roasted Vegetables Yellow Rice"],
+    "Soup": ["French Onion", "Chicken Noodle"],
+    "International Station": ["Mediterranean"]
   }
 }
