@@ -1,10 +1,10 @@
 <template>
-  <timed-card startTime="November 1, 2023" endTime="November 4, 2023">
+  <timed-card startTime="December 10, 2023" endTime="December 16, 2023">
     <div class="container">
-      <div class="title">Happy GiveAThon! 🎁</div>
+      <div class="title">Jukebox 2024 🎸</div>
       <div class="message">
-        Go check out the <a href="https://shsgiveathon.com/" target="_blank"> GiveAThon Leaderboard</a>, a new website
-        by NHS. It's a great way to see how much money all of us have raised so far, and to compete with your friends for 1st place 🥇
+        We're looking for new submissions to join <a href="/jukebox">Jukebox</a> in 2024!
+        <a href="https://forms.gle/mGvTXzRoWhBU4zfp6" target="_blank">Submit your song now</a> to be featured 🎵
       </div>
     </div>
   </timed-card>
