@@ -6,17 +6,11 @@
         <div class="info-container">
           <p class="info date">{{ weather.day }}</p>
           <div class="info condition">
-            <Cloudy class="condition-icon" v-if="weather.cloudcover > 70 && weather.rain_percent < 40" />
-            <Rainy class="condition-icon" v-else-if="weather.cloudcover > 70 && weather.rain_percent >= 40" />
-            <div class="condition-icon" v-else-if="weather.cloudcover > 30 && weather.rain_percent < 40" >
-              <Sunny class="partly-sun-cloudy" />
-              <Cloudy class="partly-cloudy" />
-            </div>
-            <div class="condition-icon" v-else-if="weather.cloudcover > 30 && weather.rain_percent >= 40" >
-              <Sunny class="partly-sun-rainy" />
-              <Rainy class="partly-rainy" />
-            </div>
-            <Sunny class="condition-icon" v-else/>
+            <img :src="icons.CloudyIcon" class="condition-icon" v-if="weather.cloudcover > 70 && weather.rain_percent < 40" />
+            <img :src="icons.RainyIcon" class="condition-icon"  v-else-if="weather.cloudcover > 70 && weather.rain_percent >= 40"  />
+            <img :src="icons.PartlySunnyIcon" class="condition-icon" v-else-if="weather.cloudcover > 30 && weather.rain_percent < 40"  />
+            <img :src="icons.PartlyRainyIcon" class="condition-icon partly-rainy" v-else-if="weather.cloudcover > 30 && weather.rain_percent >= 40"    />
+            <img :src="icons.SunnyIcon" class="condition-icon"  v-else />
           </div>
           <div class="info temp">
             <p class="temp-high">{{ weather.temp_high }}°</p>
@@ -28,26 +22,25 @@
     <a class="attribution-link" href="https://open-meteo.com/">
       <div class="attribution">Weather data by Open-Meteo.com</div>
     </a>
-    <CloudIcon />
   </card>
 </template>
 
 <script>
-import { faTint, faCloud, faSun } from '@fortawesome/free-solid-svg-icons';
-import { mapState } from 'pinia';
-import Cloudy from 'vue-ionicons/dist/ios-cloudy.vue';
-import Rainy from 'vue-ionicons/dist/ios-rainy.vue';
-import Sunny from 'vue-ionicons/dist/ios-sunny.vue';
 import Card from '@/components/Card.vue';
+import SunnyIcon from "@/assets/weather/sunny-outline.svg"
+import CloudyIcon from "@/assets/weather/cloud-outline.svg"
+import RainyIcon from "@/assets/weather/rainy-outline.svg"
+import PartlySunnyIcon from "@/assets/weather/partly-sunny-outline.svg"
+import PartlyRainyIcon from "@/assets/weather/partly-rainy-outline.svg"
 
 export default {
-  components: { Card, Cloudy, Rainy, Sunny },
+  components: { Card },
   props: {
     title: { type: String, default: 'Weather' },
   },
   data() {
     return {
-      icons: { faCloud, faTint, faSun },
+      icons: { SunnyIcon, CloudyIcon, RainyIcon, PartlySunnyIcon, PartlyRainyIcon},
       weatherData: null,
     };
   },
@@ -164,36 +157,21 @@ export default {
 
       .condition
         position: absolute
-        left: 78%
+        left: 85%
         transform: translate(-50%, 0)
         display: grid
         place-items: center
 
         .condition-icon
-          font-size: 2em
-          color: var(--color)
-          margin: 0.5px 0
-          position: absolute
-          top:-15px
-
-          .partly-cloudy,
-          .partly-rainy
-            font-size: 1em
-
-          .partly-sun-cloudy,
-          .partly-sun-rainy
-            font-size: 0.8em
-            position: absolute
-            left: 35%
-
-          .partly-sun-cloudy
-            bottom: 45%
-
-          .partly-sun-rainy
-            bottom: 50%
+          width: 30px
+        .partly-rainy
+          width: 40px 
+          position: relative
+          left: 1px
 
   .attribution
     font-size: 0.5em
     text-align: center
     color: var(--color)
-</style>
+
+      </style>
