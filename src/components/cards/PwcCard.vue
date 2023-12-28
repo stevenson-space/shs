@@ -106,7 +106,7 @@ export default {
     },
     openingStatus() {
       if (this.closedDays.includes(this.currentTime.toISOString().substr(0, 10))) {
-        return 'Closed Today!';
+        return 'Closed Today';
       }
 
       return this.isOpen ? 'Open' : `Opens at ${this.formatTime(this.nextOpeningTime)}`;

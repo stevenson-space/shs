@@ -6,17 +6,29 @@
         <div class="info-container">
           <p class="info date">{{ weather.day }}</p>
           <div class="info condition">
-            <Cloudy class="condition-icon" v-if="weather.cloudcover > 70 && weather.rain_percent < 40" />
-            <Rainy class="condition-icon" v-else-if="weather.cloudcover > 70 && weather.rain_percent >= 40" />
-            <div class="condition-icon" v-else-if="weather.cloudcover > 30 && weather.rain_percent < 40" >
-              <Sunny class="partly-sun-cloudy" />
-              <Cloudy class="partly-cloudy" />
-            </div>
-            <div class="condition-icon" v-else-if="weather.cloudcover > 30 && weather.rain_percent >= 40" >
-              <Sunny class="partly-sun-rainy" />
-              <Rainy class="partly-rainy" />
-            </div>
-            <Sunny class="condition-icon" v-else/>
+         
+            <svg  v-if="weather.cloudcover > 70 && weather.rain_percent < 40" class="condition-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M400 240c-8.89-89.54-71-144-144-144-69 0-113.44 48.2-128 96-60 6-112 43.59-112 112 0 66 54 112 120 112h260c55 0 100-27.44 100-88 0-59.82-53-85.76-96-88z" fill="none" :stroke="color" stroke-linejoin="round" stroke-width="32"/></svg>
+            <svg  v-else-if="weather.cloudcover > 70 && weather.rain_percent >= 40"  class="condition-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M114.61 162.85A16.07 16.07 0 00128 149.6C140.09 76.17 193.63 32 256 32c57.93 0 96.62 37.75 112.2 77.74a15.84 15.84 0 0012.2 9.87c50 8.15 91.6 41.54 91.6 99.59 0 59.4-48.6 100.8-108 100.8H130c-49.5 0-90-24.7-90-79.2 0-48.47 38.67-72.22 74.61-77.95z" fill="none" :stroke="color" stroke-linejoin="round" stroke-width="32"/><path fill="none" :stroke="color" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M144 384l-32 48M224 384l-64 96M304 384l-32 48M384 384l-64 96"/></svg>
+            <svg  v-else-if="weather.cloudcover > 30 && weather.rain_percent < 40" class="condition-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><path d="M90.61 306.85A16.07 16.07 0 00104 293.6C116.09 220.17 169.63 176 232 176c57.93 0 96.62 37.75 112.2 77.74a15.84 15.84 0 0012.2 9.87c50 8.15 91.6 41.54 91.6 99.59 0 59.4-48.6 100.8-108 100.8H106c-49.5 0-90-24.7-90-79.2 0-48.47 38.67-72.22 74.61-77.95z" fill="none" :stroke="color" stroke-linejoin="round" stroke-width="32"/><path d="M384.8 271.4a80 80 0 10-123.55-92M464 208h32M336 48v32M222.86 94.86l22.63 22.63M449.14 94.86l-22.63 22.63" fill="none" :stroke="color" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+            <svg  v-else-if="weather.cloudcover > 30 && weather.rain_percent >= 40" class="condition-icon partly-rainy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="770" height="770" viewBox="0 0 770 770">
+            <defs>
+              <clipPath id="clip-partly-rainy">
+                <rect width="770" height="770"/>
+              </clipPath>
+            </defs>
+            <g id="partly-rainy" clip-path="url(#clip-partly-rainy)">
+              <g id="rainy-outline" transform="translate(83.668 167.541)">
+                <path id="Path_1" data-name="Path 1" d="M114.61,162.85A16.07,16.07,0,0,0,128,149.6C140.09,76.17,193.63,32,256,32c57.93,0,96.62,37.75,112.2,77.74a15.84,15.84,0,0,0,12.2,9.87c50,8.15,91.6,41.54,91.6,99.59C472,278.6,423.4,320,364,320H130c-49.5,0-90-24.7-90-79.2C40,192.33,78.67,168.58,114.61,162.85Z" fill="none" :stroke="color" stroke-linejoin="round" stroke-width="32"/>
+                <path id="Path_2" data-name="Path 2" d="M144,384l-32,48m112-48-64,96m144-96-32,48m112-48-64,96" fill="none" :stroke="color" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+              </g>
+              <g id="sunny-outline_1_" data-name="sunny-outline (1)" transform="translate(444.168 74.459)">
+                <path id="Path_3" data-name="Path 3" d="M125.082,48V65.788m0,118.587v17.788M179.587,70.576,167.01,83.154M83.154,167.01,70.576,179.588m131.588-54.506H184.375m-118.587,0H48m131.587,54.506L167.01,167.01M83.154,83.154,70.576,70.576" fill="none" :stroke="color" stroke-linecap="round" stroke-miterlimit="10" stroke-width="22"/>
+                <circle id="Ellipse_1" data-name="Ellipse 1" cx="30" cy="30" r="30" transform="translate(95.082 95.082)" fill="none" :stroke="color" stroke-linecap="round" stroke-miterlimit="10" stroke-width="22"/>
+              </g>
+            </g>
+          </svg>
+
+          <svg v-else xmlns="http://www.w3.org/2000/svg" class="condition-icon"  viewBox="0 0 512 512"><path fill="currentColor" :stroke="color" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M256 48v48M256 416v48M403.08 108.92l-33.94 33.94M142.86 369.14l-33.94 33.94M464 256h-48M96 256H48M403.08 403.08l-33.94-33.94M142.86 142.86l-33.94-33.94"/><circle cx="256" cy="256" r="80" fill="none" :stroke="color" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32"/></svg>
           </div>
           <div class="info temp">
             <p class="temp-high">{{ weather.temp_high }}°</p>
@@ -28,26 +40,24 @@
     <a class="attribution-link" href="https://open-meteo.com/">
       <div class="attribution">Weather data by Open-Meteo.com</div>
     </a>
-    <CloudIcon />
   </card>
 </template>
 
 <script>
-import { faTint, faCloud, faSun } from '@fortawesome/free-solid-svg-icons';
 import { mapState } from 'pinia';
-import Cloudy from 'vue-ionicons/dist/ios-cloudy.vue';
-import Rainy from 'vue-ionicons/dist/ios-rainy.vue';
-import Sunny from 'vue-ionicons/dist/ios-sunny.vue';
+import useThemeStore from '@/stores/themes';
 import Card from '@/components/Card.vue';
 
 export default {
-  components: { Card, Cloudy, Rainy, Sunny },
+  components: { Card },
   props: {
     title: { type: String, default: 'Weather' },
   },
+  computed: {
+    ...mapState(useThemeStore, ['color']),
+  },
   data() {
     return {
-      icons: { faCloud, faTint, faSun },
       weatherData: null,
     };
   },
@@ -164,36 +174,21 @@ export default {
 
       .condition
         position: absolute
-        left: 78%
+        left: 85%
         transform: translate(-50%, 0)
         display: grid
         place-items: center
 
         .condition-icon
-          font-size: 2em
-          color: var(--color)
-          margin: 0.5px 0
-          position: absolute
-          top:-15px
-
-          .partly-cloudy,
-          .partly-rainy
-            font-size: 1em
-
-          .partly-sun-cloudy,
-          .partly-sun-rainy
-            font-size: 0.8em
-            position: absolute
-            left: 35%
-
-          .partly-sun-cloudy
-            bottom: 45%
-
-          .partly-sun-rainy
-            bottom: 50%
+          width: 30px
+        .partly-rainy
+          width: 40px 
+          position: relative
+          left: 1px
 
   .attribution
     font-size: 0.5em
     text-align: center
     color: var(--color)
-</style>
+
+      </style>
