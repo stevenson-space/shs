@@ -61,7 +61,7 @@ export default {
 @import 'src/styles/style.sass'
 
 .calendar
-  --num-rows: 5 // changed through JavaScript to 5 or 6 depending on the month
+  --num-rows: 5 /* changed through JavaScript to 5 or 6 depending on the month */
   min-height: 100vh
   display: grid
   grid-template-columns: repeat(7, 1fr)
