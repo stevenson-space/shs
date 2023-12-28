@@ -260,7 +260,6 @@ $medium: 900px
           width: 80%
           display: flex
           margin: 15px auto auto auto
-          positon: absolute
           text-align: center
           background-color: #BCBCBC
           border-radius: 10px

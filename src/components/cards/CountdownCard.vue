@@ -76,7 +76,6 @@ a
   justify-content: center
   flex-direction: column
   color: var(--primary)
-  padding-botton: 20px
   .message
     font-size: .85em
     text-align: left
