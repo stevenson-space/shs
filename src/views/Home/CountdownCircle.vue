@@ -18,7 +18,7 @@
 
 <script>
 import { mapState } from 'pinia';
-import patriot from '@/assets/patriot-logo-festive.png';
+import patriot from '@/assets/patriot.png';
 import useScheduleStore from '@/stores/schedules';
 
 export default {
