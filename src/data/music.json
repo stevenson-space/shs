@@ -1,5 +1,26 @@
 [
   {
+    "name": "Sunflower Summer Bounce",
+    "artist": "Aleah Alberth",
+    "year": "2025",
+    "album": "",
+    "file": "SUNFLOWER_SUMMER_BOUNCE_ALEAH_ALBERTH.mp3"
+  },
+  {
+    "name": "Cinematic",
+    "artist": "Anonymous",
+    "year": "2025",
+    "album": "",
+    "file": "CINEMATIC_ANON.mp3"
+  },
+  {
+    "name": "A Boy's Journey",
+    "artist": "Eric Razdik",
+    "year": "2024",
+    "album": "",
+    "file": "A_BOYS_JOURNEY_ERIC_RAZDIK.mp3"
+  },
+  {
     "name": "The Bigger Picture",
     "artist": "Nicholas Morales",
     "year": "2024",
@@ -14,13 +35,6 @@
     "file": "SHOT_WITH_GUN_ABHI_CHOUDHARY.mp3"
   },
   {
-    "name": "FRISCO",
-    "artist": "Edison Schultz",
-    "year": "2023",
-    "album": "FRISCO_EDISON_SCHULTZ.webp",
-    "file": "FRISCO_EDISON_SCHULTZ.mp3"
-  },
-  {
     "name": "Sand Dune",
     "artist": "",
     "year": "2024",
@@ -33,13 +47,6 @@
     "year": "2025",
     "album": "BIRDS_IN_THE_SKY_ALEAH_ALBERTH.webp",
     "file": "BIRDS_IN_THE_SKY_ALEAH_ALBERTH.mp3"
-  },
-  {
-    "name": "M",
-    "artist": "",
-    "year": "2023",
-    "album": "",
-    "file": "M_ANONYMOUS.mp3"
   },
   {
     "name": "Slide My Way",
