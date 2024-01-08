@@ -1,10 +1,9 @@
 <template>
-  <timed-card startTime="December 10, 2023" endTime="December 16, 2023">
+  <timed-card startTime="January 8, 2024" endTime="January 10, 2024">
     <div class="container">
-      <div class="title">Jukebox 2024 🎸</div>
+      <div class="title"></div>
       <div class="message">
-        We're looking for new submissions to join <a href="/jukebox">Jukebox</a> in 2024!
-        <a href="https://forms.gle/mGvTXzRoWhBU4zfp6" target="_blank">Submit your song now</a> to be featured 🎵
+        🗺️ Don't be confused in the halls at the start of 2nd semester. Just use <a href="https://www.shsmaps.com/" target="_blank">SHSMaps</a>, and import your schedule to view your routes from class to class offline.
       </div>
     </div>
   </timed-card>
