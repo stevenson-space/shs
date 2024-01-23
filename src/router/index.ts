@@ -16,7 +16,7 @@ const Code:RouteComponent = () => import('@/views/Code/Code.vue');
 const QRCode:RouteComponent = () => import('@/views/QRCodes/QRCodes.vue');
 const GetHelp:RouteComponent = () => import('@/views/GetHelp/GetHelp.vue');
 const Jukebox: RouteComponent = () => import('@/views/Jukebox/Jukebox.vue');
-
+const LiveRedirect: RouteComponent = () => import('@/views/Live/Live.vue'); // redirect to shs youtube livestreams
 
 type EditScheduleProps = {
   scheduleToEdit: string;
@@ -102,6 +102,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Jukebox',
     path: '/jukebox',
     component: Jukebox,
+  },
+  {
+    name: 'Live',
+    path: '/live',
+    component: LiveRedirect,
   },
 ];
 
