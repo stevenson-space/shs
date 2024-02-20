@@ -1,9 +1,9 @@
 <template>
   <card>
-    <a class="main-link" href="https://shshacks.io" target="_blank">
+    <a class="main-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeKScB0_C3Esobhakie0zaI9jqeejckgXy4xoCjE-DywjgJbw/viewform?usp=sf_link" target="_blank">
       <img class="logo" src="@/assets/occasions/shsHacks.png">
       <div class="register">
-        Stevenson's free-to-attend hackathon is happening this weekend. <br><span class="color">Register Now!</span>&nbsp;
+        Stevenson's free-to-attend hackathon is happening <span class="bold">Saturday March 2nd!</span> <br><span class="color">Register Now!</span>&nbsp;
         <font-awesome-icon :icon="faArrowUpRightFromSquare" class="link-icon" />
       </div>
     </a>
@@ -47,9 +47,11 @@ export default {
     .color
       color: var(--color)
       font-weight: bold
-
+    .bold
+      font-weight: bold
     .link-icon
       font-size: 1.1em
       color: var(--color)
+  
 
 </style>
