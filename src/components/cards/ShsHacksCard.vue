@@ -1,21 +1,23 @@
 <template>
-  <card>
-    <a class="main-link" href="https://shshacks.io" target="_blank">
-      <img class="logo" src="@/assets/occasions/shsHacks.png">
-      <div class="register">
-        Stevenson's free-to-attend hackathon is happening this weekend. <br><span class="color">Register Now!</span>&nbsp;
-        <font-awesome-icon :icon="faArrowUpRightFromSquare" class="link-icon" />
-      </div>
-    </a>
-  </card>
+  <timed-card startTime="February 21, 2024" endTime="February 26, 2024">
+    <div class="top-padding">
+      <a class="main-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeKScB0_C3Esobhakie0zaI9jqeejckgXy4xoCjE-DywjgJbw/viewform?usp=sf_link" target="_blank">
+        <img class="logo" src="@/assets/occasions/shsHacks.png">
+        <div class="register">
+          Stevenson's free-to-attend hackathon is happening <span class="bold">Saturday March 2nd!</span> <br><span class="color">Register Now!</span>&nbsp;
+          <font-awesome-icon :icon="faArrowUpRightFromSquare" class="link-icon" />
+        </div>
+      </a>
+    </div>
+  </timed-card>
 </template>
 
 <script>
-import Card from '@/components/Card.vue';
+import TimedCard from '@/components/cards/TimedCard.vue';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  components: { Card },
+  components: { TimedCard },
   data() {
     return {
       faArrowUpRightFromSquare,
@@ -47,9 +49,11 @@ export default {
     .color
       color: var(--color)
       font-weight: bold
-
+    .bold
+      font-weight: bold
     .link-icon
       font-size: 1.1em
       color: var(--color)
-
+.top-padding
+  padding-top: .5em    
 </style>

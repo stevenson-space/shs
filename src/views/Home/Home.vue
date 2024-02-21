@@ -15,7 +15,7 @@
         <new-feature-card />
         <new-theme-card />
         <!-- <april-fools-card /> -->
-        <!-- <shs-hacks-card/> -->
+        <shs-hacks-card/>
         <holiday-card />
         <schedule-card />
         <weather-card />
@@ -76,7 +76,7 @@ import HolidayCard from "@/components/cards/HolidayCard.vue";
 import ContributeCard from "@/components/cards/ContributeCard.vue";
 import LunchCard from "@/components/cards/LunchCard.vue";
 import NewThemeCard from "@/components/cards/NewThemeCard.vue";
-// import ShsHacksCard from '@/components/cards/ShsHacksCard.vue';
+import ShsHacksCard from '@/components/cards/ShsHacksCard.vue';
 // import AprilFoolsCard from '@/components/cards/AprilFoolsCard.vue';
 import NewFeatureCard from "@/components/cards/NewFeatureCard.vue";
 import EndOfYearCard from "@/components/cards/EndOfYearCard.vue";
@@ -99,7 +99,7 @@ export default {
     HolidayCard,
     ContributeCard,
     NewThemeCard,
-    // ShsHacksCard,
+    ShsHacksCard,
     // AprilFoolsCard,
     NewFeatureCard,
     EndOfYearCard,
