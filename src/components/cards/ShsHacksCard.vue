@@ -1,5 +1,5 @@
 <template>
-  <timed-card startTime="February 20, 2024" endTime="March 2, 2024">
+  <timed-card startTime="February 21, 2024" endTime="February 26, 2024">
     <div class="top-padding">
       <a class="main-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeKScB0_C3Esobhakie0zaI9jqeejckgXy4xoCjE-DywjgJbw/viewform?usp=sf_link" target="_blank">
         <img class="logo" src="@/assets/occasions/shsHacks.png">
