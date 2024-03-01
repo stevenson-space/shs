@@ -1,3 +1,3 @@
-/send/* https://dpaste.com/api/v2/:splat 307
-/receive/* https://dpaste.com/:splat 307
-/* /index.html 307
+/send/* https://dpaste.com/api/v2/:splat
+/receive/* https://dpaste.com/:splat
+/* /index.html
