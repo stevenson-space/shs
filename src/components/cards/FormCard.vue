@@ -3,9 +3,7 @@
     <div class="container">
       <div class="title">{{ title }}</div>
       <!-- manually handle submitting, so we can emit an 'submit' event -->
-      <form :name="name" method="POST" :data-netlify="netlify">
-        <!-- mandatory hidden element with the form name -->
-        <input type="hidden" name="form-name" :value="name" />
+      <form :name="name">
         <slot />
       </form>
     </div>
@@ -20,11 +18,11 @@ export default {
   props: {
     name: { type: String, required: true },
     title: { type: String, required: false },
-    netlify: { type: Boolean, default: true },
   },
   methods: {
     onSubmit(event) {
       event.preventDefault();
+      console.log(event);
     },
   },
 };
