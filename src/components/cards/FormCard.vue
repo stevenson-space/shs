@@ -3,7 +3,7 @@
     <div class="container">
       <div class="title">{{ title }}</div>
       <!-- manually handle submitting, so we can emit an 'submit' event -->
-      <form :name="name">
+      <form @submit="onSubmit" :name="name">
         <slot />
       </form>
     </div>
@@ -22,7 +22,14 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      console.log(event);
+      const dataToSubmit = [];
+      for (const element of event.target.elements) {
+        if (element.name !== '' && element.value !== '') {
+          dataToSubmit.push({ name: element.name, value: element.value });
+        }
+      }
+
+      // TODO: submit to email worker
     },
   },
 };
