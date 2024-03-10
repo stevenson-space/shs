@@ -2,6 +2,7 @@
   "name": "stevenson-space",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "music-dev": "cd music-backend && npm run dev",
