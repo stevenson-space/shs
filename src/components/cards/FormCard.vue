@@ -20,7 +20,7 @@ export default {
     title: { type: String, required: false },
   },
   methods: {
-    onSubmit(event) {
+    async onSubmit(event) {
       event.preventDefault();
       const dataToSubmit = [];
       for (const element of event.target.elements) {
@@ -30,6 +30,13 @@ export default {
       }
 
       // TODO: submit to email worker
+      const sendEmail = await fetch('https://URL.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataToSubmit),
+      })
     },
   },
 };

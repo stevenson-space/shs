@@ -7,10 +7,8 @@ export default {
   async fetch(
     request: Request,
     env: Env,
-    ctx: ExecutionContext,
   ): Promise<Response> {
-    const url = new URL(request.url);
-    const key = url.pathname.slice(1);
+    let parsedMessage = '';
 
     switch (request.method) {
       case 'POST':
@@ -22,9 +20,15 @@ export default {
         const msg = createMimeMessage();
         msg.setSender({ name: 'Document Request', addr: 'documents@stevenson.space' });
         msg.setSubject('📚 New Document Request');
+
+        const body = await request.json() as Record<string, string>;
+        for (const [key, value] of Object.entries(body)) {
+          parsedMessage += `${key}: ${value}\n`;
+        }
+
         msg.addMessage({
           contentType: 'text/plain',
-          data: await request.text(),
+          data: parsedMessage,
         });
 
         const email = new EmailMessage(
