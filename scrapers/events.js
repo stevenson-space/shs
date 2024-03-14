@@ -1,9 +1,12 @@
-const superagent = require('superagent');
-const ical = require('ical.js');
-const fs = require('fs');
-const path = require("path");
+import superagent from 'superagent';
+import ical from 'ical.js';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
 
-const eventsFilepath = path.resolve(__dirname, "../src/data/events.json");
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const eventsFilepath = resolve(__dirname, "../src/data/events.json");
 const calendarURL = 'https://www.d125.org/data/calendar/icalcache/feed_E96D4A2A781C43699D5A4645042A0F79.ics';
 // By default, the d125.org page blocks the superagent user agent string, but any other reasonable value works.
 const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0'
