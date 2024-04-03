@@ -29,14 +29,16 @@ export default {
         }
       }
 
-      // TODO: submit to email worker
-      const sendEmail = await fetch('https://URL.com', {
+      // Change to localhost to test forms locally
+      await fetch('https://email-backend.stevenson-space.workers.dev', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(dataToSubmit),
-      })
+      }).catch((error) => {
+        console.error('Error:', error);
+      });
     },
   },
 };

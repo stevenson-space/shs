@@ -1,7 +1,8 @@
 /* eslint-disable no-case-declarations */
 
-import { EmailMessage } from "cloudflare:email";
-import { createMimeMessage } from "mimetext";
+export interface Env {
+  MAILGUN_KEY: string;
+}
 
 export default {
   async fetch(
@@ -11,39 +12,59 @@ export default {
     let parsedMessage = '';
 
     switch (request.method) {
+      case 'OPTIONS':
+        return new Response(null, {
+          headers: {
+            'Access-Control-Allow-Origin': 'https://stevenson.space', // change to * for dev
+            'Access-Control-Allow-Methods': 'POST',
+            'Access-Control-Allow-Headers': 'Content-Type',
+          },
+        })
       case 'POST':
-        // in case we'd like to automate song uploading in the future
+        console.log(env.MAILGUN_KEY);
         if (request.body === null) {
           return new Response('Bad Request', { status: 400 });
         }
 
-        const msg = createMimeMessage();
-        msg.setSender({ name: 'Document Request', addr: 'documents@stevenson.space' });
-        msg.setSubject('📚 New Document Request');
-
         const body = await request.json() as Record<string, string>;
+        let targetEmail = '';
         for (const [key, value] of Object.entries(body)) {
-          parsedMessage += `${key}: ${value}\n`;
+          parsedMessage += `${value.name}: ${value.value}\n`;
+          if (value.name === 'contact-address') {
+            targetEmail = value.value;
+          }
         }
 
-        msg.addMessage({
-          contentType: 'text/plain',
-          data: parsedMessage,
-        });
-
-        const email = new EmailMessage(
-          'documents@stevenson.space',
-          'admin@stevenson.space',
-          msg.asRaw(),
-        );
+        const emailBody = new URLSearchParams();
+        emailBody.append('from', 'stevenson.space Document Request <documents@stevenson.space>');
+        emailBody.append('to', 'me@andreww.co');
+        if (targetEmail) {
+          emailBody.append('h:Reply-To', targetEmail);
+        }
+        emailBody.append('subject', '📚 New Document Request');
+        emailBody.append('text', parsedMessage);
+        emailBody.append('html', parsedMessage.replace(/\n/g, '<br>'));
 
         try {
-          await env.SEB.send(email);
+          const res = await fetch('https://api.mailgun.net/v3/stevenson.space/messages', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+              Authorization: `Basic ${btoa(`api:${env.MAILGUN_KEY}`)}`,
+            },
+            body: emailBody.toString(),
+          });
+          if (res.ok) {
+            return new Response('OK', { status: 200 });
+          } else {
+            console.log(res);
+          }
+          return new Response('Internal Server Error', { status: 500 });
         } catch (e) {
           console.error(e);
           return new Response('Internal Server Error', { status: 500 });
         }
-        return new Response('Forbidden', { status: 403 });
+        break;
       default:
         return new Response('Method Not Allowed', {
           status: 405,
