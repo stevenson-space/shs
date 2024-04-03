@@ -37,7 +37,7 @@ export default {
 
         const emailBody = new URLSearchParams();
         emailBody.append('from', 'stevenson.space Document Request <documents@stevenson.space>');
-        emailBody.append('to', 'me@andreww.co');
+        emailBody.append('to', 'admin@stevenson.space');
         if (targetEmail) {
           emailBody.append('h:Reply-To', targetEmail);
         }
