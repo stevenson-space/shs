@@ -6,12 +6,13 @@ stevenson.space was created in 2016 and has been a student-run project ever sinc
 stevenson.space uses the following languages/technologies
 
 - Github
-- Vue.js + VueX, SASS, ESlint
+- Vue.js + Pinia, SASS, ESlint
 - Node.js
 - Typescript
 - Node Package Manager (NPM)
-- Netlify CI/CD builds
-- Google OAth 2.0
+- Cloudflare Pages
+- Cloudflare Workers (for Jukebox music storage and email notification forms)
+- Google OAuth 2.0
 
 *Note: If you know Javascript, HTML, and CSS well, you will be close to being able to work with Vue. Also React, Next, Gatsby, and other JS frameworks are quite similar to Vue.js. Node.js and Typescript are forms of Javascript.*
  
