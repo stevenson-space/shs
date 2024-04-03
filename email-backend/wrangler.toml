@@ -1,0 +1,9 @@
+name = "email-backend"
+main = "src/index.ts"
+compatibility_date = "2023-01-20"
+
+account_id = "eb09a67d16effcedf18472e3926ce09d" # change to your CF account ID
+
+[vars]
+# Add Mailgun API key
+# MAILGUN_KEY = ""

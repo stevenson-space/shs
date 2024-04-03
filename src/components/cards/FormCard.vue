@@ -3,9 +3,7 @@
     <div class="container">
       <div class="title">{{ title }}</div>
       <!-- manually handle submitting, so we can emit an 'submit' event -->
-      <form :name="name" method="POST" :data-netlify="netlify">
-        <!-- mandatory hidden element with the form name -->
-        <input type="hidden" name="form-name" :value="name" />
+      <form @submit="onSubmit" :name="name">
         <slot />
       </form>
     </div>
@@ -20,11 +18,27 @@ export default {
   props: {
     name: { type: String, required: true },
     title: { type: String, required: false },
-    netlify: { type: Boolean, default: true },
   },
   methods: {
-    onSubmit(event) {
+    async onSubmit(event) {
       event.preventDefault();
+      const dataToSubmit = [];
+      for (const element of event.target.elements) {
+        if (element.name !== '' && element.value !== '') {
+          dataToSubmit.push({ name: element.name, value: element.value });
+        }
+      }
+
+      // Change to localhost to test forms locally
+      await fetch('https://email-backend.stevenson-space.workers.dev', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataToSubmit),
+      }).catch((error) => {
+        console.error('Error:', error);
+      });
     },
   },
 };

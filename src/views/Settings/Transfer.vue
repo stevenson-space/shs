@@ -191,7 +191,7 @@ export default defineComponent({
           data[setting] = this.getSetting(setting);
         }
       }
-      const response = await fetch('/send', {
+      const response = await fetch('https://dpaste.com/api/v2/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -213,7 +213,7 @@ export default defineComponent({
       this.showPopup(popups.loading);
       let isValid = true;
 
-      const response = await fetch(`/receive/${this.receiveCode.toUpperCase()}.txt`, {
+      const response = await fetch(`https://dpaste.com/${this.receiveCode.toUpperCase()}.txt`, {
         method: 'GET',
       });
       if (response.status === 200) {
