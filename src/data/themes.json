@@ -134,6 +134,21 @@
         "iconTextCardInvertColor": "var(--color)"
     },
     {
+        "name": "Eclipse",
+        "schedule": "4/7/2024-4/8/2024",
+        "message": "[Try] The new Eclipse theme now! ☀️",
+        "suggestedColor": "#F88203",
+        "background": "black",
+        "secondaryBackground": "black",
+        "headerBackgroundColor": "black",
+        "headerScheduleBackgroundColor": "black",
+        "primary": "white",
+        "secondary": "white",
+        "tertiary": "white",
+        "iconTextCardColor": "black",
+        "iconTextCardInvertColor": "var(--color)"
+    },
+    {
         "name": "Cosmic Reef",
         "message": "[Try] The new Cosmic theme now!",
         "description": "Featuring a satellite galaxy of the Milky Way - the Large Magellanic Cloud, located 163,000 light-years away. Credit: Hubble Telescope, NASA",

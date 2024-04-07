@@ -1,7 +1,7 @@
 <template>
   <div
     class="header"
-    :class="{ 'full-screen': fullScreenMode, 'halloween': theme.name.toLowerCase() == 'halloween', 'minecraft': theme.name.toLowerCase() == 'minecraft', 'mars': theme.name.toLowerCase() == 'mars', 'cosmic-reef': theme.name.toLowerCase() == 'cosmic reef', 'cosmic-tarantula': theme.name.toLowerCase() == 'cosmic tarantula', 'summer': theme.name.toLowerCase() == 'summer', 'zen': theme.name.toLowerCase() == 'zen' || theme.name.toLowerCase() == 'not windows xp'}"
+    :class="{ 'full-screen': fullScreenMode, 'halloween': theme.name.toLowerCase() == 'halloween', 'minecraft': theme.name.toLowerCase() == 'minecraft', 'mars': theme.name.toLowerCase() == 'mars', 'cosmic-reef': theme.name.toLowerCase() == 'cosmic reef', 'cosmic-tarantula': theme.name.toLowerCase() == 'cosmic tarantula', 'summer': theme.name.toLowerCase() == 'summer', 'eclipse': theme.name.toLowerCase() == 'eclipse', 'zen': theme.name.toLowerCase() == 'zen' || theme.name.toLowerCase() == 'not windows xp'}"
     :style="colors"
   >
     <dropdown
@@ -419,6 +419,12 @@ export default {
     background-size: 250px
     +mobile-small
       background-size: 150px
+  &.eclipse
+    background: url(@/assets/occasions/eclipse-mobile.png) center center no-repeat, var(--header-color)
+    background-size: cover
+    +desktop
+      background: url(@/assets/occasions/eclipse-full.png) center center no-repeat, var(--header-color)
+      background-size: fit
 
   .starry-night
     position: absolute
