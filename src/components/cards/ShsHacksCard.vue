@@ -1,10 +1,10 @@
 <template>
-  <timed-card startTime="February 21, 2024" endTime="February 26, 2024">
+  <timed-card startTime="April 16, 2024" endTime="April 20, 2024">
     <div class="top-padding">
-      <a class="main-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeKScB0_C3Esobhakie0zaI9jqeejckgXy4xoCjE-DywjgJbw/viewform?usp=sf_link" target="_blank">
-        <img class="logo" src="@/assets/occasions/shsHacks.png">
-        <div class="register">
-          Stevenson's free-to-attend hackathon is happening <span class="bold">Saturday March 2nd!</span> <br><span class="color">Register Now!</span>&nbsp;
+      <a class="main-link" href="https://windycityhacks.com?ref=stevenson.space" target="_blank">
+        <img class="logo" src="@/assets/occasions/windy-city-hacks.png">
+        <div class="register" onclick="fathom.trackEvent('WCH Click')">
+          Build <i><b>something amazing</b></i> at Windy City Hacks, Chicagoland's free 24-hour coding competition <span class="bold">June 22nd-23rd!</span> <br><span class="color">Register Now!</span>&nbsp;
           <font-awesome-icon :icon="faArrowUpRightFromSquare" class="link-icon" />
         </div>
       </a>
