@@ -4,7 +4,7 @@
       <a class="main-link" href="https://windycityhacks.com?ref=stevenson.space" target="_blank">
         <img class="logo" src="@/assets/occasions/windy-city-hacks.png">
         <div class="register" onclick="fathom.trackEvent('WCH Click')">
-          Build <i><b>something amazing</b></i> at Windy City Hacks, Chicagoland's free 24-hour coding competition <span class="bold">June 22nd-23rd!</span> <br><span class="color">Register Now!</span>&nbsp;
+          Build <i><b>something amazing</b></i> at Windy City Hacks, Chicagoland's free 24-hour coding competition <span class="bold">June 22nd-23rd!</span><what-is-this>Ran by Andrew Wolf (maintains stevenson.space, SHSMaps), Connor Lin (maintains SHSMaps), Miles Klein, and Jacob Zerull</what-is-this> <br><span class="color">Register Now!</span>&nbsp;
           <font-awesome-icon :icon="faArrowUpRightFromSquare" class="link-icon" />
         </div>
       </a>
@@ -14,10 +14,11 @@
 
 <script>
 import TimedCard from '@/components/cards/TimedCard.vue';
+import WhatIsThis from '@/components/WhatIsThis.vue';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  components: { TimedCard },
+  components: { TimedCard, WhatIsThis },
   data() {
     return {
       faArrowUpRightFromSquare,
