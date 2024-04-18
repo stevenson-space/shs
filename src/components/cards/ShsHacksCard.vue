@@ -38,7 +38,7 @@ export default {
   .logo
     height: 150px
     margin: 10px
-    background: white
+    //background: white
     border-radius: 15px
   .register
     font-size: .85em
