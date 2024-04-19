@@ -9,5 +9,9 @@ jobs:
   call-cloudflare-deploy-webhook:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, world!"
+      - shell: bash
+        env:
+          URL: ${{ secrets.CLOUDFLARE_DEPLOY_WEBOOK_URL }}
+        run: |
+          curl -X POST "$URL"
     
