@@ -1,7 +1,10 @@
+name: Run Cloudflare deploy webhook
+
 on:
   schedule:
-  - cron: "01 01 * * *"
-
+    - cron: "01 01 * * *"
+  workflow_dispatch:
+  
 jobs:
   call-cloudflare-deploy-webhook:
     runs-on: ubuntu-latest
