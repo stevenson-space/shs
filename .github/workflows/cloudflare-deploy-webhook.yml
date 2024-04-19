@@ -1,0 +1,10 @@
+on:
+  schedule:
+  - cron: "01 01 * * *"
+
+jobs:
+  call-cloudflare-deploy-webhook:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, world!"
+    
