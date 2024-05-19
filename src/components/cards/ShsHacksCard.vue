@@ -1,5 +1,5 @@
 <template>
-  <timed-card startTime="May 1, 2024" endTime="May 3, 2024">
+  <timed-card startTime="May 19, 2024" endTime="May 24, 2024">
     <div class="top-padding">
       <a class="main-link" href="https://windycityhacks.com?ref=stevenson.space" target="_blank">
         <img class="logo" src="@/assets/occasions/windy-city-hacks.png">
