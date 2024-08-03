@@ -6,7 +6,6 @@
         <div class="info-container">
           <p class="info date">{{ weather.day }}</p>
           <div class="info condition">
-         
             <svg  v-if="weather.cloudcover > 70 && weather.rain_percent < 40" class="condition-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M400 240c-8.89-89.54-71-144-144-144-69 0-113.44 48.2-128 96-60 6-112 43.59-112 112 0 66 54 112 120 112h260c55 0 100-27.44 100-88 0-59.82-53-85.76-96-88z" fill="none" :stroke="color" stroke-linejoin="round" stroke-width="32"/></svg>
             <svg  v-else-if="weather.cloudcover > 70 && weather.rain_percent >= 40"  class="condition-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M114.61 162.85A16.07 16.07 0 00128 149.6C140.09 76.17 193.63 32 256 32c57.93 0 96.62 37.75 112.2 77.74a15.84 15.84 0 0012.2 9.87c50 8.15 91.6 41.54 91.6 99.59 0 59.4-48.6 100.8-108 100.8H130c-49.5 0-90-24.7-90-79.2 0-48.47 38.67-72.22 74.61-77.95z" fill="none" :stroke="color" stroke-linejoin="round" stroke-width="32"/><path fill="none" :stroke="color" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M144 384l-32 48M224 384l-64 96M304 384l-32 48M384 384l-64 96"/></svg>
             <svg  v-else-if="weather.cloudcover > 30 && weather.rain_percent < 40" class="condition-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><path d="M90.61 306.85A16.07 16.07 0 00104 293.6C116.09 220.17 169.63 176 232 176c57.93 0 96.62 37.75 112.2 77.74a15.84 15.84 0 0012.2 9.87c50 8.15 91.6 41.54 91.6 99.59 0 59.4-48.6 100.8-108 100.8H106c-49.5 0-90-24.7-90-79.2 0-48.47 38.67-72.22 74.61-77.95z" fill="none" :stroke="color" stroke-linejoin="round" stroke-width="32"/><path d="M384.8 271.4a80 80 0 10-123.55-92M464 208h32M336 48v32M222.86 94.86l22.63 22.63M449.14 94.86l-22.63 22.63" fill="none" :stroke="color" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
@@ -185,10 +184,11 @@ export default {
           width: 40px 
           position: relative
           left: 1px
-
-  .attribution
-    font-size: 0.5em
-    text-align: center
-    color: var(--color)
+  .attribution-link
+    text-decoration-color: var(--color)
+    .attribution
+      font-size: 0.5em
+      text-align: center
+      color: var(--color)
 
       </style>
