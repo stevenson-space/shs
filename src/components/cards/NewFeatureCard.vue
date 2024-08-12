@@ -1,9 +1,9 @@
 <template>
-  <timed-card startTime="January 8, 2024" endTime="January 10, 2024">
+  <timed-card startTime="August 11, 2024" endTime="August 13, 2024">
     <div class="container">
       <div class="title"></div>
       <div class="message">
-        🗺️ Don't be confused in the halls at the start of 2nd semester. Just use <a href="https://www.shsmaps.com/" target="_blank">SHSMaps</a>, and import your schedule to view your routes from class to class offline.
+        🗺️ Find rooms easily with <a href="https://www.shsmaps.com/" target="_blank">SHSMaps</a>, a website by Stevenson students. Import your schedule to view your routes from class to class offline, and easily share your rooms and paths for club advertisements! Your members will thank you.
       </div>
     </div>
   </timed-card>
