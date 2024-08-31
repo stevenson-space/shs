@@ -1,4 +1,32 @@
 {
+  "3": {
+    "Comfort Food": ["Swedish Meatballs with Eggnoodles"],
+    "Mindful": ["Chicken Tikka Masala"],
+    "Sides": ["Roasted Zuccini", "Lime Cilantro Rice"],
+    "Soup": ["Minestrone", "Chicken Gumbo"],
+    "International Station": ["Mac and Cheese Bowl"]
+  },
+  "4": {
+    "Comfort Food": ["Cheese Enchilada Caserol"],
+    "Mindful": ["Chipotle Orange Chicken"],
+    "Sides": ["Roasted Brocolini", "Rice Pilaf"],
+    "Soup": ["Minestrone", "Chicken Gumbo"],
+    "International Station": ["Mac and Cheese Bowl"]
+  },
+  "5": {
+    "Comfort Food": ["Adobo Roasted Turkey Breast"],
+    "Mindful": ["Creamy Vegetable Casserole"],
+    "Sides": ["Corn", "Egg Noodles"],
+    "Soup": ["Minestrone", "Chicken Gumbo"],
+    "International Station": ["Mac and Cheese Bowl"]
+  },
+  "6": {
+    "Comfort Food": ["Baked Battered Cod"],
+    "Mindful": ["Chicken Vesuvio"],
+    "Sides": ["Roasted Vegetables", "Roasted Wedge Potatoes"],
+    "Soup": ["Minestrone", "Chicken Gumbo"],
+    "International Station": ["Mac and Cheese Bowl"]
+  },
   "12": {
     "Comfort Food": ["Cheese Tortellini"],
     "Mindful": ["Lemon Garlic Baked Chicken"],
