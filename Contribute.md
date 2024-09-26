@@ -2,6 +2,9 @@
 
 stevenson.space was created in 2016 and has been a student-run project ever since. The site doesn't run itself and requires constant maintenance, bug fixes and upgrades only made possible by its contributors. Unknown to many, the code for the website is [open-sourced](https://opensource.com/resources/what-open-source) and the opportunity to contribute to the website is extended to Stevenson students. 
 
+## Interested in becoming a dedicated contributer?
+We're looking for a team of dedicated students to help maintain the bulk of the everchanging code forstevenson.space. From updating lunch menus, to creating new themes, to fixing bugs, we could use your help. [Apply here](https://stevenson.space/apply) to join our team!
+
 ## Technical Overview
 stevenson.space uses the following languages/technologies
 
