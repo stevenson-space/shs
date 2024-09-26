@@ -24,6 +24,8 @@ const QRCode: RouteComponent = () => import("@/views/QRCodes/QRCodes.vue");
 const GetHelp: RouteComponent = () => import("@/views/GetHelp/GetHelp.vue");
 const Jukebox: RouteComponent = () => import("@/views/Jukebox/Jukebox.vue");
 const LiveRedirect: RouteComponent = () => import("@/views/Live/Live.vue"); // redirect to shs youtube livestreams
+const ApplicationRedirect: RouteComponent = () => import("@/views/Apply/Apply.vue"); // redirect to dedicated contributor application
+const SnowballRedirect: RouteComponent = () => import("@/views/Snowball/Snowball.vue"); // redirect to snowball url (it's confusing for the club -- helping them out)
 
 type EditScheduleProps = {
   scheduleToEdit: string;
@@ -117,6 +119,16 @@ const routes: Array<RouteRecordRaw> = [
     name: "Live",
     path: "/live",
     component: LiveRedirect,
+  },
+  {
+    name: "Apply",
+    path: "/apply",
+    component: ApplicationRedirect,
+  },
+  {
+    name: "Snowball",
+    path: "/snowball",
+    component: SnowballRedirect,
   },
 ];
 
