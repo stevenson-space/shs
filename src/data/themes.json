@@ -29,7 +29,7 @@
     },
     {
         "name": "Fall",
-        "schedule": "9/25/2024-12/1/2024",
+        "schedule": "9/28/2024-12/1/2024",
         "message": "[Try] The New Fall Theme 🍁",
         "suggestedColor": "#d26f1e",
         "background": "white",
@@ -86,6 +86,21 @@
         "tertiary": "var(--primary)",
         "iconTextCardColor": "white",
         "iconTextCardInvertColor": "var(--color)"
+    },
+    {
+        "name": "Spy",
+        "schedule": "9/25/2024-9/28/2024",
+        "message": "[Try] The New Spy Theme",
+        "suggestedColor": "#bfbdbd",
+        "background": "#242424",
+        "headerBackgroundColor": "black",
+        "headerScheduleBackgroundColor": "#242424",
+        "secondaryBackground": "black",
+        "primary": "white",
+        "secondary": "white",
+        "tertiary": "white",
+        "iconTextCardColor": "black",
+        "iconTextCardInvertColor": "white"
     },
     {
         "name": "Stevenson Space",

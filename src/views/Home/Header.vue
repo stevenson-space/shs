@@ -1,7 +1,7 @@
 <template>
   <div
     class="header"
-    :class="{ 'full-screen': fullScreenMode, 'halloween': theme.name.toLowerCase() == 'halloween', 'minecraft': theme.name.toLowerCase() == 'minecraft', 'mars': theme.name.toLowerCase() == 'mars', 'cosmic-reef': theme.name.toLowerCase() == 'cosmic reef', 'cosmic-tarantula': theme.name.toLowerCase() == 'cosmic tarantula', 'summer': theme.name.toLowerCase() == 'summer', 'eclipse': theme.name.toLowerCase() == 'eclipse', 'zen': theme.name.toLowerCase() == 'zen' || theme.name.toLowerCase() == 'not windows xp'}"
+    :class="{ 'full-screen': fullScreenMode, 'spy': theme.name.toLowerCase() == 'spy', 'halloween': theme.name.toLowerCase() == 'halloween', 'minecraft': theme.name.toLowerCase() == 'minecraft', 'mars': theme.name.toLowerCase() == 'mars', 'cosmic-reef': theme.name.toLowerCase() == 'cosmic reef', 'cosmic-tarantula': theme.name.toLowerCase() == 'cosmic tarantula', 'summer': theme.name.toLowerCase() == 'summer', 'eclipse': theme.name.toLowerCase() == 'eclipse', 'zen': theme.name.toLowerCase() == 'zen' || theme.name.toLowerCase() == 'not windows xp'}"
     :style="colors"
   >
     <dropdown
@@ -384,6 +384,12 @@ export default {
   background-color: var(--header-color)
   text-align: center
   transition: background-color .3s
+  &.spy
+    background: url(@/assets/occasions/spy-mobile.png) center center no-repeat, var(--header-color)
+    background-size: cover
+    +desktop
+      background: url(@/assets/occasions/spy-full.png) center center no-repeat, var(--header-color)
+      
   &.minecraft
     background: url(@/assets/occasions/minecraft-mobile.png) center center no-repeat, var(--header-color)
     background-size: cover
@@ -527,6 +533,7 @@ export default {
     z-index: 2
     display: flex
     flex-direction: column
+    background-size: cover
 
     .main
       flex-grow: 1
