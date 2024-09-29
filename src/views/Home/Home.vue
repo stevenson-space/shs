@@ -14,6 +14,7 @@
         /> -->
         <new-feature-card />
         <new-theme-card />
+        <contribute-card />
         <!-- <april-fools-card /> -->
         <shs-hacks-card/>
         <holiday-card />

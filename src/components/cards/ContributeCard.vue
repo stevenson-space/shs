@@ -1,14 +1,14 @@
 <template>
-  <timed-card startTime="May 22, 2022" endTime="May 27, 2022" style="padding: 0px 5px">
-     <div class="icon">
-      <font-awesome-icon :icon="icons.faFilm" />
-     </div>
-    <div class="message">Interested in how stevenson.space has changed over the years? Checkout <b><a class="learn-more-link" href="https://vimeo.com/712696114">Then VS Now</a></b> - a short film showing the progress of the open-source project.</div>
+  <timed-card startTime="September 29, 2024" endTime="October 13, 2024">
+      <div class="icon">
+        <font-awesome-icon :icon="icons.faCode" />
+      </div>
+    <div class="message"><b>stevenson.space is open source and looking <br> for new developers to help maintain the site!<br><a href="https://github.com/stevenson-space/shs/blob/main/Contribute.md" target="_blank">Learn More.</a></b></div>
   </timed-card>
 </template>
 
 <script>
-import { faFilm } from '@fortawesome/free-solid-svg-icons';
+import { faCode } from '@fortawesome/free-solid-svg-icons';
 import TimedCard from './TimedCard.vue';
 
 export default {
@@ -17,7 +17,7 @@ export default {
     return {
       hidden: false,
       icons: {
-        faFilm,
+        faCode,
       },
     };
   },
@@ -26,10 +26,10 @@ export default {
 
 <style lang="sass" scoped>
 .icon
-  font-size: 40px
+  font-size: 30px
   display: flex
   justify-content: center
-  padding: 10px
+  padding-top: 15px
   color: var(--color)
 
 .learn-more-link
@@ -43,7 +43,7 @@ export default {
   padding: 10px 5px
 
 .message
-  font-size: .9em
+  font-size: .85em
   text-align: center
-  padding-bottom: 10px
+  padding: 10px
 </style>
