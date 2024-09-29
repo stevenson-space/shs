@@ -3,7 +3,7 @@
       <div class="icon">
         <font-awesome-icon :icon="icons.faCode" />
       </div>
-    <div class="message"><b>stevenson.space is open source and looking <br> for new developers to help maintain the site!<br><a href="https://github.com/stevenson-space/shs/blob/main/Contribute.md" target="_blank">Learn More.</a></b></div>
+    <div class="message"><b>stevenson.space is open source and looking <br> for new developers to help maintain the site!<br><a class="learn-more-link" href="https://github.com/stevenson-space/shs/blob/main/Contribute.md" target="_blank">Learn More.</a></b></div>
   </timed-card>
 </template>
 
