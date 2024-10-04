@@ -17,7 +17,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.5",
     "@sentry/tracing": "^7.91.0",
-    "@sentry/vue": "^7.91.0",
+    "@sentry/vue": "^8.33.1",
     "@vitejs/plugin-vue": "^5.0.0",
     "@vue/eslint-config-airbnb": "^8.0.0",
     "animejs": "^3.2.2",
