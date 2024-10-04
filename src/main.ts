@@ -1,10 +1,8 @@
 import { createApp } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { createPinia } from 'pinia';
-import { BrowserTracing } from '@sentry/tracing';
 import * as Sentry from '@sentry/vue';
 import VueGtag from 'vue-gtag';
-import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 
@@ -27,10 +25,7 @@ Sentry.init({
   app,
   dsn: 'https://c669e2d7bb9c48c3a3ec84abce8830f0@o1226632.ingest.sentry.io/6372249',
   integrations: [
-    new BrowserTracing({
-      routingInstrumentation: Sentry.vueRouterInstrumentation(router),
-      tracingOrigins: ['stevenson.space', /^\//],
-    }),
+    Sentry.browserTracingIntegration({ router })
   ],
   // Set tracesSampleRate to 1.0 to capture 100%
   // of transactions for performance monitoring.
