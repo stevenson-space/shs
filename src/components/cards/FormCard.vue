@@ -39,6 +39,8 @@ export default {
       }).catch((error) => {
         console.error('Error:', error);
       });
+
+      alert("Submitted successfully! We'll follow up soon.");
     },
   },
 };
