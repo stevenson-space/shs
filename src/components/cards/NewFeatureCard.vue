@@ -1,9 +1,9 @@
 <template>
-  <timed-card startTime="August 11, 2024" endTime="August 13, 2024">
+  <timed-card startTime="November 7, 2024" endTime="November 9, 2024">
     <div class="container">
       <div class="title"></div>
       <div class="message">
-        🗺️ Find rooms easily with <a href="https://www.shsmaps.com/" target="_blank">SHSMaps</a>, a website by Stevenson students. Import your schedule to view your routes from class to class offline, and easily share your rooms and paths for club advertisements! Your members will thank you.
+        Go check out the <a href="https://shsgiveathon.com/" target="_blank"> GiveAThon Leaderboard</a>, a website by NHS. It's a great way to see how much money all of us have raised so far, and to compete with your friends for 1st place 🥇
       </div>
     </div>
   </timed-card>
