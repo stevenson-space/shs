@@ -1,9 +1,9 @@
 <template>
-  <timed-card startTime="November 7, 2024" endTime="November 9, 2024">
+  <timed-card startTime="November 10, 2024" endTime="November 17, 2024">
     <div class="container">
       <div class="title"></div>
       <div class="message">
-        Go check out the <a href="https://shsgiveathon.com/" target="_blank"> GiveAThon Leaderboard</a>, a website by NHS. It's a great way to see how much money all of us have raised so far, and to compete with your friends for 1st place 🥇
+        <a class="link" href="/snowball" target="_blank">❄️ Registration for this year's Operation Snowball is open now!</a> Don't miss out on a weekend of fun activities, team building, bonding with friends, and endless hot chocolate from December 5th-7th at Camp Timberlee in East Troy, Wisconsin! 
       </div>
     </div>
   </timed-card>
