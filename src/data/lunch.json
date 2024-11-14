@@ -1,1 +1,65 @@
-{}
+{
+    "14": {
+      "Comfort Food": ["Coconut Curry with Rice"],
+      "Mindful": ["Baked Turkey Meatloaf with Chipotle BBQ"],
+      "Sides": ["Satueed Brocolini", "Maple Whipped Sweet Potatoes"],
+      "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
+      "International Station": ["Pasta Bowl"]
+    },
+    "15": {
+      "Comfort Food": ["Baked Herbed Cod"],
+      "Mindful": ["Roast Turkey"],
+      "Sides": ["Brussel Sprouts", "Mashed Potatoes with Gravy"],
+      "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
+      "International Station": ["Pasta Bowl"]
+    },
+    "18": {
+      "Comfort Food": ["Open faced Pot Roast Sandwich"],
+      "Mindful": ["Baked Chicken Parmesean"],
+      "Sides": ["Snow Peas", "Pasta"],
+      "Soup": ["Italian Wedding", "Cream of Potato"],
+      "International Station": ["Burrito Bowl"]
+    },
+    "19": {
+      "Comfort Food": ["3 Cheese Penne"],
+      "Mindful": ["Biryani Chicken"],
+      "Sides": ["Lemon Pepper Green Beans", "Yellow Rice"],
+      "Soup": ["Italian Wedding", "Cream of Potato"],
+      "International Station": ["Burrito Bowl"]
+    },
+    "20": {
+      "Comfort Food": ["Falafel Sandwich Pita with Tom & onions"],
+      "Mindful": ["Gyro Sandwich with Pita with Tom & onions"],
+      "Sides": ["Cucumber salad with tzatziki sauce", "Lemon Rice"],
+      "Soup": ["Italian Wedding", "Cream of Potato"],
+      "International Station": ["Burrito Bowl"]
+    },
+    "21": {
+      "Comfort Food": ["Fried Chicken"],
+      "Mindful": ["Chopped Steak with Onion Gravy"],
+      "Sides": ["Asparagus", "Scalloped Potatoes"],
+      "Soup": ["Italian Wedding", "Cream of Potato"],
+      "International Station": ["Burrito Bowl"]
+    },
+    "22": {
+      "Comfort Food": ["Turkey Sloppy Joe"],
+      "Mindful": ["Dijon Chicken"],
+      "Sides": ["Roasted Vegetables", "Mashed Potatoes"],
+      "Soup": ["Italian Wedding", "Cream of Potato"],
+      "International Station": ["Burrito Bowl"]
+    },
+    "25": {
+      "Comfort Food": ["Spicy Whole Wheat Spaghetti"],
+      "Mindful": ["Chicken Marsala"],
+      "Sides": ["Lemon Pepper Green Beans", "Roasted Potatoes"],
+      "Soup": ["Minestrone", "Chicken Gumbo"],
+      "International Station": ["Burrito Bowl"]
+    },
+    "26": {
+      "Comfort Food": ["Swedish Meatballs with Eggnoodles"],
+      "Mindful": ["Chicken Tikka Marsala"],
+      "Sides": ["Roasted Zuccini", "Lime Cilantro Rice"],
+      "Soup": ["Minestrone", "Chicken Gumbo"],
+      "International Station": ["Burrito Bowl"]
+    }
+  }
