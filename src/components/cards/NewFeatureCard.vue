@@ -1,9 +1,9 @@
 <template>
-  <timed-card startTime="August 11, 2024" endTime="August 13, 2024">
+  <timed-card startTime="November 10, 2024" endTime="November 17, 2024">
     <div class="container">
       <div class="title"></div>
       <div class="message">
-        🗺️ Find rooms easily with <a href="https://www.shsmaps.com/" target="_blank">SHSMaps</a>, a website by Stevenson students. Import your schedule to view your routes from class to class offline, and easily share your rooms and paths for club advertisements! Your members will thank you.
+        <a class="link" href="/snowball" target="_blank">❄️ Registration for this year's Operation Snowball is open now!</a> Don't miss out on a weekend of fun activities, team building, bonding with friends, and endless hot chocolate from December 5th-7th at Camp Timberlee in East Troy, Wisconsin! 
       </div>
     </div>
   </timed-card>
