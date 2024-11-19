@@ -3,7 +3,7 @@
     <div class="container">
       <div class="title"></div>
       <div class="message">
-        <a class="link" href="/snowball" target="_blank">LAST CHANCE: ❄️ Registration for this year's Operation Snowball is closes Friday!</a> Don't miss out on a weekend of fun activities, team building, bonding with friends, and endless hot chocolate from December 5th-7th at Camp Timberlee in East Troy, Wisconsin! 
+        <a class="link" href="/snowball" target="_blank">LAST CHANCE: ❄️ Registration for this year's Operation Snowball closes Friday!</a> Don't miss out on a weekend of fun activities, team building, bonding with friends, and endless hot chocolate from December 5th-7th at Camp Timberlee in East Troy, Wisconsin! 
       </div>
     </div>
   </timed-card>
