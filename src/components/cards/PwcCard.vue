@@ -27,8 +27,8 @@ export default {
         { day: 3, start: '15:30', end: '20:00' }, // Wednesday
         { day: 4, start: '15:30', end: '20:00' }, // Thursday
         { day: 5, start: '15:30', end: '18:00' }, // Friday
-        { day: 6, start: '10:00', end: '15:00' }, // Saturday
-        { day: 0, start: '10:00', end: '15:00' }, // Sunday
+        { day: 6, start: '10:00', end: '14:00' }, // Saturday
+        { day: 0, start: '10:00', end: '14:00' }, // Sunday
       ],
       closedDays: [
         // Add dates in 'YYYY-MM-DD' format for holidays or special closures
