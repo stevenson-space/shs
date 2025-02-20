@@ -1,9 +1,9 @@
 <template>
-  <timed-card startTime="November 22, 2024" endTime="November 26, 2024">
+  <timed-card startTime="Feburary 21, 2025" endTime="Feburary 22, 2025">
     <div class="container">
       <div class="title"></div>
       <div class="message">
-        <a class="link" href="/snowball" target="_blank">LAST CHANCE: ❄️ Registration for this year's Operation Snowball closes TODAY!</a> Don't miss out on a weekend of fun activities, team building, bonding with friends, and endless hot chocolate from December 5th-7th at Camp Timberlee in East Troy, Wisconsin! 
+        <a class="link" href="/snowblitz" target="_blank">❄️ Registration for Operation Snowball's Snowblitz is now open!</a> Don't miss out on a Friday night of fun activities, team building, bonding with friends, and pizza all on March 7th! 
       </div>
     </div>
   </timed-card>
