@@ -1,1513 +1,156 @@
 {
-  "6/17/2024": [
+  "1/21/2025": [
     {
       "allDay": false,
-      "start": 1718668800000,
-      "end": 1718668800000,
-      "name": "District 125 Board of Education Meeting",
-      "description": "Please visit the  Board of Education webpage  for additional information.",
-      "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
-      "categories": []
-    }
-  ],
-  "6/19/2024": [
-    {
-      "allDay": true,
-      "start": 1718773200000,
-      "end": 1718859600000,
-      "name": "Juneteenth National Freedom Day (No School)",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "6/26/2024": [
-    {
-      "allDay": false,
-      "start": 1719406800000,
-      "end": 1719424800000,
-      "name": "Summer Art Fest (Session 1)",
-      "description": "All students from a summer art class (Art & Design, Digital Art & Design, & Photography) will be exhibiting artwork from that class to celebrate their hard work. The art fest will feature a variety of art mediums such as wire sculptures, clay vessels, photographs, digital paintings, etc.",
-      "location": "Stevenson High School | The Forum",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "6/27/2024": [
-    {
-      "allDay": false,
-      "start": 1719492300000,
-      "end": 1719510600000,
-      "name": "Summer School - Session 1 End",
-      "description": "For more information, visit the  Summer School webpage.",
-      "location": null,
-      "categories": [
-        "Summer School"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1719493200000,
-      "end": 1719511200000,
-      "name": "Summer Art Fest (Session 1)",
-      "description": "All students from a summer art class (Art & Design, Digital Art & Design, & Photography) will be exhibiting artwork from that class to celebrate their hard work. The art fest will feature a variety of art mediums such as wire sculptures, clay vessels, photographs, digital paintings, etc.",
-      "location": "Stevenson High School | The Forum",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "7/1/2024": [
-    {
-      "allDay": false,
-      "start": 1719837900000,
-      "end": 1719856200000,
-      "name": "Summer School - Session 2 Start",
-      "description": "For more information, visit the  Summer School webpage.",
-      "location": null,
-      "categories": [
-        "Summer School"
-      ]
-    }
-  ],
-  "7/24/2024": [
-    {
-      "allDay": false,
-      "start": 1721826000000,
-      "end": 1721844000000,
-      "name": "Summer Art Fest (Session 2)",
-      "description": "All students from a summer art class (Art & Design, Digital Art & Design, & Photography) will be exhibiting artwork from that class to celebrate their hard work. The art fest will feature a variety of art mediums such as wire sculptures, clay vessels, photographs, digital paintings, etc.",
-      "location": "Stevenson High School | The Forum",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "7/25/2024": [
-    {
-      "allDay": false,
-      "start": 1721911500000,
-      "end": 1721929800000,
-      "name": "Summer School - Session 2 End",
-      "description": "For more information, visit the  Summer School webpage.",
-      "location": null,
-      "categories": [
-        "Summer School"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1721912400000,
-      "end": 1721930400000,
-      "name": "Summer Art Fest (Session 2)",
-      "description": "All students from a summer art class (Art & Design, Digital Art & Design, & Photography) will be exhibiting artwork from that class to celebrate their hard work. The art fest will feature a variety of art mediums such as wire sculptures, clay vessels, photographs, digital paintings, etc.",
-      "location": "Stevenson High School | The Forum",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "7/30/2024": [
-    {
-      "allDay": false,
-      "start": 1722373200000,
-      "end": 1722387600000,
-      "name": "Stevenson High School Band Fundraiser - Chipotle",
-      "description": "Come support the Stevenson High School Band at the Lincolnshire Chipotle on Tuesday, July 30 from 4 - 8 p.m.! 25% of sales will go to support our program.\n\n\n\nMake sure to use the code  GEJCKZL  with your order to help support the fundraiser!",
-      "location": "Chipotle | Lincolnshire, IL",
-      "categories": [
-        "Fundraisers"
-      ]
-    }
-  ],
-  "8/9/2024": [
-    {
-      "allDay": true,
-      "start": 1723179600000,
-      "end": 1723266000000,
-      "name": "Freshmen Orientation Day 2024",
-      "description": "The  Freshman Mentor Program (FMP)  is a comprehensive advisory program that spans the length of freshman year and focuses on helping students create and maintain connections to campus, classmates and our community. The FMP upperclassman mentors are \"trusted guides\" who help students become familiar with Stevenson's physical layout, policies, programs, traditions and personnel, while simultaneously developing powerful relationships with each freshman. Each freshman will spend the day with their FMP mentors on Freshman Orientation Day, the first day of a year-long journey to help each freshman find success at Stevenson!\n\nFor more information, visit the  Incoming Freshman: Class of 2028 web page .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Clubs and Activities",
-        "Orientations"
-      ]
-    }
-  ],
-  "8/12/2024": [
-    {
-      "allDay": true,
-      "start": 1723438800000,
-      "end": 1723525200000,
-      "name": "First Day of School",
-      "description": "",
-      "location": "Stevenson High School",
-      "categories": []
-    }
-  ],
-  "8/14/2024": [
-    {
-      "allDay": false,
-      "start": 1723674600000,
-      "end": 1723674600000,
-      "name": "Sports Booster Meeting",
-      "description": "All meetings begin at 5:30 p.m. in the Athletics Division Office (Room 5116 in PWC)",
-      "location": "Stevenson High School | Athletics Division Office (Room 5116 in PWC)",
-      "categories": [
-        "Parent Calendar",
-        "Athletics"
-      ]
-    }
-  ],
-  "8/16/2024": [
-    {
-      "allDay": false,
-      "start": 1723852800000,
-      "end": 1723860000000,
-      "name": "Freshmen Mixer",
-      "description": "For more information, visit the  Incoming Freshman: Class of 2028 web page .",
-      "location": "Stevenson High School | Pool Patio",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "8/19/2024": [
-    {
-      "allDay": false,
-      "start": 1724112000000,
-      "end": 1724112000000,
-      "name": "District 125 Board of Education Meeting",
-      "description": "Please visit the  Board of Education webpage  for additional information.",
-      "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
-      "categories": []
-    }
-  ],
-  "8/20/2024": [
-    {
-      "allDay": true,
-      "start": 1724130000000,
-      "end": 1724216400000,
-      "name": "Activity Period (Drill Day)",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Activity Period"
-      ]
-    }
-  ],
-  "8/21/2024": [
-    {
-      "allDay": false,
-      "start": 1724284800000,
-      "end": 1724284800000,
-      "name": "Open House - Night 1",
-      "description": "Open House is scheduled for two nights, one of which parents should attend based on their last name. If you have a calendar conflict with the designated Open House evening, please feel free to attend on the other date. There is no need to inform us of the change. We encourage all parents to attend one of the two nights:\n * Before both Open House evenings start, freshman and transfer student families are invited to meet with their child's counselor from 6:15 p.m. - 6:45 p.m.\n* Wednesday, August 21, from 7:00 - 9:30 pm: Last Names A - L\n* Thursday, August 29, from 7:00 - 9:30 pm: Last Names M - Z\n \nFor more information, please read the communications for  Freshmen/Transfer Students  and  Sophomores/Juniors/Seniors .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "8/22/2024": [
-    {
-      "allDay": true,
-      "start": 1724302800000,
-      "end": 1724389200000,
-      "name": "Late Arrival",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    }
-  ],
-  "8/24/2024": [
-    {
-      "allDay": true,
-      "start": 1724475600000,
-      "end": 1724562000000,
-      "name": "24 Hour Play Project",
-      "description": "",
-      "location": "Stevenson High School | West Auditorium",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "8/26/2024": [
-    {
-      "allDay": true,
-      "start": 1724648400000,
-      "end": 1724734800000,
-      "name": "Senior Parent Night",
-      "description": "",
-      "location": "Virtual Meeting via Zoom",
-      "categories": [
-        "CCC"
-      ]
-    }
-  ],
-  "8/29/2024": [
-    {
-      "allDay": true,
-      "start": 1724907600000,
-      "end": 1724994000000,
-      "name": "Activity Period (Senior Core Curriculum)",
-      "description": "Seniors \nThis is a mandatory meeting with your counselor during the activity period. You must attend this meeting even if you have a club.\n  \n\n DOWNLOAD :  Counselor Room Locations \n\n\n Clubs  *  TBA \n  All Other Students  * Remain in  your   second-period class  for the Activity Period.",
-      "location": null,
-      "categories": [
-        "Activity Period"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1724976000000,
-      "end": 1724976000000,
-      "name": "Open House - Night 2",
-      "description": "Open House is scheduled for two nights, one of which parents should attend based on their last name. If you have a calendar conflict with the designated Open House evening, please feel free to attend on the other date. There is no need to inform us of the change. We encourage all parents to attend one of the two nights:\n * Before both Open House evenings start, freshman and transfer student families are invited to meet with their child's counselor from 6:15 p.m. - 6:45 p.m.\n* Wednesday, August 21, from 7:00 - 9:30 pm: Last Names A - L\n* Thursday, August 29, from 7:00 - 9:30 pm: Last Names M - Z\n \nFor more information, please read the communications for  Freshmen/Transfer Students  and  Sophomores/Juniors/Seniors .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "8/30/2024": [
-    {
-      "allDay": true,
-      "start": 1724994000000,
-      "end": 1725080400000,
-      "name": "Late Arrival",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    }
-  ],
-  "9/2/2024": [
-    {
-      "allDay": true,
-      "start": 1725253200000,
-      "end": 1725339600000,
-      "name": "Labor Day (No School)",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "9/11/2024": [
-    {
-      "allDay": false,
-      "start": 1726093800000,
-      "end": 1726093800000,
-      "name": "Sports Booster Meeting",
-      "description": "All meetings begin at 5:30 p.m. in the Athletics Division Office (Room 5116 in PWC)",
-      "location": "Stevenson High School | Athletics Division Office (Room 5116 in PWC)",
-      "categories": [
-        "Parent Calendar",
-        "Athletics"
-      ]
-    }
-  ],
-  "9/12/2024": [
-    {
-      "allDay": true,
-      "start": 1726117200000,
-      "end": 1726203600000,
-      "name": "Late Arrival",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    }
-  ],
-  "9/14/2024": [
-    {
-      "allDay": true,
-      "start": 1726290000000,
-      "end": 1726376400000,
-      "name": "Street Fest 2024",
-      "description": "For more information, visit the  Wellness Week | Street Fest web page !",
-      "location": null,
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "9/16/2024": [
-    {
-      "allDay": false,
-      "start": 1726531200000,
-      "end": 1726531200000,
-      "name": "District 125 Board of Education Meeting",
-      "description": "Please visit the  Board of Education webpage  for additional information.",
-      "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
-      "categories": []
-    }
-  ],
-  "9/23/2024": [
-    {
-      "allDay": true,
-      "start": 1727067600000,
-      "end": 1727154000000,
-      "name": "Homecoming Week 2024",
-      "description": "For more information, visit the  Stevenson Homecoming 2024 hub !",
-      "location": null,
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "9/24/2024": [
-    {
-      "allDay": true,
-      "start": 1727154000000,
-      "end": 1727240400000,
-      "name": "Homecoming Week 2024",
-      "description": "For more information, visit the  Stevenson Homecoming 2024 hub !",
-      "location": null,
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "9/25/2024": [
-    {
-      "allDay": true,
-      "start": 1727240400000,
-      "end": 1727326800000,
-      "name": "Homecoming Week 2024",
-      "description": "For more information, visit the  Stevenson Homecoming 2024 hub !",
-      "location": null,
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "9/26/2024": [
-    {
-      "allDay": true,
-      "start": 1727326800000,
-      "end": 1727413200000,
-      "name": "Homecoming Week 2024",
-      "description": "For more information, visit the  Stevenson Homecoming 2024 hub !",
-      "location": null,
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "9/27/2024": [
-    {
-      "allDay": true,
-      "start": 1727413200000,
-      "end": 1727499600000,
-      "name": "Homecoming Week 2024",
-      "description": "For more information, visit the  Stevenson Homecoming 2024 hub !",
-      "location": null,
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1727413200000,
-      "end": 1727499600000,
-      "name": "PPA Treat Day",
-      "description": "",
-      "location": "Stevenson High School | Wood Commons & East Glass Commons",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1727466120000,
-      "end": 1727466120000,
-      "name": "PM Assembly",
-      "description": "",
-      "location": "Stevenson High School | The Stadium",
-      "categories": [
-        "Early Dismissal"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1727481600000,
-      "end": 1727481600000,
-      "name": "Homecoming Game: Varsity Patriots Football vs. TBA",
-      "description": "Admittance to the Patriots Varsity Football game will require the following: \n * A purchased ticket, GoFan Booster, or Activity Pass is Required for entry.\n* Stevenson students are required to have their   current student ID   with them for entry to the football game.\n* Tickets should be   purchased in advance   via GoFan  https://gofan.co/app/school/IL15688 \n* If you have EVENT printed on your ID please proceed to the line identified for passholders.\n* As a friendly reminder, there is no re-entry for students.",
-      "location": "Stevenson High School | The Stadium",
-      "categories": [
-        "Athletics"
-      ]
-    }
-  ],
-  "9/28/2024": [
-    {
-      "allDay": true,
-      "start": 1727499600000,
-      "end": 1727586000000,
-      "name": "Homecoming Dance 2024",
-      "description": "More information coming soon!",
-      "location": "Stevenson High School",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "9/30/2024": [
-    {
-      "allDay": false,
-      "start": 1727740800000,
-      "end": 1727740800000,
-      "name": "CCC Presents: Financial Aid Night",
-      "description": "",
-      "location": "Virtual Meeting via Zoom",
-      "categories": [
-        "CCC"
-      ]
-    }
-  ],
-  "10/1/2024": [
-    {
-      "allDay": false,
-      "start": 1727827200000,
-      "end": 1727827200000,
-      "name": "Fall Band Concert",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "10/3/2024": [
-    {
-      "allDay": true,
-      "start": 1727931600000,
-      "end": 1728018000000,
-      "name": "Non-Attendance Day",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "10/5/2024": [
-    {
-      "allDay": true,
-      "start": 1728104400000,
-      "end": 1728190800000,
-      "name": "2024 Fall Play: Anon(ymous)",
-      "description": "",
-      "location": "Stevenson High School | The Little Theatre (Room 4200)",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "10/6/2024": [
-    {
-      "allDay": true,
-      "start": 1728190800000,
-      "end": 1728277200000,
-      "name": "2024 Fall Play: Anon(ymous)",
-      "description": "",
-      "location": "Stevenson High School | The Little Theatre (Room 4200)",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "10/8/2024": [
-    {
-      "allDay": true,
-      "start": 1728363600000,
-      "end": 1728450000000,
-      "name": "Activity Period",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Activity Period"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1728432000000,
-      "end": 1728432000000,
-      "name": "Fall Choir Concert",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "10/9/2024": [
-    {
-      "allDay": true,
-      "start": 1728450000000,
-      "end": 1728536400000,
-      "name": "CCC Presents: First-Generation Night",
-      "description": "For more information visit the  First-Generation Families web page.",
-      "location": "Virtual Meeting via Zoom",
-      "categories": [
-        "CCC"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1728450000000,
-      "end": 1728536400000,
-      "name": "Patriot Guitar Concert",
-      "description": "",
-      "location": "Stevenson High School | West Auditorium",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1728450000000,
-      "end": 1728536400000,
-      "name": "Testing Day (PSAT/NMSQT)",
-      "description": "For more information, visit the  PSAT - SAT - ACT Testing web page .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Testing Day"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1728513000000,
-      "end": 1728513000000,
-      "name": "Sports Booster Meeting",
-      "description": "All meetings begin at 5:30 p.m. in the Athletics Division Office (Room 5116 in PWC)",
-      "location": "Stevenson High School | Athletics Division Office (Room 5116 in PWC)",
-      "categories": [
-        "Parent Calendar",
-        "Athletics"
-      ]
-    }
-  ],
-  "10/10/2024": [
-    {
-      "allDay": true,
-      "start": 1728536400000,
-      "end": 1728622800000,
-      "name": "Late Arrival",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1728536400000,
-      "end": 1728622800000,
-      "name": "Testing Day (PSAT/NMSQT)",
-      "description": "For more information, visit the  PSAT - SAT - ACT Testing web page .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Testing Day"
-      ]
-    }
-  ],
-  "10/11/2024": [
-    {
-      "allDay": false,
-      "start": 1728658800000,
-      "end": 1728678600000,
-      "name": "NHS Fall 2024 Blood Drive",
-      "description": "",
-      "location": "Stevenson High School | Wrestling Room",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "10/14/2024": [
-    {
-      "allDay": true,
-      "start": 1728882000000,
-      "end": 1728968400000,
-      "name": "Columbus Day (No School)",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "10/17/2024": [
-    {
-      "allDay": true,
-      "start": 1729141200000,
-      "end": 1729227600000,
-      "name": "Yearbook Photo Re-Take Day",
-      "description": "View your School Portraits, and select your yearbook/class picture before Retake Day!\n * *The final deadline is two weeks after retake day; if you do not pick an image VIP will choose a yearbook image for you*\n* To view your student's school portraits look for an email sent to you by \"Visual Image Photography\", or go to  vipis.com \n* Retake pictures will be taken on  Thur   10/17/24 & Fri 10/18/24 (10 a.m. - 3:30 p.m. - location TBA) . This is for students who have not yet taken a Yearbook Portrait this year, or for students who have reported a need for a new picture\n* Retake photos will be added to your online image gallery about a week after photo day\n* If you have any questions, please email  support@vipis.com \n \nSeniors who took a photo on School Picture Day AND paid for a \"VIP Premier Senior Portrait Session\" -- the image you choose from your Premier Session gallery will be your yearbook selection. If you'd rather use an image taken during the fall School Picture Day instead, please contact  support@vipis.com",
-      "location": "Stevenson High School | TBA",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1729207800000,
-      "end": 1729207800000,
-      "name": "Fall Orchestra Concert",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "10/18/2024": [
-    {
-      "allDay": true,
-      "start": 1729227600000,
-      "end": 1729314000000,
-      "name": "Yearbook Photo Re-Take Day",
-      "description": "View your School Portraits, and select your yearbook/class picture before Retake Day!\n * *The final deadline is two weeks after retake day; if you do not pick an image VIP will choose a yearbook image for you*\n* To view your student's school portraits look for an email sent to you by \"Visual Image Photography\", or go to  vipis.com \n* Retake pictures will be taken on  Thur   10/17/24 & Fri 10/18/24 (10 a.m. - 3:30 p.m. - location TBA) . This is for students who have not yet taken a Yearbook Portrait this year, or for students who have reported a need for a new picture\n* Retake photos will be added to your online image gallery about a week after photo day\n* If you have any questions, please email  support@vipis.com \n \nSeniors who took a photo on School Picture Day AND paid for a \"VIP Premier Senior Portrait Session\" -- the image you choose from your Premier Session gallery will be your yearbook selection. If you'd rather use an image taken during the fall School Picture Day instead, please contact  support@vipis.com",
-      "location": "Stevenson High School | TBA",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "10/19/2024": [
-    {
-      "allDay": true,
-      "start": 1729314000000,
-      "end": 1729400400000,
-      "name": "Night Market",
-      "description": "",
-      "location": "Stevenson High School",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "10/21/2024": [
-    {
-      "allDay": false,
-      "start": 1729555200000,
-      "end": 1729555200000,
-      "name": "District 125 Board of Education Meeting",
-      "description": "Please visit the  Board of Education webpage  for additional information.",
-      "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
-      "categories": []
-    }
-  ],
-  "10/24/2024": [
-    {
-      "allDay": true,
-      "start": 1729746000000,
-      "end": 1729832400000,
-      "name": "Activity Period",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Activity Period"
-      ]
-    }
-  ],
-  "10/25/2024": [
-    {
-      "allDay": false,
-      "start": 1729891800000,
-      "end": 1729899000000,
-      "name": "Trunk or Treat",
-      "description": "",
-      "location": "Stevenson High School",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "10/30/2024": [
-    {
-      "allDay": false,
-      "start": 1730331000000,
-      "end": 1730331000000,
-      "name": "Band Chamber Concert",
-      "description": "",
-      "location": "Stevenson High School | West Auditorium",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "11/5/2024": [
-    {
-      "allDay": true,
-      "start": 1730786400000,
-      "end": 1730872800000,
-      "name": "Election Day (No School)",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "11/7/2024": [
-    {
-      "allDay": true,
-      "start": 1730959200000,
-      "end": 1731045600000,
-      "name": "CCC Presents: First-Generation Night",
-      "description": "For more information visit the  First-Generation Families web page.",
-      "location": "Virtual Meeting via Zoom",
-      "categories": [
-        "CCC"
-      ]
-    }
-  ],
-  "11/12/2024": [
-    {
-      "allDay": true,
-      "start": 1731391200000,
-      "end": 1731477600000,
-      "name": "Activity Period",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Activity Period"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1731459600000,
-      "end": 1731465000000,
-      "name": "CCC Presents: College and Career Center Night for Junior Families",
-      "description": "",
-      "location": "Virtual Meeting via Zoom",
-      "categories": [
-        "CCC"
-      ]
-    }
-  ],
-  "11/13/2024": [
-    {
-      "allDay": false,
-      "start": 1731540600000,
-      "end": 1731540600000,
-      "name": "Sports Booster Meeting",
-      "description": "All meetings begin at 5:30 p.m. in the Athletics Division Office (Room 5116 in PWC)",
-      "location": "Stevenson High School | Athletics Division Office (Room 5116 in PWC)",
-      "categories": [
-        "Parent Calendar",
-        "Athletics"
-      ]
-    }
-  ],
-  "11/14/2024": [
-    {
-      "allDay": true,
-      "start": 1731564000000,
-      "end": 1731650400000,
-      "name": "Consortium Musical Performance",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1731564000000,
-      "end": 1731650400000,
-      "name": "Late Arrival",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    }
-  ],
-  "11/15/2024": [
-    {
-      "allDay": false,
-      "start": 1731718800000,
-      "end": 1731718800000,
-      "name": "2024 Fall Musical: The Prom",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "11/16/2024": [
-    {
-      "allDay": false,
-      "start": 1731805200000,
-      "end": 1731805200000,
-      "name": "2024 Fall Musical: The Prom",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "11/17/2024": [
-    {
-      "allDay": false,
-      "start": 1731891600000,
-      "end": 1731891600000,
-      "name": "2024 Fall Musical: The Prom",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "11/18/2024": [
-    {
-      "allDay": false,
-      "start": 1731978000000,
-      "end": 1731978000000,
-      "name": "District 125 Board of Education Meeting",
-      "description": "Please visit the  Board of Education webpage  for additional information.",
-      "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
-      "categories": []
-    }
-  ],
-  "11/27/2024": [
-    {
-      "allDay": true,
-      "start": 1732687200000,
-      "end": 1732773600000,
-      "name": "Thanksgiving Break (No School)",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "11/28/2024": [
-    {
-      "allDay": true,
-      "start": 1732773600000,
-      "end": 1732860000000,
-      "name": "Thanksgiving Break (No School)",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "11/29/2024": [
-    {
-      "allDay": true,
-      "start": 1732860000000,
-      "end": 1732946400000,
-      "name": "Thanksgiving Break (No School)",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "12/3/2024": [
-    {
-      "allDay": true,
-      "start": 1733205600000,
-      "end": 1733292000000,
-      "name": "Give-A-Thon 2024 Collection Day",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "12/4/2024": [
-    {
-      "allDay": true,
-      "start": 1733292000000,
-      "end": 1733378400000,
-      "name": "Give-A-Thon 2024 Delivery Day",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1733360400000,
-      "end": 1733360400000,
-      "name": "Winter Guitar Concert",
-      "description": "",
-      "location": "Stevenson High School | West Auditorium",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/5/2024": [
-    {
-      "allDay": true,
-      "start": 1733378400000,
-      "end": 1733464800000,
-      "name": "Activity Period",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Activity Period"
-      ]
-    }
-  ],
-  "12/6/2024": [
-    {
-      "allDay": false,
-      "start": 1733533200000,
-      "end": 1733533200000,
-      "name": "2024 Winter Dance Concert",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1733533200000,
-      "end": 1733533200000,
-      "name": "Music Production Showcase",
-      "description": "",
-      "location": "Stevenson High School | West Auditorium",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/7/2024": [
-    {
-      "allDay": false,
-      "start": 1733619600000,
-      "end": 1733619600000,
-      "name": "2024 Winter Dance Concert",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/9/2024": [
-    {
-      "allDay": false,
-      "start": 1733792400000,
-      "end": 1733792400000,
-      "name": "December Band Concert",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/10/2024": [
-    {
-      "allDay": true,
-      "start": 1733810400000,
-      "end": 1733896800000,
-      "name": "Winter ArtFest 2024",
-      "description": "",
-      "location": "Stevenson High School | Room 2104 & Upper Forum",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1733878800000,
-      "end": 1733878800000,
-      "name": "December Band Concert",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/11/2024": [
-    {
-      "allDay": true,
-      "start": 1733896800000,
-      "end": 1733983200000,
-      "name": "Winter ArtFest 2024",
-      "description": "",
-      "location": "Stevenson High School | Room 2104 & Upper Forum",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/12/2024": [
-    {
-      "allDay": true,
-      "start": 1733983200000,
-      "end": 1734069600000,
-      "name": "Late Arrival",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1734051600000,
-      "end": 1734051600000,
-      "name": "December Choir Concert",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/16/2024": [
-    {
-      "allDay": false,
-      "start": 1734397200000,
-      "end": 1734397200000,
-      "name": "District 125 Board of Education Meeting",
-      "description": "Please visit the  Board of Education webpage  for additional information.",
-      "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
-      "categories": []
-    }
-  ],
-  "12/17/2024": [
-    {
-      "allDay": false,
-      "start": 1734436800000,
-      "end": 1734436800000,
-      "name": "December Orchestra Concert",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/18/2024": [
-    {
-      "allDay": false,
-      "start": 1734566400000,
-      "end": 1734566400000,
-      "name": "Adv. Acting & Acting 3 Showcase",
-      "description": "",
-      "location": "Stevenson High School | West Auditorium",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "12/19/2024": [
-    {
-      "allDay": true,
-      "start": 1734588000000,
-      "end": 1734674400000,
-      "name": "The Final Experience (Early Dismissal)",
-      "description": "For schedule info, please visit the  Final Experience  web page.",
-      "location": null,
-      "categories": [
-        "Early Dismissal"
-      ]
-    }
-  ],
-  "12/20/2024": [
-    {
-      "allDay": true,
-      "start": 1734674400000,
-      "end": 1734760800000,
-      "name": "The Final Experience (Early Dismissal)",
-      "description": "For schedule info, please visit the  Final Experience  web page.",
-      "location": null,
-      "categories": [
-        "Early Dismissal"
-      ]
-    }
-  ],
-  "12/23/2024": [
-    {
-      "allDay": true,
-      "start": 1734933600000,
-      "end": 1735020000000,
-      "name": "Winter Break",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "12/24/2024": [
-    {
-      "allDay": true,
-      "start": 1735020000000,
-      "end": 1735106400000,
-      "name": "Winter Break",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "12/25/2024": [
-    {
-      "allDay": true,
-      "start": 1735106400000,
-      "end": 1735192800000,
-      "name": "Winter Break",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "12/26/2024": [
-    {
-      "allDay": true,
-      "start": 1735192800000,
-      "end": 1735279200000,
-      "name": "Winter Break",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "12/27/2024": [
-    {
-      "allDay": true,
-      "start": 1735279200000,
-      "end": 1735365600000,
-      "name": "Winter Break",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "12/30/2024": [
-    {
-      "allDay": true,
-      "start": 1735538400000,
-      "end": 1735624800000,
-      "name": "Winter Break",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "12/31/2024": [
-    {
-      "allDay": true,
-      "start": 1735624800000,
-      "end": 1735711200000,
-      "name": "Winter Break",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "1/1/2025": [
-    {
-      "allDay": true,
-      "start": 1735711200000,
-      "end": 1735797600000,
-      "name": "Winter Break",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "1/2/2025": [
-    {
-      "allDay": true,
-      "start": 1735797600000,
-      "end": 1735884000000,
-      "name": "Winter Break",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "1/3/2025": [
-    {
-      "allDay": true,
-      "start": 1735884000000,
-      "end": 1735970400000,
-      "name": "Winter Break",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "1/6/2025": [
-    {
-      "allDay": true,
-      "start": 1736143200000,
-      "end": 1736229600000,
-      "name": "Teacher Institute Day (Non-Attendance)",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "1/7/2025": [
-    {
-      "allDay": true,
-      "start": 1736229600000,
-      "end": 1736316000000,
-      "name": "Start of Second Semester -- Classes Resume",
-      "description": "",
-      "location": null,
-      "categories": []
-    }
-  ],
-  "1/8/2025": [
-    {
-      "allDay": false,
-      "start": 1736379000000,
-      "end": 1736379000000,
-      "name": "Sports Booster Meeting",
-      "description": "All meetings begin at 5:30 p.m. in the Athletics Division Office (Room 5116 in PWC)",
-      "location": "Stevenson High School | Athletics Division Office (Room 5116 in PWC)",
-      "categories": [
-        "Parent Calendar",
-        "Athletics"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1736384400000,
-      "end": 1736384400000,
-      "name": "Incoming Freshman Parent Nights",
-      "description": "*  January 8  (last names A-G)\n*  January 9  (last names H-O)\n*  January 14  (last names P-Z)\n \n\n\nFor more information, visit the  Incoming Freshmen: Class of 2028 web page .",
+      "start": 1737486000000,
+      "end": 1737486000000,
+      "name": "Incoming Freshman Course Selection Evenings",
+      "description": "Stevenson will host the second of three virtual course selection evenings for incoming freshman families. During these evenings, families can virtually meet with a Stevenson school counselor or director for support in choosing classes for the upcoming school year.\n\n  \n \n\n\n *  Jan. 21 (Last Names H - O)  * Group 1 ( H - J ):  https://zoom.us/j/99457138350 \n* Group 2 ( K ):  https://zoom.us/j/94291628473 \n* Group 3 ( L - Mar ):  https://zoom.us/j/91273453344 \n* Group 4 ( Mas - O ):  https://zoom.us/j/99613343413",
       "location": "Stevenson High School | TBA",
       "categories": [
         "Parent Calendar"
       ]
     }
   ],
-  "1/9/2025": [
+  "1/22/2025": [
     {
       "allDay": false,
-      "start": 1736470800000,
-      "end": 1736470800000,
-      "name": "Incoming Freshman Parent Nights",
-      "description": "*  January 8  (last names A-G)\n*  January 9  (last names H-O)\n*  January 14  (last names P-Z)\n \n\n\nFor more information, visit the  Incoming Freshmen: Class of 2028 web page .",
+      "start": 1737572400000,
+      "end": 1737572400000,
+      "name": "Incoming Freshman Course Selection Evenings",
+      "description": "Stevenson will host the last of three virtual course selection evenings for incoming freshman families. During these evenings, families can virtually meet with a Stevenson school counselor or director for support in choosing classes for the upcoming school year.\n\n  \n \n\n\n *  Jan. 22 (Last Names P - Z)  * Group 1 ( P - Ra ):  https://zoom.us/j/94555830466 \n* Group 2 ( Re - Sh ):  https://zoom.us/j/92789471256 \n* Group 3 ( Si - Va ):  https://zoom.us/j/92248837241 \n* Group 4 ( Ve - Z ):  https://zoom.us/j/97640392096",
       "location": "Stevenson High School | TBA",
       "categories": [
         "Parent Calendar"
-      ]
-    }
-  ],
-  "1/13/2025": [
-    {
-      "allDay": false,
-      "start": 1736814600000,
-      "end": 1736814600000,
-      "name": "Consortium Jazz and Band Festival",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1736816400000,
-      "end": 1736816400000,
-      "name": "District 125 Board of Education Meeting",
-      "description": "Please visit the  Board of Education webpage  for additional information.",
-      "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
-      "categories": []
-    }
-  ],
-  "1/14/2025": [
-    {
-      "allDay": true,
-      "start": 1736834400000,
-      "end": 1736920800000,
-      "name": "Activity Period",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Activity Period"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1736902800000,
-      "end": 1736902800000,
-      "name": "Incoming Freshman Parent Nights",
-      "description": "*  January 8  (last names A-G)\n*  January 9  (last names H-O)\n*  January 14  (last names P-Z)\n \n\n\nFor more information, visit the  Incoming Freshmen: Class of 2028 web page .",
-      "location": "Stevenson High School | TBA",
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "1/15/2025": [
-    {
-      "allDay": false,
-      "start": 1736985600000,
-      "end": 1736985600000,
-      "name": "Consortium Orchestra Concert",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "1/16/2025": [
-    {
-      "allDay": true,
-      "start": 1737007200000,
-      "end": 1737093600000,
-      "name": "Late Arrival",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1737075600000,
-      "end": 1737075600000,
-      "name": "Consortium Choir Concert",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "1/17/2025": [
-    {
-      "allDay": false,
-      "start": 1737162000000,
-      "end": 1737172800000,
-      "name": "SAGA Dance",
-      "description": "",
-      "location": "Stevenson High School | Lower East Glass Commons",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "1/20/2025": [
-    {
-      "allDay": true,
-      "start": 1737352800000,
-      "end": 1737439200000,
-      "name": "Martin Luther. King, Jr. Day (No School)",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
       ]
     }
   ],
   "1/25/2025": [
     {
       "allDay": true,
-      "start": 1737784800000,
-      "end": 1737871200000,
+      "start": 1737763200000,
+      "end": 1737849600000,
       "name": "World's Fair 2025",
-      "description": "",
+      "description": "For more information, please visit the  World's Fair 2025 web page .",
       "location": "Stevenson High School",
       "categories": [
         "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1737828000000,
+      "end": 1737828000000,
+      "name": "Boys Ice Hockey vs. Glenbrook North: Hearthland Animal Shelter Collection Fundraiser",
+      "description": "Join Stevenson Patriot Ice Hockey in supporting  Heartland Animal Shelter ! You can make a difference by using  this link  to have items shipped directly to the shelter or by bringing them to the game this Saturday, Jan. 25 against Glenbrook North at Twin Rinks.",
+      "location": "Twin Rinks Ice Pavilion | Buffalo Grove, IL",
+      "categories": [
+        "Fundraisers",
+        "Athletics"
       ]
     }
   ],
   "1/26/2025": [
     {
       "allDay": true,
-      "start": 1737871200000,
-      "end": 1737957600000,
+      "start": 1737849600000,
+      "end": 1737936000000,
       "name": "World's Fair 2025",
-      "description": "",
+      "description": "For more information, please visit the  World's Fair 2025 web page .",
       "location": "Stevenson High School",
       "categories": [
         "Clubs and Activities"
       ]
     }
   ],
-  "1/29/2025": [
+  "1/28/2025": [
     {
-      "allDay": true,
-      "start": 1738130400000,
-      "end": 1738216800000,
-      "name": "Lunar New Year Celebration",
-      "description": ".",
-      "location": "Stevenson High School | TBA",
+      "allDay": false,
+      "start": 1738090800000,
+      "end": 1738094400000,
+      "name": "CCC Presents: Career Talks w/ Del Prete (Architect on Education Design)",
+      "description": "Join us virtually on Tuesday, Jan. 28 from 7 to 8 p.m. as Mr. Wesley Del Prete will discuss his career as an architect.\n\nMr. Del Prete is an architect focused on education design. He is involved in designing spaces for teaching, preparing drawings and specifications, and overseeing construction administration. If you want to learn more about how to become an architect, the day-to-day tasks, and job responsibilities, consider attending this Zoom meeting.\n\n\n\n LINKS \n * Please complete this  Google Form  if you are interested in attending.\n* Zoom Link for 1/15 at 7 p.m.:  https://zoom.us/j/98406837662",
+      "location": "Virtual Meeting via Zoom",
       "categories": [
-        "Clubs and Activities"
+        "CCC"
       ]
     }
   ],
   "1/31/2025": [
     {
+      "allDay": true,
+      "start": 1738281600000,
+      "end": 1738368000000,
+      "name": "Boys Bowling Individual State Final Tournament",
+      "description": "IHSA Boys Bowling Individual State Final Tournament   \n\n Date : Friday - Saturday, Jan. 31 - Feb. 1, 2025\n Time : TBA\n Location : St. Clair Bowl, Fairview Heights (O'Fallon), IL ( Google Maps )\n Tickets :  GoFan   \n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
+      "location": "St. Clair Bowl | Fairview Heights (O'Fallon), IL",
+      "categories": [
+        "Athletics"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1738281600000,
+      "end": 1738368000000,
+      "name": "CCC Presents: Summer Enrichment Program & Internship Information Session",
+      "description": "The College Career Center is hosting the first Summer Enrichment Program/ Internship Information Session on Friday, January 31st, in the West Auditorium. The information session will be held every 1/2 lunch period. Freshman-senior students are able to sign-up. This presentation targets freshman-junior students since it covers high school programs, but seniors can still attend if they are interested.\n\n Topics will include: \n * What an internship/ summer enrichment program/ pre-college program is.\n* How to find internships/ summer enrichment programs/ pre-college programs.\n* What to include to make your application stronger for an internship/ summer enrichment program/ pre-college program.\n* And more!\n \n LINKS \n *  REGISTER: via Google Forms",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "CCC"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1738281600000,
+      "end": 1738368000000,
+      "name": "Competitive Dance State Final Competition",
+      "description": "IHSA Competitive Dance State Final Competition   \n\n Date : Friday - Saturday, Jan. 31 - Feb. 1, 2025\n Time : TBA\n Location :  Grossinger Motors Arena, Bloomington, IL ( Google Maps )\n Tickets :  via Ticketmaster \n  \n\n\n\n\n\n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
+      "location": "Grossinger Motors Arena | Bloomington, IL",
+      "categories": [
+        "Athletics"
+      ]
+    },
+    {
       "allDay": false,
-      "start": 1738364400000,
-      "end": 1738375200000,
+      "start": 1738346400000,
+      "end": 1738357200000,
       "name": "KIVA Club presents S-Factor",
-      "description": "",
+      "description": "Welcome to S-Factor, sponsored by  KIVA Club ! This is Stevenson's annual singing competition where the proceeds will go towards micro-loaning to entrepreneurs in emerging economies.\n\n LINKS \n *  PURCHASE: Tickets via GoFan -- $5",
       "location": "Stevenson High School | Performing Arts Center",
       "categories": [
         "Clubs and Activities"
       ]
     }
   ],
+  "2/1/2025": [
+    {
+      "allDay": true,
+      "start": 1738368000000,
+      "end": 1738454400000,
+      "name": "Boys Bowling Individual State Final Tournament",
+      "description": "IHSA Boys Bowling Individual State Final Tournament   \n\n Date : Friday - Saturday, Jan. 31 - Feb. 1, 2025\n Time : TBA\n Location : St. Clair Bowl, Fairview Heights (O'Fallon), IL ( Google Maps )\n Tickets :  GoFan   \n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
+      "location": "St. Clair Bowl | Fairview Heights (O'Fallon), IL",
+      "categories": [
+        "Athletics"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1738368000000,
+      "end": 1738454400000,
+      "name": "Competitive Dance State Final Competition",
+      "description": "IHSA Competitive Dance State Final Competition   \n\n Date : Friday - Saturday, Jan. 31 - Feb. 1, 2025\n Time : TBA\n Location :  Grossinger Motors Arena, Bloomington, IL ( Google Maps )\n Tickets :  via Ticketmaster \n  \n\n\n\n\n\n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
+      "location": "Grossinger Motors Arena | Bloomington, IL",
+      "categories": [
+        "Athletics"
+      ]
+    }
+  ],
   "2/4/2025": [
     {
       "allDay": true,
-      "start": 1738648800000,
-      "end": 1738735200000,
+      "start": 1738627200000,
+      "end": 1738713600000,
       "name": "CCC Presents: First-Generation Night",
       "description": "For more information visit the  First-Generation Families web page.",
       "location": "Virtual Meeting via Zoom",
@@ -1519,24 +162,46 @@
   "2/6/2025": [
     {
       "allDay": false,
-      "start": 1738890000000,
-      "end": 1738890000000,
-      "name": "2024 Frosh/Soph Play: The Lion, The Witch & The Wardrobe",
-      "description": "",
-      "location": "Stevenson High School | TBA",
+      "start": 1738856700000,
+      "end": 1738863900000,
+      "name": "Black History Month at SHS: Let's Make Peach Cobbler in the Food Lab",
+      "description": "Join the  BSU (Black Student Union)  as they make Peach Cobbler and share insight on some of the history behind the dish and its journey to America.",
+      "location": "Stevenson High School | The Food Lab (Room 1406)",
       "categories": [
-        "Fine Arts"
+        "Clubs and Activities"
       ]
     }
   ],
   "2/7/2025": [
     {
+      "allDay": true,
+      "start": 1738886400000,
+      "end": 1738972800000,
+      "name": "Competitive Cheer State Final Competition",
+      "description": "IHSA Competitive Cheer State Final Competition   \n\n Date : Friday - Saturday, Feb. 7 - 8, 2025\n Time : TBA\n Location :  Grossinger Motors Arena, Bloomington, IL ( Google Maps )\n Tickets :  via Ticketmaster \n\n\n\n\n\n\n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
+      "location": "Grossinger Motors Arena | Bloomington, IL",
+      "categories": [
+        "Athletics"
+      ]
+    },
+    {
       "allDay": false,
-      "start": 1738976400000,
-      "end": 1738976400000,
+      "start": 1738951200000,
+      "end": 1738958400000,
+      "name": "Chinese Lunar New Year Celebration",
+      "description": "Join the  Chinese Club, NCHS,  and  TWCC  on Feb. 7, 2025, to celebrate the Chinese New Year! The event will feature food games, including a passport book to navigate the different game tables.\n\nAdmission is free if you bring food for yourself or your family, and for student and parent volunteers. Otherwise, admission is $3 per person and free for children under 5.\n\n PURCHASE: Tickets via Omella",
+      "location": "Stevenson High School | Room 2104",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1738954800000,
+      "end": 1738954800000,
       "name": "2024 Frosh/Soph Play: The Lion, The Witch & The Wardrobe",
-      "description": "",
-      "location": "Stevenson High School | TBA",
+      "description": "This new dramatization of C.S. Lewis' classic, set in the land of Narnia, faithfully recreates the magic and mystery of Aslan, the great lion; his struggle with the White Witch; and the adventures of four children who inadvertently wander from an old wardrobe into the exciting, never-to-be-forgotten Narina. The intense action features chases, duels, and escapes as the witch is determined to keep Narnia in her possession and end Aslan's reign. All the memorable episodes from the story are represented in this exciting dramatization: the temptation of Edmund by the witch, the slaying of the evil wolf by Peter, the witnessing of Aslan's resurrection by Susan and Lucy, the crowning of the four new rulers of Narnia, and more. The supporting characters are also here: the unicorn, the centaur and other forest animals, along with Father Christmas, Mr. and Mrs. Beaver and Tumnus the Faun. This story of love, faith, courage and giving, with its triumph of good over evil, is a true celebration of life.\n\n\n\n  Audience Advisory: Patriot Theatre Company rates this production PG. The staging includes moments of combat, flashing lights, and atmospheric fog.  \n\n\n LINKS \n\n *  PURCHASE: Tickets via GoFan  ( Feb. 7 @ 7 p.m.  |  Feb. 8 @ 2 p.m.  |  Feb. 8 @ 7 p.m. )\n*  DOWNLOAD: Event Program",
+      "location": "Stevenson High School | Little Theatre (Room 4200)",
       "categories": [
         "Fine Arts"
       ]
@@ -1544,12 +209,34 @@
   ],
   "2/8/2025": [
     {
+      "allDay": true,
+      "start": 1738972800000,
+      "end": 1739059200000,
+      "name": "Competitive Cheer State Final Competition",
+      "description": "IHSA Competitive Cheer State Final Competition   \n\n Date : Friday - Saturday, Feb. 7 - 8, 2025\n Time : TBA\n Location :  Grossinger Motors Arena, Bloomington, IL ( Google Maps )\n Tickets :  via Ticketmaster \n\n\n\n\n\n\n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
+      "location": "Grossinger Motors Arena | Bloomington, IL",
+      "categories": [
+        "Athletics"
+      ]
+    },
+    {
       "allDay": false,
-      "start": 1739062800000,
-      "end": 1739062800000,
+      "start": 1739023200000,
+      "end": 1739023200000,
       "name": "2024 Frosh/Soph Play: The Lion, The Witch & The Wardrobe",
-      "description": "",
-      "location": "Stevenson High School | TBA",
+      "description": "This new dramatization of C.S. Lewis' classic, set in the land of Narnia, faithfully recreates the magic and mystery of Aslan, the great lion; his struggle with the White Witch; and the adventures of four children who inadvertently wander from an old wardrobe into the exciting, never-to-be-forgotten Narina. The intense action features chases, duels, and escapes as the witch is determined to keep Narnia in her possession and end Aslan's reign. All the memorable episodes from the story are represented in this exciting dramatization: the temptation of Edmund by the witch, the slaying of the evil wolf by Peter, the witnessing of Aslan's resurrection by Susan and Lucy, the crowning of the four new rulers of Narnia, and more. The supporting characters are also here: the unicorn, the centaur and other forest animals, along with Father Christmas, Mr. and Mrs. Beaver and Tumnus the Faun. This story of love, faith, courage and giving, with its triumph of good over evil, is a true celebration of life.\n\n\n\n  Audience Advisory: Patriot Theatre Company rates this production PG. The staging includes moments of combat, flashing lights, and atmospheric fog.  \n\n\n LINKS \n\n *  PURCHASE: Tickets via GoFan  ( Feb. 7 @ 7 p.m.  |  Feb. 8 @ 2 p.m.  |  Feb. 8 @ 7 p.m. )\n*  DOWNLOAD: Event Program",
+      "location": "Stevenson High School | Little Theatre (Room 4200)",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1739041200000,
+      "end": 1739041200000,
+      "name": "2024 Frosh/Soph Play: The Lion, The Witch & The Wardrobe",
+      "description": "This new dramatization of C.S. Lewis' classic, set in the land of Narnia, faithfully recreates the magic and mystery of Aslan, the great lion; his struggle with the White Witch; and the adventures of four children who inadvertently wander from an old wardrobe into the exciting, never-to-be-forgotten Narina. The intense action features chases, duels, and escapes as the witch is determined to keep Narnia in her possession and end Aslan's reign. All the memorable episodes from the story are represented in this exciting dramatization: the temptation of Edmund by the witch, the slaying of the evil wolf by Peter, the witnessing of Aslan's resurrection by Susan and Lucy, the crowning of the four new rulers of Narnia, and more. The supporting characters are also here: the unicorn, the centaur and other forest animals, along with Father Christmas, Mr. and Mrs. Beaver and Tumnus the Faun. This story of love, faith, courage and giving, with its triumph of good over evil, is a true celebration of life.\n\n\n\n  Audience Advisory: Patriot Theatre Company rates this production PG. The staging includes moments of combat, flashing lights, and atmospheric fog.  \n\n\n LINKS \n\n *  PURCHASE: Tickets via GoFan  ( Feb. 7 @ 7 p.m.  |  Feb. 8 @ 2 p.m.  |  Feb. 8 @ 7 p.m. )\n*  DOWNLOAD: Event Program",
+      "location": "Stevenson High School | Little Theatre (Room 4200)",
       "categories": [
         "Fine Arts"
       ]
@@ -1558,19 +245,54 @@
   "2/10/2025": [
     {
       "allDay": false,
-      "start": 1739235600000,
-      "end": 1739235600000,
+      "start": 1739214000000,
+      "end": 1739214000000,
       "name": "District 125 Board of Education Meeting",
       "description": "Please visit the  Board of Education webpage  for additional information.",
       "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
       "categories": []
     }
   ],
+  "2/11/2025": [
+    {
+      "allDay": true,
+      "start": 1739232000000,
+      "end": 1739318400000,
+      "name": "CCC Presents: CLC Application Workshop",
+      "description": "",
+      "location": "Stevenson High School | College Career Center",
+      "categories": [
+        "CCC"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1739232000000,
+      "end": 1739318400000,
+      "name": "Operation Snowball Fundraiser: Culver's of Lincolnshire",
+      "description": "Join Us for an Operation Snowball Reunion & Fundraiser! Mark your calendars! Operation Snowball is hosting a Reunion & Fundraiser on Tuesday, February 11th at Culver's in Lincolnshire. This is the perfect opportunity to reconnect with friends, share memories, support Snowball while enjoying some delicious food!\n\nA portion of the evening's sales will go directly toward supporting Operation Snowball's mission of empowering students through leadership, personal growth, and positive choices. Bring your family and friends, grab a meal, and help make a difference!\n\nWe can't wait to see you there! Spread the word and let's make it a great night!",
+      "location": "Culver's | Lincolnshire, IL",
+      "categories": [
+        "Fundraisers"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1739296800000,
+      "end": 1739300400000,
+      "name": "CCC Presents: Career Talks w/ Jim Kwasek (Pilot & Flight Instructor)",
+      "description": "Join us virtually on February 11th from 6:00pm-7:00 to discover a career in aviation with Jim Kwasek!\n\nDuring this virtual meeting you will hear Mr. Kwasek's insights on what it's like to be a pilot, the steps to getting started, and the exciting opportunities in aviation! Don't miss this chance to learn from an expert and discover a possible career interest in aviation.\n\n\n\n\n\n LINKS \n * Please complete this  Google Form  if you are interested in attending.\n* Zoom Link for 1/15 at 7 p.m.:  https://zoom.us/j/95063214408",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "CCC"
+      ]
+    }
+  ],
   "2/12/2025": [
     {
       "allDay": false,
-      "start": 1739403000000,
-      "end": 1739403000000,
+      "start": 1739381400000,
+      "end": 1739381400000,
       "name": "Sports Booster Meeting",
       "description": "All meetings begin at 5:30 p.m. in the Athletics Division Office (Room 5116 in PWC)",
       "location": "Stevenson High School | Athletics Division Office (Room 5116 in PWC)",
@@ -1578,39 +300,39 @@
         "Parent Calendar",
         "Athletics"
       ]
-    },
-    {
-      "allDay": false,
-      "start": 1739404800000,
-      "end": 1739404800000,
-      "name": "Chamber Orchestra Concert",
-      "description": "",
-      "location": "Stevenson High School | Recital Hall (Room 4100)",
-      "categories": [
-        "Fine Arts"
-      ]
     }
   ],
   "2/13/2025": [
     {
       "allDay": true,
-      "start": 1739426400000,
-      "end": 1739512800000,
+      "start": 1739404800000,
+      "end": 1739491200000,
       "name": "Late Arrival",
       "description": "",
       "location": null,
       "categories": [
         "Late Arrival"
       ]
+    },
+    {
+      "allDay": false,
+      "start": 1739461500000,
+      "end": 1739468700000,
+      "name": "Black History Month at SHS: A Conversation with Michael Wilson",
+      "description": "Join the  BSU (Black Student Union)  as Michael Wilson, a former Navy Engineer and a current therapist who mentors students of color, spends the afternoon with our students. He will share how he learned to navigate the military as a person of color, why education is important for people of color, and how he navigated a predominantly white university as a person of color.",
+      "location": "Stevenson High School | Room 2600",
+      "categories": [
+        "Clubs and Activities"
+      ]
     }
   ],
   "2/14/2025": [
     {
       "allDay": true,
-      "start": 1739512800000,
-      "end": 1739599200000,
+      "start": 1739491200000,
+      "end": 1739577600000,
       "name": "CCC Presents: Summer Job Fair",
-      "description": "",
+      "description": "Mark your calendars for Friday, February 14th, for Stevenson's Summer Job Fair hosted by the College Career Center! This will be held during the lunch periods (4th, 5th, and 6th) in the PWC. During this time, students will have the chance to interact with representatives from local businesses and organizations to learn about what types of summer work opportunities will be available. Freshman through senior students are able to attend this event.\n\n\n\n   DOWNLOAD: Map of Visiting Employers \n\n  Please email  jtravis@d125.org  with any questions.",
       "location": "Stevenson High School | Rooms 5120, 5124 & 5128 (PWC)",
       "categories": [
         "CCC"
@@ -1618,21 +340,47 @@
     },
     {
       "allDay": true,
-      "start": 1739512800000,
-      "end": 1739599200000,
-      "name": "NHS Spring 2025 Blood Drive",
-      "description": "",
-      "location": "Stevenson High School | Wrestling Room",
+      "start": 1739491200000,
+      "end": 1739577600000,
+      "name": "Chess State Tournament",
+      "description": "IHSA Chess State Tournament   \n\n Date : Friday - Saturday, Feb. 14 - 15, 2025\n Time : TBA\n Location :  Peoria Civic Center, Peoria, IL ( Google Maps )\n  \n\n\n\n\n\n\n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
+      "location": "Peoria Civic Center | Peroria, IL",
+      "categories": [
+        "Clubs and Activities",
+        "Athletics"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1739559600000,
+      "end": 1739566800000,
+      "name": "Senior Showdown",
+      "description": "Come support your classmates at  Senior Showdown , a night of talent and entertainment! Whether it's music, comedy, or something unexpected, our seniors are bringing their best to the stage. Students of all grade levels are welcome, but Seniors will have a special Senior-only viewing section!\n\nMake sure you bring your cell phone so you can vote for your favorite contestant:\n * Oliver Arora\n* Karina Cantero\n* Hari Dokku\n* Nathan Huang\n* Michael Kozuch\n* Luke Nelson\n* Arushi Srinivasan\n \n WATCH via Viemo",
+      "location": "Stevenson High School | Performing Arts Center",
       "categories": [
         "Clubs and Activities"
+      ]
+    }
+  ],
+  "2/15/2025": [
+    {
+      "allDay": true,
+      "start": 1739577600000,
+      "end": 1739664000000,
+      "name": "Chess State Tournament",
+      "description": "IHSA Chess State Tournament   \n\n Date : Friday - Saturday, Feb. 14 - 15, 2025\n Time : TBA\n Location :  Peoria Civic Center, Peoria, IL ( Google Maps )\n  \n\n\n\n\n\n\n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
+      "location": "Peoria Civic Center | Peroria, IL",
+      "categories": [
+        "Clubs and Activities",
+        "Athletics"
       ]
     }
   ],
   "2/17/2025": [
     {
       "allDay": true,
-      "start": 1739772000000,
-      "end": 1739858400000,
+      "start": 1739750400000,
+      "end": 1739836800000,
       "name": "President's Day (No School)",
       "description": "",
       "location": null,
@@ -1644,10 +392,10 @@
   "2/18/2025": [
     {
       "allDay": true,
-      "start": 1739858400000,
-      "end": 1739944800000,
+      "start": 1739836800000,
+      "end": 1739923200000,
       "name": "Winterfest Week 2025",
-      "description": "",
+      "description": "For more information, please visit the  Winterfest Week 2025 Google Site!",
       "location": null,
       "categories": [
         "Clubs and Activities"
@@ -1655,11 +403,11 @@
     },
     {
       "allDay": false,
-      "start": 1739926800000,
-      "end": 1739926800000,
-      "name": "Chamber Guitar Concert",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
+      "start": 1739901600000,
+      "end": 1739901600000,
+      "name": "Orchestra Chamber Concert",
+      "description": "The yearly orchestra chamber concert highlights some of Stevenson's most musically talented musicians from the Symphonic and Patriot orchestras, The repertoire for this concert includes a varied and exciting list of pieces that will be sure to please any musical tastes.\n\n LINKS \n *  DOWNLOAD: Event Program   \n*  Streaming via Vimeo",
+      "location": "Stevenson High School | Recital Hall (Room 4100)",
       "categories": [
         "Fine Arts"
       ]
@@ -1668,10 +416,21 @@
   "2/19/2025": [
     {
       "allDay": true,
-      "start": 1739944800000,
-      "end": 1740031200000,
-      "name": "Winterfest Week 2025",
+      "start": 1739923200000,
+      "end": 1740009600000,
+      "name": "PPA Bake Sale",
       "description": "",
+      "location": "Glass Commons & Wood Commons",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1739923200000,
+      "end": 1740009600000,
+      "name": "Winterfest Week 2025",
+      "description": "For more information, please visit the  Winterfest Week 2025 Google Site!",
       "location": null,
       "categories": [
         "Clubs and Activities"
@@ -1679,10 +438,10 @@
     },
     {
       "allDay": false,
-      "start": 1740013200000,
-      "end": 1740013200000,
-      "name": "Chamber Guitar Concert",
-      "description": "",
+      "start": 1739991600000,
+      "end": 1739991600000,
+      "name": "February Guitar Concert",
+      "description": "The guitar programs are excited to announce our February guitar concert! Students in Guitar 2 are working in small groups to perform chamber music ranging from Ed Sheeran to traditional Brazilian Dances; while our Patriot Guitar Ensemble performs an exciting set of music with lots of variety as well!\n\n LINKS \n *  Streaming via Vimeo \n*  DOWNLOAD: Event Program",
       "location": "Stevenson High School | Performing Arts Center",
       "categories": [
         "Fine Arts"
@@ -1692,21 +451,54 @@
   "2/20/2025": [
     {
       "allDay": true,
-      "start": 1740031200000,
-      "end": 1740117600000,
+      "start": 1740009600000,
+      "end": 1740096000000,
       "name": "Winterfest Week 2025",
-      "description": "",
+      "description": "For more information, please visit the  Winterfest Week 2025 Google Site!",
       "location": null,
       "categories": [
         "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1740066300000,
+      "end": 1740073500000,
+      "name": "Black History Month at SHS: Screening of The Six Triple Eight",
+      "description": "The Six Triple Eight is a Tyler Perry movie based on a true story of the U.S. Army's 6888th Central Postal Directory Battalion -- the largest group of Black servicewomen to serve overseas during World War II.",
+      "location": "Stevenson High School | Room 2104",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1740078000000,
+      "end": 1740078000000,
+      "name": "Thespian Cabaret",
+      "description": "Pop your popcorn, grab your 3d glasses, sit back and relax for Patriot Theatre Company's Thespian Cabaret… \"From Screen to Stage\"! Join us on February 20th at 7pm in the Little Theatre to see some astounding student performances and demonstrations of talent!\n\nAdmission is free, with suggested donations going to the  Illinois Action for Children .\n\n LINKS \n * DOWNLOAD: Event Program  -- coming soon!",
+      "location": "Stevenson High School | The Little Theatre (Room 4200)",
+      "categories": [
+        "Fine Arts"
       ]
     }
   ],
   "2/21/2025": [
     {
       "allDay": true,
-      "start": 1740117600000,
-      "end": 1740204000000,
+      "start": 1740096000000,
+      "end": 1740182400000,
+      "name": "CCC Presents: Career Talks w/ Elizabeth Michalczyk (Orthodontist)",
+      "description": "Please join us in person at the College Career Center (room 1123) on Friday, Feb. 21 during every lunch period to hear and learn from Dr. Elizabeth Michalczyk! She is a skilled orthodontist who transforms smiles and corrects bites using advanced technologies. Her work utilizes braces or Invisalign to achieve the best results for her patients.\n\n NOTE : This is a PM assembly day (4th Period -- 10:52 a.m. to 11:33 a.m. | 5th Period -- 11:38 a.m. to 12:19 p.m. | 6th Period -- 12:24 to 1:05 p.m.) \n\n\n\n\n\n LINKS \n * Please complete this  Google Form  if you are interested in attending",
+      "location": "Virtual Meeting via Zoom",
+      "categories": [
+        "CCC"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1740096000000,
+      "end": 1740182400000,
       "name": "PM Assembly",
       "description": "",
       "location": null,
@@ -1716,10 +508,10 @@
     },
     {
       "allDay": true,
-      "start": 1740117600000,
-      "end": 1740204000000,
+      "start": 1740096000000,
+      "end": 1740182400000,
       "name": "Winterfest Week 2025",
-      "description": "",
+      "description": "For more information, please visit the  Winterfest Week 2025 Google Site!",
       "location": null,
       "categories": [
         "Clubs and Activities"
@@ -1727,10 +519,10 @@
     },
     {
       "allDay": false,
-      "start": 1740186000000,
-      "end": 1740186000000,
-      "name": "Baroque Concert",
-      "description": "",
+      "start": 1740164400000,
+      "end": 1740164400000,
+      "name": "Baroque Ensemble Concert",
+      "description": "The Stevenson Baroque Ensemble and Viol Consort will be presenting an evening of Baroque and Renaissance repertoire that is sure to transport you to another time period. The evening's performance will feature works by Gervaise, White, Holburn, Vivaldi, Telemann, and Bach.\n\n LINKS \n *  Streaming via Vimeo \n*  DOWNLOAD: Event Program",
       "location": "Stevenson High School | Recital Hall (Room 4100)",
       "categories": [
         "Fine Arts"
@@ -1739,11 +531,22 @@
   ],
   "2/22/2025": [
     {
-      "allDay": true,
-      "start": 1740204000000,
-      "end": 1740290400000,
+      "allDay": false,
+      "start": 1740229200000,
+      "end": 1740243600000,
+      "name": "CCC Features: Make-a-Thon @ CLC",
+      "description": "On February 22nd 1:00pm-5:00pm at the Grayslake Campus, the Make a Thon event is being held. This is a one-day workshop that will kick off with an introduction to coding and the platform CLC is using.\n\n\n\nFor more information, please visit  the College of Lake County website .",
+      "location": "College of Lake County | Grayslake, IL",
+      "categories": [
+        "CCC"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1740252600000,
+      "end": 1740263400000,
       "name": "Winterfest Dance 2025",
-      "description": "",
+      "description": "*  Ticket Price :  $25  starting  Jan. 21 through Feb. 23 . Tickets purchased on the  dance day  will be  $40 .\n*  NO CASH will be accepted when buying tickets at the door, but tickets can be purchased online until the dance begins. \n*    Time:  Doors open at 7:30 p.m. and close at 8 p.m.\n*  Note: This is a LOCK-IN event -- you will not be allowed to leave until the dance ends.   The doors will re-open to exit at 10 p.m. \n   LINKS \n\n  \n *  PURCHASE: Tickets via 5Star \n*  Winterfest Dance FAQ 's\n*  Non-Stevenson Guest Forms  --  Due Feb. 13",
       "location": "Stevenson High School",
       "categories": [
         "Clubs and Activities"
@@ -1753,34 +556,58 @@
   "2/25/2025": [
     {
       "allDay": true,
-      "start": 1740463200000,
-      "end": 1740549600000,
+      "start": 1740441600000,
+      "end": 1740528000000,
       "name": "Activity Period",
       "description": "",
       "location": null,
       "categories": [
         "Activity Period"
       ]
+    },
+    {
+      "allDay": true,
+      "start": 1740441600000,
+      "end": 1740528000000,
+      "name": "CCC Presents: CLC Drop-In Day",
+      "description": "<img alt=\"event banner for CLC Drop-In Day \" data-image-sizes=\"[{%22url%22:%22https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_1/v1739132042/d125org/fxq5hs5wgy5zunchkzed/CCCCLCDropInDay2025Promo-IM.jpg%22,%22width%22:256},{%22url%22:%22https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1739132042/d125org/fxq5hs5wgy5zunchkzed/CCCCLCDropInDay2025Promo-IM.jpg%22,%22width%22:512},{%22url%22:%22https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_3/v1739132042/d125org/fxq5hs5wgy5zunchk",
+      "location": "Stevenson High School | College Career Center",
+      "categories": [
+        "CCC"
+      ]
     }
   ],
   "2/26/2025": [
     {
       "allDay": false,
-      "start": 1740618000000,
-      "end": 1740618000000,
+      "start": 1740596400000,
+      "end": 1740596400000,
       "name": "Winter Choir Concert",
-      "description": "",
+      "description": "This year's Winter Choir Concert highlights Black History and Black choral composers. Each group will feature music from gospel and spiritual traditions, as well as other pieces representing Jewish, Italian, Ladino, and Omani musical cultures. Come enjoy some outstanding singing from three of the best choirs around!\n LINKS \n\n * DOWNLOAD: Event Program  -- coming soon!   \n*  Streaming via Vimeo",
       "location": "Stevenson High School | Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
     }
   ],
+  "2/27/2025": [
+    {
+      "allDay": false,
+      "start": 1740671100000,
+      "end": 1740678300000,
+      "name": "Black History Month at SHS: Operation Black History Month",
+      "description": "",
+      "location": "Stevenson High School | Room 2104",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
   "2/28/2025": [
     {
       "allDay": true,
-      "start": 1740722400000,
-      "end": 1740808800000,
+      "start": 1740700800000,
+      "end": 1740787200000,
       "name": "Institute Day (Non-Attendance)",
       "description": "",
       "location": null,
@@ -1792,8 +619,8 @@
   "3/3/2025": [
     {
       "allDay": true,
-      "start": 1740981600000,
-      "end": 1741068000000,
+      "start": 1740960000000,
+      "end": 1741046400000,
       "name": "Casimir Pulaski Day (No School)",
       "description": "",
       "location": null,
@@ -1805,8 +632,8 @@
   "3/4/2025": [
     {
       "allDay": false,
-      "start": 1741136400000,
-      "end": 1741136400000,
+      "start": 1741114800000,
+      "end": 1741114800000,
       "name": "Winter Band Concert",
       "description": "",
       "location": "Stevenson High School | Performing Arts Center",
@@ -1818,8 +645,8 @@
   "3/5/2025": [
     {
       "allDay": false,
-      "start": 1741212000000,
-      "end": 1741219200000,
+      "start": 1741190400000,
+      "end": 1741197600000,
       "name": "CCC Presents: Career Ready Trade Expo",
       "description": "",
       "location": "Stevenson High School | Wood Commons",
@@ -1829,8 +656,8 @@
     },
     {
       "allDay": false,
-      "start": 1741222800000,
-      "end": 1741222800000,
+      "start": 1741201200000,
+      "end": 1741201200000,
       "name": "Winter Band Concert",
       "description": "",
       "location": "Stevenson High School | Performing Arts Center",
@@ -1842,45 +669,23 @@
   "3/6/2025": [
     {
       "allDay": true,
-      "start": 1741240800000,
-      "end": 1741327200000,
+      "start": 1741219200000,
+      "end": 1741305600000,
       "name": "Late Arrival",
       "description": "",
       "location": null,
       "categories": [
         "Late Arrival"
       ]
-    },
-    {
-      "allDay": true,
-      "start": 1741240800000,
-      "end": 1741327200000,
-      "name": "Testing Day (Illinois Science Assessment)",
-      "description": "For more information, visit the  PSAT - SAT - ACT Testing web page .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Testing Day"
-      ]
     }
   ],
   "3/7/2025": [
     {
-      "allDay": true,
-      "start": 1741327200000,
-      "end": 1741413600000,
-      "name": "Testing Day (Illinois Science Assessment)",
-      "description": "For more information, visit the  PSAT - SAT - ACT Testing web page .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Testing Day"
-      ]
-    },
-    {
       "allDay": false,
-      "start": 1741395600000,
-      "end": 1741395600000,
-      "name": "2025 Winter Play: Spelling Bee",
-      "description": "",
+      "start": 1741374000000,
+      "end": 1741374000000,
+      "name": "2025 Winter Play: The 25th Annual Putnam County Spelling Bee",
+      "description": "Step right up to the quirkiest competition in town! The 25th Annual Putnam County Spelling Bee is a hilarious musical comedy perfect for audiences of all ages.\n\nFollow an eclectic group of six mid-pubescents as they compete for the ultimate spelling championship. Along the way, they'll share hilarious and touching glimpses into their home lives, tackle outrageous (and possibly made-up) words, and dodge the dreaded \"ding\" of elimination. With catchy songs, quick-witted humor, and lovable characters, this show guarantees an evening of laughter and fun.\n\nWho will take home the trophy? Who will go home with a juice box? Find out in this unforgettable celebration of awkward adolescence and the unbreakable spirit of competition!\n\n    \n\n  Audience Advisory: Patriot Theatre Company rates this production PG.  \n\n LINKS \n *  PURCHASE: Tickets via GoFan  ( Mar. 7 @ 7 p.m.  |  Mar. 8 @ 2 p.m.  |  Mar. 8 @ 7 p.m.  |  Mar. 9 @ 2 p.m. )  \n* DOWNLOAD: Event Program  -- coming soon!",
       "location": "Stevenson High School | West Auditorium",
       "categories": [
         "Fine Arts"
@@ -1890,10 +695,10 @@
   "3/8/2025": [
     {
       "allDay": false,
-      "start": 1741464000000,
-      "end": 1741464000000,
-      "name": "2025 Winter Play: Spelling Bee",
-      "description": "",
+      "start": 1741442400000,
+      "end": 1741442400000,
+      "name": "2025 Winter Play: The 25th Annual Putnam County Spelling Bee",
+      "description": "Step right up to the quirkiest competition in town! The 25th Annual Putnam County Spelling Bee is a hilarious musical comedy perfect for audiences of all ages.\n\nFollow an eclectic group of six mid-pubescents as they compete for the ultimate spelling championship. Along the way, they'll share hilarious and touching glimpses into their home lives, tackle outrageous (and possibly made-up) words, and dodge the dreaded \"ding\" of elimination. With catchy songs, quick-witted humor, and lovable characters, this show guarantees an evening of laughter and fun.\n\nWho will take home the trophy? Who will go home with a juice box? Find out in this unforgettable celebration of awkward adolescence and the unbreakable spirit of competition!\n\n    \n\n  Audience Advisory: Patriot Theatre Company rates this production PG.  \n\n LINKS \n *  PURCHASE: Tickets via GoFan  ( Mar. 7 @ 7 p.m.  |  Mar. 8 @ 2 p.m.  |  Mar. 8 @ 7 p.m.  |  Mar. 9 @ 2 p.m. )  \n* DOWNLOAD: Event Program  -- coming soon!",
       "location": "Stevenson High School | West Auditorium",
       "categories": [
         "Fine Arts"
@@ -1901,10 +706,10 @@
     },
     {
       "allDay": false,
-      "start": 1741482000000,
-      "end": 1741482000000,
-      "name": "2025 Winter Play: Spelling Bee",
-      "description": "",
+      "start": 1741460400000,
+      "end": 1741460400000,
+      "name": "2025 Winter Play: The 25th Annual Putnam County Spelling Bee",
+      "description": "Step right up to the quirkiest competition in town! The 25th Annual Putnam County Spelling Bee is a hilarious musical comedy perfect for audiences of all ages.\n\nFollow an eclectic group of six mid-pubescents as they compete for the ultimate spelling championship. Along the way, they'll share hilarious and touching glimpses into their home lives, tackle outrageous (and possibly made-up) words, and dodge the dreaded \"ding\" of elimination. With catchy songs, quick-witted humor, and lovable characters, this show guarantees an evening of laughter and fun.\n\nWho will take home the trophy? Who will go home with a juice box? Find out in this unforgettable celebration of awkward adolescence and the unbreakable spirit of competition!\n\n    \n\n  Audience Advisory: Patriot Theatre Company rates this production PG.  \n\n LINKS \n *  PURCHASE: Tickets via GoFan  ( Mar. 7 @ 7 p.m.  |  Mar. 8 @ 2 p.m.  |  Mar. 8 @ 7 p.m.  |  Mar. 9 @ 2 p.m. )  \n* DOWNLOAD: Event Program  -- coming soon!",
       "location": "Stevenson High School | West Auditorium",
       "categories": [
         "Fine Arts"
@@ -1914,10 +719,10 @@
   "3/9/2025": [
     {
       "allDay": false,
-      "start": 1741546800000,
-      "end": 1741546800000,
-      "name": "2025 Winter Play: Spelling Bee",
-      "description": "",
+      "start": 1741528800000,
+      "end": 1741528800000,
+      "name": "2025 Winter Play: The 25th Annual Putnam County Spelling Bee",
+      "description": "Step right up to the quirkiest competition in town! The 25th Annual Putnam County Spelling Bee is a hilarious musical comedy perfect for audiences of all ages.\n\nFollow an eclectic group of six mid-pubescents as they compete for the ultimate spelling championship. Along the way, they'll share hilarious and touching glimpses into their home lives, tackle outrageous (and possibly made-up) words, and dodge the dreaded \"ding\" of elimination. With catchy songs, quick-witted humor, and lovable characters, this show guarantees an evening of laughter and fun.\n\nWho will take home the trophy? Who will go home with a juice box? Find out in this unforgettable celebration of awkward adolescence and the unbreakable spirit of competition!\n\n    \n\n  Audience Advisory: Patriot Theatre Company rates this production PG.  \n\n LINKS \n *  PURCHASE: Tickets via GoFan  ( Mar. 7 @ 7 p.m.  |  Mar. 8 @ 2 p.m.  |  Mar. 8 @ 7 p.m.  |  Mar. 9 @ 2 p.m. )  \n* DOWNLOAD: Event Program  -- coming soon!",
       "location": "Stevenson High School | West Auditorium",
       "categories": [
         "Fine Arts"
@@ -1927,8 +732,8 @@
   "3/12/2025": [
     {
       "allDay": false,
-      "start": 1741818600000,
-      "end": 1741818600000,
+      "start": 1741800600000,
+      "end": 1741800600000,
       "name": "Sports Booster Meeting",
       "description": "All meetings begin at 5:30 p.m. in the Athletics Division Office (Room 5116 in PWC)",
       "location": "Stevenson High School | Athletics Division Office (Room 5116 in PWC)",
@@ -1939,8 +744,8 @@
     },
     {
       "allDay": false,
-      "start": 1741824000000,
-      "end": 1741824000000,
+      "start": 1741806000000,
+      "end": 1741806000000,
       "name": "CCC Presents: Sophomore Family College and Career Night",
       "description": "",
       "location": "Stevenson High School | TBA",
@@ -1952,8 +757,8 @@
   "3/17/2025": [
     {
       "allDay": false,
-      "start": 1742256000000,
-      "end": 1742256000000,
+      "start": 1742238000000,
+      "end": 1742238000000,
       "name": "District 125 Board of Education Meeting",
       "description": "Please visit the  Board of Education webpage  for additional information.",
       "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
@@ -1963,8 +768,8 @@
   "3/18/2025": [
     {
       "allDay": true,
-      "start": 1742274000000,
-      "end": 1742360400000,
+      "start": 1742256000000,
+      "end": 1742342400000,
       "name": "Activity Period (Student Government)",
       "description": "",
       "location": null,
@@ -1974,8 +779,8 @@
     },
     {
       "allDay": false,
-      "start": 1742338800000,
-      "end": 1742338800000,
+      "start": 1742320800000,
+      "end": 1742320800000,
       "name": "Spring Orchestra Concert",
       "description": "",
       "location": "Stevenson High School | Performing Arts Center",
@@ -1985,8 +790,8 @@
     },
     {
       "allDay": false,
-      "start": 1742342400000,
-      "end": 1742342400000,
+      "start": 1742324400000,
+      "end": 1742324400000,
       "name": "Spring Orchestra Concert",
       "description": "",
       "location": "Stevenson High School | Performing Arts Center",
@@ -1998,8 +803,8 @@
   "3/19/2025": [
     {
       "allDay": true,
-      "start": 1742360400000,
-      "end": 1742446800000,
+      "start": 1742342400000,
+      "end": 1742428800000,
       "name": "Co-Curricular Fair",
       "description": "",
       "location": null,
@@ -2008,11 +813,24 @@
       ]
     }
   ],
+  "3/20/2025": [
+    {
+      "allDay": false,
+      "start": 1742497200000,
+      "end": 1742502600000,
+      "name": "CCC Presents: College and Career Center Night for Junior Families",
+      "description": "For more information, please visit the  Junior Focus web page .",
+      "location": "Stevenson High School | West Auditorium & Virtual Meeting via Zoom",
+      "categories": [
+        "CCC"
+      ]
+    }
+  ],
   "3/24/2025": [
     {
       "allDay": true,
-      "start": 1742792400000,
-      "end": 1742878800000,
+      "start": 1742774400000,
+      "end": 1742860800000,
       "name": "Spring Break",
       "description": "",
       "location": null,
@@ -2024,8 +842,8 @@
   "3/25/2025": [
     {
       "allDay": true,
-      "start": 1742878800000,
-      "end": 1742965200000,
+      "start": 1742860800000,
+      "end": 1742947200000,
       "name": "Spring Break",
       "description": "",
       "location": null,
@@ -2037,8 +855,8 @@
   "3/26/2025": [
     {
       "allDay": true,
-      "start": 1742965200000,
-      "end": 1743051600000,
+      "start": 1742947200000,
+      "end": 1743033600000,
       "name": "Spring Break",
       "description": "",
       "location": null,
@@ -2050,8 +868,8 @@
   "3/27/2025": [
     {
       "allDay": true,
-      "start": 1743051600000,
-      "end": 1743138000000,
+      "start": 1743033600000,
+      "end": 1743120000000,
       "name": "Spring Break",
       "description": "",
       "location": null,
@@ -2063,8 +881,8 @@
   "3/28/2025": [
     {
       "allDay": true,
-      "start": 1743138000000,
-      "end": 1743224400000,
+      "start": 1743120000000,
+      "end": 1743206400000,
       "name": "Spring Break",
       "description": "",
       "location": null,
@@ -2076,8 +894,8 @@
   "4/2/2025": [
     {
       "allDay": false,
-      "start": 1743638400000,
-      "end": 1743638400000,
+      "start": 1743620400000,
+      "end": 1743620400000,
       "name": "CCC Presents: Freshmen Family Night",
       "description": "",
       "location": "Stevenson High School | Performing Arts Center",
@@ -2089,8 +907,8 @@
   "4/4/2025": [
     {
       "allDay": false,
-      "start": 1743811200000,
-      "end": 1743811200000,
+      "start": 1743793200000,
+      "end": 1743793200000,
       "name": "Evening of Jazz Concert",
       "description": "",
       "location": "Stevenson High School | West Auditorium",
@@ -2102,8 +920,8 @@
   "4/8/2025": [
     {
       "allDay": true,
-      "start": 1744088400000,
-      "end": 1744174800000,
+      "start": 1744070400000,
+      "end": 1744156800000,
       "name": "Activity Period",
       "description": "",
       "location": null,
@@ -2113,8 +931,8 @@
     },
     {
       "allDay": true,
-      "start": 1744088400000,
-      "end": 1744174800000,
+      "start": 1744070400000,
+      "end": 1744156800000,
       "name": "The AP and Advanced Art Show",
       "description": "",
       "location": "Stevenson High School | Room 2104 & Upper Forum",
@@ -2126,8 +944,8 @@
   "4/9/2025": [
     {
       "allDay": true,
-      "start": 1744174800000,
-      "end": 1744261200000,
+      "start": 1744156800000,
+      "end": 1744243200000,
       "name": "CCC Presents: First-Generation Night",
       "description": "For more information visit the  First-Generation Families web page.",
       "location": "Virtual Meeting via Zoom",
@@ -2137,8 +955,30 @@
     },
     {
       "allDay": true,
-      "start": 1744174800000,
-      "end": 1744261200000,
+      "start": 1744156800000,
+      "end": 1744243200000,
+      "name": "Testing Day (Digital PreACT 9)",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1744156800000,
+      "end": 1744243200000,
+      "name": "Testing Day (Digital School-Day ACT with Writing)",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1744156800000,
+      "end": 1744243200000,
       "name": "The AP and Advanced Art Show",
       "description": "",
       "location": "Stevenson High School | Room 2104 & Upper Forum",
@@ -2148,8 +988,8 @@
     },
     {
       "allDay": false,
-      "start": 1744237800000,
-      "end": 1744237800000,
+      "start": 1744219800000,
+      "end": 1744219800000,
       "name": "Sports Booster Meeting",
       "description": "All meetings begin at 5:30 p.m. in the Athletics Division Office (Room 5116 in PWC)",
       "location": "Stevenson High School | Athletics Division Office (Room 5116 in PWC)",
@@ -2162,8 +1002,8 @@
   "4/10/2025": [
     {
       "allDay": true,
-      "start": 1744261200000,
-      "end": 1744347600000,
+      "start": 1744243200000,
+      "end": 1744329600000,
       "name": "Late Arrival",
       "description": "",
       "location": null,
@@ -2172,11 +1012,37 @@
       ]
     }
   ],
+  "4/11/2025": [
+    {
+      "allDay": true,
+      "start": 1744329600000,
+      "end": 1744416000000,
+      "name": "NHS Spring 2025 Blood Drive",
+      "description": "",
+      "location": "Stevenson High School | Wrestling Room",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    }
+  ],
+  "4/12/2025": [
+    {
+      "allDay": false,
+      "start": 1744452000000,
+      "end": 1744466400000,
+      "name": "CCC Features: Maker Faire @ CLC",
+      "description": "On April 12th from 10am-2:00pm considering attending the exhibit at the 5th annual Maker Faire Lake County event at the Grayslake campus.\n\n\n\n\n\nFor more information, please visit  the College of Lake County website .",
+      "location": "College of Lake County | Grayslake, IL",
+      "categories": [
+        "CCC"
+      ]
+    }
+  ],
   "4/14/2025": [
     {
       "allDay": false,
-      "start": 1744675200000,
-      "end": 1744675200000,
+      "start": 1744657200000,
+      "end": 1744657200000,
       "name": "Jazz Combo Concert",
       "description": "",
       "location": "Stevenson High School | Little Theatre (Room 4200)",
@@ -2188,8 +1054,8 @@
   "4/15/2025": [
     {
       "allDay": false,
-      "start": 1744759800000,
-      "end": 1744759800000,
+      "start": 1744741800000,
+      "end": 1744741800000,
       "name": "Small Ensemble Concert",
       "description": "",
       "location": "Stevenson High School | West Auditorium",
@@ -2201,8 +1067,8 @@
   "4/18/2025": [
     {
       "allDay": true,
-      "start": 1744952400000,
-      "end": 1745038800000,
+      "start": 1744934400000,
+      "end": 1745020800000,
       "name": "Non-Attendance Day",
       "description": "",
       "location": null,
@@ -2214,8 +1080,8 @@
   "4/21/2025": [
     {
       "allDay": false,
-      "start": 1745280000000,
-      "end": 1745280000000,
+      "start": 1745262000000,
+      "end": 1745262000000,
       "name": "District 125 Board of Education Meeting",
       "description": "Please visit the  Board of Education webpage  for additional information.",
       "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
@@ -2224,9 +1090,20 @@
   ],
   "4/22/2025": [
     {
-      "allDay": false,
-      "start": 1745366400000,
+      "allDay": true,
+      "start": 1745280000000,
       "end": 1745366400000,
+      "name": "Testing Day (Digital PreACT)",
+      "description": "",
+      "location": null,
+      "categories": [
+        "Testing Day"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1745348400000,
+      "end": 1745348400000,
       "name": "Percussion Ensemble Spring Concert",
       "description": "",
       "location": "Stevenson High School | West Auditorium",
@@ -2235,24 +1112,11 @@
       ]
     }
   ],
-  "4/24/2025": [
-    {
-      "allDay": false,
-      "start": 1745539200000,
-      "end": 1745539200000,
-      "name": "Baroque Concert",
-      "description": "",
-      "location": "Stevenson High School | Recital Hall (Room 4100)",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
   "4/26/2025": [
     {
       "allDay": true,
-      "start": 1745643600000,
-      "end": 1745730000000,
+      "start": 1745625600000,
+      "end": 1745712000000,
       "name": "Prom 2025",
       "description": "",
       "location": null,
@@ -2264,8 +1128,8 @@
   "4/29/2025": [
     {
       "allDay": true,
-      "start": 1745902800000,
-      "end": 1745989200000,
+      "start": 1745884800000,
+      "end": 1745971200000,
       "name": "Activity Period",
       "description": "",
       "location": null,
@@ -2277,8 +1141,8 @@
   "5/1/2025": [
     {
       "allDay": false,
-      "start": 1746102600000,
-      "end": 1746106200000,
+      "start": 1746084600000,
+      "end": 1746088200000,
       "name": "Senior Sunrise",
       "description": "",
       "location": "Stevenson High School | The Stadium",
@@ -2290,8 +1154,8 @@
   "5/2/2025": [
     {
       "allDay": false,
-      "start": 1746230400000,
-      "end": 1746230400000,
+      "start": 1746212400000,
+      "end": 1746212400000,
       "name": "2025 Spring Dance Concert",
       "description": "",
       "location": "Stevenson High School | Performing Arts Center",
@@ -2301,8 +1165,8 @@
     },
     {
       "allDay": false,
-      "start": 1746230400000,
-      "end": 1746230400000,
+      "start": 1746212400000,
+      "end": 1746212400000,
       "name": "The One Acts",
       "description": "",
       "location": "Stevenson High School | West Auditorium",
@@ -2314,8 +1178,8 @@
   "5/3/2025": [
     {
       "allDay": false,
-      "start": 1746316800000,
-      "end": 1746316800000,
+      "start": 1746298800000,
+      "end": 1746298800000,
       "name": "2025 Spring Dance Concert",
       "description": "",
       "location": "Stevenson High School | Performing Arts Center",
@@ -2325,8 +1189,8 @@
     },
     {
       "allDay": false,
-      "start": 1746316800000,
-      "end": 1746316800000,
+      "start": 1746298800000,
+      "end": 1746298800000,
       "name": "The One Acts",
       "description": "",
       "location": "Stevenson High School | West Auditorium",
@@ -2338,8 +1202,8 @@
   "5/5/2025": [
     {
       "allDay": true,
-      "start": 1746421200000,
-      "end": 1746507600000,
+      "start": 1746403200000,
+      "end": 1746489600000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -2351,8 +1215,8 @@
   "5/6/2025": [
     {
       "allDay": true,
-      "start": 1746507600000,
-      "end": 1746594000000,
+      "start": 1746489600000,
+      "end": 1746576000000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -2362,8 +1226,8 @@
     },
     {
       "allDay": false,
-      "start": 1746576000000,
-      "end": 1746576000000,
+      "start": 1746558000000,
+      "end": 1746558000000,
       "name": "Spring Choir Concert",
       "description": "",
       "location": "Stevenson High School | Performing Arts Center",
@@ -2375,8 +1239,8 @@
   "5/7/2025": [
     {
       "allDay": true,
-      "start": 1746594000000,
-      "end": 1746680400000,
+      "start": 1746576000000,
+      "end": 1746662400000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -2388,8 +1252,8 @@
   "5/8/2025": [
     {
       "allDay": true,
-      "start": 1746680400000,
-      "end": 1746766800000,
+      "start": 1746662400000,
+      "end": 1746748800000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -2401,8 +1265,8 @@
   "5/9/2025": [
     {
       "allDay": true,
-      "start": 1746766800000,
-      "end": 1746853200000,
+      "start": 1746748800000,
+      "end": 1746835200000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -2412,8 +1276,19 @@
     },
     {
       "allDay": false,
-      "start": 1746835200000,
-      "end": 1746835200000,
+      "start": 1746817200000,
+      "end": 1746817200000,
+      "name": "Baroque Concert",
+      "description": "",
+      "location": "Stevenson High School | Recital Hall (Room 4100)",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1746817200000,
+      "end": 1746817200000,
       "name": "Music Production Showcase",
       "description": "",
       "location": "Stevenson High School | West Auditorium",
@@ -2425,8 +1300,8 @@
   "5/12/2025": [
     {
       "allDay": true,
-      "start": 1747026000000,
-      "end": 1747112400000,
+      "start": 1747008000000,
+      "end": 1747094400000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -2438,8 +1313,8 @@
   "5/13/2025": [
     {
       "allDay": true,
-      "start": 1747112400000,
-      "end": 1747198800000,
+      "start": 1747094400000,
+      "end": 1747180800000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -2449,8 +1324,8 @@
     },
     {
       "allDay": false,
-      "start": 1747180800000,
-      "end": 1747180800000,
+      "start": 1747162800000,
+      "end": 1747162800000,
       "name": "Spring Band Concert",
       "description": "",
       "location": "Stevenson High School | Performing Arts Center",
@@ -2462,8 +1337,8 @@
   "5/14/2025": [
     {
       "allDay": true,
-      "start": 1747198800000,
-      "end": 1747285200000,
+      "start": 1747180800000,
+      "end": 1747267200000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -2473,8 +1348,8 @@
     },
     {
       "allDay": false,
-      "start": 1747261800000,
-      "end": 1747261800000,
+      "start": 1747243800000,
+      "end": 1747243800000,
       "name": "Sports Booster Meeting",
       "description": "All meetings begin at 5:30 p.m. in the Athletics Division Office (Room 5116 in PWC)",
       "location": "Stevenson High School | Athletics Division Office (Room 5116 in PWC)",
@@ -2485,8 +1360,8 @@
     },
     {
       "allDay": false,
-      "start": 1747267200000,
-      "end": 1747267200000,
+      "start": 1747249200000,
+      "end": 1747249200000,
       "name": "Spring Guitar Concert",
       "description": "",
       "location": "Stevenson High School | West Auditorium",
@@ -2498,8 +1373,8 @@
   "5/15/2025": [
     {
       "allDay": true,
-      "start": 1747285200000,
-      "end": 1747371600000,
+      "start": 1747267200000,
+      "end": 1747353600000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -2509,8 +1384,8 @@
     },
     {
       "allDay": false,
-      "start": 1747353600000,
-      "end": 1747353600000,
+      "start": 1747335600000,
+      "end": 1747335600000,
       "name": "Orchestra POPS Concert",
       "description": "",
       "location": "Stevenson High School | Patriot Wellness Center (Turf)",
@@ -2522,8 +1397,8 @@
   "5/16/2025": [
     {
       "allDay": true,
-      "start": 1747371600000,
-      "end": 1747458000000,
+      "start": 1747353600000,
+      "end": 1747440000000,
       "name": "PM Assembly",
       "description": "",
       "location": null,
@@ -2533,8 +1408,8 @@
     },
     {
       "allDay": true,
-      "start": 1747371600000,
-      "end": 1747458000000,
+      "start": 1747353600000,
+      "end": 1747440000000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -2544,8 +1419,8 @@
     },
     {
       "allDay": false,
-      "start": 1747427100000,
-      "end": 1747427100000,
+      "start": 1747409100000,
+      "end": 1747409100000,
       "name": "Spring Fling 2025",
       "description": "",
       "location": "Stevenson High School | The Stadium",
@@ -2557,8 +1432,8 @@
   "5/19/2025": [
     {
       "allDay": false,
-      "start": 1747699200000,
-      "end": 1747699200000,
+      "start": 1747681200000,
+      "end": 1747681200000,
       "name": "Advanced Acting Showcase",
       "description": "",
       "location": "Stevenson High School | West Auditorium",
@@ -2568,8 +1443,8 @@
     },
     {
       "allDay": false,
-      "start": 1747699200000,
-      "end": 1747699200000,
+      "start": 1747681200000,
+      "end": 1747681200000,
       "name": "District 125 Board of Education Meeting",
       "description": "Please visit the  Board of Education webpage  for additional information.",
       "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
@@ -2579,8 +1454,8 @@
   "5/20/2025": [
     {
       "allDay": false,
-      "start": 1747778400000,
-      "end": 1747789200000,
+      "start": 1747760400000,
+      "end": 1747771200000,
       "name": "Consortium Art Festival & Reception",
       "description": "",
       "location": "Stevenson High School | Field House",
@@ -2592,8 +1467,8 @@
   "5/22/2025": [
     {
       "allDay": true,
-      "start": 1747890000000,
-      "end": 1747976400000,
+      "start": 1747872000000,
+      "end": 1747958400000,
       "name": "Final Experience - Early Dismissal",
       "description": "For more information, please visit the  Final Experience web page   .",
       "location": null,
@@ -2605,8 +1480,8 @@
   "5/23/2025": [
     {
       "allDay": true,
-      "start": 1747976400000,
-      "end": 1748062800000,
+      "start": 1747958400000,
+      "end": 1748044800000,
       "name": "Final Experience - Early Dismissal",
       "description": "For more information, please visit the  Final Experience web page   .",
       "location": null,
@@ -2616,13 +1491,65 @@
     },
     {
       "allDay": false,
-      "start": 1748037600000,
-      "end": 1748037600000,
+      "start": 1748019600000,
+      "end": 1748019600000,
       "name": "Commencement Ceremony: Class of 2025",
       "description": "",
       "location": "NOW Arena | Hoffman Estates, IL",
       "categories": [
         "Clubs and Activities"
+      ]
+    }
+  ],
+  "6/3/2025": [
+    {
+      "allDay": false,
+      "start": 1748936700000,
+      "end": 1748955000000,
+      "name": "Summer School - Session 1 Start",
+      "description": "For more information, visit the  Summer School webpage.",
+      "location": null,
+      "categories": [
+        "Summer School"
+      ]
+    }
+  ],
+  "6/26/2025": [
+    {
+      "allDay": false,
+      "start": 1750923900000,
+      "end": 1750942200000,
+      "name": "Summer School - Session 1 End",
+      "description": "For more information, visit the  Summer School webpage.",
+      "location": null,
+      "categories": [
+        "Summer School"
+      ]
+    }
+  ],
+  "6/30/2025": [
+    {
+      "allDay": false,
+      "start": 1751269500000,
+      "end": 1751287800000,
+      "name": "Summer School - Session 2 Start",
+      "description": "For more information, visit the  Summer School webpage.",
+      "location": null,
+      "categories": [
+        "Summer School"
+      ]
+    }
+  ],
+  "7/24/2025": [
+    {
+      "allDay": false,
+      "start": 1753343100000,
+      "end": 1753361400000,
+      "name": "Summer School - Session 2 End",
+      "description": "For more information, visit the  Summer School webpage.",
+      "location": null,
+      "categories": [
+        "Summer School"
       ]
     }
   ]
