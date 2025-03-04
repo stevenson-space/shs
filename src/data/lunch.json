@@ -35,7 +35,7 @@
     "International Station": ["Mac & Cheese Bowl"]
   },
   "11": {
-    "Comfort Food": ["Swedish Meatballs with Eggnoodles"],
+    "Comfort Food": ["Swedish Meatballs with Egg Noodles"],
     "Mindful": ["Chicken Tikka Masala"],
     "Sides": ["Roasted Zucchini", "Lime Cilantro Rice"],
     "Soup": ["Minestrone", "Chicken Gumbo"],
@@ -44,12 +44,12 @@
   "12": {
     "Comfort Food": ["Cheese Enchilada Casserole"],
     "Mindful": ["Chipotle Orange Chicken"],
-    "Sides": ["Roasted Brocolini", "Rice Pilaf"],
+    "Sides": ["Roasted Broccolini", "Rice Pilaf"],
     "Soup": ["Minestrone", "Chicken Gumbo"],
     "International Station": ["Mac & Cheese Bowl"]
   },
   "13": {
-    "Comfort Food": ["Vegetable Noddle Casserole"],
+    "Comfort Food": ["Vegetable Noodle Casserole"],
     "Mindful": ["Adobo Roasted Turkey Breast"],
     "Sides": ["Corn", "Cauliflower"],
     "Soup": ["Minestrone", "Chicken Gumbo"],
@@ -66,35 +66,35 @@
     "Comfort Food": ["Cheese Tortellini"],
     "Mindful": ["Cornbeef"],
     "Sides": ["Cabbage", "Potatoes & Carrots"],
-    "Soup": ["Smokey Poblano", "Chicken Noodle"],
+    "Soup": ["Smoky Poblano", "Chicken Noodle"],
     "International Station": ["Asian Bowl"]
   },
   "18": {
-    "Comfort Food": ["Chicken Shawrama with Pita"],
+    "Comfort Food": ["Chicken Shawarma with Pita"],
     "Mindful": ["Gyro with Pita"],
     "Sides": ["Simple Green Salad", "Lemon Rice", "Tahini & Tzatziki Sauce"],
-    "Soup": ["Smokey Poblano", "Chicken Noodle"],
+    "Soup": ["Smoky Poblano", "Chicken Noodle"],
     "International Station": ["Asian Bowl"]
   },
   "19": {
-    "Comfort Food": ["Home Made Beef Meatloaf"],
+    "Comfort Food": ["Homemade Beef Meatloaf"],
     "Mindful": ["Roast Turkey Breast"],
     "Sides": ["Roasted Carrots and Broccoli", "Mashed Potatoes"],
-    "Soup": ["Smokey Poblano", "Chicken Noodle"],
+    "Soup": ["Smoky Poblano", "Chicken Noodle"],
     "International Station": ["Asian Bowl"]
   },
   "20": {
     "Comfort Food": ["Baked Mostaccioli"],
     "Mindful": ["Chicken Tinga"],
     "Sides": ["Azteca Corn", "Mexican Rice"],
-    "Soup": ["Smokey Poblano", "Chicken Noodle"],
+    "Soup": ["Smoky Poblano", "Chicken Noodle"],
     "International Station": ["Asian Bowl"]
   },
   "21": {
     "Comfort Food": ["BBQ Pulled Chicken Sandwich"],
     "Mindful": ["Cajun Shrimp Alfredo Pasta"],
     "Sides": ["Roasted Vegetables", "Yellow Rice"],
-    "Soup": ["Smokey Poblano", "Chicken Noodle"],
+    "Soup": ["Smoky Poblano", "Chicken Noodle"],
     "International Station": ["Asian Bowl"]
   },
   "31": {
@@ -104,32 +104,4 @@
     "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
     "International Station": ["Pasta Bowl"]
   },
-  "1": {
-    "Comfort Food": ["Veggie Chilaquiles"],
-    "Mindful": ["Thai Chicken Stir Fry"],
-    "Sides": ["Roasted Carrots", "Cilantro Lime Rice"],
-    "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
-    "International Station": ["Pasta Bowl"]
-  },
-  "2": {
-    "Comfort Food": ["Chicken Tetrazzini"],
-    "Mindful": ["Tortilla crusted Tilapia"],
-    "Sides": ["Sugar Snap Peas", "Orzo"],
-    "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
-    "International Station": ["Pasta Bowl"]
-  },
-  "3": {
-    "Comfort Food": ["Coconut Curry with Rice"],
-    "Mindful": ["Baked Turkey Meatloaf with Chipotle BBQ"],
-    "Sides": ["Sauteed Broccolini", "Maple Whipped Sweet Potatoes"],
-    "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
-    "International Station": ["Pasta Bowl"]
-  }
-  "4": { 
-    "Comfort Food": ["Roasted Italian Chicken Thigh"],
-    "Mindful": ["Baked Herb Cod"],
-    "Sides": ["Roasted Vegetables", "Mashed Potatoes"],
-    "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
-    "International Station": ["Pasta Bowl"]
-  }
 }
