@@ -8,24 +8,14 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
-      - id: deploy
-        if: github.event.pull_request.head.repo.fork == true
+      - if: github.event.pull_request.head.repo.fork == 'true'
         uses: tomjschuster/cloudflare-pages-deploy-action@v0.0.12
         with:
-          account-id: 'eb09a67d16effcedf18472e3926ce09d'
-          project-name: 'shs'
-          api-key: ${{ secrets.CF_GLOBAL_APIKEY }}
-          email: ${{ secrets.CF_EMAIL }}
+          account-id: '${{ env.CF_ACCOUNT_ID }}'
+          project-name: '${{ env.PAGES_PROJECT_NAME }}'
+          api-key: '${{ secrets.CF_GLOBAL_APIKEY }}'
+          email: '${{ secrets.CF_EMAIL }}'
           preview: true
-      - if: github.event.pull_request.head.repo.fork == true
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            const deploymentUrl = '${{ steps.deploy.outputs.deployment-url }}';
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `👋 Your deployment preview is available at: ${deploymentUrl}`
-            })
+        env:
+          CF_ACCOUNT_ID: eb09a67d16effcedf18472e3926ce09d
+          PAGES_PROJECT_NAME: shs
