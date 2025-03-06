@@ -51,67 +51,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ env.CF_ACCOUNT_ID }}
-          command: pages deploy ./dist --project-name=${{ env.PAGES_PROJECT_NAME }} --branch=pr-${{ github.event.pull_request.number }} --commit-hash=${{ github.event.pull_request.head.sha }} --commit-message="${{ github.event.pull_request.title }}"
+          command: pages deploy ./dist --project-name=${{ env.PAGES_PROJECT_NAME }} --branch=pr-${{ github.event.pull_request.number }}
         env:
           CF_ACCOUNT_ID: eb09a67d16effcedf18472e3926ce09d
           PAGES_PROJECT_NAME: shs
-
-      - name: Extract deployment URL
-        if: steps.check-fork.outputs.is_fork == 'true' && success()
-        id: extract-url
-        run: |
-          RESULT='${{ steps.deploy.outputs.result }}'
-          if [[ -z "$RESULT" ]]; then
-            echo "No output from deployment step"
-            exit 1
-          fi
-          
-          DEPLOY_URL=$(echo "$RESULT" | grep -o 'https://[^ ]*' | head -1)
-          if [[ -z "$DEPLOY_URL" ]]; then
-            echo "Could not extract deployment URL"
-            echo "Deployment output: $RESULT"
-            exit 1
-          fi
-          
-          echo "deployment-url=$DEPLOY_URL" >> $GITHUB_OUTPUT
-          echo "Successfully extracted URL: $DEPLOY_URL"
-
-      - name: Comment on PR
-        if: steps.check-fork.outputs.is_fork == 'true' && success() && steps.extract-url.outputs.deployment-url != ''
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const deploymentUrl = '${{ steps.extract-url.outputs.deployment-url }}';
-            
-            // Check for existing comment
-            const { data: comments } = await github.rest.issues.listComments({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo
-            });
-            
-            const botComment = comments.find(comment => {
-              return comment.user.type === 'Bot' && 
-                     comment.body.includes('Your deployment preview is available at:');
-            });
-            
-            const commentBody = `👋 Your deployment preview is available at: ${deploymentUrl}`;
-            
-            if (botComment) {
-              // Update existing comment
-              await github.rest.issues.updateComment({
-                comment_id: botComment.id,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: commentBody
-              });
-            } else {
-              // Create new comment
-              await github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: commentBody
-              });
-            }
