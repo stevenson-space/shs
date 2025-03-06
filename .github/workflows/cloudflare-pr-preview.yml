@@ -1,7 +1,7 @@
 name: Run Cloudflare Pages Preview on Fork PRs
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened]
 
 jobs:
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: deploy
-        if: github.event.pull_request.head.repo.fork == 'true'
+        if: github.event.pull_request.head.repo.fork == true
         uses: tomjschuster/cloudflare-pages-deploy-action@v0.0.12
         with:
           account-id: '${{ env.CF_ACCOUNT_ID }}'
@@ -21,7 +21,7 @@ jobs:
           CF_ACCOUNT_ID: eb09a67d16effcedf18472e3926ce09d
           PAGES_PROJECT_NAME: shs
           
-      - if: github.event.pull_request.head.repo.fork == 'true'
+      - if: github.event.pull_request.head.repo.fork == true
         uses: actions/github-script@v7
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
