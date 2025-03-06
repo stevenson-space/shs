@@ -29,19 +29,9 @@ jobs:
           api-key: '${{ secrets.CF_GLOBAL_APIKEY }}'
           email: '${{ secrets.CF_EMAIL }}'
           preview: true
+          production: false
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
         env:
           CF_ACCOUNT_ID: eb09a67d16effcedf18472e3926ce09d
           PAGES_PROJECT_NAME: shs
           
-      - if: success()
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            const deploymentUrl = '${{ steps.deploy.outputs.deployment-url }}';
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `👋 Your deployment preview is available at: ${deploymentUrl}`
-            })
