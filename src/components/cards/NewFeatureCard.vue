@@ -1,9 +1,9 @@
 <template>
-  <timed-card startTime="March 6, 2025" endTime="March 7, 2025">
+  <timed-card startTime="March 6, 2025" endTime="March 8, 2025">
     <div class="container">
       <div class="title"></div>
       <div class="message">
-        <a class="link" href="/snowblitz" target="_blank">❄️ Operation Snowball's Snowblitz is TOMORROW!</a> Don't miss out on a night of fun activities, team building, bonding with friends, and pizza! 
+        <a class="link" href="/snowblitz" target="_blank">❄️ Operation Snowball's Snowblitz is TODAY!</a> Don't miss out on a night of fun activities, team building, bonding with friends, and pizza! 
       </div>
     </div>
   </timed-card>
