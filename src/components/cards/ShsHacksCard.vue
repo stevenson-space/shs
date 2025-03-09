@@ -57,6 +57,7 @@ export default {
       color: var(--color)
 .top-padding
   padding-top: .5em    
+
 .side-padding
   padding-left: 1em
   padding-right: 1em
