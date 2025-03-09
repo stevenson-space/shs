@@ -54,38 +54,39 @@
 </template>
 
 <script>
-import {
-  faBell,
-  faLink,
-  faFileLines,
-  faCalendarDays,
-  faDroplet,
-  faCalculator,
-  faGear,
-  faHourglass,
-  faQrcode,
-  faRadio,
-} from "@fortawesome/free-solid-svg-icons";
-import { mapActions } from "pinia";
 import CardContainer from "@/components/CardContainer.vue";
-import UpcomingEventsCard from "@/components/cards/UpcomingEventsCard.vue";
- import IconTextCard from "@/components/cards/IconTextCard.vue";
- import WeatherCard from "@/components/cards/WeatherCard.vue";
- import PwcCard from "@/components/cards/PwcCard.vue";
-import ScheduleCard from "@/components/cards/ScheduleCard.vue";
-import HolidayCard from "@/components/cards/HolidayCard.vue";
 import ContributeCard from "@/components/cards/ContributeCard.vue";
+import HolidayCard from "@/components/cards/HolidayCard.vue";
+import IconTextCard from "@/components/cards/IconTextCard.vue";
 import LunchCard from "@/components/cards/LunchCard.vue";
 import NewThemeCard from "@/components/cards/NewThemeCard.vue";
-import ShsHacksCard from '@/components/cards/ShsHacksCard.vue';
+import PwcCard from "@/components/cards/PwcCard.vue";
+import ScheduleCard from "@/components/cards/ScheduleCard.vue";
+import UpcomingEventsCard from "@/components/cards/UpcomingEventsCard.vue";
+import WeatherCard from "@/components/cards/WeatherCard.vue";
+import {
+	faBell,
+	faCalculator,
+	faCalendarDays,
+	faDroplet,
+	faFileLines,
+	faGear,
+	faHourglass,
+	faLink,
+	faQrcode,
+	faRadio,
+} from "@fortawesome/free-solid-svg-icons";
+import { mapActions } from "pinia";
 // import AprilFoolsCard from '@/components/cards/AprilFoolsCard.vue';
-import NewFeatureCard from "@/components/cards/NewFeatureCard.vue";
-import EndOfYearCard from "@/components/cards/EndOfYearCard.vue";
 import Confetti from "@/components/cards/ConfettiCard.vue";
 import CountdownCard from "@/components/cards/CountdownCard.vue";
+import EndOfYearCard from "@/components/cards/EndOfYearCard.vue";
+import NewFeatureCard from "@/components/cards/NewFeatureCard.vue";
+import ShsHacksCard from "@/components/cards/ShsHacksCard.vue";
 import useScheduleStore from "@/stores/schedules";
 import useThemeStore from "@/stores/themes";
 import ScheduleHeader from "./Header.vue";
+
 
 export default {
   components: {

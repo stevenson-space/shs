@@ -1,10 +1,10 @@
 <template>
-  <timed-card startTime="May 19, 2024" endTime="May 24, 2024">
+  <timed-card startTime="May 19, 2024" endTime="May 24, 2025">
     <div class="top-padding">
-      <a class="main-link" href="https://windycityhacks.com?ref=stevenson.space" target="_blank">
-        <img class="logo" src="@/assets/occasions/windy-city-hacks.png">
-        <div class="register" onclick="fathom.trackEvent('WCH Click')">
-          Build <i><b>something amazing</b></i> at Windy City Hacks, Chicagoland's free 24-hour coding competition <span class="bold">June 22nd-23rd!</span><what-is-this>Ran by Andrew Wolf (maintains stevenson.space, SHSMaps), Connor Lin (maintains SHSMaps), Miles Klein, and Jacob Zerull</what-is-this> <br><span class="color">Register Now!</span>&nbsp;
+      <a class="main-link" href="https://scrapyardchicago.com" target="_blank">
+        <img class="logo" src="@/assets/occasions/chicago-logo.png">
+        <div class="register" onclick="">
+          Build <i><b>something amazing</b></i> at Scrapyard Chicago, a free coding competition <span class="bold">March 15th-16th!</span><what-is-this></what-is-this> <br><span class="color">Register Now!</span>&nbsp;
           <font-awesome-icon :icon="faArrowUpRightFromSquare" class="link-icon" />
         </div>
       </a>
