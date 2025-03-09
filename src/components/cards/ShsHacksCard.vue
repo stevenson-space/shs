@@ -2,7 +2,7 @@
   <timed-card class="side-padding" startTime="May 19, 2024" endTime="May 24, 2025">
     <div class="top-padding ">
       <a class="main-link" href="https://scrapyardchicago.com" target="_blank">
-        <img class="logo" src="@/assets/occasions/chicago-logo.png">
+        <img class="logo" src="@/assets/occasions/chicago-logo-min.png">
         <div class="register" onclick="">
           Build <i><b>something amazing</b></i> at Scrapyard Chicago, a free coding competition <span class="bold">March 15th-16th!</span><br><span class="color">Register Now!</span>&nbsp;
           <font-awesome-icon :icon="faArrowUpRightFromSquare" class="link-icon" />
