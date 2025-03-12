@@ -380,7 +380,7 @@ export default {
 @import 'src/styles/style.sass'
 
 .header
-  +shadow
+  +shadow-light
   background-color: var(--header-color)
   text-align: center
   transition: background-color .3s

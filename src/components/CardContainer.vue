@@ -15,6 +15,7 @@
   // the card will then decide how many rows to span based on its height
   // this allows for arbitrarily tall cards while still filling all the space (masonry layout)
   display: grid
+  padding: 0 5px
   grid-auto-rows: 5px
 
   grid-template-columns: 1fr
