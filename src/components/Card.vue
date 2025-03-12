@@ -82,10 +82,8 @@ export default {
   position: relative
   transition: height .3s
   overflow: hidden
-  &.shadow
-    +shadow
-  &.border
-    border: #999 1px solid
+  border: oklch(0.872 0.01 258.338) 1px solid
+
   .wrapper
     overflow: hidden
 </style>
