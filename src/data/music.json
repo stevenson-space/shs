@@ -7,25 +7,18 @@
     "file": "SUNFLOWER_SUMMER_BOUNCE_ALEAH_ALBERTH.mp3"
   },
   {
+    "name": "Red Paint",
+    "artist": "Wren Ben-Yoseph",
+    "year": "2028",
+    "album": "RED_PAINT_WREN_BEN_YOSEPH.png",
+    "file": "RED_PAINT_WREN_BEN_YOSEPH.mp3"
+  },
+  {
     "name": "Cinematic",
     "artist": "Anonymous",
     "year": "2025",
     "album": "",
     "file": "CINEMATIC_ANON.mp3"
-  },
-  {
-    "name": "A Boy's Journey",
-    "artist": "Eric Razdik",
-    "year": "2024",
-    "album": "",
-    "file": "A_BOYS_JOURNEY_ERIC_RAZDIK.mp3"
-  },
-  {
-    "name": "The Bigger Picture",
-    "artist": "Nicholas Morales",
-    "year": "2024",
-    "album": "",
-    "file": "THE_BIGGER_PICTURE_NICHOLAS_MORALES.mp3"
   },
   {
     "name": "Shot with Gun",
@@ -35,24 +28,10 @@
     "file": "SHOT_WITH_GUN_ABHI_CHOUDHARY.mp3"
   },
   {
-    "name": "Sand Dune",
-    "artist": "",
-    "year": "2024",
-    "album": "SAND_DUNE_ANONYMOUS.webp",
-    "file": "SAND_DUNE_ANONYMOUS.mp3"
-  },
-  {
     "name": "Birds in the Sky",
     "artist": "Aleah Alberth",
     "year": "2025",
     "album": "BIRDS_IN_THE_SKY_ALEAH_ALBERTH.webp",
     "file": "BIRDS_IN_THE_SKY_ALEAH_ALBERTH.mp3"
   },
-  {
-    "name": "Slide My Way",
-    "artist": "Seth Arnold",
-    "year": "2024",
-    "album": "SLIDE_MY_WAY_SETH_ARNOLD.webp",
-    "file": "SLIDE_MY_WAY_SETH_ARNOLD.mp3"
-  }
 ]
