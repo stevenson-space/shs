@@ -132,7 +132,7 @@ export default {
       this.showHelpPopup = false;
     },
     ok() {
-      window.open('/getHelp?referrer=true');
+      window.open('/getHelp');
       this.showHelpPopup = false;
     },
     loadEvents(num) {
