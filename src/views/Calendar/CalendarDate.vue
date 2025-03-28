@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import 'src/styles/style.sass'
+@import '@/styles/style.sass'
 
 .date
   font-size: 16px // prevents parent from enlarging the date number (parent actually intends to enlarge CalendarEvent's text)

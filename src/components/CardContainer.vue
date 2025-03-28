@@ -5,7 +5,7 @@
 </template>
 
 <style lang="sass" scoped>
-@import 'src/styles/style.sass'
+@import '@/styles/style.sass'
 
 .card-container
   max-width: $content-width
