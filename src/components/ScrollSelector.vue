@@ -76,7 +76,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import 'src/styles/style.sass'
+@import '@/styles/style.sass'
 
 .scroll-selector
   height: 90px

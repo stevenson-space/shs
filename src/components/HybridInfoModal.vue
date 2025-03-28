@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import 'src/styles/style.sass'
+@import '@/styles/style.sass'
 
 .fade-enter-active, .fade-leave-active
   transition: all 0.20s

@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import 'src/styles/style.sass'
+@import '@/styles/style.sass'
 
 .calendar
   --num-rows: 5 /* changed through JavaScript to 5 or 6 depending on the month */

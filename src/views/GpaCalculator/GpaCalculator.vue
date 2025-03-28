@@ -237,7 +237,7 @@ export default defineComponent({
 </script>
 
 <style lang="sass" scoped>
-@import 'src/styles/style.sass'
+@import '@/styles/style.sass'
 .gpa-title-row
   display: flex
   justify-content: center

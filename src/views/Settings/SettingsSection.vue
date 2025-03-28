@@ -18,7 +18,7 @@ export default {
 
 <style lang="sass" scoped>
 
-@import 'src/styles/style.sass'
+@import '@/styles/style.sass'
 
 .settings-section
   width: 100%

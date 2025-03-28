@@ -90,7 +90,7 @@ export default defineComponent({
 </script>
 
 <style lang="sass" scoped>
-@import 'src/styles/style.sass'
+@import '@/styles/style.sass'
 .theme-row
     margin-bottom: 20px
     display: flex
