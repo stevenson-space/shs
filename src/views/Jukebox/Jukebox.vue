@@ -59,7 +59,7 @@
         <div class="footer-group">
           <p class="footer">
             Have a song you'd like to publish on Jukebox?
-            <a href="https://forms.gle/AHwgziyiqdLJwVaS9" target="_blank" rel="noreferrer"
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd33UAW_OQjYCfsAJsw_DQPhMAv2Td42MOV9GGZTpEbVgCdig/viewform?usp=dialog9" target="_blank" rel="noreferrer"
               >Submit it here <font-awesome-icon :icon="icons.faArrowUpRightFromSquare"
             /></a>
           </p>

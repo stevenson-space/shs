@@ -1,4 +1,5 @@
 [
+  
   {
     "name": "Sunflower Summer Bounce",
     "artist": "Aleah Alberth",
@@ -26,5 +27,54 @@
     "year": "2025",
     "album": "BIRDS_IN_THE_SKY_ALEAH_ALBERTH.webp",
     "file": "BIRDS_IN_THE_SKY_ALEAH_ALBERTH.mp3"
+  },
+  {
+    "name": "Crystallize",
+    "artist": "David Panayotov",
+    "year": "2026",
+    "album": "CRYSTALLIZE_DAVID_PANAYOTOV.jpeg",
+    "file": "CRYSTALLIZE_DAVID_PANAYOTOV.mp3"
+  },
+  {
+    "name": "cuttin' it up",
+    "artist": "Anonymous",
+    "year": "2026",
+    "album": "",
+    "file": "CUTTIN_IT_UP_ANONYMOUS.mp3"
+  },
+  {
+    "name": "Tiempo de Despertar",
+    "artist": "Montserrat Vargas",
+    "year": "2025",
+    "album": "TIEMPO_DE_DESPERTAR_MONTSERRAT_VARGAS.png",
+    "file": "TIEMPO_DE_DESPERTAR_MONTSERRAT_VARGAS.mp3"
+  },
+  {
+    "name": "Ghost Therapist",
+    "artist": "Justin Park",
+    "year": "2025",
+    "album": "GHOST_THERAPIST_JUSTIN_PARK",
+    "file": "GHOST_THERAPIST_JUSTIN_PARK.mp3"
+  },
+  {
+    "name": "Coming Back",
+    "artist": "Thomas Bijoy",
+    "year": "2026",
+    "album": "COMING_BACK_THOMAS_BIJOY.png",
+    "file": "COMING_BACK_THOMAS_BIJOY.mp3"
+  },
+  {
+    "name": "Feelin'",
+    "artist": "Anonymous",
+    "year": "2026",
+    "album": "FEELIN_ANONYMOUS.jpg",
+    "file": "FEELIN_ANONYMOUS.mp3"
+  },
+  {
+    "name": "Moonlit Lies",
+    "artist": "Anonymous",
+    "year": "2028",
+    "album": "",
+    "file": "MOONLIT_LIES_ANONYMOUS.mp3"
   }
 ]
