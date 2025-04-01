@@ -52,7 +52,7 @@ export default {
     // Set up automatic cycling every 5 seconds
     this.cycleTimer = setInterval(() => {
       this.patriotIndex = (this.patriotIndex + 1) % this.patriotImages.length;
-    }, 5000);
+    }, 2500);
   },
   beforeUnmount() {
     // Clean up the timer when component is destroyed
