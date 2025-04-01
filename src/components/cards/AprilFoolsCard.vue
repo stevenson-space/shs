@@ -1,5 +1,5 @@
 <template>
-  <timed-card startTime="April 1, 2022" endTime="April 2, 2022">
+  <timed-card startTime="April 1, 2025" endTime="April 2, 2025">
     <div class="row">
       <div class="description">We are sad to announce that due to high server costs, and operational upkeep, <b>stevenson.space will be terminating service at the end of the school year.</b>
       &nbsp;<a class="link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer">Read more... <font-awesome-icon :icon="faArrowUpRightFromSquare" class="link-icon" /></a></div>
