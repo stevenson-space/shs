@@ -1,7 +1,6 @@
 <template>
   <div class="circle" :class="{ 'full-screen': fullScreenMode }">
-    <!-- Easter Egg -->
-    <img :src="currentPatriot" class="logo">
+    <img :src="patriot" class="logo">
     <div v-if="mode === 'current'" class="countdown">
       {{ countdown }}
     </div>
@@ -18,9 +17,7 @@
 
 <script>
 import { mapState } from 'pinia';
-import patriot1 from '@/assets/patriot-april-fools-1.png';
-import patriot2 from '@/assets/patriot-april-fools-2.png';
-import patriot3 from '@/assets/patriot-april-fools-3.png';
+import patriot from '@/assets/patriot.png';
 import useScheduleStore from '@/stores/schedules';
 
 export default {
@@ -34,32 +31,12 @@ export default {
   },
   computed: {
     ...mapState(useScheduleStore, ['mode']),
-    currentPatriot() {
-      return this.patriotImages[this.patriotIndex];
-    }
   },
   data() {
     return {
-      toggled: false,
-      patriotIndex: 0,
-      patriotImages: [patriot1, patriot2, patriot3],
-      cycleTimer: null
+      patriot
     };
   },
-  methods: {
-  },
-  mounted() {
-    // Set up automatic cycling every 5 seconds
-    this.cycleTimer = setInterval(() => {
-      this.patriotIndex = (this.patriotIndex + 1) % this.patriotImages.length;
-    }, 2500);
-  },
-  beforeUnmount() {
-    // Clean up the timer when component is destroyed
-    if (this.cycleTimer) {
-      clearInterval(this.cycleTimer);
-    }
-  }
 };
 </script>
 
