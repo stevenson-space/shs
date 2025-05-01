@@ -19,8 +19,9 @@
     ],
     "Soup": [
       "Tomato Basil Bisque",
-      "Broccoli Cheddar"
-    ]
+      "Broccoli Cheddar",
+    ],
+    "International Station": ["Pasta Bowl"]
   },
   "2": {
     "Comfort Food": [
@@ -36,7 +37,8 @@
     "Soup": [
       "Tomato Basil Bisque",
       "Broccoli Cheddar"
-    ]
+    ],
+    "International Station": ["Pasta Bowl"]
   },
   "3": {
     "Comfort Food": [
