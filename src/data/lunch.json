@@ -40,44 +40,7 @@
     ],
     "International Station": ["Pasta Bowl"]
   },
-  "3": {
-    "Comfort Food": [
-      "Coconut Curry w/ Rice"
-    ],
-    "Mindful": [
-      "Baked Turkey Meatloaf w/ Chipotle BBQ"
-    ],
-    "Sides": [
-      "Sauteed Broccolini Maple Whipped Sweet Potatoes"
-    ],
-    "Soup": [
-      "Tomato Basil Bisque",
-      "Broccoli Cheddar"
-    ],
-    "International Station": [
-      "Pasta Bowl"
-    ]
-  },
-  "4": {
-    "Comfort Food": [
-      "Roasted Italian Chicken Thigh"
-    ],
-    "Mindful": [
-      "Baked Herbed Cod"
-    ],
-    "Sides": [
-      "Roasted Vegetables",
-      "Mashed Potatoes"
-    ],
-    "Soup": [
-      "Tomato Basil Bisque",
-      "Broccoli Cheddar"
-    ],
-    "International Station": [
-      "Pasta Bowl"
-    ]
-  },
-  "7": {
+  "5": {
     "Comfort Food": [
       "Open Faced Pot Roast Sandwich"
     ],
@@ -95,7 +58,7 @@
       "Burrito Bowl"
     ]
   },
-  "8": {
+  "6": {
     "Comfort Food": [
       "3 Cheese Penne"
     ],
@@ -115,7 +78,7 @@
       "Burrito Bowl"
     ]
   },
-  "9": {
+  "7": {
     "Comfort Food": [
       "Falafel Sandwich Pita / Tomato & Onions"
     ],
@@ -134,7 +97,7 @@
       "Burrito Bowl"
     ]
   },
-  "10": {
+  "8": {
     "Comfort Food": [
       "Fried Chicken"
     ],
@@ -153,7 +116,7 @@
       "Burrito Bowl"
     ]
   },
-  "11": {
+  "9": {
     "Comfort Food": [
       "Turkey Sloppy Joe"
     ],
@@ -172,7 +135,7 @@
       "Burrito Bowl"
     ]
   },
-  "14": {
+  "12": {
     "Comfort Food": [
       "Spicy Whole Wheat Spaghetti"
     ],
@@ -191,7 +154,7 @@
       "Mac and Cheese Bowl"
     ]
   },
-  "15": {
+  "13": {
     "Comfort Food": [
       "Swedish Meatballs w/ Egg Noodles"
     ],
@@ -210,7 +173,7 @@
       "Mac and Cheese Bowl"
     ]
   },
-  "16": {
+  "14": {
     "Comfort Food": [
       "Cheese Enchilada Casserole"
     ],
@@ -229,9 +192,9 @@
       "Mac and Cheese Bowl"
     ]
   },
-  "17": {
+  "15": {
     "Comfort Food": [
-      " Vegetable Noodle Casserole"
+      "Vegetable Noodle Casserole"
     ],
     "Mindful": [
       "Adobo Roasted Turkey Breast"
@@ -248,7 +211,26 @@
       "Mac and Cheese Bowl"
     ]
   },
-  "21": {
+  "16": {
+    "Comfort Food": [
+      "Baked Battered Cod"
+    ],
+    "Mindful": [
+      "Chicken Vesuvio"
+    ],
+    "Sides": [
+      "Roasted Vegetables",
+      "Roasted Wedge Potatoes"
+    ],
+    "Soup": [
+      "Minestrone",
+      "Chicken Gumbo"
+    ],
+    "International Station": [
+      "Mac and Cheese Bowl"
+    ]
+  },
+  "19": {
     "Comfort Food": [
       "Cheese Tortellini"
     ],
@@ -264,10 +246,10 @@
       "Chicken Noodle"
     ],
     "International Station": [
-      "Asian Bowl"
+      "Mac and Cheese Bowl"
     ]
   },
-  "22": {
+  "20": {
     "Comfort Food": [
       "Chicken Shawarma w/ Pita"
     ],
@@ -284,10 +266,10 @@
       "Chicken Noodle"
     ],
     "International Station": [
-      "Asian Bowl"
+      "Mac and Cheese Bowl"
     ]
   },
-  "23": {
+  "21": {
     "Comfort Food": [
       "Homemade Beef Meatloaf"
     ],
@@ -303,100 +285,7 @@
       "Chicken Noodle"
     ],
     "International Station": [
-      "Asian Bowl"
-    ]
-  },
-  "24": {
-    "Comfort Food": [
-      "Baked Mostaccioli"
-    ],
-    "Mindful": [
-      "Chicken Tinga"
-    ],
-    "Sides": [
-      "Azteca Corn Mexican Rice"
-    ],
-    "Soup": [
-      "Smoky Poblano",
-      "Chicken Noodle"
-    ],
-    "International Station": [
-      "Asian Bowl"
-    ]
-  },
-  "25": {
-    "Comfort Food": [
-      "BBQ Pulled Chicken Sandwich"
-    ],
-    "Mindful": [
-      "Palak Paneer"
-    ],
-    "Sides": [
-      "Roasted Vegetables Yellow Rice"
-    ],
-    "Soup": [
-      "Smoky Poblano",
-      "Chicken Noodle"
-    ],
-    "International Station": [
-      "Asian Bowl"
-    ]
-  },
-  "28": {
-    "Comfort Food": [
-      "Blackened Tilapia"
-    ],
-    "Mindful": [
-      "Jerk Chicken"
-    ],
-    "Sides": [
-      "Brussel Sprouts",
-      "Scalloped Potatoes"
-    ],
-    "Soup": [
-      "Tomato Basil Bisque",
-      "Broccoli Cheddar"
-    ],
-    "International Station": [
-      "Pasta Bowl"
-    ]
-  },
-  "29": {
-    "Comfort Food": [
-      "Veggie Chilaquiles"
-    ],
-    "Mindful": [
-      "Thai Chicken Stir Fry"
-    ],
-    "Sides": [
-      "Roasted Carrots",
-      "Cilantro Lime Rice"
-    ],
-    "Soup": [
-      "Tomato Basil Bisque",
-      "Broccoli Cheddar"
-    ],
-    "International Station": [
-      "Pasta Bowl"
-    ]
-  },
-  "30": {
-    "Comfort Food": [
-      "Chicken Tetrazzini"
-    ],
-    "Mindful": [
-      "Tortilla Crusted Tilapia"
-    ],
-    "Sides": [
-      "Sugar Snap Peas",
-      "Orzo"
-    ],
-    "Soup": [
-      "Tomato Basil Bisque",
-      "Broccoli Cheddar"
-    ],
-    "International Station": [
-      "Pasta Bowl"
+      "Mac and Cheese Bowl"
     ]
   }
 }
