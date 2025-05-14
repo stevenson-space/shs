@@ -63,6 +63,12 @@
               >Submit it here <font-awesome-icon :icon="icons.faArrowUpRightFromSquare"
             /></a>
           </p>
+          <p class="footer">
+            <a href="https://youtube.com/playlist?list=PLap5ZkjM9rSEGwfnayinyap-wGVZNdN8g&si=jkeY3i9zYnPJueEx" target="_blank" rel="noreferrer">
+              Listen to music by Music Production 2's activist songwriting project!
+              <font-awesome-icon :icon="icons.faArrowUpRightFromSquare"/>
+            </a>
+          </p>
           <p class="footer">Music is student-created and not endorsed by Stevenson High School</p>
         </div>
       </div>
