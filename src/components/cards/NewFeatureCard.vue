@@ -1,5 +1,5 @@
 <template>
-  <timed-card startTime="May 8, 2025" endTime="May 26, 2025">
+  <timed-card startTime="May 12, 2025" endTime="May 17, 2025">
     <div class="container">
       <div class="title"></div>
       <div class="message">
