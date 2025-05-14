@@ -3,11 +3,7 @@
     <div class="container">
       <div class="title"></div>
       <div class="message">
-        SHS's 2024-25 Music Production 2 classes engaged in an activist songwriting project centered around important topics to raise awareness for
-        <a class="link" href="https://www.gkmcenglewood.com/" target="_blank">Good Kids Mad City</a>,
-        <a class="link" href="https://nami-nwsc.org/" target="_blank">NAMI Northwest Suburbs Chicago</a>, and
-        <a class="link" href="https://buffalogrovepride.com/" target="_blank">The Pinta Pride Project</a>!
-
+        SHS's 2024-25 Music Production 2 classes engaged in an activist songwriting project centered around important topics to raise awareness for important causes!
         <div class= "chips">
           <LinkChip
             href="https://youtube.com/playlist?list=PLap5ZkjM9rSEGwfnayinyap-wGVZNdN8g&si=jkeY3i9zYnPJueEx"
