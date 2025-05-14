@@ -14,9 +14,10 @@
             label="Listen Now!"
             background="#fbe9e7"
           />
+          <!-- not using just "/jukebox" because of how I implemented LinkChips' icons -->
           <LinkChip
-            href="https://omella.com/9zh2h"
-            label="Donate Here"
+            href="https://stevenson.space/jukebox"
+            label="More Student Made Music!"
             background="#dcffdb"
           />
         </div>
