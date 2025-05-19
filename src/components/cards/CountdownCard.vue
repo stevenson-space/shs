@@ -42,7 +42,9 @@ export default {
   },
   methods: {
     getTimeLeft() {
-      const goalTime = this.formattedUntilDate.getTime();
+      const untilDate = new Date(this.untilDate);
+      untilDate.setHours(11, 40, 0, 0);
+      const goalTime = untilDate.getTime();
       const now = new Date().getTime();
       const diff = goalTime - now;
 
