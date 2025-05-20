@@ -8,7 +8,7 @@
     <card-container class="card-container">
         <end-of-year-card />
         <countdown-card
-          untilDate="May 24, 2025"
+          untilDate="May 23, 2025"
           message="🌴 Summer Countdown 🐬"
         />
         <new-feature-card />
