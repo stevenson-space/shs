@@ -34,7 +34,7 @@
           :in-school="bell.inSchool"
           :countdown="intoCountdownString(this.totalSecondsLeft)"
           :range="bell.getRange()"
-          :next-day="nextDayString"
+          :next-day="schoolResumesString(this.bell, this.date).replace(',', ',\n')"
           :schedule-type="bell.type"
           :full-screen-mode="fullScreenMode"
         />
@@ -122,7 +122,7 @@ import { dateToSeconds, periodToSeconds, formatDate } from '@/utils/util';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
 import Announcements from './Announcements.vue';
-import { intoCountdownString } from "@/utils/countdown.js";
+import { intoCountdownString, schoolResumesString } from "@/utils/countdown.js";
 
 export default {
   components: {
@@ -200,29 +200,6 @@ export default {
       // second while endTime (which is computationally expensive) does not
       return this.endTime - this.currentTime;
     },
-    nextDayString() {
-      // Returns when school resumes
-      // Only displayed when not in school (either no school, before school, or after school)
-      const { bell, date } = this;
-      const { isSchoolDay, period, nextSchoolDay } = bell;
-
-      // get days since January 1, 1970
-      const getEpochDay = (ofDate) => Math.floor(ofDate.getTime() / 1000 / 60 / 60 / 24);
-
-      // if school resumes on the same day or the next day, use 'today' or 'tomorrow' instead of the date
-      let str;
-      if (isSchoolDay && period.beforeSchool) {
-        str = '\ntoday';
-      } else {
-        const dayDifference = getEpochDay(nextSchoolDay) - getEpochDay(date);
-        if (dayDifference === 1) {
-          str = '\ntomorrow';
-        } else {
-          str = this.formatDate(nextSchoolDay);
-        }
-      }
-      return `School resumes ${str}`;
-    },
     tomorrow() {
       // Date object for the next day, used for the arrow right
       const date = new Date(this.date);
@@ -284,6 +261,7 @@ export default {
   },
   methods: {
     formatDate,
+    schoolResumesString,
     intoCountdownString,
     ...mapActions(useScheduleStore, ['countdownDone', 'setScheduleMode']),
     formatDateUrl(date) {

@@ -1,3 +1,6 @@
+import Bell from "@/utils/bell";
+import { formatDate } from "@/utils/util";
+
 export function intoCountdownString(secondsLeft: number): string {
   if (secondsLeft < 0) {
     return `0:00`;
@@ -22,4 +25,29 @@ export function intoCountdownString(secondsLeft: number): string {
   const ss = `${seconds < 10 ? '0' : ''}${seconds}`;
 
   return `${h}${mm}${ss}`;
+}
+
+// Returns when school resumes
+export function schoolResumesString(bell: Bell, date: Date): string | null {
+  // Only displayed when not in school (either no school, before school, or after school)
+  if (bell.inSchool || date >= bell.nextSchoolDay) {
+    return null;
+  }
+
+  // get days since January 1, 1970
+  const getEpochDay = (ofDate: Date) => Math.floor(ofDate.getTime() / 1000 / 60 / 60 / 24);
+
+  // if school resumes on the same day or the next day, use 'today' or 'tomorrow' instead of the date
+  let str;
+  if (bell.isSchoolDay && bell.period!.beforeSchool /* FIXME(Bell.schoolDay) */) {
+    str = '\ntoday';
+  } else {
+    const dayDifference = getEpochDay(bell.nextSchoolDay) - getEpochDay(date);
+    if (dayDifference === 1) {
+      str = '\ntomorrow';
+    } else {
+      str = formatDate(bell.nextSchoolDay);
+    }
+  }
+  return `School resumes ${str}`;
 }
