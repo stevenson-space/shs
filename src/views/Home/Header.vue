@@ -31,7 +31,7 @@
 
       <div>
         <countdown-circle
-          :in-school="inSchool"
+          :in-school="bell.inSchool"
           :countdown="countdownString"
           :range="bell.getRange()"
           :next-day="nextDayString"
@@ -79,7 +79,7 @@
     </div>
 
     <header-schedule
-      :in-school="inSchool"
+      :in-school="bell.inSchool"
       :period="bell.getPeriodName()"
       :range="bell.getRange()"
       :schedule-type="bell.type"
@@ -166,18 +166,9 @@ export default {
         '--header-accent': showColor ? 'white' : 'var(--color)',
       };
     },
-    inSchool() {
-      // To be in school, there must be school that day and we must not be before or after school
-      const { bell } = this;
-      return (
-        bell.isSchoolDay
-        && !bell.period.afterSchool
-        && !bell.period.beforeSchool
-      );
-    },
     endTime() {
-      const { bell, date, inSchool } = this;
-      if (inSchool) {
+      const { bell, date } = this;
+      if (bell.inSchool) {
         return periodToSeconds(bell.period.end);
       }
       // if not currently in school, return seconds left until school starts
@@ -280,9 +271,11 @@ export default {
       this.currentTime = dateToSeconds(this.date);
     },
     totalSecondsLeft() {
+      let { bell } = this;
+
       if (this.totalSecondsLeft <= 0) {
         this.countdownDone();
-        if (this.inSchool && this.useVirtualBell) {
+        if (bell.inSchool && this.useVirtualBell) {
           const bell = new Audio(bellAudio);
           bell.volume = 0.05;
           bell.play();

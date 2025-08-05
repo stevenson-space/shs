@@ -55,6 +55,15 @@ class Bell {
     this.nextSchoolDay = Bell.getNextSchoolDay(date, schedules);
   }
 
+  get inSchool(): boolean {
+    // FIXME: refactor period field
+    return (
+      this.isSchoolDay
+      && !this.period!.afterSchool
+      && !this.period!.beforeSchool
+    );
+  }
+
   /**
    * @return {string} human readable range for current period or day (blank if no school)
    */
