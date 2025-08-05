@@ -7,7 +7,8 @@
         !disableProgressBar &&
         (actualPeriod.length == 1 || actualPeriod.length == 2)
       "
-      :class="{ invert, 'circle-width-spacer': true }"
+      :class="{ invert }"
+      width="40"
       height="40"
     >
       <circle
@@ -43,7 +44,7 @@
       <span class="dash"> – </span>
       <div class="time">{{ convertMilitaryTime(end) }}</div>
     </div>
-    <div class="circle-width-spacer"></div>
+  <div :style="{ width: actualPeriod.length > 4 ? '20px' : '40px' /* FIXME: check circle width instead? */}"></div>
   </div>
 </template>
 <script>
@@ -203,8 +204,6 @@ export default {
     stroke-dashoffset: 0
     transition: stroke-dashoffset 1s
     transition-timing-function: linear
-  .circle-width-spacer
-    width: 40px
 
   .range
     color: white
