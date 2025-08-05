@@ -202,13 +202,17 @@ export default {
         margin: 0 40px
 
   .periods
-    flex-grow: 1
+    gap: 12px
     display: flex
+    flex-direction: row
     justify-content: space-around
     align-items: center
     flex-wrap: wrap
     padding: 25px 50px
     +mobile
       padding: 10px 15px
+
+  .period
+    flex-grow: 1
 
 </style>

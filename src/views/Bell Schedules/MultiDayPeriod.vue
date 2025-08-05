@@ -1,15 +1,17 @@
 <template>
   <div class="day">
     <h2>Day {{ day }}</h2>
-    <period
-      v-for="(period, i) in periods"
-      :key="period"
-      :disableProgressBar="true"
-      class="period"
-      :period="period"
-      :start="start[i]"
-      :end="end[i]"
-    />
+    <div class="periods">
+      <period
+        v-for="(period, i) in periods"
+        :key="period"
+        :disableProgressBar="true"
+        class="period"
+        :period="period"
+        :start="start[i]"
+        :end="end[i]"
+      />
+    </div>
   </div>
 </template>
 
@@ -37,7 +39,9 @@ export default {
   h2
     text-align: center
 
-  .period
-    width: 100%
+  .periods
+    display: flex
+    flex-direction: column
+    gap: 8px
 
 </style>
