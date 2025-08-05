@@ -17,7 +17,7 @@
         <april-fools-card />
         <shs-hacks-card/>
         <holiday-card />
-        <schedule-card />
+        <schedule-card max-height="270px"/>
         <weather-card />
         <pwc-card/>
         <lunch-card />
@@ -119,7 +119,7 @@ export default {
         faHourglass,
         faQrcode,
         faRadio,
-        
+
       },
       fullScreenMode: false,
       themeName: useThemeStore().theme.name,
