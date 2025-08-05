@@ -6,7 +6,11 @@
     @height-change="scrollToCurrentPeriod"
   >
     <div class="title">{{ title }}</div>
-    <div ref="periods" class="periods">
+    <div
+      ref="periods"
+      class="periods"
+      :style="{ maxHeight: maxHeight || undefined }"
+    >
       <template v-for="period in periods">
         <div v-if="period.isUpNextIndicator" :key="period.name" class="up-next-indicator">
           <div class="line">
@@ -42,6 +46,7 @@ export default {
   props: {
     schedule: { type: Object, default: null },
     title: { type: String, default: 'Schedule' },
+    maxHeight: { type: String, default: null },
   },
   computed: {
     ...mapState(useScheduleStore, ['bell']),
@@ -117,8 +122,7 @@ export default {
 @import '@/styles/style.sass'
 
 .card
-  padding: 0 8px
-  padding-bottom: 5px
+  padding: 0 8px 6px
 
   .title
     text-align: center
@@ -126,11 +130,14 @@ export default {
     margin: 15px 0
 
   .periods
-    max-height: 275px
-    overflow-y: scroll
+    padding: 8px
+    display: flex
+    flex-direction: column
+    gap: 8px
+    overflow-y: auto
+    scrollbar-width: none
     -webkit-overflow-scrolling: touch
     position: relative
-    +no-scrollbar
 
     .up-next-indicator
       padding: 0px 13px
@@ -147,9 +154,5 @@ export default {
         background-color: var(--secondaryBackground)
         color: grey
         padding: 3px
-
-    .period
-      margin-left: 4px
-      margin-bottom: 7px
 
 </style>

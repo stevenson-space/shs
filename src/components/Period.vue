@@ -1,5 +1,6 @@
 <template>
-  <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">    <svg
+  <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">
+    <svg
       class="progress"
       v-if="
         progress != 0 &&
@@ -43,7 +44,7 @@
       <span class="dash"> – </span>
       <div class="time">{{ convertMilitaryTime(end) }}</div>
     </div>
-    <div class="spacer"></div>
+  <div :style="{ width: actualPeriod.length > 4 ? '20px' : '40px' /* FIXME: check circle width instead? */}"></div>
   </div>
 </template>
 <script>
@@ -149,16 +150,16 @@ export default {
 
 .period
   +shadow
+  min-width: 225px
   height: 37px
   border-radius: 100px
   background-color: var(--color)
   display: flex
   align-items: center
   justify-content: space-between
-  flex-grow: 1
-  margin: 7px
   padding: 2px
-  width: calc(100% - 14px)
+  margin: 0
+  width: auto
 
   .circle
     min-width: 15px
@@ -203,9 +204,6 @@ export default {
     stroke-dashoffset: 0
     transition: stroke-dashoffset 1s
     transition-timing-function: linear
-  .spacer
-    width: 40px
-    height: 2px
 
   .range
     color: white
