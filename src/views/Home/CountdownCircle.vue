@@ -25,7 +25,7 @@ export default {
     inSchool: { type: Boolean, required: true },
     countdown: { type: String, required: true },
     range: { type: String, required: true },
-    nextDay: { type: String, required: true },
+    nextDay: { type: [String, null], required: true },
     scheduleType: { type: String, required: true },
     fullScreenMode: { type: Boolean, default: false },
   },

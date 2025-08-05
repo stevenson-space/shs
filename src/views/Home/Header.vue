@@ -34,7 +34,7 @@
           :in-school="bell.inSchool"
           :countdown="intoCountdownString(this.totalSecondsLeft)"
           :range="bell.getRange()"
-          :next-day="schoolResumesString(this.bell, this.date).replace(',', ',\n')"
+          :next-day="schoolResumesString(this.bell, this.date)?.replace(',', ',\n') ?? null"
           :schedule-type="bell.type"
           :full-screen-mode="fullScreenMode"
         />
