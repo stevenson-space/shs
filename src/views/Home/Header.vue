@@ -118,7 +118,7 @@ import useScheduleStore from '@/stores/schedules';
 import useThemeStore from '@/stores/themes';
 
 import Bell from '@/utils/bell';
-import { dateToSeconds, periodToSeconds } from '@/utils/util';
+import { dateToSeconds, periodToSeconds, formatDate } from '@/utils/util';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
 import Announcements from './Announcements.vue';
@@ -283,28 +283,12 @@ export default {
     clearInterval(this.interval);
   },
   methods: {
+    formatDate,
     intoCountdownString,
     ...mapActions(useScheduleStore, ['countdownDone', 'setScheduleMode']),
-    formatDate(date) {
-      // Wednesday,
-      // September 30
-      return date
-        .toLocaleDateString('en-US', {
-          weekday: 'long',
-          month: 'long',
-          day: 'numeric',
-        })
-        .replace(',', ',\n');
-    },
     formatDateUrl(date) {
       // e.g. "6-11-2018"
-      return date
-        .toLocaleDateString('en-US', {
-          month: 'numeric',
-          day: 'numeric',
-          year: 'numeric',
-        })
-        .replace(/\//g, '-');
+      return formatDate(date).replace(/\//g, '-');
     },
     initializeCountdown() {
       this.stopCountdown();
