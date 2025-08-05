@@ -135,6 +135,7 @@ export default {
     flex-direction: column
     gap: 8px
     overflow-y: auto
+    scrollbar-width: none
     -webkit-overflow-scrolling: touch
     position: relative
 
