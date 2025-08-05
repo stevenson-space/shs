@@ -32,7 +32,7 @@
       <div>
         <countdown-circle
           :in-school="bell.inSchool"
-          :countdown="countdownString"
+          :countdown="intoCountdownString(this.totalSecondsLeft)"
           :range="bell.getRange()"
           :next-day="nextDayString"
           :schedule-type="bell.type"
@@ -122,6 +122,7 @@ import { dateToSeconds, periodToSeconds } from '@/utils/util';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
 import Announcements from './Announcements.vue';
+import { intoCountdownString } from "@/utils/countdown.js";
 
 export default {
   components: {
@@ -198,23 +199,6 @@ export default {
       // this is seperated from endTime since totalSecondsLeft needs to be recalculated every
       // second while endTime (which is computationally expensive) does not
       return this.endTime - this.currentTime;
-    },
-    countdownString() {
-      if (this.totalSecondsLeft > 60 * 60 * 24) {
-        // if more than 1 day of seconds left, display number of days left
-        const numDays = Math.ceil(this.totalSecondsLeft / 60 / 60 / 24);
-        return `${numDays} days`;
-      }
-      // return a nicely formatted string with remaining hours, minutes, and seconds left
-      const seconds = this.totalSecondsLeft % 60;
-      const minutes = Math.floor(this.totalSecondsLeft / 60) % 60;
-      const hours = Math.floor(this.totalSecondsLeft / 60 / 60);
-
-      const h = hours > 0 ? `${hours}:` : ''; // hours is only displayed if > 0
-      const mm = `${minutes < 10 && hours > 0 ? '0' : ''}${minutes}:`; // minutes always has 2 digits if hours are displayed
-      const ss = `${seconds < 10 ? '0' : ''}${seconds}`; // seconds always has 2 digits
-
-      return `${h}${mm}${ss}`;
     },
     nextDayString() {
       // Returns when school resumes
@@ -299,6 +283,7 @@ export default {
     clearInterval(this.interval);
   },
   methods: {
+    intoCountdownString,
     ...mapActions(useScheduleStore, ['countdownDone', 'setScheduleMode']),
     formatDate(date) {
       // Wednesday,
