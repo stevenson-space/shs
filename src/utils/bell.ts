@@ -56,7 +56,7 @@ class Bell {
   }
 
   get inSchool(): boolean {
-    // FIXME: refactor period field
+    // FIXME(bell.schoolDay)
     return (
       this.isSchoolDay
       && !this.period!.afterSchool
