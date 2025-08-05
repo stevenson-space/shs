@@ -6,14 +6,14 @@ import { deepCopy, is2DArray } from './util';
 // A type guard that states if `school` is true, then all the properties of bell (including `mode`,
 // `schedule`, and `period`) will have values specified
 export function isBellOnSchoolDay(bell: Bell): bell is Required<Bell> {
-  return bell?.school;
+  return bell?.isSchoolDay;
 }
 
 class Bell {
   // current active date? if not live, this is whatever date it's on
   date: Date;
   // if there is school on the current day
-  school: boolean;
+  isSchoolDay: boolean;
   // "Standard Schedule", "Late Arrival", "No School", "No School (Weekend)"
   type: string;
   // list of all the schedules?
@@ -41,7 +41,7 @@ class Bell {
     const schedule = Bell.getSchedule(scheduleType.modes, scheduleMode);
 
     this.date = date;
-    this.school = !!schedule;
+    this.isSchoolDay = !!schedule;
     this.type = scheduleType.name; // "Standard Schedule", "Late Arrival", "No School", ...
     this.modes = scheduleType.modes;
     this.dates = scheduleType.dates;

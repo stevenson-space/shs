@@ -170,7 +170,7 @@ export default {
       // To be in school, there must be school that day and we must not be before or after school
       const { bell } = this;
       return (
-        bell.school
+        bell.isSchoolDay
         && !bell.period.afterSchool
         && !bell.period.beforeSchool
       );
@@ -181,14 +181,14 @@ export default {
         return periodToSeconds(bell.period.end);
       }
       // if not currently in school, return seconds left until school starts
-      const { school, period, nextSchoolDay } = bell;
+      const { isSchoolDay, period, nextSchoolDay } = bell;
       let dayDifference = 0;
 
       // if before school, get the seconds until the first period today
       let nextBell = bell;
 
       // if no school or after school, get the first period on the next school day
-      if (!school || period.afterSchool) {
+      if (!isSchoolDay || period.afterSchool) {
         dayDifference = Math.floor(
           (nextSchoolDay.getTime() - date.getTime())
             / 1000
@@ -229,14 +229,14 @@ export default {
       // Returns when school resumes
       // Only displayed when not in school (either no school, before school, or after school)
       const { bell, date } = this;
-      const { school, period, nextSchoolDay } = bell;
+      const { isSchoolDay, period, nextSchoolDay } = bell;
 
       // get days since January 1, 1970
       const getEpochDay = (ofDate) => Math.floor(ofDate.getTime() / 1000 / 60 / 60 / 24);
 
       // if school resumes on the same day or the next day, use 'today' or 'tomorrow' instead of the date
       let str;
-      if (school && period.beforeSchool) {
+      if (isSchoolDay && period.beforeSchool) {
         str = '\ntoday';
       } else {
         const dayDifference = getEpochDay(nextSchoolDay) - getEpochDay(date);
@@ -389,7 +389,7 @@ export default {
     background-size: cover
     +desktop
       background: url(@/assets/occasions/spy-full.png) center center no-repeat, var(--header-color)
-      
+
   &.minecraft
     background: url(@/assets/occasions/minecraft-mobile.png) center center no-repeat, var(--header-color)
     background-size: cover

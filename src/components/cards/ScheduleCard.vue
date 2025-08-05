@@ -1,6 +1,6 @@
 <template>
   <card
-    v-if="schedule || bell?.school"
+    v-if="schedule || bell?.isSchoolDay"
     class="card"
     :ignoreStyleMutations="true"
     @height-change="scrollToCurrentPeriod"
