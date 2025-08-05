@@ -18,6 +18,7 @@
         class="card"
         :schedule="schedule"
         :title="schedule.name"
+        max-height="300px"
       >
         <div class="actions">
           <div v-if="schedule.isCustom" class="action" @click="deleteSchedule(schedule.name)">
