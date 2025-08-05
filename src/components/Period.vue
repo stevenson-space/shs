@@ -1,13 +1,13 @@
 <template>
-  <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">    <svg
+  <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">
+    <svg
       class="progress"
       v-if="
         progress != 0 &&
         !disableProgressBar &&
         (actualPeriod.length == 1 || actualPeriod.length == 2)
       "
-      :class="{ invert }"
-      width="40"
+      :class="{ invert, 'circle-width-spacer': true }"
       height="40"
     >
       <circle
@@ -43,7 +43,7 @@
       <span class="dash"> – </span>
       <div class="time">{{ convertMilitaryTime(end) }}</div>
     </div>
-    <div class="spacer"></div>
+    <div class="circle-width-spacer"></div>
   </div>
 </template>
 <script>
@@ -149,16 +149,16 @@ export default {
 
 .period
   +shadow
+  min-width: 225px
   height: 37px
   border-radius: 100px
   background-color: var(--color)
   display: flex
   align-items: center
   justify-content: space-between
-  flex-grow: 1
-  margin: 7px
   padding: 2px
-  width: calc(100% - 14px)
+  margin: 0
+  width: auto
 
   .circle
     min-width: 15px
@@ -203,9 +203,8 @@ export default {
     stroke-dashoffset: 0
     transition: stroke-dashoffset 1s
     transition-timing-function: linear
-  .spacer
+  .circle-width-spacer
     width: 40px
-    height: 2px
 
   .range
     color: white
