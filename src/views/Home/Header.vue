@@ -266,7 +266,13 @@ export default {
     ...mapActions(useScheduleStore, ['countdownDone', 'setScheduleMode']),
     formatDateUrl(date) {
       // e.g. "6-11-2018"
-      return formatDate(date).replace(/\//g, '-');
+      return date
+        .toLocaleDateString('en-US', {
+          month: 'numeric',
+          day: 'numeric',
+          year: 'numeric',
+        })
+        .replace(/\//g, '-');
     },
     initializeCountdown() {
       this.stopCountdown();
