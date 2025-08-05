@@ -10,14 +10,24 @@ export function isBellOnSchoolDay(bell: Bell): bell is Required<Bell> {
 }
 
 class Bell {
+  // current active date? if not live, this is whatever date it's on
   date: Date;
+  // if there is school on the current day
   school: boolean;
+  // "Standard Schedule", "Late Arrival", "No School", "No School (Weekend)"
   type: string;
+  // list of all the schedules?
   modes: Schedule[];
+  // FIXME: corresponds to field in json, doesn't need to be stored by bell
   dates: string[];
+  // "Normal", "Half Periods", ..
   mode?: string;
+  // has period times, schedule name, and period names
   schedule?: SingleDaySchedule;
+  // current period name, start, and end time
+  // can be before school or after school as well
   period?: Period;
+  // date of next school day
   nextSchoolDay: Date;
 
   /**
