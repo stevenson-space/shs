@@ -13,6 +13,7 @@ interface State {
   urlDate: Date,
   startTime: number,
   currentTime: number,
+  countdownInterval: ReturnType<typeof setInterval> | null;
 }
 
 function parseUrlDateTime(route: RouteLocationNormalized): Date {
@@ -45,6 +46,7 @@ export default defineStore('schedules', {
     urlDate: new Date(), // relative to URL specified time (will be set when URL changes)
     startTime: Date.now(), // relative to real time
     currentTime: Date.now(), // relative to real time
+    countdownInterval: null
   }),
   getters: {
     schedules(state): ScheduleCollection[] { // we merge the officialSchedules provided by us and the user defined customSchedules
@@ -82,6 +84,20 @@ export default defineStore('schedules', {
     },
   },
   actions: {
+    stopCountdown(): void {
+      if (this.countdownInterval) {
+        clearInterval(this.countdownInterval);
+        this.countdownInterval = null;
+      }
+    },
+    startCountdown(): void {
+      this.stopCountdown();
+      if (this.mode === 'current') {
+        this.countdownInterval = setInterval(() => {
+          this.currentTime = Date.now();
+        }, 1000);
+      }
+    },
     initializeSchedule(): void {
       this.setCustomSchedules(tryParseJSON(localStorage.customSchedules) as CustomSchedules);
       if (localStorage.defaultScheduleMode) {
@@ -93,19 +109,13 @@ export default defineStore('schedules', {
       this.setMode(route);
       this.setUrlDate(route);
       this.setStartTime();
-      this.setCurrentTime();
-    },
-    countdownDone(): void {
-      this.setCurrentTime();
+      this.startCountdown();
     },
     setUrlDate(route: RouteLocationNormalized): void {
       this.urlDate = parseUrlDateTime(route);
     },
     setStartTime(): void {
       this.startTime = Date.now();
-    },
-    setCurrentTime(): void {
-      this.currentTime = Date.now();
     },
 
     addCustomScheduleMode({ scheduleType, scheduleToAdd, scheduleToReplace }: { scheduleType: string, scheduleToAdd: { start: string[], end: string[], name: string, periods: string }, scheduleToReplace: string }): void {
@@ -169,6 +179,12 @@ export default defineStore('schedules', {
       // the 'time' url parameter is to be used for testing and forces the mode to 'current' regardless of date
       const { date, time } = route.query;
       this.mode = !date || time ? 'current' : 'day';
+
+      if (this.mode === 'current') {
+        this.startCountdown();
+      } else {
+        this.stopCountdown();
+      }
     },
   },
 });

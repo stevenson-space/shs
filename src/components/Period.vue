@@ -66,8 +66,6 @@ export default {
     return {
       radius: 22, // radius of the progress bar
       stroke: 3, // stroke of the progress bar
-      currentSeconds: 0, // seconds since 12:00am
-      interval: null, // interval for updating the current seconds
     };
   },
   computed: {
@@ -94,7 +92,8 @@ export default {
       return periodToSeconds(this.end);
     },
     progress() {
-      const { startSeconds, endSeconds, currentSeconds } = this;
+      const currentSeconds = dateToSeconds(this.date);
+      const { startSeconds, endSeconds } = this;
       if (currentSeconds >= startSeconds && currentSeconds <= endSeconds) {
         if (currentSeconds - startSeconds < 1) { // fancy animation when the period starts
           return 0.00001;
@@ -111,36 +110,6 @@ export default {
   },
   methods: {
     convertMilitaryTime: Bell.convertMilitaryTime,
-    stopInterval() {
-      clearInterval(this.interval);
-      this.interval = null;
-    },
-    startInterval() {
-      this.stopInterval();
-      this.interval = setInterval(() => {
-        this.currentSeconds++;
-      }, 1000);
-    },
-    startIntervalIfCurrentPeriod() {
-      this.currentSeconds = dateToSeconds(this.date);
-      const { startSeconds, endSeconds, currentSeconds } = this;
-      if (currentSeconds >= startSeconds && currentSeconds <= endSeconds) {
-        this.startInterval();
-      } else {
-        this.stopInterval();
-      }
-    },
-  },
-  created() {
-    this.currentSeconds = dateToSeconds(this.date);
-  },
-  mounted() {
-    this.startIntervalIfCurrentPeriod();
-  },
-  watch: {
-    date() {
-      this.startIntervalIfCurrentPeriod();
-    },
   },
 };
 </script>

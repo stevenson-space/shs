@@ -126,13 +126,13 @@ export default {
     };
   },
   methods: {
-    ...mapActions(useScheduleStore, ["setCurrentTime"]),
+    ...mapActions(useScheduleStore, ["startCountdown"]),
   },
   created() {
     // Sometimes the interval used in Header.vue stops when the tab leaves focus
     // so updating the date when focus returns is necessary
     window.addEventListener("focus", () => {
-      this.setCurrentTime();
+      this.startCountdown();
     });
   },
 };

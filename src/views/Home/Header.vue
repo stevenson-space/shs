@@ -148,8 +148,6 @@ export default {
       },
       heart,
       snowflake,
-      currentTime: 0, // seconds since 12:00am
-      interval: null,
       colored: true,
       useVirtualBell: false,
       starryNight,
@@ -206,7 +204,7 @@ export default {
     totalSecondsLeft() {
       // this is seperated from endTime since totalSecondsLeft needs to be recalculated every
       // second while endTime (which is computationally expensive) does not
-      return this.endTime - this.currentTime;
+      return this.endTime - dateToSeconds(this.date);
     },
     countdownString() {
       if (this.totalSecondsLeft > 60 * 60 * 24) {
@@ -269,24 +267,15 @@ export default {
     },
   },
   watch: {
-    mode() {
-      if (this.mode === 'current') {
-        this.initializeCountdown();
-      } else {
-        this.stopCountdown();
-      }
-    },
     date() {
-      this.currentTime = dateToSeconds(this.date);
-    },
-    totalSecondsLeft() {
-      if (this.totalSecondsLeft <= 0) {
-        this.countdownDone();
-        if (this.inSchool && this.useVirtualBell) {
-          const bell = new Audio(bellAudio);
-          bell.volume = 0.05;
-          bell.play();
-        }
+      if (this.totalSecondsLeft === 1) {
+        setTimeout(() => {
+          if (this.inSchool && this.useVirtualBell) {
+            const bell = new Audio(bellAudio);
+            bell.volume = 0.05;
+            bell.play();
+          }
+        }, 1000);
       }
     },
     colored() {
@@ -294,19 +283,12 @@ export default {
     },
   },
   created() {
-    this.currentTime = dateToSeconds(this.date);
     if (localStorage.fullScreenColored === 'false') {
       this.colored = false;
     }
   },
-  mounted() {
-    this.initializeCountdown();
-  },
-  destroyed() {
-    clearInterval(this.interval);
-  },
   methods: {
-    ...mapActions(useScheduleStore, ['countdownDone', 'setScheduleMode']),
+    ...mapActions(useScheduleStore, ['setScheduleMode']),
     formatDate(date) {
       // Wednesday,
       // September 30
@@ -327,16 +309,6 @@ export default {
           year: 'numeric',
         })
         .replace(/\//g, '-');
-    },
-    initializeCountdown() {
-      this.stopCountdown();
-      // start an interval which increments the currentTime every seconds (everything else updates based on that)
-      this.interval = setInterval(() => {
-        this.currentTime++;
-      }, 1000);
-    },
-    stopCountdown() {
-      clearInterval(this.interval);
     },
     previousDay() {
       // e.srcEvent.preventDefault();
@@ -389,7 +361,7 @@ export default {
     background-size: cover
     +desktop
       background: url(@/assets/occasions/spy-full.png) center center no-repeat, var(--header-color)
-      
+
   &.minecraft
     background: url(@/assets/occasions/minecraft-mobile.png) center center no-repeat, var(--header-color)
     background-size: cover
