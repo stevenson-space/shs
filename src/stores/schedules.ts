@@ -13,7 +13,7 @@ interface State {
   urlDate: Date,
   startTime: number,
   currentTime: number,
-  countdownInterval: ReturnType<typeof setInterval> | null;
+  clockInterval: ReturnType<typeof setInterval> | null;
 }
 
 function parseUrlDateTime(route: RouteLocationNormalized): Date {
@@ -46,7 +46,7 @@ export default defineStore('schedules', {
     urlDate: new Date(), // relative to URL specified time (will be set when URL changes)
     startTime: Date.now(), // relative to real time
     currentTime: Date.now(), // relative to real time
-    countdownInterval: null
+    clockInterval: null
   }),
   getters: {
     schedules(state): ScheduleCollection[] { // we merge the officialSchedules provided by us and the user defined customSchedules
@@ -84,17 +84,17 @@ export default defineStore('schedules', {
     },
   },
   actions: {
-    stopCountdown(): void {
-      if (this.countdownInterval) {
-        clearInterval(this.countdownInterval);
-        this.countdownInterval = null;
+    stopClock(): void {
+      if (this.clockInterval) {
+        clearInterval(this.clockInterval);
+        this.clockInterval = null;
       }
     },
-    startCountdown(): void {
-      this.stopCountdown();
+    startClock(): void {
+      this.stopClock();
       if (this.mode === 'current') {
         this.currentTime = Date.now();
-        this.countdownInterval = setInterval(() => {
+        this.clockInterval = setInterval(() => {
           this.currentTime = Date.now();
         }, 1000);
       }
@@ -110,7 +110,7 @@ export default defineStore('schedules', {
       this.setMode(route);
       this.setUrlDate(route);
       this.setStartTime();
-      this.startCountdown();
+      this.startClock();
     },
     setUrlDate(route: RouteLocationNormalized): void {
       this.urlDate = parseUrlDateTime(route);
@@ -182,9 +182,9 @@ export default defineStore('schedules', {
       this.mode = !date || time ? 'current' : 'day';
 
       if (this.mode === 'current') {
-        this.startCountdown();
+        this.startClock();
       } else {
-        this.stopCountdown();
+        this.stopClock();
       }
     },
   },
