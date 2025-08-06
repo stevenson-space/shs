@@ -93,6 +93,7 @@ export default defineStore('schedules', {
     startCountdown(): void {
       this.stopCountdown();
       if (this.mode === 'current') {
+        this.currentTime = Date.now();
         this.countdownInterval = setInterval(() => {
           this.currentTime = Date.now();
         }, 1000);
