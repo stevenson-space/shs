@@ -39,7 +39,7 @@ export function schoolResumesString(bell: Bell, date: Date): string | null {
 
   // if school resumes on the same day or the next day, use 'today' or 'tomorrow' instead of the date
   let str;
-  if (bell.isSchoolDay && bell.period!.beforeSchool /* FIXME(Bell.schoolDay) */) {
+  if (bell.isSchoolDay && bell.period && bell.period.beforeSchool /* FIXME(Bell.schoolDay) */) {
     str = '\ntoday';
   } else {
     const dayDifference = getEpochDay(bell.nextSchoolDay) - getEpochDay(date);
