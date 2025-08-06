@@ -121,7 +121,7 @@ import { dateToSeconds, formatDate } from '@/utils/util';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
 import Announcements from './Announcements.vue';
-import { getSecondsUntilTargetPeriod, intoCountdownString, schoolResumesString } from "@/utils/countdown.js";
+import { intoCountdownString, schoolResumesString } from "@/utils/countdown.ts";
 
 export default {
   components: {
