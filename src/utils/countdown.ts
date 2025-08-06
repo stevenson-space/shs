@@ -1,5 +1,5 @@
 import Bell from "@/utils/bell";
-import { formatDate } from "@/utils/util";
+import {formatDate, periodToSeconds } from "@/utils/util";
 
 export function intoCountdownString(secondsLeft: number): string {
   if (secondsLeft < 0) {
@@ -50,4 +50,33 @@ export function schoolResumesString(bell: Bell, date: Date): string | null {
     }
   }
   return `School resumes ${str}`;
+}
+
+export function getSecondsUntilTargetPeriod(bell: Bell, date: Date): number {
+  if (bell.inSchool) {
+    // @ts-ignore FIXME(period-enum)
+    return periodToSeconds(bell.period!.end);
+  }
+  // if not currently in school, return seconds left until school starts
+  const { isSchoolDay, period, nextSchoolDay } = bell;
+  let dayDifference = 0;
+
+  // if before school, get the seconds until the first period today
+  let nextBell = bell;
+
+  // if no school or after school, get the first period on the next school day
+  if (!isSchoolDay || period!.afterSchool) {
+    dayDifference = Math.floor(
+      (nextSchoolDay.getTime() - date.getTime())
+      / 1000
+      / 60
+      / 60
+      / 24,
+    );
+    nextBell = new Bell(nextSchoolDay);
+  }
+
+  // return the start time of the next first period + 24 hours for each day elapsed in between
+  const firstPeriod = nextBell.schedule!.start[0];
+  return periodToSeconds(firstPeriod) + dayDifference * 24 * 60 * 60;
 }

@@ -117,12 +117,11 @@ import Snow from '@/components/Snow.vue';
 import useScheduleStore from '@/stores/schedules';
 import useThemeStore from '@/stores/themes';
 
-import Bell from '@/utils/bell';
-import { dateToSeconds, periodToSeconds, formatDate } from '@/utils/util';
+import { dateToSeconds, formatDate } from '@/utils/util';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
 import Announcements from './Announcements.vue';
-import { intoCountdownString, schoolResumesString } from "@/utils/countdown.js";
+import { getSecondsUntilTargetPeriod, intoCountdownString, schoolResumesString } from "@/utils/countdown.js";
 
 export default {
   components: {
@@ -169,31 +168,7 @@ export default {
     },
     endTime() {
       const { bell, date } = this;
-      if (bell.inSchool) {
-        return periodToSeconds(bell.period.end);
-      }
-      // if not currently in school, return seconds left until school starts
-      const { isSchoolDay, period, nextSchoolDay } = bell;
-      let dayDifference = 0;
-
-      // if before school, get the seconds until the first period today
-      let nextBell = bell;
-
-      // if no school or after school, get the first period on the next school day
-      if (!isSchoolDay || period.afterSchool) {
-        dayDifference = Math.floor(
-          (nextSchoolDay.getTime() - date.getTime())
-            / 1000
-            / 60
-            / 60
-            / 24,
-        );
-        nextBell = new Bell(nextSchoolDay);
-      }
-
-      // return the start time of the next first period + 24 hours for each day elapsed in between
-      const firstPeriod = nextBell.schedule.start[0];
-      return periodToSeconds(firstPeriod) + dayDifference * 24 * 60 * 60;
+      return getSecondsUntilTargetPeriod(bell, date);
     },
     totalSecondsLeft() {
       // this is seperated from endTime since totalSecondsLeft needs to be recalculated every
