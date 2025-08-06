@@ -104,7 +104,7 @@ class Bell {
     let dayDifference = 0;
 
     // if before school, get the seconds until the first period today
-    let nextBell = this;
+    let nextBell: Bell = this;
 
     // if no school or after school, get the first period on the next school day
     if (!isSchoolDay || period!.afterSchool) {
@@ -115,7 +115,6 @@ class Bell {
         / 60
         / 24,
       );
-      // @ts-ignore
       nextBell = new Bell(nextSchoolDay);
     }
 
