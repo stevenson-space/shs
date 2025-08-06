@@ -1,5 +1,5 @@
-import Bell from "@/utils/bell";
-import {formatDate, periodToSeconds } from "@/utils/util";
+import Bell from '@/utils/bell';
+import { formatDate } from '@/utils/util';
 
 export function intoCountdownString(secondsLeft: number): string {
   if (secondsLeft < 0) {
