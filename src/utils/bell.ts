@@ -97,7 +97,7 @@ class Bell {
   getSecondsUntilNextTarget(): number {
     if (this.inSchool) {
       // @ts-ignore FIXME(period-enum)
-      return periodToSeconds(bell.period!.end);
+      return periodToSeconds(this.period!.end);
     }
     // if not currently in school, return seconds left until school starts
     const { isSchoolDay, period, nextSchoolDay, date } = this;
