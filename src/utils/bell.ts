@@ -1,7 +1,7 @@
 import defaultSchedules from '@/data/schedules.json';
 import testDate from './dateparser';
 import { ScheduleCollection, Schedule, Period, SingleDaySchedule, SingleDayPeriods, MultiDaySchedule } from './types';
-import { deepCopy, is2DArray } from './util';
+import {deepCopy, is2DArray, periodToSeconds} from './util';
 
 // A type guard that states if `school` is true, then all the properties of bell (including `mode`,
 // `schedule`, and `period`) will have values specified
@@ -92,6 +92,36 @@ class Bell {
       }
     }
     return '';
+  }
+
+  getSecondsUntilNextTarget(): number {
+    if (this.inSchool) {
+      // @ts-ignore FIXME(period-enum)
+      return periodToSeconds(bell.period!.end);
+    }
+    // if not currently in school, return seconds left until school starts
+    const { isSchoolDay, period, nextSchoolDay, date } = this;
+    let dayDifference = 0;
+
+    // if before school, get the seconds until the first period today
+    let nextBell = this;
+
+    // if no school or after school, get the first period on the next school day
+    if (!isSchoolDay || period!.afterSchool) {
+      dayDifference = Math.floor(
+        (nextSchoolDay.getTime() - date.getTime())
+        / 1000
+        / 60
+        / 60
+        / 24,
+      );
+      // @ts-ignore
+      nextBell = new Bell(nextSchoolDay);
+    }
+
+    // return the start time of the next first period + 24 hours for each day elapsed in between
+    const firstPeriod = nextBell.schedule!.start[0];
+    return periodToSeconds(firstPeriod) + dayDifference * 24 * 60 * 60;
   }
 
   /**

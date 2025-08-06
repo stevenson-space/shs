@@ -167,8 +167,8 @@ export default {
       };
     },
     endTime() {
-      const { bell, date } = this;
-      return getSecondsUntilTargetPeriod(bell, date);
+      const { bell } = this;
+      return bell.getSecondsUntilNextTarget();
     },
     totalSecondsLeft() {
       // this is seperated from endTime since totalSecondsLeft needs to be recalculated every
