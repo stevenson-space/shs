@@ -6,13 +6,13 @@ import { tryParseJSON, getNameWithoutConflicts } from '@/utils/util';
 import Bell from '@/utils/bell';
 
 interface State {
-  customSchedules: CustomSchedules,
-  defaultScheduleMode: string,
-  scheduleMode: string,
-  mode: string,
-  urlDate: Date,
-  startTime: number,
-  currentTime: number,
+  customSchedules: CustomSchedules;
+  defaultScheduleMode: string;
+  scheduleMode: string;
+  mode: string;
+  urlDate: Date;
+  startTime: number;
+  currentTime: number;
   clockInterval: ReturnType<typeof setInterval> | null;
 }
 
