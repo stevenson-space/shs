@@ -82,7 +82,7 @@ import NewFeatureCard from "@/components/cards/NewFeatureCard.vue";
 import EndOfYearCard from "@/components/cards/EndOfYearCard.vue";
 import Confetti from "@/components/cards/ConfettiCard.vue";
 import CountdownCard from "@/components/cards/CountdownCard.vue";
-import useScheduleStore from "@/stores/schedules";
+import useClockStore from "@/stores/clock";
 import useThemeStore from "@/stores/themes";
 import ScheduleHeader from "./Header.vue";
 
@@ -126,7 +126,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(useScheduleStore, ["startClock"]),
+    ...mapActions(useClockStore, ["startClock"]),
   },
   created() {
     // Sometimes the interval used in Header.vue stops when the tab leaves focus

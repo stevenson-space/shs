@@ -10,7 +10,7 @@
       />
 
       <div class="center">
-        <template v-if="mode === 'current'">
+        <template v-if="clockMode === 'current'">
           <div class="range">{{ range }}</div>
 
           <div v-if="inSchool" class="period">
@@ -49,6 +49,7 @@ import { mapState, mapActions } from 'pinia';
 import Dropdown from '@/components/Dropdown.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import useScheduleStore from '@/stores/schedules';
+import useClockStore from '@/stores/clock';
 
 export default {
   components: { Dropdown, RoundedButton },
@@ -61,7 +62,7 @@ export default {
     fullScreenMode: { type: Boolean, default: false },
   },
   computed: {
-    ...mapState(useScheduleStore, ['mode', 'bell']),
+    ...mapState(useClockStore, ['clockMode', 'bell']),
   },
   methods: {
     ...mapActions(useScheduleStore, ['setScheduleMode']),

@@ -51,7 +51,7 @@
 import { mapState } from 'pinia';
 import Bell from '@/utils/bell';
 import { dateToSeconds, periodToSeconds } from '@/utils/util';
-import useScheduleStore from '@/stores/schedules';
+import useClockStore from '@/stores/clock';
 
 export default {
   props: {
@@ -69,7 +69,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(useScheduleStore, ['date']),
+    ...mapState(useClockStore, ['date']),
     normalizedRadius() {
       return this.radius - this.stroke * 2;
     },

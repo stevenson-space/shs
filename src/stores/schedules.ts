@@ -9,31 +9,6 @@ interface State {
   customSchedules: CustomSchedules;
   defaultScheduleMode: string;
   scheduleMode: string;
-  mode: string;
-  urlDate: Date;
-  startTime: number;
-  currentTime: number;
-  clockInterval: ReturnType<typeof setInterval> | null;
-}
-
-function parseUrlDateTime(route: RouteLocationNormalized): Date {
-  // If date and/or time is specified in URL, return that date
-  // Otherwise, return current date
-  let { date = '', time = '' } = route.query;
-  if (!date) date = '';
-  if (!time) time = '';
-
-  if (!Array.isArray(time) && !Array.isArray(date)) { // make sure multiple values weren't specified in URL for each
-    time = time.replace(/\./g, ':'); // lets you use "." (url safe) instead of ":" (not url safe)
-    date = date.replace(/-/g, '/'); // lets you use "-" instead of "/"
-
-    const today = new Date();
-    const todayDate = today.toLocaleDateString();
-    const todayTime = today.toLocaleTimeString();
-
-    return new Date(`${date || todayDate} ${time || todayTime}`);
-  }
-  return new Date();
 }
 
 export default defineStore('schedules', {
@@ -42,11 +17,6 @@ export default defineStore('schedules', {
     customSchedules: {} as CustomSchedules,
     defaultScheduleMode: 'Normal',
     scheduleMode: '',
-    mode: 'current',
-    urlDate: new Date(), // relative to URL specified time (will be set when URL changes)
-    startTime: Date.now(), // relative to real time
-    currentTime: Date.now(), // relative to real time
-    clockInterval: null
   }),
   getters: {
     schedules(state): ScheduleCollection[] { // we merge the officialSchedules provided by us and the user defined customSchedules
@@ -67,38 +37,8 @@ export default defineStore('schedules', {
       }
       return schedules;
     },
-
-    date(): Date {
-      const { urlDate, startTime, currentTime } = this;
-      const date = new Date(
-        (urlDate.getTime()) + (currentTime - startTime),
-      );
-      // if mode is 'day' return date at time 0:00 instead (to get range string for whole day instead for current period)
-      return this.mode === 'current'
-        ? date
-        : new Date(date.toLocaleDateString());
-    },
-
-    bell(otherGetters: any): Bell {
-      return new Bell(otherGetters.date, otherGetters.schedules, this.scheduleMode);
-    },
   },
   actions: {
-    stopClock(): void {
-      if (this.clockInterval) {
-        clearInterval(this.clockInterval);
-        this.clockInterval = null;
-      }
-    },
-    startClock(): void {
-      this.stopClock();
-      if (this.mode === 'current') {
-        this.currentTime = Date.now();
-        this.clockInterval = setInterval(() => {
-          this.currentTime = Date.now();
-        }, 1000);
-      }
-    },
     initializeSchedule(): void {
       this.setCustomSchedules(tryParseJSON(localStorage.customSchedules) as CustomSchedules);
       if (localStorage.defaultScheduleMode) {
@@ -106,19 +46,6 @@ export default defineStore('schedules', {
         this.setScheduleMode(localStorage.defaultScheduleMode);
       }
     },
-    pageLoaded(route: RouteLocationNormalized): void {
-      this.setMode(route);
-      this.setUrlDate(route);
-      this.setStartTime();
-      this.startClock();
-    },
-    setUrlDate(route: RouteLocationNormalized): void {
-      this.urlDate = parseUrlDateTime(route);
-    },
-    setStartTime(): void {
-      this.startTime = Date.now();
-    },
-
     addCustomScheduleMode({ scheduleType, scheduleToAdd, scheduleToReplace }: { scheduleType: string, scheduleToAdd: { start: string[], end: string[], name: string, periods: string }, scheduleToReplace: string }): void {
       // If scheduleToReplace is not defined, then we want to just add to end of scheduleModes list
       const scheduleModes = (this.customSchedules || {})[scheduleType] || [] as CustomSchedules[];
@@ -174,18 +101,6 @@ export default defineStore('schedules', {
     },
     setScheduleMode(scheduleMode: string): void {
       this.scheduleMode = scheduleMode;
-    },
-    setMode(route: RouteLocationNormalized): void {
-      // if 'date' url parameter is specified, 'day' mode is triggered
-      // the 'time' url parameter is to be used for testing and forces the mode to 'current' regardless of date
-      const { date, time } = route.query;
-      this.mode = !date || time ? 'current' : 'day';
-
-      if (this.mode === 'current') {
-        this.startClock();
-      } else {
-        this.stopClock();
-      }
     },
   },
 });

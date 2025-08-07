@@ -45,7 +45,7 @@ import EventChip from '@/components/EventChip.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import { mapState } from 'pinia';
 import Bell from '@/utils/bell';
-import useScheduleStore from '@/stores/schedules';
+import useClockStore from '@/stores/clock';
 
 function getNextEvent(startDate) {
   // Generator that yields sequential dates starting from the day after start
@@ -101,7 +101,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(useScheduleStore, ['date']),
+    ...mapState(useClockStore, ['date']),
     displayedEvents() {
       // Only display numEventsDisplayed events even if the events array contains more
       // and display blank placeholders if no events (possibly still loading)

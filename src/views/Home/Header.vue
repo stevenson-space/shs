@@ -57,7 +57,7 @@
         />
       </div>
       <div
-        v-show="mode === 'current'"
+        v-show="clockMode === 'current'"
         @click="toggleFullScreen"
         class="icon full-screen-mode"
       >
@@ -67,7 +67,7 @@
         />
       </div>
       <div
-        v-show="mode === 'current'"
+        v-show="clockMode === 'current'"
         @click="toggleVirtualBell"
         class="icon virtual-bell-toggle"
       >
@@ -114,6 +114,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from '@/components/Dropdown.vue';
 import Snow from '@/components/Snow.vue';
+import useClockStore from '@/stores/clock';
 import useScheduleStore from '@/stores/schedules';
 import useThemeStore from '@/stores/themes';
 
@@ -156,7 +157,7 @@ export default {
   computed: {
     // this automatically gets the following properties from the store and adds them as computed properties
     ...mapState(useThemeStore, ['theme']),
-    ...mapState(useScheduleStore, ['mode', 'date', 'bell']),
+    ...mapState(useClockStore, ['clockMode', 'date', 'bell']),
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
       return {

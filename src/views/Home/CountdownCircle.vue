@@ -1,14 +1,14 @@
 <template>
   <div class="circle" :class="{ 'full-screen': fullScreenMode }">
     <img :src="patriot" class="logo">
-    <div v-if="mode === 'current'" class="countdown">
+    <div v-if="clockMode === 'current'" class="countdown">
       {{ countdown }}
     </div>
     <div v-else class="range">
       {{ range }}
     </div>
 
-    <div v-if="inSchool || mode === 'day'" class="type">
+    <div v-if="inSchool || clockMode === 'day'" class="type">
       {{ scheduleType }}
     </div>
     <div v-else class="next-day">{{ nextDay }}</div>
@@ -18,7 +18,7 @@
 <script>
 import { mapState } from 'pinia';
 import patriot from '@/assets/patriot-logo-party.png';
-import useScheduleStore from '@/stores/schedules';
+import useClockStore from '@/stores/clock'
 
 export default {
   props: {
@@ -30,7 +30,7 @@ export default {
     fullScreenMode: { type: Boolean, default: false },
   },
   computed: {
-    ...mapState(useScheduleStore, ['mode']),
+    ...mapState(useClockStore, ['clockMode']),
   },
   data() {
     return {

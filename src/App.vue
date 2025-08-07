@@ -8,6 +8,7 @@
 import { mapState, mapActions } from 'pinia';
 import useThemeStore from '@/stores/themes';
 import useScheduleStore from '@/stores/schedules';
+import useClockStore from '@/stores/clock';
 import useUserSettingsStore from '@/stores/user-settings';
 
 export default {
@@ -29,7 +30,8 @@ export default {
     },
   },
   methods: {
-    ...mapActions(useScheduleStore, ['initializeSchedule', 'pageLoaded']),
+    ...mapActions(useScheduleStore, ['initializeSchedule']),
+    ...mapActions(useClockStore, ['pageLoaded']),
     ...mapActions(useThemeStore, ['initializeTheme']),
     ...mapActions(useUserSettingsStore, ['initializeGrade', 'initializeShowPWCSchedule']),
   },
