@@ -27,6 +27,15 @@ export function toSeconds(hour = 0, minute = 0, second = 0): number {
   return (hour * 60 + minute) * 60 + second;
 }
 
+export function formatDate(date: Date): string {
+  return date
+    .toLocaleDateString('en-US', {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+    });
+}
+
 // Calculates the number of seconds since 12:00AM on given date, up to the time
 // on the given date
 export function dateToSeconds(date: Date): number {

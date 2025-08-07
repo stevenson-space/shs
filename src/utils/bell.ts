@@ -1,23 +1,33 @@
 import defaultSchedules from '@/data/schedules.json';
 import testDate from './dateparser';
 import { ScheduleCollection, Schedule, Period, SingleDaySchedule, SingleDayPeriods, MultiDaySchedule } from './types';
-import { deepCopy, is2DArray } from './util';
+import {deepCopy, is2DArray, periodToSeconds} from './util';
 
 // A type guard that states if `school` is true, then all the properties of bell (including `mode`,
 // `schedule`, and `period`) will have values specified
 export function isBellOnSchoolDay(bell: Bell): bell is Required<Bell> {
-  return bell?.school;
+  return bell?.isSchoolDay;
 }
 
 class Bell {
+  // current active date? if not live, this is whatever date it's on
   date: Date;
-  school: boolean;
+  // if there is school on the current day
+  isSchoolDay: boolean;
+  // "Standard Schedule", "Late Arrival", "No School", "No School (Weekend)"
   type: string;
+  // list of all the schedules?
   modes: Schedule[];
+  // FIXME: corresponds to field in json, doesn't need to be stored by bell
   dates: string[];
+  // "Normal", "Half Periods", ..
   mode?: string;
+  // has period times, schedule name, and period names
   schedule?: SingleDaySchedule;
+  // current period name, start, and end time
+  // can be before school or after school as well
   period?: Period;
+  // date of next school day
   nextSchoolDay: Date;
 
   /**
@@ -31,7 +41,7 @@ class Bell {
     const schedule = Bell.getSchedule(scheduleType.modes, scheduleMode);
 
     this.date = date;
-    this.school = !!schedule;
+    this.isSchoolDay = !!schedule;
     this.type = scheduleType.name; // "Standard Schedule", "Late Arrival", "No School", ...
     this.modes = scheduleType.modes;
     this.dates = scheduleType.dates;
@@ -43,6 +53,15 @@ class Bell {
     }
 
     this.nextSchoolDay = Bell.getNextSchoolDay(date, schedules);
+  }
+
+  get inSchool(): boolean {
+    // FIXME(bell.schoolDay)
+    return (
+      this.isSchoolDay
+      && !this.period!.afterSchool
+      && !this.period!.beforeSchool
+    );
   }
 
   /**
@@ -73,6 +92,35 @@ class Bell {
       }
     }
     return '';
+  }
+
+  getSecondsUntilNextTarget(): number {
+    if (this.inSchool) {
+      // @ts-ignore FIXME(period-enum)
+      return periodToSeconds(this.period!.end);
+    }
+    // if not currently in school, return seconds left until school starts
+    const { isSchoolDay, period, nextSchoolDay, date } = this;
+    let dayDifference = 0;
+
+    // if before school, get the seconds until the first period today
+    let nextBell: Bell = this;
+
+    // if no school or after school, get the first period on the next school day
+    if (!isSchoolDay || period!.afterSchool) {
+      dayDifference = Math.floor(
+        (nextSchoolDay.getTime() - date.getTime())
+        / 1000
+        / 60
+        / 60
+        / 24,
+      );
+      nextBell = new Bell(nextSchoolDay);
+    }
+
+    // return the start time of the next first period + 24 hours for each day elapsed in between
+    const firstPeriod = nextBell.schedule!.start[0];
+    return periodToSeconds(firstPeriod) + dayDifference * 24 * 60 * 60;
   }
 
   /**
