@@ -13,11 +13,13 @@ jobs:
   check-approvals:
     name: check-approvals
     runs-on: ubuntu-latest
+    env:
+      TEAM_MEMBERS_TOKEN: ${{ secrets.TEAM_MEMBERS_TOKEN }}
     steps:
       - name: Validate approvals from required users
         uses: actions/github-script@v7
         with:
-          # Use the default token for repo-scope APIs; use TEAM_MEMBERS_TOKEN only for team membership lookups inside the script
+          # Use default token for PR operations
           github-token: ${{ github.token }}
           script: |
             const pr = context.payload.pull_request;
@@ -39,9 +41,7 @@ jobs:
             let teamMembers = [];
             try {
               const teamToken = process.env.TEAM_MEMBERS_TOKEN;
-              const teamRequest = teamToken
-                ? github.request.defaults({ headers: { authorization: `token ${teamToken}` } })
-                : github.request;
+              const teamRequest = github.request.defaults({ headers: { authorization: `token ${teamToken}` } })
               let page = 1;
               while (true) {
                 const { data } = await teamRequest('GET /orgs/{org}/teams/{team_slug}/members', { org: teamOrg, team_slug: teamSlug, per_page: 100, page });
@@ -51,7 +51,7 @@ jobs:
                 if (page > 20) break; // safety cap
               }
             } catch (e) {
-              core.setFailed(`Unable to list team members for ${teamOrg}/${teamSlug}. Provide TEAM_MEMBERS_TOKEN with read:org (or equivalent). ${e.message}`);
+              core.setFailed(`Unable to list team members for ${teamOrg}/${teamSlug}. Ensure TEAM_MEMBERS_TOKEN has read:org permissions. ${e.message}`);
               return;
             }
 
