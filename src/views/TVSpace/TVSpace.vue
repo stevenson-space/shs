@@ -2,10 +2,10 @@
   <div class="page">
     <Card>
       <div class="container">
-        <span class="countdown">
+        <span class="countdown center">
           {{ intoCountdownString(this.totalSecondsLeft) }}
         </span>
-        <h6>{{ this.bell.type.toUpperCase() }}</h6>
+        <span class="schedule-name center">{{ this.bell.type.toUpperCase() }}</span>
         <ScrollablePeriodList/>
       </div>
     </Card>
@@ -52,7 +52,6 @@ export default {
 .container
   display: flex
   flex-direction: column
-  align-items: center
   gap: 2px
   padding: 6px
   background: var(--background)
@@ -60,15 +59,18 @@ export default {
   border-radius: 15px
   font-weight: bold
 
+  .center
+    text-align: center
+    width: 100%
+
   .countdown
     font-size: 3em
     line-height: 1em
     color: var(--secondary)
     margin-top: 8px
 
-  h6
-    color: darkgrey
-    font-size: large
-    padding-bottom: 8px
-    margin: 8px
+  .schedule-name
+    color: dimgray
+    font-weight: bolder
+    font-size: 1.5em
 </style>
