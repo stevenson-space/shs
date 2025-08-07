@@ -6,9 +6,9 @@
           {{ intoCountdownString(this.totalSecondsLeft) }}
         </span>
         <h6>{{ this.bell.type.toUpperCase() }}</h6>
+        <ScrollablePeriodList/>
       </div>
     </Card>
-    <ScheduleCard title=""/>
   </div>
 </template>
 
@@ -19,9 +19,11 @@ import Card from "@/components/Card.vue";
 import { intoCountdownString } from '@/utils/countdown';
 import { mapState } from "pinia";
 import {dateToSeconds} from "@/utils/util";
+import ScrollablePeriodList from "@/components/ScrollablePeriodList.vue";
 
 export default {
   components: {
+    ScrollablePeriodList,
     ScheduleCard,
     Card
   },
