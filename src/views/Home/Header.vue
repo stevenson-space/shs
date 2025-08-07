@@ -198,7 +198,7 @@ export default {
     date() {
       if (this.totalSecondsLeft === 1) {
         setTimeout(() => {
-          if (this.inSchool && this.useVirtualBell) {
+          if (this.bell.inSchool && this.useVirtualBell) {
             const bell = new Audio(bellAudio);
             bell.volume = 0.05;
             bell.play();
