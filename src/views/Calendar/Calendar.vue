@@ -54,6 +54,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(useClockStore, ['date']),
     childProps() {
       const {
         today, month, year, dates, schedules, categories, filteredEvents,
@@ -195,12 +196,11 @@ export default {
     },
   },
   created() {
-    this.today = this.date();
+    this.today = this.date;
     this.month = this.today.getMonth();
     this.year = this.today.getFullYear();
   },
   methods: {
-    ...mapState(useClockStore, ['date']),
     nextMonth() {
       this.month++;
       if (this.month >= 12) {
