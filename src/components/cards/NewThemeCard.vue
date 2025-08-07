@@ -23,14 +23,14 @@ import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
 import { mapState, mapActions } from 'pinia';
-import useScheduleStore from '@/stores/schedules';
+import useClockStore from '@/stores/clock';
 import useThemeStore from '@/stores/themes';
 
 export default {
   components: { Card, RoundedButton, ThemeChangeModal },
   computed: {
     ...mapState(useThemeStore, ['theme', 'color']),
-    ...mapState(useScheduleStore, ['date']),
+    ...mapState(useClockStore, ['date']),
     newTheme() { // finds a seasonal theme that within the current date
       for (const x of this.themes) {
         const { schedule } = x;

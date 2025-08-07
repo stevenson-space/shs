@@ -33,7 +33,7 @@ import Period from '@/components/Period.vue';
 import Dropdown from '@/components/Dropdown.vue';
 import ScrollSelector from '@/components/ScrollSelector.vue';
 import Bell from '@/utils/bell';
-import useScheduleStore from '@/stores/schedules';
+import useClockStore from '@/stores/clock';
 import MultiDayPeriod from './MultiDayPeriod.vue';
 
 export default {
@@ -55,7 +55,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(useScheduleStore, ['bell']),
+    ...mapState(useClockStore, ['bell']),
 
     selectedModeString() {
       return this.dropdownOptions[this.selectedMode];

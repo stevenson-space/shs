@@ -15,7 +15,7 @@
 import { mapState } from 'pinia';
 import Card from '@/components/Card.vue';
 import useUserSettingsStore from '@/stores/user-settings';
-import useScheduleStore from '@/stores/schedules';
+import useClockStore from '@/stores/clock';
 
 export default {
   components: { Card },
@@ -49,7 +49,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(useScheduleStore, ['date']),
+    ...mapState(useClockStore, ['date']),
     ...mapState(useUserSettingsStore, ['showPWCSchedule']),
     currentTime() {
       return new Date(this.currentTimeMs);

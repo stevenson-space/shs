@@ -32,7 +32,7 @@ import WhatIsThis from '@/components/WhatIsThis.vue';
 import { mapState, mapActions } from 'pinia';
 import { defineComponent } from 'vue';
 import useThemeStore from '@/stores/themes';
-import useScheduleStore from '@/stores/schedules';
+import useClockStore from '@/stores/clock';
 import { MapStateToComputed, Theme } from '@/utils/types';
 
 type ThemeStoreState = {
@@ -40,7 +40,7 @@ type ThemeStoreState = {
   color: string;
 }
 
-type ScheduleStoreState = {
+type ClockStoreState = {
   date: Date;
 }
 
@@ -48,7 +48,7 @@ export default defineComponent({
   components: { themeCircle, ThemeChangeModal, WhatIsThis },
   computed: {
     ...(mapState(useThemeStore, ['theme', 'color']) as MapStateToComputed<ThemeStoreState>),
-    ...(mapState(useScheduleStore, ['date']) as MapStateToComputed<ScheduleStoreState>),
+    ...(mapState(useClockStore, ['date']) as MapStateToComputed<ClockStoreState>),
   },
   data() {
     return {

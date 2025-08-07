@@ -51,7 +51,7 @@
 import { mapState } from 'pinia';
 import Bell from '@/utils/bell';
 import { dateToSeconds, periodToSeconds } from '@/utils/util';
-import useScheduleStore from '@/stores/schedules';
+import useClockStore from '@/stores/clock';
 
 export default {
   props: {
@@ -66,12 +66,10 @@ export default {
     return {
       radius: 22, // radius of the progress bar
       stroke: 3, // stroke of the progress bar
-      currentSeconds: 0, // seconds since 12:00am
-      interval: null, // interval for updating the current seconds
     };
   },
   computed: {
-    ...mapState(useScheduleStore, ['date']),
+    ...mapState(useClockStore, ['date']),
     normalizedRadius() {
       return this.radius - this.stroke * 2;
     },
@@ -94,7 +92,8 @@ export default {
       return periodToSeconds(this.end);
     },
     progress() {
-      const { startSeconds, endSeconds, currentSeconds } = this;
+      const currentSeconds = dateToSeconds(this.date);
+      const { startSeconds, endSeconds } = this;
       if (currentSeconds >= startSeconds && currentSeconds <= endSeconds) {
         if (currentSeconds - startSeconds < 1) { // fancy animation when the period starts
           return 0.00001;
@@ -111,36 +110,6 @@ export default {
   },
   methods: {
     convertMilitaryTime: Bell.convertMilitaryTime,
-    stopInterval() {
-      clearInterval(this.interval);
-      this.interval = null;
-    },
-    startInterval() {
-      this.stopInterval();
-      this.interval = setInterval(() => {
-        this.currentSeconds++;
-      }, 1000);
-    },
-    startIntervalIfCurrentPeriod() {
-      this.currentSeconds = dateToSeconds(this.date);
-      const { startSeconds, endSeconds, currentSeconds } = this;
-      if (currentSeconds >= startSeconds && currentSeconds <= endSeconds) {
-        this.startInterval();
-      } else {
-        this.stopInterval();
-      }
-    },
-  },
-  created() {
-    this.currentSeconds = dateToSeconds(this.date);
-  },
-  mounted() {
-    this.startIntervalIfCurrentPeriod();
-  },
-  watch: {
-    date() {
-      this.startIntervalIfCurrentPeriod();
-    },
   },
 };
 </script>

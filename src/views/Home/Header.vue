@@ -57,7 +57,7 @@
         />
       </div>
       <div
-        v-show="mode === 'current'"
+        v-show="clockMode === 'current'"
         @click="toggleFullScreen"
         class="icon full-screen-mode"
       >
@@ -67,7 +67,7 @@
         />
       </div>
       <div
-        v-show="mode === 'current'"
+        v-show="clockMode === 'current'"
         @click="toggleVirtualBell"
         class="icon virtual-bell-toggle"
       >
@@ -114,14 +114,16 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from '@/components/Dropdown.vue';
 import Snow from '@/components/Snow.vue';
+import useClockStore from '@/stores/clock';
 import useScheduleStore from '@/stores/schedules';
 import useThemeStore from '@/stores/themes';
 
+import Bell from '@/utils/bell';
 import { dateToSeconds, formatDate } from '@/utils/util';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
 import Announcements from './Announcements.vue';
-import { intoCountdownString, schoolResumesString } from "@/utils/countdown.ts";
+import { intoCountdownString, schoolResumesString } from '@/utils/countdown.ts';
 
 export default {
   components: {
@@ -148,8 +150,6 @@ export default {
       },
       heart,
       snowflake,
-      currentTime: 0, // seconds since 12:00am
-      interval: null,
       colored: true,
       useVirtualBell: false,
       starryNight,
@@ -158,7 +158,7 @@ export default {
   computed: {
     // this automatically gets the following properties from the store and adds them as computed properties
     ...mapState(useThemeStore, ['theme']),
-    ...mapState(useScheduleStore, ['mode', 'date', 'bell']),
+    ...mapState(useClockStore, ['clockMode', 'date', 'bell']),
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
       return {
@@ -172,7 +172,7 @@ export default {
     totalSecondsLeft() {
       // this is seperated from endTime since totalSecondsLeft needs to be recalculated every
       // second while endTime (which is computationally expensive) does not
-      return this.endTime - this.currentTime;
+      return this.endTime - dateToSeconds(this.date);
     },
     tomorrow() {
       // Date object for the next day, used for the arrow right
@@ -195,24 +195,15 @@ export default {
     },
   },
   watch: {
-    mode() {
-      if (this.mode === 'current') {
-        this.initializeCountdown();
-      } else {
-        this.stopCountdown();
-      }
-    },
     date() {
-      this.currentTime = dateToSeconds(this.date);
-    },
-    totalSecondsLeft() {
-      if (this.totalSecondsLeft <= 0) {
-        this.countdownDone();
-        if (this.bell.inSchool && this.useVirtualBell) {
-          const bell = new Audio(bellAudio);
-          bell.volume = 0.05;
-          bell.play();
-        }
+      if (this.totalSecondsLeft === 1) {
+        setTimeout(() => {
+          if (this.bell.inSchool && this.useVirtualBell) {
+            const bell = new Audio(bellAudio);
+            bell.volume = 0.05;
+            bell.play();
+          }
+        }, 1000);
       }
     },
     colored() {
@@ -220,22 +211,15 @@ export default {
     },
   },
   created() {
-    this.currentTime = dateToSeconds(this.date);
     if (localStorage.fullScreenColored === 'false') {
       this.colored = false;
     }
-  },
-  mounted() {
-    this.initializeCountdown();
-  },
-  destroyed() {
-    clearInterval(this.interval);
   },
   methods: {
     formatDate,
     schoolResumesString,
     intoCountdownString,
-    ...mapActions(useScheduleStore, ['countdownDone', 'setScheduleMode']),
+    ...mapActions(useScheduleStore, ['setScheduleMode']),
     formatDateUrl(date) {
       // e.g. "6-11-2018"
       return date
@@ -245,16 +229,6 @@ export default {
           year: 'numeric',
         })
         .replace(/\//g, '-');
-    },
-    initializeCountdown() {
-      this.stopCountdown();
-      // start an interval which increments the currentTime every seconds (everything else updates based on that)
-      this.interval = setInterval(() => {
-        this.currentTime++;
-      }, 1000);
-    },
-    stopCountdown() {
-      clearInterval(this.interval);
     },
     previousDay() {
       // e.srcEvent.preventDefault();

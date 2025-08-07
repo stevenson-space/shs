@@ -29,7 +29,7 @@
 <script>
 import { mapState } from 'pinia';
 import allEvents from '@/data/events.json';
-import useScheduleStore from '@/stores/schedules';
+import useClockStore from '@/stores/clock';
 import Bell from '@/utils/bell';
 import CalendarMain from './CalendarMain.vue';
 import CalendarMobile from './CalendarMobile.vue';
@@ -54,6 +54,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(useClockStore, ['date']),
     childProps() {
       const {
         today, month, year, dates, schedules, categories, filteredEvents,
@@ -195,12 +196,11 @@ export default {
     },
   },
   created() {
-    this.today = this.date();
+    this.today = this.date;
     this.month = this.today.getMonth();
     this.year = this.today.getFullYear();
   },
   methods: {
-    ...mapState(useScheduleStore, ['date']),
     nextMonth() {
       this.month++;
       if (this.month >= 12) {

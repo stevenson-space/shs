@@ -39,7 +39,7 @@ import Card from '@/components/Card.vue';
 import Period from '@/components/Period.vue';
 import { mapState } from 'pinia';
 import { isBellOnSchoolDay } from '@/utils/bell';
-import useScheduleStore from '@/stores/schedules';
+import useClockStore from '@/stores/clock';
 
 export default {
   components: { Card, Period },
@@ -49,7 +49,7 @@ export default {
     maxHeight: { type: String, default: null },
   },
   computed: {
-    ...mapState(useScheduleStore, ['bell']),
+    ...mapState(useClockStore, ['bell']),
 
     periods() {
       const convertPeriods = ({ start, end, periods }, currentPeriodName) => periods.map((period, i) => ({
