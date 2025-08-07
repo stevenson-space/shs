@@ -1,12 +1,16 @@
 <template>
   <div class="page">
-    <Card>
+    <Card
+      class="card"
+      :ignoreStyleMutations="true"
+      @height-change="onHeightChange"
+    >
       <div class="container">
         <span class="countdown center">
           {{ intoCountdownString(this.totalSecondsLeft) }}
         </span>
         <span class="schedule-name center">{{ this.bell.type.toUpperCase() }}</span>
-        <ScrollablePeriodList/>
+        <ScrollablePeriodList ref="periodList"/>
       </div>
     </Card>
   </div>
@@ -35,6 +39,9 @@ export default {
   },
   methods: {
     intoCountdownString,
+    onHeightChange() {
+      this.$refs.periodList?.scrollToCurrentPeriod();
+    }
   }
 }
 </script>
