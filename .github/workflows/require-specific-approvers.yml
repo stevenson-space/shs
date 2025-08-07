@@ -1,8 +1,10 @@
 name: Require dedicated contributor approval
 
 on:
-  pull_request:
+  # Use pull_request_target so secrets are available for forks; do NOT checkout PR code in this job
+  pull_request_target:
     types: [opened, reopened, synchronize, ready_for_review]
+  # Keep review events for same-repo PRs; for forks, the target run above enforces the rule
   pull_request_review:
     types: [submitted, dismissed]
 
@@ -41,17 +43,34 @@ jobs:
             let teamMembers = [];
             try {
               const teamToken = process.env.TEAM_MEMBERS_TOKEN;
-              const teamRequest = github.request.defaults({ headers: { authorization: `token ${teamToken}` } })
+              if (!teamToken) {
+                core.setFailed('TEAM_MEMBERS_TOKEN is not set. Add a repo secret with a PAT that has read:org.');
+                return;
+              }
               let page = 1;
               while (true) {
-                const { data } = await teamRequest('GET /orgs/{org}/teams/{team_slug}/members', { org: teamOrg, team_slug: teamSlug, per_page: 100, page });
+                const url = `https://api.github.com/orgs/${teamOrg}/teams/${teamSlug}/members?per_page=100&page=${page}`;
+                const res = await fetch(url, {
+                  headers: {
+                    'Authorization': `Bearer ${teamToken}`,
+                    'Accept': 'application/vnd.github+json',
+                    'X-GitHub-Api-Version': '2022-11-28',
+                    'User-Agent': 'actions/github-script'
+                  }
+                });
+                if (!res.ok) {
+                  const text = await res.text();
+                  core.setFailed(`Failed to list team members (${teamOrg}/${teamSlug}): HTTP ${res.status}. ${text}`);
+                  return;
+                }
+                const data = await res.json();
                 teamMembers = teamMembers.concat((data || []).map(u => (u.login || '').toLowerCase()).filter(Boolean));
-                if (!data || data.length < 100) break;
+                if (!Array.isArray(data) || data.length < 100) break;
                 page += 1;
                 if (page > 20) break; // safety cap
               }
             } catch (e) {
-              core.setFailed(`Unable to list team members for ${teamOrg}/${teamSlug}. Ensure TEAM_MEMBERS_TOKEN has read:org permissions. ${e.message}`);
+              core.setFailed(`Unable to list team members for ${teamOrg}/${teamSlug}. ${e && e.message ? e.message : e}`);
               return;
             }
 
