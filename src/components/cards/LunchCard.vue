@@ -1,5 +1,5 @@
 <template>
-  <card v-show="bell?.school && bell?.type != 'Summer' && (lunch || noLunchData)">
+  <card v-show="bell?.isSchoolDay && bell?.type != 'Summer' && (lunch || noLunchData)">
     <div class="title">Lunch</div>
     <div v-if="noLunchData" class="no-data lunch">
           No Lunch Data

@@ -31,10 +31,10 @@
 
       <div>
         <countdown-circle
-          :in-school="inSchool"
-          :countdown="countdownString"
+          :in-school="bell.inSchool"
+          :countdown="intoCountdownString(this.totalSecondsLeft)"
           :range="bell.getRange()"
-          :next-day="nextDayString"
+          :next-day="schoolResumesString(this.bell, this.date)?.replace(',', ',\n') ?? null"
           :schedule-type="bell.type"
           :full-screen-mode="fullScreenMode"
         />
@@ -79,7 +79,7 @@
     </div>
 
     <header-schedule
-      :in-school="inSchool"
+      :in-school="bell.inSchool"
       :period="bell.getPeriodName()"
       :range="bell.getRange()"
       :schedule-type="bell.type"
@@ -119,10 +119,11 @@ import useScheduleStore from '@/stores/schedules';
 import useThemeStore from '@/stores/themes';
 
 import Bell from '@/utils/bell';
-import { dateToSeconds, periodToSeconds } from '@/utils/util';
+import { dateToSeconds, formatDate } from '@/utils/util';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
 import Announcements from './Announcements.vue';
+import { intoCountdownString, schoolResumesString } from '@/utils/countdown.ts';
 
 export default {
   components: {
@@ -165,87 +166,13 @@ export default {
         '--header-accent': showColor ? 'white' : 'var(--color)',
       };
     },
-    inSchool() {
-      // To be in school, there must be school that day and we must not be before or after school
-      const { bell } = this;
-      return (
-        bell.school
-        && !bell.period.afterSchool
-        && !bell.period.beforeSchool
-      );
-    },
     endTime() {
-      const { bell, date, inSchool } = this;
-      if (inSchool) {
-        return periodToSeconds(bell.period.end);
-      }
-      // if not currently in school, return seconds left until school starts
-      const { school, period, nextSchoolDay } = bell;
-      let dayDifference = 0;
-
-      // if before school, get the seconds until the first period today
-      let nextBell = bell;
-
-      // if no school or after school, get the first period on the next school day
-      if (!school || period.afterSchool) {
-        dayDifference = Math.floor(
-          (nextSchoolDay.getTime() - date.getTime())
-            / 1000
-            / 60
-            / 60
-            / 24,
-        );
-        nextBell = new Bell(nextSchoolDay);
-      }
-
-      // return the start time of the next first period + 24 hours for each day elapsed in between
-      const firstPeriod = nextBell.schedule.start[0];
-      return periodToSeconds(firstPeriod) + dayDifference * 24 * 60 * 60;
+      return this.bell.getSecondsUntilNextTarget();
     },
     totalSecondsLeft() {
       // this is seperated from endTime since totalSecondsLeft needs to be recalculated every
       // second while endTime (which is computationally expensive) does not
       return this.endTime - dateToSeconds(this.date);
-    },
-    countdownString() {
-      if (this.totalSecondsLeft > 60 * 60 * 24) {
-        // if more than 1 day of seconds left, display number of days left
-        const numDays = Math.ceil(this.totalSecondsLeft / 60 / 60 / 24);
-        return `${numDays} days`;
-      }
-      // return a nicely formatted string with remaining hours, minutes, and seconds left
-      const seconds = this.totalSecondsLeft % 60;
-      const minutes = Math.floor(this.totalSecondsLeft / 60) % 60;
-      const hours = Math.floor(this.totalSecondsLeft / 60 / 60);
-
-      const h = hours > 0 ? `${hours}:` : ''; // hours is only displayed if > 0
-      const mm = `${minutes < 10 && hours > 0 ? '0' : ''}${minutes}:`; // minutes always has 2 digits if hours are displayed
-      const ss = `${seconds < 10 ? '0' : ''}${seconds}`; // seconds always has 2 digits
-
-      return `${h}${mm}${ss}`;
-    },
-    nextDayString() {
-      // Returns when school resumes
-      // Only displayed when not in school (either no school, before school, or after school)
-      const { bell, date } = this;
-      const { school, period, nextSchoolDay } = bell;
-
-      // get days since January 1, 1970
-      const getEpochDay = (ofDate) => Math.floor(ofDate.getTime() / 1000 / 60 / 60 / 24);
-
-      // if school resumes on the same day or the next day, use 'today' or 'tomorrow' instead of the date
-      let str;
-      if (school && period.beforeSchool) {
-        str = '\ntoday';
-      } else {
-        const dayDifference = getEpochDay(nextSchoolDay) - getEpochDay(date);
-        if (dayDifference === 1) {
-          str = '\ntomorrow';
-        } else {
-          str = this.formatDate(nextSchoolDay);
-        }
-      }
-      return `School resumes ${str}`;
     },
     tomorrow() {
       // Date object for the next day, used for the arrow right
@@ -289,18 +216,10 @@ export default {
     }
   },
   methods: {
+    formatDate,
+    schoolResumesString,
+    intoCountdownString,
     ...mapActions(useScheduleStore, ['setScheduleMode']),
-    formatDate(date) {
-      // Wednesday,
-      // September 30
-      return date
-        .toLocaleDateString('en-US', {
-          weekday: 'long',
-          month: 'long',
-          day: 'numeric',
-        })
-        .replace(',', ',\n');
-    },
     formatDateUrl(date) {
       // e.g. "6-11-2018"
       return date
