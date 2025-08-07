@@ -24,7 +24,7 @@ function parseDateTimeFromRoute(route: RouteLocationNormalized): Date {
     date = date.replace(/-/g, '/'); // lets you use "-" instead of "/"
 
     const today = new Date();
-    const todayDate = today.toISOString().split('T')[0].replace(/-/g, '/');
+    const todayDate = today.toLocaleDateString();
     const todayTime = today.toTimeString().split(' ')[0];
 
     const parsedDate = new Date(`${date || todayDate} ${time || todayTime}`);
