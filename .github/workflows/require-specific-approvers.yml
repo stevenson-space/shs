@@ -1,4 +1,4 @@
-name: Require specific approvers
+name: Require dedicated contributor approval
 
 on:
   pull_request:
@@ -13,29 +13,13 @@ jobs:
   check-approvals:
     name: check-approvals
     runs-on: ubuntu-latest
-    env:
-      # Set this repository variable in GitHub: Settings > Secrets and variables > Actions > Variables
-      # Name: REQUIRED_APPROVERS, Value (comma-separated usernames): e.g. 'alice,bob,charlie'
-      REQUIRED_APPROVERS: ${{ vars.REQUIRED_APPROVERS }}
-      # Optional: override the number of approvals required. If unset, a simple majority of REQUIRED_APPROVERS is used.
-      # Name: APPROVALS_REQUIRED, Value: e.g. '2'
-      # Not currently used.
-      APPROVALS_REQUIRED: ${{ vars.APPROVALS_REQUIRED }}
     steps:
       - name: Validate approvals from required users
         uses: actions/github-script@v7
         with:
+          # Use the default token for repo-scope APIs; use TEAM_MEMBERS_TOKEN only for team membership lookups inside the script
+          github-token: ${{ github.token }}
           script: |
-            const required = (process.env.REQUIRED_APPROVERS || '')
-              .split(',')
-              .map(s => s.trim().toLowerCase())
-              .filter(Boolean);
-
-            if (required.length === 0) {
-              core.setFailed('REQUIRED_APPROVERS is not configured. Set it to a comma-separated list of usernames.');
-              return;
-            }
-
             const pr = context.payload.pull_request;
             if (!pr) {
               core.info('No pull_request payload; skipping.');
@@ -46,6 +30,38 @@ jobs:
               core.info('Draft PR detected; skipping approval enforcement.');
               return;
             }
+
+            const prAuthor = pr.user && pr.user.login ? pr.user.login.toLowerCase() : undefined;
+
+            // Hardcoded team configuration
+            const teamOrg = 'stevenson-space';
+            const teamSlug = 'dedicated-contributors';
+            let teamMembers = [];
+            try {
+              const teamToken = process.env.TEAM_MEMBERS_TOKEN;
+              const teamRequest = teamToken
+                ? github.request.defaults({ headers: { authorization: `token ${teamToken}` } })
+                : github.request;
+              let page = 1;
+              while (true) {
+                const { data } = await teamRequest('GET /orgs/{org}/teams/{team_slug}/members', { org: teamOrg, team_slug: teamSlug, per_page: 100, page });
+                teamMembers = teamMembers.concat((data || []).map(u => (u.login || '').toLowerCase()).filter(Boolean));
+                if (!data || data.length < 100) break;
+                page += 1;
+                if (page > 20) break; // safety cap
+              }
+            } catch (e) {
+              core.setFailed(`Unable to list team members for ${teamOrg}/${teamSlug}. Provide TEAM_MEMBERS_TOKEN with read:org (or equivalent). ${e.message}`);
+              return;
+            }
+
+            const eligible = [...new Set(teamMembers.filter(u => u !== prAuthor))];
+            if (eligible.length === 0) {
+              core.setFailed('No eligible approvers in the team after excluding the PR author.');
+              return;
+            }
+
+            const required = eligible;
 
             const { owner, repo } = context.repo;
             const pull_number = pr.number;
@@ -89,15 +105,13 @@ jobs:
               }
             }
 
-            const configured = Number.parseInt(process.env.APPROVALS_REQUIRED || '', 10);
-            const majority = Math.floor(required.length / 2) + 1;
-            const requiredCount = Number.isFinite(configured) && configured > 0
-              ? Math.min(configured, required.length)
-              : majority;
+            const requiredCount = Math.floor(required.length / 2) + 1;
 
-            core.info(`Designated approvers: ${required.join(', ')}`);
+            core.info(`PR author: ${prAuthor || 'unknown'}`);
+            core.info(`Team scope: ${teamOrg}/${teamSlug}`);
+            core.info(`Eligible approvers (author excluded): ${required.join(', ')}`);
             core.info(`Approved by (latest head): ${approvedBy.join(', ') || 'none'}`);
-            core.info(`Approvals required: ${requiredCount} (policy: ${Number.isFinite(configured) && configured > 0 ? 'fixed' : 'majority'})`);
+            core.info(`Approvals required: ${requiredCount} (policy: majority)`);
 
             if (approvedBy.length < requiredCount) {
               const remaining = requiredCount - approvedBy.length;
@@ -107,4 +121,3 @@ jobs:
             }
 
             core.info('All required approvers have approved the latest commit.');
-
