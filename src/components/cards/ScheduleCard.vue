@@ -5,7 +5,7 @@
     :ignoreStyleMutations="true"
     @height-change="scrollToCurrentPeriod"
   >
-    <div class="title">{{ title }}</div>
+    <div v-if="title" class="title">{{ title }}</div>
     <div
       ref="periods"
       class="periods"
