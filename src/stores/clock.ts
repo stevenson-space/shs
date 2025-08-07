@@ -15,6 +15,7 @@ function parseDateTimeFromRoute(route: RouteLocationNormalized): Date {
   // If date and/or time is specified in URL, return that date
   // Otherwise, return current date
   let { date = '', time = '' } = route.query;
+  // needed in case date or time is null, undefined handled above
   if (!date) date = '';
   if (!time) time = '';
 
@@ -23,10 +24,11 @@ function parseDateTimeFromRoute(route: RouteLocationNormalized): Date {
     date = date.replace(/-/g, '/'); // lets you use "-" instead of "/"
 
     const today = new Date();
-    const todayDate = today.toLocaleDateString();
-    const todayTime = today.toLocaleTimeString();
+    const todayDate = today.toISOString().split('T')[0].replace(/-/g, '/');
+    const todayTime = today.toTimeString().split(' ')[0];
 
-    return new Date(`${date || todayDate} ${time || todayTime}`);
+    const parsedDate = new Date(`${date || todayDate} ${time || todayTime}`);
+    return isNaN(parsedDate.getTime()) ? new Date() : parsedDate;
   }
   return new Date();
 }
