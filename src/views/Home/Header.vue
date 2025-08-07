@@ -167,8 +167,7 @@ export default {
       };
     },
     endTime() {
-      const { bell } = this;
-      return bell.getSecondsUntilNextTarget();
+      return this.bell.getSecondsUntilNextTarget();
     },
     totalSecondsLeft() {
       // this is seperated from endTime since totalSecondsLeft needs to be recalculated every
@@ -207,11 +206,9 @@ export default {
       this.currentTime = dateToSeconds(this.date);
     },
     totalSecondsLeft() {
-      let { bell } = this;
-
       if (this.totalSecondsLeft <= 0) {
         this.countdownDone();
-        if (bell.inSchool && this.useVirtualBell) {
+        if (this.bell.inSchool && this.useVirtualBell) {
           const bell = new Audio(bellAudio);
           bell.volume = 0.05;
           bell.play();
