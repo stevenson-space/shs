@@ -11,7 +11,7 @@
         </span>
         <span class="schedule-name center">{{ this.bell.type.toUpperCase() }}</span>
         <div class="divider"/>
-        <ScrollablePeriodList ref="periodList"/>
+        <ScrollablePeriodList class="list" ref="periodList"/>
       </div>
     </Card>
   </div>
@@ -77,6 +77,9 @@ export default {
   color: var(--secondary)
   border-radius: 15px
   font-weight: bold
+
+  .list
+    font-size: larger
 
   .center
     text-align: center
