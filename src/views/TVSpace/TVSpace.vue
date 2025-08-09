@@ -76,10 +76,11 @@ export default {
   background: var(--background)
   color: var(--secondary)
   border-radius: 15px
-  font-weight: bold
 
   .list
-    font-size: larger
+    text-shadow: 1px 1px 4px rgba(0.8,0.8,0.8,0.65)
+    font-weight: bold
+    font-size: 22px
 
   .center
     text-align: center
