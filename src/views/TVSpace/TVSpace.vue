@@ -83,7 +83,7 @@ export default {
     width: 100%
 
   .countdown
-    font-size: 3em
+    font-size: 3.25em
     line-height: 1em
     color: var(--secondary)
     margin-top: 8px
@@ -91,5 +91,5 @@ export default {
   .schedule-name
     color: dimgray
     font-weight: bolder
-    font-size: 1.5em
+    font-size: 1.65em
 </style>
