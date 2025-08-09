@@ -10,6 +10,7 @@
           {{ intoCountdownString(this.totalSecondsLeft) }}
         </span>
         <span class="schedule-name center">{{ this.bell.type.toUpperCase() }}</span>
+        <div class="divider"/>
         <ScrollablePeriodList ref="periodList"/>
       </div>
     </Card>
@@ -55,6 +56,12 @@ export default {
   flex-direction: column
   justify-content: flex-start
   overflow: hidden
+
+.divider
+  height: 3px
+  background: var(--color)
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2)
+  margin-top: 4px
 
 .container
   // FIXME: this max-height is a hacky fix until the cards & period component can
