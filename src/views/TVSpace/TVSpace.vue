@@ -93,7 +93,7 @@ export default {
     margin-top: 8px
 
   .schedule-name
-    color: dimgray
+    color: lightgray
     font-weight: bolder
     font-size: 1.65em
 </style>
