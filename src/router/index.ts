@@ -26,6 +26,7 @@ const Jukebox: RouteComponent = () => import("@/views/Jukebox/Jukebox.vue");
 const LiveRedirect: RouteComponent = () => import("@/views/Live/Live.vue"); // redirect to shs youtube livestreams
 const ApplicationRedirect: RouteComponent = () => import("@/views/Apply/Apply.vue"); // redirect to dedicated contributor application
 const SnowballRedirect: RouteComponent = () => import("@/views/Snowball/Snowball.vue"); // redirect to snowball url (it's confusing for the club -- helping them out)
+const TVSpace: RouteComponent = () => import("@/views/TVSpace/TVSpace.vue");
 
 type EditScheduleProps = {
   scheduleToEdit: string;
@@ -129,6 +130,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "Snowball",
     path: "/snowblitz",
     component: SnowballRedirect,
+  },
+  {
+    name: "TVSpace",
+  path: "/tvspace",
+    component: TVSpace,
   },
 ];
 

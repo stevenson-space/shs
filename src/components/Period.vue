@@ -179,7 +179,6 @@ export default {
     text-align: center
     flex-grow: 1
     font-size: 1.1em
-    font-weight: bold
     min-width: 100px
 
     .time
@@ -194,7 +193,6 @@ export default {
       fill: var(--color)
     .range
       color: var(--primaryColor)
-      font-weight: normal
 
   &.not-mobile
     +desktop
@@ -216,4 +214,9 @@ export default {
 
         .dash
           display: none
+
+.period:not(.invert)
+  .range
+    font-weight: bold
+
 </style>
