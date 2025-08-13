@@ -79,6 +79,9 @@ export default defineComponent({
       if (schedule === 'always') {
         return true;
       }
+      if (schedule === 'never') {
+        return false;
+      }
       const [startTime, endTime] = [
         new Date(schedule.substring(0, schedule.indexOf('-'))).getTime(),
         new Date(schedule.substring(schedule.indexOf('-') + 1)).getTime(),
