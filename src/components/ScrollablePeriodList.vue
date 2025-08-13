@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import Card from '@/components/Card.vue';
 import Period from '@/components/Period.vue';
 import { mapState } from 'pinia';
 import { isBellOnSchoolDay } from '@/utils/bell';
