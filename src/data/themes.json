@@ -240,4 +240,13 @@
         "iconTextCardColor": "white",
         "iconTextCardInvertColor": "var(--color)"
     }
+    {
+        
+  "name": "My Custom Theme",
+  "backgroundImage": "url('/uploads/mywallpaper.png')",
+  "primary": "#ff0000",
+  "secondary": "#333",
+  "tertiary": "#555"
+    }
+    
 ]
