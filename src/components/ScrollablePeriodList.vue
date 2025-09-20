@@ -123,6 +123,10 @@ export default {
   -webkit-overflow-scrolling: touch
   position: relative
 
+  &.tv-space
+    padding: 3px
+    gap: 6px
+
   .up-next-indicator
     padding: 0px 13px
 

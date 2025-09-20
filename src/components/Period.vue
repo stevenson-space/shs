@@ -84,7 +84,13 @@ export default {
       return period[0] === '!' ? period.substring(1) : period;
     },
     periodFontSize() {
-      return this.period.length > 10 ? '1em' : '1.3em';
+      if (!this.tvSpace) {
+        return this.period.length > 10 ? '1em' : '1.3em';
+      }
+      // TV sizes - smaller for long names, bigger for short
+      if (this.period.length > 7) return '0.85em';  // Long names like "Activity"
+      if (this.period.length > 4) return '1.1em';   // Medium names
+      return '1.3em';                                // Short names like "1", "2"
     },
     startSeconds() {
       return periodToSeconds(this.start);
@@ -130,6 +136,30 @@ export default {
   padding: 2px
   margin: 0
   width: auto
+
+  &.tv-space
+    min-width: 200px
+    height: 34px
+    padding: 0px
+
+    &:not(.invert)
+      margin-top: 2px
+      margin-bottom: 2px
+
+    .range
+      font-size: 1.1em
+      min-width: 85px
+
+    .circle
+      margin: 2.5px
+      padding: 5.5px
+
+      &:not(.invert)
+        background-color: var(--secondaryBackground)
+
+      &.invert
+        background-color: transparent
+
 
   .circle
     min-width: 15px
