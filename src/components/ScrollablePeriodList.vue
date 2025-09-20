@@ -124,8 +124,19 @@ export default {
   position: relative
 
   &.tv-space
-    padding: 3px
+    padding: 2px
     gap: 6px
+
+    .up-next-indicator
+      .title
+        background-color: var(--background)
+        position: relative
+        top: -10px
+        padding: 0px 3px
+
+      .line
+        height: 6px
+        margin: 4px auto 6px auto
 
   .up-next-indicator
     padding: 0px 13px
