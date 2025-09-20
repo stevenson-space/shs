@@ -82,8 +82,8 @@ export default {
   // FIXME: this max-height is a hacky fix until the cards & period component can
   // be fixed to be more responsive. currently, the scrolling for the period list
   // doesn't display unless the container is constrained smaller than the max
-  // size it can be, and 95vh is mostly unnoticeable but gets the scrolling working
-  max-height: 98vh
+  // size it can be, and 97vh is mostly unnoticeable but gets the scrolling working
+  max-height: 97vh
   display: flex
   flex-direction: column
   gap: 1px
