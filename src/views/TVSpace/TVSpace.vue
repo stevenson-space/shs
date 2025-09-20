@@ -11,7 +11,7 @@
         </span>
         <span class="schedule-name center">{{ this.bell.type.toUpperCase() }}</span>
         <div class="divider"/>
-        <ScrollablePeriodList class="list" ref="periodList"/>
+        <ScrollablePeriodList class="list" ref="periodList" :tv-space="true"/>
       </div>
     </Card>
   </div>

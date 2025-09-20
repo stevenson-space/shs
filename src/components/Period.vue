@@ -1,5 +1,5 @@
 <template>
-  <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">
+  <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert, 'tv-space': tvSpace }">
     <svg
       class="progress"
       v-if="
@@ -61,6 +61,7 @@ export default {
     invert: { type: Boolean, default: false },
     forceMobileLayout: { type: Boolean, default: false },
     disableProgressBar: { type: Boolean, default: false },
+    tvSpace: { type: Boolean, default: false },
   },
   data() {
     return {

@@ -2,6 +2,7 @@
   <div
     ref="periods"
     class="periods"
+    :class="{ 'tv-space': tvSpace }"
     :style="{ maxHeight: maxHeight || undefined }"
   >
     <template v-for="period in periods">
@@ -20,6 +21,7 @@
         :period="period.name"
         :invert="!period.isCurrent"
         :force-mobile-layout="true"
+        :tv-space="tvSpace"
       />
     </template>
   </div>
@@ -36,6 +38,7 @@ export default {
   props: {
     schedule: { type: Object, default: null },
     maxHeight: { type: String, default: null },
+    tvSpace: { type: Boolean, default: false },
   },
   computed: {
     ...mapState(useClockStore, ['bell']),
