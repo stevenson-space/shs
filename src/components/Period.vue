@@ -157,10 +157,6 @@ export default {
       &:not(.invert)
         background-color: var(--secondaryBackground)
 
-      &.invert
-        background-color: transparent
-
-
   .circle
     min-width: 15px
     height: 15px
