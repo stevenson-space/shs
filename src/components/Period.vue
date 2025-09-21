@@ -44,7 +44,7 @@
       <span class="dash"> – </span>
       <div class="time">{{ convertMilitaryTime(end) }}</div>
     </div>
-  <div :style="{ width: tvSpace ? (actualPeriod.length > 4 ? '10px' : '20px') : (actualPeriod.length > 4 ? '20px' : '40px') /* FIXME: check circle width instead? */}"></div>
+  <div :style="{ width: spacerWidth }"></div>
   </div>
 </template>
 <script>
@@ -113,6 +113,15 @@ export default {
     },
     strokeDashoffset() {
       return this.circumference - this.progress * this.circumference;
+    },
+    spacerWidth() {
+      const isLongPeriod = this.actualPeriod.length > 4;
+
+      if (this.tvSpace) {
+        return isLongPeriod ? '10px' : '20px';
+      }
+
+      return isLongPeriod ? '20px' : '40px';
     },
   },
   methods: {
