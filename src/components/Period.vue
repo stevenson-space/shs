@@ -1,5 +1,5 @@
 <template>
-  <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert }">
+  <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert, 'tv-space': tvSpace }">
     <svg
       class="progress"
       v-if="
@@ -44,7 +44,7 @@
       <span class="dash"> – </span>
       <div class="time">{{ convertMilitaryTime(end) }}</div>
     </div>
-  <div :style="{ width: actualPeriod.length > 4 ? '20px' : '40px' /* FIXME: check circle width instead? */}"></div>
+  <div :style="{ width: spacerWidth }"></div>
   </div>
 </template>
 <script>
@@ -61,6 +61,7 @@ export default {
     invert: { type: Boolean, default: false },
     forceMobileLayout: { type: Boolean, default: false },
     disableProgressBar: { type: Boolean, default: false },
+    tvSpace: { type: Boolean, default: false },
   },
   data() {
     return {
@@ -83,7 +84,13 @@ export default {
       return period[0] === '!' ? period.substring(1) : period;
     },
     periodFontSize() {
-      return this.period.length > 10 ? '1em' : '1.3em';
+      if (!this.tvSpace) {
+        return this.period.length > 10 ? '1em' : '1.3em';
+      }
+      // TV sizes - smaller for long names, bigger for short
+      if (this.period.length > 7) return '0.85em';  // Long names like "Activity"
+      if (this.period.length > 4) return '1.1em';   // Medium names
+      return '1.3em';                                // Short names like "1", "2"
     },
     startSeconds() {
       return periodToSeconds(this.start);
@@ -107,6 +114,15 @@ export default {
     strokeDashoffset() {
       return this.circumference - this.progress * this.circumference;
     },
+    spacerWidth() {
+      const isLongPeriod = this.actualPeriod.length > 4;
+
+      if (this.tvSpace) {
+        return isLongPeriod ? '10px' : '20px';
+      }
+
+      return isLongPeriod ? '20px' : '40px';
+    },
   },
   methods: {
     convertMilitaryTime: Bell.convertMilitaryTime,
@@ -129,6 +145,26 @@ export default {
   padding: 2px
   margin: 0
   width: auto
+
+  &.tv-space
+    min-width: 200px
+    height: 34px
+    padding: 0px
+
+    &:not(.invert)
+      margin-top: 2px
+      margin-bottom: 2px
+
+    .range
+      font-size: 1.1em
+      min-width: 85px
+
+    .circle
+      margin: 2.5px
+      padding: 5.5px
+
+      &:not(.invert)
+        background-color: var(--secondaryBackground)
 
   .circle
     min-width: 15px
