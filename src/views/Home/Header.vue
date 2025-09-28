@@ -88,8 +88,8 @@
     />
 
     <announcements :full-screen-mode="fullScreenMode" />
-    <snow v-if="theme.name.toLowerCase() == 'winter'" :images="[snowflake]"/>
-    <snow v-if="theme.name.includes('Valentine')" :images="[heart]"/>
+    <particle-system v-if="theme.name.toLowerCase() == 'winter'" :images="[snowflake]"/>
+    <particle-system v-if="theme.name.includes('Valentine')" :images="[heart]"/>
 
   </div>
 </template>
@@ -113,7 +113,7 @@ import {
   faVolumeOff,
 } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from '@/components/Dropdown.vue';
-import Snow from '@/components/Snow.vue';
+import ParticleSystem from '@/components/ParticleSystem.vue';
 import useClockStore from '@/stores/clock';
 import useScheduleStore from '@/stores/schedules';
 import useThemeStore from '@/stores/themes';
@@ -131,7 +131,7 @@ export default {
     HeaderSchedule,
     Dropdown,
     Announcements,
-    Snow,
+    ParticleSystem,
   },
   props: {
     fullScreenMode: { type: Boolean, default: false },
