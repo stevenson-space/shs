@@ -62,6 +62,7 @@ export default defineComponent({
     color: var(--background)
     font-size: .9em
     .text
+      // TODO(theme): this should use theme!
       color: white
       white-space: nowrap
       overflow: hidden
