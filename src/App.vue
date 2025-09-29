@@ -7,7 +7,7 @@
 <script>
 import { mapState, mapActions } from 'pinia';
 import useThemeStore from '@/stores/themes';
-import { fallbackTheme } from "@/utils/themes.ts";
+import { fallbackTheme } from '@/utils/themes.ts';
 import useScheduleStore from '@/stores/schedules';
 import useClockStore from '@/stores/clock';
 import useUserSettingsStore from '@/stores/user-settings';
