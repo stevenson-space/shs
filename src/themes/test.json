@@ -15,29 +15,13 @@
   "styling": {
     "inherit": "light",
 
-    "background": "light-gray",
-    "secondaryBackground": "white",
-
     "accent": "#039be5",
 
-    "text": {
-      "primary": "white",
-      "secondary": "white",
-      "tertiary": "white"
-    },
-
     "header": {
-      "background": "white",
       "image": {
         "full": "assets://header-images/cosmic-reef-full.png",
         "mobile": "assets://header-images/cosmic-reef-full.png"
-      },
-      "scheduleBar": "white"
-    },
-
-    "iconCards": {
-      "regular": "white",
-      "invert": "var(--accent)"
+      }
     },
 
     "particles": {
