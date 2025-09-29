@@ -9,7 +9,7 @@
   "seasonal": {
     "dates": "02/07-02/10",
     "message": "try out the new test theme!",
-    "limited-time": false
+    "limitedTime": false
   },
 
   "styling": {
