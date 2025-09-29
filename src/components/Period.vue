@@ -222,13 +222,13 @@ export default {
 
   &.invert
     box-shadow: none
-    background-color: var(--secondarybackground)
+    background-color: var(--secondaryBackground)
     border: var(--accent) 1px solid
 
     .progress
       fill: var(--accent)
     .range
-      color: var(--primaryColor)
+      color: var(--primary)
 
   &.not-mobile
     +desktop

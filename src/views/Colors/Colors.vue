@@ -121,15 +121,15 @@ export default defineComponent({
     width: 90%
 
   .custom-color
-    color: var(--color)
+    color: var(--accent)
     font-weight: bold
     font-size: 1.2em
     margin-left: 5px
     padding: 2px 10px
-    border-radius:20px
+    border-radius: 20px
     +shadow-light
     &:focus
-      outline-color: var(--color)
+      outline-color: var(--accent)
       outline-style: solid
       outline-width: 1px
 

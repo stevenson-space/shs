@@ -261,7 +261,7 @@ $medium: 900px
           margin-right: auto
           font-size: 0.8em
           font-weight: bold
-          color: var(--textColor)
+          color: var(--primary)
         .progress-bar
           width: 80%
           display: flex
