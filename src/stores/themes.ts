@@ -27,11 +27,7 @@ export default defineStore('themes', {
       }
     },
     setColor(color:string): void {
-    //   this.color = color;
-    //   localStorage.color = color;
-    //   GASet({ user_properties: {
-    //     color,
-    //   } });
+      // TODO: remove uses of this
     },
     setTheme(theme: Theme): void {
       this.theme = theme;
