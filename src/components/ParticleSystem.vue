@@ -273,8 +273,16 @@ export default {
   pointer-events: none;
   height: 100%;
   width: 100%;
-  &.events-all {
-    pointer-events: all;
+
+  canvas {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &.events-all canvas {
+    pointer-events: auto;
   }
   &.hide {
     opacity: 0;
