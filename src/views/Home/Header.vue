@@ -88,8 +88,8 @@
     />
 
     <announcements :full-screen-mode="fullScreenMode" />
-    <particle-system v-if="theme.name.toLowerCase() == 'winter'" :images="[snowflake]"/>
-    <particle-system v-if="theme.name.includes('Valentine')" :images="[heart]"/>
+    <particle-system v-if="theme.metadata.name.toLowerCase() == 'winter'" :images="[snowflake]"/>
+    <particle-system v-if="theme.metadata.name.includes('Valentine')" :images="[heart]"/>
 
   </div>
 </template>
