@@ -20,20 +20,14 @@ export default defineStore('themes', {
   }),
   actions: {
     initializeTheme(): void {
-      // if (localStorage.color && import.meta.env.VITE_EDIT_COLORS !== 'true') {
-      //   this.setColor(localStorage.color);
-      //   GASet({ user_properties: {
-      //     color: localStorage.color,
-      //   } });
-      // } else {
-      //   GASet({ user_properties: {
-      //     color: 'unset',
-      //   } });
-      // }
-      if (localStorage.theme && import.meta.env.VITE_EDIT_COLORS !== 'true') {
-        this.setTheme(JSON.parse(localStorage.theme));
+      if (localStorage.theme) {
+        try {
+          this.setTheme(JSON.parse(localStorage.theme));
+        } catch (error) {
+          this.setTheme(DEFAULT_THEME);
+        }
       } else {
-        this.setTheme(lightTheme as Theme);
+        this.setTheme(DEFAULT_THEME);
       }
     },
     setColor(color:string): void {
