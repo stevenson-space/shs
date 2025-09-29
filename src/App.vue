@@ -28,7 +28,7 @@ export default {
         color: styling.text?.primary || fallback.text.primary,
         '--secondary': styling.text?.secondary || fallback.text.secondary,
         '--tertiary': styling.text?.tertiary || fallback.text.tertiary,
-        'iconCardsRegular': styling.iconCards?.regular || fallback.iconCards.regular,
+        '--iconCardsRegular': styling.iconCards?.regular || fallback.iconCards.regular,
         '--iconCardsInvert': styling.iconCards?.invert || fallback.iconCards.invert,
       };
     },
