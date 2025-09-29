@@ -1,7 +1,7 @@
 <template>
   <div
     class="header"
-    :class="{ 'full-screen': fullScreenMode, 'spy': theme.name.toLowerCase() == 'spy', 'halloween': theme.name.toLowerCase() == 'halloween', 'minecraft': theme.name.toLowerCase() == 'minecraft', 'mars': theme.name.toLowerCase() == 'mars', 'cosmic-reef': theme.name.toLowerCase() == 'cosmic reef', 'cosmic-tarantula': theme.name.toLowerCase() == 'cosmic tarantula', 'summer': theme.name.toLowerCase() == 'summer', 'eclipse': theme.name.toLowerCase() == 'eclipse', 'zen': theme.name.toLowerCase() == 'zen' || theme.name.toLowerCase() == 'not windows xp'}"
+    :class="{ 'full-screen': fullScreenMode }"
     :style="colors"
   >
     <dropdown
@@ -161,10 +161,23 @@ export default {
     ...mapState(useClockStore, ['clockMode', 'date', 'bell']),
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
-      return {
+      const styling = this.theme.styling;
+
+      let headerStyle = {
         '--header-color': showColor ? 'var(--headerBackground)' : 'var(--background)',
         '--header-accent': showColor ? 'white' : 'var(--accent)',
       };
+
+      if (styling?.header?.image?.full) {
+        const resolveAsset = (url) => url?.startsWith('assets://') ? url.replace('assets://', '/src/themes/assets/') : url;
+
+        headerStyle['--header-image-full'] = `url(${resolveAsset(styling.header.image.full)})`;
+        const mobileImage = styling.header.image.mobile || styling.header.image.full;
+        headerStyle['--header-image-mobile'] = `url(${resolveAsset(mobileImage)})`;
+        headerStyle['--has-header-image'] = '1';
+      }
+
+      return headerStyle;
     },
     endTime() {
       return this.bell.getSecondsUntilNextTarget();
@@ -276,53 +289,13 @@ export default {
   background-color: var(--header-color)
   text-align: center
   transition: background-color .3s
-  &.spy
-    background: url(@/assets/occasions/spy-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/spy-full.png) center center no-repeat, var(--header-color)
 
-  &.minecraft
-    background: url(@/assets/occasions/minecraft-mobile.png) center center no-repeat, var(--header-color)
+  // Dynamic header images using CSS variables
+  &[style*="--has-header-image"]
+    background: var(--header-image-mobile, var(--header-color)) center center no-repeat
     background-size: cover
     +desktop
-      background: url(@/assets/occasions/minecraft-desktop.png) center center no-repeat, var(--header-color)
-  &.mars
-    background: url(@/assets/occasions/mars-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/mars-full.png) center center no-repeat, var(--header-color)
-  &.cosmic-reef
-    background: url(@/assets/occasions/cosmic-reef-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/cosmic-reef-full.png) center center no-repeat, var(--header-color)
-  &.cosmic-tarantula
-    background: url(@/assets/occasions/cosmic-tarantula-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/cosmic-tarantula-full.png) center center no-repeat, var(--header-color)
-  &.summer
-    background: url(@/assets/occasions/beach-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/beach-full.png) center center no-repeat, var(--header-color)
-  &.zen
-    background: url(@/assets/occasions/zen-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/zen-full.png) center center no-repeat, var(--header-color)
-  &.halloween
-    background: url(@/assets/occasions/cob-webs-left.png) left top no-repeat, url(@/assets/occasions/cob-webs-right.png) right top no-repeat, var(--header-color)
-    background-size: 250px
-    +mobile-small
-      background-size: 150px
-  &.eclipse
-    background: url(@/assets/occasions/eclipse-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/eclipse-full.png) center center no-repeat, var(--header-color)
-      background-size: fit
+      background: var(--header-image-full, var(--header-color)) center center no-repeat
 
   .starry-night
     position: absolute
