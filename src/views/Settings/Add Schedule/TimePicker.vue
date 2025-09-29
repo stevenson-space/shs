@@ -204,13 +204,13 @@ export default defineComponent({
       display: flex
       justify-content: space-between
       border-radius: 100px
-      border: var(--color) thin solid
+      border: var(--accent) thin solid
       margin: 10px 10px
       padding: 5px 10px
       cursor: pointer
       min-width: 200px
       &.selected
-        background-color: var(--color)
+        background-color: var(--accent)
         color: var(--background)
 
       .suffix

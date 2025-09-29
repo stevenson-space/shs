@@ -31,7 +31,7 @@ export default {
   .icon
     position: relative
     +hover-darken-background
-    color: var(--color)
+    color: var(--accent)
     font-size: 1.05em
     padding: 2px
 

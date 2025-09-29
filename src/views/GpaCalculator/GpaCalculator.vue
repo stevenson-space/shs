@@ -273,7 +273,7 @@ export default defineComponent({
 
     .gpa-tile
       display: flex
-      background-color: var(--color)
+      background-color: var(--accent)
       color: var(--background)
       border-top-right-radius: 10px
       border-top-left-radius: 10px
@@ -321,7 +321,7 @@ export default defineComponent({
       font-size: 3em
 
     .final-gpa
-      color: var(--color)
+      color: var(--accent)
       font-size: 2em
       text-align: center
 </style>

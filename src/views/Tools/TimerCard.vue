@@ -321,7 +321,7 @@ export default {
 
   .header
     display: flex
-    background-color: var(--color)
+    background-color: var(--accent)
     padding: 3px 20px
     color: var(--background)
     font-size: 1.25em
@@ -382,9 +382,9 @@ export default {
     justify-content: center
     font-weight: bold
     font-size: 1.25em
-    color: var(--color)
+    color: var(--accent)
     margin-top: 10px
-    border: thin solid var(--color)
+    border: thin solid var(--accent)
     border-radius: 10px
     user-select: none
     &.disabled

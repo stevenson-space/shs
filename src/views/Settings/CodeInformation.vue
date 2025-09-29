@@ -17,5 +17,5 @@ export default {
 <style lang="sass" scoped>
 a
     text-decoration: none
-    color: var(--color)
+    color: var(--accent)
 </style>

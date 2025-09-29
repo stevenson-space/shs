@@ -292,7 +292,7 @@ export default defineComponent({
   max-width: 300px
   text-align: center
   .color, .code
-    color: var(--color)
+    color: var(--accent)
     font-weight: bold
   .code
     margin-top: 5px
@@ -307,7 +307,7 @@ export default defineComponent({
     font-size: 1.75em
     margin-bottom: 3px
   .color
-    color: var(--color)
+    color: var(--accent)
     font-weight: bold
   input
     margin-top: 12px
@@ -317,7 +317,7 @@ export default defineComponent({
     width: 150px
     letter-spacing: 2px
     font-weight: bold
-    color: var(--color)
+    color: var(--accent)
     text-align: center
 
 .loading-popup

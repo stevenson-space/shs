@@ -183,7 +183,7 @@ export default {
   .input-tip
     font-size: 14px
     a
-      color: var(--color)
+      color: var(--accent)
   .center
     display: flex
     flex-direction: column
@@ -203,7 +203,7 @@ export default {
         border-radius: 7px
         margin-bottom: 10px
         color: var(--primary)
-        border: 1px solid var(--color)
+        border: 1px solid var(--accent)
         +shadow-light
         &:focus
           outline: none

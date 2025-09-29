@@ -54,7 +54,7 @@ export default {
   opacity: 0
 
 .info-circle
-  color: var(--color)
+  color: var(--accent)
   cursor: pointer
 
 .modal

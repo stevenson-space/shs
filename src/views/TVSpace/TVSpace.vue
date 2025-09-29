@@ -73,7 +73,7 @@ export default {
 
 .divider
   height: 2px
-  background: var(--color)
+  background: var(--accent)
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2)
   margin-top: 2px
   margin-bottom: 1px

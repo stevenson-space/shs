@@ -163,7 +163,7 @@ export default {
       const showColor = this.colored || !this.fullScreenMode;
       return {
         '--header-color': showColor ? 'var(--headerBackgroundColor)' : 'var(--background)',
-        '--header-accent': showColor ? 'white' : 'var(--color)',
+        '--header-accent': showColor ? 'white' : 'var(--accent)',
       };
     },
     endTime() {

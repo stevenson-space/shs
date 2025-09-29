@@ -31,7 +31,7 @@ export default {
 @import '@/styles/style.sass'
 
 .card
-  background: var(--color) !important
+  background: var(--accent) !important
   color: var(--iconTextCardColor)
   transition: transform .4s
   &.invert

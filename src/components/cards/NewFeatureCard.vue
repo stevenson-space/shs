@@ -33,7 +33,7 @@ export default {
 
 <style lang="sass" scoped>
 a
-  color: var(--color)
+  color: var(--accent)
 
 .title
   margin-top: 20px
@@ -45,7 +45,7 @@ a
   flex-direction: column
   color: var(--primary)
   .link
-    color: var(--color)
+    color: var(--accent)
   .logo
     height: 165px
     margin: 12px 10px

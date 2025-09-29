@@ -223,7 +223,7 @@ export default {
       position: absolute
       left: calc(100% / 2 - var(--width) / 2)
       border-radius: 50px
-      background-color: var(--color)
+      background-color: var(--accent)
 
     .event-chip
       margin-top: 30px
@@ -236,6 +236,6 @@ export default {
       margin: -3px 10px 5px 10px
       font-size: 1.75em
       cursor: pointer
-      color: var(--color)
+      color: var(--accent)
 
 </style>

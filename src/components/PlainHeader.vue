@@ -24,7 +24,7 @@ export default {
   margin: auto
   position: relative
   margin-top: 10px
-  color: var(--color)
+  color: var(--accent)
   +mobile
     text-align: center
 
