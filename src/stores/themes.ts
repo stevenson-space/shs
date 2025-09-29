@@ -1,7 +1,4 @@
 import { defineStore } from 'pinia';
-import _themeIdeas from '@/data/themeIdeas.json';
-import _themes from '@/data/themes.json';
-import { set as GASet } from 'vue-gtag';
 import lightTheme from '@/themes/base/light.json'
 import { Theme } from '@/utils/types';
 
