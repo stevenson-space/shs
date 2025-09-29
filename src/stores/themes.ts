@@ -6,16 +6,16 @@ import lightTheme from '@/themes/base/light.json'
 import darkTheme from '@/themes/base/dark.json'
 import { Theme } from '@/utils/types';
 
+const DEFAULT_THEME: Theme = lightTheme as Theme;
+
 interface State {
-  // color: string,
   theme: Theme,
   resolvedAssets: Map<string, string>,
 }
 
 export default defineStore('themes', {
   state: (): State => ({
-    // color: import.meta.env.VITE_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1].suggestedColor : themes[0].suggestedColor,
-    theme: /*import.meta.env.VITE_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1] : */lightTheme as Theme,
+    theme: DEFAULT_THEME,
     resolvedAssets: new Map(),
   }),
   actions: {
