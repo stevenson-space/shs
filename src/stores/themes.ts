@@ -38,14 +38,6 @@ export default defineStore('themes', {
     //   } });
     },
     setTheme(theme: Theme): void {
-      // const color = theme.suggestedColor;
-      // if (useThemeColor) {
-      //   this.color = color;
-      //   localStorage.color = color;
-      //   GASet({ user_properties: {
-      //     color,
-      //   } });
-      // }
       this.theme = theme;
       localStorage.theme = JSON.stringify(theme);
     },
