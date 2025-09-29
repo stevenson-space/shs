@@ -40,9 +40,10 @@
       "invert": "var(--accent)"
     },
 
-    "specialEffect": {
-      "type": "falling-particles",
-      "particle": "assets://particles/snowflake.png"
+    "particles": {
+      "images": [
+        "assets://particles/snowflake.png"
+      ]
     }
   }
 }
