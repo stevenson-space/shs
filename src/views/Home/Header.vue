@@ -88,8 +88,16 @@
     />
 
     <announcements :full-screen-mode="fullScreenMode" />
-    <particle-system v-if="theme.metadata.name.toLowerCase() == 'winter'" :images="[snowflake]"/>
-    <particle-system v-if="theme.metadata.name.includes('Valentine')" :images="[heart]"/>
+    <particle-system
+      v-if="particleImages.length > 0"
+      :images="particleImages"
+      :speed="theme.styling.particles?.speed"
+      :count="theme.styling.particles?.count"
+      :size="theme.styling.particles?.size"
+      :opacity="theme.styling.particles?.opacity"
+      :wind-power="theme.styling.particles?.windPower"
+      :interaction="theme.styling.particles?.interaction"
+    />
 
   </div>
 </template>
@@ -97,8 +105,6 @@
 <script>
 import { mapState, mapActions } from 'pinia';
 
-import heart from '@/assets/occasions/heart.svg';
-import snowflake from '@/assets/occasions/snowflake.png';
 import bellAudio from '@/assets/virtual-bell.wav';
 import starryNight from '@/assets/occasions/starry-night-full.mp4';
 
@@ -148,8 +154,6 @@ export default {
         faVolumeHigh,
         faVolumeOff,
       },
-      heart,
-      snowflake,
       colored: true,
       useVirtualBell: false,
       starryNight,
@@ -205,6 +209,16 @@ export default {
       }
       const { modes } = this.bell;
       return modes.map((mode) => mode.name);
+    },
+    particleImages() {
+      if (!this.theme.styling?.particles?.images) {
+        return [];
+      }
+
+      const resolveAsset = (url) => url?.startsWith('assets://') ?
+        url.replace('assets://', '/src/themes/assets/') : url;
+
+      return this.theme.styling.particles.images.map(resolveAsset);
     },
   },
   watch: {
