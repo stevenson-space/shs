@@ -1,31 +1,31 @@
 {
   "metadata": {
-    "name": "Light",
+    "name": "Dark",
     "author": "shs-space"
   },
 
   "visibility": "show",
 
   "styling": {
-    "background": "white",
-    "secondaryBackground": "var(--background)",
+    "background": "#23272a",
+    "secondaryBackground": "#2c2f33",
 
-    "accent": "#1b5e20",
+    "accent": "#b38825",
 
     "text": {
       "primary": "black",
-      "secondary": "#333",
-      "tertiary": "#555"
+      "secondary": "white",
+      "tertiary": "white"
     },
 
     "header": {
-      "background": "var(--accent)",
+      "background": "var(--secondaryBackground)",
       "scheduleBar": "var(--background)"
     },
 
     "iconCards": {
       "regular": "white",
-      "invert": "var(--accent)"
+      "invert": "white"
     }
   }
 }
