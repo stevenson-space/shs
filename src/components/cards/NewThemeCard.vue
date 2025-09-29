@@ -1,5 +1,5 @@
 <template>
-  <card v-if="newTheme != null && theme.name !== newTheme.name">
+  <card v-if="newTheme != null && theme.metadata.name !== newTheme.metadata.name">
     <div class="row">
       <rounded-button
         class="button"
