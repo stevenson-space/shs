@@ -26,6 +26,7 @@ export default {
         '--headerBackground': styling.header?.background || fallback.header.background,
         '--headerScheduleBar': styling.header?.scheduleBar || fallback.header.scheduleBar,
         color: styling.text?.primary || fallback.text.primary,
+        '--primary': styling.text?.primary || fallback.text.primary,
         '--secondary': styling.text?.secondary || fallback.text.secondary,
         '--tertiary': styling.text?.tertiary || fallback.text.tertiary,
         '--iconCardsRegular': styling.iconCards?.regular || fallback.iconCards.regular,
