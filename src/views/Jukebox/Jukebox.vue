@@ -207,7 +207,7 @@ $medium: 900px
 
 .live
   .background-block
-    background-color: var(--headerBackgroundColor)
+    background-color: var(--headerBackground)
     height: 250px
     width: 100%
     left: 0
@@ -238,7 +238,7 @@ $medium: 900px
       margin: 15px 0 0 15px
 
     .icon
-      color: var(--headerBackgroundColor)
+      color: var(--headerBackground)
 
     .subtitle
       text-align: left
@@ -272,11 +272,11 @@ $medium: 900px
         .progress-bar-fill
           height: 15px
           width: 20%
-          background-color: var(--headerBackgroundColor)
+          background-color: var(--headerBackground)
           // transition: width 0.05s ease-in-out
           border-radius: 10px
         .progress-bar-handle
-          background-color: var(--headerBackgroundColor)
+          background-color: var(--headerBackground)
           border-radius: 9999px
 
       .album-art
@@ -314,10 +314,10 @@ $medium: 900px
           font-size: 2em
           color: var(--secondary)
           &:hover
-            color: var(--headerBackgroundColor)
+            color: var(--headerBackground)
             cursor: pointer
         .play-button
-          background-color: var(--headerBackgroundColor)
+          background-color: var(--headerBackground)
           border-radius: 50%
           padding: 10px 20px 9px 21px
           margin: 0
@@ -346,7 +346,7 @@ $medium: 900px
         transition: 0.15s
         font-size: 1em
         margin: 3px 5px 0 0
-        color: var(--headerBackgroundColor)
+        color: var(--headerBackground)
         &:hover
           font-size: 1.2em
           cursor: pointer
