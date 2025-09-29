@@ -84,7 +84,7 @@ export type ThemeParticles = {
 };
 
 export type ThemeStyling = {
-  inherit?: string;
+  base?: "light" | "dark";
   background?: string;
   secondaryBackground?: string;
   accent?: string;
