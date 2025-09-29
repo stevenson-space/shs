@@ -64,7 +64,7 @@ export type ThemeHeaderConfig = {
     mobile?: string;
   };
   // color of the bar below the header
-  bar: string;
+  scheduleBar: string;
 };
 
 export type ThemeIconCards = {

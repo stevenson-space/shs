@@ -32,7 +32,7 @@
         "full": "assets://header-images/cosmic-reef-full.png",
         "mobile": "assets://header-images/cosmic-reef-full.png"
       },
-      "bar": "white"
+      "scheduleBar": "white"
     },
 
     "iconCards": {
