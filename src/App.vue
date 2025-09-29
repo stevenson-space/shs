@@ -7,6 +7,7 @@
 <script>
 import { mapState, mapActions } from 'pinia';
 import useThemeStore from '@/stores/themes';
+import { fallbackTheme } from "@/utils/themes.ts";
 import useScheduleStore from '@/stores/schedules';
 import useClockStore from '@/stores/clock';
 import useUserSettingsStore from '@/stores/user-settings';
@@ -15,17 +16,20 @@ export default {
   computed: {
     ...mapState(useThemeStore, ['theme', 'color']),
     style() {
+      const fallback = fallbackTheme(this.theme).styling;
+      const styling = this.theme.styling;
+
       return {
-        '--color': this.color,
-        '--background': this.theme.background,
-        '--secondaryBackground': this.theme.secondaryBackground,
-        '--headerBackgroundColor': this.theme.headerBackgroundColor,
-        '--headerScheduleBackgroundColor': this.theme.headerScheduleBackgroundColor,
-        color: this.theme.primary,
-        '--secondary': this.theme.secondary,
-        '--tertiary': this.theme.tertiary,
-        '--iconTextCardColor': this.theme.iconTextCardColor,
-        '--iconTextCardInvertColor': this.theme.iconTextCardInvertColor,
+        '--accent': styling.accent || fallback.accent,
+        '--background': styling.background || fallback.background,
+        '--secondaryBackground': styling.secondaryBackground || fallback.secondaryBackground,
+        '--headerBackground': styling.header?.background || fallback.header.background,
+        '--headerScheduleBar': styling.header?.scheduleBar || fallback.header.scheduleBar,
+        color: styling.text?.primary || fallback.text.primary,
+        '--secondary': styling.text?.secondary || fallback.text.secondary,
+        '--tertiary': styling.text?.tertiary || fallback.text.tertiary,
+        'iconCardsRegular': styling.iconCards?.regular || fallback.iconCards.regular,
+        '--iconCardsInvert': styling.iconCards?.invert || fallback.iconCards.invert,
       };
     },
   },
@@ -37,7 +41,7 @@ export default {
   },
   watch: {
     theme() {
-      document.querySelector('body').style.background = this.theme.background;
+      document.querySelector('body').style.background = this.theme.styling.background || fallbackTheme(this.theme).styling.background;
     },
     $route() {
       this.pageLoaded(this.$route);
@@ -52,7 +56,7 @@ export default {
     this.initializeGrade();
     this.initializeShowPWCSchedule();
     this.pageLoaded(this.$route);
-    document.querySelector('body').style.background = this.theme.background;
+    document.querySelector('body').style.background = this.theme.styling.background || fallbackTheme(this.theme).styling.background;
   },
 };
 </script>
