@@ -32,11 +32,11 @@ export default {
 
 .card
   background: var(--accent) !important
-  color: var(--iconTextCardColor)
+  color: var(iconCardsRegular)
   transition: transform .4s
   &.invert
     background-color: var(--secondaryBackground) !important
-    color: var(--iconTextCardInvertColor)
+    color: var(--iconCardsInvert)
   &:hover
     transform: scale(1.03)
 

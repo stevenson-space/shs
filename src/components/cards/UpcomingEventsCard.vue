@@ -195,7 +195,7 @@ export default {
       margin-right: 20px
       margin-top: 2px
       font-size: .8em
-      color: var(--iconTextCardInvertColor)
+      color: var(--iconCardsInvert)
 
   .send-popup, .save-popup
     margin: 15px 25px
