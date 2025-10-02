@@ -22,6 +22,7 @@ import RoundedButton from '@/components/RoundedButton.vue';
 import { mapState, mapActions } from 'pinia';
 import useClockStore from '@/stores/clock';
 import useThemeStore from '@/stores/themes';
+import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
 
 export default {
   components: { Card, RoundedButton },
@@ -35,16 +36,8 @@ export default {
       for (const theme of this.themes) {
         if (!theme.seasonal?.dates) continue;
 
-        const [start, end] = theme.seasonal.dates.split('-').map(d => {
-          const parts = d.split('/').map(Number);
-          const [month, day, year] = parts;
-          if (year !== undefined) {
-            return new Date(year, month - 1, day);
-          }
-          return new Date(now.getFullYear(), month - 1, day);
-        });
-
-        if (now >= start && now <= end) {
+        const [start, end] = parseDateRange(theme.seasonal.dates, now);
+        if (isDateInRange(now, start, end)) {
           return theme;
         }
       }
@@ -66,17 +59,6 @@ export default {
   methods: {
     ...mapActions(useThemeStore, ['setTheme']),
 
-    async loadThemes() {
-      const baseThemeModules = import.meta.glob('@/themes/base/*.json', { eager: true });
-      const regularThemeModules = import.meta.glob('@/themes/*.json', { eager: true });
-
-      const allModules = { ...baseThemeModules, ...regularThemeModules };
-
-      this.themes = Object.values(allModules)
-        .map(module => module.default)
-        .filter(theme => theme.visibility !== 'hide');
-    },
-
     toggleTheme() {
       this.setTheme(this.newTheme);
     },
@@ -88,8 +70,8 @@ export default {
       localStorage.setItem('dismissedThemeCards', JSON.stringify(dismissedThemes));
     },
   },
-  mounted() {
-    this.loadThemes();
+  async mounted() {
+    this.themes = await loadAllThemes();
   },
 };
 </script>
