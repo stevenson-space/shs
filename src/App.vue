@@ -41,8 +41,11 @@ export default {
     ...mapActions(useUserSettingsStore, ['initializeGrade', 'initializeShowPWCSchedule']),
   },
   watch: {
-    styling() {
-      document.querySelector('body').style.background = this.styling.background || fallbackStyling(this.styling).background;
+    styling: {
+      handler() {
+        document.querySelector('body').style.background = this.styling.background || fallbackStyling(this.styling).background;
+      },
+      deep: true,
     },
     $route() {
       this.pageLoaded(this.$route);
