@@ -25,8 +25,7 @@ import { intoCountdownString } from '@/utils/countdown';
 import { mapActions, mapState } from "pinia";
 import {dateToSeconds} from "@/utils/util";
 import ScrollablePeriodList from "@/components/ScrollablePeriodList.vue";
-// TODO(themes)
-// import themes from '@/data/themes.json';
+import tvspaceTheme from '@/themes/tvspace.json';
 import useThemeStore from '@/stores/themes';
 
 
@@ -38,12 +37,7 @@ export default {
   },
   mounted() {
     if (this.$route.query.settheme === 'true') {
-      const theme = themes.find(e => e.name === "TVSpace");
-      console.log(theme);
-
-      if (theme) {
-        this.setTheme({ theme, useThemeColor: true });
-      }
+      this.setTheme(tvspaceTheme);
     }
   },
   computed: {
