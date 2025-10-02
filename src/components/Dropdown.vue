@@ -156,7 +156,7 @@ export default defineComponent({
   .select-option
     background-color: var(--background)
     position: relative
-    border: var(--color) 1px solid
+    border: var(--accent) 1px solid
     display: flex
     margin-left: 7px
     justify-content: center

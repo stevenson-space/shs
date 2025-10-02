@@ -73,7 +73,7 @@ export default {
   .date
     font-size: .9em
     font-weight: bold
-    color: var(--color)
+    color: var(--accent)
 
   .title
     font-size: 1.4em
@@ -93,7 +93,7 @@ export default {
     align-items: center
 
   .icon
-    color: var(--color)
+    color: var(--accent)
     font-size: 1.25em
     margin-right: 5px
 

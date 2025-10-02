@@ -2,7 +2,7 @@
 <!-- Code Written By Bob Chen under an MIT license with minor changes made. https://github.com/bob-chen/vue-let-it-snow -->
   <div
     ref="wrap"
-    class="snow-wrap"
+    class="particle-wrap"
     :class="{ 'events-all': interaction, hide: toHide }"
   >
     <img
@@ -10,7 +10,7 @@
       :key="index"
       :src="img"
       style="display: none"
-      class="lis_flake"
+      class="particle_image"
     />
     <canvas ref="canvas" width="100%" height="100%"></canvas>
   </div>
@@ -19,13 +19,13 @@
 <script>
 /* eslint-disable */
 export default {
-  name: "let-it-snow",
+  name: "ParticleSystem",
   data() {
     return {
-      flakes: [],
+      particles: [],
       canvas: null,
       ctx: null,
-      flakeCount: this.count,
+      particleCount: this.count,
       mX: -100,
       mY: -100,
       imageItems: [],
@@ -108,15 +108,15 @@ export default {
       // No other way of checking: assume it’s ok.
       return true;
     },
-    snow: function () {
+    animate: function () {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      for (var i = 0; i < this.flakeCount; i++) {
-        var flake = this.flakes[i],
+      for (var i = 0; i < this.particleCount; i++) {
+        var particle = this.particles[i],
           x = this.mX,
           y = this.mY,
           minDist = 100,
-          x2 = flake.x,
-          y2 = flake.y;
+          x2 = particle.x,
+          y2 = particle.y;
         var dist = Math.sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y)),
           dx = x2 - x,
           dy = y2 - y;
@@ -125,22 +125,22 @@ export default {
             xcomp = (x - x2) / dist,
             ycomp = (y - y2) / dist,
             deltaV = force / 2;
-          flake.velX -= deltaV * xcomp;
-          flake.velY -= deltaV * ycomp;
+          particle.velX -= deltaV * xcomp;
+          particle.velY -= deltaV * ycomp;
         } else {
-          flake.velX *= 0.98;
-          if (flake.velY <= flake.speed) {
-            flake.velY = flake.speed;
+          particle.velX *= 0.98;
+          if (particle.velY <= particle.speed) {
+            particle.velY = particle.speed;
           }
           switch (this.windPower) {
             case false:
-              flake.velX += Math.cos((flake.step += 0.05)) * flake.stepSize;
+              particle.velX += Math.cos((particle.step += 0.05)) * particle.stepSize;
               break;
             case 0:
-              flake.velX += Math.cos((flake.step += 0.05)) * flake.stepSize;
+              particle.velX += Math.cos((particle.step += 0.05)) * particle.stepSize;
               break;
             default:
-              flake.velX += 0.01 + this.windPower / 100;
+              particle.velX += 0.01 + this.windPower / 100;
           }
         }
         var s = this.color;
@@ -152,38 +152,38 @@ export default {
           parseInt(matches[2], 16) +
           "," +
           parseInt(matches[3], 16);
-        flake.y += flake.velY;
-        flake.x += flake.velX;
-        if (flake.y >= this.canvas.height || flake.y <= 0) {
-          this.reset(flake);
+        particle.y += particle.velY;
+        particle.x += particle.velX;
+        if (particle.y >= this.canvas.height || particle.y <= 0) {
+          this.reset(particle);
         }
-        if (flake.x >= this.canvas.width || flake.x <= 0) {
-          this.reset(flake);
+        if (particle.x >= this.canvas.width || particle.x <= 0) {
+          this.reset(particle);
         }
         if (this.images.length == 0) {
-          this.ctx.fillStyle = "rgba(" + rgb + "," + flake.opacity + ")";
+          this.ctx.fillStyle = "rgba(" + rgb + "," + particle.opacity + ")";
           this.ctx.beginPath();
-          this.ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
+          this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
           this.ctx.fill();
         } else {
           var imgItem = this.imageItems[i % this.imageNum];
           if (this.IsImageOk(imgItem)) {
             this.ctx.drawImage(
               imgItem,
-              flake.x,
-              flake.y,
-              flake.size * 2,
-              flake.size * 2
+              particle.x,
+              particle.y,
+              particle.size * 2,
+              particle.size * 2
             );
           }
         }
       }
-      this.reqId = requestAnimationFrame(this.snow);
+      this.reqId = requestAnimationFrame(this.animate);
     },
-    reset: function (flake) {
+    reset: function (particle) {
       if (this.windPower == false || this.windPower == 0) {
-        flake.x = Math.floor(Math.random() * this.canvas.width);
-        flake.y = 0;
+        particle.x = Math.floor(Math.random() * this.canvas.width);
+        particle.y = 0;
       } else {
         if (this.windPower > 0) {
           var xarray = Array(Math.floor(Math.random() * this.canvas.width), 0);
@@ -191,8 +191,8 @@ export default {
           var allarray = Array(xarray, yarray);
           var selected_array =
             allarray[Math.floor(Math.random() * allarray.length)];
-          flake.x = selected_array[0];
-          flake.y = selected_array[1];
+          particle.x = selected_array[0];
+          particle.y = selected_array[1];
         } else {
           var xarray = Array(Math.floor(Math.random() * this.canvas.width), 0);
           var yarray = Array(
@@ -202,15 +202,15 @@ export default {
           var allarray = Array(xarray, yarray);
           var selected_array =
             allarray[Math.floor(Math.random() * allarray.length)];
-          flake.x = selected_array[0];
-          flake.y = selected_array[1];
+          particle.x = selected_array[0];
+          particle.y = selected_array[1];
         }
       }
-      flake.size = Math.random() * 3 + this.size;
-      flake.speed = Math.random() * .3 + this.speed * 0.5;
-      flake.velY = flake.speed*.5;
-      flake.velX = 0;
-      flake.opacity = Math.random() * 0.5 + this.opacity;
+      particle.size = Math.random() * 3 + this.size;
+      particle.speed = Math.random() * .3 + this.speed * 0.5;
+      particle.velY = particle.speed*.5;
+      particle.velX = 0;
+      particle.opacity = Math.random() * 0.5 + this.opacity;
     },
     init: function () {
       if (this.reqId) cancelAnimationFrame(this.reqId);
@@ -234,13 +234,13 @@ export default {
           }
         });
       }
-      for (var i = 0; i < this.flakeCount; i++) {
+      for (var i = 0; i < this.particleCount; i++) {
         var x = Math.floor(Math.random() * this.canvas.width),
           y = Math.floor(Math.random() * this.canvas.height),
           size = Math.random() * 3 + this.size,
           speed = Math.random() * .3 + this.speed*.5,
           opacity = Math.random() * 0.5 + this.opacity;
-        this.flakes.push({
+        this.particles.push({
           speed: speed*.5,
           velY: speed,
           velX: 0,
@@ -253,19 +253,19 @@ export default {
           opacity: opacity,
         });
       }
-      var imageList = document.querySelectorAll(".lis_flake");
+      var imageList = document.querySelectorAll(".particle_image");
       for (i = 0; i < imageList.length; i++) {
         this.imageItems.push(imageList[i]);
       }
       this.imageNum = imageList.length;
-      this.snow();
+      this.animate();
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.snow-wrap {
+.particle-wrap {
   position: fixed;
   left: 0;
   top: 0;
@@ -273,15 +273,23 @@ export default {
   pointer-events: none;
   height: 100%;
   width: 100%;
-  &.events-all {
-    pointer-events: all;
+
+  canvas {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &.events-all canvas {
+    pointer-events: auto;
   }
   &.hide {
     opacity: 0;
     -webkit-transition: opacity 1s;
     transition: opacity 1s;
   }
-  canvans {
+  canvas {
     display: block;
     height: 100%;
     width: 100%;

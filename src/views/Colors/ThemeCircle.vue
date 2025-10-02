@@ -4,7 +4,7 @@
       <div class="circle" :style="{ background: gradientString }"></div>
     </div>
     <div class="name">
-      {{ theme.name.toUpperCase().substring(0, 1) + theme.name.substring(1) }}
+      {{ theme.metadata.name.toUpperCase().substring(0, 1) + theme.metadata.name.substring(1) }}
     </div>
   </div>
 </template>

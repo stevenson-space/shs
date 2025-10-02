@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "name": "Light",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+
+  "styling": {
+    "background": "white",
+    "secondaryBackground": "var(--background)",
+
+    "accent": "#1b5e20",
+
+    "text": {
+      "primary": "black",
+      "secondary": "#333",
+      "tertiary": "#555"
+    },
+
+    "header": {
+      "background": "var(--accent)",
+      "scheduleBar": "var(--background)"
+    },
+
+    "iconCards": {
+      "regular": "white",
+      "invert": "var(--accent)"
+    }
+  }
+}

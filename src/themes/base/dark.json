@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "name": "Dark",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+
+  "styling": {
+    "background": "#23272a",
+    "secondaryBackground": "#2c2f33",
+
+    "accent": "#b38825",
+
+    "text": {
+      "primary": "white",
+      "secondary": "white",
+      "tertiary": "white"
+    },
+
+    "header": {
+      "background": "var(--secondaryBackground)",
+      "scheduleBar": "var(--background)"
+    },
+
+    "iconCards": {
+      "regular": "white",
+      "invert": "white"
+    }
+  }
+}

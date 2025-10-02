@@ -14,7 +14,7 @@
         v-show="showTheme(themeItem)"
         @click="changeTheme(themeItem)"
         :theme="themeItem"
-        :isCurrentTheme="themeItem.name==theme.name && themeItem.suggestedColor == color"
+        :isCurrentTheme="themeItem.name==theme.metadata.name && themeItem.suggestedColor == color"
       />
     </div>
     <div v-if="theme.description" class="about-theme">

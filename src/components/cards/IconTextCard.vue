@@ -31,12 +31,12 @@ export default {
 @import '@/styles/style.sass'
 
 .card
-  background: var(--color) !important
-  color: var(--iconTextCardColor)
+  background: var(--accent) !important
+  color: var(--iconCardsRegular)
   transition: transform .4s
   &.invert
     background-color: var(--secondaryBackground) !important
-    color: var(--iconTextCardInvertColor)
+    color: var(--iconCardsInvert)
   &:hover
     transform: scale(1.03)
 

@@ -1,56 +1,35 @@
 import { defineStore } from 'pinia';
-import _themeIdeas from '@/data/themeIdeas.json';
-import _themes from '@/data/themes.json';
-import { set as GASet } from 'vue-gtag';
-import { ThemeData, Theme } from '@/utils/types';
+import lightTheme from '@/themes/base/light.json'
+import { Theme } from '@/utils/types';
 
-const themes: Theme[] = _themes;
-const themeIdeas: Theme[] = _themeIdeas;
+const DEFAULT_THEME: Theme = lightTheme as Theme;
 
 interface State {
-  color: string,
-  theme: object,
+  theme: Theme,
+  resolvedAssets: Map<string, string>,
 }
 
 export default defineStore('themes', {
   state: (): State => ({
-    color: import.meta.env.VITE_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1].suggestedColor : themes[0].suggestedColor,
-    theme: import.meta.env.VITE_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1] : themes[0],
+    theme: DEFAULT_THEME,
+    resolvedAssets: new Map(),
   }),
   actions: {
     initializeTheme(): void {
-      if (localStorage.color && import.meta.env.VITE_EDIT_COLORS !== 'true') {
-        this.setColor(localStorage.color);
-        GASet({ user_properties: {
-          color: localStorage.color,
-        } });
+      if (localStorage.theme) {
+        try {
+          this.setTheme(JSON.parse(localStorage.theme));
+        } catch (error) {
+          this.setTheme(DEFAULT_THEME);
+        }
       } else {
-        GASet({ user_properties: {
-          color: 'unset',
-        } });
-      }
-      if (localStorage.theme && import.meta.env.VITE_EDIT_COLORS !== 'true') {
-        const data:ThemeData = { theme: JSON.parse(localStorage.theme), useThemeColor: false };
-        this.setTheme(data);
+        this.setTheme(DEFAULT_THEME);
       }
     },
     setColor(color:string): void {
-      this.color = color;
-      localStorage.color = color;
-      GASet({ user_properties: {
-        color,
-      } });
+      // TODO: remove uses of this
     },
-    setTheme(data: ThemeData): void {
-      const { useThemeColor, theme } = data;
-      const color = theme.suggestedColor;
-      if (useThemeColor) {
-        this.color = color;
-        localStorage.color = color;
-        GASet({ user_properties: {
-          color,
-        } });
-      }
+    setTheme(theme: Theme): void {
       this.theme = theme;
       localStorage.theme = JSON.stringify(theme);
     },

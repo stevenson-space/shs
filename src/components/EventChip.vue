@@ -52,7 +52,7 @@ export default defineComponent({
   align-items: center
   .name
     +shadow
-    background-color: var(--color)
+    background-color: var(--accent)
     width: calc(50% + var(--circle-radius))
     height: var(--circle-diameter)
     line-height: var(--circle-diameter)
@@ -62,6 +62,7 @@ export default defineComponent({
     color: var(--background)
     font-size: .9em
     .text
+      // TODO(theme): this should use theme!
       color: white
       white-space: nowrap
       overflow: hidden

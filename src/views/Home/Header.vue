@@ -1,7 +1,7 @@
 <template>
   <div
     class="header"
-    :class="{ 'full-screen': fullScreenMode, 'spy': theme.name.toLowerCase() == 'spy', 'halloween': theme.name.toLowerCase() == 'halloween', 'minecraft': theme.name.toLowerCase() == 'minecraft', 'mars': theme.name.toLowerCase() == 'mars', 'cosmic-reef': theme.name.toLowerCase() == 'cosmic reef', 'cosmic-tarantula': theme.name.toLowerCase() == 'cosmic tarantula', 'summer': theme.name.toLowerCase() == 'summer', 'eclipse': theme.name.toLowerCase() == 'eclipse', 'zen': theme.name.toLowerCase() == 'zen' || theme.name.toLowerCase() == 'not windows xp'}"
+    :class="{ 'full-screen': fullScreenMode }"
     :style="colors"
   >
     <dropdown
@@ -14,9 +14,9 @@
 
     <div
       class="main"
-      :class="{ 'extra-padding': scheduleModes.length > 1, 'winterfest': theme.name.toLowerCase() == 'into the woods'}"
+      :class="{ 'extra-padding': scheduleModes.length > 1, 'winterfest': theme.metadata.name.toLowerCase() == 'into the woods'}"
     >
-      <video v-if="theme.name.toLowerCase() === 'stevenson space'" autoplay loop muted playsinline :class="'starry-night' + (fullScreenMode ? ' starry-night-full' : '')">
+      <video v-if="theme.metadata.name.toLowerCase() === 'stevenson space'" autoplay loop muted playsinline :class="'starry-night' + (fullScreenMode ? ' starry-night-full' : '')">
         <source
           :src="starryNight"
           type="video/mp4"
@@ -88,8 +88,16 @@
     />
 
     <announcements :full-screen-mode="fullScreenMode" />
-    <snow v-if="theme.name.toLowerCase() == 'winter'" :images="[snowflake]"/>
-    <snow v-if="theme.name.includes('Valentine')" :images="[heart]"/>
+    <particle-system
+      v-if="particleImages.length > 0"
+      :images="particleImages"
+      :speed="theme.styling.particles?.speed"
+      :count="theme.styling.particles?.count"
+      :size="theme.styling.particles?.size"
+      :opacity="theme.styling.particles?.opacity"
+      :wind-power="theme.styling.particles?.windPower"
+      :interaction="theme.styling.particles?.interaction"
+    />
 
   </div>
 </template>
@@ -97,8 +105,6 @@
 <script>
 import { mapState, mapActions } from 'pinia';
 
-import heart from '@/assets/occasions/heart.svg';
-import snowflake from '@/assets/occasions/snowflake.png';
 import bellAudio from '@/assets/virtual-bell.wav';
 import starryNight from '@/assets/occasions/starry-night-full.mp4';
 
@@ -113,7 +119,7 @@ import {
   faVolumeOff,
 } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from '@/components/Dropdown.vue';
-import Snow from '@/components/Snow.vue';
+import ParticleSystem from '@/components/ParticleSystem.vue';
 import useClockStore from '@/stores/clock';
 import useScheduleStore from '@/stores/schedules';
 import useThemeStore from '@/stores/themes';
@@ -131,7 +137,7 @@ export default {
     HeaderSchedule,
     Dropdown,
     Announcements,
-    Snow,
+    ParticleSystem,
   },
   props: {
     fullScreenMode: { type: Boolean, default: false },
@@ -148,8 +154,6 @@ export default {
         faVolumeHigh,
         faVolumeOff,
       },
-      heart,
-      snowflake,
       colored: true,
       useVirtualBell: false,
       starryNight,
@@ -161,10 +165,23 @@ export default {
     ...mapState(useClockStore, ['clockMode', 'date', 'bell']),
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
-      return {
-        '--header-color': showColor ? 'var(--headerBackgroundColor)' : 'var(--background)',
-        '--header-accent': showColor ? 'white' : 'var(--color)',
+      const styling = this.theme.styling;
+
+      let headerStyle = {
+        '--header-color': showColor ? 'var(--headerBackground)' : 'var(--background)',
+        '--header-accent': showColor ? 'white' : 'var(--accent)',
       };
+
+      if (styling?.header?.image?.full) {
+        const resolveAsset = (url) => url?.startsWith('assets://') ? url.replace('assets://', '/src/themes/assets/') : url;
+
+        headerStyle['--header-image-full'] = `url(${resolveAsset(styling.header.image.full)})`;
+        const mobileImage = styling.header.image.mobile || styling.header.image.full;
+        headerStyle['--header-image-mobile'] = `url(${resolveAsset(mobileImage)})`;
+        headerStyle['--has-header-image'] = '1';
+      }
+
+      return headerStyle;
     },
     endTime() {
       return this.bell.getSecondsUntilNextTarget();
@@ -192,6 +209,16 @@ export default {
       }
       const { modes } = this.bell;
       return modes.map((mode) => mode.name);
+    },
+    particleImages() {
+      if (!this.theme.styling?.particles?.images) {
+        return [];
+      }
+
+      const resolveAsset = (url) => url?.startsWith('assets://') ?
+        url.replace('assets://', '/src/themes/assets/') : url;
+
+      return this.theme.styling.particles.images.map(resolveAsset);
     },
   },
   watch: {
@@ -276,53 +303,13 @@ export default {
   background-color: var(--header-color)
   text-align: center
   transition: background-color .3s
-  &.spy
-    background: url(@/assets/occasions/spy-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/spy-full.png) center center no-repeat, var(--header-color)
 
-  &.minecraft
-    background: url(@/assets/occasions/minecraft-mobile.png) center center no-repeat, var(--header-color)
+  // Dynamic header images using CSS variables
+  &[style*="--has-header-image"]
+    background: var(--header-image-mobile, var(--header-color)) center center no-repeat
     background-size: cover
     +desktop
-      background: url(@/assets/occasions/minecraft-desktop.png) center center no-repeat, var(--header-color)
-  &.mars
-    background: url(@/assets/occasions/mars-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/mars-full.png) center center no-repeat, var(--header-color)
-  &.cosmic-reef
-    background: url(@/assets/occasions/cosmic-reef-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/cosmic-reef-full.png) center center no-repeat, var(--header-color)
-  &.cosmic-tarantula
-    background: url(@/assets/occasions/cosmic-tarantula-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/cosmic-tarantula-full.png) center center no-repeat, var(--header-color)
-  &.summer
-    background: url(@/assets/occasions/beach-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/beach-full.png) center center no-repeat, var(--header-color)
-  &.zen
-    background: url(@/assets/occasions/zen-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/zen-full.png) center center no-repeat, var(--header-color)
-  &.halloween
-    background: url(@/assets/occasions/cob-webs-left.png) left top no-repeat, url(@/assets/occasions/cob-webs-right.png) right top no-repeat, var(--header-color)
-    background-size: 250px
-    +mobile-small
-      background-size: 150px
-  &.eclipse
-    background: url(@/assets/occasions/eclipse-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/eclipse-full.png) center center no-repeat, var(--header-color)
-      background-size: fit
+      background: var(--header-image-full, var(--header-color)) center center no-repeat
 
   .starry-night
     position: absolute

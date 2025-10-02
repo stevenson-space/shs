@@ -50,7 +50,7 @@ export default {
   padding: 0px 5px
   border-radius: 30px
   width: 80%
-  border: 1px solid var(--color)
+  border: 1px solid var(--accent)
   height: 30px
   font-size: 1em
   text-indent: 0.3em
