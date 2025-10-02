@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "name": "Mars",
+    "author": "shs-space",
+    "description": "Featuring a selfie of the Curiosity rover on Mount Sharp. Credit: NASA"
+  },
+
+  "visibility": "show",
+
+  "styling": {
+    "base": "light",
+    "background": "#f0e7e7",
+    "secondaryBackground": "white",
+    "accent": "#c1440e",
+
+    "text": {
+      "primary": "black",
+      "secondary": "#333",
+      "tertiary": "#555"
+    },
+
+    "header": {
+      "background": "#F2F4F4",
+      "scheduleBar": "white",
+      "image": {
+        "full": "assets://header-images/mars-full.png",
+        "mobile": "assets://header-images/mars-mobile.png"
+      }
+    },
+
+    "iconCards": {
+      "regular": "white",
+      "invert": "var(--accent)"
+    }
+  }
+}

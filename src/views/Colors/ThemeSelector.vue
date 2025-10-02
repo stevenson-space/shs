@@ -26,7 +26,8 @@
 
 <script lang="ts">
 import themeCircle from '@/views/Colors/ThemeCircle.vue';
-import themes from '@/data/themes.json';
+// TODO(themes)
+// import themes from '@/data/themes.json';
 import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
 import WhatIsThis from '@/components/WhatIsThis.vue';
 import { mapState, mapActions } from 'pinia';

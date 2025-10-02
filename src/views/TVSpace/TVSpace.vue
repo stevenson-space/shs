@@ -25,7 +25,8 @@ import { intoCountdownString } from '@/utils/countdown';
 import { mapActions, mapState } from "pinia";
 import {dateToSeconds} from "@/utils/util";
 import ScrollablePeriodList from "@/components/ScrollablePeriodList.vue";
-import themes from '@/data/themes.json';
+// TODO(themes)
+// import themes from '@/data/themes.json';
 import useThemeStore from '@/stores/themes';
 
 

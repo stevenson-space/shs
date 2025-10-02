@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "name": "Spy",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+
+  "seasonal": {
+    "dates": "09/25-09/28",
+    "message": "[Try] The New Spy Theme 🕵️",
+    "limitedTime": true
+  },
+
+  "styling": {
+    "base": "dark",
+    "background": "#242424",
+    "secondaryBackground": "black",
+    "accent": "#bfbdbd",
+
+    "text": {
+      "primary": "white",
+      "secondary": "white",
+      "tertiary": "white"
+    },
+
+    "header": {
+      "background": "black",
+      "scheduleBar": "#242424",
+      "image": {
+        "full": "assets://header-images/spy-full.png",
+        "mobile": "assets://header-images/spy-mobile.png"
+      }
+    },
+
+    "iconCards": {
+      "regular": "black",
+      "invert": "white"
+    }
+  }
+}

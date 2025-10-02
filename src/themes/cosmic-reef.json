@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "name": "Cosmic Reef",
+    "author": "shs-space",
+    "description": "Featuring a satellite galaxy of the Milky Way - the Large Magellanic Cloud, located 163,000 light-years away. Credit: Hubble Telescope, NASA"
+  },
+
+  "visibility": "show",
+
+  "styling": {
+    "base": "dark",
+    "background": "#23272a",
+    "secondaryBackground": "#2c2f33",
+    "accent": "#cf6236",
+
+    "text": {
+      "primary": "white",
+      "secondary": "white",
+      "tertiary": "white"
+    },
+
+    "header": {
+      "background": "var(--secondaryBackground)",
+      "scheduleBar": "var(--background)",
+      "image": {
+        "full": "assets://header-images/cosmic-reef-full.png",
+        "mobile": "assets://header-images/cosmic-reef-mobile.png"
+      }
+    },
+
+    "iconCards": {
+      "regular": "white",
+      "invert": "white"
+    }
+  }
+}

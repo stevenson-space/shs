@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "name": "Winter",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+
+  "seasonal": {
+    "dates": "12/01-03/20",
+    "message": "[Try] The New Winter Theme ☕",
+    "limitedTime": false
+  },
+
+  "styling": {
+    "base": "light",
+    "background": "#f2fcff",
+    "secondaryBackground": "white",
+    "accent": "#02647a",
+
+    "text": {
+      "primary": "#02647a",
+      "secondary": "#02647a",
+      "tertiary": "#02647a"
+    },
+
+    "header": {
+      "background": "#02647a",
+      "scheduleBar": "var(--background)"
+    },
+
+    "iconCards": {
+      "regular": "white",
+      "invert": "var(--accent)"
+    },
+
+    "particles": {
+      "images": [
+        "assets://particles/snowflake.png"
+      ],
+      "speed": 1,
+      "count": 15,
+      "size": 5,
+      "opacity": 0.7,
+      "windPower": 2,
+      "interaction": false
+    }
+  }
+}

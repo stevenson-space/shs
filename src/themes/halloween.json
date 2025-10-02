@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "name": "Halloween",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+
+  "seasonal": {
+    "dates": "10/15-11/01",
+    "message": "[Try] The Spooky Halloween Theme",
+    "limitedTime": false
+  },
+
+  "styling": {
+    "base": "dark",
+    "background": "#0f0f0f",
+    "secondaryBackground": "#181a1c",
+    "accent": "#cc611b",
+
+    "text": {
+      "primary": "white",
+      "secondary": "white",
+      "tertiary": "white"
+    },
+
+    "header": {
+      "background": "#cc611b",
+      "scheduleBar": "var(--background)"
+    },
+
+    "iconCards": {
+      "regular": "white",
+      "invert": "white"
+    }
+  }
+}

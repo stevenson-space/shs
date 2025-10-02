@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "name": "Valentine's Day",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+
+  "seasonal": {
+    "dates": "02/08-02/15",
+    "message": "[Try] The New Valentines Day Theme",
+    "limitedTime": false
+  },
+
+  "styling": {
+    "base": "light",
+    "background": "#ffeded",
+    "secondaryBackground": "white",
+    "accent": "#f98686",
+
+    "text": {
+      "primary": "#D73F2F",
+      "secondary": "#D73F2F",
+      "tertiary": "#D73F2F"
+    },
+
+    "header": {
+      "background": "#bf4040",
+      "scheduleBar": "white"
+    },
+
+    "iconCards": {
+      "regular": "white",
+      "invert": "var(--accent)"
+    },
+
+    "particles": {
+      "images": [
+        "assets://particles/heart.svg"
+      ],
+      "speed": 0.8,
+      "count": 12,
+      "size": 8,
+      "opacity": 0.6,
+      "windPower": 1,
+      "interaction": false
+    }
+  }
+}

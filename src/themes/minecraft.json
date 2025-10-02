@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "name": "Minecraft",
+    "author": "shs-space",
+    "description": "The new Minecraft wallpaper created by Dan Rybin!"
+  },
+
+  "visibility": "show",
+
+  "seasonal": {
+    "dates": "01/12-09/22",
+    "message": "The new Minecraft wallpaper created by Dan Rybin!",
+    "limitedTime": false
+  },
+
+  "styling": {
+    "base": "light",
+    "background": "white",
+    "secondaryBackground": "white",
+    "accent": "#1b5e20",
+
+    "text": {
+      "primary": "black",
+      "secondary": "#333",
+      "tertiary": "#555"
+    },
+
+    "header": {
+      "background": "var(--accent)",
+      "scheduleBar": "var(--background)",
+      "image": {
+        "full": "assets://header-images/minecraft-desktop.png",
+        "mobile": "assets://header-images/minecraft-mobile.png"
+      }
+    },
+
+    "iconCards": {
+      "regular": "white",
+      "invert": "var(--accent)"
+    }
+  }
+}

@@ -18,7 +18,8 @@
 </template>
 
 <script>
-import themes from '@/data/themes.json';
+// TODO(themes)
+// import themes from '@/data/themes.json';
 import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ThemeChangeModal from '@/components/ThemeChangeModal.vue';

@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "name": "Fall",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+
+  "seasonal": {
+    "dates": "09/28-12/01",
+    "message": "[Try] The New Fall Theme 🍁",
+    "limitedTime": false
+  },
+
+  "styling": {
+    "base": "light",
+    "background": "white",
+    "secondaryBackground": "white",
+    "accent": "#d26f1e",
+
+    "text": {
+      "primary": "black",
+      "secondary": "#333",
+      "tertiary": "#555"
+    },
+
+    "header": {
+      "background": "#df9920",
+      "scheduleBar": "white"
+    },
+
+    "iconCards": {
+      "regular": "white",
+      "invert": "var(--accent)"
+    }
+  }
+}

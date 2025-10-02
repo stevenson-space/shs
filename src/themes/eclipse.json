@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "name": "Eclipse",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+
+  "seasonal": {
+    "dates": "04/07/24-04/09/24",
+    "message": "[Try] The new Eclipse theme now! ☀️",
+    "limitedTime": true
+  },
+
+  "styling": {
+    "base": "dark",
+    "background": "black",
+    "secondaryBackground": "black",
+    "accent": "#F88203",
+
+    "text": {
+      "primary": "white",
+      "secondary": "white",
+      "tertiary": "white"
+    },
+
+    "header": {
+      "background": "black",
+      "scheduleBar": "black",
+      "image": {
+        "full": "assets://header-images/eclipse-full.png",
+        "mobile": "assets://header-images/eclipse-mobile.png"
+      }
+    },
+
+    "iconCards": {
+      "regular": "black",
+      "invert": "var(--accent)"
+    }
+  }
+}

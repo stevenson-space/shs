@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "name": "Cosmic Tarantula",
+    "author": "shs-space",
+    "description": "Thousands of never-before-seen young stars spotted in a stellar nursery called 30 Doradus. Credit: James Webb Telescope, NASA"
+  },
+
+  "visibility": "show",
+
+  "styling": {
+    "base": "dark",
+    "background": "#23272a",
+    "secondaryBackground": "#2c2f33",
+    "accent": "#3498DB",
+
+    "text": {
+      "primary": "white",
+      "secondary": "white",
+      "tertiary": "white"
+    },
+
+    "header": {
+      "background": "var(--secondaryBackground)",
+      "scheduleBar": "var(--background)",
+      "image": {
+        "full": "assets://header-images/cosmic-tarantula-full.png",
+        "mobile": "assets://header-images/cosmic-tarantula-mobile.png"
+      }
+    },
+
+    "iconCards": {
+      "regular": "white",
+      "invert": "white"
+    }
+  }
+}
