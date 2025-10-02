@@ -1,7 +1,8 @@
 {
   "metadata": {
     "name": "Eclipse",
-    "author": "shs-space"
+    "author": "shs-space",
+    "description": "Theme celebrating the April 8th 2024 solar eclipse. Don't stare at the sun!"
   },
 
   "visibility": "show",
