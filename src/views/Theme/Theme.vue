@@ -79,32 +79,35 @@
             </div>
           </section>
 
+          <!-- Base Theme Selection -->
+          <section class="section">
+            <h3>Base Theme</h3>
+            <div class="field">
+              <label>Inherit From</label>
+              <select v-model="customTheme.styling.base" @change="applyTheme">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+              </select>
+            </div>
+          </section>
+
           <!-- Styling customization -->
           <section class="section">
             <h3>Colors</h3>
 
             <div class="field">
               <label>Accent Color</label>
-              <div class="color-input-group">
-                <input v-model="customTheme.styling.accent" type="color" @input="applyTheme" />
-                <input v-model="customTheme.styling.accent" type="text" class="color-text" @blur="applyTheme" />
-              </div>
+              <color-picker v-model="customTheme.styling.accent" property-path="accent" @update:modelValue="applyTheme" />
             </div>
 
             <div class="field">
               <label>Background</label>
-              <div class="color-input-group">
-                <input v-model="customTheme.styling.background" type="color" @input="applyTheme" />
-                <input v-model="customTheme.styling.background" type="text" class="color-text" @blur="applyTheme" />
-              </div>
+              <color-picker v-model="customTheme.styling.background" property-path="background" @update:modelValue="applyTheme" />
             </div>
 
             <div class="field">
               <label>Secondary Background</label>
-              <div class="color-input-group">
-                <input v-model="customTheme.styling.secondaryBackground" type="color" @input="applyTheme" />
-                <input v-model="customTheme.styling.secondaryBackground" type="text" class="color-text" @blur="applyTheme" />
-              </div>
+              <color-picker v-model="customTheme.styling.secondaryBackground" property-path="secondaryBackground" @update:modelValue="applyTheme" />
             </div>
           </section>
 
@@ -114,26 +117,17 @@
 
             <div class="field">
               <label>Primary Text</label>
-              <div class="color-input-group">
-                <input v-model="customTheme.styling.text.primary" type="color" @input="applyTheme" />
-                <input v-model="customTheme.styling.text.primary" type="text" class="color-text" @blur="applyTheme" />
-              </div>
+              <color-picker v-model="customTheme.styling.text.primary" property-path="text.primary" @update:modelValue="applyTheme" />
             </div>
 
             <div class="field">
               <label>Secondary Text</label>
-              <div class="color-input-group">
-                <input v-model="customTheme.styling.text.secondary" type="color" @input="applyTheme" />
-                <input v-model="customTheme.styling.text.secondary" type="text" class="color-text" @blur="applyTheme" />
-              </div>
+              <color-picker v-model="customTheme.styling.text.secondary" property-path="text.secondary" @update:modelValue="applyTheme" />
             </div>
 
             <div class="field">
               <label>Tertiary Text</label>
-              <div class="color-input-group">
-                <input v-model="customTheme.styling.text.tertiary" type="color" @input="applyTheme" />
-                <input v-model="customTheme.styling.text.tertiary" type="text" class="color-text" @blur="applyTheme" />
-              </div>
+              <color-picker v-model="customTheme.styling.text.tertiary" property-path="text.tertiary" @update:modelValue="applyTheme" />
             </div>
           </section>
 
@@ -143,18 +137,12 @@
 
             <div class="field">
               <label>Header Background</label>
-              <div class="color-input-group">
-                <input v-model="customTheme.styling.header.background" type="color" @input="applyTheme" />
-                <input v-model="customTheme.styling.header.background" type="text" class="color-text" @blur="applyTheme" />
-              </div>
+              <color-picker v-model="customTheme.styling.header.background" property-path="header.background" @update:modelValue="applyTheme" />
             </div>
 
             <div class="field">
               <label>Schedule Bar</label>
-              <div class="color-input-group">
-                <input v-model="customTheme.styling.header.scheduleBar" type="color" @input="applyTheme" />
-                <input v-model="customTheme.styling.header.scheduleBar" type="text" class="color-text" @blur="applyTheme" />
-              </div>
+              <color-picker v-model="customTheme.styling.header.scheduleBar" property-path="header.scheduleBar" @update:modelValue="applyTheme" />
             </div>
 
             <div class="field">
@@ -174,18 +162,12 @@
 
             <div class="field">
               <label>Regular</label>
-              <div class="color-input-group">
-                <input v-model="customTheme.styling.iconCards.regular" type="color" @input="applyTheme" />
-                <input v-model="customTheme.styling.iconCards.regular" type="text" class="color-text" @blur="applyTheme" />
-              </div>
+              <color-picker v-model="customTheme.styling.iconCards.regular" property-path="iconCards.regular" @update:modelValue="applyTheme" />
             </div>
 
             <div class="field">
               <label>Invert</label>
-              <div class="color-input-group">
-                <input v-model="customTheme.styling.iconCards.invert" type="color" @input="applyTheme" />
-                <input v-model="customTheme.styling.iconCards.invert" type="text" class="color-text" @blur="applyTheme" />
-              </div>
+              <color-picker v-model="customTheme.styling.iconCards.invert" property-path="iconCards.invert" @update:modelValue="applyTheme" />
             </div>
           </section>
 
@@ -266,6 +248,7 @@
 import { mapActions, mapState } from 'pinia';
 import Home from '@/views/Home/Home.vue';
 import ThemeCard from '@/components/ThemeCard.vue';
+import ColorPicker from '@/components/ColorPicker.vue';
 import useThemeStore from '@/stores/themes';
 import useClockStore from '@/stores/clock';
 import { fallbackStyling, parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
@@ -275,6 +258,7 @@ export default {
   components: {
     Home,
     ThemeCard,
+    ColorPicker,
   },
   data() {
     return {
@@ -423,24 +407,25 @@ export default {
         visibility: theme.visibility,
         ...(theme.seasonal && { seasonal: { ...theme.seasonal } }),
         styling: {
-          background: theme.styling?.background || fallback.background,
-          secondaryBackground: theme.styling?.secondaryBackground || fallback.secondaryBackground,
-          accent: theme.styling?.accent || fallback.accent,
+          base: theme.styling?.base || 'light',
+          background: theme.styling?.background,
+          secondaryBackground: theme.styling?.secondaryBackground,
+          accent: theme.styling?.accent,
           text: {
-            primary: theme.styling?.text?.primary || fallback.text.primary,
-            secondary: theme.styling?.text?.secondary || fallback.text.secondary,
-            tertiary: theme.styling?.text?.tertiary || fallback.text.tertiary,
+            primary: theme.styling?.text?.primary,
+            secondary: theme.styling?.text?.secondary,
+            tertiary: theme.styling?.text?.tertiary,
           },
           header: {
-            background: theme.styling?.header?.background || fallback.header.background,
-            scheduleBar: theme.styling?.header?.scheduleBar || fallback.header.scheduleBar,
+            background: theme.styling?.header?.background,
+            scheduleBar: theme.styling?.header?.scheduleBar,
             ...(theme.styling?.header?.image && {
               image: { ...theme.styling.header.image }
             })
           },
           iconCards: {
-            regular: theme.styling?.iconCards?.regular || fallback.iconCards.regular,
-            invert: theme.styling?.iconCards?.invert || fallback.iconCards.invert,
+            regular: theme.styling?.iconCards?.regular,
+            invert: theme.styling?.iconCards?.invert,
           },
           ...(theme.styling?.particles && {
             particles: { ...theme.styling.particles }
