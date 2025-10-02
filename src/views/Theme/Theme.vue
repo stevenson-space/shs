@@ -436,7 +436,7 @@ export default {
     },
 
     applyTheme() {
-      this.setStyling(this.customTheme);
+      this.setStyling(this.customTheme.styling);
     },
 
     exportTheme() {
