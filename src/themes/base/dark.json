@@ -5,6 +5,7 @@
   },
 
   "visibility": "show",
+  "recommended": "always",
 
   "styling": {
     "background": "#23272a",
