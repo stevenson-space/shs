@@ -1,37 +1,54 @@
 import { defineStore } from 'pinia';
 import lightTheme from '@/themes/base/light.json'
-import { Theme } from '@/utils/types';
+import { Theme, ThemeStyling } from '@/utils/types';
 
 const DEFAULT_THEME: Theme = lightTheme as Theme;
 
 interface State {
-  theme: Theme,
+  _styling: ThemeStyling,
   resolvedAssets: Map<string, string>,
 }
 
 export default defineStore('themes', {
   state: (): State => ({
-    theme: DEFAULT_THEME,
+    _styling: DEFAULT_THEME.styling,
     resolvedAssets: new Map(),
   }),
+  getters: {
+    styling(state): ThemeStyling {
+      return state._styling;
+    },
+    // TODO(theme)
+    theme(state): Theme {
+      return {
+        metadata: DEFAULT_THEME.metadata,
+        visibility: DEFAULT_THEME.visibility,
+        styling: state._styling,
+      };
+    },
+  },
   actions: {
     initializeTheme(): void {
-      if (localStorage.theme) {
+      if (localStorage.themeStyling) {
         try {
-          this.setTheme(JSON.parse(localStorage.theme));
+          this._styling = JSON.parse(localStorage.themeStyling);
         } catch (error) {
-          this.setTheme(DEFAULT_THEME);
+          this._styling = DEFAULT_THEME.styling;
         }
       } else {
-        this.setTheme(DEFAULT_THEME);
+        this._styling = DEFAULT_THEME.styling;
       }
     },
     setColor(color:string): void {
       // TODO: remove uses of this
     },
-    setTheme(theme: Theme): void {
-      this.theme = theme;
-      localStorage.theme = JSON.stringify(theme);
+    setStyling(styling: ThemeStyling | Theme): void {
+      if ('styling' in styling) {
+        this._styling = styling.styling;
+      } else {
+        this._styling = styling;
+      }
+      localStorage.themeStyling = JSON.stringify(this._styling);
     },
   },
 });

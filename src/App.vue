@@ -7,17 +7,17 @@
 <script>
 import { mapState, mapActions } from 'pinia';
 import useThemeStore from '@/stores/themes';
-import { fallbackTheme } from '@/utils/themes.ts';
+import { fallbackStyling } from '@/utils/themes.ts';
 import useScheduleStore from '@/stores/schedules';
 import useClockStore from '@/stores/clock';
 import useUserSettingsStore from '@/stores/user-settings';
 
 export default {
   computed: {
-    ...mapState(useThemeStore, ['theme', 'color']),
+    ...mapState(useThemeStore, ['styling', 'color']),
     style() {
-      const fallback = fallbackTheme(this.theme).styling;
-      const styling = this.theme.styling;
+      const fallback = fallbackStyling(this.styling);
+      const styling = this.styling;
 
       return {
         '--accent': styling.accent || fallback.accent,
@@ -41,8 +41,8 @@ export default {
     ...mapActions(useUserSettingsStore, ['initializeGrade', 'initializeShowPWCSchedule']),
   },
   watch: {
-    theme() {
-      document.querySelector('body').style.background = this.theme.styling.background || fallbackTheme(this.theme).styling.background;
+    styling() {
+      document.querySelector('body').style.background = this.styling.background || fallbackStyling(this.styling).background;
     },
     $route() {
       this.pageLoaded(this.$route);
@@ -57,7 +57,7 @@ export default {
     this.initializeGrade();
     this.initializeShowPWCSchedule();
     this.pageLoaded(this.$route);
-    document.querySelector('body').style.background = this.theme.styling.background || fallbackTheme(this.theme).styling.background;
+    document.querySelector('body').style.background = this.styling.background || fallbackStyling(this.styling).background;
   },
 };
 </script>

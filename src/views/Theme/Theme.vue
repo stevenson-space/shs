@@ -268,7 +268,7 @@ import Home from '@/views/Home/Home.vue';
 import ThemeCard from '@/components/ThemeCard.vue';
 import useThemeStore from '@/stores/themes';
 import useClockStore from '@/stores/clock';
-import { fallbackTheme, parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
+import { fallbackStyling, parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
 import lightTheme from '@/themes/base/light.json';
 
 export default {
@@ -408,14 +408,14 @@ export default {
     },
   },
   methods: {
-    ...mapActions(useThemeStore, ['setTheme']),
+    ...mapActions(useThemeStore, ['setStyling']),
 
     async loadThemes() {
       this.themes = await loadAllThemes();
     },
 
     loadTheme(theme) {
-      const fallback = fallbackTheme(theme);
+      const fallback = fallbackStyling(theme.styling);
 
       // Merge theme with fallback for editing
       this.customTheme = {
@@ -423,24 +423,24 @@ export default {
         visibility: theme.visibility,
         ...(theme.seasonal && { seasonal: { ...theme.seasonal } }),
         styling: {
-          background: theme.styling?.background || fallback.styling.background,
-          secondaryBackground: theme.styling?.secondaryBackground || fallback.styling.secondaryBackground,
-          accent: theme.styling?.accent || fallback.styling.accent,
+          background: theme.styling?.background || fallback.background,
+          secondaryBackground: theme.styling?.secondaryBackground || fallback.secondaryBackground,
+          accent: theme.styling?.accent || fallback.accent,
           text: {
-            primary: theme.styling?.text?.primary || fallback.styling.text.primary,
-            secondary: theme.styling?.text?.secondary || fallback.styling.text.secondary,
-            tertiary: theme.styling?.text?.tertiary || fallback.styling.text.tertiary,
+            primary: theme.styling?.text?.primary || fallback.text.primary,
+            secondary: theme.styling?.text?.secondary || fallback.text.secondary,
+            tertiary: theme.styling?.text?.tertiary || fallback.text.tertiary,
           },
           header: {
-            background: theme.styling?.header?.background || fallback.styling.header.background,
-            scheduleBar: theme.styling?.header?.scheduleBar || fallback.styling.header.scheduleBar,
+            background: theme.styling?.header?.background || fallback.header.background,
+            scheduleBar: theme.styling?.header?.scheduleBar || fallback.header.scheduleBar,
             ...(theme.styling?.header?.image && {
               image: { ...theme.styling.header.image }
             })
           },
           iconCards: {
-            regular: theme.styling?.iconCards?.regular || fallback.styling.iconCards.regular,
-            invert: theme.styling?.iconCards?.invert || fallback.styling.iconCards.invert,
+            regular: theme.styling?.iconCards?.regular || fallback.iconCards.regular,
+            invert: theme.styling?.iconCards?.invert || fallback.iconCards.invert,
           },
           ...(theme.styling?.particles && {
             particles: { ...theme.styling.particles }
@@ -451,7 +451,7 @@ export default {
     },
 
     applyTheme() {
-      this.setTheme(this.customTheme);
+      this.setStyling(this.customTheme);
     },
 
     exportTheme() {

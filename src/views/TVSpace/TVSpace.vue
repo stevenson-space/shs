@@ -37,7 +37,7 @@ export default {
   },
   mounted() {
     if (this.$route.query.settheme === 'true') {
-      this.setTheme(tvspaceTheme);
+      this.setStyling(tvspaceTheme);
     }
   },
   computed: {
@@ -47,7 +47,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(useThemeStore, ['setTheme']),
+    ...mapActions(useThemeStore, ['setStyling']),
     intoCountdownString,
     onHeightChange() {
       this.$refs.periodList?.scrollToCurrentPeriod();

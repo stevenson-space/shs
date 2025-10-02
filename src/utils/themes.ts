@@ -1,14 +1,14 @@
-import {Theme} from "@/utils/types";
+import {Theme, ThemeStyling} from "@/utils/types";
 import lightBaseTheme from "@/themes/base/light.json";
 import darkBaseTheme from "@/themes/base/dark.json";
 
-export function fallbackTheme(theme: Theme): Theme {
-  if (theme.styling.base === "light" || theme.styling.base === undefined) {
-    return lightBaseTheme as Theme;
-  } else if (theme.styling.base === "dark") {
-    return darkBaseTheme as Theme;
+export function fallbackStyling(styling: ThemeStyling): ThemeStyling {
+  if (styling.base === "light" || styling.base === undefined) {
+    return (lightBaseTheme as Theme).styling;
+  } else if (styling.base === "dark") {
+    return (darkBaseTheme as Theme).styling;
   } else {
-    throw new Error(`Invalid base theme: ${theme.styling.base}`);
+    throw new Error(`Invalid base theme: ${styling.base}`);
   }
 }
 

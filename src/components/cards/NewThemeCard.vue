@@ -57,10 +57,10 @@ export default {
     };
   },
   methods: {
-    ...mapActions(useThemeStore, ['setTheme']),
+    ...mapActions(useThemeStore, ['setStyling']),
 
     toggleTheme() {
-      this.setTheme(this.newTheme);
+      this.setStyling(this.newTheme);
     },
 
     dismiss() {

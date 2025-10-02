@@ -91,12 +91,12 @@
     <particle-system
       v-if="particleImages.length > 0"
       :images="particleImages"
-      :speed="theme.styling.particles?.speed"
-      :count="theme.styling.particles?.count"
-      :size="theme.styling.particles?.size"
-      :opacity="theme.styling.particles?.opacity"
-      :wind-power="theme.styling.particles?.windPower"
-      :interaction="theme.styling.particles?.interaction"
+      :speed="styling.particles?.speed"
+      :count="styling.particles?.count"
+      :size="styling.particles?.size"
+      :opacity="styling.particles?.opacity"
+      :wind-power="styling.particles?.windPower"
+      :interaction="styling.particles?.interaction"
     />
 
   </div>
@@ -161,11 +161,11 @@ export default {
   },
   computed: {
     // this automatically gets the following properties from the store and adds them as computed properties
-    ...mapState(useThemeStore, ['theme']),
+    ...mapState(useThemeStore, ['styling', 'theme']),
     ...mapState(useClockStore, ['clockMode', 'date', 'bell']),
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
-      const styling = this.theme.styling;
+      const styling = this.styling;
 
       let headerStyle = {
         '--header-color': showColor ? 'var(--headerBackground)' : 'var(--background)',
@@ -211,14 +211,14 @@ export default {
       return modes.map((mode) => mode.name);
     },
     particleImages() {
-      if (!this.theme.styling?.particles?.images) {
+      if (!this.styling?.particles?.images) {
         return [];
       }
 
       const resolveAsset = (url) => url?.startsWith('assets://') ?
         url.replace('assets://', '/src/themes/assets/') : url;
 
-      return this.theme.styling.particles.images.map(resolveAsset);
+      return this.styling.particles.images.map(resolveAsset);
     },
   },
   watch: {

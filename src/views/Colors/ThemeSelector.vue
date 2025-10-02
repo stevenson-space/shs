@@ -59,11 +59,11 @@ export default defineComponent({
     };
   },
   methods: {
-    ...mapActions(useThemeStore, ['setTheme']),
+    ...mapActions(useThemeStore, ['setStyling']),
     choice(useThemeColor: boolean): void {
       const data = { theme: this.selectedTheme, useThemeColor };
       this.showModal = false;
-      this.setTheme(data);
+      this.setStyling(data);
     },
     changeTheme(theme: Theme): void {
       if (theme !== this.theme || theme.suggestedColor !== this.color) {

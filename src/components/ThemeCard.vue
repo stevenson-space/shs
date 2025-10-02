@@ -35,7 +35,7 @@
 
 <script>
 import InfoTooltip from '@/components/InfoTooltip.vue';
-import { formatDateRange, fallbackTheme } from '@/utils/themes';
+import { formatDateRange, fallbackStyling } from '@/utils/themes';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 export default {
@@ -64,12 +64,10 @@ export default {
       return fullImage;
     },
     accent() {
-      const fallback = fallbackTheme(this.theme);
-      return this.theme.styling?.accent || fallback.styling.accent;
+      return this.theme.styling?.accent || fallbackStyling(this.theme.styling).accent;
     },
     background() {
-      const fallback = fallbackTheme(this.theme);
-      return this.theme.styling?.background || fallback.styling.background;
+      return this.theme.styling?.background || fallbackStyling(this.theme.styling).background;
     },
     seasonalDateRange() {
       if (!this.theme.seasonal?.dates) return '';
