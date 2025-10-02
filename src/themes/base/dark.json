@@ -8,6 +8,7 @@
   "recommended": "always",
 
   "styling": {
+    "base": "dark",
     "background": "#23272a",
     "secondaryBackground": "#2c2f33",
 
