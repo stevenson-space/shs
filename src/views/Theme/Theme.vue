@@ -30,13 +30,12 @@
 
                 <!-- View More Button -->
                 <div style="text-align: center;">
-                  <button
+                  <liquid-glass-button
                     v-if="!otherThemesExpanded"
-                    class="view-more-btn"
-                    @click.stop="otherThemesExpanded = true"
+                    @click="otherThemesExpanded = true"
                   >
-                    <span>View More</span>
-                  </button>
+                    View More
+                  </liquid-glass-button>
                 </div>
 
                 <!-- Other Themes Section -->
@@ -67,12 +66,11 @@
 
                     <!-- View Less Button -->
                     <div style="text-align: center;">
-                      <button
-                        class="view-more-btn"
-                        @click.stop="otherThemesExpanded = false"
+                      <liquid-glass-button
+                        @click="otherThemesExpanded = false"
                       >
-                        <span>View Less</span>
-                      </button>
+                        View Less
+                      </liquid-glass-button>
                     </div>
                   </div>
                 </transition>
