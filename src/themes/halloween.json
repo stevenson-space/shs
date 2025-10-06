@@ -18,20 +18,8 @@
     "secondaryBackground": "#181a1c",
     "accent": "#cc611b",
 
-    "text": {
-      "primary": "white",
-      "secondary": "white",
-      "tertiary": "white"
-    },
-
     "header": {
-      "background": "#cc611b",
-      "scheduleBar": "var(--background)"
-    },
-
-    "iconCards": {
-      "regular": "white",
-      "invert": "white"
+      "background": "var(--accent)"
     }
   }
 }

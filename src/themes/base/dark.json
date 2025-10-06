@@ -16,8 +16,8 @@
 
     "text": {
       "primary": "white",
-      "secondary": "white",
-      "tertiary": "white"
+      "secondary": "var(--primary)",
+      "tertiary": "var(--primary)"
     },
 
     "header": {

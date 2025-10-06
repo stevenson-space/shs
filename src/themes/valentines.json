@@ -20,18 +20,13 @@
 
     "text": {
       "primary": "#D73F2F",
-      "secondary": "#D73F2F",
-      "tertiary": "#D73F2F"
+      "secondary": "var(--primary)",
+      "tertiary": "var(--primary)"
     },
 
     "header": {
       "background": "#bf4040",
       "scheduleBar": "white"
-    },
-
-    "iconCards": {
-      "regular": "white",
-      "invert": "var(--accent)"
     },
 
     "particles": {

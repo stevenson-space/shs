@@ -14,24 +14,11 @@
 
   "styling": {
     "base": "light",
-    "background": "white",
-    "secondaryBackground": "white",
+
     "accent": "#d26f1e",
 
-    "text": {
-      "primary": "black",
-      "secondary": "#333",
-      "tertiary": "#555"
-    },
-
     "header": {
-      "background": "#df9920",
-      "scheduleBar": "white"
-    },
-
-    "iconCards": {
-      "regular": "white",
-      "invert": "var(--accent)"
+      "background": "#df9920"
     }
   }
 }

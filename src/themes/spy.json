@@ -18,15 +18,7 @@
     "secondaryBackground": "black",
     "accent": "#bfbdbd",
 
-    "text": {
-      "primary": "white",
-      "secondary": "white",
-      "tertiary": "white"
-    },
-
     "header": {
-      "background": "black",
-      "scheduleBar": "#242424",
       "image": {
         "full": "assets://header-images/spy-full.png",
         "mobile": "assets://header-images/spy-mobile.png"

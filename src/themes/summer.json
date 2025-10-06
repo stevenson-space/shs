@@ -14,28 +14,14 @@
 
   "styling": {
     "base": "light",
-    "background": "white",
-    "secondaryBackground": "white",
+
     "accent": "#49c3d1",
 
-    "text": {
-      "primary": "black",
-      "secondary": "#333",
-      "tertiary": "#555"
-    },
-
     "header": {
-      "background": "#49c3d1",
-      "scheduleBar": "white",
       "image": {
         "full": "assets://header-images/beach-full.png",
         "mobile": "assets://header-images/beach-mobile.png"
       }
-    },
-
-    "iconCards": {
-      "regular": "white",
-      "invert": "var(--accent)"
     }
   }
 }

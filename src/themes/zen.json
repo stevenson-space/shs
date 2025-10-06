@@ -8,28 +8,14 @@
 
   "styling": {
     "base": "light",
-    "background": "white",
-    "secondaryBackground": "white",
+
     "accent": "#3B77BC",
 
-    "text": {
-      "primary": "black",
-      "secondary": "#333",
-      "tertiary": "#555"
-    },
-
     "header": {
-      "background": "var(--accent)",
-      "scheduleBar": "var(--background)",
       "image": {
         "full": "assets://header-images/zen-full.png",
         "mobile": "assets://header-images/zen-mobile.png"
       }
-    },
-
-    "iconCards": {
-      "regular": "white",
-      "invert": "var(--accent)"
     }
   }
 }

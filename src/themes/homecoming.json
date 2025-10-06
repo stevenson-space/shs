@@ -9,7 +9,7 @@
   "seasonal": {
     "dates": "09/17-09/25",
     "message": "[Try] The New Homecoming Theme",
-    "limitedTime": true
+    "limitedTime": false
   },
 
   "styling": {
@@ -17,12 +17,6 @@
     "background": "#242424",
     "secondaryBackground": "black",
     "accent": "#bfbdbd",
-
-    "text": {
-      "primary": "white",
-      "secondary": "white",
-      "tertiary": "white"
-    },
 
     "header": {
       "background": "black",

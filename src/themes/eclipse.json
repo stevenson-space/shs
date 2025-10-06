@@ -19,12 +19,6 @@
     "secondaryBackground": "black",
     "accent": "#F88203",
 
-    "text": {
-      "primary": "white",
-      "secondary": "white",
-      "tertiary": "white"
-    },
-
     "header": {
       "background": "black",
       "scheduleBar": "black",

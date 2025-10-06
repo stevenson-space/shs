@@ -19,19 +19,9 @@
     "accent": "#02647a",
 
     "text": {
-      "primary": "#02647a",
-      "secondary": "#02647a",
-      "tertiary": "#02647a"
-    },
-
-    "header": {
-      "background": "#02647a",
-      "scheduleBar": "var(--background)"
-    },
-
-    "iconCards": {
-      "regular": "white",
-      "invert": "var(--accent)"
+      "primary": "var(--accent)",
+      "secondary": "var(--accent)",
+      "tertiary": "var(--accent)"
     },
 
     "particles": {
