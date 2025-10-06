@@ -250,7 +250,7 @@ import ColorPicker from '@/components/ColorPicker.vue';
 import useThemeStore from '@/stores/themes';
 import useClockStore from '@/stores/clock';
 import { fallbackStyling, parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
-import lightTheme from '@/themes/base/light.json';
+import lightTheme from '@/themes/light.json';
 
 export default {
   components: {

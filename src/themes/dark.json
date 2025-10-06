@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "name": "Dark",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+  "recommended": "always",
+
+  "styling": {
+    "base": "dark",
+
+    "accent": "#b38825"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "name": "Light",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+  "recommended": "always",
+
+  "styling": {
+    "base": "light",
+
+    "accent": "#1b5e20"
+  }
+}

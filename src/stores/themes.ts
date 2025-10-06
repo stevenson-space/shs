@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import lightTheme from '@/themes/base/light.json'
+import lightTheme from '@/themes/light.json'
 import { Theme, ThemeStyling } from '@/utils/types';
 
 const DEFAULT_THEME: Theme = lightTheme as Theme;

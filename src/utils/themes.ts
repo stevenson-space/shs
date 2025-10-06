@@ -81,12 +81,9 @@ export function formatDateRange(dateRange: string): string {
  * @returns Promise that resolves to array of theme objects
  */
 export async function loadAllThemes(): Promise<any[]> {
-  const baseThemeModules = import.meta.glob('@/themes/base/*.json', { eager: true });
   const regularThemeModules = import.meta.glob('@/themes/*.json', { eager: true });
 
-  const allModules = { ...baseThemeModules, ...regularThemeModules };
-
-  return Object.values(allModules)
+  return Object.values(regularThemeModules)
     .map((module: any) => module.default)
     .filter(theme => theme.visibility !== 'hide');
 }

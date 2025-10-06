@@ -1,11 +1,10 @@
 {
   "metadata": {
-    "name": "Light",
+    "name": "Light (Base)",
     "author": "shs-space"
   },
 
   "visibility": "show",
-  "recommended": "always",
 
   "styling": {
     "base": "light",
