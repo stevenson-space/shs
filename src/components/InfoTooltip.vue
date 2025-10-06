@@ -1,7 +1,9 @@
 <template>
   <div class="info-tooltip-wrapper">
     <div class="info-icon" @mouseenter="showTooltip" @mouseleave="hideTooltip">
-      <font-awesome-icon :icon="icon" />
+      <slot name="trigger">
+        <font-awesome-icon :icon="icon" />
+      </slot>
     </div>
     <teleport to="body">
       <div v-if="isVisible" class="info-tooltip" :style="tooltipStyle">

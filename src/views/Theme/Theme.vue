@@ -251,6 +251,7 @@ import useThemeStore from '@/stores/themes';
 import useClockStore from '@/stores/clock';
 import { fallbackStyling, parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
 import lightTheme from '@/themes/light.json';
+import { faDownload, faUpload, faSave, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   components: {
