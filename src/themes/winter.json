@@ -32,8 +32,7 @@
       "count": 15,
       "size": 5,
       "opacity": 0.7,
-      "windPower": 2,
-      "interaction": false
+      "windPower": 2
     }
   }
 }

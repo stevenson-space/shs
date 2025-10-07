@@ -96,7 +96,7 @@
       :size="styling.particles?.size"
       :opacity="styling.particles?.opacity"
       :wind-power="styling.particles?.windPower"
-      :interaction="styling.particles?.interaction"
+      :interaction="false"
     />
 
   </div>

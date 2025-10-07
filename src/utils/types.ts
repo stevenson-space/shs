@@ -80,7 +80,6 @@ export type ThemeParticles = {
   size?: number;
   opacity?: number;
   windPower?: number;
-  interaction?: boolean;
 };
 
 export type ThemeStyling = {
