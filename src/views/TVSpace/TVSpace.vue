@@ -118,7 +118,7 @@ export default {
     vertical-align: middle
 
   .schedule-name
-    color: var(--secondary)
+    color: var(--tertiary)
     font-weight: bolder
     font-size: 1.1em
     line-height: 1em
