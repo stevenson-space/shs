@@ -205,8 +205,8 @@
         "headerScheduleBackgroundColor": "var(--background)",
         "secondaryBackground": "#696051",
         "primary": "white",
-        "secondary": "white",
-        "tertiary": "white",
+        "secondary": "var(--primary)",
+        "tertiary": "lightgray",
         "iconTextCardColor": "white",
         "iconTextCardInvertColor": "white"
     },
