@@ -111,7 +111,7 @@ export default {
     margin-bottom: 3px
 
   .schedule-name
-    color: lightgray
+    color: var(--secondary)
     font-weight: bolder
     font-size: 1.1em
     line-height: 1em
