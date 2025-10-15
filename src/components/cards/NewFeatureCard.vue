@@ -1,22 +1,13 @@
 <template>
-  <timed-card startTime="May 12, 2025" endTime="May 17, 2025">
+  <timed-card startTime="October 15, 2025" endTime="October 18, 2025">
     <div class="container">
-      <div class="title"></div>
+      <div class="title">Senior Yearbook Photos!</div>
       <div class="message">
-        SHS's 2024-25 Music Production 2 classes engaged in an activist songwriting project centered around important topics to raise awareness for important causes!
-        <div class= "chips">
-          <LinkChip
-            href="https://youtube.com/playlist?list=PLap5ZkjM9rSEGwfnayinyap-wGVZNdN8g&si=jkeY3i9zYnPJueEx"
-            label="Listen Now!"
-            background="#fbe9e7"
-          />
-          <!-- not using just "/jukebox" because of how I implemented LinkChips' icons -->
-          <LinkChip
-            href="https://stevenson.space/jukebox"
-            label="More Student Made Music!"
-            background="#dcffdb"
-          />
-        </div>
+        Seniors, if you haven't had your yearbook photo taken yet, make sure to dress up for retakes <strong>Thursday, Oct 16th or Friday Oct 17th</strong>
+        Stop by the <strong>Recital Hall (in the Glass Commons) 10am-3:30pm</strong> to have your picture taken!
+        You won't be featured in the yearbook if you don't have your photo taken by V.I.P.!
+        <br/>
+        <u>Set a reminder to come dressed for photos!</u>
       </div>
     </div>
   </timed-card>
@@ -37,6 +28,7 @@ a
 
 .title
   margin-top: 20px
+  color: red
 .container
   display: flex
   align-items: center
@@ -44,6 +36,7 @@ a
   justify-content: center
   flex-direction: column
   color: var(--primary)
+  // border to make it stand out!!
   .link
     color: var(--color)
   .logo
@@ -59,11 +52,6 @@ a
     margin: 0 20px
     line-height: 1.6em
     text-align: center
-.chips
-  display: flex
-  gap: 10px
-  flex-wrap: wrap
-  justify-content: center
-  margin-top: 8px
+    // 4 px red border
 
 </style>
