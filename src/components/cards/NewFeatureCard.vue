@@ -3,7 +3,7 @@
     <div class="container">
       <div class="title">Senior Yearbook Photos!</div>
       <div class="message">
-        Seniors, if you haven't had your yearbook photo taken yet, make sure to dress up for retakes <strong>Thursday, Oct 16th or Friday, Oct 17th</strong>
+        Seniors, if you haven't had your yearbook photo taken yet, make sure to dress up for retakes <strong>Thursday, Oct 16th or Friday, Oct 17th</strong>.
         Stop by the <strong>Recital Hall (in the Glass Commons) 10am-3:30pm</strong> to have your picture taken!
         You won't be featured in the yearbook if you don't have your photo taken by V.I.P.!
         <br/>
