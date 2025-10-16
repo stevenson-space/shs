@@ -36,7 +36,6 @@ a
   justify-content: center
   flex-direction: column
   color: var(--primary)
-  // border to make it stand out!!
   .link
     color: var(--color)
   .logo
@@ -52,6 +51,5 @@ a
     margin: 0 20px
     line-height: 1.6em
     text-align: center
-    // 4 px red border
 
 </style>
