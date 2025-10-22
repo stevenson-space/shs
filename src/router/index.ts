@@ -129,7 +129,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     name: "Snowball",
-    path: "/snowblitz",
+    path: "/snowball",
     component: SnowballRedirect,
   },
   {
