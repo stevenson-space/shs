@@ -71,19 +71,59 @@ export default {
 .period-card
   grid-column: 1
   grid-row: 1 / 3
-  background-color: var(--secondaryBackground)
+  background-color: var(--background)
   border-radius: 25px
   border: 3px solid rgba(0, 0, 0, 0.15)
   padding: 25px
   display: flex
   flex-direction: column
+  justify-content: center
   overflow: hidden
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+
+  // Make periods larger to fill the card better
+  :deep(.periods)
+    padding: 10px
+    gap: 18px
+
+  :deep(.period)
+    height: 60px
+    min-width: 100%
+
+    .range
+      font-size: 2em
+      font-weight: bold
+
+    .circle
+      font-size: 2.3em !important
+      min-width: 50px
+      width: auto
+      height: 50px
+      line-height: 50px
+      border-radius: 25px
+      padding: 0 10px
+      margin: 5px
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-shrink: 0
+
+      &.invert
+        padding-left: 8px
+        padding-right: 12px
+
+    .progress
+      margin: 5px
+      transform: scale(1.75)
+      flex-shrink: 0
+
+      text
+        font-size: 19px
 
 .time-card
   grid-column: 2
   grid-row: 1
-  background-color: var(--secondaryBackground)
+  background-color: var(--background)
   border-radius: 25px
   border: 3px solid rgba(0, 0, 0, 0.15)
   padding: 50px
@@ -95,7 +135,7 @@ export default {
 .countdown-card
   grid-column: 2
   grid-row: 2
-  background-color: var(--secondaryBackground)
+  background-color: var(--background)
   border-radius: 25px
   border: 3px solid rgba(0, 0, 0, 0.15)
   padding: 50px
