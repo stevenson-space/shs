@@ -19,8 +19,11 @@
     "accent": "#bfbdbd",
 
     "header": {
-      "background": "black",
-      "scheduleBar": "#242424"
+      "scheduleBar": "#242424",
+      "image": {
+        "full": "assets://header-images/starry-night.gif",
+        "mobile": "assets://header-images/starry-night.png"
+      }
     },
 
     "iconCards": {
