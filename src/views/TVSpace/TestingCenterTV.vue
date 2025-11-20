@@ -68,18 +68,23 @@ export default {
   width: 100%
   height: 100%
 
-.period-card
-  grid-column: 1
-  grid-row: 1 / 3
+.period-card, .time-card, .countdown-card
   background-color: var(--background)
   border-radius: 25px
   border: 3px solid rgba(0, 0, 0, 0.15)
-  padding: 25px
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
   display: flex
+  align-items: center
+  justify-content: center
+
+.period-card
+  grid-column: 1
+  grid-row: 1 / 3
+  padding: 25px
   flex-direction: column
   justify-content: center
+  align-items: stretch
   overflow: hidden
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
 
   // Make periods larger to fill the card better
   :deep(.periods)
@@ -121,26 +126,12 @@ export default {
 .time-card
   grid-column: 2
   grid-row: 1
-  background-color: var(--background)
-  border-radius: 25px
-  border: 3px solid rgba(0, 0, 0, 0.15)
   padding: 50px
-  display: flex
-  align-items: center
-  justify-content: center
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
 
 .countdown-card
   grid-column: 2
   grid-row: 2
-  background-color: var(--background)
-  border-radius: 25px
-  border: 3px solid rgba(0, 0, 0, 0.15)
   padding: 50px
-  display: flex
-  align-items: center
-  justify-content: center
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
 
 .time-content
   text-align: center
