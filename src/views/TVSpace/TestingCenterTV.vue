@@ -7,8 +7,8 @@
 
       <div class="time-card">
         <div class="time-content">
-          <div class="current-time">{{ formattedTime }}</div>
-          <div class="current-date">{{ formattedDate }}</div>
+          <div class="current-time">{{ formatTime(date) }}</div>
+          <div class="current-date">{{ formatFullDate(date).toUpperCase() }}</div>
         </div>
       </div>
 
@@ -27,12 +27,10 @@
 <script lang="ts">
 import useClockStore from '@/stores/clock'
 import { intoCountdownString } from '@/utils/countdown';
+import { formatTime, formatFullDate } from '@/utils/clock';
 import { mapState } from "pinia";
 import { dateToSeconds } from "@/utils/util";
 import ScrollablePeriodList from "@/components/ScrollablePeriodList.vue";
-
-const DAYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 
 export default {
   components: {
@@ -43,25 +41,10 @@ export default {
     totalSecondsLeft(): number {
       return this.bell.getSecondsUntilNextTarget() - dateToSeconds(this.date)
     },
-    formattedTime() {
-      const date = this.date;
-      let hours = date.getHours();
-      const minutes = date.getMinutes();
-      const ampm = hours >= 12 ? 'PM' : 'AM';
-      hours = hours % 12;
-      hours = hours ? hours : 12;
-      const minutesStr = minutes < 10 ? '0' + minutes : minutes;
-      return `${hours}:${minutesStr} ${ampm}`;
-    },
-    formattedDate() {
-      const date = this.date;
-      const dayName = DAYS[date.getDay()].toUpperCase();
-      const monthName = MONTHS[date.getMonth()].toUpperCase();
-      const dayNum = date.getDate();
-      return `${dayName}, ${monthName} ${dayNum}`;
-    }
   },
   methods: {
+    formatFullDate,
+    formatTime,
     intoCountdownString
   }
 }
