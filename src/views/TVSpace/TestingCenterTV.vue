@@ -99,7 +99,6 @@ export default {
       min-width: 50px
       width: auto
       height: 50px
-      line-height: 50px
       border-radius: 25px
       padding: 0 10px
       margin: 5px
@@ -109,8 +108,7 @@ export default {
       flex-shrink: 0
 
       &.invert
-        padding-left: 8px
-        padding-right: 12px
+        padding: 0 12px 0 8px
 
     .progress
       margin: 5px
