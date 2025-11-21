@@ -32,6 +32,7 @@ export default {
       imageNum: [],
       toHide: false,
       reqId: null,
+      lastImagesKey: '',
     };
   },
   props: {
@@ -90,6 +91,27 @@ export default {
     this.$nextTick(() => {
       this.init();
     });
+  },
+  watch: {
+    images: {
+      handler(newImages) {
+        // only reinitialize if images changed
+        const newKey = JSON.stringify(newImages);
+        if (newKey !== this.lastImagesKey) {
+          this.lastImagesKey = newKey;
+          this.$nextTick(() => {
+            this.init();
+          });
+        }
+      },
+      deep: true,
+    },
+    count() {
+      this.particleCount = this.count;
+      this.$nextTick(() => {
+        this.init();
+      });
+    },
   },
   methods: {
     IsImageOk: function (img) {
@@ -168,20 +190,27 @@ export default {
         } else {
           var imgItem = this.imageItems[i % this.imageNum];
           if (this.IsImageOk(imgItem)) {
+            this.ctx.globalAlpha = particle.opacity;
+
+            const aspectRatio = imgItem.naturalWidth / imgItem.naturalHeight;
+            const width = particle.size * 2;
+            const height = width / aspectRatio;
+
             this.ctx.drawImage(
               imgItem,
               particle.x,
               particle.y,
-              particle.size * 2,
-              particle.size * 2
+              width,
+              height
             );
+            this.ctx.globalAlpha = 1;
           }
         }
       }
       this.reqId = requestAnimationFrame(this.animate);
     },
     reset: function (particle) {
-      if (this.windPower == false || this.windPower == 0) {
+      if (this.windPower === false || this.windPower === 0) {
         particle.x = Math.floor(Math.random() * this.canvas.width);
         particle.y = 0;
       } else {
@@ -214,6 +243,11 @@ export default {
     },
     init: function () {
       if (this.reqId) cancelAnimationFrame(this.reqId);
+
+      this.particles = [];
+      this.imageItems = [];
+
+      this.lastImagesKey = JSON.stringify(this.images);
 
       this.canvas = this.$refs.canvas;
       this.ctx = this.canvas?.getContext("2d");
