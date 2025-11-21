@@ -428,8 +428,15 @@ export default {
       const activeSeasonalNames = new Set(
         this.recommendedThemes.filter(t => t.seasonalDates).map(t => t.metadata.name)
       );
-      return this.themes.filter(t => {
+      const filtered = this.themes.filter(t => {
         return t.seasonalDates && !activeSeasonalNames.has(t.metadata.name);
+      });
+
+      // Sort by start date (descending)
+      return filtered.sort((a, b) => {
+        const [startA] = parseDateRange(a.seasonalDates, this.date);
+        const [startB] = parseDateRange(b.seasonalDates, this.date);
+        return startB - startA;
       });
     },
 
