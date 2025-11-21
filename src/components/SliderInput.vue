@@ -1,7 +1,7 @@
 <template>
   <div class="slider-input-container">
     <div class="slider-row">
-      <label v-if="label" class="slider-label">{{ label }}</label>
+      <label v-if="label" class="slider-label" :id="`${$.uid}-label`">{{ label }}</label>
       <div class="slider-controls">
         <input
           :value="modelValue"
@@ -11,6 +11,7 @@
           :max="max"
           :step="step"
           class="slider"
+          :aria-labelledby="label ? `${$.uid}-label` : undefined"
         />
         <input
           :value="modelValue"
@@ -21,6 +22,7 @@
           :max="max"
           :step="step"
           class="number-input"
+          :aria-labelledby="label ? `${$.uid}-label` : undefined"
         />
       </div>
     </div>
