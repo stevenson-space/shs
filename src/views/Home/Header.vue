@@ -131,6 +131,8 @@ import HeaderSchedule from './HeaderSchedule.vue';
 import Announcements from './Announcements.vue';
 import { intoCountdownString, schoolResumesString } from '@/utils/countdown';
 
+import { globalImageResolver } from '@/utils/imageResolver';
+
 export default {
   components: {
     CountdownCircle,
@@ -144,6 +146,7 @@ export default {
   },
   data() {
     return {
+      imageCache: globalImageResolver.getCache(),
       icons: {
         faChevronRight,
         faChevronLeft,
@@ -173,12 +176,27 @@ export default {
       };
 
       if (styling?.header?.image?.full) {
-        const resolveAsset = (url) => url?.startsWith('assets://') ? url.replace('assets://', '/src/themes/assets/') : url;
+        // trigger reactivity when cache updates
+        const _ = this.imageCache;
 
-        headerStyle['--header-image-full'] = `url(${resolveAsset(styling.header.image.full)})`;
-        const mobileImage = styling.header.image.mobile || styling.header.image.full;
-        headerStyle['--header-image-mobile'] = `url(${resolveAsset(mobileImage)})`;
-        headerStyle['--has-header-image'] = '1';
+        const fullResolved = globalImageResolver.resolve(styling.header.image.full);
+        const mobileResolved = globalImageResolver.resolve(styling.header.image.mobile || styling.header.image.full);
+
+        if (fullResolved) {
+          headerStyle['--header-image-full'] = fullResolved.startsWith('data:')
+            ? `url("${fullResolved}")`
+            : `url(${fullResolved})`;
+        }
+        if (mobileResolved) {
+          headerStyle['--header-image-mobile'] = mobileResolved.startsWith('data:')
+            ? `url("${mobileResolved}")`
+            : `url(${mobileResolved})`;
+        }
+        if (fullResolved || mobileResolved) {
+          headerStyle['--has-header-image'] = '1';
+        }
+
+        this.loadImages(styling.header.image.full, styling.header.image.mobile);
       }
 
       return headerStyle;
@@ -215,10 +233,14 @@ export default {
         return [];
       }
 
-      const resolveAsset = (url) => url?.startsWith('assets://') ?
-        url.replace('assets://', '/src/themes/assets/') : url;
+      // trigger reactivity when cache updates
+      const _ = this.imageCache;
 
-      return this.styling.particles.images.map(resolveAsset);
+      this.loadImages(...this.styling.particles.images);
+
+      return this.styling.particles.images
+        .map(url => globalImageResolver.resolve(url))
+        .filter(img => img !== null);
     },
   },
   watch: {
@@ -241,11 +263,24 @@ export default {
     if (localStorage.fullScreenColored === 'false') {
       this.colored = false;
     }
+
+    this.unsubscribeImageCache = globalImageResolver.onUpdate((cache) => {
+      this.imageCache = cache;
+    });
+  },
+  beforeUnmount() {
+    if (this.unsubscribeImageCache) {
+      this.unsubscribeImageCache();
+    }
   },
   methods: {
     formatDate,
     schoolResumesString,
     intoCountdownString,
+
+    async loadImages(...paths) {
+      await globalImageResolver.loadAll(paths);
+    },
     ...mapActions(useScheduleStore, ['setScheduleMode']),
     formatDateUrl(date) {
       // e.g. "6-11-2018"
