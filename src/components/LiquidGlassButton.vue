@@ -1,5 +1,5 @@
 <template>
-  <button class="liquid-glass-btn" @click="$emit('click')">
+  <button type="button" class="liquid-glass-btn" @click="$emit('click')">
     <slot />
   </button>
 </template>
