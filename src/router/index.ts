@@ -13,8 +13,6 @@ const GpaCalculator: RouteComponent = () => import("@/views/GpaCalculator/GpaCal
 const BellSchedules: RouteComponent = () => import("@/views/Bell Schedules/BellSchedules.vue");
 const Calendar: RouteComponent = () => import("@/views/Calendar/Calendar.vue");
 const Links: RouteComponent = () => import("@/views/Links/Links.vue");
-const Colors: RouteComponent = () => import("@/views/Colors/Colors.vue");
-const Theme: RouteComponent = () => import("@/views/Theme/Theme.vue");
 const Settings: RouteComponent = () => import("@/views/Settings/Settings.vue");
 const Tools: RouteComponent = () => import("@/views/Tools/Tools.vue");
 const Documents: RouteComponent = () => import("@/views/Documents/Documents.vue");
@@ -57,14 +55,6 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/links",
     component: Links,
-  },
-  {
-    path: "/colors",
-    component: Colors,
-  },
-  {
-    path: "/theme",
-    component: Theme,
   },
   {
     path: "/settings",
