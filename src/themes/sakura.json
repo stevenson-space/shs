@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "name": "Sakura",
+    "author": "Joshua F. ('26)",
+    "description": "Inspired by Minecraft's Cherry Grove biome. This theme has a lot of particles!"
+  },
+
+  "visibility": "show",
+  "recommended": "11/11/2025-11/21/2025",
+
+  "styling": {
+    "base": "light",
+
+    "background": "#ffdcdc",
+    "secondaryBackground": "white",
+
+    "accent": "#f25477",
+
+    "header": {
+      "background": "var(--accent)",
+      "image": {
+        "full": "assets://header-images/sakura-full.png",
+        "mobile": "assets://header-images/sakura-mobile.png"
+      },
+      "scheduleBar": "white"
+    },
+
+    "particles": {
+      "images": [
+        "assets://particles/sakura/petal_1.png",
+        "assets://particles/sakura/petal_2.png",
+        "assets://particles/sakura/petal_3.png",
+        "assets://particles/sakura/petal_4.png",
+        "assets://particles/sakura/petal_5.png",
+        "assets://particles/sakura/bee.png"
+      ],
+      "speed": 0.5,
+      "count": 25,
+      "size": 12,
+      "opacity": 0.8,
+      "windPower": 3
+    }
+  }
+}
