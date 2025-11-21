@@ -374,32 +374,44 @@ export default {
       const now = this.date;
 
       const recommended = this.themes.filter(t => {
-        if (t.recommended !== undefined) {
+        if (t.recommended !== undefined && t.recommended !== null) {
           if (t.recommended === 'never') return false;
           if (t.recommended === 'always') return true;
 
-          const [start, end] = parseDateRange(t.recommended, now);
-          if (isDateInRange(now, start, end)) return true;
-        }
+          if (t.recommended === 'season' && t.seasonal?.dates) {
+            const [start, end] = parseDateRange(t.seasonal.dates, now);
+            return isDateInRange(now, start, end);
+          }
 
-        // Seasonal themes are recommended during their active dates (unless recommended: "never")
-        if (t.seasonal?.dates) {
-          const [start, end] = parseDateRange(t.seasonal.dates, now);
-          return isDateInRange(now, start, end);
+          if (typeof t.recommended === 'string' && t.recommended.length > 0) {
+            const [start, end] = parseDateRange(t.recommended, now);
+            if (isDateInRange(now, start, end)) return true;
+          }
         }
 
         return false;
       });
 
-      // Sort: explicitly recommended first, seasonal-only at the end
       return recommended.sort((a, b) => {
+        const aIsBase = a.recommended === 'always' && !a.seasonal?.dates;
+        const bIsBase = b.recommended === 'always' && !b.seasonal?.dates;
         const aHasRecommended = a.recommended !== undefined;
         const bHasRecommended = b.recommended !== undefined;
-        const aIsSeasonalOnly = !aHasRecommended && a.seasonal?.dates;
-        const bIsSeasonalOnly = !bHasRecommended && b.seasonal?.dates;
+        const aIsSeasonalOnly = aHasRecommended && a.recommended === 'season';
+        const bIsSeasonalOnly = bHasRecommended && b.recommended === 'season';
 
+        // Base themes first
+        if (aIsBase && !bIsBase) return -1;
+        if (!aIsBase && bIsBase) return 1;
+
+        // Then other explicitly recommended themes
+        if (aHasRecommended && !bHasRecommended && !aIsSeasonalOnly && !bIsSeasonalOnly) return -1;
+        if (!aHasRecommended && bHasRecommended && !aIsSeasonalOnly && !bIsSeasonalOnly) return 1;
+
+        // Seasonal themes last
         if (aIsSeasonalOnly && !bIsSeasonalOnly) return 1;
         if (!aIsSeasonalOnly && bIsSeasonalOnly) return -1;
+
         return 0;
       });
     },
@@ -410,20 +422,11 @@ export default {
     },
 
     seasonalThemes() {
-      const now = this.date;
       const activeSeasonalNames = new Set(
         this.recommendedThemes.filter(t => t.seasonal?.dates).map(t => t.metadata.name)
       );
       return this.themes.filter(t => {
-        if (!t.seasonal?.dates || activeSeasonalNames.has(t.metadata.name)) return false;
-
-        // Filter out limited time themes that are outside their date range
-        if (t.seasonal?.limitedTime) {
-          const [start, end] = parseDateRange(t.seasonal.dates, now);
-          return isDateInRange(now, start, end);
-        }
-
-        return true;
+        return t.seasonal?.dates && !activeSeasonalNames.has(t.metadata.name);
       });
     },
 
