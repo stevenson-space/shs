@@ -63,7 +63,7 @@ export default {
     ...mapActions(useThemeStore, ['setStyling']),
 
     toggleTheme() {
-      this.setStyling(this.newTheme);
+      this.setStyling(this.newTheme.styling);
     },
 
     dismiss() {

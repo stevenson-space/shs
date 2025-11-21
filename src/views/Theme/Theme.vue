@@ -364,6 +364,7 @@ export default {
   },
   computed: {
     ...mapState(useClockStore, ['date']),
+    ...mapState(useThemeStore, ['styling']),
     recommendedThemes() {
       const now = this.date;
 
@@ -683,6 +684,20 @@ export default {
       immediate: true,
       handler(newVal) {
         this.panelOpen = newVal;
+      },
+    },
+    styling: {
+      deep: true,
+      handler(newStyling) {
+        // Update customTheme when store's styling changes externally
+        // (e.g., from NewThemeCard or ThemeCard clicks)
+        if (newStyling && JSON.stringify(newStyling) !== JSON.stringify(this.customTheme.styling)) {
+          this.customTheme.styling = structuredClone(toRaw(newStyling));
+          // Ensure nested objects exist for v-model binding
+          if (!this.customTheme.styling.text) this.customTheme.styling.text = {};
+          if (!this.customTheme.styling.header) this.customTheme.styling.header = {};
+          if (!this.customTheme.styling.iconCards) this.customTheme.styling.iconCards = {};
+        }
       },
     },
   },
