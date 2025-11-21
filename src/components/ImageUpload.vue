@@ -246,12 +246,24 @@ export default {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
 
+            if (!ctx) {
+              this.error = 'Your browser does not support image processing';
+              event.target.value = '';
+              return;
+            }
+
             // Use SVG dimensions or default size
             canvas.width = img.width || 512;
             canvas.height = img.height || 512;
             ctx.drawImage(img, 0, 0);
 
             canvas.toBlob(async (blob) => {
+              if (!blob) {
+                this.error = 'Failed to process image. Try a smaller image';
+                event.target.value = '';
+                return;
+              }
+
               const filename = file.name.replace(/\.svg$/i, '.png');
 
               try {
@@ -264,7 +276,13 @@ export default {
                 this.$emit('update:modelValue', localPath);
 
                 // Immediately load the image into the resolver cache for instant preview
-                await globalImageResolver.load(localPath);
+                try {
+                  await globalImageResolver.load(localPath);
+                } catch (e) {
+                  console.error('[ImageUpload] Failed to load image:', e);
+                }
+
+                event.target.value = ''; // Reset to allow re-selecting the same file
 
                 this.$emit('blur'); // Trigger theme apply
               } catch (e) {
@@ -307,6 +325,12 @@ export default {
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
 
+        if (!ctx) {
+          this.error = 'Your browser does not support image processing';
+          event.target.value = '';
+          return;
+        }
+
         // Resize to max width of 1920px
         const maxWidth = 1920;
         let width = img.width;
@@ -327,6 +351,12 @@ export default {
         const quality = mimeType === 'image/jpeg' ? 0.85 : undefined;
 
         canvas.toBlob(async (blob) => {
+          if (!blob) {
+            this.error = 'Failed to process image. Try a smaller image';
+            event.target.value = '';
+            return;
+          }
+
           const filename = file.name;
 
           try {
@@ -339,7 +369,13 @@ export default {
             this.$emit('update:modelValue', localPath);
 
             // Immediately load the image into the resolver cache for instant preview
-            await globalImageResolver.load(localPath);
+            try {
+              await globalImageResolver.load(localPath);
+            } catch (e) {
+              console.error('[ImageUpload] Failed to load image:', e);
+            }
+
+            event.target.value = ''; // Reset to allow re-selecting the same file
 
             this.$emit('blur'); // Trigger theme apply
           } catch (e) {
