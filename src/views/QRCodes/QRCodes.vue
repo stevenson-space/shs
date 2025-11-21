@@ -1,160 +1,155 @@
 <template>
   <div>
     <plain-header title='QR Codes' />
-    <card class="qr-card">
-      <color-selector
-      :colors="colors"
-      :backgroundShade="1"
-      :current-color="color"
-      @color-selected="colorSelected"
-      />
-      <div class="center" >
-        <rounded-button v-if="color != defaultColor" class="reset-button"  @click='resetColor()' text="Reset Color" :circular="true"/>
-        <div id="qr-code" :class="{ 'show' : showQR }">
-           <QRCodeVue3
-          :key="componentKey"
-          :image="QRCodeLogo"
-          :width="options.width"
-          :margin="options.margin"
-          :height="options.height"
-          :value="options.data"
-          :qrOptions="options.qrOptions"
-          :imageOptions="options.imageOptions"
-          :dotsOptions="options.dotsOptions"
-          :backgroundOptions="{ color: '#ffffff' }"
-          :cornersSquareOptions="{ type: 'extra-rounded', color: options.dotsOptions.color }"
-          :cornersDotOptions="{ type: 'circle', color:  options.dotsOptions.color }"
-          fileExt="png"
-          myclass="my-qur"
-          imgclass="img-qr"
-        />
+    <div class="qr-container">
+      <card class="qr-card">
+        <div class="qr-content">
+        <div class="qr-left">
+          <div class="qr-preview">
+            <div v-if="showQR" class="qr-image">
+              <QRCodeVue3
+                :key="qrKey"
+                :image="logo"
+                :width="300"
+                :height="300"
+                :margin="10"
+                :value="url"
+                :qrOptions="{ typeNumber: 0, mode: 'Byte', errorCorrectionLevel: 'Q' }"
+                :imageOptions="{ hideBackgroundDots: true, imageSize: 0.4 }"
+                :dotsOptions="{ type: 'rounded', color: qrColor }"
+                :backgroundOptions="{ color: '#ffffff' }"
+                :cornersSquareOptions="{ type: 'extra-rounded', color: qrColor }"
+                :cornersDotOptions="{ type: 'circle', color: qrColor }"
+                fileExt="png"
+              />
+            </div>
+            <div v-else class="qr-empty">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <p>Generate QR Code</p>
+            </div>
+          </div>
         </div>
-        <br>
-        <p><b>To save: drag-and-drop the image or tap and hold (on mobile)</b></p>
-        <form @submit.prevent @submit="generateQR()">
-          <input v-model='enteredQRCode' class="link-input" placeholder="Enter A Valid Link" />
-        </form>
-        <div class="input-tip" v-if="enteredQRCode.length > 40">Tip: For very long links, consider using <a href="https://bitly.com/" target='_blank'>Bitly</a> for a more aesthetic code</div>
-        <div class="input-tip" v-if="errorMessage.length > 0">{{ errorMessage }}</div>
-        <div class="btn-row">
-          <rounded-button v-if="isValidLink()" class="button" @click="generateQR" :text="showQR && options.data != enteredQRCode ? 'Re-Generate' : 'Generate'" :circular="false"/>
-          <!-- <rounded-button v-if="showQR" class="button"  @click='download' text="Download" :circular="false"/> -->
+
+        <div class="qr-right">
+          <div class="field">
+            <color-picker
+              label="QR Code Color"
+              v-model="qrColor"
+              :allow-inherit="false"
+              :disable-inline-button="true"
+            />
+          </div>
+
+          <div class="field">
+            <label>Link</label>
+            <input
+              v-model="url"
+              placeholder="https://stevenson.space"
+            />
+          </div>
+
+          <div class="save-info">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <div>
+              <strong>To save:</strong>
+              <span>Drag & drop or tap and hold (mobile)</span>
+            </div>
+          </div>
+
+          <div v-if="url.length > 40" class="tip">
+            💡 For long links, try <a href="https://bitly.com/" target="_blank">Bitly</a>
+          </div>
+
+          <div v-if="error" class="error">
+            {{ error }}
+          </div>
+
+          <div v-if="qrColor !== defaultColor" class="buttons">
+            <rounded-button
+              @click="resetColor"
+              text="Reset Color"
+              :circular="true"
+              class="btn-reset"
+            />
+          </div>
         </div>
       </div>
-    </card>
+      </card>
+    </div>
   </div>
 </template>
 
 <script>
-import colors from '@/data/QRColors.json';
 import PlainHeader from '@/components/PlainHeader.vue';
 import QRCodeVue3 from 'space-vue3-qrcode';
 import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
-import ColorSelector from '@/views/Colors/ColorSelector.vue';
-
-import QRCodeLogo from '@/assets/QRCodeLogo.png';
+import ColorPicker from '@/components/ColorPicker.vue';
+import logo from '@/assets/QRCodeLogo.png';
 
 export default {
-  components: {
-    PlainHeader,
-    Card,
-    RoundedButton,
-    ColorSelector,
-    QRCodeVue3,
-  },
-  data: () => {
-    const options = {
-      width: 800,
-      height: 800,
-      type: 'jpeg',
-      margin: 27,
-      data: '',
-      image: 'static/QRCodeLogo.png',
-      qrOptions: {
-        typeNumber: 0,
-        mode: 'Byte',
-        errorCorrectionLevel: 'Q',
-      },
-      imageOptions: {
-        hideBackgroundDots: true,
-        imageSize: 0.4,
-      },
-      dotsOptions: {
-        type: 'rounded',
-        color: '#1F5D39',
-      },
-      cornersSquareOptions: {
-        color: '',
-        type: 'extra-rounded',
-      },
-      cornersDotOptions: {
-        color: '',
-        type: 'dot',
-      },
-    };
+  components: { PlainHeader, Card, RoundedButton, ColorPicker, QRCodeVue3 },
+  data() {
     return {
+      url: 'https://stevenson.space',
+      qrColor: '#1F5D39',
       defaultColor: '#1F5D39',
-      color: '',
-      colors,
       showQR: false,
-      options,
-      componentKey: 0,
-      enteredQRCode: '',
-      errorMessage: '',
-      QRCodeLogo,
+      qrKey: 0,
+      error: '',
+      logo,
     };
   },
-  mounted() {
-    if (process.env.NODE_ENV === 'development') {
-      this.enteredQRCode = 'https://test.com';
-    }
-    this.color = this.defaultColor;
-    this.setQRColor(this.defaultColor);
-  },
-  methods: {
-    resetColor() {
-      this.color = this.defaultColor;
-      this.setQRColor();
-    },
-    colorSelected(color) {
-      this.color = color;
-      this.setQRColor();
-    },
-    isValidLink(checkDifferentURL = true) { // checkDifferentURL means whether the url entered previously has to be different than the current one to validate true. For the color picker, it should skip this check.
-      const { enteredQRCode } = this;
-      const linkExpression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
-      const linkValidator = new RegExp(linkExpression);
-      const isNonEmptyURL = this.enteredQRCode.length > 0;
-      if (!enteredQRCode.match(linkValidator)) {
-        this.errorMessage = isNonEmptyURL ? 'Invalid Link Format (Example: https://stevenson.space)' : '';
-        return false;
-      } if (enteredQRCode.length > 120) {
-        this.errorMessage = isNonEmptyURL ? 'Link too long' : '';
+  computed: {
+    canGenerate() {
+      const urlPattern = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
+
+      if (!this.url || this.url.length === 0) {
+        this.error = '';
         return false;
       }
-      this.errorMessage = '';
-      if (!checkDifferentURL) return isNonEmptyURL;
-      return this.options.data !== enteredQRCode && isNonEmptyURL;
+
+      if (!this.url.match(urlPattern)) {
+        this.error = 'Invalid URL format (e.g., https://stevenson.space)';
+        return false;
+      }
+
+      if (this.url.length > 120) {
+        this.error = 'URL too long';
+        return false;
+      }
+
+      this.error = '';
+      return true;
     },
-    generateQR(checkDifferentURL = true) {
-      if (this.isValidLink(checkDifferentURL)) {
-        this.showQR = false;
-        this.options.data = this.enteredQRCode;
+  },
+  watch: {
+    qrColor() {
+      this.qrKey++;
+    },
+    url() {
+      if (this.canGenerate) {
         this.showQR = true;
       }
     },
-    // download() {
-    // const fileName = `QR-${this.options.data.replace('http://', '').replace('https://', '').replace('www.', '').substring(0, 12)}`;
-    // this.qrCode.download({ extension: this.options.type, name: fileName });
-    // },
-    setQRColor() {
-      const { options, color } = this;
-      options.dotsOptions.color = color;
-      options.cornersSquareOptions.color = color;
-      options.cornersDotOptions.color = color;
-      this.generateQR(false);
-      this.componentKey += 1;
+  },
+  mounted() {
+    if (this.canGenerate) {
+      this.showQR = true;
+    }
+  },
+  methods: {
+    resetColor() {
+      this.qrColor = this.defaultColor;
     },
   },
 };
@@ -162,56 +157,174 @@ export default {
 
 <style lang="sass" scoped>
 @import '@/styles/style.sass'
-.reset-button
-  width: 100px
-  margin-top: 12px
-#qr-code
-  &.show
-    +shadow
-    transform: scale(.35)
-    padding: 12px
-    height: 800px
-    background: white
-    border-radius: 40px
-    margin-top: -250px
-    margin-bottom: -260px
+
+.qr-container
+  display: flex
+  justify-content: center
+  width: 100%
+
 .qr-card
-  max-width: 972px
-  padding: 20px
-  +desktop
-    margin: 0px auto !important
-  .input-tip
-    font-size: 14px
-    a
-      color: var(--accent)
-  .center
-    display: flex
+  width: auto
+  max-width: 100%
+
+.qr-content
+  padding: 30px
+  display: flex
+  gap: 40px
+  align-items: flex-start
+
+  +mobile
     flex-direction: column
-    align-items: center
-    form
-      display: flex
-      justify-content: center
-      width: 100%
-      input
-        background: none
-        text-align: center
-        border: none
-        font-size: 17px
-        width: 90%
-        max-width: 650px
-        padding: 10px
-        border-radius: 7px
-        margin-bottom: 10px
-        color: var(--primary)
-        border: 1px solid var(--accent)
-        +shadow-light
-        &:focus
-          outline: none
-    .button
-      margin: auto
-      width: 110px
-  .btn-row
-    display: flex
-    margin-top: 8px
-    gap: 5px
+    padding: 20px
+    gap: 30px
+
+.qr-left
+  flex: 0 0 350px
+  display: flex
+  flex-direction: column
+  gap: 20px
+
+  +mobile
+    flex: none
+
+.qr-right
+  flex: 0 0 350px
+  display: flex
+  flex-direction: column
+  gap: 20px
+
+  +mobile
+    flex: none
+
+.qr-preview
+  width: 100%
+  aspect-ratio: 1
+  background: white
+  border-radius: 16px
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 30px
+  box-sizing: border-box
+
+.qr-image
+  width: 100%
+  height: 100%
+  min-width: 300px
+  min-height: 300px
+  display: flex
+  align-items: center
+  justify-content: center
+
+  :deep(.my-qur)
+    width: 100% !important
+    height: 100% !important
+
+  :deep(canvas)
+    width: 100% !important
+    height: 100% !important
+    object-fit: contain
+
+.qr-empty
+  width: 100%
+  height: 100%
+  min-width: 300px
+  min-height: 300px
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  gap: 12px
+  color: var(--secondary)
+  opacity: 0.5
+
+  svg
+    opacity: 0.6
+
+  p
+    font-size: 14px
+
+.save-info
+  display: flex
+  align-items: center
+  gap: 12px
+  padding: 14px 18px
+  background: rgba(128, 128, 128, 0.06)
+  border: 1px solid rgba(128, 128, 128, 0.12)
+  border-radius: 10px
+  font-size: 13px
+
+  svg
+    flex-shrink: 0
+    color: var(--accent)
+
+  strong
+    color: var(--primary)
+    font-weight: 600
+    margin-right: 4px
+
+  span
+    color: var(--secondary)
+
+.field
+  display: flex
+  flex-direction: column
+  gap: 8px
+
+  label
+    font-size: 13px
+    font-weight: 500
+    color: var(--secondary)
+    text-transform: uppercase
+    letter-spacing: 0.5px
+
+  input
+    background: rgba(128, 128, 128, 0.06)
+    border: 1px solid rgba(128, 128, 128, 0.12)
+    border-radius: 10px
+    padding: 10px 14px
+    font-size: 14px
+    color: var(--primary)
+    font-family: monospace
+    transition: all 0.2s
+
+    &::placeholder
+      color: var(--tertiary)
+      opacity: 0.5
+
+    &:hover
+      border-color: rgba(128, 128, 128, 0.2)
+
+    &:focus
+      outline: none
+      border-color: var(--accent)
+      box-shadow: 0 0 0 3px rgba(128, 128, 128, 0.08)
+
+.tip
+  font-size: 13px
+  color: var(--secondary)
+  padding: 12px 14px
+  background: rgba(128, 128, 128, 0.04)
+  border-radius: 8px
+  border-left: 3px solid var(--accent)
+
+  a
+    color: var(--accent)
+
+.error
+  font-size: 13px
+  color: #ef4444
+  padding: 12px 14px
+  background: rgba(239, 68, 68, 0.08)
+  border-radius: 8px
+  border-left: 3px solid #ef4444
+
+.buttons
+  display: flex
+  gap: 10px
+  margin-top: 8px
+
+  .btn-reset
+    width: 120px
 </style>
