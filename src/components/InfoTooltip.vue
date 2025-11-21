@@ -33,7 +33,7 @@ export default {
     showTooltip(event) {
       this.isVisible = true;
       this.$nextTick(() => {
-        const rect = event.target.getBoundingClientRect();
+        const rect = event.currentTarget.getBoundingClientRect();
         const tooltip = document.querySelector('.info-tooltip');
 
         if (tooltip) {
