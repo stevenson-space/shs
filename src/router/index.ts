@@ -26,6 +26,7 @@ const LiveRedirect: RouteComponent = () => import("@/views/Live/Live.vue"); // r
 const ApplicationRedirect: RouteComponent = () => import("@/views/Apply/Apply.vue"); // redirect to dedicated contributor application
 const SnowballRedirect: RouteComponent = () => import("@/views/Snowball/Snowball.vue"); // redirect to snowball url (it's confusing for the club -- helping them out)
 const TVSpace: RouteComponent = () => import("@/views/TVSpace/TVSpace.vue");
+const TestingCenterTV: RouteComponent = () => import("@/views/TVSpace/TestingCenterTV.vue");
 const RawCountdown: RouteComponent = () => import("@/views/Raw/Countdown.vue");
 
 type EditScheduleProps = {
@@ -124,13 +125,18 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     name: "Snowball",
-    path: "/snowblitz",
+    path: "/snowball",
     component: SnowballRedirect,
   },
   {
     name: "TVSpace",
   path: "/tvspace",
     component: TVSpace,
+  },
+  {
+    name: "TestingCenterTV",
+    path: "/testing-center",
+    component: TestingCenterTV,
   },
   {
     name: "RawCountdown",

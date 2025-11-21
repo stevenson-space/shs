@@ -7,7 +7,7 @@
     >
       <div class="container">
         <span class="countdown center">
-          {{ intoCountdownString(this.totalSecondsLeft) }}
+          {{ intoCountdownString(this.totalSecondsLeft) }} <span class="left-text">LEFT</span>
         </span>
         <span class="schedule-name center">{{ this.bell.type.toUpperCase() }}</span>
         <div class="divider"/>
@@ -99,14 +99,21 @@ export default {
     width: 100%
 
   .countdown
-    font-size: 2.6em
+    font-size: 2.2em
     line-height: 0.9em
-    color: var(--secondary)
+    color: var(--primary)
     margin-top: 2px
     margin-bottom: 3px
+    font-family: 'Arial', 'Helvetica', sans-serif
+
+  .left-text
+    color: var(--primary)
+    font-weight: normal
+    font-size: 0.75em
+    vertical-align: middle
 
   .schedule-name
-    color: lightgray
+    color: var(--tertiary)
     font-weight: bolder
     font-size: 1.1em
     line-height: 1em
