@@ -1,11 +1,17 @@
 <template>
-  <card class="card" :class="{ invert }">
-    <custom-link :href="link" v-bind="linkProps">
+  <card class="card" :class="{ invert }" @click="handleClick">
+    <custom-link v-if="link" :href="link" v-bind="linkProps">
       <div class="icon">
         <font-awesome-icon class="boxIcon" :icon="icon" size="5x" v-bind="iconProps" />
       </div>
       <div class="text">{{ text }}</div>
     </custom-link>
+    <div v-else>
+      <div class="icon">
+        <font-awesome-icon class="boxIcon" :icon="icon" size="5x" v-bind="iconProps" />
+      </div>
+      <div class="text">{{ text }}</div>
+    </div>
   </card>
 </template>
 
@@ -23,7 +29,14 @@ export default {
     invert: { type: Boolean, default: false },
     iconProps: { type: Object, default: () => {} },
   },
-
+  emits: ['click'],
+  methods: {
+    handleClick() {
+      if (!this.link) {
+        this.$emit('click');
+      }
+    },
+  },
 };
 </script>
 

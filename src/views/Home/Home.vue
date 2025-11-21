@@ -5,6 +5,8 @@
       @toggle-fullscreen="fullScreenMode = !fullScreenMode"
     />
 
+    <theme-editor :open="themeEditorOpen" @close="themeEditorOpen = false" />
+
     <card-container class="card-container">
         <end-of-year-card />
         <countdown-card
@@ -41,7 +43,7 @@
                         :link-props="{ type: 'a' }"
                         :invert="true" />
 
-        <icon-text-card :icon="icons.faDroplet" text="Switch Theme" link="colors" />
+        <icon-text-card :icon="icons.faDroplet" text="Switch Theme" @click="themeEditorOpen = !themeEditorOpen" />
 
         <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
 
@@ -85,6 +87,7 @@ import CountdownCard from "@/components/cards/CountdownCard.vue";
 import useClockStore from "@/stores/clock";
 import useThemeStore from "@/stores/themes";
 import ScheduleHeader from "./Header.vue";
+import ThemeEditor from "@/views/Theme/Theme.vue";
 
 export default {
   components: {
@@ -105,6 +108,7 @@ export default {
     EndOfYearCard,
     Confetti,
     CountdownCard,
+    ThemeEditor,
   },
   data() {
     return {
@@ -123,6 +127,7 @@ export default {
       },
       fullScreenMode: false,
       themeName: useThemeStore().theme.metadata.name,
+      themeEditorOpen: false,
     };
   },
   methods: {

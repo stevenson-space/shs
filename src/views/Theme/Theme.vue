@@ -5,7 +5,7 @@
       <div v-if="panelOpen" class="customization-panel">
         <div class="panel-header">
           <h2>Customize Theme</h2>
-          <button @click="panelOpen = false" class="close-btn">&times;</button>
+          <button @click="closePanel" class="close-btn">&times;</button>
         </div>
 
         <div class="panel-content">
@@ -291,25 +291,12 @@
         </div>
       </div>
     </transition>
-
-    <!-- Toggle button -->
-    <button @click="panelOpen = !panelOpen" class="toggle-panel-btn">
-      {{ panelOpen ? '×' : '🎨' }}
-    </button>
-
-    <!-- Home preview (non-interactive) -->
-    <div ref="preview" class="preview" :style="{ height: previewHeight }">
-      <div class="wrapper">
-        <home />
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 import { mapActions, mapState } from 'pinia';
 import { toRaw } from 'vue';
-import Home from '@/views/Home/Home.vue';
 import ThemeCard from '@/components/ThemeCard.vue';
 import ColorPicker from '@/components/ColorPicker.vue';
 import InfoTooltip from '@/components/InfoTooltip.vue';
@@ -327,7 +314,6 @@ import { cleanupOrphanedImages } from '@/utils/imageStorage';
 
 export default {
   components: {
-    Home,
     ThemeCard,
     ColorPicker,
     InfoTooltip,
@@ -338,6 +324,13 @@ export default {
     SliderInput,
     ImageUpload,
   },
+  props: {
+    open: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  emits: ['close'],
   data() {
     // Initialize from store's current theme, not light.json
     const store = useThemeStore();
@@ -356,9 +349,8 @@ export default {
     if (!theme.styling.iconCards) theme.styling.iconCards = {};
 
     return {
-      panelOpen: true,
+      panelOpen: false,
       customTheme: theme,
-      previewHeight: '',
       themes: [],
       presetsExpanded: true,
       otherThemesExpanded: false,
@@ -503,6 +495,11 @@ export default {
   },
   methods: {
     ...mapActions(useThemeStore, ['setStyling']),
+
+    closePanel() {
+      this.panelOpen = false;
+      this.$emit('close');
+    },
 
     async loadThemes() {
       this.themes = await loadAllThemes();
@@ -680,18 +677,17 @@ export default {
       a.click();
       URL.revokeObjectURL(url);
     },
-
-    setPreviewHeight() {
-      const { offsetTop } = this.$refs.preview;
-      const marginBottom = 20;
-      this.previewHeight = `calc(100vh - ${offsetTop}px - ${marginBottom}px)`;
+  },
+  watch: {
+    open: {
+      immediate: true,
+      handler(newVal) {
+        this.panelOpen = newVal;
+      },
     },
   },
   async mounted() {
     this.loadThemes();
-    this.$nextTick(() => {
-      this.setPreviewHeight();
-    });
 
     // Clean up orphaned images on mount
     await cleanupOrphanedImages(this.customTheme.styling);
@@ -703,9 +699,17 @@ export default {
 @import '@/styles/style.sass'
 
 .theme-page
-  min-height: 100vh
-  position: relative
-  padding-top: 10px
+  position: fixed
+  top: 0
+  left: 0
+  width: 0
+  height: 0
+  pointer-events: none
+  z-index: 1000
+
+  // Re-enable pointer events for the panel
+  .customization-panel
+    pointer-events: auto
 
 .customization-panel
   position: fixed
@@ -1140,62 +1144,6 @@ export default {
     resize: vertical
     font-family: monospace
     font-size: 11px
-
-.toggle-panel-btn
-  position: fixed
-  top: 20px
-  left: 20px
-  width: 50px
-  height: 50px
-  background: var(--accent)
-  color: white
-  border: none
-  border-radius: 50%
-  font-size: 24px
-  cursor: pointer
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2)
-  z-index: 999
-  transition: all 0.3s
-  display: flex
-  align-items: center
-  justify-content: center
-
-  &:hover
-    transform: scale(1.1)
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3)
-
-.preview
-  width: 80%
-  max-width: $content-width
-  height: 500px
-  overflow: auto
-  margin: auto
-  margin-top: 10px
-  border-radius: 25px
-  transition: box-shadow .2s
-  min-width: 320px
-  +mobile
-    width: 90%
-    +shadow
-
-  .wrapper
-    position: relative
-    z-index: 0
-    text-decoration: none
-    display: block
-    color: inherit
-    border-radius: 25px
-    overflow: hidden
-
-    // This is placed over the Home preview to prevent anything in the preview from being clickable
-    &::before
-      position: absolute
-      height: 100%
-      width: 100%
-      top: 0
-      left: 0
-      content: ''
-      z-index: 26
 
 // Slide transition from left
 .slide-enter-active,
