@@ -113,7 +113,7 @@
                   </info-tooltip>
                   <info-tooltip>
                     <template #trigger>
-                      <icon-button>
+                      <icon-button @click="importTheme">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                           <polyline points="17 8 12 3 7 8"></polyline>
@@ -125,7 +125,7 @@
                   </info-tooltip>
                   <info-tooltip>
                     <template #trigger>
-                      <icon-button>
+                      <icon-button @click="exportTheme">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                           <polyline points="7 10 12 15 17 10"></polyline>
@@ -587,13 +587,82 @@ export default {
       }
     },
 
+    importTheme() {
+      // hidden file input
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.json';
+
+      input.onchange = async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        try {
+          const text = await file.text();
+          const importedTheme = JSON.parse(text);
+
+          // Only import the styling field
+          if (importedTheme.styling) {
+            // Merge with current theme structure, but only use imported styling
+            this.customTheme.styling = {
+              base: importedTheme.styling?.base || 'light',
+              background: importedTheme.styling?.background,
+              secondaryBackground: importedTheme.styling?.secondaryBackground,
+              accent: importedTheme.styling?.accent,
+              text: {
+                primary: importedTheme.styling?.text?.primary,
+                secondary: importedTheme.styling?.text?.secondary,
+                tertiary: importedTheme.styling?.text?.tertiary,
+              },
+              header: {
+                background: importedTheme.styling?.header?.background,
+                scheduleBar: importedTheme.styling?.header?.scheduleBar,
+                ...(importedTheme.styling?.header?.image && {
+                  image: { ...importedTheme.styling.header.image }
+                })
+              },
+              iconCards: {
+                regular: importedTheme.styling?.iconCards?.regular,
+                invert: importedTheme.styling?.iconCards?.invert,
+              },
+              ...(importedTheme.styling?.particles && {
+                particles: {
+                  ...importedTheme.styling.particles,
+                  images: [...(importedTheme.styling.particles.images || [])]
+                }
+              })
+            };
+
+            this.applyTheme();
+            await cleanupOrphanedImages(this.customTheme.styling);
+          } else {
+            console.error('No styling field found in imported theme');
+          }
+        } catch (err) {
+          console.error('Failed to import theme:', err);
+          alert('Failed to import theme. Please check the file format.');
+        }
+      };
+
+      input.click();
+    },
+
     exportTheme() {
-      const json = JSON.stringify(this.customTheme, null, 2);
+      // Create export object with custom metadata
+      const exportData = {
+        metadata: {
+          name: 'Custom Theme',
+          author: 'Unknown Artist',
+        },
+        styling: this.customTheme.styling,
+      };
+
+      const json = JSON.stringify(exportData, null, 2);
       const blob = new Blob([json], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `${this.customTheme.metadata.name.toLowerCase().replace(/\s+/g, '-')}.json`;
+      a.download = 'custom-theme.json';
       a.click();
       URL.revokeObjectURL(url);
     },
