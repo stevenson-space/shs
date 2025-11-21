@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "name": "Candy",
+    "author": "Ipshita S. ('26)",
+    "description": "Like the BRACHS heart candies!"
+  },
+  "styling": {
+    "base": "light",
+    "accent": "#f3a0b9",
+
+    "background": "#FCD9E1",
+    "secondaryBackground": "#fde7ec",
+
+    "particles": {
+      "images": [
+        "assets://particles/candy/heart_pink.png",
+        "assets://particles/candy/heart_purple.png",
+        "assets://particles/candy/heart_blue.png"
+      ],
+      "speed": 0.5,
+      "count": 12,
+      "size": 8,
+      "opacity": 0.8,
+      "windPower": 0.125
+    }
+  }
+}
