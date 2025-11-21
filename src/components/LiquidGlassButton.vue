@@ -25,7 +25,7 @@ export default {
   text-transform: uppercase
   letter-spacing: 0.5px
   cursor: pointer
-  display: inline-flex
+  display: flex
   align-items: center
   justify-content: center
   transition: all 0.2s ease
