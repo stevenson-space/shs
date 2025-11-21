@@ -21,7 +21,7 @@
           <div class="theme-author">{{ theme.metadata.author }}</div>
         </div>
         <div class="theme-icons">
-          <info-tooltip v-if="theme.seasonal?.dates" :icon="icons.faCalendar" @click.stop>
+          <info-tooltip v-if="theme.seasonalDates" :icon="icons.faCalendar" @click.stop>
             {{ seasonalDateRange }}
           </info-tooltip>
           <info-tooltip v-if="theme.metadata?.description" @click.stop>
@@ -70,8 +70,8 @@ export default {
       return this.theme.styling?.background || fallbackStyling(this.theme.styling).background;
     },
     seasonalDateRange() {
-      if (!this.theme.seasonal?.dates) return '';
-      return formatDateRange(this.theme.seasonal.dates);
+      if (!this.theme.seasonalDates) return '';
+      return formatDateRange(this.theme.seasonalDates);
     },
   },
 };
