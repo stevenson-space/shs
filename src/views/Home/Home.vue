@@ -126,7 +126,6 @@ export default {
 
       },
       fullScreenMode: false,
-      themeName: useThemeStore().theme.metadata.name,
       themeEditorOpen: false,
     };
   },

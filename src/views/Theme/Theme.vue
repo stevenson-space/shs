@@ -360,6 +360,7 @@ export default {
       iconCardsExpanded: false,
       particlesExpanded: false,
       advancedExpanded: false,
+      isApplyingTheme: false, // Flag to prevent infinite loop in styling watcher
     };
   },
   computed: {
@@ -549,7 +550,11 @@ export default {
     },
 
     applyTheme() {
+      this.isApplyingTheme = true;
       this.setStyling(this.customTheme.styling);
+      this.$nextTick(() => {
+        this.isApplyingTheme = false;
+      });
     },
 
     updateParticleImage(index, value) {
@@ -684,11 +689,25 @@ export default {
       immediate: true,
       handler(newVal) {
         this.panelOpen = newVal;
+
+        // Reset state when closing
+        if (!newVal) {
+          this.otherThemesExpanded = false;
+          this.colorsExpanded = false;
+          this.textExpanded = false;
+          this.headerExpanded = false;
+          this.iconCardsExpanded = false;
+          this.particlesExpanded = false;
+          this.advancedExpanded = false;
+        }
       },
     },
     styling: {
       deep: true,
       handler(newStyling) {
+        // Skip if this update came from our own applyTheme call
+        if (this.isApplyingTheme) return;
+
         // Update customTheme when store's styling changes externally
         // (e.g., from NewThemeCard or ThemeCard clicks)
         if (newStyling && JSON.stringify(newStyling) !== JSON.stringify(this.customTheme.styling)) {
