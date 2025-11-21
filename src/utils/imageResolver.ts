@@ -58,8 +58,9 @@ export class ImageResolver {
     if (this.cache[filename]) return;
 
     // Skip if already loading
-    if (this.loadingPromises.has(filename)) {
-      return this.loadingPromises.get(filename);
+    const existingPromise = this.loadingPromises.get(filename);
+    if (existingPromise) {
+      return existingPromise;
     }
 
     // Start loading
