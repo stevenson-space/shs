@@ -47,7 +47,7 @@
         </div>
 
         <button
-          v-if="allowInherit"
+          v-if="allowInherit && !disableInlineButton"
           @click="toggleInherit"
           class="inherit-btn"
           :class="{ active: isInheriting }"
@@ -77,6 +77,10 @@ export default {
     allowInherit: {
       type: Boolean,
       default: true,
+    },
+    disableInlineButton: {
+      type: Boolean,
+      default: false,
     },
     placeholder: {
       type: String,
