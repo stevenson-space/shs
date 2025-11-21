@@ -77,153 +77,215 @@
             </div>
           </section>
 
-          <!-- Base Theme Selection -->
-          <section class="section">
-            <h3>Base Theme</h3>
-            <div class="field">
-              <label>Inherit From</label>
-              <select v-model="customTheme.styling.base" @change="applyTheme">
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-              </select>
+          <!-- Customization Section -->
+          <section class="customization-section">
+            <div class="presets-header">
+              <h3>Customize</h3>
+            </div>
+
+            <div class="customization-content">
+              <!-- Base Theme Toggle & Accent Color -->
+              <div class="primary-controls">
+                <div class="accent-control">
+                  <color-picker label="Accent" v-model="customTheme.styling.accent" property-path="accent" @update:modelValue="applyTheme" />
+                </div>
+                <div class="controls-right">
+                  <info-tooltip>
+                    <template #trigger>
+                      <icon-button @click="customTheme.styling.base = customTheme.styling.base === 'light' ? 'dark' : 'light'; applyTheme()">
+                        <svg v-if="customTheme.styling.base === 'light'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="5"></circle>
+                          <line x1="12" y1="1" x2="12" y2="3"></line>
+                          <line x1="12" y1="21" x2="12" y2="23"></line>
+                          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                          <line x1="1" y1="12" x2="3" y2="12"></line>
+                          <line x1="21" y1="12" x2="23" y2="12"></line>
+                          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg v-else xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                      </icon-button>
+                    </template>
+                    Base Style
+                  </info-tooltip>
+                  <info-tooltip>
+                    <template #trigger>
+                      <icon-button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                          <polyline points="17 8 12 3 7 8"></polyline>
+                          <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                      </icon-button>
+                    </template>
+                    Import Theme
+                  </info-tooltip>
+                  <info-tooltip>
+                    <template #trigger>
+                      <icon-button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                          <polyline points="7 10 12 15 17 10"></polyline>
+                          <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                      </icon-button>
+                    </template>
+                    Export Theme
+                  </info-tooltip>
+                  <info-tooltip>
+                    <template #trigger>
+                      <icon-button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                          <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                          <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                      </icon-button>
+                    </template>
+                    Save Theme
+                  </info-tooltip>
+                </div>
+              </div>
+
+              <!-- View More Toggle -->
+              <div v-if="!advancedExpanded" style="text-align: center; margin-top: 16px;">
+                <liquid-glass-button
+                  @click="advancedExpanded = true"
+                >
+                  View More
+                </liquid-glass-button>
+              </div>
+
+              <!-- Advanced Sections -->
+              <transition name="expand">
+                <div v-show="advancedExpanded" class="advanced-sections">
+                  <!-- Background -->
+                  <collapsible-section title="Background" v-model="colorsExpanded">
+                    <div class="field-compact">
+                      <color-picker label="Background" v-model="customTheme.styling.background" property-path="background" @update:modelValue="applyTheme" />
+                    </div>
+                    <div class="field-compact">
+                      <color-picker label="Secondary Background" v-model="customTheme.styling.secondaryBackground" property-path="secondaryBackground" @update:modelValue="applyTheme" />
+                    </div>
+                  </collapsible-section>
+
+              <!-- Text Colors -->
+              <collapsible-section title="Text" v-model="textExpanded">
+                <div class="field-compact">
+                  <color-picker label="Primary" v-model="customTheme.styling.text.primary" property-path="text.primary" @update:modelValue="applyTheme" />
+                </div>
+                <div class="field-compact">
+                  <color-picker label="Secondary" v-model="customTheme.styling.text.secondary" property-path="text.secondary" @update:modelValue="applyTheme" />
+                </div>
+                <div class="field-compact">
+                  <color-picker label="Tertiary" v-model="customTheme.styling.text.tertiary" property-path="text.tertiary" @update:modelValue="applyTheme" />
+                </div>
+              </collapsible-section>
+
+              <!-- Header -->
+              <collapsible-section title="Header" v-model="headerExpanded">
+                <div class="field-compact">
+                  <color-picker label="Background" v-model="customTheme.styling.header.background" property-path="header.background" @update:modelValue="applyTheme" />
+                </div>
+                <div class="field-compact">
+                  <color-picker label="Schedule Bar" v-model="customTheme.styling.header.scheduleBar" property-path="header.scheduleBar" @update:modelValue="applyTheme" />
+                </div>
+                <div class="image-uploads-row">
+                  <image-upload label="Full" v-model="headerImageFull" :min-aspect-ratio="1.5" @blur="applyTheme" />
+                  <image-upload label="Mobile" v-model="headerImageMobile" :min-aspect-ratio="1.5" @blur="applyTheme" />
+                </div>
+              </collapsible-section>
+
+              <!-- Icon Cards -->
+              <collapsible-section title="Icon Cards" v-model="iconCardsExpanded">
+                <div class="field-compact">
+                  <color-picker label="Regular" v-model="customTheme.styling.iconCards.regular" property-path="iconCards.regular" @update:modelValue="applyTheme" />
+                </div>
+                <div class="field-compact">
+                  <color-picker label="Invert" v-model="customTheme.styling.iconCards.invert" property-path="iconCards.invert" @update:modelValue="applyTheme" />
+                </div>
+              </collapsible-section>
+
+              <!-- Particles -->
+              <collapsible-section title="Particles" v-model="particlesExpanded" :disabled="!particlesEnabled">
+                <template #action>
+                  <checkbox v-model="particlesEnabled" />
+                </template>
+                <template v-if="particlesEnabled">
+                  <slider-input
+                    label="Speed"
+                    v-model="customTheme.styling.particles.speed"
+                    :min="0"
+                    :max="5"
+                    :step="0.1"
+                    @update:modelValue="applyTheme"
+                  />
+                  <slider-input
+                    label="Count"
+                    v-model="customTheme.styling.particles.count"
+                    :min="0"
+                    :max="100"
+                    :step="1"
+                    @update:modelValue="applyTheme"
+                  />
+                  <slider-input
+                    label="Size"
+                    v-model="customTheme.styling.particles.size"
+                    :min="0"
+                    :max="50"
+                    :step="1"
+                    @update:modelValue="applyTheme"
+                  />
+                  <slider-input
+                    label="Opacity"
+                    v-model="customTheme.styling.particles.opacity"
+                    :min="0"
+                    :max="1"
+                    :step="0.01"
+                    @update:modelValue="applyTheme"
+                  />
+                  <slider-input
+                    label="Wind"
+                    v-model="customTheme.styling.particles.windPower"
+                    :min="-5"
+                    :max="5"
+                    :step="0.1"
+                    @update:modelValue="applyTheme"
+                  />
+
+                  <!-- Particle Images -->
+                  <div class="particle-images-section">
+                    <label class="section-label">Images</label>
+                    <div class="particle-images-list">
+                      <image-upload
+                        v-for="(image, index) in particleImages"
+                        :key="`particle-${index}-${image}`"
+                        :model-value="image"
+                        :asset-folder="'particles'"
+                        :min-aspect-ratio="0"
+                        @update:modelValue="updateParticleImage(index, $event)"
+                        @blur="applyTheme"
+                      />
+                    </div>
+                  </div>
+                </template>
+              </collapsible-section>
+
+              <!-- View Less Button -->
+              <div style="text-align: center; margin-top: 16px;">
+                <liquid-glass-button
+                  @click="advancedExpanded = false"
+                >
+                  View Less
+                </liquid-glass-button>
+              </div>
+                </div>
+              </transition>
             </div>
           </section>
-
-          <!-- Styling customization -->
-          <section class="section">
-            <h3>Colors</h3>
-
-            <div class="field">
-              <label>Accent Color</label>
-              <color-picker v-model="customTheme.styling.accent" property-path="accent" @update:modelValue="applyTheme" />
-            </div>
-
-            <div class="field">
-              <label>Background</label>
-              <color-picker v-model="customTheme.styling.background" property-path="background" @update:modelValue="applyTheme" />
-            </div>
-
-            <div class="field">
-              <label>Secondary Background</label>
-              <color-picker v-model="customTheme.styling.secondaryBackground" property-path="secondaryBackground" @update:modelValue="applyTheme" />
-            </div>
-          </section>
-
-          <!-- Text Colors -->
-          <section class="section">
-            <h3>Text Colors</h3>
-
-            <div class="field">
-              <label>Primary Text</label>
-              <color-picker v-model="customTheme.styling.text.primary" property-path="text.primary" @update:modelValue="applyTheme" />
-            </div>
-
-            <div class="field">
-              <label>Secondary Text</label>
-              <color-picker v-model="customTheme.styling.text.secondary" property-path="text.secondary" @update:modelValue="applyTheme" />
-            </div>
-
-            <div class="field">
-              <label>Tertiary Text</label>
-              <color-picker v-model="customTheme.styling.text.tertiary" property-path="text.tertiary" @update:modelValue="applyTheme" />
-            </div>
-          </section>
-
-          <!-- Header -->
-          <section class="section">
-            <h3>Header</h3>
-
-            <div class="field">
-              <label>Header Background</label>
-              <color-picker v-model="customTheme.styling.header.background" property-path="header.background" @update:modelValue="applyTheme" />
-            </div>
-
-            <div class="field">
-              <label>Schedule Bar</label>
-              <color-picker v-model="customTheme.styling.header.scheduleBar" property-path="header.scheduleBar" @update:modelValue="applyTheme" />
-            </div>
-
-            <div class="field">
-              <label>Header Image (Full)</label>
-              <input v-model="headerImageFull" type="text" placeholder="assets://header-images/..." @blur="applyTheme" />
-            </div>
-
-            <div class="field">
-              <label>Header Image (Mobile)</label>
-              <input v-model="headerImageMobile" type="text" placeholder="assets://header-images/..." @blur="applyTheme" />
-            </div>
-          </section>
-
-          <!-- Icon Cards -->
-          <section class="section">
-            <h3>Icon Cards</h3>
-
-            <div class="field">
-              <label>Regular</label>
-              <color-picker v-model="customTheme.styling.iconCards.regular" property-path="iconCards.regular" @update:modelValue="applyTheme" />
-            </div>
-
-            <div class="field">
-              <label>Invert</label>
-              <color-picker v-model="customTheme.styling.iconCards.invert" property-path="iconCards.invert" @update:modelValue="applyTheme" />
-            </div>
-          </section>
-
-          <!-- Particles -->
-          <section class="section">
-            <h3>Particles</h3>
-
-            <div class="field">
-              <label class="checkbox-label">
-                <input v-model="particlesEnabled" type="checkbox" @change="applyTheme" />
-                <span>Enable Particles</span>
-              </label>
-            </div>
-
-            <template v-if="particlesEnabled">
-              <div class="field">
-                <label>Speed</label>
-                <input v-model.number="customTheme.styling.particles.speed" type="number" step="0.1" min="0" @blur="applyTheme" />
-              </div>
-
-              <div class="field">
-                <label>Count</label>
-                <input v-model.number="customTheme.styling.particles.count" type="number" min="0" @blur="applyTheme" />
-              </div>
-
-              <div class="field">
-                <label>Size</label>
-                <input v-model.number="customTheme.styling.particles.size" type="number" min="0" @blur="applyTheme" />
-              </div>
-
-              <div class="field">
-                <label>Opacity</label>
-                <input v-model.number="customTheme.styling.particles.opacity" type="number" step="0.1" min="0" max="1" @blur="applyTheme" />
-              </div>
-
-              <div class="field">
-                <label>Wind Power</label>
-                <input v-model.number="customTheme.styling.particles.windPower" type="number" step="0.1" @blur="applyTheme" />
-              </div>
-
-              <div class="field">
-                <label class="checkbox-label">
-                  <input v-model="customTheme.styling.particles.interaction" type="checkbox" @change="applyTheme" />
-                  <span>Interaction</span>
-                </label>
-              </div>
-
-              <div class="field">
-                <label>Images (comma-separated)</label>
-                <textarea v-model="particleImagesText" placeholder="assets://particles/image1.png" @blur="applyTheme"></textarea>
-              </div>
-            </template>
-          </section>
-
-          <!-- Actions -->
-          <div class="actions">
-            <button @click="exportTheme" class="export-btn">Export JSON</button>
-          </div>
         </div>
       </div>
     </transition>
@@ -244,29 +306,66 @@
 
 <script>
 import { mapActions, mapState } from 'pinia';
+import { toRaw } from 'vue';
 import Home from '@/views/Home/Home.vue';
 import ThemeCard from '@/components/ThemeCard.vue';
 import ColorPicker from '@/components/ColorPicker.vue';
+import InfoTooltip from '@/components/InfoTooltip.vue';
+import IconButton from '@/components/IconButton.vue';
+import LiquidGlassButton from '@/components/LiquidGlassButton.vue';
+import Checkbox from '@/components/Checkbox.vue';
+import CollapsibleSection from '@/components/CollapsibleSection.vue';
+import SliderInput from '@/components/SliderInput.vue';
+import ImageUpload from '@/components/ImageUpload.vue';
 import useThemeStore from '@/stores/themes';
 import useClockStore from '@/stores/clock';
-import { fallbackStyling, parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
+import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
 import lightTheme from '@/themes/light.json';
-import { faDownload, faUpload, faSave, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { cleanupOrphanedImages } from '@/utils/imageStorage';
 
 export default {
   components: {
     Home,
     ThemeCard,
     ColorPicker,
+    InfoTooltip,
+    IconButton,
+    LiquidGlassButton,
+    Checkbox,
+    CollapsibleSection,
+    SliderInput,
+    ImageUpload,
   },
   data() {
+    // Initialize from store's current theme, not light.json
+    const store = useThemeStore();
+    const storeStyling = toRaw(store.styling); // Extract raw object from Proxy
+    const currentStyling = structuredClone(storeStyling);
+
+    const theme = {
+      metadata: lightTheme.metadata,
+      visibility: lightTheme.visibility,
+      styling: currentStyling,
+    };
+
+    // Ensure nested objects exist for v-model binding
+    if (!theme.styling.text) theme.styling.text = {};
+    if (!theme.styling.header) theme.styling.header = {};
+    if (!theme.styling.iconCards) theme.styling.iconCards = {};
+
     return {
       panelOpen: true,
-      customTheme: structuredClone(lightTheme),
+      customTheme: theme,
       previewHeight: '',
       themes: [],
       presetsExpanded: true,
       otherThemesExpanded: false,
+      colorsExpanded: false,
+      textExpanded: false,
+      headerExpanded: false,
+      iconCardsExpanded: false,
+      particlesExpanded: false,
+      advancedExpanded: false,
     };
   },
   computed: {
@@ -333,33 +432,32 @@ export default {
         return !!this.customTheme.styling.particles;
       },
       set(value) {
-        if (value && !this.customTheme.styling.particles) {
-          this.customTheme.styling.particles = {
-            images: [],
-            speed: 1,
-            count: 20,
-            size: 10,
-            opacity: 0.8,
-            windPower: 0,
-            interaction: false,
-          };
-        } else if (!value) {
+        if (value) {
+          if (!this.customTheme.styling.particles) {
+            this.customTheme.styling.particles = {
+              images: [],
+              speed: 1,
+              count: 20,
+              size: 10,
+              opacity: 0.8,
+              windPower: 0,
+            };
+          }
+        } else {
           delete this.customTheme.styling.particles;
+          this.particlesExpanded = false;
         }
+        this.applyTheme();
       },
     },
-    particleImagesText: {
-      get() {
-        return this.customTheme.styling.particles?.images?.join(', ') || '';
-      },
-      set(value) {
-        if (this.customTheme.styling.particles) {
-          this.customTheme.styling.particles.images = value
-            .split(',')
-            .map(s => s.trim())
-            .filter(s => s);
-        }
-      },
+
+    particleImages() {
+      const images = this.customTheme.styling.particles?.images || [];
+      // Always ensure there's a trailing empty slot
+      if (images.length === 0 || images[images.length - 1] !== '') {
+        return [...images, ''];
+      }
+      return images;
     },
     headerImageFull: {
       get() {
@@ -397,10 +495,8 @@ export default {
       this.themes = await loadAllThemes();
     },
 
-    loadTheme(theme) {
-      const fallback = fallbackStyling(theme.styling);
-
-      // Merge theme with fallback for editing
+    async loadTheme(theme) {
+      // Ensure nested objects exist even if empty
       this.customTheme = {
         metadata: { ...theme.metadata },
         visibility: theme.visibility,
@@ -427,15 +523,68 @@ export default {
             invert: theme.styling?.iconCards?.invert,
           },
           ...(theme.styling?.particles && {
-            particles: { ...theme.styling.particles }
+            particles: {
+              ...theme.styling.particles,
+              images: [...(theme.styling.particles.images || [])]
+            }
           })
         }
       };
       this.applyTheme();
+
+      // Clean up images not referenced in the new theme
+      await cleanupOrphanedImages(this.customTheme.styling);
     },
 
     applyTheme() {
       this.setStyling(this.customTheme.styling);
+    },
+
+    updateParticleImage(index, value) {
+      if (!this.customTheme.styling.particles) {
+        this.customTheme.styling.particles = {
+          images: [],
+          speed: 1,
+          count: 20,
+          size: 10,
+          opacity: 0.8,
+          windPower: 0,
+        };
+      }
+      if (!this.customTheme.styling.particles.images) {
+        this.customTheme.styling.particles.images = [];
+      }
+
+      // If updating the trailing empty slot with a value, add it to the array
+      if (index === this.customTheme.styling.particles.images.length) {
+        this.customTheme.styling.particles.images.push(value);
+      } else {
+        this.customTheme.styling.particles.images[index] = value;
+      }
+
+      // Use nextTick to ensure the update has been processed before cleanup
+      this.$nextTick(() => {
+        this.cleanupEmptyParticleImages();
+      });
+    },
+
+    cleanupEmptyParticleImages() {
+      if (!this.customTheme.styling.particles?.images) return;
+
+      const images = this.customTheme.styling.particles.images;
+      const indicesToRemove = [];
+
+      // Find all empty images
+      for (let i = 0; i < images.length; i++) {
+        if (!images[i] || images[i].trim() === '') {
+          indicesToRemove.push(i);
+        }
+      }
+
+      // Remove all empty images (the computed property will add a trailing one)
+      for (let i = indicesToRemove.length - 1; i >= 0; i--) {
+        images.splice(indicesToRemove[i], 1);
+      }
     },
 
     exportTheme() {
@@ -455,11 +604,14 @@ export default {
       this.previewHeight = `calc(100vh - ${offsetTop}px - ${marginBottom}px)`;
     },
   },
-  mounted() {
+  async mounted() {
     this.loadThemes();
     this.$nextTick(() => {
       this.setPreviewHeight();
     });
+
+    // Clean up orphaned images on mount
+    await cleanupOrphanedImages(this.customTheme.styling);
   },
 };
 </script>
@@ -522,11 +674,11 @@ export default {
   flex: 1
   overflow-y: auto
   padding: 15px
+  scrollbar-gutter: stable
 
 .presets-section
   margin-bottom: 25px
   padding-bottom: 20px
-  border-bottom: 2px solid var(--accent)
   position: relative
 
 .presets-header
@@ -721,15 +873,121 @@ export default {
       .info-icon
         color: white
 
-.section
+.customization-section
   margin-bottom: 25px
 
+.customization-content
+  padding-top: 8px
+
+.primary-controls
+  display: flex
+  gap: 16px
+  padding: 0 0 20px 0
+  margin-bottom: 20px
+  border-bottom: 1px solid rgba(128, 128, 128, 0.08)
+  align-items: flex-end
+
+.accent-control
+  flex: 1
+
+.controls-right
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 6px
+  flex-shrink: 0
+
+.advanced-sections
+  margin-top: 16px
+
+:deep(.collapsible-section)
+  .header-action .checkbox-container
+    margin-top: 0
+
+.image-uploads-row
+  display: flex
+  gap: 16px
+  margin-bottom: 12px
+
+  &:last-child
+    margin-bottom: 0
+
+.field-compact
+  margin-bottom: 12px
+
+  &:last-child
+    margin-bottom: 0
+
+// Particle Images Section
+.particle-images-section
+  margin-top: 16px
+
+  .section-label
+    display: block
+    font-size: 13px
+    font-weight: 500
+    color: var(--secondary)
+    text-transform: uppercase
+    letter-spacing: 0.5px
+    margin-bottom: 12px
+
+.particle-images-list
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 16px
+
+  label
+    display: block
+    margin-bottom: 6px
+    color: var(--secondary)
+    font-weight: 500
+    font-size: 11px
+
+  input[type="text"],
+  input[type="number"],
+  select,
+  textarea
+    width: 100%
+    padding: 6px 8px
+    border: 1px solid rgba(128, 128, 128, 0.2)
+    border-radius: 6px
+    background: var(--background)
+    color: var(--primary)
+    font-size: 12px
+    box-sizing: border-box
+    transition: border-color 0.2s ease
+
+    &:focus
+      outline: none
+      border-color: var(--accent)
+
+  textarea
+    min-height: 50px
+    resize: vertical
+    font-family: monospace
+    font-size: 10px
+
+  .checkbox-label
+    display: flex
+    align-items: center
+    gap: 6px
+    cursor: pointer
+    font-size: 12px
+
+    input[type="checkbox"]
+      width: 16px
+      height: 16px
+      cursor: pointer
+
+.section
+  margin-bottom: 20px
+
   h3
-    margin: 0 0 12px 0
+    margin: 0 0 10px 0
     color: var(--accent)
-    font-size: 16px
-    border-bottom: 1px solid var(--accent)
-    padding-bottom: 5px
+    font-size: 14px
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2)
+    padding-bottom: 6px
+    font-weight: 600
 
   select
     width: 100%
@@ -741,14 +999,14 @@ export default {
     font-size: 13px
 
 .field
-  margin-bottom: 12px
+  margin-bottom: 10px
 
   label
     display: block
-    margin-bottom: 4px
-    color: var(--primary)
+    margin-bottom: 6px
+    color: var(--secondary)
     font-weight: 500
-    font-size: 13px
+    font-size: 12px
 
   .checkbox-label
     display: flex
@@ -799,29 +1057,6 @@ export default {
     resize: vertical
     font-family: monospace
     font-size: 11px
-
-.actions
-  display: flex
-  gap: 10px
-  padding-top: 15px
-  border-top: 1px solid var(--accent)
-
-  button
-    flex: 1
-    padding: 10px
-    border: none
-    border-radius: 4px
-    cursor: pointer
-    font-size: 13px
-    font-weight: 600
-    transition: all 0.2s
-
-  .export-btn
-    background: var(--accent)
-    color: white
-
-    &:hover
-      opacity: 0.9
 
 .toggle-panel-btn
   position: fixed
