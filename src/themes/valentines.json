@@ -31,7 +31,7 @@
 
     "particles": {
       "images": [
-        "assets://particles/heart.svg"
+        "assets://particles/heart_red.png"
       ],
       "speed": 0.8,
       "count": 12,
