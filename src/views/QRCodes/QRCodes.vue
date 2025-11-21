@@ -137,15 +137,11 @@ export default {
       this.qrKey++;
     },
     url() {
-      if (this.canGenerate) {
-        this.showQR = true;
-      }
+      this.showQR = this.canGenerate;
     },
   },
   mounted() {
-    if (this.canGenerate) {
-      this.showQR = true;
-    }
+    this.showQR = this.canGenerate;
   },
   methods: {
     resetColor() {
