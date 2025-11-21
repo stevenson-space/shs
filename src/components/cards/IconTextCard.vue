@@ -1,17 +1,15 @@
 <template>
-  <card class="card" :class="{ invert }" @click="handleClick">
-    <custom-link v-if="link" :href="link" v-bind="linkProps">
+  <card class="card" :class="{ invert }">
+    <component
+      :is="link ? 'custom-link' : 'div'"
+      v-bind="link ? { href: link, ...linkProps } : {}"
+      @click="handleClick"
+    >
       <div class="icon">
         <font-awesome-icon class="boxIcon" :icon="icon" size="5x" v-bind="iconProps" />
       </div>
       <div class="text">{{ text }}</div>
-    </custom-link>
-    <div v-else>
-      <div class="icon">
-        <font-awesome-icon class="boxIcon" :icon="icon" size="5x" v-bind="iconProps" />
-      </div>
-      <div class="text">{{ text }}</div>
-    </div>
+    </component>
   </card>
 </template>
 
