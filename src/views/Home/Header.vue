@@ -129,7 +129,7 @@ import { dateToSeconds, formatDate } from '@/utils/util';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
 import Announcements from './Announcements.vue';
-import { intoCountdownString, schoolResumesString } from '@/utils/countdown.ts';
+import { intoCountdownString, schoolResumesString } from '@/utils/countdown';
 
 export default {
   components: {
