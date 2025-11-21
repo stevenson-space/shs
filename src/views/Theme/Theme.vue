@@ -134,6 +134,8 @@
                       </icon-button>
                     </template>
                     Save Theme
+                    <br/>
+                    (Not implemented)
                   </info-tooltip>
                   <info-tooltip>
                     <template #trigger>
