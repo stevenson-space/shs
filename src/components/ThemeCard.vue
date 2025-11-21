@@ -37,6 +37,8 @@
 import InfoTooltip from '@/components/InfoTooltip.vue';
 import { formatDateRange, fallbackStyling } from '@/utils/themes';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { globalImageResolver } from '@/utils/imageResolver';
+
 
 export default {
   components: {
@@ -56,12 +58,7 @@ export default {
   computed: {
     headerImage() {
       const fullImage = this.theme.styling?.header?.image?.full;
-      if (!fullImage) return null;
-
-      if (fullImage.startsWith('assets://')) {
-        return fullImage.replace('assets://', '/src/themes/assets/');
-      }
-      return fullImage;
+      return globalImageResolver.resolve(fullImage);
     },
     accent() {
       return this.theme.styling?.accent || fallbackStyling(this.theme.styling).accent;
