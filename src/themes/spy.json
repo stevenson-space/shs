@@ -1,14 +1,17 @@
 {
   "metadata": {
-    "name": "Spy",
-    "author": "shs-space"
+    "name": "Spy (HOCO '24)",
+    "author": "shs-space",
+    "description": "Homecoming 2024 theme!"
   },
 
   "visibility": "show",
   "recommended": {
-    "timing": "09/25/2024-09/28/2024",
+    "timing": "season",
     "message": "[Try] The New Spy Theme 🕵️"
   },
+
+  "seasonalDates": "09/25/2024-09/28/2024",
 
   "styling": {
     "base": "dark",
