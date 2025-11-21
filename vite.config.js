@@ -13,5 +13,6 @@ export default defineConfig({
   },
   server: {
     port: 8080, // to stay consistant with old ports
+    allowedHosts: ['localhost', '*.pages.dev', 'stevenson.space']
   },
 });

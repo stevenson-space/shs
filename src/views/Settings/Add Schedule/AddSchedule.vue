@@ -440,7 +440,7 @@ export default {
       display: block
 
     .link
-      color: var(--color)
+      color: var(--accent)
       font-weight: bold
       font-size: 1.2em
 

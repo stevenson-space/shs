@@ -192,11 +192,11 @@ export default {
 .time-text
   font-size: 15px
   text-align: center
-  color: var(--color)
+  color: var(--accent)
 
 .green-line
   width: 100%
   height: 1px
-  background-color: var(--color)
+  background-color: var(--accent)
   margin-bottom: 10px
 </style>

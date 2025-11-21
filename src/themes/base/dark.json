@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "name": "Dark (Base)",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+  "recommended": "always",
+
+  "styling": {
+    "base": "dark",
+    "background": "#23272a",
+    "secondaryBackground": "#2c2f33",
+
+    "accent": "#b38825",
+
+    "text": {
+      "primary": "white",
+      "secondary": "var(--primary)",
+      "tertiary": "var(--primary)"
+    },
+
+    "header": {
+      "background": "var(--secondaryBackground)",
+      "scheduleBar": "var(--background)"
+    },
+
+    "iconCards": {
+      "regular": "white",
+      "invert": "white"
+    }
+  }
+}

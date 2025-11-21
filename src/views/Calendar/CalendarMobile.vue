@@ -125,16 +125,16 @@ export default {
         background-color: #CCC
 
       &.border
-        border: var(--color) 1px dashed
+        border: var(--accent) 1px dashed
 
       &.inverted
-        background-color: var(--color)
+        background-color: var(--accent)
         color: var(--background)
         .dot
           background-color: var(--background)
 
       .dot
-        background-color: var(--color)
+        background-color: var(--accent)
         height: 5px
         width: 5px
         border-radius: 5px

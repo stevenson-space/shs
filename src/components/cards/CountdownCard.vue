@@ -70,7 +70,7 @@ export default {
 
 <style lang="sass" scoped>
 a
-  color: var(--color)
+  color: var(--accent)
 .container
   display: flex
   align-items: center
@@ -92,6 +92,6 @@ a
         font-size: 2em
         font-weight: 600
         margin: 0 5px
-        color: var(--color)
-        background-color: rgba(var(--color), 100)
+        color: var(--accent)
+        background-color: rgba(var(--accent), 100)
 </style>

@@ -21,5 +21,5 @@ export default {
 a
     text-decoration: none
     font-weight: bold
-    color: var(--color)
+    color: var(--accent)
 </style>

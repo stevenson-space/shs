@@ -22,14 +22,14 @@ export default {
   border-radius: 20px
   width: calc(100% - 10px)
   margin: 0 auto
-  border: var(--color) 1px solid
-  color: var(--color)
+  border: var(--accent) 1px solid
+  color: var(--accent)
   margin-bottom: 10px
   font-weight: bold
   max-width: 250px
 
   &.invert
-    background-color: var(--color)
+    background-color: var(--accent)
     color: var(--background)
 
   .text

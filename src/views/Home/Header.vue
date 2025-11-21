@@ -1,7 +1,7 @@
 <template>
   <div
     class="header"
-    :class="{ 'full-screen': fullScreenMode, 'spy': theme.name.toLowerCase() == 'spy', 'halloween': theme.name.toLowerCase() == 'halloween', 'minecraft': theme.name.toLowerCase() == 'minecraft', 'mars': theme.name.toLowerCase() == 'mars', 'cosmic-reef': theme.name.toLowerCase() == 'cosmic reef', 'cosmic-tarantula': theme.name.toLowerCase() == 'cosmic tarantula', 'summer': theme.name.toLowerCase() == 'summer', 'eclipse': theme.name.toLowerCase() == 'eclipse', 'zen': theme.name.toLowerCase() == 'zen' || theme.name.toLowerCase() == 'not windows xp'}"
+    :class="{ 'full-screen': fullScreenMode }"
     :style="colors"
   >
     <dropdown
@@ -14,9 +14,9 @@
 
     <div
       class="main"
-      :class="{ 'extra-padding': scheduleModes.length > 1, 'winterfest': theme.name.toLowerCase() == 'into the woods'}"
+      :class="{ 'extra-padding': scheduleModes.length > 1, 'winterfest': theme.metadata.name.toLowerCase() == 'into the woods'}"
     >
-      <video v-if="theme.name.toLowerCase() === 'stevenson space'" autoplay loop muted playsinline :class="'starry-night' + (fullScreenMode ? ' starry-night-full' : '')">
+      <video v-if="theme.metadata.name.toLowerCase() === 'stevenson space'" autoplay loop muted playsinline :class="'starry-night' + (fullScreenMode ? ' starry-night-full' : '')">
         <source
           :src="starryNight"
           type="video/mp4"
@@ -88,8 +88,16 @@
     />
 
     <announcements :full-screen-mode="fullScreenMode" />
-    <snow v-if="theme.name.toLowerCase() == 'winter'" :images="[snowflake]"/>
-    <snow v-if="theme.name.includes('Valentine')" :images="[heart]"/>
+    <particle-system
+      v-if="particleImages.length > 0"
+      :images="particleImages"
+      :speed="styling.particles?.speed"
+      :count="styling.particles?.count"
+      :size="styling.particles?.size"
+      :opacity="styling.particles?.opacity"
+      :wind-power="styling.particles?.windPower"
+      :interaction="false"
+    />
 
   </div>
 </template>
@@ -97,8 +105,6 @@
 <script>
 import { mapState, mapActions } from 'pinia';
 
-import heart from '@/assets/occasions/heart.svg';
-import snowflake from '@/assets/occasions/snowflake.png';
 import bellAudio from '@/assets/virtual-bell.wav';
 import starryNight from '@/assets/occasions/starry-night-full.mp4';
 
@@ -113,7 +119,7 @@ import {
   faVolumeOff,
 } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from '@/components/Dropdown.vue';
-import Snow from '@/components/Snow.vue';
+import ParticleSystem from '@/components/ParticleSystem.vue';
 import useClockStore from '@/stores/clock';
 import useScheduleStore from '@/stores/schedules';
 import useThemeStore from '@/stores/themes';
@@ -123,7 +129,9 @@ import { dateToSeconds, formatDate } from '@/utils/util';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
 import Announcements from './Announcements.vue';
-import { intoCountdownString, schoolResumesString } from '@/utils/countdown.ts';
+import { intoCountdownString, schoolResumesString } from '@/utils/countdown';
+
+import { globalImageResolver } from '@/utils/imageResolver';
 
 export default {
   components: {
@@ -131,13 +139,14 @@ export default {
     HeaderSchedule,
     Dropdown,
     Announcements,
-    Snow,
+    ParticleSystem,
   },
   props: {
     fullScreenMode: { type: Boolean, default: false },
   },
   data() {
     return {
+      imageCache: globalImageResolver.getCache(),
       icons: {
         faChevronRight,
         faChevronLeft,
@@ -148,8 +157,6 @@ export default {
         faVolumeHigh,
         faVolumeOff,
       },
-      heart,
-      snowflake,
       colored: true,
       useVirtualBell: false,
       starryNight,
@@ -157,14 +164,42 @@ export default {
   },
   computed: {
     // this automatically gets the following properties from the store and adds them as computed properties
-    ...mapState(useThemeStore, ['theme']),
+    ...mapState(useThemeStore, ['styling', 'theme']),
     ...mapState(useClockStore, ['clockMode', 'date', 'bell']),
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
-      return {
-        '--header-color': showColor ? 'var(--headerBackgroundColor)' : 'var(--background)',
-        '--header-accent': showColor ? 'white' : 'var(--color)',
+      const styling = this.styling;
+
+      let headerStyle = {
+        '--header-color': showColor ? 'var(--headerBackground)' : 'var(--background)',
+        '--header-accent': showColor ? 'white' : 'var(--accent)',
       };
+
+      if (styling?.header?.image?.full) {
+        // trigger reactivity when cache updates
+        const _ = this.imageCache;
+
+        const fullResolved = globalImageResolver.resolve(styling.header.image.full);
+        const mobileResolved = globalImageResolver.resolve(styling.header.image.mobile || styling.header.image.full);
+
+        if (fullResolved) {
+          headerStyle['--header-image-full'] = fullResolved.startsWith('data:')
+            ? `url("${fullResolved}")`
+            : `url(${fullResolved})`;
+        }
+        if (mobileResolved) {
+          headerStyle['--header-image-mobile'] = mobileResolved.startsWith('data:')
+            ? `url("${mobileResolved}")`
+            : `url(${mobileResolved})`;
+        }
+        if (fullResolved || mobileResolved) {
+          headerStyle['--has-header-image'] = '1';
+        }
+
+        this.loadImages(styling.header.image.full, styling.header.image.mobile);
+      }
+
+      return headerStyle;
     },
     endTime() {
       return this.bell.getSecondsUntilNextTarget();
@@ -193,6 +228,20 @@ export default {
       const { modes } = this.bell;
       return modes.map((mode) => mode.name);
     },
+    particleImages() {
+      if (!this.styling?.particles?.images) {
+        return [];
+      }
+
+      // trigger reactivity when cache updates
+      const _ = this.imageCache;
+
+      this.loadImages(...this.styling.particles.images);
+
+      return this.styling.particles.images
+        .map(url => globalImageResolver.resolve(url))
+        .filter(img => img !== null);
+    },
   },
   watch: {
     date() {
@@ -214,11 +263,24 @@ export default {
     if (localStorage.fullScreenColored === 'false') {
       this.colored = false;
     }
+
+    this.unsubscribeImageCache = globalImageResolver.onUpdate((cache) => {
+      this.imageCache = cache;
+    });
+  },
+  beforeUnmount() {
+    if (this.unsubscribeImageCache) {
+      this.unsubscribeImageCache();
+    }
   },
   methods: {
     formatDate,
     schoolResumesString,
     intoCountdownString,
+
+    async loadImages(...paths) {
+      await globalImageResolver.loadAll(paths);
+    },
     ...mapActions(useScheduleStore, ['setScheduleMode']),
     formatDateUrl(date) {
       // e.g. "6-11-2018"
@@ -276,53 +338,13 @@ export default {
   background-color: var(--header-color)
   text-align: center
   transition: background-color .3s
-  &.spy
-    background: url(@/assets/occasions/spy-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/spy-full.png) center center no-repeat, var(--header-color)
 
-  &.minecraft
-    background: url(@/assets/occasions/minecraft-mobile.png) center center no-repeat, var(--header-color)
+  // Dynamic header images using CSS variables
+  &[style*="--has-header-image"]
+    background: var(--header-image-mobile, var(--header-color)) center center no-repeat
     background-size: cover
     +desktop
-      background: url(@/assets/occasions/minecraft-desktop.png) center center no-repeat, var(--header-color)
-  &.mars
-    background: url(@/assets/occasions/mars-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/mars-full.png) center center no-repeat, var(--header-color)
-  &.cosmic-reef
-    background: url(@/assets/occasions/cosmic-reef-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/cosmic-reef-full.png) center center no-repeat, var(--header-color)
-  &.cosmic-tarantula
-    background: url(@/assets/occasions/cosmic-tarantula-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/cosmic-tarantula-full.png) center center no-repeat, var(--header-color)
-  &.summer
-    background: url(@/assets/occasions/beach-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/beach-full.png) center center no-repeat, var(--header-color)
-  &.zen
-    background: url(@/assets/occasions/zen-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/zen-full.png) center center no-repeat, var(--header-color)
-  &.halloween
-    background: url(@/assets/occasions/cob-webs-left.png) left top no-repeat, url(@/assets/occasions/cob-webs-right.png) right top no-repeat, var(--header-color)
-    background-size: 250px
-    +mobile-small
-      background-size: 150px
-  &.eclipse
-    background: url(@/assets/occasions/eclipse-mobile.png) center center no-repeat, var(--header-color)
-    background-size: cover
-    +desktop
-      background: url(@/assets/occasions/eclipse-full.png) center center no-repeat, var(--header-color)
-      background-size: fit
+      background: var(--header-image-full, var(--header-color)) center center no-repeat
 
   .starry-night
     position: absolute

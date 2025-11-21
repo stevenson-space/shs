@@ -33,11 +33,11 @@ export default {
   background-color: var(--background)
   color: var(--secondary)
   &.showColor
-    border: var(--color) $border-width solid
+    border: var(--accent) $border-width solid
     background-color: var(--background)
-    color: var(--color)
+    color: var(--accent)
   &.invert
-    background-color: var(--color)
+    background-color: var(--accent)
     color: var(--background)
     border: none
     padding: (5px + $border-width) (15px + $border-width)

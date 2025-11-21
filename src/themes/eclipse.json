@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "name": "Eclipse",
+    "author": "shs-space",
+    "description": "Theme celebrating the April 8th 2024 solar eclipse. Don't stare at the sun!"
+  },
+
+  "visibility": "show",
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The new Eclipse theme now! ☀️"
+  },
+
+  "seasonalDates": "04/07/2024-04/09/2024",
+
+  "styling": {
+    "base": "dark",
+    "background": "black",
+    "secondaryBackground": "black",
+    "accent": "#F88203",
+
+    "header": {
+      "background": "black",
+      "scheduleBar": "black",
+      "image": {
+        "full": "assets://header-images/eclipse-full.png",
+        "mobile": "assets://header-images/eclipse-mobile.png"
+      }
+    },
+
+    "iconCards": {
+      "regular": "black",
+      "invert": "var(--accent)"
+    }
+  }
+}

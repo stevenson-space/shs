@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "name": "Spy (HOCO '24)",
+    "author": "shs-space",
+    "description": "Homecoming 2024 theme!"
+  },
+
+  "visibility": "show",
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The New Spy Theme 🕵️"
+  },
+
+  "seasonalDates": "09/25/2024-09/28/2024",
+
+  "styling": {
+    "base": "dark",
+    "background": "#242424",
+    "secondaryBackground": "black",
+    "accent": "#bfbdbd",
+
+    "header": {
+      "image": {
+        "full": "assets://header-images/spy-full.png",
+        "mobile": "assets://header-images/spy-mobile.png"
+      }
+    },
+
+    "iconCards": {
+      "regular": "black",
+      "invert": "white"
+    }
+  }
+}

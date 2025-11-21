@@ -35,7 +35,7 @@ export default {
 
 .bellschedules
   .background-block
-    background-color: var(--headerBackgroundColor)
+    background-color: var(--headerBackground)
     height: 250px
     width: 100%
     left: 0

@@ -97,7 +97,7 @@ export default {
     display: flex
     align-items: center
     justify-content: center
-    color: var(--color)
+    color: var(--accent)
 
     .filter-dropdown, .home
       +mobile

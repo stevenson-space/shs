@@ -31,9 +31,9 @@ export default {
   padding: 5px
 .link
     text-decoration: none
-    color: var(--color)
+    color: var(--accent)
     font-weight: bold
 .link-icon
     font-size: 1.1em
-    color: var(--color)
+    color: var(--accent)
 </style>

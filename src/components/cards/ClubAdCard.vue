@@ -34,7 +34,7 @@ export default {
   text-align: center
 
   .title
-    background-color: var(--color)
+    background-color: var(--accent)
     color: var(--background)
     font-size: 1.1em
     font-weight: bold
@@ -55,8 +55,8 @@ export default {
       flex-grow: 1
 
     .chip
-      border: 1px var(--color) solid
-      color: var(--color)
+      border: 1px var(--accent) solid
+      color: var(--accent)
       border-radius: 100px
       padding: 2px 5px
       font-weight: bold

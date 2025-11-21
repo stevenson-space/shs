@@ -78,7 +78,7 @@ export default {
   width: calc(100% - 10px) // subtract 2 * 5px (padding)
   color: var(--secondary)
   letter-spacing: 1px
-  background-color: var(--headerScheduleBackgroundColor)
+  background-color: var(--headerScheduleBar)
   &.full-screen
     font-size: 2.75vh
 
