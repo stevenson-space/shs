@@ -16,7 +16,7 @@
       </slot>
     </div>
     <teleport to="body">
-      <div v-if="isVisible" class="info-tooltip" :style="tooltipStyle">
+      <div v-if="isVisible" ref="tooltip" class="info-tooltip" :style="tooltipStyle">
         <slot />
       </div>
     </teleport>
@@ -44,7 +44,7 @@ export default {
       this.isVisible = true;
       this.$nextTick(() => {
         const rect = event.currentTarget.getBoundingClientRect();
-        const tooltip = document.querySelector('.info-tooltip');
+        const tooltip = this.$refs.tooltip;
 
         if (tooltip) {
           const tooltipWidth = tooltip.offsetWidth;
