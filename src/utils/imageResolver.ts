@@ -4,7 +4,7 @@ type ImageCache = Record<string, string>;
 type CacheUpdateCallback = (cache: ImageCache) => void;
 
 // Import all theme assets using Vite's glob import
-const themeAssets = import.meta.glob('@/themes/assets/**/*.(png|jpg|jpeg|gif|svg|webp)', {
+const themeAssets = import.meta.glob('@/themes/assets/**/*.{png,jpg,jpeg,gif,svg,webp}', {
   eager: true,
   import: 'default'
 }) as Record<string, string>;
