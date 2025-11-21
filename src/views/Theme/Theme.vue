@@ -146,6 +146,8 @@
                       </icon-button>
                     </template>
                     Export Theme
+                    <br/>
+                    (Images not included)
                   </info-tooltip>
                 </div>
               </div>
