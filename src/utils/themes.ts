@@ -36,10 +36,15 @@ export function parseThemeDate(dateStr: string, referenceDate: Date): Date {
  */
 export function parseDateRange(dateRange: string, referenceDate: Date): [Date, Date] {
   const [startStr, endStr] = dateRange.split('-');
-  return [
-    parseThemeDate(startStr, referenceDate),
-    parseThemeDate(endStr, referenceDate),
-  ];
+  const start = parseThemeDate(startStr, referenceDate);
+  let end = parseThemeDate(endStr, referenceDate);
+
+  // Handle year boundary crossing (e.g., "11/01-03/20" means Nov 1 to March 20 of next year)
+  if (end < start) {
+    end = new Date(end.getFullYear() + 1, end.getMonth(), end.getDate());
+  }
+
+  return [start, end];
 }
 
 /**
