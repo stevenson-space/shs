@@ -740,6 +740,10 @@ export default {
   flex-direction: column
   overflow: hidden
 
+  +mobile
+    width: 100vw
+    border-right: none
+
 .panel-header
   display: flex
   justify-content: space-between
