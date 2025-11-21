@@ -1,6 +1,16 @@
 <template>
   <div class="info-tooltip-wrapper">
-    <div class="info-icon" @mouseenter="showTooltip" @mouseleave="hideTooltip">
+    <div
+      class="info-icon"
+      tabindex="0"
+      role="button"
+      aria-label="More information"
+      @mouseenter="showTooltip"
+      @mouseleave="hideTooltip"
+      @focus="showTooltip"
+      @blur="hideTooltip"
+      @click="toggleTooltip"
+    >
       <slot name="trigger">
         <font-awesome-icon :icon="icon" />
       </slot>
@@ -64,9 +74,15 @@ export default {
         }
       });
     },
-
     hideTooltip() {
       this.isVisible = false;
+    },
+    toggleTooltip(event) {
+      if (this.isVisible) {
+        this.hideTooltip();
+      } else {
+        this.showTooltip(event);
+      }
     },
   },
 };
