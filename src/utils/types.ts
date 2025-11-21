@@ -44,9 +44,6 @@ export type ThemeSeasonal = {
   dates: string;
   // the message on the homepage advertising the theme
   message?: string;
-  // if the theme should be hidden from the themes page outside of the schedule
-  // (this can be overridden using the debug date setting)
-  limitedTime: boolean;
 };
 
 export type ThemeTextColors = {
@@ -96,6 +93,7 @@ export type ThemeStyling = {
 export type Theme = {
   metadata: ThemeMetadata;
   visibility: "show" | "draft" | "hide";
+  recommended?: "never" | "always" | "season" | string;
   seasonal?: ThemeSeasonal;
   styling: ThemeStyling;
 };
