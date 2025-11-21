@@ -374,17 +374,18 @@ export default {
       const now = this.date;
 
       const recommended = this.themes.filter(t => {
-        if (t.recommended !== undefined && t.recommended !== null) {
-          if (t.recommended === 'never') return false;
-          if (t.recommended === 'always') return true;
+        const timing = t.recommended?.timing;
+        if (timing !== undefined && timing !== null) {
+          if (timing === 'never') return false;
+          if (timing === 'always') return true;
 
-          if (t.recommended === 'season' && t.seasonal?.dates) {
-            const [start, end] = parseDateRange(t.seasonal.dates, now);
+          if (timing === 'season' && t.seasonalDates) {
+            const [start, end] = parseDateRange(t.seasonalDates, now);
             return isDateInRange(now, start, end);
           }
 
-          if (typeof t.recommended === 'string' && t.recommended.length > 0) {
-            const [start, end] = parseDateRange(t.recommended, now);
+          if (typeof timing === 'string' && timing.length > 0) {
+            const [start, end] = parseDateRange(timing, now);
             if (isDateInRange(now, start, end)) return true;
           }
         }
@@ -393,12 +394,12 @@ export default {
       });
 
       return recommended.sort((a, b) => {
-        const aIsBase = a.recommended === 'always' && !a.seasonal?.dates;
-        const bIsBase = b.recommended === 'always' && !b.seasonal?.dates;
-        const aHasRecommended = a.recommended !== undefined;
-        const bHasRecommended = b.recommended !== undefined;
-        const aIsSeasonalOnly = aHasRecommended && a.recommended === 'season';
-        const bIsSeasonalOnly = bHasRecommended && b.recommended === 'season';
+        const aIsBase = a.recommended?.timing === 'always' && !a.seasonalDates;
+        const bIsBase = b.recommended?.timing === 'always' && !b.seasonalDates;
+        const aHasRecommended = a.recommended?.timing !== undefined;
+        const bHasRecommended = b.recommended?.timing !== undefined;
+        const aIsSeasonalOnly = aHasRecommended && a.recommended?.timing === 'season';
+        const bIsSeasonalOnly = bHasRecommended && b.recommended?.timing === 'season';
 
         // Base themes first
         if (aIsBase && !bIsBase) return -1;
@@ -418,15 +419,15 @@ export default {
 
     otherThemes() {
       const recommended = new Set(this.recommendedThemes.map(t => t.metadata.name));
-      return this.themes.filter(t => !recommended.has(t.metadata.name) && !t.seasonal?.dates);
+      return this.themes.filter(t => !recommended.has(t.metadata.name) && !t.seasonalDates);
     },
 
     seasonalThemes() {
       const activeSeasonalNames = new Set(
-        this.recommendedThemes.filter(t => t.seasonal?.dates).map(t => t.metadata.name)
+        this.recommendedThemes.filter(t => t.seasonalDates).map(t => t.metadata.name)
       );
       return this.themes.filter(t => {
-        return t.seasonal?.dates && !activeSeasonalNames.has(t.metadata.name);
+        return t.seasonalDates && !activeSeasonalNames.has(t.metadata.name);
       });
     },
 
@@ -503,7 +504,8 @@ export default {
       this.customTheme = {
         metadata: { ...theme.metadata },
         visibility: theme.visibility,
-        ...(theme.seasonal && { seasonal: { ...theme.seasonal } }),
+        ...(theme.recommended && { recommended: { ...theme.recommended } }),
+        ...(theme.seasonalDates && { seasonalDates: theme.seasonalDates }),
         styling: {
           base: theme.styling?.base || 'light',
           background: theme.styling?.background,

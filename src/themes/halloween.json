@@ -5,12 +5,12 @@
   },
 
   "visibility": "show",
-
-  "seasonal": {
-    "dates": "10/15-11/01",
-    "message": "[Try] The Spooky Halloween Theme",
-    "limitedTime": false
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The Spooky Halloween Theme"
   },
+
+  "seasonalDates": "10/20-11/01",
 
   "styling": {
     "base": "dark",

@@ -1,16 +1,16 @@
 {
   "metadata": {
-    "name": "Homecoming",
+    "name": "Homecoming '23",
     "author": "shs-space"
   },
 
   "visibility": "show",
-
-  "seasonal": {
-    "dates": "09/17-09/25",
-    "message": "[Try] The New Homecoming Theme",
-    "limitedTime": false
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The New Homecoming Theme"
   },
+
+  "seasonalDates": "09/17/2023-09/25/2023",
 
   "styling": {
     "base": "dark",

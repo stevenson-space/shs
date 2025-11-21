@@ -5,11 +5,9 @@
   },
 
   "visibility": "show",
-
-  "seasonal": {
-    "dates": "09/25-09/28",
-    "message": "[Try] The New Spy Theme 🕵️",
-    "limitedTime": true
+  "recommended": {
+    "timing": "09/25/2024-09/28/2024",
+    "message": "[Try] The New Spy Theme 🕵️"
   },
 
   "styling": {

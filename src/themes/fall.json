@@ -5,12 +5,12 @@
   },
 
   "visibility": "show",
-
-  "seasonal": {
-    "dates": "09/28-12/01",
-    "message": "[Try] The New Fall Theme 🍁",
-    "limitedTime": false
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The New Fall Theme 🍁"
   },
+
+  "seasonalDates": "09/16-12/15",
 
   "styling": {
     "base": "light",

@@ -5,12 +5,12 @@
   },
 
   "visibility": "show",
-
-  "seasonal": {
-    "dates": "02/08-02/15",
-    "message": "[Try] The New Valentines Day Theme",
-    "limitedTime": false
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The New Valentines Day Theme"
   },
+
+  "seasonalDates": "02/08-02/15",
 
   "styling": {
     "base": "light",

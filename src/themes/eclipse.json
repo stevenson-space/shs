@@ -6,12 +6,12 @@
   },
 
   "visibility": "show",
-
-  "seasonal": {
-    "dates": "04/07/2024-04/09/2024",
-    "message": "[Try] The new Eclipse theme now! ☀️",
-    "limitedTime": true
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The new Eclipse theme now! ☀️"
   },
+
+  "seasonalDates": "04/07/2024-04/09/2024",
 
   "styling": {
     "base": "dark",

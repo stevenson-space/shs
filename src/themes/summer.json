@@ -5,12 +5,12 @@
   },
 
   "visibility": "show",
-
-  "seasonal": {
-    "dates": "05/01-09/22",
-    "message": "[Try] The new summer theme now!",
-    "limitedTime": false
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The new summer theme now!"
   },
+
+  "seasonalDates": "05/15-09/15",
 
   "styling": {
     "base": "light",

@@ -6,11 +6,9 @@
   },
 
   "visibility": "show",
-
-  "seasonal": {
-    "dates": "01/12-09/22",
-    "message": "The new Minecraft wallpaper created by Dan Rybin!",
-    "limitedTime": false
+  "recommended": {
+    "timing": "1/12/2023-3/12/2023",
+    "message": "The new Minecraft wallpaper created by Dan Rybin!"
   },
 
   "styling": {

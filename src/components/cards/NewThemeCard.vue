@@ -8,9 +8,11 @@
           :circular="false"
           @click="toggleTheme()"
         />
-        <div class="message">{{ newTheme.seasonal?.message?.replace('[Try]','') || '' }}</div>
+        <div class="message">{{ newTheme.recommended?.message?.replace('[Try]','') || '' }}</div>
       </div>
-      <div v-if="newTheme.metadata?.description" class="description">{{ newTheme.metadata.description }}</div>
+      <info-tooltip v-if="newTheme.metadata?.description" @click.stop>
+        {{ newTheme.metadata.description }}
+      </info-tooltip>
       <button class="close-btn" @click="dismiss">&times;</button>
     </div>
   </card>
@@ -23,9 +25,10 @@ import { mapState, mapActions } from 'pinia';
 import useClockStore from '@/stores/clock';
 import useThemeStore from '@/stores/themes';
 import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
+import InfoTooltip from "@/components/InfoTooltip.vue";
 
 export default {
-  components: { Card, RoundedButton },
+  components: {InfoTooltip, Card, RoundedButton },
   computed: {
     ...mapState(useThemeStore, ['theme']),
     ...mapState(useClockStore, ['date']),
@@ -34,9 +37,9 @@ export default {
       const now = this.date;
 
       for (const theme of this.themes) {
-        if (!theme.seasonal?.dates) continue;
+        if (!theme.seasonalDates) continue;
 
-        const [start, end] = parseDateRange(theme.seasonal.dates, now);
+        const [start, end] = parseDateRange(theme.seasonalDates, now);
         if (isDateInRange(now, start, end)) {
           return theme;
         }

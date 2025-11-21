@@ -5,7 +5,9 @@
   },
 
   "visibility": "show",
-  "recommended": "always",
+  "recommended": {
+    "timing": "always"
+  },
 
   "styling": {
     "base": "dark",

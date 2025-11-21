@@ -39,13 +39,6 @@ export type ThemeMetadata = {
   author: string;
 };
 
-export type ThemeSeasonal = {
-  // the dates the theme will be visible
-  dates: string;
-  // the message on the homepage advertising the theme
-  message?: string;
-};
-
 export type ThemeTextColors = {
   primary: string;
   secondary: string;
@@ -90,11 +83,17 @@ export type ThemeStyling = {
   particles?: ThemeParticles;
 };
 
+export type ThemeRecommended = {
+  timing: "always" | "never" | "season" | string;
+  // the message on the homepage advertising the theme
+  message?: string,
+};
+
 export type Theme = {
   metadata: ThemeMetadata;
   visibility: "show" | "draft" | "hide";
-  recommended?: "never" | "always" | "season" | string;
-  seasonal?: ThemeSeasonal;
+  recommended?: ThemeRecommended;
+  seasonalDates?: string;
   styling: ThemeStyling;
 };
 

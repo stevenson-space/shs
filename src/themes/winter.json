@@ -5,12 +5,12 @@
   },
 
   "visibility": "show",
-
-  "seasonal": {
-    "dates": "12/01-03/20",
-    "message": "[Try] The New Winter Theme ☕",
-    "limitedTime": false
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The New Winter Theme ☕"
   },
+
+  "seasonalDates": "12/15-03/15",
 
   "styling": {
     "base": "light",
