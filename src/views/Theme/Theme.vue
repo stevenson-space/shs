@@ -166,6 +166,15 @@
               <!-- Advanced Sections -->
               <transition name="expand">
                 <div v-show="advancedExpanded" class="advanced-sections">
+                  <!-- Inheritance Info -->
+                  <div class="inheritance-info">
+                    <font-awesome-icon :icon="icons.faCircleInfo" />
+                    <div>
+                      <strong>Color Inheritance:</strong>
+                      <span>Some colors copy from other theme colors. Click the link icon until you can edit the color to turn off inheritance.</span>
+                    </div>
+                  </div>
+
                   <!-- Background -->
                   <collapsible-section title="Background" v-model="colorsExpanded">
                     <div class="field-compact">
@@ -299,6 +308,7 @@
 <script>
 import { mapActions, mapState } from 'pinia';
 import { toRaw } from 'vue';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import ThemeCard from '@/components/ThemeCard.vue';
 import ColorPicker from '@/components/ColorPicker.vue';
 import InfoTooltip from '@/components/InfoTooltip.vue';
@@ -363,6 +373,7 @@ export default {
       particlesExpanded: false,
       advancedExpanded: false,
       isApplyingTheme: false, // Flag to prevent infinite loop in styling watcher
+      icons: { faCircleInfo },
     };
   },
   computed: {
@@ -1025,6 +1036,32 @@ export default {
 
 .advanced-sections
   margin-top: 16px
+
+.inheritance-info
+  display: flex
+  align-items: flex-start
+  gap: 12px
+  padding: 12px 14px
+  background: rgba(128, 128, 128, 0.06)
+  border: 1px solid rgba(128, 128, 128, 0.12)
+  border-radius: 10px
+  font-size: 13px
+  margin-bottom: 16px
+
+  svg
+    flex-shrink: 0
+    margin-top: 3px
+    color: var(--accent)
+    font-size: 16px
+
+  strong
+    color: var(--primary)
+    font-weight: 600
+    margin-right: 4px
+
+  span
+    color: var(--secondary)
+    line-height: 1.4
 
 :deep(.collapsible-section)
   .header-action .checkbox-container
