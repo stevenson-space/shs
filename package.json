@@ -12,10 +12,10 @@
     "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore --fix src"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.1",
-    "@fortawesome/free-regular-svg-icons": "^6.5.1",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
-    "@fortawesome/vue-fontawesome": "^3.0.5",
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-regular-svg-icons": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/vue-fontawesome": "^3.1.2",
     "@sentry/tracing": "^7.91.0",
     "@sentry/vue": "^8.33.1",
     "@vitejs/plugin-vue": "^5.2.3",
