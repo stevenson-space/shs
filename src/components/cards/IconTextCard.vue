@@ -1,11 +1,15 @@
 <template>
   <card class="card" :class="{ invert }">
-    <custom-link :href="link" v-bind="linkProps">
+    <component
+      :is="link ? 'custom-link' : 'div'"
+      v-bind="link ? { href: link, ...linkProps } : {}"
+      @click="handleClick"
+    >
       <div class="icon">
         <font-awesome-icon class="boxIcon" :icon="icon" size="5x" v-bind="iconProps" />
       </div>
       <div class="text">{{ text }}</div>
-    </custom-link>
+    </component>
   </card>
 </template>
 
@@ -23,7 +27,14 @@ export default {
     invert: { type: Boolean, default: false },
     iconProps: { type: Object, default: () => {} },
   },
-
+  emits: ['click'],
+  methods: {
+    handleClick() {
+      if (!this.link) {
+        this.$emit('click');
+      }
+    },
+  },
 };
 </script>
 
@@ -31,12 +42,12 @@ export default {
 @import '@/styles/style.sass'
 
 .card
-  background: var(--color) !important
-  color: var(--iconTextCardColor)
+  background: var(--accent) !important
+  color: var(--iconCardsRegular)
   transition: transform .4s
   &.invert
     background-color: var(--secondaryBackground) !important
-    color: var(--iconTextCardInvertColor)
+    color: var(--iconCardsInvert)
   &:hover
     transform: scale(1.03)
 

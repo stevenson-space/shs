@@ -185,7 +185,7 @@ export default defineComponent({
     padding: 10px
     position: absolute
     left: 10px
-    color: var(--color)
+    color: var(--accent)
     display: none
     +mobile
       display: block
@@ -214,7 +214,7 @@ export default defineComponent({
       &.show
         transform: translateX(0)
     .close-arrow
-      color: var(--color)
+      color: var(--accent)
       font-size: 1.5em
       padding: 10px 15px
       cursor: pointer
@@ -222,7 +222,7 @@ export default defineComponent({
       +mobile
         display: inline-block
     .title
-      color: var(--color)
+      color: var(--accent)
       text-align: center
       font-size: 2.25em
       font-weight: bold

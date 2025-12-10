@@ -39,7 +39,7 @@ export default {
 
   .checkbox
     color: var(--background)
-    border: var(--color) 1.5px solid
+    border: var(--accent) 1.5px solid
     box-sizing: border-box
     width: 20px
     height: 20px

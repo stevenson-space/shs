@@ -1,58 +1,54 @@
 import { defineStore } from 'pinia';
-import _themeIdeas from '@/data/themeIdeas.json';
-import _themes from '@/data/themes.json';
-import { set as GASet } from 'vue-gtag';
-import { ThemeData, Theme } from '@/utils/types';
+import lightTheme from '@/themes/light.json'
+import { Theme, ThemeStyling } from '@/utils/types';
 
-const themes: Theme[] = _themes;
-const themeIdeas: Theme[] = _themeIdeas;
+const DEFAULT_THEME: Theme = lightTheme as Theme;
 
 interface State {
-  color: string,
-  theme: object,
+  _styling: ThemeStyling,
+  resolvedAssets: Map<string, string>,
 }
 
 export default defineStore('themes', {
   state: (): State => ({
-    color: import.meta.env.VITE_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1].suggestedColor : themes[0].suggestedColor,
-    theme: import.meta.env.VITE_EDIT_COLORS === 'true' ? themeIdeas[themeIdeas.length - 1] : themes[0],
+    _styling: DEFAULT_THEME.styling,
+    resolvedAssets: new Map(),
   }),
+  getters: {
+    styling(state): ThemeStyling {
+      return state._styling;
+    },
+    // TODO(theme)
+    theme(state): Theme {
+      return {
+        metadata: DEFAULT_THEME.metadata,
+        visibility: DEFAULT_THEME.visibility,
+        styling: state._styling,
+      };
+    },
+  },
   actions: {
     initializeTheme(): void {
-      if (localStorage.color && import.meta.env.VITE_EDIT_COLORS !== 'true') {
-        this.setColor(localStorage.color);
-        GASet({ user_properties: {
-          color: localStorage.color,
-        } });
+      if (localStorage.themeStyling) {
+        try {
+          this._styling = JSON.parse(localStorage.themeStyling);
+        } catch (error) {
+          this._styling = DEFAULT_THEME.styling;
+        }
       } else {
-        GASet({ user_properties: {
-          color: 'unset',
-        } });
-      }
-      if (localStorage.theme && import.meta.env.VITE_EDIT_COLORS !== 'true') {
-        const data:ThemeData = { theme: JSON.parse(localStorage.theme), useThemeColor: false };
-        this.setTheme(data);
+        this._styling = DEFAULT_THEME.styling;
       }
     },
     setColor(color:string): void {
-      this.color = color;
-      localStorage.color = color;
-      GASet({ user_properties: {
-        color,
-      } });
+      // TODO: remove uses of this
     },
-    setTheme(data: ThemeData): void {
-      const { useThemeColor, theme } = data;
-      const color = theme.suggestedColor;
-      if (useThemeColor) {
-        this.color = color;
-        localStorage.color = color;
-        GASet({ user_properties: {
-          color,
-        } });
+    setStyling(styling: ThemeStyling | Theme): void {
+      if ('styling' in styling) {
+        this._styling = styling.styling;
+      } else {
+        this._styling = styling;
       }
-      this.theme = theme;
-      localStorage.theme = JSON.stringify(theme);
+      localStorage.themeStyling = JSON.stringify(this._styling);
     },
   },
 });

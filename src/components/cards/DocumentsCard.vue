@@ -23,7 +23,7 @@ export default {
 
 .classname
   text-align: center
-  background-color: var(--color)
+  background-color: var(--accent)
   color: var(--background)
   font-size: 1.1em
   font-weight: bold
@@ -43,6 +43,6 @@ export default {
     text-align: center
 
     text-decoration: none
-    color: var(--color)
+    color: var(--accent)
 
 </style>

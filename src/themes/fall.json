@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "name": "Fall",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The New Fall Theme 🍁"
+  },
+
+  "seasonalDates": "09/16-12/15",
+
+  "styling": {
+    "base": "light",
+
+    "accent": "#d26f1e",
+
+    "header": {
+      "background": "#df9920"
+    }
+  }
+}

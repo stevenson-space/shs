@@ -69,6 +69,6 @@ export default {
 
     &.invert:hover
       color: white
-      background-color: var(--color)
+      background-color: var(--accent)
 
 </style>

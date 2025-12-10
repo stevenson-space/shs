@@ -50,11 +50,11 @@ export default {
   margin-bottom: 4px
 
 .lunch
-  border-top: var(--color) 1.5px solid
+  border-top: var(--accent) 1.5px solid
   padding: 10px 0
 
   .name
-    color: var(--color)
+    color: var(--accent)
     font-weight: bold
     font-size: .85em
     text-align: center

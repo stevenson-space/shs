@@ -30,10 +30,10 @@ export default {
   display: flex
   justify-content: center
   padding-top: 15px
-  color: var(--color)
+  color: var(--accent)
 
 .learn-more-link
-  color: var(--color)
+  color: var(--accent)
 
 .logo
   display: block

@@ -25,7 +25,7 @@ import { intoCountdownString } from '@/utils/countdown';
 import { mapActions, mapState } from "pinia";
 import {dateToSeconds} from "@/utils/util";
 import ScrollablePeriodList from "@/components/ScrollablePeriodList.vue";
-import themes from '@/data/themes.json';
+import tvspaceTheme from '@/themes/tvspace.json';
 import useThemeStore from '@/stores/themes';
 
 
@@ -37,12 +37,7 @@ export default {
   },
   mounted() {
     if (this.$route.query.settheme === 'true') {
-      const theme = themes.find(e => e.name === "TVSpace");
-      console.log(theme);
-
-      if (theme) {
-        this.setTheme({ theme, useThemeColor: true });
-      }
+      this.setStyling(tvspaceTheme);
     }
   },
   computed: {
@@ -52,7 +47,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(useThemeStore, ['setTheme']),
+    ...mapActions(useThemeStore, ['setStyling']),
     intoCountdownString,
     onHeightChange() {
       this.$refs.periodList?.scrollToCurrentPeriod();
@@ -73,7 +68,7 @@ export default {
 
 .divider
   height: 2px
-  background: var(--color)
+  background: var(--accent)
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2)
   margin-top: 2px
   margin-bottom: 1px

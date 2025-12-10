@@ -79,7 +79,7 @@ import SettingsSection from './SettingsSection.vue';
 
 type transferableSettingOption = 'color' |'theme' |'defaultScheduleMode' | 'grade' | 'customSchedules'
 
-const transferableSettings: transferableSettingOption[] = ['color', 'theme', 'defaultScheduleMode', 'grade', 'customSchedules'];
+const transferableSettings: transferableSettingOption[] = ['theme', 'defaultScheduleMode', 'grade', 'customSchedules'];
 
 const popups = {
   none: 0,
@@ -93,7 +93,6 @@ const popups = {
 
 type ThemeStoreState = {
   theme: Theme;
-  color: string;
 }
 
 type GradeStoreState = {
@@ -137,12 +136,12 @@ export default defineComponent({
     });
   },
   computed: {
-    ...(mapState(useThemeStore, ['theme', 'color']) as MapStateToComputed<ThemeStoreState>),
+    ...(mapState(useThemeStore, ['theme']) as MapStateToComputed<ThemeStoreState>),
     ...(mapState(useScheduleStore, ['defaultScheduleMode', 'customSchedules']) as MapStateToComputed<ScheduleStoreState>),
     ...(mapState(useUserSettingsStore, ['grade']) as MapStateToComputed<GradeStoreState>),
   },
   methods: {
-    ...mapActions(useThemeStore, ['setTheme', 'setColor']),
+    ...mapActions(useThemeStore, ['setStyling']),
     ...mapActions(useScheduleStore, ['setDefaultScheduleMode', 'setCustomSchedules']),
     ...mapActions(useUserSettingsStore, ['setGrade']),
 
@@ -155,7 +154,6 @@ export default defineComponent({
     },
     getSetting(name: transferableSettingOption): string | Theme | ScheduleMode {
       switch (name) {
-        case 'color': return this.color as string;
         case 'theme': return this.theme as Theme;
         case 'defaultScheduleMode': return this.defaultScheduleMode;
         case 'grade': return this.grade as string;
@@ -165,8 +163,7 @@ export default defineComponent({
     },
     setSetting(name: transferableSettingOption, value: any): void {
       switch (name) {
-        case 'color': this.setColor(value); break;
-        case 'theme': this.setTheme(value); break;
+        case 'theme': this.setStyling(value); break;
         case 'defaultScheduleMode': this.setDefaultScheduleMode(value); break;
         case 'grade': this.setGrade(value); break;
         case 'customSchedules': this.setCustomSchedules(value); break;
@@ -241,7 +238,7 @@ export default defineComponent({
     save(): void {
       if (this.receivedData) {
         if (this.shouldSaveSetting.theme) {
-          this.receivedData.theme = { theme: this.receivedData.theme, useThemeColor: !this.shouldSaveSetting.color };
+                    this.receivedData.theme = { theme: this.receivedData.theme, useThemeColor: true };
         }
         for (const [setting, data] of (Object.entries(this.receivedData) as [transferableSettingOption, any][])) {
           if (this.shouldSaveSetting[setting]) {
@@ -292,7 +289,7 @@ export default defineComponent({
   max-width: 300px
   text-align: center
   .color, .code
-    color: var(--color)
+    color: var(--accent)
     font-weight: bold
   .code
     margin-top: 5px
@@ -307,7 +304,7 @@ export default defineComponent({
     font-size: 1.75em
     margin-bottom: 3px
   .color
-    color: var(--color)
+    color: var(--accent)
     font-weight: bold
   input
     margin-top: 12px
@@ -317,7 +314,7 @@ export default defineComponent({
     width: 150px
     letter-spacing: 2px
     font-weight: bold
-    color: var(--color)
+    color: var(--accent)
     text-align: center
 
 .loading-popup

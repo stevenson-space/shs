@@ -57,7 +57,7 @@ export default {
   width: 100%
 
   .title
-    background-color: var(--color)
+    background-color: var(--accent)
     color: var(--background)
     font-size: 1.1em
     font-weight: bold

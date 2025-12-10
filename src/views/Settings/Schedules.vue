@@ -146,13 +146,13 @@ export default {
     .actions
       display: flex
       padding: 10px 0 5px 0
-      border-top: 1.5px solid var(--color)
+      border-top: 1.5px solid var(--accent)
 
       .action
         flex: 1
         text-align: center
         font-size: 1.25em
-        color: var(--color)
+        color: var(--accent)
         font-weight: bold
         cursor: pointer
 
@@ -163,7 +163,7 @@ export default {
     align-items: center
     flex-direction: column
     font-size: 2.8em
-    color: var(--color)
+    color: var(--accent)
     cursor: pointer
 
     .text

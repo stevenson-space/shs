@@ -146,7 +146,7 @@ export default {
     .info-container
       display: flex
       align-items: center
-      border-top: 1px solid var(--color)
+      border-top: 1px solid var(--accent)
       height: 55px
 
       .info
@@ -181,14 +181,14 @@ export default {
         .condition-icon
           width: 30px
         .partly-rainy
-          width: 40px 
+          width: 40px
           position: relative
           left: 1px
   .attribution-link
-    text-decoration-color: var(--color)
+    text-decoration-color: var(--accent)
     .attribution
       font-size: 0.5em
       text-align: center
-      color: var(--color)
+      color: var(--accent)
 
       </style>
