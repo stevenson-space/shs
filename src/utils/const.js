@@ -111,7 +111,7 @@ export default {
       ],
     },
     {
-      name: 'Finals',
+      name: 'Early Dismissal Days',
       dates: ['12/19/2018-12/21/2018', '5/21/2019-5/23/2019'],
       modes: [
         {
