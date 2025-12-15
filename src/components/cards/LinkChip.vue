@@ -1,5 +1,5 @@
 <template>
-  <a class="link-chip" :href="href" target="_blank" :style="{ backgroundColor: background, color: color }">
+  <a class="link-chip" :href="href" target="_blank" rel="noopener noreferrer" :style="{ backgroundColor: background, color: color }">
     <font-awesome-icon v-if="icon" :icon="icon" class="icon" />
     <img v-else :src="faviconUrl" :alt="alt || 'favicon'" />
     <span>{{ label }}</span>
