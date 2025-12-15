@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "name": "Homecoming '23",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The New Homecoming Theme"
+  },
+
+  "seasonalDates": "09/17/2023-09/25/2023",
+
+  "styling": {
+    "base": "dark",
+    "background": "#242424",
+    "secondaryBackground": "black",
+    "accent": "#bfbdbd",
+
+    "header": {
+      "scheduleBar": "#242424",
+      "image": {
+        "full": "assets://header-images/starry-night.gif",
+        "mobile": "assets://header-images/starry-night.png"
+      }
+    },
+
+    "iconCards": {
+      "regular": "black",
+      "invert": "white"
+    }
+  }
+}

@@ -45,7 +45,7 @@ export default {
 
   &.today
     color: var(--background)
-    background-color: var(--color)
+    background-color: var(--accent)
 
 .event
   cursor: pointer

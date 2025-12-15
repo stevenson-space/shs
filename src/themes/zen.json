@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "Not Windows XP",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+
+  "styling": {
+    "base": "light",
+
+    "accent": "#3B77BC",
+
+    "header": {
+      "image": {
+        "full": "assets://header-images/zen-full.png",
+        "mobile": "assets://header-images/zen-mobile.png"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "name": "Mars",
+    "author": "Joseph S. ('22)",
+    "description": "Featuring a selfie of the Curiosity rover on Mount Sharp. Credit: NASA"
+  },
+
+  "visibility": "show",
+
+  "styling": {
+    "base": "light",
+    "background": "#f0e7e7",
+    "secondaryBackground": "white",
+    "accent": "#c1440e",
+
+    "header": {
+      "scheduleBar": "white",
+      "image": {
+        "full": "assets://header-images/mars-full.png",
+        "mobile": "assets://header-images/mars-mobile.png"
+      }
+    }
+  }
+}

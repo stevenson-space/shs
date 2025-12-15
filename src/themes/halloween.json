@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "name": "Halloween",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The Spooky Halloween Theme"
+  },
+
+  "seasonalDates": "10/20-11/01",
+
+  "styling": {
+    "base": "dark",
+    "background": "#0f0f0f",
+    "secondaryBackground": "#181a1c",
+    "accent": "#cc611b",
+
+    "header": {
+      "background": "var(--accent)"
+    }
+  }
+}

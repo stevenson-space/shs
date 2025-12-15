@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "name": "Summer",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The new summer theme now!"
+  },
+
+  "seasonalDates": "05/15-09/15",
+
+  "styling": {
+    "base": "light",
+
+    "accent": "#49c3d1",
+
+    "header": {
+      "image": {
+        "full": "assets://header-images/beach-full.png",
+        "mobile": "assets://header-images/beach-mobile.png"
+      }
+    }
+  }
+}

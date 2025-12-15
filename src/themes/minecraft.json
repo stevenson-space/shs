@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "name": "Minecraft",
+    "author": "Dan Rybin ('23)",
+    "description": "A recreation of the school, in Minecraft!"
+  },
+
+  "visibility": "show",
+  "recommended": {
+    "timing": "1/12/2023-3/12/2023",
+    "message": "[Try] The new Minecraft wallpaper created by Dan Rybin!"
+  },
+
+  "styling": {
+    "base": "light",
+
+    "header": {
+      "image": {
+        "full": "assets://header-images/minecraft-desktop.png",
+        "mobile": "assets://header-images/minecraft-mobile.png"
+      }
+    }
+  }
+}

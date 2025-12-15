@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "name": "Midnight",
+    "author": "Nishanth N. ('26)"
+  },
+
+  "visibility": "show",
+
+  "styling": {
+    "base": "dark",
+    "background": "#1d1d20",
+    "secondaryBackground": "#212124",
+    "accent": "#232a31",
+
+    "text": {
+      "primary": "#818181"
+    },
+    "header": {
+      "background": "var(--accent)"
+    },
+    "iconCards": {
+      "regular": "var(--primary)",
+      "invert": "var(--primary)"
+    }
+  }
+}

@@ -1,96 +1,129 @@
 <template>
-  <card v-if="newTheme != null && theme.name !== newTheme.name">
-    <div class="row">
-      <rounded-button
-        class="button"
-        text="Try"
-        :circular="false"
-        @click="toggleColor()"
-      />
-      <div class="message">{{ newTheme.message.replace('[Try]','') }}</div>
-      <theme-change-modal :newTheme="newTheme" :showModal="showModal"
-      v-on:true="choice(true)"
-      v-on:false="choice(false)"
-      v-on:close="showModal = false" />
+  <card v-if="newTheme != null && !isDismissed">
+    <div class="card-content">
+      <div class="row">
+        <rounded-button
+          class="button"
+          text="Try"
+          :circular="false"
+          @click="toggleTheme()"
+        />
+        <div class="message">{{ newTheme.recommended?.message?.replace('[Try]','') || '' }}</div>
+      </div>
+      <info-tooltip v-if="newTheme.metadata?.description" @click.stop>
+        {{ newTheme.metadata.description }}
+      </info-tooltip>
+      <button class="close-btn" @click="dismiss">&times;</button>
     </div>
-      <div class="description">{{ newTheme.description }}</div>
   </card>
 </template>
 
 <script>
-import themes from '@/data/themes.json';
 import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
-import ThemeChangeModal from '@/components/ThemeChangeModal.vue';
 import { mapState, mapActions } from 'pinia';
 import useClockStore from '@/stores/clock';
 import useThemeStore from '@/stores/themes';
+import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
+import InfoTooltip from "@/components/InfoTooltip.vue";
 
 export default {
-  components: { Card, RoundedButton, ThemeChangeModal },
+  components: {InfoTooltip, Card, RoundedButton },
   computed: {
-    ...mapState(useThemeStore, ['theme', 'color']),
+    ...mapState(useThemeStore, ['theme']),
     ...mapState(useClockStore, ['date']),
-    newTheme() { // finds a seasonal theme that within the current date
-      for (const x of this.themes) {
-        const { schedule } = x;
-        if (schedule !== 'always') {
-          const [startTime, endTime] = [
-            new Date(schedule.substring(0, schedule.indexOf('-'))).getTime(),
-            new Date(schedule.substring(schedule.indexOf('-') + 1)).getTime(),
-          ];
-          const currentTime = this.date.getTime();
-          if ((currentTime > startTime) && (this.date < endTime) && ((currentTime - startTime) < 6.048e8)) { // if the theme is within the start and end time, and within the first 7 days
-            return x;
-          }
+    newTheme() {
+      // finds a seasonal theme that is within the current date range
+      const now = this.date;
+
+      for (const theme of this.themes) {
+        if (!theme.seasonalDates) continue;
+
+        const [start, end] = parseDateRange(theme.seasonalDates, now);
+        if (isDateInRange(now, start, end)) {
+          return theme;
         }
       }
       return null;
     },
+    isDismissed() {
+      if (!this.newTheme) return false;
+      const dismissedThemes = JSON.parse(localStorage.getItem('dismissedThemeCards') || '{}');
+      const dismissedYear = dismissedThemes[this.newTheme.metadata.name];
+      const currentYear = this.date.getFullYear();
+      return dismissedYear === currentYear;
+    },
   },
   data() {
     return {
-      showModal: false,
-      themes,
+      themes: [],
     };
   },
   methods: {
-    ...mapActions(useThemeStore, ['setTheme']),
-    choice(useThemeColor) {
-      const data = { useThemeColor };
-      this.showModal = false;
-      data.theme = this.newTheme;
-      this.setTheme(data);
+    ...mapActions(useThemeStore, ['setStyling']),
+
+    toggleTheme() {
+      this.setStyling(this.newTheme.styling);
     },
-    toggleColor() {
-      if (this.color !== this.theme.suggestedColor) { //  if the color you set differs from the suggested color ("color conflict")
-        this.showModal = true;
-      } else {
-        this.choice(true);
-      }
+
+    dismiss() {
+      const dismissedThemes = JSON.parse(localStorage.getItem('dismissedThemeCards') || '{}');
+      const currentYear = this.date.getFullYear();
+      dismissedThemes[this.newTheme.metadata.name] = currentYear;
+      localStorage.setItem('dismissedThemeCards', JSON.stringify(dismissedThemes));
     },
-    capitalize(str) {
-      return str.substring(0, 1).toUpperCase() + str.substring(1);
-    },
+  },
+  async mounted() {
+    this.themes = await loadAllThemes();
   },
 };
 </script>
 
 <style lang="sass" scoped>
+.card-content
+  display: flex
+  align-items: center
+  gap: 10px
+  padding: 15px
+  position: relative
+
 .row
   display: flex
   justify-content: center
   align-items: center
   gap: 10px
-  padding: 15px
+  flex: 1
+
 .message
   font-size: .9em
   text-align: center
+
 .description
   text-align: center
   font-size: .9em
+  flex: 1
+
 .button
   width: 40px
   height: 10px
 
+.close-btn
+  background: transparent
+  border: none
+  font-size: 24px
+  color: var(--secondary)
+  cursor: pointer
+  padding: 0
+  width: 30px
+  height: 30px
+  display: flex
+  align-items: center
+  justify-content: center
+  line-height: 1
+  opacity: 0.6
+  transition: opacity 0.2s
+  flex-shrink: 0
+
+  &:hover
+    opacity: 1
 </style>

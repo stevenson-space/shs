@@ -34,24 +34,67 @@ export type Period =
   | { beforeSchool?: false, afterSchool: true }
   | { beforeSchool?: false, afterSchool?: false, name: string, start: string, end: string }
 
-export type Theme = {
+export type ThemeMetadata = {
   name: string;
-  suggestedColor: string;
-  background: string;
-  secondaryBackground: string;
-  headerBackgroundColor: string;
-  headerScheduleBackgroundColor: string;
+  author: string;
+};
+
+export type ThemeTextColors = {
   primary: string;
   secondary: string;
   tertiary: string;
-  iconTextCardColor: string;
-  iconTextCardInvertColor: string;
-  schedule: string;
 };
 
-export type ThemeData = {
-  theme: Theme;
-  useThemeColor: boolean; // if the suggestedColor of the theme is persisted as opposed to your set color.
+export type ThemeHeaderConfig = {
+  // background color of the header
+  background: string;
+  // background image
+  image?: {
+    full: string;
+    mobile?: string;
+  };
+  // color of the bar below the header
+  scheduleBar: string;
+};
+
+export type ThemeIconCards = {
+  // text color of the icon cards on the homepage
+  regular: string;
+  invert: string;
+};
+
+export type ThemeParticles = {
+  images: string[];
+  speed?: number;
+  count?: number;
+  size?: number;
+  opacity?: number;
+  windPower?: number;
+};
+
+export type ThemeStyling = {
+  base?: "light" | "dark";
+  background?: string;
+  secondaryBackground?: string;
+  accent?: string;
+  text?: ThemeTextColors;
+  header?: ThemeHeaderConfig;
+  iconCards?: ThemeIconCards;
+  particles?: ThemeParticles;
+};
+
+export type ThemeRecommended = {
+  timing: "always" | "never" | "season" | string;
+  // the message on the homepage advertising the theme
+  message?: string,
+};
+
+export type Theme = {
+  metadata: ThemeMetadata;
+  visibility: "show" | "draft" | "hide";
+  recommended?: ThemeRecommended;
+  seasonalDates?: string;
+  styling: ThemeStyling;
 };
 
 export type MapStateToComputed<S> = { // used for mapState()

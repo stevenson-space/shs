@@ -15,7 +15,7 @@
         class="progress-circle"
         cx="20"
         cy="20"
-        stroke="var(--color)"
+        stroke="var(--accent)"
         stroke-linecap="round"
         :r="normalizedRadius"
         :style="{
@@ -138,7 +138,7 @@ export default {
   min-width: 225px
   height: 37px
   border-radius: 100px
-  background-color: var(--color)
+  background-color: var(--accent)
   display: flex
   align-items: center
   justify-content: space-between
@@ -181,7 +181,7 @@ export default {
     white-space: nowrap
     text-overflow: ellipsis
     &.invert
-      color: var(--color)
+      color: var(--accent)
 
   &.not-mobile
     +tablet
@@ -222,13 +222,13 @@ export default {
 
   &.invert
     box-shadow: none
-    background-color: var(--secondarybackground)
-    border: var(--color) 1px solid
+    background-color: var(--secondaryBackground)
+    border: var(--accent) 1px solid
 
     .progress
-      fill: var(--color)
+      fill: var(--accent)
     .range
-      color: var(--primaryColor)
+      color: var(--primary)
 
   &.not-mobile
     +desktop

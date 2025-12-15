@@ -48,13 +48,13 @@ export default {
     line-height: 1.6em
     text-align: center
     .color
-      color: var(--color)
+      color: var(--accent)
       font-weight: bold
     .bold
       font-weight: bold
     .link-icon
       font-size: 1.1em
-      color: var(--color)
+      color: var(--accent)
 .top-padding
-  padding-top: .5em    
+  padding-top: .5em
 </style>

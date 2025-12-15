@@ -72,7 +72,7 @@ export default {
 .button
   margin: 4px
 .info-circle
-  color: var(--color)
+  color: var(--accent)
   cursor: pointer
 .modal
   +animate-fade-up

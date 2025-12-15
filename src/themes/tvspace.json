@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "name": "TVSpace",
+    "author": "shs-space",
+    "description": "Theme for the SHS Space display on the bulletin boards."
+  },
+
+  "visibility": "hide",
+
+  "styling": {
+    "base": "dark",
+    "background": "#1d4a2b",
+    "secondaryBackground": "#696051",
+    "accent": "#c89b2b",
+
+    "text": {
+      "primary": "white",
+      "secondary": "white",
+      "tertiary": "white"
+    },
+
+    "header": {
+      "background": "var(--secondaryBackground)",
+      "scheduleBar": "var(--background)"
+    },
+
+    "iconCards": {
+      "regular": "white",
+      "invert": "white"
+    }
+  }
+}
