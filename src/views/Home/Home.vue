@@ -13,7 +13,7 @@
           untilDate="May 23, 2025"
           message="🌴 Summer Countdown 🐬"
         />
-        <new-feature-card />
+        <new-feature-card @open-theme-editor="themeEditorOpen = true" />
         <new-theme-card />
         <contribute-card />
         <april-fools-card />

@@ -1,22 +1,20 @@
 <template>
-  <timed-card startTime="May 12, 2025" endTime="May 17, 2025">
+  <timed-card startTime="December 14, 2025" endTime="January 9, 2026">
     <div class="container">
       <div class="title"></div>
       <div class="message">
-        SHS's 2024-25 Music Production 2 classes engaged in an activist songwriting project centered around important topics to raise awareness for important causes!
-        <div class= "chips">
-          <LinkChip
-            href="https://youtube.com/playlist?list=PLap5ZkjM9rSEGwfnayinyap-wGVZNdN8g&si=jkeY3i9zYnPJueEx"
-            label="Listen Now!"
-            background="#fbe9e7"
-          />
-          <!-- not using just "/jukebox" because of how I implemented LinkChips' icons -->
-          <LinkChip
-            href="https://stevenson.space/jukebox"
-            label="More Student Made Music!"
-            background="#dcffdb"
-          />
-        </div>
+        SHS Space has a new theme editor!
+        Either choose a prebuilt theme or, if you're feeling creative, make your own and share it with your friends!
+      </div>
+      <div class="chips">
+        <link-chip
+          href="#"
+          label="Edit Theme"
+          :icon="icons.faDroplet"
+          background="var(--accent)"
+          color="var(--iconCardsRegular)"
+          @click.native.prevent="$emit('open-theme-editor')"
+        />
       </div>
     </div>
   </timed-card>
@@ -25,9 +23,17 @@
 <script>
 import TimedCard from "@/components/cards/TimedCard.vue";
 import LinkChip from "@/components/cards/LinkChip.vue";
+import { faDroplet } from "@fortawesome/free-solid-svg-icons";
 
 export default {
   components: { TimedCard, LinkChip },
+  data() {
+    return {
+      icons: {
+        faDroplet
+      }
+    };
+  }
 };
 </script>
 
@@ -35,8 +41,6 @@ export default {
 a
   color: var(--accent)
 
-.title
-  margin-top: 20px
 .container
   display: flex
   align-items: center
@@ -44,18 +48,12 @@ a
   justify-content: center
   flex-direction: column
   color: var(--primary)
+  padding: 20px
   .link
     color: var(--accent)
-  .logo
-    height: 165px
-    margin: 12px 10px
-    background: white
-    border-radius: 100%
   .message
-    padding-top: 5px
     font-size: .85em
-    text-align: left
-    padding-bottom: 20px
+    padding-bottom: 10px
     margin: 0 20px
     line-height: 1.6em
     text-align: center
@@ -64,6 +62,6 @@ a
   gap: 10px
   flex-wrap: wrap
   justify-content: center
-  margin-top: 8px
+  margin-bottom: 10px
 
 </style>
