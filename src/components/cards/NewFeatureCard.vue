@@ -13,7 +13,7 @@
           :icon="icons.faDroplet"
           background="var(--accent)"
           color="var(--iconCardsRegular)"
-          @click.native.prevent="$emit('open-theme-editor')"
+          @click.prevent="$emit('open-theme-editor')"
         />
       </div>
     </div>
