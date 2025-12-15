@@ -6,7 +6,9 @@
   },
 
   "visibility": "show",
-  "recommended": "12/14/2025-01/09/2026",
+  "recommended": {
+    "timing": "12/14/2025-01/09/2026"
+  },
 
   "styling": {
     "base": "light",
