@@ -171,7 +171,11 @@
                     <font-awesome-icon :icon="icons.faCircleInfo" />
                     <div>
                       <strong>Color Inheritance:</strong>
-                      <span>Some colors copy from other theme colors. Click the link icon until you can edit the color to turn off inheritance.</span>
+                      <span>
+                        Some colors copy from other theme colors. To turn off inheritance and specify your own colors, click the link icon until you can edit the color.
+                        <br/><br/>
+                        The base style button switches between "light" and "dark", which affects the default colors if no color is set for something.
+                      </span>
                     </div>
                   </div>
 
