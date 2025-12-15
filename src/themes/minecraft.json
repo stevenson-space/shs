@@ -1,14 +1,14 @@
 {
   "metadata": {
     "name": "Minecraft",
-    "author": "shs-space",
-    "description": "The new Minecraft wallpaper created by Dan Rybin!"
+    "author": "Dan Rybin ('23)",
+    "description": "A recreation of the school, in Minecraft!"
   },
 
   "visibility": "show",
   "recommended": {
     "timing": "1/12/2023-3/12/2023",
-    "message": "The new Minecraft wallpaper created by Dan Rybin!"
+    "message": "[Try] The new Minecraft wallpaper created by Dan Rybin!"
   },
 
   "styling": {
