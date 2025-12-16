@@ -162,7 +162,7 @@ export default {
               particle.velX += Math.cos((particle.step += 0.05)) * particle.stepSize;
               break;
             default:
-              particle.velX += 0.01 + this.windPower / 100;
+              particle.velX += this.windPower / 100;
           }
         }
         var s = this.color;
@@ -236,8 +236,8 @@ export default {
         }
       }
       particle.size = Math.random() * 3 + this.size;
-      particle.speed = Math.random() * .3 + this.speed * 0.5;
-      particle.velY = particle.speed*.5;
+      particle.speed = Math.random() * .1 + this.speed * 0.3;
+      particle.velY = particle.speed*.30;
       particle.velX = 0;
       particle.opacity = Math.random() * 0.5 + this.opacity;
     },
@@ -272,7 +272,7 @@ export default {
         var x = Math.floor(Math.random() * this.canvas.width),
           y = Math.floor(Math.random() * this.canvas.height),
           size = Math.random() * 3 + this.size,
-          speed = Math.random() * .3 + this.speed*.5,
+          speed = Math.random() * .2 + this.speed*.3,
           opacity = Math.random() * 0.5 + this.opacity;
         this.particles.push({
           speed: speed*.5,
