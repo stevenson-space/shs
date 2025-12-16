@@ -7,7 +7,11 @@
         :class="{ disabled: disabled }"
       >
         <span class="group-title">{{ title }}</span>
-        <span v-if="showChevron" class="chevron">›</span>
+        <font-awesome-icon
+          v-if="showChevron"
+          :icon="icons.faChevronRight"
+          class="chevron"
+        />
       </div>
       <div v-if="$slots.action" class="header-action" @click.stop>
         <slot name="action" />
@@ -22,7 +26,13 @@
 </template>
 
 <script>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 export default {
+  components: {
+    FontAwesomeIcon,
+  },
   props: {
     title: {
       type: String,
@@ -40,6 +50,11 @@ export default {
       type: String,
       default: '',
     },
+  },
+  data() {
+    return {
+      icons: { faChevronRight },
+    };
   },
   computed: {
     isExpanded() {

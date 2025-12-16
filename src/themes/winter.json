@@ -29,10 +29,10 @@
         "assets://particles/snowflake.png"
       ],
       "speed": 1,
-      "count": 15,
-      "size": 5,
+      "count": 50,
+      "size": 8,
       "opacity": 0.7,
-      "windPower": 0.5
+      "windPower": 0.7
     }
   }
 }

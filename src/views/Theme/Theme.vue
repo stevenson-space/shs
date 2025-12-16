@@ -1,5 +1,5 @@
 <template>
-  <div class="theme-page">
+  <div>
     <transition name="slide">
       <div v-if="panelOpen" class="customization-panel">
         <div class="panel-header">
@@ -91,20 +91,14 @@
                   <info-tooltip>
                     <template #trigger>
                       <icon-button @click="customTheme.styling.base = customTheme.styling.base === 'light' ? 'dark' : 'light'; applyTheme()">
-                        <svg v-if="customTheme.styling.base === 'light'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <circle cx="12" cy="12" r="5"></circle>
-                          <line x1="12" y1="1" x2="12" y2="3"></line>
-                          <line x1="12" y1="21" x2="12" y2="23"></line>
-                          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                          <line x1="1" y1="12" x2="3" y2="12"></line>
-                          <line x1="21" y1="12" x2="23" y2="12"></line>
-                          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                        <svg v-else xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                        </svg>
+                        <font-awesome-icon
+                          v-if="customTheme.styling.base === 'light'"
+                          :icon="icons.faSun"
+                        />
+                        <font-awesome-icon
+                          v-else
+                          :icon="icons.faMoon"
+                        />
                       </icon-button>
                     </template>
                     Base Style
@@ -112,11 +106,7 @@
                   <info-tooltip>
                     <template #trigger>
                       <icon-button @click="importTheme">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                          <polyline points="17 8 12 3 7 8"></polyline>
-                          <line x1="12" y1="3" x2="12" y2="15"></line>
-                        </svg>
+                        <font-awesome-icon :icon="icons.faFileImport" />
                       </icon-button>
                     </template>
                     Import Theme
@@ -124,11 +114,7 @@
                   <info-tooltip>
                     <template #trigger>
                       <icon-button :disabled="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
-                          <polyline points="17 21 17 13 7 13 7 21"></polyline>
-                          <polyline points="7 3 7 8 15 8"></polyline>
-                        </svg>
+                        <font-awesome-icon :icon="icons.faFloppyDisk" />
                       </icon-button>
                     </template>
                     Save Theme
@@ -138,11 +124,7 @@
                   <info-tooltip>
                     <template #trigger>
                       <icon-button @click="exportTheme">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                          <polyline points="7 10 12 15 17 10"></polyline>
-                          <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
+                        <font-awesome-icon :icon="icons.faFileExport" />
                       </icon-button>
                     </template>
                     Export Theme
@@ -242,7 +224,7 @@
                     label="Count"
                     v-model="customTheme.styling.particles.count"
                     :min="0"
-                    :max="100"
+                    :max="200"
                     :step="1"
                     @update:modelValue="applyTheme"
                   />
@@ -310,7 +292,15 @@
 <script>
 import { mapActions, mapState } from 'pinia';
 import { toRaw } from 'vue';
-import { faCircleInfo, faXmark } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCircleInfo,
+  faXmark,
+  faSun,
+  faMoon,
+  faFileImport,
+  faFileExport,
+  faFloppyDisk,
+} from '@fortawesome/free-solid-svg-icons';
 import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
 import { cleanupOrphanedImages } from '@/utils/imageStorage';
 import ThemeCard from '@/components/ThemeCard.vue';
@@ -375,7 +365,15 @@ export default {
       particlesExpanded: false,
       advancedExpanded: false,
       isApplyingTheme: false, // Flag to prevent infinite loop in styling watcher
-      icons: { faCircleInfo, faXmark },
+      icons: {
+        faCircleInfo,
+        faXmark,
+        faSun,
+        faMoon,
+        faFileImport,
+        faFileExport,
+        faFloppyDisk,
+      },
     };
   },
   computed: {
@@ -747,18 +745,7 @@ export default {
 <style lang="sass" scoped>
 @import '@/styles/style.sass'
 
-.theme-page
-  position: fixed
-  top: 0
-  left: 0
-  width: 0
-  height: 0
-  pointer-events: none
-  z-index: 1000
 
-  // Re-enable pointer events for the panel
-  .customization-panel
-    pointer-events: auto
 
 .customization-panel
   position: fixed
@@ -810,14 +797,13 @@ export default {
   position: relative
 
 .presets-header
+  color: var(--primary)
   position: sticky
   top: -15px
   z-index: 10
   margin: -15px -15px 0 -15px
   padding: 8px 19px
-  background: rgba(0, 0, 0, 0.15)
-  backdrop-filter: blur(10px)
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+  background: var(--secondaryBackground)
 
   h3
     margin: 0
@@ -972,8 +958,7 @@ export default {
 
   input[type="text"],
   input[type="number"],
-  select,
-  textarea
+  select
     width: 100%
     padding: 6px 8px
     border: 1px solid rgba(128, 128, 128, 0.2)
@@ -987,32 +972,6 @@ export default {
     &:focus
       outline: none
       border-color: var(--accent)
-
-  textarea
-    min-height: 50px
-    resize: vertical
-    font-family: monospace
-    font-size: 10px
-
-.section
-  margin-bottom: 20px
-
-  h3
-    margin: 0 0 10px 0
-    color: var(--accent)
-    font-size: 14px
-    border-bottom: 1px solid rgba(128, 128, 128, 0.2)
-    padding-bottom: 6px
-    font-weight: 600
-
-  select
-    width: 100%
-    padding: 8px
-    border: 1px solid var(--accent)
-    border-radius: 4px
-    background: var(--background)
-    color: var(--primary)
-    font-size: 13px
 
 
 .slide-enter-active,

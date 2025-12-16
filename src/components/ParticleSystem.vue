@@ -1,5 +1,4 @@
 <template>
-<!-- Code Written By Bob Chen under an MIT license with minor changes made. https://github.com/bob-chen/vue-let-it-snow -->
   <div
     ref="wrap"
     class="particle-wrap"
@@ -9,290 +8,201 @@
       v-for="(img, index) in images"
       :key="index"
       :src="img"
-      style="display: none"
       class="particle_image"
+      style="display:none"
+      @load="onImageLoad"
     />
-    <canvas ref="canvas" width="100%" height="100%"></canvas>
+    <canvas ref="canvas"></canvas>
   </div>
 </template>
 
 <script>
-/* eslint-disable */
 export default {
   name: "ParticleSystem",
+
+  props: {
+    speed: { type: Number, default: 1 },
+    interaction: { type: Boolean, default: false },
+    size: { type: Number, default: 7 },
+    count: { type: Number, default: 20 },
+    opacity: { type: Number, default: 1 },
+    color: { type: String, default: "#ffffff" },
+
+    windPower: { type: Number, default: 0 },
+
+    images: { type: Array, required: true },
+  },
+
   data() {
     return {
       particles: [],
       canvas: null,
       ctx: null,
-      particleCount: this.count,
+      particleCount: 0,
+      imageItems: [],
+      imageNum: 0,
+      imagesLoaded: 0,
+      reqId: null,
       mX: -100,
       mY: -100,
-      imageItems: [],
-      imageNum: [],
       toHide: false,
-      reqId: null,
-      lastImagesKey: '',
     };
   },
-  props: {
-    speed: {
-      type: Number,
-      default: 1,
-    },
-    interaction: {
-      type: Boolean,
-      default: false,
-    },
-    size: {
-      type: Number,
-      default: 7,
-    },
-    count: {
-      type: Number,
-      default: 20,
-    },
-    opacity: {
-      type: Number,
-      default: 1,
-    },
-    color: {
-      type: String,
-      default: "#ffffff",
-    },
-    windPower: {
-      type: Number,
-      default: 0,
-    },
-    images: {
-      type: Array,
-      required: true
-    },
-  },
+
   mounted() {
-    var requestAnimationFrame =
-      window.requestAnimationFrame ||
-      function (callback) {
-        return window.setTimeout(callback, 1000 / 60);
-      };
-    window.requestAnimationFrame = requestAnimationFrame;
-    var cancelAnimationFrame =
-      window.cancelAnimationFrame ||
-      function (id) {
-        window.clearTimeout(id);
-      };
-    window.cancelAnimationFrame = cancelAnimationFrame;
-    window.onresize = () => {
-      if (this.resizeTO) clearTimeout(this.resizeTO);
-      this.resizeTO = setTimeout(() => {
-        this.init();
-      }, 200);
-    };
-    this.$nextTick(() => {
-      this.init();
-    });
+    this.particleCount = this.count;
+    this.init();
+    window.addEventListener("resize", this.resize);
   },
+
+  beforeUnmount() {
+    cancelAnimationFrame(this.reqId);
+    window.removeEventListener("resize", this.resize);
+  },
+
   watch: {
-    images: {
-      handler(newImages) {
-        // only reinitialize if images changed
-        const newKey = JSON.stringify(newImages);
-        if (newKey !== this.lastImagesKey) {
-          this.lastImagesKey = newKey;
-          this.$nextTick(() => {
-            this.init();
-          });
-        }
-      },
-      deep: true,
-    },
     count() {
       this.particleCount = this.count;
-      this.$nextTick(() => {
-        this.init();
-      });
+      this.init();
+    },
+    images() {
+      this.imagesLoaded = 0;
+      this.init();
     },
   },
+
   methods: {
-    IsImageOk: function (img) {
-      // During the onload event, IE correctly identifies any images that
-      // weren’t downloaded as not complete. Others should too. Gecko-based
-      // browsers act like NS4 in that they report this incorrectly.
-      if (!img.complete) {
-        return false;
-      }
-      // However, they do have two very useful properties: naturalWidth and
-      // naturalHeight. These give the true size of the image. If it failed
-      // to load, either of these should be zero.
-      if (typeof img.naturalWidth !== "undefined" && img.naturalWidth === 0) {
-        return false;
-      }
-      // No other way of checking: assume it’s ok.
-      return true;
+    resize() {
+      this.setCanvasSize();
     },
-    animate: function () {
-      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      for (var i = 0; i < this.particleCount; i++) {
-        var particle = this.particles[i],
-          x = this.mX,
-          y = this.mY,
-          minDist = 100,
-          x2 = particle.x,
-          y2 = particle.y;
-        var dist = Math.sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y)),
-          dx = x2 - x,
-          dy = y2 - y;
-        if (dist < minDist) {
-          var force = minDist / (dist * dist),
-            xcomp = (x - x2) / dist,
-            ycomp = (y - y2) / dist,
-            deltaV = force / 2;
-          particle.velX -= deltaV * xcomp;
-          particle.velY -= deltaV * ycomp;
-        } else {
-          particle.velX *= 0.98;
-          if (particle.velY <= particle.speed) {
-            particle.velY = particle.speed;
-          }
-          switch (this.windPower) {
-            case false:
-              particle.velX += Math.cos((particle.step += 0.05)) * particle.stepSize;
-              break;
-            case 0:
-              particle.velX += Math.cos((particle.step += 0.05)) * particle.stepSize;
-              break;
-            default:
-              particle.velX += this.windPower / 100;
-          }
-        }
-        var s = this.color;
-        var patt = /^#([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2})$/;
-        var matches = patt.exec(s);
-        var rgb =
-          parseInt(matches[1], 16) +
-          "," +
-          parseInt(matches[2], 16) +
-          "," +
-          parseInt(matches[3], 16);
-        particle.y += particle.velY;
-        particle.x += particle.velX;
-        if (particle.y >= this.canvas.height || particle.y <= 0) {
-          this.reset(particle);
-        }
-        if (particle.x >= this.canvas.width || particle.x <= 0) {
-          this.reset(particle);
-        }
-        if (this.images.length == 0) {
-          this.ctx.fillStyle = "rgba(" + rgb + "," + particle.opacity + ")";
-          this.ctx.beginPath();
-          this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-          this.ctx.fill();
-        } else {
-          var imgItem = this.imageItems[i % this.imageNum];
-          if (this.IsImageOk(imgItem)) {
-            this.ctx.globalAlpha = particle.opacity;
 
-            const aspectRatio = imgItem.naturalWidth / imgItem.naturalHeight;
-            const width = particle.size * 2;
-            const height = width / aspectRatio;
-
-            this.ctx.drawImage(
-              imgItem,
-              particle.x,
-              particle.y,
-              width,
-              height
-            );
-            this.ctx.globalAlpha = 1;
-          }
-        }
-      }
-      this.reqId = requestAnimationFrame(this.animate);
+    setCanvasSize() {
+      const dpr = window.devicePixelRatio || 1;
+      this.canvas.width = window.innerWidth * dpr;
+      this.canvas.height = window.innerHeight * dpr;
+      this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     },
-    reset: function (particle) {
-      if (this.windPower === false || this.windPower === 0) {
-        particle.x = Math.floor(Math.random() * this.canvas.width);
-        particle.y = 0;
-      } else {
-        if (this.windPower > 0) {
-          var xarray = Array(Math.floor(Math.random() * this.canvas.width), 0);
-          var yarray = Array(0, Math.floor(Math.random() * this.canvas.height));
-          var allarray = Array(xarray, yarray);
-          var selected_array =
-            allarray[Math.floor(Math.random() * allarray.length)];
-          particle.x = selected_array[0];
-          particle.y = selected_array[1];
-        } else {
-          var xarray = Array(Math.floor(Math.random() * this.canvas.width), 0);
-          var yarray = Array(
-            this.canvas.width,
-            Math.floor(Math.random() * this.canvas.height)
-          );
-          var allarray = Array(xarray, yarray);
-          var selected_array =
-            allarray[Math.floor(Math.random() * allarray.length)];
-          particle.x = selected_array[0];
-          particle.y = selected_array[1];
-        }
+
+    onImageLoad() {
+      this.imagesLoaded++;
+      if (this.imagesLoaded === this.images.length) {
+        this.collectImages();
       }
-      particle.size = Math.random() * 3 + this.size;
-      particle.speed = Math.random() * .1 + this.speed * 0.3;
-      particle.velY = particle.speed*.30;
-      particle.velX = 0;
-      particle.opacity = Math.random() * 0.5 + this.opacity;
     },
-    init: function () {
-      if (this.reqId) cancelAnimationFrame(this.reqId);
 
-      this.particles = [];
-      this.imageItems = [];
+    collectImages() {
+      this.imageItems = Array.from(
+        this.$el.querySelectorAll(".particle_image")
+      );
+      this.imageNum = this.imageItems.length;
+    },
 
-      this.lastImagesKey = JSON.stringify(this.images);
+    init() {
+      cancelAnimationFrame(this.reqId);
 
       this.canvas = this.$refs.canvas;
-      this.ctx = this.canvas?.getContext("2d");
-      this.canvas.width = window?.innerWidth;
-      this.canvas.height = window?.innerHeight;
-      if (this.interaction == true) {
-        var actionFuncName =
-          "ontouchstart" in document.documentElement
-            ? "touchmove"
-            : "mousemove";
-        this.canvas.addEventListener(actionFuncName, (e) => {
-          if (actionFuncName == "touchmove") {
-            this.mX = e.touches[0].clientX;
-            this.mY = e.touches[0].clientY;
-          } else {
-            this.mX = e.clientX;
-            this.mY = e.clientY;
-          }
-        });
+      this.ctx = this.canvas.getContext("2d");
+      this.setCanvasSize();
+
+      this.particles = [];
+
+      for (let i = 0; i < this.particleCount; i++) {
+        this.reset(
+          {
+            x: Math.random() * this.canvas.width,
+            y: Math.random() * this.canvas.height,
+          },
+          true
+        );
       }
-      for (var i = 0; i < this.particleCount; i++) {
-        var x = Math.floor(Math.random() * this.canvas.width),
-          y = Math.floor(Math.random() * this.canvas.height),
-          size = Math.random() * 3 + this.size,
-          speed = Math.random() * .2 + this.speed*.3,
-          opacity = Math.random() * 0.5 + this.opacity;
-        this.particles.push({
-          speed: speed*.5,
-          velY: speed,
-          velX: 0,
-          x: x,
-          y: y,
-          size: size,
-          stepSize: Math.random() / 30,
-          step: 0,
-          angle: 180,
-          opacity: opacity,
-        });
-      }
-      var imageList = document.querySelectorAll(".particle_image");
-      for (i = 0; i < imageList.length; i++) {
-        this.imageItems.push(imageList[i]);
-      }
-      this.imageNum = imageList.length;
+
       this.animate();
+    },
+
+    reset(particle, first = false) {
+      if (!first) {
+        particle.x =
+          this.windPower >= 0
+            ? Math.random() * this.canvas.width * 0.8
+            : Math.random() * this.canvas.width * 1.2;
+        particle.y = -30;
+      }
+
+      particle.size = Math.random() * 3 + this.size;
+
+      particle.speed = Math.random() * 0.1 + this.speed * 0.3;
+      particle.velY = particle.speed;
+
+      // base horizontal drift + wind bias
+      particle.baseVelX = (Math.random() - 0.5) * 0.4;
+      particle.velX = particle.baseVelX;
+
+      // wobble params
+      particle.wobble = Math.random() * Math.PI * 2;
+      particle.wobbleSpeed = Math.random() * 0.02 + 0.01;
+      particle.wobbleStrength = Math.random() * 0.4 + 0.2;
+
+      particle.opacity = Math.min(
+        1,
+        Math.random() * 0.5 + this.opacity
+      );
+
+      if (first) this.particles.push(particle);
+    },
+
+    animate() {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+      // normalize wind so small values still feel directional
+      const wind = this.windPower * 0.10;
+
+      for (let i = 0; i < this.particles.length; i++) {
+        const p = this.particles[i];
+
+        p.wobble += p.wobbleSpeed;
+
+        // wind-influenced horizontal movement
+        const windPush = wind * (1 + p.size / 10);
+
+        // wobble reduced slightly when wind is strong
+        const wobbleX =
+          Math.sin(p.wobble) *
+          p.wobbleStrength *
+          (1 - Math.min(Math.abs(wind), 1));
+
+        p.x += p.velX + windPush + wobbleX;
+
+        // tilt the fall slightly in wind direction
+        p.y += p.velY + Math.abs(wind) * 0.1;
+
+        if (
+          p.y > this.canvas.height + 60 ||
+          p.x < -60 ||
+          p.x > this.canvas.width + 60
+        ) {
+          this.reset(p);
+        }
+
+        if (this.imageNum > 0) {
+          const img = this.imageItems[i % this.imageNum];
+          if (img?.naturalWidth) {
+            const w = p.size * 2;
+            const h = w * (img.naturalHeight / img.naturalWidth);
+            this.ctx.globalAlpha = p.opacity;
+            this.ctx.drawImage(img, p.x, p.y, w, h);
+            this.ctx.globalAlpha = 1;
+          }
+        } else {
+          this.ctx.fillStyle = this.color;
+          this.ctx.globalAlpha = p.opacity;
+          this.ctx.beginPath();
+          this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          this.ctx.fill();
+          this.ctx.globalAlpha = 1;
+        }
+      }
+
+      this.reqId = requestAnimationFrame(this.animate);
     },
   },
 };
@@ -301,32 +211,26 @@ export default {
 <style lang="scss" scoped>
 .particle-wrap {
   position: fixed;
-  left: 0;
-  top: 0;
+  inset: 0;
   z-index: 9999;
   pointer-events: none;
-  height: 100%;
-  width: 100%;
 
   canvas {
-    pointer-events: none;
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
   }
 
   &.events-all canvas {
     pointer-events: auto;
   }
+
   &.hide {
     opacity: 0;
-    -webkit-transition: opacity 1s;
     transition: opacity 1s;
-  }
-  canvas {
-    display: block;
-    height: 100%;
-    width: 100%;
   }
 }
 </style>

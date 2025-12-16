@@ -35,10 +35,10 @@
         "assets://particles/sakura/bee.png"
       ],
       "speed": 0.5,
-      "count": 25,
+      "count": 40,
       "size": 12,
       "opacity": 0.8,
-      "windPower": 3
+      "windPower": -1
     }
   }
 }

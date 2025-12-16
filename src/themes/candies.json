@@ -24,10 +24,10 @@
         "assets://particles/candy/heart_blue.png"
       ],
       "speed": 0.5,
-      "count": 12,
+      "count": 20,
       "size": 8,
       "opacity": 0.8,
-      "windPower": 0.125
+      "windPower": 0.5
     }
   }
 }
