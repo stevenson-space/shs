@@ -83,6 +83,7 @@ export default {
   transition: height .3s
   overflow: hidden
   &.shadow
+    border: 1px solid rgba(0,0,0,.1)
     +shadow-light
   &.border
     border: #999 1px solid

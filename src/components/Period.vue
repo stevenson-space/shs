@@ -25,9 +25,14 @@
         fill="var(--secondaryBackground)"
         :stroke-width="stroke"
       />
-      <text x="19.5" y="21" alignment-baseline="middle" text-anchor="middle">
-        {{ actualPeriod }}
-      </text>
+    <text
+      x="20"
+      y="20"
+      text-anchor="middle"
+      dominant-baseline="middle"
+    >
+      {{ actualPeriod }}
+    </text>
     </svg>
 
     <div
