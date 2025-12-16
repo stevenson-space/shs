@@ -300,7 +300,7 @@ export default {
 .color-swatch-wrapper
   position: relative
   width: 48px
-  height: 56px
+  height: 48px
   flex-shrink: 0
 
 .color-input
@@ -319,7 +319,7 @@ export default {
   width: 100%
   height: 100%
   border-radius: 12px
-  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px rgba(128, 128, 128, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(128, 128, 128, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
   position: relative
   pointer-events: none
@@ -333,9 +333,6 @@ export default {
     opacity: 0
     transition: opacity 0.3s
     z-index: -1
-
-  .color-swatch-wrapper:hover &::before
-    opacity: 0.3
 
   .color-input:disabled ~ &
     opacity: 0.5
@@ -370,7 +367,6 @@ export default {
   background: transparent
   color: var(--primary)
   font-size: 13px
-  font-family: monospace
   box-sizing: border-box
   outline: none
   transition: background 0.2s
@@ -396,7 +392,6 @@ export default {
   background: transparent
   color: var(--primary)
   font-size: 13px
-  font-family: monospace
   box-sizing: border-box
   outline: none
   transition: background 0.2s

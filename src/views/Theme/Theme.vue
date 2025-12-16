@@ -316,6 +316,8 @@ import useThemeStore from '@/stores/themes';
 import useClockStore from '@/stores/clock';
 import lightTheme from '@/themes/light.json';
 
+const cloneParticles = particles => (particles ? JSON.parse(JSON.stringify(particles)) : null);
+
 export default {
   components: {
     ThemeCard,
@@ -355,6 +357,7 @@ export default {
     return {
       panelOpen: false,
       customTheme: theme,
+      particlesBackup: cloneParticles(theme.styling.particles),
       themes: [],
       presetsExpanded: true,
       otherThemesExpanded: false,
@@ -454,16 +457,21 @@ export default {
       set(value) {
         if (value) {
           if (!this.customTheme.styling.particles) {
-            this.customTheme.styling.particles = {
-              images: [],
-              speed: 1,
-              count: 20,
-              size: 10,
-              opacity: 0.8,
-              windPower: 0,
-            };
+            this.customTheme.styling.particles = this.particlesBackup
+              ? cloneParticles(this.particlesBackup)
+              : {
+                  images: [],
+                  speed: 1,
+                  count: 20,
+                  size: 10,
+                  opacity: 0.8,
+                  windPower: 0,
+                };
           }
         } else {
+          if (this.customTheme.styling.particles) {
+            this.particlesBackup = cloneParticles(this.customTheme.styling.particles);
+          }
           delete this.customTheme.styling.particles;
           this.particlesExpanded = false;
         }
@@ -557,6 +565,7 @@ export default {
         }
       };
       this.applyTheme();
+      this.particlesBackup = cloneParticles(this.customTheme.styling.particles);
 
       // Clean up images not referenced in the new theme
       await cleanupOrphanedImages(this.customTheme.styling);
@@ -664,6 +673,7 @@ export default {
             };
 
             this.applyTheme();
+            this.particlesBackup = cloneParticles(this.customTheme.styling.particles);
             await cleanupOrphanedImages(this.customTheme.styling);
           } else {
             console.error('No styling field found in imported theme');
@@ -729,6 +739,7 @@ export default {
           if (!this.customTheme.styling.text) this.customTheme.styling.text = {};
           if (!this.customTheme.styling.header) this.customTheme.styling.header = {};
           if (!this.customTheme.styling.iconCards) this.customTheme.styling.iconCards = {};
+          this.particlesBackup = cloneParticles(this.customTheme.styling.particles);
         }
       },
     },

@@ -514,7 +514,6 @@ export default {
   padding: 6px 10px
   border-radius: 6px
   font-size: 11px
-  font-family: monospace
   white-space: nowrap
   max-width: 300px
   overflow: hidden

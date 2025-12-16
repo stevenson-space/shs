@@ -282,7 +282,6 @@ export default {
     padding: 10px 14px
     font-size: 14px
     color: var(--primary)
-    font-family: monospace
     transition: all 0.2s
 
     &::placeholder
