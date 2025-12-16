@@ -69,9 +69,9 @@ import {
 import { mapActions } from "pinia";
 import CardContainer from "@/components/CardContainer.vue";
 import UpcomingEventsCard from "@/components/cards/UpcomingEventsCard.vue";
- import IconTextCard from "@/components/cards/IconTextCard.vue";
- import WeatherCard from "@/components/cards/WeatherCard.vue";
- import PwcCard from "@/components/cards/PwcCard.vue";
+import IconTextCard from "@/components/cards/IconTextCard.vue";
+import WeatherCard from "@/components/cards/WeatherCard.vue";
+import PwcCard from "@/components/cards/PwcCard.vue";
 import ScheduleCard from "@/components/cards/ScheduleCard.vue";
 import HolidayCard from "@/components/cards/HolidayCard.vue";
 import ContributeCard from "@/components/cards/ContributeCard.vue";
@@ -84,7 +84,6 @@ import EndOfYearCard from "@/components/cards/EndOfYearCard.vue";
 import Confetti from "@/components/cards/ConfettiCard.vue";
 import CountdownCard from "@/components/cards/CountdownCard.vue";
 import useClockStore from "@/stores/clock";
-import useThemeStore from "@/stores/themes";
 import ScheduleHeader from "./Header.vue";
 import ThemeEditor from "@/views/Theme/Theme.vue";
 
