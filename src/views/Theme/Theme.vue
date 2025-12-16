@@ -28,12 +28,12 @@
                 </div>
 
                 <div style="text-align: center;">
-                  <liquid-glass-button
+                  <rounded-button
                     v-if="!otherThemesExpanded"
+                    class="theme-button"
+                    text="View More"
                     @click="otherThemesExpanded = true"
-                  >
-                    View More
-                  </liquid-glass-button>
+                  />
                 </div>
 
                 <!-- Other Themes Section -->
@@ -64,11 +64,11 @@
 
                     <!-- View Less Button -->
                     <div style="text-align: center;">
-                      <liquid-glass-button
+                      <rounded-button
+                        class="theme-button"
+                        text="View Less"
                         @click="otherThemesExpanded = false"
-                      >
-                        View Less
-                      </liquid-glass-button>
+                      />
                     </div>
                   </div>
                 </transition>
@@ -154,11 +154,11 @@
 
               <!-- View More Toggle -->
               <div v-if="!advancedExpanded" style="text-align: center; margin-top: 16px;">
-                <liquid-glass-button
+                <rounded-button
+                  class="theme-button"
+                  text="View More"
                   @click="advancedExpanded = true"
-                >
-                  View More
-                </liquid-glass-button>
+                />
               </div>
 
               <!-- Advanced Sections -->
@@ -291,11 +291,11 @@
 
               <!-- View Less Button -->
               <div style="text-align: center; margin-top: 16px;">
-                <liquid-glass-button
+                <rounded-button
+                  class="theme-button"
+                  text="View Less"
                   @click="advancedExpanded = false"
-                >
-                  View Less
-                </liquid-glass-button>
+                />
               </div>
                 </div>
               </transition>
@@ -317,7 +317,7 @@ import ThemeCard from '@/components/ThemeCard.vue';
 import ColorPicker from '@/components/ColorPicker.vue';
 import InfoTooltip from '@/components/InfoTooltip.vue';
 import IconButton from '@/components/IconButton.vue';
-import LiquidGlassButton from '@/components/LiquidGlassButton.vue';
+import RoundedButton from '@/components/RoundedButton.vue';
 import Checkbox from '@/components/Checkbox.vue';
 import CollapsibleSection from '@/components/CollapsibleSection.vue';
 import SliderInput from '@/components/SliderInput.vue';
@@ -332,7 +332,7 @@ export default {
     ColorPicker,
     InfoTooltip,
     IconButton,
-    LiquidGlassButton,
+    RoundedButton,
     Checkbox,
     CollapsibleSection,
     SliderInput,
@@ -791,6 +791,7 @@ export default {
 
   .title
     margin: 0
+    font-weight: 600
     font-size: 18px
 
   .close-btn
@@ -804,7 +805,7 @@ export default {
   scrollbar-gutter: stable
 
 .presets-section
-  margin-bottom: 25px
+  margin-bottom: 15px
   padding-bottom: 20px
   position: relative
 
@@ -841,6 +842,10 @@ export default {
 
 .themes-container
   padding-top: 15px
+
+.theme-button
+  display: inline-flex
+  margin-bottom: 12px
 
 .theme-subsection
   margin-bottom: 20px
@@ -989,18 +994,6 @@ export default {
     font-family: monospace
     font-size: 10px
 
-  .checkbox-label
-    display: flex
-    align-items: center
-    gap: 6px
-    cursor: pointer
-    font-size: 12px
-
-    input[type="checkbox"]
-      width: 16px
-      height: 16px
-      cursor: pointer
-
 .section
   margin-bottom: 20px
 
@@ -1021,65 +1014,6 @@ export default {
     color: var(--primary)
     font-size: 13px
 
-.field
-  margin-bottom: 10px
-
-  label
-    display: block
-    margin-bottom: 6px
-    color: var(--secondary)
-    font-weight: 500
-    font-size: 12px
-
-  .checkbox-label
-    display: flex
-    align-items: center
-    gap: 8px
-    cursor: pointer
-    font-weight: 500
-
-    span
-      user-select: none
-
-  input[type="text"],
-  input[type="number"],
-  textarea
-    width: 100%
-    padding: 6px 8px
-    border: 1px solid var(--accent)
-    border-radius: 4px
-    background: var(--background)
-    color: var(--primary)
-    font-size: 13px
-    box-sizing: border-box
-
-  .color-input-group
-    display: flex
-    gap: 8px
-    align-items: center
-
-    input[type="color"]
-      width: 50px
-      height: 35px
-      border: 1px solid var(--accent)
-      border-radius: 4px
-      cursor: pointer
-      flex-shrink: 0
-
-    .color-text
-      flex: 1
-
-  input[type="checkbox"]
-    width: 18px
-    height: 18px
-    cursor: pointer
-    flex-shrink: 0
-
-  textarea
-    min-height: 60px
-    resize: vertical
-    font-family: monospace
-    font-size: 11px
 
 .slide-enter-active,
 .slide-leave-active
