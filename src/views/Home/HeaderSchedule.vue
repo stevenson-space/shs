@@ -80,6 +80,7 @@ export default {
   letter-spacing: 1px
   &.full-screen
     font-size: 2.75vh
+    margin-top: -40px !important
 
   .container
     max-width: min(#{$content-width+0-20}, calc(100% - 44px))
@@ -92,7 +93,7 @@ export default {
     margin: auto
     &.full-screen
       max-width: 100%
-      border-radius: 0px 
+      border-radius: 30px 30px 0px 0px 
       align-items: center
       top: 0px
 
