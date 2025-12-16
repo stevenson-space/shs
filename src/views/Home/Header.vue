@@ -403,8 +403,6 @@ export default {
       transition: .1s ease-in-out
       +mobile-small
         margin: 0 5px
-      &:hover
-        +shadow
       &:active
         +shadow
 
