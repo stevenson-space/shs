@@ -1,21 +1,20 @@
 <template>
   <div class="theme-page">
-    <!-- Slide-in customization panel from LEFT -->
     <transition name="slide">
       <div v-if="panelOpen" class="customization-panel">
         <div class="panel-header">
-          <h2>Customize Theme</h2>
-          <button @click="closePanel" class="close-btn">&times;</button>
+          <h2 class="title">Customize Theme</h2>
+          <div @click="closePanel">
+            <font-awesome-icon :icon="icons.faXmark" class="close-btn" />
+          </div>
         </div>
 
         <div class="panel-content">
-          <!-- Theme Presets at top -->
           <section class="presets-section">
             <div class="presets-header">
               <h3>Presets</h3>
             </div>
             <div class="themes-container">
-                <!-- Recommended Section -->
                 <div class="theme-subsection">
                   <h4 class="subsection-title">Recommended</h4>
                   <div class="theme-grid">
@@ -28,7 +27,6 @@
                   </div>
                 </div>
 
-                <!-- View More Button -->
                 <div style="text-align: center;">
                   <liquid-glass-button
                     v-if="!otherThemesExpanded"
@@ -312,7 +310,9 @@
 <script>
 import { mapActions, mapState } from 'pinia';
 import { toRaw } from 'vue';
-import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { faCircleInfo, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
+import { cleanupOrphanedImages } from '@/utils/imageStorage';
 import ThemeCard from '@/components/ThemeCard.vue';
 import ColorPicker from '@/components/ColorPicker.vue';
 import InfoTooltip from '@/components/InfoTooltip.vue';
@@ -324,9 +324,7 @@ import SliderInput from '@/components/SliderInput.vue';
 import ImageUpload from '@/components/ImageUpload.vue';
 import useThemeStore from '@/stores/themes';
 import useClockStore from '@/stores/clock';
-import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
 import lightTheme from '@/themes/light.json';
-import { cleanupOrphanedImages } from '@/utils/imageStorage';
 
 export default {
   components: {
@@ -377,7 +375,7 @@ export default {
       particlesExpanded: false,
       advancedExpanded: false,
       isApplyingTheme: false, // Flag to prevent infinite loop in styling watcher
-      icons: { faCircleInfo },
+      icons: { faCircleInfo, faXmark },
     };
   },
   computed: {
@@ -791,27 +789,14 @@ export default {
   flex-shrink: 0
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15)
 
-  h2
+  .title
     margin: 0
     font-size: 18px
 
   .close-btn
-    background: transparent
-    border: none
-    color: white
-    font-size: 36px
-    cursor: pointer
-    padding: 0
-    width: 40px
-    height: 40px
-    display: flex
-    align-items: center
-    justify-content: center
-    line-height: 1
-
-    &:hover
-      opacity: 0.8
-
+    font-size: 20px
+    cursor: pointer !important  
+    
 .panel-content
   flex: 1
   overflow-y: auto
@@ -871,35 +856,6 @@ export default {
     text-transform: uppercase
     letter-spacing: 0.5px
 
-.view-more-btn
-  padding: 10px 24px
-  margin: 0 auto 12px
-  border: 1px solid rgba(128, 128, 128, 0.3)
-  border-radius: 50px
-  background: rgba(255, 255, 255, 0.2)
-  backdrop-filter: blur(10px)
-  -webkit-backdrop-filter: blur(10px)
-  color: var(--secondary)
-  font-size: 11px
-  font-weight: 600
-  text-transform: uppercase
-  letter-spacing: 0.5px
-  cursor: pointer
-  display: inline-flex
-  align-items: center
-  justify-content: center
-  transition: all 0.2s ease
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
-  width: auto
-
-  &:hover
-    background: rgba(255, 255, 255, 0.3)
-    transform: translateY(-1px)
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15)
-
-  &:active
-    transform: translateY(0)
-
 .expanded-themes
   .subsection-title
     margin: 0 0 10px 0
@@ -909,111 +865,10 @@ export default {
     text-transform: uppercase
     letter-spacing: 0.5px
 
-  .view-more-btn
-    margin-top: 12px
-    margin-bottom: 0
-
 .theme-grid
   display: grid
   grid-template-columns: repeat(2, 1fr)
   gap: 10px
-
-.theme-card
-  cursor: pointer
-  border-radius: 12px
-  overflow: visible
-  transition: all 0.2s ease
-  border: 2px solid transparent
-
-  &:hover
-    transform: translateY(-2px)
-
-    .theme-thumbnail
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25)
-
-
-.theme-thumbnail
-  width: 100%
-  aspect-ratio: 16 / 9
-  overflow: visible
-  position: relative
-  border-radius: 12px
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15)
-  transition: all 0.2s ease
-
-  .header-image
-    width: 100%
-    height: 100%
-    object-fit: cover
-    border-radius: 12px
-
-  .color-split
-    width: 100%
-    height: 100%
-    display: flex
-    border-radius: 12px
-    overflow: hidden
-
-    .accent-half,
-    .background-half
-      flex: 1
-      height: 100%
-
-  .theme-info-overlay
-    position: absolute
-    bottom: 0
-    left: 0
-    right: 0
-    padding: 30px 10px 8px 10px
-    color: white
-    display: flex
-    justify-content: space-between
-    align-items: flex-end
-    border-bottom-left-radius: 12px
-    border-bottom-right-radius: 12px
-
-    &::before
-      content: ''
-      position: absolute
-      bottom: 0
-      left: 0
-      right: 0
-      height: 100%
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%)
-      backdrop-filter: blur(8px)
-      mask-image: linear-gradient(to top, black 0%, black 50%, transparent 100%)
-      -webkit-mask-image: linear-gradient(to top, black 0%, black 50%, transparent 100%)
-      border-bottom-left-radius: 12px
-      border-bottom-right-radius: 12px
-      z-index: 0
-
-    .theme-text
-      flex: 1
-      text-align: left
-      position: relative
-      z-index: 1
-
-      .theme-name
-        font-weight: 700
-        font-size: 14px
-        line-height: 1.3
-        margin-bottom: 2px
-
-      .theme-author
-        font-size: 11px
-        opacity: 0.9
-        font-weight: 400
-
-    .theme-icons
-      display: flex
-      gap: 6px
-      flex-shrink: 0
-      position: relative
-      z-index: 1
-
-    :deep(.info-tooltip-wrapper)
-      .info-icon
-        color: white
 
 .customization-section
   margin-bottom: 25px
@@ -1226,7 +1081,6 @@ export default {
     font-family: monospace
     font-size: 11px
 
-// Slide transition from left
 .slide-enter-active,
 .slide-leave-active
   transition: transform 0.3s ease
