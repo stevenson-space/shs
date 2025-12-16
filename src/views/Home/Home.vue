@@ -4,7 +4,6 @@
       :full-screen-mode="fullScreenMode"
       @toggle-fullscreen="fullScreenMode = !fullScreenMode"
     />
-
     <theme-editor :open="themeEditorOpen" @close="themeEditorOpen = false" />
 
     <card-container class="card-container">
@@ -144,6 +143,9 @@ export default {
 
 <style lang="sass" scoped>
 @import '@/styles/style.sass'
+
+.card-container
+  margin-top: 10px
 
 .no-overflow
   height: 100vh

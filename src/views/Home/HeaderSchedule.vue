@@ -1,6 +1,6 @@
 <template>
   <div class="schedule" :class="{ 'full-screen': fullScreenMode }">
-    <div class="container">
+    <div class="container" :class="{ 'full-screen': fullScreenMode }">
       <!-- This dropdown is just here for alignment purposes and is not displayed -->
       <dropdown
         v-show="scheduleModes.length > 1"
@@ -35,6 +35,7 @@
       <dropdown
         v-show="scheduleModes.length > 1"
         class="schedule-select"
+        :class="{ 'full-screen': fullScreenMode }"
         :options="scheduleModes"
         :modelValue="scheduleModes.indexOf(bell.mode)"
         :direction="fullScreenMode ? 'up' : 'down'"
@@ -74,23 +75,32 @@ export default {
 @import '@/styles/style.sass'
 
 .schedule
-  padding: 5px
-  width: calc(100% - 10px) // subtract 2 * 5px (padding)
+  margin-top: -10px !important
   color: var(--secondary)
   letter-spacing: 1px
-  background-color: var(--headerScheduleBar)
   &.full-screen
     font-size: 2.75vh
 
   .container
+    max-width: min(#{$content-width+0-20}, calc(100% - 44px))
+    background: var(--background)
+    border-radius: 22px 22px 0 0 
+    position: relative
+    top: 15px
+    padding: 12px 12px
     display: flex
-    align-items: center
-    max-width: $content-width
     margin: auto
+    &.full-screen
+      max-width: 100%
+      border-radius: 0px 
+      align-items: center
+      top: 0px
 
   .schedule-select
     &.hidden
       visibility: hidden
+    &.full-screen
+      margin-right: 10px
     +mobile-small
       display: none
 

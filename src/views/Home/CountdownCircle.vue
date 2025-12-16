@@ -45,9 +45,9 @@ export default {
 
 .circle
   --circle-diameter: 290px
-  --logo-width: 100px
+  --logo-width: 95px
   +mobile-small
-    --circle-diameter: 230px
+    --circle-diameter: 240px
     --logo-width: 70px
 
   // +shadow

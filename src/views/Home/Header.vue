@@ -334,7 +334,6 @@ export default {
 @import '@/styles/style.sass'
 
 .header
-  +shadow
   background-color: var(--header-color)
   text-align: center
   transition: background-color .3s
@@ -401,8 +400,11 @@ export default {
       margin: 0 15px
       cursor: pointer
       border-radius: 1000px
+      transition: .1s ease-in-out
       +mobile-small
         margin: 0 5px
+      &:hover
+        +shadow
       &:active
         +shadow
 
