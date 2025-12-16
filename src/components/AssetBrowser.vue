@@ -5,9 +5,9 @@
         <div class="modal-content" :style="modalStyle">
           <div class="modal-header">
             <h3>{{ modalTitle }}</h3>
-            <button @click="close" class="close-btn" type="button">
+            <div @click="close" style="cursor: pointer;">
               <font-awesome-icon :icon="icons.faXmark" />
-            </button>
+            </div>
           </div>
 
           <div class="modal-body">
@@ -38,12 +38,11 @@
 
 <script>
 import { mapState } from 'pinia';
-import useThemeStore from '@/stores/themes';
-import { fallbackStyling } from '@/utils/themes';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { fallbackStyling } from '@/utils/themes';
+import useThemeStore from '@/stores/themes';
+import IconButton from '@/components/IconButton.vue';
 
-// Import all images using Vite's glob import
 const headerImageModules = import.meta.glob('@/themes/assets/header-images/*', {
   eager: true,
   as: 'url',
@@ -57,7 +56,7 @@ const particleImageModules = import.meta.glob('@/themes/assets/particles/**/*', 
 export default {
   name: 'AssetBrowser',
   components: {
-    FontAwesomeIcon,
+    IconButton,
   },
   props: {
     isOpen: {
@@ -165,23 +164,6 @@ export default {
     margin: 0
     font-size: 18px
     font-weight: 600
-
-.close-btn
-  width: 40px
-  height: 40px
-  border: none
-  border-radius: 8px
-  background: transparent
-  color: white
-  cursor: pointer
-  display: flex
-  align-items: center
-  justify-content: center
-  transition: opacity 0.2s
-  padding: 0
-
-  &:hover
-    opacity: 0.8
 
 // Modal body
 .modal-body

@@ -4,9 +4,9 @@
       <div v-if="panelOpen" class="customization-panel">
         <div class="panel-header">
           <h2 class="title">Customize Theme</h2>
-          <div @click="closePanel">
-            <font-awesome-icon :icon="icons.faXmark" class="close-btn" />
-          </div>
+          <icon-button class="close-btn" @click="closePanel">
+            <font-awesome-icon :icon="icons.faXmark" />
+          </icon-button>
         </div>
 
         <div class="panel-content">
@@ -207,7 +207,11 @@
               </collapsible-section>
 
               <!-- Particles -->
-              <collapsible-section title="Particles" v-model="particlesExpanded" :disabled="!particlesEnabled">
+              <collapsible-section
+                title="Particles"
+                :model-value="true"
+                :lock-open="true"
+              >
                 <template #action>
                   <checkbox v-model="particlesEnabled" />
                 </template>
@@ -216,7 +220,7 @@
                     label="Speed"
                     v-model="customTheme.styling.particles.speed"
                     :min="0"
-                    :max="5"
+                    :max="10"
                     :step="0.1"
                     @update:modelValue="applyTheme"
                   />
@@ -294,12 +298,12 @@ import { mapActions, mapState } from 'pinia';
 import { toRaw } from 'vue';
 import {
   faCircleInfo,
-  faXmark,
   faSun,
   faMoon,
   faFileImport,
   faFileExport,
   faFloppyDisk,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
 import { cleanupOrphanedImages } from '@/utils/imageStorage';
@@ -365,17 +369,16 @@ export default {
       textExpanded: false,
       headerExpanded: false,
       iconCardsExpanded: false,
-      particlesExpanded: false,
       advancedExpanded: false,
       isApplyingTheme: false, // Flag to prevent infinite loop in styling watcher
       icons: {
         faCircleInfo,
-        faXmark,
         faSun,
         faMoon,
         faFileImport,
         faFileExport,
         faFloppyDisk,
+        faXmark,
       },
     };
   },
@@ -473,7 +476,6 @@ export default {
             this.particlesBackup = cloneParticles(this.customTheme.styling.particles);
           }
           delete this.customTheme.styling.particles;
-          this.particlesExpanded = false;
         }
         this.applyTheme();
       },
@@ -720,7 +722,6 @@ export default {
           this.textExpanded = false;
           this.headerExpanded = false;
           this.iconCardsExpanded = false;
-          this.particlesExpanded = false;
           this.advancedExpanded = false;
         }
       },
@@ -780,7 +781,7 @@ export default {
   display: flex
   justify-content: space-between
   align-items: center
-  padding: 8px 15px
+  padding: 8px 5px 5px 15px
   border-bottom: 1px solid var(--accent)
   background: var(--accent)
   color: white
@@ -793,8 +794,9 @@ export default {
     font-size: 18px
 
   .close-btn
-    font-size: 20px
-    cursor: pointer !important  
+    font-size: 18px
+    background: transparent
+    color: white
     
 .panel-content
   flex: 1

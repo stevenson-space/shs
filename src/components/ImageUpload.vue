@@ -22,58 +22,44 @@
 
         <!-- Overlay buttons left (info) -->
         <div class="button-overlay-left">
-          <button
-            v-if="modelValue"
-            @click.stop
-            @mouseenter="showTooltip"
-            @mouseleave="hideTooltip"
-            class="overlay-btn info-btn"
-            type="button"
-            ref="infoBtn"
-          >
-            <font-awesome-icon :icon="icons.faCircleInfo" />
-          </button>
-        </div>
-
-        <!-- Tooltip (portal to body) -->
-        <teleport to="body">
-          <div
-            v-if="tooltipVisible"
-            class="image-path-tooltip"
-            :style="tooltipStyle"
-          >
+          <info-tooltip v-if="modelValue">
+            <template #trigger>
+              <icon-button class="overlay-btn" @click.stop type="button" ref="infoBtn">
+                <font-awesome-icon :icon="icons.faCircleInfo" />
+              </icon-button>
+            </template>
             {{ modelValue }}
-          </div>
-        </teleport>
+          </info-tooltip>
+        </div>
 
         <!-- Overlay buttons right (clear/upload & folder) -->
         <div class="button-overlay-right">
-          <button
+          <icon-button
+            class="overlay-btn"
             v-if="modelValue"
             @click.stop="clearImage"
-            class="overlay-btn clear-btn"
             type="button"
-            title="Clear image"
+            title="Delete image"
           >
-            <font-awesome-icon :icon="icons.faXmark" />
-          </button>
-          <button
+            <font-awesome-icon :icon="icons.faTrashCan" />
+          </icon-button>
+          <icon-button
+            class="overlay-btn"
             v-else
             @click.stop="$refs.fileInput.click()"
-            class="overlay-btn upload-btn"
             type="button"
             title="Upload image"
           >
             <font-awesome-icon :icon="icons.faCloudArrowUp" />
-          </button>
-          <button
+          </icon-button>
+          <icon-button
+            class="overlay-btn"
             @click.stop="openAssetBrowser"
-            class="overlay-btn folder-btn"
             type="button"
             title="Browse asset images"
           >
             <font-awesome-icon :icon="icons.faFolderOpen" />
-          </button>
+          </icon-button>
         </div>
       </div>
       <div v-if="error" class="error">{{ error }}</div>
@@ -94,19 +80,23 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
   faImage,
   faCircleInfo,
-  faXmark,
+  faTrashCan,
   faCloudArrowUp,
   faFolderOpen,
 } from '@fortawesome/free-solid-svg-icons';
 import { storeImage, deleteImage } from '@/utils/imageStorage';
 import { globalImageResolver } from '@/utils/imageResolver';
 import AssetBrowser from './AssetBrowser.vue';
+import IconButton from '@/components/IconButton.vue';
+import InfoTooltip from '@/components/InfoTooltip.vue';
 
 export default {
   name: 'ImageUpload',
   components: {
     AssetBrowser,
     FontAwesomeIcon,
+    IconButton,
+    InfoTooltip,
   },
   props: {
     modelValue: String,
@@ -128,13 +118,11 @@ export default {
     return {
       error: null,
       imageCache: globalImageResolver.getCache(),
-      tooltipVisible: false,
-      tooltipStyle: {},
       assetBrowserOpen: false,
       icons: {
         faImage,
         faCircleInfo,
-        faXmark,
+        faTrashCan,
         faCloudArrowUp,
         faFolderOpen,
       },
@@ -177,25 +165,6 @@ export default {
     }
   },
   methods: {
-    showTooltip() {
-      if (!this.$refs.infoBtn) return;
-
-      const btn = this.$refs.infoBtn;
-      const rect = btn.getBoundingClientRect();
-
-      this.tooltipStyle = {
-        position: 'fixed',
-        left: `${rect.left}px`,
-        top: `${rect.top - 36}px`,
-        zIndex: 1001,
-      };
-      this.tooltipVisible = true;
-    },
-
-    hideTooltip() {
-      this.tooltipVisible = false;
-    },
-
     openAssetBrowser() {
       this.assetBrowserOpen = true;
     },
@@ -459,74 +428,23 @@ export default {
   opacity: 1
 
 .overlay-btn
-  width: 32px
-  height: 32px
-  border: none
-  border-radius: 8px
-  background: rgba(0, 0, 0, 0.7)
-  backdrop-filter: blur(8px)
-  color: white
-  cursor: pointer
-  display: flex
-  align-items: center
-  justify-content: center
-  transition: all 0.2s
-  padding: 0
-  position: relative
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3)
+  background: var(--background)
+  border-color: rgba(128, 128, 128, 0.25)
+
+:deep(.overlay-btn.icon-btn)
+  background: var(--background)
+  border-color: rgba(128, 128, 128, 0.25)
+  color: var(--primary)
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12)
 
   &:hover
-    background: rgba(0, 0, 0, 0.85)
-    transform: scale(1.15)
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4)
-
-  &:active
-    transform: scale(0.95)
+    background: var(--background)
+    border-color: rgba(128, 128, 128, 0.25)
+    transform: scale(1.1)
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18)
 
   svg
-    display: block
-    width: 16px
-    height: 16px
-
-.clear-btn
-  &:hover
-    background: rgba(220, 38, 38, 0.9)
-
-.upload-btn
-  &:hover
-    background: var(--accent)
-
-.folder-btn
-  &:hover
-    background: var(--accent)
-
-.info-btn
-  cursor: default
-
-  &:hover
-    background: rgba(59, 130, 246, 0.9)
-    transform: scale(1.1)
-
-.image-path-tooltip
-  background: rgba(0, 0, 0, 0.9)
-  color: white
-  padding: 6px 10px
-  border-radius: 6px
-  font-size: 11px
-  white-space: nowrap
-  max-width: 300px
-  overflow: hidden
-  text-overflow: ellipsis
-  pointer-events: none
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3)
-
-  &::before
-    content: ''
-    position: absolute
-    bottom: -6px
-    left: 8px
-    border: 6px solid transparent
-    border-top-color: rgba(0, 0, 0, 0.9)
+    color: inherit
 
 .error
   color: #dc2626

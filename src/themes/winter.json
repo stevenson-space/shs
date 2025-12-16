@@ -28,8 +28,8 @@
       "images": [
         "assets://particles/snowflake.png"
       ],
-      "speed": 1,
-      "count": 50,
+      "speed": 5,
+      "count": 60,
       "size": 8,
       "opacity": 0.7,
       "windPower": 0.7

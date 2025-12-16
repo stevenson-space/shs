@@ -65,9 +65,15 @@ export default {
       this.particleCount = this.count;
       this.init();
     },
+    speed() {
+      this.init();
+    },
     images() {
       this.imagesLoaded = 0;
       this.init();
+      this.$nextTick(() => {
+        this.collectImages();
+      });
     },
   },
 
@@ -85,9 +91,7 @@ export default {
 
     onImageLoad() {
       this.imagesLoaded++;
-      if (this.imagesLoaded === this.images.length) {
-        this.collectImages();
-      }
+      this.collectImages();
     },
 
     collectImages() {
@@ -117,6 +121,9 @@ export default {
       }
 
       this.animate();
+      this.$nextTick(() => {
+        this.collectImages();
+      });
     },
 
     reset(particle, first = false) {
@@ -130,11 +137,13 @@ export default {
 
       particle.size = Math.random() * 3 + this.size;
 
-      particle.speed = Math.random() * 0.1 + this.speed * 0.3;
+      const baseSpeed = Math.max(0, this.speed);
+      particle.speed = Math.random() * 0.1 + baseSpeed * 0.3;
       particle.velY = particle.speed;
 
       // base horizontal drift + wind bias
-      particle.baseVelX = (Math.random() - 0.5) * 0.4;
+      const speedInfluence = baseSpeed * 0.2;
+      particle.baseVelX = (Math.random() - 0.5) * (0.4 + speedInfluence);
       particle.velX = particle.baseVelX;
 
       // wobble params

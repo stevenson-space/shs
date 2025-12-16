@@ -54,11 +54,16 @@ export default {
     },
   },
   methods: {
+    clampValue(val) {
+      const num = Number(val);
+      if (Number.isNaN(num)) return this.min;
+      return Math.min(this.max, Math.max(this.min, num));
+    },
     handleSliderInput(event) {
-      this.$emit('update:modelValue', Number(event.target.value));
+      this.$emit('update:modelValue', this.clampValue(event.target.value));
     },
     handleNumberInput(event) {
-      this.$emit('update:modelValue', Number(event.target.value));
+      this.$emit('update:modelValue', this.clampValue(event.target.value));
     },
   },
 };

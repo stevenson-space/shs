@@ -23,8 +23,8 @@
         "assets://particles/candy/heart_purple.png",
         "assets://particles/candy/heart_blue.png"
       ],
-      "speed": 0.5,
-      "count": 20,
+      "speed": 5,
+      "count": 40,
       "size": 8,
       "opacity": 0.8,
       "windPower": 0.5

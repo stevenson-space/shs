@@ -33,8 +33,8 @@
       "images": [
         "assets://particles/heart_red.png"
       ],
-      "speed": 0.8,
-      "count": 12,
+      "speed": 4,
+      "count": 50,
       "size": 8,
       "opacity": 0.6,
       "windPower": 0.5

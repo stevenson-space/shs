@@ -50,6 +50,10 @@ export default {
       type: String,
       default: '',
     },
+    lockOpen: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -58,15 +62,15 @@ export default {
   },
   computed: {
     isExpanded() {
-      return this.modelValue;
+      return this.lockOpen ? true : this.modelValue;
     },
     showChevron() {
-      return !this.disabled;
+      return !this.disabled && !this.lockOpen;
     },
   },
   methods: {
     handleHeaderClick() {
-      if (!this.disabled) {
+      if (!this.disabled && !this.lockOpen) {
         this.$emit('update:modelValue', !this.modelValue);
       }
     },

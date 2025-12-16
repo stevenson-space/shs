@@ -1,5 +1,5 @@
 <template>
-  <button class="icon-btn" :disabled="disabled" @click="$emit('click')">
+  <button class="icon-btn" type="button" :disabled="disabled" @click="onClick">
     <slot />
   </button>
 </template>
@@ -13,6 +13,11 @@ export default {
     },
   },
   emits: ['click'],
+  methods: {
+    onClick(event) {
+      this.$emit('click', event);
+    },
+  },
 };
 </script>
 
@@ -42,7 +47,7 @@ export default {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
 
     svg
-      transform: scale(1.1)
+      transform: scale(1.05)
       color: var(--accent)
 
   &:active
