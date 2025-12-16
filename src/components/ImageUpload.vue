@@ -17,11 +17,7 @@
         @click="$refs.fileInput.click()"
       >
         <div v-if="!resolvedImageUrl" class="empty-state">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-            <polyline points="21 15 16 10 5 21"></polyline>
-          </svg>
+          <font-awesome-icon :icon="icons.faImage" />
         </div>
 
         <!-- Overlay buttons left (info) -->
@@ -35,11 +31,7 @@
             type="button"
             ref="infoBtn"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="16" x2="12" y2="12"></line>
-              <line x1="12" y1="8" x2="12.01" y2="8"></line>
-            </svg>
+            <font-awesome-icon :icon="icons.faCircleInfo" />
           </button>
         </div>
 
@@ -63,10 +55,7 @@
             type="button"
             title="Clear image"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
+            <font-awesome-icon :icon="icons.faXmark" />
           </button>
           <button
             v-else
@@ -75,11 +64,7 @@
             type="button"
             title="Upload image"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="17 8 12 3 7 8"></polyline>
-              <line x1="12" y1="3" x2="12" y2="15"></line>
-            </svg>
+            <font-awesome-icon :icon="icons.faCloudArrowUp" />
           </button>
           <button
             @click.stop="openAssetBrowser"
@@ -87,9 +72,7 @@
             type="button"
             title="Browse asset images"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-            </svg>
+            <font-awesome-icon :icon="icons.faFolderOpen" />
           </button>
         </div>
       </div>
@@ -107,6 +90,14 @@
 </template>
 
 <script>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import {
+  faImage,
+  faCircleInfo,
+  faXmark,
+  faCloudArrowUp,
+  faFolderOpen,
+} from '@fortawesome/free-solid-svg-icons';
 import { storeImage, deleteImage } from '@/utils/imageStorage';
 import { globalImageResolver } from '@/utils/imageResolver';
 import AssetBrowser from './AssetBrowser.vue';
@@ -115,6 +106,7 @@ export default {
   name: 'ImageUpload',
   components: {
     AssetBrowser,
+    FontAwesomeIcon,
   },
   props: {
     modelValue: String,
@@ -139,6 +131,13 @@ export default {
       tooltipVisible: false,
       tooltipStyle: {},
       assetBrowserOpen: false,
+      icons: {
+        faImage,
+        faCircleInfo,
+        faXmark,
+        faCloudArrowUp,
+        faFolderOpen,
+      },
     };
   },
   computed: {

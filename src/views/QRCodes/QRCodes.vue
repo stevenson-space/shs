@@ -24,12 +24,7 @@
               />
             </div>
             <div v-else class="qr-empty">
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="3" width="7" height="7"></rect>
-                <rect x="14" y="3" width="7" height="7"></rect>
-                <rect x="14" y="14" width="7" height="7"></rect>
-                <rect x="3" y="14" width="7" height="7"></rect>
-              </svg>
+              <font-awesome-icon :icon="icons.faQrcode"  style="font-size:40px"/>
               <p>Generate QR Code</p>
             </div>
           </div>
@@ -54,11 +49,7 @@
           </div>
 
           <div class="save-info">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
+            <font-awesome-icon :icon="icons.faFileExport" />
             <div>
               <strong>To save:</strong>
               <span>Drag & drop or tap and hold (mobile)</span>
@@ -95,9 +86,18 @@ import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ColorPicker from '@/components/ColorPicker.vue';
 import logo from '@/assets/QRCodeLogo.png';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faQrcode, faFileExport } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  components: { PlainHeader, Card, RoundedButton, ColorPicker, QRCodeVue3 },
+  components: {
+    PlainHeader,
+    Card,
+    RoundedButton,
+    ColorPicker,
+    QRCodeVue3,
+    FontAwesomeIcon,
+  },
   data() {
     return {
       url: 'https://stevenson.space',
@@ -107,6 +107,10 @@ export default {
       qrKey: 0,
       error: '',
       logo,
+      icons: {
+        faQrcode,
+        faFileExport,
+      },
     };
   },
   computed: {

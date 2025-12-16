@@ -6,10 +6,7 @@
           <div class="modal-header">
             <h3>{{ modalTitle }}</h3>
             <button @click="close" class="close-btn" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
+              <font-awesome-icon :icon="icons.faXmark" />
             </button>
           </div>
 
@@ -43,6 +40,8 @@
 import { mapState } from 'pinia';
 import useThemeStore from '@/stores/themes';
 import { fallbackStyling } from '@/utils/themes';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 // Import all images using Vite's glob import
 const headerImageModules = import.meta.glob('@/themes/assets/header-images/*', {
@@ -57,6 +56,9 @@ const particleImageModules = import.meta.glob('@/themes/assets/particles/**/*', 
 
 export default {
   name: 'AssetBrowser',
+  components: {
+    FontAwesomeIcon,
+  },
   props: {
     isOpen: {
       type: Boolean,
@@ -66,6 +68,11 @@ export default {
       type: String,
       default: 'header-images', // 'header-images' or 'particles'
     },
+  },
+  data() {
+    return {
+      icons: { faXmark },
+    };
   },
   emits: ['close', 'select'],
   computed: {
