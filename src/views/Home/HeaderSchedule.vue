@@ -75,7 +75,7 @@ export default {
 @import '@/styles/style.sass'
 
 .schedule
-  margin-top: -10px !important
+  margin-top: -8px !important
   color: var(--secondary)
   letter-spacing: 1px
   &.full-screen
@@ -83,7 +83,7 @@ export default {
     margin-top: -40px !important
 
   .container
-    max-width: min(#{$content-width+0-20}, calc(100% - 44px))
+    max-width: min(#{$content-width+0-20}, 100%)
     background: var(--background)
     border-radius: 22px 22px 0 0 
     position: relative
