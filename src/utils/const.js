@@ -111,7 +111,7 @@ export default {
       ],
     },
     {
-      name: 'Early Dismissal Days',
+      name: 'Early Dismissal Day',
       dates: ['12/19/2018-12/21/2018', '5/21/2019-5/23/2019'],
       modes: [
         {
