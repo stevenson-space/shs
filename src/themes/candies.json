@@ -23,7 +23,7 @@
         "assets://particles/candy/heart_purple.png",
         "assets://particles/candy/heart_blue.png"
       ],
-      "speed": 5,
+      "speed": 3,
       "count": 40,
       "size": 8,
       "opacity": 0.8,

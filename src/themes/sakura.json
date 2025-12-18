@@ -34,7 +34,7 @@
         "assets://particles/sakura/petal_5.png",
         "assets://particles/sakura/bee.png"
       ],
-      "speed": 4,
+      "speed": 3,
       "count": 50,
       "size": 12,
       "opacity": 0.8,

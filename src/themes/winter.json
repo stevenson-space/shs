@@ -28,7 +28,7 @@
       "images": [
         "assets://particles/snowflake.png"
       ],
-      "speed": 5,
+      "speed": 2,
       "count": 60,
       "size": 8,
       "opacity": 0.7,
