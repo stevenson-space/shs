@@ -1,19 +1,24 @@
 <template>
-  <timed-card startTime="December 14, 2025" endTime="January 9, 2026">
+  <timed-card startTime="January 11, 2026" endTime="January 22, 2026">
     <div class="container">
       <div class="title"></div>
       <div class="message">
-        SHS Space has a new theme editor!
-        Either choose a prebuilt theme or, if you're feeling creative, make your own and share it with your friends!
+        We have many new features planned for SHS Space, and your feedback would be very, very helpful!
+        <i>(and, if you have ideas of your own, tell me that too!)</i><br/>
+        <br/>
+        Two responders will be randomly chosen for a $15 Jazzman's gift card!<br/>
+        <br/>
+        - Joshua F. ('26)
       </div>
       <div class="chips">
         <link-chip
-          href="#"
-          label="Edit Theme"
-          :icon="icons.faDroplet"
+          href="https://forms.gle/jxZkFJALWoa1zaKY8"
+          label="Take Survey"
+          :icon="icons.faPoll"
           background="var(--accent)"
           color="var(--iconCardsRegular)"
-          @click.prevent="$emit('open-theme-editor')"
+          target="_blank"
+          rel="noopener noreferrer"
         />
       </div>
     </div>
@@ -23,14 +28,14 @@
 <script>
 import TimedCard from "@/components/cards/TimedCard.vue";
 import LinkChip from "@/components/cards/LinkChip.vue";
-import { faDroplet } from "@fortawesome/free-solid-svg-icons";
+import { faPoll } from "@fortawesome/free-solid-svg-icons";
 
 export default {
   components: { TimedCard, LinkChip },
   data() {
     return {
       icons: {
-        faDroplet
+        faPoll
       }
     };
   }
