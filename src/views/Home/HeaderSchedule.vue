@@ -83,9 +83,9 @@ export default {
     margin-top: -40px !important
 
   .container
-    max-width: min(#{$content-width+0-20}, 100%)
+    max-width: 100%
     background: var(--background)
-    border-radius: 22px 22px 0 0 
+    border-radius: 15px 15px 0 0 
     position: relative
     top: 15px
     padding: 12px 12px
