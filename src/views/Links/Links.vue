@@ -42,7 +42,7 @@ export default {
     return {
       links: [ /* eslint-disable max-len */
         { name: 'D125', url: 'https://www.d125.org/', image: D125 },
-        { name: 'Canvas', desc: 'Must be logged in using school Google account', url: 'https://d125.instructure.com/', image: Canvas },
+        { name: 'Canvas', desc: 'Must be logged in using school Google account', url: 'https://d125.instructure.com/login/saml', image: Canvas },
         { name: 'IRC', desc: 'Must be logged in using school Google account', url: 'https://irc.d125.org/login', image: IRC },
         { name: 'Infinite Campus', url: 'https://infinitecampus.d125.org/campus/portal/aes.jsp', image: InfiniteCampus },
         { name: 'Naviance', url: 'https://student.naviance.com/aeshs', image: Naviance },
