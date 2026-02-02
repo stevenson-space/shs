@@ -1,25 +1,31 @@
 {
   "metadata": {
     "name": "Halloween",
-    "author": "Joseph S. ('22)"
+    "author": "Joseph S. ('22) & Allan H ('28)"
   },
-
-  "visibility": "show",
-  "recommended": {
-    "timing": "season",
-    "message": "[Try] The Spooky Halloween Theme"
-  },
-
-  "seasonalDates": "10/20-11/01",
-
   "styling": {
     "base": "dark",
     "background": "#0f0f0f",
     "secondaryBackground": "#181a1c",
     "accent": "#cc611b",
-
+    "text": {},
     "header": {
       "background": "var(--accent)"
+    },
+    "iconCards": {},
+    "particles": {
+      "images": [
+        "assets://particles/halloween/pumpkin.png",
+        "assets://particles/halloween/candy-corn.png",
+        "assets://particles/halloween/cauldron.png",
+        "assets://particles/halloween/ghost.png",
+        "assets://particles/halloween/candy.png"
+      ],
+      "speed": 1.25,
+      "count": 50,
+      "size": 7.5,
+      "opacity": 0.8,
+      "windPower": -0.7
     }
   }
 }
