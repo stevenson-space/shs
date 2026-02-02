@@ -3,6 +3,15 @@
     "name": "Halloween",
     "author": "Joseph S. ('22) & Allan H ('28)"
   },
+
+  "visibility": "show",
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The Spooky Halloween Theme"
+  },
+
+  "seasonalDates": "10/20-11/01",
+  
   "styling": {
     "base": "dark",
     "background": "#0f0f0f",
