@@ -17,7 +17,7 @@
     "base": "light",
     "accent": "#be1b00",
     "text": {
-      "primary": "#b38825",
+      "primary": "#83611b",
       "secondary": "#9e2100",
       "tertiary": "var(--primary)"
     },
