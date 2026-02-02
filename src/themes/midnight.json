@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "name": "Midnight",
+    "author": "Nishanth N. ('26) & Allan H. ('28)"
+  },
+  "styling": {
+    "base": "dark",
+    "background": "#1d1d20",
+    "secondaryBackground": "#212124",
+    "accent": "#707070",
+    "text": {
+      "primary": "#818181"
+    },
+    "header": {
+      "background": "#232a31",
+      "scheduleBar": ""
+    },
+    "iconCards": {
+      "regular": "var(--headerBackground)",
+      "invert": "var(--accent)"
+    }
+  }
+}
