@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "name": "St. Patrick's",
+    "author": "Allan H. ('28)",
+    "description": "Look out for special particles!"
+  },
+  "visibility": "show",
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The St. Patrick's Theme ??"
+  },
+  "seasonalDates": "03/03-03/18",
+  "styling": {
+    "base": "dark",
+    "background": "#E1F8D2",
+    "secondaryBackground": "#eefbe6",
+    "accent": "#73a837",
+    "text": {
+      "primary": "#4B4E53"
+    },
+    "header": {
+      "background": "var(--accent)"
+    },
+    "iconCards": {
+      "regular": "#ffffff",
+      "invert": "var(--accent)"
+    },
+    "particles": {
+      "images": [
+        "local://clover.png",
+        "local://clover.png",
+        "local://clover.png",
+        "local://clover.png",
+        "local://clover.png",
+        "local://clover.png",
+        "local://shamrock.png",
+        "local://coin.png"
+      ],
+      "speed": 1.5,
+      "count": 25,
+      "size": 12,
+      "opacity": 1,
+      "windPower": 0
+    }
+  }
+}
