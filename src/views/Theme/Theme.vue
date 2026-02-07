@@ -275,6 +275,22 @@
                 </template>
               </collapsible-section>
 
+              <!-- Submit Theme Info -->
+              <div class="inheritance-info">
+                <font-awesome-icon :icon="icons.faCircleInfo" />
+                <div>
+                  <strong>Share Your Theme:</strong>
+                  <span>
+                    Submit your theme to be considered for the theme presets!
+                  </span>
+                  <rounded-button
+                    class="submit-theme-button"
+                    text="Submit Your Theme"
+                    @click="openThemeForm"
+                  />
+                </div>
+              </div>
+
               <!-- View Less Button -->
               <div style="text-align: center; margin-top: 16px;">
                 <rounded-button
@@ -708,6 +724,10 @@ export default {
       a.click();
       URL.revokeObjectURL(url);
     },
+
+    openThemeForm() {
+      window.open('https://forms.gle/v47ebLsiDKGDcwhr9', '_blank');
+    },
   },
   watch: {
     open: {
@@ -925,6 +945,9 @@ export default {
   span
     color: var(--secondary)
     line-height: 1.4
+
+  .submit-theme-button
+    margin-top: 12px
 
 :deep(.collapsible-section)
   .header-action .checkbox-container
