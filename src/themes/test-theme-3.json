@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "name": "Test Theme 3",
+    "author": "Anonymous"
+  },
+  "styling": {
+    "base": "light",
+    "accent": "#113468",
+    "text": {},
+    "header": {
+      "image": {
+        "full": "local://MuseScore4_tK4G87c213.png"
+      }
+    },
+    "iconCards": {
+      "regular": "#f02f69",
+      "invert": "#225726"
+    },
+    "particles": {
+      "images": [
+        "assets://particles/candy/heart_blue.png"
+      ],
+      "speed": 1,
+      "count": 20,
+      "size": 10,
+      "opacity": 0.8,
+      "windPower": 0
+    }
+  }
+}
