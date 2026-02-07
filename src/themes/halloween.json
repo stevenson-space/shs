@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "Halloween",
-    "author": "Joseph S. ('22)"
+    "author": "Allan H. ('28)"
   },
 
   "visibility": "show",
@@ -11,15 +11,29 @@
   },
 
   "seasonalDates": "10/20-11/01",
-
+  
   "styling": {
     "base": "dark",
     "background": "#0f0f0f",
     "secondaryBackground": "#181a1c",
     "accent": "#cc611b",
-
     "header": {
       "background": "var(--accent)"
+    },
+    "iconCards": {},
+    "particles": {
+      "images": [
+        "assets://particles/halloween/pumpkin.png",
+        "assets://particles/halloween/candy-corn.png",
+        "assets://particles/halloween/cauldron.png",
+        "assets://particles/halloween/ghost.png",
+        "assets://particles/halloween/candy.png"
+      ],
+      "speed": 1,
+      "count": 15,
+      "size": 12,
+      "opacity": 0.8,
+      "windPower": -0.7
     }
   }
 }

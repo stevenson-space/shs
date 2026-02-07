@@ -1,9 +1,9 @@
 {
   "metadata": {
     "name": "Fall",
-    "author": "Joseph S. ('22)"
+    "author": "Allan H. ('28)"
   },
-
+	
   "visibility": "show",
   "recommended": {
     "timing": "season",
@@ -11,14 +11,26 @@
   },
 
   "seasonalDates": "09/16-12/15",
-
+	
   "styling": {
     "base": "light",
-
     "accent": "#d26f1e",
-
     "header": {
       "background": "#df9920"
+    },
+    "iconCards": {},
+    "particles": {
+      "images": [
+        "assets://particles/fall/leaf-1.png",
+        "assets://particles/fall/leaf-2.png",
+        "assets://particles/fall/leaf-3.png"
+      ],
+      "speed": 2.8,
+      "count": 35,
+      "size": 12,
+      "opacity": 0.8,
+      "windPower": 3.25
     }
   }
 }
+
