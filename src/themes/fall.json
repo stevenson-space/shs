@@ -15,7 +15,6 @@
   "styling": {
     "base": "light",
     "accent": "#d26f1e",
-    "text": {},
     "header": {
       "background": "#df9920"
     },
