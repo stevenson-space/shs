@@ -30,9 +30,9 @@
         "assets://particles/halloween/ghost.png",
         "assets://particles/halloween/candy.png"
       ],
-      "speed": 1.25,
-      "count": 50,
-      "size": 7.5,
+      "speed": 1,
+      "count": 15,
+      "size": 12,
       "opacity": 0.8,
       "windPower": -0.7
     }
