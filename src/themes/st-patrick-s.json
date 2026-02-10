@@ -27,14 +27,13 @@
     },
     "particles": {
       "images": [
-        "local://clover.png",
-        "local://clover.png",
-        "local://clover.png",
-        "local://clover.png",
-        "local://clover.png",
-        "local://clover.png",
-        "local://shamrock.png",
-        "local://coin.png"
+        "assets://particles/st-patricks/shamrock.png",
+        "assets://particles/st-patricks/shamrock.png",
+        "assets://particles/st-patricks/shamrock.png",
+        "assets://particles/st-patricks/shamrock.png",
+        "assets://particles/st-patricks/shamrock.png",
+        "assets://particles/st-patricks/clover.png",
+        "assets://particles/st-patricks/coin.png"
       ],
       "speed": 1.5,
       "count": 25,
