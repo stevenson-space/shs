@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "name": "Dark blue",
+    "author": "Matt v. ('29)",
+    "description": "It is blue cross black"
+  },
+  "styling": {
+    "base": "dark",
+    "accent": "#00a1d8",
+    "text": {},
+    "header": {},
+    "iconCards": {
+      "regular": ""
+    }
+  }
+}
