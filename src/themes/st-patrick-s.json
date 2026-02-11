@@ -2,14 +2,14 @@
   "metadata": {
     "name": "St. Patrick's",
     "author": "Allan H. ('28)",
-    "description": "Look out for special particles!"
+    "description": "Look out for the lucky clover!"
   },
   "visibility": "show",
   "recommended": {
     "timing": "season",
     "message": "[Try] The St. Patrick's Theme ☘️"
   },
-  "seasonalDates": "03/03-03/18",
+  "seasonalDates": "03/06-03/20",
   "styling": {
     "base": "dark",
     "background": "#E1F8D2",
