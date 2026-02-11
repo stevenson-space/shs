@@ -10,25 +10,20 @@
     "message": "[Try] The New Valentine's Day Theme 💕"
   },
 
-  "seasonalDates": "02/08-02/15",
+  "seasonalDates": "02/08-02/17",
 
   "styling": {
     "base": "light",
     "background": "#fff3f3",
     "secondaryBackground": "#ffe5e5",
-    "accent": "#da5552",
+    "accent": "#d15552",
     "text": {
-      "primary": "#9e2100",
-      "secondary": "var(--primary)",
-      "tertiary": "var(--primary)"
-    },
-    "header": {
-      "background": "",
-      "scheduleBar": ""
+      "primary": "#785800",
+      "secondary": "#a67b01",
+      "tertiary": "#d19d01"
     },
     "iconCards": {
-      "regular": "var(--secondaryBackground)",
-      "invert": ""
+      "regular": "var(--secondaryBackground)"
     },
     "particles": {
       "images": [
