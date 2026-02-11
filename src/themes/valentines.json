@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "name": "Valentine's Day",
+    "author": "Allan H. ('28)"
+  },
+
+  "visibility": "show",
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The New Valentine's Day Theme 💕"
+  },
+
+  "seasonalDates": "02/08-02/17",
+
+  "styling": {
+    "base": "light",
+    "background": "#fff3f3",
+    "secondaryBackground": "#ffe5e5",
+    "accent": "#d15552",
+    "text": {
+      "primary": "#785800",
+      "secondary": "#a67b01",
+      "tertiary": "#d19d01"
+    },
+    "iconCards": {
+      "regular": "var(--secondaryBackground)"
+    },
+    "particles": {
+      "images": [
+        "assets://particles/candy/heart_pink.png",
+        "assets://particles/heart_red.png",
+        "assets://particles/heart_gold.png"
+      ],
+      "speed": 2.6,
+      "count": 160,
+      "size": 8,
+      "opacity": 0.8,
+      "windPower": 0.8
+    }
+  }
+}
