@@ -31,6 +31,8 @@ import PatriotDollars from '@/assets/links/Patriot Dollars.png';
 import Canvas from '@/assets/links/Canvas.png';
 import SHSMaps from '@/assets/links/SHSMaps.png';
 import GiveAThon from '@/assets/links/GiveAThon.png';
+import StevensonClubs from '@/assets/links/StevensonClubs.png';
+import PatriotPalooza from '@/assets/links/PatriotPalooza.png';
 
 export default {
   components: {
@@ -50,6 +52,8 @@ export default {
         { name: 'GiveAThon', url: 'https://shsgiveathon.com/', image: GiveAThon },
         { name: 'Peer Tutors', desc: 'Must be logged in using school Google account', url: 'https://sites.google.com/d125.org/peer-tutors/content-database', image: PeerTutors },
         { name: 'Patriot Dollars', url: 'https://get.cbord.com/d125/full/login.php', image: PatriotDollars },
+        { name: 'Activities Database', url: 'https://stevensonclubs.space/database', image: StevensonClubs },
+        { name: 'Patriot Palooza', url: 'https://patriotpalooza.netlify.app/', image: PatriotPalooza },
       ],
     };
   },
