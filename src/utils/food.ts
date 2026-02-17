@@ -16,7 +16,7 @@ interface NutritionalInfo {
   protein_g: number;
 }
 
-type Allergen = "Egg" | "Gluten" | "Milk" | "Sesame" | "Soy" | "Wheat";
+type Allergen = "Egg" | "Fish" | "Gluten" | "Milk" | "MSG" | "Mustard" | "Sesame" | "Soy" | "Sulphites" | "Wheat";
 
 interface FoodItemMetaData {
   name: string;
