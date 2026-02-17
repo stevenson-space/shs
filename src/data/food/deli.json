@@ -1,0 +1,640 @@
+[
+  {
+    "metadata": {
+      "name": "White Bread",
+      "recipe": 11222
+    },
+    "nutrition": {
+      "serving_size": "1 slice",
+      "calories": 70,
+      "fat_calories": 10,
+      "total_fat_g": 1.0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 135.0,
+      "total_carbs_g": 13.0,
+      "fiber_g": 0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 3.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Wheat Bread",
+      "recipe": 12186
+    },
+    "nutrition": {
+      "serving_size": "1 slice",
+      "calories": 70,
+      "fat_calories": 10,
+      "total_fat_g": 1.0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 135.0,
+      "total_carbs_g": 13.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 2.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "9-Grain Wheat",
+      "recipe": 80071
+    },
+    "nutrition": {
+      "serving_size": "1 slice",
+      "calories": 130,
+      "fat_calories": 18,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 280.0,
+      "total_carbs_g": 25.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 3.0,
+      "protein_g": 5.0
+    },
+    "allergens": ["Gluten", "Sesame", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Pretzel Bun",
+      "recipe": 83096
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 360,
+      "fat_calories": 16,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0.65,
+      "sodium_mg": 530.0,
+      "total_carbs_g": 64.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 0,
+      "protein_g": 12.0
+    },
+    "allergens": ["Milk", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Medium Kaiser",
+      "recipe": 33224
+    },
+    "nutrition": {
+      "serving_size": "1 roll",
+      "calories": 120,
+      "fat_calories": 10,
+      "total_fat_g": 1.0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 240.0,
+      "total_carbs_g": 22.0,
+      "fiber_g": 0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0,
+      "protein_g": 4.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "French Roll",
+      "recipe": 31197
+    },
+    "nutrition": {
+      "serving_size": "1 Roll",
+      "calories": 150,
+      "fat_calories": 9,
+      "total_fat_g": 1.0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 340.0,
+      "total_carbs_g": 27.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 6.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "12\" Flour Tortilla",
+      "recipe": 727271
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 290,
+      "fat_calories": 72,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 570.0,
+      "total_carbs_g": 48.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 8.0
+    },
+    "allergens": ["Gluten", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Turkey Breast Sliced",
+      "recipe": 606421
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 50,
+      "fat_calories": 9,
+      "total_fat_g": 1.0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 480.0,
+      "total_carbs_g": 1.0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 9.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Ham",
+      "recipe": 118041
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 60,
+      "fat_calories": 14,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 390.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0,
+      "protein_g": 9.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Roast Beef Sliced",
+      "recipe": 533927
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 50,
+      "fat_calories": 14,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 280.0,
+      "total_carbs_g": 1.0,
+      "fiber_g": 0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 12.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Salami Sliced",
+      "recipe": 612510
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 220,
+      "fat_calories": 180,
+      "total_fat_g": 20.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 55.0,
+      "sodium_mg": 950.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0,
+      "protein_g": 11.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Hummus",
+      "recipe": 357374
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 70,
+      "fat_calories": 49,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 130.0,
+      "total_carbs_g": 4.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 2.0
+    },
+    "allergens": ["Sesame", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Buffalo Chicken",
+      "recipe": 96354
+    },
+    "nutrition": {
+      "serving_size": "1 tender",
+      "calories": 130,
+      "fat_calories": 80,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 15.0,
+      "sodium_mg": 570.0,
+      "total_carbs_g": 8.0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 6.0
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "BBQ Chicken",
+      "recipe": 96366
+    },
+    "nutrition": {
+      "serving_size": "1 tender",
+      "calories": 160,
+      "fat_calories": 80,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 15.0,
+      "sodium_mg": 290.0,
+      "total_carbs_g": 15.0,
+      "fiber_g": 0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0,
+      "protein_g": 6.0
+    },
+    "allergens": ["Egg", "Gluten", "Mustard", "Soy", "Sulphites", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Bacon",
+      "recipe": 80368
+    },
+    "nutrition": {
+      "serving_size": "2 Slices",
+      "calories": 100,
+      "fat_calories": 90,
+      "total_fat_g": 10.0,
+      "saturated_fat_g": 3.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 15.0,
+      "sodium_mg": 180.0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 3.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Swiss Cheese",
+      "recipe": 863976
+    },
+    "nutrition": {
+      "serving_size": "2 slices",
+      "calories": 110,
+      "fat_calories": 81,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 50.0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 8.0
+    },
+    "allergens": ["Milk"]
+  },
+  {
+    "metadata": {
+      "name": "Cheddar Cheese",
+      "recipe": 250711
+    },
+    "nutrition": {
+      "serving_size": "2 slices",
+      "calories": 110,
+      "fat_calories": 81,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 170.0,
+      "total_carbs_g": 1.0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": ["Milk"]
+  },
+  {
+    "metadata": {
+      "name": "Pepper Jack Cheese",
+      "recipe": 706231
+    },
+    "nutrition": {
+      "serving_size": "2 slices",
+      "calories": 100,
+      "fat_calories": 72,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 180.0,
+      "total_carbs_g": 1.0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 7.0
+    },
+    "allergens": ["Milk"]
+  },
+  {
+    "metadata": {
+      "name": "Provolone",
+      "recipe": 445101
+    },
+    "nutrition": {
+      "serving_size": "2 slices",
+      "calories": 100,
+      "fat_calories": 72,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 240.0,
+      "total_carbs_g": 1.0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 7.0
+    },
+    "allergens": ["Milk"]
+  },
+  {
+    "metadata": {
+      "name": "American Cheese",
+      "recipe": 814241
+    },
+    "nutrition": {
+      "serving_size": "2 slices",
+      "calories": 90,
+      "fat_calories": 72,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 460.0,
+      "total_carbs_g": 1.0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 5.0
+    },
+    "allergens": ["Milk"]
+  },
+  {
+    "metadata": {
+      "name": "Swiss American Cheese",
+      "recipe": 206880
+    },
+    "nutrition": {
+      "serving_size": "2 Slices",
+      "calories": 100,
+      "fat_calories": 72,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 490.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 5.0
+    },
+    "allergens": ["Milk", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Mayonnaise",
+      "recipe": 451474
+    },
+    "nutrition": {
+      "serving_size": "1 Tablespoon",
+      "calories": 100,
+      "fat_calories": 99,
+      "total_fat_g": 11.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 10.0,
+      "sodium_mg": 80.0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": ["Egg", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Mustard",
+      "recipe": 741270
+    },
+    "nutrition": {
+      "serving_size": "1 Teaspoon",
+      "calories": 0,
+      "fat_calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 55.0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": ["Mustard"]
+  },
+  {
+    "metadata": {
+      "name": "Ranch",
+      "recipe": 759082
+    },
+    "nutrition": {
+      "serving_size": "2 Tablespoon",
+      "calories": 120,
+      "fat_calories": 117,
+      "total_fat_g": 13.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 10.0,
+      "sodium_mg": 250.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 0
+    },
+    "allergens": ["Egg", "MSG", "Milk", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Honey Mustard",
+      "recipe": 636690
+    },
+    "nutrition": {
+      "serving_size": "2 Tablespoons",
+      "calories": 130,
+      "fat_calories": 108,
+      "total_fat_g": 12.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 170.0,
+      "total_carbs_g": 7.0,
+      "fiber_g": 0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 6.0,
+      "protein_g": 1.0
+    },
+    "allergens": ["Egg", "Mustard", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Chipotle Mayonnaise",
+      "recipe": 199431
+    },
+    "nutrition": {
+      "serving_size": "1 Tablespoon",
+      "calories": 90,
+      "fat_calories": 90,
+      "total_fat_g": 10.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 115.0,
+      "total_carbs_g": 1.0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": ["Egg", "Mustard", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Italian Dressing",
+      "recipe": 281821
+    },
+    "nutrition": {
+      "serving_size": "2 Tablespoons",
+      "calories": 140,
+      "fat_calories": 126,
+      "total_fat_g": 14.0,
+      "saturated_fat_g": 2.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 290.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 2.0,
+      "protein_g": 0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Tuna Salad",
+      "recipe": 34603793
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 110,
+      "fat_calories": 90,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 180.0,
+      "total_carbs_g": 0.5,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 6.0
+    },
+    "allergens": ["Egg", "Fish", "Mustard", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Salad",
+      "recipe": 173903787
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 140,
+      "fat_calories": 100,
+      "total_fat_g": 11.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 115.0,
+      "total_carbs_g": 0.5,
+      "fiber_g": 0,
+      "total_sugar_g": 0.5,
+      "added_sugar_g": 0,
+      "protein_g": 8.0
+    },
+    "allergens": ["Egg", "Mustard", "Soy"]
+  }
+]
