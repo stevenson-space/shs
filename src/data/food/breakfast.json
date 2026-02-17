@@ -1,0 +1,706 @@
+[
+  {
+    "metadata": {
+      "name": "Scrambled Eggs",
+      "recipe": 81193
+    },
+    "nutrition": {
+      "serving_size": "4 oz Portion",
+      "calories": 190,
+      "fat_calories": 120,
+      "total_fat_g": 13.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 505.0,
+      "sodium_mg": 190.0,
+      "total_carbs_g": 0.5,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 17.0
+    },
+    "allergens": ["Egg", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Scrambled Eggs with Cheese",
+      "recipe": 3734
+    },
+    "nutrition": {
+      "serving_size": "4 oz Portion",
+      "calories": 250,
+      "fat_calories": 160,
+      "total_fat_g": 18.0,
+      "saturated_fat_g": 8.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 425.0,
+      "sodium_mg": 300.0,
+      "total_carbs_g": 1.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.5,
+      "added_sugar_g": 0.0,
+      "protein_g": 19.0
+    },
+    "allergens": ["Egg", "Milk", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Turkey Sausage Links",
+      "recipe": 123651
+    },
+    "nutrition": {
+      "serving_size": "2 Links",
+      "calories": 100,
+      "fat_calories": 45,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 380.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 8.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Turkey Sausage Patty",
+      "recipe": 227241
+    },
+    "nutrition": {
+      "serving_size": "1 Patty",
+      "calories": 90,
+      "fat_calories": 63,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 280.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 7.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Pork Sausage Links",
+      "recipe": 426983
+    },
+    "nutrition": {
+      "serving_size": "2 Links",
+      "calories": 200,
+      "fat_calories": 19,
+      "total_fat_g": 170.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 35.0,
+      "sodium_mg": 390.0,
+      "total_carbs_g": 0.5,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 6.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Pork Sausage Patty",
+      "recipe": 427005
+    },
+    "nutrition": {
+      "serving_size": "1 Patty",
+      "calories": 180,
+      "fat_calories": 160,
+      "total_fat_g": 17.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 300.0,
+      "total_carbs_g": 0.5,
+      "fiber_g": 0.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 5.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Tater Tots",
+      "recipe": 502
+    },
+    "nutrition": {
+      "serving_size": "4 oz Portion",
+      "calories": 340,
+      "fat_calories": 24,
+      "total_fat_g": 27.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 420.0,
+      "total_carbs_g": 23.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 3.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Breakfast Potatoes",
+      "recipe": 271880
+    },
+    "nutrition": {
+      "serving_size": "3 oz Portion",
+      "calories": 110,
+      "fat_calories": 36,
+      "total_fat_g": 4.0,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 440.0,
+      "total_carbs_g": 20.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 2.0
+    },
+    "allergens": ["Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Chorizo Crumbled",
+      "recipe": 51830
+    },
+    "nutrition": {
+      "serving_size": "2 oz Portion",
+      "calories": 170,
+      "fat_calories": 130,
+      "total_fat_g": 14.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 400.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.5,
+      "added_sugar_g": 0.0,
+      "protein_g": 8.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Peppers & Onions",
+      "recipe": 266751
+    },
+    "nutrition": {
+      "serving_size": "6 oz Portion",
+      "calories": 45,
+      "fat_calories": 4,
+      "total_fat_g": 0.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 290.0,
+      "total_carbs_g": 9.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "12\" Flour Tortilla",
+      "recipe": 727271
+    },
+    "nutrition": {
+      "serving_size": "1 Tortilla",
+      "calories": 290,
+      "fat_calories": 72,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 570.0,
+      "total_carbs_g": 48.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 8.0
+    },
+    "allergens": ["Wheat", "Gluten"]
+  },
+  {
+    "metadata": {
+      "name": "Buttermilk Pancakes",
+      "recipe": 301820
+    },
+    "nutrition": {
+      "serving_size": "3 Pancakes",
+      "calories": 280,
+      "fat_calories": 81,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 590.0,
+      "total_carbs_g": 45.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 11.0,
+      "added_sugar_g": 11.0,
+      "protein_g": 6.0
+    },
+    "allergens": ["Wheat", "Gluten", "Milk", "Soy", "Egg"]
+  },
+  {
+    "metadata": {
+      "name": "Round Waffle",
+      "recipe": 103452
+    },
+    "nutrition": {
+      "serving_size": "2 Waffles",
+      "calories": 180,
+      "fat_calories": 45,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 330.0,
+      "total_carbs_g": 30.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 4.0,
+      "protein_g": 4.0
+    },
+    "allergens": ["Wheat", "Gluten", "Milk", "Egg", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Belgian Waffle",
+      "recipe": 113821
+    },
+    "nutrition": {
+      "serving_size": "1 Waffle",
+      "calories": 180,
+      "fat_calories": 50,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 370.0,
+      "total_carbs_g": 27.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 3.0
+    },
+    "allergens": ["Egg", "Milk", "Soy", "Wheat", "Gluten"]
+  },
+  {
+    "metadata": {
+      "name": "Thick Slice French Toast",
+      "recipe": 385029
+    },
+    "nutrition": {
+      "serving_size": "1 Slice",
+      "calories": 190,
+      "fat_calories": 27,
+      "total_fat_g": 3.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 500.0,
+      "total_carbs_g": 34.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 3.5,
+      "protein_g": 7.0
+    },
+    "allergens": ["Egg", "Milk", "Soy", "Wheat", "Gluten"]
+  },
+  {
+    "metadata": {
+      "name": "Pancake Syrup",
+      "recipe": 131857
+    },
+    "nutrition": {
+      "serving_size": "2.5 oz",
+      "calories": 260,
+      "fat_calories": 0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 120.0,
+      "total_carbs_g": 66.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 43.0,
+      "added_sugar_g": 42.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Plain Bagel",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Bagel",
+      "calories": 250,
+      "fat_calories": 18,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 580.0,
+      "total_carbs_g": 48.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 10.0
+    },
+    "allergens": ["Wheat", "Gluten", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Asiago Bagel",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Bagel",
+      "calories": 250,
+      "fat_calories": 18,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 580.0,
+      "total_carbs_g": 48.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 10.0
+    },
+    "allergens": ["Wheat", "Gluten", "Soy", "Milk"]
+  },
+  {
+    "metadata": {
+      "name": "Chocolate Chip Bagel",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Bagel",
+      "calories": 250,
+      "fat_calories": 18,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 580.0,
+      "total_carbs_g": 48.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 10.0
+    },
+    "allergens": ["Wheat", "Gluten", "Soy", "Milk"]
+  },
+  {
+    "metadata": {
+      "name": "Blueberry Bagel",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Bagel",
+      "calories": 250,
+      "fat_calories": 18,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 580.0,
+      "total_carbs_g": 48.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 10.0
+    },
+    "allergens": ["Wheat", "Gluten", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Everything Bagel",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Bagel",
+      "calories": 250,
+      "fat_calories": 18,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 580.0,
+      "total_carbs_g": 48.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 10.0
+    },
+    "allergens": ["Wheat", "Gluten", "Soy", "Sesame"]
+  },
+  {
+    "metadata": {
+      "name": "Vanilla Yogurt Low Fat",
+      "recipe": 811500
+    },
+    "nutrition": {
+      "serving_size": "1 oz Portion",
+      "calories": 25,
+      "fat_calories": 0,
+      "total_fat_g": 0.75,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 15.0,
+      "total_carbs_g": 5.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 3.0,
+      "protein_g": 0.5
+    },
+    "allergens": ["Milk"]
+  },
+  {
+    "metadata": {
+      "name": "Greek Yogurt Vanilla Fat Free",
+      "recipe": 673251
+    },
+    "nutrition": {
+      "serving_size": "1 oz Portion",
+      "calories": 22,
+      "fat_calories": 0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 2.0,
+      "sodium_mg": 8.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 17.0,
+      "added_sugar_g": 11.0,
+      "protein_g": 2.0
+    },
+    "allergens": ["Milk"]
+  },
+  {
+    "metadata": {
+      "name": "Strawberry Yogurt Low Fat",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 oz Portion",
+      "calories": 22,
+      "fat_calories": 2,
+      "total_fat_g": 0.25,
+      "saturated_fat_g": 0.16,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 2.0,
+      "sodium_mg": 14.0,
+      "total_carbs_g": 4.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 2.0,
+      "protein_g": 1.0
+    },
+    "allergens": ["Milk"]
+  },
+  {
+    "metadata": {
+      "name": "Cottage Cheese",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 oz Portion",
+      "calories": 23,
+      "fat_calories": 4,
+      "total_fat_g": 0.5,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 4.0,
+      "sodium_mg": 90.0,
+      "total_carbs_g": 1.25,
+      "fiber_g": 0.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 3.0
+    },
+    "allergens": ["Milk"]
+  },
+  {
+    "metadata": {
+      "name": "Grapes",
+      "recipe": 61986
+    },
+    "nutrition": {
+      "serving_size": "1 oz Portion",
+      "calories": 20,
+      "fat_calories": 0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 5.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Pineapple Fresh",
+      "recipe": 12081
+    },
+    "nutrition": {
+      "serving_size": "1 oz Portion",
+      "calories": 15,
+      "fat_calories": 0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 4.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Strawberries Fresh",
+      "recipe": 61995
+    },
+    "nutrition": {
+      "serving_size": "1 oz Portion",
+      "calories": 10,
+      "fat_calories": 0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0.5,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Blueberries Fresh",
+      "recipe": 80015
+    },
+    "nutrition": {
+      "serving_size": "1 oz Portion",
+      "calories": 15,
+      "fat_calories": 0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 4.0,
+      "fiber_g": 0.5,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Canned Peaches",
+      "recipe": 268348
+    },
+    "nutrition": {
+      "serving_size": "1 oz Portion",
+      "calories": 15,
+      "fat_calories": 0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 1.25,
+      "total_carbs_g": 4.0,
+      "fiber_g": 0.25,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 1.25,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Granola Oat & Honey",
+      "recipe": 711644
+    },
+    "nutrition": {
+      "serving_size": "1 oz Portion",
+      "calories": 120,
+      "fat_calories": 41,
+      "total_fat_g": 4.5,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 95.0,
+      "total_carbs_g": 19.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 7.0,
+      "protein_g": 2.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Chocolate Chips",
+      "recipe": 242115
+    },
+    "nutrition": {
+      "serving_size": "1 Tablespoon",
+      "calories": 70,
+      "fat_calories": 36,
+      "total_fat_g": 4.0,
+      "saturated_fat_g": 2.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 10.0,
+      "fiber_g": 0.5,
+      "total_sugar_g": 9.0,
+      "added_sugar_g": 9.0,
+      "protein_g": 0.5
+    },
+    "allergens": ["Milk", "Soy"]
+  }
+]
