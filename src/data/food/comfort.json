@@ -1,0 +1,1080 @@
+[
+  {
+    "metadata": {
+      "name": "Cheese Tortellini Marinara",
+      "recipe": 63149
+    },
+    "nutrition": {
+      "serving_size": "6 oz",
+      "calories": 210,
+      "fat_calories": 35,
+      "total_fat_g": 4.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 35.0,
+      "sodium_mg": 620.0,
+      "total_carbs_g": 36.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0,
+      "protein_g": 9.0
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Thigh",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 180,
+      "fat_calories": 90,
+      "total_fat_g": 10.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 100.0,
+      "sodium_mg": 210.0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 21.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Allspice",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1/4 tsp",
+      "calories": 0,
+      "fat_calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Garlic Granulated",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1/4 tsp",
+      "calories": 0,
+      "fat_calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Cloves",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1/4 tsp",
+      "calories": 0,
+      "fat_calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Cinnamon",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1/4 tsp",
+      "calories": 0,
+      "fat_calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Nutmeg",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1/4 tsp",
+      "calories": 0,
+      "fat_calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Cardamom",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1/4 tsp",
+      "calories": 0,
+      "fat_calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Chili Powder",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1/4 tsp",
+      "calories": 2.5,
+      "fat_calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 19.0,
+      "total_carbs_g": 0.25,
+      "fiber_g": 0.25,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Oregano",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1/4 tsp",
+      "calories": 0,
+      "fat_calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Pita Bread",
+      "recipe": 472068
+    },
+    "nutrition": {
+      "serving_size": "1/2 Pita",
+      "calories": 115,
+      "fat_calories": 27,
+      "total_fat_g": 3.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 180.0,
+      "total_carbs_g": 19.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 3.5
+    },
+    "allergens": ["Wheat", "Gluten", "Soy", "Sulphites"]
+  },
+  {
+    "metadata": {
+      "name": "Homemade Beef Meatloaf",
+      "recipe": 68137
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 340,
+      "fat_calories": 220,
+      "total_fat_g": 24.0,
+      "saturated_fat_g": 10.0,
+      "trans_fat_g": 1.5,
+      "cholesterol_mg": 95.0,
+      "sodium_mg": 570.0,
+      "total_carbs_g": 14.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0,
+      "protein_g": 18.0
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Sesame", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Brown Gravy",
+      "recipe": 12881
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 30,
+      "fat_calories": 5,
+      "total_fat_g": 1.0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 135.0,
+      "total_carbs_g": 5.0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0.5
+    },
+    "allergens": ["Soy", "Sulphites"]
+  },
+  {
+    "metadata": {
+      "name": "Korean Tofu Stir Fry",
+      "recipe": 43946
+    },
+    "nutrition": {
+      "serving_size": "6 oz",
+      "calories": 170,
+      "fat_calories": 110,
+      "total_fat_g": 12.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 85.0,
+      "total_carbs_g": 7.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 11.0,
+      "protein_g": 0
+    },
+    "allergens": ["Wheat", "Soy", "Sesame", "Gluten"]
+  },
+  {
+    "metadata": {
+      "name": "Baked Mostaccioli",
+      "recipe": 48971
+    },
+    "nutrition": {
+      "serving_size": "4 oz + Sauce",
+      "calories": 260,
+      "fat_calories": 45,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 450.0,
+      "total_carbs_g": 47.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 0,
+      "protein_g": 10.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Bbq Pulled Chicken Sandwich",
+      "recipe": 59869
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 280,
+      "fat_calories": 45,
+      "total_fat_g": 5.5,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 60.0,
+      "sodium_mg": 590.0,
+      "total_carbs_g": 35.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 8.0,
+      "added_sugar_g": 5.0,
+      "protein_g": 24.0
+    },
+    "allergens": ["Gluten", "Mustard", "Sesame", "Soy", "Sulphites", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Blackened Tilapia",
+      "recipe": 57024
+    },
+    "nutrition": {
+      "serving_size": "1 Portion",
+      "calories": 100,
+      "fat_calories": 15,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 0.05,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 380.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 0.5,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 18.0
+    },
+    "allergens": ["Fish"]
+  },
+  {
+    "metadata": {
+      "name": "Veggie Chilaquiles",
+      "recipe": 49149
+    },
+    "nutrition": {
+      "serving_size": "1 serving",
+      "calories": 430,
+      "fat_calories": 170,
+      "total_fat_g": 19.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 640.0,
+      "total_carbs_g": 53.0,
+      "fiber_g": 10.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 16.0
+    },
+    "allergens": ["Milk", "Soy", "Sulphites"]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Tatrazini",
+      "recipe": 368714007
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 360,
+      "fat_calories": 160,
+      "total_fat_g": 17.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 940.0,
+      "total_carbs_g": 34.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 8.0,
+      "added_sugar_g": 0,
+      "protein_g": 16.0
+    },
+    "allergens": ["Gluten", "Milk", "Sesame", "Soy", "Sulphites", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Turkey Sloppy Joe on a Bun",
+      "recipe": 51350
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 240,
+      "fat_calories": 60,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 50.0,
+      "sodium_mg": 410.0,
+      "total_carbs_g": 32.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 5.0,
+      "protein_g": 13.0
+    },
+    "allergens": ["Soy", "Wheat", "Gluten", "Sesame"]
+  },
+  {
+    "metadata": {
+      "name": "Roasted Italian Chicken Thigh",
+      "recipe": 92825
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 220,
+      "fat_calories": 130,
+      "total_fat_g": 15.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 95.0,
+      "sodium_mg": 170.0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 20.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Open Face Pot Roast Sandwich",
+      "recipe": 58428
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 380,
+      "fat_calories": 140,
+      "total_fat_g": 15.5,
+      "saturated_fat_g": 5.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 50.0,
+      "sodium_mg": 925.0,
+      "total_carbs_g": 38.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 15.5,
+      "added_sugar_g": 21.0,
+      "protein_g": 0
+    },
+    "allergens": ["Milk", "Wheat", "Soy", "Gluten", "Mustard", "Sulphites"]
+  },
+  {
+    "metadata": {
+      "name": "Vegetable Paella",
+      "recipe": 55575
+    },
+    "nutrition": {
+      "serving_size": "8 oz Cup",
+      "calories": 170,
+      "fat_calories": 5,
+      "total_fat_g": 1.0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 310.0,
+      "total_carbs_g": 36.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0,
+      "protein_g": 4.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "3 Cheese Penne",
+      "recipe": 8745
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 440,
+      "fat_calories": 160,
+      "total_fat_g": 17.0,
+      "saturated_fat_g": 8.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 35.0,
+      "sodium_mg": 540.0,
+      "total_carbs_g": 54.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0,
+      "protein_g": 19.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Falafel Sandwich",
+      "recipe": 211798
+    },
+    "nutrition": {
+      "serving_size": "3 Falafels",
+      "calories": 190,
+      "fat_calories": 80,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 385.0,
+      "total_carbs_g": 18.0,
+      "fiber_g": 0.5,
+      "total_sugar_g": 3.5,
+      "added_sugar_g": 0,
+      "protein_g": 7.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Fried Chicken",
+      "recipe": 55627
+    },
+    "nutrition": {
+      "serving_size": "1 Piece",
+      "calories": 360,
+      "fat_calories": 260,
+      "total_fat_g": 29.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 70.0,
+      "sodium_mg": 880.0,
+      "total_carbs_g": 7.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 18.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Turkey Meatloaf with Chipotle BBQ",
+      "recipe": 81298
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 160,
+      "fat_calories": 60,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 70.0,
+      "sodium_mg": 200.0,
+      "total_carbs_g": 12.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 14.0
+    },
+    "allergens": ["Egg", "Gluten", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Turkey Gravy",
+      "recipe": 86494
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 50,
+      "fat_calories": 30,
+      "total_fat_g": 3.5,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 10.0,
+      "sodium_mg": 75.0,
+      "total_carbs_g": 5.0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0.5
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Chipotle BBQ Sauce",
+      "recipe": 62168
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 45,
+      "fat_calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 380.0,
+      "total_carbs_g": 11.0,
+      "fiber_g": 0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 6.0,
+      "protein_g": 0.5
+    },
+    "allergens": ["Mustard", "Sulphites"]
+  },
+  {
+    "metadata": {
+      "name": "Spicy Whole Wheat Spaghetti",
+      "recipe": 84405
+    },
+    "nutrition": {
+      "serving_size": "1/2 cup",
+      "calories": 80,
+      "fat_calories": 5,
+      "total_fat_g": 0.5,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 75.0,
+      "total_carbs_g": 18.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0,
+      "protein_g": 4.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Sulphites", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Swedish Meatballs",
+      "recipe": 46968
+    },
+    "nutrition": {
+      "serving_size": "3- 1 oz or 6- 1/2 oz meatballs, 2 oz sauce",
+      "calories": 310,
+      "fat_calories": 220,
+      "total_fat_g": 25.0,
+      "saturated_fat_g": 10.0,
+      "trans_fat_g": 1.0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 460.0,
+      "total_carbs_g": 8.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 0.5,
+      "added_sugar_g": 0,
+      "protein_g": 12.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Sulphites", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Egg Noodles",
+      "recipe": 47037
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 160,
+      "fat_calories": 30,
+      "total_fat_g": 3.0,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 70.0,
+      "total_carbs_g": 27.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 6.0
+    },
+    "allergens": ["Egg", "Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Cheese Enchilada Casserole",
+      "recipe": 58231
+    },
+    "nutrition": {
+      "serving_size": "6 oz",
+      "calories": 240,
+      "fat_calories": 120,
+      "total_fat_g": 15.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 660.0,
+      "total_carbs_g": 18.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 12.0
+    },
+    "allergens": ["Gluten", "Milk", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Adobo Roasted Turkey Breast",
+      "recipe": 66166
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 120,
+      "fat_calories": 30,
+      "total_fat_g": 3.5,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 520.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 20.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Cheese Ravioli with Cream Sauce",
+      "recipe": 36531
+    },
+    "nutrition": {
+      "serving_size": "6 oz + 4 oz",
+      "calories": 430,
+      "fat_calories": 54,
+      "total_fat_g": 23.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 70.0,
+      "sodium_mg": 770.0,
+      "total_carbs_g": 43.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 2.5,
+      "added_sugar_g": 0,
+      "protein_g": 14.5
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Orange Chicken with Broccoli",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 500,
+      "fat_calories": 150,
+      "total_fat_g": 16.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 960.0,
+      "total_carbs_g": 81.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 56.0,
+      "added_sugar_g": 0,
+      "protein_g": 10.5
+    },
+    "allergens": ["Egg", "Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Vegetarian Chow Mein",
+      "recipe": 49114
+    },
+    "nutrition": {
+      "serving_size": "6 oz",
+      "calories": 540,
+      "fat_calories": 33,
+      "total_fat_g": 3.0,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 660.0,
+      "total_carbs_g": 52.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0,
+      "protein_g": 14.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Vegetable Lo Mein",
+      "recipe": 37499
+    },
+    "nutrition": {
+      "serving_size": "11.5 oz",
+      "calories": 320,
+      "fat_calories": 50,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 1880.0,
+      "total_carbs_g": 56.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 12.0,
+      "added_sugar_g": 0,
+      "protein_g": 12.0
+    },
+    "allergens": ["Egg", "Gluten", "Sesame", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Beef Broccoli Stir Fry",
+      "recipe": 50228
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 130,
+      "fat_calories": 50,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 320.0,
+      "total_carbs_g": 11.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0,
+      "protein_g": 9.0
+    },
+    "allergens": ["Gluten", "Sesame", "Shellfish", "Soy", "Sulphites", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Baked Glazed Ham",
+      "recipe": 286904306
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 140,
+      "fat_calories": 40,
+      "total_fat_g": 4.5,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 50.0,
+      "sodium_mg": 1420.0,
+      "total_carbs_g": 9.0,
+      "fiber_g": 0,
+      "total_sugar_g": 12.0,
+      "added_sugar_g": 0,
+      "protein_g": 15.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Vegetarian Shepherds Pie",
+      "recipe": 49240
+    },
+    "nutrition": {
+      "serving_size": "1 Portion",
+      "calories": 400,
+      "fat_calories": 170,
+      "total_fat_g": 19.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 10.0,
+      "sodium_mg": 860.0,
+      "total_carbs_g": 52.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0,
+      "protein_g": 10.0
+    },
+    "allergens": ["Gluten", "Milk", "Oats", "Soy", "Sulphites", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Beef Ravioli",
+      "recipe": 5953
+    },
+    "nutrition": {
+      "serving_size": "4 oz + 4oz Sauce",
+      "calories": 280,
+      "fat_calories": 50,
+      "total_fat_g": 5.75,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 725.0,
+      "total_carbs_g": 45.5,
+      "fiber_g": 8.5,
+      "total_sugar_g": 9.5,
+      "added_sugar_g": 0,
+      "protein_g": 12.5
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Breadstick",
+      "recipe": 34071
+    },
+    "nutrition": {
+      "serving_size": "1 Breadstick",
+      "calories": 120,
+      "fat_calories": 15,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 230.0,
+      "total_carbs_g": 22.0,
+      "fiber_g": 0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 4.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Apple Cider Glazed Pork Loin",
+      "recipe": 97055
+    },
+    "nutrition": {
+      "serving_size": "4 oz + 2 oz",
+      "calories": 150,
+      "fat_calories": 50,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 60.0,
+      "sodium_mg": 200.0,
+      "total_carbs_g": 6.0,
+      "fiber_g": 0.5,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0,
+      "protein_g": 19.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Vegetarian Korean Rice Bowl",
+      "recipe": 66991
+    },
+    "nutrition": {
+      "serving_size": "1 Bowl",
+      "calories": 345,
+      "fat_calories": 101,
+      "total_fat_g": 12.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 103.0,
+      "sodium_mg": 968.0,
+      "total_carbs_g": 46.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 10.0,
+      "added_sugar_g": 0,
+      "protein_g": 16.0
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Sesame", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Beef & Mushroom Stroganoff",
+      "recipe": 85316
+    },
+    "nutrition": {
+      "serving_size": "4 oz ladle",
+      "calories": 110,
+      "fat_calories": 50,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 60.0,
+      "total_carbs_g": 6.0,
+      "fiber_g": 0.5,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0,
+      "protein_g": 8.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Sulphites", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Baked Battered Cod",
+      "recipe": 46129
+    },
+    "nutrition": {
+      "serving_size": "2 pieces",
+      "calories": 430,
+      "fat_calories": 290,
+      "total_fat_g": 32.0,
+      "saturated_fat_g": 4.5,
+      "trans_fat_g": 0.5,
+      "cholesterol_mg": 35.0,
+      "sodium_mg": 650.0,
+      "total_carbs_g": 19.0,
+      "fiber_g": 0.5,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 15.0
+    },
+    "allergens": ["Fish", "Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Chopped Steak with Onion Gravy",
+      "recipe": 38993
+    },
+    "nutrition": {
+      "serving_size": "1 Patty + 2oz gravy",
+      "calories": 280,
+      "fat_calories": 169,
+      "total_fat_g": 19.0,
+      "saturated_fat_g": 7.5,
+      "trans_fat_g": 0.5,
+      "cholesterol_mg": 70.0,
+      "sodium_mg": 700.0,
+      "total_carbs_g": 7.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0,
+      "protein_g": 17.5
+    },
+    "allergens": ["Soy", "Sulphites"]
+  },
+  {
+    "metadata": {
+      "name": "Cheese Enchiladas",
+      "recipe": 726250
+    },
+    "nutrition": {
+      "serving_size": "2 enchilladas",
+      "calories": 360,
+      "fat_calories": 130,
+      "total_fat_g": 20.0,
+      "saturated_fat_g": 11.0,
+      "trans_fat_g": 0.5,
+      "cholesterol_mg": 55.0,
+      "sodium_mg": 530.0,
+      "total_carbs_g": 30.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 16.0
+    },
+    "allergens": ["Gluten", "Milk", "Wheat"]
+  }
+]
