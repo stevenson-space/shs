@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "name": "Saturn",
+    "author": "Anna M. ('26)"
+  },
+  "styling": {
+    "base": "dark",
+    "accent": "#f7e0a3",
+    "text": {
+      "primary": "",
+      "secondary": "var(--accent)",
+      "tertiary": "var(--accent)"
+    },
+    "header": {
+      "image": {
+        "full": "local://IMG_1646.jpeg",
+        "mobile": "local://IMG_1646.jpeg"
+      },
+      "background": "",
+      "scheduleBar": "var(--accent)"
+    },
+    "iconCards": {
+      "regular": "var(--background)",
+      "invert": "var(--primary)"
+    },
+    "background": "#240039",
+    "secondaryBackground": "",
+    "particles": {
+      "images": [
+        "local://IMG_1648.png"
+      ],
+      "speed": 4.3,
+      "count": 11,
+      "size": 17,
+      "opacity": 0.39,
+      "windPower": 0
+    }
+  }
+}
