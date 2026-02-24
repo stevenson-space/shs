@@ -10,14 +10,10 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
-export default {
-  props: {
-    icon: { type: Object, required: false, default: () => faQuestionCircle },
-  },
-};
+const { icon = faQuestionCircle } = defineProps<{ icon?: object }>();
 </script>
 
 <style lang="sass" scoped>
