@@ -1,33 +1,31 @@
 import { defineStore } from "pinia";
+import { ref } from "vue";
 
-interface State {
-  grade: string;
-  showPWCSchedule: boolean;
-}
+export default defineStore("grades", () => {
+  const grade = ref('None');
+  const showPWCSchedule = ref(true);
 
-export default defineStore("grades", {
-  state: (): State => ({
-    grade: 'None',
-    showPWCSchedule: true,
-  }),
-  actions: {
-    initializeGrade(): void {
-      if (localStorage.grade) {
-        this.setGrade(localStorage.grade);
-      }
-    },
-    initializeShowPWCSchedule(): void {
-      if (localStorage.showPWCSchedule) {
-        this.setShowPWCSchedule(localStorage.showPWCSchedule === 'true');
-      }
-    },
-    setGrade(grade: string): void {
-      this.grade = grade;
-      localStorage.grade = grade;
-    },
-    setShowPWCSchedule(showPWCSchedule: boolean): void {
-      this.showPWCSchedule = showPWCSchedule;
-      localStorage.showPWCSchedule = showPWCSchedule;
-    },
-  },
+  function initializeGrade(): void {
+    if (localStorage.grade) {
+      setGrade(localStorage.grade);
+    }
+  }
+
+  function initializeShowPWCSchedule(): void {
+    if (localStorage.showPWCSchedule) {
+      setShowPWCSchedule(localStorage.showPWCSchedule === 'true');
+    }
+  }
+
+  function setGrade(value: string): void {
+    grade.value = value;
+    localStorage.grade = value;
+  }
+
+  function setShowPWCSchedule(value: boolean): void {
+    showPWCSchedule.value = value;
+    localStorage.showPWCSchedule = value;
+  }
+
+  return { grade, showPWCSchedule, initializeGrade, initializeShowPWCSchedule, setGrade, setShowPWCSchedule };
 });
