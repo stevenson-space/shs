@@ -13,7 +13,7 @@
           class="chevron"
         />
       </div>
-      <div v-if="$slots.action" class="header-action" @click.stop>
+      <div v-if="slots.action" class="header-action" @click.stop>
         <slot name="action" />
       </div>
     </div>
@@ -25,57 +25,34 @@
   </div>
 </template>
 
-<script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+<script setup lang="ts">
+import { computed, useSlots } from 'vue';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-export default {
-  components: {
-    FontAwesomeIcon,
-  },
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    modelValue: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    headerClass: {
-      type: String,
-      default: '',
-    },
-    lockOpen: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  data() {
-    return {
-      icons: { faChevronRight },
-    };
-  },
-  computed: {
-    isExpanded() {
-      return this.lockOpen ? true : this.modelValue;
-    },
-    showChevron() {
-      return !this.disabled && !this.lockOpen;
-    },
-  },
-  methods: {
-    handleHeaderClick() {
-      if (!this.disabled && !this.lockOpen) {
-        this.$emit('update:modelValue', !this.modelValue);
-      }
-    },
-  },
-};
+const { title, modelValue = false, disabled = false, headerClass = '', lockOpen = false } = defineProps<{
+  title: string
+  modelValue?: boolean
+  disabled?: boolean
+  headerClass?: string
+  lockOpen?: boolean
+}>();
+
+const emit = defineEmits<{
+  'update:modelValue': [value: boolean]
+}>();
+
+const slots = useSlots();
+
+const icons = { faChevronRight };
+
+const isExpanded = computed(() => lockOpen ? true : modelValue);
+const showChevron = computed(() => !disabled && !lockOpen);
+
+function handleHeaderClick() {
+  if (!disabled && !lockOpen) {
+    emit('update:modelValue', !modelValue);
+  }
+}
 </script>
 
 <style lang="sass" scoped>
