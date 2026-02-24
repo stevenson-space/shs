@@ -7,31 +7,22 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+import { useRouter } from 'vue-router';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 
-export default {
-  props: {
-    invert: { type: Boolean, default: true },
-  },
-  data() {
-    return {
-      faHouse,
-    };
-  },
-  methods: {
-    goHome(e) {
-      if (e.pointerType === 'touch') {
-        // if touched, show animation first before going home (computers will see animation on hover)
-        setTimeout(() => {
-          this.$router.push('/');
-        }, 130);
-      } else {
-        this.$router.push('/');
-      }
-    },
-  },
-};
+const { invert = true } = defineProps<{ invert?: boolean }>();
+
+const router = useRouter();
+
+function goHome(e: PointerEvent): void {
+  if (e.pointerType === 'touch') {
+    // if touched, show animation first before going home (computers will see animation on hover)
+    setTimeout(() => router.push('/'), 130);
+  } else {
+    router.push('/');
+  }
+}
 </script>
 
 <style lang="sass" scoped>
