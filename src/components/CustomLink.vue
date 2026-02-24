@@ -10,36 +10,27 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import { computed } from 'vue';
 
-export default defineComponent({
-  props: {
-    href: { type: [String, Object], required: true },
-    type: { type: String, default: '' },
-    newTab: { type: Boolean, default: false },
-  },
-  computed: {
-    linkType(): string | object {
-      if (this.type) {
-        return this.type;
-      }
+const { href, type = '', newTab = false } = defineProps<{
+  href: string | object
+  type?: string
+  newTab?: boolean
+}>();
 
-      // router-link will be used if href is an object or a non URL string
-      // a will be used if href is a URL string (starting with http)
-      // otherwise a plain div will be used
-      const { href } = this;
-      if (href) {
-        return typeof href === 'object' || href.indexOf('http') !== 0 ? 'router-link' : 'a';
-      }
-
-      return 'none';
-    },
-    target(): string {
-      return this.newTab ? '_blank' : '_self';
-    },
-  },
+const linkType = computed((): string => {
+  if (type) return type;
+  // router-link will be used if href is an object or a non URL string
+  // a will be used if href is a URL string (starting with http)
+  // otherwise a plain div will be used
+  if (href) {
+    return typeof href === 'object' || (href as string).indexOf('http') !== 0 ? 'router-link' : 'a';
+  }
+  return 'none';
 });
+
+const target = computed(() => newTab ? '_blank' : '_self');
 </script>
 
 <style lang="sass" scoped>
