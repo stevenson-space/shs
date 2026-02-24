@@ -6,12 +6,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    show: { type: Boolean, required: true },
-  },
-};
+<script setup lang="ts">
+defineProps<{ show: boolean }>();
+defineEmits<{ close: [] }>();
 </script>
 
 <style lang="sass" scoped>
