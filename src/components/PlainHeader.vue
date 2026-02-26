@@ -5,15 +5,10 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import HomeLink from './HomeLink.vue';
 
-export default {
-  components: { HomeLink },
-  props: {
-    title: { type: String, required: true },
-  },
-};
+defineProps<{ title: string }>();
 </script>
 
 <style lang="sass" scoped>

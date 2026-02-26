@@ -10,33 +10,23 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import { computed } from 'vue';
 
-export default defineComponent({
-  props: {
-    date: { type: Date, default: null },
-    name: { type: String, default: '' },
-    direction: {
-      type: String,
-      validator: (str) => str === 'left' || str === 'right',
-      default: 'left',
-    },
-  },
-  computed: {
-    month(): string {
-      if (this.date) {
-        return this.date.toLocaleDateString('en-US', { month: 'short' });
-      }
-      return '';
-    },
-    day(): string {
-      if (this.date) {
-        return this.date.getDate();
-      }
-      return '';
-    },
-  },
+const { date = null, name = '', direction = 'left' } = defineProps<{
+  date?: Date | null
+  name?: string
+  direction?: 'left' | 'right'
+}>();
+
+const month = computed((): string => {
+  if (date) return date.toLocaleDateString('en-US', { month: 'short' });
+  return '';
+});
+
+const day = computed((): string | number => {
+  if (date) return date.getDate();
+  return '';
 });
 </script>
 

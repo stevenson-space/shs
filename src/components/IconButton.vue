@@ -4,21 +4,14 @@
   </button>
 </template>
 
-<script>
-export default {
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  emits: ['click'],
-  methods: {
-    onClick(event) {
-      this.$emit('click', event);
-    },
-  },
-};
+<script setup lang="ts">
+const { disabled = false } = defineProps<{ disabled?: boolean }>();
+
+const emit = defineEmits<{ click: [event: MouseEvent] }>();
+
+function onClick(event: MouseEvent): void {
+  emit('click', event);
+}
 </script>
 
 <style lang="sass" scoped>

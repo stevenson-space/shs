@@ -11,49 +11,47 @@
   </TransitionGroup>
 </template>
 
-<script>
+<script setup lang="ts">
 import gsap from 'gsap';
 
-export default {
-  props: {
-    isColorSelector: { type: Boolean, required: false }, // if it's coming the color selector component
-    align: {
-      validator: (str) => str === 'left' || str === 'right' || str === 'center',
-      default: 'right',
-    },
-    numberOfSlots: { type: Number, default: 0 }, // used if slots will be changed after initial render
-    direction: {
-      validator: (str) => (str === 'up' || str === 'down'),
-      required: true,
-    },
-  },
-  methods: {
-    onBeforeEnter(el) {
-      el.style.opacity = 0;
-    },
-    onEnter(el, done) {
-      const { height } = el.getBoundingClientRect();
-      gsap.to(el, {
-        opacity: 1,
-        y: this.direction === 'down' ? 0 : (-1 * (height + 7.7) * this.numberOfSlots - (height + 15)),
-        height: this.isColorSelector ? '30px' : 'auto',
-        marginBottom: this.isColorSelector ? '0px' : '8px',
-        textAlign: 'left',
-        delay: el.dataset.index * 0.01,
-        onComplete: done,
-        duration: this.numberOfSlots * 0.05,
-      });
-    },
-    onLeave(el, done) {
-      gsap.to(el, {
-        opacity: 0,
-        duration: this.isColorSelector ? 0 : 0.2,
-        delay: this.isColorSelector ? 0 : ((this.numberOfSlots - 1) - el.dataset.index) * (0.2 / this.numberOfSlots),
-        onComplete: done,
-      });
-    },
-  },
-};
+const {
+  isColorSelector = false,
+  align = 'right',
+  numberOfSlots = 0,
+  direction,
+} = defineProps<{
+  isColorSelector?: boolean // if it's coming the color selector component
+  align?: 'left' | 'right' | 'center'
+  numberOfSlots?: number   // used if slots will be changed after initial render
+  direction: 'up' | 'down'
+}>();
+
+function onBeforeEnter(el: Element): void {
+  (el as HTMLElement).style.opacity = '0';
+}
+
+function onEnter(el: Element, done: () => void): void {
+  const { height } = el.getBoundingClientRect();
+  gsap.to(el, {
+    opacity: 1,
+    y: direction === 'down' ? 0 : (-1 * (height + 7.7) * numberOfSlots - (height + 15)),
+    height: isColorSelector ? '30px' : 'auto',
+    marginBottom: isColorSelector ? '0px' : '8px',
+    textAlign: 'left',
+    delay: (el as HTMLElement).dataset.index * 0.01,
+    onComplete: done,
+    duration: numberOfSlots * 0.05,
+  });
+}
+
+function onLeave(el: Element, done: () => void): void {
+  gsap.to(el, {
+    opacity: 0,
+    duration: isColorSelector ? 0 : 0.2,
+    delay: isColorSelector ? 0 : ((numberOfSlots - 1) - (el as HTMLElement).dataset.index) * (0.2 / numberOfSlots),
+    onComplete: done,
+  });
+}
 </script>
 
 <style lang="sass" scoped>

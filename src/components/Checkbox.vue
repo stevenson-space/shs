@@ -10,20 +10,15 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
-export default {
-  props: {
-    modelValue: { type: Boolean, required: true },
-    labelSize: { type: String, default: '.85em' },
-  },
-  data() {
-    return {
-      faCheck,
-    };
-  },
-};
+const { modelValue, labelSize = '.85em' } = defineProps<{
+  modelValue: boolean
+  labelSize?: string
+}>();
+
+defineEmits<{ 'update:modelValue': [value: boolean] }>();
 </script>
 
 <style lang="sass" scoped>

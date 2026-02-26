@@ -5,16 +5,14 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    text: { type: String, default: 'Button' },
-    icon: { type: Object, default: null },
-    invert: { type: Boolean, default: false },
-    circular: { type: Boolean, default: true },
-    showColor: { type: Boolean, default: true },
-  },
-};
+<script setup lang="ts">
+const { text = 'Button', icon = null, invert = false, circular = true, showColor = true } = defineProps<{
+  text?: string
+  icon?: object | null
+  invert?: boolean
+  circular?: boolean
+  showColor?: boolean
+}>();
 </script>
 
 <style lang="sass" scoped>

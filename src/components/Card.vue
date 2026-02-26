@@ -6,72 +6,70 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    shadow: { type: Boolean, default: true },
-    border: { type: Boolean, default: false },
-    wrapperStyle: { type: Object, default: () => {} },
-    ignoreStyleMutations: { type: Boolean, default: false }, // whether to ignore content style mutations when deciding when to recalculate height
-  },
-  data() {
-    return {
-      height: 0,
-      margin: 7,
-      spanValue: 0,
-      mutationObserver: null,
-      debounceTimeout: null,
-    };
-  },
-  computed: {
-    style() {
-      const { height, margin, spanValue } = this;
-      return {
-        height: `${height}px`,
-        margin: `${margin}px`,
-        gridRow: `span ${spanValue}`,
-      };
-    },
-  },
-  mounted() {
-    this.setHeight();
-    // for some reason, card doesn't open to full height on first load
-    setTimeout(this.setHeight, 250);
-    window.addEventListener('resize', this.debounceSetHeight);
-    // The MutationObserver will detect when any children or descendants are added
-    // and when any CSS is changed
-    this.mutationObserver = new MutationObserver(this.setHeight);
-    this.mutationObserver.observe(this.$refs.wrapper, {
-      attributes: true,
-      childList: true,
-      subtree: true,
-      attributeFilter: this.ignoreStyleMutations ? [] : ['style'],
-    });
-  },
-  destroyed() {
-    window.removeEventListener('resize', this.debounceSetHeight);
-    if (this.mutationObserver) {
-      this.mutationObserver.disconnect();
-    }
-  },
-  methods: {
-    // call setHeight() manually from parent component whenever the content (slot) height changes
-    // and the change is undetectable by MutationObserver
-    setHeight() {
-      const { margin, $refs } = this;
-      if ($refs && $refs.wrapper) {
-        this.height = $refs.wrapper.offsetHeight;
-        // Adjust the number of rows the card spans (necessary for the masonry layout to work)
-        this.spanValue = Math.ceil((this.height + margin * 2) / 5); // 5 is row height
-        this.$emit('height-change');
-      }
-    },
-    debounceSetHeight() {
-      clearTimeout(this.debounceTimeout);
-      this.debounceTimeout = setTimeout(() => this.setHeight(), 250);
-    },
-  },
-};
+<script setup lang="ts">
+import { ref, computed, onMounted, onUnmounted, useTemplateRef } from 'vue';
+
+const { shadow = true, border = false, wrapperStyle = {}, ignoreStyleMutations = false } = defineProps<{
+  shadow?: boolean
+  border?: boolean
+  wrapperStyle?: object
+  ignoreStyleMutations?: boolean // whether to ignore content style mutations when deciding when to recalculate height
+}>();
+
+const emit = defineEmits<{ 'height-change': [] }>();
+
+const wrapper = useTemplateRef<HTMLDivElement>('wrapper');
+
+const height = ref(0);
+const margin = 7;
+const spanValue = ref(0);
+let mutationObserver: MutationObserver | null = null;
+let debounceTimeout: ReturnType<typeof setTimeout> | null = null;
+
+const style = computed(() => ({
+  height: `${height.value}px`,
+  margin: `${margin}px`,
+  gridRow: `span ${spanValue.value}`,
+}));
+
+// call setHeight() manually from parent component whenever the content (slot) height changes
+// and the change is undetectable by MutationObserver
+function setHeight(): void {
+  if (wrapper.value) {
+    height.value = wrapper.value.offsetHeight;
+    // Adjust the number of rows the card spans (necessary for the masonry layout to work)
+    spanValue.value = Math.ceil((height.value + margin * 2) / 5); // 5 is row height
+    emit('height-change');
+  }
+}
+
+function debounceSetHeight(): void {
+  clearTimeout(debounceTimeout ?? undefined);
+  debounceTimeout = setTimeout(() => setHeight(), 250);
+}
+
+onMounted(() => {
+  setHeight();
+  // for some reason, card doesn't open to full height on first load
+  setTimeout(setHeight, 250);
+  window.addEventListener('resize', debounceSetHeight);
+  // The MutationObserver will detect when any children or descendants are added
+  // and when any CSS is changed
+  mutationObserver = new MutationObserver(setHeight);
+  mutationObserver.observe(wrapper.value!, {
+    attributes: true,
+    childList: true,
+    subtree: true,
+    attributeFilter: ignoreStyleMutations ? [] : ['style'],
+  });
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', debounceSetHeight);
+  mutationObserver?.disconnect();
+});
+
+defineExpose({ setHeight });
 </script>
 
 <style lang="sass" scoped>

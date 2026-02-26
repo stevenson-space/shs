@@ -23,69 +23,61 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+import { ref, nextTick, useTemplateRef } from 'vue';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
-export default {
-  props: {
-    icon: {
-      type: Object,
-      default: () => faInfoCircle,
-    },
-  },
-  data() {
-    return {
-      isVisible: false,
-      tooltipStyle: {},
-    };
-  },
-  methods: {
-    showTooltip(event) {
-      this.isVisible = true;
-      this.$nextTick(() => {
-        const rect = event.currentTarget.getBoundingClientRect();
-        const tooltip = this.$refs.tooltip;
+const { icon = faInfoCircle } = defineProps<{ icon?: object }>();
 
-        if (tooltip) {
-          const tooltipWidth = tooltip.offsetWidth;
-          const tooltipHeight = tooltip.offsetHeight;
+const tooltip = useTemplateRef<HTMLDivElement>('tooltip');
+const isVisible = ref(false);
+const tooltipStyle = ref<Record<string, string>>({});
 
-          let left = rect.left + rect.width / 2 - tooltipWidth / 2;
-          let top = rect.top - tooltipHeight - 8;
+function showTooltip(event: MouseEvent | FocusEvent): void {
+  isVisible.value = true;
+  nextTick(() => {
+    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
 
-          // Keep within viewport
-          if (left < 10) left = 10;
-          if (left + tooltipWidth > window.innerWidth - 10) {
-            left = window.innerWidth - tooltipWidth - 10;
-          }
-          if (top < 10) top = rect.bottom + 8; // flip to bottom if no room above
+    if (tooltip.value) {
+      const tooltipWidth = tooltip.value.offsetWidth;
+      const tooltipHeight = tooltip.value.offsetHeight;
 
-          // Get current accent color from CSS variables
-          const accentColor = getComputedStyle(document.documentElement)
-            .getPropertyValue('--accent')
-            .trim();
+      let left = rect.left + rect.width / 2 - tooltipWidth / 2;
+      let top = rect.top - tooltipHeight - 8;
 
-          this.tooltipStyle = {
-            left: `${left}px`,
-            top: `${top}px`,
-            background: accentColor,
-            borderColor: accentColor,
-          };
-        }
-      });
-    },
-    hideTooltip() {
-      this.isVisible = false;
-    },
-    toggleTooltip(event) {
-      if (this.isVisible) {
-        this.hideTooltip();
-      } else {
-        this.showTooltip(event);
+      // Keep within viewport
+      if (left < 10) left = 10;
+      if (left + tooltipWidth > window.innerWidth - 10) {
+        left = window.innerWidth - tooltipWidth - 10;
       }
-    },
-  },
-};
+      if (top < 10) top = rect.bottom + 8; // flip to bottom if no room above
+
+      // Get current accent color from CSS variables
+      const accentColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--accent')
+        .trim();
+
+      tooltipStyle.value = {
+        left: `${left}px`,
+        top: `${top}px`,
+        background: accentColor,
+        borderColor: accentColor,
+      };
+    }
+  });
+}
+
+function hideTooltip(): void {
+  isVisible.value = false;
+}
+
+function toggleTooltip(event: MouseEvent): void {
+  if (isVisible.value) {
+    hideTooltip();
+  } else {
+    showTooltip(event);
+  }
+}
 </script>
 
 <style lang="sass" scoped>
