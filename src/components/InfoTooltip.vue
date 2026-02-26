@@ -33,7 +33,7 @@ const tooltip = useTemplateRef<HTMLDivElement>('tooltip');
 const isVisible = ref(false);
 const tooltipStyle = ref<Record<string, string>>({});
 
-function showTooltip(event: MouseEvent): void {
+function showTooltip(event: MouseEvent | FocusEvent): void {
   isVisible.value = true;
   nextTick(() => {
     const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
