@@ -36,7 +36,7 @@ export const Fall: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     await waitFor(() => expect(canvas.getByText('Try')).toBeInTheDocument())
-    await expect(canvas.getByText(/The New Fall Theme/)).toBeInTheDocument()
+    await expect(canvas.getByText(/The Fall Theme/)).toBeInTheDocument()
   },
 }
 
@@ -46,7 +46,7 @@ export const Summer: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     await waitFor(() => expect(canvas.getByText('Try')).toBeInTheDocument())
-    await expect(canvas.getByText(/the new summer theme now/i)).toBeInTheDocument()
+    await expect(canvas.getByText(/the summer theme/i)).toBeInTheDocument()
   },
 }
 
