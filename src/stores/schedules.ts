@@ -89,7 +89,7 @@ export default defineStore('schedules', () => {
 
   function resetSchedules(): void {
     customSchedules.value = {} as CustomSchedules;
-    localStorage.customSchedules = {};
+    localStorage.customSchedules = JSON.stringify({});
   }
 
   function setDefaultScheduleMode(value: string): void {
