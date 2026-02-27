@@ -1,0 +1,4404 @@
+[
+  {
+    "metadata": {
+      "name": "Red Pepper Gouda Bisque",
+      "recipe": 557163
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 280.0,
+      "fat_calories": 180.0,
+      "total_fat_g": 20.0,
+      "saturated_fat_g": 8.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 35.0,
+      "sodium_mg": 830.0,
+      "total_carbs_g": 17.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 12.0,
+      "added_sugar_g": 4.0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Mexican Street Corn Soup",
+      "recipe": 128505
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 140.0,
+      "fat_calories": 60.0,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 3.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 870.0,
+      "total_carbs_g": 19.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 5.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Smokey Poblano Cheese Soup",
+      "recipe": 825600
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 390.0,
+      "fat_calories": 297.0,
+      "total_fat_g": 33.0,
+      "saturated_fat_g": 20.0,
+      "trans_fat_g": 1.0,
+      "cholesterol_mg": 95.0,
+      "sodium_mg": 1100.0,
+      "total_carbs_g": 15.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Cream of Potato Soup",
+      "recipe": 570102
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 320.0,
+      "fat_calories": 144.0,
+      "total_fat_g": 16.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 1720.0,
+      "total_carbs_g": 36.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Butternut Squash Bisque",
+      "recipe": 374850
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 230.0,
+      "fat_calories": 99.0,
+      "total_fat_g": 11.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 310.0,
+      "total_carbs_g": 29.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 5.0,
+      "added_sugar_g": 14.0,
+      "protein_g": 3.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Vegetarian Garden Vegetable Soup",
+      "recipe": 403930
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 140.0,
+      "fat_calories": 9.0,
+      "total_fat_g": 1.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 1540.0,
+      "total_carbs_g": 30.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 5.0,
+      "added_sugar_g": 2.0,
+      "protein_g": 2.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Corn Chowder",
+      "recipe": 527290
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 170.0,
+      "fat_calories": 63.0,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 710.0,
+      "total_carbs_g": 24.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 10.0,
+      "added_sugar_g": 0,
+      "protein_g": 3.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Parmesan Kale & Italian Sausage",
+      "recipe": 239111
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 240.0,
+      "fat_calories": 135.0,
+      "total_fat_g": 15.0,
+      "saturated_fat_g": 8.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 50.0,
+      "sodium_mg": 990.0,
+      "total_carbs_g": 15.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0,
+      "protein_g": 10.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Stuffed Pepper Soup",
+      "recipe": 374860
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 240.0,
+      "fat_calories": 32.0,
+      "total_fat_g": 3.5,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 15.0,
+      "sodium_mg": 710.0,
+      "total_carbs_g": 14.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 5.0
+    },
+    "allergens": [
+      "Gluten",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Italian Wedding Soup",
+      "recipe": 403940
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 80.0,
+      "fat_calories": 20.0,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 10.0,
+      "sodium_mg": 550.0,
+      "total_carbs_g": 12.0,
+      "fiber_g": 0.5,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.5,
+      "protein_g": 5.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Power Wrap",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Wrap",
+      "calories": 540.0,
+      "fat_calories": 175.5,
+      "total_fat_g": 19.55,
+      "saturated_fat_g": 4.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 60.0,
+      "sodium_mg": 981.0,
+      "total_carbs_g": 62.02,
+      "fiber_g": 7.3,
+      "total_sugar_g": 4.68,
+      "added_sugar_g": 0.0,
+      "protein_g": 30.23
+    },
+    "allergens": [
+      "Gluten",
+      "Sesame",
+      "Soy",
+      "Sulphites",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Hummus Avocado Vegetable Wrap",
+      "recipe": 94295
+    },
+    "nutrition": {
+      "serving_size": "1 Wrap",
+      "calories": 430.0,
+      "fat_calories": 160.0,
+      "total_fat_g": 18.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 630.0,
+      "total_carbs_g": 61.0,
+      "fiber_g": 10.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 8.0,
+      "protein_g": 10.0
+    },
+    "allergens": [
+      "Gluten",
+      "Mustard",
+      "Sesame",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Turkey BLT on Multigrain Bread w/Jalapeno Mayonnaise",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 315.0,
+      "fat_calories": 125.0,
+      "total_fat_g": 13.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 37.0,
+      "sodium_mg": 795.0,
+      "total_carbs_g": 28.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 19.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Grilled Pesto Havarti Cheese Sandwich",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 390.0,
+      "fat_calories": 200.0,
+      "total_fat_g": 22.0,
+      "saturated_fat_g": 12.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 710.0,
+      "total_carbs_g": 31.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 16.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Breakfast Croissant Sandwich with Turkey Bacon",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 620.0,
+      "fat_calories": 253.0,
+      "total_fat_g": 28.0,
+      "saturated_fat_g": 9.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 285.0,
+      "sodium_mg": 1270.0,
+      "total_carbs_g": 64.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 5.0,
+      "added_sugar_g": 22.0,
+      "protein_g": 24.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Breakfast Croissant Sandwich with Veggie Sausage",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 640.0,
+      "fat_calories": 226.0,
+      "total_fat_g": 25.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 250.0,
+      "sodium_mg": 1140.0,
+      "total_carbs_g": 71.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 22.0,
+      "protein_g": 32.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Artichoke Puff",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Each",
+      "calories": 523.0,
+      "fat_calories": 270.0,
+      "total_fat_g": 30.0,
+      "saturated_fat_g": 9.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 43.0,
+      "sodium_mg": 773.0,
+      "total_carbs_g": 32.0,
+      "fiber_g": 5.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 30.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Hot Dog Cheese Puff",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Each",
+      "calories": 510.0,
+      "fat_calories": 338.0,
+      "total_fat_g": 37.5,
+      "saturated_fat_g": 17.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 50.0,
+      "sodium_mg": 825.0,
+      "total_carbs_g": 26.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 14.5
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chicken, Turkey Bacon, Ranch Flatbread",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Flatbread",
+      "calories": 710.0,
+      "fat_calories": 225.0,
+      "total_fat_g": 25.0,
+      "saturated_fat_g": 8.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 90.0,
+      "sodium_mg": 1550.0,
+      "total_carbs_g": 57.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 34.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Roasted Tomato Flatbread",
+      "recipe": 84792
+    },
+    "nutrition": {
+      "serving_size": "1 Flatbread",
+      "calories": 450.0,
+      "fat_calories": 210.0,
+      "total_fat_g": 23.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 890.0,
+      "total_carbs_g": 46.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 8.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 13.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Sesame",
+      "Soy",
+      "Sulphites",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Pot Pie",
+      "recipe": 62992
+    },
+    "nutrition": {
+      "serving_size": "1 Pie",
+      "calories": 1010.0,
+      "fat_calories": 540.0,
+      "total_fat_g": 60.0,
+      "saturated_fat_g": 39.0,
+      "trans_fat_g": 0.5,
+      "cholesterol_mg": 65.0,
+      "sodium_mg": 1350.0,
+      "total_carbs_g": 87.0,
+      "fiber_g": 5.0,
+      "total_sugar_g": 8.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 31.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Spicy Roasted Vegetable Flatbread",
+      "recipe": 51852
+    },
+    "nutrition": {
+      "serving_size": "1 Flatbread",
+      "calories": 280.0,
+      "fat_calories": 130.0,
+      "total_fat_g": 14.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 680.0,
+      "total_carbs_g": 29.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 11.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Sesame",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Roasted Sweet Potato Wrap",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Wrap",
+      "calories": 549.0,
+      "fat_calories": 306.0,
+      "total_fat_g": 34.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 1293.0,
+      "total_carbs_g": 46.0,
+      "fiber_g": 15.0,
+      "total_sugar_g": 9.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 23.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Zucchini Bacon Swiss Frittata",
+      "recipe": 212543
+    },
+    "nutrition": {
+      "serving_size": "3 Each",
+      "calories": 330.0,
+      "fat_calories": 210.0,
+      "total_fat_g": 24.0,
+      "saturated_fat_g": 9.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 420.0,
+      "sodium_mg": 330.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 21.0
+    },
+    "allergens": [
+      "Egg",
+      "Milk",
+      "Sulphites"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Grecian Egg White Frittata",
+      "recipe": 98598
+    },
+    "nutrition": {
+      "serving_size": "3 Each",
+      "calories": 150.0,
+      "fat_calories": 30.0,
+      "total_fat_g": 4.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 1.0,
+      "sodium_mg": 720.0,
+      "total_carbs_g": 15.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 9.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 15.0
+    },
+    "allergens": [
+      "Egg",
+      "Milk",
+      "Soy",
+      "Sulphites"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Mozzarella Rollup",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Each",
+      "calories": 405.0,
+      "fat_calories": 104.0,
+      "total_fat_g": 11.5,
+      "saturated_fat_g": 5.625,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 88.75,
+      "sodium_mg": 870.0,
+      "total_carbs_g": 36.5,
+      "fiber_g": 5.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 39.75
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "California Turkey Sandwich",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 527.0,
+      "fat_calories": 167.0,
+      "total_fat_g": 18.0,
+      "saturated_fat_g": 11.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 82.0,
+      "sodium_mg": 1456.0,
+      "total_carbs_g": 38.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0,
+      "protein_g": 37.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Portobello Mushroom and Goat Cheese on Focaccia",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 766.0,
+      "fat_calories": 438.0,
+      "total_fat_g": 28.0,
+      "saturated_fat_g": 10.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 50.0,
+      "sodium_mg": 1106.0,
+      "total_carbs_g": 60.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 11.0,
+      "added_sugar_g": 0,
+      "protein_g": 20.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Sulphites",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Bacon Egg & Cheddar English Muffin",
+      "recipe": 99769
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 330.0,
+      "fat_calories": 150.0,
+      "total_fat_g": 16.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 590.0,
+      "total_carbs_g": 29.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 17.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Caprese Puff Pastry",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 553.0,
+      "fat_calories": 367.0,
+      "total_fat_g": 41.0,
+      "saturated_fat_g": 21.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 51.0,
+      "sodium_mg": 570.0,
+      "total_carbs_g": 28.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0,
+      "protein_g": 27.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Sweet Potato Turnover",
+      "recipe": 97686
+    },
+    "nutrition": {
+      "serving_size": "1 Turnover",
+      "calories": 340.0,
+      "fat_calories": 180.0,
+      "total_fat_g": 20.0,
+      "saturated_fat_g": 8.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 230.0,
+      "total_carbs_g": 35.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 13.0,
+      "added_sugar_g": 4.0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Sulphites",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jalapeno Popper Turnover",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Turnover",
+      "calories": 507.0,
+      "fat_calories": 333.0,
+      "total_fat_g": 37.0,
+      "saturated_fat_g": 19.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 61.0,
+      "sodium_mg": 624.0,
+      "total_carbs_g": 29.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 14.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Blueberry Cobbler Muffin Filled with Cream Cheese",
+      "recipe": 771502
+    },
+    "nutrition": {
+      "serving_size": "5 oz Muffin",
+      "calories": 490.0,
+      "fat_calories": 180.0,
+      "total_fat_g": 20.0,
+      "saturated_fat_g": 4.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 55.0,
+      "sodium_mg": 580.0,
+      "total_carbs_g": 74.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 9.0,
+      "added_sugar_g": 34.0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Cheese Burger Quesadilla",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "Each",
+      "calories": 1255.0,
+      "fat_calories": 735.0,
+      "total_fat_g": 82.0,
+      "saturated_fat_g": 30.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 225.0,
+      "sodium_mg": 1894.0,
+      "total_carbs_g": 56.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 7.5,
+      "added_sugar_g": 5.0,
+      "protein_g": 64.5
+    },
+    "allergens": [
+      "Fish",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Meat Lovers Calzone",
+      "recipe": 95444
+    },
+    "nutrition": {
+      "serving_size": "1 Calzone",
+      "calories": 900.0,
+      "fat_calories": 430.0,
+      "total_fat_g": 47.0,
+      "saturated_fat_g": 18.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 145.0,
+      "sodium_mg": 2550.0,
+      "total_carbs_g": 74.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 12.0,
+      "added_sugar_g": 3.0,
+      "protein_g": 48.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Veggie Lover's Calzone",
+      "recipe": 44821
+    },
+    "nutrition": {
+      "serving_size": "1 Calzone",
+      "calories": 610.0,
+      "fat_calories": 190.0,
+      "total_fat_g": 21.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 35.0,
+      "sodium_mg": 1350.0,
+      "total_carbs_g": 80.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 3.0,
+      "protein_g": 28.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Greek Flatbread",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Flat Bread",
+      "calories": 631.0,
+      "fat_calories": 293.0,
+      "total_fat_g": 32.5,
+      "saturated_fat_g": 24.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 2015.0,
+      "total_carbs_g": 58.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 8.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 20.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Ratatouille",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "10 oz",
+      "calories": 185.0,
+      "fat_calories": 90.0,
+      "total_fat_g": 10.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 980.0,
+      "total_carbs_g": 23.0,
+      "fiber_g": 5.5,
+      "total_sugar_g": 16.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 4.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Parmesan Cheese (Optional)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "2 Teaspoons",
+      "calories": 20.0,
+      "fat_calories": 14.0,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 65.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 2.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Vegetarian Gluten Free Pasta with Vegetables and Cheese",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "8 oz Portion",
+      "calories": 415.0,
+      "fat_calories": 37.0,
+      "total_fat_g": 4.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 10.0,
+      "sodium_mg": 1120.0,
+      "total_carbs_g": 80.5,
+      "fiber_g": 7.5,
+      "total_sugar_g": 8.5,
+      "added_sugar_g": 0.0,
+      "protein_g": 10.0
+    },
+    "allergens": [
+      "Milk",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Avocado Toast",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "Each",
+      "calories": 515.0,
+      "fat_calories": 359.0,
+      "total_fat_g": 39.5,
+      "saturated_fat_g": 5.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 1400.0,
+      "total_carbs_g": 32.0,
+      "fiber_g": 3.5,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.5,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Gluten",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Greek Feta Toast",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "Each",
+      "calories": 470.0,
+      "fat_calories": 261.0,
+      "total_fat_g": 29.0,
+      "saturated_fat_g": 21.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 1390.0,
+      "total_carbs_g": 34.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 2.5,
+      "added_sugar_g": 0.5,
+      "protein_g": 24.5
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Balsamic Strawberry Toast",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "Each",
+      "calories": 470.0,
+      "fat_calories": 171.0,
+      "total_fat_g": 19.5,
+      "saturated_fat_g": 10.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 80.0,
+      "sodium_mg": 350.0,
+      "total_carbs_g": 57.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 15.5,
+      "added_sugar_g": 5.5,
+      "protein_g": 15.0
+    },
+    "allergens": [
+      "Gluten",
+      "Soy",
+      "Sulphites",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Turkey, Smoked Gouda and Arugula Sandwich",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "Each",
+      "calories": 517.5,
+      "fat_calories": 270.0,
+      "total_fat_g": 30.0,
+      "saturated_fat_g": 11.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 93.0,
+      "sodium_mg": 1620.0,
+      "total_carbs_g": 27.0,
+      "fiber_g": 1.5,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 32.5
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "High Protein Veggie Wrap",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Wrap",
+      "calories": 619.6600000000001,
+      "fat_calories": 305.58000000000004,
+      "total_fat_g": 33.94,
+      "saturated_fat_g": 4.67,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 1672.0,
+      "total_carbs_g": 62.0,
+      "fiber_g": 12.0,
+      "total_sugar_g": 8.5,
+      "added_sugar_g": 2.0,
+      "protein_g": 22.0
+    },
+    "allergens": [
+      "Gluten",
+      "Soy",
+      "Sulphites",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Spicy Steak Omelet Burrito",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Burrito",
+      "calories": 740.0,
+      "fat_calories": 292.0,
+      "total_fat_g": 24.0,
+      "saturated_fat_g": 10.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 270.0,
+      "sodium_mg": 1870.0,
+      "total_carbs_g": 129.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 33.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Breakfast Skillet",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "Each",
+      "calories": 468.0,
+      "fat_calories": 286.25,
+      "total_fat_g": 30.75,
+      "saturated_fat_g": 5.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 608.0,
+      "sodium_mg": 660.0,
+      "total_carbs_g": 16.5,
+      "fiber_g": 1.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 24.5
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Power Bites",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "3 Bites",
+      "calories": 280.0,
+      "fat_calories": 100.0,
+      "total_fat_g": 11.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 10.0,
+      "total_carbs_g": 48.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 36.0,
+      "added_sugar_g": 8.0,
+      "protein_g": 4.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Cinnamon Streusel Muffin filled with Caramel",
+      "recipe": 775531
+    },
+    "nutrition": {
+      "serving_size": "1 Muffin",
+      "calories": 560.0,
+      "fat_calories": 261.0,
+      "total_fat_g": 29.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 1.0,
+      "cholesterol_mg": 85.0,
+      "sodium_mg": 680.0,
+      "total_carbs_g": 72.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 41.0,
+      "added_sugar_g": 39.0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chocolate Chip Muffin",
+      "recipe": 411990
+    },
+    "nutrition": {
+      "serving_size": "6 oz",
+      "calories": 690.0,
+      "fat_calories": 351.0,
+      "total_fat_g": 39.0,
+      "saturated_fat_g": 12.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 120.0,
+      "sodium_mg": 390.0,
+      "total_carbs_g": 88.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 38.0,
+      "added_sugar_g": 38.0,
+      "protein_g": 10.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Super Greens",
+      "recipe": 212014
+    },
+    "nutrition": {
+      "serving_size": "3 cups",
+      "calories": 5.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 1.66,
+      "total_carbs_g": 1.16,
+      "fiber_g": 0.33,
+      "total_sugar_g": 0.83,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.33
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Grape Tomatoes",
+      "recipe": 8515
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 5.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 1.66,
+      "total_carbs_g": 1.16,
+      "fiber_g": 0.33,
+      "total_sugar_g": 0.83,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.33
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Cucumber",
+      "recipe": 9616
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 5.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 1.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Shredded Carrots",
+      "recipe": 4597
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 12.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 20.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 0.88,
+      "total_sugar_g": 1.33,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Red Onion",
+      "recipe": 6506
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 10.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Broccoli",
+      "recipe": 3505
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 10.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 13.0,
+      "total_carbs_g": 2.2,
+      "fiber_g": 2.5,
+      "total_sugar_g": 0.4,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.8
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Quinoa",
+      "recipe": 69701
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 50.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 9.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 2.0
+    },
+    "allergens": [
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Farro",
+      "recipe": 90172
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 35.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 35.0,
+      "total_carbs_g": 7.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 1.0
+    },
+    "allergens": [
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Rice Noodles",
+      "recipe": 53092
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 40.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 1.25,
+      "total_carbs_g": 9.75,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Barley",
+      "recipe": 276509679
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 100.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 22.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 4.0
+    },
+    "allergens": [
+      "Gluten"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Zucchini",
+      "recipe": 8020
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 3.75,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 2.5,
+      "total_carbs_g": 1.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Yellow Squash",
+      "recipe": 8017
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 3.75,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 2.5,
+      "total_carbs_g": 1.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Roasted Beets",
+      "recipe": 44556
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 25.0,
+      "fat_calories": 15.0,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 22.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": [
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jicama",
+      "recipe": 9078
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 11.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 2.75,
+      "fiber_g": 1.5,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 1.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Chicken Breast Strips",
+      "recipe": 99534
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 80.0,
+      "fat_calories": 25.0,
+      "total_fat_g": 2.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 30.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 12.0
+    },
+    "allergens": [
+      "Soy",
+      "Sulphites"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Beef Flank Steak",
+      "recipe": 38427
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 100.0,
+      "fat_calories": 50.0,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 35.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 12.0
+    },
+    "allergens": [
+      "Soy",
+      "Sulphites"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Plant Based Shrimp",
+      "recipe": 124579
+    },
+    "nutrition": {
+      "serving_size": "5 Shrimp",
+      "calories": 80.0,
+      "fat_calories": 32.0,
+      "total_fat_g": 3.5,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 320.0,
+      "total_carbs_g": 7.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 5.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Tofu",
+      "recipe": 90921
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 45.0,
+      "fat_calories": 20.0,
+      "total_fat_g": 2.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 5.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 5.0
+    },
+    "allergens": [
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Green Goddess Dressing",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 43.0,
+      "fat_calories": 26.0,
+      "total_fat_g": 3.0,
+      "saturated_fat_g": 0.42,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 94.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 1.5,
+      "total_sugar_g": 0.65,
+      "added_sugar_g": 0,
+      "protein_g": 1.13
+    },
+    "allergens": [
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Balsamic Dressing",
+      "recipe": 683770
+    },
+    "nutrition": {
+      "serving_size": "1.5 oz",
+      "calories": 160.0,
+      "fat_calories": 135.0,
+      "total_fat_g": 15.0,
+      "saturated_fat_g": 2.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 250.0,
+      "total_carbs_g": 6.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 5.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": [
+      "Mustard",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Ranch Dressing Lite",
+      "recipe": 784814
+    },
+    "nutrition": {
+      "serving_size": "1.5 oz",
+      "calories": 120.0,
+      "fat_calories": 89.0,
+      "total_fat_g": 11.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 10.0,
+      "sodium_mg": 420.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": [
+      "Egg",
+      "Milk",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Fat Free Ranch Dressing",
+      "recipe": 582816
+    },
+    "nutrition": {
+      "serving_size": "1 Packet",
+      "calories": 40.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 490.0,
+      "total_carbs_g": 9.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 2.0,
+      "protein_g": 0.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Grilled Chicken Breast",
+      "recipe": 693420
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 100.0,
+      "fat_calories": 18.0,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 55.0,
+      "sodium_mg": 320.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 19.0
+    },
+    "allergens": [
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Egg Salad",
+      "recipe": 47112
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 170.0,
+      "fat_calories": 110.0,
+      "total_fat_g": 12.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 290.0,
+      "sodium_mg": 470.0,
+      "total_carbs_g": 4.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 10.0
+    },
+    "allergens": [
+      "Egg",
+      "Mustard",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Salad",
+      "recipe": 58023
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 390.0,
+      "fat_calories": 320.0,
+      "total_fat_g": 35.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.5,
+      "cholesterol_mg": 70.0,
+      "sodium_mg": 390.0,
+      "total_carbs_g": 1.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 15.0
+    },
+    "allergens": [
+      "Egg",
+      "Mustard",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Tuna Salad",
+      "recipe": 47110
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 120.0,
+      "fat_calories": 60.0,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 520.0,
+      "total_carbs_g": 4.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 11.0
+    },
+    "allergens": [
+      "Egg",
+      "Fish",
+      "Mustard",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Naan Bite Dippers",
+      "recipe": 794757
+    },
+    "nutrition": {
+      "serving_size": "5 Each",
+      "calories": 140.0,
+      "fat_calories": 31.5,
+      "total_fat_g": 3.5,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 350.0,
+      "total_carbs_g": 23.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 1.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Carrot Sticks",
+      "recipe": 327
+    },
+    "nutrition": {
+      "serving_size": "3 sticks",
+      "calories": 10.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 20.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Celery Sticks",
+      "recipe": 2191
+    },
+    "nutrition": {
+      "serving_size": "3 Sticks",
+      "calories": 0.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 10.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Green Leaf Lettuce",
+      "recipe": 58655
+    },
+    "nutrition": {
+      "serving_size": "1 Leaf",
+      "calories": 0.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Hearts Of Palm Salad (Vegan)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 212.0,
+      "fat_calories": 186.0,
+      "total_fat_g": 20.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 378.0,
+      "total_carbs_g": 6.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0,
+      "protein_g": 3.0
+    },
+    "allergens": [
+      "Mustard",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Sweet Potato Salad",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 125.0,
+      "fat_calories": 64.0,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 180.0,
+      "total_carbs_g": 15.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 5.0,
+      "added_sugar_g": 0,
+      "protein_g": 3.0
+    },
+    "allergens": [
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Harvest Grain Bowl",
+      "recipe": 211790
+    },
+    "nutrition": {
+      "serving_size": "1 Bowl",
+      "calories": 450.0,
+      "fat_calories": 200.0,
+      "total_fat_g": 22.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 730.0,
+      "total_carbs_g": 57.0,
+      "fiber_g": 8.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 11.0
+    },
+    "allergens": [
+      "Sesame",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Power Keto Bowl",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1- Bowl",
+      "calories": 0,
+      "fat_calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": [
+      "Mustard",
+      "Soy",
+      "Tree Nuts"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Cowboy Bowl No Meat",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Bowl",
+      "calories": 398.0,
+      "fat_calories": 64.0,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 532.0,
+      "total_carbs_g": 72.0,
+      "fiber_g": 4.5,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 8.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Cowboy Bowl with Chicken",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Bowl",
+      "calories": 600.0,
+      "fat_calories": 64.0,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 1.83,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 100.0,
+      "sodium_mg": 982.0,
+      "total_carbs_g": 75.0,
+      "fiber_g": 4.5,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 44.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Cowboy Bowl with Barbacoa",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Bowl",
+      "calories": 586.0,
+      "fat_calories": 145.0,
+      "total_fat_g": 16.0,
+      "saturated_fat_g": 4.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 60.0,
+      "sodium_mg": 1349.0,
+      "total_carbs_g": 76.33,
+      "fiber_g": 5.83,
+      "total_sugar_g": 7.33,
+      "added_sugar_g": 0.0,
+      "protein_g": 29.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Mediterranean Chicken Bowl",
+      "recipe": 211783
+    },
+    "nutrition": {
+      "serving_size": "1 Bowl",
+      "calories": 820.0,
+      "fat_calories": 540.0,
+      "total_fat_g": 60.0,
+      "saturated_fat_g": 9.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 55.0,
+      "sodium_mg": 1310.0,
+      "total_carbs_g": 45.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 26.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Sulphites",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Salmon Soba Noodle Bowl",
+      "recipe": 211796
+    },
+    "nutrition": {
+      "serving_size": "1 Bowl",
+      "calories": 640.0,
+      "fat_calories": 340.0,
+      "total_fat_g": 38.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 60.0,
+      "sodium_mg": 1180.0,
+      "total_carbs_g": 46.0,
+      "fiber_g": 5.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 31.0
+    },
+    "allergens": [
+      "Fish",
+      "Gluten",
+      "Sesame",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Protein Snack Box",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Each",
+      "calories": 473.0,
+      "fat_calories": 205.0,
+      "total_fat_g": 23.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 222.0,
+      "sodium_mg": 450.0,
+      "total_carbs_g": 39.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 42.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 27.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Antipasto Box",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 540.0,
+      "fat_calories": 307.0,
+      "total_fat_g": 43.0,
+      "saturated_fat_g": 16.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 110.0,
+      "sodium_mg": 1110.0,
+      "total_carbs_g": 24.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 9.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 29.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Turkey Pinwheel Box",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Each",
+      "calories": 448.0,
+      "fat_calories": 172.0,
+      "total_fat_g": 20.0,
+      "saturated_fat_g": 9.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 53.0,
+      "sodium_mg": 996.0,
+      "total_carbs_g": 52.0,
+      "fiber_g": 1.5,
+      "total_sugar_g": 14.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 14.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Turkey Pinwheels",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "3 slices",
+      "calories": 298.0,
+      "fat_calories": 158.0,
+      "total_fat_g": 18.0,
+      "saturated_fat_g": 9.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 53.0,
+      "sodium_mg": 776.0,
+      "total_carbs_g": 19.0,
+      "fiber_g": 0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 13.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Re-Energize",
+      "recipe": 211543
+    },
+    "nutrition": {
+      "serving_size": "1 Each",
+      "calories": 215.0,
+      "fat_calories": 128.5,
+      "total_fat_g": 14.5,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 15.0,
+      "sodium_mg": 315.0,
+      "total_carbs_g": 15.0,
+      "fiber_g": 1.5,
+      "total_sugar_g": 9.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 9.0
+    },
+    "allergens": [
+      "Gluten",
+      "Soy",
+      "Tree Nuts",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Strawberry",
+      "recipe": 67892
+    },
+    "nutrition": {
+      "serving_size": "9 oz cup",
+      "calories": 45.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 11.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Pineapple Cup",
+      "recipe": 67914
+    },
+    "nutrition": {
+      "serving_size": "9 oz cup",
+      "calories": 90.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 22.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 17.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Cantaloupe Cup",
+      "recipe": 67911
+    },
+    "nutrition": {
+      "serving_size": "9 oz",
+      "calories": 60.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 25.0,
+      "total_carbs_g": 14.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 13.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Honeydew Cup",
+      "recipe": 67913
+    },
+    "nutrition": {
+      "serving_size": "9 oz cup",
+      "calories": 60.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 30.0,
+      "total_carbs_g": 15.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 14.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Grape Cup",
+      "recipe": 67918
+    },
+    "nutrition": {
+      "serving_size": "9 oz",
+      "calories": 100.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 26.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 22.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Watermelon Cup",
+      "recipe": 67906
+    },
+    "nutrition": {
+      "serving_size": "9 oz cup",
+      "calories": 50.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 13.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 11.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Mixed Fruit Cup",
+      "recipe": 211486
+    },
+    "nutrition": {
+      "serving_size": "9 oz cup",
+      "calories": 70.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 10.0,
+      "total_carbs_g": 17.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 14.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Strawberry Yogurt Parfait",
+      "recipe": 211891
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 300.0,
+      "fat_calories": 35.0,
+      "total_fat_g": 3.5,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 130.0,
+      "total_carbs_g": 60.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 35.0,
+      "added_sugar_g": 25.0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Blueberry Parfait",
+      "recipe": 211893
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 310.0,
+      "fat_calories": 35.0,
+      "total_fat_g": 3.5,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 130.0,
+      "total_carbs_g": 63.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 37.0,
+      "added_sugar_g": 25.0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Three Berry Parfait",
+      "recipe": 67925
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 310.0,
+      "fat_calories": 70.0,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 180.0,
+      "total_carbs_g": 56.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 32.0,
+      "added_sugar_g": 0,
+      "protein_g": 7.0
+    },
+    "allergens": [
+      "Gluten",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Mango Parfait",
+      "recipe": 211893
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 310.0,
+      "fat_calories": 35.0,
+      "total_fat_g": 3.5,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 130.0,
+      "total_carbs_g": 63.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 37.0,
+      "added_sugar_g": 25.0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Protein Box",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 413.0,
+      "fat_calories": 205.0,
+      "total_fat_g": 23.0,
+      "saturated_fat_g": 4.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 225.0,
+      "sodium_mg": 193.0,
+      "total_carbs_g": 9.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 17.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 26.0
+    },
+    "allergens": [
+      "Egg",
+      "Soy",
+      "Sulphites"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Cottage Cheese Box",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "",
+      "calories": 128.0,
+      "fat_calories": 20.0,
+      "total_fat_g": 2.25,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 12.5,
+      "sodium_mg": 220.0,
+      "total_carbs_g": 22.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 17.0,
+      "added_sugar_g": 0,
+      "protein_g": 6.5
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Pepperoni & Cheese Cup",
+      "recipe": 211510
+    },
+    "nutrition": {
+      "serving_size": "1 Each",
+      "calories": 510.0,
+      "fat_calories": 340.0,
+      "total_fat_g": 38.0,
+      "saturated_fat_g": 21.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 110.0,
+      "sodium_mg": 1100.0,
+      "total_carbs_g": 16.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.5,
+      "added_sugar_g": 0.0,
+      "protein_g": 27.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Spicy Feta Dip with Naan",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Each",
+      "calories": 380.0,
+      "fat_calories": 220.5,
+      "total_fat_g": 24.5,
+      "saturated_fat_g": 10.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 1100.0,
+      "total_carbs_g": 26.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 16.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Hummus & Naan Cup",
+      "recipe": 211513
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 410.0,
+      "fat_calories": 170.0,
+      "total_fat_g": 19.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.5,
+      "sodium_mg": 930.0,
+      "total_carbs_g": 52.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 3.0,
+      "protein_g": 12.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Sesame",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Veggie with Ranch",
+      "recipe": 211511
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 90.0,
+      "fat_calories": 35.0,
+      "total_fat_g": 4.0,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 480.0,
+      "total_carbs_g": 13.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 2.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "MSG",
+      "Milk",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Cheese & Grape Cup",
+      "recipe": 56726
+    },
+    "nutrition": {
+      "serving_size": "1 Each",
+      "calories": 520.0,
+      "fat_calories": 340.0,
+      "total_fat_g": 38.0,
+      "saturated_fat_g": 24.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 120.0,
+      "sodium_mg": 710.0,
+      "total_carbs_g": 17.0,
+      "fiber_g": 0.5,
+      "total_sugar_g": 14.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 29.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Falafel Grain Bowl",
+      "recipe": 211784
+    },
+    "nutrition": {
+      "serving_size": "1 Bowl",
+      "calories": 580.0,
+      "fat_calories": 240.0,
+      "total_fat_g": 27.0,
+      "saturated_fat_g": 3.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 620.0,
+      "total_carbs_g": 69.0,
+      "fiber_g": 9.0,
+      "total_sugar_g": 11.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 19.0
+    },
+    "allergens": [
+      "Sesame",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Whole Grain Triple Berry Muffin",
+      "recipe": 411582
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 440.0,
+      "fat_calories": 189.0,
+      "total_fat_g": 21.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 60.0,
+      "sodium_mg": 670.0,
+      "total_carbs_g": 60.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 28.0,
+      "protein_g": 7.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Healthy Tropical Coconut Overnight Oats",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "6 oz portion",
+      "calories": 346.88461538461536,
+      "fat_calories": 137.92307692307693,
+      "total_fat_g": 15.323076923076922,
+      "saturated_fat_g": 12.474230769230768,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 107.5,
+      "total_carbs_g": 48.69230769230769,
+      "fiber_g": 3.6423076923076922,
+      "total_sugar_g": 20.73076923076923,
+      "added_sugar_g": 5.8076923076923075,
+      "protein_g": 4.173076923076923
+    },
+    "allergens": [
+      "Gluten",
+      "Tree Nuts"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Strawberry Granola Overnight Oats",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "9 oz Cup",
+      "calories": 185.62,
+      "fat_calories": 14.25,
+      "total_fat_g": 1.58,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 6.65,
+      "sodium_mg": 66.2,
+      "total_carbs_g": 31.625,
+      "fiber_g": 2.625,
+      "total_sugar_g": 12.125,
+      "added_sugar_g": 7.25,
+      "protein_g": 5.955
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Peach Overnight Oats with Granola",
+      "recipe": 92392
+    },
+    "nutrition": {
+      "serving_size": "9 oz cup",
+      "calories": 228.16,
+      "fat_calories": 37.31,
+      "total_fat_g": 4.1425,
+      "saturated_fat_g": 3.6999999999999997,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 66.97,
+      "total_carbs_g": 25.825,
+      "fiber_g": 2.75,
+      "total_sugar_g": 11.675,
+      "added_sugar_g": 9.63,
+      "protein_g": 4.195
+    },
+    "allergens": [
+      "Gluten",
+      "Tree Nuts",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Mango Chia Overnight Oats",
+      "recipe": 211882
+    },
+    "nutrition": {
+      "serving_size": "9 oz cup",
+      "calories": 230.0,
+      "fat_calories": 50.0,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 10.0,
+      "sodium_mg": 55.0,
+      "total_carbs_g": 39.0,
+      "fiber_g": 5.0,
+      "total_sugar_g": 28.0,
+      "added_sugar_g": 0,
+      "protein_g": 7.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Acai Bowl with Toppings",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "Small",
+      "calories": 621.0,
+      "fat_calories": 145.0,
+      "total_fat_g": 16.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 125.0,
+      "total_carbs_g": 123.0,
+      "fiber_g": 11.0,
+      "total_sugar_g": 84.0,
+      "added_sugar_g": 0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Gluten",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Acai Bowl with Toppings (Large)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "Large",
+      "calories": 751.0,
+      "fat_calories": 181.0,
+      "total_fat_g": 20.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 140.0,
+      "total_carbs_g": 148.0,
+      "fiber_g": 13.0,
+      "total_sugar_g": 98.0,
+      "added_sugar_g": 0,
+      "protein_g": 7.0
+    },
+    "allergens": [
+      "Gluten",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Acai Bowl with Toppings (Wellness Size)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "Wellness Size",
+      "calories": 301.0,
+      "fat_calories": 53.0,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 58.0,
+      "total_carbs_g": 72.0,
+      "fiber_g": 7.0,
+      "total_sugar_g": 47.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 4.0
+    },
+    "allergens": [
+      "Gluten",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Green Machine Smoothie Greek Yogurt",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 254.0,
+      "fat_calories": 14.0,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.66,
+      "sodium_mg": 16.0,
+      "total_carbs_g": 36.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 21.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 5.5
+    },
+    "allergens": [
+      "Gluten",
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Power Berry Smoothie",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 240.0,
+      "fat_calories": 14.0,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 1.0,
+      "sodium_mg": 22.0,
+      "total_carbs_g": 51.0,
+      "fiber_g": 5.0,
+      "total_sugar_g": 30.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Power Berry Smoothie (16 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 232.0,
+      "fat_calories": 19.0,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 21.0,
+      "total_carbs_g": 49.0,
+      "fiber_g": 5.0,
+      "total_sugar_g": 29.0,
+      "added_sugar_g": 0,
+      "protein_g": 5.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Thai Wrap",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 wrap",
+      "calories": 483.0,
+      "fat_calories": 112.0,
+      "total_fat_g": 13.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 50.0,
+      "sodium_mg": 1474.0,
+      "total_carbs_g": 67.0,
+      "fiber_g": 5.0,
+      "total_sugar_g": 13.0,
+      "added_sugar_g": 0,
+      "protein_g": 26.0
+    },
+    "allergens": [
+      "Gluten",
+      "Sesame",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Veggie Vitality Wrap",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 wrap",
+      "calories": 488.0,
+      "fat_calories": 175.0,
+      "total_fat_g": 20.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 1027.0,
+      "total_carbs_g": 66.0,
+      "fiber_g": 8.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0,
+      "protein_g": 11.0
+    },
+    "allergens": [
+      "Gluten",
+      "Sesame",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Autumn Harvest Overnight Oats",
+      "recipe": 213564
+    },
+    "nutrition": {
+      "serving_size": "9 oz cup",
+      "calories": 170.0,
+      "fat_calories": 18.0,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 35.0,
+      "total_carbs_g": 33.0,
+      "fiber_g": 2.5,
+      "total_sugar_g": 25.0,
+      "added_sugar_g": 0,
+      "protein_g": 3.75
+    },
+    "allergens": [
+      "Gluten",
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Strawberry Cheesecake Overnight Oats",
+      "recipe": 212791
+    },
+    "nutrition": {
+      "serving_size": "9 oz cup",
+      "calories": 190.0,
+      "fat_calories": 45.0,
+      "total_fat_g": 4.5,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 10.0,
+      "sodium_mg": 90.0,
+      "total_carbs_g": 32.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 21.0,
+      "added_sugar_g": 0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Ham, Cheese, Asparagus Puff",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 455.0,
+      "fat_calories": 243.0,
+      "total_fat_g": 27.0,
+      "saturated_fat_g": 13.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 43.0,
+      "sodium_mg": 1110.0,
+      "total_carbs_g": 29.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0,
+      "protein_g": 18.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Mustard",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Strawberry Banana Smoothie",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 301.0,
+      "fat_calories": 14.0,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 1.25,
+      "sodium_mg": 16.0,
+      "total_carbs_g": 63.0,
+      "fiber_g": 5.0,
+      "total_sugar_g": 33.0,
+      "added_sugar_g": 2.0,
+      "protein_g": 9.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Mango Pineapple Smoothie",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 354.0,
+      "fat_calories": 14.0,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.66,
+      "sodium_mg": 26.0,
+      "total_carbs_g": 61.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 43.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 5.5
+    },
+    "allergens": [
+      "Gluten",
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Banana Chai Smoothie",
+      "recipe": 90860
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 370.0,
+      "fat_calories": 70.0,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 340.0,
+      "total_carbs_g": 64.0,
+      "fiber_g": 10.0,
+      "total_sugar_g": 39.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 2.0
+    },
+    "allergens": [
+      "Almonds",
+      "Tree Nuts"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Dragon Fruit Smoothie",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 328.0,
+      "fat_calories": 33.75,
+      "total_fat_g": 3.6875,
+      "saturated_fat_g": 0.875,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 21.0,
+      "sodium_mg": 123.5,
+      "total_carbs_g": 56.0,
+      "fiber_g": 7.5,
+      "total_sugar_g": 34.25,
+      "added_sugar_g": 1.75,
+      "protein_g": 16.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jazzmans Signature Coffee",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 0.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Jazzmans Signature Coffee (16 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 0.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Jazzmans Signature Coffee (20 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "20 oz",
+      "calories": 0.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Jazzmans Latte Hot",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 140.0,
+      "fat_calories": 45.0,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 3.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 130.0,
+      "total_carbs_g": 13.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 14.0,
+      "added_sugar_g": 0,
+      "protein_g": 9.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jazzmans Latte Hot (16 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 170.0,
+      "fat_calories": 63.0,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 160.0,
+      "total_carbs_g": 16.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 17.0,
+      "added_sugar_g": 0,
+      "protein_g": 11.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jazzmans Latte Hot (20 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "20 oz",
+      "calories": 220.0,
+      "fat_calories": 81.0,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 35.0,
+      "sodium_mg": 210.0,
+      "total_carbs_g": 21.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 23.0,
+      "added_sugar_g": 0,
+      "protein_g": 15.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jazzman's Mocha Hot",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 170.0,
+      "fat_calories": 72.0,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 4.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 115.0,
+      "total_carbs_g": 22.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 22.0,
+      "added_sugar_g": 0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jazzman's Mocha Hot (16 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 220.0,
+      "fat_calories": 72.0,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 130.0,
+      "total_carbs_g": 27.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 27.0,
+      "added_sugar_g": 0,
+      "protein_g": 9.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jazzman's Mocha Hot (20 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "20 oz",
+      "calories": 260.0,
+      "fat_calories": 90.0,
+      "total_fat_g": 10.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 35.0,
+      "sodium_mg": 160.0,
+      "total_carbs_g": 33.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 33.0,
+      "added_sugar_g": 0,
+      "protein_g": 12.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jazzmans Mocha Iced",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 170.0,
+      "fat_calories": 63.0,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 4.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 100.0,
+      "total_carbs_g": 21.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 20.0,
+      "added_sugar_g": 0,
+      "protein_g": 7.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jazzmans Mocha Iced (16 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 200.0,
+      "fat_calories": 63.0,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 4.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 120.0,
+      "total_carbs_g": 25.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 25.0,
+      "added_sugar_g": 0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jazzmans Mocha Iced (20 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "20 oz",
+      "calories": 230.0,
+      "fat_calories": 72.0,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 135.0,
+      "total_carbs_g": 30.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 30.0,
+      "added_sugar_g": 0,
+      "protein_g": 9.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Hot Chocolate",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 230.0,
+      "fat_calories": 81.0,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 35.0,
+      "sodium_mg": 150.0,
+      "total_carbs_g": 26.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 26.0,
+      "added_sugar_g": 0,
+      "protein_g": 11.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Hot Chocolate (16 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 280.0,
+      "fat_calories": 90.0,
+      "total_fat_g": 10.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 180.0,
+      "total_carbs_g": 32.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 33.0,
+      "added_sugar_g": 0,
+      "protein_g": 13.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Hot Chocolate (20 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "20 oz",
+      "calories": 320.0,
+      "fat_calories": 108.0,
+      "total_fat_g": 12.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 210.0,
+      "total_carbs_g": 38.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 39.0,
+      "added_sugar_g": 0,
+      "protein_g": 15.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jazzman's Latte Iced",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 90.0,
+      "fat_calories": 31.5,
+      "total_fat_g": 3.5,
+      "saturated_fat_g": 2.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 15.0,
+      "sodium_mg": 90.0,
+      "total_carbs_g": 9.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 9.0,
+      "added_sugar_g": 0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jazzman's Latte Iced (16 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 110.0,
+      "fat_calories": 36.0,
+      "total_fat_g": 4.0,
+      "saturated_fat_g": 2.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 15.0,
+      "sodium_mg": 110.0,
+      "total_carbs_g": 10.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 11.0,
+      "added_sugar_g": 0,
+      "protein_g": 7.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jazzman's Latte Iced (20 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "20 oz",
+      "calories": 120.0,
+      "fat_calories": 45.0,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 125.0,
+      "total_carbs_g": 12.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 12.0,
+      "added_sugar_g": 0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Cappuccino Hot",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 139.0,
+      "fat_calories": 49.0,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 22.0,
+      "sodium_mg": 131.0,
+      "total_carbs_g": 13.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 14.0,
+      "added_sugar_g": 0,
+      "protein_g": 9.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Cappuccino",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 180.0,
+      "fat_calories": 63.0,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 4.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 170.0,
+      "total_carbs_g": 17.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 18.0,
+      "added_sugar_g": 0,
+      "protein_g": 12.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Cappuccino (20 oz)",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "20 oz",
+      "calories": 220.0,
+      "fat_calories": 81.0,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 35.0,
+      "sodium_mg": 210.0,
+      "total_carbs_g": 21.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 22.0,
+      "added_sugar_g": 0,
+      "protein_g": 15.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Monin Vanilla Syrup Sugar Free",
+      "recipe": 853910
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 0.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 10.0,
+      "total_carbs_g": 5.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Monin Caramel Syrup Sugar Free",
+      "recipe": 608962
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 0.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 10.0,
+      "total_carbs_g": 6.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Monin Hazelnut Syrup Sugar Free",
+      "recipe": 1121055
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 0.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 15.0,
+      "total_carbs_g": 5.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": [
+      "Tree Nuts"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Monin Dark Chocolate Sauce",
+      "recipe": 1156790
+    },
+    "nutrition": {
+      "serving_size": "1/2 oz",
+      "calories": 50.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 7.5,
+      "total_carbs_g": 12.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 11.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.5
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Monin Dark Chocolate Sauce Sugar Free",
+      "recipe": 1121057
+    },
+    "nutrition": {
+      "serving_size": "1/2 oz",
+      "calories": 40.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 10.0,
+      "total_carbs_g": 13.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Monin Carmel Sauce",
+      "recipe": 1155765
+    },
+    "nutrition": {
+      "serving_size": "1/2 oz",
+      "calories": 50.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 20.0,
+      "total_carbs_g": 11.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 10.0,
+      "added_sugar_g": 0,
+      "protein_g": 1.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "White Chocolate Sauce",
+      "recipe": 2109
+    },
+    "nutrition": {
+      "serving_size": "1/2 oz",
+      "calories": 50.0,
+      "fat_calories": 9.0,
+      "total_fat_g": 1.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 25.0,
+      "total_carbs_g": 11.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 11.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Iced Latte Caramel",
+      "recipe": 820978
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 140.0,
+      "fat_calories": 36.0,
+      "total_fat_g": 4.0,
+      "saturated_fat_g": 2.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 15.0,
+      "sodium_mg": 115.0,
+      "total_carbs_g": 20.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 20.0,
+      "added_sugar_g": 0,
+      "protein_g": 7.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Iced Latte Caramel (16 oz)",
+      "recipe": 820979
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 170.0,
+      "fat_calories": 45.0,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 135.0,
+      "total_carbs_g": 23.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 23.0,
+      "added_sugar_g": 0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Iced Latte Caramel (20 oz)",
+      "recipe": 820980
+    },
+    "nutrition": {
+      "serving_size": "20 oz",
+      "calories": 190.0,
+      "fat_calories": 54.0,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 3.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 160.0,
+      "total_carbs_g": 27.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 27.0,
+      "added_sugar_g": 0,
+      "protein_g": 9.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Mocha White Chocolate",
+      "recipe": 820907
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 190.0,
+      "fat_calories": 72.0,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 125.0,
+      "total_carbs_g": 22.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 21.0,
+      "added_sugar_g": 0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Mocha White Chocolate (16 oz)",
+      "recipe": 820908
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 220.0,
+      "fat_calories": 72.0,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 150.0,
+      "total_carbs_g": 27.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 25.0,
+      "added_sugar_g": 0,
+      "protein_g": 9.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Mocha White Chocolate (20 oz)",
+      "recipe": 820909
+    },
+    "nutrition": {
+      "serving_size": "20 oz",
+      "calories": 260.0,
+      "fat_calories": 90.0,
+      "total_fat_g": 10.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 35.0,
+      "sodium_mg": 190.0,
+      "total_carbs_g": 33.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 31.0,
+      "added_sugar_g": 0,
+      "protein_g": 12.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Mocha White Chocolate Iced",
+      "recipe": 820884
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 170.0,
+      "fat_calories": 63.0,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 4.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 115.0,
+      "total_carbs_g": 20.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 19.0,
+      "added_sugar_g": 0,
+      "protein_g": 7.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Mocha White Chocolate Iced (16 oz)",
+      "recipe": 820885
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 200.0,
+      "fat_calories": 72.0,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 5.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 140.0,
+      "total_carbs_g": 25.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 23.0,
+      "added_sugar_g": 0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Mocha White Chocolate Iced (20 oz)",
+      "recipe": 820886
+    },
+    "nutrition": {
+      "serving_size": "20 oz",
+      "calories": 230.0,
+      "fat_calories": 72.0,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 5.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 160.0,
+      "total_carbs_g": 29.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 28.0,
+      "added_sugar_g": 0,
+      "protein_g": 9.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "White Hot Chocolate",
+      "recipe": 820873
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 250.0,
+      "fat_calories": 81.0,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 35.0,
+      "sodium_mg": 180.0,
+      "total_carbs_g": 32.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 31.0,
+      "added_sugar_g": 0,
+      "protein_g": 11.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "White Hot Chocolate (16 oz)",
+      "recipe": 820874
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 310.0,
+      "fat_calories": 99.0,
+      "total_fat_g": 11.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 220.0,
+      "total_carbs_g": 39.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 37.0,
+      "added_sugar_g": 0,
+      "protein_g": 14.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "White Hot Chocolate (20 oz)",
+      "recipe": 820875
+    },
+    "nutrition": {
+      "serving_size": "20 oz",
+      "calories": 340.0,
+      "fat_calories": 108.0,
+      "total_fat_g": 12.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 250.0,
+      "total_carbs_g": 44.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 42.0,
+      "added_sugar_g": 0,
+      "protein_g": 16.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Hot Tea",
+      "recipe": 810456
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 0.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 10.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Hot Tea (16 oz)",
+      "recipe": 810457
+    },
+    "nutrition": {
+      "serving_size": "16 oz",
+      "calories": 0.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 15.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Hot Tea (20 oz)",
+      "recipe": 810458
+    },
+    "nutrition": {
+      "serving_size": "20 oz",
+      "calories": 0.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 15.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  }
+]

@@ -16,7 +16,7 @@ interface NutritionalInfo {
   protein_g: number;
 }
 
-type Allergen = "Egg" | "Fish" | "Gluten" | "Milk" | "MSG" | "Mustard" | "Oats" | "Sesame" | "Shellfish" | "Soy" | "Sulphites" | "Tree Nuts" | "Wheat";
+type Allergen = "Almonds" | "Egg" | "Fish" | "Gluten" | "Milk" | "MSG" | "Mustard" | "Oats" | "Sesame" | "Shellfish" | "Soy" | "Sulphites" | "Tree Nuts" | "Wheat";
 
 interface FoodItemMetaData {
   name: string;
