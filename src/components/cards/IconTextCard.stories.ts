@@ -33,7 +33,6 @@ export const Default: Story = {
     const text = canvas.getByText('Explore')
     await expect(text).toBeInTheDocument()
     await userEvent.click(text)
-    // onClick fires only when there is no link
   },
 }
 

@@ -4,6 +4,10 @@ export const cardWidthDecorator: Decorator = () => ({
   template: '<div style="max-width: 320px; margin: 20px;"><story /></div>'
 })
 
+export const wrapDecorator = (style: string): Decorator => () => ({
+  template: `<div style="${style}"><story /></div>`,
+})
+
 export function mockDateSetup(activeDate: Date) {
   return {
     beforeEach() {
