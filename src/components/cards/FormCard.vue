@@ -17,12 +17,12 @@ const { name, title } = defineProps<{ name: string; title?: string }>()
 
 async function onSubmit(event: Event): Promise<void> {
   event.preventDefault();
-  const dataToSubmit = [];
-  for (const element of (event.target as HTMLFormElement).elements) {
-    if ((element as HTMLInputElement).name !== '' && (element as HTMLInputElement).value !== '') {
-      dataToSubmit.push({ name: (element as HTMLInputElement).name, value: (element as HTMLInputElement).value });
+  const dataToSubmit: { name: string; value: string }[] = [];
+  new FormData(event.target as HTMLFormElement).forEach((value, name) => {
+    if (name !== '' && value !== '') {
+      dataToSubmit.push({ name, value: value as string });
     }
-  }
+  });
 
   // Change to localhost to test forms locally
   await fetch('https://email-backend.stevenson-space.workers.dev', {
