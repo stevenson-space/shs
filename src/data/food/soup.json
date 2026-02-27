@@ -1,0 +1,660 @@
+[
+  {
+    "metadata": {
+      "name": "French Onion  Soup",
+      "recipe": 692580
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 160.0,
+      "fat_calories": 90.0,
+      "total_fat_g": 10.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 1600.0,
+      "total_carbs_g": 16.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 8.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 4.0
+    },
+    "allergens": [
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "French Onion  Soup",
+      "recipe": 692580
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 240.0,
+      "fat_calories": 135.0,
+      "total_fat_g": 15.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 2400.0,
+      "total_carbs_g": 24.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 12.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Smokey Poblano Vegetarian",
+      "recipe": 825600
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 390.0,
+      "fat_calories": 297.0,
+      "total_fat_g": 33.0,
+      "saturated_fat_g": 20.0,
+      "trans_fat_g": 1.0,
+      "cholesterol_mg": 95.0,
+      "sodium_mg": 1250.0,
+      "total_carbs_g": 15.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 5.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Smokey Poblano Vegetarian",
+      "recipe": 825600
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 585.0,
+      "fat_calories": 450.0,
+      "total_fat_g": 50.0,
+      "saturated_fat_g": 30.0,
+      "trans_fat_g": 1.5,
+      "cholesterol_mg": 143.0,
+      "sodium_mg": 1875.0,
+      "total_carbs_g": 23.0,
+      "fiber_g": 1.5,
+      "total_sugar_g": 8.0,
+      "added_sugar_g": 1.5,
+      "protein_g": 12.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Noodle",
+      "recipe": 165510
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 140.0,
+      "fat_calories": 36.0,
+      "total_fat_g": 4.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 1600.0,
+      "total_carbs_g": 20.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Noodle",
+      "recipe": 165510
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 210.0,
+      "fat_calories": 54.0,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 2400.0,
+      "total_carbs_g": 30.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 1.5,
+      "added_sugar_g": 0.0,
+      "protein_g": 12.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Tomato Basil",
+      "recipe": 573120
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 80.0,
+      "fat_calories": 18.0,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 390.0,
+      "total_carbs_g": 14.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 9.0,
+      "added_sugar_g": 3.0,
+      "protein_g": 2.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Tomato Basil",
+      "recipe": 573120
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 120.0,
+      "fat_calories": 27.0,
+      "total_fat_g": 3.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 585.0,
+      "total_carbs_g": 21.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 14.0,
+      "added_sugar_g": 5.0,
+      "protein_g": 3.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Golden Broccoli Cheese Soup",
+      "recipe": 165500
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 360.0,
+      "fat_calories": 252.0,
+      "total_fat_g": 28.0,
+      "saturated_fat_g": 10.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 1900.0,
+      "total_carbs_g": 20.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 4.0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Milk",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Golden Broccoli Cheese Soup",
+      "recipe": 165500
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 540.0,
+      "fat_calories": 378.0,
+      "total_fat_g": 42.0,
+      "saturated_fat_g": 15.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 60.0,
+      "sodium_mg": 2850.0,
+      "total_carbs_g": 30.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 9.0,
+      "added_sugar_g": 6.0,
+      "protein_g": 12.0
+    },
+    "allergens": [
+      "Milk",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Vegetarian Garden Vegetable Soup",
+      "recipe": 403930
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 140.0,
+      "fat_calories": 9.0,
+      "total_fat_g": 1.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 1540.0,
+      "total_carbs_g": 30.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 14.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 2.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Vegetarian Garden Vegetable Soup",
+      "recipe": 403930
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 210.0,
+      "fat_calories": 13.5,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 2310.0,
+      "total_carbs_g": 45.0,
+      "fiber_g": 9.0,
+      "total_sugar_g": 21.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 3.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Italian Wedding Soup",
+      "recipe": 403940
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 200.0,
+      "fat_calories": 45.0,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 1340.0,
+      "total_carbs_g": 28.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 2.0,
+      "protein_g": 10.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Italian Wedding Soup",
+      "recipe": 403940
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 300.0,
+      "fat_calories": 72.0,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 20.1,
+      "total_carbs_g": 42.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 3.0,
+      "protein_g": 15.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Cream of Potato",
+      "recipe": 570102
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 320.0,
+      "fat_calories": 144.0,
+      "total_fat_g": 16.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 20.0,
+      "sodium_mg": 1720.0,
+      "total_carbs_g": 36.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Cream of Potato",
+      "recipe": 570102
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 480.0,
+      "fat_calories": 216.0,
+      "total_fat_g": 24.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 2580.0,
+      "total_carbs_g": 54.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 9.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 9.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Minestrone Soup",
+      "recipe": 165490
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 140.0,
+      "fat_calories": 18.0,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 10.0,
+      "sodium_mg": 1300.0,
+      "total_carbs_g": 22.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 8.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Minestrone Soup",
+      "recipe": 165490
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 210.0,
+      "fat_calories": 27.0,
+      "total_fat_g": 3.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 15.0,
+      "sodium_mg": 1950.0,
+      "total_carbs_g": 33.0,
+      "fiber_g": 9.0,
+      "total_sugar_g": 12.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 9.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Gumbo",
+      "recipe": 403980
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 120.0,
+      "fat_calories": 9.0,
+      "total_fat_g": 1.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 1600.0,
+      "total_carbs_g": 22.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Mustard",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Gumbo",
+      "recipe": 403980
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 180.0,
+      "fat_calories": 13.5,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 2400.0,
+      "total_carbs_g": 33.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 9.0
+    },
+    "allergens": [
+      "Mustard",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Corn Chowder",
+      "recipe": 4664489
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 170.0,
+      "fat_calories": 63.0,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 710.0,
+      "total_carbs_g": 24.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 10.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 3.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Corn Chowder",
+      "recipe": 4664489
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 255.0,
+      "fat_calories": 95.0,
+      "total_fat_g": 10.5,
+      "saturated_fat_g": 2.25,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 7.5,
+      "sodium_mg": 1065.0,
+      "total_carbs_g": 36.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 15.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 4.5
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Southwest Vegetarian Chili",
+      "recipe": 20602
+    },
+    "nutrition": {
+      "serving_size": "8oz",
+      "calories": 150.0,
+      "fat_calories": 18.0,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 780.0,
+      "total_carbs_g": 27.0,
+      "fiber_g": 7.0,
+      "total_sugar_g": 5.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 6.0
+    },
+    "allergens": [
+      "Gluten",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Southwest Vegetarian Chili",
+      "recipe": 20602
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 225.0,
+      "fat_calories": 27.0,
+      "total_fat_g": 3.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 1170.0,
+      "total_carbs_g": 40.5,
+      "fiber_g": 10.5,
+      "total_sugar_g": 7.5,
+      "added_sugar_g": 0.0,
+      "protein_g": 10.0
+    },
+    "allergens": [
+      "Gluten",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Tortilla Soup",
+      "recipe": 20304
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 130.0,
+      "fat_calories": 45.0,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 15.0,
+      "sodium_mg": 880.0,
+      "total_carbs_g": 17.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 5.0
+    },
+    "allergens": [
+      "Gluten",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Tortilla Soup",
+      "recipe": 20304
+    },
+    "nutrition": {
+      "serving_size": "12 oz",
+      "calories": 190.0,
+      "fat_calories": 68.0,
+      "total_fat_g": 7.5,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 23.0,
+      "sodium_mg": 1320.0,
+      "total_carbs_g": 26.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 7.5
+    },
+    "allergens": [
+      "Gluten",
+      "Soy",
+      "Wheat"
+    ]
+  }
+]
