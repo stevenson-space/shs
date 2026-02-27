@@ -84,8 +84,7 @@ export const DirectionUp: Story = {
     components: { StaggerAnimation },
     setup() {
       const open = ref(false);
-      const options = ["Option A", "Option B", "Option C"];
-      return { args, open, options, optionStyle };
+      return { args, open, optionStyle };
     },
     template: `
       <div style="position: relative; height: 160px; padding-top: 120px;">
@@ -95,10 +94,10 @@ export const DirectionUp: Story = {
         >
           Toggle ▴
         </button>
-        <StaggerAnimation direction="up" :number-of-slots="options.length" align="right">
+        <StaggerAnimation direction="up" :number-of-slots="args.numberOfSlots" align="right">
           <template v-if="open">
-            <div v-for="(option, i) in options" :key="option" :data-index="i" :style="optionStyle">
-              {{ option }}
+            <div v-for="i in args.numberOfSlots" :key="i" :data-index="i - 1" :style="optionStyle">
+              Option {{ i }}
             </div>
           </template>
         </StaggerAnimation>
@@ -112,8 +111,7 @@ export const AlignLeft: Story = {
     components: { StaggerAnimation },
     setup() {
       const open = ref(false);
-      const options = ["First", "Second", "Third"];
-      return { args, open, options, optionStyle };
+      return { args, open, optionStyle };
     },
     template: `
       <div style="position: relative; height: 160px;">
@@ -123,10 +121,10 @@ export const AlignLeft: Story = {
         >
           Toggle ▾
         </button>
-        <StaggerAnimation direction="down" :number-of-slots="options.length" align="left">
+        <StaggerAnimation direction="down" :number-of-slots="args.numberOfSlots" align="left">
           <template v-if="open">
-            <div v-for="(option, i) in options" :key="option" :data-index="i" :style="optionStyle">
-              {{ option }}
+            <div v-for="i in args.numberOfSlots" :key="i" :data-index="i - 1" :style="optionStyle">
+              Option {{ i }}
             </div>
           </template>
         </StaggerAnimation>
