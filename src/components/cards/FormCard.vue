@@ -10,40 +10,33 @@
   </card>
 </template>
 
-<script>
+<script setup lang="ts">
 import Card from '@/components/Card.vue';
 
-export default {
-  components: { Card },
-  props: {
-    name: { type: String, required: true },
-    title: { type: String, required: false },
-  },
-  methods: {
-    async onSubmit(event) {
-      event.preventDefault();
-      const dataToSubmit = [];
-      for (const element of event.target.elements) {
-        if (element.name !== '' && element.value !== '') {
-          dataToSubmit.push({ name: element.name, value: element.value });
-        }
-      }
+const { name, title } = defineProps<{ name: string; title?: string }>()
 
-      // Change to localhost to test forms locally
-      await fetch('https://email-backend.stevenson-space.workers.dev', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataToSubmit),
-      }).catch((error) => {
-        console.error('Error:', error);
-      });
+async function onSubmit(event: Event): Promise<void> {
+  event.preventDefault();
+  const dataToSubmit = [];
+  for (const element of (event.target as HTMLFormElement).elements) {
+    if ((element as HTMLInputElement).name !== '' && (element as HTMLInputElement).value !== '') {
+      dataToSubmit.push({ name: (element as HTMLInputElement).name, value: (element as HTMLInputElement).value });
+    }
+  }
 
-      alert("Submitted successfully! We'll follow up soon.");
+  // Change to localhost to test forms locally
+  await fetch('https://email-backend.stevenson-space.workers.dev', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
     },
-  },
-};
+    body: JSON.stringify(dataToSubmit),
+  }).catch((error) => {
+    console.error('Error:', error);
+  });
+
+  alert("Submitted successfully! We'll follow up soon.");
+}
 </script>
 
 <style lang="sass" scoped>

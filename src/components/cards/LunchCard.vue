@@ -1,5 +1,5 @@
 <template>
-  <card v-show="bell?.isSchoolDay && bell?.type != 'Summer' && (lunch || noLunchData)">
+  <card v-show="clockStore.bell?.isSchoolDay && clockStore.bell?.type != 'Summer' && (lunch || noLunchData)">
     <div class="title">Lunch</div>
     <div v-if="noLunchData" class="no-data lunch">
           No Lunch Data
@@ -14,27 +14,18 @@
   </card>
 </template>
 
-<script>
-import Card from '@/components/Card.vue';
-import WhatIsThis from '@/components/WhatIsThis.vue';
-import { mapState } from 'pinia';
+<script setup lang="ts">
+import { ref, computed } from 'vue';
 import getLunch from '@/utils/lunch';
 import useClockStore from '@/stores/clock';
+import Card from '@/components/Card.vue';
+import WhatIsThis from '@/components/WhatIsThis.vue';
 
-export default {
-  components: { Card, WhatIsThis },
-  data() {
-    return {
-      noLunchData: false,
-    };
-  },
-  computed: {
-    ...mapState(useClockStore, ['bell', 'date']),
-    lunch() {
-      return getLunch(this.date);
-    },
-  },
-};
+const clockStore = useClockStore();
+
+const noLunchData = ref(false);
+
+const lunch = computed(() => getLunch(clockStore.date));
 </script>
 
 <style lang="sass" scoped>

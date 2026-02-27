@@ -6,18 +6,17 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    submit: { type: Boolean, default: false },
-  },
-  methods: {
-    clicked() {
-      // if this is the submit component, then click our simulated submit button
-      if (this.submit) this.$refs.submitButton.click();
-    },
-  },
-};
+<script setup lang="ts">
+import { useTemplateRef } from 'vue';
+
+const { submit = false } = defineProps<{ submit?: boolean }>()
+
+const submitButton = useTemplateRef<HTMLInputElement>('submitButton')
+
+function clicked(): void {
+  // if this is the submit component, then click our simulated submit button
+  if (submit) submitButton.value?.click();
+}
 </script>
 
 <style lang="sass" scoped>

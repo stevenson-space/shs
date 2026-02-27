@@ -14,7 +14,7 @@
         <link-chip
           href="https://forms.gle/jxZkFJALWoa1zaKY8"
           label="Take Survey"
-          :icon="icons.faPoll"
+          :icon="faPoll"
           background="var(--accent)"
           color="var(--iconCardsRegular)"
           target="_blank"
@@ -25,21 +25,10 @@
   </timed-card>
 </template>
 
-<script>
-import TimedCard from "@/components/cards/TimedCard.vue";
-import LinkChip from "@/components/cards/LinkChip.vue";
+<script setup lang="ts">
 import { faPoll } from "@fortawesome/free-solid-svg-icons";
-
-export default {
-  components: { TimedCard, LinkChip },
-  data() {
-    return {
-      icons: {
-        faPoll
-      }
-    };
-  }
-};
+import TimedCard from './TimedCard.vue';
+import LinkChip from './LinkChip.vue';
 </script>
 
 <style lang="sass" scoped>

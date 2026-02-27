@@ -9,70 +9,20 @@
   </card>
 </template>
 
-<script>
-// import { mapState, mapMutations } from 'vuex';
-// import Card from '@/components/Card.vue';
-// import Vue from 'vue';
-// import VueConfetti from 'vue-confetti';
-// import RoundedButton from '@/components/RoundedButton.vue';
+<script setup lang="ts">
+import { ref } from 'vue';
+import Card from '@/components/Card.vue';
+import RoundedButton from '@/components/RoundedButton.vue';
 
-// Vue.use(VueConfetti);
+const confettiMode = ref(false);
 
-export default {
-//   components: { Card, RoundedButton },
-//   data() {
-//     return {
-//       settings: {
-//         defaultDropRate: 4,
-//         particlesPerFrame: 0.3,
-//         particles: [
-//           {
-//             type: 'heart',
-//           },
-//           {
-//             type: 'rect',
-//           },
-//           {
-//             type: 'circle',
-//           },
-//           {
-//             type: 'image',
-//             url: '/static/patriot.png',
-//             size: 15,
-//           },
-//         ],
-//         defaultColors: [
-//           '#1b5e20',
-//           '#b38825',
-//           '#a864fd',
-//           '#29cdff',
-//           '#78ff44',
-//           '#ff718d',
-//           '#fdff6a',
-//         ],
-//       },
-//     };
-//   },
-//   computed: {
-//     ...mapState(['confettiMode']),
-//   },
-//   methods: {
-//     start() {
-//       this.setConfettiMode(true);
-//       this.$confetti.start(this.settings);
-//     },
-//     stop() {
-//       this.setConfettiMode(false);
-//       this.$confetti.stop();
-//     },
-//     ...mapMutations(['setConfettiMode']),
-//   },
-//   mounted() {
-//     if (this.confettiMode) {
-//       this.$confetti.start(this.settings);
-//     }
-//   },
-};
+function start(): void {
+  confettiMode.value = true;
+}
+
+function stop(): void {
+  confettiMode.value = false;
+}
 </script>
 
 <style lang="sass" scoped>

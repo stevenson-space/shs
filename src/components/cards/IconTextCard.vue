@@ -1,7 +1,7 @@
 <template>
   <card class="card" :class="{ invert }">
     <component
-      :is="link ? 'custom-link' : 'div'"
+      :is="link ? CustomLink : 'div'"
       v-bind="link ? { href: link, ...linkProps } : {}"
       @click="handleClick"
     >
@@ -13,29 +13,26 @@
   </card>
 </template>
 
-<script>
+<script setup lang="ts">
 import Card from '@/components/Card.vue';
 import CustomLink from '@/components/CustomLink.vue';
 
-export default {
-  components: { Card, CustomLink },
-  props: {
-    icon: { type: Object, required: true },
-    text: { type: String, required: true },
-    link: { type: [String, Object], default: '' },
-    linkProps: { type: Object, default: () => ({}) },
-    invert: { type: Boolean, default: false },
-    iconProps: { type: Object, default: () => {} },
-  },
-  emits: ['click'],
-  methods: {
-    handleClick() {
-      if (!this.link) {
-        this.$emit('click');
-      }
-    },
-  },
-};
+const { icon, text, link = '', linkProps = {}, invert = false, iconProps = {} } = defineProps<{
+  icon: Record<string, any>;
+  text: string;
+  link?: string | Record<string, any>;
+  linkProps?: Record<string, any>;
+  invert?: boolean;
+  iconProps?: Record<string, any>;
+}>()
+
+const emit = defineEmits<{ click: [] }>()
+
+function handleClick(): void {
+  if (!link) {
+    emit('click');
+  }
+}
 </script>
 
 <style lang="sass" scoped>

@@ -1,5 +1,5 @@
 <template>
-    <card v-if="showPWCSchedule && showPWCCard" class="card">
+    <card v-if="userSettingsStore.showPWCSchedule && showPWCCard" class="card">
         <p class="title">PWC</p>
         <div class="green-line"></div>
         <div class="countdown">
@@ -11,161 +11,160 @@
     </card>
 </template>
 
-<script>
-import { mapState } from 'pinia';
+<script setup lang="ts">
+import { ref, computed, onBeforeUnmount } from 'vue';
 import Card from '@/components/Card.vue';
 import useUserSettingsStore from '@/stores/user-settings';
 import useClockStore from '@/stores/clock';
 
-export default {
-  components: { Card },
-  data() {
-    return {
-      openingTimes: [
-        { day: 1, start: '15:30', end: '20:00' }, // Monday
-        { day: 2, start: '15:30', end: '20:00' }, // Tuesday
-        { day: 3, start: '15:30', end: '20:00' }, // Wednesday
-        { day: 4, start: '15:30', end: '20:00' }, // Thursday
-        { day: 5, start: '15:30', end: '18:00' }, // Friday
-        { day: 6, start: '10:00', end: '14:00' }, // Saturday
-        { day: 0, start: '10:00', end: '14:00' }, // Sunday
-      ],
-      closedDays: [
-        // Add dates in 'YYYY-MM-DD' format for holidays or special closures
-        '2024-02-18',
-        '2024-02-19',
-        '2024-03-03',
-        '2024-03-04',
-        '2024-03-31',
-        '2024-05-12',
-        '2024-05-22',
-        '2024-05-23',
-        '2024-05-24',
-        '2024-05-25',
-        '2024-05-26',
-        '2024-05-27',
-      ],
-      currentTimeMs: 0,
-    };
-  },
-  computed: {
-    ...mapState(useClockStore, ['date']),
-    ...mapState(useUserSettingsStore, ['showPWCSchedule']),
-    currentTime() {
-      return new Date(this.currentTimeMs);
-    },
-    showPWCCard() {
-      const scheduleDate = new Date(this.date);
-      const today = new Date();
-      return scheduleDate.getDate() === today.getDate() &&
-              scheduleDate.getMonth() === today.getMonth() &&
-              scheduleDate.getFullYear() === today.getFullYear();
-    },
-    currentDay() {
-      return this.currentTime.getDay();
-    },
-    currentOpeningTime() {
-      const openingTime = this.openingTimes.find(
-        (time) => time.day === this.currentDay,
-      );
-      return this.getTimeInMs(
-        this.currentTime.toDateString(),
-        openingTime.start,
-      );
-    },
-    currentClosingTime() {
-      const closingTime = this.openingTimes.find(
-        (time) => time.day === this.currentDay,
-      );
-      return this.getTimeInMs(
-        this.currentTime.toDateString(),
-        closingTime.end,
-      );
-    },
-    nextOpeningTime() {
-      const currentDate = this.currentTime.toISOString().substr(0, 10);
-      if (this.currentTime < this.currentOpeningTime) {
-        const openingTime = this.openingTimes.find((time) => time.day === this.currentDay);
-        return this.getTimeInMs(currentDate, openingTime.start);
-      }
+const clockStore = useClockStore();
+const userSettingsStore = useUserSettingsStore();
 
-      let nextDay = (this.currentDay + 1) % 7;
-      while (this.closedDays.includes(this.getTimeInMs(this.getNextDate(nextDay), ''))) {
-        nextDay = (nextDay + 1) % 7;
-      }
-      const openingTime = this.openingTimes.find((time) => time.day === nextDay);
-      return this.getTimeInMs(currentDate, openingTime.start);
-    },
-    isOpen() {
-      const isClosedDay = this.closedDays.includes(this.currentTime.toISOString().substr(0, 10));
-      if (isClosedDay) {
-        return false;
-      }
+const openingTimes = [
+  { day: 1, start: '15:30', end: '20:00' }, // Monday
+  { day: 2, start: '15:30', end: '20:00' }, // Tuesday
+  { day: 3, start: '15:30', end: '20:00' }, // Wednesday
+  { day: 4, start: '15:30', end: '20:00' }, // Thursday
+  { day: 5, start: '15:30', end: '18:00' }, // Friday
+  { day: 6, start: '10:00', end: '14:00' }, // Saturday
+  { day: 0, start: '10:00', end: '14:00' }, // Sunday
+];
 
-      return (
-        this.currentTime >= this.currentOpeningTime && this.currentTime <= this.currentClosingTime
-      );
-    },
-    openingStatus() {
-      if (this.closedDays.includes(this.currentTime.toISOString().substr(0, 10))) {
-        return 'Closed Today';
-      }
+const closedDays = [
+  // Add dates in 'YYYY-MM-DD' format for holidays or special closures
+  '2024-02-18',
+  '2024-02-19',
+  '2024-03-03',
+  '2024-03-04',
+  '2024-03-31',
+  '2024-05-12',
+  '2024-05-22',
+  '2024-05-23',
+  '2024-05-24',
+  '2024-05-25',
+  '2024-05-26',
+  '2024-05-27',
+];
 
-      return this.isOpen ? 'Open' : `Opens at ${this.formatTime(this.nextOpeningTime)}`;
-    },
-    timeStatus() {
-      return this.isOpen ? 'Closes' : 'Closed';
-    },
-    countdownTime() {
-      const targetTime = this.isOpen? this.currentClosingTime : this.nextOpeningTime;
-      const timeDiff = targetTime - this.currentTimeMs;
-      if (timeDiff <= 0) {
-        return '00:00:00';
-      }
-      const hours = String(Math.floor(timeDiff / (1000 * 60 * 60))).padStart(2, '0');
-      const minutes = String(Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-      const seconds = String(Math.floor((timeDiff % (1000 * 60)) / 1000)).padStart(2, '0');
-      return `${hours}:${minutes}:${seconds}`;
-    },
-  },
-  methods: {
-    getTimeInMs(dateString, timeString) {
-      const dateTimeString = `${dateString} ${timeString}`;
-      return new Date(dateTimeString).getTime();
-    },
-    getNextDate(day) {
-      const today = this.currentTime.getDay();
-      const difference = (day - today + 7) % 7;
-      const nextDate = new Date(this.currentTime);
-      nextDate.setDate(this.currentTime.getDate() + difference);
-      return nextDate.toDateString();
-    },
-    formatTime(timeInMs) {
-      const date = new Date(timeInMs);
-      const hours = date.getHours();
-      const minutes = date.getMinutes();
-      const period = hours >= 12 ? 'pm' : 'am';
-      const formattedHours = hours % 12 || 12;
-      const formattedMinutes = String(minutes).padStart(2, '0');
-      return `${formattedHours}:${formattedMinutes} ${period}`;
-    },
-    updateCurrentTime() {
-      this.currentTimeMs = Date.now();
-    },
-  },
-  created() {
-    // Initialize countdown immediately
-    this.updateCurrentTime();
+const currentTimeMs = ref(0);
+let timer: ReturnType<typeof setInterval> | null = null;
 
-    // Update currentTime every second
-    this.timer = setInterval(() => {
-      this.updateCurrentTime();
-    }, 1000);
-  },
-  beforeDestroy() {
-    clearInterval(this.timer);
-  },
-};
+const currentTime = computed(() => new Date(currentTimeMs.value));
+
+const showPWCCard = computed(() => {
+  const scheduleDate = new Date(clockStore.date);
+  const today = new Date();
+  return scheduleDate.getDate() === today.getDate() &&
+          scheduleDate.getMonth() === today.getMonth() &&
+          scheduleDate.getFullYear() === today.getFullYear();
+});
+
+const currentDay = computed(() => currentTime.value.getDay());
+
+const currentOpeningTime = computed(() => {
+  const openingTime = openingTimes.find(
+    (time) => time.day === currentDay.value,
+  )!;
+  return getTimeInMs(
+    currentTime.value.toDateString(),
+    openingTime.start,
+  );
+});
+
+const currentClosingTime = computed(() => {
+  const closingTime = openingTimes.find(
+    (time) => time.day === currentDay.value,
+  )!;
+  return getTimeInMs(
+    currentTime.value.toDateString(),
+    closingTime.end,
+  );
+});
+
+const nextOpeningTime = computed(() => {
+  const currentDate = currentTime.value.toISOString().substr(0, 10);
+  if (currentTime.value < currentOpeningTime.value) {
+    const openingTime = openingTimes.find((time) => time.day === currentDay.value)!;
+    return getTimeInMs(currentDate, openingTime.start);
+  }
+
+  let nextDay = (currentDay.value + 1) % 7;
+  while ((closedDays as any[]).includes(getTimeInMs(getNextDate(nextDay), ''))) {
+    nextDay = (nextDay + 1) % 7;
+  }
+  const openingTime = openingTimes.find((time) => time.day === nextDay)!;
+  return getTimeInMs(currentDate, openingTime.start);
+});
+
+const isOpen = computed(() => {
+  const isClosedDay = closedDays.includes(currentTime.value.toISOString().substr(0, 10));
+  if (isClosedDay) {
+    return false;
+  }
+
+  return (
+    currentTime.value >= currentOpeningTime.value && currentTime.value <= currentClosingTime.value
+  );
+});
+
+const openingStatus = computed(() => {
+  if (closedDays.includes(currentTime.value.toISOString().substr(0, 10))) {
+    return 'Closed Today';
+  }
+
+  return isOpen.value ? 'Open' : `Opens at ${formatTime(nextOpeningTime.value)}`;
+});
+
+const timeStatus = computed(() => isOpen.value ? 'Closes' : 'Closed');
+
+const countdownTime = computed(() => {
+  const targetTime = isOpen.value ? currentClosingTime.value : nextOpeningTime.value;
+  const timeDiff = targetTime - currentTimeMs.value;
+  if (timeDiff <= 0) {
+    return '00:00:00';
+  }
+  const hours = String(Math.floor(timeDiff / (1000 * 60 * 60))).padStart(2, '0');
+  const minutes = String(Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+  const seconds = String(Math.floor((timeDiff % (1000 * 60)) / 1000)).padStart(2, '0');
+  return `${hours}:${minutes}:${seconds}`;
+});
+
+function getTimeInMs(dateString: string, timeString: string): number {
+  const dateTimeString = `${dateString} ${timeString}`;
+  return new Date(dateTimeString).getTime();
+}
+
+function getNextDate(day: number): string {
+  const today = currentTime.value.getDay();
+  const difference = (day - today + 7) % 7;
+  const nextDate = new Date(currentTime.value);
+  nextDate.setDate(currentTime.value.getDate() + difference);
+  return nextDate.toDateString();
+}
+
+function formatTime(timeInMs: number): string {
+  const date = new Date(timeInMs);
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const period = hours >= 12 ? 'pm' : 'am';
+  const formattedHours = hours % 12 || 12;
+  const formattedMinutes = String(minutes).padStart(2, '0');
+  return `${formattedHours}:${formattedMinutes} ${period}`;
+}
+
+function updateCurrentTime(): void {
+  currentTimeMs.value = Date.now();
+}
+
+// created() logic — runs immediately
+updateCurrentTime();
+timer = setInterval(() => {
+  updateCurrentTime();
+}, 1000);
+
+onBeforeUnmount(() => {
+  clearInterval(timer!);
+});
 </script>
 
 <style lang="sass" scoped>
