@@ -7,6 +7,7 @@ module.exports = {
     'plugin:vue/essential',
     '@vue/airbnb',
     '@vue/typescript/recommended',
+    'plugin:storybook/recommended',
   ],
   parserOptions: {
     ecmaVersion: 2020,

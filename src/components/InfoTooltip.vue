@@ -42,8 +42,9 @@ export default {
   methods: {
     showTooltip(event) {
       this.isVisible = true;
+      const target = event.currentTarget;
       this.$nextTick(() => {
-        const rect = event.currentTarget.getBoundingClientRect();
+        const rect = target.getBoundingClientRect();
         const tooltip = this.$refs.tooltip;
 
         if (tooltip) {
