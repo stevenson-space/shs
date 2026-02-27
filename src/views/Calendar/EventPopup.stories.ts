@@ -44,7 +44,7 @@ export const Default: Story = {
 export const AllDay: Story = {
   args: {
     event: {
-      name: 'Martin Luther. King, Jr. Day (No School)',
+      name: 'Martin Luther King, Jr. Day (No School)',
       start: 1768780800000,
       end: 1768867200000,
       allDay: true,
