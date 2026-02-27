@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, computed, onMounted } from 'vue';
+import { reactive, computed, onMounted, onBeforeUnmount } from 'vue';
 import Card from '@/components/Card.vue';
 
 const { untilDate, message } = defineProps<{ untilDate: string; message?: string }>();
@@ -45,10 +45,16 @@ function getTimeLeft(): void {
   timeLeft.minutes = minutesLeft < 10 ? `0${minutesLeft}` : `${minutesLeft}`;
 }
 
+let intervalId: ReturnType<typeof setInterval> | undefined;
+
 onMounted(() => {
-  setInterval(() => {
+  intervalId = setInterval(() => {
     getTimeLeft();
   }, 1000);
+});
+
+onBeforeUnmount(() => {
+  clearInterval(intervalId);
 });
 </script>
 
