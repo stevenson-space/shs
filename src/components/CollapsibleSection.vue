@@ -29,9 +29,10 @@
 import { computed, useSlots } from 'vue';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-const { title, modelValue = false, disabled = false, headerClass = '', lockOpen = false } = defineProps<{
+const modelValue = defineModel<boolean>({ default: false });
+
+const { title, disabled = false, headerClass = '', lockOpen = false } = defineProps<{
   title: string
-  modelValue?: boolean
   disabled?: boolean
   headerClass?: string
   lockOpen?: boolean
@@ -45,12 +46,12 @@ const slots = useSlots();
 
 const icons = { faChevronRight };
 
-const isExpanded = computed(() => lockOpen ? true : modelValue);
+const isExpanded = computed(() => lockOpen ? true : modelValue.value);
 const showChevron = computed(() => !disabled && !lockOpen);
 
 function handleHeaderClick() {
   if (!disabled && !lockOpen) {
-    emit('update:modelValue', !modelValue);
+    modelValue.value = !modelValue.value;
   }
 }
 </script>
