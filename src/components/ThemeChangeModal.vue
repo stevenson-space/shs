@@ -6,7 +6,7 @@
           <div class="divider" />
           <p>Do you want to override your current color selection to the suggested color for the {{ newTheme["name"] }} theme?</p>
           <div class="btn-row">
-            <div class="color-circle" :style="{ background: themeStore.color }"></div>
+            <div class="color-circle" :style="{ background: themeStore.styling.accent ?? 'transparent' /* TODO(theme): resolve fallback */ }"></div>
              <font-awesome-icon
             class="arrow"
             :icon="faArrowRight"
