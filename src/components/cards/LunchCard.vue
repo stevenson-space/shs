@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import getLunch from '@/utils/lunch';
 import useClockStore from '@/stores/clock';
 import Card from '@/components/Card.vue';
@@ -23,9 +23,9 @@ import WhatIsThis from '@/components/WhatIsThis.vue';
 
 const clockStore = useClockStore();
 
-const noLunchData = ref(false);
-
 const lunch = computed(() => getLunch(clockStore.date));
+
+const noLunchData = computed(() => lunch.value === null);
 </script>
 
 <style lang="sass" scoped>
