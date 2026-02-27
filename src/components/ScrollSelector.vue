@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-selector" :style="{ height: `${optionHeight * (2 * numOptionsAbove + 1)}px`, fontSize }">
+  <div ref="root" class="scroll-selector" :style="{ height: `${optionHeight * (2 * numOptionsAbove + 1)}px`, fontSize }">
     <!-- eslint-disable-next-line vue/require-v-for-key vue/no-unused-vars-->
     <div v-for="_ in Array(numOptionsAbove)" :style="{ height: `${optionHeight}px`}" />
     <div
@@ -18,65 +18,83 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    options: { type: Array, required: true },
-    modelValue: { type: String, required: true },
-    numOptionsAbove: { type: Number, default: 1 }, // the number of options to be displayed above the selected option to indicate scrollability
-    fontSize: { type: String, default: '1em' }, // this property must be used to set font-size because optionHeight depends upon it
-  },
-  data() {
-    return {
-      optionHeight: 0,
-    };
-  },
-  watch: {
-    modelValue() {
-      this.scrollToSelected();
-    },
-    fontSize() {
-      this.$nextTick(this.setOptionHeight);
-    },
-    options() {
-      this.$nextTick(this.setOptionHeight);
-    },
-  },
-  mounted() {
-    this.setOptionHeight();
-    setTimeout(this.setOptionHeight, 100); // just in case
+<script setup lang="ts">
+import { ref, watch, onMounted, onBeforeUnmount, nextTick, useTemplateRef } from 'vue';
 
-    this.$nextTick(this.scrollToSelected);
+const { options, modelValue, numOptionsAbove = 1, fontSize = '1em' } = defineProps<{
+  options: unknown[];
+  modelValue: string;
+  numOptionsAbove?: number;
+  fontSize?: string;
+}>();
 
-    let scrollTimeout = null;
-    this.$el.addEventListener('scroll', () => {
-      // wait until user is finished scrolling before selecting a choice (debounce)
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        const selectedIndex = Math.round(this.$el.scrollTop / this.optionHeight);
-        this.$emit('update:modelValue', this.options[selectedIndex]);
-        this.scrollToSelected();
-      }, 100);
-    });
-  },
-  methods: {
-    scrollToSelected() {
-      this.$nextTick(() => { // wait until this.value is updated if necessary
-        const index = this.options.indexOf(this.modelValue);
-        if (index > -1 && this.$refs.option[index]) {
-          this.$el.scroll({
-            top: this.$refs.option[index].offsetTop - (this.optionHeight * this.numOptionsAbove),
-            behavior: 'smooth',
-          });
-        }
+const emit = defineEmits<{
+  'update:modelValue': [value: unknown];
+}>();
+
+const optionHeight = ref(0);
+
+const root = useTemplateRef<HTMLElement>('root');
+const option = useTemplateRef<HTMLElement[]>('option');
+
+let scrollHandler: (() => void) | null = null;
+
+watch(() => modelValue, () => {
+  scrollToSelected();
+});
+
+watch(() => fontSize, () => {
+  nextTick(setOptionHeight);
+});
+
+watch(() => options, () => {
+  nextTick(setOptionHeight);
+});
+
+onMounted(() => {
+  setOptionHeight();
+  setTimeout(setOptionHeight, 100); // just in case
+
+  nextTick(scrollToSelected);
+
+  let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
+  scrollHandler = () => {
+    // wait until user is finished scrolling before selecting a choice (debounce)
+    if (!root.value) return;
+    clearTimeout(scrollTimeout!);
+    scrollTimeout = setTimeout(() => {
+      if (!root.value || optionHeight.value <= 0 || options.length === 0) return;
+      const selectedIndex = Math.min(
+        Math.max(Math.round(root.value.scrollTop / optionHeight.value), 0),
+        options.length - 1,
+      );
+      emit('update:modelValue', options[selectedIndex]);
+      scrollToSelected();
+    }, 100);
+  };
+  root.value!.addEventListener('scroll', scrollHandler);
+});
+
+onBeforeUnmount(() => {
+  if (scrollHandler) root.value?.removeEventListener('scroll', scrollHandler);
+});
+
+function scrollToSelected(): void {
+  nextTick(() => { // wait until this.value is updated if necessary
+    const index = (options as string[]).indexOf(modelValue);
+    if (index > -1 && option.value?.[index]) {
+      root.value!.scroll({
+        top: option.value[index].offsetTop - (optionHeight.value * numOptionsAbove),
+        behavior: 'smooth',
       });
-    },
-    setOptionHeight() {
-      if (!this.$refs.option?.[0]) return;
-      this.optionHeight = this.$refs.option[0].getBoundingClientRect().height;
-    },
-  },
-};
+    }
+  });
+}
+
+function setOptionHeight(): void {
+  if (!option.value?.[0]) return;
+  optionHeight.value = option.value[0].getBoundingClientRect().height;
+}
 </script>
 
 <style lang="sass" scoped>

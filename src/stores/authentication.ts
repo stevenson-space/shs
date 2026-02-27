@@ -1,19 +1,15 @@
 import { defineStore } from 'pinia';
+import { ref } from 'vue';
 
-interface State {
-  authenticated: boolean,
-}
+export default defineStore('authentication', () => {
+  const authenticated = ref(false);
 
-export default defineStore('authentication', {
-  state: (): State => ({
-    authenticated: false,
-  }),
-  actions: {
-    setAuthenticated(value: boolean): void {
-      this.authenticated = value;
-      // explicitly do not use local storage for handling authentication
-      // google will automatically perform token refreshes/sign ins
-      // localStorage.isAuthenticated = authenticated;
-    },
-  },
+  function setAuthenticated(value: boolean): void {
+    authenticated.value = value;
+    // explicitly do not use local storage for handling authentication
+    // google will automatically perform token refreshes/sign ins
+    // localStorage.isAuthenticated = authenticated;
+  }
+
+  return { authenticated, setAuthenticated };
 });

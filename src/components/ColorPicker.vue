@@ -29,7 +29,7 @@
             @change="handleInheritChange"
             class="inherit-select"
           >
-            <option value="base">Inherit {{ styling.base || 'light' }} mode</option>
+            <option value="base">Inherit {{ themeStore.styling.base || 'light' }} mode</option>
             <option value="accent">Inherit accent</option>
             <option value="background">Inherit background</option>
             <option value="secondaryBackground">Inherit secondaryBackground</option>
@@ -63,215 +63,202 @@
   </div>
 </template>
 
-<script>
-import { mapState } from 'pinia';
+<script setup lang="ts">
+import { ref, computed, watch } from 'vue';
 import { fallbackStyling } from '@/utils/themes';
 import useThemeStore from '@/stores/themes';
 
-export default {
-  props: {
-    modelValue: {
-      type: String,
-      default: '',
-    },
-    allowInherit: {
-      type: Boolean,
-      default: true,
-    },
-    disableInlineButton: {
-      type: Boolean,
-      default: false,
-    },
-    placeholder: {
-      type: String,
-      default: 'Color value',
-    },
-    propertyPath: {
-      type: String,
-      required: false,
-    },
-    label: {
-      type: String,
-      default: '',
-    },
-  },
-  data() {
-    return {
-      inheritMode: 'base',
-    };
-  },
-  computed: {
-    ...mapState(useThemeStore, ['styling']),
-    isInheriting() {
-      return !this.modelValue || this.modelValue === 'inherit' || this.modelValue.startsWith('var(--');
-    },
-    inheritedValue() {
-      if (this.modelValue && this.modelValue.startsWith('var(--')) {
-        // Extract property name from var(--propertyName)
-        const match = this.modelValue.match(/var\(--([^)]+)\)/);
-        if (match) {
-          const varName = match[1];
-          return this.getValueFromVarName(varName);
-        }
-      }
+const { modelValue = '', allowInherit = true, disableInlineButton = false, placeholder = 'Color value', propertyPath, label = '' } = defineProps<{
+  modelValue?: string;
+  allowInherit?: boolean;
+  disableInlineButton?: boolean;
+  placeholder?: string;
+  propertyPath?: string;
+  label?: string;
+}>();
 
-      // Default to base inheritance
-      if (!this.propertyPath) {
-        return '#000000';
-      }
+const emit = defineEmits<{
+  'update:modelValue': [value: string];
+}>();
 
-      const fallback = fallbackStyling(this.styling);
-      const parts = this.propertyPath.split('.');
-      let value = fallback;
-      for (const part of parts) {
-        value = value?.[part];
-      }
+const themeStore = useThemeStore();
 
-      return value || '#000000';
-    },
-    colorValue() {
-      const valueToConvert = this.isInheriting ? this.inheritedValue : this.modelValue;
+const inheritMode = ref('base');
 
-      // Convert CSS color names, var(), or other formats to hex for color input
-      if (!valueToConvert || valueToConvert.startsWith('var(')) {
-        return '#000000';
-      }
+const isInheriting = computed(() => {
+  return !modelValue || modelValue === 'inherit' || modelValue.startsWith('var(--');
+});
 
-      // If it's already a hex color, return it
-      if (/^#[0-9A-Fa-f]{6}$/.test(valueToConvert)) {
-        return valueToConvert;
-      }
+const inheritedValue = computed(() => {
+  if (modelValue && modelValue.startsWith('var(--')) {
+    // Extract property name from var(--propertyName)
+    const match = modelValue.match(/var\(--([^)]+)\)/);
+    if (match) {
+      const varName = match[1];
+      return getValueFromVarName(varName);
+    }
+  }
 
-      // Try to convert CSS color name to hex
-      const hex = this.cssColorToHex(valueToConvert);
-      return hex || '#000000';
-    },
-  },
-  watch: {
-    modelValue: {
-      immediate: true,
-      handler(value) {
-        if (value && value.startsWith('var(--')) {
-          // Parse the var reference to set inheritMode
-          const match = value.match(/var\(--([^)]+)\)/);
-          if (match) {
-            this.inheritMode = match[1];
-          }
-        } else if (!value || value === 'inherit') {
-          this.inheritMode = 'base';
-        }
-      },
-    },
-  },
-  methods: {
-    handleColorInput(event) {
-      this.$emit('update:modelValue', event.target.value);
-    },
-    handleTextInput(event) {
-      this.$emit('update:modelValue', event.target.value);
-    },
-    handleInheritChange() {
-      if (this.inheritMode === 'base') {
-        this.$emit('update:modelValue', '');
-      } else {
-        this.$emit('update:modelValue', `var(--${this.inheritMode})`);
-      }
-    },
-    validateColor() {
-      const value = this.modelValue?.trim();
-      if (!value || value === 'inherit' || this.isValidColor(value)) {
-        return;
-      }
-      // If invalid, revert to empty (inherit)
-      this.$emit('update:modelValue', '');
-    },
-    isValidColor(value) {
-      // Check hex colors
-      if (/^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/.test(value)) {
-        return true;
-      }
-      // Check rgb/rgba
-      if (/^rgba?\(/.test(value)) {
-        return true;
-      }
-      // Check var()
-      if (/^var\(--[\w-]+\)$/.test(value)) {
-        return true;
-      }
-      // Check CSS color names
-      return this.cssColorToHex(value) !== null;
-    },
-    cssColorToHex(color) {
-      // Create a temporary element to use browser's color parsing
-      const el = document.createElement('div');
-      el.style.color = color;
-      document.body.appendChild(el);
-      const computed = getComputedStyle(el).color;
-      document.body.removeChild(el);
+  // Default to base inheritance
+  if (!propertyPath) {
+    return '#000000';
+  }
 
-      // Convert rgb to hex
-      const match = computed.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-      if (match) {
-        const r = parseInt(match[1]).toString(16).padStart(2, '0');
-        const g = parseInt(match[2]).toString(16).padStart(2, '0');
-        const b = parseInt(match[3]).toString(16).padStart(2, '0');
-        return `#${r}${g}${b}`;
-      }
-      return null;
-    },
-    toggleInherit() {
-      const currentValue = this.modelValue;
+  const fallback = fallbackStyling(themeStore.styling);
+  const parts = propertyPath.split('.');
+  let value: any = fallback;
+  for (const part of parts) {
+    value = value?.[part];
+  }
 
-      // Check if currently inheriting
-      const isCurrentlyInheriting = !currentValue || currentValue === 'inherit' || currentValue.startsWith('var(--');
+  return value || '#000000';
+});
 
-      if (isCurrentlyInheriting) {
-        // Turn OFF inheritance: set to the actual resolved color value
-        this.$emit('update:modelValue', this.inheritedValue);
-      } else {
-        // Turn ON inheritance: always default to inherit from base (empty string)
-        this.$emit('update:modelValue', '');
-      }
-    },
-    getValueFromVarName(varName) {
-      // Map CSS variable names to styling paths (matching App.vue)
-      const varMap = {
-        'accent': 'accent',
-        'background': 'background',
-        'secondaryBackground': 'secondaryBackground',
-        'headerBackground': 'header.background',
-        'headerScheduleBar': 'header.scheduleBar',
-        'primary': 'text.primary',
-        'secondary': 'text.secondary',
-        'tertiary': 'text.tertiary',
-        'iconCardsRegular': 'iconCards.regular',
-        'iconCardsInvert': 'iconCards.invert',
-      };
+const colorValue = computed(() => {
+  const valueToConvert = isInheriting.value ? inheritedValue.value : modelValue;
 
-      const path = varMap[varName];
-      if (!path) return '#000000';
+  // Convert CSS color names, var(), or other formats to hex for color input
+  if (!valueToConvert || valueToConvert.startsWith('var(')) {
+    return '#000000';
+  }
 
-      const parts = path.split('.');
-      let value = this.styling;
-      for (const part of parts) {
-        value = value?.[part];
-        if (!value) break;
-      }
+  // If it's already a hex color, return it
+  if (/^#[0-9A-Fa-f]{6}$/.test(valueToConvert)) {
+    return valueToConvert;
+  }
 
-      // If not found in current styling, check fallback
-      if (!value) {
-        const fallback = fallbackStyling(this.styling);
-        value = fallback;
-        for (const part of parts) {
-          value = value?.[part];
-          if (!value) break;
-        }
-      }
+  // Try to convert CSS color name to hex
+  const hex = cssColorToHex(valueToConvert);
+  return hex || '#000000';
+});
 
-      return value || '#000000';
-    },
-  },
-};
+watch(() => modelValue, (value) => {
+  if (value && value.startsWith('var(--')) {
+    // Parse the var reference to set inheritMode
+    const match = value.match(/var\(--([^)]+)\)/);
+    if (match) {
+      inheritMode.value = match[1];
+    }
+  } else if (!value || value === 'inherit') {
+    inheritMode.value = 'base';
+  }
+}, { immediate: true });
+
+function handleColorInput(event: Event): void {
+  emit('update:modelValue', (event.target as HTMLInputElement).value);
+}
+
+function handleTextInput(event: Event): void {
+  emit('update:modelValue', (event.target as HTMLInputElement).value);
+}
+
+function handleInheritChange(): void {
+  if (inheritMode.value === 'base') {
+    emit('update:modelValue', '');
+  } else {
+    emit('update:modelValue', `var(--${inheritMode.value})`);
+  }
+}
+
+function validateColor(): void {
+  const value = modelValue?.trim();
+  if (!value || value === 'inherit' || isValidColor(value)) {
+    return;
+  }
+  // If invalid, revert to empty (inherit)
+  emit('update:modelValue', '');
+}
+
+function isValidColor(value: string): boolean {
+  // Check hex colors
+  if (/^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/.test(value)) {
+    return true;
+  }
+  // Check rgb/rgba
+  if (/^rgba?\(/.test(value)) {
+    return true;
+  }
+  // Check var()
+  if (/^var\(--[\w-]+\)$/.test(value)) {
+    return true;
+  }
+  // Check CSS color names
+  return cssColorToHex(value) !== null;
+}
+
+function cssColorToHex(color: string): string | null {
+  // Create a temporary element to use browser's color parsing
+  const el = document.createElement('div');
+  el.style.color = color;
+  // If the browser rejected the value, style.color stays empty
+  if (!el.style.color) return null;
+  document.body.appendChild(el);
+  const computedColor = getComputedStyle(el).color;
+  document.body.removeChild(el);
+
+  // Convert rgb/rgba to hex
+  const match = computedColor.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*[\d.]+)?\)$/);
+  if (match) {
+    const r = parseInt(match[1]).toString(16).padStart(2, '0');
+    const g = parseInt(match[2]).toString(16).padStart(2, '0');
+    const b = parseInt(match[3]).toString(16).padStart(2, '0');
+    return `#${r}${g}${b}`;
+  }
+  return null;
+}
+
+function toggleInherit(): void {
+  const currentValue = modelValue;
+
+  // Check if currently inheriting
+  const isCurrentlyInheriting = !currentValue || currentValue === 'inherit' || currentValue.startsWith('var(--');
+
+  if (isCurrentlyInheriting) {
+    // Turn OFF inheritance: set to the actual resolved color value
+    emit('update:modelValue', inheritedValue.value);
+  } else {
+    // Turn ON inheritance: always default to inherit from base (empty string)
+    emit('update:modelValue', '');
+  }
+}
+
+function getValueFromVarName(varName: string): string {
+  // Map CSS variable names to styling paths (matching App.vue)
+  const varMap: Record<string, string> = {
+    'accent': 'accent',
+    'background': 'background',
+    'secondaryBackground': 'secondaryBackground',
+    'headerBackground': 'header.background',
+    'headerScheduleBar': 'header.scheduleBar',
+    'primary': 'text.primary',
+    'secondary': 'text.secondary',
+    'tertiary': 'text.tertiary',
+    'iconCardsRegular': 'iconCards.regular',
+    'iconCardsInvert': 'iconCards.invert',
+  };
+
+  const path = varMap[varName];
+  if (!path) return '#000000';
+
+  const parts = path.split('.');
+  let value: any = themeStore.styling;
+  for (const part of parts) {
+    value = value?.[part];
+    if (!value) break;
+  }
+
+  // If not found in current styling, check fallback
+  if (!value) {
+    const fallback = fallbackStyling(themeStore.styling);
+    value = fallback;
+    for (const part of parts) {
+      value = value?.[part];
+      if (!value) break;
+    }
+  }
+
+  return value || '#000000';
+}
 </script>
 
 <style lang="sass" scoped>

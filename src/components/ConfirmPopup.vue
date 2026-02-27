@@ -9,11 +9,7 @@
   </popup>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import Popup from '@/components/Popup.vue';
-import RoundedButton from '@/components/RoundedButton.vue';
-
+<script setup lang="ts">
 // 2 ways to use this component:
 //   - Method 1: use the 'show' prop to display and hide,
 //               use the slot to control content
@@ -21,52 +17,57 @@ import RoundedButton from '@/components/RoundedButton.vue';
 //   - Method 2: use a reference to this component and call the 'displayPopup' method with the text as the parameter,
 //               which returns a Promise (success or fail depending on user action)
 
-export default defineComponent({
-  components: {
-    Popup,
-    RoundedButton,
-  },
-  props: {
-    show: { type: Boolean, default: false },
-    okText: { type: String, default: 'OK' },
-    cancelText: { type: String, default: 'Cancel' },
-  },
-  data() {
-    return {
-      showAlt: false,
-      text: '',
-      promiseResolve: () => {},
-      promiseReject: () => {},
-    };
-  },
-  methods: {
-    ok(): void {
-      this.$emit('ok');
-      this.promiseResolve();
-      this.reset();
-    },
-    cancel(): void {
-      this.$emit('cancel');
-      this.promiseReject('Canceled');
-      this.reset();
-    },
-    reset(): void {
-      this.promiseResolve = () => {};
-      this.promiseReject = () => {};
-      this.showAlt = false;
-      this.text = '';
-    },
-    displayPopup(text: string): Promise<void> {
-      return new Promise((resolve, reject) => {
-        this.text = text;
-        this.promiseResolve = resolve;
-        this.promiseReject = reject;
+import { ref } from 'vue';
+import Popup from '@/components/Popup.vue';
+import RoundedButton from '@/components/RoundedButton.vue';
 
-        this.showAlt = true;
-      });
-    },
-  },
-});
+const { show = false, okText = 'OK', cancelText = 'Cancel' } = defineProps<{
+  show?: boolean
+  okText?: string
+  cancelText?: string
+}>();
+
+const emit = defineEmits<{ ok: [], cancel: [] }>();
+
+const showAlt = ref(false);
+const text = ref('');
+let promiseResolve: () => void = () => {};
+let promiseReject: (reason?: unknown) => void = () => {};
+
+function ok(): void {
+  emit('ok');
+  promiseResolve();
+  reset();
+}
+
+function cancel(): void {
+  emit('cancel');
+  promiseReject('Canceled');
+  reset();
+}
+
+function reset(): void {
+  promiseResolve = () => {};
+  promiseReject = () => {};
+  showAlt.value = false;
+  text.value = '';
+}
+
+function displayPopup(message: string): Promise<void> {
+  if (showAlt.value) {
+    promiseReject(new Error('popup replaced'));
+    promiseResolve = () => {};
+    promiseReject = () => {};
+  }
+  return new Promise((resolve, reject) => {
+    text.value = message;
+    promiseResolve = resolve;
+    promiseReject = reject;
+    showAlt.value = true;
+  });
+}
+
+defineExpose({ displayPopup });
 </script>
 
 <style lang="sass" scoped>

@@ -7,16 +7,9 @@
   </card>
 </template>
 
-<script>
+<script setup lang="ts">
 import Card from '@/components/Card.vue';
-
-export default {
-  components: { Card },
-  props: {
-    className: { type: String, required: true },
-    documents: { type: Array[Object], required: true },
-  },
-};
+const { className, documents } = defineProps<{ className: string; documents: { title: string; link: string }[] }>()
 </script>
 
 <style lang="sass" scoped>

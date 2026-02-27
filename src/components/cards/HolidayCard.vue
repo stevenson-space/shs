@@ -5,12 +5,8 @@
   </timed-card>
 </template>
 
-<script>
+<script setup lang="ts">
 import TimedCard from './TimedCard.vue';
-
-export default {
-  components: { TimedCard },
-};
 </script>
 
 <style lang="sass" scoped>

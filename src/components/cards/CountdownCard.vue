@@ -16,56 +16,46 @@
   </card>
 </template>
 
-<script>
+<script setup lang="ts">
+import { reactive, computed, onMounted, onBeforeUnmount } from 'vue';
 import Card from '@/components/Card.vue';
 
-export default {
-  components: { Card },
-  props: {
-    untilDate: { type: String, required: true }, // example "May 22, 2021"
-    message: { type: String, required: false },
-  },
-  data() {
-    return {
-      formattedUntilDate: new Date(this.untilDate),
-      timeLeft: {
-        days: '00',
-        hours: '00',
-        minutes: '00',
-      },
-    };
-  },
-  mounted() {
-    setInterval(() => {
-      this.getTimeLeft();
-    }, 1000);
-  },
-  methods: {
-    getTimeLeft() {
-      const untilDate = new Date(this.untilDate);
-      untilDate.setHours(11, 40, 0, 0);
-      const goalTime = untilDate.getTime();
-      const now = new Date().getTime();
-      const diff = goalTime - now;
+const { untilDate, message } = defineProps<{ untilDate: string; message?: string }>();
 
-      // diff is in milliseconds, so we need to do a little math to get the days, hours, and minutes
-      const daysLeft = Math.floor(diff / 86400000);
-      const hoursLeft = Math.floor((diff % 86400000) / 3600000);
-      const minutesLeft = Math.floor((diff % 3600000) / 60000);
+const canonicalUntilDate = new Date(untilDate);
+canonicalUntilDate.setHours(11, 40, 0, 0);
+const canonicalUntilMs = canonicalUntilDate.getTime();
 
-      // basic formatting to make sure the numbers are always two digits
-      this.timeLeft.days = daysLeft < 10 ? `0${daysLeft}` : `${daysLeft}`;
-      this.timeLeft.hours = hoursLeft < 10 ? `0${hoursLeft}` : `${hoursLeft}`;
-      this.timeLeft.minutes = minutesLeft < 10 ? `0${minutesLeft}` : `${minutesLeft}`;
-    },
-  },
-  computed: {
-    showCard() {
-      const today = new Date().getTime();
-      return today < this.formattedUntilDate.getTime();
-    },
-  },
-};
+const timeLeft = reactive({ days: '00', hours: '00', minutes: '00' });
+
+const showCard = computed(() => Date.now() < canonicalUntilMs);
+
+function getTimeLeft(): void {
+  const now = Date.now();
+  const diff = canonicalUntilMs - now;
+
+  // diff is in milliseconds, so we need to do a little math to get the days, hours, and minutes
+  const daysLeft = Math.floor(diff / 86400000);
+  const hoursLeft = Math.floor((diff % 86400000) / 3600000);
+  const minutesLeft = Math.floor((diff % 3600000) / 60000);
+
+  // basic formatting to make sure the numbers are always two digits
+  timeLeft.days = daysLeft < 10 ? `0${daysLeft}` : `${daysLeft}`;
+  timeLeft.hours = hoursLeft < 10 ? `0${hoursLeft}` : `${hoursLeft}`;
+  timeLeft.minutes = minutesLeft < 10 ? `0${minutesLeft}` : `${minutesLeft}`;
+}
+
+let intervalId: ReturnType<typeof setInterval> | undefined;
+
+onMounted(() => {
+  intervalId = setInterval(() => {
+    getTimeLeft();
+  }, 1000);
+});
+
+onBeforeUnmount(() => {
+  clearInterval(intervalId);
+});
 </script>
 
 <style lang="sass" scoped>

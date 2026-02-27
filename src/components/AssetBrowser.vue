@@ -5,9 +5,9 @@
         <div class="modal-content" :style="modalStyle">
           <div class="modal-header">
             <h3>{{ modalTitle }}</h3>
-            <div @click="close" style="cursor: pointer;">
-              <font-awesome-icon :icon="icons.faXmark" />
-            </div>
+            <button type="button" class="close-btn" aria-label="Close" @click="close">
+              <font-awesome-icon :icon="faXmark" />
+            </button>
           </div>
 
           <div class="modal-body">
@@ -36,12 +36,11 @@
   </teleport>
 </template>
 
-<script>
-import { mapState } from 'pinia';
+<script setup lang="ts">
+import { computed } from 'vue';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { fallbackStyling } from '@/utils/themes';
 import useThemeStore from '@/stores/themes';
-import IconButton from '@/components/IconButton.vue';
 
 const headerImageModules = import.meta.glob('@/themes/assets/header-images/*', {
   eager: true,
@@ -53,74 +52,59 @@ const particleImageModules = import.meta.glob('@/themes/assets/particles/**/*', 
   as: 'url',
 });
 
-export default {
-  name: 'AssetBrowser',
-  components: {
-    IconButton,
-  },
-  props: {
-    isOpen: {
-      type: Boolean,
-      default: false,
-    },
-    folder: {
-      type: String,
-      default: 'header-images', // 'header-images' or 'particles'
-    },
-  },
-  data() {
-    return {
-      icons: { faXmark },
-    };
-  },
-  emits: ['close', 'select'],
-  computed: {
-    ...mapState(useThemeStore, ['styling']),
+const { isOpen = false, folder = 'header-images' } = defineProps<{
+  isOpen?: boolean;
+  folder?: string;
+}>();
 
-    modalStyle() {
-      const fallback = fallbackStyling(this.styling);
-      const bgColor = this.styling.background || fallback.background;
-      return {
-        backgroundColor: bgColor,
-      };
-    },
+const emit = defineEmits<{
+  close: [];
+  select: [path: string];
+}>();
 
-    modalTitle() {
-      return this.folder === 'particles' ? 'Browse Particle Images' : 'Browse Header Images';
-    },
+const themeStore = useThemeStore();
 
-    allImages() {
-      const images = [];
-      const imageModules = this.folder === 'particles' ? particleImageModules : headerImageModules;
+const modalStyle = computed(() => {
+  const fallback = fallbackStyling(themeStore.styling);
+  const bgColor = themeStore.styling.background || fallback.background;
+  return {
+    backgroundColor: bgColor,
+  };
+});
 
-      for (const [path, url] of Object.entries(imageModules)) {
-        const filename = path.split('/').pop();
-        const folderPath = path.split('/themes/assets/')[1].split('/').slice(0, -1).join('/');
-        const name = filename.replace(/\.(png|jpg|jpeg|webp|gif)$/i, '');
+const modalTitle = computed(() => {
+  return folder === 'particles' ? 'Browse Particle Images' : 'Browse Header Images';
+});
 
-        images.push({
-          path: `assets://${folderPath}/${filename}`,
-          url,
-          filename,
-          name,
-          folder: folderPath.split('/').pop(),
-        });
-      }
+const allImages = computed(() => {
+  const images: any[] = [];
+  const imageModules = folder === 'particles' ? particleImageModules : headerImageModules;
 
-      return images.sort((a, b) => a.name.localeCompare(b.name));
-    },
-  },
-  methods: {
-    close() {
-      this.$emit('close');
-    },
+  for (const [path, url] of Object.entries(imageModules)) {
+    const filename = path.split('/').pop()!;
+    const folderPath = path.split('/themes/assets/')[1].split('/').slice(0, -1).join('/');
+    const name = filename.replace(/\.(png|jpg|jpeg|webp|gif)$/i, '');
 
-    selectImage(image) {
-      this.$emit('select', image.path);
-      this.close();
-    },
-  },
-};
+    images.push({
+      path: `assets://${folderPath}/${filename}`,
+      url,
+      filename,
+      name,
+      folder: folderPath.split('/').pop(),
+    });
+  }
+
+  return images.sort((a, b) => a.name.localeCompare(b.name));
+});
+
+function close(): void {
+  emit('close');
+}
+
+function selectImage(image: any): void {
+  emit('select', image.path);
+  close();
+}
 </script>
 
 <style lang="sass" scoped>
@@ -164,6 +148,15 @@ export default {
     margin: 0
     font-size: 18px
     font-weight: 600
+
+  .close-btn
+    background: transparent
+    border: none
+    color: white
+    cursor: pointer
+    padding: 0
+    display: flex
+    align-items: center
 
 // Modal body
 .modal-body

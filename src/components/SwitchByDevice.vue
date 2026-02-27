@@ -7,23 +7,21 @@
   </div>
 </template>
 
-<script>
-export default {
-  computed: {
-    defaultThingClasses() {
-      const classes = ['mobile', 'tablet', 'desktop'];
+<script setup lang="ts">
+import { computed, useSlots } from 'vue';
 
-      Object.keys(this.$slots).forEach((slotName) => {
-        const index = classes.indexOf(slotName);
-        if (index > -1) {
-          classes.splice(index, 1); // remove that class
-        }
-      });
+const slots = useSlots();
 
-      return classes;
-    },
-  },
-};
+const defaultThingClasses = computed(() => {
+  const classes = ['mobile', 'tablet', 'desktop'];
+  Object.keys(slots).forEach((slotName) => {
+    const index = classes.indexOf(slotName);
+    if (index > -1) {
+      classes.splice(index, 1); // remove that class
+    }
+  });
+  return classes;
+});
 </script>
 
 <style lang="sass" scoped>

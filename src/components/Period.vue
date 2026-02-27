@@ -52,87 +52,79 @@
   <div :style="{ width: spacerWidth }"></div>
   </div>
 </template>
-<script>
-import { mapState } from 'pinia';
+<script setup lang="ts">
+import { computed } from 'vue';
 import Bell from '@/utils/bell';
 import { dateToSeconds, periodToSeconds } from '@/utils/util';
 import useClockStore from '@/stores/clock';
 
-export default {
-  props: {
-    period: { type: String, required: true },
-    start: { type: String, required: true },
-    end: { type: String, required: true },
-    invert: { type: Boolean, default: false },
-    forceMobileLayout: { type: Boolean, default: false },
-    disableProgressBar: { type: Boolean, default: false },
-    tvSpace: { type: Boolean, default: false },
-  },
-  data() {
-    return {
-      radius: 22, // radius of the progress bar
-      stroke: 3, // stroke of the progress bar
-    };
-  },
-  computed: {
-    ...mapState(useClockStore, ['date']),
-    normalizedRadius() {
-      return this.radius - this.stroke * 2;
-    },
-    circumference() {
-      return this.normalizedRadius * 2 * Math.PI;
-    },
+const {
+  period,
+  start,
+  end,
+  invert = false,
+  forceMobileLayout = false,
+  disableProgressBar = false,
+  tvSpace = false,
+} = defineProps<{
+  period: string
+  start: string
+  end: string
+  invert?: boolean
+  forceMobileLayout?: boolean
+  disableProgressBar?: boolean
+  tvSpace?: boolean
+}>();
 
-    actualPeriod() {
-      // remove the ! mark in front of period names
-      const { period } = this;
-      return period[0] === '!' ? period.substring(1) : period;
-    },
-    periodFontSize() {
-      if (!this.tvSpace) {
-        return this.period.length > 10 ? '1em' : '1.3em';
-      }
-      // TV sizes - smaller for long names, bigger for short
-      if (this.period.length > 7) return '0.85em';  // Long names like "Activity"
-      if (this.period.length > 4) return '1.1em';   // Medium names
-      return '1.3em';                                // Short names like "1", "2"
-    },
-    startSeconds() {
-      return periodToSeconds(this.start);
-    },
-    endSeconds() {
-      return periodToSeconds(this.end);
-    },
-    progress() {
-      const currentSeconds = dateToSeconds(this.date);
-      const { startSeconds, endSeconds } = this;
-      if (currentSeconds >= startSeconds && currentSeconds <= endSeconds) {
-        if (currentSeconds - startSeconds < 1) { // fancy animation when the period starts
-          return 0.00001;
-        }
-        const secondsLeft = endSeconds - currentSeconds;
-        const periodLength = endSeconds - startSeconds;
-        return secondsLeft / periodLength;
-      }
-      return 0;
-    },
-    strokeDashoffset() {
-      return this.circumference - this.progress * this.circumference;
-    },
-    spacerWidth() {
-      const isLongPeriod = this.actualPeriod.length > 4;
+const clockStore = useClockStore();
 
-      if (this.tvSpace) {
-        return isLongPeriod ? '10px' : '20px';
-      }
+const radius = 22; // radius of the progress bar
+const stroke = 3;  // stroke of the progress bar
 
-      return isLongPeriod ? '20px' : '40px';
-    },
-  },
-  methods: {
-    convertMilitaryTime: Bell.convertMilitaryTime,
-  },
-};
+const normalizedRadius = computed(() => radius - stroke * 2);
+const circumference = computed(() => normalizedRadius.value * 2 * Math.PI);
+
+const actualPeriod = computed(() => {
+  // remove the ! mark in front of period names
+  return period[0] === '!' ? period.substring(1) : period;
+});
+
+const periodFontSize = computed(() => {
+  if (!tvSpace) {
+    return period.length > 10 ? '1em' : '1.3em';
+  }
+  // TV sizes - smaller for long names, bigger for short
+  if (period.length > 7) return '0.85em';  // Long names like "Activity"
+  if (period.length > 4) return '1.1em';   // Medium names
+  return '1.3em';                           // Short names like "1", "2"
+});
+
+const startSeconds = computed(() => periodToSeconds(start));
+const endSeconds = computed(() => periodToSeconds(end));
+
+const progress = computed(() => {
+  const currentSeconds = dateToSeconds(clockStore.date);
+  if (currentSeconds >= startSeconds.value && currentSeconds <= endSeconds.value) {
+    if (currentSeconds - startSeconds.value < 1) { // fancy animation when the period starts
+      return 0.00001;
+    }
+    const secondsLeft = endSeconds.value - currentSeconds;
+    const periodLength = endSeconds.value - startSeconds.value;
+    return secondsLeft / periodLength;
+  }
+  return 0;
+});
+
+const strokeDashoffset = computed(() => circumference.value - progress.value * circumference.value);
+
+const spacerWidth = computed(() => {
+  const isLongPeriod = actualPeriod.value.length > 4;
+  return tvSpace
+    ? (isLongPeriod ? '10px' : '20px')
+    : (isLongPeriod ? '20px' : '40px');
+});
+
+const convertMilitaryTime = Bell.convertMilitaryTime;
 </script>
 
 <style lang='sass' scoped>

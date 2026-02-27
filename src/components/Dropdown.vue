@@ -31,111 +31,108 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import { ref, computed, watch } from 'vue';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
-import StaggerAnimation from './StaggerAnimation.vue';
+import StaggerAnimation from '@/components/StaggerAnimation.vue';
 
-export default defineComponent({
-  components: { StaggerAnimation },
-  props: {
-    options: { type: Array, required: true },
-    modelValue: { type: Number, required: true },
-    showSelectedAsOption: { type: Boolean, default: true },
-    align: {
-      validator: (str) => str === 'left' || str === 'right' || str === 'center',
-      default: 'right',
-    },
-    direction: {
-      validator: (str) => str === 'up' || str === 'down',
-      default: 'down',
-    },
-  },
-  data() {
-    return {
-      faCaretDown,
-      open: false, // open is true even when dropdown is partially open, false only when dropdown is completely closed
-      arrowRotateAmount: 0,
-    };
-  },
-  computed: {
-    remainingOptions(): string[] {
-      const remainingOptions = this.options.slice(0);
-      remainingOptions.splice(this.modelValue, 1);
-      return remainingOptions;
-    },
-    formattedOptions(): { name: string, style: any, index: number}[] {
-      const options = (this.showSelectedAsOption ? this.options : this.remainingOptions) as string[];
-      return options.map((option) => {
-        const style = {} as any;
-        if (this.align === 'center') {
-          style.left = '50%';
-          style.transform = 'translateX(-50%)';
-        } else {
-          style[this.align] = 0;
-        }
+const { options, modelValue, showSelectedAsOption = true, align = 'right', direction = 'down' } = defineProps<{
+  options: string[];
+  modelValue: number;
+  showSelectedAsOption?: boolean;
+  align?: 'left' | 'right' | 'center';
+  direction?: 'up' | 'down';
+}>();
 
-        return {
-          name: option,
-          style,
-          index: this.options.indexOf(option), // if we're using this.remainingOptions, the original indexes are lost
-        };
-      });
-    },
-    dropdownStyle(): { transition: string, zIndex: number} {
-      return {
-        transition: 'box-shadow .2s, border-color .2s',
-        zIndex: this.options.length + 5,
-      };
-    },
-    iconStyle(): { transition: string, transform: string} {
-      return {
-        transition: 'transform .2s',
-        transform: `rotate(${this.arrowRotateAmount}deg)`,
-      };
-    },
-  },
-  watch: {
-    options(): void {
-      this.optionShifts = Array(this.options.length).fill(0);
-    },
-    direction(): void {
-      this.closeDropdown();
-      this.arrowRotateAmount = this.direction === 'down' ? 0 : 180;
-    },
-  },
-  created(): void {
-    // if the initial index is out of bounds, choose the first index by default
-    if (this.modelValue < 0 || this.modelValue >= this.options.length) {
-      this.$emit('update:modelValue', 0);
-    }
-  },
-  methods: {
-    toggleDropdown(): void {
-      this.arrowRotateAmount += (this.arrowRotateAmount >= 180) ? -180 : 180;
-      this.open = !this.open;
-    },
-    openDropdown(): void {
-      if (!this.open) {
-        this.toggleDropdown();
-      }
-    },
-    closeDropdown(): void {
-      if (this.open) {
-        this.toggleDropdown();
-      }
-    },
-    selectOption(optionIndex: number): void {
-      if (this.open) {
-        this.closeDropdown();
-        // allow animation to start before emitting event (event may cause blocking calculations that slow down animation)
-        setTimeout(() => {
-          this.$emit('update:modelValue', optionIndex);
-        }, 100);
-      }
-    },
-  },
+const emit = defineEmits<{
+  'update:modelValue': [value: number];
+}>();
+
+const open = ref(false); // open is true even when dropdown is partially open, false only when dropdown is completely closed
+const arrowRotateAmount = ref(0);
+let optionShifts: number[] = [];
+
+// if modelValue is out of bounds (including when options change at runtime), reset to 0
+watch(() => [modelValue, options.length], () => {
+  if (modelValue < 0 || modelValue >= options.length) {
+    emit('update:modelValue', 0);
+  }
+}, { immediate: true });
+
+const remainingOptions = computed((): string[] => {
+  const remaining = options.slice(0);
+  remaining.splice(modelValue, 1);
+  return remaining;
 });
+
+const formattedOptions = computed((): { name: string; style: any; index: number }[] => {
+  const opts = (showSelectedAsOption ? options : remainingOptions.value) as string[];
+  return opts.map((option) => {
+    const style = {} as any;
+    if (align === 'center') {
+      style.left = '50%';
+      style.transform = 'translateX(-50%)';
+    } else {
+      style[align] = 0;
+    }
+
+    return {
+      name: option,
+      style,
+      index: options.indexOf(option), // if we're using remainingOptions, the original indexes are lost
+    };
+  });
+});
+
+const dropdownStyle = computed((): { transition: string; zIndex: number } => {
+  return {
+    transition: 'box-shadow .2s, border-color .2s',
+    zIndex: options.length + 5,
+  };
+});
+
+const iconStyle = computed((): { transition: string; transform: string } => {
+  return {
+    transition: 'transform .2s',
+    transform: `rotate(${arrowRotateAmount.value}deg)`,
+  };
+});
+
+watch(() => options, (): void => {
+  optionShifts = Array(options.length).fill(0);
+});
+
+watch(() => direction, (): void => {
+  closeDropdown();
+  arrowRotateAmount.value = direction === 'down' ? 0 : 180;
+});
+
+function toggleDropdown(): void {
+  arrowRotateAmount.value += (arrowRotateAmount.value >= 180) ? -180 : 180;
+  open.value = !open.value;
+}
+
+function openDropdown(): void {
+  if (!open.value) {
+    toggleDropdown();
+  }
+}
+
+function closeDropdown(): void {
+  if (open.value) {
+    toggleDropdown();
+  }
+}
+
+function selectOption(optionIndex: number): void {
+  if (open.value) {
+    closeDropdown();
+    // allow animation to start before emitting event (event may cause blocking calculations that slow down animation)
+    setTimeout(() => {
+      emit('update:modelValue', optionIndex);
+    }, 100);
+  }
+}
 </script>
 
 <style lang="sass" scoped>

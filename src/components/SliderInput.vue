@@ -1,7 +1,7 @@
 <template>
   <div class="slider-input-container">
     <div class="slider-row">
-      <label v-if="label" class="slider-label" :id="`${$.uid}-label`">{{ label }}</label>
+      <label v-if="label" class="slider-label" :id="`${id}-label`">{{ label }}</label>
       <div class="slider-controls">
         <input
           :value="modelValue"
@@ -11,7 +11,7 @@
           :max="max"
           :step="step"
           class="slider"
-          :aria-labelledby="label ? `${$.uid}-label` : undefined"
+          :aria-labelledby="label ? `${id}-label` : undefined"
         />
         <input
           :value="modelValue"
@@ -22,51 +22,44 @@
           :max="max"
           :step="step"
           class="number-input"
-          :aria-labelledby="label ? `${$.uid}-label` : undefined"
+          :aria-labelledby="label ? `${id}-label` : undefined"
         />
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    modelValue: {
-      type: Number,
-      required: true,
-    },
-    label: {
-      type: String,
-      default: '',
-    },
-    min: {
-      type: Number,
-      default: 0,
-    },
-    max: {
-      type: Number,
-      default: 100,
-    },
-    step: {
-      type: Number,
-      default: 1,
-    },
-  },
-  methods: {
-    clampValue(val) {
-      const num = Number(val);
-      if (Number.isNaN(num)) return this.min;
-      return Math.min(this.max, Math.max(this.min, num));
-    },
-    handleSliderInput(event) {
-      this.$emit('update:modelValue', this.clampValue(event.target.value));
-    },
-    handleNumberInput(event) {
-      this.$emit('update:modelValue', this.clampValue(event.target.value));
-    },
-  },
-};
+<script setup lang="ts">
+import { useId } from 'vue'
+
+const { modelValue, label = '', min = 0, max = 100, step = 1 } = defineProps<{
+  modelValue: number
+  label?: string
+  min?: number
+  max?: number
+  step?: number
+}>()
+
+const emit = defineEmits<{
+  'update:modelValue': [value: number]
+  blur: []
+}>()
+
+const id = useId()
+
+function clampValue(val: string | number): number {
+  const num = Number(val)
+  if (Number.isNaN(num)) return min
+  return Math.min(max, Math.max(min, num))
+}
+
+function handleSliderInput(event: Event): void {
+  emit('update:modelValue', clampValue((event.target as HTMLInputElement).value))
+}
+
+function handleNumberInput(event: Event): void {
+  emit('update:modelValue', clampValue((event.target as HTMLInputElement).value))
+}
 </script>
 
 <style lang="sass" scoped>

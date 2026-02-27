@@ -1,6 +1,6 @@
 <template>
   <card
-    v-if="schedule || bell?.isSchoolDay"
+    v-if="schedule || clockStore.bell?.isSchoolDay"
     class="card"
     :ignoreStyleMutations="true"
     @height-change="onHeightChange"
@@ -15,31 +15,25 @@
   </card>
 </template>
 
-<script>
-import Card from '@/components/Card.vue';
-import { mapState } from 'pinia';
+<script setup lang="ts">
+import { useTemplateRef } from 'vue';
 import useClockStore from '@/stores/clock';
-import ScrollablePeriodList from "@/components/ScrollablePeriodList.vue";
+import ScrollablePeriodList from '@/components/ScrollablePeriodList.vue';
+import Card from '@/components/Card.vue';
 
-export default {
-  components: {
-    ScrollablePeriodList,
-    Card
-  },
-  props: {
-    schedule: { type: Object, default: null },
-    title: { type: String, default: 'Schedule' },
-    maxHeight: { type: String, default: null },
-  },
-  computed: {
-    ...mapState(useClockStore, ['bell']),
-  },
-  methods: {
-    onHeightChange() {
-      this.$refs.periodList?.scrollToCurrentPeriod();
-    }
-  }
-};
+const { schedule = null, title = 'Schedule', maxHeight = null } = defineProps<{
+  schedule?: Record<string, any> | null;
+  title?: string;
+  maxHeight?: string | null;
+}>();
+
+const clockStore = useClockStore();
+
+const periodList = useTemplateRef<{ scrollToCurrentPeriod: () => void }>('periodList');
+
+function onHeightChange(): void {
+  periodList.value?.scrollToCurrentPeriod();
+}
 </script>
 
 <style lang="sass" scoped>

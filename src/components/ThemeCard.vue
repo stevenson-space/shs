@@ -21,7 +21,7 @@
           <div class="theme-author">{{ theme.metadata.author }}</div>
         </div>
         <div class="theme-icons">
-          <info-tooltip v-if="theme.seasonalDates" :icon="icons.faCalendar" @click.stop>
+          <info-tooltip v-if="theme.seasonalDates" :icon="faCalendar" @click.stop>
             {{ seasonalDateRange }}
           </info-tooltip>
           <info-tooltip v-if="theme.metadata?.description" @click.stop>
@@ -33,45 +33,38 @@
   </div>
 </template>
 
-<script>
-import InfoTooltip from '@/components/InfoTooltip.vue';
-import { formatDateRange, fallbackStyling } from '@/utils/themes';
-import { faCalendar } from '@fortawesome/free-solid-svg-icons';
-import { globalImageResolver } from '@/utils/imageResolver';
+<script setup lang="ts">
+import { computed } from 'vue'
+import { faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { formatDateRange, fallbackStyling } from '@/utils/themes'
+import { globalImageResolver } from '@/utils/imageResolver'
+import InfoTooltip from '@/components/InfoTooltip.vue'
 
+const { theme } = defineProps<{
+  theme: Record<string, any>
+}>()
 
-export default {
-  components: {
-    InfoTooltip,
-  },
-  props: {
-    theme: {
-      type: Object,
-      required: true,
-    },
-  },
-  data() {
-    return {
-      icons: { faCalendar },
-    };
-  },
-  computed: {
-    headerImage() {
-      const fullImage = this.theme.styling?.header?.image?.full;
-      return globalImageResolver.resolve(fullImage);
-    },
-    accent() {
-      return this.theme.styling?.accent || fallbackStyling(this.theme.styling).accent;
-    },
-    background() {
-      return this.theme.styling?.background || fallbackStyling(this.theme.styling).background;
-    },
-    seasonalDateRange() {
-      if (!this.theme.seasonalDates) return '';
-      return formatDateRange(this.theme.seasonalDates);
-    },
-  },
-};
+defineEmits<{
+  click: [theme: Record<string, any>]
+}>()
+
+const headerImage = computed(() => {
+  const fullImage = theme.styling?.header?.image?.full
+  return globalImageResolver.resolve(fullImage)
+})
+
+const accent = computed(() =>
+  theme.styling?.accent || fallbackStyling(theme.styling).accent
+)
+
+const background = computed(() =>
+  theme.styling?.background || fallbackStyling(theme.styling).background
+)
+
+const seasonalDateRange = computed(() => {
+  if (!theme.seasonalDates) return ''
+  return formatDateRange(theme.seasonalDates)
+})
 </script>
 
 <style lang="sass" scoped>

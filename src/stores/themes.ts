@@ -1,54 +1,42 @@
-import { defineStore } from 'pinia';
+import {defineStore} from 'pinia';
+import {computed, readonly, ref} from 'vue';
 import lightTheme from '@/themes/light.json'
-import { Theme, ThemeStyling } from '@/utils/types';
+import {Theme, ThemeStyling} from '@/utils/types';
 
 const DEFAULT_THEME: Theme = lightTheme as Theme;
 
-interface State {
-  _styling: ThemeStyling,
-  resolvedAssets: Map<string, string>,
-}
 
-export default defineStore('themes', {
-  state: (): State => ({
-    _styling: DEFAULT_THEME.styling,
-    resolvedAssets: new Map(),
-  }),
-  getters: {
-    styling(state): ThemeStyling {
-      return state._styling;
-    },
-    // TODO(theme)
-    theme(state): Theme {
-      return {
-        metadata: DEFAULT_THEME.metadata,
-        visibility: DEFAULT_THEME.visibility,
-        styling: state._styling,
-      };
-    },
-  },
-  actions: {
-    initializeTheme(): void {
-      if (localStorage.themeStyling) {
-        try {
-          this._styling = JSON.parse(localStorage.themeStyling);
-        } catch (error) {
-          this._styling = DEFAULT_THEME.styling;
-        }
-      } else {
-        this._styling = DEFAULT_THEME.styling;
+export default defineStore('themes', () => {
+  const _styling = ref<ThemeStyling>(DEFAULT_THEME.styling);
+  const resolvedAssets = ref(new Map<string, string>());
+
+  // TODO(theme)
+  const theme = computed((): Theme => ({
+    metadata: DEFAULT_THEME.metadata,
+    visibility: DEFAULT_THEME.visibility,
+    styling: _styling.value,
+  }));
+
+  function initializeTheme(): void {
+    if (localStorage.themeStyling) {
+      try {
+        _styling.value = JSON.parse(localStorage.themeStyling);
+      } catch {
+        _styling.value = DEFAULT_THEME.styling;
       }
-    },
-    setColor(color:string): void {
-      // TODO: remove uses of this
-    },
-    setStyling(styling: ThemeStyling | Theme): void {
-      if ('styling' in styling) {
-        this._styling = styling.styling;
-      } else {
-        this._styling = styling;
-      }
-      localStorage.themeStyling = JSON.stringify(this._styling);
-    },
-  },
+    } else {
+      _styling.value = DEFAULT_THEME.styling;
+    }
+  }
+
+  function setColor(color: string): void {
+    // TODO: remove uses of this
+  }
+
+  function setStyling(value: ThemeStyling | Theme): void {
+    _styling.value = 'styling' in value ? value.styling : value;
+    localStorage.themeStyling = JSON.stringify(_styling.value);
+  }
+
+  return { styling: readonly(_styling), resolvedAssets, theme, initializeTheme, setColor, setStyling };
 });

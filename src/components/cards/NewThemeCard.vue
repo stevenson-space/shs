@@ -18,65 +18,59 @@
   </card>
 </template>
 
-<script>
-import Card from '@/components/Card.vue';
-import RoundedButton from '@/components/RoundedButton.vue';
-import { mapState, mapActions } from 'pinia';
+<script setup lang="ts">
+import { ref, computed, onMounted, reactive } from 'vue';
 import useClockStore from '@/stores/clock';
 import useThemeStore from '@/stores/themes';
+import RoundedButton from '@/components/RoundedButton.vue';
+import Card from '@/components/Card.vue';
+import InfoTooltip from '@/components/InfoTooltip.vue';
 import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
-import InfoTooltip from "@/components/InfoTooltip.vue";
 
-export default {
-  components: {InfoTooltip, Card, RoundedButton },
-  computed: {
-    ...mapState(useThemeStore, ['theme']),
-    ...mapState(useClockStore, ['date']),
-    newTheme() {
-      // finds a seasonal theme that is within the current date range
-      const now = this.date;
+const themeStore = useThemeStore();
+const clockStore = useClockStore();
 
-      for (const theme of this.themes) {
-        if (!theme.seasonalDates) continue;
+const themes = ref<any[]>([]);
+const dismissedThemesRef = reactive<Record<string, number>>(
+  JSON.parse(localStorage.getItem('dismissedThemeCards') || '{}'),
+);
 
-        const [start, end] = parseDateRange(theme.seasonalDates, now);
-        if (isDateInRange(now, start, end)) {
-          return theme;
-        }
-      }
-      return null;
-    },
-    isDismissed() {
-      if (!this.newTheme) return false;
-      const dismissedThemes = JSON.parse(localStorage.getItem('dismissedThemeCards') || '{}');
-      const dismissedYear = dismissedThemes[this.newTheme.metadata.name];
-      const currentYear = this.date.getFullYear();
-      return dismissedYear === currentYear;
-    },
-  },
-  data() {
-    return {
-      themes: [],
-    };
-  },
-  methods: {
-    ...mapActions(useThemeStore, ['setStyling']),
+const newTheme = computed(() => {
+  // finds a seasonal theme that is within the current date range
+  const now = clockStore.date;
 
-    toggleTheme() {
-      this.setStyling(this.newTheme.styling);
-    },
+  for (const theme of themes.value) {
+    if (!theme.seasonalDates) continue;
 
-    dismiss() {
-      const dismissedThemes = JSON.parse(localStorage.getItem('dismissedThemeCards') || '{}');
-      const currentYear = this.date.getFullYear();
-      dismissedThemes[this.newTheme.metadata.name] = currentYear;
-      localStorage.setItem('dismissedThemeCards', JSON.stringify(dismissedThemes));
-    },
-  },
-  async mounted() {
-    this.themes = await loadAllThemes();
-  },
-};
+    const [start, end] = parseDateRange(theme.seasonalDates, now);
+    if (isDateInRange(now, start, end)) {
+      return theme;
+    }
+  }
+  return null;
+});
+
+const isDismissed = computed(() => {
+  if (!newTheme.value) return false;
+  const currentYear = clockStore.date.getFullYear();
+  return dismissedThemesRef[newTheme.value.metadata.name] === currentYear;
+});
+
+function toggleTheme(): void {
+  if (!newTheme.value) return;
+  themeStore.setStyling(newTheme.value.styling);
+}
+
+function dismiss(): void {
+  if (!newTheme.value) return;
+  const currentYear = clockStore.date.getFullYear();
+  dismissedThemesRef[newTheme.value.metadata.name] = currentYear;
+  localStorage.setItem('dismissedThemeCards', JSON.stringify(dismissedThemesRef));
+}
+
+onMounted(async () => {
+  themes.value = await loadAllThemes();
+});
 </script>
 
 <style lang="sass" scoped>

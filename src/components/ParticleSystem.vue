@@ -2,7 +2,7 @@
   <div
     ref="wrap"
     class="particle-wrap"
-    :class="{ 'events-all': interaction, hide: toHide }"
+    :class="{ 'events-all': interaction }"
   >
     <img
       v-for="(img, index) in images"
@@ -16,205 +16,198 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "ParticleSystem",
+<script setup lang="ts">
+import { ref, watch, onMounted, onBeforeUnmount, nextTick, useTemplateRef } from 'vue';
 
-  props: {
-    speed: { type: Number, default: 1 },
-    interaction: { type: Boolean, default: false },
-    size: { type: Number, default: 7 },
-    count: { type: Number, default: 20 },
-    opacity: { type: Number, default: 1 },
-    color: { type: String, default: "#ffffff" },
+const { speed = 1, interaction = false, size = 7, count = 20, opacity = 1, color = '#ffffff', windPower = 0, images } = defineProps<{
+  speed?: number;
+  interaction?: boolean;
+  size?: number;
+  count?: number;
+  opacity?: number;
+  color?: string;
+  windPower?: number;
+  images: string[];
+}>();
 
-    windPower: { type: Number, default: 0 },
+let particles: any[] = [];
+let imageItems: any[] = [];
+const particleCount = ref(0);
 
-    images: { type: Array, required: true },
-  },
+let canvas: HTMLCanvasElement | null = null;
+let ctx: CanvasRenderingContext2D | null = null;
+let imageNum = 0;
+let imagesLoaded = 0;
+let reqId: number | null = null;
+let mX = -100;
+let mY = -100;
 
-  data() {
-    return {
-      particles: [],
-      canvas: null,
-      ctx: null,
-      particleCount: 0,
-      imageItems: [],
-      imageNum: 0,
-      imagesLoaded: 0,
-      reqId: null,
-      mX: -100,
-      mY: -100,
-      toHide: false,
-    };
-  },
+const canvasEl = useTemplateRef<HTMLCanvasElement>('canvas');
+const wrap = useTemplateRef<HTMLDivElement>('wrap');
 
-  mounted() {
-    this.particleCount = this.count;
-    this.init();
-    window.addEventListener("resize", this.resize);
-  },
+watch(() => count, () => {
+  particleCount.value = count;
+  init();
+});
 
-  beforeUnmount() {
-    cancelAnimationFrame(this.reqId);
-    window.removeEventListener("resize", this.resize);
-  },
+watch(() => speed, () => {
+  init();
+});
 
-  watch: {
-    count() {
-      this.particleCount = this.count;
-      this.init();
-    },
-    speed() {
-      this.init();
-    },
-    images() {
-      this.imagesLoaded = 0;
-      this.init();
-      this.$nextTick(() => {
-        this.collectImages();
-      });
-    },
-  },
+watch(() => images, () => {
+  imagesLoaded = 0;
+  init();
+  nextTick(() => {
+    collectImages();
+  });
+});
 
-  methods: {
-    resize() {
-      this.setCanvasSize();
-    },
+onMounted(() => {
+  particleCount.value = count;
+  init();
+  window.addEventListener('resize', resize);
+});
 
-    setCanvasSize() {
-      const dpr = window.devicePixelRatio || 1;
-      this.canvas.width = window.innerWidth * dpr;
-      this.canvas.height = window.innerHeight * dpr;
-      this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    },
+onBeforeUnmount(() => {
+  cancelAnimationFrame(reqId!);
+  window.removeEventListener('resize', resize);
+});
 
-    onImageLoad() {
-      this.imagesLoaded++;
-      this.collectImages();
-    },
+function resize(): void {
+  setCanvasSize();
+}
 
-    collectImages() {
-      this.imageItems = Array.from(
-        this.$el.querySelectorAll(".particle_image")
-      );
-      this.imageNum = this.imageItems.length;
-    },
+function setCanvasSize(): void {
+  const dpr = window.devicePixelRatio || 1;
+  canvas!.width = window.innerWidth * dpr;
+  canvas!.height = window.innerHeight * dpr;
+  ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
 
-    init() {
-      cancelAnimationFrame(this.reqId);
+function onImageLoad(): void {
+  imagesLoaded++;
+  collectImages();
+}
 
-      this.canvas = this.$refs.canvas;
-      this.ctx = this.canvas.getContext("2d");
-      this.setCanvasSize();
+function collectImages(): void {
+  imageItems = Array.from(
+    wrap.value?.querySelectorAll('.particle_image') ?? []
+  );
+  imageNum = imageItems.length;
+}
 
-      this.particles = [];
+function init(): void {
+  cancelAnimationFrame(reqId!);
 
-      for (let i = 0; i < this.particleCount; i++) {
-        this.reset(
-          {
-            x: Math.random() * this.canvas.width,
-            y: Math.random() * this.canvas.height,
-          },
-          true
-        );
+  canvas = canvasEl.value!;
+  ctx = canvas.getContext('2d')!;
+  setCanvasSize();
+
+  particles = [];
+
+  for (let i = 0; i < particleCount.value; i++) {
+    reset(
+      {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+      },
+      true
+    );
+  }
+
+  animate();
+  nextTick(() => {
+    collectImages();
+  });
+}
+
+function reset(particle: any, first = false): void {
+  if (!first) {
+    particle.x =
+      windPower >= 0
+        ? Math.random() * canvas!.width * 0.8
+        : Math.random() * canvas!.width * 1.2;
+    particle.y = -30;
+  }
+
+  particle.size = Math.random() * 3 + size;
+
+  const baseSpeed = Math.max(0, speed);
+  particle.speed = Math.random() * 0.1 + baseSpeed * 0.3;
+  particle.velY = particle.speed;
+
+  // base horizontal drift + wind bias
+  const speedInfluence = baseSpeed * 0.2;
+  particle.baseVelX = (Math.random() - 0.5) * (0.4 + speedInfluence);
+  particle.velX = particle.baseVelX;
+
+  // wobble params
+  particle.wobble = Math.random() * Math.PI * 2;
+  particle.wobbleSpeed = Math.random() * 0.02 + 0.01;
+  particle.wobbleStrength = Math.random() * 0.4 + 0.2;
+
+  particle.opacity = Math.min(
+    1,
+    Math.random() * 0.5 + opacity
+  );
+
+  if (first) particles.push(particle);
+}
+
+function animate(): void {
+  ctx!.clearRect(0, 0, canvas!.width, canvas!.height);
+
+  // normalize wind so small values still feel directional
+  const wind = windPower * 0.10;
+
+  for (let i = 0; i < particles.length; i++) {
+    const p = particles[i];
+
+    p.wobble += p.wobbleSpeed;
+
+    // wind-influenced horizontal movement
+    const windPush = wind * (1 + p.size / 10);
+
+    // wobble reduced slightly when wind is strong
+    const wobbleX =
+      Math.sin(p.wobble) *
+      p.wobbleStrength *
+      (1 - Math.min(Math.abs(wind), 1));
+
+    p.x += p.velX + windPush + wobbleX;
+
+    // tilt the fall slightly in wind direction
+    p.y += p.velY + Math.abs(wind) * 0.1;
+
+    if (
+      p.y > canvas!.height + 60 ||
+      p.x < -60 ||
+      p.x > canvas!.width + 60
+    ) {
+      reset(p);
+    }
+
+    if (imageNum > 0) {
+      const img = imageItems[i % imageNum];
+      if (img?.naturalWidth) {
+        const w = p.size * 2;
+        const h = w * (img.naturalHeight / img.naturalWidth);
+        ctx!.globalAlpha = p.opacity;
+        ctx!.drawImage(img, p.x, p.y, w, h);
+        ctx!.globalAlpha = 1;
       }
+    } else {
+      ctx!.fillStyle = color;
+      ctx!.globalAlpha = p.opacity;
+      ctx!.beginPath();
+      ctx!.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx!.fill();
+      ctx!.globalAlpha = 1;
+    }
+  }
 
-      this.animate();
-      this.$nextTick(() => {
-        this.collectImages();
-      });
-    },
-
-    reset(particle, first = false) {
-      if (!first) {
-        particle.x =
-          this.windPower >= 0
-            ? Math.random() * this.canvas.width * 0.8
-            : Math.random() * this.canvas.width * 1.2;
-        particle.y = -30;
-      }
-
-      particle.size = Math.random() * 3 + this.size;
-
-      const baseSpeed = Math.max(0, this.speed);
-      particle.speed = Math.random() * 0.1 + baseSpeed * 0.3;
-      particle.velY = particle.speed;
-
-      // base horizontal drift + wind bias
-      const speedInfluence = baseSpeed * 0.2;
-      particle.baseVelX = (Math.random() - 0.5) * (0.4 + speedInfluence);
-      particle.velX = particle.baseVelX;
-
-      // wobble params
-      particle.wobble = Math.random() * Math.PI * 2;
-      particle.wobbleSpeed = Math.random() * 0.02 + 0.01;
-      particle.wobbleStrength = Math.random() * 0.4 + 0.2;
-
-      particle.opacity = Math.min(
-        1,
-        Math.random() * 0.5 + this.opacity
-      );
-
-      if (first) this.particles.push(particle);
-    },
-
-    animate() {
-      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-      // normalize wind so small values still feel directional
-      const wind = this.windPower * 0.10;
-
-      for (let i = 0; i < this.particles.length; i++) {
-        const p = this.particles[i];
-
-        p.wobble += p.wobbleSpeed;
-
-        // wind-influenced horizontal movement
-        const windPush = wind * (1 + p.size / 10);
-
-        // wobble reduced slightly when wind is strong
-        const wobbleX =
-          Math.sin(p.wobble) *
-          p.wobbleStrength *
-          (1 - Math.min(Math.abs(wind), 1));
-
-        p.x += p.velX + windPush + wobbleX;
-
-        // tilt the fall slightly in wind direction
-        p.y += p.velY + Math.abs(wind) * 0.1;
-
-        if (
-          p.y > this.canvas.height + 60 ||
-          p.x < -60 ||
-          p.x > this.canvas.width + 60
-        ) {
-          this.reset(p);
-        }
-
-        if (this.imageNum > 0) {
-          const img = this.imageItems[i % this.imageNum];
-          if (img?.naturalWidth) {
-            const w = p.size * 2;
-            const h = w * (img.naturalHeight / img.naturalWidth);
-            this.ctx.globalAlpha = p.opacity;
-            this.ctx.drawImage(img, p.x, p.y, w, h);
-            this.ctx.globalAlpha = 1;
-          }
-        } else {
-          this.ctx.fillStyle = this.color;
-          this.ctx.globalAlpha = p.opacity;
-          this.ctx.beginPath();
-          this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          this.ctx.fill();
-          this.ctx.globalAlpha = 1;
-        }
-      }
-
-      this.reqId = requestAnimationFrame(this.animate);
-    },
-  },
-};
+  reqId = requestAnimationFrame(animate);
+}
 </script>
 
 <style lang="scss" scoped>
@@ -237,9 +230,6 @@ export default {
     pointer-events: auto;
   }
 
-  &.hide {
-    opacity: 0;
-    transition: opacity 1s;
-  }
+
 }
 </style>

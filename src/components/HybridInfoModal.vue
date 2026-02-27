@@ -1,8 +1,8 @@
 <template>
   <div v-if="scheduleType === 'Patriot Hybrid' || scheduleType === 'Remote Learning'">
-    <div class="info-circle" @click="openModal()">
-      <font-awesome-icon :icon="icons.faQuestionCircle" fixed-width />
-    </div>
+    <button type="button" class="info-circle" aria-label="Open info modal" aria-haspopup="dialog" @click="openModal">
+      <font-awesome-icon :icon="faQuestionCircle" fixed-width />
+    </button>
 
     <transition name="fade">
       <div v-if="showModal" class="modal" @click="closeModal()">
@@ -18,30 +18,23 @@
   </div>
 </template>
 
-<script>
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+<script setup lang="ts">
+import { ref } from 'vue'
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 
-export default {
-  props: {
-    scheduleType: { type: String, required: true },
-  },
-  data() {
-    return {
-      showModal: false,
-      icons: {
-        faQuestionCircle,
-      },
-    };
-  },
-  methods: {
-    openModal() {
-      this.showModal = true;
-    },
-    closeModal() {
-      this.showModal = false;
-    },
-  },
-};
+const { scheduleType } = defineProps<{
+  scheduleType: string
+}>()
+
+const showModal = ref(false)
+
+function openModal(): void {
+  showModal.value = true
+}
+
+function closeModal(): void {
+  showModal.value = false
+}
 </script>
 
 <style lang="sass" scoped>
@@ -50,10 +43,13 @@ export default {
 .fade-enter-active, .fade-leave-active
   transition: all 0.20s
 
-.fade-enter, .fade-leave-to
+.fade-enter-from, .fade-leave-to
   opacity: 0
 
 .info-circle
+  background: none
+  border: none
+  padding: 0
   color: var(--accent)
   cursor: pointer
 

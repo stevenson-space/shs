@@ -7,16 +7,9 @@
   </timed-card>
 </template>
 
-<script>
-import TimedCard from '@/components/cards/TimedCard.vue';
+<script setup lang="ts">
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-
-export default {
-  components: { TimedCard },
-  data() {
-    return { faArrowUpRightFromSquare };
-  },
-};
+import TimedCard from './TimedCard.vue';
 </script>
 
 <style lang="sass" scoped>

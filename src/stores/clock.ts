@@ -1,15 +1,8 @@
 import { defineStore } from 'pinia';
+import { ref, computed } from 'vue';
 import Bell from '@/utils/bell';
 import { RouteLocationNormalized } from 'vue-router';
 import useScheduleStore from '@/stores/schedules'
-
-interface State {
-  urlDate: Date;
-  clockMode: 'current' | 'day',
-  startTime: number;
-  currentTime: number;
-  clockInterval: ReturnType<typeof setInterval> | null;
-}
 
 function parseDateTimeFromRoute(route: RouteLocationNormalized): Date {
   // If date and/or time is specified in URL, return that date
@@ -33,64 +26,66 @@ function parseDateTimeFromRoute(route: RouteLocationNormalized): Date {
   return new Date();
 }
 
-export default defineStore('clock', {
-  state: (): State => ({
-    urlDate: new Date(),
-    clockMode: 'current',
-    startTime: Date.now(),
-    currentTime: Date.now(),
-    clockInterval: null
-  }),
-  getters: {
-    date(): Date {
-      const { urlDate, startTime, currentTime } = this;
-      const date = new Date(
-        (urlDate.getTime()) + (currentTime - startTime),
-      );
-      // if mode is 'day' return date at time 0:00 instead (to get range string for whole day instead for current period)
-      return this.clockMode === 'current'
-        ? date
-        : new Date(date.toLocaleDateString());
-    },
-    bell(getters: any): Bell {
-      const scheduleStore = useScheduleStore();
-      return new Bell(getters.date, scheduleStore.schedules, scheduleStore.scheduleMode);
-    },
-  },
-  actions: {
-    pageLoaded(route: RouteLocationNormalized): void {
-      this.setStartTime();
-      this.startClock();
-      this.setModeFromRoute(route);
-      this.urlDate = parseDateTimeFromRoute(route);
-    },
-    stopClock(): void {
-      if (this.clockInterval) {
-        clearInterval(this.clockInterval);
-        this.clockInterval = null;
-      }
-    },
-    startClock(): void {
-      this.stopClock();
-      this.currentTime = Date.now();
-      this.clockInterval = setInterval(() => {
-        this.currentTime = Date.now();
-      }, 1000);
-    },
-    setStartTime(): void {
-      this.startTime = Date.now();
-    },
-    setModeFromRoute(route: RouteLocationNormalized): void {
-      // if 'date' url parameter is specified, 'day' mode is triggered
-      // the 'time' url parameter is to be used for testing and forces the mode to 'current' regardless of date
-      const { date, time } = route.query;
-      this.clockMode = !date || time ? 'current' : 'day';
+export default defineStore('clock', () => {
+  const scheduleStore = useScheduleStore();
 
-      if (this.clockMode === 'current') {
-        this.startClock();
-      } else {
-        this.stopClock();
-      }
-    },
+  const urlDate = ref(new Date());
+  const clockMode = ref<'current' | 'day'>('current');
+  const startTime = ref(Date.now());
+  const currentTime = ref(Date.now());
+  let clockInterval: ReturnType<typeof setInterval> | null = null;
+
+  const date = computed((): Date => {
+    const d = new Date(urlDate.value.getTime() + (currentTime.value - startTime.value));
+    // if mode is 'day' return date at time 0:00 instead (to get range string for whole day instead for current period)
+    if (clockMode.value === 'current') return d;
+    const normalized = new Date(d);
+    normalized.setHours(0, 0, 0, 0);
+    return normalized;
+  });
+
+  const bell = computed((): Bell => {
+    return new Bell(date.value, scheduleStore.schedules, scheduleStore.scheduleMode);
+  });
+
+  function stopClock(): void {
+    if (clockInterval) {
+      clearInterval(clockInterval);
+      clockInterval = null;
+    }
   }
+
+  function startClock(): void {
+    stopClock();
+    currentTime.value = Date.now();
+    clockInterval = setInterval(() => {
+      currentTime.value = Date.now();
+    }, 1000);
+  }
+
+  function setStartTime(): void {
+    startTime.value = Date.now();
+  }
+
+  function setModeFromRoute(route: RouteLocationNormalized): void {
+    // if 'date' url parameter is specified, 'day' mode is triggered
+    // the 'time' url parameter is to be used for testing and forces the mode to 'current' regardless of date
+    const { date: dateParam, time } = route.query;
+    clockMode.value = !dateParam || time ? 'current' : 'day';
+
+    if (clockMode.value === 'current') {
+      startClock();
+    } else {
+      stopClock();
+    }
+  }
+
+  function pageLoaded(route: RouteLocationNormalized): void {
+    setStartTime();
+    startClock();
+    setModeFromRoute(route);
+    urlDate.value = parseDateTimeFromRoute(route);
+  }
+
+  return { urlDate, clockMode, startTime, currentTime, date, bell, pageLoaded, stopClock, startClock, setStartTime, setModeFromRoute };
 });

@@ -6,30 +6,22 @@
   </a>
 </template>
 
-<script>
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+<script setup lang="ts">
+import { computed } from 'vue';
 
-export default {
-  name: "LinkChip",
-  components: { FontAwesomeIcon },
-  props: {
-    href: { type: String, required: true },
-    label: { type: String, required: true },
-    favicon: { type: String, required: false },
-    icon: { type: Object, required: false },
-    background: { type: String, default: "#fff" },
-    color: { type: String, default: "#333" },
-    alt: { type: String, default: "" }
-  },
-  computed: {
-    faviconUrl() {
-      return (
-        this.favicon ||
-        `https://www.google.com/s2/favicons?sz=64&domain_url=${this.href}`
-      );
-    }
-  }
-};
+const { href, label, favicon, icon, background = '#fff', color = '#333', alt = '' } = defineProps<{
+  href: string;
+  label: string;
+  favicon?: string;
+  icon?: Record<string, any>;
+  background?: string;
+  color?: string;
+  alt?: string;
+}>()
+
+const faviconUrl = computed(() =>
+  favicon || `https://www.google.com/s2/favicons?sz=64&domain_url=${href}`
+)
 </script>
 
 <style lang="sass" scoped>
