@@ -28,6 +28,9 @@
       "scripthost"
     ]
   },
+  "files": [
+    "vitest.shims.d.ts"
+  ],
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
