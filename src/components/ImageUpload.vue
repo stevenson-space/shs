@@ -76,7 +76,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onBeforeUnmount, useTemplateRef } from 'vue';
+import { ref, computed, watch, onBeforeUnmount, useTemplateRef } from 'vue';
 import {
   faImage,
   faCircleInfo,
@@ -112,9 +112,11 @@ let unsubscribeImageCache: (() => void) | undefined = globalImageResolver.onUpda
   imageCache.value = cache;
 });
 
-if (modelValue?.startsWith('local://')) {
-  globalImageResolver.load(modelValue);
-}
+watch(() => modelValue, (newVal) => {
+  if (newVal?.startsWith('local://')) {
+    globalImageResolver.load(newVal);
+  }
+}, { immediate: true });
 
 onBeforeUnmount(() => {
   unsubscribeImageCache?.();
