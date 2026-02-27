@@ -5,7 +5,7 @@
     :class="{ 'tv-space': tvSpace }"
     :style="{ maxHeight: maxHeight || undefined }"
   >
-    <template v-for="period in periods">
+    <template v-for="period in periodsComputed">
       <div v-if="period.isUpNextIndicator" :key="period.name" class="up-next-indicator">
         <div class="line">
           <span class="title">Up Next</span>
@@ -27,87 +27,87 @@
   </div>
 </template>
 
-<script>
-import Period from '@/components/Period.vue';
-import { mapState } from 'pinia';
+<script setup lang="ts">
+import { computed, nextTick, onMounted, watch, useTemplateRef, ComponentPublicInstance } from 'vue';
 import { isBellOnSchoolDay } from '@/utils/bell';
 import useClockStore from '@/stores/clock';
+import Period from '@/components/Period.vue';
 
-export default {
-  components: { Period },
-  props: {
-    schedule: { type: Object, default: null },
-    maxHeight: { type: String, default: null },
-    tvSpace: { type: Boolean, default: false },
-  },
-  computed: {
-    ...mapState(useClockStore, ['bell']),
+const { schedule = null, maxHeight = null, tvSpace = false } = defineProps<{
+  schedule?: Record<string, any> | null;
+  maxHeight?: string | null;
+  tvSpace?: boolean;
+}>();
 
-    periods() {
-      const convertPeriods = ({ start, end, periods }, currentPeriodName) => periods.map((period, i) => ({
-        name: period,
-        start: start[i],
-        end: end[i],
-        isCurrent: currentPeriodName === period,
-      }));
+const clockStore = useClockStore();
 
-      // first we check if the `schedule` prop is specified and use that if so
-      if (this.schedule) {
-        return convertPeriods(this.schedule, null);
-      }
+const periods = useTemplateRef<HTMLDivElement>('periods');
+const period = useTemplateRef<ComponentPublicInstance[]>('period');
 
-      // otherwise we check if we can default to using today's schedule (i.e if it's a school day)
-      if (isBellOnSchoolDay(this.bell)) {
-        const results = convertPeriods(this.bell.schedule, this.bell.period.name);
+const periodsComputed = computed(() => {
+  const convertPeriods = ({ start, end, periods }: any, currentPeriodName: string | null) => periods.map((p: string, i: number) => ({
+    name: p,
+    start: start[i],
+    end: end[i],
+    isCurrent: currentPeriodName === p,
+  }));
 
-        // if we're displaying today's schedule and we're in a passing period,
-        // we want to display an "Up Next" indicator between the two periods (so we manually add it in)
-        if (this.bell.period.name === '!Passing') {
-          for (let i = 0; i < results.length; i++) {
-            // find the period that ends right before the current passing period
-            if (results[i].end === this.bell.period.start) {
-              // insert an object corresponding to the "Up Next" indicator right after it
-              results.splice(i + 1, 0, { isUpNextIndicator: true });
-            }
-          }
+  // first we check if the `schedule` prop is specified and use that if so
+  if (schedule) {
+    return convertPeriods(schedule, null);
+  }
+
+  // otherwise we check if we can default to using today's schedule (i.e if it's a school day)
+  if (isBellOnSchoolDay(clockStore.bell)) {
+    const results = convertPeriods(clockStore.bell.schedule, clockStore.bell.period.name);
+
+    // if we're displaying today's schedule and we're in a passing period,
+    // we want to display an "Up Next" indicator between the two periods (so we manually add it in)
+    if (clockStore.bell.period.name === '!Passing') {
+      for (let i = 0; i < results.length; i++) {
+        // find the period that ends right before the current passing period
+        if (results[i].end === clockStore.bell.period.start) {
+          // insert an object corresponding to the "Up Next" indicator right after it
+          results.splice(i + 1, 0, { isUpNextIndicator: true });
         }
-        return results;
       }
+    }
+    return results;
+  }
 
-      return [];
-    },
-  },
-  watch: {
-    bell() {
-      // wait until periods rerender before scrolling
-      this.$nextTick(() => {
-        this.scrollToCurrentPeriod();
-      });
-    },
-  },
-  mounted() {
-    this.scrollToCurrentPeriod();
-  },
-  methods: {
-    scrollToCurrentPeriod() {
-      // Get the html element for the current period if there is one
-      let $period = null;
-      this.periods.forEach((period, i) => {
-        if (period.isCurrent) {
-          $period = this.$refs.period[i];
-        }
-      });
+  return [];
+});
 
-      if ($period) {
-        const $container = this.$refs.periods;
-        const containerHeight = $container.offsetHeight;
-        const { offsetTop, offsetHeight } = $period.$el;
-        // Set the scroll so that the current period is centered
-        $container.scrollTop = offsetTop - containerHeight / 2 + offsetHeight / 2;
-      }
-    },
-  },
-};
+watch(() => clockStore.bell, () => {
+  // wait until periods rerender before scrolling
+  nextTick(() => {
+    scrollToCurrentPeriod();
+  });
+});
+
+onMounted(() => {
+  scrollToCurrentPeriod();
+});
+
+function scrollToCurrentPeriod(): void {
+  // Get the html element for the current period if there is one
+  let $period: ComponentPublicInstance | null = null;
+  periodsComputed.value.forEach((p: any, i: number) => {
+    if (p.isCurrent) {
+      $period = period.value?.[i] ?? null;
+    }
+  });
+
+  if ($period) {
+    const $container = periods.value;
+    const containerHeight = $container!.offsetHeight;
+    const { offsetTop, offsetHeight } = ($period as any).$el;
+    // Set the scroll so that the current period is centered
+    $container!.scrollTop = offsetTop - containerHeight / 2 + offsetHeight / 2;
+  }
+}
+
+defineExpose({ scrollToCurrentPeriod });
 </script>
 
 <style lang="sass" scoped>

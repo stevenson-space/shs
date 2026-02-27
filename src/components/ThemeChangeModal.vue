@@ -6,10 +6,10 @@
           <div class="divider" />
           <p>Do you want to override your current color selection to the suggested color for the {{ newTheme["name"] }} theme?</p>
           <div class="btn-row">
-            <div class="color-circle" :style="{ background: color }"></div>
+            <div class="color-circle" :style="{ background: themeStore.color }"></div>
              <font-awesome-icon
             class="arrow"
-            :icon="icons.faArrowRight"
+            :icon="faArrowRight"
           />
             <div
               class="color-circle"
@@ -26,35 +26,27 @@
   </div>
 </template>
 
-<script>
-import { faArrowRight, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
-import RoundedButton from '@/components/RoundedButton.vue';
-import { mapState } from 'pinia';
-import useThemeStore from '@/stores/themes';
+<script setup lang="ts">
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import useThemeStore from '@/stores/themes'
+import RoundedButton from '@/components/RoundedButton.vue'
 
-export default {
-  components: { RoundedButton },
-  props: {
-    newTheme: { type: Object, required: true },
-    showModal: { type: Boolean, required: true },
-  },
-  computed: {
-    ...mapState(useThemeStore, ['color']),
-  },
-  data() {
-    return {
-      icons: {
-        faQuestionCircle,
-        faArrowRight,
-      },
-    };
-  },
-  methods: {
-    closeModal() {
-      this.$emit('close');
-    },
-  },
-};
+const { newTheme, showModal } = defineProps<{
+  newTheme: Record<string, any>
+  showModal: boolean
+}>()
+
+const emit = defineEmits<{
+  'false': []
+  'true': []
+  close: []
+}>()
+
+const themeStore = useThemeStore()
+
+function closeModal(): void {
+  emit('close')
+}
 </script>
 
 <style lang="sass" scoped>

@@ -14,10 +14,10 @@
       <div
         class="image-preview"
         :style="previewStyle"
-        @click="$refs.fileInput.click()"
+        @click="fileInput?.click()"
       >
         <div v-if="!resolvedImageUrl" class="empty-state">
-          <font-awesome-icon :icon="icons.faImage" />
+          <font-awesome-icon :icon="faImage" />
         </div>
 
         <!-- Overlay buttons left (info) -->
@@ -25,7 +25,7 @@
           <info-tooltip v-if="modelValue">
             <template #trigger>
               <icon-button class="overlay-btn" @click.stop type="button" ref="infoBtn">
-                <font-awesome-icon :icon="icons.faCircleInfo" />
+                <font-awesome-icon :icon="faCircleInfo" />
               </icon-button>
             </template>
             {{ modelValue }}
@@ -41,16 +41,16 @@
             type="button"
             title="Delete image"
           >
-            <font-awesome-icon :icon="icons.faTrashCan" />
+            <font-awesome-icon :icon="faTrashCan" />
           </icon-button>
           <icon-button
             class="overlay-btn"
             v-else
-            @click.stop="$refs.fileInput.click()"
+            @click.stop="fileInput?.click()"
             type="button"
             title="Upload image"
           >
-            <font-awesome-icon :icon="icons.faCloudArrowUp" />
+            <font-awesome-icon :icon="faCloudArrowUp" />
           </icon-button>
           <icon-button
             class="overlay-btn"
@@ -58,7 +58,7 @@
             type="button"
             title="Browse asset images"
           >
-            <font-awesome-icon :icon="icons.faFolderOpen" />
+            <font-awesome-icon :icon="faFolderOpen" />
           </icon-button>
         </div>
       </div>
@@ -75,8 +75,8 @@
   </div>
 </template>
 
-<script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+<script setup lang="ts">
+import { ref, computed, onBeforeUnmount, useTemplateRef } from 'vue';
 import {
   faImage,
   faCircleInfo,
@@ -86,255 +86,138 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { storeImage, deleteImage } from '@/utils/imageStorage';
 import { globalImageResolver } from '@/utils/imageResolver';
-import AssetBrowser from './AssetBrowser.vue';
+import AssetBrowser from '@/components/AssetBrowser.vue';
 import IconButton from '@/components/IconButton.vue';
 import InfoTooltip from '@/components/InfoTooltip.vue';
 
-export default {
-  name: 'ImageUpload',
-  components: {
-    AssetBrowser,
-    FontAwesomeIcon,
-    IconButton,
-    InfoTooltip,
-  },
-  props: {
-    modelValue: String,
-    label: {
-      type: String,
-      default: '',
-    },
-    minAspectRatio: {
-      type: Number,
-      default: 2, // width must be at least 2x height
-    },
-    assetFolder: {
-      type: String,
-      default: 'header-images', // 'header-images' or 'particles'
-    },
-  },
-  emits: ['update:modelValue', 'blur'],
-  data() {
+const { modelValue, label = '', minAspectRatio = 2, assetFolder = 'header-images' } = defineProps<{
+  modelValue?: string;
+  label?: string;
+  minAspectRatio?: number;
+  assetFolder?: string;
+}>();
+
+const emit = defineEmits<{
+  'update:modelValue': [value: string];
+  blur: [];
+}>();
+
+const error = ref<string | null>(null);
+const imageCache = ref(globalImageResolver.getCache());
+const assetBrowserOpen = ref(false);
+
+const fileInput = useTemplateRef<HTMLInputElement>('fileInput');
+
+let unsubscribeImageCache: (() => void) | undefined = globalImageResolver.onUpdate((cache) => {
+  imageCache.value = cache;
+});
+
+if (modelValue?.startsWith('local://')) {
+  globalImageResolver.load(modelValue);
+}
+
+onBeforeUnmount(() => {
+  unsubscribeImageCache?.();
+});
+
+const resolvedImageUrl = computed(() => {
+  // Reference imageCache for reactivity
+  const _ = imageCache.value;
+  return modelValue ? globalImageResolver.resolve(modelValue) : null;
+});
+
+const previewStyle = computed(() => {
+  if (resolvedImageUrl.value) {
+    const url = resolvedImageUrl.value.startsWith('data:')
+      ? `url("${resolvedImageUrl.value}")`
+      : `url(${resolvedImageUrl.value})`;
     return {
-      error: null,
-      imageCache: globalImageResolver.getCache(),
-      assetBrowserOpen: false,
-      icons: {
-        faImage,
-        faCircleInfo,
-        faTrashCan,
-        faCloudArrowUp,
-        faFolderOpen,
-      },
+      backgroundImage: url,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
     };
-  },
-  computed: {
-    resolvedImageUrl() {
-      // Reference imageCache for reactivity
-      const _ = this.imageCache;
-      return this.modelValue ? globalImageResolver.resolve(this.modelValue) : null;
-    },
-    previewStyle() {
-      if (this.resolvedImageUrl) {
-        const url = this.resolvedImageUrl.startsWith('data:')
-          ? `url("${this.resolvedImageUrl}")`
-          : `url(${this.resolvedImageUrl})`;
-        return {
-          backgroundImage: url,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        };
-      }
-      return {};
-    },
-  },
-  created() {
-    // Subscribe to image cache updates
-    this.unsubscribeImageCache = globalImageResolver.onUpdate((cache) => {
-      this.imageCache = cache;
-    });
+  }
+  return {};
+});
 
-    // Load the current image if it's a local:// path
-    if (this.modelValue?.startsWith('local://')) {
-      globalImageResolver.load(this.modelValue);
+function openAssetBrowser(): void {
+  assetBrowserOpen.value = true;
+}
+
+function handleAssetSelect(assetPath: string): void {
+  emit('update:modelValue', assetPath);
+  emit('blur');
+}
+
+async function clearImage(): Promise<void> {
+  const oldValue = modelValue;
+
+  // If clearing a local:// image, delete it from IndexedDB
+  if (oldValue?.startsWith('local://')) {
+    const filename = oldValue.replace('local://', '');
+    try {
+      await deleteImage(filename);
+      console.log('[ImageUpload] Deleted image from IndexedDB:', filename);
+    } catch (err) {
+      console.error('[ImageUpload] Failed to delete image:', err);
     }
-  },
-  beforeUnmount() {
-    if (this.unsubscribeImageCache) {
-      this.unsubscribeImageCache();
-    }
-  },
-  methods: {
-    openAssetBrowser() {
-      this.assetBrowserOpen = true;
-    },
+  }
 
-    handleAssetSelect(assetPath) {
-      this.$emit('update:modelValue', assetPath);
-      this.$emit('blur');
-    },
+  emit('update:modelValue', '');
+  emit('blur');
+}
 
-    async clearImage() {
-      const oldValue = this.modelValue;
+async function handleFileSelect(event: Event): Promise<void> {
+  const target = event.target as HTMLInputElement;
+  const file = target.files?.[0];
+  if (!file) return;
 
-      // If clearing a local:// image, delete it from IndexedDB
-      if (oldValue?.startsWith('local://')) {
-        const filename = oldValue.replace('local://', '');
-        try {
-          await deleteImage(filename);
-          console.log('[ImageUpload] Deleted image from IndexedDB:', filename);
-        } catch (err) {
-          console.error('[ImageUpload] Failed to delete image:', err);
-        }
-      }
+  error.value = null;
 
-      this.$emit('update:modelValue', '');
-      this.$emit('blur');
-    },
+  // Validate it's an image
+  if (!file.type.startsWith('image/')) {
+    error.value = 'Please select an image file';
+    return;
+  }
 
-    async handleFileSelect(event) {
-      const file = event.target.files[0];
-      if (!file) return;
-
-      this.error = null;
-
-      // Validate it's an image
-      if (!file.type.startsWith('image/')) {
-        this.error = 'Please select an image file';
-        return;
-      }
-
-      // Handle SVG files - convert to PNG for canvas compatibility
-      if (file.type === 'image/svg+xml') {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const img = new Image();
-          img.onload = () => {
-            // Convert SVG to PNG via canvas
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-
-            if (!ctx) {
-              this.error = 'Your browser does not support image processing';
-              event.target.value = '';
-              return;
-            }
-
-            // Use SVG dimensions or default size
-            canvas.width = img.width || 512;
-            canvas.height = img.height || 512;
-            ctx.drawImage(img, 0, 0);
-
-            canvas.toBlob(async (blob) => {
-              if (!blob) {
-                this.error = 'Failed to process image. Try a smaller image';
-                event.target.value = '';
-                return;
-              }
-
-              const filename = file.name.replace(/\.svg$/i, '.png');
-
-              try {
-                await storeImage(filename, blob);
-                console.log('[ImageUpload] Stored SVG as PNG in IndexedDB:', filename, 'Size:', blob.size, 'bytes');
-
-                // Update model value with local:// path
-                const localPath = `local://${filename}`;
-                console.log('[ImageUpload] Emitting path:', localPath);
-                this.$emit('update:modelValue', localPath);
-
-                // Immediately load the image into the resolver cache for instant preview
-                try {
-                  await globalImageResolver.load(localPath);
-                } catch (e) {
-                  console.error('[ImageUpload] Failed to load image:', e);
-                }
-
-                event.target.value = ''; // Reset to allow re-selecting the same file
-
-                this.$emit('blur'); // Trigger theme apply
-              } catch (e) {
-                console.error('[ImageUpload] Failed to store SVG:', e);
-                this.error = 'Failed to store image. Try a smaller image.';
-                event.target.value = ''; // Reset file input
-              }
-            }, 'image/png');
-          };
-
-          img.onerror = () => {
-            this.error = 'Failed to load SVG';
-            event.target.value = '';
-          };
-
-          img.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-        return;
-      }
-
-      // Load image to check dimensions
+  // Handle SVG files - convert to PNG for canvas compatibility
+  if (file.type === 'image/svg+xml') {
+    const reader = new FileReader();
+    reader.onload = (e) => {
       const img = new Image();
-      const reader = new FileReader();
-
-      reader.onload = (e) => {
-        img.src = e.target.result;
-      };
-
       img.onload = () => {
-        const aspectRatio = img.width / img.height;
-
-        if (aspectRatio < this.minAspectRatio) {
-          this.error = `Image width must be at least ${this.minAspectRatio}x the height. Current: ${img.width}x${img.height}`;
-          event.target.value = ''; // Reset file input
-          return;
-        }
-
-        // Compress image for efficient storage
+        // Convert SVG to PNG via canvas
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
 
         if (!ctx) {
-          this.error = 'Your browser does not support image processing';
-          event.target.value = '';
+          error.value = 'Your browser does not support image processing';
+          target.value = '';
           return;
         }
 
-        // Resize to max width of 1920px
-        const maxWidth = 1920;
-        let width = img.width;
-        let height = img.height;
-
-        if (width > maxWidth) {
-          height = (maxWidth / width) * height;
-          width = maxWidth;
-        }
-
-        canvas.width = width;
-        canvas.height = height;
-        ctx.drawImage(img, 0, 0, width, height);
-
-        // Convert to Blob (more efficient than base64)
-        // Use PNG for transparency support, JPEG for photos
-        const mimeType = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
-        const quality = mimeType === 'image/jpeg' ? 0.85 : undefined;
+        // Use SVG dimensions or default size
+        canvas.width = img.width || 512;
+        canvas.height = img.height || 512;
+        ctx.drawImage(img, 0, 0);
 
         canvas.toBlob(async (blob) => {
           if (!blob) {
-            this.error = 'Failed to process image. Try a smaller image';
-            event.target.value = '';
+            error.value = 'Failed to process image. Try a smaller image';
+            target.value = '';
             return;
           }
 
-          const filename = file.name;
+          const filename = file.name.replace(/\.svg$/i, '.png');
 
           try {
             await storeImage(filename, blob);
-            console.log('[ImageUpload] Stored image in IndexedDB:', filename, 'Size:', blob.size, 'bytes');
+            console.log('[ImageUpload] Stored SVG as PNG in IndexedDB:', filename, 'Size:', blob.size, 'bytes');
 
             // Update model value with local:// path
             const localPath = `local://${filename}`;
             console.log('[ImageUpload] Emitting path:', localPath);
-            this.$emit('update:modelValue', localPath);
+            emit('update:modelValue', localPath);
 
             // Immediately load the image into the resolver cache for instant preview
             try {
@@ -343,26 +226,117 @@ export default {
               console.error('[ImageUpload] Failed to load image:', e);
             }
 
-            event.target.value = ''; // Reset to allow re-selecting the same file
+            target.value = ''; // Reset to allow re-selecting the same file
 
-            this.$emit('blur'); // Trigger theme apply
+            emit('blur'); // Trigger theme apply
           } catch (e) {
-            console.error('[ImageUpload] Failed to store image:', e);
-            this.error = 'Failed to store image. Try a smaller image.';
-            event.target.value = ''; // Reset file input
+            console.error('[ImageUpload] Failed to store SVG:', e);
+            error.value = 'Failed to store image. Try a smaller image.';
+            target.value = ''; // Reset file input
           }
-        }, mimeType, quality);
+        }, 'image/png');
       };
 
       img.onerror = () => {
-        this.error = 'Failed to load image';
-        event.target.value = ''; // Reset file input
+        error.value = 'Failed to load SVG';
+        target.value = '';
       };
 
-      reader.readAsDataURL(file);
-    },
-  },
-};
+      img.src = (e.target as FileReader).result as string;
+    };
+    reader.readAsDataURL(file);
+    return;
+  }
+
+  // Load image to check dimensions
+  const img = new Image();
+  const reader = new FileReader();
+
+  reader.onload = (e) => {
+    img.src = (e.target as FileReader).result as string;
+  };
+
+  img.onload = () => {
+    const aspectRatio = img.width / img.height;
+
+    if (aspectRatio < minAspectRatio) {
+      error.value = `Image width must be at least ${minAspectRatio}x the height. Current: ${img.width}x${img.height}`;
+      target.value = ''; // Reset file input
+      return;
+    }
+
+    // Compress image for efficient storage
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    if (!ctx) {
+      error.value = 'Your browser does not support image processing';
+      target.value = '';
+      return;
+    }
+
+    // Resize to max width of 1920px
+    const maxWidth = 1920;
+    let width = img.width;
+    let height = img.height;
+
+    if (width > maxWidth) {
+      height = (maxWidth / width) * height;
+      width = maxWidth;
+    }
+
+    canvas.width = width;
+    canvas.height = height;
+    ctx.drawImage(img, 0, 0, width, height);
+
+    // Convert to Blob (more efficient than base64)
+    // Use PNG for transparency support, JPEG for photos
+    const mimeType = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
+    const quality = mimeType === 'image/jpeg' ? 0.85 : undefined;
+
+    canvas.toBlob(async (blob) => {
+      if (!blob) {
+        error.value = 'Failed to process image. Try a smaller image';
+        target.value = '';
+        return;
+      }
+
+      const filename = file.name;
+
+      try {
+        await storeImage(filename, blob);
+        console.log('[ImageUpload] Stored image in IndexedDB:', filename, 'Size:', blob.size, 'bytes');
+
+        // Update model value with local:// path
+        const localPath = `local://${filename}`;
+        console.log('[ImageUpload] Emitting path:', localPath);
+        emit('update:modelValue', localPath);
+
+        // Immediately load the image into the resolver cache for instant preview
+        try {
+          await globalImageResolver.load(localPath);
+        } catch (e) {
+          console.error('[ImageUpload] Failed to load image:', e);
+        }
+
+        target.value = ''; // Reset to allow re-selecting the same file
+
+        emit('blur'); // Trigger theme apply
+      } catch (e) {
+        console.error('[ImageUpload] Failed to store image:', e);
+        error.value = 'Failed to store image. Try a smaller image.';
+        target.value = ''; // Reset file input
+      }
+    }, mimeType, quality);
+  };
+
+  img.onerror = () => {
+    error.value = 'Failed to load image';
+    target.value = ''; // Reset file input
+  };
+
+  reader.readAsDataURL(file);
+}
 </script>
 
 <style lang="sass" scoped>
