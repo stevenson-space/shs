@@ -38,6 +38,9 @@ export default {
     fontSize() {
       this.$nextTick(this.setOptionHeight);
     },
+    options() {
+      this.$nextTick(this.setOptionHeight);
+    },
   },
   mounted() {
     this.setOptionHeight();
@@ -69,6 +72,7 @@ export default {
       });
     },
     setOptionHeight() {
+      if (!this.$refs.option?.[0]) return;
       this.optionHeight = this.$refs.option[0].getBoundingClientRect().height;
     },
   },
