@@ -1,0 +1,340 @@
+[
+  {
+    "metadata": {
+      "name": "Three Cheese Panini",
+      "recipe": 84528
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 390,
+      "fat_calories": 200,
+      "total_fat_g": 22.0,
+      "saturated_fat_g": 12.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 710.0,
+      "total_carbs_g": 31.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0,
+      "protein_g": 16.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Turkey Panini",
+      "recipe": 85052
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 380,
+      "fat_calories": 180,
+      "total_fat_g": 20.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 1070.0,
+      "total_carbs_g": 32.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 19.0
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Mustard", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Caprese Panini",
+      "recipe": 52336
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 420,
+      "fat_calories": 200,
+      "total_fat_g": 23.0,
+      "saturated_fat_g": 10.0,
+      "trans_fat_g": 0.5,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 820.0,
+      "total_carbs_g": 37.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0,
+      "protein_g": 18.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Balsamic Chicken Panini",
+      "recipe": 65785
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 570,
+      "fat_calories": 250,
+      "total_fat_g": 28.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 95.0,
+      "sodium_mg": 1900.0,
+      "total_carbs_g": 43.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0,
+      "protein_g": 37.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Sulphites", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Bacon & Caramelized Onion Panini",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1  Sandwich",
+      "calories": 1090,
+      "fat_calories": 676,
+      "total_fat_g": 75.0,
+      "saturated_fat_g": 26.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 135.0,
+      "sodium_mg": 2470.0,
+      "total_carbs_g": 64.5,
+      "fiber_g": 3.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 4.0,
+      "protein_g": 43.5
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Mustard", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Chipotle Cheese Steak Panini",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 680,
+      "fat_calories": 366,
+      "total_fat_g": 40.0,
+      "saturated_fat_g": 10.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 80.0,
+      "sodium_mg": 1280.0,
+      "total_carbs_g": 47.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 32.5
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Mustard", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Nanini",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 767,
+      "fat_calories": 447,
+      "total_fat_g": 49.5,
+      "saturated_fat_g": 17.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 88.0,
+      "sodium_mg": 2160.0,
+      "total_carbs_g": 57.0,
+      "fiber_g": 4.33,
+      "total_sugar_g": 6.33,
+      "added_sugar_g": 2.0,
+      "protein_g": 28.79
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Sesame", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Cuban Panini",
+      "recipe": 62744
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 490,
+      "fat_calories": 230,
+      "total_fat_g": 26.0,
+      "saturated_fat_g": 11.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 1140.0,
+      "total_carbs_g": 44.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0,
+      "protein_g": 22.0
+    },
+    "allergens": ["Gluten", "Milk", "Mustard", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Roast Beef Panini",
+      "recipe": 211646
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 590,
+      "fat_calories": 300,
+      "total_fat_g": 33.0,
+      "saturated_fat_g": 10.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 70.0,
+      "sodium_mg": 1330.0,
+      "total_carbs_g": 49.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0,
+      "protein_g": 30.0
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Italian Panini",
+      "recipe": 211638
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 690,
+      "fat_calories": 360,
+      "total_fat_g": 40.0,
+      "saturated_fat_g": 13.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 85.0,
+      "sodium_mg": 2060.0,
+      "total_carbs_g": 49.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0,
+      "protein_g": 31.0
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Mustard", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Buffalo Chicken Panini",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 780,
+      "fat_calories": 469,
+      "total_fat_g": 51.5,
+      "saturated_fat_g": 11.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 65.0,
+      "sodium_mg": 2690.0,
+      "total_carbs_g": 55.0,
+      "fiber_g": 1.5,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0,
+      "protein_g": 27.0
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "BBQ Chicken Panini",
+      "recipe": 48048
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 580,
+      "fat_calories": 260,
+      "total_fat_g": 29.0,
+      "saturated_fat_g": 10.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 105.0,
+      "sodium_mg": 1490.0,
+      "total_carbs_g": 43.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 8.0,
+      "added_sugar_g": 0,
+      "protein_g": 35.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Mustard",
+      "Soy",
+      "Sulphites",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Monte Cristo Panini",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 600,
+      "fat_calories": 158,
+      "total_fat_g": 17.5,
+      "saturated_fat_g": 7.05,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 155.0,
+      "sodium_mg": 1920.0,
+      "total_carbs_g": 71.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 14.0,
+      "added_sugar_g": 0,
+      "protein_g": 40.0
+    },
+    "allergens": ["Egg", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Honey Mustard Turkey Panini",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 640,
+      "fat_calories": 178,
+      "total_fat_g": 20.0,
+      "saturated_fat_g": 4.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 55.65,
+      "sodium_mg": 1780.0,
+      "total_carbs_g": 73.5,
+      "fiber_g": 2.0,
+      "total_sugar_g": 13.0,
+      "added_sugar_g": 0,
+      "protein_g": 34.5
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Mustard", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Mushroom and Goat Cheese Panini",
+      "recipe": 840820
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 740,
+      "fat_calories": 216,
+      "total_fat_g": 24.0,
+      "saturated_fat_g": 4.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 90.0,
+      "sodium_mg": 1010.0,
+      "total_carbs_g": 84.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 13.0,
+      "added_sugar_g": 0,
+      "protein_g": 46.0
+    },
+    "allergens": ["Egg", "Gluten", "Milk", "Mustard", "Soy", "Wheat"]
+  }
+]
