@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { expect } from 'storybook/test'
+import { fn, expect } from 'storybook/test'
 import AssetBrowser from './AssetBrowser.vue'
 
 const meta = {
@@ -9,12 +9,12 @@ const meta = {
   argTypes: {
     isOpen: { control: 'boolean' },
     folder: { control: 'select', options: ['header-images', 'particles'] },
-    onClose: { action: 'close' },
-    onSelect: { action: 'select' },
   },
   args: {
     isOpen: true,
     folder: 'header-images',
+    onClose: fn(),
+    onSelect: fn(),
   },
 } satisfies Meta<typeof AssetBrowser>
 

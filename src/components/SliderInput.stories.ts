@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref, watch } from 'vue'
-import { userEvent, within, expect } from 'storybook/test'
+import { fn, userEvent, within, expect } from 'storybook/test'
 import SliderInput from './SliderInput.vue'
 
 const meta = {
@@ -13,8 +13,6 @@ const meta = {
     max: { control: 'number' },
     step: { control: 'number' },
     label: { control: 'text' },
-    'onUpdate:modelValue': { action: 'update:modelValue' },
-    onBlur: { action: 'blur' },
   },
   args: {
     modelValue: 50,
@@ -22,6 +20,8 @@ const meta = {
     max: 100,
     step: 1,
     label: '',
+    'onUpdate:modelValue': fn(),
+    onBlur: fn(),
   },
 } satisfies Meta<typeof SliderInput>
 

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref } from 'vue'
-import { userEvent, within, expect, waitFor } from 'storybook/test'
+import { fn, userEvent, within, expect, waitFor } from 'storybook/test'
 import Popup from './Popup.vue'
 
 const meta = {
@@ -9,10 +9,10 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     show: { control: 'boolean' },
-    onClose: { action: 'close' },
   },
   args: {
     show: true,
+    onClose: fn(),
   },
 } satisfies Meta<typeof Popup>
 

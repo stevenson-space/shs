@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { faStar, faPencil, faTrash } from '@fortawesome/free-solid-svg-icons'
-import { userEvent, within, expect } from 'storybook/test'
+import { fn, userEvent, within, expect } from 'storybook/test'
 import IconButton from './IconButton.vue'
 
 const meta = {
@@ -9,10 +9,10 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     disabled: { control: 'boolean' },
-    onClick: { action: 'clicked' },
   },
   args: {
     disabled: false,
+    onClick: fn(),
   },
 } satisfies Meta<typeof IconButton>
 

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref, watch } from 'vue'
-import { userEvent, within, expect } from 'storybook/test'
+import { fn, userEvent, within, expect } from 'storybook/test'
 import ScrollSelector from './ScrollSelector.vue'
 
 const timeOptions = ['6:00 AM', '7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM']
@@ -16,13 +16,13 @@ const meta = {
     modelValue: { control: 'text' },
     numOptionsAbove: { control: 'number' },
     fontSize: { control: 'text' },
-    'onUpdate:modelValue': { action: 'update:modelValue' },
   },
   args: {
     options: timeOptions,
     modelValue: '8:00 AM',
     numOptionsAbove: 1,
     fontSize: '1em',
+    'onUpdate:modelValue': fn(),
   },
 } satisfies Meta<typeof ScrollSelector>
 

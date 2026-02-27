@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { expect, within } from 'storybook/test'
+import { fn, expect, within } from 'storybook/test'
 import ThemeCard from './ThemeCard.vue'
 
 const mockTheme = {
@@ -20,10 +20,10 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     theme: { control: 'object' },
-    onClick: { action: 'click' },
   },
   args: {
     theme: mockTheme,
+    onClick: fn(),
   },
 } satisfies Meta<typeof ThemeCard>
 

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref } from 'vue'
-import { userEvent, within, expect, waitFor } from 'storybook/test'
+import { fn, userEvent, within, expect, waitFor } from 'storybook/test'
 import ConfirmPopup from './ConfirmPopup.vue'
 
 const meta = {
@@ -11,13 +11,13 @@ const meta = {
     show: { control: 'boolean' },
     okText: { control: 'text' },
     cancelText: { control: 'text' },
-    onOk: { action: 'ok' },
-    onCancel: { action: 'cancel' },
   },
   args: {
     show: true,
     okText: 'OK',
     cancelText: 'Cancel',
+    onOk: fn(),
+    onCancel: fn(),
   },
 } satisfies Meta<typeof ConfirmPopup>
 

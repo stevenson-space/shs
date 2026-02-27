@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref, watch } from 'vue'
-import { expect, within } from 'storybook/test'
+import { fn, expect, within } from 'storybook/test'
 import ImageUpload from './ImageUpload.vue'
 
 const meta = {
@@ -12,14 +12,14 @@ const meta = {
     label: { control: 'text' },
     minAspectRatio: { control: 'number' },
     assetFolder: { control: 'select', options: ['header-images', 'particles'] },
-    'onUpdate:modelValue': { action: 'update:modelValue' },
-    onBlur: { action: 'blur' },
   },
   args: {
     modelValue: '',
     label: '',
     minAspectRatio: 2,
     assetFolder: 'header-images',
+    'onUpdate:modelValue': fn(),
+    onBlur: fn(),
   },
 } satisfies Meta<typeof ImageUpload>
 

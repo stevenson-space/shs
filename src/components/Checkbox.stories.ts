@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref, watch } from 'vue'
-import { userEvent, within, expect } from 'storybook/test'
+import { fn, userEvent, within, expect } from 'storybook/test'
 import Checkbox from './Checkbox.vue'
 
 const meta = {
@@ -10,11 +10,11 @@ const meta = {
   argTypes: {
     modelValue: { control: 'boolean' },
     labelSize: { control: 'text' },
-    'onUpdate:modelValue': { action: 'update:modelValue' },
   },
   args: {
     modelValue: false,
     labelSize: '.85em',
+    'onUpdate:modelValue': fn(),
   },
 } satisfies Meta<typeof Checkbox>
 

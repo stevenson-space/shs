@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { within, expect } from 'storybook/test'
+import { fn, within, expect } from 'storybook/test'
 import { faPlus, faStar, faTrash } from '@fortawesome/free-solid-svg-icons'
 import RoundedButton from './RoundedButton.vue'
 
@@ -20,6 +20,7 @@ const meta = {
     invert: false,
     circular: true,
     showColor: true,
+    onClick: fn(),
   },
 } satisfies Meta<typeof RoundedButton>
 

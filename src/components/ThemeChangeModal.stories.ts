@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { expect, within, waitFor } from 'storybook/test'
+import { fn, expect, within, waitFor } from 'storybook/test'
 import ThemeChangeModal from './ThemeChangeModal.vue'
 
 const meta = {
@@ -9,9 +9,6 @@ const meta = {
   argTypes: {
     showModal: { control: 'boolean' },
     newTheme: { control: 'object' },
-    onTrue: { action: 'true' },
-    onFalse: { action: 'false' },
-    onClose: { action: 'close' },
   },
   args: {
     showModal: true,
@@ -19,6 +16,9 @@ const meta = {
       name: 'Ocean Blue',
       suggestedColor: '#3b82f6',
     },
+    onTrue: fn(),
+    onFalse: fn(),
+    onClose: fn(),
   },
 } satisfies Meta<typeof ThemeChangeModal>
 

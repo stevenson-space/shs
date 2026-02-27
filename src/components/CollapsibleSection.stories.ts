@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref, watch } from 'vue'
-import { userEvent, within, expect, waitFor } from 'storybook/test'
+import { fn, userEvent, within, expect, waitFor } from 'storybook/test'
 import CollapsibleSection from './CollapsibleSection.vue'
 
 const meta = {
@@ -13,7 +13,6 @@ const meta = {
     disabled: { control: 'boolean' },
     lockOpen: { control: 'boolean' },
     headerClass: { control: 'text' },
-    'onUpdate:modelValue': { action: 'update:modelValue' },
   },
   args: {
     title: 'Section Title',
@@ -21,6 +20,7 @@ const meta = {
     disabled: false,
     lockOpen: false,
     headerClass: '',
+    'onUpdate:modelValue': fn(),
   },
 } satisfies Meta<typeof CollapsibleSection>
 

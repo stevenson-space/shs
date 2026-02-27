@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref, watch } from 'vue'
-import { userEvent, within, expect, waitFor } from 'storybook/test'
+import { fn, userEvent, within, expect, waitFor } from 'storybook/test'
 import Dropdown from './Dropdown.vue'
 
 const meta = {
@@ -13,7 +13,6 @@ const meta = {
     showSelectedAsOption: { control: 'boolean' },
     align: { control: 'select', options: ['left', 'right', 'center'] },
     direction: { control: 'select', options: ['up', 'down'] },
-    'onUpdate:modelValue': { action: 'update:modelValue' },
   },
   args: {
     options: ['Option A', 'Option B', 'Option C'],
@@ -21,6 +20,7 @@ const meta = {
     showSelectedAsOption: true,
     align: 'right',
     direction: 'down',
+    'onUpdate:modelValue': fn(),
   },
 } satisfies Meta<typeof Dropdown>
 

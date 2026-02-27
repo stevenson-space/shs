@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref, watch } from 'vue'
-import { expect, within } from 'storybook/test'
+import { fn, expect, within } from 'storybook/test'
 import ColorPicker from './ColorPicker.vue'
 
 const meta = {
@@ -14,7 +14,6 @@ const meta = {
     placeholder: { control: 'text' },
     propertyPath: { control: 'text' },
     label: { control: 'text' },
-    'onUpdate:modelValue': { action: 'update:modelValue' },
   },
   args: {
     modelValue: '#3b82f6',
@@ -23,6 +22,7 @@ const meta = {
     placeholder: 'Color value',
     propertyPath: '',
     label: '',
+    'onUpdate:modelValue': fn(),
   },
 } satisfies Meta<typeof ColorPicker>
 
