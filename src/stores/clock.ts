@@ -38,9 +38,10 @@ export default defineStore('clock', () => {
   const date = computed((): Date => {
     const d = new Date(urlDate.value.getTime() + (currentTime.value - startTime.value));
     // if mode is 'day' return date at time 0:00 instead (to get range string for whole day instead for current period)
-    return clockMode.value === 'current'
-      ? d
-      : new Date(d.toLocaleDateString());
+    if (clockMode.value === 'current') return d;
+    const normalized = new Date(d);
+    normalized.setHours(0, 0, 0, 0);
+    return normalized;
   });
 
   const bell = computed((): Bell => {
