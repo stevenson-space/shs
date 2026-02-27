@@ -107,8 +107,8 @@ export const ClosesOnBackdropClick: Story = {
     await waitFor(() => expect(content).toBeVisible())
 
     const backdrop = canvasElement.querySelector('.popup') as HTMLElement
-    if (backdrop) {
-      await userEvent.click(backdrop)
-    }
+    expect(backdrop).not.toBeNull()
+    await userEvent.click(backdrop)
+    await waitFor(() => expect(content).not.toBeInTheDocument())
   },
 }
