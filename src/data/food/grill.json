@@ -1,0 +1,398 @@
+[
+  {
+    "metadata": {
+      "name": "Hamburger Patty",
+      "recipe": 824640
+    },
+    "nutrition": {
+      "serving_size": "1 Patty",
+      "calories": 220,
+      "fat_calories": 144,
+      "total_fat_g": 16.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 1.0,
+      "cholesterol_mg": 70.0,
+      "sodium_mg": 350.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 17.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Hamburger Bun",
+      "recipe": 51408
+    },
+    "nutrition": {
+      "serving_size": "1 Bun",
+      "calories": 140,
+      "fat_calories": 25,
+      "total_fat_g": 3.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 250.0,
+      "total_carbs_g": 26.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 4.0
+    },
+    "allergens": ["Gluten", "Sesame", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Cheese Burger",
+      "recipe": 824640
+    },
+    "nutrition": {
+      "serving_size": "1 Patty + 1 Slice of American Cheese",
+      "calories": 265,
+      "fat_calories": 180,
+      "total_fat_g": 20.0,
+      "saturated_fat_g": 9.5,
+      "trans_fat_g": 1.0,
+      "cholesterol_mg": 82.5,
+      "sodium_mg": 580.0,
+      "total_carbs_g": 0.5,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 19.5
+    },
+    "allergens": ["Milk", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Baked Chicken Tenders",
+      "recipe": 837729
+    },
+    "nutrition": {
+      "serving_size": "3 Tenders",
+      "calories": 225,
+      "fat_calories": 81,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 14.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 630.0,
+      "total_carbs_g": 19.5,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 15.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Black Bean Chipotle Patty",
+      "recipe": 829642
+    },
+    "nutrition": {
+      "serving_size": "4.25 oz Patty",
+      "calories": 170,
+      "fat_calories": 45,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 450.0,
+      "total_carbs_g": 26.0,
+      "fiber_g": 9.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 2.0,
+      "protein_g": 15.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Grilled Chicken Breast Sandwich",
+      "recipe": 48046
+    },
+    "nutrition": {
+      "serving_size": "1 Breast 5 oz",
+      "calories": 160,
+      "fat_calories": 60,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 75.0,
+      "sodium_mg": 530.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 23.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Spicy Chicken Sandwich",
+      "recipe": 525490
+    },
+    "nutrition": {
+      "serving_size": "1 Piece",
+      "calories": 200,
+      "fat_calories": 90,
+      "total_fat_g": 10.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 330.0,
+      "total_carbs_g": 9.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 19.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Hot Dog All Beef",
+      "recipe": 596390
+    },
+    "nutrition": {
+      "serving_size": "1 Frank",
+      "calories": 170,
+      "fat_calories": 144,
+      "total_fat_g": 16.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 1.0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 520.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 6.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Hot Dog Bun",
+      "recipe": 53401
+    },
+    "nutrition": {
+      "serving_size": "1 Bun",
+      "calories": 140,
+      "fat_calories": 23,
+      "total_fat_g": 2.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 270.0,
+      "total_carbs_g": 26.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 4.0
+    },
+    "allergens": ["Gluten", "Sesame", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Baked Sweet Potato Fries",
+      "recipe": 62006
+    },
+    "nutrition": {
+      "serving_size": "3 oz",
+      "calories": 160,
+      "fat_calories": 60,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 190.0,
+      "total_carbs_g": 25.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 8.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 1.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Baked Battered French Fries",
+      "recipe": 174241
+    },
+    "nutrition": {
+      "serving_size": "3 oz",
+      "calories": 140,
+      "fat_calories": 63,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 360.0,
+      "total_carbs_g": 23.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Baked Seasoned French Fries",
+      "recipe": 230962
+    },
+    "nutrition": {
+      "serving_size": "3 oz",
+      "calories": 120,
+      "fat_calories": 36,
+      "total_fat_g": 4.0,
+      "saturated_fat_g": 0.05,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 180.0,
+      "total_carbs_g": 18.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 2.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Baked Curly Fries",
+      "recipe": 181501
+    },
+    "nutrition": {
+      "serving_size": "3 oz",
+      "calories": 150,
+      "fat_calories": 72,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 360.0,
+      "total_carbs_g": 20.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 2.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Ketchup",
+      "recipe": 819492
+    },
+    "nutrition": {
+      "serving_size": "1 Tablespoon",
+      "calories": 20,
+      "fat_calories": 0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 180.0,
+      "total_carbs_g": 5.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 4.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Mustard",
+      "recipe": 819506
+    },
+    "nutrition": {
+      "serving_size": "1 Tablespoon",
+      "calories": 15,
+      "fat_calories": 0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 180.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Mayonnaise",
+      "recipe": 147834
+    },
+    "nutrition": {
+      "serving_size": "1 Tablespoon",
+      "calories": 100,
+      "fat_calories": 99,
+      "total_fat_g": 11.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 10.0,
+      "sodium_mg": 85.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": ["Egg", "Mustard", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "BBQ Sauce",
+      "recipe": 664950
+    },
+    "nutrition": {
+      "serving_size": "1 Tablespoon",
+      "calories": 30,
+      "fat_calories": 0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 155.0,
+      "total_carbs_g": 8.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 6.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Ranch",
+      "recipe": 676210
+    },
+    "nutrition": {
+      "serving_size": "1 Tablespoon",
+      "calories": 55,
+      "fat_calories": 54,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 150.0,
+      "total_carbs_g": 1.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.5,
+      "added_sugar_g": 0.5,
+      "protein_g": 0.0
+    },
+    "allergens": ["Egg", "Milk", "Soy"]
+  }
+]
