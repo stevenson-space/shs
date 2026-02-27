@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref, watch } from 'vue'
-import { fn, userEvent, within, expect, waitFor } from 'storybook/test'
+import { fn, userEvent, within, expect } from 'storybook/test'
 import Dropdown from './Dropdown.vue'
 
 const meta = {
@@ -54,8 +54,8 @@ export const Default: Story = {
     await expect(trigger).toBeVisible()
 
     await userEvent.click(trigger)
-    const optionB = canvas.getByText('Option B')
-    await waitFor(() => expect(optionB).toBeVisible())
+    const optionB = await canvas.findByText('Option B')
+    await expect(optionB).toBeVisible()
 
     await userEvent.click(optionB)
   },
