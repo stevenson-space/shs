@@ -52,10 +52,12 @@ const open = ref(false); // open is true even when dropdown is partially open, f
 const arrowRotateAmount = ref(0);
 let optionShifts: number[] = [];
 
-// if the initial index is out of bounds, choose the first index by default
-if (modelValue < 0 || modelValue >= options.length) {
-  emit('update:modelValue', 0);
-}
+// if modelValue is out of bounds (including when options change at runtime), reset to 0
+watch(() => [modelValue, options.length], () => {
+  if (modelValue < 0 || modelValue >= options.length) {
+    emit('update:modelValue', 0);
+  }
+}, { immediate: true });
 
 const remainingOptions = computed((): string[] => {
   const remaining = options.slice(0);
