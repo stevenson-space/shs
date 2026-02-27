@@ -2,7 +2,7 @@
   {
     "metadata": {
       "name": "Hamburger Patty",
-      "recipe": 824640
+      "recipe": [824640]
     },
     "nutrition": {
       "serving_size": "1 Patty",
@@ -24,7 +24,7 @@
   {
     "metadata": {
       "name": "Hamburger Bun",
-      "recipe": 51408
+      "recipe": [51408]
     },
     "nutrition": {
       "serving_size": "1 Bun",
@@ -46,7 +46,7 @@
   {
     "metadata": {
       "name": "Cheese Burger",
-      "recipe": 824640
+      "recipe": [824640, 814241]
     },
     "nutrition": {
       "serving_size": "1 Patty + 1 Slice of American Cheese",
@@ -68,7 +68,7 @@
   {
     "metadata": {
       "name": "Baked Chicken Tenders",
-      "recipe": 837729
+      "recipe": [837729]
     },
     "nutrition": {
       "serving_size": "3 Tenders",
@@ -90,7 +90,7 @@
   {
     "metadata": {
       "name": "Black Bean Chipotle Patty",
-      "recipe": 829642
+      "recipe": [829642]
     },
     "nutrition": {
       "serving_size": "4.25 oz Patty",
@@ -112,7 +112,7 @@
   {
     "metadata": {
       "name": "Grilled Chicken Breast Sandwich",
-      "recipe": 48046
+      "recipe": [48046]
     },
     "nutrition": {
       "serving_size": "1 Breast 5 oz",
@@ -134,7 +134,7 @@
   {
     "metadata": {
       "name": "Spicy Chicken Sandwich",
-      "recipe": 525490
+      "recipe": [525490]
     },
     "nutrition": {
       "serving_size": "1 Piece",
@@ -156,7 +156,7 @@
   {
     "metadata": {
       "name": "Hot Dog All Beef",
-      "recipe": 596390
+      "recipe": [596390]
     },
     "nutrition": {
       "serving_size": "1 Frank",
@@ -178,7 +178,7 @@
   {
     "metadata": {
       "name": "Hot Dog Bun",
-      "recipe": 53401
+      "recipe": [53401]
     },
     "nutrition": {
       "serving_size": "1 Bun",
@@ -200,7 +200,7 @@
   {
     "metadata": {
       "name": "Baked Sweet Potato Fries",
-      "recipe": 62006
+      "recipe": [62006]
     },
     "nutrition": {
       "serving_size": "3 oz",
@@ -222,7 +222,7 @@
   {
     "metadata": {
       "name": "Baked Battered French Fries",
-      "recipe": 174241
+      "recipe": [174241]
     },
     "nutrition": {
       "serving_size": "3 oz",
@@ -244,7 +244,7 @@
   {
     "metadata": {
       "name": "Baked Seasoned French Fries",
-      "recipe": 230962
+      "recipe": [230962]
     },
     "nutrition": {
       "serving_size": "3 oz",
@@ -266,7 +266,7 @@
   {
     "metadata": {
       "name": "Baked Curly Fries",
-      "recipe": 181501
+      "recipe": [181501]
     },
     "nutrition": {
       "serving_size": "3 oz",
@@ -288,7 +288,7 @@
   {
     "metadata": {
       "name": "Ketchup",
-      "recipe": 819492
+      "recipe": [819492]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -310,7 +310,7 @@
   {
     "metadata": {
       "name": "Mustard",
-      "recipe": 819506
+      "recipe": [819506]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -332,7 +332,7 @@
   {
     "metadata": {
       "name": "Mayonnaise",
-      "recipe": 147834
+      "recipe": [147834]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -354,7 +354,7 @@
   {
     "metadata": {
       "name": "BBQ Sauce",
-      "recipe": 664950
+      "recipe": [664950]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -376,7 +376,7 @@
   {
     "metadata": {
       "name": "Ranch",
-      "recipe": 676210
+      "recipe": [676210]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",

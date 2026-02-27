@@ -2,7 +2,7 @@
   {
     "metadata": {
       "name": "White Bread",
-      "recipe": 11222
+      "recipe": [11222]
     },
     "nutrition": {
       "serving_size": "1 slice",
@@ -24,7 +24,7 @@
   {
     "metadata": {
       "name": "Wheat Bread",
-      "recipe": 12186
+      "recipe": [12186]
     },
     "nutrition": {
       "serving_size": "1 slice",
@@ -46,7 +46,7 @@
   {
     "metadata": {
       "name": "9-Grain Wheat",
-      "recipe": 80071
+      "recipe": [80071]
     },
     "nutrition": {
       "serving_size": "1 slice",
@@ -68,7 +68,7 @@
   {
     "metadata": {
       "name": "Pretzel Bun",
-      "recipe": 83096
+      "recipe": [83096]
     },
     "nutrition": {
       "serving_size": "1 each",
@@ -90,7 +90,7 @@
   {
     "metadata": {
       "name": "Medium Kaiser",
-      "recipe": 33224
+      "recipe": [33224]
     },
     "nutrition": {
       "serving_size": "1 roll",
@@ -112,7 +112,7 @@
   {
     "metadata": {
       "name": "French Roll",
-      "recipe": 31197
+      "recipe": [31197]
     },
     "nutrition": {
       "serving_size": "1 Roll",
@@ -134,7 +134,7 @@
   {
     "metadata": {
       "name": "12\" Flour Tortilla",
-      "recipe": 727271
+      "recipe": [727271]
     },
     "nutrition": {
       "serving_size": "1 each",
@@ -156,7 +156,7 @@
   {
     "metadata": {
       "name": "Turkey Breast Sliced",
-      "recipe": 606421
+      "recipe": [606421]
     },
     "nutrition": {
       "serving_size": "2 oz",
@@ -178,7 +178,7 @@
   {
     "metadata": {
       "name": "Ham",
-      "recipe": 118041
+      "recipe": [118041]
     },
     "nutrition": {
       "serving_size": "2 oz",
@@ -200,7 +200,7 @@
   {
     "metadata": {
       "name": "Roast Beef Sliced",
-      "recipe": 533927
+      "recipe": [533927]
     },
     "nutrition": {
       "serving_size": "2 oz",
@@ -222,7 +222,7 @@
   {
     "metadata": {
       "name": "Salami Sliced",
-      "recipe": 612510
+      "recipe": [612510]
     },
     "nutrition": {
       "serving_size": "2 oz",
@@ -244,7 +244,7 @@
   {
     "metadata": {
       "name": "Hummus",
-      "recipe": 357374
+      "recipe": [357374]
     },
     "nutrition": {
       "serving_size": "1 oz",
@@ -266,7 +266,7 @@
   {
     "metadata": {
       "name": "Buffalo Chicken",
-      "recipe": 96354
+      "recipe": [96354]
     },
     "nutrition": {
       "serving_size": "1 tender",
@@ -288,7 +288,7 @@
   {
     "metadata": {
       "name": "BBQ Chicken",
-      "recipe": 96366
+      "recipe": [96366]
     },
     "nutrition": {
       "serving_size": "1 tender",
@@ -310,7 +310,7 @@
   {
     "metadata": {
       "name": "Bacon",
-      "recipe": 80368
+      "recipe": [80368]
     },
     "nutrition": {
       "serving_size": "2 Slices",
@@ -332,7 +332,7 @@
   {
     "metadata": {
       "name": "Swiss Cheese",
-      "recipe": 863976
+      "recipe": [863976]
     },
     "nutrition": {
       "serving_size": "2 slices",
@@ -354,7 +354,7 @@
   {
     "metadata": {
       "name": "Cheddar Cheese",
-      "recipe": 250711
+      "recipe": [250711]
     },
     "nutrition": {
       "serving_size": "2 slices",
@@ -376,7 +376,7 @@
   {
     "metadata": {
       "name": "Pepper Jack Cheese",
-      "recipe": 706231
+      "recipe": [706231]
     },
     "nutrition": {
       "serving_size": "2 slices",
@@ -398,7 +398,7 @@
   {
     "metadata": {
       "name": "Provolone",
-      "recipe": 445101
+      "recipe": [445101]
     },
     "nutrition": {
       "serving_size": "2 slices",
@@ -420,7 +420,7 @@
   {
     "metadata": {
       "name": "American Cheese",
-      "recipe": 814241
+      "recipe": [814241]
     },
     "nutrition": {
       "serving_size": "2 slices",
@@ -442,7 +442,7 @@
   {
     "metadata": {
       "name": "Swiss American Cheese",
-      "recipe": 206880
+      "recipe": [206880]
     },
     "nutrition": {
       "serving_size": "2 Slices",
@@ -464,7 +464,7 @@
   {
     "metadata": {
       "name": "Mayonnaise",
-      "recipe": 451474
+      "recipe": [451474]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -486,7 +486,7 @@
   {
     "metadata": {
       "name": "Mustard",
-      "recipe": 741270
+      "recipe": [741270]
     },
     "nutrition": {
       "serving_size": "1 Teaspoon",
@@ -508,7 +508,7 @@
   {
     "metadata": {
       "name": "Ranch",
-      "recipe": 759082
+      "recipe": [759082]
     },
     "nutrition": {
       "serving_size": "2 Tablespoon",
@@ -530,7 +530,7 @@
   {
     "metadata": {
       "name": "Honey Mustard",
-      "recipe": 636690
+      "recipe": [636690]
     },
     "nutrition": {
       "serving_size": "2 Tablespoons",
@@ -552,7 +552,7 @@
   {
     "metadata": {
       "name": "Chipotle Mayonnaise",
-      "recipe": 199431
+      "recipe": [199431]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -574,7 +574,7 @@
   {
     "metadata": {
       "name": "Italian Dressing",
-      "recipe": 281821
+      "recipe": [281821]
     },
     "nutrition": {
       "serving_size": "2 Tablespoons",
@@ -596,7 +596,7 @@
   {
     "metadata": {
       "name": "Tuna Salad",
-      "recipe": 34603793
+      "recipe": [34603793]
     },
     "nutrition": {
       "serving_size": "2 oz",
@@ -618,7 +618,7 @@
   {
     "metadata": {
       "name": "Chicken Salad",
-      "recipe": 173903787
+      "recipe": [173903787]
     },
     "nutrition": {
       "serving_size": "2 oz",

@@ -20,7 +20,7 @@ type Allergen = "Almonds" | "Egg" | "Fish" | "Gluten" | "Milk" | "MSG" | "Mustar
 
 interface FoodItemMetaData {
   name: string;
-  recipe: number | null;
+  recipe: number[];
 }
 
 interface FoodInformation {
