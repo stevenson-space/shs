@@ -1,8 +1,8 @@
 <template>
   <div v-if="scheduleType === 'Patriot Hybrid' || scheduleType === 'Remote Learning'">
-    <div class="info-circle" @click="openModal()">
+    <button type="button" class="info-circle" aria-label="Open info modal" aria-haspopup="dialog" @click="openModal">
       <font-awesome-icon :icon="faQuestionCircle" fixed-width />
-    </div>
+    </button>
 
     <transition name="fade">
       <div v-if="showModal" class="modal" @click="closeModal()">
@@ -47,6 +47,9 @@ function closeModal(): void {
   opacity: 0
 
 .info-circle
+  background: none
+  border: none
+  padding: 0
   color: var(--accent)
   cursor: pointer
 
