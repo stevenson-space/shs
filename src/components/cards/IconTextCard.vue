@@ -2,8 +2,9 @@
   <card class="card" :class="{ invert }">
     <component
       :is="link ? CustomLink : 'div'"
-      v-bind="link ? { href: link, ...linkProps } : {}"
+      v-bind="link ? { href: link, ...linkProps } : { tabindex: '0', role: 'button' }"
       @click="handleClick"
+      @keydown="handleKeydown"
     >
       <div class="icon">
         <font-awesome-icon class="boxIcon" :icon="icon" size="5x" v-bind="iconProps" />
@@ -30,6 +31,13 @@ const emit = defineEmits<{ click: [] }>()
 
 function handleClick(): void {
   if (!link) {
+    emit('click');
+  }
+}
+
+function handleKeydown(event: KeyboardEvent): void {
+  if (!link && (event.key === 'Enter' || event.key === ' ')) {
+    if (event.key === ' ') event.preventDefault();
     emit('click');
   }
 }
