@@ -69,6 +69,7 @@ export default {
       });
     },
     setOptionHeight() {
+      if (!this.$refs.option?.[0]) return;
       this.optionHeight = this.$refs.option[0].getBoundingClientRect().height;
     },
   },
