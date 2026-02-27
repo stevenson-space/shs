@@ -107,14 +107,22 @@ function fetchWeatherData(cacheKey: string): void {
 onMounted(() => {
   const cacheKey = 'weatherDataCache';
 
-  let cacheData = localStorage.getItem(cacheKey);
+  const cacheData = localStorage.getItem(cacheKey);
   if (cacheData) {
-    const parsed = JSON.parse(cacheData);
-    const currentTime = new Date().getTime();
-    const sixHours = 6 * 60 * 60 * 1000;
-    if (currentTime - parsed.timestamp < sixHours) {
-      weatherData.value = parsed.dailyData;
-    } else {
+    try {
+      const parsed = JSON.parse(cacheData);
+      const currentTime = new Date().getTime();
+      const sixHours = 6 * 60 * 60 * 1000;
+      if (
+        typeof parsed.timestamp === 'number' &&
+        Array.isArray(parsed.dailyData) &&
+        currentTime - parsed.timestamp < sixHours
+      ) {
+        weatherData.value = parsed.dailyData;
+      } else {
+        fetchWeatherData(cacheKey);
+      }
+    } catch {
       fetchWeatherData(cacheKey);
     }
   } else {
