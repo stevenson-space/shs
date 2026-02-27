@@ -22,20 +22,17 @@ import Card from '@/components/Card.vue';
 
 const { untilDate, message } = defineProps<{ untilDate: string; message?: string }>();
 
-const formattedUntilDate = new Date(untilDate);
+const canonicalUntilDate = new Date(untilDate);
+canonicalUntilDate.setHours(11, 40, 0, 0);
+const canonicalUntilMs = canonicalUntilDate.getTime();
+
 const timeLeft = reactive({ days: '00', hours: '00', minutes: '00' });
 
-const showCard = computed(() => {
-  const today = new Date().getTime();
-  return today < formattedUntilDate.getTime();
-});
+const showCard = computed(() => Date.now() < canonicalUntilMs);
 
 function getTimeLeft(): void {
-  const untilDateObj = new Date(untilDate);
-  untilDateObj.setHours(11, 40, 0, 0);
-  const goalTime = untilDateObj.getTime();
-  const now = new Date().getTime();
-  const diff = goalTime - now;
+  const now = Date.now();
+  const diff = canonicalUntilMs - now;
 
   // diff is in milliseconds, so we need to do a little math to get the days, hours, and minutes
   const daysLeft = Math.floor(diff / 86400000);
