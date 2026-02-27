@@ -32,7 +32,7 @@ const emit = defineEmits<{ ok: [], cancel: [] }>();
 const showAlt = ref(false);
 const text = ref('');
 let promiseResolve: () => void = () => {};
-let promiseReject: (reason?: string) => void = () => {};
+let promiseReject: (reason?: unknown) => void = () => {};
 
 function ok(): void {
   emit('ok');
@@ -54,6 +54,11 @@ function reset(): void {
 }
 
 function displayPopup(message: string): Promise<void> {
+  if (showAlt.value) {
+    promiseReject(new Error('popup replaced'));
+    promiseResolve = () => {};
+    promiseReject = () => {};
+  }
   return new Promise((resolve, reject) => {
     text.value = message;
     promiseResolve = resolve;
