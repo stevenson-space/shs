@@ -1,0 +1,689 @@
+[
+  {
+    "metadata": {
+      "name": "Turkey on a Pretzel Roll",
+      "recipe": 211764
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 280.0,
+      "fat_calories": 70.0,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 3.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 35.0,
+      "sodium_mg": 1030.0,
+      "total_carbs_g": 38.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 5.0,
+      "protein_g": 20.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Italian Sandwich on French Roll",
+      "recipe": 98916
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 580.0,
+      "fat_calories": 280.0,
+      "total_fat_g": 270.0,
+      "saturated_fat_g": 9.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 75.0,
+      "sodium_mg": 1980.0,
+      "total_carbs_g": 48.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 4.0,
+      "protein_g": 28.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Salad Croissant",
+      "recipe": 211958
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 450.0,
+      "fat_calories": 250.0,
+      "total_fat_g": 28.0,
+      "saturated_fat_g": 11.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 80.0,
+      "sodium_mg": 710.0,
+      "total_carbs_g": 32.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 4.0,
+      "protein_g": 17.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Mustard",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Ham& Swiss on Marble Rye",
+      "recipe": 211960
+    },
+    "nutrition": {
+      "serving_size": "1 sandwich",
+      "calories": 270.0,
+      "fat_calories": 70.0,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 55.0,
+      "sodium_mg": 910.0,
+      "total_carbs_g": 29.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 5.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 21.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Muffuletta on Herb Focaccia Roll.",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 0.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": [
+      "Gluten",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Buffalo Chicken Wrap",
+      "recipe": 56473
+    },
+    "nutrition": {
+      "serving_size": "1 wrap",
+      "calories": 580.0,
+      "fat_calories": 260.0,
+      "total_fat_g": 28.0,
+      "saturated_fat_g": 8.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 1870.0,
+      "total_carbs_g": 65.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 18.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Roasted Vegetable Wrap",
+      "recipe": 211951
+    },
+    "nutrition": {
+      "serving_size": "1 wrap",
+      "calories": 460.0,
+      "fat_calories": 170.0,
+      "total_fat_g": 19.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 690.0,
+      "total_carbs_g": 63.0,
+      "fiber_g": 9.0,
+      "total_sugar_g": 8.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 12.0
+    },
+    "allergens": [
+      "Gluten",
+      "Mustard",
+      "Sesame",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Caesar Wrap",
+      "recipe": 211953
+    },
+    "nutrition": {
+      "serving_size": "1 wrap",
+      "calories": 580.0,
+      "fat_calories": 260.0,
+      "total_fat_g": 29.0,
+      "saturated_fat_g": 9.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 70.0,
+      "sodium_mg": 1020.0,
+      "total_carbs_g": 51.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 27.0
+    },
+    "allergens": [
+      "Egg",
+      "Fish",
+      "Gluten",
+      "MSG",
+      "Milk",
+      "Soy",
+      "Sulphites",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Veggie Caesar Wrap",
+      "recipe": 55843
+    },
+    "nutrition": {
+      "serving_size": "1 wrap",
+      "calories": 410.0,
+      "fat_calories": 150.0,
+      "total_fat_g": 17.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 10.0,
+      "sodium_mg": 870.0,
+      "total_carbs_g": 58.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 11.0
+    },
+    "allergens": [
+      "Egg",
+      "Fish",
+      "Gluten",
+      "MSG",
+      "Milk",
+      "Mustard",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Turkey Bacon Wrap",
+      "recipe": 48270
+    },
+    "nutrition": {
+      "serving_size": "1 wrap",
+      "calories": 510.0,
+      "fat_calories": 210.0,
+      "total_fat_g": 23.0,
+      "saturated_fat_g": 9.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 1460.0,
+      "total_carbs_g": 55.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 5.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 22.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Buffalo Chicken Salald",
+      "recipe": 211854
+    },
+    "nutrition": {
+      "serving_size": "1 salad",
+      "calories": 540.0,
+      "fat_calories": 340.0,
+      "total_fat_g": 38.0,
+      "saturated_fat_g": 8.0,
+      "trans_fat_g": 0.5,
+      "cholesterol_mg": 6.0,
+      "sodium_mg": 1650.0,
+      "total_carbs_g": 34.0,
+      "fiber_g": 5.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 16.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "MSG",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Garden Salad",
+      "recipe": 98923
+    },
+    "nutrition": {
+      "serving_size": "1 salad",
+      "calories": 80.0,
+      "fat_calories": 20.0,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 160.0,
+      "total_carbs_g": 15.0,
+      "fiber_g": 7.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 3.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Chicken Caesar Salad with Caesar Dressing",
+      "recipe": 211865
+    },
+    "nutrition": {
+      "serving_size": "1 salad",
+      "calories": 490.0,
+      "fat_calories": 320.0,
+      "total_fat_g": 36.0,
+      "saturated_fat_g": 7.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 95.0,
+      "sodium_mg": 1080.0,
+      "total_carbs_g": 15.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 27.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "MSG",
+      "Milk",
+      "Soy",
+      "Sulphites",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Classic Caesar Salad with Caesar Dressing",
+      "recipe": 211482
+    },
+    "nutrition": {
+      "serving_size": "1 salad",
+      "calories": 410.0,
+      "fat_calories": 290.0,
+      "total_fat_g": 32.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 1110.0,
+      "total_carbs_g": 25.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Egg",
+      "Fish",
+      "Gluten",
+      "MSG",
+      "Milk",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Stevenson Quinoa Salad",
+      "recipe": 81955
+    },
+    "nutrition": {
+      "serving_size": "1 salad",
+      "calories": 530.0,
+      "fat_calories": 100.0,
+      "total_fat_g": 12.0,
+      "saturated_fat_g": 3.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 90.0,
+      "sodium_mg": 390.0,
+      "total_carbs_g": 67.0,
+      "fiber_g": 8.0,
+      "total_sugar_g": 11.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 38.0
+    },
+    "allergens": [
+      "Milk",
+      "Mustard",
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Hummus & Naan Snack",
+      "recipe": 211513
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 410.0,
+      "fat_calories": 170.0,
+      "total_fat_g": 19.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.5,
+      "sodium_mg": 930.0,
+      "total_carbs_g": 52.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 4.0,
+      "added_sugar_g": 3.0,
+      "protein_g": 12.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Sesame",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Crudite no Ranch",
+      "recipe": 3569
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 15.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 30.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Cheese & Grape Cup",
+      "recipe": 56726
+    },
+    "nutrition": {
+      "serving_size": "1 Each",
+      "calories": 520.0,
+      "fat_calories": 340.0,
+      "total_fat_g": 38.0,
+      "saturated_fat_g": 24.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 120.0,
+      "sodium_mg": 710.0,
+      "total_carbs_g": 17.0,
+      "fiber_g": 0.5,
+      "total_sugar_g": 14.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 29.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Fresh Fruit Cup",
+      "recipe": 67885
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 70.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 15.0,
+      "total_carbs_g": 18.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 16.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Strawberry Yogurt Parfait",
+      "recipe": 211891
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 300.0,
+      "fat_calories": 35.0,
+      "total_fat_g": 3.5,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 130.0,
+      "total_carbs_g": 60.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 35.0,
+      "added_sugar_g": 25.0,
+      "protein_g": 8.0
+    },
+    "allergens": [
+      "Gluten",
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Jell-O Plain",
+      "recipe": 1512
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 80.0,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 100.0,
+      "total_carbs_g": 18.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 18.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 2.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Home-Made Pasta Salad",
+      "recipe": 67037
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 310.0,
+      "fat_calories": 20.0,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 85.0,
+      "total_carbs_g": 65.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 10.0
+    },
+    "allergens": [
+      "Egg",
+      "Gluten",
+      "Mustard",
+      "Soy",
+      "Wheat"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Vanilla Pudding Cup",
+      "recipe": 211898
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 190.0,
+      "fat_calories": 45.0,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 4.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 280.0,
+      "total_carbs_g": 38.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 23.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 1.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chocolate Pudding Cup",
+      "recipe": 211899
+    },
+    "nutrition": {
+      "serving_size": "1 each",
+      "calories": 180.0,
+      "fat_calories": 40.0,
+      "total_fat_g": 4.5,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 250.0,
+      "total_carbs_g": 34.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 22.0,
+      "added_sugar_g": 21.0,
+      "protein_g": 1.0
+    },
+    "allergens": [
+      "Milk"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chips and Salsa Cup",
+      "recipe": 58882
+    },
+    "nutrition": {
+      "serving_size": "1.5 oz Chips 5 oz Salsa",
+      "calories": 185.0,
+      "fat_calories": 45.0,
+      "total_fat_g": 5.25,
+      "saturated_fat_g": 0.75,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 1123.0,
+      "total_carbs_g": 36.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 2.5,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.5
+    },
+    "allergens": [
+      "Soy"
+    ]
+  },
+  {
+    "metadata": {
+      "name": "Chips and Guacamole",
+      "recipe": 58882
+    },
+    "nutrition": {
+      "serving_size": "1.5 oz chips + 5 oz Guacamole",
+      "calories": 385.0,
+      "fat_calories": 270.0,
+      "total_fat_g": 30.0,
+      "saturated_fat_g": 5.75,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 673.0,
+      "total_carbs_g": 31.0,
+      "fiber_g": 8.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 5.5
+    },
+    "allergens": [
+      "Soy"
+    ]
+  }
+]
