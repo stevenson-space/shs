@@ -4,7 +4,7 @@ import { wrapDecorator } from '@/components/cards/storybook_utils'
 import { makeDates } from './storybook_utils'
 import CalendarMain from './CalendarMain.vue'
 
-const mar2026Dates = makeDates(2026, 2)
+const mar2026Dates = makeDates(2026, 2, new Date(2026, 2, 15))
 
 const meta = {
   title: 'Calendar/CalendarMain',
