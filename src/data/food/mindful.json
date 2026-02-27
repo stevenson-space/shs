@@ -1,0 +1,970 @@
+[
+  {
+    "metadata": {
+      "name": "Lemon Garlic Chicken",
+      "recipe": 43930
+    },
+    "nutrition": {
+      "serving_size": "5 oz",
+      "calories": 210,
+      "fat_calories": 110,
+      "total_fat_g": 12.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 75.0,
+      "sodium_mg": 630.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 24.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Lemon Garlic Cream Sauce",
+      "recipe": 94514
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 25,
+      "fat_calories": 15,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 110.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.5,
+      "added_sugar_g": 0.0,
+      "protein_g": 0.0
+    },
+    "allergens": ["Milk"]
+  },
+  {
+    "metadata": {
+      "name": "Blackened Tilapia",
+      "recipe": 57024
+    },
+    "nutrition": {
+      "serving_size": "1 Filet",
+      "calories": 100,
+      "fat_calories": 15,
+      "total_fat_g": 1.5,
+      "saturated_fat_g": 0.05,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 380.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 18.0
+    },
+    "allergens": ["Fish", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Gyro Meat",
+      "recipe": 320043
+    },
+    "nutrition": {
+      "serving_size": "3 oz",
+      "calories": 150,
+      "fat_calories": 99,
+      "total_fat_g": 11.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 55.0,
+      "sodium_mg": 460.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 12.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Pita Bread",
+      "recipe": 472068
+    },
+    "nutrition": {
+      "serving_size": "1/2 Pita",
+      "calories": 115,
+      "fat_calories": 27,
+      "total_fat_g": 3.0,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 180.0,
+      "total_carbs_g": 19.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 3.5
+    },
+    "allergens": ["Gluten", "Soy", "Sulphites", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Coconut Curry",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "9 oz",
+      "calories": 288.5,
+      "fat_calories": 110.25,
+      "total_fat_g": 12.25,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 157.5,
+      "sodium_mg": 237.0,
+      "total_carbs_g": 10.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 2.5,
+      "added_sugar_g": 0,
+      "protein_g": 34.5
+    },
+    "allergens": ["Soy", "Tree Nuts"]
+  },
+  {
+    "metadata": {
+      "name": "Roast Turkey Breast",
+      "recipe": 61533
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 120,
+      "fat_calories": 30,
+      "total_fat_g": 3.5,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 490.0,
+      "total_carbs_g": 1.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 20.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Tinga",
+      "recipe": 90541
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 120,
+      "fat_calories": 35,
+      "total_fat_g": 4.0,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 60.0,
+      "sodium_mg": 80.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 0.5,
+      "added_sugar_g": 0.0,
+      "protein_g": 19.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Palak Paneer",
+      "recipe": 53801
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 120,
+      "fat_calories": 80,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 15.0,
+      "sodium_mg": 390.0,
+      "total_carbs_g": 6.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0,
+      "protein_g": 6.0
+    },
+    "allergens": ["Milk"]
+  },
+  {
+    "metadata": {
+      "name": "Italian Chicken Thigh",
+      "recipe": 48481
+    },
+    "nutrition": {
+      "serving_size": "1 thigh",
+      "calories": 130,
+      "fat_calories": 60,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 80.0,
+      "sodium_mg": 95.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 17.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Southwest Beefy Macaroni",
+      "recipe": 82302
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 422,
+      "fat_calories": 154,
+      "total_fat_g": 17.0,
+      "saturated_fat_g": 5.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 65.0,
+      "sodium_mg": 209.0,
+      "total_carbs_g": 47.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 5.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 23.0
+    },
+    "allergens": ["Gluten", "Milk", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Jerk Chicken",
+      "recipe": 63292
+    },
+    "nutrition": {
+      "serving_size": "2 Pieces",
+      "calories": 440,
+      "fat_calories": 260,
+      "total_fat_g": 29.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 135.0,
+      "sodium_mg": 430.0,
+      "total_carbs_g": 0.5,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 430.0
+    },
+    "allergens": ["Soy", "Sulphites"]
+  },
+  {
+    "metadata": {
+      "name": "Thai Chicken Stir Fry",
+      "recipe": 63513
+    },
+    "nutrition": {
+      "serving_size": "10 oz + 5 oz Rice",
+      "calories": 430,
+      "fat_calories": 90,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 65.0,
+      "sodium_mg": 520.0,
+      "total_carbs_g": 62.0,
+      "fiber_g": 4.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0,
+      "protein_g": 27.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Steamed Rice",
+      "recipe": 58069
+    },
+    "nutrition": {
+      "serving_size": "3 oz",
+      "calories": 130,
+      "fat_calories": 0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 27.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 3.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Chicken Cordon Bleu",
+      "recipe": 181773
+    },
+    "nutrition": {
+      "serving_size": "Each",
+      "calories": 180,
+      "fat_calories": 45,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 55.0,
+      "sodium_mg": 580.0,
+      "total_carbs_g": 12.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 2.0,
+      "protein_g": 20.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Mornay Sauce",
+      "recipe": 95551
+    },
+    "nutrition": {
+      "serving_size": "1 oz ladle",
+      "calories": 30,
+      "fat_calories": 15,
+      "total_fat_g": 2.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.5,
+      "sodium_mg": 65.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 1.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Tortilla Crusted Tilapia",
+      "recipe": 329611
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 190,
+      "fat_calories": 72,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 520.0,
+      "total_carbs_g": 11.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 19.0
+    },
+    "allergens": ["Fish", "Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Turkey Meatloaf with Chipotle BBQ",
+      "recipe": 81298
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 160,
+      "fat_calories": 60,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 70.0,
+      "sodium_mg": 200.0,
+      "total_carbs_g": 12.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 14.0
+    },
+    "allergens": ["Egg", "Gluten", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Turkey Gravy",
+      "recipe": 86494
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 50,
+      "fat_calories": 30,
+      "total_fat_g": 3.5,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 10.0,
+      "sodium_mg": 75.0,
+      "total_carbs_g": 5.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 1.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Chipotle BBQ Sauce",
+      "recipe": 62168
+    },
+    "nutrition": {
+      "serving_size": "1 oz",
+      "calories": 50,
+      "fat_calories": 0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 420.0,
+      "total_carbs_g": 10.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 0
+    },
+    "allergens": ["Mustard", "Sulphites"]
+  },
+  {
+    "metadata": {
+      "name": "Basic Chicken Breast",
+      "recipe": 94454
+    },
+    "nutrition": {
+      "serving_size": "5 oz",
+      "calories": 120,
+      "fat_calories": 25,
+      "total_fat_g": 2.5,
+      "saturated_fat_g": 0.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 75.0,
+      "sodium_mg": 170.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 23.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Dijon Cream Sauce",
+      "recipe": 50301
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 70,
+      "fat_calories": 45,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 5.0,
+      "sodium_mg": 80.0,
+      "total_carbs_g": 6.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 2.0
+    },
+    "allergens": ["Gluten", "Milk", "Mustard", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Baked Herb Cod",
+      "recipe": 35980
+    },
+    "nutrition": {
+      "serving_size": "1 Filet",
+      "calories": 110,
+      "fat_calories": 45,
+      "total_fat_g": 5.0,
+      "saturated_fat_g": 0.05,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 40.0,
+      "sodium_mg": 640.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 14.0
+    },
+    "allergens": ["Fish", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Parmesan",
+      "recipe": 698510
+    },
+    "nutrition": {
+      "serving_size": "1 Serving",
+      "calories": 220,
+      "fat_calories": 50,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 460.0,
+      "total_carbs_g": 19.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 22.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Marinara sauce",
+      "recipe": 315494
+    },
+    "nutrition": {
+      "serving_size": "4 oz ladle",
+      "calories": 70,
+      "fat_calories": 0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 500.0,
+      "total_carbs_g": 14.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 8.0,
+      "added_sugar_g": 4.0,
+      "protein_g": 2.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
+      "name": "Pasta",
+      "recipe": 47023
+    },
+    "nutrition": {
+      "serving_size": "4oz",
+      "calories": 190,
+      "fat_calories": 25,
+      "total_fat_g": 2.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 45.0,
+      "total_carbs_g": 38.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 6.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Biryani",
+      "recipe": 53543
+    },
+    "nutrition": {
+      "serving_size": "7 oz",
+      "calories": 200,
+      "fat_calories": 80,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 80.0,
+      "sodium_mg": 90.0,
+      "total_carbs_g": 13.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 18.0
+    },
+    "allergens": ["Milk", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Chopped Steak with Onion Gravy",
+      "recipe": 824640
+    },
+    "nutrition": {
+      "serving_size": "1 Patty + 2oz gravy",
+      "calories": 280,
+      "fat_calories": 169,
+      "total_fat_g": 19.0,
+      "saturated_fat_g": 7.5,
+      "trans_fat_g": 0.5,
+      "cholesterol_mg": 70.0,
+      "sodium_mg": 700.0,
+      "total_carbs_g": 7.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 17.5
+    },
+    "allergens": ["Soy", "Sulphites"]
+  },
+  {
+    "metadata": {
+      "name": "Plant Based Chick'N Stir Fry",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Portion",
+      "calories": 435,
+      "fat_calories": 72,
+      "total_fat_g": 8.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 2230.0,
+      "total_carbs_g": 80.0,
+      "fiber_g": 6.0,
+      "total_sugar_g": 31.0,
+      "added_sugar_g": 0,
+      "protein_g": 15.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Cajun Shrimp Pasta",
+      "recipe": 50299
+    },
+    "nutrition": {
+      "serving_size": "11.75 oz",
+      "calories": 380,
+      "fat_calories": 100,
+      "total_fat_g": 11.0,
+      "saturated_fat_g": 3.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 85.0,
+      "sodium_mg": 640.0,
+      "total_carbs_g": 52.0,
+      "fiber_g": 5.0,
+      "total_sugar_g": 5.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 20.0
+    },
+    "allergens": ["Gluten", "Milk", "Shellfish", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Marsala",
+      "recipe": 48523
+    },
+    "nutrition": {
+      "serving_size": "1 Serving",
+      "calories": 250,
+      "fat_calories": 80,
+      "total_fat_g": 9.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 75.0,
+      "sodium_mg": 540.0,
+      "total_carbs_g": 10.0,
+      "fiber_g": 1.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 20.0
+    },
+    "allergens": ["Gluten", "Soy", "Sulphites", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Country Gravy",
+      "recipe": 95278
+    },
+    "nutrition": {
+      "serving_size": "2 oz",
+      "calories": 45,
+      "fat_calories": 20,
+      "total_fat_g": 2.5,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 170.0,
+      "total_carbs_g": 5.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 0.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Tikka Masala",
+      "recipe": 69029
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 140,
+      "fat_calories": 60,
+      "total_fat_g": 7.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 55.0,
+      "sodium_mg": 210.0,
+      "total_carbs_g": 3.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 17.0
+    },
+    "allergens": ["Milk", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Chipotle & Orange Chicken",
+      "recipe": 63317
+    },
+    "nutrition": {
+      "serving_size": "1 serving",
+      "calories": 230,
+      "fat_calories": 70,
+      "total_fat_g": 7.5,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 75.0,
+      "sodium_mg": 245.0,
+      "total_carbs_g": 18.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 37.0,
+      "added_sugar_g": 12.0,
+      "protein_g": 23.0
+    },
+    "allergens": ["Mustard", "Soy", "Sulphites"]
+  },
+  {
+    "metadata": {
+      "name": "Vegetable Pot Pie with Biscuit",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "8 oz",
+      "calories": 301,
+      "fat_calories": 126,
+      "total_fat_g": 14.0,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 18.0,
+      "sodium_mg": 804.0,
+      "total_carbs_g": 40.0,
+      "fiber_g": 3.0,
+      "total_sugar_g": 6.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 6.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Creamy Pesto and Roasted Vegetables with Pasta",
+      "recipe": 99658
+    },
+    "nutrition": {
+      "serving_size": "1 Portion",
+      "calories": 340,
+      "fat_calories": 245,
+      "total_fat_g": 27.5,
+      "saturated_fat_g": 6.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 25.0,
+      "sodium_mg": 1020.0,
+      "total_carbs_g": 40.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 8.0,
+      "added_sugar_g": 0,
+      "protein_g": 7.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Sulphites", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Penne Pasta",
+      "recipe": 94946
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 0,
+      "fat_calories": 0,
+      "total_fat_g": 0,
+      "saturated_fat_g": 0,
+      "trans_fat_g": 0,
+      "cholesterol_mg": 0,
+      "sodium_mg": 0,
+      "total_carbs_g": 0,
+      "fiber_g": 0,
+      "total_sugar_g": 0,
+      "added_sugar_g": 0,
+      "protein_g": 0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Vesuvio",
+      "recipe": null
+    },
+    "nutrition": {
+      "serving_size": "1 Portion",
+      "calories": 306,
+      "fat_calories": 144,
+      "total_fat_g": 16.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 81.0,
+      "sodium_mg": 174.0,
+      "total_carbs_g": 12.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 23.0
+    },
+    "allergens": ["Milk", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Adobo Roasted Turkey Breast",
+      "recipe": 66166
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 120,
+      "fat_calories": 30,
+      "total_fat_g": 3.5,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 45.0,
+      "sodium_mg": 520.0,
+      "total_carbs_g": 2.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 2.0,
+      "added_sugar_g": 1.0,
+      "protein_g": 20.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Tempura",
+      "recipe": 47039
+    },
+    "nutrition": {
+      "serving_size": "9 oz",
+      "calories": 320,
+      "fat_calories": 150,
+      "total_fat_g": 17.0,
+      "saturated_fat_g": 2.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 30.0,
+      "sodium_mg": 300.0,
+      "total_carbs_g": 32.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 23.0,
+      "added_sugar_g": 0,
+      "protein_g": 11.0
+    },
+    "allergens": ["Egg", "Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Chicken Piccata",
+      "recipe": 82291
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 140,
+      "fat_calories": 60,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 1.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 60.0,
+      "sodium_mg": 40.0,
+      "total_carbs_g": 0.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0,
+      "protein_g": 19.0
+    },
+    "allergens": ["Milk", "Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Ratatouille",
+      "recipe": 12110
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 60,
+      "fat_calories": 25,
+      "total_fat_g": 3.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 340.0,
+      "total_carbs_g": 8.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 3.0,
+      "added_sugar_g": 0,
+      "protein_g": 1.0
+    },
+    "allergens": ["Soy"]
+  },
+  {
+    "metadata": {
+      "name": "Turkey Sloppy Joe on a Bun",
+      "recipe": 51350
+    },
+    "nutrition": {
+      "serving_size": "1 Sandwich",
+      "calories": 240,
+      "fat_calories": 60,
+      "total_fat_g": 6.0,
+      "saturated_fat_g": 1.5,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 50.0,
+      "sodium_mg": 410.0,
+      "total_carbs_g": 32.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 7.0,
+      "added_sugar_g": 0,
+      "protein_g": 13.0
+    },
+    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
+      "name": "Maple Chile Glazed Pork",
+      "recipe": 90039
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 200,
+      "fat_calories": 100,
+      "total_fat_g": 12.0,
+      "saturated_fat_g": 4.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 65.0,
+      "sodium_mg": 160.0,
+      "total_carbs_g": 1.0,
+      "fiber_g": 0.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0,
+      "protein_g": 20.0
+    },
+    "allergens": ["Soy"]
+  }
+]
