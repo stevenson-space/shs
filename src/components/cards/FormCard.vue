@@ -25,17 +25,25 @@ async function onSubmit(event: Event): Promise<void> {
   });
 
   // Change to localhost to test forms locally
-  await fetch('https://email-backend.stevenson-space.workers.dev', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(dataToSubmit),
-  }).catch((error) => {
-    console.error('Error:', error);
-  });
+  try {
+    const response = await fetch('https://email-backend.stevenson-space.workers.dev', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(dataToSubmit),
+    });
 
-  alert("Submitted successfully! We'll follow up soon.");
+    if (response.ok) {
+      alert("Submitted successfully! We'll follow up soon.");
+    } else {
+      console.error('Submission failed:', response.status, response.statusText);
+      alert('Submission failed. Please try again later.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Submission failed. Please try again later.');
+  }
 }
 </script>
 
