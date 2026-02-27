@@ -3,7 +3,7 @@
     <div class="title">
       <div>Upcoming Events</div>
       <!-- eslint-disable-next-line vuejs-accessibility/anchor-has-content -->
-      <a class="get-help-icon" href="#" @click="showHelpPopup = true"><font-awesome-icon :icon="faFlag" /></a>
+      <a class="get-help-icon" href="#" @click.prevent="showHelpPopup = true"><font-awesome-icon :icon="faFlag" /></a>
     </div>
     <confirm-popup :show="showHelpPopup" ok-text="Get Help" @cancel="cancel" @ok="ok">
       <div class="send-popup">
