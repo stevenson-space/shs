@@ -89,7 +89,7 @@ const nextOpeningTime = computed(() => {
   }
 
   let nextDay = (currentDay.value + 1) % 7;
-  while ((closedDays as any[]).includes(getTimeInMs(getNextDate(nextDay), ''))) {
+  while (closedDays.includes(new Date(getNextDate(nextDay)).toISOString().substr(0, 10))) {
     nextDay = (nextDay + 1) % 7;
   }
   const openingTime = openingTimes.find((time) => time.day === nextDay)!;
