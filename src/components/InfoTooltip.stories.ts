@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { userEvent, within, expect } from 'storybook/test'
+import { userEvent, expect, waitFor } from 'storybook/test'
 import InfoTooltip from './InfoTooltip.vue'
 
 const meta = {
@@ -30,17 +30,15 @@ export const Default: Story = {
     `,
   }),
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
     const trigger = canvasElement.querySelector('.info-icon') as HTMLElement
     await expect(trigger).toBeInTheDocument()
 
-    await userEvent.click(trigger)
-    const tooltip = document.querySelector('.info-tooltip') as HTMLElement
-    await expect(tooltip).toBeInTheDocument()
-    await expect(tooltip).toHaveTextContent('This is helpful tooltip information about the feature.')
+    await userEvent.hover(trigger)
+    await waitFor(() => expect(document.querySelector('.info-tooltip')).toBeInTheDocument())
+    await expect(document.querySelector('.info-tooltip')).toHaveTextContent('This is helpful tooltip information about the feature.')
 
-    await userEvent.click(trigger)
-    await expect(document.querySelector('.info-tooltip')).not.toBeInTheDocument()
+    await userEvent.unhover(trigger)
+    await waitFor(() => expect(document.querySelector('.info-tooltip')).not.toBeInTheDocument())
   },
 }
 
