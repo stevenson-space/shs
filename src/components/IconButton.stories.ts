@@ -9,9 +9,11 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     disabled: { control: 'boolean' },
+    ariaLabel: { control: 'text' },
   },
   args: {
     disabled: false,
+    ariaLabel: 'Star',
     onClick: fn(),
   },
 } satisfies Meta<typeof IconButton>
@@ -26,7 +28,7 @@ export const Default: Story = {
       return { args, faStar }
     },
     template: `
-      <IconButton :disabled="args.disabled" @click="args.onClick">
+      <IconButton :disabled="args.disabled" :aria-label="args.ariaLabel" @click="args.onClick">
         <font-awesome-icon :icon="faStar" />
       </IconButton>
     `,
@@ -47,7 +49,7 @@ export const Disabled: Story = {
       return { args, faStar }
     },
     template: `
-      <IconButton :disabled="args.disabled" @click="args.onClick">
+      <IconButton :disabled="args.disabled" :aria-label="args.ariaLabel" @click="args.onClick">
         <font-awesome-icon :icon="faStar" />
       </IconButton>
     `,
@@ -62,7 +64,7 @@ export const WithPencilIcon: Story = {
       return { args, faPencil }
     },
     template: `
-      <IconButton :disabled="args.disabled" @click="args.onClick">
+      <IconButton :disabled="args.disabled" aria-label="Edit" @click="args.onClick">
         <font-awesome-icon :icon="faPencil" />
       </IconButton>
     `,
@@ -78,13 +80,13 @@ export const MultipleButtons: Story = {
     },
     template: `
       <div style="display: flex; gap: 8px;">
-        <IconButton :disabled="args.disabled" @click="args.onClick">
+        <IconButton :disabled="args.disabled" aria-label="Edit" @click="args.onClick">
           <font-awesome-icon :icon="faPencil" />
         </IconButton>
-        <IconButton :disabled="args.disabled" @click="args.onClick">
+        <IconButton :disabled="args.disabled" aria-label="Delete" @click="args.onClick">
           <font-awesome-icon :icon="faTrash" />
         </IconButton>
-        <IconButton disabled @click="args.onClick">
+        <IconButton disabled aria-label="Star" @click="args.onClick">
           <font-awesome-icon :icon="faStar" />
         </IconButton>
       </div>
