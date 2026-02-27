@@ -5,9 +5,9 @@
         <div class="modal-content" :style="modalStyle">
           <div class="modal-header">
             <h3>{{ modalTitle }}</h3>
-            <div @click="close" style="cursor: pointer;">
+            <button type="button" class="close-btn" aria-label="Close" @click="close">
               <font-awesome-icon :icon="faXmark" />
-            </div>
+            </button>
           </div>
 
           <div class="modal-body">
@@ -148,6 +148,15 @@ function selectImage(image: any): void {
     margin: 0
     font-size: 18px
     font-weight: 600
+
+  .close-btn
+    background: transparent
+    border: none
+    color: white
+    cursor: pointer
+    padding: 0
+    display: flex
+    align-items: center
 
 // Modal body
 .modal-body
