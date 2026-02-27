@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { fn, userEvent, within, expect, waitFor } from 'storybook/test'
 import Popup from './Popup.vue'
 
@@ -23,7 +23,8 @@ export const Default: Story = {
   render: (args) => ({
     components: { Popup },
     setup() {
-      const show = ref(true)
+      const show = ref(args.show)
+      watch(() => args.show, (v) => { show.value = v })
       return {
         args,
         show,
@@ -43,7 +44,8 @@ export const Hidden: Story = {
   render: (args) => ({
     components: { Popup },
     setup() {
-      const show = ref(false)
+      const show = ref(args.show)
+      watch(() => args.show, (v) => { show.value = v })
       return {
         args,
         show,
@@ -59,7 +61,8 @@ export const WithRichContent: Story = {
   render: (args) => ({
     components: { Popup },
     setup() {
-      const show = ref(true)
+      const show = ref(args.show)
+      watch(() => args.show, (v) => { show.value = v })
       return {
         args,
         show,
@@ -83,7 +86,8 @@ export const ClosesOnBackdropClick: Story = {
   render: (args) => ({
     components: { Popup },
     setup() {
-      const show = ref(true)
+      const show = ref(args.show)
+      watch(() => args.show, (v) => { show.value = v })
       const closed = ref(false)
       return {
         args,
