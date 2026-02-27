@@ -38,6 +38,9 @@ export default {
     fontSize() {
       this.$nextTick(this.setOptionHeight);
     },
+    options() {
+      this.$nextTick(this.setOptionHeight);
+    },
   },
   mounted() {
     this.setOptionHeight();
