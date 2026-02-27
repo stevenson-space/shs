@@ -1,4 +1,3 @@
-import { vi } from 'storybook/test'
 import type { Decorator } from '@storybook/vue3'
 
 export const cardWidthDecorator: Decorator = () => ({
@@ -8,9 +7,23 @@ export const cardWidthDecorator: Decorator = () => ({
 export function mockDateSetup(activeDate: Date) {
   return {
     beforeEach() {
-      vi.useFakeTimers({ toFake: ['Date'] })
-      vi.setSystemTime(activeDate)
-      return () => vi.useRealTimers()
+      const OriginalDate = globalThis.Date
+      const fixedMs = activeDate.getTime()
+
+      const MockDate = class extends OriginalDate {
+        constructor(...args: any[]) {
+          if (args.length === 0) {
+            super(fixedMs)
+          } else {
+            super(...args as [])
+          }
+        }
+        static now() { return fixedMs }
+      }
+
+      globalThis.Date = MockDate as unknown as typeof Date
+
+      return () => { globalThis.Date = OriginalDate }
     }
   }
 }
