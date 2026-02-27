@@ -33,12 +33,13 @@ export const Default: Story = {
       </IconButton>
     `,
   }),
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement)
     const button = canvas.getByRole('button') as HTMLButtonElement
     await expect(button).toBeInTheDocument()
     await expect(button).not.toBeDisabled()
     await userEvent.click(button)
+    await expect(args.onClick).toHaveBeenCalledOnce()
   },
 }
 
