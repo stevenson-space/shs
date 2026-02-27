@@ -63,8 +63,11 @@ onMounted(() => {
     if (!root.value) return;
     clearTimeout(scrollTimeout!);
     scrollTimeout = setTimeout(() => {
-      if (!root.value) return;
-      const selectedIndex = Math.round(root.value.scrollTop / optionHeight.value);
+      if (!root.value || optionHeight.value <= 0 || options.length === 0) return;
+      const selectedIndex = Math.min(
+        Math.max(Math.round(root.value.scrollTop / optionHeight.value), 0),
+        options.length - 1,
+      );
       emit('update:modelValue', options[selectedIndex]);
       scrollToSelected();
     }, 100);
