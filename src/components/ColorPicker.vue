@@ -190,12 +190,14 @@ function cssColorToHex(color: string): string | null {
   // Create a temporary element to use browser's color parsing
   const el = document.createElement('div');
   el.style.color = color;
+  // If the browser rejected the value, style.color stays empty
+  if (!el.style.color) return null;
   document.body.appendChild(el);
   const computedColor = getComputedStyle(el).color;
   document.body.removeChild(el);
 
-  // Convert rgb to hex
-  const match = computedColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+  // Convert rgb/rgba to hex
+  const match = computedColor.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*[\d.]+)?\)$/);
   if (match) {
     const r = parseInt(match[1]).toString(16).padStart(2, '0');
     const g = parseInt(match[2]).toString(16).padStart(2, '0');
