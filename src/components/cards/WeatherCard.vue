@@ -73,7 +73,10 @@ function fetchWeatherData(cacheKey: string): void {
   const endDate = formatDate(new Date(currentDate.setDate(currentDate.getDate() + 5)));
   currentDate = new Date();
   fetch(`https://api.open-meteo.com/v1/forecast?latitude=42.26&longitude=-87.84&hourly=cloudcover&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&temperature_unit=fahrenheit&start_date=${startDate}&end_date=${endDate}&timezone=auto`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) throw new Error(`Weather fetch failed: ${response.status}`);
+      return response.json();
+    })
     .then((data) => {
       const dailyData = [];
       for (let i = 0; i < 5; i++) {
@@ -95,6 +98,9 @@ function fetchWeatherData(cacheKey: string): void {
       weatherData.value = dailyData;
       const cachedData = { timestamp: currentDate.getTime(), dailyData };
       localStorage.setItem(cacheKey, JSON.stringify(cachedData));
+    })
+    .catch((error: unknown) => {
+      console.error('Failed to fetch weather data:', error);
     });
 }
 
