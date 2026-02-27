@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref, watch } from 'vue'
-import { userEvent, within, expect } from 'storybook/test'
+import { userEvent, within, expect, waitFor } from 'storybook/test'
 import CollapsibleSection from './CollapsibleSection.vue'
 
 const meta = {
@@ -68,10 +68,10 @@ export const Default: Story = {
     await expect(content).not.toBeVisible()
 
     await userEvent.click(header)
-    await expect(content).toBeVisible()
+    await waitFor(() => expect(content).toBeVisible())
 
     await userEvent.click(header)
-    await expect(content).not.toBeVisible()
+    await waitFor(() => expect(content).not.toBeVisible())
   },
 }
 

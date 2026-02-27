@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { expect, within } from 'storybook/test'
+import { expect, within, waitFor } from 'storybook/test'
 import ThemeChangeModal from './ThemeChangeModal.vue'
 
 const meta = {
@@ -43,7 +43,7 @@ export const Default: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const title = canvas.getByText('Color Conflict')
-    await expect(title).toBeVisible()
+    await waitFor(() => expect(title).toBeVisible())
     const yesBtn = canvas.getByText('Yes')
     await expect(yesBtn).toBeVisible()
     const noBtn = canvas.getByText('No')

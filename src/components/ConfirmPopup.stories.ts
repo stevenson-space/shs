@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref } from 'vue'
-import { userEvent, within, expect } from 'storybook/test'
+import { userEvent, within, expect, waitFor } from 'storybook/test'
 import ConfirmPopup from './ConfirmPopup.vue'
 
 const meta = {
@@ -47,7 +47,7 @@ export const Default: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const text = canvas.getByText(/Are you sure/)
-    await expect(text).toBeVisible()
+    await waitFor(() => expect(text).toBeVisible())
 
     const okButton = canvas.getByText('OK')
     await expect(okButton).toBeVisible()

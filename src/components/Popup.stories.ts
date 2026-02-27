@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref } from 'vue'
-import { userEvent, within, expect } from 'storybook/test'
+import { userEvent, within, expect, waitFor } from 'storybook/test'
 import Popup from './Popup.vue'
 
 const meta = {
@@ -35,7 +35,7 @@ export const Default: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const content = canvas.getByText('Popup content here')
-    await expect(content).toBeVisible()
+    await waitFor(() => expect(content).toBeVisible())
   },
 }
 
@@ -104,7 +104,7 @@ export const ClosesOnBackdropClick: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const content = canvas.getByText('Click outside to close')
-    await expect(content).toBeVisible()
+    await waitFor(() => expect(content).toBeVisible())
 
     const backdrop = canvasElement.querySelector('.popup') as HTMLElement
     if (backdrop) {
