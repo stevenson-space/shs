@@ -2,7 +2,7 @@
   {
     "metadata": {
       "name": "Turkey on a Pretzel Roll",
-      "recipe": 211764
+      "recipe": [211764]
     },
     "nutrition": {
       "serving_size": "1 sandwich",
@@ -30,7 +30,7 @@
   {
     "metadata": {
       "name": "Italian Sandwich on French Roll",
-      "recipe": 98916
+      "recipe": [98916]
     },
     "nutrition": {
       "serving_size": "1 sandwich",
@@ -58,7 +58,7 @@
   {
     "metadata": {
       "name": "Chicken Salad Croissant",
-      "recipe": 211958
+      "recipe": [211958]
     },
     "nutrition": {
       "serving_size": "1 sandwich",
@@ -87,7 +87,7 @@
   {
     "metadata": {
       "name": "Ham& Swiss on Marble Rye",
-      "recipe": 211960
+      "recipe": [211960]
     },
     "nutrition": {
       "serving_size": "1 sandwich",
@@ -114,7 +114,7 @@
   {
     "metadata": {
       "name": "Muffuletta on Herb Focaccia Roll.",
-      "recipe": null
+      "recipe": []
     },
     "nutrition": {
       "serving_size": "1 Sandwich",
@@ -140,7 +140,7 @@
   {
     "metadata": {
       "name": "Buffalo Chicken Wrap",
-      "recipe": 56473
+      "recipe": [56473]
     },
     "nutrition": {
       "serving_size": "1 wrap",
@@ -168,7 +168,7 @@
   {
     "metadata": {
       "name": "Roasted Vegetable Wrap",
-      "recipe": 211951
+      "recipe": [211951]
     },
     "nutrition": {
       "serving_size": "1 wrap",
@@ -196,7 +196,7 @@
   {
     "metadata": {
       "name": "Chicken Caesar Wrap",
-      "recipe": 211953
+      "recipe": [211953]
     },
     "nutrition": {
       "serving_size": "1 wrap",
@@ -227,7 +227,7 @@
   {
     "metadata": {
       "name": "Veggie Caesar Wrap",
-      "recipe": 55843
+      "recipe": [55843]
     },
     "nutrition": {
       "serving_size": "1 wrap",
@@ -258,7 +258,7 @@
   {
     "metadata": {
       "name": "Turkey Bacon Wrap",
-      "recipe": 48270
+      "recipe": [48270]
     },
     "nutrition": {
       "serving_size": "1 wrap",
@@ -285,7 +285,7 @@
   {
     "metadata": {
       "name": "Buffalo Chicken Salald",
-      "recipe": 211854
+      "recipe": [211854]
     },
     "nutrition": {
       "serving_size": "1 salad",
@@ -314,7 +314,7 @@
   {
     "metadata": {
       "name": "Garden Salad",
-      "recipe": 98923
+      "recipe": [98923]
     },
     "nutrition": {
       "serving_size": "1 salad",
@@ -336,7 +336,7 @@
   {
     "metadata": {
       "name": "Chicken Caesar Salad with Caesar Dressing",
-      "recipe": 211865
+      "recipe": [211865]
     },
     "nutrition": {
       "serving_size": "1 salad",
@@ -366,7 +366,7 @@
   {
     "metadata": {
       "name": "Classic Caesar Salad with Caesar Dressing",
-      "recipe": 211482
+      "recipe": [211482]
     },
     "nutrition": {
       "serving_size": "1 salad",
@@ -396,7 +396,7 @@
   {
     "metadata": {
       "name": "Stevenson Quinoa Salad",
-      "recipe": 81955
+      "recipe": [81955]
     },
     "nutrition": {
       "serving_size": "1 salad",
@@ -422,7 +422,7 @@
   {
     "metadata": {
       "name": "Hummus & Naan Snack",
-      "recipe": 211513
+      "recipe": [211513]
     },
     "nutrition": {
       "serving_size": "1 each",
@@ -450,7 +450,7 @@
   {
     "metadata": {
       "name": "Crudite no Ranch",
-      "recipe": 3569
+      "recipe": [3569]
     },
     "nutrition": {
       "serving_size": "1 each",
@@ -472,7 +472,7 @@
   {
     "metadata": {
       "name": "Cheese & Grape Cup",
-      "recipe": 56726
+      "recipe": [56726]
     },
     "nutrition": {
       "serving_size": "1 Each",
@@ -496,7 +496,7 @@
   {
     "metadata": {
       "name": "Fresh Fruit Cup",
-      "recipe": 67885
+      "recipe": [67885]
     },
     "nutrition": {
       "serving_size": "1 each",
@@ -518,7 +518,7 @@
   {
     "metadata": {
       "name": "Strawberry Yogurt Parfait",
-      "recipe": 211891
+      "recipe": [211891]
     },
     "nutrition": {
       "serving_size": "1 each",
@@ -543,7 +543,7 @@
   {
     "metadata": {
       "name": "Jell-O Plain",
-      "recipe": 1512
+      "recipe": [1512]
     },
     "nutrition": {
       "serving_size": "1 each",
@@ -565,7 +565,7 @@
   {
     "metadata": {
       "name": "Home-Made Pasta Salad",
-      "recipe": 67037
+      "recipe": [67037]
     },
     "nutrition": {
       "serving_size": "1 each",
@@ -593,7 +593,7 @@
   {
     "metadata": {
       "name": "Vanilla Pudding Cup",
-      "recipe": 211898
+      "recipe": [211898]
     },
     "nutrition": {
       "serving_size": "1 each",
@@ -617,7 +617,7 @@
   {
     "metadata": {
       "name": "Chocolate Pudding Cup",
-      "recipe": 211899
+      "recipe": [211899]
     },
     "nutrition": {
       "serving_size": "1 each",
@@ -641,7 +641,7 @@
   {
     "metadata": {
       "name": "Chips and Salsa Cup",
-      "recipe": 58882
+      "recipe": [58882, 59707]
     },
     "nutrition": {
       "serving_size": "1.5 oz Chips 5 oz Salsa",
@@ -665,7 +665,7 @@
   {
     "metadata": {
       "name": "Chips and Guacamole",
-      "recipe": 58882
+      "recipe": [58882, 414931]
     },
     "nutrition": {
       "serving_size": "1.5 oz chips + 5 oz Guacamole",

@@ -2,7 +2,7 @@
   {
     "metadata": {
       "name": "Cheese Pizza 16\"",
-      "recipe": 57934
+      "recipe": [57934, 236591]
     },
     "nutrition": {
       "serving_size": "1 Slice",
@@ -29,7 +29,7 @@
   {
     "metadata": {
       "name": "Pepperoni Pizza 16\"",
-      "recipe": 85696
+      "recipe": [85696]
     },
     "nutrition": {
       "serving_size": "1 Slice",
@@ -56,7 +56,7 @@
   {
     "metadata": {
       "name": "Sausage Pizza",
-      "recipe": 85731
+      "recipe": [85731]
     },
     "nutrition": {
       "serving_size": "1 Slice",
@@ -83,7 +83,7 @@
   {
     "metadata": {
       "name": "Bbq Chicken Pizza",
-      "recipe": 57975
+      "recipe": [57975]
     },
     "nutrition": {
       "serving_size": "1 Slice",
@@ -112,7 +112,7 @@
   {
     "metadata": {
       "name": "Vegetable Lovers Pizza",
-      "recipe": 85880
+      "recipe": [85880]
     },
     "nutrition": {
       "serving_size": "1 Slice",
@@ -140,7 +140,7 @@
   {
     "metadata": {
       "name": "Cheese Breadsticks + Sauce",
-      "recipe": 96065
+      "recipe": [96065]
     },
     "nutrition": {
       "serving_size": "1 each",
@@ -168,7 +168,7 @@
   {
     "metadata": {
       "name": "Grated Parmesan Cheese",
-      "recipe": 486859
+      "recipe": [486859]
     },
     "nutrition": {
       "serving_size": "2.5 Teaspoons",
@@ -192,7 +192,7 @@
   {
     "metadata": {
       "name": "Crushed Red Pepper Flakes",
-      "recipe": 430196
+      "recipe": [430196]
     },
     "nutrition": {
       "serving_size": "1 Teaspoon",
@@ -214,7 +214,7 @@
   {
     "metadata": {
       "name": "Marinara Sauce Cup",
-      "recipe": 772061
+      "recipe": [772061]
     },
     "nutrition": {
       "serving_size": "Each",

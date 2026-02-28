@@ -90,7 +90,7 @@
   {
     "metadata": {
       "name": "Black Bean Chipotle Patty",
-      "recipe": [829642]
+      "recipe": [99165, 829642]
     },
     "nutrition": {
       "serving_size": "4.25 oz Patty",
@@ -137,7 +137,7 @@
       "recipe": [525490]
     },
     "nutrition": {
-      "serving_size": "1 Piece",
+      "serving_size": "Each",
       "calories": 200,
       "fat_calories": 90,
       "total_fat_g": 10.0,
@@ -200,7 +200,7 @@
   {
     "metadata": {
       "name": "Baked Sweet Potato Fries",
-      "recipe": [62006]
+      "recipe": [62006, 787100]
     },
     "nutrition": {
       "serving_size": "3 oz",
@@ -222,7 +222,7 @@
   {
     "metadata": {
       "name": "Baked Battered French Fries",
-      "recipe": [174241]
+      "recipe": [2789, 174241]
     },
     "nutrition": {
       "serving_size": "3 oz",

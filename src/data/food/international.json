@@ -2,7 +2,7 @@
   {
     "metadata": {
       "name": "Lo-Mein Noodles",
-      "recipe": 378115820
+      "recipe": [378115820]
     },
     "nutrition": {
       "serving_size": "6 oz",
@@ -28,7 +28,7 @@
   {
     "metadata": {
       "name": "Fried Rice with Vegetables",
-      "recipe": 254991
+      "recipe": [254991]
     },
     "nutrition": {
       "serving_size": "1- 8 oz Cup",
@@ -55,7 +55,7 @@
   {
     "metadata": {
       "name": "Ginger Rice",
-      "recipe": 34052
+      "recipe": [34052]
     },
     "nutrition": {
       "serving_size": "6 oz",
@@ -81,7 +81,7 @@
   {
     "metadata": {
       "name": "Orange Chicken",
-      "recipe": 692811
+      "recipe": [692811, 202813]
     },
     "nutrition": {
       "serving_size": "4 oz + Sauce",
@@ -109,10 +109,10 @@
   {
     "metadata": {
       "name": "Sweet Fire Chicken",
-      "recipe": null
+      "recipe": []
     },
     "nutrition": {
-      "serving_size": "6 oz",
+      "serving_size": "4 oz + Sce",
       "calories": 445.0,
       "fat_calories": 99.0,
       "total_fat_g": 11.0,
@@ -131,7 +131,7 @@
   {
     "metadata": {
       "name": "Thai Basil Beef",
-      "recipe": null
+      "recipe": []
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -157,7 +157,7 @@
   {
     "metadata": {
       "name": "Teriyaki Meatballs",
-      "recipe": null
+      "recipe": []
     },
     "nutrition": {
       "serving_size": "3 Meatballs + Sce",
@@ -184,7 +184,7 @@
   {
     "metadata": {
       "name": "Honey Sesame Meatballs",
-      "recipe": null
+      "recipe": []
     },
     "nutrition": {
       "serving_size": "3 Meatballs + Sce",
@@ -212,7 +212,7 @@
   {
     "metadata": {
       "name": "Gochujang Meatballs",
-      "recipe": null
+      "recipe": []
     },
     "nutrition": {
       "serving_size": "3 Meatballs + Sce",
@@ -240,7 +240,7 @@
   {
     "metadata": {
       "name": "Asian Vegetable Blend",
-      "recipe": 83961
+      "recipe": [83961]
     },
     "nutrition": {
       "serving_size": "3 oz",
@@ -262,7 +262,7 @@
   {
     "metadata": {
       "name": "Green Onions",
-      "recipe": 2198
+      "recipe": [2198]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -284,7 +284,7 @@
   {
     "metadata": {
       "name": "Crisp Chow Mein Noodles",
-      "recipe": 124516
+      "recipe": [124516]
     },
     "nutrition": {
       "serving_size": "1/4 Cup",
@@ -309,7 +309,7 @@
   {
     "metadata": {
       "name": "Sesame Seeds",
-      "recipe": 513806
+      "recipe": [513806]
     },
     "nutrition": {
       "serving_size": "1/4 Teaspoon",
@@ -333,7 +333,7 @@
   {
     "metadata": {
       "name": "Sweet Chili Sauce",
-      "recipe": 896038
+      "recipe": [896038]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -355,7 +355,7 @@
   {
     "metadata": {
       "name": "Teriyaki Sauce",
-      "recipe": 246506
+      "recipe": [246506]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -388,7 +388,7 @@
   {
     "metadata": {
       "name": "Soy Sauce",
-      "recipe": 271802
+      "recipe": [271802]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -421,7 +421,7 @@
   {
     "metadata": {
       "name": "Sriracha Sauce",
-      "recipe": 246911
+      "recipe": [246911]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -443,7 +443,7 @@
   {
     "metadata": {
       "name": "White Rice",
-      "recipe": 58069
+      "recipe": [58069]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -467,7 +467,7 @@
   {
     "metadata": {
       "name": "Mediterranean Chicken",
-      "recipe": 41843
+      "recipe": [41843]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -491,7 +491,7 @@
   {
     "metadata": {
       "name": "Falafel",
-      "recipe": 587083
+      "recipe": [587083]
     },
     "nutrition": {
       "serving_size": "3 each",
@@ -513,7 +513,7 @@
   {
     "metadata": {
       "name": "Gyro Meat",
-      "recipe": 216631
+      "recipe": [216631]
     },
     "nutrition": {
       "serving_size": "2 oz.",
@@ -539,7 +539,7 @@
   {
     "metadata": {
       "name": "Naan",
-      "recipe": 216713
+      "recipe": [216713]
     },
     "nutrition": {
       "serving_size": "1 Portion",
@@ -568,7 +568,7 @@
   {
     "metadata": {
       "name": "Hummus",
-      "recipe": 92743
+      "recipe": [92743]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -593,7 +593,7 @@
   {
     "metadata": {
       "name": "Cabbage Salad",
-      "recipe": 61230
+      "recipe": [61230]
     },
     "nutrition": {
       "serving_size": "3 oz",
@@ -617,7 +617,7 @@
   {
     "metadata": {
       "name": "Tomato Cucumber Salad",
-      "recipe": 62546
+      "recipe": [62546]
     },
     "nutrition": {
       "serving_size": "3 oz",
@@ -642,7 +642,7 @@
   {
     "metadata": {
       "name": "Couscous Salad",
-      "recipe": 62496
+      "recipe": [62496]
     },
     "nutrition": {
       "serving_size": "3 oz.",
@@ -668,7 +668,7 @@
   {
     "metadata": {
       "name": "Tahini",
-      "recipe": 53831
+      "recipe": [53831]
     },
     "nutrition": {
       "serving_size": "1 oz",
@@ -692,7 +692,7 @@
   {
     "metadata": {
       "name": "Roasted Red Pepper Sauce",
-      "recipe": 95553
+      "recipe": [95553]
     },
     "nutrition": {
       "serving_size": "1 oz ladle",
@@ -718,7 +718,7 @@
   {
     "metadata": {
       "name": "Shug",
-      "recipe": null
+      "recipe": []
     },
     "nutrition": {
       "serving_size": "2 Tablespoons",
@@ -740,7 +740,7 @@
   {
     "metadata": {
       "name": "Pasta -Penne",
-      "recipe": 47023
+      "recipe": [47023]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -767,7 +767,7 @@
   {
     "metadata": {
       "name": "Spaghetti/Marinara Sauce",
-      "recipe": 315494
+      "recipe": [315494]
     },
     "nutrition": {
       "serving_size": "4 oz ladle",
@@ -789,7 +789,7 @@
   {
     "metadata": {
       "name": "Alfredo Sauce",
-      "recipe": 95517
+      "recipe": [95517]
     },
     "nutrition": {
       "serving_size": "4 oz ladle",
@@ -814,7 +814,7 @@
   {
     "metadata": {
       "name": "Vodka Sauce",
-      "recipe": 95517
+      "recipe": [95517, 315494]
     },
     "nutrition": {
       "serving_size": "4 oz ladle",
@@ -841,7 +841,7 @@
   {
     "metadata": {
       "name": "Chicken Breast",
-      "recipe": 58259
+      "recipe": [58259]
     },
     "nutrition": {
       "serving_size": "3 oz",
@@ -866,7 +866,7 @@
   {
     "metadata": {
       "name": "Meatballs 1 Oz Beef",
-      "recipe": 124898
+      "recipe": [124898]
     },
     "nutrition": {
       "serving_size": "3 Each",
@@ -893,7 +893,7 @@
   {
     "metadata": {
       "name": "Meatballs 1/2 Oz Beef",
-      "recipe": 155201
+      "recipe": [155201]
     },
     "nutrition": {
       "serving_size": "6 Each",
@@ -907,7 +907,7 @@
       "total_carbs_g": 5.0,
       "fiber_g": 1.0,
       "total_sugar_g": 1.0,
-      "added_sugar_g": 0.0,
+      "added_sugar_g": 1.0,
       "protein_g": 18.0
     },
     "allergens": [
@@ -920,7 +920,7 @@
   {
     "metadata": {
       "name": "Italian Sausage",
-      "recipe": 80333
+      "recipe": [80333]
     },
     "nutrition": {
       "serving_size": "3 oz",
@@ -945,7 +945,7 @@
   {
     "metadata": {
       "name": "Parmesan Cheese",
-      "recipe": 486859
+      "recipe": [486859]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -969,7 +969,7 @@
   {
     "metadata": {
       "name": "Parmesan Cheese Shredded",
-      "recipe": 269400
+      "recipe": [269400]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -993,7 +993,7 @@
   {
     "metadata": {
       "name": "Lime Cilantro Rice",
-      "recipe": 38353
+      "recipe": [38353]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -1017,7 +1017,7 @@
   {
     "metadata": {
       "name": "Chicken Breast Seasoned",
-      "recipe": 37342
+      "recipe": [37342]
     },
     "nutrition": {
       "serving_size": "3 oz",
@@ -1042,7 +1042,7 @@
   {
     "metadata": {
       "name": "Picadillo",
-      "recipe": 154001
+      "recipe": [154001]
     },
     "nutrition": {
       "serving_size": "3 oz",
@@ -1066,7 +1066,7 @@
   {
     "metadata": {
       "name": "Seasoned Black Beans",
-      "recipe": 58339
+      "recipe": [58339]
     },
     "nutrition": {
       "serving_size": "2 oz",
@@ -1090,7 +1090,7 @@
   {
     "metadata": {
       "name": "Corn Salsa",
-      "recipe": 93562
+      "recipe": [93562]
     },
     "nutrition": {
       "serving_size": "2 Tablespoons",
@@ -1112,7 +1112,7 @@
   {
     "metadata": {
       "name": "Pico De Gallo",
-      "recipe": null
+      "recipe": []
     },
     "nutrition": {
       "serving_size": "2 Tablespoons",
@@ -1134,7 +1134,7 @@
   {
     "metadata": {
       "name": "Sour Cream",
-      "recipe": 285218
+      "recipe": [285218]
     },
     "nutrition": {
       "serving_size": "2 Tablespoon",
@@ -1158,7 +1158,7 @@
   {
     "metadata": {
       "name": "Salsa",
-      "recipe": 704504
+      "recipe": [704504]
     },
     "nutrition": {
       "serving_size": "2 Tablespoon",
@@ -1180,7 +1180,7 @@
   {
     "metadata": {
       "name": "Salsa Verde",
-      "recipe": 543324
+      "recipe": [543324]
     },
     "nutrition": {
       "serving_size": "2 Tablespoon",
@@ -1202,7 +1202,7 @@
   {
     "metadata": {
       "name": "Guacamole",
-      "recipe": 414931
+      "recipe": [414931]
     },
     "nutrition": {
       "serving_size": "2 Tablespoon",
@@ -1224,7 +1224,7 @@
   {
     "metadata": {
       "name": "Macaroni & Cheese",
-      "recipe": 61274
+      "recipe": [61274]
     },
     "nutrition": {
       "serving_size": "1 cup",
@@ -1252,7 +1252,7 @@
   {
     "metadata": {
       "name": "Bbq Chicken",
-      "recipe": 84965
+      "recipe": [84965]
     },
     "nutrition": {
       "serving_size": "3 oz",
@@ -1266,7 +1266,7 @@
       "total_carbs_g": 4.0,
       "fiber_g": 0.0,
       "total_sugar_g": 3.0,
-      "added_sugar_g": 0.0,
+      "added_sugar_g": 3.0,
       "protein_g": 17.0
     },
     "allergens": [
@@ -1276,7 +1276,7 @@
   {
     "metadata": {
       "name": "Broccoli",
-      "recipe": 88271
+      "recipe": [88271]
     },
     "nutrition": {
       "serving_size": "2 oz",
@@ -1300,7 +1300,7 @@
   {
     "metadata": {
       "name": "Vegetarian Chili",
-      "recipe": 425312540
+      "recipe": [425312540]
     },
     "nutrition": {
       "serving_size": "2 oz",
@@ -1325,7 +1325,7 @@
   {
     "metadata": {
       "name": "Bacon Bits",
-      "recipe": 596541
+      "recipe": [596541]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -1347,7 +1347,7 @@
   {
     "metadata": {
       "name": "Diced Tomatoes",
-      "recipe": 2206
+      "recipe": [2206]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -1369,7 +1369,7 @@
   {
     "metadata": {
       "name": "Green Peppers",
-      "recipe": 12070
+      "recipe": [12070]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",
@@ -1391,7 +1391,7 @@
   {
     "metadata": {
       "name": "Jalapenos",
-      "recipe": 466240
+      "recipe": [466240]
     },
     "nutrition": {
       "serving_size": "1 oz",
@@ -1413,7 +1413,7 @@
   {
     "metadata": {
       "name": "Shredded Cheddar Cheese & Shredded Monterey Jack Cheese",
-      "recipe": 230151
+      "recipe": [230151, 285413]
     },
     "nutrition": {
       "serving_size": "1 oz",
@@ -1437,7 +1437,7 @@
   {
     "metadata": {
       "name": "Buffalo Sauce",
-      "recipe": 282944
+      "recipe": [282944]
     },
     "nutrition": {
       "serving_size": "1 Teaspoon",
@@ -1459,7 +1459,7 @@
   {
     "metadata": {
       "name": "French Fried Onions",
-      "recipe": 201413
+      "recipe": [201413]
     },
     "nutrition": {
       "serving_size": "2 Tablespoons",
@@ -1484,7 +1484,7 @@
   {
     "metadata": {
       "name": "Crispy Jalapenos",
-      "recipe": 619271
+      "recipe": [619271]
     },
     "nutrition": {
       "serving_size": "1 Tablespoon",

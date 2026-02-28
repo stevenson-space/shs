@@ -2,7 +2,7 @@
   {
     "metadata": {
       "name": "French Onion  Soup",
-      "recipe": 692580
+      "recipe": [692580]
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -26,7 +26,7 @@
   {
     "metadata": {
       "name": "French Onion  Soup",
-      "recipe": 692580
+      "recipe": [692580]
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -50,7 +50,7 @@
   {
     "metadata": {
       "name": "Smokey Poblano Vegetarian",
-      "recipe": 825600
+      "recipe": [825600]
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -74,7 +74,7 @@
   {
     "metadata": {
       "name": "Smokey Poblano Vegetarian",
-      "recipe": 825600
+      "recipe": [825600]
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -98,7 +98,7 @@
   {
     "metadata": {
       "name": "Chicken Noodle",
-      "recipe": 165510
+      "recipe": [165510]
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -125,7 +125,7 @@
   {
     "metadata": {
       "name": "Chicken Noodle",
-      "recipe": 165510
+      "recipe": [165510]
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -152,7 +152,7 @@
   {
     "metadata": {
       "name": "Tomato Basil",
-      "recipe": 573120
+      "recipe": [573120]
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -176,7 +176,7 @@
   {
     "metadata": {
       "name": "Tomato Basil",
-      "recipe": 573120
+      "recipe": [573120]
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -200,7 +200,7 @@
   {
     "metadata": {
       "name": "Golden Broccoli Cheese Soup",
-      "recipe": 165500
+      "recipe": [165500]
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -225,7 +225,7 @@
   {
     "metadata": {
       "name": "Golden Broccoli Cheese Soup",
-      "recipe": 165500
+      "recipe": [165500]
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -250,7 +250,7 @@
   {
     "metadata": {
       "name": "Vegetarian Garden Vegetable Soup",
-      "recipe": 403930
+      "recipe": [403930]
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -272,7 +272,7 @@
   {
     "metadata": {
       "name": "Vegetarian Garden Vegetable Soup",
-      "recipe": 403930
+      "recipe": [403930]
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -294,7 +294,7 @@
   {
     "metadata": {
       "name": "Italian Wedding Soup",
-      "recipe": 403940
+      "recipe": [403940]
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -321,7 +321,7 @@
   {
     "metadata": {
       "name": "Italian Wedding Soup",
-      "recipe": 403940
+      "recipe": [403940]
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -348,7 +348,7 @@
   {
     "metadata": {
       "name": "Cream of Potato",
-      "recipe": 570102
+      "recipe": [570102]
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -375,7 +375,7 @@
   {
     "metadata": {
       "name": "Cream of Potato",
-      "recipe": 570102
+      "recipe": [570102]
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -402,7 +402,7 @@
   {
     "metadata": {
       "name": "Minestrone Soup",
-      "recipe": 165490
+      "recipe": [165490]
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -429,7 +429,7 @@
   {
     "metadata": {
       "name": "Minestrone Soup",
-      "recipe": 165490
+      "recipe": [165490]
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -456,7 +456,7 @@
   {
     "metadata": {
       "name": "Chicken Gumbo",
-      "recipe": 403980
+      "recipe": [403980]
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -481,7 +481,7 @@
   {
     "metadata": {
       "name": "Chicken Gumbo",
-      "recipe": 403980
+      "recipe": [403980]
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -506,7 +506,7 @@
   {
     "metadata": {
       "name": "Corn Chowder",
-      "recipe": 4664489
+      "recipe": [4664489]
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -532,7 +532,7 @@
   {
     "metadata": {
       "name": "Corn Chowder",
-      "recipe": 4664489
+      "recipe": [4664489]
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -558,7 +558,7 @@
   {
     "metadata": {
       "name": "Southwest Vegetarian Chili",
-      "recipe": 20602
+      "recipe": [20602]
     },
     "nutrition": {
       "serving_size": "8oz",
@@ -583,7 +583,7 @@
   {
     "metadata": {
       "name": "Southwest Vegetarian Chili",
-      "recipe": 20602
+      "recipe": [20602]
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -608,7 +608,7 @@
   {
     "metadata": {
       "name": "Chicken Tortilla Soup",
-      "recipe": 20304
+      "recipe": [20304]
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -634,7 +634,7 @@
   {
     "metadata": {
       "name": "Chicken Tortilla Soup",
-      "recipe": 20304
+      "recipe": [20304]
     },
     "nutrition": {
       "serving_size": "12 oz",

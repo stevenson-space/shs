@@ -2,12 +2,12 @@
   {
     "metadata": {
       "name": "Lemon Garlic Chicken",
-      "recipe": 43930
+      "recipe": [43930]
     },
     "nutrition": {
       "serving_size": "5 oz",
-      "calories": 210,
-      "fat_calories": 110,
+      "calories": 210.0,
+      "fat_calories": 110.0,
       "total_fat_g": 12.0,
       "saturated_fat_g": 2.0,
       "trans_fat_g": 0.0,
@@ -24,12 +24,12 @@
   {
     "metadata": {
       "name": "Lemon Garlic Cream Sauce",
-      "recipe": 94514
+      "recipe": [94514]
     },
     "nutrition": {
       "serving_size": "1 oz",
-      "calories": 25,
-      "fat_calories": 15,
+      "calories": 25.0,
+      "fat_calories": 15.0,
       "total_fat_g": 1.5,
       "saturated_fat_g": 0.0,
       "trans_fat_g": 0.0,
@@ -46,12 +46,12 @@
   {
     "metadata": {
       "name": "Blackened Tilapia",
-      "recipe": 57024
+      "recipe": [57024]
     },
     "nutrition": {
       "serving_size": "1 Filet",
-      "calories": 100,
-      "fat_calories": 15,
+      "calories": 100.0,
+      "fat_calories": 15.0,
       "total_fat_g": 1.5,
       "saturated_fat_g": 0.05,
       "trans_fat_g": 0.0,
@@ -60,7 +60,7 @@
       "total_carbs_g": 3.0,
       "fiber_g": 1.0,
       "total_sugar_g": 0.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 18.0
     },
     "allergens": ["Fish", "Soy"]
@@ -68,12 +68,12 @@
   {
     "metadata": {
       "name": "Gyro Meat",
-      "recipe": 320043
+      "recipe": [320043]
     },
     "nutrition": {
       "serving_size": "3 oz",
-      "calories": 150,
-      "fat_calories": 99,
+      "calories": 150.0,
+      "fat_calories": 99.0,
       "total_fat_g": 11.0,
       "saturated_fat_g": 3.0,
       "trans_fat_g": 0.0,
@@ -90,12 +90,12 @@
   {
     "metadata": {
       "name": "Pita Bread",
-      "recipe": 472068
+      "recipe": [472068]
     },
     "nutrition": {
       "serving_size": "1/2 Pita",
-      "calories": 115,
-      "fat_calories": 27,
+      "calories": 115.0,
+      "fat_calories": 27.0,
       "total_fat_g": 3.0,
       "saturated_fat_g": 0.5,
       "trans_fat_g": 0.0,
@@ -112,7 +112,7 @@
   {
     "metadata": {
       "name": "Chicken Coconut Curry",
-      "recipe": null
+      "recipe": []
     },
     "nutrition": {
       "serving_size": "9 oz",
@@ -134,12 +134,12 @@
   {
     "metadata": {
       "name": "Roast Turkey Breast",
-      "recipe": 61533
+      "recipe": [61533]
     },
     "nutrition": {
       "serving_size": "4 oz",
-      "calories": 120,
-      "fat_calories": 30,
+      "calories": 120.0,
+      "fat_calories": 30.0,
       "total_fat_g": 3.5,
       "saturated_fat_g": 1.0,
       "trans_fat_g": 0.0,
@@ -156,12 +156,12 @@
   {
     "metadata": {
       "name": "Chicken Tinga",
-      "recipe": 90541
+      "recipe": [90541]
     },
     "nutrition": {
       "serving_size": "4 oz",
-      "calories": 120,
-      "fat_calories": 35,
+      "calories": 120.0,
+      "fat_calories": 35.0,
       "total_fat_g": 4.0,
       "saturated_fat_g": 0.5,
       "trans_fat_g": 0.0,
@@ -178,12 +178,12 @@
   {
     "metadata": {
       "name": "Palak Paneer",
-      "recipe": 53801
+      "recipe": [53801]
     },
     "nutrition": {
       "serving_size": "4 oz",
-      "calories": 120,
-      "fat_calories": 80,
+      "calories": 120.0,
+      "fat_calories": 80.0,
       "total_fat_g": 9.0,
       "saturated_fat_g": 4.0,
       "trans_fat_g": 0.0,
@@ -192,7 +192,7 @@
       "total_carbs_g": 6.0,
       "fiber_g": 2.0,
       "total_sugar_g": 2.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 6.0
     },
     "allergens": ["Milk"]
@@ -200,12 +200,12 @@
   {
     "metadata": {
       "name": "Italian Chicken Thigh",
-      "recipe": 48481
+      "recipe": [48481]
     },
     "nutrition": {
       "serving_size": "1 thigh",
-      "calories": 130,
-      "fat_calories": 60,
+      "calories": 130.0,
+      "fat_calories": 60.0,
       "total_fat_g": 7.0,
       "saturated_fat_g": 1.5,
       "trans_fat_g": 0.0,
@@ -214,7 +214,7 @@
       "total_carbs_g": 0.0,
       "fiber_g": 0.0,
       "total_sugar_g": 0.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 17.0
     },
     "allergens": ["Soy"]
@@ -222,12 +222,12 @@
   {
     "metadata": {
       "name": "Southwest Beefy Macaroni",
-      "recipe": 82302
+      "recipe": [82302]
     },
     "nutrition": {
       "serving_size": "8 oz",
-      "calories": 422,
-      "fat_calories": 154,
+      "calories": 422.0,
+      "fat_calories": 154.0,
       "total_fat_g": 17.0,
       "saturated_fat_g": 5.5,
       "trans_fat_g": 0.0,
@@ -244,12 +244,12 @@
   {
     "metadata": {
       "name": "Jerk Chicken",
-      "recipe": 63292
+      "recipe": [63292]
     },
     "nutrition": {
       "serving_size": "2 Pieces",
-      "calories": 440,
-      "fat_calories": 260,
+      "calories": 440.0,
+      "fat_calories": 260.0,
       "total_fat_g": 29.0,
       "saturated_fat_g": 6.0,
       "trans_fat_g": 0.0,
@@ -266,12 +266,12 @@
   {
     "metadata": {
       "name": "Thai Chicken Stir Fry",
-      "recipe": 63513
+      "recipe": [63513]
     },
     "nutrition": {
       "serving_size": "10 oz + 5 oz Rice",
-      "calories": 430,
-      "fat_calories": 90,
+      "calories": 430.0,
+      "fat_calories": 90.0,
       "total_fat_g": 9.0,
       "saturated_fat_g": 1.5,
       "trans_fat_g": 0.0,
@@ -280,7 +280,7 @@
       "total_carbs_g": 62.0,
       "fiber_g": 4.0,
       "total_sugar_g": 6.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 27.0
     },
     "allergens": ["Gluten", "Soy", "Wheat"]
@@ -288,12 +288,12 @@
   {
     "metadata": {
       "name": "Steamed Rice",
-      "recipe": 58069
+      "recipe": [58069]
     },
     "nutrition": {
       "serving_size": "3 oz",
-      "calories": 130,
-      "fat_calories": 0,
+      "calories": 130.0,
+      "fat_calories": 0.0,
       "total_fat_g": 0.0,
       "saturated_fat_g": 0.0,
       "trans_fat_g": 0.0,
@@ -302,7 +302,7 @@
       "total_carbs_g": 27.0,
       "fiber_g": 1.0,
       "total_sugar_g": 0.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 3.0
     },
     "allergens": []
@@ -310,12 +310,12 @@
   {
     "metadata": {
       "name": "Chicken Cordon Bleu",
-      "recipe": 181773
+      "recipe": [181773]
     },
     "nutrition": {
       "serving_size": "Each",
-      "calories": 180,
-      "fat_calories": 45,
+      "calories": 180.0,
+      "fat_calories": 45.0,
       "total_fat_g": 5.0,
       "saturated_fat_g": 2.0,
       "trans_fat_g": 0.0,
@@ -332,12 +332,12 @@
   {
     "metadata": {
       "name": "Mornay Sauce",
-      "recipe": 95551
+      "recipe": [95551]
     },
     "nutrition": {
       "serving_size": "1 oz ladle",
-      "calories": 30,
-      "fat_calories": 15,
+      "calories": 30.0,
+      "fat_calories": 15.0,
       "total_fat_g": 2.0,
       "saturated_fat_g": 1.0,
       "trans_fat_g": 0.0,
@@ -354,12 +354,12 @@
   {
     "metadata": {
       "name": "Tortilla Crusted Tilapia",
-      "recipe": 329611
+      "recipe": [329611]
     },
     "nutrition": {
       "serving_size": "4 oz",
-      "calories": 190,
-      "fat_calories": 72,
+      "calories": 190.0,
+      "fat_calories": 72.0,
       "total_fat_g": 8.0,
       "saturated_fat_g": 1.0,
       "trans_fat_g": 0.0,
@@ -376,12 +376,12 @@
   {
     "metadata": {
       "name": "Turkey Meatloaf with Chipotle BBQ",
-      "recipe": 81298
+      "recipe": [81298]
     },
     "nutrition": {
       "serving_size": "4 oz",
-      "calories": 160,
-      "fat_calories": 60,
+      "calories": 160.0,
+      "fat_calories": 60.0,
       "total_fat_g": 7.0,
       "saturated_fat_g": 2.0,
       "trans_fat_g": 0.0,
@@ -390,7 +390,7 @@
       "total_carbs_g": 12.0,
       "fiber_g": 1.0,
       "total_sugar_g": 1.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 14.0
     },
     "allergens": ["Egg", "Gluten", "Wheat"]
@@ -398,12 +398,12 @@
   {
     "metadata": {
       "name": "Turkey Gravy",
-      "recipe": 86494
+      "recipe": [86494]
     },
     "nutrition": {
       "serving_size": "2 oz",
-      "calories": 50,
-      "fat_calories": 30,
+      "calories": 50.0,
+      "fat_calories": 30.0,
       "total_fat_g": 3.5,
       "saturated_fat_g": 2.0,
       "trans_fat_g": 0.0,
@@ -412,7 +412,7 @@
       "total_carbs_g": 5.0,
       "fiber_g": 0.0,
       "total_sugar_g": 0.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 1.0
     },
     "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
@@ -420,12 +420,12 @@
   {
     "metadata": {
       "name": "Chipotle BBQ Sauce",
-      "recipe": 62168
+      "recipe": [62168]
     },
     "nutrition": {
       "serving_size": "1 oz",
-      "calories": 50,
-      "fat_calories": 0,
+      "calories": 50.0,
+      "fat_calories": 0.0,
       "total_fat_g": 0.0,
       "saturated_fat_g": 0.0,
       "trans_fat_g": 0.0,
@@ -435,19 +435,19 @@
       "fiber_g": 0.0,
       "total_sugar_g": 7.0,
       "added_sugar_g": 1.0,
-      "protein_g": 0
+      "protein_g": 0.0
     },
     "allergens": ["Mustard", "Sulphites"]
   },
   {
     "metadata": {
       "name": "Basic Chicken Breast",
-      "recipe": 94454
+      "recipe": [94454]
     },
     "nutrition": {
       "serving_size": "5 oz",
-      "calories": 120,
-      "fat_calories": 25,
+      "calories": 120.0,
+      "fat_calories": 25.0,
       "total_fat_g": 2.5,
       "saturated_fat_g": 0.5,
       "trans_fat_g": 0.0,
@@ -464,12 +464,12 @@
   {
     "metadata": {
       "name": "Dijon Cream Sauce",
-      "recipe": 50301
+      "recipe": [50301]
     },
     "nutrition": {
       "serving_size": "2 oz",
-      "calories": 70,
-      "fat_calories": 45,
+      "calories": 70.0,
+      "fat_calories": 45.0,
       "total_fat_g": 5.0,
       "saturated_fat_g": 2.0,
       "trans_fat_g": 0.0,
@@ -486,12 +486,12 @@
   {
     "metadata": {
       "name": "Baked Herb Cod",
-      "recipe": 35980
+      "recipe": [35980]
     },
     "nutrition": {
       "serving_size": "1 Filet",
-      "calories": 110,
-      "fat_calories": 45,
+      "calories": 110.0,
+      "fat_calories": 45.0,
       "total_fat_g": 5.0,
       "saturated_fat_g": 0.05,
       "trans_fat_g": 0.0,
@@ -508,12 +508,12 @@
   {
     "metadata": {
       "name": "Chicken Parmesan",
-      "recipe": 698510
+      "recipe": [698510]
     },
     "nutrition": {
       "serving_size": "1 Serving",
-      "calories": 220,
-      "fat_calories": 50,
+      "calories": 220.0,
+      "fat_calories": 50.0,
       "total_fat_g": 6.0,
       "saturated_fat_g": 3.0,
       "trans_fat_g": 0.0,
@@ -530,12 +530,12 @@
   {
     "metadata": {
       "name": "Marinara sauce",
-      "recipe": 315494
+      "recipe": [315494]
     },
     "nutrition": {
       "serving_size": "4 oz ladle",
-      "calories": 70,
-      "fat_calories": 0,
+      "calories": 70.0,
+      "fat_calories": 0.0,
       "total_fat_g": 0.0,
       "saturated_fat_g": 0.0,
       "trans_fat_g": 0.0,
@@ -552,12 +552,12 @@
   {
     "metadata": {
       "name": "Pasta",
-      "recipe": 47023
+      "recipe": [47023]
     },
     "nutrition": {
       "serving_size": "4oz",
-      "calories": 190,
-      "fat_calories": 25,
+      "calories": 190.0,
+      "fat_calories": 25.0,
       "total_fat_g": 2.5,
       "saturated_fat_g": 0.0,
       "trans_fat_g": 0.0,
@@ -574,12 +574,12 @@
   {
     "metadata": {
       "name": "Biryani",
-      "recipe": 53543
+      "recipe": [53543]
     },
     "nutrition": {
       "serving_size": "7 oz",
-      "calories": 200,
-      "fat_calories": 80,
+      "calories": 200.0,
+      "fat_calories": 80.0,
       "total_fat_g": 9.0,
       "saturated_fat_g": 1.5,
       "trans_fat_g": 0.0,
@@ -595,13 +595,35 @@
   },
   {
     "metadata": {
+      "name": "Gyro Meat (Week 3)",
+      "recipe": [216631]
+    },
+    "nutrition": {
+      "serving_size": "4 Slices",
+      "calories": 350.0,
+      "fat_calories": 252.0,
+      "total_fat_g": 28.0,
+      "saturated_fat_g": 12.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 58.0,
+      "sodium_mg": 567.0,
+      "total_carbs_g": 7.0,
+      "fiber_g": 1.5,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 13.0
+    },
+    "allergens": ["Gluten", "Soy", "Wheat"]
+  },
+  {
+    "metadata": {
       "name": "Chopped Steak with Onion Gravy",
-      "recipe": 824640
+      "recipe": [824640, 38993]
     },
     "nutrition": {
       "serving_size": "1 Patty + 2oz gravy",
-      "calories": 280,
-      "fat_calories": 169,
+      "calories": 280.0,
+      "fat_calories": 169.0,
       "total_fat_g": 19.0,
       "saturated_fat_g": 7.5,
       "trans_fat_g": 0.5,
@@ -618,12 +640,12 @@
   {
     "metadata": {
       "name": "Plant Based Chick'N Stir Fry",
-      "recipe": null
+      "recipe": []
     },
     "nutrition": {
       "serving_size": "1 Portion",
-      "calories": 435,
-      "fat_calories": 72,
+      "calories": 435.0,
+      "fat_calories": 72.0,
       "total_fat_g": 8.0,
       "saturated_fat_g": 1.0,
       "trans_fat_g": 0.0,
@@ -632,7 +654,7 @@
       "total_carbs_g": 80.0,
       "fiber_g": 6.0,
       "total_sugar_g": 31.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 15.0
     },
     "allergens": ["Gluten", "Soy", "Wheat"]
@@ -640,12 +662,12 @@
   {
     "metadata": {
       "name": "Cajun Shrimp Pasta",
-      "recipe": 50299
+      "recipe": [50299]
     },
     "nutrition": {
       "serving_size": "11.75 oz",
-      "calories": 380,
-      "fat_calories": 100,
+      "calories": 380.0,
+      "fat_calories": 100.0,
       "total_fat_g": 11.0,
       "saturated_fat_g": 3.0,
       "trans_fat_g": 0.0,
@@ -662,12 +684,12 @@
   {
     "metadata": {
       "name": "Chicken Marsala",
-      "recipe": 48523
+      "recipe": [48523]
     },
     "nutrition": {
       "serving_size": "1 Serving",
-      "calories": 250,
-      "fat_calories": 80,
+      "calories": 250.0,
+      "fat_calories": 80.0,
       "total_fat_g": 9.0,
       "saturated_fat_g": 2.0,
       "trans_fat_g": 0.0,
@@ -684,12 +706,12 @@
   {
     "metadata": {
       "name": "Country Gravy",
-      "recipe": 95278
+      "recipe": [95278]
     },
     "nutrition": {
       "serving_size": "2 oz",
-      "calories": 45,
-      "fat_calories": 20,
+      "calories": 45.0,
+      "fat_calories": 20.0,
       "total_fat_g": 2.5,
       "saturated_fat_g": 1.0,
       "trans_fat_g": 0.0,
@@ -698,7 +720,7 @@
       "total_carbs_g": 5.0,
       "fiber_g": 0.0,
       "total_sugar_g": 1.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 0.0
     },
     "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
@@ -706,12 +728,12 @@
   {
     "metadata": {
       "name": "Chicken Tikka Masala",
-      "recipe": 69029
+      "recipe": [69029]
     },
     "nutrition": {
       "serving_size": "4 oz",
-      "calories": 140,
-      "fat_calories": 60,
+      "calories": 140.0,
+      "fat_calories": 60.0,
       "total_fat_g": 7.0,
       "saturated_fat_g": 1.5,
       "trans_fat_g": 0.0,
@@ -728,12 +750,12 @@
   {
     "metadata": {
       "name": "Chipotle & Orange Chicken",
-      "recipe": 63317
+      "recipe": [63317]
     },
     "nutrition": {
       "serving_size": "1 serving",
-      "calories": 230,
-      "fat_calories": 70,
+      "calories": 230.0,
+      "fat_calories": 70.0,
       "total_fat_g": 7.5,
       "saturated_fat_g": 1.5,
       "trans_fat_g": 0.0,
@@ -750,12 +772,12 @@
   {
     "metadata": {
       "name": "Vegetable Pot Pie with Biscuit",
-      "recipe": null
+      "recipe": []
     },
     "nutrition": {
       "serving_size": "8 oz",
-      "calories": 301,
-      "fat_calories": 126,
+      "calories": 301.0,
+      "fat_calories": 126.0,
       "total_fat_g": 14.0,
       "saturated_fat_g": 6.0,
       "trans_fat_g": 0.0,
@@ -772,12 +794,12 @@
   {
     "metadata": {
       "name": "Creamy Pesto and Roasted Vegetables with Pasta",
-      "recipe": 99658
+      "recipe": [99658]
     },
     "nutrition": {
       "serving_size": "1 Portion",
-      "calories": 340,
-      "fat_calories": 245,
+      "calories": 340.0,
+      "fat_calories": 245.0,
       "total_fat_g": 27.5,
       "saturated_fat_g": 6.0,
       "trans_fat_g": 0.0,
@@ -786,7 +808,7 @@
       "total_carbs_g": 40.0,
       "fiber_g": 2.0,
       "total_sugar_g": 8.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 7.0
     },
     "allergens": ["Gluten", "Milk", "Soy", "Sulphites", "Wheat"]
@@ -794,34 +816,34 @@
   {
     "metadata": {
       "name": "Penne Pasta",
-      "recipe": 94946
+      "recipe": [94946]
     },
     "nutrition": {
       "serving_size": "4 oz",
-      "calories": 0,
-      "fat_calories": 0,
-      "total_fat_g": 0,
-      "saturated_fat_g": 0,
-      "trans_fat_g": 0,
-      "cholesterol_mg": 0,
-      "sodium_mg": 0,
-      "total_carbs_g": 0,
-      "fiber_g": 0,
-      "total_sugar_g": 0,
-      "added_sugar_g": 0,
-      "protein_g": 0
+      "calories": 190.0,
+      "fat_calories": 5.0,
+      "total_fat_g": 0.5,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 40.0,
+      "fiber_g": 2.0,
+      "total_sugar_g": 1.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 7.0
     },
     "allergens": ["Gluten", "Soy", "Wheat"]
   },
   {
     "metadata": {
       "name": "Chicken Vesuvio",
-      "recipe": null
+      "recipe": []
     },
     "nutrition": {
       "serving_size": "1 Portion",
-      "calories": 306,
-      "fat_calories": 144,
+      "calories": 306.0,
+      "fat_calories": 144.0,
       "total_fat_g": 16.0,
       "saturated_fat_g": 4.0,
       "trans_fat_g": 0.0,
@@ -838,12 +860,12 @@
   {
     "metadata": {
       "name": "Adobo Roasted Turkey Breast",
-      "recipe": 66166
+      "recipe": [66166]
     },
     "nutrition": {
       "serving_size": "4 oz",
-      "calories": 120,
-      "fat_calories": 30,
+      "calories": 120.0,
+      "fat_calories": 30.0,
       "total_fat_g": 3.5,
       "saturated_fat_g": 1.0,
       "trans_fat_g": 0.0,
@@ -860,12 +882,12 @@
   {
     "metadata": {
       "name": "Chicken Tempura",
-      "recipe": 47039
+      "recipe": [47039]
     },
     "nutrition": {
       "serving_size": "9 oz",
-      "calories": 320,
-      "fat_calories": 150,
+      "calories": 320.0,
+      "fat_calories": 150.0,
       "total_fat_g": 17.0,
       "saturated_fat_g": 2.0,
       "trans_fat_g": 0.0,
@@ -874,20 +896,20 @@
       "total_carbs_g": 32.0,
       "fiber_g": 2.0,
       "total_sugar_g": 23.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 11.0
     },
-    "allergens": ["Egg", "Gluten", "Soy", "Wheat"]
+    "allergens": ["Egg", "Gluten", "Sesame", "Soy", "Wheat"]
   },
   {
     "metadata": {
       "name": "Chicken Piccata",
-      "recipe": 82291
+      "recipe": [82291]
     },
     "nutrition": {
       "serving_size": "4 oz",
-      "calories": 140,
-      "fat_calories": 60,
+      "calories": 140.0,
+      "fat_calories": 60.0,
       "total_fat_g": 6.0,
       "saturated_fat_g": 1.0,
       "trans_fat_g": 0.0,
@@ -896,7 +918,7 @@
       "total_carbs_g": 0.0,
       "fiber_g": 0.0,
       "total_sugar_g": 0.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 19.0
     },
     "allergens": ["Milk", "Soy"]
@@ -904,12 +926,12 @@
   {
     "metadata": {
       "name": "Ratatouille",
-      "recipe": 12110
+      "recipe": [12110]
     },
     "nutrition": {
       "serving_size": "4 oz",
-      "calories": 60,
-      "fat_calories": 25,
+      "calories": 60.0,
+      "fat_calories": 25.0,
       "total_fat_g": 3.0,
       "saturated_fat_g": 0.0,
       "trans_fat_g": 0.0,
@@ -918,7 +940,7 @@
       "total_carbs_g": 8.0,
       "fiber_g": 2.0,
       "total_sugar_g": 3.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 1.0
     },
     "allergens": ["Soy"]
@@ -926,12 +948,12 @@
   {
     "metadata": {
       "name": "Turkey Sloppy Joe on a Bun",
-      "recipe": 51350
+      "recipe": [51350]
     },
     "nutrition": {
       "serving_size": "1 Sandwich",
-      "calories": 240,
-      "fat_calories": 60,
+      "calories": 240.0,
+      "fat_calories": 60.0,
       "total_fat_g": 6.0,
       "saturated_fat_g": 1.5,
       "trans_fat_g": 0.0,
@@ -940,7 +962,7 @@
       "total_carbs_g": 32.0,
       "fiber_g": 2.0,
       "total_sugar_g": 7.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 13.0
     },
     "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
@@ -948,12 +970,12 @@
   {
     "metadata": {
       "name": "Maple Chile Glazed Pork",
-      "recipe": 90039
+      "recipe": [90039]
     },
     "nutrition": {
       "serving_size": "4 oz",
-      "calories": 200,
-      "fat_calories": 100,
+      "calories": 200.0,
+      "fat_calories": 100.0,
       "total_fat_g": 12.0,
       "saturated_fat_g": 4.0,
       "trans_fat_g": 0.0,
@@ -962,7 +984,7 @@
       "total_carbs_g": 1.0,
       "fiber_g": 0.0,
       "total_sugar_g": 1.0,
-      "added_sugar_g": 0,
+      "added_sugar_g": 0.0,
       "protein_g": 20.0
     },
     "allergens": ["Soy"]

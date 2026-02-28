@@ -2,7 +2,7 @@
   {
     "metadata": {
       "name": "Roasted Carrots",
-      "recipe": 87632
+      "recipe": [87632]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -17,7 +17,7 @@
       "fiber_g": 3.0,
       "total_sugar_g": 4.0,
       "added_sugar_g": 0.0,
-      "protein_g": 0.5
+      "protein_g": 1.0
     },
     "allergens": [
       "Soy"
@@ -26,7 +26,7 @@
   {
     "metadata": {
       "name": "Italian Roasted Red Potatoes",
-      "recipe": 84986
+      "recipe": [84986]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -50,7 +50,7 @@
   {
     "metadata": {
       "name": "Lettuce, Cucumber, Onion, Tomato Salad",
-      "recipe": null
+      "recipe": []
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -71,8 +71,30 @@
   },
   {
     "metadata": {
+      "name": "Lemon Rice",
+      "recipe": [58069, 179500709]
+    },
+    "nutrition": {
+      "serving_size": "4 oz",
+      "calories": 171.66,
+      "fat_calories": 0.0,
+      "total_fat_g": 0.0,
+      "saturated_fat_g": 0.0,
+      "trans_fat_g": 0.0,
+      "cholesterol_mg": 0.0,
+      "sodium_mg": 0.0,
+      "total_carbs_g": 36.66,
+      "fiber_g": 0.5,
+      "total_sugar_g": 0.0,
+      "added_sugar_g": 0.0,
+      "protein_g": 3.0
+    },
+    "allergens": []
+  },
+  {
+    "metadata": {
       "name": "White Rice",
-      "recipe": 58069
+      "recipe": [58069]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -84,7 +106,7 @@
       "cholesterol_mg": 0.0,
       "sodium_mg": 0.0,
       "total_carbs_g": 36.0,
-      "fiber_g": 0.5,
+      "fiber_g": 1.0,
       "total_sugar_g": 0.0,
       "added_sugar_g": 0.0,
       "protein_g": 3.0
@@ -96,7 +118,7 @@
   {
     "metadata": {
       "name": "Tahini",
-      "recipe": 661481
+      "recipe": [661481]
     },
     "nutrition": {
       "serving_size": "1 fl oz",
@@ -120,7 +142,7 @@
   {
     "metadata": {
       "name": "Tzatziki Sauce",
-      "recipe": 609919
+      "recipe": [609919]
     },
     "nutrition": {
       "serving_size": "1 fl oz",
@@ -145,7 +167,7 @@
   {
     "metadata": {
       "name": "Broccoli & Carrots",
-      "recipe": 61434
+      "recipe": [61434]
     },
     "nutrition": {
       "serving_size": "4oz",
@@ -169,7 +191,7 @@
   {
     "metadata": {
       "name": "Mashed Potatoes",
-      "recipe": 46903
+      "recipe": [46903]
     },
     "nutrition": {
       "serving_size": "4 oz =  #8 scoop",
@@ -195,7 +217,7 @@
   {
     "metadata": {
       "name": "Aztec Corn",
-      "recipe": 68423
+      "recipe": [68423]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -219,7 +241,7 @@
   {
     "metadata": {
       "name": "Mexican Rice",
-      "recipe": 294910087
+      "recipe": [294910087]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -243,7 +265,7 @@
   {
     "metadata": {
       "name": "Roasted Vegetables",
-      "recipe": 98404
+      "recipe": [98404]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -267,7 +289,7 @@
   {
     "metadata": {
       "name": "Yellow Rice",
-      "recipe": 48404
+      "recipe": [48404]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -277,9 +299,9 @@
       "saturated_fat_g": 0.5,
       "trans_fat_g": 0.0,
       "cholesterol_mg": 0.0,
-      "sodium_mg": 55.0,
+      "sodium_mg": 60.0,
       "total_carbs_g": 32.0,
-      "fiber_g": 0.5,
+      "fiber_g": 1.0,
       "total_sugar_g": 1.0,
       "added_sugar_g": 0.0,
       "protein_g": 3.0
@@ -291,7 +313,7 @@
   {
     "metadata": {
       "name": "Fried Potato Wedges",
-      "recipe": 8335
+      "recipe": [8335, 509661]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -315,7 +337,7 @@
   {
     "metadata": {
       "name": "Roasted Brussels Sprouts",
-      "recipe": 89060
+      "recipe": [89060]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -339,7 +361,7 @@
   {
     "metadata": {
       "name": "Scalloped Potatoes",
-      "recipe": null
+      "recipe": [118567]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -365,7 +387,7 @@
   {
     "metadata": {
       "name": "Cilantro Lime Rice",
-      "recipe": 65401
+      "recipe": [65401]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -389,7 +411,7 @@
   {
     "metadata": {
       "name": "Roasted Zucchini",
-      "recipe": 10018
+      "recipe": [10018]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -413,7 +435,7 @@
   {
     "metadata": {
       "name": "Sugar Snap Peas",
-      "recipe": 94198
+      "recipe": [94198]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -437,7 +459,7 @@
   {
     "metadata": {
       "name": "Herbed Orzo",
-      "recipe": 55501
+      "recipe": [55501]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -463,7 +485,7 @@
   {
     "metadata": {
       "name": "Rice Pilaf",
-      "recipe": 259381
+      "recipe": [259381]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -489,7 +511,7 @@
   {
     "metadata": {
       "name": "Roasted Snow Peas",
-      "recipe": 59142
+      "recipe": [59142]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -513,7 +535,7 @@
   {
     "metadata": {
       "name": "Sauteed Broccolini",
-      "recipe": 83358
+      "recipe": [83358]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -537,7 +559,7 @@
   {
     "metadata": {
       "name": "Pasta Penne (Various)",
-      "recipe": 47023
+      "recipe": [47023]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -563,7 +585,7 @@
   {
     "metadata": {
       "name": "Lemon Pepper Green Beans",
-      "recipe": 68725
+      "recipe": [68725]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -587,7 +609,7 @@
   {
     "metadata": {
       "name": "Greek Cucumber Salad",
-      "recipe": 62546
+      "recipe": [62546]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -612,7 +634,7 @@
   {
     "metadata": {
       "name": "Roasted Asparagus",
-      "recipe": 36113
+      "recipe": [36113]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -636,7 +658,7 @@
   {
     "metadata": {
       "name": "Maple Mashed Sweet Potatoes",
-      "recipe": 87463
+      "recipe": [87463]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -661,7 +683,7 @@
   {
     "metadata": {
       "name": "Roasted Corn",
-      "recipe": 93398
+      "recipe": [93398]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -684,8 +706,8 @@
   },
   {
     "metadata": {
-      "name": "Recipe # Roasted Cauliflower",
-      "recipe": 86717
+      "name": "Roasted Cauliflower",
+      "recipe": [86717]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -709,7 +731,7 @@
   {
     "metadata": {
       "name": "Egg Noodles",
-      "recipe": 47037
+      "recipe": [47037]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -736,7 +758,7 @@
   {
     "metadata": {
       "name": "Roasted Potato Wedges",
-      "recipe": 59162
+      "recipe": [59162]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -760,7 +782,7 @@
   {
     "metadata": {
       "name": "Baked Vegetable Spring Roll",
-      "recipe": 92763
+      "recipe": [92763]
     },
     "nutrition": {
       "serving_size": "1 each",
@@ -773,9 +795,9 @@
       "sodium_mg": 120.0,
       "total_carbs_g": 7.0,
       "fiber_g": 0.0,
-      "total_sugar_g": 0.5,
+      "total_sugar_g": 1.0,
       "added_sugar_g": 0.0,
-      "protein_g": 0.5
+      "protein_g": 1.0
     },
     "allergens": [
       "Egg",
@@ -788,7 +810,7 @@
   {
     "metadata": {
       "name": "Fried Rice",
-      "recipe": 213228
+      "recipe": [213228, 254991]
     },
     "nutrition": {
       "serving_size": "4 oz",
@@ -815,7 +837,7 @@
   {
     "metadata": {
       "name": "Baked Vegetable Egg Roll",
-      "recipe": 92762
+      "recipe": [92762]
     },
     "nutrition": {
       "serving_size": "1 each",
@@ -824,7 +846,7 @@
       "total_fat_g": 4.5,
       "saturated_fat_g": 1.0,
       "trans_fat_g": 0.0,
-      "cholesterol_mg": 4.5,
+      "cholesterol_mg": 5.0,
       "sodium_mg": 420.0,
       "total_carbs_g": 19.0,
       "fiber_g": 2.0,
@@ -842,7 +864,7 @@
   {
     "metadata": {
       "name": "Couscous Primavera",
-      "recipe": 80243
+      "recipe": [80243]
     },
     "nutrition": {
       "serving_size": "1/2 cup",
@@ -855,7 +877,7 @@
       "sodium_mg": 140.0,
       "total_carbs_g": 17.0,
       "fiber_g": 1.0,
-      "total_sugar_g": 0.5,
+      "total_sugar_g": 1.0,
       "added_sugar_g": 0.0,
       "protein_g": 3.0
     },

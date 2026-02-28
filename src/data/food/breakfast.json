@@ -96,7 +96,7 @@
       "serving_size": "2 Links",
       "calories": 200,
       "fat_calories": 19,
-      "total_fat_g": 170.0,
+      "total_fat_g": 19.0,
       "saturated_fat_g": 7.0,
       "trans_fat_g": 0.0,
       "cholesterol_mg": 35.0,
@@ -205,7 +205,7 @@
     "nutrition": {
       "serving_size": "6 oz Portion",
       "calories": 45,
-      "fat_calories": 4,
+      "fat_calories": 4.5,
       "total_fat_g": 0.5,
       "saturated_fat_g": 0.0,
       "trans_fat_g": 0.0,
@@ -513,7 +513,7 @@
     "nutrition": {
       "serving_size": "1 oz Portion",
       "calories": 22,
-      "fat_calories": 2,
+      "fat_calories": 2.25,
       "total_fat_g": 0.25,
       "saturated_fat_g": 0.16,
       "trans_fat_g": 0.0,
@@ -535,7 +535,7 @@
     "nutrition": {
       "serving_size": "1 oz Portion",
       "calories": 23,
-      "fat_calories": 4,
+      "fat_calories": 4.5,
       "total_fat_g": 0.5,
       "saturated_fat_g": 0.5,
       "trans_fat_g": 0.0,
