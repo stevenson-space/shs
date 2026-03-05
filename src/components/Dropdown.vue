@@ -54,10 +54,10 @@ let optionShifts: number[] = [];
 
 // if modelValue is out of bounds (including when options change at runtime), reset to 0
 watch(() => [modelValue, options.length], () => {
-  if (modelValue < 0 || modelValue >= options.length) {
+  if (options.length > 0 && (modelValue < 0 || modelValue >= options.length)) {
     emit('update:modelValue', 0);
   }
-}, { immediate: true });
+}, { immediate: true, flush: 'post' });
 
 const remainingOptions = computed((): string[] => {
   const remaining = options.slice(0);
