@@ -5,21 +5,21 @@
     :class="{ 'tv-space': tvSpace }"
     :style="{ maxHeight: maxHeight || undefined }"
   >
-    <template v-for="period in periodsComputed">
-      <div v-if="period.isUpNextIndicator" :key="period.name" class="up-next-indicator">
+    <template v-for="p in periodsComputed">
+      <div v-if="p.isUpNextIndicator" :key="p.name" class="up-next-indicator">
         <div class="line">
           <span class="title">Up Next</span>
         </div>
       </div>
       <period
         v-else
-        :key="period.name"
+        :key="p.name"
         ref="period"
-        :class="period.name === 'Passing' ? 'passing' : 'period'"
-        :start="period.start"
-        :end="period.end"
-        :period="period.name"
-        :invert="!period.isCurrent"
+        :class="p.name === 'Passing' ? 'passing' : 'period'"
+        :start="p.start"
+        :end="p.end"
+        :period="p.name"
+        :invert="!p.isCurrent"
         :force-mobile-layout="true"
         :tv-space="tvSpace"
       />
