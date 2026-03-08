@@ -33,7 +33,10 @@ const clockStore = useClockStore();
 const themes = ref<any[]>([]);
 function parseDismissed(): Record<string, number> {
   try {
-    return JSON.parse(localStorage.getItem('dismissedThemeCards') || '{}');
+    const parsed = JSON.parse(localStorage.getItem('dismissedThemeCards') || '{}');
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) return {};
+    if (Object.values(parsed).some((v) => typeof v !== 'number')) return {};
+    return parsed as Record<string, number>;
   } catch {
     return {};
   }
