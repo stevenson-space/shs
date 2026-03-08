@@ -19,9 +19,9 @@ async function onSubmit(event: Event): Promise<void> {
   event.preventDefault();
   const dataToSubmit: { name: string; value: string }[] = [];
   new FormData(event.currentTarget as HTMLFormElement).forEach((value, name) => {
-    if (name !== '' && value !== '') {
+    if (name !== '') {
       const stringValue = value instanceof File ? value.name : value;
-      dataToSubmit.push({ name, value: stringValue });
+      if (stringValue !== '') dataToSubmit.push({ name, value: stringValue });
     }
   });
 
