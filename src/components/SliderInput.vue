@@ -12,6 +12,7 @@
           :step="step"
           class="slider"
           :aria-labelledby="label ? `${id}-label` : undefined"
+          :aria-label="!label ? ariaLabel || undefined : undefined"
         />
         <input
           :value="modelValue"
@@ -23,6 +24,7 @@
           :step="step"
           class="number-input"
           :aria-labelledby="label ? `${id}-label` : undefined"
+          :aria-label="!label ? ariaLabel || undefined : undefined"
         />
       </div>
     </div>
@@ -32,9 +34,10 @@
 <script setup lang="ts">
 import { useId } from 'vue'
 
-const { modelValue, label = '', min = 0, max = 100, step = 1 } = defineProps<{
+const { modelValue, label = '', ariaLabel = '', min = 0, max = 100, step = 1 } = defineProps<{
   modelValue: number
   label?: string
+  ariaLabel?: string
   min?: number
   max?: number
   step?: number
