@@ -9,7 +9,7 @@
       <div class="time">
         <div v-for="(time, name) in timeLeft" :key="name" class="inner">
           <div class="number">{{ time }}</div>
-          <p class="unit">{{ time === '01' ? name.slice(0, -1) : time === '00' ? name : name }}</p>
+          <p class="unit">{{ time === '01' ? name.slice(0, -1) : name }}</p>
         </div>
       </div>
     </div>
