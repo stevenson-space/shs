@@ -65,6 +65,7 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
+  clearTimeout(debounceTimeout ?? undefined);
   window.removeEventListener('resize', debounceSetHeight);
   mutationObserver?.disconnect();
 });
