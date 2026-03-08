@@ -1,11 +1,4 @@
 {
-  "2": {
-    "Comfort Food": ["Vegetarian Paella"],
-    "Mindful": ["Baked Chicken Parmesan"],
-    "Sides": ["Broccolini", "Pasta"],
-    "Soup": ["Italian Wedding", "Cream of Potato"],
-    "International Station": ["Burrito Bowl"]
-  },
   "3": {
     "Comfort Food": ["Three Cheese Penne"],
     "Mindful": ["Biryani Chicken"],
@@ -69,6 +62,13 @@
     "Soup": ["Minestrone", "Chicken Gumbo"],
     "International Station": ["Mac & Cheese Bowl"]
   },
+  "16": {
+    "Comfort Food": ["Cheese Tortellini"],
+    "Mindful": ["Corned Beef"],
+    "Sides": ["Cabbage", "Carrots & Potatoes"],
+    "Soup": ["Smoky Poblano", "Chicken Noodle"],
+    "International Station": ["Asian Bowl"]
+  },
   "17": {
     "Comfort Food": ["Chicken Shawarma w/ Pita"],
     "Mindful": ["Gyro w/ Pita"],
@@ -96,33 +96,5 @@
     "Sides": ["Roasted Vegetables", "Potato Wedges"],
     "Soup": ["Smoky Poblano", "Chicken Noodle"],
     "International Station": ["Asian Bowl"]
-  },
-  "23": {
-    "Comfort Food": ["Blackened Tilapia"],
-    "Mindful": ["Jerk Chicken"],
-    "Sides": ["Brussels Sprouts", "Scalloped Potatoes"],
-    "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
-    "International Station": ["Pasta Bowl"]
-  },
-  "24": {
-    "Comfort Food": ["Veggie Chilaquiles"],
-    "Mindful": ["Chicken Cordon Bleu"],
-    "Sides": ["Roasted Carrots", "Cilantro Lime Rice"],
-    "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
-    "International Station": ["Pasta Bowl"]
-  },
-  "25": {
-    "Comfort Food": ["Chicken Tetrazzini"],
-    "Mindful": ["Tortilla Crusted Tilapia"],
-    "Sides": ["Zucchini", "Orzo"],
-    "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
-    "International Station": ["Pasta Bowl"]
-  },
-  "26": {
-    "Comfort Food": ["Turkey Sloppy Joe"],
-    "Mindful": ["Dijon Chicken"],
-    "Sides": ["Broccoli & Carrots", "Mashed Potatoes"],
-    "Soup": ["Tomato Basil Bisque", "Broccoli Cheddar"],
-    "International Station": ["Pasta Bowl"]
-  }
+ }
 }
