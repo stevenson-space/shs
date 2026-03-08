@@ -39,8 +39,6 @@ let ctx: CanvasRenderingContext2D | null = null;
 let imageNum = 0;
 let imagesLoaded = 0;
 let reqId: number | null = null;
-let mX = -100;
-let mY = -100;
 
 const canvasEl = useTemplateRef<HTMLCanvasElement>('canvas');
 const wrap = useTemplateRef<HTMLDivElement>('wrap');
