@@ -179,6 +179,7 @@ async function handleFileSelect(event: Event): Promise<void> {
   // Validate it's an image
   if (!file.type.startsWith('image/')) {
     error.value = 'Please select an image file';
+    target.value = '';
     return;
   }
 
