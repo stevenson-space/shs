@@ -31,9 +31,17 @@ const themeStore = useThemeStore();
 const clockStore = useClockStore();
 
 const themes = ref<any[]>([]);
-const dismissedThemesRef = reactive<Record<string, number>>(
-  JSON.parse(localStorage.getItem('dismissedThemeCards') || '{}'),
-);
+function parseDismissed(): Record<string, number> {
+  try {
+    const parsed = JSON.parse(localStorage.getItem('dismissedThemeCards') || '{}');
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) return {};
+    if (Object.values(parsed).some((v) => typeof v !== 'number')) return {};
+    return parsed as Record<string, number>;
+  } catch {
+    return {};
+  }
+}
+const dismissedThemesRef = reactive<Record<string, number>>(parseDismissed());
 
 const newTheme = computed(() => {
   // finds a seasonal theme that is within the current date range

@@ -85,7 +85,8 @@ function fetchWeatherData(cacheKey: string): void {
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         let dayOfWeek = 'Today';
         if (i !== 0) {
-          dayOfWeek = days[(currentDate.getDay() + i) % 7];
+          const [year, month, day] = (data.daily.time[i] as string).split('-').map(Number);
+          dayOfWeek = days[new Date(year, month - 1, day).getDay()];
         }
         const daily = {
           day: dayOfWeek,
