@@ -1,9 +1,9 @@
 <template>
   <div @click="goHome" class="home-link">
-    <div class="home" :class="{ invert }">
+    <button class="home" :class="{ invert }">
       <font-awesome-icon class="icon" :icon="faHouse" fixed-width />
       <span class="text">Home</span>
-    </div>
+    </button>
   </div>
 </template>
 
@@ -30,6 +30,8 @@ function goHome(e: PointerEvent): void {
 
 .home-link
   .home
+    border: none
+    cursor: pointer
     color: var(--secondary)
     border-radius: 100px
     padding: 7px
