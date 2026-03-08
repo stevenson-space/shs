@@ -81,7 +81,6 @@ import ShsHacksCard from '@/components/cards/ShsHacksCard.vue';
 import AprilFoolsCard from '@/components/cards/AprilFoolsCard.vue';
 import NewFeatureCard from "@/components/cards/NewFeatureCard.vue";
 import EndOfYearCard from "@/components/cards/EndOfYearCard.vue";
-import Confetti from "@/components/cards/ConfettiCard.vue";
 import CountdownCard from "@/components/cards/CountdownCard.vue";
 import useClockStore from "@/stores/clock";
 import ScheduleHeader from "./Header.vue";
@@ -104,7 +103,6 @@ export default {
     AprilFoolsCard,
     NewFeatureCard,
     EndOfYearCard,
-    Confetti,
     CountdownCard,
     ThemeEditor,
   },
