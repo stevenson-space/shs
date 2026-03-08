@@ -33,11 +33,12 @@ const showCard = computed(() => Date.now() < canonicalUntilMs);
 function getTimeLeft(): void {
   const now = Date.now();
   const diff = canonicalUntilMs - now;
+  const safeDiff = Math.max(0, diff);
 
   // diff is in milliseconds, so we need to do a little math to get the days, hours, and minutes
-  const daysLeft = Math.floor(diff / 86400000);
-  const hoursLeft = Math.floor((diff % 86400000) / 3600000);
-  const minutesLeft = Math.floor((diff % 3600000) / 60000);
+  const daysLeft = Math.floor(safeDiff / 86400000);
+  const hoursLeft = Math.floor((safeDiff % 86400000) / 3600000);
+  const minutesLeft = Math.floor((safeDiff % 3600000) / 60000);
 
   // basic formatting to make sure the numbers are always two digits
   timeLeft.days = daysLeft < 10 ? `0${daysLeft}` : `${daysLeft}`;
