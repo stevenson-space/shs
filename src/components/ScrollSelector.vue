@@ -72,7 +72,7 @@ onMounted(() => {
       scrollToSelected();
     }, 100);
   };
-  root.value!.addEventListener('scroll', scrollHandler);
+  root.value?.addEventListener('scroll', scrollHandler);
 });
 
 onBeforeUnmount(() => {
