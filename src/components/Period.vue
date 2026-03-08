@@ -53,7 +53,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed, withDefaults } from 'vue';
+import { computed } from 'vue';
 import Bell from '@/utils/bell';
 import { dateToSeconds, periodToSeconds } from '@/utils/util';
 import useClockStore from '@/stores/clock';
