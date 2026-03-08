@@ -1,9 +1,9 @@
 <template>
   <div @click="goHome" class="home-link">
-    <router-link to="/" class="home" :class="{ invert }" event="">
+    <div class="home" :class="{ invert }">
       <font-awesome-icon class="icon" :icon="faHouse" fixed-width />
       <span class="text">Home</span>
-    </router-link>
+    </div>
   </div>
 </template>
 
