@@ -41,8 +41,8 @@ export default defineStore('schedules', () => {
 
   function addCustomScheduleMode({ scheduleType, scheduleToAdd, scheduleToReplace }: { scheduleType: string, scheduleToAdd: { start: string[], end: string[], name: string, periods: string }, scheduleToReplace: string }): void {
     // If scheduleToReplace is not defined, then we want to just add to end of scheduleModes list
-    const scheduleModes = (customSchedules.value || {})[scheduleType] || [] as CustomSchedules[];
-    const replaceIndex = scheduleModes.map((mode: CustomSchedules) => mode.name).indexOf(scheduleToReplace);
+    const scheduleModes = (customSchedules.value || {})[scheduleType] || [] as Schedule[];
+    const replaceIndex = scheduleModes.map((mode: Schedule) => mode.name).indexOf(scheduleToReplace);
     // Notice that scheduleModes only contains schedules from customSchedules, so if scheduleToReplace is an
     // official schedule, then replaceIndex will be -1, and we'll just add the new schedule without replacing anything
     // (this is the expected behavior because official schedules can't be modified or replaced)

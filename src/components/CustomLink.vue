@@ -1,5 +1,5 @@
 <template>
-  <a v-if="linkType === 'a'" class="link" :href="href" :target="target">
+  <a v-if="linkType === 'a'" class="link" :href="href" :target="target" :rel="rel">
     <slot />
   </a>
   <router-link v-else-if="linkType === 'router-link'" class="link" :to="href" :target="target">
@@ -25,12 +25,13 @@ const linkType = computed((): string => {
   // a will be used if href is a URL string (starting with http)
   // otherwise a plain div will be used
   if (href) {
-    return typeof href === 'object' || (href as string).indexOf('http') !== 0 ? 'router-link' : 'a';
+    return typeof href === 'object' || !/^[A-Za-z][A-Za-z0-9+.-]*:/.test(href as string) ? 'router-link' : 'a';
   }
   return 'none';
 });
 
 const target = computed(() => newTab ? '_blank' : '_self');
+const rel = computed(() => target.value === '_blank' ? 'noopener noreferrer' : undefined);
 </script>
 
 <style lang="sass" scoped>

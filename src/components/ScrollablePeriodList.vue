@@ -2,8 +2,8 @@
   <div
     ref="periods"
     class="periods"
-    :class="{ 'tv-space': tvSpace }"
-    :style="{ maxHeight: maxHeight || undefined }"
+    :class="{ 'tv-space': props.tvSpace }"
+    :style="{ maxHeight: props.maxHeight || undefined }"
   >
     <template v-for="p in periodsComputed">
       <div v-if="p.isUpNextIndicator" :key="p.name" class="up-next-indicator">
@@ -21,23 +21,27 @@
         :period="p.name"
         :invert="!p.isCurrent"
         :force-mobile-layout="true"
-        :tv-space="tvSpace"
+        :tv-space="props.tvSpace"
       />
     </template>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, onMounted, watch, useTemplateRef, ComponentPublicInstance } from 'vue';
+import { computed, nextTick, onMounted, watch, useTemplateRef, withDefaults, ComponentPublicInstance } from 'vue';
 import { isBellOnSchoolDay } from '@/utils/bell';
 import useClockStore from '@/stores/clock';
 import Period from '@/components/Period.vue';
 
-const { schedule = null, maxHeight = null, tvSpace = false } = defineProps<{
+const props = withDefaults(defineProps<{
   schedule?: Record<string, any> | null;
   maxHeight?: string | null;
   tvSpace?: boolean;
-}>();
+}>(), {
+  schedule: null,
+  maxHeight: null,
+  tvSpace: false,
+});
 
 const clockStore = useClockStore();
 
@@ -53,8 +57,8 @@ const periodsComputed = computed(() => {
   }));
 
   // first we check if the `schedule` prop is specified and use that if so
-  if (schedule) {
-    return convertPeriods(schedule, null);
+  if (props.schedule) {
+    return convertPeriods(props.schedule, null);
   }
 
   // otherwise we check if we can default to using today's schedule (i.e if it's a school day)
@@ -91,19 +95,24 @@ onMounted(() => {
 
 function scrollToCurrentPeriod(): void {
   // Get the html element for the current period if there is one
+  // Use a separate counter for period refs since Up Next indicators don't occupy a ref slot
   let $period: ComponentPublicInstance | null = null;
-  periodsComputed.value.forEach((p: any, i: number) => {
+  let periodRefIndex = 0;
+  periodsComputed.value.forEach((p: any) => {
+    if (p.isUpNextIndicator) return;
     if (p.isCurrent) {
-      $period = period.value?.[i] ?? null;
+      $period = period.value?.[periodRefIndex] ?? null;
     }
+    periodRefIndex++;
   });
 
   if ($period) {
     const $container = periods.value;
-    const containerHeight = $container!.offsetHeight;
+    if (!$container) return;
+    const containerHeight = $container.offsetHeight;
     const { offsetTop, offsetHeight } = ($period as any).$el;
     // Set the scroll so that the current period is centered
-    $container!.scrollTop = offsetTop - containerHeight / 2 + offsetHeight / 2;
+    $container.scrollTop = offsetTop - containerHeight / 2 + offsetHeight / 2;
   }
 }
 

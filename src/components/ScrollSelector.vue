@@ -1,7 +1,7 @@
 <template>
   <div ref="root" class="scroll-selector" :style="{ height: `${optionHeight * (2 * numOptionsAbove + 1)}px`, fontSize }">
     <!-- eslint-disable-next-line vue/require-v-for-key vue/no-unused-vars-->
-    <div v-for="_ in Array(numOptionsAbove)" :style="{ height: `${optionHeight}px`}" />
+    <div v-for="_ in Array(Math.max(0, Math.floor(numOptionsAbove)))" :style="{ height: `${optionHeight}px`}" />
     <div
       v-for="option in options"
       ref="option"
@@ -14,7 +14,7 @@
     </div>
 
     <!-- eslint-disable-next-line vue/require-v-for-key vue/no-unused-vars-->
-    <div v-for="_ in Array(numOptionsAbove)" :style="{ height: `${optionHeight}px`}" />
+    <div v-for="_ in Array(Math.max(0, Math.floor(numOptionsAbove)))" :style="{ height: `${optionHeight}px`}" />
   </div>
 </template>
 
@@ -72,7 +72,7 @@ onMounted(() => {
       scrollToSelected();
     }, 100);
   };
-  root.value!.addEventListener('scroll', scrollHandler);
+  root.value?.addEventListener('scroll', scrollHandler);
 });
 
 onBeforeUnmount(() => {
@@ -81,9 +81,10 @@ onBeforeUnmount(() => {
 
 function scrollToSelected(): void {
   nextTick(() => { // wait until this.value is updated if necessary
+    if (!root.value) return;
     const index = (options as string[]).indexOf(modelValue);
     if (index > -1 && option.value?.[index]) {
-      root.value!.scroll({
+      root.value.scroll({
         top: option.value[index].offsetTop - (optionHeight.value * numOptionsAbove),
         behavior: 'smooth',
       });

@@ -18,9 +18,10 @@ const { name, title } = defineProps<{ name: string; title?: string }>()
 async function onSubmit(event: Event): Promise<void> {
   event.preventDefault();
   const dataToSubmit: { name: string; value: string }[] = [];
-  new FormData(event.target as HTMLFormElement).forEach((value, name) => {
-    if (name !== '' && value !== '') {
-      dataToSubmit.push({ name, value: value as string });
+  new FormData(event.currentTarget as HTMLFormElement).forEach((value, name) => {
+    if (name !== '') {
+      const stringValue = value instanceof File ? value.name : value;
+      if (stringValue !== '') dataToSubmit.push({ name, value: stringValue });
     }
   });
 
