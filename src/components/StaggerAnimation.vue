@@ -38,7 +38,7 @@ function onEnter(el: Element, done: () => void): void {
     height: isColorSelector ? '30px' : 'auto',
     marginBottom: isColorSelector ? '0px' : '8px',
     textAlign: 'left',
-    delay: (el as HTMLElement).dataset.index * 0.01,
+    delay: (Number((el as HTMLElement).dataset.index) || 0) * 0.01,
     onComplete: done,
     duration: numberOfSlots * 0.05,
   });
