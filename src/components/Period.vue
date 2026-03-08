@@ -1,13 +1,13 @@
 <template>
-  <div class="period" :class="{ 'not-mobile': !forceMobileLayout, invert, 'tv-space': tvSpace }">
+  <div class="period" :class="{ 'not-mobile': !props.forceMobileLayout, invert: props.invert, 'tv-space': props.tvSpace }">
     <svg
       class="progress"
       v-if="
         progress != 0 &&
-        !disableProgressBar &&
+        !props.disableProgressBar &&
         (actualPeriod.length == 1 || actualPeriod.length == 2)
       "
-      :class="{ invert }"
+      :class="{ invert: props.invert }"
       width="40"
       height="40"
     >
@@ -38,35 +38,27 @@
     <div
       v-else
       class="circle"
-      :class="{ invert }"
+      :class="{ invert: props.invert }"
       :style="{ fontSize: periodFontSize }"
     >
       {{ actualPeriod }}
     </div>
     <!-- <p>{{ currentSeconds }}</p> -->
     <div class="range">
-      <div class="time">{{ convertMilitaryTime(start) }}</div>
+      <div class="time">{{ convertMilitaryTime(props.start) }}</div>
       <span class="dash"> – </span>
-      <div class="time">{{ convertMilitaryTime(end) }}</div>
+      <div class="time">{{ convertMilitaryTime(props.end) }}</div>
     </div>
   <div :style="{ width: spacerWidth }"></div>
   </div>
 </template>
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, withDefaults } from 'vue';
 import Bell from '@/utils/bell';
 import { dateToSeconds, periodToSeconds } from '@/utils/util';
 import useClockStore from '@/stores/clock';
 
-const {
-  period,
-  start,
-  end,
-  invert = false,
-  forceMobileLayout = false,
-  disableProgressBar = false,
-  tvSpace = false,
-} = defineProps<{
+const props = withDefaults(defineProps<{
   period: string
   start: string
   end: string
@@ -74,7 +66,12 @@ const {
   forceMobileLayout?: boolean
   disableProgressBar?: boolean
   tvSpace?: boolean
-}>();
+}>(), {
+  invert: false,
+  forceMobileLayout: false,
+  disableProgressBar: false,
+  tvSpace: false,
+});
 
 const clockStore = useClockStore();
 
@@ -86,21 +83,21 @@ const circumference = computed(() => normalizedRadius.value * 2 * Math.PI);
 
 const actualPeriod = computed(() => {
   // remove the ! mark in front of period names
-  return period[0] === '!' ? period.substring(1) : period;
+  return props.period[0] === '!' ? props.period.substring(1) : props.period;
 });
 
 const periodFontSize = computed(() => {
-  if (!tvSpace) {
-    return period.length > 10 ? '1em' : '1.3em';
+  if (!props.tvSpace) {
+    return props.period.length > 10 ? '1em' : '1.3em';
   }
   // TV sizes - smaller for long names, bigger for short
-  if (period.length > 7) return '0.85em';  // Long names like "Activity"
-  if (period.length > 4) return '1.1em';   // Medium names
-  return '1.3em';                           // Short names like "1", "2"
+  if (props.period.length > 7) return '0.85em';  // Long names like "Activity"
+  if (props.period.length > 4) return '1.1em';   // Medium names
+  return '1.3em';                                  // Short names like "1", "2"
 });
 
-const startSeconds = computed(() => periodToSeconds(start));
-const endSeconds = computed(() => periodToSeconds(end));
+const startSeconds = computed(() => periodToSeconds(props.start));
+const endSeconds = computed(() => periodToSeconds(props.end));
 
 const progress = computed(() => {
   const currentSeconds = dateToSeconds(clockStore.date);
@@ -119,7 +116,7 @@ const strokeDashoffset = computed(() => circumference.value - progress.value * c
 
 const spacerWidth = computed(() => {
   const isLongPeriod = actualPeriod.value.length > 4;
-  return tvSpace
+  return props.tvSpace
     ? (isLongPeriod ? '10px' : '20px')
     : (isLongPeriod ? '20px' : '40px');
 });
