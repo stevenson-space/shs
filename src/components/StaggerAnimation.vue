@@ -48,7 +48,7 @@ function onLeave(el: Element, done: () => void): void {
   gsap.to(el, {
     opacity: 0,
     duration: isColorSelector ? 0 : 0.2,
-    delay: isColorSelector ? 0 : ((numberOfSlots - 1) - (el as HTMLElement).dataset.index) * (0.2 / numberOfSlots),
+    delay: isColorSelector ? 0 : ((numberOfSlots - 1) - (Number((el as HTMLElement).dataset.index) || 0)) * (0.2 / numberOfSlots),
     onComplete: done,
   });
 }
