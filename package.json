@@ -10,6 +10,9 @@
     "prebuild": "node scrapers/events.js",
     "build": "vite build",
     "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore --fix src",
+    "test": "vitest --run",
+    "test:unit": "vitest --run --project unit",
+    "test:storybook": "vitest --run --project storybook",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
