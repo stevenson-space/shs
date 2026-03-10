@@ -11,7 +11,7 @@
       </div>
       <div class="chips">
         <link-chip
-          href="https://forms.gle/jxZkFJALWoa1zaKY8"
+          href="https://forms.gle/TLCmQtrSUkpr7Njg6"
           label="Apply Now"
           :icon="faFileLines"
           background="var(--accent)"
