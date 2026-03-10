@@ -1,20 +1,19 @@
-<template>
-  <timed-card startTime="January 11, 2026" endTime="January 19, 2026">
+<template xmlns="http://www.w3.org/1999/html">
+  <timed-card startTime="March 8, 2026" endTime="April 1, 2026">
     <div class="container">
       <div class="title"></div>
       <div class="message">
-        We have many new features planned for SHS Space, and your feedback would be very, very helpful!
-        <i>(and, if you have ideas of your own, tell me that too!)</i><br/>
+        stevenson.space is completely student run, and we're looking for new maintainers!<br/>
         <br/>
-        Two responders will be randomly chosen for a $15 Jazzman's gift card!<br/>
+        If you or someone you know has programming experience and would be a great fit, please apply! <b>Due 03/31.</b><br/>
         <br/>
         - Joshua F. ('26)
       </div>
       <div class="chips">
         <link-chip
           href="https://forms.gle/jxZkFJALWoa1zaKY8"
-          label="Take Survey"
-          :icon="faPoll"
+          label="Apply Now"
+          :icon="faFileLines"
           background="var(--accent)"
           color="var(--iconCardsRegular)"
           target="_blank"
@@ -26,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { faPoll } from "@fortawesome/free-solid-svg-icons";
+import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 import TimedCard from './TimedCard.vue';
 import LinkChip from './LinkChip.vue';
 </script>
