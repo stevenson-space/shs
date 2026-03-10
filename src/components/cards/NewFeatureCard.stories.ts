@@ -8,7 +8,7 @@ const meta = {
   component: NewFeatureCard,
   tags: ['autodocs'],
   decorators: [cardWidthDecorator],
-  ...mockDateSetup(new Date('January 15, 2026')),
+  ...mockDateSetup(new Date('March 15, 2026')),
 } satisfies Meta<typeof NewFeatureCard>
 
 export default meta
