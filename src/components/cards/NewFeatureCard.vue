@@ -5,7 +5,7 @@
       <div class="message">
         stevenson.space is completely student run, and we're looking for new maintainers!<br/>
         <br/>
-        If you or someone you know has programming experience and would be a great fit, please apply! <b>Due 03/31.</b><br/>
+        If you or someone you know has programming experience and would be a great fit, please apply!<br/><b>Due 03/31.</b><br/>
         <br/>
         - Joshua F. ('26)
       </div>
