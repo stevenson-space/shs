@@ -3,14 +3,14 @@
     <!-- eslint-disable-next-line vue/require-v-for-key vue/no-unused-vars-->
     <div v-for="_ in Array(Math.max(0, Math.floor(numOptionsAbove)))" :style="{ height: `${optionHeight}px`}" />
     <div
-      v-for="option in options"
+      v-for="opt in options"
       ref="option"
-      :key="option"
+      :key="opt"
       class="option"
-      :class="{ selected: option === modelValue }"
-      @click="$emit('update:modelValue', option)"
+      :class="{ selected: opt === modelValue }"
+      @click="$emit('update:modelValue', opt)"
     >
-      {{ option }}
+      {{ opt }}
     </div>
 
     <!-- eslint-disable-next-line vue/require-v-for-key vue/no-unused-vars-->

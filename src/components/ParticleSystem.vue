@@ -34,7 +34,7 @@ let particles: any[] = [];
 let imageItems: any[] = [];
 const particleCount = ref(0);
 
-let canvas: HTMLCanvasElement | null = null;
+let canvasNode: HTMLCanvasElement | null = null;
 let ctx: CanvasRenderingContext2D | null = null;
 let imageNum = 0;
 let imagesLoaded = 0;
@@ -77,8 +77,8 @@ function resize(): void {
 
 function setCanvasSize(): void {
   const dpr = window.devicePixelRatio || 1;
-  canvas!.width = window.innerWidth * dpr;
-  canvas!.height = window.innerHeight * dpr;
+  canvasNode!.width = window.innerWidth * dpr;
+  canvasNode!.height = window.innerHeight * dpr;
   ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
 
@@ -97,8 +97,8 @@ function collectImages(): void {
 function init(): void {
   cancelAnimationFrame(reqId!);
 
-  canvas = canvasEl.value!;
-  ctx = canvas.getContext('2d')!;
+  canvasNode = canvasEl.value!;
+  ctx = canvasNode.getContext('2d')!;
   setCanvasSize();
 
   particles = [];
@@ -106,8 +106,8 @@ function init(): void {
   for (let i = 0; i < particleCount.value; i++) {
     reset(
       {
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
+        x: Math.random() * canvasNode.width,
+        y: Math.random() * canvasNode.height,
       },
       true
     );
@@ -123,8 +123,8 @@ function reset(particle: any, first = false): void {
   if (!first) {
     particle.x =
       windPower >= 0
-        ? Math.random() * canvas!.width * 0.8
-        : Math.random() * canvas!.width * 1.2;
+        ? Math.random() * canvasNode!.width * 0.8
+        : Math.random() * canvasNode!.width * 1.2;
     particle.y = -30;
   }
 
@@ -153,7 +153,7 @@ function reset(particle: any, first = false): void {
 }
 
 function animate(): void {
-  ctx!.clearRect(0, 0, canvas!.width, canvas!.height);
+  ctx!.clearRect(0, 0, canvasNode!.width, canvasNode!.height);
 
   // normalize wind so small values still feel directional
   const wind = windPower * 0.10;
@@ -178,9 +178,9 @@ function animate(): void {
     p.y += p.velY + Math.abs(wind) * 0.1;
 
     if (
-      p.y > canvas!.height + 60 ||
+      p.y > canvasNode!.height + 60 ||
       p.x < -60 ||
-      p.x > canvas!.width + 60
+      p.x > canvasNode!.width + 60
     ) {
       reset(p);
     }
