@@ -16,15 +16,15 @@
       >
       <template v-if="open">
           <div
-            v-for="(option, index) in formattedOptions"
-            :key="option"
+            v-for="(opt, index) in formattedOptions"
+            :key="opt"
             ref="option"
             class="option"
-            :style="option.style"
+            :style="opt.style"
             :data-index="index"
-            @click="selectOption(option.index)"
+            @click="selectOption(opt.index)"
           >
-            {{ option.name }}
+            {{ opt.name }}
         </div>
         </template>
       </stagger-animation>
