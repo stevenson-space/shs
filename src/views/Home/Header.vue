@@ -72,7 +72,7 @@
         class="icon virtual-bell-toggle"
       >
         <font-awesome-icon
-          :icon="useVirtualBell ? icons.faVolumeHigh : icons.faVolumeOff"
+          :icon="useVirtualBell ? icons.faVolumeHigh : icons.faVolumeXmark"
           fixed-width
         />
       </div>
@@ -116,7 +116,7 @@ import {
   faDroplet,
   faDropletSlash,
   faVolumeHigh,
-  faVolumeOff,
+  faVolumeXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from '@/components/Dropdown.vue';
 import ParticleSystem from '@/components/ParticleSystem.vue';
@@ -155,7 +155,7 @@ export default {
         faDroplet,
         faDropletSlash,
         faVolumeHigh,
-        faVolumeOff,
+        faVolumeXmark,
       },
       colored: true,
       useVirtualBell: false,
