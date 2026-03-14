@@ -6,9 +6,11 @@
          <what-is-this>Stevenson.Space relies on quality data dispayed by Stevenson's lunch website. We will promptly restore lunch functionality once data is provided there.</what-is-this>
     </div>
     <div v-else v-for="(items, name) in lunch" :key="name" class="lunch">
-      <div class="name">{{ name }}</div>
-      <div v-for="item in items" :key="item" class="item">
-        {{ item }}
+      <div class="lunch-content">
+        <div class="name">{{ name }}</div>
+        <div v-for="item in items" :key="item" class="item">
+          {{ item }}
+        </div>
       </div>
     </div>
   </card>
@@ -41,8 +43,10 @@ const noLunchData = computed(() => lunch.value === null);
   margin-bottom: 4px
 
 .lunch
-  border-top: var(--accent) 1.5px solid
-  padding: 10px 0
+  padding: 0 8px
+  .lunch-content
+    border-top: var(--accent) 1px solid
+    padding: 10px 0px
 
   .name
     color: var(--accent)
@@ -54,5 +58,10 @@ const noLunchData = computed(() => lunch.value === null);
     text-align: center
     margin: auto
     margin-top: 5px
+
+
+.lunch element
+  .lunch:last-child .lunch-content
+  border-top: none
 
 </style>
