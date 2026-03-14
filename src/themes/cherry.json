@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "name": "Cherry",
+    "author": "Ipshita S. ('26)"
+  },
+  "styling": {
+    "base": "light",
+    "background": "#6f010c",
+    "secondaryBackground": "#980110",
+    "accent": "#000000",
+    "text": {
+      "primary": "#ffffff",
+      "secondary": "#ffffff",
+      "tertiary": "#ffffff"
+    },
+    "header": {
+      "image": {
+        "full": "local://814-A36wuFL.png"
+      }
+    },
+    "iconCards": {},
+    "particles": {
+      "images": [
+        "local://31680-3-cherry-vector-transparent-background.png"
+      ],
+      "speed": 3,
+      "count": 17,
+      "size": 23,
+      "opacity": 0.8,
+      "windPower": 0.5
+    }
+  }
+}
