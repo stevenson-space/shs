@@ -12,10 +12,10 @@ const meta = {
     }),
   ],
   argTypes: {
-    id: { control: { type: 'number', min: 1 } },
+    position: { control: { type: 'number', min: 1 } },
   },
   args: {
-    id: 1,
+    position: 1,
   },
 } satisfies Meta<typeof TestCard>
 
@@ -28,7 +28,7 @@ export const Default: Story = {
     setup() {
       return { args }
     },
-    template: '<TestCard :id="args.id" />',
+    template: '<TestCard :position="args.position" />',
   }),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
@@ -42,7 +42,7 @@ export const AnotherCard: Story = {
     setup() {
       return { args }
     },
-    template: '<TestCard :id="args.id" />',
+    template: '<TestCard :position="args.position" />',
   }),
-  args: { id: 3 },
+  args: { position: 3 },
 }

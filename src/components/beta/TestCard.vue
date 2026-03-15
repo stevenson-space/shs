@@ -1,13 +1,13 @@
 <template>
-  <BaseCard :label="`Card ${id}`">
-    <p class="title">Test Card {{ id }}</p>
+  <BaseCard :label="`Card ${position}`">
+    <h3 class="title">Test Card {{ position }}</h3>
     <p class="desc">Placeholder — replace with a real widget.</p>
   </BaseCard>
 </template>
 
 <script setup lang="ts">
 import BaseCard from './BaseCard.vue'
-const { id } = defineProps<{ id: number }>()
+const { position } = defineProps<{ position: number }>()
 </script>
 
 <style scoped>
