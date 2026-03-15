@@ -38,7 +38,7 @@ const emit = defineEmits<{
 @reference "tailwindcss";
 
 .base-card {
-  @apply relative overflow-hidden rounded-[14px] border-[0.5px] border-white/90 bg-white p-3;
+  @apply relative overflow-hidden rounded-[14px] border-[0.5px] border-white/90 bg-background p-3;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
 }
 
