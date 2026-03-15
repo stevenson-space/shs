@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/vue3-vite";
+import "../src/styles/tailwind.css";
 import { setup } from "@storybook/vue3";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { createPinia } from "pinia";

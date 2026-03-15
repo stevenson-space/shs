@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import './styles/tailwind.css';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { createPinia } from 'pinia';
 import * as Sentry from '@sentry/vue';

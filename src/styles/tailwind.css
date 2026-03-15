@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #1b5e20;
+  --background: #ffffff;
+  --secondaryBackground: #ffffff;
+  --primary: #000000;
+  --secondary: #333333;
+  --tertiary: #555555;
+  --headerBackground: #1b5e20;
+  --iconCardsRegular: #ffffff;
+  --iconCardsInvert: #1b5e20;
+}
+
+@theme inline {
+  --color-accent: var(--accent);
+  --color-background: var(--background);
+  --color-background-secondary: var(--secondaryBackground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-header-bg: var(--headerBackground);
+  --color-icon-regular: var(--iconCardsRegular);
+  --color-icon-invert: var(--iconCardsInvert);
+}
