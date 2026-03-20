@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "name": "Spring",
+    "author": "Allan H. ('28)"
+  },
+  "visibility": "show",
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The Spring Theme 🌷"
+  },
+  "seasonalDates": "03/20-04/10",
+  "styling": {
+    "base": "light",
+    "background": "#FFFDF7",
+    "secondaryBackground": "#f5fff9",
+    "accent": "#6BCBE6",
+    "text": {
+      "primary": "#2D3A3A",
+      "secondary": "#6C7A7A"
+    },
+    "header": {
+      "background": "#d6ffe7",
+    },
+    "iconCards": {
+      "regular": "#FFE0C2",
+      "invert": "#ffcfad"
+    },
+    "particles": {
+      "images": [
+        "assets://particles/spring/butterfly.png",
+        "assets://particles/spring/bee.png",
+        "assets://particles/spring/cherry_blossom.png",
+        "assets://particles/spring/flower.png",
+        "assets://particles/spring/tulip.png",
+        "assets://particles/spring/morning_glory.png"
+      ],
+      "speed": 0.7,
+      "count": 30,
+      "size": 15,
+      "opacity": 0.8,
+      "windPower": 0
+    }
+  }
+}
