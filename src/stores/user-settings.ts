@@ -4,6 +4,7 @@ import { ref } from "vue";
 export default defineStore("grades", () => {
   const grade = ref('None');
   const showPWCSchedule = ref(true);
+  const showILCSchedule = ref(true);
 
   function initializeGrade(): void {
     if (localStorage.grade) {
@@ -17,6 +18,12 @@ export default defineStore("grades", () => {
     }
   }
 
+  function initializeShowILCSchedule(): void {
+    if (localStorage.showILCSchedule) {
+      setShowILCSchedule(localStorage.showILCSchedule === 'true');
+    }
+  }
+
   function setGrade(value: string): void {
     grade.value = value;
     localStorage.grade = value;
@@ -27,5 +34,10 @@ export default defineStore("grades", () => {
     localStorage.showPWCSchedule = value;
   }
 
-  return { grade, showPWCSchedule, initializeGrade, initializeShowPWCSchedule, setGrade, setShowPWCSchedule };
+  function setShowILCSchedule(value: boolean): void {
+    showILCSchedule.value = value;
+    localStorage.showILCSchedule = value;
+  }
+
+  return { grade, showPWCSchedule, showILCSchedule, initializeGrade, initializeShowPWCSchedule, initializeShowILCSchedule, setGrade, setShowPWCSchedule, setShowILCSchedule };
 });
