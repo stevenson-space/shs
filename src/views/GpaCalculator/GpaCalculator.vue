@@ -66,6 +66,16 @@
               @update:modelValue="selectGrade(course,$event)"
             />
           </div>
+          <div class="label-row">
+          <dropdown
+            style="flex:1;"
+            :options="availableLabels"
+            :modelValue="course.label"
+            align="left"
+            editable
+            @update:modelValue="selectLabel(course, $event)"
+          />
+        </div>
         <p class="grade-label">{{course.finalGrade}}</p>
           <div class="gpa-title-row">
             <div class="gpa-col">
@@ -103,6 +113,7 @@ class Course {
   finalGrade: string;
   hasFinal: boolean;
   name: string;
+  label: string;
   constructor(id: number) {
     this.id = id;
     this.grade = 0; // A
@@ -113,6 +124,7 @@ class Course {
     this.finalGrade = 'A';
     this.hasFinal = true;
     this.name = `Course ${id}`;
+    this.label = '';
   }
 }
 
@@ -130,12 +142,14 @@ export default defineComponent({
       gradeLabels: ['A', 'B', 'C', 'D', 'F'] as string[],
       terms: ['1st', '2nd', '3rd', 'Final'] as string[],
       reduceFadeUpAnimation: false as boolean,
+      availableLabels: [''] as string[],
     };
   },
   watch: {
     courses: {
       handler() {
         localStorage.setItem('EBRCourses', JSON.stringify(this.courses));
+        this.updateAvailableLabels();
       },
       deep: true,
     },
@@ -146,6 +160,7 @@ export default defineComponent({
       this.courses = JSON.parse(courses);
       this.calculateSemesterGrades();
     }
+    this.updateAvailableLabels();
   },
 
   methods: {
@@ -232,6 +247,20 @@ export default defineComponent({
       this.averageUnweightedGpa = unweightedGPASum / weightTotal;
       this.averageWeightedGpa = weightedGPASum / weightTotal;
     },
+    selectLabel(course: Course, label: string): void {
+      const index = this.courses.indexOf(course);
+      course.label = label;
+      this.courses[index] = course;
+      this. calculateSemesterGrades();
+    },
+    updateAvailableLabels(): void {
+      const labels = new Set<string>();
+      this.courses.forEach(course => {
+        if (course.label) labels.add(course.label);
+      });
+      this.availableLabels = ['', ...Array.from(labels).sort()];
+      localStorage.setItem('EBRLabels', JSON.stringify(this.availableLabels));
+    },
   },
 });
 </script>
@@ -301,6 +330,11 @@ export default defineComponent({
       margin: 0 5px
       display: flex
       padding: 12px 0px 0px 4px
+
+    .labels-course-row
+      margin: 0 5px
+      display: flex
+      padding: 6px 0px 0px 4px
 
     .grade-dropdown-row
       margin: 0 5px
