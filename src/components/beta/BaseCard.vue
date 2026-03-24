@@ -35,7 +35,7 @@ const emit = defineEmits<{
 </script>
 
 <style scoped>
-@reference "tailwindcss";
+@reference "@/styles/tailwind.css";
 
 .base-card {
   @apply relative overflow-hidden rounded-[14px] border-[0.5px] border-white/90 bg-background p-3;
