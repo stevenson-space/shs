@@ -85,7 +85,7 @@ export const FullLayout: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     await expect(canvas.getByText('Bell Schedules')).toBeInTheDocument()
-    await expect(canvas.getByText('Links')).toBeInTheDocument()
+    await expect(canvas.getAllByText('Links')).toHaveLength(2)
     await expect(canvas.getAllByText(/Test Card/)).toHaveLength(5)
   },
 }
