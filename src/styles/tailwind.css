@@ -1,4 +1,4 @@
-@import "tailwindcss/theme.css";
+@import "tailwindcss" source(none);
 
 :root {
   --accent: #1b5e20;
