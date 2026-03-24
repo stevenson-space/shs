@@ -10,10 +10,16 @@
         />
         <div class="message">{{ activeThemes[currentIndex].recommended?.message?.replace('[Try]','') || '' }}</div>
       </div>
-      <info-tooltip v-if="activeThemes[currentIndex].metadata?.description" @click.stop>
-        {{ activeThemes[currentIndex].metadata.description }}
-      </info-tooltip>
-      <button class="close-btn" @click="dismiss">&times;</button>
+      <div v-if="activeThemes.length > 1" class="divider"></div>
+      <!-- Navigation buttons for multiple themes -->
+      <div v-if="activeThemes.length > 1" class="theme-nav">
+        <button class="nav-btn" @click.stop="prevTheme">&lt;</button>
+        <button class="nav-btn" @click.stop="nextTheme">&gt;</button>
+        <button class="nav-btn close-btn" @click.stop="dismiss">&times;</button>
+      </div>
+
+<!-- Fallback single theme close -->
+<button v-else class="close-btn fallback" @click.stop>&times;</button>
     </div>
   </card>
 </template>
@@ -145,3 +151,35 @@ onMounted(async () => {
   &:hover
     opacity: 1
 </style>
+
+.divider
+  width: 90%
+  height: 1px
+  background-color: rgba(0,0,0,0.2)
+  margin: 5px 0
+
+.theme-nav
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 8px
+
+.nav-btn
+  background: rgba(0,0,0,0.1)
+  border: none
+  border-radius: 4px
+  color: var(--secondary)
+  width: 25px
+  height: 25px
+  cursor: pointer
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 14px
+  transition: background 0.2s
+
+  &:hover
+    background: rgba(0,0,0,0.2)
+
+.close-btn.fallback
+  margin-top: 5px
