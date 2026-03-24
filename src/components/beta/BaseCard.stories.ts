@@ -1,16 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { within, expect, userEvent, fn } from 'storybook/test'
 import BaseCard from './BaseCard.vue'
+import CardPreview from './CardPreview.vue'
 
 const meta = {
   title: 'Beta/BaseCard',
   component: BaseCard,
   tags: ['autodocs'],
-  decorators: [
-    () => ({
-      template: '<div style="background: #f2f2f7; padding: 24px; min-height: 200px;"><story /></div>',
-    }),
-  ],
   argTypes: {
     label: { control: 'text' },
     showMenu: { control: 'boolean' },
@@ -34,16 +30,18 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: (args) => ({
-    components: { BaseCard },
+    components: { BaseCard, CardPreview },
     setup() {
       return { args }
     },
     template: `
-      <BaseCard :label="args.label" :show-menu="args.showMenu" :show-flag="args.showFlag" @flag="args.onFlag" @menu="args.onMenu">
-        <p style="margin: 0; font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.5;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </BaseCard>
+      <CardPreview>
+        <BaseCard :label="args.label" :show-menu="args.showMenu" :show-flag="args.showFlag" @flag="args.onFlag" @menu="args.onMenu">
+          <p style="margin: 0; font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.5;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </BaseCard>
+      </CardPreview>
     `,
   }),
   play: async ({ canvasElement }) => {
@@ -54,16 +52,18 @@ export const Default: Story = {
 
 export const WithMenu: Story = {
   render: (args) => ({
-    components: { BaseCard },
+    components: { BaseCard, CardPreview },
     setup() {
       return { args }
     },
     template: `
-      <BaseCard :label="args.label" :show-menu="args.showMenu" :show-flag="args.showFlag" @flag="args.onFlag" @menu="args.onMenu">
-        <p style="margin: 0; font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.5;">
-          Click the ellipsis button in the eyebrow.
-        </p>
-      </BaseCard>
+      <CardPreview>
+        <BaseCard :label="args.label" :show-menu="args.showMenu" :show-flag="args.showFlag" @flag="args.onFlag" @menu="args.onMenu">
+          <p style="margin: 0; font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.5;">
+            Click the ellipsis button in the eyebrow.
+          </p>
+        </BaseCard>
+      </CardPreview>
     `,
   }),
   args: {
@@ -79,16 +79,18 @@ export const WithMenu: Story = {
 
 export const WithFlag: Story = {
   render: (args) => ({
-    components: { BaseCard },
+    components: { BaseCard, CardPreview },
     setup() {
       return { args }
     },
     template: `
-      <BaseCard :label="args.label" :show-menu="args.showMenu" :show-flag="args.showFlag" @flag="args.onFlag" @menu="args.onMenu">
-        <p style="margin: 0; font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.5;">
-          Click the flag button in the eyebrow.
-        </p>
-      </BaseCard>
+      <CardPreview>
+        <BaseCard :label="args.label" :show-menu="args.showMenu" :show-flag="args.showFlag" @flag="args.onFlag" @menu="args.onMenu">
+          <p style="margin: 0; font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.5;">
+            Click the flag button in the eyebrow.
+          </p>
+        </BaseCard>
+      </CardPreview>
     `,
   }),
   args: {
@@ -104,16 +106,18 @@ export const WithFlag: Story = {
 
 export const BothButtons: Story = {
   render: (args) => ({
-    components: { BaseCard },
+    components: { BaseCard, CardPreview },
     setup() {
       return { args }
     },
     template: `
-      <BaseCard :label="args.label" :show-menu="args.showMenu" :show-flag="args.showFlag" @flag="args.onFlag" @menu="args.onMenu">
-        <p style="margin: 0; font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.5;">
-          Both flag and menu buttons are visible.
-        </p>
-      </BaseCard>
+      <CardPreview>
+        <BaseCard :label="args.label" :show-menu="args.showMenu" :show-flag="args.showFlag" @flag="args.onFlag" @menu="args.onMenu">
+          <p style="margin: 0; font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.5;">
+            Both flag and menu buttons are visible.
+          </p>
+        </BaseCard>
+      </CardPreview>
     `,
   }),
   args: {
@@ -132,16 +136,18 @@ export const BothButtons: Story = {
 
 export const NoLabel: Story = {
   render: (args) => ({
-    components: { BaseCard },
+    components: { BaseCard, CardPreview },
     setup() {
       return { args }
     },
     template: `
-      <BaseCard @flag="args.onFlag" @menu="args.onMenu">
-        <p style="margin: 0; font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.5;">
-          No label — eyebrow row does not render.
-        </p>
-      </BaseCard>
+      <CardPreview>
+        <BaseCard @flag="args.onFlag" @menu="args.onMenu">
+          <p style="margin: 0; font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.5;">
+            No label — eyebrow row does not render.
+          </p>
+        </BaseCard>
+      </CardPreview>
     `,
   }),
   args: {
@@ -158,16 +164,18 @@ export const NoLabel: Story = {
 
 export const NoLabelWithButtons: Story = {
   render: (args) => ({
-    components: { BaseCard },
+    components: { BaseCard, CardPreview },
     setup() {
       return { args }
     },
     template: `
-      <BaseCard :show-menu="args.showMenu" :show-flag="args.showFlag" @flag="args.onFlag" @menu="args.onMenu">
-        <p style="margin: 0; font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.5;">
-          No label but buttons are shown — eyebrow row still renders.
-        </p>
-      </BaseCard>
+      <CardPreview>
+        <BaseCard :show-menu="args.showMenu" :show-flag="args.showFlag" @flag="args.onFlag" @menu="args.onMenu">
+          <p style="margin: 0; font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.5;">
+            No label but buttons are shown — eyebrow row still renders.
+          </p>
+        </BaseCard>
+      </CardPreview>
     `,
   }),
   args: {

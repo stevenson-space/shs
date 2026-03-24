@@ -1,16 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { within, expect } from 'storybook/test'
 import TestCard from './TestCard.vue'
+import CardPreview from './CardPreview.vue'
 
 const meta = {
   title: 'Beta/TestCard',
   component: TestCard,
   tags: ['autodocs'],
-  decorators: [
-    () => ({
-      template: '<div style="background: #f2f2f7; padding: 24px; max-width: 320px;"><story /></div>',
-    }),
-  ],
   argTypes: {
     position: { control: { type: 'number', min: 1 } },
   },
@@ -24,11 +20,15 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: (args) => ({
-    components: { TestCard },
+    components: { TestCard, CardPreview },
     setup() {
       return { args }
     },
-    template: '<TestCard :position="args.position" />',
+    template: `
+      <CardPreview>
+        <TestCard :position="args.position" />
+      </CardPreview>
+    `,
   }),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
@@ -38,11 +38,15 @@ export const Default: Story = {
 
 export const AnotherCard: Story = {
   render: (args) => ({
-    components: { TestCard },
+    components: { TestCard, CardPreview },
     setup() {
       return { args }
     },
-    template: '<TestCard :position="args.position" />',
+    template: `
+      <CardPreview>
+        <TestCard :position="args.position" />
+      </CardPreview>
+    `,
   }),
   args: { position: 3 },
 }
