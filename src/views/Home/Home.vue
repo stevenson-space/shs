@@ -21,6 +21,7 @@
         <schedule-card max-height="270px"/>
         <weather-card />
         <pwc-card/>
+        <ilc-card />
         <lunch-card />
         <upcoming-events-card />
 
@@ -72,6 +73,7 @@ import UpcomingEventsCard from "@/components/cards/UpcomingEventsCard.vue";
 import IconTextCard from "@/components/cards/IconTextCard.vue";
 import WeatherCard from "@/components/cards/WeatherCard.vue";
 import PwcCard from "@/components/cards/PwcCard.vue";
+import IlcCard from "@/components/cards/IlcCard.vue";
 import ScheduleCard from "@/components/cards/ScheduleCard.vue";
 import HolidayCard from "@/components/cards/HolidayCard.vue";
 import ContributeCard from "@/components/cards/ContributeCard.vue";
@@ -96,6 +98,7 @@ export default {
     ScheduleCard,
     WeatherCard,
     PwcCard,
+    IlcCard,
     HolidayCard,
     ContributeCard,
     NewThemeCard,
