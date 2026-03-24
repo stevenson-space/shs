@@ -129,20 +129,14 @@ export const HeightConsistency: Story = {
   play: async ({ canvasElement }) => {
     const h = (el: Element | null) => el ? el.getBoundingClientRect().height : -1
 
-    const iconCard = canvasElement.querySelector('[data-testid="pair-1"] .link-card') as HTMLElement
-    const faviconCard = canvasElement.querySelector('[data-testid="pair-6"] .link-card') as HTMLElement
-
-    // Diagnostic: report sub-element heights so we can pinpoint the 2px difference
-    await expect({
-      card: h(faviconCard),
-      iconArea: h(faviconCard?.querySelector('.icon-area') ?? null),
-      iconAreaContent: h(faviconCard?.querySelector('.icon-area > *') ?? null),
-      label: h(faviconCard?.querySelector('.label') ?? null),
-    }).toEqual({
-      card: h(iconCard),
-      iconArea: h(iconCard?.querySelector('.icon-area') ?? null),
-      iconAreaContent: h(iconCard?.querySelector('.icon-area > *') ?? null),
-      label: h(iconCard?.querySelector('.label') ?? null),
+    const pairHeights = [1, 2, 3, 4, 5, 6].map(n => {
+      const card = canvasElement.querySelector(`[data-testid="pair-${n}"] .link-card, [data-testid="pair-${n}"] .placeholder`)
+      return h(card ?? null)
     })
+
+    const reference = Math.round(pairHeights[0])
+    for (let i = 1; i < pairHeights.length; i++) {
+      await expect(Math.round(pairHeights[i])).toEqual(reference)
+    }
   },
 }
