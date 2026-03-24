@@ -13,12 +13,15 @@
       <div v-if="activeThemes.length > 1" class="divider"></div>
       <!-- Navigation buttons for multiple themes -->
       <div v-if="activeThemes.length > 1" class="theme-nav">
-        <button class="nav-btn" @click.stop="prevTheme">&lt;</button>
-        <button class="nav-btn" @click.stop="nextTheme">&gt;</button>
-        <button class="nav-btn close-btn" @click.stop="dismiss">&times;</button>
+      <button class="nav-btn" @click.stop="prevTheme">
+      <font-awesome-icon :icon="faChevronLeft" />
+      </button>
+      <button class="nav-btn" @click.stop="nextTheme">
+      <font-awesome-icon :icon="faChevronRight" />
+      </button>
+      <button class="nav-btn close-btn" @click.stop="dismiss">&times;</button>
       </div>
 
-<!-- Fallback single theme close -->
 <button v-else class="close-btn fallback" @click.stop>&times;</button>
     </div>
   </card>
@@ -29,6 +32,8 @@ import { ref, computed, onMounted, reactive } from 'vue';
 import useClockStore from '@/stores/clock';
 import useThemeStore from '@/stores/themes';
 import RoundedButton from '@/components/RoundedButton.vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import Card from '@/components/Card.vue';
 import InfoTooltip from '@/components/InfoTooltip.vue';
 import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
@@ -163,6 +168,7 @@ onMounted(async () => {
   justify-content: center
   align-items: center
   gap: 8px
+  margin-top: 5px
 
 .nav-btn
   background: rgba(0,0,0,0.1)
