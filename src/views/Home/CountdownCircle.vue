@@ -1,6 +1,7 @@
 <template>
   <div class="circle" :class="{ 'full-screen': fullScreenMode }">
     <img :src="patriot" class="logo">
+    <img :src="patriotprom" class="logo">
     <div v-if="clockMode === 'current'" class="countdown">
       {{ countdown }}
     </div>
@@ -18,9 +19,11 @@
 <script>
 import { mapState } from 'pinia';
 import patriot from '@/assets/patriot.png';
+import patriotprom from '@/assets/patriotprom.png';
+import {Theme, ThemeStyling} from "@/utils/types";
 import useClockStore from '@/stores/clock'
 
-export default {
+export default(theme: ThemeMetadata) {
   props: {
     inSchool: { type: Boolean, required: true },
     countdown: { type: String, required: true },
@@ -33,8 +36,15 @@ export default {
     ...mapState(useClockStore, ['clockMode']),
   },
   data() {
-    return {
-      patriot
+    if (theme.name === "Prom '26"){
+      return {
+        patriotprom
+      }
+    }
+    else {
+      return {
+        patriot
+      }
     };
   },
 };
