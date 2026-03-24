@@ -1,5 +1,5 @@
 <template>
-  <card v-if="newTheme != null && !isDismissed">
+  <card v-if="activeThemes[currentIndex] != null && !isDismissed">
     <div class="card-content">
       <div class="row">
         <rounded-button
@@ -8,10 +8,10 @@
           :circular="false"
           @click="toggleTheme()"
         />
-        <div class="message">{{ newTheme.recommended?.message?.replace('[Try]','') || '' }}</div>
+        <div class="message">{{ activeThemes[currentIndex].recommended?.message?.replace('[Try]','') || '' }}</div>
       </div>
-      <info-tooltip v-if="newTheme.metadata?.description" @click.stop>
-        {{ newTheme.metadata.description }}
+      <info-tooltip v-if="activeThemes[currentIndex].metadata?.description" @click.stop>
+        {{ activeThemes[currentIndex].metadata.description }}
       </info-tooltip>
       <button class="close-btn" @click="dismiss">&times;</button>
     </div>
@@ -43,41 +43,57 @@ function parseDismissed(): Record<string, number> {
 }
 const dismissedThemesRef = reactive<Record<string, number>>(parseDismissed());
 
-const newTheme = computed(() => {
-  // finds a seasonal theme that is within the current date range
+const activeThemes = computed(() => {
   const now = clockStore.date;
-
-  for (const theme of themes.value) {
-    if (!theme.seasonalDates) continue;
-
+  return themes.value.filter(theme => {
+    if (!theme.seasonalDates) return false;
     const [start, end] = parseDateRange(theme.seasonalDates, now);
-    if (isDateInRange(now, start, end)) {
-      return theme;
-    }
-  }
-  return null;
+    return isDateInRange(now, start, end);
+  });
 });
 
+const currentIndex = ref(0);
+
+function nextTheme(): void {
+  if (activeThemes.value.length === 0) return;
+  currentIndex.value = (currentIndex.value + 1) % activeThemes.value.length;
+}
+
+function prevTheme(): void {
+  if (activeThemes.value.length === 0) return;
+  currentIndex.value =
+    (currentIndex.value - 1 + activeThemes.value.length) % activeThemes.value.length;
+}
+
+const currentTheme = computed(() => activeThemes.value[currentIndex.value] || null);
+
 const isDismissed = computed(() => {
-  if (!newTheme.value) return false;
+  if (!currentTheme.value) return false;
   const currentYear = clockStore.date.getFullYear();
-  return dismissedThemesRef[newTheme.value.metadata.name] === currentYear;
+  return dismissedThemesRef[currentTheme.value.metadata.name] === currentYear;
 });
 
 function toggleTheme(): void {
-  if (!newTheme.value) return;
-  themeStore.setStyling(newTheme.value.styling);
+  if (!currentTheme.value) return;
+  themeStore.setStyling(currentTheme.value.styling);
 }
 
 function dismiss(): void {
-  if (!newTheme.value) return;
+  if (!currentTheme.value) return;
   const currentYear = clockStore.date.getFullYear();
-  dismissedThemesRef[newTheme.value.metadata.name] = currentYear;
+  dismissedThemesRef[currentTheme.value.metadata.name] = currentYear;
   localStorage.setItem('dismissedThemeCards', JSON.stringify(dismissedThemesRef));
 }
 
 onMounted(async () => {
   themes.value = await loadAllThemes();
+
+  // auto-rotate every 5s if multiple active themes
+  if (activeThemes.value.length > 1) {
+    setInterval(() => {
+      nextTheme();
+    }, 5000);
+  }
 });
 </script>
 
