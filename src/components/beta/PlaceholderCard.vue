@@ -9,7 +9,7 @@
   background: rgba(0, 0, 0, 0.03);
   box-shadow: none;
   pointer-events: none;
-  padding: 14px 12px 12px;
+  box-sizing: border-box;
   min-height: 90px;
 }
 </style>
