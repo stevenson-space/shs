@@ -1,7 +1,7 @@
 <template>
   <BaseCard :label="`Card ${position}`">
     <h3 class="title">Test Card {{ position }}</h3>
-    <p class="desc">Placeholder — replace with a real widget.</p>
+    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   </BaseCard>
 </template>
 
@@ -11,7 +11,7 @@ const { position } = defineProps<{ position: number }>()
 </script>
 
 <style scoped>
-@reference "tailwindcss";
+@reference "@/styles/tailwind.css";
 
 .title {
   @apply m-0 text-[13px] font-semibold tracking-[-0.02em] text-primary;
