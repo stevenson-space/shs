@@ -85,6 +85,9 @@ function dismiss(): void {
   localStorage.setItem('dismissedThemeCards', JSON.stringify(dismissedThemesRef));
 }
 
+onMounted(async () => {
+  themes.value = await loadAllThemes();
+
 </script>
 
 <style lang="sass" scoped>
