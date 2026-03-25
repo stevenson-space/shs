@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { ref, watch } from 'vue'
-import { fn, userEvent, within, expect } from 'storybook/test'
-import SliderInput from './SliderInput.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { ref, watch } from 'vue';
+import { fn, userEvent, within, expect } from 'storybook/test';
+import SliderInput from './SliderInput.vue';
 
 const meta = {
   title: 'Components/SliderInput',
@@ -23,54 +23,54 @@ const meta = {
     'onUpdate:modelValue': fn(),
     onBlur: fn(),
   },
-} satisfies Meta<typeof SliderInput>
+} satisfies Meta<typeof SliderInput>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 function makeRender(initialValue: number) {
   return (args: Parameters<NonNullable<Story['render']>>[0]) => ({
     components: { SliderInput },
     setup() {
-      const value = ref(initialValue)
-      watch(() => args.modelValue, (val) => { value.value = val })
+      const value = ref(initialValue);
+      watch(() => args.modelValue, (val) => { value.value = val; });
       return {
         args,
         value,
         onUpdate: (val: number) => {
-          value.value = val
-          args['onUpdate:modelValue']?.(val)
+          value.value = val;
+          args['onUpdate:modelValue']?.(val);
         },
-      }
+      };
     },
-    template: `<SliderInput :model-value="value" :min="args.min" :max="args.max" :step="args.step" :label="args.label" @update:modelValue="onUpdate" @blur="args.onBlur" />`,
-  })
+    template: '<SliderInput :model-value="value" :min="args.min" :max="args.max" :step="args.step" :label="args.label" @update:modelValue="onUpdate" @blur="args.onBlur" />',
+  });
 }
 
 export const Default: Story = {
   render: makeRender(50),
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const numberInput = canvas.getByRole('spinbutton')
-    await expect(numberInput).toBeVisible()
-    await expect(numberInput).toHaveValue(50)
+    const canvas = within(canvasElement);
+    const numberInput = canvas.getByRole('spinbutton');
+    await expect(numberInput).toBeVisible();
+    await expect(numberInput).toHaveValue(50);
   },
-}
+};
 
 export const WithLabel: Story = {
   render: makeRender(50),
   args: { label: 'Volume' },
-}
+};
 
 export const AtMinimum: Story = {
   render: makeRender(0),
   args: { modelValue: 0 },
-}
+};
 
 export const AtMaximum: Story = {
   render: makeRender(100),
   args: { modelValue: 100 },
-}
+};
 
 export const CustomRange: Story = {
   render: makeRender(5),
@@ -81,7 +81,7 @@ export const CustomRange: Story = {
     step: 1,
     label: 'Rating',
   },
-}
+};
 
 export const DecimalStep: Story = {
   render: makeRender(0.5),
@@ -92,4 +92,4 @@ export const DecimalStep: Story = {
     step: 0.1,
     label: 'Opacity',
   },
-}
+};

@@ -45,10 +45,10 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from 'vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import ScrollSelector from '@/components/ScrollSelector.vue';
 import Checkbox from '@/components/Checkbox.vue';
-import { defineComponent } from 'vue';
 import Bell from '@/utils/bell';
 
 interface TimePickerPeriod {

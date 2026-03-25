@@ -8,27 +8,27 @@
         :style="iconStyle"
       />
     </div>
-      <stagger-animation
-        ref="staggerAnimation"
-        :direction="direction"
-        :number-of-slots="formattedOptions.length"
-        :align="align"
-      >
+    <stagger-animation
+      ref="staggerAnimation"
+      :direction="direction"
+      :number-of-slots="formattedOptions.length"
+      :align="align"
+    >
       <template v-if="open">
-          <div
-            v-for="(opt, index) in formattedOptions"
-            :key="opt"
-            ref="option"
-            class="option"
-            :style="opt.style"
-            :data-index="index"
-            @click="selectOption(opt.index)"
-          >
-            {{ opt.name }}
+        <div
+          v-for="(opt, index) in formattedOptions"
+          :key="opt"
+          ref="option"
+          class="option"
+          :style="opt.style"
+          :data-index="index"
+          @click="selectOption(opt.index)"
+        >
+          {{ opt.name }}
         </div>
-        </template>
-      </stagger-animation>
-    </div>
+      </template>
+    </stagger-animation>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -86,19 +86,15 @@ const formattedOptions = computed((): { name: string; style: any; index: number 
   });
 });
 
-const dropdownStyle = computed((): { transition: string; zIndex: number } => {
-  return {
-    transition: 'box-shadow .2s, border-color .2s',
-    zIndex: options.length + 5,
-  };
-});
+const dropdownStyle = computed((): { transition: string; zIndex: number } => ({
+  transition: 'box-shadow .2s, border-color .2s',
+  zIndex: options.length + 5,
+}));
 
-const iconStyle = computed((): { transition: string; transform: string } => {
-  return {
-    transition: 'transform .2s',
-    transform: `rotate(${arrowRotateAmount.value}deg)`,
-  };
-});
+const iconStyle = computed((): { transition: string; transform: string } => ({
+  transition: 'transform .2s',
+  transform: `rotate(${arrowRotateAmount.value}deg)`,
+}));
 
 watch(() => options, (): void => {
   optionShifts = Array(options.length).fill(0);

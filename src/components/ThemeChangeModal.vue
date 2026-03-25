@@ -1,51 +1,51 @@
 <template>
-    <div v-if="showModal">
-      <div class="modal" @click="closeModal()">
-        <div class="modal-content" @click.stop="">
-          <div class="title"><b>Color Conflict</b></div>
-          <div class="divider" />
-          <p>Do you want to override your current color selection to the suggested color for the {{ newTheme["name"] }} theme?</p>
-          <div class="btn-row">
-            <div class="color-circle" :style="{ background: themeStore.styling.accent ?? 'transparent' /* TODO(theme): resolve fallback */ }"></div>
-             <font-awesome-icon
+  <div v-if="showModal">
+    <div class="modal" @click="closeModal()">
+      <div class="modal-content" @click.stop="">
+        <div class="title"><b>Color Conflict</b></div>
+        <div class="divider" />
+        <p>Do you want to override your current color selection to the suggested color for the {{ newTheme.name }} theme?</p>
+        <div class="btn-row">
+          <div class="color-circle" :style="{ background: themeStore.styling.accent ?? 'transparent' /* TODO(theme): resolve fallback */ }" />
+          <font-awesome-icon
             class="arrow"
             :icon="faArrowRight"
           />
-            <div
-              class="color-circle"
-              :style="{ background: newTheme['suggestedColor'] }"
-            ></div>
-          </div>
-          <br />
-          <div class="btn-row">
-            <rounded-button class="button" :showColor="false" text="No" @click="$emit('false')" :circular="false" />
-            <rounded-button class="button" :showColor="false" text="Yes" @click="$emit('true')" :circular="false" />
-          </div>
+          <div
+            class="color-circle"
+            :style="{ background: newTheme.suggestedColor }"
+          />
+        </div>
+        <br />
+        <div class="btn-row">
+          <rounded-button class="button" :showColor="false" text="No" @click="$emit('false')" :circular="false" />
+          <rounded-button class="button" :showColor="false" text="Yes" @click="$emit('true')" :circular="false" />
         </div>
       </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
-import useThemeStore from '@/stores/themes'
-import RoundedButton from '@/components/RoundedButton.vue'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import useThemeStore from '@/stores/themes';
+import RoundedButton from '@/components/RoundedButton.vue';
 
 const { newTheme, showModal } = defineProps<{
   newTheme: Record<string, any>
   showModal: boolean
-}>()
+}>();
 
 const emit = defineEmits<{
   'false': []
   'true': []
   close: []
-}>()
+}>();
 
-const themeStore = useThemeStore()
+const themeStore = useThemeStore();
 
 function closeModal(): void {
-  emit('close')
+  emit('close');
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div @click="goHome" class="home-link">
-    <button class="home" :class="{ invert }">
+    <button type="button" class="home" :class="{ invert }">
       <font-awesome-icon class="icon" :icon="faHouse" fixed-width />
       <span class="text">Home</span>
     </button>

@@ -19,21 +19,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+import { ref } from 'vue';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 const { scheduleType } = defineProps<{
   scheduleType: string
-}>()
+}>();
 
-const showModal = ref(false)
+const showModal = ref(false);
 
 function openModal(): void {
-  showModal.value = true
+  showModal.value = true;
 }
 
 function closeModal(): void {
-  showModal.value = false
+  showModal.value = false;
 }
 </script>
 

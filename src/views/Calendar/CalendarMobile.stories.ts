@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { within, expect } from 'storybook/test'
-import { wrapDecorator } from '@/components/cards/storybook_utils'
-import { makeDates } from './storybook_utils'
-import CalendarMobile from './CalendarMobile.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { within, expect } from 'storybook/test';
+import { wrapDecorator } from '@/components/cards/storybook_utils';
+import { makeDates } from './storybook_utils';
+import CalendarMobile from './CalendarMobile.vue';
 
-const mar2026Dates = makeDates(2026, 2, new Date(2026, 2, 15))
+const mar2026Dates = makeDates(2026, 2, new Date(2026, 2, 15));
 
 const meta = {
   title: 'Calendar/CalendarMobile',
@@ -21,14 +21,14 @@ const meta = {
     filterCategories: [],
   },
   decorators: [wrapDecorator('max-width: 400px;')],
-} satisfies Meta<typeof CalendarMobile>
+} satisfies Meta<typeof CalendarMobile>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await expect(canvas.getByText('Sun')).toBeInTheDocument()
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText('Sun')).toBeInTheDocument();
   },
-}
+};

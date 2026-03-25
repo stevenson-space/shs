@@ -3,7 +3,7 @@
     <div class="container">
       <div class="message">
         <br>
-          <h3 style="margin-bottom: 0px">{{ message ?? `Countdown to ${untilDate}` }}</h3>
+        <h3 style="margin-bottom: 0px">{{ message ?? `Countdown to ${untilDate}` }}</h3>
         <br>
       </div>
       <div class="time">

@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
-import Bell from '@/utils/bell';
 import { RouteLocationNormalized } from 'vue-router';
-import useScheduleStore from '@/stores/schedules'
+import Bell from '@/utils/bell';
+import useScheduleStore from '@/stores/schedules';
 
 function parseDateTimeFromRoute(route: RouteLocationNormalized): Date {
   // If date and/or time is specified in URL, return that date
@@ -44,9 +44,7 @@ export default defineStore('clock', () => {
     return normalized;
   });
 
-  const bell = computed((): Bell => {
-    return new Bell(date.value, scheduleStore.schedules, scheduleStore.scheduleMode);
-  });
+  const bell = computed((): Bell => new Bell(date.value, scheduleStore.schedules, scheduleStore.scheduleMode));
 
   function stopClock(): void {
     if (clockInterval) {

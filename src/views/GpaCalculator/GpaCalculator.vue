@@ -10,11 +10,11 @@
               <h1 class="overall-gpa">
                 {{ averageUnweightedGpa.toFixed(2) }}
               </h1>
-              </div>
+            </div>
             <div class="gpa-col">
               <p class="weight-title">Weighted</p>
               <h1 class="overall-gpa">
-              {{averageWeightedGpa.toFixed(2)}}
+                {{averageWeightedGpa.toFixed(2)}}
               </h1>
             </div>
           </div>
@@ -30,15 +30,15 @@
       </card>
     </div>
     <card-container class="gpa-card-container">
-      <card class="gpa-card" :wrapperStyle="{ overflow: 'visible' }" v-for="(course, courseIndex) in courses" :key="courseIndex" :style="{ 'animation-delay': reduceFadeUpAnimation ? 0 : (courseIndex * .045 + .1) + 's'}">
+      <card class="gpa-card" :wrapperStyle="{ overflow: 'visible' }" v-for="(course, courseIndex) in courses" :key="courseIndex" :style="{ 'animation-delay': reduceFadeUpAnimation ? 0 : `${courseIndex * .045 + .1}s` }">
         <div class="gpa-tile">
           <input
             class="name"
             maxlength="20"
             type="text"
             :value="course.name"
-            :placeholder="'Course '+ (course.id)"
-            @input="editCourseName(course,$event.target.value)"
+            :placeholder="`Course ${course.id}`"
+            @input="editCourseName(course, $event.target.value)"
           >
           <font-awesome-icon
             v-show="courses.length > 1"
@@ -51,42 +51,42 @@
         <div class="course-settings-row">
           <dropdown
             style="flex:1;"
-            :options="['Regular','Accelerated','Honors/AP']"
+            :options="['Regular', 'Accelerated', 'Honors/AP']"
             :modelValue="course.level"
             align="left"
-            @update:modelValue="selectedCourseLevel(course,$event)"
+            @update:modelValue="selectedCourseLevel(course, $event)"
           />
-            <dropdown
-              style="flex:1;"
-              :direction="course.direction"
-              class="grade-selector"
-              :options="gradeLabels"
-              :modelValue="course.grade"
-              align="left"
-              @update:modelValue="selectGrade(course,$event)"
-            />
-          </div>
+          <dropdown
+            style="flex:1;"
+            :direction="course.direction"
+            class="grade-selector"
+            :options="gradeLabels"
+            :modelValue="course.grade"
+            align="left"
+            @update:modelValue="selectGrade(course, $event)"
+          />
+        </div>
         <p class="grade-label">{{course.finalGrade}}</p>
-          <div class="gpa-title-row">
-            <div class="gpa-col">
-              <p class="weight-title"><b>Un</b>weighted</p>
-              <div class="final-gpa">{{course.unweightedGPA.toFixed(2)}}</div>
-            </div>
-            <div class="gpa-col">
-              <p class="weight-title">Weighted</p>
-              <div class="final-gpa">{{course.weightedGPA.toFixed(2)}}</div>
-            </div>
+        <div class="gpa-title-row">
+          <div class="gpa-col">
+            <p class="weight-title"><b>Un</b>weighted</p>
+            <div class="final-gpa">{{course.unweightedGPA.toFixed(2)}}</div>
           </div>
-          <checkbox :modelValue="course.weight == 1.5" @update:modelValue="toggleExtraWeight(course, $event)">1.5 Weight Science Class</checkbox>
+          <div class="gpa-col">
+            <p class="weight-title">Weighted</p>
+            <div class="final-gpa">{{course.weightedGPA.toFixed(2)}}</div>
+          </div>
+        </div>
+        <checkbox :modelValue="course.weight == 1.5" @update:modelValue="toggleExtraWeight(course, $event)">1.5 Weight Science Class</checkbox>
         <br>
       </card>
     </card-container>
   </div>
 </template>
 <script lang="ts">
-import RoundedButton from '@/components/RoundedButton.vue';
 import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { defineComponent } from 'vue';
+import RoundedButton from '@/components/RoundedButton.vue';
 import Card from '@/components/Card.vue';
 import PlainHeader from '@/components/PlainHeader.vue';
 import CardContainer from '@/components/CardContainer.vue';

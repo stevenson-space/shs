@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { expect } from 'storybook/test'
-import HybridInfoModal from './HybridInfoModal.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { expect } from 'storybook/test';
+import HybridInfoModal from './HybridInfoModal.vue';
 
 const meta = {
   title: 'Components/HybridInfoModal',
@@ -12,9 +12,9 @@ const meta = {
   args: {
     scheduleType: 'Patriot Hybrid',
   },
-} satisfies Meta<typeof HybridInfoModal>
+} satisfies Meta<typeof HybridInfoModal>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
@@ -22,14 +22,14 @@ export const Default: Story = {
     scheduleType: 'Patriot Hybrid',
   },
   play: async ({ canvasElement }) => {
-    const infoIcon = canvasElement.querySelector('.info-circle') as HTMLElement
-    await expect(infoIcon).toBeInTheDocument()
-    await expect(infoIcon).toBeVisible()
+    const infoIcon = canvasElement.querySelector('.info-circle') as HTMLElement;
+    await expect(infoIcon).toBeInTheDocument();
+    await expect(infoIcon).toBeVisible();
   },
-}
+};
 
 export const RemoteLearning: Story = {
   args: {
     scheduleType: 'Remote Learning',
   },
-}
+};

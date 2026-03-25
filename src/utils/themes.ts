@@ -1,15 +1,14 @@
-import {Theme, ThemeStyling} from "@/utils/types";
-import lightBaseTheme from "@/themes/base/light.json";
-import darkBaseTheme from "@/themes/base/dark.json";
+import { Theme, ThemeStyling } from '@/utils/types';
+import lightBaseTheme from '@/themes/base/light.json';
+import darkBaseTheme from '@/themes/base/dark.json';
 
 export function fallbackStyling(styling: ThemeStyling): ThemeStyling {
-  if (styling.base === "light" || styling.base === undefined) {
+  if (styling.base === 'light' || styling.base === undefined) {
     return (lightBaseTheme as Theme).styling;
-  } else if (styling.base === "dark") {
+  } if (styling.base === 'dark') {
     return (darkBaseTheme as Theme).styling;
-  } else {
-    throw new Error(`Invalid base theme: ${styling.base}`);
   }
+  throw new Error(`Invalid base theme: ${styling.base}`);
 }
 
 /**
@@ -70,7 +69,7 @@ export function formatDateRange(dateRange: string): string {
     const parts = dateStr.split('/').map(Number);
     const [month, day, year] = parts;
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     if (year !== undefined) {
       return `${monthNames[month - 1]} ${day} ${year}`;
@@ -90,5 +89,5 @@ export async function loadAllThemes(): Promise<any[]> {
 
   return Object.values(regularThemeModules)
     .map((module: any) => module.default)
-    .filter(theme => theme.visibility !== 'hide');
+    .filter((theme) => theme.visibility !== 'hide');
 }

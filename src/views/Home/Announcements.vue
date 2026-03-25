@@ -7,7 +7,7 @@
         v-if="!(!announcement.showInFullScreen && fullScreenMode)"
       >
         <div class="container">
-          <div class="center" v-html="announcement.text"></div>
+          <div class="center" v-html="announcement.text" />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
-import { defineStore } from "pinia";
-import { ref } from "vue";
+import { defineStore } from 'pinia';
+import { ref } from 'vue';
 
-export default defineStore("grades", () => {
+export default defineStore('grades', () => {
   const grade = ref('None');
   const showPWCSchedule = ref(true);
 

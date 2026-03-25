@@ -1,5 +1,5 @@
 <template>
-  <div class="schedule-column-period" :class="{ closed: closed, open: !closed }">
+  <div class="schedule-column-period" :class="{ closed, open: !closed }">
     <font-awesome-icon :icon="icons.faXmark" class="delete" @click="deletePopup" />
 
     <div class="title" @click="editNamePopup">

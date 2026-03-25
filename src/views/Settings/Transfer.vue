@@ -238,7 +238,7 @@ export default defineComponent({
     save(): void {
       if (this.receivedData) {
         if (this.shouldSaveSetting.theme) {
-                    this.receivedData.theme = { theme: this.receivedData.theme, useThemeColor: true };
+          this.receivedData.theme = { theme: this.receivedData.theme, useThemeColor: true };
         }
         for (const [setting, data] of (Object.entries(this.receivedData) as [transferableSettingOption, any][])) {
           if (this.shouldSaveSetting[setting]) {

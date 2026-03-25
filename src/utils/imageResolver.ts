@@ -6,7 +6,7 @@ type CacheUpdateCallback = (cache: ImageCache) => void;
 // Import all theme assets using Vite's glob import
 const themeAssets = import.meta.glob('@/themes/assets/**/*.{png,jpg,jpeg,gif,svg,webp}', {
   eager: true,
-  import: 'default'
+  import: 'default',
 }) as Record<string, string>;
 
 export class ImageResolver {
@@ -87,7 +87,7 @@ export class ImageResolver {
    * Preload multiple images
    */
   async loadAll(paths: (string | undefined | null)[]): Promise<void> {
-    await Promise.all(paths.map(path => this.load(path)));
+    await Promise.all(paths.map((path) => this.load(path)));
   }
 
   /**
@@ -103,7 +103,7 @@ export class ImageResolver {
    * Notify all subscribers of cache update
    */
   private notifyUpdate(): void {
-    this.updateCallbacks.forEach(callback => callback(this.cache));
+    this.updateCallbacks.forEach((callback) => callback(this.cache));
   }
 
   /**

@@ -3,7 +3,7 @@ import { formatDate } from '@/utils/util';
 
 export function intoCountdownString(secondsLeft: number): string {
   if (secondsLeft < 0) {
-    return `0:00`;
+    return '0:00';
   }
 
   // if more than 1 day of seconds left, display number of days left

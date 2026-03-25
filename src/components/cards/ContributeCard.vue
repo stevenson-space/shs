@@ -1,9 +1,9 @@
 <template>
   <timed-card startTime="September 29, 2024" endTime="October 13, 2024">
-      <div class="icon">
-        <font-awesome-icon :icon="faCode" />
-      </div>
-    <div class="message"><b>For people interested in becoming a dedicated contributor of stevenson.space, the form is due by Oct. 13. <a class="learn-more-link" href="https://github.com/stevenson-space/shs/blob/main/Contribute.md" target="_blank">Learn More</a></b></div>
+    <div class="icon">
+      <font-awesome-icon :icon="faCode" />
+    </div>
+    <div class="message"><b>For people interested in becoming a dedicated contributor of stevenson.space, the form is due by Oct. 13. <a class="learn-more-link" href="https://github.com/stevenson-space/shs/blob/main/Contribute.md" target="_blank" rel="noopener noreferrer">Learn More</a></b></div>
   </timed-card>
 </template>
 

@@ -14,9 +14,9 @@
 
     <div
       class="main"
-      :class="{ 'extra-padding': scheduleModes.length > 1, 'winterfest': theme.metadata.name.toLowerCase() == 'into the woods'}"
+      :class="{ 'extra-padding': scheduleModes.length > 1, winterfest: theme.metadata.name.toLowerCase() == 'into the woods' }"
     >
-      <video v-if="theme.metadata.name.toLowerCase() === 'stevenson space'" autoplay loop muted playsinline :class="'starry-night' + (fullScreenMode ? ' starry-night-full' : '')">
+      <video v-if="theme.metadata.name.toLowerCase() === 'stevenson space'" autoplay loop muted playsinline :class="`starry-night${fullScreenMode ? ' starry-night-full' : ''}`">
         <source
           :src="starryNight"
           type="video/mp4"
@@ -105,9 +105,6 @@
 <script>
 import { mapState, mapActions } from 'pinia';
 
-import bellAudio from '@/assets/virtual-bell.wav';
-import starryNight from '@/assets/occasions/starry-night-full.mp4';
-
 import {
   faChevronRight,
   faChevronLeft,
@@ -118,6 +115,9 @@ import {
   faVolumeHigh,
   faVolumeOff,
 } from '@fortawesome/free-solid-svg-icons';
+import bellAudio from '@/assets/virtual-bell.wav';
+import starryNight from '@/assets/occasions/starry-night-full.mp4';
+
 import Dropdown from '@/components/Dropdown.vue';
 import ParticleSystem from '@/components/ParticleSystem.vue';
 import useClockStore from '@/stores/clock';
@@ -168,9 +168,9 @@ export default {
     ...mapState(useClockStore, ['clockMode', 'date', 'bell']),
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
-      const styling = this.styling;
+      const { styling } = this;
 
-      let headerStyle = {
+      const headerStyle = {
         '--header-color': showColor ? 'var(--headerBackground)' : 'var(--background)',
         '--header-accent': showColor ? 'white' : 'var(--accent)',
       };
@@ -239,8 +239,8 @@ export default {
       this.loadImages(...this.styling.particles.images);
 
       return this.styling.particles.images
-        .map(url => globalImageResolver.resolve(url))
-        .filter(img => img !== null);
+        .map((url) => globalImageResolver.resolve(url))
+        .filter((img) => img !== null);
     },
   },
   watch: {

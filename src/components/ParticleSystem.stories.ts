@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { expect } from 'storybook/test'
-import ParticleSystem from './ParticleSystem.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { expect } from 'storybook/test';
+import ParticleSystem from './ParticleSystem.vue';
 
 const meta = {
   title: 'Components/ParticleSystem',
@@ -26,16 +26,16 @@ const meta = {
     windPower: 0,
     images: [],
   },
-} satisfies Meta<typeof ParticleSystem>
+} satisfies Meta<typeof ParticleSystem>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: (args) => ({
     components: { ParticleSystem },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="width: 400px; height: 300px; background: #1a1a2e; position: relative; overflow: hidden;">
@@ -44,16 +44,16 @@ export const Default: Story = {
     `,
   }),
   play: async ({ canvasElement }) => {
-    const canvas = canvasElement.querySelector('canvas') as HTMLCanvasElement
-    await expect(canvas).toBeInTheDocument()
+    const canvas = canvasElement.querySelector('canvas') as HTMLCanvasElement;
+    await expect(canvas).toBeInTheDocument();
   },
-}
+};
 
 export const FastSpeed: Story = {
   render: (args) => ({
     components: { ParticleSystem },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="width: 400px; height: 300px; background: #1a1a2e; position: relative; overflow: hidden;">
@@ -65,13 +65,13 @@ export const FastSpeed: Story = {
     speed: 5,
     count: 30,
   },
-}
+};
 
 export const LargeParticles: Story = {
   render: (args) => ({
     components: { ParticleSystem },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="width: 400px; height: 300px; background: #1a1a2e; position: relative; overflow: hidden;">
@@ -83,13 +83,13 @@ export const LargeParticles: Story = {
     size: 20,
     count: 10,
   },
-}
+};
 
 export const ColoredParticles: Story = {
   render: (args) => ({
     components: { ParticleSystem },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="width: 400px; height: 300px; background: #0f172a; position: relative; overflow: hidden;">
@@ -102,13 +102,13 @@ export const ColoredParticles: Story = {
     count: 40,
     size: 5,
   },
-}
+};
 
 export const WithWind: Story = {
   render: (args) => ({
     components: { ParticleSystem },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="width: 400px; height: 300px; background: #1a1a2e; position: relative; overflow: hidden;">
@@ -121,13 +121,13 @@ export const WithWind: Story = {
     count: 30,
     speed: 2,
   },
-}
+};
 
 export const LowOpacity: Story = {
   render: (args) => ({
     components: { ParticleSystem },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="width: 400px; height: 300px; background: #1a1a2e; position: relative; overflow: hidden;">
@@ -140,4 +140,4 @@ export const LowOpacity: Story = {
     count: 50,
     size: 10,
   },
-}
+};

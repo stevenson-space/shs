@@ -25,7 +25,7 @@ Sentry.init({
   app,
   dsn: 'https://c669e2d7bb9c48c3a3ec84abce8830f0@o1226632.ingest.sentry.io/6372249',
   integrations: [
-    Sentry.browserTracingIntegration({ router })
+    Sentry.browserTracingIntegration({ router }),
   ],
   // Set tracesSampleRate to 1.0 to capture 100%
   // of transactions for performance monitoring.

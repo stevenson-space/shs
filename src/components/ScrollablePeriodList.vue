@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, onMounted, watch, useTemplateRef, withDefaults, ComponentPublicInstance } from 'vue';
+import { computed, nextTick, onMounted, watch, useTemplateRef, ComponentPublicInstance } from 'vue';
 import { isBellOnSchoolDay } from '@/utils/bell';
 import useClockStore from '@/stores/clock';
 import Period from '@/components/Period.vue';

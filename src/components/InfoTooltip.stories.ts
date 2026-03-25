@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { userEvent, expect, waitFor } from 'storybook/test'
-import InfoTooltip from './InfoTooltip.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { userEvent, expect, waitFor } from 'storybook/test';
+import InfoTooltip from './InfoTooltip.vue';
 
 const meta = {
   title: 'Components/InfoTooltip',
@@ -10,16 +10,16 @@ const meta = {
     icon: { control: 'object' },
   },
   args: {},
-} satisfies Meta<typeof InfoTooltip>
+} satisfies Meta<typeof InfoTooltip>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: (args) => ({
     components: { InfoTooltip },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="display: flex; justify-content: center; padding: 60px;">
@@ -30,23 +30,23 @@ export const Default: Story = {
     `,
   }),
   play: async ({ canvasElement }) => {
-    const trigger = canvasElement.querySelector('.info-icon') as HTMLElement
-    await expect(trigger).toBeInTheDocument()
+    const trigger = canvasElement.querySelector('.info-icon') as HTMLElement;
+    await expect(trigger).toBeInTheDocument();
 
-    await userEvent.hover(trigger)
-    await waitFor(() => expect(document.querySelector('.info-tooltip')).toBeInTheDocument())
-    await expect(document.querySelector('.info-tooltip')).toHaveTextContent('This is helpful tooltip information about the feature.')
+    await userEvent.hover(trigger);
+    await waitFor(() => expect(document.querySelector('.info-tooltip')).toBeInTheDocument());
+    await expect(document.querySelector('.info-tooltip')).toHaveTextContent('This is helpful tooltip information about the feature.');
 
-    await userEvent.unhover(trigger)
-    await waitFor(() => expect(document.querySelector('.info-tooltip')).not.toBeInTheDocument())
+    await userEvent.unhover(trigger);
+    await waitFor(() => expect(document.querySelector('.info-tooltip')).not.toBeInTheDocument());
   },
-}
+};
 
 export const WithLongText: Story = {
   render: (args) => ({
     components: { InfoTooltip },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="display: flex; justify-content: center; padding: 60px;">
@@ -57,13 +57,13 @@ export const WithLongText: Story = {
       </div>
     `,
   }),
-}
+};
 
 export const WithCustomTrigger: Story = {
   render: (args) => ({
     components: { InfoTooltip },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="display: flex; justify-content: center; padding: 60px;">
@@ -78,13 +78,13 @@ export const WithCustomTrigger: Story = {
       </div>
     `,
   }),
-}
+};
 
 export const InlineWithText: Story = {
   render: (args) => ({
     components: { InfoTooltip },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="padding: 60px; font-size: 14px; color: var(--primary, #333);">
@@ -95,4 +95,4 @@ export const InlineWithText: Story = {
       </div>
     `,
   }),
-}
+};

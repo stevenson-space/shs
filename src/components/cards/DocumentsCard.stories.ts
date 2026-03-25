@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { within, expect } from 'storybook/test'
-import { cardWidthDecorator } from './storybook_utils'
-import DocumentsCard from './DocumentsCard.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { within, expect } from 'storybook/test';
+import { cardWidthDecorator } from './storybook_utils';
+import DocumentsCard from './DocumentsCard.vue';
 
 const meta = {
   title: 'Cards/DocumentsCard',
@@ -15,18 +15,18 @@ const meta = {
       { title: 'Lab Report Template', link: 'https://example.com/lab.pdf' },
     ],
   },
-} satisfies Meta<typeof DocumentsCard>
+} satisfies Meta<typeof DocumentsCard>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await expect(canvas.getByText('AP Chemistry')).toBeInTheDocument()
-    await expect(canvas.getByText('Syllabus')).toBeInTheDocument()
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText('AP Chemistry')).toBeInTheDocument();
+    await expect(canvas.getByText('Syllabus')).toBeInTheDocument();
   },
-}
+};
 
 export const MultipleDocuments: Story = {
   args: {
@@ -38,4 +38,4 @@ export const MultipleDocuments: Story = {
       { title: 'Past Exams', link: 'https://example.com/exams.pdf' },
     ],
   },
-}
+};

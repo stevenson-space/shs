@@ -13,7 +13,7 @@
 <script setup lang="ts">
 import Card from '@/components/Card.vue';
 
-const { name, title } = defineProps<{ name: string; title?: string }>()
+const { name, title } = defineProps<{ name: string; title?: string }>();
 
 async function onSubmit(event: Event): Promise<void> {
   event.preventDefault();

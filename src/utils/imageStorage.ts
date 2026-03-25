@@ -26,7 +26,7 @@ function openDB(): Promise<IDBDatabase> {
 
 async function executeTransaction<T>(
   mode: IDBTransactionMode,
-  operation: (store: IDBObjectStore) => IDBRequest<T>
+  operation: (store: IDBObjectStore) => IDBRequest<T>,
 ): Promise<T> {
   const db = await openDB();
   return new Promise((resolve, reject) => {
@@ -74,9 +74,9 @@ function extractLocalImagePaths(obj: any, paths: Set<string> = new Set()): Set<s
     const filename = obj.replace('local://', '');
     paths.add(filename);
   } else if (Array.isArray(obj)) {
-    obj.forEach(item => extractLocalImagePaths(item, paths));
+    obj.forEach((item) => extractLocalImagePaths(item, paths));
   } else if (typeof obj === 'object') {
-    Object.values(obj).forEach(value => extractLocalImagePaths(value, paths));
+    Object.values(obj).forEach((value) => extractLocalImagePaths(value, paths));
   }
 
   return paths;
@@ -91,11 +91,11 @@ export async function cleanupOrphanedImages(themeStyling: any): Promise<void> {
     const allImages = await getAllImageNames();
     const referencedImages = extractLocalImagePaths(themeStyling);
 
-    const orphanedImages = allImages.filter(filename => !referencedImages.has(filename));
+    const orphanedImages = allImages.filter((filename) => !referencedImages.has(filename));
 
     if (orphanedImages.length > 0) {
       console.log('[ImageStorage] Cleaning up orphaned images:', orphanedImages);
-      await Promise.all(orphanedImages.map(filename => deleteImage(filename)));
+      await Promise.all(orphanedImages.map((filename) => deleteImage(filename)));
     }
   } catch (error) {
     console.error('[ImageStorage] Failed to cleanup orphaned images:', error);

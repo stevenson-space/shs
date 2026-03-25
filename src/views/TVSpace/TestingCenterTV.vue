@@ -2,7 +2,7 @@
   <div class="page">
     <div class="grid-container">
       <div class="period-card">
-        <ScrollablePeriodList ref="periodList" :tv-space="true"/>
+        <ScrollablePeriodList ref="periodList" :tv-space="true" />
       </div>
 
       <div class="time-card">
@@ -25,18 +25,18 @@
 </template>
 
 <script lang="ts">
-import useClockStore from '@/stores/clock'
+import { mapActions, mapState } from 'pinia';
+import useClockStore from '@/stores/clock';
 import { intoCountdownString } from '@/utils/countdown';
 import { formatTime, formatFullDate } from '@/utils/clock';
-import { mapActions, mapState } from "pinia";
-import { dateToSeconds } from "@/utils/util";
-import ScrollablePeriodList from "@/components/ScrollablePeriodList.vue";
+import { dateToSeconds } from '@/utils/util';
+import ScrollablePeriodList from '@/components/ScrollablePeriodList.vue';
 import useThemeStore from '@/stores/themes';
-import tvspaceTheme from "@/themes/tvspace.json";
+import tvspaceTheme from '@/themes/tvspace.json';
 
 export default {
   components: {
-    ScrollablePeriodList
+    ScrollablePeriodList,
   },
   mounted() {
     if (this.$route.query.settheme === 'true') {
@@ -46,16 +46,16 @@ export default {
   computed: {
     ...mapState(useClockStore, ['bell', 'date']),
     totalSecondsLeft(): number {
-      return this.bell.getSecondsUntilNextTarget() - dateToSeconds(this.date)
+      return this.bell.getSecondsUntilNextTarget() - dateToSeconds(this.date);
     },
   },
   methods: {
     ...mapActions(useThemeStore, ['setStyling']),
     formatFullDate,
     formatTime,
-    intoCountdownString
-  }
-}
+    intoCountdownString,
+  },
+};
 </script>
 
 <style scoped lang="sass">

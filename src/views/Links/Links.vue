@@ -5,7 +5,7 @@
       <image-text-card
         v-for="(link, index) in links"
         :key="link.url"
-        :style="{ 'animation-delay': index * .045 + 's'}"
+        :style="{ 'animation-delay': `${index * .045}s` }"
         :image="link.image"
         :text="link.name"
         :desc="link.desc"

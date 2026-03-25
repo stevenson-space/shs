@@ -1,14 +1,14 @@
 <template>
-    <card v-if="userSettingsStore.showPWCSchedule && showPWCCard" class="card">
-        <p class="title">PWC</p>
-        <div class="green-line"></div>
-        <div class="countdown">
-            <p v-if="isOpen">{{ countdownTime }}</p>
-            <p v-else>{{ openingStatus }}</p>
-           <p v-if="isOpen" class="time-text">Time remaining until closure</p>
-            <p v-else class="time-text">{{ timeStatus }}</p>
-        </div>
-    </card>
+  <card v-if="userSettingsStore.showPWCSchedule && showPWCCard" class="card">
+    <p class="title">PWC</p>
+    <div class="green-line" />
+    <div class="countdown">
+      <p v-if="isOpen">{{ countdownTime }}</p>
+      <p v-else>{{ openingStatus }}</p>
+      <p v-if="isOpen" class="time-text">Time remaining until closure</p>
+      <p v-else class="time-text">{{ timeStatus }}</p>
+    </div>
+  </card>
 </template>
 
 <script setup lang="ts">
@@ -54,9 +54,9 @@ const currentTime = computed(() => new Date(currentTimeMs.value));
 const showPWCCard = computed(() => {
   const scheduleDate = new Date(clockStore.date);
   const today = new Date();
-  return scheduleDate.getDate() === today.getDate() &&
-          scheduleDate.getMonth() === today.getMonth() &&
-          scheduleDate.getFullYear() === today.getFullYear();
+  return scheduleDate.getDate() === today.getDate()
+          && scheduleDate.getMonth() === today.getMonth()
+          && scheduleDate.getFullYear() === today.getFullYear();
 });
 
 const currentDay = computed(() => currentTime.value.getDay());
@@ -115,7 +115,7 @@ const openingStatus = computed(() => {
   return isOpen.value ? 'Open' : `Opens at ${formatTime(nextOpeningTime.value)}`;
 });
 
-const timeStatus = computed(() => isOpen.value ? 'Closes' : 'Closed');
+const timeStatus = computed(() => (isOpen.value ? 'Closes' : 'Closed'));
 
 const countdownTime = computed(() => {
   const targetTime = isOpen.value ? currentClosingTime.value : nextOpeningTime.value;

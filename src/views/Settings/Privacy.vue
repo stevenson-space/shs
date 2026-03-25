@@ -5,7 +5,7 @@
         title="Privacy Policy"
         src="https://www.iubenda.com/privacy-policy/40291148"
         frameBorder="0"
-      ></iframe>
+      />
     </div>
   </settings-section>
 </template>

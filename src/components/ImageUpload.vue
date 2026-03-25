@@ -108,7 +108,7 @@ const assetBrowserOpen = ref(false);
 
 const fileInput = useTemplateRef<HTMLInputElement>('fileInput');
 
-let unsubscribeImageCache: (() => void) | undefined = globalImageResolver.onUpdate((cache) => {
+const unsubscribeImageCache: (() => void) | undefined = globalImageResolver.onUpdate((cache) => {
   imageCache.value = cache;
 });
 
@@ -280,8 +280,8 @@ async function handleFileSelect(event: Event): Promise<void> {
 
     // Resize to max width of 1920px
     const maxWidth = 1920;
-    let width = img.width;
-    let height = img.height;
+    let { width } = img;
+    let { height } = img;
 
     if (width > maxWidth) {
       height = (maxWidth / width) * height;

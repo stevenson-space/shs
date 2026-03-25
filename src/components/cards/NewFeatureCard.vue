@@ -1,12 +1,12 @@
-<template xmlns="http://www.w3.org/1999/html">
+<template>
   <timed-card startTime="March 8, 2026" endTime="April 1, 2026">
     <div class="container">
-      <div class="title"></div>
+      <div class="title" />
       <div class="message">
-        stevenson.space is completely student run, and we're looking for new maintainers!<br/>
-        <br/>
-        If you or someone you know has programming experience and would be a great fit, please apply!<br/><b>Due 03/31.</b><br/>
-        <br/>
+        stevenson.space is completely student run, and we're looking for new maintainers!<br />
+        <br />
+        If you or someone you know has programming experience and would be a great fit, please apply!<br /><b>Due 03/31.</b><br />
+        <br />
         - Joshua F. ('26)
       </div>
       <div class="chips">
@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { faFileLines } from "@fortawesome/free-solid-svg-icons";
+import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 import TimedCard from './TimedCard.vue';
 import LinkChip from './LinkChip.vue';
 </script>

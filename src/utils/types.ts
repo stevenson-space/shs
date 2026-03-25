@@ -73,7 +73,7 @@ export type ThemeParticles = {
 };
 
 export type ThemeStyling = {
-  base?: "light" | "dark";
+  base?: 'light' | 'dark';
   background?: string;
   secondaryBackground?: string;
   accent?: string;
@@ -84,14 +84,14 @@ export type ThemeStyling = {
 };
 
 export type ThemeRecommended = {
-  timing: "always" | "never" | "season" | string;
+  timing: 'always' | 'never' | 'season' | string;
   // the message on the homepage advertising the theme
   message?: string,
 };
 
 export type Theme = {
   metadata: ThemeMetadata;
-  visibility: "show" | "draft" | "hide";
+  visibility: 'show' | 'draft' | 'hide';
   recommended?: ThemeRecommended;
   seasonalDates?: string;
   styling: ThemeStyling;

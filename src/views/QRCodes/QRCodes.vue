@@ -4,90 +4,90 @@
     <div class="qr-container">
       <card class="qr-card">
         <div class="qr-content">
-        <div class="qr-left">
-          <div class="qr-preview">
-            <div v-if="showQR" class="qr-image">
-              <QRCodeVue3
-                :key="qrKey"
-                :image="logo"
-                :width="300"
-                :height="300"
-                :margin="10"
-                :value="url"
-                :qrOptions="{ typeNumber: 0, mode: 'Byte', errorCorrectionLevel: 'Q' }"
-                :imageOptions="{ hideBackgroundDots: true, imageSize: 0.4 }"
-                :dotsOptions="{ type: 'rounded', color: qrColor }"
-                :backgroundOptions="{ color: '#ffffff' }"
-                :cornersSquareOptions="{ type: 'extra-rounded', color: qrColor }"
-                :cornersDotOptions="{ type: 'circle', color: qrColor }"
-                fileExt="png"
+          <div class="qr-left">
+            <div class="qr-preview">
+              <div v-if="showQR" class="qr-image">
+                <QRCodeVue3
+                  :key="qrKey"
+                  :image="logo"
+                  :width="300"
+                  :height="300"
+                  :margin="10"
+                  :value="url"
+                  :qrOptions="{ typeNumber: 0, mode: 'Byte', errorCorrectionLevel: 'Q' }"
+                  :imageOptions="{ hideBackgroundDots: true, imageSize: 0.4 }"
+                  :dotsOptions="{ type: 'rounded', color: qrColor }"
+                  :backgroundOptions="{ color: '#ffffff' }"
+                  :cornersSquareOptions="{ type: 'extra-rounded', color: qrColor }"
+                  :cornersDotOptions="{ type: 'circle', color: qrColor }"
+                  fileExt="png"
+                />
+              </div>
+              <div v-else class="qr-empty">
+                <font-awesome-icon :icon="icons.faQrcode" style="font-size:40px" />
+                <p>Generate QR Code</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="qr-right">
+            <div class="field">
+              <color-picker
+                label="QR Code Color"
+                v-model="qrColor"
+                :allow-inherit="false"
+                :disable-inline-button="true"
               />
             </div>
-            <div v-else class="qr-empty">
-              <font-awesome-icon :icon="icons.faQrcode"  style="font-size:40px"/>
-              <p>Generate QR Code</p>
+
+            <div class="field">
+              <label>Link</label>
+              <input
+                v-model="url"
+                placeholder="https://stevenson.space"
+              />
+            </div>
+
+            <div class="save-info">
+              <font-awesome-icon :icon="icons.faFileExport" />
+              <div>
+                <strong>To save:</strong>
+                <span>Drag & drop or tap and hold (mobile)</span>
+              </div>
+            </div>
+
+            <div v-if="url.length > 40" class="tip">
+              💡 For long links, try <a href="https://bitly.com/" target="_blank" rel="noopener noreferrer">Bitly</a>
+            </div>
+
+            <div v-if="error" class="error">
+              {{ error }}
+            </div>
+
+            <div v-if="qrColor !== defaultColor" class="buttons">
+              <rounded-button
+                @click="resetColor"
+                text="Reset Color"
+                :circular="true"
+                class="btn-reset"
+              />
             </div>
           </div>
         </div>
-
-        <div class="qr-right">
-          <div class="field">
-            <color-picker
-              label="QR Code Color"
-              v-model="qrColor"
-              :allow-inherit="false"
-              :disable-inline-button="true"
-            />
-          </div>
-
-          <div class="field">
-            <label>Link</label>
-            <input
-              v-model="url"
-              placeholder="https://stevenson.space"
-            />
-          </div>
-
-          <div class="save-info">
-            <font-awesome-icon :icon="icons.faFileExport" />
-            <div>
-              <strong>To save:</strong>
-              <span>Drag & drop or tap and hold (mobile)</span>
-            </div>
-          </div>
-
-          <div v-if="url.length > 40" class="tip">
-            💡 For long links, try <a href="https://bitly.com/" target="_blank">Bitly</a>
-          </div>
-
-          <div v-if="error" class="error">
-            {{ error }}
-          </div>
-
-          <div v-if="qrColor !== defaultColor" class="buttons">
-            <rounded-button
-              @click="resetColor"
-              text="Reset Color"
-              :circular="true"
-              class="btn-reset"
-            />
-          </div>
-        </div>
-      </div>
       </card>
     </div>
   </div>
 </template>
 
 <script>
-import PlainHeader from '@/components/PlainHeader.vue';
 import QRCodeVue3 from 'space-vue3-qrcode';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faQrcode, faFileExport } from '@fortawesome/free-solid-svg-icons';
+import PlainHeader from '@/components/PlainHeader.vue';
 import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ColorPicker from '@/components/ColorPicker.vue';
 import logo from '@/assets/QRCodeLogo.png';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faQrcode, faFileExport } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   components: {

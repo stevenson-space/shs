@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { fn, expect, within } from 'storybook/test'
-import ThemeCard from './ThemeCard.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { fn, expect, within } from 'storybook/test';
+import ThemeCard from './ThemeCard.vue';
 
 const mockTheme = {
   metadata: {
@@ -12,7 +12,7 @@ const mockTheme = {
     accent: '#3b82f6',
     background: '#1e3a5f',
   },
-}
+};
 
 const meta = {
   title: 'Components/ThemeCard',
@@ -25,16 +25,16 @@ const meta = {
     theme: mockTheme,
     onClick: fn(),
   },
-} satisfies Meta<typeof ThemeCard>
+} satisfies Meta<typeof ThemeCard>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: (args) => ({
     components: { ThemeCard },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="width: 260px; padding: 16px;">
@@ -43,19 +43,19 @@ export const Default: Story = {
     `,
   }),
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const name = canvas.getByText('Ocean Blue')
-    await expect(name).toBeVisible()
-    const author = canvas.getByText('John Doe')
-    await expect(author).toBeVisible()
+    const canvas = within(canvasElement);
+    const name = canvas.getByText('Ocean Blue');
+    await expect(name).toBeVisible();
+    const author = canvas.getByText('John Doe');
+    await expect(author).toBeVisible();
   },
-}
+};
 
 export const WithDescription: Story = {
   render: (args) => ({
     components: { ThemeCard },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="width: 260px; padding: 16px;">
@@ -76,13 +76,13 @@ export const WithDescription: Story = {
       },
     },
   },
-}
+};
 
 export const WithSeasonalDates: Story = {
   render: (args) => ({
     components: { ThemeCard },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="width: 260px; padding: 16px;">
@@ -103,13 +103,13 @@ export const WithSeasonalDates: Story = {
       seasonalDates: '12/1-12/31',
     },
   },
-}
+};
 
 export const NoDescription: Story = {
   render: (args) => ({
     components: { ThemeCard },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="width: 260px; padding: 16px;">
@@ -129,7 +129,7 @@ export const NoDescription: Story = {
       },
     },
   },
-}
+};
 
 export const Grid: Story = {
   render: (args) => ({
@@ -152,8 +152,8 @@ export const Grid: Story = {
           metadata: { name: 'Purple Night', author: 'Sam Patel' },
           styling: { accent: '#8b5cf6', background: '#2e1065' },
         },
-      ]
-      return { args, themes }
+      ];
+      return { args, themes };
     },
     template: `
       <div style="display: grid; grid-template-columns: repeat(2, 220px); gap: 16px; padding: 16px;">
@@ -161,4 +161,4 @@ export const Grid: Story = {
       </div>
     `,
   }),
-}
+};

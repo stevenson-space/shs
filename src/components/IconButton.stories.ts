@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { faStar, faPencil, faTrash } from '@fortawesome/free-solid-svg-icons'
-import { fn, userEvent, within, expect } from 'storybook/test'
-import IconButton from './IconButton.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { faStar, faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { fn, userEvent, within, expect } from 'storybook/test';
+import IconButton from './IconButton.vue';
 
 const meta = {
   title: 'Components/IconButton',
@@ -16,16 +16,16 @@ const meta = {
     ariaLabel: 'Star',
     onClick: fn(),
   },
-} satisfies Meta<typeof IconButton>
+} satisfies Meta<typeof IconButton>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: (args) => ({
     components: { IconButton },
     setup() {
-      return { args, faStar }
+      return { args, faStar };
     },
     template: `
       <IconButton :disabled="args.disabled" :aria-label="args.ariaLabel" @click="args.onClick">
@@ -34,20 +34,20 @@ export const Default: Story = {
     `,
   }),
   play: async ({ canvasElement, args }) => {
-    const canvas = within(canvasElement)
-    const button = canvas.getByRole('button') as HTMLButtonElement
-    await expect(button).toBeInTheDocument()
-    await expect(button).not.toBeDisabled()
-    await userEvent.click(button)
-    await expect(args.onClick).toHaveBeenCalledOnce()
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button') as HTMLButtonElement;
+    await expect(button).toBeInTheDocument();
+    await expect(button).not.toBeDisabled();
+    await userEvent.click(button);
+    await expect(args.onClick).toHaveBeenCalledOnce();
   },
-}
+};
 
 export const Disabled: Story = {
   render: (args) => ({
     components: { IconButton },
     setup() {
-      return { args, faStar }
+      return { args, faStar };
     },
     template: `
       <IconButton :disabled="args.disabled" :aria-label="args.ariaLabel" @click="args.onClick">
@@ -56,13 +56,13 @@ export const Disabled: Story = {
     `,
   }),
   args: { disabled: true },
-}
+};
 
 export const WithPencilIcon: Story = {
   render: (args) => ({
     components: { IconButton },
     setup() {
-      return { args, faPencil }
+      return { args, faPencil };
     },
     template: `
       <IconButton :disabled="args.disabled" aria-label="Edit" @click="args.onClick">
@@ -70,14 +70,13 @@ export const WithPencilIcon: Story = {
       </IconButton>
     `,
   }),
-}
-
+};
 
 export const MultipleButtons: Story = {
   render: (args) => ({
     components: { IconButton },
     setup() {
-      return { args, faStar, faPencil, faTrash }
+      return { args, faStar, faPencil, faTrash };
     },
     template: `
       <div style="display: flex; gap: 8px;">
@@ -93,4 +92,4 @@ export const MultipleButtons: Story = {
       </div>
     `,
   }),
-}
+};

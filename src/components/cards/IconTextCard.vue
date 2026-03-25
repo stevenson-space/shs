@@ -25,9 +25,9 @@ const { icon, text, link = '', linkProps = {}, invert = false, iconProps = {} } 
   linkProps?: Record<string, any>;
   invert?: boolean;
   iconProps?: Record<string, any>;
-}>()
+}>();
 
-const emit = defineEmits<{ click: [] }>()
+const emit = defineEmits<{ click: [] }>();
 
 function handleClick(): void {
   if (!link) {

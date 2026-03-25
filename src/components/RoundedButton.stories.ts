@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { fn, within, expect } from 'storybook/test'
-import { faPlus, faStar, faTrash } from '@fortawesome/free-solid-svg-icons'
-import RoundedButton from './RoundedButton.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { fn, within, expect } from 'storybook/test';
+import { faPlus, faStar, faTrash } from '@fortawesome/free-solid-svg-icons';
+import RoundedButton from './RoundedButton.vue';
 
 const meta = {
   title: 'Components/RoundedButton',
@@ -22,31 +22,31 @@ const meta = {
     showColor: true,
     onClick: fn(),
   },
-} satisfies Meta<typeof RoundedButton>
+} satisfies Meta<typeof RoundedButton>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await expect(canvas.getByText('Button')).toBeInTheDocument()
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText('Button')).toBeInTheDocument();
   },
-}
+};
 
 export const WithIcon: Story = {
   args: {
     text: 'Add Item',
     icon: faPlus,
   },
-}
+};
 
 export const Inverted: Story = {
   args: {
     text: 'Inverted',
     invert: true,
   },
-}
+};
 
 export const InvertedWithIcon: Story = {
   args: {
@@ -54,21 +54,21 @@ export const InvertedWithIcon: Story = {
     icon: faStar,
     invert: true,
   },
-}
+};
 
 export const NotCircular: Story = {
   args: {
     text: 'Submit',
     circular: false,
   },
-}
+};
 
 export const NoColor: Story = {
   args: {
     text: 'Neutral',
     showColor: false,
   },
-}
+};
 
 export const DestructiveAction: Story = {
   args: {
@@ -76,4 +76,4 @@ export const DestructiveAction: Story = {
     icon: faTrash,
     invert: true,
   },
-}
+};

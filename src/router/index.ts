@@ -5,142 +5,142 @@ import {
   RouteComponent,
   RouteLocationNormalized,
   NavigationGuardNext,
-} from "vue-router";
-import useAuthenticationStore from "@/stores/authentication";
+} from 'vue-router';
+import useAuthenticationStore from '@/stores/authentication';
 
-const Home: RouteComponent = () => import("@/views/Home/Home.vue");
-const GpaCalculator: RouteComponent = () => import("@/views/GpaCalculator/GpaCalculator.vue");
-const BellSchedules: RouteComponent = () => import("@/views/Bell Schedules/BellSchedules.vue");
-const Calendar: RouteComponent = () => import("@/views/Calendar/Calendar.vue");
-const Links: RouteComponent = () => import("@/views/Links/Links.vue");
-const Settings: RouteComponent = () => import("@/views/Settings/Settings.vue");
-const Tools: RouteComponent = () => import("@/views/Tools/Tools.vue");
-const Documents: RouteComponent = () => import("@/views/Documents/Documents.vue");
-const AddSchedule: RouteComponent = () => import("@/views/Settings/Add Schedule/AddSchedule.vue");
-const Login: RouteComponent = () => import("@/views/Login/Login.vue");
-const Code: RouteComponent = () => import("@/views/Code/Code.vue");
-const QRCode: RouteComponent = () => import("@/views/QRCodes/QRCodes.vue");
-const GetHelp: RouteComponent = () => import("@/views/GetHelp/GetHelp.vue");
-const Jukebox: RouteComponent = () => import("@/views/Jukebox/Jukebox.vue");
-const LiveRedirect: RouteComponent = () => import("@/views/Live/Live.vue"); // redirect to shs youtube livestreams
-const ApplicationRedirect: RouteComponent = () => import("@/views/Apply/Apply.vue"); // redirect to dedicated contributor application
-const SnowballRedirect: RouteComponent = () => import("@/views/Snowball/Snowball.vue"); // redirect to snowball url (it's confusing for the club -- helping them out)
-const TVSpace: RouteComponent = () => import("@/views/TVSpace/TVSpace.vue");
-const TestingCenterTV: RouteComponent = () => import("@/views/TVSpace/TestingCenterTV.vue");
-const RawCountdown: RouteComponent = () => import("@/views/Raw/Countdown.vue");
+const Home: RouteComponent = () => import('@/views/Home/Home.vue');
+const GpaCalculator: RouteComponent = () => import('@/views/GpaCalculator/GpaCalculator.vue');
+const BellSchedules: RouteComponent = () => import('@/views/Bell Schedules/BellSchedules.vue');
+const Calendar: RouteComponent = () => import('@/views/Calendar/Calendar.vue');
+const Links: RouteComponent = () => import('@/views/Links/Links.vue');
+const Settings: RouteComponent = () => import('@/views/Settings/Settings.vue');
+const Tools: RouteComponent = () => import('@/views/Tools/Tools.vue');
+const Documents: RouteComponent = () => import('@/views/Documents/Documents.vue');
+const AddSchedule: RouteComponent = () => import('@/views/Settings/Add Schedule/AddSchedule.vue');
+const Login: RouteComponent = () => import('@/views/Login/Login.vue');
+const Code: RouteComponent = () => import('@/views/Code/Code.vue');
+const QRCode: RouteComponent = () => import('@/views/QRCodes/QRCodes.vue');
+const GetHelp: RouteComponent = () => import('@/views/GetHelp/GetHelp.vue');
+const Jukebox: RouteComponent = () => import('@/views/Jukebox/Jukebox.vue');
+const LiveRedirect: RouteComponent = () => import('@/views/Live/Live.vue'); // redirect to shs youtube livestreams
+const ApplicationRedirect: RouteComponent = () => import('@/views/Apply/Apply.vue'); // redirect to dedicated contributor application
+const SnowballRedirect: RouteComponent = () => import('@/views/Snowball/Snowball.vue'); // redirect to snowball url (it's confusing for the club -- helping them out)
+const TVSpace: RouteComponent = () => import('@/views/TVSpace/TVSpace.vue');
+const TestingCenterTV: RouteComponent = () => import('@/views/TVSpace/TestingCenterTV.vue');
+const RawCountdown: RouteComponent = () => import('@/views/Raw/Countdown.vue');
 
 type EditScheduleProps = {
   scheduleToEdit: string;
-  mode: "all" | "edit";
+  mode: 'all' | 'edit';
 };
 
 type Position = { left: number; top: number };
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
+    path: '/',
     component: Home,
   },
   {
-    path: "/bellschedules",
+    path: '/bellschedules',
     component: BellSchedules,
   },
   {
-    path: "/calendar",
+    path: '/calendar',
     component: Calendar,
   },
   {
-    path: "/GpaCalculator",
+    path: '/GpaCalculator',
     component: GpaCalculator,
   },
   {
-    path: "/links",
+    path: '/links',
     component: Links,
   },
   {
-    path: "/settings",
+    path: '/settings',
     component: Settings,
   },
   {
-    path: "/add-schedule",
+    path: '/add-schedule',
     component: AddSchedule,
   },
   {
-    name: "editSchedules",
-    path: "/edit-schedule/:scheduleToEdit",
+    name: 'editSchedules',
+    path: '/edit-schedule/:scheduleToEdit',
     component: AddSchedule,
     props: (route): EditScheduleProps => ({
       scheduleToEdit:
-        typeof route.params.scheduleToEdit === "string"
+        typeof route.params.scheduleToEdit === 'string'
           ? route.params.scheduleToEdit
           : route.params.scheduleToEdit[0],
-      mode: "edit",
+      mode: 'edit',
     }),
   },
   {
-    name: "tools",
-    path: "/tools",
+    name: 'tools',
+    path: '/tools',
     component: Tools,
   },
   {
-    name: "documents",
-    path: "/documents",
+    name: 'documents',
+    path: '/documents',
     component: Documents,
     meta: { requiresAuth: false },
   },
   {
-    name: "login",
-    path: "/login",
+    name: 'login',
+    path: '/login',
     component: Login,
   },
   {
-    name: "code",
-    path: "/code",
+    name: 'code',
+    path: '/code',
     component: Code,
   },
   {
-    name: "QRCode",
-    path: "/qr",
+    name: 'QRCode',
+    path: '/qr',
     component: QRCode,
   },
   {
-    name: "GetHelp",
-    path: "/getHelp",
+    name: 'GetHelp',
+    path: '/getHelp',
     component: GetHelp,
   },
   {
-    name: "Jukebox",
-    path: "/jukebox",
+    name: 'Jukebox',
+    path: '/jukebox',
     component: Jukebox,
   },
   {
-    name: "Live",
-    path: "/live",
+    name: 'Live',
+    path: '/live',
     component: LiveRedirect,
   },
   {
-    name: "Apply",
-    path: "/apply",
+    name: 'Apply',
+    path: '/apply',
     component: ApplicationRedirect,
   },
   {
-    name: "Snowball",
-    path: "/snowball",
+    name: 'Snowball',
+    path: '/snowball',
     component: SnowballRedirect,
   },
   {
-    name: "TVSpace",
-  path: "/tvspace",
+    name: 'TVSpace',
+    path: '/tvspace',
     component: TVSpace,
   },
   {
-    name: "TestingCenterTV",
-    path: "/testing-center",
+    name: 'TestingCenterTV',
+    path: '/testing-center',
     component: TestingCenterTV,
   },
   {
-    name: "RawCountdown",
-    path: "/raw/countdown",
+    name: 'RawCountdown',
+    path: '/raw/countdown',
     component: RawCountdown,
   },
 ];
@@ -169,7 +169,7 @@ router.beforeEach(
       } else {
         // if not, proxy this route through the login component
         // inform the login component where to go next
-        next({ name: "login", query: { to: to.path.replace("/", "") } });
+        next({ name: 'login', query: { to: to.path.replace('/', '') } });
       }
     } else {
       // otherwise, just continue through

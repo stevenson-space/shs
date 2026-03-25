@@ -2,14 +2,15 @@
   <card>
     <div class="classname">{{ className }}</div>
     <div class="books">
-      <a v-for="doc in documents" :href="doc.link" target="_blank" :key="doc.title">{{ doc.title }}</a>
+      <a v-for="doc in documents" :key="doc.title" :href="doc.link" target="_blank" rel="noopener noreferrer">{{ doc.title }}</a>
     </div>
   </card>
 </template>
 
 <script setup lang="ts">
 import Card from '@/components/Card.vue';
-const { className, documents } = defineProps<{ className: string; documents: { title: string; link: string }[] }>()
+
+const { className, documents } = defineProps<{ className: string; documents: { title: string; link: string }[] }>();
 </script>
 
 <style lang="sass" scoped>

@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { within, expect } from 'storybook/test'
-import { faInfoCircle, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
-import WhatIsThis from './WhatIsThis.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { within, expect } from 'storybook/test';
+import { faInfoCircle, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import WhatIsThis from './WhatIsThis.vue';
 
 const meta = {
   title: 'Components/WhatIsThis',
@@ -13,16 +13,16 @@ const meta = {
   args: {
     icon: faQuestionCircle,
   },
-} satisfies Meta<typeof WhatIsThis>
+} satisfies Meta<typeof WhatIsThis>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: (args) => ({
     components: { WhatIsThis },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="padding: 60px;">
@@ -33,16 +33,16 @@ export const Default: Story = {
     `,
   }),
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await expect(canvas.getByText(/helpful tooltip/)).toBeInTheDocument()
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText(/helpful tooltip/)).toBeInTheDocument();
   },
-}
+};
 
 export const WithInfoIcon: Story = {
   render: (args) => ({
     components: { WhatIsThis },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="padding: 60px;">
@@ -55,13 +55,13 @@ export const WithInfoIcon: Story = {
   args: {
     icon: faInfoCircle,
   },
-}
+};
 
 export const LongTooltip: Story = {
   render: (args) => ({
     components: { WhatIsThis },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <div style="padding: 60px;">
@@ -72,4 +72,4 @@ export const LongTooltip: Story = {
       </div>
     `,
   }),
-}
+};

@@ -1,5 +1,5 @@
 <template>
-  <a class="link-chip" :href="href" target="_blank" rel="noopener noreferrer" :style="{ backgroundColor: background, color: color }">
+  <a class="link-chip" :href="href" target="_blank" rel="noopener noreferrer" :style="{ backgroundColor: background, color }">
     <font-awesome-icon v-if="icon" :icon="icon" class="icon" />
     <img v-else :src="faviconUrl" :alt="alt || 'favicon'" />
     <span>{{ label }}</span>
@@ -17,11 +17,9 @@ const { href, label, favicon, icon, background = '#fff', color = '#333', alt = '
   background?: string;
   color?: string;
   alt?: string;
-}>()
+}>();
 
-const faviconUrl = computed(() =>
-  favicon || `https://www.google.com/s2/favicons?sz=64&domain_url=${href}`
-)
+const faviconUrl = computed(() => favicon || `https://www.google.com/s2/favicons?sz=64&domain_url=${href}`);
 </script>
 
 <style lang="sass" scoped>

@@ -85,7 +85,7 @@ export default {
   .container
     max-width: 100%
     background: var(--background)
-    border-radius: 15px 15px 0 0 
+    border-radius: 15px 15px 0 0
     position: relative
     top: 15px
     padding: 12px 12px
@@ -93,7 +93,7 @@ export default {
     margin: auto
     &.full-screen
       max-width: 100%
-      border-radius: 30px 30px 0px 0px 
+      border-radius: 30px 30px 0px 0px
       align-items: center
       top: 0px
 

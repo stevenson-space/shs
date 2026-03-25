@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { ref } from 'vue'
-import { fn, userEvent, within, expect, waitFor } from 'storybook/test'
-import ConfirmPopup from './ConfirmPopup.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { ref } from 'vue';
+import { fn, userEvent, within, expect, waitFor } from 'storybook/test';
+import ConfirmPopup from './ConfirmPopup.vue';
 
 const meta = {
   title: 'Components/ConfirmPopup',
@@ -19,22 +19,22 @@ const meta = {
     onOk: fn(),
     onCancel: fn(),
   },
-} satisfies Meta<typeof ConfirmPopup>
+} satisfies Meta<typeof ConfirmPopup>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: (args) => ({
     components: { ConfirmPopup },
     setup() {
-      const show = ref(true)
+      const show = ref(true);
       return {
         args,
         show,
-        onOk: () => { show.value = false; args.onOk?.() },
-        onCancel: () => { show.value = false; args.onCancel?.() },
-      }
+        onOk: () => { show.value = false; args.onOk?.(); },
+        onCancel: () => { show.value = false; args.onCancel?.(); },
+      };
     },
     template: `
       <ConfirmPopup :show="show" :ok-text="args.okText" :cancel-text="args.cancelText" @ok="onOk" @cancel="onCancel">
@@ -45,29 +45,29 @@ export const Default: Story = {
     `,
   }),
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const text = canvas.getByText(/Are you sure/)
-    await waitFor(() => expect(text).toBeVisible())
+    const canvas = within(canvasElement);
+    const text = canvas.getByText(/Are you sure/);
+    await waitFor(() => expect(text).toBeVisible());
 
-    const okButton = canvas.getByText('OK')
-    await expect(okButton).toBeVisible()
+    const okButton = canvas.getByText('OK');
+    await expect(okButton).toBeVisible();
 
-    const cancelButton = canvas.getByText('Cancel')
-    await expect(cancelButton).toBeVisible()
+    const cancelButton = canvas.getByText('Cancel');
+    await expect(cancelButton).toBeVisible();
   },
-}
+};
 
 export const OkOnly: Story = {
   render: (args) => ({
     components: { ConfirmPopup },
     setup() {
-      const show = ref(true)
+      const show = ref(true);
       return {
         args,
         show,
-        onOk: () => { show.value = false; args.onOk?.() },
-        onCancel: () => { show.value = false; args.onCancel?.() },
-      }
+        onOk: () => { show.value = false; args.onOk?.(); },
+        onCancel: () => { show.value = false; args.onCancel?.(); },
+      };
     },
     template: `
       <ConfirmPopup :show="show" :ok-text="args.okText" :cancel-text="args.cancelText" @ok="onOk" @cancel="onCancel">
@@ -81,19 +81,19 @@ export const OkOnly: Story = {
     cancelText: '',
     okText: 'OK',
   },
-}
+};
 
 export const CustomButtonLabels: Story = {
   render: (args) => ({
     components: { ConfirmPopup },
     setup() {
-      const show = ref(true)
+      const show = ref(true);
       return {
         args,
         show,
-        onOk: () => { show.value = false; args.onOk?.() },
-        onCancel: () => { show.value = false; args.onCancel?.() },
-      }
+        onOk: () => { show.value = false; args.onOk?.(); },
+        onCancel: () => { show.value = false; args.onCancel?.(); },
+      };
     },
     template: `
       <ConfirmPopup :show="show" :ok-text="args.okText" :cancel-text="args.cancelText" @ok="onOk" @cancel="onCancel">
@@ -107,19 +107,19 @@ export const CustomButtonLabels: Story = {
     okText: 'Discard',
     cancelText: 'Keep Editing',
   },
-}
+};
 
 export const Hidden: Story = {
   render: (args) => ({
     components: { ConfirmPopup },
     setup() {
-      const show = ref(false)
+      const show = ref(false);
       return {
         args,
         show,
-        onOk: () => { show.value = false; args.onOk?.() },
-        onCancel: () => { show.value = false; args.onCancel?.() },
-      }
+        onOk: () => { show.value = false; args.onOk?.(); },
+        onCancel: () => { show.value = false; args.onCancel?.(); },
+      };
     },
     template: `
       <div>
@@ -133,4 +133,4 @@ export const Hidden: Story = {
     `,
   }),
   args: { show: false },
-}
+};

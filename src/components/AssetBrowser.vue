@@ -44,12 +44,14 @@ import useThemeStore from '@/stores/themes';
 
 const headerImageModules = import.meta.glob('@/themes/assets/header-images/*', {
   eager: true,
-  as: 'url',
+  query: '?url',
+  import: 'default',
 });
 
 const particleImageModules = import.meta.glob('@/themes/assets/particles/**/*', {
   eager: true,
-  as: 'url',
+  query: '?url',
+  import: 'default',
 });
 
 const { isOpen = false, folder = 'header-images' } = defineProps<{
@@ -72,9 +74,7 @@ const modalStyle = computed(() => {
   };
 });
 
-const modalTitle = computed(() => {
-  return folder === 'particles' ? 'Browse Particle Images' : 'Browse Header Images';
-});
+const modalTitle = computed(() => (folder === 'particles' ? 'Browse Particle Images' : 'Browse Header Images'));
 
 const allImages = computed(() => {
   const images: any[] = [];
