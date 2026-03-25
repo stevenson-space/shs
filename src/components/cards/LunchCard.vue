@@ -13,6 +13,11 @@
         </div>
       </div>
     </div>
+    <div class="nutrition-link-row">
+      <custom-link class="nutrition-link" :href="{ name: 'nutrition' }">
+        Explore Nutrition Menu
+      </custom-link>
+    </div>
   </card>
 </template>
 
@@ -22,6 +27,7 @@ import getLunch from '@/utils/lunch';
 import useClockStore from '@/stores/clock';
 import Card from '@/components/Card.vue';
 import WhatIsThis from '@/components/WhatIsThis.vue';
+import CustomLink from '@/components/CustomLink.vue';
 
 const clockStore = useClockStore();
 
@@ -54,10 +60,23 @@ const noLunchData = computed(() => lunch.value === null);
     font-size: .85em
     text-align: center
 
-  .item
+.item
     text-align: center
     margin: auto
     margin-top: 5px
+
+.nutrition-link-row
+  padding: 12px 8px 14px
+  border-top: var(--accent) 1px solid
+
+.nutrition-link
+  width: fit-content
+  margin: 0 auto
+  padding: 8px 14px
+  border-radius: 999px
+  border: 1px solid var(--accent)
+  color: var(--accent)
+  font-weight: 700
 
 
 .lunch element

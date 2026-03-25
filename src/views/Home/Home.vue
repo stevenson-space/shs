@@ -22,6 +22,7 @@
         <weather-card />
         <pwc-card/>
         <ilc-card />
+        <nutrition-card />
         <lunch-card />
         <upcoming-events-card />
 
@@ -48,6 +49,7 @@
         <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
 
         <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" />
+        <icon-text-card :icon="icons.faClipboardCheck" text="AP Exams" link="ap" :invert="true" />
 
         <icon-text-card :icon="icons.faGear" text="Settings" link="settings" :invert="true" />
     </card-container>
@@ -57,6 +59,7 @@
 <script>
 import {
   faBell,
+  faClipboardCheck,
   faLink,
   faFileLines,
   faCalendarDays,
@@ -74,6 +77,7 @@ import IconTextCard from "@/components/cards/IconTextCard.vue";
 import WeatherCard from "@/components/cards/WeatherCard.vue";
 import PwcCard from "@/components/cards/PwcCard.vue";
 import IlcCard from "@/components/cards/IlcCard.vue";
+import NutritionCard from "@/components/cards/NutritionCard.vue";
 import ScheduleCard from "@/components/cards/ScheduleCard.vue";
 import HolidayCard from "@/components/cards/HolidayCard.vue";
 import ContributeCard from "@/components/cards/ContributeCard.vue";
@@ -99,6 +103,7 @@ export default {
     WeatherCard,
     PwcCard,
     IlcCard,
+    NutritionCard,
     HolidayCard,
     ContributeCard,
     NewThemeCard,
@@ -113,6 +118,7 @@ export default {
     return {
       icons: {
         faBell,
+        faClipboardCheck,
         faLink,
         faFileLines,
         faCalendarDays,
