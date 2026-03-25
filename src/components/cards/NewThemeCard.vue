@@ -82,16 +82,6 @@ function dismiss(): void {
   isDismissed.value = true // dismisses the entire card if "x" pressed once
 }
 
-onMounted(async () => {
-  themes.value = await loadAllThemes();
-
-  // auto-rotate every 10 seconds if multiple active themes
-  if (activeThemes.value.length > 1) {
-    setInterval(() => {
-      nextTheme();
-    }, 10000);
-  }
-});
 </script>
 
 <style lang="sass" scoped>
@@ -100,7 +90,8 @@ onMounted(async () => {
   flex-direction: column
   align-items: center
   gap: 10px
-  padding: 15px
+  padding: 0 8px
+  padding-bottom: 5px
   position: relative
 
 .row
@@ -144,7 +135,6 @@ onMounted(async () => {
     opacity: 1
 
 .divider
-  width: 90%
   height: 1px
   background-color: var(--accent)
   margin: 3px 0
