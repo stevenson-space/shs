@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "name": "April Fools' Day!",
+    "author": "Allan H. ('28)",
+    "description": "A calming pastel theme inspired by ocean tones."
+  },
+  "visibility": "show",
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The New Ocean Theme 🪸"
+  },
+  "seasonalDates": "03/29-04/04",
+  "styling": {
+    "base": "light",
+    "background": "#F5F5DC",
+    "secondaryBackground": "#91a406",
+    "accent": "#dcd281",
+    "text": {
+      "primary": "#624d33",
+      "secondary": "#ff00cd"
+    },
+    "header": {
+      "background": "#FF5F1F",
+      "scheduleBar": "white"
+    },
+    "iconCards": {
+      "regular": "#CC8899",
+      "invert": "#DFFF00"
+    },
+    "particles": {
+      "images": [
+        "assets://particles/april-fools/april_first.png",
+        "assets://particles/april-fools/banana_peel.png",
+        "assets://particles/april-fools/clown_hat.png",
+        "assets://particles/april-fools/surpise_box.png"
+      ],
+      "speed": 3.5,
+      "count": 75,
+      "size": 25,
+      "opacity": 1,
+      "windPower": 1
+    }
+  }
+}
