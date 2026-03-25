@@ -6,6 +6,7 @@ import TestCard from './TestCard.vue'
 import LinkCard from './LinkCard.vue'
 import PairCard from './PairCard.vue'
 import WeatherWidget from './WeatherWidget/WeatherWidget.vue'
+import CountdownWidget from './CountdownWidget/CountdownWidget.vue'
 
 const meta = {
   title: 'Beta/CardContainer',
@@ -71,13 +72,15 @@ export const FullLayout: Story = {
     return () => { window.fetch = original }
   },
   render: () => ({
-    components: { CardContainer, TestCard, PairCard, LinkCard, WeatherWidget },
+    components: { CardContainer, TestCard, PairCard, LinkCard, WeatherWidget, CountdownWidget },
     setup() {
-      return { Bell, Link, Calendar, Music, GraduationCap, Settings }
+      const springBreak = new Date('2026-04-04T08:00:00')
+      return { Bell, Link, Calendar, Music, GraduationCap, Settings, springBreak }
     },
     template: `
       <CardContainer>
         <WeatherWidget />
+        <CountdownWidget eventName="Spring Break" :targetDate="springBreak" />
         <TestCard :position="2" />
         <PairCard>
           <LinkCard inverted label="Bell Schedules" :icon="Bell" href="/bell" />
