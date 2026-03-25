@@ -9,7 +9,7 @@
               <div v-if="showQR" class="qr-image">
                 <QRCodeVue3
                   :key="qrKey"
-                  :image="logo"
+                  :image="selectedLogoImage"
                   :width="300"
                   :height="300"
                   :margin="10"
@@ -38,6 +38,25 @@
                 :allow-inherit="false"
                 :disable-inline-button="true"
               />
+            </div>
+
+            <div class="field">
+              <label>Center Icon</label>
+              <div class="logo-grid">
+                <button
+                  v-for="logoOption in logoOptions"
+                  :key="logoOption.name"
+                  type="button"
+                  class="logo-option"
+                  :class="{ selected: selectedLogo === logoOption.name }"
+                  @click="selectedLogo = logoOption.name"
+                >
+                  <div class="logo-preview" :style="logoOption.image ? { backgroundImage: `url(${logoOption.image})` } : {}">
+                    <span v-if="!logoOption.image">None</span>
+                  </div>
+                  <span>{{ logoOption.label }}</span>
+                </button>
+              </div>
             </div>
 
             <div class="field">
@@ -88,6 +107,9 @@ import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ColorPicker from '@/components/ColorPicker.vue';
 import logo from '@/assets/QRCodeLogo.png';
+import patriotLogo from '@/assets/patriot.png';
+import patriotPartyLogo from '@/assets/patriot-logo-party.png';
+import patriotSpaceLogo from '@/assets/patriot-logo-space.png';
 
 export default {
   components: {
@@ -107,6 +129,14 @@ export default {
       qrKey: 0,
       error: '',
       logo,
+      selectedLogo: 'stevenson',
+      logoOptions: [
+        { name: 'stevenson', label: 'Stevenson', image: logo },
+        { name: 'patriot', label: 'Patriot', image: patriotLogo },
+        { name: 'party', label: 'Party', image: patriotPartyLogo },
+        { name: 'space', label: 'Space', image: patriotSpaceLogo },
+        { name: 'none', label: 'No Icon', image: null },
+      ],
       icons: {
         faQrcode,
         faFileExport,
@@ -114,6 +144,10 @@ export default {
     };
   },
   computed: {
+    selectedLogoImage() {
+      const selected = this.logoOptions.find((option) => option.name === this.selectedLogo);
+      return selected?.image || '';
+    },
     canGenerate() {
       const urlPattern = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
 
@@ -138,6 +172,9 @@ export default {
   },
   watch: {
     qrColor() {
+      this.qrKey++;
+    },
+    selectedLogo() {
       this.qrKey++;
     },
     url() {
@@ -258,6 +295,46 @@ export default {
   svg
     flex-shrink: 0
     color: var(--accent)
+
+.logo-grid
+  display: grid
+  grid-template-columns: repeat(3, minmax(0, 1fr))
+  gap: 10px
+
+.logo-option
+  border: 1px solid rgba(128, 128, 128, 0.18)
+  border-radius: 12px
+  background: var(--secondaryBackground)
+  color: var(--primary)
+  padding: 10px
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 8px
+  cursor: pointer
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s
+
+  &.selected
+    border-color: var(--accent)
+    box-shadow: 0 0 0 2px rgba(31, 93, 57, 0.12)
+
+  &:hover
+    transform: translateY(-1px)
+
+.logo-preview
+  width: 48px
+  height: 48px
+  border-radius: 12px
+  background-color: white
+  background-position: center
+  background-repeat: no-repeat
+  background-size: contain
+  display: flex
+  align-items: center
+  justify-content: center
+  color: var(--secondary)
+  font-size: 12px
+  font-weight: bold
 
   strong
     color: var(--primary)
