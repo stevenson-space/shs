@@ -106,7 +106,7 @@
                   <info-tooltip>
                     <template #trigger>
                       <icon-button @click="importTheme">
-                        <font-awesome-icon :icon="icons.faFileImport" />
+                        <font-awesome-icon :icon="icons.faArrowUpFromBracket" />
                       </icon-button>
                     </template>
                     Import Theme
@@ -124,10 +124,10 @@
                   <info-tooltip>
                     <template #trigger>
                       <icon-button @click="exportTheme">
-                        <font-awesome-icon :icon="icons.faFileExport" />
+                        <font-awesome-icon :icon="icons.faDownload" />
                       </icon-button>
                     </template>
-                    Export Theme
+                    Download Theme
                     <br/>
                     (Images not included)
                   </info-tooltip>
@@ -316,8 +316,8 @@ import {
   faCircleInfo,
   faSun,
   faMoon,
-  faFileImport,
-  faFileExport,
+  faArrowUpFromBracket,
+  faDownload,
   faFloppyDisk,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
