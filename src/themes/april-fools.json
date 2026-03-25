@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "name": "April Fools' Day!",
+    "name": "April Showers",
     "author": "Allan H. ('28)",
-    "description": "A calming pastel theme inspired by ocean tones."
+    "description": "May flowers will bloom soon! ️🌸"
   },
   "visibility": "show",
   "recommended": {
     "timing": "season",
-    "message": "[Try] The New Ocean Theme 🪸"
+    "message": "[Try] The April Showers Theme 🌧️"
   },
-  "seasonalDates": "03/29-04/04",
+  "seasonalDates": "04/01-04/02",
   "styling": {
     "base": "light",
     "background": "#F5F5DC",
