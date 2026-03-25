@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "Summer",
-    "author": "Joseph S. ('22)"
+    "author": "Allan H. ('28)"
   },
 
   "visibility": "show",
@@ -22,6 +22,20 @@
         "full": "assets://header-images/beach-full.png",
         "mobile": "assets://header-images/beach-mobile.png"
       }
+    },
+    "particles": {
+      "images": [
+        "assets://particles/summer/beach_ball.png",
+        "assets://particles/summer/crab.png",
+        "assets://particles/summer/flamingo.png",
+        "assets://particles/summer/popsicle.png",
+        "assets://particles/summer/sun.png"
+      ],
+      "speed": 1,
+      "count": 20,
+      "size": 16,
+      "opacity": 0.8,
+      "windPower": 0
     }
   }
 }
