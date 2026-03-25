@@ -114,11 +114,12 @@ export function useWeatherData(): { state: Ref<WidgetState> } {
 
     try {
       const data = await fetchWeatherData()
-      localStorage.setItem(
-        CACHE_KEY,
-        JSON.stringify({ timestamp: Date.now(), data })
-      )
       state.value = { status: 'loaded', data }
+      try {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data }))
+      } catch (e) {
+        console.warn('WeatherWidget: failed to write weather cache', e)
+      }
     } catch (e) {
       console.warn('WeatherWidget: failed to fetch weather data', e)
       state.value = { status: 'error' }
