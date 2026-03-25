@@ -18,13 +18,38 @@
               </h1>
             </div>
           </div>
-          <rounded-button
-            class="add-course-button"
-            :icon="icons.faPlus"
-            text="Add Course"
-            invert
-            @click="addCourse()"
-          />
+          <div class="summary-pills">
+            <div class="summary-pill">
+              {{ courses.length }} {{ courses.length === 1 ? 'course' : 'courses' }}
+            </div>
+            <div class="summary-pill">
+              {{ honorsCourseCount }} weighted
+            </div>
+            <div class="summary-pill">
+              {{ extraWeightCourseCount }} 1.5 weight
+            </div>
+          </div>
+          <div class="action-row">
+            <rounded-button
+              class="add-course-button"
+              :icon="icons.faPlus"
+              text="Add Course"
+              invert
+              @click="addCourse()"
+            />
+            <rounded-button
+              class="add-course-button"
+              :icon="icons.faLayerGroup"
+              text="Add 4"
+              @click="addCourses(4)"
+            />
+            <rounded-button
+              class="add-course-button"
+              :icon="icons.faRotateLeft"
+              text="Clear All"
+              @click="resetCourses()"
+            />
+          </div>
           <div style="padding: 12px 0px;">Note: Each semester counts as a different course<br>Course names are editable</div>
         </div>
       </card>
@@ -46,6 +71,12 @@
             class="close"
             size="1x"
             :icon="icons.faXmark"
+          />
+          <font-awesome-icon
+            @click="duplicateCourse(course)"
+            class="duplicate"
+            size="1x"
+            :icon="icons.faCopy"
           />
         </div>
         <div class="course-settings-row">
@@ -84,7 +115,13 @@
   </div>
 </template>
 <script lang="ts">
-import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+  faXmark,
+  faPlus,
+  faCopy,
+  faRotateLeft,
+  faLayerGroup,
+} from '@fortawesome/free-solid-svg-icons';
 import { defineComponent } from 'vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import Card from '@/components/Card.vue';
@@ -122,7 +159,9 @@ export default defineComponent({
   },
   data() {
     return {
-      icons: { faPlus, faXmark },
+      icons: {
+        faPlus, faXmark, faCopy, faRotateLeft, faLayerGroup,
+      },
       courses: [new Course(1)] as Course[],
       averageUnweightedGpa: 4.0 as number,
       averageWeightedGpa: 4.0 as number,
@@ -131,6 +170,14 @@ export default defineComponent({
       terms: ['1st', '2nd', '3rd', 'Final'] as string[],
       reduceFadeUpAnimation: false as boolean,
     };
+  },
+  computed: {
+    honorsCourseCount(): number {
+      return this.courses.filter((course) => course.level > 0).length;
+    },
+    extraWeightCourseCount(): number {
+      return this.courses.filter((course) => course.weight === 1.5).length;
+    },
   },
   watch: {
     courses: {
@@ -149,12 +196,28 @@ export default defineComponent({
   },
 
   methods: {
+    createCourseId(): number {
+      return Math.max(0, ...this.courses.map((course) => course.id)) + 1;
+    },
     editCourseName(course:Course, inputValue: string): void {
       course.name = inputValue;
     },
     addCourse(): void {
+      this.addCourses(1);
+    },
+    addCourses(count: number): void {
       this.reduceFadeUpAnimation = true;
-      this.courses.push(new Course(this.courses.length + 1));
+      for (let index = 0; index < count; index += 1) {
+        this.courses.push(new Course(this.createCourseId()));
+      }
+      this.calculateSemesterGrades();
+    },
+    duplicateCourse(course: Course): void {
+      const duplicate = Object.assign(new Course(this.createCourseId()), structuredClone(course));
+      duplicate.id = this.createCourseId();
+      duplicate.name = `${course.name} Copy`;
+      const courseIndex = this.courses.indexOf(course);
+      this.courses.splice(courseIndex + 1, 0, duplicate);
       this.calculateSemesterGrades();
     },
     removeCourse(course: Course): void {
@@ -163,6 +226,11 @@ export default defineComponent({
         this.courses.splice(index, 1);
         this.calculateSemesterGrades();
       }
+    },
+    resetCourses(): void {
+      this.reduceFadeUpAnimation = true;
+      this.courses = [new Course(1)];
+      this.calculateSemesterGrades();
     },
     selectGrade(course: Course, gradeIndex: number): void {
       const index = this.courses.indexOf(course);
@@ -258,8 +326,30 @@ export default defineComponent({
     font-weight: 500
 
   .add-course-button
-    width: 130px
-    margin: 2px auto
+    min-width: 120px
+
+.action-row
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  gap: 10px
+  margin-top: 8px
+
+.summary-pills
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  gap: 8px
+  margin: 12px 0
+
+.summary-pill
+  background: var(--secondaryBackground)
+  color: var(--accent)
+  border: 1px solid var(--accent)
+  border-radius: 999px
+  padding: 6px 12px
+  font-size: .9em
+  font-weight: 600
 
 .gpa-card-container
   margin-top: 10px
@@ -295,6 +385,13 @@ export default defineComponent({
         position: absolute
         top: 13px
         right: 11px
+        cursor: pointer
+
+      .duplicate
+        width: 18px
+        position: absolute
+        top: 13px
+        right: 40px
         cursor: pointer
 
     .course-settings-row
