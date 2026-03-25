@@ -106,7 +106,7 @@
                   <info-tooltip>
                     <template #trigger>
                       <icon-button @click="importTheme">
-                        <font-awesome-icon :icon="icons.faArrowUpFromBracket" />
+                        <font-awesome-icon :icon="icons.faArrowRightToBracket" />
                       </icon-button>
                     </template>
                     Import Theme
@@ -316,7 +316,7 @@ import {
   faCircleInfo,
   faSun,
   faMoon,
-  faArrowUpFromBracket,
+  faArrowRightToBracket,
   faDownload,
   faFloppyDisk,
   faXmark,
@@ -391,7 +391,7 @@ export default {
         faCircleInfo,
         faSun,
         faMoon,
-        faArrowUpFromBracket,
+        faArrowRightToBracket,
         faDownload,
         faFloppyDisk,
         faXmark,
