@@ -79,7 +79,9 @@ function toggleTheme(): void {
 }
 
 function dismiss(): void {
-  isDismissed.value = true // dismisses the entire card if "x" pressed once
+  if (!currentTheme.value) return
+  const currentYear = clockStore.date.getFullYear()
+  dismissedThemesRef[currentTheme.value.metadata.name] = currentYear
 }
 
 </script>
