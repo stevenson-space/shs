@@ -9,11 +9,13 @@
           @click="toggleTheme()"
         />
         <div class="message">{{ activeThemes[currentIndex].recommended?.message?.replace('[Try]','') || '' }}</div>
-      <button v-if="activeThemes.length === 1" class="close-btn fallback" @click.stop>&times;</button></div>
+      <button v-if="activeThemes.length === 1" class="close-btn fallback" @click.stop>&times;</button>
+      </div>
       <div v-if="activeThemes.length > 1" class="divider"></div>
       <div v-if="activeThemes.length > 1" class="theme-nav">
       <button class="nav-btn" @click.stop="switchTheme">
-      <font-awesome-icon :icon="faArrowsRotate" /></button>
+      <font-awesome-icon :icon="faArrowsRotate" />
+      </button>
       <button class="nav-btn close-btn" @click.stop="dismiss">&times;</button>
       </div>
   </card>
