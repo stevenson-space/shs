@@ -11,7 +11,6 @@
         <div class="message">{{ activeThemes[currentIndex].recommended?.message?.replace('[Try]','') || '' }}</div>
       </div>
       <div v-if="activeThemes.length > 1" class="divider"></div>
-      <!-- Navigation buttons for multiple themes -->
       <div v-if="activeThemes.length > 1" class="theme-nav">
       <button class="nav-btn" @click.stop="prevTheme">
       <font-awesome-icon :icon="faChevronLeft" />
@@ -99,11 +98,11 @@ function dismiss(): void {
 onMounted(async () => {
   themes.value = await loadAllThemes();
 
-  // auto-rotate every 5s if multiple active themes
+  // auto-rotate every 10 seconds if multiple active themes
   if (activeThemes.value.length > 1) {
     setInterval(() => {
       nextTheme();
-    }, 5000);
+    }, 10000);
   }
 });
 </script>
@@ -111,6 +110,7 @@ onMounted(async () => {
 <style lang="sass" scoped>
 .card-content
   display: flex
+  flex-direction: column
   align-items: center
   gap: 10px
   padding: 15px
@@ -155,7 +155,6 @@ onMounted(async () => {
 
   &:hover
     opacity: 1
-</style>
 
 .divider
   width: 90%
@@ -171,9 +170,8 @@ onMounted(async () => {
   margin-top: 5px
 
 .nav-btn
-  background: rgba(0,0,0,0.1)
+  background: transparent
   border: none
-  border-radius: 4px
   color: var(--secondary)
   width: 25px
   height: 25px
@@ -181,11 +179,13 @@ onMounted(async () => {
   display: flex
   justify-content: center
   align-items: center
-  font-size: 14px
-  transition: background 0.2s
+  opacity: 0.6
+  transition: opacity 0.2s
+  flex-shrink: 0
 
   &:hover
-    background: rgba(0,0,0,0.2)
+    opacity: 1
 
 .close-btn.fallback
   margin-top: 5px
+</style>
