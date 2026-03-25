@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { within, expect, waitFor, userEvent, fn } from 'storybook/test'
 import WeatherWidget from './WeatherWidget.vue'
-import CardPreview from './CardPreview.vue'
+import CardPreview from '../CardPreview.vue'
 
 function makeHourly(pct: number): number[] {
   return Array<number>(72).fill(pct)

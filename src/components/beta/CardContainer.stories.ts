@@ -5,7 +5,7 @@ import CardContainer from './CardContainer.vue'
 import TestCard from './TestCard.vue'
 import LinkCard from './LinkCard.vue'
 import PairCard from './PairCard.vue'
-import WeatherWidget from './WeatherWidget.vue'
+import WeatherWidget from './WeatherWidget/WeatherWidget.vue'
 
 const meta = {
   title: 'Beta/CardContainer',

@@ -70,7 +70,7 @@
 import { computed } from 'vue'
 import type { Component } from 'vue'
 import { Sun, CloudSun, Cloud, CloudRain, WifiOff } from 'lucide-vue-next'
-import BaseCard from './BaseCard.vue'
+import BaseCard from '../BaseCard.vue'
 import { useWeatherData } from './useWeatherData'
 
 const emit = defineEmits<{ flag: [] }>()
