@@ -141,6 +141,7 @@ onMounted(async () => {
     opacity: 1
 
 .divider
+  width: calc(100% - 16px)
   height: 1px
   background-color: var(--accent)
   margin: 3px 0
