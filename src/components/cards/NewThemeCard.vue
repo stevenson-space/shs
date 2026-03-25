@@ -87,6 +87,7 @@ function dismiss(): void {
 
 onMounted(async () => {
   themes.value = await loadAllThemes();
+});
 
 </script>
 
