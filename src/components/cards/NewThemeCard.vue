@@ -9,20 +9,13 @@
           @click="toggleTheme()"
         />
         <div class="message">{{ activeThemes[currentIndex].recommended?.message?.replace('[Try]','') || '' }}</div>
-      </div>
+      <button v-if="activeThemes.length === 1" class="close-btn fallback" @click.stop>&times;</button></div>
       <div v-if="activeThemes.length > 1" class="divider"></div>
       <div v-if="activeThemes.length > 1" class="theme-nav">
-      <button class="nav-btn" @click.stop="prevTheme">
-      <font-awesome-icon :icon="faChevronLeft" />
-      </button>
-      <button class="nav-btn" @click.stop="nextTheme">
-      <font-awesome-icon :icon="faChevronRight" />
-      </button>
+      <button class="nav-btn" @click.stop="switchTheme">
+      <font-awesome-icon :icon="faArrowsRotate" /></button>
       <button class="nav-btn close-btn" @click.stop="dismiss">&times;</button>
       </div>
-
-<button v-else class="close-btn fallback" @click.stop>&times;</button>
-    </div>
   </card>
 </template>
 
@@ -32,7 +25,7 @@ import useClockStore from '@/stores/clock';
 import useThemeStore from '@/stores/themes';
 import RoundedButton from '@/components/RoundedButton.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons'
 import Card from '@/components/Card.vue';
 import InfoTooltip from '@/components/InfoTooltip.vue';
 import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
@@ -64,15 +57,9 @@ const activeThemes = computed(() => {
 
 const currentIndex = ref(0);
 
-function nextTheme(): void {
+function switchTheme(): void {
   if (activeThemes.value.length === 0) return;
   currentIndex.value = (currentIndex.value + 1) % activeThemes.value.length;
-}
-
-function prevTheme(): void {
-  if (activeThemes.value.length === 0) return;
-  currentIndex.value =
-    (currentIndex.value - 1 + activeThemes.value.length) % activeThemes.value.length;
 }
 
 const currentTheme = computed(() => activeThemes.value[currentIndex.value] || null);
@@ -170,8 +157,8 @@ onMounted(async () => {
   background: transparent
   border: none
   color: var(--secondary)
-  width: 25px
-  height: 25px
+  width: 30px
+  height: 30px
   cursor: pointer
   display: flex
   justify-content: center
@@ -184,5 +171,19 @@ onMounted(async () => {
     opacity: 1
 
 .close-btn.fallback
-  margin-top: 5px
+  background: transparent
+  border: none
+  font-size: 24px
+  color: var(--secondary)
+  cursor: pointer
+  padding: 0
+  width: 30px
+  height: 30px
+  display: flex
+  align-items: center
+  justify-content: center
+  line-height: 1
+  opacity: 0.6
+  transition: opacity 0.2s
+  flex-shrink: 0
 </style>
