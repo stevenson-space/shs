@@ -39,10 +39,12 @@ export function parseDateRange(dateRange: string, referenceDate: Date): [Date, D
   const start = parseThemeDate(startStr, referenceDate);
   let end = parseThemeDate(endStr, referenceDate);
 
-  // Handle year boundary crossing (e.g., "11/01-03/20" means Nov 1 to March 20 of next year)
+  // Correctly handles themes that cross years (e.g., winter)
   if (end < start) {
     end = new Date(end.getFullYear() + 1, end.getMonth(), end.getDate());
   }
+
+  end.setHours(referenceDate.getHours(), referenceDate.getMinutes(), referenceDate.getSeconds(), referenceDate.getMilliseconds());
 
   return [start, end];
 }
