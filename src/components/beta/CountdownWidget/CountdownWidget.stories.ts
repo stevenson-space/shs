@@ -113,3 +113,33 @@ export const HeightConsistency: Story = {
     await expect(endedH).toEqual(activeH);
   },
 };
+
+export const WidthConsistency: Story = {
+  name: "[TEST] Width Consistency",
+  ...mockDateSetup(new Date("0001-01-01T00:00:00")),
+  render: () => ({
+    components: { CountdownWidget, CardPreview },
+    setup() {
+      const shortTarget = new Date("0001-01-01T00:10:00");
+      const longTarget = new Date("9999-12-31T23:59:59");
+      return { shortTarget, longTarget };
+    },
+    template: `
+      <CardPreview style="display: flex; flex-direction: column; gap: 8px;">
+        <div data-testid="card-short"><CountdownWidget eventName="Soon" :targetDate="shortTarget" /></div>
+        <div data-testid="card-long"><CountdownWidget eventName="Far Away" :targetDate="longTarget" /></div>
+      </CardPreview>
+    `,
+  }),
+  play: async ({ canvasElement }) => {
+    const w = (testid: string) => {
+      const el = canvasElement.querySelector(`[data-testid="${testid}"] .base-card`);
+      return el ? Math.round(el.getBoundingClientRect().width) : -1;
+    };
+
+    const shortW = w("card-short");
+    const longW = w("card-long");
+
+    await expect(shortW).toEqual(longW);
+  },
+};
