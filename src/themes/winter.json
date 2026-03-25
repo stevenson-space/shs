@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "Winter",
-    "author": "Joseph S. ('22)"
+    "author": "Allan H. ('28)"
   },
 
   "visibility": "show",
@@ -26,10 +26,14 @@
 
     "particles": {
       "images": [
-        "assets://particles/snowflake.png"
+        "assets://particles/winter/snowflake.png",
+        "assets://particles/winter/hat.png",
+        "assets://particles/winter/gingerbread_cookie.png",
+        "assets://particles/winter/candy_cane.png",
+        "assets://particles/winter/hot_chcolate.png"
       ],
       "speed": 2,
-      "count": 60,
+      "count": 40,
       "size": 8,
       "opacity": 0.7,
       "windPower": 0.7
