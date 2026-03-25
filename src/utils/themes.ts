@@ -35,16 +35,21 @@ export function parseThemeDate(dateStr: string, referenceDate: Date): Date {
  * @returns Tuple of [start, end] dates
  */
 export function parseDateRange(dateRange: string, referenceDate: Date): [Date, Date] {
-  const [startStr, endStr] = dateRange.split('-');
-  const start = parseThemeDate(startStr, referenceDate);
+  let [startStr, endStr] = dateRange.split('-');
+  let start = parseThemeDate(startStr, referenceDate);
   let end = parseThemeDate(endStr, referenceDate);
 
-  // Correctly handles themes that cross years (e.g., winter)
+  // Handles themes that cross years (e.g., winter)
   if (end < start) {
-    end = new Date(end.getFullYear() + 1, end.getMonth(), end.getDate());
+    if (referenceDate < start) {
+      start = new Date(start.getFullYear() - 1, start.getMonth(), start.getDate());
+    } else {
+      end = new Date(end.getFullYear() + 1, end.getMonth(), end.getDate());
+    }
   }
 
-  end.setHours(referenceDate.getHours(), referenceDate.getMinutes(), referenceDate.getSeconds(), referenceDate.getMilliseconds());
+  start.setHours(0, 0, 0, 0);
+  end.setHours(23, 59, 59, 999);
 
   return [start, end];
 }
