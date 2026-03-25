@@ -17,6 +17,7 @@
         <font-awesome-icon :icon="faArrowsRotate" />
         </button>
         <button class="nav-btn close-btn" @click.stop="dismiss">&times;</button>
+        </div>
       </div>
   </card>
 </template>
@@ -78,9 +79,10 @@ function toggleTheme(): void {
 }
 
 function dismiss(): void {
-  if (!currentTheme.value) return
-  const currentYear = clockStore.date.getFullYear()
-  dismissedThemesRef[currentTheme.value.metadata.name] = currentYear
+  if (!currentTheme.value) return;
+  const currentYear = clockStore.date.getFullYear();
+  dismissedThemesRef[currentTheme.value.metadata.name] = currentYear;
+  localStorage.setItem('dismissedThemeCards', JSON.stringify(dismissedThemesRef));
 }
 
 </script>
