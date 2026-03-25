@@ -17,7 +17,6 @@
         <font-awesome-icon :icon="faArrowsRotate" />
         </button>
         <button class="nav-btn close-btn" @click.stop="dismiss">&times;</button>
-        </div>
       </div>
   </card>
 </template>
