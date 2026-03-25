@@ -2,9 +2,7 @@
   <BaseCard
     label="WEATHER"
     :show-flag="true"
-    :show-menu="true"
     @flag="emit('flag')"
-    @menu="emit('menu')"
   >
     <div v-if="state.status === 'loading'" class="skeleton-body">
       <div class="skeleton-left">
@@ -75,7 +73,7 @@ import { Sun, CloudSun, Cloud, CloudRain, WifiOff } from 'lucide-vue-next'
 import BaseCard from './BaseCard.vue'
 import { useWeatherData } from './useWeatherData'
 
-const emit = defineEmits<{ flag: []; menu: [] }>()
+const emit = defineEmits<{ flag: [] }>()
 
 const { state } = useWeatherData()
 

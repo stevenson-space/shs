@@ -78,7 +78,6 @@ const meta = {
   tags: ['autodocs'],
   args: {
     onFlag: fn(),
-    onMenu: fn(),
   },
 } satisfies Meta<typeof WeatherWidget>
 
@@ -88,7 +87,7 @@ type Story = StoryObj<typeof meta>
 const renderInPreview = (args: Record<string, unknown>) => ({
   components: { WeatherWidget, CardPreview },
   setup() { return { args } },
-  template: `<CardPreview><WeatherWidget @flag="args.onFlag" @menu="args.onMenu" /></CardPreview>`,
+  template: `<CardPreview><WeatherWidget @flag="args.onFlag" /></CardPreview>`,
 })
 
 export const Live: Story = {
@@ -115,9 +114,6 @@ export const Default: Story = {
     await expect(canvas.getByText('63°')).toBeInTheDocument()
     await userEvent.click(canvas.getByLabelText('Flag'))
     await expect(args.onFlag).toHaveBeenCalledOnce()
-    await expect(args.onMenu).not.toHaveBeenCalled()
-    await userEvent.click(canvas.getByLabelText('More options'))
-    await expect(args.onMenu).toHaveBeenCalledOnce()
   },
 }
 
