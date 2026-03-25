@@ -89,10 +89,7 @@ function toggleTheme(): void {
 }
 
 function dismiss(): void {
-  if (!currentTheme.value) return;
-  const currentYear = clockStore.date.getFullYear();
-  dismissedThemesRef[currentTheme.value.metadata.name] = currentYear;
-  localStorage.setItem('dismissedThemeCards', JSON.stringify(dismissedThemesRef));
+  isDismissed.value = true // dismisses the entire card if "x" pressed once
 }
 
 onMounted(async () => {
@@ -159,8 +156,8 @@ onMounted(async () => {
 .divider
   width: 90%
   height: 1px
-  background-color: rgba(0,0,0,0.2)
-  margin: 5px 0
+  background-color: var(--accent)
+  margin: 3px 0
 
 .theme-nav
   display: flex
