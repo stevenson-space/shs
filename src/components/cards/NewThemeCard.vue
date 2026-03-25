@@ -97,8 +97,7 @@ onMounted(async () => {
   flex-direction: column
   align-items: center
   gap: 10px
-  padding: 0 8px
-  padding-bottom: 5px
+  padding: 15px
   position: relative
 
 .row
