@@ -5,6 +5,7 @@
       <div class="text-group text">{{ text }}</div>
       <div class="text-group desc">{{ desc }}</div>
     </custom-link>
+    <slot name="actions" />
   </card>
 </template>
 

@@ -1,12 +1,24 @@
 <template>
-  <timed-card startTime="December 19, 2022" endTime="January 10, 2023">
+  <timed-card :startTime="breakWindow.startTime" :endTime="breakWindow.endTime">
     <img class="logo" src="@/assets/occasions/snowman.png">
-    <div class="message">Good luck on finals and have an amazing break! ❄️</div>
+    <div class="message">{{ breakWindow.message }}</div>
   </timed-card>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import TimedCard from './TimedCard.vue';
+
+const breakWindow = computed(() => {
+  const now = new Date();
+  const year = now.getMonth() === 11 ? now.getFullYear() : now.getFullYear() - 1;
+
+  return {
+    startTime: `December 19, ${year}`,
+    endTime: `January 10, ${year + 1}`,
+    message: 'Good luck on finals and have an amazing break! ❄️',
+  };
+});
 </script>
 
 <style lang="sass" scoped>
