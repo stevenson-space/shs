@@ -29,6 +29,7 @@
     "eslint-plugin-vuejs-accessibility": "^2.2.0",
     "gsap": "^3.12.4",
     "howler": "^2.2.4",
+    "pdfjs-dist": "^5.5.207",
     "pinia": "^2.3.1",
     "space-vue3-qrcode": "^1.4.19",
     "vite": "^6.4.1",

@@ -1,0 +1,154 @@
+{
+  "years": [
+    { "key": "freshman", "label": "Freshman" },
+    { "key": "sophomore", "label": "Sophomore" },
+    { "key": "junior", "label": "Junior" },
+    { "key": "senior", "label": "Senior" }
+  ],
+  "courses": [
+    {
+      "id": "english-1",
+      "name": "English 1",
+      "subject": "English",
+      "defaultLevel": "Regular",
+      "scienceWeightEligible": false,
+      "description": "Core English course focused on reading and writing foundations.",
+      "eligibleYears": ["freshman", "sophomore"]
+    },
+    {
+      "id": "english-2",
+      "name": "English 2",
+      "subject": "English",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "Literature and composition course with analytical writing.",
+      "eligibleYears": ["freshman", "sophomore", "junior"]
+    },
+    {
+      "id": "ap-english-literature",
+      "name": "AP English Literature",
+      "subject": "English",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "College-level literary analysis and argumentative writing.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "algebra-2",
+      "name": "Algebra 2",
+      "subject": "Math",
+      "defaultLevel": "Regular",
+      "scienceWeightEligible": false,
+      "description": "Algebraic functions, polynomials, and trigonometric foundations.",
+      "eligibleYears": ["freshman", "sophomore", "junior"]
+    },
+    {
+      "id": "precalculus",
+      "name": "Precalculus",
+      "subject": "Math",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "Preparation for calculus with advanced algebra and trig topics.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-calculus-ab",
+      "name": "AP Calculus AB",
+      "subject": "Math",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "Introductory college calculus course.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "biology",
+      "name": "Biology",
+      "subject": "Science",
+      "defaultLevel": "Regular",
+      "scienceWeightEligible": true,
+      "description": "Foundational biology with lab-based learning.",
+      "eligibleYears": ["freshman", "sophomore"]
+    },
+    {
+      "id": "chemistry",
+      "name": "Chemistry",
+      "subject": "Science",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": true,
+      "description": "Matter, reactions, and lab investigations.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-biology",
+      "name": "AP Biology",
+      "subject": "Science",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": true,
+      "description": "Advanced biology course aligned to AP expectations.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "world-history",
+      "name": "World History",
+      "subject": "Social Studies",
+      "defaultLevel": "Regular",
+      "scienceWeightEligible": false,
+      "description": "Global historical themes and major civilizations.",
+      "eligibleYears": ["freshman", "sophomore", "junior"]
+    },
+    {
+      "id": "us-history",
+      "name": "U.S. History",
+      "subject": "Social Studies",
+      "defaultLevel": "Regular",
+      "scienceWeightEligible": false,
+      "description": "Survey of U.S. history and civic development.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "government",
+      "name": "Government",
+      "subject": "Social Studies",
+      "defaultLevel": "Regular",
+      "scienceWeightEligible": false,
+      "description": "Civics, institutions, and public policy.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "spanish-1",
+      "name": "Spanish 1",
+      "subject": "World Language",
+      "defaultLevel": "Regular",
+      "scienceWeightEligible": false,
+      "description": "Introductory Spanish language course.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "french-2",
+      "name": "French 2",
+      "subject": "World Language",
+      "defaultLevel": "Regular",
+      "scienceWeightEligible": false,
+      "description": "Second-year French with speaking and reading practice.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing",
+      "subject": "Elective",
+      "defaultLevel": "Regular",
+      "scienceWeightEligible": false,
+      "description": "Business, branding, and market strategy elective.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "graphic-design",
+      "name": "Graphic Design",
+      "subject": "Elective",
+      "defaultLevel": "Regular",
+      "scienceWeightEligible": false,
+      "description": "Visual communication and digital design tools.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    }
+  ]
+}
