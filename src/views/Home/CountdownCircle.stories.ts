@@ -16,6 +16,7 @@ const meta = {
     nextDay: 'Monday,\nMarch 2',
     scheduleType: 'Standard Schedule',
     fullScreenMode: false,
+    theme: { name: 'light' }, // ✅ Always pass theme
   },
 } satisfies Meta<typeof CountdownCircle>
 
@@ -46,5 +47,11 @@ export const NoNextDay: Story = {
   args: {
     inSchool: false,
     nextDay: null,
+  },
+}
+
+export const PromTheme: Story = {
+  args: {
+    theme: { name: 'prom' },
   },
 }

@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "name": "Prom '26",
+    "author": "Zhaochen Liu ('27)",
+    "description": "Prom 2026 Theme!"
+  },
+  "visibility": "show",
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The New Prom Theme"
+  },
+  "seasonalDates": "03/30/2026-05/25/2026",
+  "styling": {
+    "base": "dark",
+    "background": "#281825",
+    "secondaryBackground": "#744489",
+    "accent": "#9F7630",
+
+    "header": {
+      "image": {
+        "full": "assets://header-images/ballroombanner.png"
+      }
+    },
+
+    
+
+    "iconCards": {
+      "regular": "black",
+      "invert": "white"
+    }
+  }
+}
