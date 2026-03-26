@@ -112,7 +112,11 @@
         <p v-if="coursesForYear(year.key).length === 0" class="empty-text">
           No courses added yet for {{ year.label.toLowerCase() }} year.
         </p>
-        <card-container v-else class="gpa-card-container">
+        <card-container
+          v-else
+          :key="`${year.key}-${expandedYears[year.key] ? 'open' : 'closed'}-${coursesForYear(year.key).length}`"
+          class="gpa-card-container"
+        >
           <card
             v-for="(course, courseIndex) in coursesForYear(year.key)"
             :key="course.id"
@@ -431,9 +435,21 @@ export default defineComponent({
     },
     normalizeStoredCourse(course: StoredCourse, index: number): Course {
       const year = this.getYearByKey(course.yearKey || this.catalogYears[0].key);
-      const catalogCourse = this.getCatalogCourseById(course.catalogId)
-        || this.catalogCourses.find((item) => item.name === course.name)
-        || this.getFallbackCourseForYear(year.key);
+      const matchedCatalogCourse = this.getCatalogCourseById(course.catalogId)
+        || this.catalogCourses.find((item) => item.name === course.name);
+      const catalogCourse = matchedCatalogCourse || {
+        id: course.catalogId || `stored:${this.normalizeCourseName(course.name || `course-${index + 1}`)}`,
+        name: course.name || `Course ${index + 1}`,
+        subject: course.subject || this.inferSubjectFromTranscriptName(course.name || ''),
+        defaultLevel: this.courseLevels[
+          typeof course.level === 'number' && course.level >= 0 && course.level < this.courseLevels.length
+            ? course.level
+            : 0
+        ] as CourseLevel,
+        scienceWeightEligible: course.scienceWeightEligible ?? false,
+        description: course.description || 'Imported from transcript',
+        eligibleYears: [year.key],
+      };
       const normalizedCourse = new Course(
         course.id || index + 1,
         year.key,
@@ -446,12 +462,12 @@ export default defineComponent({
       normalizedCourse.weightedGPA = typeof course.weightedGPA === 'number' ? course.weightedGPA : 4.0;
       normalizedCourse.finalGrade = course.finalGrade || 'A';
       normalizedCourse.hasFinal = course.hasFinal ?? true;
-      normalizedCourse.name = catalogCourse.name;
-      normalizedCourse.subject = catalogCourse.subject;
-      normalizedCourse.description = catalogCourse.description;
-      normalizedCourse.scienceWeightEligible = catalogCourse.scienceWeightEligible;
+      normalizedCourse.name = course.name || catalogCourse.name;
+      normalizedCourse.subject = course.subject || catalogCourse.subject;
+      normalizedCourse.description = course.description || catalogCourse.description;
+      normalizedCourse.scienceWeightEligible = course.scienceWeightEligible ?? catalogCourse.scienceWeightEligible;
       normalizedCourse.catalogId = catalogCourse.id;
-      normalizedCourse.yearKey = catalogCourse.eligibleYears.includes(year.key) ? year.key : catalogCourse.eligibleYears[0];
+      normalizedCourse.yearKey = year.key;
       normalizedCourse.term = course.term || '';
       normalizedCourse.termLabel = course.termLabel || '';
       return normalizedCourse;

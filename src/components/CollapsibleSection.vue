@@ -17,7 +17,15 @@
         <slot name="action" />
       </div>
     </div>
-    <transition name="expand">
+    <transition
+      name="expand"
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @after-enter="afterEnter"
+      @before-leave="beforeLeave"
+      @leave="leave"
+      @after-leave="afterLeave"
+    >
       <div v-show="isExpanded && !disabled" class="collapsible-content">
         <slot />
       </div>
@@ -53,6 +61,42 @@ function handleHeaderClick() {
   if (!disabled && !lockOpen) {
     modelValue.value = !modelValue.value;
   }
+}
+
+function beforeEnter(el: Element): void {
+  const content = el as HTMLElement;
+  content.style.maxHeight = '0px';
+  content.style.opacity = '0';
+}
+
+function enter(el: Element): void {
+  const content = el as HTMLElement;
+  content.style.maxHeight = `${content.scrollHeight}px`;
+  content.style.opacity = '1';
+}
+
+function afterEnter(el: Element): void {
+  const content = el as HTMLElement;
+  content.style.maxHeight = 'none';
+}
+
+function beforeLeave(el: Element): void {
+  const content = el as HTMLElement;
+  content.style.maxHeight = `${content.scrollHeight}px`;
+  content.style.opacity = '1';
+}
+
+function leave(el: Element): void {
+  const content = el as HTMLElement;
+  void content.offsetHeight;
+  content.style.maxHeight = '0px';
+  content.style.opacity = '0';
+}
+
+function afterLeave(el: Element): void {
+  const content = el as HTMLElement;
+  content.style.maxHeight = '';
+  content.style.opacity = '';
 }
 </script>
 
@@ -123,19 +167,18 @@ function handleHeaderClick() {
 .collapsible-content
   padding: 12px 18px
   background: transparent
+  max-height: none
 
 .expand-enter-active,
 .expand-leave-active
-  transition: all 0.3s ease
+  transition: max-height 0.3s ease, opacity 0.3s ease
   overflow: hidden
 
 .expand-enter-from,
 .expand-leave-to
   opacity: 0
-  max-height: 0
 
 .expand-enter-to,
 .expand-leave-from
   opacity: 1
-  max-height: 2000px
 </style>
