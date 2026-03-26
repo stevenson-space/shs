@@ -47,6 +47,7 @@ export type ParsedTranscriptResult = {
   skippedCount: number;
 };
 
+/** Extracts transcript tokens from a Stevenson transcript PDF and parses them into course entries. */
 export async function parseTranscriptPdf(file: File): Promise<ParsedTranscriptResult> {
   const data = new Uint8Array(await file.arrayBuffer());
   const pdf = await getDocument({
@@ -72,6 +73,7 @@ export async function parseTranscriptPdf(file: File): Promise<ParsedTranscriptRe
   return parseTranscriptTokens(tokens);
 }
 
+/** Parses flattened transcript text tokens into normalized course records for GPA import. */
 export function parseTranscriptTokens(tokens: string[]): ParsedTranscriptResult {
   const courses: ParsedTranscriptCourse[] = [];
   let skippedCount = 0;
@@ -158,6 +160,7 @@ export function parseTranscriptTokens(tokens: string[]): ParsedTranscriptResult 
   return { courses, skippedCount };
 }
 
+/** Converts transcript grade levels into the GPA calculator's year buckets. */
 function gradeToYearKey(gradeLevel: string): string {
   const gradeNumber = Number(gradeLevel);
   if (gradeNumber <= 9) return 'freshman';
@@ -166,10 +169,12 @@ function gradeToYearKey(gradeLevel: string): string {
   return 'senior';
 }
 
+/** Normalizes repeated whitespace in transcript-derived strings. */
 function collapseWhitespace(value: string): string {
   return value.replace(/\s+/g, ' ').trim();
 }
 
+/** Finds the last letter-grade token in a transcript detail row. */
 function findLastGradeIndex(details: string[]): number {
   for (let index = details.length - 1; index >= 0; index -= 1) {
     if (LETTER_GRADE_REGEX.test(details[index])) {
@@ -179,10 +184,12 @@ function findLastGradeIndex(details: string[]): number {
   return -1;
 }
 
+/** Restricts parsed transcript marks to graded entries used by the calculator. */
 function isSupportedGrade(mark: string): mark is ParsedTranscriptCourse['mark'] {
   return ['A', 'B', 'C', 'D', 'F'].includes(mark);
 }
 
+/** Identifies transcript tokens that indicate parsing should stop for the current section. */
 function isStopToken(token: string): boolean {
   return STOP_TOKENS.has(token);
 }

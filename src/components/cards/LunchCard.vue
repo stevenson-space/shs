@@ -13,6 +13,13 @@
         </div>
       </div>
     </div>
+    <div class="nutrition-special">
+      <div class="special-label">Today's rotating special</div>
+      <div class="special-name">{{ todaysSpecial?.name || 'No rotating special' }}</div>
+      <div v-if="todaysSpecial" class="special-meta">
+        {{ todaysSpecial.location }}
+      </div>
+    </div>
     <div class="nutrition-link-row">
       <custom-link class="nutrition-link" :href="{ name: 'nutrition' }">
         Explore Nutrition Menu
@@ -28,12 +35,17 @@ import useClockStore from '@/stores/clock';
 import Card from '@/components/Card.vue';
 import WhatIsThis from '@/components/WhatIsThis.vue';
 import CustomLink from '@/components/CustomLink.vue';
+import nutritionData from '@/data/nutrition.json';
 
 const clockStore = useClockStore();
+const weekdayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 const lunch = computed(() => getLunch(clockStore.date));
-
 const noLunchData = computed(() => lunch.value === null);
+const todaysSpecial = computed(() => {
+  const weekday = weekdayNames[new Date(clockStore.date).getDay()];
+  return nutritionData.rotatingSpecials.find((item) => item.weekday === weekday);
+});
 </script>
 
 <style lang="sass" scoped>
@@ -68,6 +80,28 @@ const noLunchData = computed(() => lunch.value === null);
 .nutrition-link-row
   padding: 12px 8px 14px
   border-top: var(--accent) 1px solid
+
+.nutrition-special
+  padding: 12px 8px 14px
+  border-top: var(--accent) 1px solid
+  text-align: center
+
+.special-label
+  margin: 0
+  font-size: 12px
+  text-transform: uppercase
+  letter-spacing: 0.08em
+  color: var(--secondary)
+
+.special-name
+  margin-top: 8px
+  font-size: 1.25em
+  font-weight: bold
+
+.special-meta
+  margin-top: 4px
+  color: var(--accent)
+  font-size: .9em
 
 .nutrition-link
   width: fit-content

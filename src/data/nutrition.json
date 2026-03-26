@@ -37,35 +37,35 @@
       "weekday": "Monday",
       "name": "Mac n Cheese Bowl",
       "description": "Cheesy pasta bowl bar with topping options and rotating proteins.",
-      "location": "Glass Commons",
+      "location": "Glass Commons and Wood Commons",
       "imagePath": "/nutrition/image.png"
     },
     {
       "weekday": "Tuesday",
       "name": "Taco Tuesday",
       "description": "Build-your-own tacos with salsa, beans, and seasoned proteins.",
-      "location": "Wood Commons Cafeteria",
+      "location": "Glass Commons and Wood Commons",
       "imagePath": "/nutrition/image.png"
     },
     {
       "weekday": "Wednesday",
       "name": "Wing Wednesday",
       "description": "Crispy wing baskets with sauce choices and side pairings.",
-      "location": "Lower Glass Commons",
+      "location": "Lower Glass Commons and Wood Commons",
       "imagePath": "/nutrition/image.png"
     },
     {
       "weekday": "Thursday",
       "name": "Nacho Thursday",
       "description": "Loaded nachos with queso, toppings, and side add-ons.",
-      "location": "Glass Commons",
+      "location": "Glass Commons and Wood Commons",
       "imagePath": "/nutrition/image.png"
     },
     {
       "weekday": "Friday",
       "name": "Friday Pasta",
       "description": "A pasta dish to close out the week with something good.",
-      "location": "Wood Commons Cafeteria",
+      "location": "Glass Commons and Wood Commons",
       "imagePath": "/nutrition/image.png"
     }
   ],

@@ -4,6 +4,9 @@
     <div class="content">
       <div class="intro-card">
         <h2>2026 AP Test Dates and Times</h2>
+        <p class="intro-copy">
+          Dates and times are provided for convenience and may change. Always confirm details with College Board and school communication before your exam.
+        </p>
       </div>
 
       <div class="date-groups">

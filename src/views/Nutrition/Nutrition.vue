@@ -13,8 +13,8 @@
         </p>
         <div class="overview-grid">
           <div class="overview-card">
-            <p class="panel-label">Selected Date</p>
-            <input v-model="selectedDate" class="shared-input" type="date">
+            <label class="panel-label" for="selected-date">Selected Date</label>
+            <input id="selected-date" v-model="selectedDate" class="shared-input" type="date">
             <p class="panel-title">{{ featuredSpecial?.name || 'No rotating special' }}</p>
             <p class="panel-meta" v-if="featuredSpecial">
               {{ featuredSpecial.weekday }} • {{ featuredSpecial.location }}
@@ -130,7 +130,7 @@ import PlainHeader from '@/components/PlainHeader.vue';
 import nutritionData from '@/data/nutrition.json';
 
 const today = new Date();
-const selectedDate = ref(today.toISOString().slice(0, 10));
+const selectedDate = ref(formatLocalDate(today));
 const openSections = reactive({
   menus: true,
   specials: false,
@@ -157,6 +157,15 @@ const nextBakeSaleLabel = computed(() => {
   return next ? formatDate(next) : 'No upcoming date listed';
 });
 
+/** Returns a local-calendar YYYY-MM-DD string without UTC date shifting. */
+function formatLocalDate(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+/** Formats ISO-like dates for human-readable nutrition page labels. */
 function formatDate(dateString: string): string {
   const date = new Date(`${dateString}T00:00:00`);
   return date.toLocaleDateString(undefined, {
@@ -167,6 +176,7 @@ function formatDate(dateString: string): string {
   });
 }
 
+/** Opens a section and smoothly scrolls to it after the DOM has expanded. */
 async function scrollToSection(sectionId: 'menus' | 'specials' | 'milkshakes' | 'bake-sales' | 'locations'): Promise<void> {
   const sectionMap = {
     menus: 'menus',

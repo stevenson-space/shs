@@ -22,7 +22,6 @@
         <weather-card />
         <pwc-card/>
         <ilc-card />
-        <nutrition-card />
         <lunch-card />
         <upcoming-events-card />
 
@@ -35,6 +34,7 @@
 
         <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" :invert="true" />
         <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
+        <icon-text-card :icon="icons.faPeopleGroup" text="Clubs" link="clubs" :invert="true" />
 
         <icon-text-card :icon="icons.faRadio" text="Jukebox" link="jukebox" />
 
@@ -67,6 +67,7 @@ import {
   faCalculator,
   faGear,
   faHourglass,
+  faPeopleGroup,
   faQrcode,
   faRadio,
 } from "@fortawesome/free-solid-svg-icons";
@@ -77,7 +78,6 @@ import IconTextCard from "@/components/cards/IconTextCard.vue";
 import WeatherCard from "@/components/cards/WeatherCard.vue";
 import PwcCard from "@/components/cards/PwcCard.vue";
 import IlcCard from "@/components/cards/IlcCard.vue";
-import NutritionCard from "@/components/cards/NutritionCard.vue";
 import ScheduleCard from "@/components/cards/ScheduleCard.vue";
 import HolidayCard from "@/components/cards/HolidayCard.vue";
 import ContributeCard from "@/components/cards/ContributeCard.vue";
@@ -103,7 +103,6 @@ export default {
     WeatherCard,
     PwcCard,
     IlcCard,
-    NutritionCard,
     HolidayCard,
     ContributeCard,
     NewThemeCard,
@@ -126,6 +125,7 @@ export default {
         faCalculator,
         faGear,
         faHourglass,
+        faPeopleGroup,
         faQrcode,
         faRadio,
 

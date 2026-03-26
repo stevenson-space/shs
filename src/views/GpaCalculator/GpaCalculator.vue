@@ -132,13 +132,18 @@
                   <template v-if="course.termLabel"> • {{ course.termLabel }}</template>
                 </p>
               </div>
-              <font-awesome-icon
+              <button
                 v-show="courses.length > 0"
+                type="button"
                 class="close"
-                size="1x"
-                :icon="icons.faXmark"
+                aria-label="Remove course"
                 @click="removeCourse(course)"
-              />
+              >
+                <font-awesome-icon
+                  size="1x"
+                  :icon="icons.faXmark"
+                />
+              </button>
             </div>
             <div class="course-settings-row">
               <dropdown
@@ -198,6 +203,7 @@ import Popup from '@/components/Popup.vue';
 import courseCatalog from '@/data/courses.json';
 import type { ParsedTranscriptCourse } from '@/utils/transcriptParser';
 
+/** Adds browser compatibility shims required by the in-browser transcript parser. */
 function ensurePdfCompatibility(): void {
   if (!('withResolvers' in Promise)) {
     Object.defineProperty(Promise, 'withResolvers', {
@@ -407,21 +413,26 @@ export default defineComponent({
     }
   },
   methods: {
+    /** Resolves a course-level label to its dropdown index. */
     levelIndexFromLabel(level: CourseLevel): number {
       return this.courseLevels.indexOf(level);
     },
+    /** Returns the configured year metadata for a given year key. */
     getYearByKey(yearKey: string): CatalogYear {
       return this.catalogYears.find((year) => year.key === yearKey) || this.catalogYears[0];
     },
+    /** Looks up a catalog course by its stable id. */
     getCatalogCourseById(catalogId?: string): CatalogCourse | undefined {
       return this.catalogCourses.find((course) => course.id === catalogId);
     },
+    /** Normalizes course names for transcript matching and dedupe checks. */
     normalizeCourseName(value: string): string {
       return value
         .toUpperCase()
         .replace(/&/g, 'AND')
         .replace(/[^A-Z0-9]/g, '');
     },
+    /** Finds the best catalog course match for a transcript course name. */
     findCatalogCourseByTranscriptName(name: string): CatalogCourse | undefined {
       const normalizedName = this.normalizeCourseName(name);
       return this.catalogCourses.find((course) => {
@@ -429,22 +440,28 @@ export default defineComponent({
         return candidateNames.some((candidate) => this.normalizeCourseName(candidate) === normalizedName);
       });
     },
+    /** Returns a safe catalog fallback when a saved course no longer exists in the catalog. */
     getFallbackCourseForYear(yearKey: string): CatalogCourse {
       return this.catalogCourses.find((course) => course.eligibleYears.includes(yearKey)) || this.catalogCourses[0];
     },
+    /** Clamps persisted numeric values into a valid inclusive range. */
+    clampNumber(value: unknown, min: number, max: number): number {
+      const parsedValue = Number(value);
+      if (!Number.isFinite(parsedValue)) return min;
+      return Math.min(Math.max(parsedValue, min), max);
+    },
+    /** Rehydrates a saved course entry into the current Course model safely. */
     normalizeStoredCourse(course: StoredCourse, index: number): Course {
       const year = this.getYearByKey(course.yearKey || this.catalogYears[0].key);
+      const safeLevel = this.clampNumber(course.level, 0, this.courseLevels.length - 1);
+      const safeGrade = this.clampNumber(course.grade, 0, this.gradeLabels.length - 1);
       const matchedCatalogCourse = this.getCatalogCourseById(course.catalogId)
         || this.catalogCourses.find((item) => item.name === course.name);
       const catalogCourse = matchedCatalogCourse || {
         id: course.catalogId || `stored:${this.normalizeCourseName(course.name || `course-${index + 1}`)}`,
         name: course.name || `Course ${index + 1}`,
         subject: course.subject || this.inferSubjectFromTranscriptName(course.name || ''),
-        defaultLevel: this.courseLevels[
-          typeof course.level === 'number' && course.level >= 0 && course.level < this.courseLevels.length
-            ? course.level
-            : 0
-        ] as CourseLevel,
+        defaultLevel: this.courseLevels[safeLevel] as CourseLevel,
         scienceWeightEligible: course.scienceWeightEligible ?? false,
         description: course.description || 'Imported from transcript',
         eligibleYears: [year.key],
@@ -453,9 +470,9 @@ export default defineComponent({
         course.id || index + 1,
         year.key,
         catalogCourse,
-        typeof course.level === 'number' ? course.level : this.levelIndexFromLabel(catalogCourse.defaultLevel),
+        safeLevel,
       );
-      normalizedCourse.grade = typeof course.grade === 'number' ? course.grade : 0;
+      normalizedCourse.grade = safeGrade;
       normalizedCourse.weight = course.weight === 1.5 && catalogCourse.scienceWeightEligible ? 1.5 : 1.0;
       normalizedCourse.unweightedGPA = typeof course.unweightedGPA === 'number' ? course.unweightedGPA : 4.0;
       normalizedCourse.weightedGPA = typeof course.weightedGPA === 'number' ? course.weightedGPA : 4.0;
@@ -471,23 +488,26 @@ export default defineComponent({
       normalizedCourse.termLabel = course.termLabel || '';
       return normalizedCourse;
     },
+    /** Formats transcript term markers into user-facing semester labels. */
     formatTermLabel(term: string): string {
       if (term === '1') return 'Semester 1';
       if (term === '2') return 'Semester 2';
       return term ? `Term ${term}` : '';
     },
+    /** Infers a subject bucket from a transcript course name for fallback metadata. */
     inferSubjectFromTranscriptName(name: string): string {
       const normalized = name.toUpperCase();
-      if (/(CALCULUS|ALGEBRA|GEOMETRY|STATISTICS|PRECALCULUS)/.test(normalized)) return 'Math';
-      if (/(BIOLOGY|CHEMISTRY|PHYSICS|SCIENCE)/.test(normalized)) return 'Science';
-      if (/(ENGLISH|LANGUAGE|COMP\b|LITERATURE)/.test(normalized)) return 'English';
-      if (/(HISTORY|ECONOMICS|GOVERNMENT|GEOG)/.test(normalized)) return 'Social Studies';
-      if (/(FRENCH|SPANISH|GERMAN|LANGUAGE)/.test(normalized)) return 'World Language';
-      if (/(COMPUTER|PROGRAMMING|WEB|ENGINEERING|COMP SCI)/.test(normalized)) return 'STEM';
-      if (/(PE|HEALTH)/.test(normalized)) return 'PE/Health';
-      if (/(MUSIC|ART|THEATER|DRAMA)/.test(normalized)) return 'Fine Arts';
+      if (/\b(CALCULUS|ALGEBRA|GEOMETRY|STATISTICS|PRECALCULUS)\b/.test(normalized)) return 'Math';
+      if (/\b(BIOLOGY|CHEMISTRY|PHYSICS|SCIENCE)\b/.test(normalized)) return 'Science';
+      if (/\b(FRENCH|SPANISH|GERMAN|MANDARIN|CHINESE|LATIN|ITALIAN)\b/.test(normalized)) return 'World Language';
+      if (/\b(HISTORY|ECONOMICS|GOVERNMENT|GEOG)\b/.test(normalized)) return 'Social Studies';
+      if (/\b(ENGLISH|COMP\b|LITERATURE)\b/.test(normalized)) return 'English';
+      if (/\b(COMPUTER|PROGRAMMING|WEB|ENGINEERING|COMP SCI)\b/.test(normalized)) return 'STEM';
+      if (/\b(PE|HEALTH)\b/.test(normalized)) return 'PE/Health';
+      if (/\b(MUSIC|ART|THEATER|DRAMA)\b/.test(normalized)) return 'Fine Arts';
       return 'Elective';
     },
+    /** Infers course rigor from transcript markers and catalog defaults. */
     inferLevelFromTranscript(course: ParsedTranscriptCourse, matchedCourse?: CatalogCourse): number {
       if (course.courseMarker === 'H' || course.transcriptName.startsWith('AP ')) {
         return 2;
@@ -500,6 +520,7 @@ export default defineComponent({
       }
       return 0;
     },
+    /** Builds a GPA course entry from a parsed transcript row. */
     createCourseFromTranscript(parsedCourse: ParsedTranscriptCourse): Course {
       const matchedCourse = this.findCatalogCourseByTranscriptName(parsedCourse.transcriptName);
       const fallbackCatalogCourse: CatalogCourse = matchedCourse || {
@@ -509,7 +530,7 @@ export default defineComponent({
         defaultLevel: 'Regular',
         scienceWeightEligible: /SCIENCE|BIOLOGY|CHEMISTRY|PHYSICS/.test(
           this.inferSubjectFromTranscriptName(parsedCourse.transcriptName).toUpperCase(),
-        ) || parsedCourse.credit >= 1.5,
+        ),
         description: 'Imported from transcript',
         eligibleYears: [parsedCourse.yearKey],
       };
@@ -526,25 +547,26 @@ export default defineComponent({
       course.scienceWeightEligible = matchedCourse?.scienceWeightEligible || fallbackCatalogCourse.scienceWeightEligible;
       course.level = this.inferLevelFromTranscript(parsedCourse, matchedCourse);
       course.grade = this.gradeLabels.indexOf(parsedCourse.mark);
-      course.weight = parsedCourse.credit >= 1.5 ? 1.5 : 1;
+      course.weight = course.scienceWeightEligible ? 1.5 : 1;
       course.catalogId = matchedCourse?.id || fallbackCatalogCourse.id;
       course.finalGrade = parsedCourse.mark;
       course.term = parsedCourse.term;
       course.termLabel = this.formatTermLabel(parsedCourse.term);
       return course;
     },
-    transcriptCourseKey(course: Pick<Course, 'yearKey' | 'name' | 'grade' | 'level' | 'term'>): string {
+    /** Builds a stable dedupe key for transcript-imported courses. */
+    transcriptCourseKey(course: Pick<Course, 'yearKey' | 'name' | 'term'>): string {
       return [
         course.yearKey,
         this.normalizeCourseName(course.name),
         course.term || '',
-        course.grade,
-        course.level,
       ].join('|');
     },
+    /** Returns the next available in-memory course id. */
     nextCourseId(): number {
       return this.courses.reduce((highest, course) => Math.max(highest, course.id), 0) + 1;
     },
+    /** Creates a new course from a catalog selection for a specific year. */
     createCourseFromCatalog(yearKey: string, catalogCourse: CatalogCourse): Course {
       return new Course(
         this.nextCourseId(),
@@ -553,19 +575,23 @@ export default defineComponent({
         this.levelIndexFromLabel(catalogCourse.defaultLevel),
       );
     },
+    /** Opens and resets the add-course dialog state. */
     openAddCoursePopup(): void {
       this.showAddCoursePopup = true;
       this.selectedAddYearKey = this.catalogYears[0].key;
       this.courseSearch = '';
       this.selectedAddCourseId = this.filteredCatalogCourses[0]?.id || '';
     },
+    /** Closes the add-course dialog. */
     closeAddCoursePopup(): void {
       this.showAddCoursePopup = false;
     },
+    /** Opens the hidden transcript file picker unless an import is already running. */
     openTranscriptPicker(): void {
       if (this.importingTranscript) return;
       (this.$refs.transcriptInput as HTMLInputElement | undefined)?.click();
     },
+    /** Imports a Stevenson transcript PDF and merges new courses into the calculator. */
     async handleTranscriptSelected(event: Event): Promise<void> {
       const input = event.target as HTMLInputElement;
       const file = input.files?.[0];
@@ -611,6 +637,7 @@ export default defineComponent({
         input.value = '';
       }
     },
+    /** Adds the currently selected catalog course to the chosen year bucket. */
     addSelectedCourse(): void {
       const selectedCourse = this.getCatalogCourseById(this.selectedAddCourseId)
         || this.filteredCatalogCourses[0];
@@ -621,14 +648,17 @@ export default defineComponent({
       this.calculateSemesterGrades();
       this.closeAddCoursePopup();
     },
+    /** Formats eligible year keys for the add-course search results. */
     formatEligibleYears(yearKeys: string[]): string {
       return yearKeys
         .map((yearKey) => this.getYearByKey(yearKey).label)
         .join(', ');
     },
+    /** Returns the list of courses assigned to a specific school year. */
     coursesForYear(yearKey: string): Course[] {
       return this.courses.filter((course) => course.yearKey === yearKey);
     },
+    /** Removes a course and recomputes GPA summaries. */
     removeCourse(course: Course): void {
       const index = this.courses.indexOf(course);
       if (index > -1) {
@@ -636,18 +666,21 @@ export default defineComponent({
         this.calculateSemesterGrades();
       }
     },
+    /** Updates a course's grade selection and recomputes GPA summaries. */
     selectGrade(course: Course, gradeIndex: number): void {
       const index = this.courses.indexOf(course);
       course.grade = gradeIndex;
       this.courses[index] = course;
       this.calculateSemesterGrades();
     },
+    /** Updates a course's rigor level and recomputes GPA summaries. */
     selectedCourseLevel(course: Course, i: number): void {
       const index = this.courses.indexOf(course);
       course.level = i;
       this.courses[index] = course;
       this.calculateSemesterGrades();
     },
+    /** Toggles the 1.5 science weighting when the course is eligible. */
     toggleExtraWeight(course: Course, isChecked: boolean): void {
       if (!course.scienceWeightEligible) {
         course.weight = 1;
@@ -659,6 +692,7 @@ export default defineComponent({
       this.courses[index] = course;
       this.calculateSemesterGrades();
     },
+    /** Recomputes per-course GPAs and overall GPA summaries from current selections. */
     calculateSemesterGrades(): void {
       if (this.courses.length === 0) {
         this.averageUnweightedGpa = 0;
@@ -883,6 +917,13 @@ export default defineComponent({
         top: 13px
         right: 11px
         cursor: pointer
+        border: none
+        background: transparent
+        color: inherit
+        padding: 0
+        display: inline-flex
+        align-items: center
+        justify-content: center
 
     .course-settings-row
       margin: 0 5px

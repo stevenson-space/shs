@@ -57,6 +57,7 @@
         type="button"
         class="allergen-chip"
         :class="{ active: selectedAllergens.includes(allergen) }"
+        :aria-pressed="selectedAllergens.includes(allergen)"
         @click="toggleAllergen(allergen)"
       >
         {{ allergen }}
@@ -194,6 +195,7 @@ watch(sliderValue, (value) => {
   maxPrice.value = value >= sliderMax ? null : value;
 });
 
+/** Toggles an allergen exclusion filter on or off. */
 function toggleAllergen(allergen: string): void {
   if (selectedAllergens.value.includes(allergen)) {
     selectedAllergens.value = selectedAllergens.value.filter((item) => item !== allergen);

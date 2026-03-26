@@ -10,6 +10,7 @@ import useAuthenticationStore from "@/stores/authentication";
 
 const Home: RouteComponent = () => import("@/views/Home/Home.vue");
 const AP: RouteComponent = () => import("@/views/AP/AP.vue");
+const Clubs: RouteComponent = () => import("@/views/Clubs/Clubs.vue");
 const GpaCalculator: RouteComponent = () => import("@/views/GpaCalculator/GpaCalculator.vue");
 const BellSchedules: RouteComponent = () => import("@/views/Bell Schedules/BellSchedules.vue");
 const Calendar: RouteComponent = () => import("@/views/Calendar/Calendar.vue");
@@ -48,6 +49,12 @@ const routes: Array<RouteRecordRaw> = [
     name: "ap",
     path: "/ap",
     component: AP,
+  },
+  {
+    name: "clubs",
+    path: "/clubs",
+    component: Clubs,
+    meta: { requiresAuth: false },
   },
   {
     path: "/bellschedules",
