@@ -7,48 +7,1074 @@
   ],
   "courses": [
     {
-      "id": "english-1",
-      "name": "English 1",
-      "subject": "English",
-      "defaultLevel": "Regular",
+      "id": "introduction-to-business",
+      "name": "Introduction to Business",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
       "scienceWeightEligible": false,
-      "description": "Core English course focused on reading and writing foundations.",
+      "description": "Provides students with a foundational understanding of the business world. Explores key topics including marketing, accounting, international business and entrepreneurship, giving students insight into how businesses operate locally and globally. Through real-world examples and hands-on projects, students will develop critical thinking and problem-solving skills essential for future success in business.",
       "eligibleYears": ["freshman", "sophomore"]
     },
     {
-      "id": "english-2",
-      "name": "English 2",
-      "subject": "English",
-      "defaultLevel": "Accelerated",
+      "id": "business-applications-and-technology-1",
+      "name": "Business Applications and Technology 1",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
       "scienceWeightEligible": false,
-      "description": "Literature and composition course with analytical writing.",
-      "eligibleYears": ["freshman", "sophomore", "junior"]
+      "description": "Designed to teach students how to use a variety of software programs and multimedia platforms as they create a business concept. Students will strengthen their knowledge of both business operations and technology usage in the workplace as they develop communications, marketing materials, financial proposals and presentations for their proposed business.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
     },
     {
-      "id": "ap-english-literature",
-      "name": "AP English Literature",
-      "subject": "English",
+      "id": "business-applications-and-technology-2",
+      "name": "Business Applications and Technology 2",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Encourages students to develop the technology and problem-solving skills essential in today's workforce. Students will be tasked with finding solutions to common business problems, while being encouraged to consider multiple perspectives. Students will work to incorporate technology into their business practices to help them become more efficient and organized.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students will learn how companies develop and market their products and services. Current trends in the entertainment, apparel, sports and food industries will be explored and applied during class activities. Students will interact with members of the school and local community to design products, advertisements and sales promotions for their different target markets. They will learn personal selling strategies and visual merchandising techniques and get a chance to practice them in authentic projects.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "entrepreneurship",
+      "name": "Entrepreneurship",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Will provide students with a working background on the skills and knowledge necessary to own and operate a small business. Students will examine the environment of small business ownership, the procedures and skills necessary to open a small business and the policies and practices of a successful small business operation. Entrepreneurship will emphasize a hands-on approach to small business ownership.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "investment-management",
+      "name": "Investment Management",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Designed to help students create a well-rounded investment plan to meet their financial goals. Students will learn techniques used in corporate finance and analyze various financial securities like stocks, futures and options. They will explore the issues faced by today's corporate financial managers and brokers through the use of a sophisticated, hands-on investment simulation. This course is designed for students who are planning careers in brokerage, investment and other financial fields.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "personal-finance",
+      "name": "Personal Finance",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Will teach students how to manage finances and achieve their goals by utilizing sound decision-making. This student-centered course allows individuals to explore and learn about important facets of their financial life. Specific course topics relate to housing, transportation, wellness, recreation, leisure, saving and investing. Students will gain knowledge and skills by investigating and responding to problems and challenges facing all consumers.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "personal-finance-online",
+      "name": "Personal Finance-Online",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Will teach students how to manage finances and achieve their goals by utilizing sound decision-making. This student-centered course allows individuals to explore and learn about important facets of their financial life. Specific course topics relate to housing, transportation, wellness, recreation, leisure, saving and investing. The curricular requirements for this course are identical to the traditional Personal Finance course. Instructional activities are adjusted for an online instructional setting.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "driver-education",
+      "name": "Driver Education",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is normally taken during one semester of sophomore or junior year. The course is a two-phase program consisting of classroom and behind-the-wheel instruction. The course prepares students for safe motor vehicle operation in a suburban driving environment. Among the topics taught in this course are the rules of the road, defensive driving, natural laws and their effects on vehicle control, driver responsibility and impaired and distracted driving.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "clothing-and-design-1",
+      "name": "Clothing and Design 1",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "A lab-based course where students will learn fashion construction techniques, pattern and fabric selection and fashion presentation skills. Students will apply these techniques to their personal apparel and accessories. Projects include drawstring bag, sweatshirt and a project of student choice. Students who have sewing experience will have the opportunity to expand and improve their clothing construction skills.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "clothing-and-design-2",
+      "name": "Clothing and Design 2",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "A continuation of the Clothing and Design 1 course curriculum. Advanced clothing construction skills and original projects are a part of the course. Students interested in pattern manipulation and creation of their own patterns are provided the opportunity to use dress forms and fabric to create original designs. Projects include tote bag and three projects of student choice.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "interior-design",
+      "name": "Interior Design",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "A project-based course where design is explored as it relates to housing and commercial interiors. It integrates the application of design principles with the living environment, environmentally-friendly design, color and the efficient use of design in the context of individual and family lifestyles. Design projects include personal bedroom redesign, kitchen design, commercial design of a cafe, retail space or hotel lobby and a vacation home remodel.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "business-of-fashion-and-design",
+      "name": "Business of Fashion and Design",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "A project-based course which focuses on the business side of the fashion industry, fashion design and the merchandising of fashion-related products. Topics include an overview of the fashion industry, product development, the evolution, trends and movement of the fashion cycle, visual merchandising, fashion promotion, fashion and accessory design.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "teaching-young-children-1",
+      "name": "Teaching Young Children 1",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Offers students the opportunity to enhance their understanding of child development while interacting with the children in the Little Patriots Lab School. Students will focus on creating and implementing developmentally appropriate lessons, interacting positively with children and observing children's development. This course provides a valuable opportunity for students to begin their exploration of career fields that work directly with children and families.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "teaching-young-children-2",
+      "name": "Teaching Young Children 2",
+      "subject": "Applied Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Offers students the opportunity to further their understanding of early childhood while interacting with the children in the Little Patriots Lab School. Students will prepare and teach lessons while observing and assessing individual children's developmental progress. This course provides a valuable opportunity for students to continue their exploration of education or career fields that work directly with children and families.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "freshman-english",
+      "name": "Freshman English",
+      "subject": "Communication Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students develop their proficiencies in reading, writing, literary analysis, grammar and usage, oral communication and research. Students explore the overarching theme—the individual's interaction and negotiation with society—through the study of short stories, short essays and articles, novels, poetry and drama. The writing program includes narrative, informative and argumentative writing.",
+      "eligibleYears": ["freshman"]
+    },
+    {
+      "id": "freshman-english-accelerated",
+      "name": "Freshman English",
+      "subject": "Communication Arts",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "Students continue to develop their proficiencies in reading, writing, literary analysis, grammar and usage, oral communication and research. Students explore the overarching theme—the individual's interaction and negotiation with society—through the study of short stories, short essays and articles, novels, poetry and drama. Students are challenged to read more sophisticated texts, produce more complex writing and engage in more critical thinking.",
+      "eligibleYears": ["freshman"]
+    },
+    {
+      "id": "sophomore-english",
+      "name": "Sophomore English",
+      "subject": "Communication Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students continue to develop their proficiencies in reading, writing, literary analysis, grammar and usage, oral communication and research. Students explore the overarching theme—the individual's interaction and negotiation with society—through the study of short stories, short essays and articles, novels, poetry and drama. A focus on persuasion introduces students to the study of rhetorical analysis.",
+      "eligibleYears": ["sophomore"]
+    },
+    {
+      "id": "sophomore-english-accelerated",
+      "name": "Sophomore English",
+      "subject": "Communication Arts",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "Students continue to develop their proficiencies in reading, writing, literary analysis, grammar and usage, oral communication and research. Students explore the overarching theme—the individual's interaction and negotiation with society—through the study of short stories, short essays and articles, novels, poetry and drama. This course is best suited for students who are prepared for a greater challenge.",
+      "eligibleYears": ["sophomore"]
+    },
+    {
+      "id": "junior-english",
+      "name": "Junior English",
+      "subject": "Communication Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This skills-based course completes the department's three-year scope and sequence in the areas of reading, writing, speaking and listening, grammar and usage and research. Through their reading and writing, students deepen their analysis of language and rhetoric. Building on the previous focus on argumentation, students continue to develop their writing through a structured process approach that is aligned with college writing expectations.",
+      "eligibleYears": ["junior"]
+    },
+    {
+      "id": "junior-english-accelerated",
+      "name": "Junior English",
+      "subject": "Communication Arts",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "This skills-based course completes the department's three-year scope and sequence in the areas of reading, writing, speaking and listening, grammar and usage and research. Through their reading and writing, students deepen their analysis of language and rhetoric. Building on the previous focus on argumentation, students continue to develop their writing through a structured process approach that is aligned with college writing expectations.",
+      "eligibleYears": ["junior"]
+    },
+    {
+      "id": "ap-english-language-and-composition",
+      "name": "AP English Language and Composition",
+      "subject": "Communication Arts",
       "defaultLevel": "Honors/AP",
       "scienceWeightEligible": false,
-      "description": "College-level literary analysis and argumentative writing.",
+      "description": "This is a college-level course, one that adheres to the objectives articulated by the College Board. Students are guided to proficiency in the areas of reading, literary analysis, argumentation, writing, grammar and usage, oral communication and research. The course emphasizes a variety of non-fiction texts as a means of critical analysis of language and rhetoric. This writing intensive course focuses on literary analysis, rhetorical analysis, synthesis and argumentation.",
+      "eligibleYears": ["junior"]
+    },
+    {
+      "id": "american-studies",
+      "name": "American Studies (AP English Language and Composition and AP US History)",
+      "subject": "Communication Arts",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "Students are scheduled for consecutive periods of history and English, allowing for an integrated study of the two disciplines, development of skills for informed citizenship and thematic movements in our country's history and literature. This course fulfills the College Board's objectives for both AP English Language and Composition and AP US History.",
+      "eligibleYears": ["junior"]
+    },
+    {
+      "id": "ap-literature-and-composition",
+      "name": "AP Literature and Composition",
+      "subject": "Communication Arts",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This course will provide students with a college-level literary experience that will foster readiness for the AP English Literature and Composition exam. In compliance with College Board requirements, students will study works from the 16th century to the present. During the course of the year, students are expected to continue to develop their knowledge of literary terms related to prose and poetry.",
+      "eligibleYears": ["senior"]
+    },
+    {
+      "id": "world-literature",
+      "name": "World Literature",
+      "subject": "Communication Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This full-year course leads students through a wide variety of literature from traditions around the globe. Students critically examine the literary themes and methods that reflect the diverse times and cultures that produced these texts. Through multiple modes such as the novel, traditional origin stories and poetry, students will explore questions about the nature of humanity and of perspective.",
+      "eligibleYears": ["senior"]
+    },
+    {
+      "id": "public-speaking",
+      "name": "Public Speaking",
+      "subject": "Communication Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed to provide experience and training in public speaking so that students are equipped with the skills essential for success in the business and academic worlds of today and tomorrow. Students learn to tailor a message to suit a particular audience, enhance the message through technology, understand logic and reasoning, develop listening skills, identify propaganda techniques and understand the physical producers of voice.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "political-thought-and-its-literature",
+      "name": "Political Thought and Its Literature",
+      "subject": "Communication Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This one-semester elective course, which can be taken as an English credit or social studies credit, helps students develop skills in the areas of reading, literary analysis, writing, oral communication and research. Students explore the overarching themes of the course through short stories, essays, articles, novels, poetry, drama and other intriguing texts.",
+      "eligibleYears": ["senior"]
+    },
+    {
+      "id": "creative-writing",
+      "name": "Creative Writing",
+      "subject": "Communication Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students learn to express their thoughts through writing short stories, poems and plays. Class discussions analyze and implement different writing styles including, but not limited to, fiction, poetry and drama. The course format is a workshop that includes daily writing. Students will give and receive feedback and peer edit in small- and full-class groups.",
       "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "creative-writing-seminar",
+      "name": "Creative Writing Seminar",
+      "subject": "Communication Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students will refine their skills in writing and analyzing stories, plays and poetry. Projects, readings and assignments will cover various genres that allow students to pursue individual interests. Class discussions focus on the analysis and consideration of different writing styles and genres including, but not limited to, fiction, poetry and drama.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "media-analysis",
+      "name": "Media Analysis",
+      "subject": "Communication Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This one-semester composition course is designed to lead students to a critical understanding of the media that surround us. The course focuses on the analysis of three major media industries- advertising, news and entertainment- and the print and non-print messages created by these industries. Students will be required to write weekly response papers, read college-level texts, view a variety of forms of media, participate in class discussions and complete analytical projects.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "topics-in-composition-film-genres",
+      "name": "Topics in Composition: Film Genres",
+      "subject": "Communication Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This one-semester composition course is designed to lead students to an understanding of the art of film through the world of film genre, including suspense, comedy, horror, among others. Topics of composition include film techniques, film history, film analysis and elements of genre conventions. Students will be required to write weekly response papers, view a variety of films, participate in class discussions and complete four analytical projects.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "mythology-and-folklore",
+      "name": "Mythology and Folklore",
+      "subject": "Communication Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "The study of myth, folklore and culture provides students with a lens to study various texts: written, oral, performative, ritualistic, etc. We will study a wide range of short texts from various cultures and eras, including contemporary studies. In this project-based course, reading and writing assessments allow students to showcase some personal interests.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "writing-for-college",
+      "name": "Writing for College",
+      "subject": "Communication Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This class provides students the opportunity to develop their writing through a variety of skills, including but not limited to argumentation, research and impromptu responses. Structured in an inquiry format guided by essential questions, students will read and critique several short texts in each unit and engage in frequent class discussions to support writing as a process.",
+      "eligibleYears": ["senior"]
+    },
+    {
+      "id": "computer-programming-1",
+      "name": "Computer Programming 1",
+      "subject": "Computer Science",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This one-semester course introduces students to the foundations of computer programming using Python. Python's syntax is easy to read and write for those with limited experience with programming, making it an ideal language for those looking for an introduction to the field of computer science. The course introduces students to the foundational ideas of computer programming and computational thinking with an emphasis on problem-solving.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "computer-programming-2",
+      "name": "Computer Programming 2",
+      "subject": "Computer Science",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This one-semester course is intended for students who possess some programming experience or who have successfully completed Computer Programming 1 and seek a deeper understanding of computer programming concepts. The Java language continues to enjoy worldwide popularity. This course reviews foundational coding frameworks and concepts and introduces students to object-oriented design using the Java programming language.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-computer-science-a",
+      "name": "AP Computer Science A",
+      "subject": "Computer Science",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This course introduces students to object-oriented programming methodology with an emphasis on problem solving and algorithm development. It is meant to be the equivalent of a first-semester college course in Computer Science. Students will learn how to code more sophisticated concepts in Java. The course emphasizes the design issues that make programs understandable, adaptable and reusable.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "architectural-design",
+      "name": "Architectural Design",
+      "subject": "Engineering",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "An introductory course for students interested in exploring the world of architecture. Through hands-on projects, students will learn key concepts in design, planning and technical drawing. Using the same software as professional architects, Autodesk Revit, they'll create floor plans, site layouts, elevations and renderings focused on residential design.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "advanced-architectural-design",
+      "name": "Advanced Architectural Design",
+      "subject": "Engineering",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Recommended for students interested in pursuing a career in architecture and/or interior design. Designed to prepare students for the wide variety of technical and computer software skills needed for higher education courses and within the workforce. Students will use architectural software and technology that is used by professional architects including Autodesk Revit, Autodesk AutoCAD, SketchUp, Adobe InDesign, Adobe Photoshop and a laser printer.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "introduction-to-engineering-design-pltw",
+      "name": "Introduction to Engineering Design-PLTW",
+      "subject": "Engineering",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "A full-year course available to all students. In this course, students use 3D solid modeling design software to help them design solutions to solve proposed problems. Students will then use high-tech equipment including 3D printers, a laser engraver and CNC router to produce their solutions. Students will learn how to document their work and communicate solutions to peers and members of the professional community.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "civil-engineering-and-architecture-pltw",
+      "name": "Civil Engineering and Architecture-PLTW",
+      "subject": "Engineering",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "Students will learn the art and science of planning, designing and constructing buildings. The major focus of this course is completing long-term projects that involve the design and development of residential and commercial structures. Students use Autodesk Revit, a professional grade software, to design a small structure and a home to learn the basic construction systems such as wall, roof, foundation, water and electrical systems.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "principles-of-engineering-pltw",
+      "name": "Principles of Engineering-PLTW",
+      "subject": "Engineering",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "A survey course in which students will be introduced to several elements of engineering including mechanisms, energy, statics, materials and kinematics. Students in Principles of Engineering-PLTW will develop problem-solving skills and collaborate with others to complete design challenges. Students will be using various engineering programs to research and evaluate designs, create code for robotics and develop virtual models of design solutions.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "electrical-engineering-pltw",
+      "name": "Electrical Engineering-PLTW",
+      "subject": "Engineering",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This Electrical Engineering (EE) course gives students the chance to explore the technology behind everyday electronics. Students will learn the basics of how digital circuits work and dive into topics like logic gates, integrated circuits and programmable devices. They will also learn how to design your own circuits using both hardware and software.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "computer-integrated-manufacturing-pltw",
+      "name": "Computer Integrated Manufacturing-PLTW",
+      "subject": "Engineering",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "Computer Integrated Manufacturing is one of the specialization courses in the PLTW Engineering program. The course deepens the skills and knowledge of an engineering student within the context of efficiently creating the products all around us. Students learn about manufacturing processes, product design, robotics and automation.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "engineering-design-and-development-pltw",
+      "name": "Engineering Design and Development-PLTW",
+      "subject": "Engineering",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "In this capstone course of the engineering pathway, students take full ownership of the design process as they identify a real-world problem and develop a meaningful, innovative solution. Drawing on skills from previous engineering classes, students deepen their understanding of design thinking, manufacturing techniques and patterns of innovation.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "print-media-1",
+      "name": "Print Media 1",
+      "subject": "Technology",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "A creative, hands-on design lab where students will bring their ideas to life- from rough sketches to real products they can hold, wear or share. Using industry-standard tools like Adobe Illustrator and Photoshop, students will learn how to design for both screens and physical items. They will create everything from stickers, buttons and t-shirts to posters, window clings, laser-cut wood, acrylic and leather goods.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "print-media-2",
+      "name": "Print Media 2",
+      "subject": "Technology",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Builds on the skills students learned in Print Media 1 and takes their designs to the next level. This advanced, hands-on design lab introduces Adobe InDesign, alongside Illustrator and Photoshop. Students will dive deeper into designing for both digital and physical products, working on projects like custom apparel, promotional items, and commercial print products such as banners, packaging, marketing materials and large-scale prints.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "web-development-1",
+      "name": "Web Development 1",
+      "subject": "Technology",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Where design meets code. In this hands-on course, students will learn how to build websites from the ground up using HTML5 and CSS3- no templates, no shortcuts. Students will explore the world of user interface (UI) design, creating visually appealing and accessible layouts with carefully chosen colors, fonts and structure.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "web-development-2",
+      "name": "Web Development 2",
+      "subject": "Technology",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Where students' websites come to life. This course moves beyond layout and visuals to focus on user experience (UX) and interactivity. Students will learn how to build functional web apps like timers, quizzes, calculators and weather tools- all from scratch using HTML, CSS and JavaScript.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "game-development-1",
+      "name": "Game Development 1",
+      "subject": "Technology",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course introduces students to the fundamentals of game design through hands-on experience using the Unreal Game Engine. Students will learn to create their own games across a variety of genres, even with no prior programming experience. The course will explore object-oriented programming concepts alongside essential game development skills such as 3D modeling, lighting and texturing.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "game-development-2",
+      "name": "Game Development 2",
+      "subject": "Technology",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course builds on the principles introduced in Game Development 1, offering students a deeper exploration into game development using the Unreal Game Engine. Students will expand their skills in object-oriented programming and focus on more advanced techniques for resource creation, including detailed 2D and 3D design.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "motion-graphics-and-visual-effects",
+      "name": "Motion Graphics and Visual Effects",
+      "subject": "Technology",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "In Motion Graphics and Visual Effects, students dive into the world of post-production magic using Adobe After Effects. This advanced course focuses on bringing video to life through animation, compositing and special effects. Students will master key tools like keyframing, masking and layering while learning to animate shapes, text and images.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "video-editing-and-production",
+      "name": "Video Editing and Production",
+      "subject": "Technology",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "In Video Editing and Production, students will bring their stories to life with the tools and techniques used by media professionals. Students will learn the full video production workflow- from planning and shooting with professional DSLR cameras to editing with Adobe Premiere Pro. The course emphasizes visual storytelling while teaching technical skills like green screen compositing, motion graphics, color grading and visual effects.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "virtual-reality",
+      "name": "Virtual Reality",
+      "subject": "Technology",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Step into the world of virtual reality and learn how to create experiences that are immersive, interactive and impactful. In this hands-on course, students will explore the fundamentals of VR development by designing and building a variety of virtual reality projects. Students will discover how VR is used in a wide range of fields- from gaming and animation to education, training, storytelling and more.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "art-and-design",
+      "name": "Art and Design",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This foundational course introduces students to essential techniques, tools and media across the visual arts. Students will explore drawing, painting, sculpture and ceramics through hands-on studio experiences that emphasize creative thinking and technical development. This course serves as a prerequisite for all advanced art classes.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "drawing",
+      "name": "Drawing",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course provides students with the opportunity to learn more advanced realistic drawing and shading techniques. Observational drawing and inventive design are explored. Various color and black and white media are used in this course.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "painting",
+      "name": "Painting",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course teaches students the concepts, skills, methods and processes necessary to explore watercolor and oil painting. Students create a variety of compositions through both quick studies and extended complex paintings. There is an emphasis on color theory, design principles, media, tools and a variety of painting techniques.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "mixed-media",
+      "name": "Mixed Media",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course will help students develop their individual expression through the use of creative visual problem-solving. Students will use colored pencil, pastel, ink pen, watercolor and other media, students will be challenged to think creatively, work more quickly and experiment with different techniques and compositional approaches.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ceramics",
+      "name": "Ceramics",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is a hands-on class designed for those students who like to work in clay. Students will learn basic and advanced hand-building techniques and how to use a potter's wheel. They will be introduced to a variety of decorating, glazing and firing techniques and will produce a number of creative stoneware pieces.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "sculpture",
+      "name": "Sculpture",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course provides a hands-on approach for understanding contemporary sculpture. Students will have the opportunity to work with a variety of 3D media. Sculptural techniques explored may include additive, subtractive and/or assemblage, with a focus on creative problem-solving.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "metals-and-jewelry",
+      "name": "Metals and Jewelry",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed to introduce students to the principles of design as applied to metalwork, wire and jewelry. Students will learn to cut, file, texture and polish metal pieces. They will also solder with a torch and set a cabochon stone.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "advanced-drawing-painting-and-mixed-media",
+      "name": "Advanced Drawing, Painting and Mixed Media",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed to give students advanced experiences in creative thinking and problem-solving using 2D art media. In this class, students will build upon the concepts and skills learned in their Drawing, Painting, Studio Art and/or Mixed Media classes. Students can choose to focus on drawing, painting or mixed media either in a representational or expressive style, to produce works of art that relate to specific design issues and themes.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "advanced-ceramics-metals-and-sculpture",
+      "name": "Advanced Ceramics, Metals and Sculpture",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course gives students advanced experiences in creative thinking and problem solving with 3D art issues and 3D art media. In this class, students can focus on ceramics, sculpture or jewelry and metals to produce works of art that relate to specific design issues and themes.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-art-drawing-2d-and-3d-design",
+      "name": "AP Art: Drawing, 2D and 3D Design",
+      "subject": "Fine Arts",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This course offers students a concentrated program which enables them to apply for college credit in art. Emphasis is centered on studio work, the preparation of a portfolio and the submission of a portfolio for potential AP credit. In the spring, each student will exhibit their work in a one-person show.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "photography-1",
+      "name": "Photography 1",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This foundational course covers basic concepts and practice of digital photography, including understanding and use of the camera, lenses and other basic photographic equipment. The course will address aesthetic principles as they relate to composition, space, exposure, light and color. An introduction to Adobe Photoshop will be studied in this course.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "photography-2",
+      "name": "Photography 2",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed to refine students' digital photographic skills and aesthetic judgment as they relate to composition, space, exposure, light and color. Special effects, studio lighting, portraiture, night photography, use of Adobe Photoshop, the Creative Suite and Procreate are areas studied in this course.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "advanced-photography-and-digital-design",
+      "name": "Advanced Photography and Digital Design",
+      "subject": "Fine Arts",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "This course offers an advanced study of photography and/or digital design for students who want to pursue photography making in a serious manner. Students on the photography track are introduced to large format printing, DSLR camera handling skills and advanced techniques using Adobe Photoshop and the Creative Suite.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-photography-and-digital-design",
+      "name": "AP Photography and Digital Design",
+      "subject": "Fine Arts",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This course offers digital 2D design drawing and painting students a concentrated program, which enables them to apply for college credit in art. Students on the studio work, the preparation of a portfolio and the submission of a portfolio for potential AP credit. In the spring, each student will exhibit their work in a one-person show.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "digital-art-and-design-1",
+      "name": "Digital Art and Design 1",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed to introduce students to Adobe Photoshop and Procreate as drawing and graphic design tools and as a means of producing finished artwork. Students will have the opportunity to develop skills and be creative while digitally drawing, painting and manipulating photographic images with both Wacom tablets as well as the iPad and Apple Pencil.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "digital-art-and-design-2",
+      "name": "Digital Art and Design 2",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed to be an advanced or second level for students interested in furthering their study and exploration of using Adobe Photoshop as well as Procreate as a drawing and graphic design tool. Students will have the opportunity to develop skills and be creative while digitally drawing, painting and manipulating photographic images with both Wacom tablets as well as the iPad and Apple Pencil.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "2d-animation",
+      "name": "2D Animation",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course provides students the opportunity to study and explore 2D animation. Students will study the history of animation and work with 2D animation software to produce their own animated shorts, from initial concept and storyboarding through final rendering. Concepts and techniques in vector-based drawing, timing, key-framing and music and lip synchronization will be explored.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "3d-animation",
+      "name": "3D Animation",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for students with an interest in 3D animation. Students will build upon the concepts, skills and techniques learned from 2D Animation to help them learn to use 3D animation software to create and animate their own 3D models/characters. Polygon and NURB modeling, texturing, lighting and basic 3D key-frame/path animation will be explored.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-art-history",
+      "name": "AP Art History",
+      "subject": "Fine Arts",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This course is designed as an introductory college-level course in the history of art. Students will examine the major forms of artistic expression from prehistoric through contemporary cultures. They will study architecture, sculpture, painting and other art forms with intelligence and sensitivity.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "dance-1",
+      "name": "Dance 1",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course will introduce and review essential dance skills. Students will learn basic dance movement and concepts such as time, space and energy, as well as movement terminology. Practice and repetition are primary means of learning movement and are followed by assessment and teacher feedback. Emphasis will be on dance movement followed by a focus on refining technique and choreography concepts.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "dance-2",
+      "name": "Dance 2",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for students who have some experience in contemporary dance technique. Emphasis will be on dance vocabulary, essential choreographic concepts and basic anatomy as it pertains to dance. Practice and repetition are primary means of learning movement and are followed by assessment and teacher feedback.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "dance-3",
+      "name": "Dance 3",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for students with previous dance training. Students will focus on the detailed aspects of contemporary dance at an accelerated pace. Emphasis is on the student's technique and choreography studies. Students engage in critical response and self-assessment activities to enhance content knowledge.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "dance-4",
+      "name": "Dance 4",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for students who have achieved a high degree of technical skill. The class will work toward developing and enhancing performance qualities. The emphasis is on challenging students' creative skills in order to strengthen versatility of movement styles through choreographic and compositional strategies.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "concert-dance",
+      "name": "Concert Dance",
+      "subject": "Fine Arts",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for students who have had advanced training in contemporary dance, as well as a strong background in ballet, jazz and composition. Concert dancers are responsible for maintaining a high quality of technical skill. The Concert Dance class will work toward developing and enhancing performance and choreographic skills in preparation for college-level dance study and/ or professional studio experience.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "jazz-fusion",
+      "name": "Jazz Fusion",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course will introduce and review essential dance skills that pertain to the jazz dance genre. Over the semester of this jazz survey course, students will learn and engage in jazz, hip hop, musical theatre and dance fitness movement. With focus on creativity, discipline and technical development, dancers work in a nurturing atmosphere to build confidence and life/dance skills.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "technical-skills",
+      "name": "Technical Skills",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course will focus on honing technical dance skills by working on anatomical alignment, physical strength and flexibility. Students will practice technical movements such as jumps, turns and leaps. Students will also learn specific dance conditioning practices to increase the quality of dance execution.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "dance-leadership",
+      "name": "Dance Leadership",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Dance Leadership is a one-year course where students will intern and assist with dance instruction in a technique class. Dance leaders will learn and demonstrate the teacher-created combinations including warm-ups, across the floor and center combinations. Dance leaders will model proper technique and assist students.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "freshman-band",
+      "name": "Freshman Band",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "All incoming freshmen with middle school band experience may enroll in Freshman Band to continue work on their comprehensive musicianship skills. Freshman Band members also perform in three formal concerts throughout the year. For the first eight to nine weeks of the first semester, band students may choose to perform in the highly acclaimed Marching Patriots.",
+      "eligibleYears": ["freshman"]
+    },
+    {
+      "id": "symphonic-band",
+      "name": "Symphonic Band",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students in grades 10-12 with band experience in Freshman Band may enroll in Symphonic Band to continue work on comprehensive musicianship skills. Symphonic Band members also perform in four formal concerts throughout the year. For the first eight to nine weeks of the first semester, band students may choose to perform in the Marching Patriots.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "wind-symphony",
+      "name": "Wind Symphony",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students in grades 10-12 with band experience may audition to enroll in Wind Symphony to continue work on comprehensive musicianship skills. Wind Symphony members also perform in four formal concerts throughout the year. For the first eight to nine weeks of the first semester, band students may choose to perform in the Marching Patriots.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "wind-ensemble",
+      "name": "Wind Ensemble",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students in grades 10-12 with band experience may audition to enroll in Wind Ensemble to continue work on comprehensive musicianship skills. Wind Ensemble also performs in five annual concerts at Stevenson High School and may also participate in additional performance opportunities or festivals.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "stevenson-singers",
+      "name": "Stevenson Singers",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This ensemble is an entry level singing course, available to all students of all grade levels, regardless of previous experience. This course focuses on developing fundamental skills for individual and group singing, and comprehensive musician skills. Stevenson Singers perform at five school concerts throughout the year.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "advanced-chorus",
+      "name": "Advanced Chorus",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Experienced sopranos and altos may audition for this advanced vocal ensemble. Students will continue to work on developing more advanced skills for individual and group singing, as well as comprehensive musicianship. This ensemble performs at five school concerts and may also participate in additional performance opportunities or festivals.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "patriot-singers",
+      "name": "Patriot Singers",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Experienced students of all voice parts may audition for Patriot Singers. This is an advanced SATB vocal ensemble, where students will be challenged with a wide variety of repertoire, and further develop advanced musicianship skills. The Patriot Singers perform at five school concerts, community events and may also participate in additional performance opportunities or festivals.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "stevenson-orchestra",
+      "name": "Stevenson Orchestra",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is open to students in grade 9, as well as transfer students who demonstrate the appropriate level of technical preparedness on violin, viola, cello, bass or harp. Students will continue developing foundational and intermediate performance techniques while expanding their knowledge of music theory and comprehensive musicianship skills.",
+      "eligibleYears": ["freshman"]
+    },
+    {
+      "id": "concert-orchestra",
+      "name": "Concert Orchestra",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for students in grades 10–12 who play violin, viola, cello, bass or harp with advanced string technique. Students will study two- and three-octave scales and arpeggios while developing advanced performance techniques, music theory knowledge and comprehensive musicianship skills.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "symphonic-orchestra",
+      "name": "Symphonic Orchestra",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for advanced violin, viola, cello, bass and harp string students. The repertoire in this class includes works for chamber groups, string ensemble and full orchestra. Musical works highlight repertoire of the Baroque, Classical and early Romantic eras with performances on five formal concerts throughout the school year.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "patriot-orchestra",
+      "name": "Patriot Orchestra",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for students in grades 10–12 who play violin, viola, cello, bass or harp and demonstrate advanced string technique. Repertoire includes works for chamber ensemble, string orchestra and full orchestra with a focus on advanced literature ranging from the mid-19th century to contemporary composers.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "guitar-1",
+      "name": "Guitar 1",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for students who are interested in learning how to play the guitar and/or develop strong technical skills in guitar performance. While this course is designed for a brand new guitarist, it also supports students with some guitar experience. This course will introduce the techniques and musicianship skills in order to perform classical, blues, jazz, rock and pop repertoire.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "guitar-2",
+      "name": "Guitar 2",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for guitarists who are interested in advancing their guitar abilities. Students will refine and further develop musicianship to develop a high level of performance on guitar. Emphasis is placed on the development of technique, music-reading skills, sight-reading, more technical chords throughout the neck of the guitar, and expressive performance, solo repertoire and ensemble skills.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "patriot-guitar-ensemble",
+      "name": "Patriot Guitar Ensemble",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for advanced guitarists who are interested in further developing technique and musicianship. The repertoire performed in this class includes chamber works for guitar, large ensemble pieces by composers of varied eras and extensive solo work repertoire.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "piano-1",
+      "name": "Piano 1",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for students of all skill levels, from non-experienced through advanced. This class will introduce students to music notation, basic music theory, keyboard technique and music terminology through the study of keyboard repertoire. Students will work independently, collaboratively and with instructor guidance to shape their musical goals, including selecting their own music to learn and perform.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "music-production-1",
+      "name": "Music Production 1",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course will explore concepts in production, recording, performance, audio engineering, music business, sound design, music marketing and more. Students will have access to music production software, instruments and recording equipment in order to create, edit and mix the music that interests them.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "music-production-2",
+      "name": "Music Production 2",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Music Production 2 is a course designed for students interested in furthering their study and exploration of music production and the music industry. Students will pursue more advanced concepts and techniques resulting in a substantial amount of original music by the end of the course.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "advanced-music-production",
+      "name": "Advanced Music Production",
+      "subject": "Fine Arts",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "Advanced Music Production is a course designed for students interested in pursuing advanced concepts in music production. This course will provide real world experiences to students and prepare them to participate in the music industry after high school and beyond.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-music-theory",
+      "name": "AP Music Theory",
+      "subject": "Fine Arts",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for the advanced musician who is interested in enhancing their music ability through a rigorous study of Western music theory. Students learn the basics of tonal harmony, including: chord construction, four-part voice writing, harmonic analysis and harmonic sequence.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "acting-1-confidence-and-collaboration",
+      "name": "Acting 1: Confidence and Collaboration",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Acting 1: Confidence and Collaboration is an introductory theatre survey and performance-based class. This course emphasizes the basic skills and techniques of theatre artists including: ensemble collaboration, confidence and risk-taking, imagination, focus, performance, rehearsal and text analysis.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "entertainment-production-and-design",
+      "name": "Entertainment Production and Design",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Entertainment Production and Design takes students behind the scenes of theatre, film, TV, concerts, events and digital media. Areas of study include scenery, lighting, sound engineering, costumes, special effects makeup and production management.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "acting-2-character-and-comedy",
+      "name": "Acting 2: Character and Comedy",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Acting 2: Character and Comedy builds upon the work of Acting 1: Confidence and Collaboration with a greater emphasis on building character through improv comedy as well as diverse scripted scene work. We will continue to build skills in performing, writing, analysis and ensemble.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "acting-3",
+      "name": "Acting 3",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Acting 3 is an advanced theatre course with an emphasis on student-generated performance. Specific areas of focus include improv comedy and student written performance relating to contemporary social issues. Acting 3 culminates in an original devised performance, as part of the Patriot Theatre Company season.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "acting-4",
+      "name": "Acting 4",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Acting 4 is an advanced theatre course which allows students to explore and perform a wide range of theatrical texts and traditions. Students will gain knowledge of influential theatre styles including Greek, Commedia dell'arte, Shakespeare and other global traditions.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "advanced-acting",
+      "name": "Advanced Acting",
+      "subject": "Fine Arts",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "In Advanced Acting, students will experience an intensive theatre course in performance, production and leadership. Students will build on the foundations of Acting 1-4 to analyze and present complex theatrical texts. Advanced Acting prepares students to be involved in departmental productions in acting and production capacities.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "theatre-leadership-directing-and-management",
+      "name": "Theatre Leadership: Directing and Management",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This directing course focuses on developing leadership skills and artistic directing. In addition to coaching actors, students in this class have the opportunity to put their advanced level theatre collaboration skills to use as they focus on production processes such as stage management, season development and creating community within ensembles.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "leadership-in-theatre-studies",
+      "name": "Leadership in Theatre Studies",
+      "subject": "Fine Arts",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Leadership in Theatre Studies is a one-semester course in which students will intern and assist with theatre instruction in Acting 1: Confidence and Collaboration, Acting 2: Character and Comedy, Acting 3, Acting 4 and/or Entertainment Production and Design courses.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "algebra-1",
+      "name": "Algebra 1",
+      "subject": "Math",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Helps students develop proficiency in algebraic thinking. Students will explore overarching ideas of patterns of change (constant, linear and multiplicative), mathematical representations (verbal, algebraic, graphical and numeric), models (real-world scenarios in and out of context) and solutions (that validate equalities/inequalities).",
+      "eligibleYears": ["freshman", "sophomore"]
+    },
+    {
+      "id": "geometry",
+      "name": "Geometry",
+      "subject": "Math",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Helps students develop proficiency in deductive reasoning and geometric thinking. Students will rely on exploration, conjecture, deduction, justification and abstraction to strengthen their reasoning skills. Geometric thinking is supported by exploring the idea of measures (geometric magnitudes, lengths, areas and volumes), transformations (effects on congruence, scaling and symmetry on geometric properties) and composition.",
+      "eligibleYears": ["freshman", "sophomore"]
+    },
+    {
+      "id": "geometry-ab-bc",
+      "name": "Geometry AB/BC",
+      "subject": "Math",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Attends to all the learning outcomes of Geometry. The topics above will be extended, and students will routinely apply prior learning to unique, non-routine and novel contexts. The course design emphasizes students' growth in making connections and transferring knowledge between units of study while extending their learning in preparation for future college-level experiences in high school.",
+      "eligibleYears": ["freshman", "sophomore"]
     },
     {
       "id": "algebra-2",
       "name": "Algebra 2",
       "subject": "Math",
-      "defaultLevel": "Regular",
+      "defaultLevel": "College Prep",
       "scienceWeightEligible": false,
-      "description": "Algebraic functions, polynomials, and trigonometric foundations.",
-      "eligibleYears": ["freshman", "sophomore", "junior"]
+      "description": "Builds upon students' prior experiences in geometric relationships and deductive reasoning to deepen students' fluency with algebraic thinking. Overarching ideas from Algebra 1 around patterns of change, mathematical representations, models and solutions are further extended in scope and depth.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "algebra-2-ab-bc",
+      "name": "Algebra 2 AB/BC",
+      "subject": "Math",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Attends to all the learning outcomes of Algebra 2. The topics above will be extended, and students will routinely apply prior learning to unique, non-routine and novel contexts. The course design emphasizes students' growth in making connections and transferring knowledge between units of study while extending their learning in preparation for future college-level experiences in high school.",
+      "eligibleYears": ["sophomore", "junior"]
     },
     {
       "id": "precalculus",
       "name": "Precalculus",
       "subject": "Math",
-      "defaultLevel": "Accelerated",
+      "defaultLevel": "College Prep",
       "scienceWeightEligible": false,
-      "description": "Preparation for calculus with advanced algebra and trig topics.",
+      "description": "Represents students' third course focused on algebraic thinking. Specifically, this course provides students with a lens to understand the interconnectedness of algebraic, geometric and trigonometric relationships. The overarching ideas from previous courses will continue to be extended in scope and depth.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "ap-precalculus-ab",
+      "name": "AP Precalculus AB",
+      "subject": "Math",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "Aligned with the College Board's expectations to prepare students for future studies in calculus. The course design prepares students for the College Board AP Precalculus Exam. This course is ideal for students preparing to complete one semester of college calculus in high school or enroll in calculus after graduation.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-precalculus-bc",
+      "name": "AP Precalculus BC",
+      "subject": "Math",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "Aligned with the College Board's expectations to prepare students for future studies in calculus. The course design prepares students for the College Board AP Precalculus Exam. This course attends to all the learning outcomes of AP Precalculus AB, as well as functions involving parameters, vectors and matrices.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "mathematical-modeling-and-design",
+      "name": "Mathematical Modeling and Design",
+      "subject": "Math",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "A non-AP introductory study in mathematical modeling and design thinking. Modeling is quantifying and understanding real-world scenarios and phenomena to make informed decisions that help improve the conditions defined within the scenarios. Students will build on prior mathematics knowledge and applications of new skills.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "data-science",
+      "name": "Data Science",
+      "subject": "Math",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "An emerging field focused on formulating relevant questions and gathering, managing and analyzing data to propose practical solutions. In this non-AP introductory course, students will explore the tools of descriptive, diagnostic, and predictive data analysis and data presentation.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "advanced-mathematical-decision-making",
+      "name": "Advanced Mathematical Decision Making",
+      "subject": "Math",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "A capstone non-AP course that prepares students for post-secondary workforce opportunities and non-STEM college majors by strengthening quantitative, collaborative and communication skills. Students will develop quantitative literacy with an emphasis on numeracy, algebraic thinking and modeling.",
+      "eligibleYears": ["senior"]
+    },
+    {
+      "id": "ap-statistics",
+      "name": "AP Statistics",
+      "subject": "Math",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "A full-year course designed to be the equivalent of a first-semester college-level non-calculus-based statistics course. This course explores variation and distribution, patterns and uncertainty, and data-based predictions, decisions and conclusions.",
       "eligibleYears": ["sophomore", "junior", "senior"]
     },
     {
@@ -57,26 +1083,548 @@
       "subject": "Math",
       "defaultLevel": "Honors/AP",
       "scienceWeightEligible": false,
-      "description": "Introductory college calculus course.",
+      "description": "A full-year capstone course designed to be the equivalent of the first semester of college calculus. Calculus focuses on the study of rates of change, limits and the analysis of functions. It is widely applicable to various Science, Technology, Engineering and Mathematics (STEM) disciplines.",
       "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "ap-calculus-bc",
+      "name": "AP Calculus BC",
+      "subject": "Math",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "Attends to all the learning outcomes of AP Calculus AB and is a full-year capstone course designed to be the equivalent of the first and second semesters of college calculus. In addition, this course extends the content and skills of AP Calculus AB to parametrically defined curves, polar curves and vector-valued functions.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "college-multivariable-calculus",
+      "name": "College Multivariable Calculus",
+      "subject": "Math",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "A one-semester capstone course designed to be equivalent to a third-semester college calculus. The distinctive focus of this course is the attention to applying the tools of calculus to multidimensional space, whereas previous coursework limited students to one- or two-dimensional experiences.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "college-linear-algebra",
+      "name": "College Linear Algebra",
+      "subject": "Math",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "A one-semester capstone college-level course that applies matrix and linear algebra techniques to model and analyze phenomena presented in concrete and abstract settings. The study of linear algebra has valuable applications within the computational, physical and social sciences.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "french-1",
+      "name": "French 1",
+      "subject": "World Language",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students begin to develop their competence in French across three modes of communication: interpersonal, presentational and interpretative. They will explore the language in the context of six AP themes: Global Challenges, Science and Technology, Contemporary Life, Personal and Public Identities, Families and Communities and Beauty and Aesthetics.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "french-2",
+      "name": "French 2",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "This course is the first in the three-year accelerated sequence that prepares students for AP French Language. Students continue to develop their competence in French across the three modes of communication in the context of the six AP themes.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "french-3",
+      "name": "French 3",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "This course is the second in the three-year accelerated sequence that prepares students for AP French Language. Students continue to develop their competence in French across the three modes of communication in the context of the six AP themes.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-french-language",
+      "name": "AP French Language",
+      "subject": "World Language",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "Students continue to work to develop their competence across the three modes of communication in the context of the six AP themes, as they simultaneously prepare for the AP French Language and Culture exam. Performance-based assessments (speaking and writing) provide the students the opportunity to use the language independently in unfamiliar contexts.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "german-1",
+      "name": "German 1",
+      "subject": "World Language",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "German 1 is an introduction to German language and culture. Students begin to develop their competence in German across the three modes of communication: interpersonal, presentational and interpretative in the context of the following AP themes: Contemporary Life and Personal and Public Identities.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "german-2",
+      "name": "German 2",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "Students continue to work to develop their competence in German across the three modes of communication in the context of the following AP themes: Contemporary Life, Families and Communities and Science and Technology.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "german-3",
+      "name": "German 3",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "This course, which moves at a faster pace than German 2, begins preparation for the AP German Language and Culture Exam. Students continue to work to develop their competence in German across the three modes of communication in the context of the six AP themes.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-german-language-and-culture",
+      "name": "AP German Language and Culture",
+      "subject": "World Language",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This AP German course is designed for motivated students who have successfully finished three years of German and who are interested in taking a higher level German course. It is aimed to prepare students who are interested in taking the AP German Language and Culture exam and/or in furthering their study in the German language and culture.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "hebrew-1",
+      "name": "Hebrew 1",
+      "subject": "World Language",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Hebrew 1 is an introduction to the Hebrew language and Israeli culture. Students develop their competencies across three modes of communication: interpersonal, presentational and interpretative. Students become comfortable reading the print form of the Hebrew alphabet that appears in books and also learn the script form for writing.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "hebrew-2",
+      "name": "Hebrew 2",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "Students continue to develop their competence in Hebrew across the three modes of communication: interpersonal, presentational and interpretive. Students also continue to learn in the context of the six AP themes.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "hebrew-3",
+      "name": "Hebrew 3",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "Students continue to develop their competence in Hebrew across the three modes of communication: interpersonal, presentational and interpretive in a near-immersion environment. Students also continue to learn in the context of the six AP themes.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "hebrew-4",
+      "name": "Hebrew 4",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "Students develop their competence in Hebrew and engage in higher-level reading, writing, listening and speaking activities that align with the interpersonal, presentational and interpretive modes of communication in an immersion environment. Students continue to learn in the context of the six AP themes.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "mandarin-chinese-1",
+      "name": "Mandarin Chinese 1",
+      "subject": "World Language",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students begin to develop their competence in Chinese across three modes of communication: interpersonal, presentational and interpretative. They will explore the language in the context of the six AP themes.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "mandarin-chinese-2",
+      "name": "Mandarin Chinese 2",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "In this course, students continue to work to develop their competence in Chinese across the three modes of communication in the context of the following AP themes: Contemporary Life, Families and Communities, Beauty and Aesthetics and Science and Technology.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "mandarin-chinese-3",
+      "name": "Mandarin Chinese 3",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "This course requires students to engage in interpersonal, presentational and interpretive tasks at more advanced proficiency levels. Students continue to work to develop their competence in Chinese across the three modes of communication in the context of the six AP themes.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "intermediate-mandarin-chinese-language-arts",
+      "name": "Intermediate Mandarin Chinese Language Arts",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "This course is designed specifically for students with lived Mandarin Chinese language experience, either from prior schooling in a Chinese-speaking country or as native/Heritage speakers of Chinese. Students will develop their literacy skills in Chinese as they explore literature from the Chinese-speaking world and engage in focused development of reading and writing skills.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "mandarin-chinese-4",
+      "name": "Mandarin Chinese 4",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "Students continue to work to develop their competence in Mandarin Chinese across the three modes of communication in the context of the six AP themes. Performance-based assessments provide the students opportunity to use the language independently in unfamiliar contexts.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-chinese-language-and-culture",
+      "name": "AP Chinese Language and Culture",
+      "subject": "World Language",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This course is designed to prepare students for the AP Chinese Language and Culture exam, i.e. a level comparable to fourth semester (or equivalent) college/university courses in Mandarin Chinese. The course focuses on language proficiency while dealing with level- and age-appropriate cultural content throughout the course.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "chinese-literature-media-and-culture",
+      "name": "Chinese Literature, Media and Culture",
+      "subject": "World Language",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "Students continue to work to develop their competence in Chinese across the three modes of communication within the context of critical analysis of literature and media, as well as a close investigation of culture and social trends.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "spanish-1",
+      "name": "Spanish 1",
+      "subject": "World Language",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students begin to develop their competence in Spanish across three modes of communication: interpersonal, presentational and interpretative. They will explore the language in the context of the six AP themes.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "spanish-2",
+      "name": "Spanish 2",
+      "subject": "World Language",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students continue to work to develop their competence in Spanish across the three modes of communication in the context of the six AP themes. Performance-based assessments provide the students the opportunity to use the language in practiced, familiar contexts with increasing independence.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "spanish-2-3",
+      "name": "Spanish 2-3",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "In comparison to Spanish 2, Spanish 2-3 has a faster pace and students are asked to engage in interpersonal, presentational and interpretive tasks at more advanced proficiency levels. Students continue to work to develop their competence in Spanish across the three modes of communication in the context of the six AP themes.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "spanish-3",
+      "name": "Spanish 3",
+      "subject": "World Language",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students continue to work to develop their competence in Spanish across the three modes of communication in the context of the six AP themes. Performance-based assessments provide the students the opportunity to use the language in familiar contexts independently.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "spanish-3-4",
+      "name": "Spanish 3-4",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "Students continue to work to develop their competence in Spanish across the three modes of communication in the context of the six AP themes. Performance-based assessments provide the students the opportunity to use the language independently in unfamiliar contexts.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "intermediate-spanish-language-arts",
+      "name": "Intermediate Spanish Language Arts",
+      "subject": "World Language",
+      "defaultLevel": "Accelerated",
+      "scienceWeightEligible": false,
+      "description": "This course is designed specifically for students with lived Spanish language experience, either from prior schooling in a Spanish-speaking country or as native/Heritage speakers of Spanish. Students will develop their literacy skills in Spanish as they explore literature from the Spanish-speaking world and engage in focused development of writing skills.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "spanish-4",
+      "name": "Spanish 4",
+      "subject": "World Language",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students continue to work to develop their competence in Spanish across the three modes of communication in the context of the six AP themes. Performance-based assessments provide the students the opportunity to use the language independently in unfamiliar contexts.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "ap-spanish-language-and-culture",
+      "name": "AP Spanish Language and Culture",
+      "subject": "World Language",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This course is designed to prepare students for the AP Spanish Language and Culture exam and provides a transition to the AP Spanish Literature and Culture course. Students continue to work to develop their competence in Spanish across the three modes of communication: interpretive, interpersonal and presentational, within the context of the six AP themes.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-spanish-literature-and-culture",
+      "name": "AP Spanish Literature and Culture",
+      "subject": "World Language",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This course is designed to introduce students to the formal study of Peninsular Spanish, Latin American and US Hispanic literature. The course aims to develop students' critical reading and analytical writing skills in Spanish as well as their ability to make interdisciplinary connections and explore linguistic and cultural comparisons.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "advanced-spanish-conversation-and-culture",
+      "name": "Advanced Spanish Conversation and Culture",
+      "subject": "World Language",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Advanced conversation and culture builds upon the communicative focus in the presentational, interpretive and interpersonal modes from prior coursework, but will uniquely explore the language through a cultural lens. The aim of this course is to present how the language manifests itself in various regions of the Spanish-speaking world through both historical and contemporary settings.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "english-language-development-eld-1",
+      "name": "English Language Development (ELD) 1",
+      "subject": "English Language Development",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This is a two-credit course for students in the ELD program at the beginning level who are new to the English language or have emerging English vocabulary and communication skills. The course meets two periods each day. Students work on developing and expanding their vocabulary, grammar, speaking, listening, reading and writing skills.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "english-language-development-eld-2",
+      "name": "English Language Development (ELD) 2",
+      "subject": "English Language Development",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This is a two-credit course for students in the ELD program at the intermediate level. This course will meet two periods each day and instruction is entirely in English. Students will build on all four language domains (listening, speaking, reading and writing) across thematic units.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "english-language-development-eld-3-language",
+      "name": "English Language Development (ELD) 3 Language",
+      "subject": "English Language Development",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This is one of two courses available for students in the ELD program at the advanced level. This course may be taken concurrently with English Language Development (ELD) 3 Literature or may be taken alone. Students will leverage their own cultural and linguistic assets as they work to expand their English language proficiency.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "english-language-development-eld-3-literature",
+      "name": "English Language Development (ELD) 3 Literature",
+      "subject": "English Language Development",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This is one of two courses available for students in the ELD program at the advanced level. This course may be taken concurrently with English Language Development (ELD) 3 Language or may be taken alone. Students will leverage their own cultural and linguistic assets as they work to expand their English language proficiency.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "english-language-development-eld-4",
+      "name": "English Language Development (ELD) 4",
+      "subject": "English Language Development",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This is an English course for students who are transitioning out of the ELD program. Students are expected to produce work with ELD support similar to that of a student in a Communication Arts English course. Students' proficiencies will advance in the areas of literary analysis, writing, grammar, oral communication and research.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "current-events-eld",
+      "name": "Current Events",
+      "subject": "English Language Development",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This one-semester elective course is designed to develop students' academic, social and instructional language across the five WIDA Standards through discussion and guided written reflection around current events and students' own experiences.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "freshman-foundational-fitness-choice-pe",
+      "name": "Freshman Foundational Fitness Choice P.E.",
+      "subject": "Physical Education",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Designed for students to learn to develop and maintain physical fitness in a variety of self-selected activities. The course begins with the Foundations of Fitness, where students learn how to develop and apply a personal fitness plan, how to perform basic lifting techniques and how to utilize a fitness center safely.",
+      "eligibleYears": ["freshman"]
+    },
+    {
+      "id": "adventure-education",
+      "name": "Adventure Education",
+      "subject": "Physical Education",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students in this course will participate in individual, partner and team activities to work towards becoming better problem solvers and communicators, while learning to trust others and be trusted. Some units will require students to be in the pool. Activities may include team building, outdoor games, biking, archery, climbing/rappelling, kayaking and canoeing.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "choice-pe",
+      "name": "Choice P.E.",
+      "subject": "Physical Education",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed for students to develop and maintain their lifelong wellness in activities of their choice. Students will choose the activity in which they will participate each semester. (Regardless of activity selected, all students will learn how to apply their fitness plan, reflect on their fitness and build their knowledge of health-related fitness.)",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "choice-pe-early-bird",
+      "name": "Choice P.E. Early Bird",
+      "subject": "Physical Education",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "See description for Choice P.E. Early Bird Physical Education is scheduled from 7-8:25 a.m. on Monday/Wednesday/Friday. Students with excessive absenteeism in this class will be removed from the Early Bird program and placed in a Physical Education class during the regularly scheduled day.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "physical-education-leadership-training",
+      "name": "Physical Education Leadership Training",
+      "subject": "Physical Education",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "The first year of the Leadership Program is designed for students to become effective teacher aides and strong leaders. There will be active participation in all activities offered within the Stevenson Physical Education program. Students will learn to lead group activities, to develop skill progression and to study methods and techniques of teaching physical education.",
+      "eligibleYears": ["junior"]
+    },
+    {
+      "id": "senior-leadership",
+      "name": "Senior Leadership",
+      "subject": "Physical Education",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students will apply what they learned in Physical Education Leadership Training by serving as teacher aides with a Physical Education teacher. All students will participate in fitness testing.",
+      "eligibleYears": ["senior"]
+    },
+    {
+      "id": "lifeguard-training-and-certification",
+      "name": "Lifeguard Training and Certification",
+      "subject": "Physical Education",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed to provide students with the ability to earn American Red Cross Lifeguarding and First Aid certification. Students will also learn skills in oxygen administration, preventing disease transmission and CPR/AED.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "pool-leadership",
+      "name": "Pool Leadership",
+      "subject": "Physical Education",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students will continue to serve as water safety instructors, lifeguards and pool aides to the aquatics program. Each student will receive ongoing Lifeguard In-Service Training that will keep their certifications current and their skills sharp.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "alternative-physical-education-leadership",
+      "name": "Alternative Physical Education Leadership",
+      "subject": "Physical Education",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "New students will engage in training which takes place in class during the first semester. Students will perform one-on-one or in small groups working with individuals who have a variety of special needs. Leaders also participate in work with the students outside of the regular school day.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "alternative-physical-education",
+      "name": "Alternative Physical Education",
+      "subject": "Physical Education",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Alternative Physical Education is for students with disabilities that merit an adapted curriculum. All curriculum will be modified and adapted so that all students can participate and benefit. The instructor will work with the doctor in an effort to design a program to meet the individual needs of each student.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "health-education",
+      "name": "Health Education",
+      "subject": "Health",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "The following Health Education units are taught: Wellness and Mental Health, Reality of Drugs, Adult CPR and AED, Social Health. Within the Adult CPR unit, students have the opportunity to receive Adult CPR and AED certification (summer school excluded) through the American Red Cross. (Student participation in the Adult CPR unit is a requirement.)",
+      "eligibleYears": ["sophomore"]
+    },
+    {
+      "id": "applied-health",
+      "name": "Applied Health",
+      "subject": "Health",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "The purpose of Applied Health is to develop professional skills that can be applied to a career in healthcare. This course empowers students with real usable skills and credentials in the allied medical health field. Topics in the course include professional rescue skills, injury management, health career exploration, functional anatomy and terminology, long-term wellness and personal/professional social/emotional life skills.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
     },
     {
       "id": "biology",
       "name": "Biology",
       "subject": "Science",
-      "defaultLevel": "Regular",
+      "defaultLevel": "College Prep",
       "scienceWeightEligible": true,
-      "description": "Foundational biology with lab-based learning.",
-      "eligibleYears": ["freshman", "sophomore"]
+      "description": "In this lab-based course, students explore macromolecules, comparative anatomy, group behavior, genetics, evolution, DNA technology, ecology, diffusion/osmosis, gene expression, cancer and the cell cycle, human impacts, homeostasis and interactions between body systems. Students will work collaboratively and engage with the science and engineering practices. Students will work together to complete a pig dissection in this course.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
     },
     {
       "id": "chemistry",
       "name": "Chemistry",
       "subject": "Science",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": true,
+      "description": "In this lab-based course, students explore atomic structure, the periodic table, intermolecular forces, thermodynamics, types of reactions, reaction rates, equilibrium and acids and bases. Students will work collaboratively and engage with the science and engineering practices.",
+      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+    },
+    {
+      "id": "earth-science",
+      "name": "Earth Science",
+      "subject": "Science",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": true,
+      "description": "In this lab-based course, students explore minerals, rocks, plate tectonics, earthquakes, volcanoes, weathering, running water, glaciers, wind, atmospheric science and astronomy. Students will work collaboratively and engage with the science and engineering practices, applying their learning in several hands-on engineering projects across the year.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "physics",
+      "name": "Physics",
+      "subject": "Science",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": true,
+      "description": "In this lab-based course, students explore constant and changing velocity, forces, energy, momentum, electrostatics, electricity and magnetism, circuits and waves. Students will work collaboratively and engage with the science and engineering practices.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "horticulture",
+      "name": "Horticulture",
+      "subject": "Science",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": true,
+      "description": "In this lab-based course, students explore plant structure, function, ecology and cultivation. Students will work collaboratively and engage with the science and engineering practices, including frequent visits and learning in Stevenson's greenhouse and green roof environments.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "science-research",
+      "name": "Science Research",
+      "subject": "Science",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "In this lab-based course, students explore scientific inquiry and research methods. Students will work collaboratively and engage with the science and engineering practices. In this course, students design and conduct experiments, analyze data and present findings for their original research project that will be entered into symposia, competitions and publications.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "human-anatomy-and-physiology",
+      "name": "Human Anatomy and Physiology",
+      "subject": "Science",
       "defaultLevel": "Accelerated",
       "scienceWeightEligible": true,
-      "description": "Matter, reactions, and lab investigations.",
+      "description": "In this lab-based course, students go beyond basic biology of human body systems and delve into the complex relationships required to maintain homeostasis. Students will work collaboratively and engage with the science and engineering practices. In this course students conduct dissections.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "earth-science-dual-credit",
+      "name": "Earth Science Dual Credit",
+      "subject": "Science",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": true,
+      "description": "In this lab-based course, students explore geology, meteorology and astronomy. Students will work collaboratively and engage with the science and engineering practices. This course is a dual-credit, college-level science course where students can earn college credit hours at no cost through the College of Lake County.",
       "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-physics-1",
+      "name": "AP Physics 1",
+      "subject": "Science",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": true,
+      "description": "In this 1.5 period lab-based course, students explore linear, circular and simple harmonic motion, forces, energy, momentum, rotation and fluids. Students will work collaboratively and engage with the science and engineering practices. This course can fulfill students' graduation requirement for two semesters of physical science and is beneficial for students considering majors or careers in science or engineering.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-physics-2",
+      "name": "AP Physics 2",
+      "subject": "Science",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": true,
+      "description": "In this lab-based course, students explore electrostatics, circuits, electromagnetism, thermodynamics, waves and sound, optics and modern physics topics. Students will work collaboratively and engage with the science and engineering practices. This course is beneficial for students considering majors or careers in science or engineering.",
+      "eligibleYears": ["junior", "senior"]
     },
     {
       "id": "ap-biology",
@@ -84,71 +1632,260 @@
       "subject": "Science",
       "defaultLevel": "Honors/AP",
       "scienceWeightEligible": true,
-      "description": "Advanced biology course aligned to AP expectations.",
+      "description": "In this 1.5 period lab-based course, students explore evolution, proteins, cell evolution, DNA, photosynthesis, ecology, cellular respiration, gene expression, gene regulation, genetics and cell signaling. Students will work collaboratively and engage with the science and engineering practices. This course can fulfill students' graduation requirement for two semesters of biological science and is beneficial for students considering majors or careers in science or health-related fields.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-environmental-science",
+      "name": "AP Environmental Science",
+      "subject": "Science",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": true,
+      "description": "In this lab-based course, students explore earth systems, ecology, populations, energy use, global warming and pollution. Students will work collaboratively and engage with the science and engineering practices. This course takes field trips throughout the year.",
       "eligibleYears": ["junior", "senior"]
     },
     {
-      "id": "world-history",
-      "name": "World History",
+      "id": "ap-chemistry",
+      "name": "AP Chemistry",
+      "subject": "Science",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": true,
+      "description": "In this 1.5 period lab-based course, students explore chemical bonding, the behavior of gases, the structure of matter, kinetic theory, solutions, acid-base chemistry, electrochemistry, molecular geometry, thermodynamics and equilibrium. Students will work collaboratively and engage with the science and engineering practices.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-physics-c",
+      "name": "AP Physics C",
+      "subject": "Science",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": true,
+      "description": "In this 1.5 period lab-based course, students explore linear, rotational, and simple harmonic motion; forces; energy; momentum; electrostatics; DC circuits; magnetostatics; and electromagnetic induction. Students will work collaboratively and engage with the science and engineering practices.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "world-history-and-geography",
+      "name": "World History and Geography",
       "subject": "Social Studies",
-      "defaultLevel": "Regular",
+      "defaultLevel": "College Prep",
       "scienceWeightEligible": false,
-      "description": "Global historical themes and major civilizations.",
-      "eligibleYears": ["freshman", "sophomore", "junior"]
+      "description": "Students will examine the development of human societies and global interactions from early civilizations to the present. The course emphasizes the analysis of historical events, geographic influences, cultural patterns, and political and economic systems. Students will engage in inquiry-based learning, source analysis, and argumentation to understand the forces that have shaped the modern world.",
+      "eligibleYears": ["freshman", "sophomore"]
+    },
+    {
+      "id": "constitutional-law",
+      "name": "Constitutional Law",
+      "subject": "Social Studies",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course examines the US Constitution through the study of landmark Supreme Court cases. Students will analyze the fundamental principles of constitutional law, including federalism, separation of powers, individual rights, and civil liberties. Through case studies, simulations, and debates, students will explore how the Constitution is interpreted and applied to contemporary issues.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "global-relations",
+      "name": "Global Relations",
+      "subject": "Social Studies",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course provides an introduction to the study of international relations, exploring the interactions between nations, international organizations, and non-state actors. Students will examine key concepts such as sovereignty, diplomacy, conflict, and cooperation, and analyze contemporary global issues including security, human rights, and economic development.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "law-in-american-society",
+      "name": "Law in American Society",
+      "subject": "Social Studies",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course introduces students to the foundations and functions of the American legal system. Students will explore criminal and civil law, the court system, and the role of law in shaping social justice. Through case studies, simulations, and discussions, students will analyze legal reasoning and the impact of law on individuals and society.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "psychology",
+      "name": "Psychology",
+      "subject": "Social Studies",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course introduces students to the scientific study of human behavior and mental processes. Students will explore topics such as the brain, learning, memory, development, personality, and psychological disorders. Through discussions, case studies, and research, students will develop an understanding of psychological principles and their application to everyday life.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "sociology",
+      "name": "Sociology",
+      "subject": "Social Studies",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "The purpose of this course is to provide students with a chance to examine human social interaction and social organization. Sociology focuses on special topics such as groups, culture, socialization, deviance and inequalities (gender, social class, race, ethnicity). This class will explore these areas through sociological readings and engaging in discussing and simulation.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "world-religions",
+      "name": "World Religions",
+      "subject": "Social Studies",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "This course is designed to introduce students to the major religions of the world. Students will analyze each religion's foundations, historical development, principle themes and beliefs and cultural impact. Its primary purpose is to equip students with an understanding of the major ideas and practices of the world's religions so that they may better understand the world in which they live.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-european-history",
+      "name": "AP European History",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This course focuses on dominant ideas in the world today (democracy, industrialism, capitalism, communism, the scientific method) through the advanced study of European history, with a focus on understanding how European ideas, culture, politics and economics have shaped the world from 1450 to the present.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-human-geography",
+      "name": "AP Human Geography",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "The purpose of the advanced placement course in human geography is to introduce students to the systematic study of patterns and processes that have shaped human understanding, use and alteration of our world. Students employ geographical and spatial concepts and tools to analyze topics such as human population movement and organization, cultural patterns and processes, political organization, agricultural and rural land use, industrialization and economic development and city and urban land use.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-african-american-studies",
+      "name": "AP African American Studies",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This year-long Social Studies elective credit course is designed to prepare students to meet the AP College Board interdisciplinary standards on their assessment. The course is designed to examine a diversity of African American experiences using authentic and varied sources of information. Students will study topics from early African kingdoms to the ongoing challenges and accomplishments of the present day.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-psychology",
+      "name": "AP Psychology",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "The purpose of an advanced placement course in psychology is to introduce students to the systematic and scientific study of the behavior and mental processes of human beings and other animals. Students are exposed to the psychological facts, principles and phenomena associated with each of the major subfields within psychology.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-psychology-blended",
+      "name": "AP Psychology–Blended",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This course is a blended version of AP Psychology, combining in-person instruction with online learning components. The purpose remains to introduce students to the systematic and scientific study of behavior and mental processes.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "ap-united-states-history",
+      "name": "AP US History",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "The AP US History course focuses on the development of historical thinking skills (chronological reasoning, comparing and contextualizing, crafting historical arguments using historical evidence and interpreting and synthesizing historical narrative) and an understanding of content objectives and themes. Students will explore American history from pre-Columbian times to the present.",
+      "eligibleYears": ["sophomore", "junior", "senior"]
+    },
+    {
+      "id": "american-studies-apush",
+      "name": "American Studies (AP US History and AP English Language and Composition)",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "Students are scheduled for consecutive periods of history and English, allowing for an integrated study of the two disciplines, development of skills for informed citizenship and thematic movements in our country's history and literature. This course fulfills the College Board's objectives for both AP English Language and Composition and AP US History.",
+      "eligibleYears": ["junior"]
+    },
+    {
+      "id": "economics",
+      "name": "Economics",
+      "subject": "Social Studies",
+      "defaultLevel": "College Prep",
+      "scienceWeightEligible": false,
+      "description": "Students in this course develop the economic awareness and decision-making skills to make rational and informed economic decisions in life, become responsible consumers and develop essential business and job skills for their futures. Through collaborative and interactive activities and units, students gain an understanding of basic economic concepts, the impact economic factors can have on their lives and their role in the growing global economy.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "sociology-honors",
+      "name": "Sociology",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "Sociology is a course in partnership with Loyola University Chicago which allows students to take a college class while still in high school. As an introductory survey course, Sociology aims to provide students with an understanding of how sociologists do research and what the seminal pieces of research in their field reveal. The class will explore the structures of society, especially family, education, peers and media, all of which influence individuals by creating and maintaining culture and social stability.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "ap-macroeconomics",
+      "name": "AP Macroeconomics",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "The purpose of an advanced placement course in macroeconomics is to give students a thorough understanding of the principles of economics that apply to an economic system as a whole. The course places particular emphasis on the study of national income and price-level determination, and also develops students' familiarity with economic performance measures, the financial sector, stabilization policies, economic growth and international economics.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "ap-microeconomics",
+      "name": "AP Microeconomics",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This is an advanced placement level course preparing students for the AP Microeconomics exam. Coursework in AP Microeconomics includes: the basic economic problem, the nature of markets, the firm, the factor markets and the role of government.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "philosophy-and-political-theory",
+      "name": "Philosophy and Political Theory",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "What is the meaning of life? What is reality? How do I know what I know? This course introduces philosophies and political theories by which humans have attempted to understand and organize their world. It is a college-level elective that explores major world philosophies, their influence on each other and their influence on the present.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "ap-comparative-government-and-politics",
+      "name": "AP Comparative Government and Politics",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "The AP Comparative Government and Politics course introduces students to the rich diversity of political life outside the United States. The course uses a comparative approach to examine the political structures; policies; and political, economic, and social challenges of six selected countries.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "ap-comparative-government-and-politics-online",
+      "name": "AP Comparative Government and Politics Online",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This online version of AP Comparative Government and Politics introduces students to the rich diversity of political life outside the United States. The course uses a comparative approach to examine the political structures; policies; and political, economic, and social challenges of six selected countries.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "ap-government-united-states",
+      "name": "AP Government–United States",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "The AP US Government and Politics course provides a college-level, nonpartisan introduction to key political concepts, ideas, institutions, policies, interactions, roles, and behaviors that characterize the constitutional system and political culture of the United States.",
+      "eligibleYears": ["junior", "senior"]
+    },
+    {
+      "id": "ap-government-united-states-online",
+      "name": "AP Government-United States Online",
+      "subject": "Social Studies",
+      "defaultLevel": "Honors/AP",
+      "scienceWeightEligible": false,
+      "description": "This online version of AP US Government and Politics provides a college-level, nonpartisan introduction to key political concepts, ideas, institutions, policies, interactions, roles, and behaviors that characterize the constitutional system and political culture of the United States.",
+      "eligibleYears": ["junior", "senior"]
     },
     {
       "id": "us-history",
-      "name": "U.S. History",
+      "name": "US History",
       "subject": "Social Studies",
-      "defaultLevel": "Regular",
+      "defaultLevel": "College Prep",
       "scienceWeightEligible": false,
-      "description": "Survey of U.S. history and civic development.",
+      "description": "This course is a survey of American history from the colonial era to the present. Students will explore key events, figures, and movements that have shaped the nation's political, economic, social, and cultural development. Emphasis is placed on developing historical thinking, analyzing primary and secondary sources, and understanding the complexities of the American experience.",
       "eligibleYears": ["sophomore", "junior", "senior"]
     },
     {
       "id": "government",
       "name": "Government",
       "subject": "Social Studies",
-      "defaultLevel": "Regular",
+      "defaultLevel": "College Prep",
       "scienceWeightEligible": false,
-      "description": "Civics, institutions, and public policy.",
-      "eligibleYears": ["junior", "senior"]
-    },
-    {
-      "id": "spanish-1",
-      "name": "Spanish 1",
-      "subject": "World Language",
-      "defaultLevel": "Regular",
-      "scienceWeightEligible": false,
-      "description": "Introductory Spanish language course.",
-      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
-    },
-    {
-      "id": "french-2",
-      "name": "French 2",
-      "subject": "World Language",
-      "defaultLevel": "Regular",
-      "scienceWeightEligible": false,
-      "description": "Second-year French with speaking and reading practice.",
-      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
-    },
-    {
-      "id": "marketing",
-      "name": "Marketing",
-      "subject": "Elective",
-      "defaultLevel": "Regular",
-      "scienceWeightEligible": false,
-      "description": "Business, branding, and market strategy elective.",
-      "eligibleYears": ["sophomore", "junior", "senior"]
-    },
-    {
-      "id": "graphic-design",
-      "name": "Graphic Design",
-      "subject": "Elective",
-      "defaultLevel": "Regular",
-      "scienceWeightEligible": false,
-      "description": "Visual communication and digital design tools.",
-      "eligibleYears": ["freshman", "sophomore", "junior", "senior"]
+      "description": "Topics considered in this course include the fundamental concepts and structure of federal, state and local government; methods of selecting candidates for office; methods by which individuals and groups may influence government officials and mechanics of voting. Instruction and assessment will address the principles of representative government, as enunciated in the American Declaration of Independence, the US Constitution and the Constitution of the State of Illinois.",
+      "eligibleYears": ["senior"]
     }
   ]
 }

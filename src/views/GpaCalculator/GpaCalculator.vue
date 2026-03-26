@@ -130,7 +130,6 @@
                 <p class="course-meta">
                   {{ course.subject }}
                   <template v-if="course.termLabel"> • {{ course.termLabel }}</template>
-                  <template v-if="course.description"> • {{ course.description }}</template>
                 </p>
               </div>
               <font-awesome-icon
