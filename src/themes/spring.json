@@ -28,7 +28,7 @@
     "particles": {
       "images": [
         "assets://particles/spring/butterfly.png",
-        "assets://particles/spring/bee.png",
+        "assets://particles/spring/bee_2.png",
         "assets://particles/spring/cherry_blossom.png",
         "assets://particles/spring/flower.png",
         "assets://particles/spring/tulip.png",
