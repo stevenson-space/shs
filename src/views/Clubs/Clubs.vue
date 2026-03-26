@@ -34,24 +34,52 @@
             >
               <div class="club-card-content">
                 <div class="club-header">
-                  <div>
+                  <a
+                    v-if="club.more && isExternalLink(club.more)"
+                    class="club-title-link"
+                    :href="club.more"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <h4>{{ club.clubName }}</h4>
-                    <p v-if="club.pseudonym" class="club-pseudonym">{{ club.pseudonym }}</p>
-                  </div>
-                  <span class="club-room">{{ club.room }}</span>
+                  </a>
+                  <h4 v-else>{{ club.clubName }}</h4>
+                  <p v-if="club.pseudonym" class="club-pseudonym">AKA: {{ club.pseudonym }}</p>
                 </div>
-                <p class="club-time">{{ formatClubDays(club.day) }} • {{ club.time }}</p>
-                <a
-                  v-if="club.more && isExternalLink(club.more)"
-                  class="club-link"
-                  :href="club.more"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Visit club page
-                </a>
-                <p v-else-if="club.more" class="club-more">{{ club.more }}</p>
+                <div class="club-details">
+                  <p class="club-detail">
+                    <span class="club-detail-label">Room</span>
+                    <span class="club-room">{{ club.room }}</span>
+                  </p>
+                  <p class="club-detail">
+                    <span class="club-detail-label">Day</span>
+                    <span class="club-time">{{ formatClubDays(club.day) }}</span>
+                  </p>
+                  <p class="club-detail">
+                    <span class="club-detail-label">Time</span>
+                    <span>{{ club.time }}</span>
+                  </p>
+                </div>
                 <p v-if="club.additionalDescription" class="club-description">{{ club.additionalDescription }}</p>
+                <p v-else-if="club.more && !isExternalLink(club.more)" class="club-more">{{ club.more }}</p>
+                <div v-if="club.emails.length || (club.more && isExternalLink(club.more))" class="club-actions">
+                  <a
+                    v-if="club.emails.length"
+                    class="club-action-button"
+                    :href="`mailto:${club.emails.join(',')}`"
+                  >
+                    Contact
+                  </a>
+                  <a
+                    v-if="club.more && isExternalLink(club.more)"
+                    class="club-action-button secondary"
+                    :href="club.more"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Club Page
+                  </a>
+                </div>
               </div>
             </card>
           </card-container>
@@ -105,25 +133,53 @@
           >
             <div class="club-card-content">
               <div class="club-header">
-                <div>
+                <a
+                  v-if="club.more && isExternalLink(club.more)"
+                  class="club-title-link"
+                  :href="club.more"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <h4>{{ club.clubName }}</h4>
-                  <p v-if="club.pseudonym" class="club-pseudonym">{{ club.pseudonym }}</p>
-                </div>
-                <span class="club-room">{{ club.room }}</span>
+                </a>
+                <h4 v-else>{{ club.clubName }}</h4>
+                <p v-if="club.pseudonym" class="club-pseudonym">{{ club.pseudonym }}</p>
               </div>
-              <p class="club-time">{{ formatClubDays(club.day) }} • {{ club.time }}</p>
-              <p class="club-emails">{{ club.emails.join(' • ') }}</p>
-              <a
-                v-if="club.more && isExternalLink(club.more)"
-                class="club-link"
-                :href="club.more"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit club page
-              </a>
-              <p v-else-if="club.more" class="club-more">{{ club.more }}</p>
+              <div class="club-details">
+                <p class="club-detail">
+                  <span class="club-detail-label">Room</span>
+                  <span class="club-room">{{ club.room }}</span>
+                </p>
+                <p class="club-detail">
+                  <span class="club-detail-label">Day</span>
+                  <span class="club-time">{{ formatClubDays(club.day) }}</span>
+                </p>
+                <p class="club-detail">
+                  <span class="club-detail-label">Time</span>
+                  <span>{{ club.time }}</span>
+                </p>
+              </div>
+
+              <p v-if="club.more && !isExternalLink(club.more)" class="club-more">{{ club.more }}</p>
               <p v-if="club.additionalDescription" class="club-description">{{ club.additionalDescription }}</p>
+              <div v-if="club.emails.length || (club.more && isExternalLink(club.more))" class="club-actions">
+                <a
+                  v-if="club.emails.length"
+                  class="club-action-button"
+                  :href="`mailto:${club.emails.join(',')}`"
+                >
+                  Contact
+                </a>
+                <a
+                  v-if="club.more && isExternalLink(club.more)"
+                  class="club-action-button secondary"
+                  :href="club.more"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Club Page
+                </a>
+              </div>
             </div>
           </card>
         </card-container>
@@ -305,51 +361,92 @@ h2
 
 .club-card-content
   padding: 18px
+  min-width: 0
+  display: flex
+  flex-direction: column
+  gap: 12px
 
 .club-header
-  display: flex
-  justify-content: space-between
-  align-items: start
-  gap: 12px
+  min-width: 0
 
   h4
     margin: 0
     font-size: 22px
     line-height: 1.15
+    overflow-wrap: anywhere
+    color: var(--accent)
+
+.club-title-link
+  color: inherit
+  text-decoration: underline
+  text-decoration-thickness: 2px
+  text-underline-offset: 3px
 
 .club-pseudonym
-  margin: 6px 0 0
+  margin: 4px 0 0
   color: var(--secondary)
   font-size: 14px
+  overflow-wrap: anywhere
+
+.club-details
+  display: grid
+  gap: 10px
+
+.club-detail
+  margin: 0
+  display: grid
+  gap: 4px
+  line-height: 1.45
+
+.club-detail-label
+  font-size: 11px
+  letter-spacing: 0.08em
+  text-transform: uppercase
+  color: var(--secondary)
+  font-weight: 700
 
 .club-room
-  padding: 6px 10px
-  border-radius: 999px
-  background: var(--secondaryBackground)
-  color: var(--accent)
-  font-size: 13px
-  font-weight: 700
-  white-space: nowrap
+  color: var(--primary)
+  overflow-wrap: anywhere
+  word-break: break-word
 
 .club-time,
 .club-emails,
-.club-link,
 .club-more,
 .club-description
-  margin: 10px 0 0
+  margin: 0
   line-height: 1.5
+  overflow-wrap: anywhere
 
 .club-time
   color: var(--accent)
   font-weight: 700
 
-.club-link
-  display: inline-block
-  color: var(--accent)
-  font-weight: 700
-  text-decoration: underline
-
 .club-emails,
 .club-description
   color: var(--secondary)
+
+.club-actions
+  margin-top: auto
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  padding-top: 4px
+
+.club-action-button
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  min-height: 40px
+  padding: 0 14px
+  border-radius: 12px
+  background: var(--accent)
+  color: var(--background)
+  text-decoration: none
+  font-weight: 700
+  border: 1px solid var(--accent)
+
+  &.secondary
+    background: transparent
+    color: var(--accent)
 </style>

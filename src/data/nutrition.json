@@ -35,7 +35,7 @@
   "rotatingSpecials": [
     {
       "weekday": "Monday",
-      "name": "Mac n Cheese Bowl",
+      "name": "Poké Bowl",
       "description": "Cheesy pasta bowl bar with topping options and rotating proteins.",
       "location": "Glass Commons and Wood Commons",
       "imagePath": "/nutrition/image.png"
@@ -63,7 +63,7 @@
     },
     {
       "weekday": "Friday",
-      "name": "Friday Pasta",
+      "name": "Friday Sushi",
       "description": "A pasta dish to close out the week with something good.",
       "location": "Glass Commons and Wood Commons",
       "imagePath": "/nutrition/image.png"
