@@ -17,11 +17,6 @@
             <p class="panel-label">Today</p>
             <h3>{{ selectedWeekday }}</h3>
           </div>
-          <p class="today-count">
-            {{ isSchoolDay
-              ? `${todaysClubs.length} ${todaysClubs.length === 1 ? 'club meets today' : 'clubs meet today'}`
-              : 'No school today' }}
-          </p>
         </div>
 
         <div v-if="isSchoolDay && todaysClubs.length" class="today-grid">
@@ -93,7 +88,7 @@
           {{ showAllTodaysClubs ? 'Show Less' : `View ${todaysClubs.length - todayClubLimit} More` }}
         </button>
         <p v-else class="empty-text">
-          {{ isSchoolDay ? `No clubs are listed for ${selectedWeekday.toLowerCase()}.` : 'Today clubs are hidden on no school days.' }}
+          {{ isSchoolDay ? `No clubs are listed for ${selectedWeekday.toLowerCase()}.` : 'No school today' }}
         </p>
       </section>
 
