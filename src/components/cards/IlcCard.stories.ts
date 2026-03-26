@@ -58,7 +58,7 @@ export const MultipleDocuments: Story = {
   args: {
     rentroom: 'Rent a Room?',
     documents: [
-      { title: 'Unit 1 Notes', link: 'https://d125.libanswers.com/faq/376376' },
+      { link: 'https://d125.libanswers.com/faq/376376' },
     ],
   },
 }

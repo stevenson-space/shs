@@ -8,7 +8,9 @@
            <p v-if="isOpen" class="time-text">Time remaining until closure</p>
             <p v-else class="time-text">{{ timeStatus }}</p>
         </div>
-        <div class="countdown">'https://d125.libanswers.com/faq/376376'</div>
+        <a href="https://d125.libanswers.com/faq/376376" target="_blank" class="rent-link">
+          Rent a room
+        </a>
     </card>
 </template>
 
@@ -109,7 +111,7 @@ const isOpen = computed(() => {
 });
 
 const openingStatus = computed(() => {
-  if (closedDays.includes(currentTime.value.toISOString().substr(0, 10)) || currentDay.value == 6 || currentDay.value == 7) { //if day is weekend, not opened
+  if (closedDays.includes(currentTime.value.toISOString().substr(0, 10)) || currentDay.value == 0 || currentDay.value == 6) { //if day is weekend, not opened
     return 'Closed Today';
   }
 
@@ -199,4 +201,9 @@ onBeforeUnmount(() => {
   height: 1px
   background-color: var(--accent)
   margin-bottom: 10px
+
+.rent-link
+  display: block
+  text-align: center
+  margin-top: 10px
 </style>
