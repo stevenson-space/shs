@@ -7,7 +7,7 @@
    "International Station": ["Asian Bowl"]
  },
  "13": {
-   "Comfort Food": ["Chicken Shawama w/ Pita"],
+   "Comfort Food": ["Chicken Shawarma w/ Pita"],
    "Mindful": ["Gyro w/ Pita"],
    "Sides": ["Simple Green Salad", "Lemon Rice", "Tahini Sauce"],
    "Soup": ["Smokey Poblano", "Chicken Noodle"],
@@ -37,7 +37,7 @@
  "19": {
    "Comfort Food": ["Blackened Tilapia"],
    "Mindful": ["Jerk Chicken"],
-   "Sides": ["Brussel Sprouts", "Scalloped Potatoes"],
+   "Sides": ["Brussels Sprouts", "Scalloped Potatoes"],
    "Soup": ["Tomato Basil", "Broccoli Cheddar"],
    "International Station": ["Pasta Bowl"]
  },
@@ -108,28 +108,28 @@
    "Comfort Food": ["Swedish Meatballs w/ Egg Noodles"],
    "Mindful": ["Chicken Tikka Masala"],
    "Sides": ["Roasted Zucchini", "Lime Cilantro Rice"],
-   "Soup": ["Minestrome", "Chicken Gumbo"],
+   "Soup": ["Minestrone", "Chicken Gumbo"],
    "International Station": ["Mac & Cheese Bowl"]
  },
  "4": {
    "Comfort Food": ["Cheese Enchilada Casserole"],
    "Mindful": ["Chipotle Orange Chicken"],
    "Sides": ["Roasted Broccolini", "Rice Pilaf"],
-   "Soup": ["Minestrome", "Chicken Gumbo"],
+   "Soup": ["Minestrone", "Chicken Gumbo"],
    "International Station": ["Mac & Cheese Bowl"]
  },
  "5": {
    "Comfort Food": ["Adobo Roasted Turkey Breast"],
    "Mindful": ["Creamy Vegetable Casserole"],
    "Sides": ["Corn", "Egg Noodles"],
-   "Soup": ["Minestrome", "Chicken Gumbo"],
+   "Soup": ["Minestrone", "Chicken Gumbo"],
    "International Station": ["Mac & Cheese Bowl"]
  },
  "6": {
    "Comfort Food": ["Baked Battered Cod"],
    "Mindful": ["Chicken Vesuvio"],
    "Sides": ["Roasted Vegetables", "Roasted Wedge Potatoes"],
-   "Soup": ["Minestrome", "Chicken Gumbo"],
+   "Soup": ["Minestrone", "Chicken Gumbo"],
    "International Station": ["Mac & Cheese Bowl"]
  }
 }
