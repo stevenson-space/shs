@@ -23,6 +23,7 @@
         <pwc-card/>
         <lunch-card />
         <upcoming-events-card />
+        <timer-card />
 
         <icon-text-card :icon="icons.faBell"
                         text="Bell Schedules"
@@ -43,8 +44,6 @@
                         :invert="true" />
 
         <icon-text-card :icon="icons.faDroplet" text="Switch Theme" @click="themeEditorOpen = !themeEditorOpen" />
-
-        <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
 
         <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" />
 
@@ -85,6 +84,7 @@ import CountdownCard from "@/components/cards/CountdownCard.vue";
 import useClockStore from "@/stores/clock";
 import ScheduleHeader from "./Header.vue";
 import ThemeEditor from "@/views/Theme/Theme.vue";
+import TimerCard from "@/views/Tools/TimerCard.vue";
 
 export default {
   components: {
@@ -105,6 +105,7 @@ export default {
     EndOfYearCard,
     CountdownCard,
     ThemeEditor,
+    TimerCard
   },
   data() {
     return {

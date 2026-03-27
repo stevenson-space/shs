@@ -65,6 +65,7 @@
     <confirm-popup :show="showTimerDonePopup" cancel-text="" @ok="timerDoneOk">
       <div class="timer-done-text">Timer Done!</div>
       <!-- TODO Display negative stopwatch counting time since timer ended-->
+      <div class="negative-time">-{{ timerDoneClock() }}</div>
     </confirm-popup>
 
     <confirm-popup :show="showAllowNotificationsPopup" cancel-text="" @ok="showAllowNotificationsPopup = false">
@@ -85,6 +86,8 @@ import RoundedButton from '@/components/RoundedButton.vue';
 import Checkbox from '@/components/Checkbox.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import WhatIsThis from '@/components/WhatIsThis.vue';
+import useClockStore from '@/stores/clock';
+
 
 export default {
   components: {
@@ -248,6 +251,7 @@ export default {
         this.$refs.filler.style.height = `${$fullscreenWrapper.offsetHeight}px`;
 
         $fullscreenWrapper.style.position = 'fixed';
+        $fullscreenWrapper.style.zIndex = '9999';
         this.fullscreenAnimation = anime({
           targets: $fullscreenWrapper,
           top: 0,
@@ -308,6 +312,18 @@ export default {
         this.$refs[`scroll-selector-${i}`].scrollToSelected();
       }
     },
+    convertSecondsToTimeAsString(seconds) {
+      const hours = Math.floor(seconds / 3600);
+      seconds %= 3600;
+      const minutes = Math.floor(seconds / 60);
+      seconds %= 60;
+      return hours + ":" + minutes + ":" + seconds;
+    },
+    timerDoneClock() {
+      const clock = useClockStore();
+      clock.setStartTime();
+      return this.convertSecondsToTimeAsString(Math.floor((clock.currentTime - this.endTime) / 1000));
+    }
   },
 };
 </script>
@@ -414,6 +430,14 @@ export default {
     color: var(--primary)
     +mobile-small
       font-size: 2em
+    
+  .negative-time
+    margin: 0 50px 25px
+    font-size: 1.5em
+    color: var(--secondary)
+    justify-self: center
+    +mobile-small
+      font-size: 1.25em
 
   .allow-notifications-text
     margin: 20px 30px
