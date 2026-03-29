@@ -29,7 +29,7 @@
                           @click="addSummer()" />
         </div>
 
-        <div class="edit-note">Course names are editable • Matches Infinite Campus Layout</div>
+        <div class="edit-note">Course names are editable â€¢ Matches Infinite Campus Layout</div>
       </div>
     </card>
 
@@ -112,9 +112,9 @@
   </div>
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue';
+<script setup lang="ts">
   import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
+  import Checkbox from '@/components/Checkbox.vue';
   import RoundedButton from '@/components/RoundedButton.vue';
   import Card from '@/components/Card.vue';
   import PlainHeader from '@/components/PlainHeader.vue';
@@ -178,7 +178,7 @@
           this.calculateAll();
         }
       },
-      
+
       addSummer() {
         const choice = prompt("Which summer? (0: Pre-Freshman, 1: Soph, 2: Junior, 3: Senior, 4+: Post-Senior)");
         const idx = parseInt(choice || "0");
