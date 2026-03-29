@@ -112,25 +112,15 @@
   </div>
 </template>
 
-<script setup lang="ts">
-  import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
-  import Checkbox from '@/components/Checkbox.vue';
-  import RoundedButton from '@/components/RoundedButton.vue';
-  import Card from '@/components/Card.vue';
-  import PlainHeader from '@/components/PlainHeader.vue';
-  import CardContainer from '@/components/CardContainer.vue';
-  import Dropdown from '@/components/Dropdown.vue';
-  import Checkbox from '@/components/Checkbox.vue';
-
-  <script lang="ts" >
+<script lang="ts">
   import { defineComponent } from 'vue';
   import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
+  import Checkbox from '@/components/Checkbox.vue';
   import RoundedButton from '@/components/RoundedButton.vue';
   import Card from '@/components/Card.vue';
   import PlainHeader from '@/components/PlainHeader.vue';
   import CardContainer from '@/components/CardContainer.vue';
   import Dropdown from '@/components/Dropdown.vue';
-  import Checkbox from '@/components/Checkbox.vue';
 
   class Course {
     instanceId = Math.random().toString(36).substring(7);
@@ -144,6 +134,7 @@
   }
 
   export default defineComponent({
+    name: 'GpaCalculator',
     components: { RoundedButton, Card, PlainHeader, CardContainer, Dropdown, Checkbox },
     data() {
       return {
@@ -178,18 +169,14 @@
           this.calculateAll();
         }
       },
-
       addSummer() {
         const choice = prompt("Which summer? (0: Pre-Freshman, 1: Soph, 2: Junior, 3: Senior, 4+: Post-Senior)");
         const idx = parseInt(choice || "0");
-
         const newSummer = {
           label: (this.summerLabels[idx] || 'Post-Senior') + ' Summer',
           isSummer: true,
-
           semesters: [{ courses: [new Course()] }]
         };
-
         this.years.splice(idx, 0, newSummer);
         this.calculateAll();
       },
