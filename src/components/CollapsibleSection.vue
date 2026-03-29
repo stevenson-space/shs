@@ -6,7 +6,8 @@
         @click="handleHeaderClick"
         :class="{ disabled: disabled }"
       >
-        <span class="group-title">{{ title }}</span>
+        <input v-if="editableTitle" class="group-title" :value="title" @input="$emit('update:title', ($event.target as HTMLInputElement).value)" @click.stop/>
+        <span v-else class="group-title">{{ title }}</span>
         <font-awesome-icon
           v-if="showChevron"
           :icon="icons.faChevronRight"
@@ -18,7 +19,7 @@
       </div>
     </div>
     <transition name="expand">
-      <div v-show="isExpanded && !disabled" class="collapsible-content">
+      <div v-if="isExpanded && !disabled" class="collapsible-content">
         <slot />
       </div>
     </transition>
@@ -31,11 +32,12 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const modelValue = defineModel<boolean>({ default: false });
 
-const { title, disabled = false, headerClass = '', lockOpen = false } = defineProps<{
+const { title, disabled = false, headerClass = '', lockOpen = false, editableTitle = false } = defineProps<{
   title: string
   disabled?: boolean
   headerClass?: string
   lockOpen?: boolean
+  editableTitle?: boolean
 }>();
 
 const emit = defineEmits<{
@@ -128,6 +130,7 @@ function handleHeaderClick() {
 .expand-leave-active
   transition: all 0.3s ease
   overflow: hidden
+  height: auto
 
 .expand-enter-from,
 .expand-leave-to
