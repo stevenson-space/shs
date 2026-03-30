@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "name": "Krillionaire or any other fitting shrimp/krill pun",
+    "author": "Anonymous"
+  },
+  "styling": {
+    "base": "light",
+    "background": "#fffbfe",
+    "secondaryBackground": "#ffdfe0",
+    "accent": "#ff6965",
+    "text": {
+      "primary": "var(--accent)",
+      "secondary": "var(--accent)",
+      "tertiary": "var(--accent)"
+    },
+    "header": {
+      "background": "var(--secondary)",
+      "scheduleBar": "var(--primary)",
+      "image": {
+        "full": "local://IMG_0355.jpeg"
+      }
+    },
+    "iconCards": {
+      "regular": "var(--secondaryBackground)",
+      "invert": "var(--accent)"
+    },
+    "particles": {
+      "images": [
+        "local://IMG_0350.png",
+        "local://IMG_0350.png"
+      ],
+      "speed": 2.7,
+      "count": 42,
+      "size": 21,
+      "opacity": 0.72,
+      "windPower": 0
+    }
+  }
+}
