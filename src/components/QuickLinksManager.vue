@@ -1,7 +1,8 @@
 <template>
-  <settings-section title="Quick Links">
-    <div class="subtitle">
-      Add personal links for quick access. You can pin up to 3 to your Home page.
+  <div class="quick-links-manager" :class="{ embedded }">
+    <div v-if="!hideHeader" class="section-title">Your Links</div>
+    <div v-if="!hideHeader" class="subtitle">
+      Add personal links for quick access. Pin links to show them on your Home page card.
     </div>
 
     <form class="link-form" @submit.prevent="saveLink">
@@ -44,7 +45,7 @@
     </form>
 
     <div v-if="customLinks.length" class="links-list">
-      <div v-for="(link, index) in customLinks" :key="link.id" class="link-item">
+      <div v-for="link in customLinks" :key="link.id" class="link-item">
         <div class="link-info">
           <a :href="link.url" target="_blank" rel="noopener noreferrer" class="link-name">
             {{ link.name }}
@@ -70,7 +71,7 @@
     <div v-else class="empty-state">
       No personal links yet.
     </div>
-  </settings-section>
+  </div>
 </template>
 
 <script lang="ts">
@@ -79,15 +80,23 @@ import { mapActions, mapState } from 'pinia';
 import Checkbox from '@/components/Checkbox.vue';
 import useUserSettingsStore from '@/stores/user-settings';
 import { MapStateToComputed, UserQuickLink } from '@/utils/types';
-import SettingsSection from './SettingsSection.vue';
 
 type UserSettingsStoreState = {
   customLinks: UserQuickLink[];
 }
 
 export default defineComponent({
+  props: {
+    hideHeader: {
+      type: Boolean,
+      default: false,
+    },
+    embedded: {
+      type: Boolean,
+      default: false,
+    },
+  },
   components: {
-    SettingsSection,
     Checkbox,
   },
   data() {
@@ -189,13 +198,31 @@ export default defineComponent({
 </script>
 
 <style lang="sass" scoped>
+.quick-links-manager
+  max-width: 1200px
+  margin: 0 auto 10px auto
+  padding: 0 12px
+  &.embedded
+    max-width: 100%
+    margin: 0
+    padding: 0
+
+    .link-form, .links-list
+      max-width: 100%
+
+.section-title
+  margin: 12px 0 6px 0
+  font-size: 1.3em
+  color: var(--secondary)
+  font-weight: 700
+
 .subtitle
-  margin: 16px 15px 20px 15px
+  margin: 0 0 16px 0
   color: var(--secondary)
   max-width: 700px
 
 .link-form
-  margin: 0 15px 25px 15px
+  margin: 0 0 25px 0
   max-width: 700px
   padding: 16px
   border-radius: 12px
@@ -238,7 +265,6 @@ export default defineComponent({
   font-size: .9em
 
 .links-list
-  margin: 0 15px
   max-width: 900px
   display: flex
   flex-direction: column
@@ -297,12 +323,7 @@ export default defineComponent({
     color: var(--background)
     border-color: var(--accent)
 
-  &:disabled
-    opacity: .45
-    cursor: not-allowed
-
 .empty-state
-  margin: 0 15px
   color: var(--secondary)
   font-size: .95em
 </style>

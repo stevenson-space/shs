@@ -39,7 +39,6 @@
     <div class="main">
       <home-link class="home-link" />
       <general id="general" />
-      <quick-links id="quick-links" />
       <schedules id="schedules" />
       <transfer id="transfer" />
       <contact id="contact" />
@@ -65,13 +64,11 @@ import {
   faLock,
   faAddressCard,
   faCode,
-  faLink,
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
 import { defineComponent } from 'vue';
 import HomeLink from '@/components/HomeLink.vue';
 import General from './General.vue';
-import QuickLinks from './QuickLinks.vue';
 import Schedules from './Schedules.vue';
 import Transfer from './Transfer.vue';
 import Privacy from './Privacy.vue';
@@ -86,7 +83,6 @@ type SettingsNavItems = {
 
 const sidenavItems = [
   { text: 'General', link: '#general', icon: faUserGear },
-  { text: 'Quick Links', link: '#quick-links', icon: faLink },
   { text: 'Schedules', link: '#schedules', icon: faRectangleList },
   {
     text: 'Transfer',
@@ -115,7 +111,6 @@ export default defineComponent({
   components: {
     HomeLink,
     General,
-    QuickLinks,
     Schedules,
     Transfer,
     Privacy,
