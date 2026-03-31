@@ -1,6 +1,25 @@
 <template>
   <div>
     <plain-header title="Links" />
+
+    <div class="section-title">Your Links</div>
+    <card-container class="container" v-if="customLinks.length">
+      <icon-text-card
+        v-for="(link, index) in customLinks"
+        :key="link.id"
+        :style="{ 'animation-delay': index * .045 + 's'}"
+        :icon="icons.faLink"
+        :text="link.name"
+        :link="link.url"
+        :link-props="{ newTab: true }"
+        :invert="index % 2 === 1"
+      />
+    </card-container>
+    <div v-else class="empty-links">
+      No personal links yet. Add some in Settings > Quick Links.
+    </div>
+
+    <div class="section-title">School Links</div>
     <card-container class="container">
       <image-text-card
         v-for="(link, index) in links"
@@ -17,9 +36,13 @@
 </template>
 
 <script>
+import { mapState } from 'pinia';
 import CardContainer from '@/components/CardContainer.vue';
 import ImageTextCard from '@/components/cards/ImageTextCard.vue';
+import IconTextCard from '@/components/cards/IconTextCard.vue';
 import PlainHeader from '@/components/PlainHeader.vue';
+import useUserSettingsStore from '@/stores/user-settings';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 // I've spent way too much time on trying to dynamically import images, this will have to work for the time being
 import D125 from '@/assets/links/D125.png';
@@ -38,10 +61,14 @@ export default {
   components: {
     CardContainer,
     ImageTextCard,
+    IconTextCard,
     PlainHeader,
   },
   data() {
     return {
+      icons: {
+        faLink,
+      },
       links: [ /* eslint-disable max-len */
         { name: 'D125', url: 'https://www.d125.org/', image: D125 },
         { name: 'Canvas', desc: 'Must be logged in using school Google account', url: 'https://d125.instructure.com/login/saml', image: Canvas },
@@ -57,5 +84,24 @@ export default {
       ],
     };
   },
+  computed: {
+    ...mapState(useUserSettingsStore, ['customLinks']),
+  },
 };
 </script>
+
+<style lang="sass" scoped>
+.section-title
+  max-width: 1200px
+  margin: 12px auto 6px auto
+  padding: 0 12px
+  font-size: 1.3em
+  color: var(--secondary)
+  font-weight: 700
+
+.empty-links
+  max-width: 1200px
+  margin: 0 auto 10px auto
+  padding: 0 12px
+  color: var(--secondary)
+</style>

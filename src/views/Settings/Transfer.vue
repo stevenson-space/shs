@@ -70,16 +70,20 @@ import RoundedButton from '@/components/RoundedButton.vue';
 import Popup from '@/components/Popup.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import Checkbox from '@/components/Checkbox.vue';
-import { tryParseJSON } from '@/utils/util';
 import useThemeStore from '@/stores/themes';
 import useScheduleStore from '@/stores/schedules';
 import useUserSettingsStore from '@/stores/user-settings';
-import { CustomSchedules, MapStateToComputed, ScheduleMode, Theme } from '@/utils/types';
+import {
+  CustomSchedules,
+  MapStateToComputed,
+  Theme,
+  UserQuickLink,
+} from '@/utils/types';
 import SettingsSection from './SettingsSection.vue';
 
-type transferableSettingOption = 'color' |'theme' |'defaultScheduleMode' | 'grade' | 'customSchedules'
+type transferableSettingOption = 'color' |'theme' |'defaultScheduleMode' | 'grade' | 'customSchedules' | 'customLinks'
 
-const transferableSettings: transferableSettingOption[] = ['theme', 'defaultScheduleMode', 'grade', 'customSchedules'];
+const transferableSettings: transferableSettingOption[] = ['theme', 'defaultScheduleMode', 'grade', 'customSchedules', 'customLinks'];
 
 const popups = {
   none: 0,
@@ -97,6 +101,7 @@ type ThemeStoreState = {
 
 type GradeStoreState = {
   grade: string;
+  customLinks: UserQuickLink[];
 }
 
 type ScheduleStoreState = {
@@ -138,12 +143,12 @@ export default defineComponent({
   computed: {
     ...(mapState(useThemeStore, ['theme']) as MapStateToComputed<ThemeStoreState>),
     ...(mapState(useScheduleStore, ['defaultScheduleMode', 'customSchedules']) as MapStateToComputed<ScheduleStoreState>),
-    ...(mapState(useUserSettingsStore, ['grade']) as MapStateToComputed<GradeStoreState>),
+    ...(mapState(useUserSettingsStore, ['grade', 'customLinks']) as MapStateToComputed<GradeStoreState>),
   },
   methods: {
     ...mapActions(useThemeStore, ['setStyling']),
     ...mapActions(useScheduleStore, ['setDefaultScheduleMode', 'setCustomSchedules']),
-    ...mapActions(useUserSettingsStore, ['setGrade']),
+    ...mapActions(useUserSettingsStore, ['setGrade', 'setCustomLinks']),
 
     settingToName(setting: transferableSettingOption): string {
       const separatedWords = setting.replace(/([a-z])([A-Z])/g, '$1 $2'); // 'defaultScheduleSomething' to 'default Schedule Something'
@@ -152,21 +157,23 @@ export default defineComponent({
     showPopup(popup: any): void {
       this.popupToShow = popup;
     },
-    getSetting(name: transferableSettingOption): string | Theme | ScheduleMode {
+    getSetting(name: transferableSettingOption): unknown {
       switch (name) {
         case 'theme': return this.theme as Theme;
         case 'defaultScheduleMode': return this.defaultScheduleMode;
         case 'grade': return this.grade as string;
         case 'customSchedules': return this.customSchedules;
+        case 'customLinks': return this.customLinks;
         default: return 'foo';
       }
     },
-    setSetting(name: transferableSettingOption, value: any): void {
+    setSetting(name: transferableSettingOption, value: unknown): void {
       switch (name) {
         case 'theme': this.setStyling(value); break;
         case 'defaultScheduleMode': this.setDefaultScheduleMode(value); break;
         case 'grade': this.setGrade(value); break;
         case 'customSchedules': this.setCustomSchedules(value); break;
+        case 'customLinks': this.setCustomLinks(value); break;
         default: break;
       }
     },
@@ -238,7 +245,7 @@ export default defineComponent({
     save(): void {
       if (this.receivedData) {
         if (this.shouldSaveSetting.theme) {
-                    this.receivedData.theme = { theme: this.receivedData.theme, useThemeColor: true };
+          this.receivedData.theme = { theme: this.receivedData.theme, useThemeColor: true };
         }
         for (const [setting, data] of (Object.entries(this.receivedData) as [transferableSettingOption, any][])) {
           if (this.shouldSaveSetting[setting]) {

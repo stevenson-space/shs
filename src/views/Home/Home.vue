@@ -19,6 +19,7 @@
         <shs-hacks-card/>
         <holiday-card />
         <schedule-card max-height="270px"/>
+        <quick-links-card max-height="270px" />
         <weather-card />
         <pwc-card/>
         <lunch-card />
@@ -73,6 +74,7 @@ import IconTextCard from "@/components/cards/IconTextCard.vue";
 import WeatherCard from "@/components/cards/WeatherCard.vue";
 import PwcCard from "@/components/cards/PwcCard.vue";
 import ScheduleCard from "@/components/cards/ScheduleCard.vue";
+import QuickLinksCard from "@/components/cards/QuickLinksCard.vue";
 import HolidayCard from "@/components/cards/HolidayCard.vue";
 import ContributeCard from "@/components/cards/ContributeCard.vue";
 import LunchCard from "@/components/cards/LunchCard.vue";
@@ -94,6 +96,7 @@ export default {
     LunchCard,
     IconTextCard,
     ScheduleCard,
+    QuickLinksCard,
     WeatherCard,
     PwcCard,
     HolidayCard,
