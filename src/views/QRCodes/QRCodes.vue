@@ -9,7 +9,7 @@
             <div v-if="showQR" class="qr-image">
               <QRCodeVue3
                 :key="qrKey"
-                :image="logo"
+                :image="selectedIconImage"
                 :width="300"
                 :height="300"
                 :margin="10"
@@ -38,6 +38,41 @@
               :allow-inherit="false"
               :disable-inline-button="true"
             />
+          </div>
+
+          <div class="field">
+            <label>Center Icon</label>
+            <dropdown
+              class="icon-dropdown"
+              :options="iconOptions"
+              :modelValue="selectedIcon"
+              :show-selected-as-option="false"
+              @update:modelValue="updateIcon"
+            />
+            <div class="icon-preview" :class="{ empty: !selectedIconImage }">
+              <img v-if="selectedIconImage" :src="selectedIconImage" alt="Selected center icon" />
+              <span v-else>No center icon</span>
+            </div>
+            <div v-if="isCustomIconSelected" class="custom-upload">
+              <input
+                ref="customUploadInput"
+                class="upload-input"
+                type="file"
+                accept="image/*"
+                @change="handleCustomImageUpload"
+              />
+              <div class="tiny-note">Square transparent images work best.</div>
+              <div v-if="uploadError" class="upload-error">
+                {{ uploadError }}
+              </div>
+              <rounded-button
+                v-if="customImageData"
+                @click="clearCustomImage"
+                text="Clear Upload"
+                :circular="true"
+                class="btn-reset"
+              />
+            </div>
           </div>
 
           <div class="field">
@@ -85,7 +120,13 @@ import QRCodeVue3 from 'space-vue3-qrcode';
 import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ColorPicker from '@/components/ColorPicker.vue';
+import Dropdown from '@/components/Dropdown.vue';
 import logo from '@/assets/QRCodeLogo.png';
+import patriot from '@/assets/patriot.png';
+import patriotEclipse from '@/assets/patriot-eclipse.png';
+import patriotLogoFestive from '@/assets/patriot-logo-festive.png';
+import patriotLogoParty from '@/assets/patriot-logo-party.png';
+import patriotLogoSpace from '@/assets/patriot-logo-space.png';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faQrcode, faFileExport } from '@fortawesome/free-solid-svg-icons';
 
@@ -95,10 +136,22 @@ export default {
     Card,
     RoundedButton,
     ColorPicker,
+    Dropdown,
     QRCodeVue3,
     FontAwesomeIcon,
   },
   data() {
+    const iconChoices = [
+      { name: 'Stevenson Space', image: logo },
+      { name: 'Patriot', image: patriot },
+      { name: 'Patriot Eclipse', image: patriotEclipse },
+      { name: 'Patriot Festive', image: patriotLogoFestive },
+      { name: 'Patriot Party', image: patriotLogoParty },
+      { name: 'Patriot Space', image: patriotLogoSpace },
+      { name: 'Custom Upload', image: '', custom: true },
+      { name: 'No Icon', image: '' },
+    ];
+
     return {
       url: 'https://stevenson.space',
       qrColor: '#1F5D39',
@@ -106,7 +159,10 @@ export default {
       showQR: false,
       qrKey: 0,
       error: '',
-      logo,
+      iconChoices,
+      selectedIcon: 0,
+      customImageData: '',
+      uploadError: '',
       icons: {
         faQrcode,
         faFileExport,
@@ -135,10 +191,31 @@ export default {
       this.error = '';
       return true;
     },
+    iconOptions() {
+      return this.iconChoices.map((choice) => choice.name);
+    },
+    selectedIconChoice() {
+      return this.iconChoices[this.selectedIcon] || this.iconChoices[0];
+    },
+    isCustomIconSelected() {
+      return !!this.selectedIconChoice?.custom;
+    },
+    selectedIconImage() {
+      if (this.isCustomIconSelected) {
+        return this.customImageData || '';
+      }
+      return this.selectedIconChoice?.image || '';
+    },
   },
   watch: {
     qrColor() {
       this.qrKey++;
+    },
+    selectedIcon() {
+      this.qrKey++;
+    },
+    customImageData() {
+      if (this.isCustomIconSelected) this.qrKey++;
     },
     url() {
       this.showQR = this.canGenerate;
@@ -150,6 +227,44 @@ export default {
   methods: {
     resetColor() {
       this.qrColor = this.defaultColor;
+    },
+    updateIcon(iconIndex) {
+      this.selectedIcon = iconIndex;
+      this.uploadError = '';
+    },
+    handleCustomImageUpload(event) {
+      const file = event?.target?.files?.[0];
+      if (!file) return;
+
+      if (!file.type.startsWith('image/')) {
+        this.uploadError = 'Please upload an image file.';
+        event.target.value = '';
+        return;
+      }
+
+      const maxFileSize = 2 * 1024 * 1024;
+      if (file.size > maxFileSize) {
+        this.uploadError = 'Please use an image under 2MB.';
+        event.target.value = '';
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.customImageData = typeof reader.result === 'string' ? reader.result : '';
+        this.uploadError = this.customImageData ? '' : 'Could not read image file.';
+      };
+      reader.onerror = () => {
+        this.uploadError = 'Could not read image file.';
+      };
+      reader.readAsDataURL(file);
+    },
+    clearCustomImage() {
+      this.customImageData = '';
+      this.uploadError = '';
+      if (this.$refs.customUploadInput) {
+        this.$refs.customUploadInput.value = '';
+      }
     },
   },
 };
@@ -299,6 +414,54 @@ export default {
       outline: none
       border-color: var(--accent)
       box-shadow: 0 0 0 3px rgba(128, 128, 128, 0.08)
+
+.icon-dropdown
+  width: fit-content
+
+.icon-preview
+  margin-top: 10px
+  width: 72px
+  height: 72px
+  border-radius: 12px
+  border: 1px solid rgba(128, 128, 128, 0.18)
+  background: rgba(128, 128, 128, 0.06)
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 11px
+  color: var(--secondary)
+  text-align: center
+  padding: 8px
+  box-sizing: border-box
+
+  img
+    width: 100%
+    height: 100%
+    object-fit: contain
+
+  &.empty
+    border-style: dashed
+
+.custom-upload
+  margin-top: 10px
+  display: flex
+  flex-direction: column
+  gap: 8px
+  align-items: flex-start
+
+.upload-input
+  max-width: 100%
+  font-size: 12px
+  color: var(--secondary)
+
+.tiny-note
+  font-size: 11px
+  color: var(--tertiary)
+  line-height: 1.2
+
+.upload-error
+  font-size: 12px
+  color: #ef4444
 
 .tip
   font-size: 13px
