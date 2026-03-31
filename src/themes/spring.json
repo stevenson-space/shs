@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "name": "spring",
+    "author": "Dianne P. ('27)"
+  },
+  "styling": {
+    "base": "light",
+    "background": "#F4E4A8",
+    "secondaryBackground": "#EFDBA6",
+    "accent": "#9BB19A",
+    "text": {
+      "primary": "#98B9C8",
+      "secondary": "#869143",
+      "tertiary": "#65A2C1"
+    },
+    "header": {
+      "image": {
+        "full": "local://IMG_0695.jpeg",
+        "mobile": "local://IMG_0695.jpeg"
+      }
+    },
+    "iconCards": {
+      "regular": "#F4E4A8",
+      "invert": "#869143"
+    },
+    "particles": {
+      "images": [
+        "local://IMG_0710.png",
+        "local://IMG_0709.png",
+        "local://IMG_0708.png",
+        "local://IMG_0707.png",
+        "local://IMG_0706.png",
+        "local://IMG_0705.png",
+        "assets://particles/sakura/bee.png"
+      ],
+      "speed": 3.6,
+      "count": 50,
+      "size": 19,
+      "opacity": 0.8,
+      "windPower": -1.1
+    }
+  }
+}
