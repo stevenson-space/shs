@@ -8,12 +8,12 @@
       <p class="time-text">{{ isOpen ? 'Time remaining until closure' : timeStatus }}</p>
     </div>
 
-    <button type="button" class="more-button" @click="toggleExpanded">
-      {{ isExpanded ? 'Less' : 'More' }}
-    </button>
-
-    <transition name="expand" @after-enter="setCardHeight" @after-leave="setCardHeight">
-      <div v-if="isExpanded" class="expanded-content">
+    <collapsible-section
+      v-model="isExpanded"
+      :title="isExpanded ? 'Less' : 'More'"
+      class="ilc-collapsible"
+    >
+      <div class="expanded-content">
         <a
           class="reserve-link"
           href="https://docs.google.com/forms/d/e/1FAIpQLSfuUtBcvAd9fV4N3hMXQ3jjVmvL54EA5eBg_jCKa205IcCwEA/viewform"
@@ -34,14 +34,15 @@
           <li>If you are over 20 minutes late, your reservation may be released.</li>
         </ol>
       </div>
-    </transition>
+    </collapsible-section>
   </card>
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, ref, useTemplateRef } from 'vue';
+import { computed, nextTick, ref, useTemplateRef, watch } from 'vue';
 import Bell from '@/utils/bell';
 import Card from '@/components/Card.vue';
+import CollapsibleSection from '@/components/CollapsibleSection.vue';
 import useClockStore from '@/stores/clock';
 import useScheduleStore from '@/stores/schedules';
 
@@ -116,15 +117,13 @@ function setCardHeight(): void {
   cardRef.value?.setHeight();
 }
 
-function toggleExpanded(): void {
-  isExpanded.value = !isExpanded.value;
-
-  // Keep masonry layout in sync while the card enters/leaves.
+watch(isExpanded, () => {
+  // Keep masonry layout in sync while the collapsible enters/leaves.
   nextTick(() => {
     setCardHeight();
-    setTimeout(setCardHeight, 260);
+    setTimeout(setCardHeight, 320);
   });
-}
+});
 
 const todayHours = computed(() => getIlcHours(currentBell.value?.type, isFinalEarlyDismissalDay.value));
 
@@ -219,27 +218,15 @@ const showIlcCard = computed(() => {
   margin-bottom: 10px
   background-color: var(--accent)
 
-.more-button
-  width: 100%
-  margin: 10px 0 0
-  padding: 8px 10px
-  border: 1px solid var(--accent)
-  border-radius: 8px
-  background: transparent
-  color: var(--accent)
-  font-weight: 600
-  cursor: pointer
-  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease
+.ilc-collapsible
+  margin-top: 10px
 
-  &:hover
-    background: var(--accent)
-    color: var(--secondaryBackground)
-    opacity: .9
+  :deep(.group-title)
+    color: var(--accent)
+    font-weight: 600
 
 .expanded-content
-  margin-top: 12px
-  border-top: 1px solid var(--accent)
-  padding-top: 12px
+  padding-top: 2px
   text-align: left
 
 .reserve-link
@@ -257,16 +244,4 @@ const showIlcCard = computed(() => {
   padding-left: 18px
   font-size: .93rem
   line-height: 1.35rem
-
-.expand-enter-active, .expand-leave-active
-  transition: all 0.25s ease
-  overflow: hidden
-
-.expand-enter-from, .expand-leave-to
-  max-height: 0
-  opacity: 0
-
-.expand-enter-to, .expand-leave-from
-  max-height: 2000px
-  opacity: 1
 </style>
