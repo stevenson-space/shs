@@ -10,9 +10,9 @@
     "base": "dark",
     "background": "#1d1d20",
     "secondaryBackground": "#212124",
-    "accent": "#2f3842",
+    "accent": "#3a4551",
     "text": {
-      "primary": "#b4b1b1"
+      "primary": "#e6e5e5"
     },
     "header": {
       "background": "var(--accent)"
