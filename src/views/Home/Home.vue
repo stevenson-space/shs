@@ -6,50 +6,26 @@
     />
     <theme-editor :open="themeEditorOpen" @close="themeEditorOpen = false" />
 
-    <card-container class="card-container">
-        <end-of-year-card />
-        <countdown-card
-          untilDate="May 23, 2025"
-          message="🌴 Summer Countdown 🐬"
+    <draggable
+      v-model="gradesStore.cardsLayout"
+      item-key="id"
+      class="card-container"
+      handle=".drag-handle"
+      :animation="200"
+      @end="gradesStore.saveLayout()"
+    >
+      <template #item="{ element }">
+        <component
+          :is="element.component"
+          :key="element.id"
+          v-bind="getProps(element)"
+          :cardId="element.id"
+          :cardTitle="element.props?.text || getFallbackTitle(element.component)"
+          @open-theme-editor="themeEditorOpen = true"
+          @click="handleCardClick(element.id)"
         />
-        <new-feature-card @open-theme-editor="themeEditorOpen = true" />
-        <new-theme-card />
-        <contribute-card />
-        <april-fools-card />
-        <shs-hacks-card/>
-        <holiday-card />
-        <schedule-card max-height="270px"/>
-        <weather-card />
-        <pwc-card/>
-        <lunch-card />
-        <upcoming-events-card />
-
-        <icon-text-card :icon="icons.faBell"
-                        text="Bell Schedules"
-                        link="bellschedules"
-                        :invert="false" />
-
-        <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
-
-        <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" :invert="true" />
-        <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
-
-        <icon-text-card :icon="icons.faRadio" text="Jukebox" link="jukebox" />
-
-        <icon-text-card :icon="icons.faCalculator"
-                        text="GPA Calculator"
-                        link="gpaCalculator"
-                        :link-props="{ type: 'a' }"
-                        :invert="true" />
-
-        <icon-text-card :icon="icons.faDroplet" text="Switch Theme" @click="themeEditorOpen = !themeEditorOpen" />
-
-        <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
-
-        <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" />
-
-        <icon-text-card :icon="icons.faGear" text="Settings" link="settings" :invert="true" />
-    </card-container>
+      </template>
+    </draggable>
   </div>
 </template>
 
@@ -66,8 +42,8 @@ import {
   faQrcode,
   faRadio,
 } from "@fortawesome/free-solid-svg-icons";
-import { mapActions } from "pinia";
-import CardContainer from "@/components/CardContainer.vue";
+import { mapActions, mapStores } from "pinia";
+import draggable from "vuedraggable";
 import UpcomingEventsCard from "@/components/cards/UpcomingEventsCard.vue";
 import IconTextCard from "@/components/cards/IconTextCard.vue";
 import WeatherCard from "@/components/cards/WeatherCard.vue";
@@ -83,13 +59,13 @@ import NewFeatureCard from "@/components/cards/NewFeatureCard.vue";
 import EndOfYearCard from "@/components/cards/EndOfYearCard.vue";
 import CountdownCard from "@/components/cards/CountdownCard.vue";
 import useClockStore from "@/stores/clock";
+import useUserSettings from "@/stores/user-settings";
 import ScheduleHeader from "./Header.vue";
 import ThemeEditor from "@/views/Theme/Theme.vue";
 
 export default {
   components: {
     ScheduleHeader,
-    CardContainer,
     UpcomingEventsCard,
     LunchCard,
     IconTextCard,
@@ -105,6 +81,7 @@ export default {
     EndOfYearCard,
     CountdownCard,
     ThemeEditor,
+    draggable,
   },
   data() {
     return {
@@ -125,10 +102,45 @@ export default {
       themeEditorOpen: false,
     };
   },
+  computed: {
+    ...mapStores(useUserSettings),
+  },
   methods: {
     ...mapActions(useClockStore, ["startClock"]),
+    getProps(element) {
+      if (!element.props) return {};
+      const { iconName, ...rest } = element.props;
+      if (iconName && this.icons[iconName]) {
+        rest.icon = this.icons[iconName];
+      }
+      return rest;
+    },
+    getFallbackTitle(component) {
+      const titles = {
+        EndOfYearCard: 'End of Year',
+        CountdownCard: 'Countdown',
+        NewFeatureCard: 'New Features',
+        NewThemeCard: 'New Themes',
+        ContributeCard: 'Contribute',
+        AprilFoolsCard: 'April Fools',
+        ShsHacksCard: 'SHS Hacks',
+        HolidayCard: 'Happy Holidays',
+        ScheduleCard: 'Schedule',
+        WeatherCard: 'Weather',
+        PwcCard: 'PWC Schedule',
+        LunchCard: 'Lunch',
+        UpcomingEventsCard: 'Upcoming Events'
+      };
+      return titles[component] || component;
+    },
+    handleCardClick(id) {
+      if (id === 'theme-switch') {
+        this.themeEditorOpen = !this.themeEditorOpen;
+      }
+    }
   },
   created() {
+    this.gradesStore.initializeLayout();
     // Sometimes the interval used in Header.vue stops when the tab leaves focus
     // so updating the date when focus returns is necessary
     window.addEventListener("focus", () => {
@@ -147,4 +159,22 @@ export default {
 .no-overflow
   height: 100vh
   overflow: hidden
+
+.card-container
+  max-width: $content-width
+  margin: 10px auto
+  display: grid
+  padding: 0 5px
+  grid-auto-rows: 5px
+
+  :deep(.sortable-ghost)
+    opacity: 0.4
+    
+  :deep(.sortable-drag)
+    opacity: 0.8
+  grid-template-columns: 1fr
+  +tablet-small
+    grid-template-columns: 1fr 1fr
+  +desktop
+    grid-template-columns: 1fr 1fr 1fr
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <card v-if="userSettingsStore.showPWCSchedule && showPWCCard" class="card">
+    <card v-show="userSettingsStore.showPWCSchedule && showPWCCard" class="card">
         <p class="title">PWC</p>
         <div class="green-line"></div>
         <div class="countdown">

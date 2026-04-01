@@ -1,8 +1,31 @@
 <template>
-  <div class="card-container">
+  <draggable
+    v-if="modelValue"
+    :model-value="modelValue"
+    @update:model-value="$emit('update:modelValue', $event)"
+    @end="$emit('end', $event)"
+    item-key="id"
+    class="card-container"
+    handle=".drag-handle"
+  >
+    <template #item="{ element }">
+      <slot name="item" :element="element" />
+    </template>
+  </draggable>
+  <div v-else class="card-container">
     <slot />
   </div>
 </template>
+
+<script setup lang="ts">
+import draggable from "vuedraggable";
+
+defineProps<{
+  modelValue?: any[];
+}>();
+
+defineEmits(['update:modelValue', 'end']);
+</script>
 
 <style lang="sass" scoped>
 @import '@/styles/style.sass'
@@ -17,6 +40,12 @@
   display: grid
   padding: 0 5px
   grid-auto-rows: 5px
+
+  :deep(.sortable-ghost)
+    opacity: 1.0
+
+  :deep(.sortable-drag)
+    opacity: 0.7
 
   grid-template-columns: 1fr
   +tablet-small

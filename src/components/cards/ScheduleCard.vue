@@ -1,6 +1,6 @@
 <template>
   <card
-    v-if="schedule || clockStore.bell?.isSchoolDay"
+    v-show="schedule || clockStore.bell?.isSchoolDay"
     class="card"
     :ignoreStyleMutations="true"
     @height-change="onHeightChange"
