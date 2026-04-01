@@ -16,35 +16,48 @@ import { ref, computed, onBeforeUnmount } from 'vue';
 import Card from '@/components/Card.vue';
 import useUserSettingsStore from '@/stores/user-settings';
 import useClockStore from '@/stores/clock';
+import useScheduleStore from '@/stores/schedules';
+import Bell from '@/utils/bell';
 
 const clockStore = useClockStore();
 const userSettingsStore = useUserSettingsStore();
+const scheduleStore = useScheduleStore();
 
-const openingTimes = [
-  { day: 1, start: '15:30', end: '20:00' }, // Monday
-  { day: 2, start: '15:30', end: '20:00' }, // Tuesday
-  { day: 3, start: '15:30', end: '20:00' }, // Wednesday
-  { day: 4, start: '15:30', end: '20:00' }, // Thursday
-  { day: 5, start: '15:30', end: '18:00' }, // Friday
-  { day: 6, start: '10:00', end: '14:00' }, // Saturday
-  { day: 0, start: '10:00', end: '14:00' }, // Sunday
-];
+type PwcHours = {
+  start: string;
+  end: string;
+};
 
-const closedDays = [
-  // Add dates in 'YYYY-MM-DD' format for holidays or special closures
-  '2024-02-18',
-  '2024-02-19',
-  '2024-03-03',
-  '2024-03-04',
-  '2024-03-31',
-  '2024-05-12',
-  '2024-05-22',
-  '2024-05-23',
-  '2024-05-24',
-  '2024-05-25',
-  '2024-05-26',
-  '2024-05-27',
-];
+const regularOpeningTimes: Record<number, PwcHours> = {
+  0: { start: '10:00', end: '14:00' }, // Sunday
+  1: { start: '15:30', end: '20:00' }, // Monday
+  2: { start: '15:30', end: '20:00' }, // Tuesday
+  3: { start: '15:30', end: '20:00' }, // Wednesday
+  4: { start: '15:30', end: '20:00' }, // Thursday
+  5: { start: '15:30', end: '18:00' }, // Friday
+  6: { start: '10:00', end: '14:00' }, // Saturday
+};
+
+const nonAttendanceOpeningTimes: PwcHours = { start: '08:00', end: '16:00' };
+
+const closedDays = new Set([
+  '2026-03-29',
+  '2026-04-03',
+  '2026-04-04',
+  '2026-04-05',
+  '2026-05-10',
+  '2026-05-21',
+  '2026-05-22',
+  '2026-05-23',
+  '2026-05-24',
+  '2026-05-25',
+  '2026-05-26',
+  '2026-05-27',
+  '2026-05-28',
+  '2026-05-29',
+  '2026-05-30',
+  '2026-05-31',
+]);
 
 const currentTimeMs = ref(0);
 let timer: ReturnType<typeof setInterval> | null = null;
@@ -59,66 +72,58 @@ const showPWCCard = computed(() => {
           scheduleDate.getFullYear() === today.getFullYear();
 });
 
-const currentDay = computed(() => currentTime.value.getDay());
+const todayHours = computed(() => getHoursForDate(currentTime.value));
 
 const currentOpeningTime = computed(() => {
-  const openingTime = openingTimes.find(
-    (time) => time.day === currentDay.value,
-  )!;
-  return getTimeInMs(
-    currentTime.value.toDateString(),
-    openingTime.start,
-  );
+  if (!todayHours.value) {
+    return null;
+  }
+  return getTimeInMs(currentTime.value, todayHours.value.start);
 });
 
 const currentClosingTime = computed(() => {
-  const closingTime = openingTimes.find(
-    (time) => time.day === currentDay.value,
-  )!;
-  return getTimeInMs(
-    currentTime.value.toDateString(),
-    closingTime.end,
-  );
+  if (!todayHours.value) {
+    return null;
+  }
+  return getTimeInMs(currentTime.value, todayHours.value.end);
 });
 
-const nextOpeningTime = computed(() => {
-  const currentDate = currentTime.value.toISOString().substr(0, 10);
-  if (currentTime.value < currentOpeningTime.value) {
-    const openingTime = openingTimes.find((time) => time.day === currentDay.value)!;
-    return getTimeInMs(currentDate, openingTime.start);
-  }
-
-  let nextDay = (currentDay.value + 1) % 7;
-  while (closedDays.includes(new Date(getNextDate(nextDay)).toISOString().substr(0, 10))) {
-    nextDay = (nextDay + 1) % 7;
-  }
-  const openingTime = openingTimes.find((time) => time.day === nextDay)!;
-  return getTimeInMs(currentDate, openingTime.start);
-});
+const nextOpeningTime = computed(() => getNextOpeningTime(currentTime.value));
 
 const isOpen = computed(() => {
-  const isClosedDay = closedDays.includes(currentTime.value.toISOString().substr(0, 10));
-  if (isClosedDay) {
+  if (!todayHours.value || currentOpeningTime.value === null || currentClosingTime.value === null) {
     return false;
   }
 
   return (
-    currentTime.value >= currentOpeningTime.value && currentTime.value <= currentClosingTime.value
+    currentTime.value.getTime() >= currentOpeningTime.value
+    && currentTime.value.getTime() <= currentClosingTime.value
   );
 });
 
 const openingStatus = computed(() => {
-  if (closedDays.includes(currentTime.value.toISOString().substr(0, 10))) {
+  if (!todayHours.value) {
     return 'Closed Today';
   }
 
-  return isOpen.value ? 'Open' : `Opens at ${formatTime(nextOpeningTime.value)}`;
+  if (isOpen.value) {
+    return 'Open';
+  }
+
+  if (nextOpeningTime.value === null) {
+    return 'Closed';
+  }
+
+  return `Opens at ${formatTime(nextOpeningTime.value)}`;
 });
 
 const timeStatus = computed(() => isOpen.value ? 'Closes' : 'Closed');
 
 const countdownTime = computed(() => {
   const targetTime = isOpen.value ? currentClosingTime.value : nextOpeningTime.value;
+  if (targetTime === null) {
+    return '00:00:00';
+  }
   const timeDiff = targetTime - currentTimeMs.value;
   if (timeDiff <= 0) {
     return '00:00:00';
@@ -129,17 +134,64 @@ const countdownTime = computed(() => {
   return `${hours}:${minutes}:${seconds}`;
 });
 
-function getTimeInMs(dateString: string, timeString: string): number {
-  const dateTimeString = `${dateString} ${timeString}`;
-  return new Date(dateTimeString).getTime();
+function getDateKey(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
 }
 
-function getNextDate(day: number): string {
-  const today = currentTime.value.getDay();
-  const difference = (day - today + 7) % 7;
-  const nextDate = new Date(currentTime.value);
-  nextDate.setDate(currentTime.value.getDate() + difference);
-  return nextDate.toDateString();
+function getTimeInMs(date: Date, timeString: string): number {
+  const [hours, minutes] = timeString.split(':').map(Number);
+  const dateWithTime = new Date(date);
+  dateWithTime.setHours(hours, minutes, 0, 0);
+  return dateWithTime.getTime();
+}
+
+function getHoursForDate(date: Date): PwcHours | null {
+  if (closedDays.has(getDateKey(date))) {
+    return null;
+  }
+
+  const scheduleType = Bell.getScheduleType(date, scheduleStore.schedules).name;
+  if (scheduleType === 'No School') {
+    return nonAttendanceOpeningTimes;
+  }
+
+  return regularOpeningTimes[date.getDay()] || null;
+}
+
+function getNextOpeningTime(date: Date): number | null {
+  const nowMs = date.getTime();
+  const todayOpeningHours = getHoursForDate(date);
+
+  if (todayOpeningHours) {
+    const todayOpeningTime = getTimeInMs(date, todayOpeningHours.start);
+    if (nowMs < todayOpeningTime) {
+      return todayOpeningTime;
+    }
+  }
+
+  const dateToCheck = new Date(date);
+  dateToCheck.setHours(0, 0, 0, 0);
+
+  for (let daysAhead = 0; daysAhead < 370; daysAhead++) {
+    if (daysAhead > 0) {
+      dateToCheck.setDate(dateToCheck.getDate() + 1);
+    }
+
+    const openingHours = getHoursForDate(dateToCheck);
+    if (!openingHours) {
+      continue;
+    }
+
+    const openingTime = getTimeInMs(dateToCheck, openingHours.start);
+    if (openingTime > nowMs) {
+      return openingTime;
+    }
+  }
+
+  return null;
 }
 
 function formatTime(timeInMs: number): string {
