@@ -1,5 +1,5 @@
 <template>
-  <card v-if="!(events.length === 0 && eventsExhausted)" class="upcoming-events-card">
+  <card v-show="!(events.length === 0 && eventsExhausted)" class="upcoming-events-card">
     <div class="title">
       <div>Upcoming Events</div>
       <!-- eslint-disable-next-line vuejs-accessibility/anchor-has-content -->

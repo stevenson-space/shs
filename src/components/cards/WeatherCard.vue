@@ -1,5 +1,5 @@
 <template>
-  <card v-if="weatherData" class="card">
+  <card v-show="weatherData" class="card">
     <div class="title">{{ title }}</div>
     <div class="weather">
       <div v-for="(weather, idx) in weatherData" :key="weather.day">

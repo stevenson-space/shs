@@ -1,5 +1,5 @@
 <template>
-  <card v-if="newTheme != null && !isDismissed">
+  <card v-show="newTheme != null && !isDismissed">
     <div class="card-content">
       <div class="row">
         <rounded-button
@@ -8,10 +8,10 @@
           :circular="false"
           @click="toggleTheme()"
         />
-        <div class="message">{{ newTheme.recommended?.message?.replace('[Try]','') || '' }}</div>
+        <div class="message">{{ newTheme?.recommended?.message?.replace('[Try]','') || '' }}</div>
       </div>
-      <info-tooltip v-if="newTheme.metadata?.description" @click.stop>
-        {{ newTheme.metadata.description }}
+      <info-tooltip v-if="newTheme?.metadata?.description" @click.stop>
+        {{ newTheme?.metadata?.description }}
       </info-tooltip>
       <button class="close-btn" @click="dismiss">&times;</button>
     </div>
