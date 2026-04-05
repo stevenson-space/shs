@@ -2717,33 +2717,6 @@
   },
   {
     "metadata": {
-      "name": "Strawberry Yogurt Parfait",
-      "recipe": [
-        211891
-      ]
-    },
-    "nutrition": {
-      "serving_size": "1 each",
-      "calories": 300.0,
-      "fat_calories": 35.0,
-      "total_fat_g": 3.5,
-      "saturated_fat_g": 1.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 5.0,
-      "sodium_mg": 130.0,
-      "total_carbs_g": 60.0,
-      "fiber_g": 3.0,
-      "total_sugar_g": 35.0,
-      "added_sugar_g": 25.0,
-      "protein_g": 8.0
-    },
-    "allergens": [
-      "Gluten",
-      "Milk"
-    ]
-  },
-  {
-    "metadata": {
       "name": "Blueberry Parfait",
       "recipe": [
         211893
@@ -2987,32 +2960,6 @@
       "MSG",
       "Milk",
       "Soy"
-    ]
-  },
-  {
-    "metadata": {
-      "name": "Cheese & Grape Cup",
-      "recipe": [
-        56726
-      ]
-    },
-    "nutrition": {
-      "serving_size": "1 Each",
-      "calories": 520.0,
-      "fat_calories": 340.0,
-      "total_fat_g": 38.0,
-      "saturated_fat_g": 24.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 120.0,
-      "sodium_mg": 710.0,
-      "total_carbs_g": 17.0,
-      "fiber_g": 0.5,
-      "total_sugar_g": 14.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 29.0
-    },
-    "allergens": [
-      "Milk"
     ]
   },
   {
