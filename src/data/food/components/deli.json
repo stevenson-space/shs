@@ -485,28 +485,6 @@
   },
   {
     "metadata": {
-      "name": "Mustard",
-      "recipe": [741270]
-    },
-    "nutrition": {
-      "serving_size": "1 Teaspoon",
-      "calories": 0,
-      "fat_calories": 0,
-      "total_fat_g": 0,
-      "saturated_fat_g": 0,
-      "trans_fat_g": 0,
-      "cholesterol_mg": 0,
-      "sodium_mg": 55.0,
-      "total_carbs_g": 0,
-      "fiber_g": 0,
-      "total_sugar_g": 0,
-      "added_sugar_g": 0,
-      "protein_g": 0
-    },
-    "allergens": ["Mustard"]
-  },
-  {
-    "metadata": {
       "name": "Ranch",
       "recipe": [759082]
     },
