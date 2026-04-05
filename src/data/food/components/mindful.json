@@ -89,28 +89,6 @@
   },
   {
     "metadata": {
-      "name": "Pita Bread",
-      "recipe": [472068]
-    },
-    "nutrition": {
-      "serving_size": "1/2 Pita",
-      "calories": 115.0,
-      "fat_calories": 27.0,
-      "total_fat_g": 3.0,
-      "saturated_fat_g": 0.5,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 0.0,
-      "sodium_mg": 180.0,
-      "total_carbs_g": 19.0,
-      "fiber_g": 1.0,
-      "total_sugar_g": 0.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 3.5
-    },
-    "allergens": ["Gluten", "Soy", "Sulphites", "Wheat"]
-  },
-  {
-    "metadata": {
       "name": "Chicken Coconut Curry",
       "recipe": []
     },
