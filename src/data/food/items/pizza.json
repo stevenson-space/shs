@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Cheese Pizza",
+    "station": "Pizza",
+    "price": 3.00,
+    "components": [
+      { "item": "Cheese Pizza 16\"" },
+      { "item": "Grated Parmesan Cheese", "addedByDefault": false },
+      { "item": "Crushed Red Pepper Flakes", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Pepperoni Pizza",
+    "station": "Pizza",
+    "price": 3.25,
+    "components": [
+      { "item": "Pepperoni Pizza 16\"" },
+      { "item": "Grated Parmesan Cheese", "addedByDefault": false },
+      { "item": "Crushed Red Pepper Flakes", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Sausage Pizza",
+    "station": "Pizza",
+    "price": 3.25,
+    "components": [
+      { "item": "Sausage Pizza" },
+      { "item": "Grated Parmesan Cheese", "addedByDefault": false },
+      { "item": "Crushed Red Pepper Flakes", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "BBQ Chicken Pizza",
+    "station": "Pizza",
+    "price": 3.25,
+    "components": [
+      { "item": "Bbq Chicken Pizza" },
+      { "item": "Grated Parmesan Cheese", "addedByDefault": false },
+      { "item": "Crushed Red Pepper Flakes", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Vegetable Lovers Pizza",
+    "station": "Pizza",
+    "price": 3.25,
+    "components": [
+      { "item": "Vegetable Lovers Pizza" },
+      { "item": "Grated Parmesan Cheese", "addedByDefault": false },
+      { "item": "Crushed Red Pepper Flakes", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Bread Sticks",
+    "station": "Pizza",
+    "price": 3.00,
+    "components": [
+      { "item": "Cheese Breadsticks + Sauce" },
+      { "item": "Marinara Sauce Cup", "addedByDefault": false }
+    ]
+  }
+]
