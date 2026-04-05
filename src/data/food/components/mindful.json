@@ -375,28 +375,6 @@
   },
   {
     "metadata": {
-      "name": "Turkey Meatloaf with Chipotle BBQ",
-      "recipe": [81298]
-    },
-    "nutrition": {
-      "serving_size": "4 oz",
-      "calories": 160.0,
-      "fat_calories": 60.0,
-      "total_fat_g": 7.0,
-      "saturated_fat_g": 2.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 70.0,
-      "sodium_mg": 200.0,
-      "total_carbs_g": 12.0,
-      "fiber_g": 1.0,
-      "total_sugar_g": 1.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 14.0
-    },
-    "allergens": ["Egg", "Gluten", "Wheat"]
-  },
-  {
-    "metadata": {
       "name": "Turkey Gravy",
       "recipe": [86494]
     },
@@ -856,28 +834,6 @@
       "protein_g": 23.0
     },
     "allergens": ["Milk", "Soy"]
-  },
-  {
-    "metadata": {
-      "name": "Adobo Roasted Turkey Breast",
-      "recipe": [66166]
-    },
-    "nutrition": {
-      "serving_size": "4 oz",
-      "calories": 120.0,
-      "fat_calories": 30.0,
-      "total_fat_g": 3.5,
-      "saturated_fat_g": 1.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 45.0,
-      "sodium_mg": 520.0,
-      "total_carbs_g": 2.0,
-      "fiber_g": 0.0,
-      "total_sugar_g": 2.0,
-      "added_sugar_g": 1.0,
-      "protein_g": 20.0
-    },
-    "allergens": ["Soy"]
   },
   {
     "metadata": {
