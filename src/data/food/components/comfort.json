@@ -1057,28 +1057,6 @@
   },
   {
     "metadata": {
-      "name": "Chopped Steak with Onion Gravy",
-      "recipe": [38993]
-    },
-    "nutrition": {
-      "serving_size": "1 Patty + 2oz gravy",
-      "calories": 280,
-      "fat_calories": 169,
-      "total_fat_g": 19.0,
-      "saturated_fat_g": 7.5,
-      "trans_fat_g": 0.5,
-      "cholesterol_mg": 70.0,
-      "sodium_mg": 700.0,
-      "total_carbs_g": 7.0,
-      "fiber_g": 1.0,
-      "total_sugar_g": 2.0,
-      "added_sugar_g": 0,
-      "protein_g": 17.5
-    },
-    "allergens": ["Soy", "Sulphites"]
-  },
-  {
-    "metadata": {
       "name": "Cheese Enchiladas",
       "recipe": [726250]
     },

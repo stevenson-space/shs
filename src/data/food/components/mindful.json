@@ -331,28 +331,6 @@
   },
   {
     "metadata": {
-      "name": "Chipotle BBQ Sauce",
-      "recipe": [62168]
-    },
-    "nutrition": {
-      "serving_size": "1 oz",
-      "calories": 50.0,
-      "fat_calories": 0.0,
-      "total_fat_g": 0.0,
-      "saturated_fat_g": 0.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 0.0,
-      "sodium_mg": 420.0,
-      "total_carbs_g": 10.0,
-      "fiber_g": 0.0,
-      "total_sugar_g": 7.0,
-      "added_sugar_g": 1.0,
-      "protein_g": 0.0
-    },
-    "allergens": ["Mustard", "Sulphites"]
-  },
-  {
-    "metadata": {
       "name": "Basic Chicken Breast",
       "recipe": [94454]
     },
@@ -727,28 +705,6 @@
   },
   {
     "metadata": {
-      "name": "Penne Pasta",
-      "recipe": [94946]
-    },
-    "nutrition": {
-      "serving_size": "4 oz",
-      "calories": 190.0,
-      "fat_calories": 5.0,
-      "total_fat_g": 0.5,
-      "saturated_fat_g": 0.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 0.0,
-      "sodium_mg": 0.0,
-      "total_carbs_g": 40.0,
-      "fiber_g": 2.0,
-      "total_sugar_g": 1.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 7.0
-    },
-    "allergens": ["Gluten", "Soy", "Wheat"]
-  },
-  {
-    "metadata": {
       "name": "Chicken Vesuvio",
       "recipe": []
     },
@@ -834,28 +790,6 @@
       "protein_g": 1.0
     },
     "allergens": ["Soy"]
-  },
-  {
-    "metadata": {
-      "name": "Turkey Sloppy Joe on a Bun",
-      "recipe": [51350]
-    },
-    "nutrition": {
-      "serving_size": "1 Sandwich",
-      "calories": 240.0,
-      "fat_calories": 60.0,
-      "total_fat_g": 6.0,
-      "saturated_fat_g": 1.5,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 50.0,
-      "sodium_mg": 410.0,
-      "total_carbs_g": 32.0,
-      "fiber_g": 2.0,
-      "total_sugar_g": 7.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 13.0
-    },
-    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
   },
   {
     "metadata": {
