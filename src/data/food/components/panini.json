@@ -156,6 +156,7 @@
   {
     "metadata": {
       "name": "Cuban Panini",
+      "hidden": "unavailable",
       "recipe": [62744]
     },
     "nutrition": {
@@ -178,6 +179,7 @@
   {
     "metadata": {
       "name": "Roast Beef Panini",
+      "hidden": "unavailable",
       "recipe": [211646]
     },
     "nutrition": {
@@ -200,6 +202,7 @@
   {
     "metadata": {
       "name": "Italian Panini",
+      "hidden": "unavailable",
       "recipe": [211638]
     },
     "nutrition": {
@@ -222,6 +225,7 @@
   {
     "metadata": {
       "name": "Buffalo Chicken Panini",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -244,6 +248,7 @@
   {
     "metadata": {
       "name": "BBQ Chicken Panini",
+      "hidden": "unavailable",
       "recipe": [48048]
     },
     "nutrition": {
@@ -274,6 +279,7 @@
   {
     "metadata": {
       "name": "Monte Cristo Panini",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -296,6 +302,7 @@
   {
     "metadata": {
       "name": "Honey Mustard Turkey Panini",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -318,6 +325,7 @@
   {
     "metadata": {
       "name": "Mushroom and Goat Cheese Panini",
+      "hidden": "unavailable",
       "recipe": [840820]
     },
     "nutrition": {
