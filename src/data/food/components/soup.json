@@ -1,7 +1,7 @@
 [
   {
     "metadata": {
-      "name": "French Onion  Soup",
+      "name": "French Onion Soup (8 oz)",
       "recipe": [692580]
     },
     "nutrition": {
@@ -25,7 +25,7 @@
   },
   {
     "metadata": {
-      "name": "French Onion  Soup",
+      "name": "French Onion Soup (12 oz)",
       "recipe": [692580]
     },
     "nutrition": {
@@ -49,7 +49,7 @@
   },
   {
     "metadata": {
-      "name": "Smokey Poblano Vegetarian",
+      "name": "Smokey Poblano Vegetarian (8 oz)",
       "recipe": [825600]
     },
     "nutrition": {
@@ -73,7 +73,7 @@
   },
   {
     "metadata": {
-      "name": "Smokey Poblano Vegetarian",
+      "name": "Smokey Poblano Vegetarian (12 oz)",
       "recipe": [825600]
     },
     "nutrition": {
@@ -97,7 +97,7 @@
   },
   {
     "metadata": {
-      "name": "Chicken Noodle",
+      "name": "Chicken Noodle (8 oz)",
       "recipe": [165510]
     },
     "nutrition": {
@@ -124,7 +124,7 @@
   },
   {
     "metadata": {
-      "name": "Chicken Noodle",
+      "name": "Chicken Noodle (12 oz)",
       "recipe": [165510]
     },
     "nutrition": {
@@ -151,7 +151,7 @@
   },
   {
     "metadata": {
-      "name": "Tomato Basil",
+      "name": "Tomato Basil (8 oz)",
       "recipe": [573120]
     },
     "nutrition": {
@@ -175,7 +175,7 @@
   },
   {
     "metadata": {
-      "name": "Tomato Basil",
+      "name": "Tomato Basil (12 oz)",
       "recipe": [573120]
     },
     "nutrition": {
@@ -199,7 +199,7 @@
   },
   {
     "metadata": {
-      "name": "Golden Broccoli Cheese Soup",
+      "name": "Golden Broccoli Cheese Soup (8 oz)",
       "recipe": [165500]
     },
     "nutrition": {
@@ -224,7 +224,7 @@
   },
   {
     "metadata": {
-      "name": "Golden Broccoli Cheese Soup",
+      "name": "Golden Broccoli Cheese Soup (12 oz)",
       "recipe": [165500]
     },
     "nutrition": {
@@ -249,7 +249,7 @@
   },
   {
     "metadata": {
-      "name": "Vegetarian Garden Vegetable Soup",
+      "name": "Vegetarian Garden Vegetable Soup (8 oz)",
       "recipe": [403930]
     },
     "nutrition": {
@@ -271,7 +271,7 @@
   },
   {
     "metadata": {
-      "name": "Vegetarian Garden Vegetable Soup",
+      "name": "Vegetarian Garden Vegetable Soup (12 oz)",
       "recipe": [403930]
     },
     "nutrition": {
@@ -293,7 +293,7 @@
   },
   {
     "metadata": {
-      "name": "Italian Wedding Soup",
+      "name": "Italian Wedding Soup (8 oz)",
       "recipe": [403940]
     },
     "nutrition": {
@@ -320,7 +320,7 @@
   },
   {
     "metadata": {
-      "name": "Italian Wedding Soup",
+      "name": "Italian Wedding Soup (12 oz)",
       "recipe": [403940]
     },
     "nutrition": {
@@ -347,7 +347,7 @@
   },
   {
     "metadata": {
-      "name": "Cream of Potato",
+      "name": "Cream of Potato (8 oz)",
       "recipe": [570102]
     },
     "nutrition": {
@@ -374,7 +374,7 @@
   },
   {
     "metadata": {
-      "name": "Cream of Potato",
+      "name": "Cream of Potato (12 oz)",
       "recipe": [570102]
     },
     "nutrition": {
@@ -401,7 +401,7 @@
   },
   {
     "metadata": {
-      "name": "Minestrone Soup",
+      "name": "Minestrone Soup (8 oz)",
       "recipe": [165490]
     },
     "nutrition": {
@@ -428,7 +428,7 @@
   },
   {
     "metadata": {
-      "name": "Minestrone Soup",
+      "name": "Minestrone Soup (12 oz)",
       "recipe": [165490]
     },
     "nutrition": {
@@ -455,7 +455,7 @@
   },
   {
     "metadata": {
-      "name": "Chicken Gumbo",
+      "name": "Chicken Gumbo (8 oz)",
       "recipe": [403980]
     },
     "nutrition": {
@@ -480,7 +480,7 @@
   },
   {
     "metadata": {
-      "name": "Chicken Gumbo",
+      "name": "Chicken Gumbo (12 oz)",
       "recipe": [403980]
     },
     "nutrition": {
@@ -505,7 +505,7 @@
   },
   {
     "metadata": {
-      "name": "Corn Chowder",
+      "name": "Corn Chowder (8 oz)",
       "recipe": [4664489]
     },
     "nutrition": {
@@ -531,7 +531,7 @@
   },
   {
     "metadata": {
-      "name": "Corn Chowder",
+      "name": "Corn Chowder (12 oz)",
       "recipe": [4664489]
     },
     "nutrition": {
@@ -557,7 +557,7 @@
   },
   {
     "metadata": {
-      "name": "Southwest Vegetarian Chili",
+      "name": "Southwest Vegetarian Chili (8 oz)",
       "recipe": [20602]
     },
     "nutrition": {
@@ -582,7 +582,7 @@
   },
   {
     "metadata": {
-      "name": "Southwest Vegetarian Chili",
+      "name": "Southwest Vegetarian Chili (12 oz)",
       "recipe": [20602]
     },
     "nutrition": {
@@ -607,7 +607,7 @@
   },
   {
     "metadata": {
-      "name": "Chicken Tortilla Soup",
+      "name": "Chicken Tortilla Soup (8 oz)",
       "recipe": [20304]
     },
     "nutrition": {
@@ -633,7 +633,7 @@
   },
   {
     "metadata": {
-      "name": "Chicken Tortilla Soup",
+      "name": "Chicken Tortilla Soup (12 oz)",
       "recipe": [20304]
     },
     "nutrition": {
