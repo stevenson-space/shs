@@ -1,0 +1,158 @@
+[
+  {
+    "name": "French Onion Soup (8 oz)",
+    "station": "Soup",
+    "price": 2.50,
+    "components": [{ "item": "French Onion Soup (8 oz)" }]
+  },
+  {
+    "name": "French Onion Soup (12 oz)",
+    "station": "Soup",
+    "price": 3.00,
+    "components": [{ "item": "French Onion Soup (12 oz)" }]
+  },
+  {
+    "name": "Smokey Poblano Vegetarian (8 oz)",
+    "station": "Soup",
+    "price": 2.50,
+    "components": [{ "item": "Smokey Poblano Vegetarian (8 oz)" }]
+  },
+  {
+    "name": "Smokey Poblano Vegetarian (12 oz)",
+    "station": "Soup",
+    "price": 3.00,
+    "components": [{ "item": "Smokey Poblano Vegetarian (12 oz)" }]
+  },
+  {
+    "name": "Chicken Noodle (8 oz)",
+    "station": "Soup",
+    "price": 2.50,
+    "components": [{ "item": "Chicken Noodle (8 oz)" }]
+  },
+  {
+    "name": "Chicken Noodle (12 oz)",
+    "station": "Soup",
+    "price": 3.00,
+    "components": [{ "item": "Chicken Noodle (12 oz)" }]
+  },
+  {
+    "name": "Tomato Basil (8 oz)",
+    "station": "Soup",
+    "price": 2.50,
+    "components": [{ "item": "Tomato Basil (8 oz)" }]
+  },
+  {
+    "name": "Tomato Basil (12 oz)",
+    "station": "Soup",
+    "price": 3.00,
+    "components": [{ "item": "Tomato Basil (12 oz)" }]
+  },
+  {
+    "name": "Golden Broccoli Cheese Soup (8 oz)",
+    "station": "Soup",
+    "price": 2.50,
+    "components": [{ "item": "Golden Broccoli Cheese Soup (8 oz)" }]
+  },
+  {
+    "name": "Golden Broccoli Cheese Soup (12 oz)",
+    "station": "Soup",
+    "price": 3.00,
+    "components": [{ "item": "Golden Broccoli Cheese Soup (12 oz)" }]
+  },
+  {
+    "name": "Vegetarian Garden Vegetable Soup (8 oz)",
+    "station": "Soup",
+    "price": 2.50,
+    "components": [{ "item": "Vegetarian Garden Vegetable Soup (8 oz)" }]
+  },
+  {
+    "name": "Vegetarian Garden Vegetable Soup (12 oz)",
+    "station": "Soup",
+    "price": 3.00,
+    "components": [{ "item": "Vegetarian Garden Vegetable Soup (12 oz)" }]
+  },
+  {
+    "name": "Italian Wedding Soup (8 oz)",
+    "station": "Soup",
+    "price": 2.50,
+    "components": [{ "item": "Italian Wedding Soup (8 oz)" }]
+  },
+  {
+    "name": "Italian Wedding Soup (12 oz)",
+    "station": "Soup",
+    "price": 3.00,
+    "components": [{ "item": "Italian Wedding Soup (12 oz)" }]
+  },
+  {
+    "name": "Cream of Potato (8 oz)",
+    "station": "Soup",
+    "price": 2.50,
+    "components": [{ "item": "Cream of Potato (8 oz)" }]
+  },
+  {
+    "name": "Cream of Potato (12 oz)",
+    "station": "Soup",
+    "price": 3.00,
+    "components": [{ "item": "Cream of Potato (12 oz)" }]
+  },
+  {
+    "name": "Minestrone Soup (8 oz)",
+    "station": "Soup",
+    "price": 2.50,
+    "components": [{ "item": "Minestrone Soup (8 oz)" }]
+  },
+  {
+    "name": "Minestrone Soup (12 oz)",
+    "station": "Soup",
+    "price": 3.00,
+    "components": [{ "item": "Minestrone Soup (12 oz)" }]
+  },
+  {
+    "name": "Chicken Gumbo (8 oz)",
+    "station": "Soup",
+    "price": 2.50,
+    "components": [{ "item": "Chicken Gumbo (8 oz)" }]
+  },
+  {
+    "name": "Chicken Gumbo (12 oz)",
+    "station": "Soup",
+    "price": 3.00,
+    "components": [{ "item": "Chicken Gumbo (12 oz)" }]
+  },
+  {
+    "name": "Corn Chowder (8 oz)",
+    "station": "Soup",
+    "price": 2.50,
+    "components": [{ "item": "Corn Chowder (8 oz)" }]
+  },
+  {
+    "name": "Corn Chowder (12 oz)",
+    "station": "Soup",
+    "price": 3.00,
+    "components": [{ "item": "Corn Chowder (12 oz)" }]
+  },
+  {
+    "name": "Southwest Vegetarian Chili (8 oz)",
+    "station": "Soup",
+    "price": 2.50,
+    "components": [{ "item": "Southwest Vegetarian Chili (8 oz)" }]
+  },
+  {
+    "name": "Southwest Vegetarian Chili (12 oz)",
+    "station": "Soup",
+    "price": 3.00,
+    "components": [{ "item": "Southwest Vegetarian Chili (12 oz)" }]
+  },
+  {
+    "name": "Chicken Tortilla Soup (8 oz)",
+    "station": "Soup",
+    "price": 2.50,
+    "components": [{ "item": "Chicken Tortilla Soup (8 oz)" }]
+  },
+  {
+    "name": "Chicken Tortilla Soup (12 oz)",
+    "station": "Soup",
+    "price": 3.00,
+    "components": [{ "item": "Chicken Tortilla Soup (12 oz)" }]
+  }
+]
