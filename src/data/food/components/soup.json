@@ -2,7 +2,8 @@
   {
     "metadata": {
       "name": "French Onion Soup (8 oz)",
-      "recipe": [692580]
+      "recipe": [692580],
+      "hidden": "unavailable"
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -26,7 +27,8 @@
   {
     "metadata": {
       "name": "French Onion Soup (12 oz)",
-      "recipe": [692580]
+      "recipe": [692580],
+      "hidden": "unavailable"
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -250,7 +252,8 @@
   {
     "metadata": {
       "name": "Vegetarian Garden Vegetable Soup (8 oz)",
-      "recipe": [403930]
+      "recipe": [403930],
+      "hidden": "unavailable"
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -272,7 +275,8 @@
   {
     "metadata": {
       "name": "Vegetarian Garden Vegetable Soup (12 oz)",
-      "recipe": [403930]
+      "recipe": [403930],
+      "hidden": "unavailable"
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -506,7 +510,8 @@
   {
     "metadata": {
       "name": "Corn Chowder (8 oz)",
-      "recipe": [4664489]
+      "recipe": [4664489],
+      "hidden": "unavailable"
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -532,7 +537,8 @@
   {
     "metadata": {
       "name": "Corn Chowder (12 oz)",
-      "recipe": [4664489]
+      "recipe": [4664489],
+      "hidden": "unavailable"
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -558,7 +564,8 @@
   {
     "metadata": {
       "name": "Southwest Vegetarian Chili (8 oz)",
-      "recipe": [20602]
+      "recipe": [20602],
+      "hidden": "unavailable"
     },
     "nutrition": {
       "serving_size": "8oz",
@@ -583,7 +590,8 @@
   {
     "metadata": {
       "name": "Southwest Vegetarian Chili (12 oz)",
-      "recipe": [20602]
+      "recipe": [20602],
+      "hidden": "unavailable"
     },
     "nutrition": {
       "serving_size": "12 oz",
@@ -608,7 +616,8 @@
   {
     "metadata": {
       "name": "Chicken Tortilla Soup (8 oz)",
-      "recipe": [20304]
+      "recipe": [20304],
+      "hidden": "unavailable"
     },
     "nutrition": {
       "serving_size": "8 oz",
@@ -634,7 +643,8 @@
   {
     "metadata": {
       "name": "Chicken Tortilla Soup (12 oz)",
-      "recipe": [20304]
+      "recipe": [20304],
+      "hidden": "unavailable"
     },
     "nutrition": {
       "serving_size": "12 oz",
