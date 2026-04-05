@@ -18,76 +18,148 @@
     "components": [{ "item": "Jazzmans Signature Coffee (20 oz)" }]
   },
   {
-    "name": "Latte (12 oz)",
+    "name": "Hot Latte (12 oz)",
     "station": "Jazzman's",
     "price": 3.00,
     "components": [{ "item": "Jazzmans Latte Hot" }]
   },
   {
-    "name": "Latte (16 oz)",
+    "name": "Hot Latte (16 oz)",
     "station": "Jazzman's",
     "price": 3.50,
     "components": [{ "item": "Jazzmans Latte Hot (16 oz)" }]
   },
   {
-    "name": "Latte (20 oz)",
+    "name": "Hot Latte (20 oz)",
     "station": "Jazzman's",
     "price": 4.00,
     "components": [{ "item": "Jazzmans Latte Hot (20 oz)" }]
   },
   {
-    "name": "Cappuccino (12 oz)",
+    "name": "Iced Latte (12 oz)",
+    "station": "Jazzman's",
+    "price": 3.00,
+    "components": [{ "item": "Jazzman's Latte Iced" }]
+  },
+  {
+    "name": "Iced Latte (16 oz)",
+    "station": "Jazzman's",
+    "price": 3.50,
+    "components": [{ "item": "Jazzman's Latte Iced (16 oz)" }]
+  },
+  {
+    "name": "Iced Latte (20 oz)",
+    "station": "Jazzman's",
+    "price": 4.00,
+    "components": [{ "item": "Jazzman's Latte Iced (20 oz)" }]
+  },
+  {
+    "name": "Hot Cappuccino (12 oz)",
     "station": "Jazzman's",
     "price": 3.00,
     "components": [{ "item": "Cappuccino Hot" }]
   },
   {
-    "name": "Cappuccino (16 oz)",
+    "name": "Hot Cappuccino (16 oz)",
     "station": "Jazzman's",
     "price": 3.50,
     "components": [{ "item": "Cappuccino" }]
   },
   {
-    "name": "Cappuccino (20 oz)",
+    "name": "Hot Cappuccino (20 oz)",
     "station": "Jazzman's",
     "price": 4.00,
     "components": [{ "item": "Cappuccino (20 oz)" }]
   },
   {
-    "name": "Mocha (12 oz)",
+    "name": "Hot Mocha (12 oz)",
     "station": "Jazzman's",
     "price": 3.25,
     "components": [{ "item": "Jazzman's Mocha Hot" }]
   },
   {
-    "name": "Mocha (16 oz)",
+    "name": "Hot Mocha (16 oz)",
     "station": "Jazzman's",
     "price": 3.75,
     "components": [{ "item": "Jazzman's Mocha Hot (16 oz)" }]
   },
   {
-    "name": "Mocha (20 oz)",
+    "name": "Hot Mocha (20 oz)",
     "station": "Jazzman's",
     "price": 4.25,
     "components": [{ "item": "Jazzman's Mocha Hot (20 oz)" }]
   },
   {
-    "name": "Caramel Latte (12 oz)",
+    "name": "Iced Mocha (12 oz)",
+    "station": "Jazzman's",
+    "price": 3.25,
+    "components": [{ "item": "Jazzmans Mocha Iced" }]
+  },
+  {
+    "name": "Iced Mocha (16 oz)",
+    "station": "Jazzman's",
+    "price": 3.75,
+    "components": [{ "item": "Jazzmans Mocha Iced (16 oz)" }]
+  },
+  {
+    "name": "Iced Mocha (20 oz)",
+    "station": "Jazzman's",
+    "price": 4.25,
+    "components": [{ "item": "Jazzmans Mocha Iced (20 oz)" }]
+  },
+  {
+    "name": "Iced Caramel Latte (12 oz)",
     "station": "Jazzman's",
     "price": 3.25,
     "components": [{ "item": "Iced Latte Caramel" }]
   },
   {
-    "name": "Caramel Latte (16 oz)",
+    "name": "Iced Caramel Latte (16 oz)",
     "station": "Jazzman's",
     "price": 3.75,
     "components": [{ "item": "Iced Latte Caramel (16 oz)" }]
   },
   {
-    "name": "Caramel Latte (20 oz)",
+    "name": "Iced Caramel Latte (20 oz)",
     "station": "Jazzman's",
     "price": 4.25,
     "components": [{ "item": "Iced Latte Caramel (20 oz)" }]
+  },
+  {
+    "name": "Hot White Chocolate Mocha (12 oz)",
+    "station": "Jazzman's",
+    "price": 3.25,
+    "components": [{ "item": "Mocha White Chocolate" }]
+  },
+  {
+    "name": "Hot White Chocolate Mocha (16 oz)",
+    "station": "Jazzman's",
+    "price": 3.75,
+    "components": [{ "item": "Mocha White Chocolate (16 oz)" }]
+  },
+  {
+    "name": "Hot White Chocolate Mocha (20 oz)",
+    "station": "Jazzman's",
+    "price": 4.25,
+    "components": [{ "item": "Mocha White Chocolate (20 oz)" }]
+  },
+  {
+    "name": "Iced White Chocolate Mocha (12 oz)",
+    "station": "Jazzman's",
+    "price": 3.25,
+    "components": [{ "item": "Mocha White Chocolate Iced" }]
+  },
+  {
+    "name": "Iced White Chocolate Mocha (16 oz)",
+    "station": "Jazzman's",
+    "price": 3.75,
+    "components": [{ "item": "Mocha White Chocolate Iced (16 oz)" }]
+  },
+  {
+    "name": "Iced White Chocolate Mocha (20 oz)",
+    "station": "Jazzman's",
+    "price": 4.25,
+    "components": [{ "item": "Mocha White Chocolate Iced (20 oz)" }]
   },
   {
     "name": "Americano (12 oz)",
