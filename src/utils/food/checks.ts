@@ -5,6 +5,7 @@ export interface DuplicateKeyError {
   key: string;
   firstFile: string;
   secondFile: string;
+  conflict: boolean;
 }
 
 export type UnusedNutritionalEntry = string;
@@ -17,16 +18,19 @@ export interface MissingComponentError {
 
 
 export function checkNoDuplicateNutritionalKeys(modules: EagerComponentModules): DuplicateKeyError[] {
-  const seen = new Map<string, string>();
+  const seen = new Map<string, { file: string; data: FoodInformation }>();
   const errors: DuplicateKeyError[] = [];
 
   for (const [file, { default: items }] of Object.entries(modules)) {
     for (const raw of items) {
-      const key = FoodInformation.parse(raw).metadata.name;
+      const parsed = FoodInformation.parse(raw);
+      const key = parsed.metadata.name;
       if (seen.has(key)) {
-        errors.push({ key, firstFile: seen.get(key)!, secondFile: file });
+        const first = seen.get(key)!;
+        const conflict = JSON.stringify(first.data) !== JSON.stringify(parsed);
+        errors.push({ key, firstFile: first.file, secondFile: file, conflict });
       } else {
-        seen.set(key, file);
+        seen.set(key, { file, data: parsed });
       }
     }
   }
