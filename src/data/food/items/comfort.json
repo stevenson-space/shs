@@ -10,8 +10,16 @@
     "station": "Comfort",
     "price": 4.50,
     "components": [
-      { "item": "Chicken Shawarma" },
-      { "item": "Pita Bread" }
+      { "item": "Chicken Thigh" },
+      { "item": "Pita Bread" },
+      { "item": "Allspice" },
+      { "item": "Garlic Granulated" },
+      { "item": "Cloves" },
+      { "item": "Cinnamon" },
+      { "item": "Nutmeg" },
+      { "item": "Cardamom" },
+      { "item": "Chili Powder" },
+      { "item": "Oregano" }
     ]
   },
   {
