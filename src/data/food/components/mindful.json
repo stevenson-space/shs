@@ -45,28 +45,6 @@
   },
   {
     "metadata": {
-      "name": "Blackened Tilapia",
-      "recipe": [57024]
-    },
-    "nutrition": {
-      "serving_size": "1 Filet",
-      "calories": 100.0,
-      "fat_calories": 15.0,
-      "total_fat_g": 1.5,
-      "saturated_fat_g": 0.05,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 45.0,
-      "sodium_mg": 380.0,
-      "total_carbs_g": 3.0,
-      "fiber_g": 1.0,
-      "total_sugar_g": 0.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 18.0
-    },
-    "allergens": ["Fish", "Soy"]
-  },
-  {
-    "metadata": {
       "name": "Gyro Meat",
       "recipe": [320043]
     },
@@ -350,28 +328,6 @@
       "protein_g": 19.0
     },
     "allergens": ["Fish", "Gluten", "Milk", "Soy", "Wheat"]
-  },
-  {
-    "metadata": {
-      "name": "Turkey Gravy",
-      "recipe": [86494]
-    },
-    "nutrition": {
-      "serving_size": "2 oz",
-      "calories": 50.0,
-      "fat_calories": 30.0,
-      "total_fat_g": 3.5,
-      "saturated_fat_g": 2.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 10.0,
-      "sodium_mg": 75.0,
-      "total_carbs_g": 5.0,
-      "fiber_g": 0.0,
-      "total_sugar_g": 0.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 1.0
-    },
-    "allergens": ["Gluten", "Milk", "Soy", "Wheat"]
   },
   {
     "metadata": {

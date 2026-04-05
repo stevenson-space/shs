@@ -512,32 +512,6 @@
   },
   {
     "metadata": {
-      "name": "Gyro Meat",
-      "recipe": [216631]
-    },
-    "nutrition": {
-      "serving_size": "2 oz.",
-      "calories": 210.0,
-      "fat_calories": 153.0,
-      "total_fat_g": 17.0,
-      "saturated_fat_g": 7.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 35.0,
-      "sodium_mg": 340.0,
-      "total_carbs_g": 4.0,
-      "fiber_g": 1.0,
-      "total_sugar_g": 0.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 8.0
-    },
-    "allergens": [
-      "Gluten",
-      "Soy",
-      "Wheat"
-    ]
-  },
-  {
-    "metadata": {
       "name": "Naan",
       "recipe": [216713]
     },

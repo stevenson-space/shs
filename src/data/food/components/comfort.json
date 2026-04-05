@@ -379,7 +379,7 @@
       "recipe": [57024]
     },
     "nutrition": {
-      "serving_size": "1 Portion",
+      "serving_size": "1 Filet",
       "calories": 100,
       "fat_calories": 15,
       "total_fat_g": 1.5,
@@ -393,7 +393,7 @@
       "added_sugar_g": 0,
       "protein_g": 18.0
     },
-    "allergens": ["Fish"]
+    "allergens": ["Fish", "Soy"]
   },
   {
     "metadata": {
