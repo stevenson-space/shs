@@ -51,7 +51,7 @@
     "name": "Tuna Scoop Salad (4 oz)",
     "station": "PWC",
     "price": 3.00,
-    "components": [{ "item": "Tuna Salad" }]
+    "components": [{ "item": "Tuna Scoop Salad" }]
   },
   {
     "name": "Egg Scoop Salad (4 oz)",
