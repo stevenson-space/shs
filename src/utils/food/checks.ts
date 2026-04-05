@@ -16,6 +16,8 @@ export interface MissingComponentError {
   component: string;
 }
 
+export type ZeroPriceError = string;
+
 
 export function checkNoDuplicateNutritionalKeys(modules: EagerComponentModules): DuplicateKeyError[] {
   const seen = new Map<string, { file: string; data: FoodInformation }>();
@@ -50,6 +52,10 @@ export function checkAllComponentsExist(menu: MenuDatabase, nutritionalDb: Nutri
   }
 
   return errors;
+}
+
+export function checkNoZeroPriceItems(menu: MenuDatabase): ZeroPriceError[] {
+  return menu.filter(item => item.price === 0).map(item => item.name);
 }
 
 export function checkAllNutritionalEntriesUsed(nutritionalDb: NutritionalDatabase, menu: MenuDatabase): UnusedNutritionalEntry[] {

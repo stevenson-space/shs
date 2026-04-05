@@ -4,6 +4,7 @@ import {
   checkNoDuplicateNutritionalKeys,
   checkAllComponentsExist,
   checkAllNutritionalEntriesUsed,
+  checkNoZeroPriceItems,
 } from "./checks";
 
 const componentModules = import.meta.glob<{ default: unknown[] }>("/src/data/food/components/*.json", { eager: true });
@@ -25,5 +26,9 @@ describe("nutritional database", () => {
 describe("menu database", () => {
   it("all components exist in the nutritional db", () => {
     expect(checkAllComponentsExist(menu, nutritionalDb)).toEqual([]);
+  });
+
+  it("no items have a zero price", () => {
+    expect(checkNoZeroPriceItems(menu)).toEqual([]);
   });
 });
