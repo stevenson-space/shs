@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Tater Tots",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Tater Tots" }]
+  },
+  {
+    "name": "Scrambled Eggs",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Scrambled Eggs" }]
+  },
+  {
+    "name": "Plate",
+    "station": "Breakfast",
+    "price": 4.50,
+    "components": []
+  },
+  {
+    "name": "Breakfast Sandwich",
+    "station": "Breakfast",
+    "price": 4.50,
+    "components": []
+  },
+  {
+    "name": "Bacon",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": []
+  },
+  {
+    "name": "Bowl",
+    "station": "Breakfast",
+    "price": 5.50,
+    "components": []
+  },
+  {
+    "name": "Wrap",
+    "station": "Breakfast",
+    "price": 5.50,
+    "components": []
+  },
+  {
+    "name": "Oatmeal (8 oz)",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": []
+  },
+  {
+    "name": "Oatmeal (12 oz)",
+    "station": "Breakfast",
+    "price": 2.50,
+    "components": []
+  }
+]
