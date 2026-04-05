@@ -1,0 +1,149 @@
+[
+  {
+    "name": "Chicken Salad",
+    "station": "Grab 'n Go",
+    "price": 5.00,
+    "components": [{ "item": "Chicken Salad Croissant" }]
+  },
+  {
+    "name": "Buffalo Chicken Wrap",
+    "station": "Grab 'n Go",
+    "price": 5.00,
+    "components": [{ "item": "Buffalo Chicken Wrap" }]
+  },
+  {
+    "name": "Hummus Wrap",
+    "station": "Grab 'n Go",
+    "price": 5.00,
+    "components": [{ "item": "Hummus Avocado Vegetable Wrap" }]
+  },
+  {
+    "name": "Turkey Pretzel",
+    "station": "Grab 'n Go",
+    "price": 5.00,
+    "components": [{ "item": "Turkey on a Pretzel Roll" }]
+  },
+  {
+    "name": "Muffuletta",
+    "station": "Grab 'n Go",
+    "price": 5.00,
+    "components": [{ "item": "Muffuletta on Herb Focaccia Roll." }]
+  },
+  {
+    "name": "Turkey Wrap",
+    "station": "Grab 'n Go",
+    "price": 5.00,
+    "components": [{ "item": "Turkey Bacon Wrap" }]
+  },
+  {
+    "name": "Fruit Cup",
+    "station": "Grab 'n Go",
+    "price": 2.00,
+    "components": [{ "item": "Fresh Fruit Cup" }]
+  },
+  {
+    "name": "Grapes n Cheese",
+    "station": "Grab 'n Go",
+    "price": 3.00,
+    "components": [{ "item": "Cheese & Grape Cup" }]
+  },
+  {
+    "name": "Jello",
+    "station": "Grab 'n Go",
+    "price": 2.00,
+    "components": [{ "item": "Jell-O Plain" }]
+  },
+  {
+    "name": "Vanilla Pudding",
+    "station": "Grab 'n Go",
+    "price": 2.00,
+    "components": [{ "item": "Vanilla Pudding Cup" }]
+  },
+  {
+    "name": "Chocolate Pudding",
+    "station": "Grab 'n Go",
+    "price": 2.00,
+    "components": [{ "item": "Chocolate Pudding Cup" }]
+  },
+  {
+    "name": "Pasta Salad",
+    "station": "Grab 'n Go",
+    "price": 2.00,
+    "components": [{ "item": "Home-Made Pasta Salad" }]
+  },
+  {
+    "name": "Strawberry Yogurt Parfait",
+    "station": "Grab 'n Go",
+    "price": 4.00,
+    "components": [{ "item": "Strawberry Yogurt Parfait" }]
+  },
+  {
+    "name": "Blueberry Yogurt Parfait",
+    "station": "Grab 'n Go",
+    "price": 4.00,
+    "components": [{ "item": "Blueberry Parfait" }]
+  },
+  {
+    "name": "Three Berry Yogurt Parfait",
+    "station": "Grab 'n Go",
+    "price": 4.00,
+    "components": [{ "item": "Three Berry Parfait" }]
+  },
+  {
+    "name": "Mango Yogurt Parfait",
+    "station": "Grab 'n Go",
+    "price": 4.00,
+    "components": [{ "item": "Mango Parfait" }]
+  },
+  {
+    "name": "Caesar Salad",
+    "station": "Grab 'n Go",
+    "price": 4.00,
+    "components": [{ "item": "Classic Caesar Salad with Caesar Dressing" }]
+  },
+  {
+    "name": "Chicken Caesar",
+    "station": "Grab 'n Go",
+    "price": 5.00,
+    "components": [{ "item": "Chicken Caesar Salad with Caesar Dressing" }]
+  },
+  {
+    "name": "Buffalo Chix Salad",
+    "station": "Grab 'n Go",
+    "price": 5.00,
+    "components": [{ "item": "Buffalo Chicken Salald" }]
+  },
+  {
+    "name": "Garden Salad",
+    "station": "Grab 'n Go",
+    "price": 4.00,
+    "components": [{ "item": "Garden Salad" }]
+  },
+  {
+    "name": "Stevenson Salad",
+    "station": "Grab 'n Go",
+    "price": 5.00,
+    "components": [{ "item": "Stevenson Quinoa Salad" }]
+  },
+  {
+    "name": "Egg Cup",
+    "station": "Grab 'n Go",
+    "price": 2.00,
+    "components": []
+  },
+  {
+    "name": "Hummus and Pita",
+    "station": "Grab 'n Go",
+    "price": 3.00,
+    "components": [
+      { "item": "Hummus (Deli)" },
+      { "item": "Pita Bread" }
+    ]
+  },
+  {
+    "name": "Chips",
+    "station": "Grab 'n Go",
+    "price": 1.50,
+    "components": []
+  }
+]
