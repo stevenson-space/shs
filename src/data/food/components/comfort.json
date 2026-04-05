@@ -310,6 +310,7 @@
   {
     "metadata": {
       "name": "Korean Tofu Stir Fry",
+      "hidden": "unavailable",
       "recipe": [43946]
     },
     "nutrition": {
@@ -486,6 +487,7 @@
   {
     "metadata": {
       "name": "Open Face Pot Roast Sandwich",
+      "hidden": "unavailable",
       "recipe": [58428]
     },
     "nutrition": {
@@ -706,6 +708,7 @@
   {
     "metadata": {
       "name": "Cheese Enchilada Casserole",
+      "hidden": "unavailable",
       "recipe": [58231]
     },
     "nutrition": {
@@ -750,6 +753,7 @@
   {
     "metadata": {
       "name": "Cheese Ravioli with Cream Sauce",
+      "hidden": "unavailable",
       "recipe": [36531, 45602]
     },
     "nutrition": {
@@ -772,6 +776,7 @@
   {
     "metadata": {
       "name": "Orange Chicken with Broccoli",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -794,6 +799,7 @@
   {
     "metadata": {
       "name": "Vegetarian Chow Mein",
+      "hidden": "unavailable",
       "recipe": [49114]
     },
     "nutrition": {
@@ -816,6 +822,7 @@
   {
     "metadata": {
       "name": "Vegetable Lo Mein",
+      "hidden": "unavailable",
       "recipe": [37499]
     },
     "nutrition": {
@@ -838,6 +845,7 @@
   {
     "metadata": {
       "name": "Beef Broccoli Stir Fry",
+      "hidden": "unavailable",
       "recipe": [50228]
     },
     "nutrition": {
@@ -860,6 +868,7 @@
   {
     "metadata": {
       "name": "Baked Glazed Ham",
+      "hidden": "unavailable",
       "recipe": [286904306]
     },
     "nutrition": {
@@ -882,6 +891,7 @@
   {
     "metadata": {
       "name": "Vegetarian Shepherds Pie",
+      "hidden": "unavailable",
       "recipe": [49240]
     },
     "nutrition": {
@@ -904,6 +914,7 @@
   {
     "metadata": {
       "name": "Beef Ravioli",
+      "hidden": "unavailable",
       "recipe": [5953, 67701]
     },
     "nutrition": {
@@ -948,6 +959,7 @@
   {
     "metadata": {
       "name": "Apple Cider Glazed Pork Loin",
+      "hidden": "unavailable",
       "recipe": [97055]
     },
     "nutrition": {
@@ -970,6 +982,7 @@
   {
     "metadata": {
       "name": "Vegetarian Korean Rice Bowl",
+      "hidden": "unavailable",
       "recipe": [66991]
     },
     "nutrition": {
@@ -992,6 +1005,7 @@
   {
     "metadata": {
       "name": "Beef & Mushroom Stroganoff",
+      "hidden": "unavailable",
       "recipe": [85316]
     },
     "nutrition": {
@@ -1036,6 +1050,7 @@
   {
     "metadata": {
       "name": "Cheese Enchiladas",
+      "hidden": "unavailable",
       "recipe": [726250]
     },
     "nutrition": {
