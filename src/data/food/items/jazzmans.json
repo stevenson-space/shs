@@ -1,0 +1,176 @@
+[
+  {
+    "name": "Coffee (12 oz)",
+    "station": "Jazzman's",
+    "price": 1.75,
+    "components": [{ "item": "Jazzmans Signature Coffee" }]
+  },
+  {
+    "name": "Coffee (16 oz)",
+    "station": "Jazzman's",
+    "price": 2.00,
+    "components": [{ "item": "Jazzmans Signature Coffee (16 oz)" }]
+  },
+  {
+    "name": "Coffee (20 oz)",
+    "station": "Jazzman's",
+    "price": 2.25,
+    "components": [{ "item": "Jazzmans Signature Coffee (20 oz)" }]
+  },
+  {
+    "name": "Latte (12 oz)",
+    "station": "Jazzman's",
+    "price": 3.00,
+    "components": [{ "item": "Jazzmans Latte Hot" }]
+  },
+  {
+    "name": "Latte (16 oz)",
+    "station": "Jazzman's",
+    "price": 3.50,
+    "components": [{ "item": "Jazzmans Latte Hot (16 oz)" }]
+  },
+  {
+    "name": "Latte (20 oz)",
+    "station": "Jazzman's",
+    "price": 4.00,
+    "components": [{ "item": "Jazzmans Latte Hot (20 oz)" }]
+  },
+  {
+    "name": "Cappuccino (12 oz)",
+    "station": "Jazzman's",
+    "price": 3.00,
+    "components": [{ "item": "Cappuccino Hot" }]
+  },
+  {
+    "name": "Cappuccino (16 oz)",
+    "station": "Jazzman's",
+    "price": 3.50,
+    "components": [{ "item": "Cappuccino" }]
+  },
+  {
+    "name": "Cappuccino (20 oz)",
+    "station": "Jazzman's",
+    "price": 4.00,
+    "components": [{ "item": "Cappuccino (20 oz)" }]
+  },
+  {
+    "name": "Mocha (12 oz)",
+    "station": "Jazzman's",
+    "price": 3.25,
+    "components": [{ "item": "Jazzman's Mocha Hot" }]
+  },
+  {
+    "name": "Mocha (16 oz)",
+    "station": "Jazzman's",
+    "price": 3.75,
+    "components": [{ "item": "Jazzman's Mocha Hot (16 oz)" }]
+  },
+  {
+    "name": "Mocha (20 oz)",
+    "station": "Jazzman's",
+    "price": 4.25,
+    "components": [{ "item": "Jazzman's Mocha Hot (20 oz)" }]
+  },
+  {
+    "name": "Caramel Latte (12 oz)",
+    "station": "Jazzman's",
+    "price": 3.25,
+    "components": [{ "item": "Iced Latte Caramel" }]
+  },
+  {
+    "name": "Caramel Latte (16 oz)",
+    "station": "Jazzman's",
+    "price": 3.75,
+    "components": [{ "item": "Iced Latte Caramel (16 oz)" }]
+  },
+  {
+    "name": "Caramel Latte (20 oz)",
+    "station": "Jazzman's",
+    "price": 4.25,
+    "components": [{ "item": "Iced Latte Caramel (20 oz)" }]
+  },
+  {
+    "name": "Americano (12 oz)",
+    "station": "Jazzman's",
+    "price": 2.00,
+    "components": []
+  },
+  {
+    "name": "Americano (16 oz)",
+    "station": "Jazzman's",
+    "price": 2.25,
+    "components": []
+  },
+  {
+    "name": "Americano (20 oz)",
+    "station": "Jazzman's",
+    "price": 2.50,
+    "components": []
+  },
+  {
+    "name": "Premium Tea (12 oz)",
+    "station": "Jazzman's",
+    "price": 3.10,
+    "components": [{ "item": "Hot Tea" }]
+  },
+  {
+    "name": "Premium Tea (16 oz)",
+    "station": "Jazzman's",
+    "price": 3.50,
+    "components": [{ "item": "Hot Tea (16 oz)" }]
+  },
+  {
+    "name": "Premium Tea (20 oz)",
+    "station": "Jazzman's",
+    "price": 4.00,
+    "components": [{ "item": "Hot Tea (20 oz)" }]
+  },
+  {
+    "name": "Cold Brew (12 oz)",
+    "station": "Jazzman's",
+    "price": 3.00,
+    "components": []
+  },
+  {
+    "name": "Cold Brew (16 oz)",
+    "station": "Jazzman's",
+    "price": 3.50,
+    "components": []
+  },
+  {
+    "name": "Cold Brew (20 oz)",
+    "station": "Jazzman's",
+    "price": 4.00,
+    "components": []
+  },
+  {
+    "name": "Cookie",
+    "station": "Jazzman's",
+    "price": 2.00,
+    "components": []
+  },
+  {
+    "name": "Blueberry Cobbler Muffin",
+    "station": "Jazzman's",
+    "price": 2.50,
+    "components": [{ "item": "Blueberry Cobbler Muffin Filled with Cream Cheese" }]
+  },
+  {
+    "name": "Cinnamon Streusel Muffin",
+    "station": "Jazzman's",
+    "price": 2.50,
+    "components": [{ "item": "Cinnamon Streusel Muffin filled with Caramel" }]
+  },
+  {
+    "name": "Chocolate Chip Muffin",
+    "station": "Jazzman's",
+    "price": 2.50,
+    "components": [{ "item": "Chocolate Chip Muffin" }]
+  },
+  {
+    "name": "Triple Berry Muffin",
+    "station": "Jazzman's",
+    "price": 2.50,
+    "components": [{ "item": "Whole Grain Triple Berry Muffin" }]
+  }
+]
