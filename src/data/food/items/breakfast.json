@@ -72,10 +72,16 @@
     "components": [{ "item": "Buttermilk Pancakes" }]
   },
   {
-    "name": "Waffles",
+    "name": "Round Waffles",
     "station": "Breakfast",
     "price": 2.00,
     "components": [{ "item": "Round Waffle" }]
+  },
+  {
+    "name": "Belgian Waffles",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Belgian Waffle" }]
   },
   {
     "name": "French Toast",
@@ -101,6 +107,7 @@
       { "item": "Peppers & Onions", "addedByDefault": false },
       { "item": "Buttermilk Pancakes", "addedByDefault": false },
       { "item": "Round Waffle", "addedByDefault": false },
+      { "item": "Belgian Waffle", "addedByDefault": false },
       { "item": "Thick Slice French Toast", "addedByDefault": false }
     ]
   },
