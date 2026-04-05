@@ -24,9 +24,12 @@ export const NutritionalInfo = z.object({
   protein_g: z.number(),
 });
 
+export const HiddenReason = z.enum(["covered variant", "unavailable"]);
+
 export const FoodItemMetadata = z.object({
   name: z.string(),
   recipe: z.array(z.number()),
+  hidden: HiddenReason.optional(),
 });
 
 export const FoodInformation = z.object({
@@ -56,6 +59,7 @@ export const MenuItem = z.object({
 
 export type Allergen = z.infer<typeof Allergen>;
 export type NutritionalInfo = z.infer<typeof NutritionalInfo>;
+export type HiddenReason = z.infer<typeof HiddenReason>;
 export type FoodItemMetaData = z.infer<typeof FoodItemMetadata>;
 export type FoodInformation = z.infer<typeof FoodInformation>;
 export type Station = z.infer<typeof Station>;
