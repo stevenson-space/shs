@@ -36,10 +36,46 @@
     "components": [{ "item": "Turkey Bacon Wrap" }]
   },
   {
-    "name": "Fruit Cup",
+    "name": "Strawberry Cup",
     "station": "Grab 'n Go",
     "price": 2.00,
     "components": [{ "item": "Fresh Fruit Cup" }]
+  },
+  {
+    "name": "Pineapple Cup",
+    "station": "Grab 'n Go",
+    "price": 2.00,
+    "components": [{ "item": "Fresh Fruit Cup" }]
+  },
+  {
+    "name": "Cantaloupe Cup",
+    "station": "Grab 'n Go",
+    "price": 2.00,
+    "components": [{ "item": "Fresh Fruit Cup" }]
+  },
+  {
+    "name": "Honeydew Cup",
+    "station": "Grab 'n Go",
+    "price": 2.00,
+    "components": [{ "item": "Fresh Fruit Cup" }]
+  },
+  {
+    "name": "Grape Cup",
+    "station": "Grab 'n Go",
+    "price": 2.00,
+    "components": [{ "item": "Fresh Fruit Cup" }]
+  },
+  {
+    "name": "Watermelon Cup",
+    "station": "Grab 'n Go",
+    "price": 2.00,
+    "components": [{ "item": "Fresh Fruit Cup" }]
+  },
+  {
+    "name": "Mixed Fruit Cup",
+    "station": "Grab 'n Go",
+    "price": 2.00,
+    "components": [{ "item": "Mixed Fruit Cup" }]
   },
   {
     "name": "Grapes n Cheese",
