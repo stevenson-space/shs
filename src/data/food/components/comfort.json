@@ -705,28 +705,6 @@
   },
   {
     "metadata": {
-      "name": "Egg Noodles",
-      "recipe": [47037]
-    },
-    "nutrition": {
-      "serving_size": "4 oz",
-      "calories": 160,
-      "fat_calories": 30,
-      "total_fat_g": 3.0,
-      "saturated_fat_g": 0.5,
-      "trans_fat_g": 0,
-      "cholesterol_mg": 45.0,
-      "sodium_mg": 70.0,
-      "total_carbs_g": 27.0,
-      "fiber_g": 1.0,
-      "total_sugar_g": 1.0,
-      "added_sugar_g": 0,
-      "protein_g": 6.0
-    },
-    "allergens": ["Egg", "Gluten", "Wheat"]
-  },
-  {
-    "metadata": {
       "name": "Cheese Enchilada Casserole",
       "recipe": [58231]
     },

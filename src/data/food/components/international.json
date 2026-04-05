@@ -442,30 +442,6 @@
   },
   {
     "metadata": {
-      "name": "White Rice",
-      "recipe": [58069]
-    },
-    "nutrition": {
-      "serving_size": "4 oz",
-      "calories": 170.0,
-      "fat_calories": 0.0,
-      "total_fat_g": 0.0,
-      "saturated_fat_g": 0.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 0.0,
-      "sodium_mg": 0.0,
-      "total_carbs_g": 36.0,
-      "fiber_g": 1.0,
-      "total_sugar_g": 0.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 3.0
-    },
-    "allergens": [
-      "Soy"
-    ]
-  },
-  {
-    "metadata": {
       "name": "Mediterranean Chicken",
       "recipe": [41843]
     },
@@ -637,30 +613,6 @@
       "Gluten",
       "Soy",
       "Wheat"
-    ]
-  },
-  {
-    "metadata": {
-      "name": "Tahini",
-      "recipe": [53831]
-    },
-    "nutrition": {
-      "serving_size": "1 oz",
-      "calories": 60.0,
-      "fat_calories": 50.0,
-      "total_fat_g": 6.0,
-      "saturated_fat_g": 1.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 0.0,
-      "sodium_mg": 290.0,
-      "total_carbs_g": 3.0,
-      "fiber_g": 1.0,
-      "total_sugar_g": 0.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 2.0
-    },
-    "allergens": [
-      "Sesame"
     ]
   },
   {
