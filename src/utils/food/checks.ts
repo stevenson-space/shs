@@ -1,11 +1,12 @@
 import type { EagerComponentModules, MenuDatabase, NutritionalDatabase } from "./database";
+import { FoodInformation } from "./types";
 
 export function checkNoDuplicateNutritionalKeys(modules: EagerComponentModules): void {
   const seen = new Map<string, string>(); // name -> source file
 
   for (const [file, { default: items }] of Object.entries(modules)) {
-    for (const item of items) {
-      const name = item.metadata.name;
+    for (const raw of items) {
+      const name = FoodInformation.parse(raw).metadata.name;
       if (seen.has(name)) {
         console.warn(
           `Duplicate nutritional DB key "${name}" found in ${file} (also seen in ${seen.get(name)})`
