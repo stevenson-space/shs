@@ -40,10 +40,11 @@ export const MenuItemComponent = z.union([
   z.object({ item: z.string(), addedByDefault: z.boolean() }),
 ]);
 
+// TODO(food): should this be named "Category" instead?
 export const Station = z.enum([
   "Grill", "Deli", "Simply to Go", "Grab 'n Go", "International",
   "Mindful", "Breakfast", "Comfort", "Pizza", "Sides", "Soup",
-  "Panini", "PWC", "Jazzman's",
+  "Panini", "PWC", "Jazzman's", "Beverage",
 ]);
 
 export const MenuItem = z.object({
