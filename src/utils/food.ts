@@ -43,7 +43,7 @@ export const MenuItemComponent = z.union([
 export const Station = z.enum([
   "Grill", "Deli", "Simply to Go", "Grab 'n Go", "International",
   "Mindful", "Breakfast", "Comfort", "Pizza", "Sides", "Soup",
-  "Panini", "PWC",
+  "Panini", "PWC", "Jazzman's",
 ]);
 
 export const MenuItem = z.object({
