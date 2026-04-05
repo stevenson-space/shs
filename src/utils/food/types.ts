@@ -24,7 +24,7 @@ export const NutritionalInfo = z.object({
   protein_g: z.number(),
 });
 
-export const HiddenReason = z.enum(["covered variant", "unavailable"]);
+export const HiddenReason = z.enum(["unncessary", "unavailable"]);
 
 export const FoodItemMetadata = z.object({
   name: z.string(),
