@@ -57,7 +57,7 @@
     "station": "International",
     "price": 6.00,
     "components": [
-      { "item": "Lo-Mein Noodles" },
+      { "item": "Lo-Mein Noodles", "addedByDefault": true },
       { "item": "Fried Rice with Vegetables", "addedByDefault": false },
       { "item": "Ginger Rice", "addedByDefault": false },
       { "item": "White Rice", "addedByDefault": false },
