@@ -39,7 +39,7 @@
     "name": "Chicken Scoop Salad (4 oz)",
     "station": "PWC",
     "price": 3.00,
-    "components": [{ "item": "Chicken Salad" }]
+    "components": [{ "item": "Chicken Scoop Salad" }]
   },
   {
     "name": "Hearts of Palm Scoop Salad (4 oz)",
