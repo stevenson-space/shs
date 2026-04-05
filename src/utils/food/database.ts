@@ -3,7 +3,7 @@ import { FoodInformation, MenuItem } from "./types";
 export type NutritionalDatabase = Record<string, FoodInformation>;
 export type MenuDatabase = MenuItem[];
 
-type EagerComponentModules = Record<string, { default: FoodInformation[] }>;
+export type EagerComponentModules = Record<string, { default: FoodInformation[] }>;
 type EagerMenuModules = Record<string, { default: MenuItem[] }>;
 
 export function buildNutritionalDatabase(modules: EagerComponentModules): NutritionalDatabase {
