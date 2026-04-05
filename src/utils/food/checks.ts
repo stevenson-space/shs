@@ -1,41 +1,54 @@
 import type { EagerComponentModules, MenuDatabase, NutritionalDatabase } from "./database";
 import { FoodInformation } from "./types";
 
-export function checkNoDuplicateNutritionalKeys(modules: EagerComponentModules): void {
-  const seen = new Map<string, string>(); // name -> source file
+export interface DuplicateKeyError {
+  key: string;
+  firstFile: string;
+  secondFile: string;
+}
+
+export type UnusedNutritionalEntry = string;
+
+export interface MissingComponentError {
+  menuItem: string;
+  station: string;
+  component: string;
+}
+
+
+export function checkNoDuplicateNutritionalKeys(modules: EagerComponentModules): DuplicateKeyError[] {
+  const seen = new Map<string, string>();
+  const errors: DuplicateKeyError[] = [];
 
   for (const [file, { default: items }] of Object.entries(modules)) {
     for (const raw of items) {
-      const name = FoodInformation.parse(raw).metadata.name;
-      if (seen.has(name)) {
-        console.warn(
-          `Duplicate nutritional DB key "${name}" found in ${file} (also seen in ${seen.get(name)})`
-        );
+      const key = FoodInformation.parse(raw).metadata.name;
+      if (seen.has(key)) {
+        errors.push({ key, firstFile: seen.get(key)!, secondFile: file });
       } else {
-        seen.set(name, file);
+        seen.set(key, file);
       }
     }
   }
+
+  return errors;
 }
 
-export function checkAllComponentsExist(menu: MenuDatabase, nutritionalDb: NutritionalDatabase): void {
+export function checkAllComponentsExist(menu: MenuDatabase, nutritionalDb: NutritionalDatabase): MissingComponentError[] {
+  const errors: MissingComponentError[] = [];
+
   for (const item of menu) {
     for (const component of item.components) {
       if (!(component.item in nutritionalDb)) {
-        console.warn(
-          `Menu item "${item.name}" (${item.station}) references unknown component "${component.item}"`
-        );
+        errors.push({ menuItem: item.name, station: item.station, component: component.item });
       }
     }
   }
+
+  return errors;
 }
 
-export function checkAllNutritionalEntriesUsed(nutritionalDb: NutritionalDatabase, menu: MenuDatabase): void {
+export function checkAllNutritionalEntriesUsed(nutritionalDb: NutritionalDatabase, menu: MenuDatabase): UnusedNutritionalEntry[] {
   const used = new Set(menu.flatMap(item => item.components.map(c => c.item)));
-
-  for (const key of Object.keys(nutritionalDb)) {
-    if (!used.has(key)) {
-      console.warn(`Nutritional entry "${key}" is not referenced by any menu item`);
-    }
-  }
+  return Object.keys(nutritionalDb).filter(key => !used.has(key));
 }
