@@ -1,32 +1,113 @@
 [
   {
-    "name": "Tater Tots",
-    "station": "Breakfast",
-    "price": 2.00,
-    "components": [{ "item": "Tater Tots" }]
-  },
-  {
     "name": "Scrambled Eggs",
     "station": "Breakfast",
     "price": 2.00,
     "components": [{ "item": "Scrambled Eggs" }]
   },
   {
-    "name": "Plate",
+    "name": "Scrambled Eggs with Cheese",
     "station": "Breakfast",
-    "price": 4.50,
-    "components": []
-  },
-  {
-    "name": "Breakfast Sandwich",
-    "station": "Breakfast",
-    "price": 4.50,
-    "components": []
+    "price": 2.00,
+    "components": [{ "item": "Scrambled Eggs with Cheese" }]
   },
   {
     "name": "Bacon",
     "station": "Breakfast",
     "price": 2.00,
+    "components": [{ "item": "Bacon" }]
+  },
+  {
+    "name": "Turkey Sausage Links",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Turkey Sausage Links" }]
+  },
+  {
+    "name": "Turkey Sausage Patty",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Turkey Sausage Patty" }]
+  },
+  {
+    "name": "Pork Sausage Links",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Pork Sausage Links" }]
+  },
+  {
+    "name": "Pork Sausage Patty",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Pork Sausage Patty" }]
+  },
+  {
+    "name": "Tater Tots",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Tater Tots" }]
+  },
+  {
+    "name": "Breakfast Potatoes",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Breakfast Potatoes" }]
+  },
+  {
+    "name": "Chorizo",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Chorizo Crumbled" }]
+  },
+  {
+    "name": "Peppers & Onions",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Peppers & Onions" }]
+  },
+  {
+    "name": "Pancakes",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Buttermilk Pancakes" }]
+  },
+  {
+    "name": "Waffles",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Round Waffle" }]
+  },
+  {
+    "name": "French Toast",
+    "station": "Breakfast",
+    "price": 2.00,
+    "components": [{ "item": "Thick Slice French Toast" }]
+  },
+  {
+    "name": "Plate",
+    "station": "Breakfast",
+    "price": 4.50,
+    "components": [
+      { "item": "Scrambled Eggs", "addedByDefault": false },
+      { "item": "Scrambled Eggs with Cheese", "addedByDefault": false },
+      { "item": "Bacon", "addedByDefault": false },
+      { "item": "Turkey Sausage Links", "addedByDefault": false },
+      { "item": "Turkey Sausage Patty", "addedByDefault": false },
+      { "item": "Pork Sausage Links", "addedByDefault": false },
+      { "item": "Pork Sausage Patty", "addedByDefault": false },
+      { "item": "Tater Tots", "addedByDefault": false },
+      { "item": "Breakfast Potatoes", "addedByDefault": false },
+      { "item": "Chorizo Crumbled", "addedByDefault": false },
+      { "item": "Peppers & Onions", "addedByDefault": false },
+      { "item": "Buttermilk Pancakes", "addedByDefault": false },
+      { "item": "Round Waffle", "addedByDefault": false },
+      { "item": "Thick Slice French Toast", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Breakfast Sandwich",
+    "station": "Breakfast",
+    "price": 4.50,
     "components": []
   },
   {
