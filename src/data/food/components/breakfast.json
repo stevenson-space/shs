@@ -221,28 +221,6 @@
   },
   {
     "metadata": {
-      "name": "12\" Flour Tortilla",
-      "recipe": [727271]
-    },
-    "nutrition": {
-      "serving_size": "1 Tortilla",
-      "calories": 290,
-      "fat_calories": 72,
-      "total_fat_g": 8.0,
-      "saturated_fat_g": 4.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 0.0,
-      "sodium_mg": 570.0,
-      "total_carbs_g": 48.0,
-      "fiber_g": 2.0,
-      "total_sugar_g": 1.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 8.0
-    },
-    "allergens": ["Wheat", "Gluten"]
-  },
-  {
-    "metadata": {
       "name": "Buttermilk Pancakes",
       "recipe": [301820]
     },
