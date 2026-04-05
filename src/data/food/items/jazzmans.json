@@ -129,19 +129,19 @@
     "name": "Cold Brew (12 oz)",
     "station": "Jazzman's",
     "price": 3.00,
-    "components": []
+    "components": [{ "item": "Jazzmans Signature Coffee" }]
   },
   {
     "name": "Cold Brew (16 oz)",
     "station": "Jazzman's",
     "price": 3.50,
-    "components": []
+    "components": [{ "item": "Jazzmans Signature Coffee (16 oz)" }]
   },
   {
     "name": "Cold Brew (20 oz)",
     "station": "Jazzman's",
     "price": 4.00,
-    "components": []
+    "components": [{ "item": "Jazzmans Signature Coffee (20 oz)" }]
   },
   {
     "name": "Cookie",
