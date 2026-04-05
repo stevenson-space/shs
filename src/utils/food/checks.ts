@@ -28,3 +28,13 @@ export function checkAllComponentsExist(menu: MenuDatabase, nutritionalDb: Nutri
     }
   }
 }
+
+export function checkAllNutritionalEntriesUsed(nutritionalDb: NutritionalDatabase, menu: MenuDatabase): void {
+  const used = new Set(menu.flatMap(item => item.components.map(c => c.item)));
+
+  for (const key of Object.keys(nutritionalDb)) {
+    if (!used.has(key)) {
+      console.warn(`Nutritional entry "${key}" is not referenced by any menu item`);
+    }
+  }
+}
