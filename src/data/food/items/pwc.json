@@ -36,10 +36,34 @@
     "components": [{ "item": "Veggie Vitality Wrap" }]
   },
   {
-    "name": "1 Scoop Salad",
+    "name": "Chicken Scoop Salad (4 oz)",
     "station": "PWC",
     "price": 3.00,
-    "components": []
+    "components": [{ "item": "Chicken Salad" }]
+  },
+  {
+    "name": "Hearts of Palm Scoop Salad (4 oz)",
+    "station": "PWC",
+    "price": 3.00,
+    "components": [{ "item": "Hearts Of Palm Salad (Vegan)" }]
+  },
+  {
+    "name": "Tuna Scoop Salad (4 oz)",
+    "station": "PWC",
+    "price": 3.00,
+    "components": [{ "item": "Tuna Salad" }]
+  },
+  {
+    "name": "Egg Scoop Salad (4 oz)",
+    "station": "PWC",
+    "price": 3.00,
+    "components": [{ "item": "Egg Salad" }]
+  },
+  {
+    "name": "Sweet Potato Scoop Salad (4 oz)",
+    "station": "PWC",
+    "price": 3.00,
+    "components": [{ "item": "Sweet Potato Salad" }]
   },
   {
     "name": "Acai Bowl",
