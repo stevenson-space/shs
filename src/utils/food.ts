@@ -35,7 +35,28 @@ export const FoodInformation = z.object({
   allergens: z.array(Allergen),
 });
 
+export const MenuIngredient = z.union([
+  z.object({ item: z.string() }),
+  z.object({ item: z.string(), addedByDefault: z.boolean() }),
+]);
+
+export const Station = z.enum([
+  "Grill", "Deli", "Simply to Go", "Grab 'n Go", "International",
+  "Mindful", "Breakfast", "Comfort", "Pizza", "Sides", "Soup",
+  "Panini", "PWC",
+]);
+
+export const MenuItem = z.object({
+  name: z.string(),
+  station: Station,
+  price: z.number(),
+  ingredients: z.array(MenuIngredient),
+});
+
 export type Allergen = z.infer<typeof Allergen>;
 export type NutritionalInfo = z.infer<typeof NutritionalInfo>;
 export type FoodItemMetaData = z.infer<typeof FoodItemMetadata>;
 export type FoodInformation = z.infer<typeof FoodInformation>;
+export type Station = z.infer<typeof Station>;
+export type MenuIngredient = z.infer<typeof MenuIngredient>;
+export type MenuItem = z.infer<typeof MenuItem>;
