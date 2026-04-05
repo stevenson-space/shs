@@ -120,6 +120,12 @@
     "components": [{ "item": "California Turkey Sandwich" }]
   },
   {
+    "name": "Portobello Mushroom and Goat Cheese Sandwich",
+    "station": "PWC",
+    "price": 5.50,
+    "components": [{ "item": "Portobello Mushroom and Goat Cheese on Focaccia" }]
+  },
+  {
     "name": "Turkey, Smoked Gouda & Arugula Sandwich",
     "station": "PWC",
     "price": 5.50,
