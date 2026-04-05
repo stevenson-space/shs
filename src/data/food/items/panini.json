@@ -34,5 +34,11 @@
     "station": "Panini",
     "price": 4.50,
     "components": [{ "item": "Three Cheese Panini" }]
+  },
+  {
+    "name": "Balsamic Chicken Panini",
+    "station": "Panini",
+    "price": 5.50,
+    "components": [{ "item": "Balsamic Chicken Panini" }]
   }
 ]
