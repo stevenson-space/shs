@@ -69,7 +69,10 @@
     "name": "Pancakes",
     "station": "Breakfast",
     "price": 2.00,
-    "components": [{ "item": "Buttermilk Pancakes" }]
+    "components": [
+      { "item": "Buttermilk Pancakes" },
+      { "item": "Pancake Syrup", "addedByDefault": false }
+    ]
   },
   {
     "name": "Round Waffles",
@@ -106,6 +109,7 @@
       { "item": "Chorizo Crumbled", "addedByDefault": false },
       { "item": "Peppers & Onions", "addedByDefault": false },
       { "item": "Buttermilk Pancakes", "addedByDefault": false },
+      { "item": "Pancake Syrup", "addedByDefault": false },
       { "item": "Round Waffle", "addedByDefault": false },
       { "item": "Belgian Waffle", "addedByDefault": false },
       { "item": "Thick Slice French Toast", "addedByDefault": false }
