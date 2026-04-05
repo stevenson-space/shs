@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Soda (20oz)",
+    "station": "Beverage",
+    "price": 2.50,
+    "components": []
+  },
+  {
+    "name": "Water",
+    "station": "Beverage",
+    "price": 1.75,
+    "components": []
+  },
+  {
+    "name": "Pure Leaf Tea",
+    "station": "Beverage",
+    "price": 3.00,
+    "components": []
+  },
+  {
+    "name": "Gatorade",
+    "station": "Beverage",
+    "price": 3.00,
+    "components": []
+  },
+  {
+    "name": "Propel",
+    "station": "Beverage",
+    "price": 3.00,
+    "components": []
+  },
+  {
+    "name": "Bubbler",
+    "station": "Beverage",
+    "price": 3.00,
+    "components": []
+  },
+  {
+    "name": "Tropicana Juice",
+    "station": "Beverage",
+    "price": 3.00,
+    "components": []
+  },
+  {
+    "name": "Naked Juice",
+    "station": "Beverage",
+    "price": 4.50,
+    "components": []
+  },
+  {
+    "name": "Kombucha",
+    "station": "Beverage",
+    "price": 4.50,
+    "components": []
+  },
+  {
+    "name": "Muscle Milk",
+    "station": "Beverage",
+    "price": 5.00,
+    "components": []
+  },
+  {
+    "name": "Milk (1/2 pint)",
+    "station": "Beverage",
+    "price": 0.75,
+    "components": []
+  },
+  {
+    "name": "Milk Chug",
+    "station": "Beverage",
+    "price": 2.00,
+    "components": []
+  },
+  {
+    "name": "Tractor Can",
+    "station": "Beverage",
+    "price": 2.75,
+    "components": []
+  }
+]
