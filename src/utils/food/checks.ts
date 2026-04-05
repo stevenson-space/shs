@@ -1,4 +1,4 @@
-import type { EagerComponentModules } from "./database";
+import type { EagerComponentModules, MenuDatabase, NutritionalDatabase } from "./database";
 
 export function checkNoDuplicateNutritionalKeys(modules: EagerComponentModules): void {
   const seen = new Map<string, string>(); // name -> source file
@@ -12,6 +12,18 @@ export function checkNoDuplicateNutritionalKeys(modules: EagerComponentModules):
         );
       } else {
         seen.set(name, file);
+      }
+    }
+  }
+}
+
+export function checkAllComponentsExist(menu: MenuDatabase, nutritionalDb: NutritionalDatabase): void {
+  for (const item of menu) {
+    for (const component of item.components) {
+      if (!(component.item in nutritionalDb)) {
+        console.warn(
+          `Menu item "${item.name}" (${item.station}) references unknown component "${component.item}"`
+        );
       }
     }
   }
