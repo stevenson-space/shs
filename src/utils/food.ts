@@ -24,18 +24,18 @@ export const NutritionalInfo = z.object({
   protein_g: z.number(),
 });
 
-export const FoodItemMetaData = z.object({
+export const FoodItemMetadata = z.object({
   name: z.string(),
   recipe: z.array(z.number()),
 });
 
 export const FoodInformation = z.object({
-  metadata: FoodItemMetaData,
+  metadata: FoodItemMetadata,
   nutrition: NutritionalInfo,
   allergens: z.array(Allergen),
 });
 
 export type Allergen = z.infer<typeof Allergen>;
 export type NutritionalInfo = z.infer<typeof NutritionalInfo>;
-export type FoodItemMetaData = z.infer<typeof FoodItemMetaData>;
+export type FoodItemMetaData = z.infer<typeof FoodItemMetadata>;
 export type FoodInformation = z.infer<typeof FoodInformation>;
