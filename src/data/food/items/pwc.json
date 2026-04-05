@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Power Wrap",
+    "station": "PWC",
+    "price": 5.00,
+    "components": [{ "item": "Power Wrap" }]
+  },
+  {
+    "name": "Hummus Avocado Vegetable Wrap",
+    "station": "PWC",
+    "price": 5.00,
+    "components": [{ "item": "Hummus Avocado Vegetable Wrap" }]
+  },
+  {
+    "name": "Roasted Sweet Potato Wrap",
+    "station": "PWC",
+    "price": 5.00,
+    "components": [{ "item": "Roasted Sweet Potato Wrap" }]
+  },
+  {
+    "name": "High Protein Veggie Wrap",
+    "station": "PWC",
+    "price": 5.00,
+    "components": [{ "item": "High Protein Veggie Wrap" }]
+  },
+  {
+    "name": "Thai Wrap",
+    "station": "PWC",
+    "price": 5.00,
+    "components": [{ "item": "Thai Wrap" }]
+  },
+  {
+    "name": "Veggie Vitality Wrap",
+    "station": "PWC",
+    "price": 5.00,
+    "components": [{ "item": "Veggie Vitality Wrap" }]
+  },
+  {
+    "name": "1 Scoop Salad",
+    "station": "PWC",
+    "price": 3.00,
+    "components": []
+  },
+  {
+    "name": "Acai Bowl",
+    "station": "PWC",
+    "price": 5.50,
+    "components": [{ "item": "Acai Bowl with Toppings" }]
+  },
+  {
+    "name": "Hummus and Veg",
+    "station": "PWC",
+    "price": 3.00,
+    "components": []
+  },
+  {
+    "name": "Hummus and Naan",
+    "station": "PWC",
+    "price": 3.00,
+    "components": [{ "item": "Hummus & Naan Cup" }]
+  },
+  {
+    "name": "Chicken Artichoke Puff",
+    "station": "PWC",
+    "price": 4.50,
+    "components": [{ "item": "Chicken Artichoke Puff" }]
+  },
+  {
+    "name": "Hot Dog Cheese Puff",
+    "station": "PWC",
+    "price": 4.50,
+    "components": [{ "item": "Hot Dog Cheese Puff" }]
+  },
+  {
+    "name": "Caprese Puff",
+    "station": "PWC",
+    "price": 4.50,
+    "components": [{ "item": "Caprese Puff Pastry" }]
+  },
+  {
+    "name": "Ham, Cheese & Asparagus Puff",
+    "station": "PWC",
+    "price": 4.50,
+    "components": [{ "item": "Ham, Cheese, Asparagus Puff" }]
+  },
+  {
+    "name": "Grilled Pesto Havarti Cheese Sandwich",
+    "station": "PWC",
+    "price": 5.50,
+    "components": [{ "item": "Grilled Pesto Havarti Cheese Sandwich" }]
+  },
+  {
+    "name": "California Turkey Sandwich",
+    "station": "PWC",
+    "price": 5.50,
+    "components": [{ "item": "California Turkey Sandwich" }]
+  },
+  {
+    "name": "Turkey, Smoked Gouda & Arugula Sandwich",
+    "station": "PWC",
+    "price": 5.50,
+    "components": [{ "item": "Turkey, Smoked Gouda and Arugula Sandwich" }]
+  },
+  {
+    "name": "Meat Lovers Calzone",
+    "station": "PWC",
+    "price": 6.50,
+    "components": [{ "item": "Meat Lovers Calzone" }]
+  },
+  {
+    "name": "Avocado Toast",
+    "station": "PWC",
+    "price": 5.00,
+    "components": [{ "item": "Avocado Toast" }]
+  },
+  {
+    "name": "Greek Feta Toast",
+    "station": "PWC",
+    "price": 5.00,
+    "components": [{ "item": "Greek Feta Toast" }]
+  },
+  {
+    "name": "Balsamic Strawberry Toast",
+    "station": "PWC",
+    "price": 5.00,
+    "components": [{ "item": "Balsamic Strawberry Toast" }]
+  },
+  {
+    "name": "Green Machine Smoothie",
+    "station": "PWC",
+    "price": 5.25,
+    "components": [{ "item": "Green Machine Smoothie Greek Yogurt" }]
+  },
+  {
+    "name": "Power Berry Smoothie",
+    "station": "PWC",
+    "price": 5.25,
+    "components": [{ "item": "Power Berry Smoothie" }]
+  },
+  {
+    "name": "Strawberry Banana Smoothie",
+    "station": "PWC",
+    "price": 5.25,
+    "components": [{ "item": "Strawberry Banana Smoothie" }]
+  },
+  {
+    "name": "Mango Pineapple Smoothie",
+    "station": "PWC",
+    "price": 5.25,
+    "components": [{ "item": "Mango Pineapple Smoothie" }]
+  },
+  {
+    "name": "Banana Chai Smoothie",
+    "station": "PWC",
+    "price": 5.25,
+    "components": [{ "item": "Banana Chai Smoothie" }]
+  },
+  {
+    "name": "Dragon Fruit Smoothie",
+    "station": "PWC",
+    "price": 5.25,
+    "components": [{ "item": "Dragon Fruit Smoothie" }]
+  },
+  {
+    "name": "Tropical Coconut Overnight Oats",
+    "station": "PWC",
+    "price": 2.75,
+    "components": [{ "item": "Healthy Tropical Coconut Overnight Oats" }]
+  },
+  {
+    "name": "Strawberry Granola Overnight Oats",
+    "station": "PWC",
+    "price": 2.75,
+    "components": [{ "item": "Strawberry Granola Overnight Oats" }]
+  },
+  {
+    "name": "Peach Overnight Oats",
+    "station": "PWC",
+    "price": 2.75,
+    "components": [{ "item": "Peach Overnight Oats with Granola" }]
+  },
+  {
+    "name": "Mango Chia Overnight Oats",
+    "station": "PWC",
+    "price": 2.75,
+    "components": [{ "item": "Mango Chia Overnight Oats" }]
+  },
+  {
+    "name": "Autumn Harvest Overnight Oats",
+    "station": "PWC",
+    "price": 2.75,
+    "components": [{ "item": "Autumn Harvest Overnight Oats" }]
+  },
+  {
+    "name": "Strawberry Cheesecake Overnight Oats",
+    "station": "PWC",
+    "price": 2.75,
+    "components": [{ "item": "Strawberry Cheesecake Overnight Oats" }]
+  },
+  {
+    "name": "Soup Bread Bowl",
+    "station": "PWC",
+    "price": 5.00,
+    "components": []
+  }
+]
