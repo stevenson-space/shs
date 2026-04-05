@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Turkey Panini",
+    "station": "Panini",
+    "price": 5.50,
+    "components": [{ "item": "Turkey Panini" }]
+  },
+  {
+    "name": "Naanini Gyro Panini",
+    "station": "Panini",
+    "price": 6.00,
+    "components": [{ "item": "Nanini" }]
+  },
+  {
+    "name": "Cheese Steak Panini",
+    "station": "Panini",
+    "price": 6.00,
+    "components": [{ "item": "Chipotle Cheese Steak Panini" }]
+  },
+  {
+    "name": "Bacon & Onion Panini",
+    "station": "Panini",
+    "price": 5.50,
+    "components": [{ "item": "Bacon & Caramelized Onion Panini" }]
+  },
+  {
+    "name": "Caprese Panini",
+    "station": "Panini",
+    "price": 5.50,
+    "components": [{ "item": "Caprese Panini" }]
+  },
+  {
+    "name": "Three Cheese Panini",
+    "station": "Panini",
+    "price": 4.50,
+    "components": [{ "item": "Three Cheese Panini" }]
+  }
+]
