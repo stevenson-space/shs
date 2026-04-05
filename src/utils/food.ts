@@ -35,7 +35,7 @@ export const FoodInformation = z.object({
   allergens: z.array(Allergen),
 });
 
-export const MenuIngredient = z.union([
+export const MenuItemComponent = z.union([
   z.object({ item: z.string() }),
   z.object({ item: z.string(), addedByDefault: z.boolean() }),
 ]);
@@ -50,7 +50,7 @@ export const MenuItem = z.object({
   name: z.string(),
   station: Station,
   price: z.number(),
-  ingredients: z.array(MenuIngredient),
+  components: z.array(MenuItemComponent),
 });
 
 export type Allergen = z.infer<typeof Allergen>;
@@ -58,5 +58,5 @@ export type NutritionalInfo = z.infer<typeof NutritionalInfo>;
 export type FoodItemMetaData = z.infer<typeof FoodItemMetadata>;
 export type FoodInformation = z.infer<typeof FoodInformation>;
 export type Station = z.infer<typeof Station>;
-export type MenuIngredient = z.infer<typeof MenuIngredient>;
+export type MenuIngredient = z.infer<typeof MenuItemComponent>;
 export type MenuItem = z.infer<typeof MenuItem>;
