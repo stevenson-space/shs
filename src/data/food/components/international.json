@@ -131,6 +131,7 @@
   {
     "metadata": {
       "name": "Thai Basil Beef",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -443,6 +444,7 @@
   {
     "metadata": {
       "name": "Mediterranean Chicken",
+      "hidden": "unavailable",
       "recipe": [41843]
     },
     "nutrition": {
@@ -467,6 +469,7 @@
   {
     "metadata": {
       "name": "Falafel",
+      "hidden": "unavailable",
       "recipe": [587083]
     },
     "nutrition": {
@@ -489,6 +492,7 @@
   {
     "metadata": {
       "name": "Naan",
+      "hidden": "unavailable",
       "recipe": [216713]
     },
     "nutrition": {
@@ -518,6 +522,7 @@
   {
     "metadata": {
       "name": "Hummus",
+      "hidden": "unavailable",
       "recipe": [92743]
     },
     "nutrition": {
@@ -543,6 +548,7 @@
   {
     "metadata": {
       "name": "Cabbage Salad",
+      "hidden": "unavailable",
       "recipe": [61230]
     },
     "nutrition": {
@@ -567,6 +573,7 @@
   {
     "metadata": {
       "name": "Tomato Cucumber Salad",
+      "hidden": "unavailable",
       "recipe": [62546]
     },
     "nutrition": {
@@ -592,6 +599,7 @@
   {
     "metadata": {
       "name": "Couscous Salad",
+      "hidden": "unavailable",
       "recipe": [62496]
     },
     "nutrition": {
@@ -618,6 +626,7 @@
   {
     "metadata": {
       "name": "Roasted Red Pepper Sauce",
+      "hidden": "unavailable",
       "recipe": [95553]
     },
     "nutrition": {
@@ -644,6 +653,7 @@
   {
     "metadata": {
       "name": "Shug",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {

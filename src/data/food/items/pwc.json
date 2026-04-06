@@ -6,18 +6,6 @@
     "components": [{ "item": "Power Wrap" }]
   },
   {
-    "name": "Hummus Avocado Vegetable Wrap",
-    "station": "PWC",
-    "price": 5.00,
-    "components": [{ "item": "Hummus Avocado Vegetable Wrap" }]
-  },
-  {
-    "name": "Roasted Sweet Potato Wrap",
-    "station": "PWC",
-    "price": 5.00,
-    "components": [{ "item": "Roasted Sweet Potato Wrap" }]
-  },
-  {
     "name": "High Protein Veggie Wrap",
     "station": "PWC",
     "price": 5.00,
@@ -84,18 +72,6 @@
     "components": [{ "item": "Hummus & Naan Cup" }]
   },
   {
-    "name": "Chicken Artichoke Puff",
-    "station": "PWC",
-    "price": 4.50,
-    "components": [{ "item": "Chicken Artichoke Puff" }]
-  },
-  {
-    "name": "Hot Dog Cheese Puff",
-    "station": "PWC",
-    "price": 4.50,
-    "components": [{ "item": "Hot Dog Cheese Puff" }]
-  },
-  {
     "name": "Caprese Puff",
     "station": "PWC",
     "price": 4.50,
@@ -106,12 +82,6 @@
     "station": "PWC",
     "price": 4.50,
     "components": [{ "item": "Ham, Cheese, Asparagus Puff" }]
-  },
-  {
-    "name": "Grilled Pesto Havarti Cheese Sandwich",
-    "station": "PWC",
-    "price": 5.50,
-    "components": [{ "item": "Grilled Pesto Havarti Cheese Sandwich" }]
   },
   {
     "name": "California Turkey Sandwich",

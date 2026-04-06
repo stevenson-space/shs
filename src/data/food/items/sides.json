@@ -1,0 +1,185 @@
+[
+  {
+    "name": "Roasted Carrots",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Roasted Carrots" }]
+  },
+  {
+    "name": "Roasted Red Potatoes",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Italian Roasted Red Potatoes" }]
+  },
+  {
+    "name": "Lettuce, Red Onion & Tomatoes, Cucumber",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Lettuce, Cucumber, Onion, Tomato Salad" }]
+  },
+  {
+    "name": "Lemon Rice",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Lemon Rice" }]
+  },
+  {
+    "name": "Tahini & Tzatziki Sauce",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [
+      { "item": "Tahini" },
+      { "item": "Tzatziki Sauce" }
+    ]
+  },
+  {
+    "name": "Roasted Carrots & Broccoli",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Broccoli & Carrots" }]
+  },
+  {
+    "name": "Mashed Potatoes",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Mashed Potatoes" }]
+  },
+  {
+    "name": "Azteca Corn",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Aztec Corn" }]
+  },
+  {
+    "name": "Mexican Rice",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Mexican Rice" }]
+  },
+  {
+    "name": "Roasted Vegetables",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Roasted Vegetables" }]
+  },
+  {
+    "name": "Fried Potato Wedges",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Fried Potato Wedges" }]
+  },
+  {
+    "name": "Roasted Brussels Sprouts",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Roasted Brussels Sprouts" }]
+  },
+  {
+    "name": "Scalloped Potatoes",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Scalloped Potatoes" }]
+  },
+  {
+    "name": "Cilantro Lime Rice",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Cilantro Lime Rice" }]
+  },
+  {
+    "name": "Roasted Zucchini",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Roasted Zucchini" }]
+  },
+  {
+    "name": "Herbed Orzo",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Herbed Orzo" }]
+  },
+  {
+    "name": "Broccoli & Carrots",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Broccoli & Carrots" }]
+  },
+  {
+    "name": "Rice Pilaf",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Rice Pilaf" }]
+  },
+  {
+    "name": "Roasted Broccolini",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Sauteed Broccolini" }]
+  },
+  {
+    "name": "Pasta",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Pasta Penne (Various)" }]
+  },
+  {
+    "name": "Lemon Pepper Green Beans",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Lemon Pepper Green Beans" }]
+  },
+  {
+    "name": "Yellow Rice",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Yellow Rice" }]
+  },
+  {
+    "name": "Cucumber Salad",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Greek Cucumber Salad" }]
+  },
+  {
+    "name": "Roasted Asparagus",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Roasted Asparagus" }]
+  },
+  {
+    "name": "Maple Whipped Sweet Potatoes",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Maple Mashed Sweet Potatoes" }]
+  },
+  {
+    "name": "Italian Roasted Red Potatoes",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Italian Roasted Red Potatoes" }]
+  },
+  {
+    "name": "Lime Cilantro Rice",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Cilantro Lime Rice" }]
+  },
+  {
+    "name": "Roasted Corn",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Roasted Corn" }]
+  },
+  {
+    "name": "Cauliflower",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Roasted Cauliflower" }]
+  },
+  {
+    "name": "Roasted Potato Wedges",
+    "station": "Sides",
+    "price": 0.00,
+    "components": [{ "item": "Roasted Potato Wedges" }]
+  }
+]

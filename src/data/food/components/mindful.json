@@ -68,6 +68,7 @@
   {
     "metadata": {
       "name": "Chicken Coconut Curry",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -134,6 +135,7 @@
   {
     "metadata": {
       "name": "Palak Paneer",
+      "hidden": "unavailable",
       "recipe": [53801]
     },
     "nutrition": {
@@ -156,6 +158,7 @@
   {
     "metadata": {
       "name": "Italian Chicken Thigh",
+      "hidden": "unavailable",
       "recipe": [48481]
     },
     "nutrition": {
@@ -222,6 +225,7 @@
   {
     "metadata": {
       "name": "Thai Chicken Stir Fry",
+      "hidden": "unavailable",
       "recipe": [63513]
     },
     "nutrition": {
@@ -332,6 +336,7 @@
   {
     "metadata": {
       "name": "Basic Chicken Breast",
+      "hidden": "unavailable",
       "recipe": [94454]
     },
     "nutrition": {
@@ -485,28 +490,6 @@
   },
   {
     "metadata": {
-      "name": "Gyro Meat (Week 3)",
-      "recipe": [216631]
-    },
-    "nutrition": {
-      "serving_size": "4 Slices",
-      "calories": 350.0,
-      "fat_calories": 252.0,
-      "total_fat_g": 28.0,
-      "saturated_fat_g": 12.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 58.0,
-      "sodium_mg": 567.0,
-      "total_carbs_g": 7.0,
-      "fiber_g": 1.5,
-      "total_sugar_g": 0.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 13.0
-    },
-    "allergens": ["Gluten", "Soy", "Wheat"]
-  },
-  {
-    "metadata": {
       "name": "Chopped Steak with Onion Gravy",
       "recipe": [824640, 38993]
     },
@@ -530,6 +513,7 @@
   {
     "metadata": {
       "name": "Plant Based Chick'N Stir Fry",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -596,6 +580,7 @@
   {
     "metadata": {
       "name": "Country Gravy",
+      "hidden": "unavailable",
       "recipe": [95278]
     },
     "nutrition": {
@@ -684,6 +669,7 @@
   {
     "metadata": {
       "name": "Creamy Pesto and Roasted Vegetables with Pasta",
+      "hidden": "unavailable",
       "recipe": [99658]
     },
     "nutrition": {
@@ -728,6 +714,7 @@
   {
     "metadata": {
       "name": "Chicken Tempura",
+      "hidden": "unavailable",
       "recipe": [47039]
     },
     "nutrition": {
@@ -750,6 +737,7 @@
   {
     "metadata": {
       "name": "Chicken Piccata",
+      "hidden": "unavailable",
       "recipe": [82291]
     },
     "nutrition": {
@@ -772,6 +760,7 @@
   {
     "metadata": {
       "name": "Ratatouille",
+      "hidden": "unavailable",
       "recipe": [12110]
     },
     "nutrition": {
@@ -794,6 +783,7 @@
   {
     "metadata": {
       "name": "Maple Chile Glazed Pork",
+      "hidden": "unavailable",
       "recipe": [90039]
     },
     "nutrition": {
