@@ -62,7 +62,10 @@ export function checkNoZeroPriceItems(menu: MenuDatabase): ZeroPriceError[] {
   return menu.filter(item => item.price === 0).map(item => item.name);
 }
 
-export function checkAllNutritionalEntriesUsed(nutritionalDb: NutritionalDatabase, menu: MenuDatabase): UnusedNutritionalEntry[] {
+export function checkAllNutritionalEntriesUsed(nutritionalDb: NutritionalDatabase, menu: MenuDatabase, skipHidden = true): UnusedNutritionalEntry[] {
   const used = new Set(menu.flatMap(item => item.components.map(c => c.item)));
-  return Object.keys(nutritionalDb).filter(key => !used.has(key));
+  return Object.keys(nutritionalDb).filter(key => {
+    if (skipHidden && nutritionalDb[key].metadata.hidden !== undefined) return false;
+    return !used.has(key);
+  });
 }
