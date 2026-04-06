@@ -6,12 +6,6 @@
     "components": [{ "item": "Power Wrap" }]
   },
   {
-    "name": "Roasted Sweet Potato Wrap",
-    "station": "PWC",
-    "price": 5.00,
-    "components": [{ "item": "Roasted Sweet Potato Wrap" }]
-  },
-  {
     "name": "High Protein Veggie Wrap",
     "station": "PWC",
     "price": 5.00,
