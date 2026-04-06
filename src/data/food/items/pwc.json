@@ -72,18 +72,6 @@
     "components": [{ "item": "Hummus & Naan Cup" }]
   },
   {
-    "name": "Chicken Artichoke Puff",
-    "station": "PWC",
-    "price": 4.50,
-    "components": [{ "item": "Chicken Artichoke Puff" }]
-  },
-  {
-    "name": "Hot Dog Cheese Puff",
-    "station": "PWC",
-    "price": 4.50,
-    "components": [{ "item": "Hot Dog Cheese Puff" }]
-  },
-  {
     "name": "Caprese Puff",
     "station": "PWC",
     "price": 4.50,
