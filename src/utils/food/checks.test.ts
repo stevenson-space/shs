@@ -19,7 +19,7 @@ describe("nutritional database", () => {
   });
 
   it("has no unused entries", () => {
-    expect(checkAllNutritionalEntriesUsed(nutritionalDb, menu)).toEqual([]);
+    expect(checkAllNutritionalEntriesUsed(componentModules, nutritionalDb, menu)).toEqual([]);
   });
 });
 

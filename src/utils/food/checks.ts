@@ -8,7 +8,10 @@ export interface DuplicateKeyError {
   conflict: boolean;
 }
 
-export type UnusedNutritionalEntry = string;
+export interface UnusedNutritionalEntry {
+  key: string;
+  file: string;
+}
 
 export interface MissingComponentError {
   menuItem: string;
@@ -62,10 +65,21 @@ export function checkNoZeroPriceItems(menu: MenuDatabase): ZeroPriceError[] {
   return menu.filter(item => item.price === 0).map(item => item.name);
 }
 
-export function checkAllNutritionalEntriesUsed(nutritionalDb: NutritionalDatabase, menu: MenuDatabase, skipHidden = true): UnusedNutritionalEntry[] {
+export function checkAllNutritionalEntriesUsed(modules: EagerComponentModules, nutritionalDb: NutritionalDatabase, menu: MenuDatabase, skipHidden = true): UnusedNutritionalEntry[] {
   const used = new Set(menu.flatMap(item => item.components.map(c => c.item)));
-  return Object.keys(nutritionalDb).filter(key => {
-    if (skipHidden && nutritionalDb[key].metadata.hidden !== undefined) return false;
-    return !used.has(key);
-  });
+
+  const keyToFile = new Map<string, string>();
+  for (const [file, { default: items }] of Object.entries(modules)) {
+    for (const raw of items) {
+      const parsed = FoodInformation.parse(raw);
+      keyToFile.set(parsed.metadata.name, file);
+    }
+  }
+
+  return Object.keys(nutritionalDb)
+    .filter(key => {
+      if (skipHidden && nutritionalDb[key].metadata.hidden !== undefined) return false;
+      return !used.has(key);
+    })
+    .map(key => ({ key, file: keyToFile.get(key) ?? 'unknown' }));
 }
