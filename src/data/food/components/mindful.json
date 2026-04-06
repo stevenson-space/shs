@@ -490,28 +490,6 @@
   },
   {
     "metadata": {
-      "name": "Gyro Meat (Week 3)",
-      "recipe": [216631]
-    },
-    "nutrition": {
-      "serving_size": "4 Slices",
-      "calories": 350.0,
-      "fat_calories": 252.0,
-      "total_fat_g": 28.0,
-      "saturated_fat_g": 12.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 58.0,
-      "sodium_mg": 567.0,
-      "total_carbs_g": 7.0,
-      "fiber_g": 1.5,
-      "total_sugar_g": 0.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 13.0
-    },
-    "allergens": ["Gluten", "Soy", "Wheat"]
-  },
-  {
-    "metadata": {
       "name": "Chopped Steak with Onion Gravy",
       "recipe": [824640, 38993]
     },
