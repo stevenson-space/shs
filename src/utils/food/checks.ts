@@ -1,5 +1,5 @@
 import type { EagerComponentModules, MenuDatabase, NutritionalDatabase } from "./database";
-import { FoodInformation } from "./types";
+import { FoodInformation, type HiddenReason } from "./types";
 
 export interface DuplicateKeyError {
   key: string;
@@ -14,6 +14,7 @@ export interface MissingComponentError {
   menuItem: string;
   station: string;
   component: string;
+  hidden?: HiddenReason;
 }
 
 export type ZeroPriceError = string;
@@ -45,8 +46,11 @@ export function checkAllComponentsExist(menu: MenuDatabase, nutritionalDb: Nutri
 
   for (const item of menu) {
     for (const component of item.components) {
-      if (!(component.item in nutritionalDb)) {
+      const entry = nutritionalDb[component.item];
+      if (entry === undefined) {
         errors.push({ menuItem: item.name, station: item.station, component: component.item });
+      } else if (entry.metadata.hidden !== undefined) {
+        errors.push({ menuItem: item.name, station: item.station, component: component.item, hidden: entry.metadata.hidden });
       }
     }
   }
