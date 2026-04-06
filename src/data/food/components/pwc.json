@@ -168,6 +168,7 @@
   {
     "metadata": {
       "name": "Corn Chowder",
+      "hidden": "unavailable",
       "recipe": [
         527290
       ]
@@ -225,6 +226,7 @@
   {
     "metadata": {
       "name": "Stuffed Pepper Soup",
+      "hidden": "unavailable",
       "recipe": [
         374860
       ]
@@ -276,35 +278,6 @@
     "allergens": [
       "Fish",
       "Soy"
-    ]
-  },
-  {
-    "metadata": {
-      "name": "Italian Wedding Soup",
-      "recipe": [
-        403940
-      ]
-    },
-    "nutrition": {
-      "serving_size": "8 oz",
-      "calories": 80.0,
-      "fat_calories": 20.0,
-      "total_fat_g": 2.0,
-      "saturated_fat_g": 1.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 10.0,
-      "sodium_mg": 550.0,
-      "total_carbs_g": 12.0,
-      "fiber_g": 0.5,
-      "total_sugar_g": 1.0,
-      "added_sugar_g": 0.5,
-      "protein_g": 5.0
-    },
-    "allergens": [
-      "Gluten",
-      "Milk",
-      "Soy",
-      "Wheat"
     ]
   },
   {
