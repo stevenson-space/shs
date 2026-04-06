@@ -6,12 +6,6 @@
     "components": [{ "item": "Power Wrap" }]
   },
   {
-    "name": "Hummus Avocado Vegetable Wrap",
-    "station": "PWC",
-    "price": 5.00,
-    "components": [{ "item": "Hummus Avocado Vegetable Wrap" }]
-  },
-  {
     "name": "Roasted Sweet Potato Wrap",
     "station": "PWC",
     "price": 5.00,
