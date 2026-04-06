@@ -222,12 +222,6 @@
     "components": []
   },
   {
-    "name": "Blueberry Cobbler Muffin",
-    "station": "Jazzman's",
-    "price": 2.50,
-    "components": [{ "item": "Blueberry Cobbler Muffin Filled with Cream Cheese" }]
-  },
-  {
     "name": "Cinnamon Streusel Muffin",
     "station": "Jazzman's",
     "price": 2.50,
@@ -238,11 +232,5 @@
     "station": "Jazzman's",
     "price": 2.50,
     "components": [{ "item": "Chocolate Chip Muffin" }]
-  },
-  {
-    "name": "Triple Berry Muffin",
-    "station": "Jazzman's",
-    "price": 2.50,
-    "components": [{ "item": "Whole Grain Triple Berry Muffin" }]
   }
 ]
