@@ -84,12 +84,6 @@
     "components": [{ "item": "Ham, Cheese, Asparagus Puff" }]
   },
   {
-    "name": "Grilled Pesto Havarti Cheese Sandwich",
-    "station": "PWC",
-    "price": 5.50,
-    "components": [{ "item": "Grilled Pesto Havarti Cheese Sandwich" }]
-  },
-  {
     "name": "California Turkey Sandwich",
     "station": "PWC",
     "price": 5.50,
