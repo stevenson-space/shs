@@ -39,37 +39,37 @@
     "name": "Strawberry Cup",
     "station": "Grab 'n Go",
     "price": 2.00,
-    "components": [{ "item": "Fresh Fruit Cup" }]
+    "components": [{ "item": "Strawberry Cup" }]
   },
   {
     "name": "Pineapple Cup",
     "station": "Grab 'n Go",
     "price": 2.00,
-    "components": [{ "item": "Fresh Fruit Cup" }]
+    "components": [{ "item": "Pineapple Cup" }]
   },
   {
     "name": "Cantaloupe Cup",
     "station": "Grab 'n Go",
     "price": 2.00,
-    "components": [{ "item": "Fresh Fruit Cup" }]
+    "components": [{ "item": "Cantaloupe Cup" }]
   },
   {
     "name": "Honeydew Cup",
     "station": "Grab 'n Go",
     "price": 2.00,
-    "components": [{ "item": "Fresh Fruit Cup" }]
+    "components": [{ "item": "Honeydew Cup" }]
   },
   {
     "name": "Grape Cup",
     "station": "Grab 'n Go",
     "price": 2.00,
-    "components": [{ "item": "Fresh Fruit Cup" }]
+    "components": [{ "item": "Grape Cup" }]
   },
   {
     "name": "Watermelon Cup",
     "station": "Grab 'n Go",
     "price": 2.00,
-    "components": [{ "item": "Fresh Fruit Cup" }]
+    "components": [{ "item": "Watermelon Cup" }]
   },
   {
     "name": "Mixed Fruit Cup",
