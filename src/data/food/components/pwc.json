@@ -2,6 +2,7 @@
   {
     "metadata": {
       "name": "Red Pepper Gouda Bisque",
+      "hidden": "unavailable",
       "recipe": [
         557163
       ]
@@ -31,6 +32,7 @@
   {
     "metadata": {
       "name": "Mexican Street Corn Soup",
+      "hidden": "unavailable",
       "recipe": [
         128505
       ]
@@ -57,6 +59,7 @@
   {
     "metadata": {
       "name": "Smokey Poblano Cheese Soup",
+      "hidden": "unavailable",
       "recipe": [
         825600
       ]
@@ -83,6 +86,7 @@
   {
     "metadata": {
       "name": "Cream of Potato Soup",
+      "hidden": "unavailable",
       "recipe": [
         570102
       ]
@@ -112,6 +116,7 @@
   {
     "metadata": {
       "name": "Butternut Squash Bisque",
+      "hidden": "unavailable",
       "recipe": [
         374850
       ]
@@ -138,6 +143,7 @@
   {
     "metadata": {
       "name": "Vegetarian Garden Vegetable Soup",
+      "hidden": "unavailable",
       "recipe": [
         403930
       ]
@@ -247,6 +253,7 @@
   {
     "metadata": {
       "name": "Sweet Pepper Beef Soup",
+      "hidden": "unavailable",
       "recipe": [
         515830
       ]
@@ -303,6 +310,7 @@
   {
     "metadata": {
       "name": "Power Wrap",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -331,6 +339,7 @@
   {
     "metadata": {
       "name": "Hummus Avocado Vegetable Wrap",
+      "hidden": "unavailable",
       "recipe": [
         94295
       ]
@@ -361,6 +370,7 @@
   {
     "metadata": {
       "name": "Turkey BLT on Multigrain Bread w/Jalapeno Mayonnaise",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -388,6 +398,7 @@
   {
     "metadata": {
       "name": "Grilled Pesto Havarti Cheese Sandwich",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -415,6 +426,7 @@
   {
     "metadata": {
       "name": "Breakfast Croissant Sandwich with Turkey Bacon",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -443,6 +455,7 @@
   {
     "metadata": {
       "name": "Breakfast Croissant Sandwich with Veggie Sausage",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -471,6 +484,7 @@
   {
     "metadata": {
       "name": "Chicken Artichoke Puff",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -498,6 +512,7 @@
   {
     "metadata": {
       "name": "Hot Dog Cheese Puff",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -525,6 +540,7 @@
   {
     "metadata": {
       "name": "Chicken, Turkey Bacon, Ranch Flatbread",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -553,6 +569,7 @@
   {
     "metadata": {
       "name": "Roasted Tomato Flatbread",
+      "hidden": "unavailable",
       "recipe": [
         84792
       ]
@@ -584,6 +601,7 @@
   {
     "metadata": {
       "name": "Chicken Pot Pie",
+      "hidden": "unavailable",
       "recipe": [
         62992
       ]
@@ -613,6 +631,7 @@
   {
     "metadata": {
       "name": "Spicy Roasted Vegetable Flatbread",
+      "hidden": "unavailable",
       "recipe": [
         51852
       ]
@@ -643,6 +662,7 @@
   {
     "metadata": {
       "name": "Roasted Sweet Potato Wrap",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -670,6 +690,7 @@
   {
     "metadata": {
       "name": "Zucchini Bacon Swiss Frittata",
+      "hidden": "unavailable",
       "recipe": [
         212543
       ]
@@ -698,6 +719,7 @@
   {
     "metadata": {
       "name": "Grecian Egg White Frittata",
+      "hidden": "unavailable",
       "recipe": [
         98598
       ]
@@ -727,6 +749,7 @@
   {
     "metadata": {
       "name": "Chicken Mozzarella Rollup",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -754,6 +777,7 @@
   {
     "metadata": {
       "name": "California Turkey Sandwich",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -781,6 +805,7 @@
   {
     "metadata": {
       "name": "Portobello Mushroom and Goat Cheese on Focaccia",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -839,6 +864,7 @@
   {
     "metadata": {
       "name": "Caprese Puff Pastry",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -867,6 +893,7 @@
   {
     "metadata": {
       "name": "Sweet Potato Turnover",
+      "hidden": "unavailable",
       "recipe": [
         97686
       ]
@@ -925,6 +952,7 @@
   {
     "metadata": {
       "name": "Blueberry Cobbler Muffin Filled with Cream Cheese",
+      "hidden": "unavailable",
       "recipe": [
         771502
       ]
@@ -1043,6 +1071,7 @@
   {
     "metadata": {
       "name": "Greek Flatbread",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -1070,6 +1099,7 @@
   {
     "metadata": {
       "name": "Ratatouille (PWC)",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -1116,6 +1146,7 @@
   {
     "metadata": {
       "name": "Vegetarian Gluten Free Pasta with Vegetables and Cheese",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -1562,6 +1593,7 @@
   {
     "metadata": {
       "name": "Quinoa",
+      "hidden": "unavailable",
       "recipe": [
         69701
       ]
@@ -1588,6 +1620,7 @@
   {
     "metadata": {
       "name": "Farro",
+      "hidden": "unavailable",
       "recipe": [
         90172
       ]
@@ -1614,6 +1647,7 @@
   {
     "metadata": {
       "name": "Rice Noodles",
+      "hidden": "unavailable",
       "recipe": [
         53092
       ]
@@ -1638,6 +1672,7 @@
   {
     "metadata": {
       "name": "Barley",
+      "hidden": "unavailable",
       "recipe": [
         276509679
       ]
@@ -1712,6 +1747,7 @@
   {
     "metadata": {
       "name": "Roasted Beets",
+      "hidden": "unavailable",
       "recipe": [
         44556
       ]
@@ -1738,6 +1774,7 @@
   {
     "metadata": {
       "name": "Jicama",
+      "hidden": "unavailable",
       "recipe": [
         9078
       ]
@@ -1762,6 +1799,7 @@
   {
     "metadata": {
       "name": "Chicken Breast Strips",
+      "hidden": "unavailable",
       "recipe": [
         99534
       ]
@@ -1789,6 +1827,7 @@
   {
     "metadata": {
       "name": "Beef Flank Steak",
+      "hidden": "unavailable",
       "recipe": [
         38427
       ]
@@ -1816,6 +1855,7 @@
   {
     "metadata": {
       "name": "Plant Based Shrimp",
+      "hidden": "unavailable",
       "recipe": [
         124579
       ]
@@ -1840,6 +1880,7 @@
   {
     "metadata": {
       "name": "Tofu",
+      "hidden": "unavailable",
       "recipe": [
         90921
       ]
@@ -1866,6 +1907,7 @@
   {
     "metadata": {
       "name": "Green Goddess Dressing",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -1917,6 +1959,7 @@
   {
     "metadata": {
       "name": "Ranch Dressing Lite",
+      "hidden": "unavailable",
       "recipe": [
         784814
       ]
@@ -2183,6 +2226,7 @@
   {
     "metadata": {
       "name": "Hearts Of Palm Salad (Vegan)",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -2208,6 +2252,7 @@
   {
     "metadata": {
       "name": "Sweet Potato Salad",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -2232,6 +2277,7 @@
   {
     "metadata": {
       "name": "Harvest Grain Bowl",
+      "hidden": "unavailable",
       "recipe": [
         211790
       ]
@@ -2494,6 +2540,7 @@
   {
     "metadata": {
       "name": "Turkey Pinwheels",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -2745,6 +2792,7 @@
   {
     "metadata": {
       "name": "Three Berry Parfait",
+      "hidden": "unavailable",
       "recipe": [
         67925
       ]
@@ -2825,6 +2873,7 @@
   {
     "metadata": {
       "name": "Cottage Cheese Box",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -2965,6 +3014,7 @@
   {
     "metadata": {
       "name": "Falafel Grain Bowl",
+      "hidden": "unavailable",
       "recipe": [
         211784
       ]
@@ -2992,6 +3042,7 @@
   {
     "metadata": {
       "name": "Whole Grain Triple Berry Muffin",
+      "hidden": "unavailable",
       "recipe": [
         411582
       ]
@@ -3102,6 +3153,7 @@
   {
     "metadata": {
       "name": "Mango Chia Overnight Oats",
+      "hidden": "unavailable",
       "recipe": [
         211882
       ]
@@ -3154,6 +3206,7 @@
   {
     "metadata": {
       "name": "Acai Bowl with Toppings (Large)",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -3280,6 +3333,7 @@
   {
     "metadata": {
       "name": "Thai Wrap",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -3307,6 +3361,7 @@
   {
     "metadata": {
       "name": "Veggie Vitality Wrap",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -3334,6 +3389,7 @@
   {
     "metadata": {
       "name": "Autumn Harvest Overnight Oats",
+      "hidden": "unavailable",
       "recipe": [
         213564
       ]
@@ -3361,6 +3417,7 @@
   {
     "metadata": {
       "name": "Strawberry Cheesecake Overnight Oats",
+      "hidden": "unavailable",
       "recipe": [
         212791
       ]
@@ -3390,6 +3447,7 @@
   {
     "metadata": {
       "name": "Ham, Cheese, Asparagus Puff",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
