@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Smokey Poblano Vegetarian (8 oz)",
+    "station": "Soup",
+    "price": 2.5,
+    "components": [
+      {
+        "item": "Smokey Poblano Vegetarian (8 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Smokey Poblano Vegetarian (12 oz)",
+    "station": "Soup",
+    "price": 3.0,
+    "components": [
+      {
+        "item": "Smokey Poblano Vegetarian (12 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Chicken Noodle (8 oz)",
+    "station": "Soup",
+    "price": 2.5,
+    "components": [
+      {
+        "item": "Chicken Noodle (8 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Chicken Noodle (12 oz)",
+    "station": "Soup",
+    "price": 3.0,
+    "components": [
+      {
+        "item": "Chicken Noodle (12 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Tomato Basil (8 oz)",
+    "station": "Soup",
+    "price": 2.5,
+    "components": [
+      {
+        "item": "Tomato Basil (8 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Tomato Basil (12 oz)",
+    "station": "Soup",
+    "price": 3.0,
+    "components": [
+      {
+        "item": "Tomato Basil (12 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Golden Broccoli Cheese Soup (8 oz)",
+    "station": "Soup",
+    "price": 2.5,
+    "components": [
+      {
+        "item": "Golden Broccoli Cheese Soup (8 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Golden Broccoli Cheese Soup (12 oz)",
+    "station": "Soup",
+    "price": 3.0,
+    "components": [
+      {
+        "item": "Golden Broccoli Cheese Soup (12 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Italian Wedding Soup (8 oz)",
+    "station": "Soup",
+    "price": 2.5,
+    "components": [
+      {
+        "item": "Italian Wedding Soup (8 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Italian Wedding Soup (12 oz)",
+    "station": "Soup",
+    "price": 3.0,
+    "components": [
+      {
+        "item": "Italian Wedding Soup (12 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Cream of Potato (8 oz)",
+    "station": "Soup",
+    "price": 2.5,
+    "components": [
+      {
+        "item": "Cream of Potato (8 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Cream of Potato (12 oz)",
+    "station": "Soup",
+    "price": 3.0,
+    "components": [
+      {
+        "item": "Cream of Potato (12 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Minestrone Soup (8 oz)",
+    "station": "Soup",
+    "price": 2.5,
+    "components": [
+      {
+        "item": "Minestrone Soup (8 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Minestrone Soup (12 oz)",
+    "station": "Soup",
+    "price": 3.0,
+    "components": [
+      {
+        "item": "Minestrone Soup (12 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Chicken Gumbo (8 oz)",
+    "station": "Soup",
+    "price": 2.5,
+    "components": [
+      {
+        "item": "Chicken Gumbo (8 oz)"
+      }
+    ]
+  },
+  {
+    "name": "Chicken Gumbo (12 oz)",
+    "station": "Soup",
+    "price": 3.0,
+    "components": [
+      {
+        "item": "Chicken Gumbo (12 oz)"
+      }
+    ]
+  }
+]

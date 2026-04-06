@@ -1,0 +1,132 @@
+[
+  {
+    "name": "Lemon Garlic Baked Chicken",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [
+      { "item": "Lemon Garlic Chicken" },
+      { "item": "Lemon Garlic Cream Sauce" }
+    ]
+  },
+  {
+    "name": "Gyro Sandwich with Pita",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [
+      { "item": "Gyro Meat" },
+      { "item": "Pita Bread" }
+    ]
+  },
+  {
+    "name": "Roast Turkey Breast",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Roast Turkey Breast" }]
+  },
+  {
+    "name": "Chicken Tinga",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Chicken Tinga" }]
+  },
+  {
+    "name": "Southwest Beef Macaroni",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Southwest Beefy Macaroni" }]
+  },
+  {
+    "name": "Jerk Chicken",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Jerk Chicken" }]
+  },
+  {
+    "name": "Chicken Cordon Bleu",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [
+      { "item": "Chicken Cordon Bleu" },
+      { "item": "Mornay Sauce" }
+    ]
+  },
+  {
+    "name": "Tortilla Crusted Tilapia",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Tortilla Crusted Tilapia" }]
+  },
+  {
+    "name": "Dijon Chicken",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [
+      { "item": "Basic Chicken Breast" },
+      { "item": "Dijon Cream Sauce" }
+    ]
+  },
+  {
+    "name": "Baked Herb Cod",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Baked Herb Cod" }]
+  },
+  {
+    "name": "Baked Chicken Parmesan",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [
+      { "item": "Chicken Parmesan" },
+      { "item": "Marinara sauce" },
+      { "item": "Pasta" }
+    ]
+  },
+  {
+    "name": "Biryani Chicken",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Biryani" }]
+  },
+  {
+    "name": "Chopped Steak with Onion Gravy",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Chopped Steak with Onion Gravy" }]
+  },
+  {
+    "name": "Cajun Shrimp Pasta",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Cajun Shrimp Pasta" }]
+  },
+  {
+    "name": "Chicken Marsala",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Chicken Marsala" }]
+  },
+  {
+    "name": "Chicken Tikka Masala",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Chicken Tikka Masala" }]
+  },
+  {
+    "name": "Chipotle Orange Chicken",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Chipotle & Orange Chicken" }]
+  },
+  {
+    "name": "Vegetable Pot Pie served with Biscuit",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Vegetable Pot Pie with Biscuit" }]
+  },
+  {
+    "name": "Chicken Vesuvio",
+    "station": "Mindful",
+    "price": 5.50,
+    "components": [{ "item": "Chicken Vesuvio" }]
+  }
+]

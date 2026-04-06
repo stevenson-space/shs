@@ -24,9 +24,12 @@ export const NutritionalInfo = z.object({
   protein_g: z.number(),
 });
 
+export const HiddenReason = z.enum(["unncessary", "unavailable"]);
+
 export const FoodItemMetadata = z.object({
   name: z.string(),
   recipe: z.array(z.number()),
+  hidden: HiddenReason.optional(),
 });
 
 export const FoodInformation = z.object({
@@ -35,7 +38,30 @@ export const FoodInformation = z.object({
   allergens: z.array(Allergen),
 });
 
+export const MenuItemComponent = z.union([
+  z.object({ item: z.string() }),
+  z.object({ item: z.string(), addedByDefault: z.boolean() }),
+]);
+
+// TODO(food): should this be named "Category" instead?
+export const Station = z.enum([
+  "Grill", "Deli", "Simply to Go", "Grab 'n Go", "International",
+  "Mindful", "Breakfast", "Comfort", "Pizza", "Sides", "Soup",
+  "Panini", "PWC", "Jazzman's", "Beverage",
+]);
+
+export const MenuItem = z.object({
+  name: z.string(),
+  station: Station,
+  price: z.number(),
+  components: z.array(MenuItemComponent),
+});
+
 export type Allergen = z.infer<typeof Allergen>;
 export type NutritionalInfo = z.infer<typeof NutritionalInfo>;
+export type HiddenReason = z.infer<typeof HiddenReason>;
 export type FoodItemMetaData = z.infer<typeof FoodItemMetadata>;
 export type FoodInformation = z.infer<typeof FoodInformation>;
+export type Station = z.infer<typeof Station>;
+export type MenuIngredient = z.infer<typeof MenuItemComponent>;
+export type MenuItem = z.infer<typeof MenuItem>;

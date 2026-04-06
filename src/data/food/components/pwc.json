@@ -2,6 +2,7 @@
   {
     "metadata": {
       "name": "Red Pepper Gouda Bisque",
+      "hidden": "unavailable",
       "recipe": [
         557163
       ]
@@ -31,6 +32,7 @@
   {
     "metadata": {
       "name": "Mexican Street Corn Soup",
+      "hidden": "unavailable",
       "recipe": [
         128505
       ]
@@ -57,6 +59,7 @@
   {
     "metadata": {
       "name": "Smokey Poblano Cheese Soup",
+      "hidden": "unavailable",
       "recipe": [
         825600
       ]
@@ -83,6 +86,7 @@
   {
     "metadata": {
       "name": "Cream of Potato Soup",
+      "hidden": "unavailable",
       "recipe": [
         570102
       ]
@@ -112,6 +116,7 @@
   {
     "metadata": {
       "name": "Butternut Squash Bisque",
+      "hidden": "unavailable",
       "recipe": [
         374850
       ]
@@ -138,6 +143,7 @@
   {
     "metadata": {
       "name": "Vegetarian Garden Vegetable Soup",
+      "hidden": "unavailable",
       "recipe": [
         403930
       ]
@@ -162,6 +168,7 @@
   {
     "metadata": {
       "name": "Corn Chowder",
+      "hidden": "unavailable",
       "recipe": [
         527290
       ]
@@ -219,6 +226,7 @@
   {
     "metadata": {
       "name": "Stuffed Pepper Soup",
+      "hidden": "unavailable",
       "recipe": [
         374860
       ]
@@ -247,6 +255,7 @@
   {
     "metadata": {
       "name": "Sweet Pepper Beef Soup",
+      "hidden": "unavailable",
       "recipe": [
         515830
       ]
@@ -269,35 +278,6 @@
     "allergens": [
       "Fish",
       "Soy"
-    ]
-  },
-  {
-    "metadata": {
-      "name": "Italian Wedding Soup",
-      "recipe": [
-        403940
-      ]
-    },
-    "nutrition": {
-      "serving_size": "8 oz",
-      "calories": 80.0,
-      "fat_calories": 20.0,
-      "total_fat_g": 2.0,
-      "saturated_fat_g": 1.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 10.0,
-      "sodium_mg": 550.0,
-      "total_carbs_g": 12.0,
-      "fiber_g": 0.5,
-      "total_sugar_g": 1.0,
-      "added_sugar_g": 0.5,
-      "protein_g": 5.0
-    },
-    "allergens": [
-      "Gluten",
-      "Milk",
-      "Soy",
-      "Wheat"
     ]
   },
   {
@@ -361,6 +341,7 @@
   {
     "metadata": {
       "name": "Turkey BLT on Multigrain Bread w/Jalapeno Mayonnaise",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -388,6 +369,7 @@
   {
     "metadata": {
       "name": "Grilled Pesto Havarti Cheese Sandwich",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -415,6 +397,7 @@
   {
     "metadata": {
       "name": "Breakfast Croissant Sandwich with Turkey Bacon",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -443,6 +426,7 @@
   {
     "metadata": {
       "name": "Breakfast Croissant Sandwich with Veggie Sausage",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -471,6 +455,7 @@
   {
     "metadata": {
       "name": "Chicken Artichoke Puff",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -498,6 +483,7 @@
   {
     "metadata": {
       "name": "Hot Dog Cheese Puff",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -525,6 +511,7 @@
   {
     "metadata": {
       "name": "Chicken, Turkey Bacon, Ranch Flatbread",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -553,6 +540,7 @@
   {
     "metadata": {
       "name": "Roasted Tomato Flatbread",
+      "hidden": "unavailable",
       "recipe": [
         84792
       ]
@@ -584,6 +572,7 @@
   {
     "metadata": {
       "name": "Chicken Pot Pie",
+      "hidden": "unavailable",
       "recipe": [
         62992
       ]
@@ -613,6 +602,7 @@
   {
     "metadata": {
       "name": "Spicy Roasted Vegetable Flatbread",
+      "hidden": "unavailable",
       "recipe": [
         51852
       ]
@@ -643,6 +633,7 @@
   {
     "metadata": {
       "name": "Roasted Sweet Potato Wrap",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -670,6 +661,7 @@
   {
     "metadata": {
       "name": "Zucchini Bacon Swiss Frittata",
+      "hidden": "unavailable",
       "recipe": [
         212543
       ]
@@ -698,6 +690,7 @@
   {
     "metadata": {
       "name": "Grecian Egg White Frittata",
+      "hidden": "unavailable",
       "recipe": [
         98598
       ]
@@ -727,6 +720,7 @@
   {
     "metadata": {
       "name": "Chicken Mozzarella Rollup",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -867,6 +861,7 @@
   {
     "metadata": {
       "name": "Sweet Potato Turnover",
+      "hidden": "unavailable",
       "recipe": [
         97686
       ]
@@ -925,6 +920,7 @@
   {
     "metadata": {
       "name": "Blueberry Cobbler Muffin Filled with Cream Cheese",
+      "hidden": "unavailable",
       "recipe": [
         771502
       ]
@@ -1043,6 +1039,7 @@
   {
     "metadata": {
       "name": "Greek Flatbread",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -1069,7 +1066,8 @@
   },
   {
     "metadata": {
-      "name": "Ratatouille",
+      "name": "Ratatouille (PWC)",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -1116,6 +1114,7 @@
   {
     "metadata": {
       "name": "Vegetarian Gluten Free Pasta with Vegetables and Cheese",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -1537,7 +1536,7 @@
   },
   {
     "metadata": {
-      "name": "Broccoli",
+      "name": "Broccoli Florets",
       "recipe": [
         3505
       ]
@@ -1562,6 +1561,7 @@
   {
     "metadata": {
       "name": "Quinoa",
+      "hidden": "unavailable",
       "recipe": [
         69701
       ]
@@ -1588,6 +1588,7 @@
   {
     "metadata": {
       "name": "Farro",
+      "hidden": "unavailable",
       "recipe": [
         90172
       ]
@@ -1614,6 +1615,7 @@
   {
     "metadata": {
       "name": "Rice Noodles",
+      "hidden": "unavailable",
       "recipe": [
         53092
       ]
@@ -1638,6 +1640,7 @@
   {
     "metadata": {
       "name": "Barley",
+      "hidden": "unavailable",
       "recipe": [
         276509679
       ]
@@ -1712,6 +1715,7 @@
   {
     "metadata": {
       "name": "Roasted Beets",
+      "hidden": "unavailable",
       "recipe": [
         44556
       ]
@@ -1738,6 +1742,7 @@
   {
     "metadata": {
       "name": "Jicama",
+      "hidden": "unavailable",
       "recipe": [
         9078
       ]
@@ -1762,6 +1767,7 @@
   {
     "metadata": {
       "name": "Chicken Breast Strips",
+      "hidden": "unavailable",
       "recipe": [
         99534
       ]
@@ -1789,6 +1795,7 @@
   {
     "metadata": {
       "name": "Beef Flank Steak",
+      "hidden": "unavailable",
       "recipe": [
         38427
       ]
@@ -1816,6 +1823,7 @@
   {
     "metadata": {
       "name": "Plant Based Shrimp",
+      "hidden": "unavailable",
       "recipe": [
         124579
       ]
@@ -1840,6 +1848,7 @@
   {
     "metadata": {
       "name": "Tofu",
+      "hidden": "unavailable",
       "recipe": [
         90921
       ]
@@ -1866,6 +1875,7 @@
   {
     "metadata": {
       "name": "Green Goddess Dressing",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -1917,6 +1927,7 @@
   {
     "metadata": {
       "name": "Ranch Dressing Lite",
+      "hidden": "unavailable",
       "recipe": [
         784814
       ]
@@ -2024,7 +2035,7 @@
   },
   {
     "metadata": {
-      "name": "Chicken Salad",
+      "name": "Chicken Scoop Salad",
       "recipe": [
         58023
       ]
@@ -2052,7 +2063,7 @@
   },
   {
     "metadata": {
-      "name": "Tuna Salad",
+      "name": "Tuna Scoop Salad",
       "recipe": [
         47110
       ]
@@ -2232,6 +2243,7 @@
   {
     "metadata": {
       "name": "Harvest Grain Bowl",
+      "hidden": "unavailable",
       "recipe": [
         211790
       ]
@@ -2494,6 +2506,7 @@
   {
     "metadata": {
       "name": "Turkey Pinwheels",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -2549,7 +2562,7 @@
   },
   {
     "metadata": {
-      "name": "Strawberry",
+      "name": "Strawberry Cup",
       "recipe": [
         67892
       ]
@@ -2717,33 +2730,6 @@
   },
   {
     "metadata": {
-      "name": "Strawberry Yogurt Parfait",
-      "recipe": [
-        211891
-      ]
-    },
-    "nutrition": {
-      "serving_size": "1 each",
-      "calories": 300.0,
-      "fat_calories": 35.0,
-      "total_fat_g": 3.5,
-      "saturated_fat_g": 1.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 5.0,
-      "sodium_mg": 130.0,
-      "total_carbs_g": 60.0,
-      "fiber_g": 3.0,
-      "total_sugar_g": 35.0,
-      "added_sugar_g": 25.0,
-      "protein_g": 8.0
-    },
-    "allergens": [
-      "Gluten",
-      "Milk"
-    ]
-  },
-  {
-    "metadata": {
       "name": "Blueberry Parfait",
       "recipe": [
         211893
@@ -2852,6 +2838,7 @@
   {
     "metadata": {
       "name": "Cottage Cheese Box",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -2991,33 +2978,8 @@
   },
   {
     "metadata": {
-      "name": "Cheese & Grape Cup",
-      "recipe": [
-        56726
-      ]
-    },
-    "nutrition": {
-      "serving_size": "1 Each",
-      "calories": 520.0,
-      "fat_calories": 340.0,
-      "total_fat_g": 38.0,
-      "saturated_fat_g": 24.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 120.0,
-      "sodium_mg": 710.0,
-      "total_carbs_g": 17.0,
-      "fiber_g": 0.5,
-      "total_sugar_g": 14.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 29.0
-    },
-    "allergens": [
-      "Milk"
-    ]
-  },
-  {
-    "metadata": {
       "name": "Falafel Grain Bowl",
+      "hidden": "unavailable",
       "recipe": [
         211784
       ]
@@ -3045,6 +3007,7 @@
   {
     "metadata": {
       "name": "Whole Grain Triple Berry Muffin",
+      "hidden": "unavailable",
       "recipe": [
         411582
       ]
@@ -3207,6 +3170,7 @@
   {
     "metadata": {
       "name": "Acai Bowl with Toppings (Large)",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -4069,6 +4033,7 @@
   {
     "metadata": {
       "name": "Monin Vanilla Syrup Sugar Free",
+      "hidden": "unncessary",
       "recipe": [
         853910
       ]
@@ -4093,6 +4058,7 @@
   {
     "metadata": {
       "name": "Monin Caramel Syrup Sugar Free",
+      "hidden": "unncessary",
       "recipe": [
         608962
       ]
@@ -4117,6 +4083,7 @@
   {
     "metadata": {
       "name": "Monin Hazelnut Syrup Sugar Free",
+      "hidden": "unncessary",
       "recipe": [
         1121055
       ]
@@ -4143,6 +4110,7 @@
   {
     "metadata": {
       "name": "Monin Dark Chocolate Sauce",
+      "hidden": "unncessary",
       "recipe": [
         1156790
       ]
@@ -4169,6 +4137,7 @@
   {
     "metadata": {
       "name": "Monin Dark Chocolate Sauce Sugar Free",
+      "hidden": "unncessary",
       "recipe": [
         1121057
       ]
@@ -4195,6 +4164,7 @@
   {
     "metadata": {
       "name": "Monin Carmel Sauce",
+      "hidden": "unncessary",
       "recipe": [
         1155765
       ]
@@ -4221,6 +4191,7 @@
   {
     "metadata": {
       "name": "White Chocolate Sauce",
+      "hidden": "unncessary",
       "recipe": [
         2109
       ]

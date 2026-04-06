@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Hamburger",
+    "station": "Grill",
+    "price": 4.75,
+    "components": [
+      { "item": "Hamburger Patty" },
+      { "item": "Hamburger Bun" },
+      { "item": "Ketchup", "addedByDefault": false },
+      { "item": "Mustard", "addedByDefault": false },
+      { "item": "Mayonnaise", "addedByDefault": false },
+      { "item": "BBQ Sauce", "addedByDefault": false },
+      { "item": "Ranch", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Cheese Burger",
+    "station": "Grill",
+    "price": 5.00,
+    "components": [
+      { "item": "Cheese Burger" },
+      { "item": "Hamburger Bun" },
+      { "item": "Ketchup", "addedByDefault": false },
+      { "item": "Mustard", "addedByDefault": false },
+      { "item": "Mayonnaise", "addedByDefault": false },
+      { "item": "BBQ Sauce", "addedByDefault": false },
+      { "item": "Ranch", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Grilled Chicken Sandwich",
+    "station": "Grill",
+    "price": 5.00,
+    "components": [
+      { "item": "Grilled Chicken Breast Sandwich" },
+      { "item": "Ketchup", "addedByDefault": false },
+      { "item": "Mustard", "addedByDefault": false },
+      { "item": "Mayonnaise", "addedByDefault": false },
+      { "item": "BBQ Sauce", "addedByDefault": false },
+      { "item": "Ranch", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Spicy Chicken Sandwich",
+    "station": "Grill",
+    "price": 5.00,
+    "components": [
+      { "item": "Spicy Chicken Sandwich" },
+      { "item": "Ketchup", "addedByDefault": false },
+      { "item": "Mustard", "addedByDefault": false },
+      { "item": "Mayonnaise", "addedByDefault": false },
+      { "item": "BBQ Sauce", "addedByDefault": false },
+      { "item": "Ranch", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Black Bean Burger",
+    "station": "Grill",
+    "price": 5.00,
+    "components": [
+      { "item": "Black Bean Chipotle Patty" },
+      { "item": "Hamburger Bun" },
+      { "item": "Ketchup", "addedByDefault": false },
+      { "item": "Mustard", "addedByDefault": false },
+      { "item": "Mayonnaise", "addedByDefault": false },
+      { "item": "BBQ Sauce", "addedByDefault": false },
+      { "item": "Ranch", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Chicken Tenders",
+    "station": "Grill",
+    "price": 4.00,
+    "components": [
+      { "item": "Baked Chicken Tenders" },
+      { "item": "Ketchup", "addedByDefault": false },
+      { "item": "Mustard", "addedByDefault": false },
+      { "item": "Mayonnaise", "addedByDefault": false },
+      { "item": "BBQ Sauce", "addedByDefault": false },
+      { "item": "Ranch", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Battered Fries",
+    "station": "Grill",
+    "price": 2.00,
+    "components": [
+      { "item": "Baked Battered French Fries" },
+      { "item": "Ketchup", "addedByDefault": false },
+      { "item": "Mustard", "addedByDefault": false },
+      { "item": "Mayonnaise", "addedByDefault": false },
+      { "item": "BBQ Sauce", "addedByDefault": false },
+      { "item": "Ranch", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Seasoned Fries",
+    "station": "Grill",
+    "price": 2.00,
+    "components": [
+      { "item": "Baked Seasoned French Fries" },
+      { "item": "Ketchup", "addedByDefault": false },
+      { "item": "Mustard", "addedByDefault": false },
+      { "item": "Mayonnaise", "addedByDefault": false },
+      { "item": "BBQ Sauce", "addedByDefault": false },
+      { "item": "Ranch", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Curly Fries",
+    "station": "Grill",
+    "price": 2.00,
+    "components": [
+      { "item": "Baked Curly Fries" },
+      { "item": "Ketchup", "addedByDefault": false },
+      { "item": "Mustard", "addedByDefault": false },
+      { "item": "Mayonnaise", "addedByDefault": false },
+      { "item": "BBQ Sauce", "addedByDefault": false },
+      { "item": "Ranch", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Sweet Potato Fries",
+    "station": "Grill",
+    "price": 2.00,
+    "components": [
+      { "item": "Baked Sweet Potato Fries" },
+      { "item": "Ketchup", "addedByDefault": false },
+      { "item": "Mustard", "addedByDefault": false },
+      { "item": "Mayonnaise", "addedByDefault": false },
+      { "item": "BBQ Sauce", "addedByDefault": false },
+      { "item": "Ranch", "addedByDefault": false }
+    ]
+  }
+]

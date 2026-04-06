@@ -137,7 +137,7 @@
       "recipe": [727271]
     },
     "nutrition": {
-      "serving_size": "1 each",
+      "serving_size": "1 Tortilla",
       "calories": 290,
       "fat_calories": 72,
       "total_fat_g": 8.0,
@@ -243,7 +243,7 @@
   },
   {
     "metadata": {
-      "name": "Hummus",
+      "name": "Hummus (Deli)",
       "recipe": [357374]
     },
     "nutrition": {
@@ -460,72 +460,6 @@
       "protein_g": 5.0
     },
     "allergens": ["Milk", "Soy"]
-  },
-  {
-    "metadata": {
-      "name": "Mayonnaise",
-      "recipe": [451474]
-    },
-    "nutrition": {
-      "serving_size": "1 Tablespoon",
-      "calories": 100,
-      "fat_calories": 99,
-      "total_fat_g": 11.0,
-      "saturated_fat_g": 2.0,
-      "trans_fat_g": 0,
-      "cholesterol_mg": 10.0,
-      "sodium_mg": 80.0,
-      "total_carbs_g": 0,
-      "fiber_g": 0,
-      "total_sugar_g": 0,
-      "added_sugar_g": 0,
-      "protein_g": 0
-    },
-    "allergens": ["Egg", "Soy"]
-  },
-  {
-    "metadata": {
-      "name": "Mustard",
-      "recipe": [741270]
-    },
-    "nutrition": {
-      "serving_size": "1 Teaspoon",
-      "calories": 0,
-      "fat_calories": 0,
-      "total_fat_g": 0,
-      "saturated_fat_g": 0,
-      "trans_fat_g": 0,
-      "cholesterol_mg": 0,
-      "sodium_mg": 55.0,
-      "total_carbs_g": 0,
-      "fiber_g": 0,
-      "total_sugar_g": 0,
-      "added_sugar_g": 0,
-      "protein_g": 0
-    },
-    "allergens": ["Mustard"]
-  },
-  {
-    "metadata": {
-      "name": "Ranch",
-      "recipe": [759082]
-    },
-    "nutrition": {
-      "serving_size": "2 Tablespoon",
-      "calories": 120,
-      "fat_calories": 117,
-      "total_fat_g": 13.0,
-      "saturated_fat_g": 2.0,
-      "trans_fat_g": 0,
-      "cholesterol_mg": 10.0,
-      "sodium_mg": 250.0,
-      "total_carbs_g": 2.0,
-      "fiber_g": 0,
-      "total_sugar_g": 1.0,
-      "added_sugar_g": 1.0,
-      "protein_g": 0
-    },
-    "allergens": ["Egg", "MSG", "Milk", "Soy"]
   },
   {
     "metadata": {

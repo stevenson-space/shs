@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Deli Sandwich Basic",
+    "station": "Deli",
+    "price": 4.25,
+    "components": [
+      { "item": "White Bread", "addedByDefault": true },
+      { "item": "Wheat Bread", "addedByDefault": false },
+      { "item": "9-Grain Wheat", "addedByDefault": false },
+      { "item": "Pretzel Bun", "addedByDefault": false },
+      { "item": "Medium Kaiser", "addedByDefault": false },
+      { "item": "French Roll", "addedByDefault": false },
+      { "item": "12\" Flour Tortilla", "addedByDefault": false },
+      { "item": "Turkey Breast Sliced", "addedByDefault": true },
+      { "item": "Ham", "addedByDefault": false },
+      { "item": "Roast Beef Sliced", "addedByDefault": false },
+      { "item": "Salami Sliced", "addedByDefault": false },
+      { "item": "Hummus (Deli)", "addedByDefault": false },
+      { "item": "Buffalo Chicken", "addedByDefault": false },
+      { "item": "BBQ Chicken", "addedByDefault": false },
+      { "item": "Bacon", "addedByDefault": false },
+      { "item": "Swiss Cheese", "addedByDefault": false },
+      { "item": "Cheddar Cheese", "addedByDefault": false },
+      { "item": "Pepper Jack Cheese", "addedByDefault": false },
+      { "item": "Provolone", "addedByDefault": false },
+      { "item": "American Cheese", "addedByDefault": false },
+      { "item": "Swiss American Cheese", "addedByDefault": false },
+      { "item": "Mayonnaise", "addedByDefault": true },
+      { "item": "Mustard", "addedByDefault": false },
+      { "item": "Ranch", "addedByDefault": false },
+      { "item": "Honey Mustard", "addedByDefault": false },
+      { "item": "Chipotle Mayonnaise", "addedByDefault": false },
+      { "item": "Italian Dressing", "addedByDefault": false }
+    ]
+  }
+]

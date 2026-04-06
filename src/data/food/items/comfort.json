@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Cheese Tortellini",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Cheese Tortellini Marinara" }]
+  },
+  {
+    "name": "Chicken Shawarma with Pita",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [
+      { "item": "Chicken Thigh" },
+      { "item": "Pita Bread" },
+      { "item": "Allspice" },
+      { "item": "Garlic Granulated" },
+      { "item": "Cloves" },
+      { "item": "Cinnamon" },
+      { "item": "Nutmeg" },
+      { "item": "Cardamom" },
+      { "item": "Chili Powder" },
+      { "item": "Oregano" }
+    ]
+  },
+  {
+    "name": "Beef Meatloaf",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [
+      { "item": "Homemade Beef Meatloaf" },
+      { "item": "Brown Gravy", "addedByDefault": true }
+    ]
+  },
+  {
+    "name": "Baked Mostaccioli",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Baked Mostaccioli" }]
+  },
+  {
+    "name": "BBQ Pulled Chicken Sandwich",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Bbq Pulled Chicken Sandwich" }]
+  },
+  {
+    "name": "Blackened Tilapia",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Blackened Tilapia" }]
+  },
+  {
+    "name": "Veggie Chilaquiles",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Veggie Chilaquiles" }]
+  },
+  {
+    "name": "Chicken Tetrazzini",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Chicken Tatrazini" }]
+  },
+  {
+    "name": "Turkey Sloppy Joe",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Turkey Sloppy Joe on a Bun" }]
+  },
+  {
+    "name": "Roasted Italian Chicken Thigh",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Roasted Italian Chicken Thigh" }]
+  },
+  {
+    "name": "Vegetable Paella",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Vegetable Paella" }]
+  },
+  {
+    "name": "Three Cheese Penne",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Three Cheese Penne" }]
+  },
+  {
+    "name": "Falafel Sandwich",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [
+      { "item": "Falafel Sandwich" },
+      { "item": "Pita Bread" }
+    ]
+  },
+  {
+    "name": "Fried Chicken",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Fried Chicken" }]
+  },
+  {
+    "name": "Baked Turkey Meatloaf",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [
+      { "item": "Turkey Meatloaf with Chipotle BBQ" },
+      { "item": "Turkey Gravy" },
+      { "item": "Chipotle BBQ Sauce" }
+    ]
+  },
+  {
+    "name": "Spicy Whole Wheat Spaghetti",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Spicy Whole Wheat Spaghetti" }]
+  },
+  {
+    "name": "Swedish Meatballs",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [
+      { "item": "Swedish Meatballs" },
+      { "item": "Egg Noodles" }
+    ]
+  },
+  {
+    "name": "Cheese Enchilada Casserole",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Cheese Enchilada Casserole" }]
+  },
+  {
+    "name": "Adobo Roasted Turkey Breast",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Adobo Roasted Turkey Breast" }]
+  },
+  {
+    "name": "Baked Battered Cod",
+    "station": "Comfort",
+    "price": 4.50,
+    "components": [{ "item": "Baked Battered Cod" }]
+  }
+]

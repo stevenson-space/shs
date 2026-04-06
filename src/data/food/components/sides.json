@@ -94,6 +94,7 @@
   {
     "metadata": {
       "name": "White Rice",
+      "hidden": "unavailable",
       "recipe": [58069]
     },
     "nutrition": {
@@ -435,6 +436,7 @@
   {
     "metadata": {
       "name": "Sugar Snap Peas",
+      "hidden": "unavailable",
       "recipe": [94198]
     },
     "nutrition": {
@@ -511,6 +513,7 @@
   {
     "metadata": {
       "name": "Roasted Snow Peas",
+      "hidden": "unavailable",
       "recipe": [59142]
     },
     "nutrition": {
@@ -782,6 +785,7 @@
   {
     "metadata": {
       "name": "Baked Vegetable Spring Roll",
+      "hidden": "unavailable",
       "recipe": [92763]
     },
     "nutrition": {
@@ -810,6 +814,7 @@
   {
     "metadata": {
       "name": "Fried Rice",
+      "hidden": "unavailable",
       "recipe": [213228, 254991]
     },
     "nutrition": {
@@ -837,6 +842,7 @@
   {
     "metadata": {
       "name": "Baked Vegetable Egg Roll",
+      "hidden": "unavailable",
       "recipe": [92762]
     },
     "nutrition": {
@@ -864,6 +870,7 @@
   {
     "metadata": {
       "name": "Couscous Primavera",
+      "hidden": "unavailable",
       "recipe": [80243]
     },
     "nutrition": {

@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Burrito Bowl",
+    "station": "International",
+    "price": 6.00,
+    "components": [
+      { "item": "Lime Cilantro Rice" },
+      { "item": "Chicken Breast Seasoned", "addedByDefault": true },
+      { "item": "Picadillo", "addedByDefault": false },
+      { "item": "Seasoned Black Beans", "addedByDefault": true },
+      { "item": "Corn Salsa", "addedByDefault": true },
+      { "item": "Pico De Gallo", "addedByDefault": true },
+      { "item": "Sour Cream", "addedByDefault": true },
+      { "item": "Salsa", "addedByDefault": true },
+      { "item": "Salsa Verde", "addedByDefault": false },
+      { "item": "Guacamole", "addedByDefault": true }
+    ]
+  },
+  {
+    "name": "Pasta",
+    "station": "International",
+    "price": 6.00,
+    "components": [
+      { "item": "Penne Pasta" },
+      { "item": "Spaghetti/Marinara Sauce", "addedByDefault": true },
+      { "item": "Alfredo Sauce", "addedByDefault": false },
+      { "item": "Vodka Sauce", "addedByDefault": false },
+      { "item": "Chicken Breast", "addedByDefault": true },
+      { "item": "Meatballs 1 Oz Beef", "addedByDefault": false },
+      { "item": "Meatballs 1/2 Oz Beef", "addedByDefault": false },
+      { "item": "Italian Sausage", "addedByDefault": false },
+      { "item": "Parmesan Cheese", "addedByDefault": true },
+      { "item": "Parmesan Cheese Shredded", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Mac & Cheese Bowl",
+    "station": "International",
+    "price": 6.00,
+    "components": [
+      { "item": "Macaroni & Cheese" },
+      { "item": "Bbq Chicken", "addedByDefault": true },
+      { "item": "Broccoli", "addedByDefault": true },
+      { "item": "Vegetarian Chili", "addedByDefault": true },
+      { "item": "Bacon Bits", "addedByDefault": true },
+      { "item": "Diced Tomatoes", "addedByDefault": false },
+      { "item": "Green Peppers", "addedByDefault": false },
+      { "item": "Jalapenos", "addedByDefault": false },
+      { "item": "Shredded Cheddar Cheese & Shredded Monterey Jack Cheese", "addedByDefault": false },
+      { "item": "Buffalo Sauce", "addedByDefault": false },
+      { "item": "French Fried Onions", "addedByDefault": false },
+      { "item": "Crispy Jalapenos", "addedByDefault": false }
+    ]
+  },
+  {
+    "name": "Asian Bowl",
+    "station": "International",
+    "price": 6.00,
+    "components": [
+      { "item": "Lo-Mein Noodles", "addedByDefault": true },
+      { "item": "Fried Rice with Vegetables", "addedByDefault": false },
+      { "item": "Ginger Rice", "addedByDefault": false },
+      { "item": "Orange Chicken", "addedByDefault": true },
+      { "item": "Sweet Fire Chicken", "addedByDefault": false },
+      { "item": "Teriyaki Meatballs", "addedByDefault": false },
+      { "item": "Honey Sesame Meatballs", "addedByDefault": false },
+      { "item": "Gochujang Meatballs", "addedByDefault": false },
+      { "item": "Asian Vegetable Blend", "addedByDefault": false },
+      { "item": "Green Onions", "addedByDefault": false },
+      { "item": "Crisp Chow Mein Noodles", "addedByDefault": false },
+      { "item": "Sesame Seeds", "addedByDefault": false },
+      { "item": "Sweet Chili Sauce", "addedByDefault": false },
+      { "item": "Teriyaki Sauce", "addedByDefault": false },
+      { "item": "Soy Sauce", "addedByDefault": false },
+      { "item": "Sriracha Sauce", "addedByDefault": false }
+    ]
+  }
+]

@@ -131,6 +131,7 @@
   {
     "metadata": {
       "name": "Thai Basil Beef",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -442,31 +443,8 @@
   },
   {
     "metadata": {
-      "name": "White Rice",
-      "recipe": [58069]
-    },
-    "nutrition": {
-      "serving_size": "4 oz",
-      "calories": 170.0,
-      "fat_calories": 0.0,
-      "total_fat_g": 0.0,
-      "saturated_fat_g": 0.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 0.0,
-      "sodium_mg": 0.0,
-      "total_carbs_g": 36.0,
-      "fiber_g": 1.0,
-      "total_sugar_g": 0.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 3.0
-    },
-    "allergens": [
-      "Soy"
-    ]
-  },
-  {
-    "metadata": {
       "name": "Mediterranean Chicken",
+      "hidden": "unavailable",
       "recipe": [41843]
     },
     "nutrition": {
@@ -491,6 +469,7 @@
   {
     "metadata": {
       "name": "Falafel",
+      "hidden": "unavailable",
       "recipe": [587083]
     },
     "nutrition": {
@@ -512,33 +491,8 @@
   },
   {
     "metadata": {
-      "name": "Gyro Meat",
-      "recipe": [216631]
-    },
-    "nutrition": {
-      "serving_size": "2 oz.",
-      "calories": 210.0,
-      "fat_calories": 153.0,
-      "total_fat_g": 17.0,
-      "saturated_fat_g": 7.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 35.0,
-      "sodium_mg": 340.0,
-      "total_carbs_g": 4.0,
-      "fiber_g": 1.0,
-      "total_sugar_g": 0.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 8.0
-    },
-    "allergens": [
-      "Gluten",
-      "Soy",
-      "Wheat"
-    ]
-  },
-  {
-    "metadata": {
       "name": "Naan",
+      "hidden": "unavailable",
       "recipe": [216713]
     },
     "nutrition": {
@@ -568,6 +522,7 @@
   {
     "metadata": {
       "name": "Hummus",
+      "hidden": "unavailable",
       "recipe": [92743]
     },
     "nutrition": {
@@ -593,6 +548,7 @@
   {
     "metadata": {
       "name": "Cabbage Salad",
+      "hidden": "unavailable",
       "recipe": [61230]
     },
     "nutrition": {
@@ -617,6 +573,7 @@
   {
     "metadata": {
       "name": "Tomato Cucumber Salad",
+      "hidden": "unavailable",
       "recipe": [62546]
     },
     "nutrition": {
@@ -642,6 +599,7 @@
   {
     "metadata": {
       "name": "Couscous Salad",
+      "hidden": "unavailable",
       "recipe": [62496]
     },
     "nutrition": {
@@ -667,31 +625,8 @@
   },
   {
     "metadata": {
-      "name": "Tahini",
-      "recipe": [53831]
-    },
-    "nutrition": {
-      "serving_size": "1 oz",
-      "calories": 60.0,
-      "fat_calories": 50.0,
-      "total_fat_g": 6.0,
-      "saturated_fat_g": 1.0,
-      "trans_fat_g": 0.0,
-      "cholesterol_mg": 0.0,
-      "sodium_mg": 290.0,
-      "total_carbs_g": 3.0,
-      "fiber_g": 1.0,
-      "total_sugar_g": 0.0,
-      "added_sugar_g": 0.0,
-      "protein_g": 2.0
-    },
-    "allergens": [
-      "Sesame"
-    ]
-  },
-  {
-    "metadata": {
       "name": "Roasted Red Pepper Sauce",
+      "hidden": "unavailable",
       "recipe": [95553]
     },
     "nutrition": {
@@ -718,6 +653,7 @@
   {
     "metadata": {
       "name": "Shug",
+      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -739,7 +675,7 @@
   },
   {
     "metadata": {
-      "name": "Pasta -Penne",
+      "name": "Penne Pasta",
       "recipe": [47023]
     },
     "nutrition": {
