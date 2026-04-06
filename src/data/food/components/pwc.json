@@ -4060,6 +4060,7 @@
   {
     "metadata": {
       "name": "Monin Vanilla Syrup Sugar Free",
+      "hidden": "unncessary",
       "recipe": [
         853910
       ]
@@ -4084,6 +4085,7 @@
   {
     "metadata": {
       "name": "Monin Caramel Syrup Sugar Free",
+      "hidden": "unncessary",
       "recipe": [
         608962
       ]
@@ -4108,6 +4110,7 @@
   {
     "metadata": {
       "name": "Monin Hazelnut Syrup Sugar Free",
+      "hidden": "unncessary",
       "recipe": [
         1121055
       ]
@@ -4134,6 +4137,7 @@
   {
     "metadata": {
       "name": "Monin Dark Chocolate Sauce",
+      "hidden": "unncessary",
       "recipe": [
         1156790
       ]
@@ -4160,6 +4164,7 @@
   {
     "metadata": {
       "name": "Monin Dark Chocolate Sauce Sugar Free",
+      "hidden": "unncessary",
       "recipe": [
         1121057
       ]
@@ -4186,6 +4191,7 @@
   {
     "metadata": {
       "name": "Monin Carmel Sauce",
+      "hidden": "unncessary",
       "recipe": [
         1155765
       ]
@@ -4212,6 +4218,7 @@
   {
     "metadata": {
       "name": "White Chocolate Sauce",
+      "hidden": "unncessary",
       "recipe": [
         2109
       ]
