@@ -310,7 +310,6 @@
   {
     "metadata": {
       "name": "Power Wrap",
-      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -776,7 +775,6 @@
   {
     "metadata": {
       "name": "California Turkey Sandwich",
-      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -804,7 +802,6 @@
   {
     "metadata": {
       "name": "Portobello Mushroom and Goat Cheese on Focaccia",
-      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -3327,7 +3324,6 @@
   {
     "metadata": {
       "name": "Thai Wrap",
-      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
@@ -3355,7 +3351,6 @@
   {
     "metadata": {
       "name": "Veggie Vitality Wrap",
-      "hidden": "unavailable",
       "recipe": []
     },
     "nutrition": {
