@@ -222,6 +222,7 @@
   {
     "metadata": {
       "name": "Chicken Shawarma",
+      "hidden": "unncessary",
       "recipe": []
     },
     "nutrition": {
