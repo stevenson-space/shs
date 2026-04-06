@@ -94,6 +94,7 @@
   {
     "metadata": {
       "name": "White Rice",
+      "hidden": "unavailable",
       "recipe": [58069]
     },
     "nutrition": {
