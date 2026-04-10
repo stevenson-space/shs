@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "name": "Labubu",
+    "author": "Maya P. ('27)",
+    "description": "Labubu"
+  },
+  "styling": {
+    "base": "light",
+    "accent": "#ffa57d",
+    "header": {
+      "background": "",
+      "scheduleBar": "",
+      "image": {
+        "full": "local://IMG_2231.jpeg"
+      }
+    },
+    "text": {
+      "primary": "#b92d5d",
+      "secondary": "#ff8c82",
+      "tertiary": "#ff8c82"
+    },
+    "iconCards": {
+      "regular": "#ff8c82",
+      "invert": "#ffc5ab"
+    },
+    "background": "#ffc5ab",
+    "secondaryBackground": "#ff8c82",
+    "particles": {
+      "images": [
+        "local://IMG_1906.jpeg"
+      ],
+      "speed": 4.2,
+      "count": 74,
+      "size": 23,
+      "opacity": 0.8,
+      "windPower": 0
+    }
+  }
+}
