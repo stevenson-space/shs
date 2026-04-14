@@ -48,6 +48,16 @@
             />
           </div>
 
+          <div class="field">
+            <label>Logo (PNG)</label>
+            <input
+              type="file"
+              accept="image/png"
+              @change="handleLogoUpload"
+              class="file-input"
+            />
+          </div>
+
           <div class="save-info">
             <font-awesome-icon :icon="icons.faFileExport" />
             <div>
@@ -64,10 +74,18 @@
             {{ error }}
           </div>
 
-          <div v-if="qrColor !== defaultColor" class="buttons">
+          <div v-if="qrColor !== defaultColor || logo" class="buttons">
             <rounded-button
+              v-if="qrColor !== defaultColor"
               @click="resetColor"
               text="Reset Color"
+              :circular="true"
+              class="btn-reset"
+            />
+            <rounded-button
+              v-if="logo"
+              @click="removeLogo"
+              text="Remove Logo"
               :circular="true"
               class="btn-reset"
             />
@@ -85,7 +103,6 @@ import QRCodeVue3 from 'space-vue3-qrcode';
 import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ColorPicker from '@/components/ColorPicker.vue';
-import logo from '@/assets/QRCodeLogo.png';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faQrcode, faFileExport } from '@fortawesome/free-solid-svg-icons';
 
@@ -106,7 +123,7 @@ export default {
       showQR: false,
       qrKey: 0,
       error: '',
-      logo,
+      logo: null,
       icons: {
         faQrcode,
         faFileExport,
@@ -150,6 +167,20 @@ export default {
   methods: {
     resetColor() {
       this.qrColor = this.defaultColor;
+    },
+    handleLogoUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.logo = e.target.result;
+        this.qrKey++;
+      };
+      reader.readAsDataURL(file);
+    },
+    removeLogo() {
+      this.logo = null;
+      this.qrKey++;
     },
   },
 };
@@ -299,6 +330,23 @@ export default {
       outline: none
       border-color: var(--accent)
       box-shadow: 0 0 0 3px rgba(128, 128, 128, 0.08)
+
+.file-input
+  cursor: pointer
+
+  &::file-selector-button
+    background: rgba(128, 128, 128, 0.1)
+    border: none
+    border-radius: 6px
+    padding: 4px 10px
+    font-size: 13px
+    color: var(--primary)
+    cursor: pointer
+    margin-right: 10px
+    transition: background 0.2s
+
+    &:hover
+      background: rgba(128, 128, 128, 0.2)
 
 .tip
   font-size: 13px
