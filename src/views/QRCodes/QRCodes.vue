@@ -42,10 +42,16 @@
 
           <div class="field">
             <label>Link</label>
-            <input
-              v-model="url"
-              placeholder="https://stevenson.space"
-            />
+            <div class="input-wrapper">
+              <input
+                v-model="url"
+                placeholder="https://stevenson.space"
+                :class="{ 'has-error': error }"
+              />
+              <info-tooltip v-if="error" :icon="faCircleExclamation" class="input-error-icon">
+                {{ error }}
+              </info-tooltip>
+            </div>
           </div>
 
           <div class="logo-row">
@@ -74,14 +80,6 @@
               <span>Drag & drop or tap and hold (mobile)</span>
             </div>
           </div>
-
-          <div v-if="url.length > 40" class="tip">
-            💡 For long links, try <a href="https://bitly.com/" target="_blank">Bitly</a>
-          </div>
-
-          <div v-if="error" class="error">
-            {{ error }}
-          </div>
         </div>
       </div>
       </card>
@@ -97,9 +95,10 @@ import Card from '@/components/Card.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import ColorPicker from '@/components/ColorPicker.vue';
 import ImageUpload from '@/components/ImageUpload.vue';
+import InfoTooltip from '@/components/InfoTooltip.vue';
 import { globalImageResolver } from '@/utils/imageResolver';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faQrcode, faFileExport } from '@fortawesome/free-solid-svg-icons';
+import { faQrcode, faFileExport, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 const defaultLogoPath = 'assets://QRCodeLogo.png';
 const defaultColor = '#1F5D39';
@@ -306,24 +305,22 @@ function reset() {
       border-color: var(--accent)
       box-shadow: 0 0 0 3px rgba(128, 128, 128, 0.08)
 
-.tip
-  font-size: 13px
-  color: var(--secondary)
-  padding: 12px 14px
-  background: rgba(128, 128, 128, 0.04)
-  border-radius: 8px
-  border-left: 3px solid var(--accent)
+.input-wrapper
+  position: relative
+  display: flex
+  align-items: center
 
-  a
-    color: var(--accent)
+  input
+    flex: 1
 
-.error
-  font-size: 13px
-  color: #ef4444
-  padding: 12px 14px
-  background: rgba(239, 68, 68, 0.08)
-  border-radius: 8px
-  border-left: 3px solid #ef4444
+  .input-error-icon
+    position: absolute
+    right: 12px
+    color: #ef4444
+
+  input.has-error
+    border-color: rgba(239, 68, 68, 0.5)
+    padding-right: 36px
 
 .logo-row
   display: flex
