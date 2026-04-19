@@ -44,6 +44,13 @@
 
         <icon-text-card :icon="icons.faDroplet" text="Switch Theme" @click="themeEditorOpen = !themeEditorOpen" />
 
+        <icon-text-card
+          v-if="!isStandalone"
+          :icon="icons.faDownload"
+          text="Install"
+          link="install"
+        />
+
         <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
 
         <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" />
@@ -65,6 +72,7 @@ import {
   faHourglass,
   faQrcode,
   faRadio,
+  faDownload,
 } from "@fortawesome/free-solid-svg-icons";
 import { mapActions } from "pinia";
 import CardContainer from "@/components/CardContainer.vue";
@@ -119,10 +127,11 @@ export default {
         faHourglass,
         faQrcode,
         faRadio,
-
+        faDownload,
       },
       fullScreenMode: false,
       themeEditorOpen: false,
+      isStandalone: false,
     };
   },
   methods: {
@@ -134,6 +143,15 @@ export default {
     window.addEventListener("focus", () => {
       this.startClock();
     });
+    // check if the app is launched as an installed PWA (standalone window) so we can hide the Install card
+    const mql = window.matchMedia('(display-mode: standalone)');
+    this.isStandalone = mql.matches || navigator.standalone === true;
+    const standaloneHandler = (e) => { this.isStandalone = e.matches; };
+    if (mql.addEventListener) {
+      mql.addEventListener('change', standaloneHandler);
+    } else {
+      mql.addListener(standaloneHandler);
+    }
   },
 };
 </script>

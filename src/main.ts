@@ -7,11 +7,25 @@ import App from './App.vue';
 import router from './router';
 
 if (navigator.serviceWorker) {
-  try {
-    navigator.serviceWorker.register('/service-workers/service-worker.js');
-  } catch (e) {
-    console.log(e);
-  }
+  navigator.serviceWorker
+    .register('/service-worker.js', { scope: '/' })
+    .catch((e) => console.warn('SW register failed', e));
+  // reload once a newly installed SW takes control
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (refreshing) return;
+    refreshing = true;
+    window.location.reload();
+  });
+  // check for update when PWA returns to foreground
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+      navigator.serviceWorker
+        .getRegistration()
+        .then((reg) => reg?.update())
+        .catch(() => {});
+    }
+  });
 }
 
 const app = createApp(App).component('font-awesome-icon', FontAwesomeIcon)
