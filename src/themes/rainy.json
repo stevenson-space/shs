@@ -16,8 +16,8 @@
     },
     "particles": {
       "images": [
-        "local://Adobe Express - file.png",
-        "local://Adobe Express - file 2.png"
+        "assets://particles/rainy-particle1.png",
+        "assets://particles/rainy-particle2.png"
       ],
       "speed": 2,
       "count": 60,
