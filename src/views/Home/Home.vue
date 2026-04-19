@@ -50,7 +50,12 @@
 
         <icon-text-card :icon="icons.faGear" text="Settings" link="settings" :invert="true" />
 
-        <icon-text-card :icon="icons.faDownload" text="Install" link="install" />
+        <icon-text-card
+          v-if="!isStandalone"
+          :icon="icons.faDownload"
+          text="Install"
+          link="install"
+        />
     </card-container>
   </div>
 </template>
@@ -126,6 +131,7 @@ export default {
       },
       fullScreenMode: false,
       themeEditorOpen: false,
+      isStandalone: false,
     };
   },
   methods: {
@@ -137,6 +143,10 @@ export default {
     window.addEventListener("focus", () => {
       this.startClock();
     });
+    // check if the app is launched as an installed PWA (standalone window) so we can hide the Install card
+    const mql = window.matchMedia('(display-mode: standalone)');
+    this.isStandalone = mql.matches || navigator.standalone === true;
+    mql.addEventListener('change', (e) => { this.isStandalone = e.matches; });
   },
 };
 </script>
