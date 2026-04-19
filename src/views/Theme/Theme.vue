@@ -191,8 +191,8 @@
                   <color-picker label="Schedule Bar" v-model="customTheme.styling.header.scheduleBar" property-path="header.scheduleBar" @update:modelValue="applyTheme" />
                 </div>
                 <div class="image-uploads-row">
-                  <image-upload label="Full" v-model="headerImageFull" :min-aspect-ratio="1.5" @blur="applyTheme" />
-                  <image-upload label="Mobile" v-model="headerImageMobile" :min-aspect-ratio="1.5" @blur="applyTheme" />
+                  <image-upload label="Full" v-model="headerImageFull" :min-aspect-ratio="1.5" :asset-sources="['header-images/']" asset-title="Browse Header Images" :asset-thumbnail-square="false" @blur="applyTheme" />
+                  <image-upload label="Mobile" v-model="headerImageMobile" :min-aspect-ratio="1.5" :asset-sources="['header-images/']" asset-title="Browse Header Images" :asset-thumbnail-square="false" @blur="applyTheme" />
                 </div>
               </collapsible-section>
 
@@ -265,7 +265,9 @@
                         v-for="(image, index) in particleImages"
                         :key="`particle-${index}-${image}`"
                         :model-value="image"
-                        :asset-folder="'particles'"
+                        :asset-sources="['particles/']"
+                        asset-title="Browse Particle Images"
+                        :asset-thumbnail-square="true"
                         :min-aspect-ratio="0"
                         @update:modelValue="updateParticleImage(index, $event)"
                         @blur="applyTheme"

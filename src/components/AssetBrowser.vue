@@ -15,14 +15,14 @@
               No images found
             </div>
 
-            <div v-else class="images-grid" :class="{ 'particles-grid': folder === 'particles' }">
+            <div v-else class="images-grid" :class="{ 'square-grid': thumbnailSquare }">
               <div
                 v-for="image in allImages"
                 :key="image.path"
                 class="image-card"
                 @click="selectImage(image)"
               >
-                <div class="image-preview" :class="{ 'particle-preview': folder === 'particles' }" :style="{ backgroundImage: `url(${image.url})` }">
+                <div class="image-preview" :class="{ 'square-preview': thumbnailSquare }" :style="{ backgroundImage: `url(${image.url})` }">
                   <div class="image-overlay">
                     <div class="image-name">{{ image.name }}</div>
                   </div>
@@ -42,19 +42,26 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { fallbackStyling } from '@/utils/themes';
 import useThemeStore from '@/stores/themes';
 
-const headerImageModules = import.meta.glob('@/themes/assets/header-images/*', {
+const themeAssetModules = import.meta.glob('@/themes/assets/**/*.{png,jpg,jpeg,gif,svg,webp}', {
   eager: true,
   as: 'url',
 });
 
-const particleImageModules = import.meta.glob('@/themes/assets/particles/**/*', {
+const generalAssetModules = import.meta.glob('@/assets/**/*.{png,jpg,jpeg,gif,svg,webp}', {
   eager: true,
   as: 'url',
 });
 
-const { isOpen = false, folder = 'header-images' } = defineProps<{
+const {
+  isOpen = false,
+  sources,
+  title,
+  thumbnailSquare,
+} = defineProps<{
   isOpen?: boolean;
-  folder?: string;
+  sources: string[];
+  title: string;
+  thumbnailSquare: boolean;
 }>();
 
 const emit = defineEmits<{
@@ -67,31 +74,43 @@ const themeStore = useThemeStore();
 const modalStyle = computed(() => {
   const fallback = fallbackStyling(themeStore.styling);
   const bgColor = themeStore.styling.background || fallback.background;
-  return {
-    backgroundColor: bgColor,
-  };
+  return { backgroundColor: bgColor };
 });
 
-const modalTitle = computed(() => {
-  return folder === 'particles' ? 'Browse Particle Images' : 'Browse Header Images';
-});
+const modalTitle = computed(() => title);
+
+function matchesAnySource(relativePath: string): boolean {
+  const filename = relativePath.split('/').pop()!;
+  return sources.some(pattern => {
+    if (pattern.endsWith('/')) {
+      return relativePath.startsWith(pattern);
+    }
+    if (pattern.includes('*')) {
+      const escaped = pattern.replace(/[.+^${}()|[\]\\?]/g, '\\$&').replace(/\*/g, '[^/]*');
+      const regex = new RegExp(`^${escaped}$`);
+      return pattern.includes('/') ? regex.test(relativePath) : regex.test(filename);
+    }
+    return relativePath === pattern || filename === pattern;
+  });
+}
 
 const allImages = computed(() => {
-  const images: any[] = [];
-  const imageModules = folder === 'particles' ? particleImageModules : headerImageModules;
+  const images: { path: string; url: string; filename: string; name: string }[] = [];
 
-  for (const [path, url] of Object.entries(imageModules)) {
-    const filename = path.split('/').pop()!;
-    const folderPath = path.split('/themes/assets/')[1].split('/').slice(0, -1).join('/');
-    const name = filename.replace(/\.(png|jpg|jpeg|webp|gif)$/i, '');
+  for (const [path, url] of Object.entries(themeAssetModules)) {
+    const afterAssets = path.split('/themes/assets/')[1];
+    if (!afterAssets || !matchesAnySource(afterAssets)) continue;
+    const filename = afterAssets.split('/').pop()!;
+    const name = filename.replace(/\.(png|jpg|jpeg|webp|gif|svg)$/i, '');
+    images.push({ path: `assets://${afterAssets}`, url, filename, name });
+  }
 
-    images.push({
-      path: `assets://${folderPath}/${filename}`,
-      url,
-      filename,
-      name,
-      folder: folderPath.split('/').pop(),
-    });
+  for (const [path, url] of Object.entries(generalAssetModules)) {
+    const afterAssets = path.split('/src/assets/')[1];
+    if (!afterAssets || !matchesAnySource(afterAssets)) continue;
+    const filename = afterAssets.split('/').pop()!;
+    const name = filename.replace(/\.(png|jpg|jpeg|webp|gif|svg)$/i, '');
+    images.push({ path: `assets://${afterAssets}`, url, filename, name });
   }
 
   return images.sort((a, b) => a.name.localeCompare(b.name));
@@ -101,7 +120,7 @@ function close(): void {
   emit('close');
 }
 
-function selectImage(image: any): void {
+function selectImage(image: { path: string }): void {
   emit('select', image.path);
   close();
 }
@@ -170,7 +189,7 @@ function selectImage(image: any): void {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
   gap: 16px
 
-  &.particles-grid
+  &.square-grid
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr))
 
 // Image card
@@ -196,7 +215,7 @@ function selectImage(image: any): void {
   background-color: rgba(128, 128, 128, 0.08)
   position: relative
 
-  &.particle-preview
+  &.square-preview
     aspect-ratio: 1 / 1
     background-size: contain
     background-repeat: no-repeat

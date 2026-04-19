@@ -11,13 +11,15 @@ const meta = {
     modelValue: { control: 'text' },
     label: { control: 'text' },
     minAspectRatio: { control: 'number' },
-    assetFolder: { control: 'select', options: ['header-images', 'particles'] },
+    assetThumbnailSquare: { control: 'boolean' },
   },
   args: {
     modelValue: '',
     label: '',
     minAspectRatio: 2,
-    assetFolder: 'header-images',
+    assetSources: ['header-images/'],
+    assetTitle: 'Browse Header Images',
+    assetThumbnailSquare: false,
     'onUpdate:modelValue': fn(),
     onBlur: fn(),
   },
@@ -47,7 +49,9 @@ function makeRender(initialValue: string) {
           :model-value="value"
           :label="args.label"
           :min-aspect-ratio="args.minAspectRatio"
-          :asset-folder="args.assetFolder"
+          :asset-sources="args.assetSources"
+          :asset-title="args.assetTitle"
+          :asset-thumbnail-square="args.assetThumbnailSquare"
           @update:modelValue="onUpdate"
           @blur="args.onBlur"
         />
@@ -77,6 +81,8 @@ export const ParticleAssetFolder: Story = {
   render: makeRender(''),
   args: {
     label: 'Particle Image',
-    assetFolder: 'particles',
+    assetSources: ['particles/'],
+    assetTitle: 'Browse Particle Images',
+    assetThumbnailSquare: true,
   },
 }
