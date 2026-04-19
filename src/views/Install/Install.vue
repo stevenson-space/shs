@@ -20,13 +20,14 @@
               <li>Ensure <strong>Open as Web App</strong> is selected.</li>
             </ol>
             <p class="note">
-              Some iOS browsers, like Firefox, are unable to install web apps. If you don't have
+              Some iOS browsers, are unable to install web apps. If you don't have
               the option or dont see the "Open as Web App" option, install SHS Space from Safari.
             </p>
           </section>
 
           <section>
             <h2>Other browsers</h2>
+            <p>The above instructions work with most browsers. If you can't get it to work, check the instructions for your browser.</p>
             <ul class="link-list">
               <li>
                 <a
