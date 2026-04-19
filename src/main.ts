@@ -8,7 +8,23 @@ import router from './router';
 
 if (navigator.serviceWorker) {
   try {
-    navigator.serviceWorker.register('/service-workers/service-worker.js');
+    navigator.serviceWorker.register('/service-worker.js', {
+      scope: '/',
+      type: 'module',
+    });
+    // reload once a newly installed SW takes control
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (refreshing) return;
+      refreshing = true;
+      window.location.reload();
+    });
+    // check for update what PWA returns to foreground
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        navigator.serviceWorker.getRegistration().then((reg) => reg?.update());
+      }
+    });
   } catch (e) {
     console.log(e);
   }
