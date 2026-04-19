@@ -156,6 +156,16 @@ const router = createRouter({
   },
 });
 
+// when a lazy-loaded route chunk fails to load, hard-reload for current build
+// this is for pwa; because this is likely because a deploy invalidated the filename while the tab was open
+router.onError((error, to) => {
+  const message = (error as Error)?.message || '';
+  const isChunkLoadError = /dynamically imported module|Loading chunk|Failed to fetch dynamically/i.test(message);
+  if (isChunkLoadError && to?.fullPath) {
+    window.location.assign(to.fullPath);
+  }
+});
+
 // ensure any page with requiresAuth set to true will redirect through the login proxy component
 router.beforeEach(
   (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
