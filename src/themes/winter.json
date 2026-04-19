@@ -1,13 +1,13 @@
 {
   "metadata": {
     "name": "Winter",
-    "author": "Joseph S. ('22)"
+    "author": "Allan H. ('28)"
   },
 
   "visibility": "show",
   "recommended": {
     "timing": "season",
-    "message": "[Try] The Winter Theme ☕"
+    "message": "[Try] The Frosty Winter Theme ☕"
   },
 
   "seasonalDates": "12/16-03/15",
@@ -25,9 +25,15 @@
     },
 
     "particles": {
-      "images": ["assets://particles/snowflake.png"],
+      "images": [
+        "assets://particles/winter/snowflake.png",
+        "assets://particles/winter/winter_hat.png",
+        "assets://particles/winter/gingerbread_cookie.png",
+        "assets://particles/winter/candy_cane.png",
+        "assets://particles/winter/hot_chocolate.png"
+      ],
       "speed": 2,
-      "count": 60,
+      "count": 40,
       "size": 8,
       "opacity": 0.7,
       "windPower": 0.7
