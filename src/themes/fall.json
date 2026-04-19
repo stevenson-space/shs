@@ -7,7 +7,7 @@
   "visibility": "show",
   "recommended": {
     "timing": "season",
-    "message": "[Try] The Fall Theme 🍁"
+    "message": "[Try] The Crisp Fall Theme 🍁"
   },
 
   "seasonalDates": "09/16-12/15",
@@ -21,9 +21,9 @@
     "iconCards": {},
     "particles": {
       "images": [
-        "assets://particles/fall/leaf-1.png",
-        "assets://particles/fall/leaf-2.png",
-        "assets://particles/fall/leaf-3.png"
+        "assets://particles/fall/leaf_1.png",
+        "assets://particles/fall/leaf_2.png",
+        "assets://particles/fall/leaf_3.png"
       ],
       "speed": 2.8,
       "count": 35,
