@@ -18,6 +18,7 @@ export default defineConfig({
       injectRegister: false,
       registerType: 'autoUpdate',
       injectManifest: {
+        rollupFormat: 'iife',
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2,mp3}'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
       },
