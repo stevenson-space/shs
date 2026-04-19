@@ -3,8 +3,12 @@ import { getImage, blobToDataURL } from '@/utils/imageStorage';
 type ImageCache = Record<string, string>;
 type CacheUpdateCallback = (cache: ImageCache) => void;
 
-// Import all theme assets using Vite's glob import
 const themeAssets = import.meta.glob('@/themes/assets/**/*.{png,jpg,jpeg,gif,svg,webp}', {
+  eager: true,
+  import: 'default'
+}) as Record<string, string>;
+
+const generalAssets = import.meta.glob('@/assets/**/*.{png,jpg,jpeg,gif,svg,webp}', {
   eager: true,
   import: 'default'
 }) as Record<string, string>;
@@ -25,12 +29,12 @@ export class ImageResolver {
 
     if (path.startsWith('assets://')) {
       const assetPath = path.replace('assets://', '');
-      // Look up the asset in our imported glob
-      const fullPath = `/src/themes/assets/${assetPath}`;
-      const resolvedUrl = themeAssets[fullPath];
+      const resolvedUrl =
+        themeAssets[`/src/themes/assets/${assetPath}`] ||
+        generalAssets[`/src/assets/${assetPath}`];
 
       if (!resolvedUrl) {
-        console.warn(`[ImageResolver] Asset not found: ${fullPath}`);
+        console.warn(`[ImageResolver] Asset not found: ${assetPath}`);
         return null;
       }
 
