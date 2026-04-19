@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "name": "Calm",
+    "author": "Florence L. ('22)"
+  },
+
+  "visibility": "show",
+
+  "styling": {
+    "base": "light",
+    "background": "#e7f0e7",
+    "secondaryBackground": "white",
+    "accent": "#565e79",
+
+    "header": {
+      "scheduleBar": "white",
+      "image": {
+        "full": "assets://header-images/calm-full.png",
+        "mobile": "assets://header-images/calm-mobile.png"
+      }
+    }
+  }
+}
