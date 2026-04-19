@@ -1,13 +1,13 @@
 {
   "metadata": {
     "name": "Summer",
-    "author": "Joseph S. ('22)"
+    "author": "Allan H. ('28)"
   },
 
   "visibility": "show",
   "recommended": {
     "timing": "season",
-    "message": "[Try] The Summer Theme 🏖️"
+    "message": "[Try] The Warm Summer Theme 🏖️"
   },
 
   "seasonalDates": "05/16-09/15",
@@ -22,6 +22,20 @@
         "full": "assets://header-images/beach-full.png",
         "mobile": "assets://header-images/beach-mobile.png"
       }
+    },
+    "particles": {
+      "images": [
+        "assets://particles/summer/beach_ball.png",
+        "assets://particles/summer/crab.png",
+        "assets://particles/summer/flamingo.png",
+        "assets://particles/summer/popsicle.png",
+        "assets://particles/summer/sun.png"
+      ],
+      "speed": 1,
+      "count": 18,
+      "size": 16,
+      "opacity": 1,
+      "windPower": 0
     }
   }
 }
