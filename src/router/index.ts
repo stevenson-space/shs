@@ -168,7 +168,11 @@ router.onError((error, to) => {
   const message = (error as Error)?.message || '';
   const isChunkLoadError = /Failed to (fetch dynamically|load module|dynamically import)|Importing a module script|Loading chunk/i.test(message);
   if (isChunkLoadError && to?.fullPath) {
-    window.location.assign(to.fullPath);
+    const flag = `__chunkReloaded:${to.fullPath}`;
+    if (!sessionStorage.getItem(flag)) {
+      sessionStorage.setItem(flag, '1');
+      window.location.replace(to.fullPath);
+    }
   }
 });
 
