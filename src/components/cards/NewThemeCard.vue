@@ -51,7 +51,7 @@ const newTheme = computed(() => {
     if (!theme.seasonalDates) continue;
 
     const [start, end] = parseDateRange(theme.seasonalDates, now);
-    if (isDateInRange(now, start, end)) {
+    if (isDateInRange(now, start, end) && theme.recommended?.message) {
       return theme;
     }
   }
