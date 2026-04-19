@@ -21,6 +21,7 @@
         <schedule-card max-height="270px"/>
         <weather-card />
         <pwc-card/>
+        <ilc-card />
         <lunch-card />
         <upcoming-events-card />
 
@@ -33,6 +34,7 @@
 
         <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" :invert="true" />
         <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
+        <icon-text-card :icon="icons.faPeopleGroup" text="Clubs" link="clubs" :invert="true" />
 
         <icon-text-card :icon="icons.faRadio" text="Jukebox" link="jukebox" />
 
@@ -47,6 +49,7 @@
         <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
 
         <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" />
+        <icon-text-card :icon="icons.faClipboardCheck" text="AP Exams" link="ap" :invert="true" />
 
         <icon-text-card :icon="icons.faGear" text="Settings" link="settings" :invert="true" />
     </card-container>
@@ -56,6 +59,7 @@
 <script>
 import {
   faBell,
+  faClipboardCheck,
   faLink,
   faFileLines,
   faCalendarDays,
@@ -63,6 +67,7 @@ import {
   faCalculator,
   faGear,
   faHourglass,
+  faPeopleGroup,
   faQrcode,
   faRadio,
 } from "@fortawesome/free-solid-svg-icons";
@@ -72,6 +77,7 @@ import UpcomingEventsCard from "@/components/cards/UpcomingEventsCard.vue";
 import IconTextCard from "@/components/cards/IconTextCard.vue";
 import WeatherCard from "@/components/cards/WeatherCard.vue";
 import PwcCard from "@/components/cards/PwcCard.vue";
+import IlcCard from "@/components/cards/IlcCard.vue";
 import ScheduleCard from "@/components/cards/ScheduleCard.vue";
 import HolidayCard from "@/components/cards/HolidayCard.vue";
 import ContributeCard from "@/components/cards/ContributeCard.vue";
@@ -96,6 +102,7 @@ export default {
     ScheduleCard,
     WeatherCard,
     PwcCard,
+    IlcCard,
     HolidayCard,
     ContributeCard,
     NewThemeCard,
@@ -110,6 +117,7 @@ export default {
     return {
       icons: {
         faBell,
+        faClipboardCheck,
         faLink,
         faFileLines,
         faCalendarDays,
@@ -117,6 +125,7 @@ export default {
         faCalculator,
         faGear,
         faHourglass,
+        faPeopleGroup,
         faQrcode,
         faRadio,
 

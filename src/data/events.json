@@ -1,532 +1,42 @@
 {
-  "1/15/2026": [
-    {
-      "allDay": false,
-      "start": 1768492800000,
-      "end": 1768503600000,
-      "name": "Incoming Freshman Course Selection Evenings",
-      "description": "Stevenson will host the first of three virtual course selection evenings for incoming freshman families. During these evenings, families can virtually meet with a Stevenson school counselor or director for support in choosing classes for the upcoming school year.\n\n Jan. 15, 2026 --  Last Names: A-H \n * Group 1:   A-Bu   (Zoom Link:  https://d125-org.zoom.us/j/92783289603 )\n* Group 3:   Bu-Ga   (Zoom Link:  https://d125-org.zoom.us/j/93239970840 )\n* Group 4:   Gh-H   (Zoom Link:  https://d125-org.zoom.us/j/99649829176 )",
-      "location": "Virtual Meeting via Zoom",
-      "categories": [
-        "Parent Calendar"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1768500000000,
-      "end": 1768500000000,
-      "name": "Consortium Orchestra Concert",
-      "description": "This is our annual 8th-grade sender school concert, showcasing our talented incoming students to all our consortium schools\n *    Streaming via Vimeo   \n*   DOWNLOAD: Event Program",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "1/19/2026": [
-    {
-      "allDay": true,
-      "start": 1768780800000,
-      "end": 1768867200000,
-      "name": "Martin Luther. King, Jr. Day (No School)",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "1/20/2026": [
-    {
-      "allDay": false,
-      "start": 1768924800000,
-      "end": 1768935600000,
-      "name": "Incoming Freshman Course Selection Evenings",
-      "description": "Stevenson will host the second of three virtual course selection evenings for incoming freshman families. During these evenings, families can virtually meet with a Stevenson school counselor or director for support in choosing classes for the upcoming school year.\n\n Jan. 20, 2026 -- Last Names: I-P \n * Group 1:  I-Kap  (Zoom Link:  https://d125-org.zoom.us/j/93615511119 )\n* Group 2:  Kar-Lal  (Zoom Link:  https://d125-org.zoom.us/j/98716934671 )\n* Group 3:  Lan-Mc  (Zoom Link:  https://d125-org.zoom.us/j/92795522488 )\n* Group 4:  Me-O  (Zoom Link:  https://d125-org.zoom.us/j/94425739476 )",
-      "location": "Virtual Meeting via Zoom",
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "1/21/2026": [
-    {
-      "allDay": false,
-      "start": 1769011200000,
-      "end": 1769022000000,
-      "name": "Incoming Freshman Course Selection Evenings",
-      "description": "Stevenson will host the third of three virtual course selection evenings for incoming freshman families. During these evenings, families can virtually meet with a Stevenson school counselor or director for support in choosing classes for the upcoming school year.\n\n Jan. 21, 2026 -- Last Names: Q-Z \n\n\n * Group 1:  P-Re  (Zoom Link:  https://d125-org.zoom.us/j/96654684319 )\n*   Group 2:  Rh-Si  (Zoom Link:  https://d125-org.zoom.us/j/98431294243 )\n*   Group 3:  Sr-Va  (Zoom Link:  https://d125-org.zoom.us/j/97837701736 )\n*   Group 4:  Ve-Z  (Zoom Link:   https://d125-org.zoom.us/j/94613936893 )",
-      "location": "Virtual Meeting via Zoom",
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "1/22/2026": [
-    {
-      "allDay": true,
-      "start": 1769040000000,
-      "end": 1769126400000,
-      "name": "Late Arrival",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1769108400000,
-      "end": 1769108400000,
-      "name": "Family Action Network presents: Parenting Anxiety: Breaking the Cycle of Worry and Raising Resilient Kids",
-      "description": "Parenting is hard-especially for families navigating anxiety. Today's parents face an overwhelming volume of advice shaped by rigid cultural ideals of what \"good\" parenting looks like, particularly when it comes to managing children's fears and worries. How do you raise resilient children in an age of uncertainty? How do you parent effectively when you yourself are anxious? Much of the advice parents encounter, unfortunately, encourages responses that can increase the long-term risk of anxiety in children. In trying to protect kids from discomfort, well-intentioned parents may block experiences children need to build courage, confidence, and resilience.\n\nIn her new book Parenting Anxiety: Breaking the Cycle of Worry and Raising Resilient Kids, Meredith Elkins, Ph.D., a clinical psychologist and faculty member at Harvard Medical School, brings clarity to this increasingly urgent conversation. Drawing on her clinical work with children and families-and her own experience as a parent-Dr. Elkins helps parents rethink so-called \"negative\" emotions such as fear, sadness, and guilt, and understand how modern parenting pressures contribute to anxiety in both children and adults. She encourages families to clarify their values and adopt a \"love and limits\" approach-balancing compassion with healthy boundaries while resisting the urge to shield children from every discomfort.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n LINKS \n *  Event Page",
-      "location": "Virtual Meeting via Zoom",
-      "categories": [
-        "Parent Calendar"
-      ]
-    }
-  ],
-  "1/24/2026": [
-    {
-      "allDay": false,
-      "start": 1769252400000,
-      "end": 1769274000000,
-      "name": "World's Fair 2026",
-      "description": "For booth information and performance schedules, please visit the  World's Fair 2026 web page .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "1/25/2026": [
-    {
-      "allDay": false,
-      "start": 1769338800000,
-      "end": 1769360400000,
-      "name": "World's Fair 2026",
-      "description": "For booth information and performance schedules, please visit the  World's Fair 2026 web page .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "1/30/2026": [
-    {
-      "allDay": true,
-      "start": 1769731200000,
-      "end": 1769817600000,
-      "name": "Competitive Dance State Final Competition",
-      "description": "IHSA Competitive Dance State Final Competition   \n\n Date : Friday - Saturday, Jan. 30 - 31, 2026\n Time : TBA\n Location :  Grossinger Motors Arena, Bloomington, IL ( Google Maps )\n Tickets :  via Ticketmaster \n  \n\n\n\n\n\n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
-      "location": "Grossinger Motors Arena | Bloomington, IL",
-      "categories": [
-        "Athletics"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1769796000000,
-      "end": 1769806800000,
-      "name": "KIVA Club presents S-Factor",
-      "description": "Come out to S-Factor, Kiva Club's biggest annual event, on Friday, January 30 at 7 p.m. in the PAC! Watch some of Stevenson's top student performers take the stage in a high-energy singing competition as they compete for the win -- all while supporting Kiva's important mission. Grab your friends and enjoy a fun night of incredible talent while making a difference.\n *  PURCHASE: Tickets via Omella",
-      "location": "Stevenson High School | Performing Arts Center",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "1/31/2026": [
-    {
-      "allDay": true,
-      "start": 1769817600000,
-      "end": 1769904000000,
-      "name": "Competitive Dance State Final Competition",
-      "description": "IHSA Competitive Dance State Final Competition   \n\n Date : Friday - Saturday, Jan. 30 - 31, 2026\n Time : TBA\n Location :  Grossinger Motors Arena, Bloomington, IL ( Google Maps )\n Tickets :  via Ticketmaster \n  \n\n\n\n\n\n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
-      "location": "Grossinger Motors Arena | Bloomington, IL",
-      "categories": [
-        "Athletics"
-      ]
-    }
-  ],
-  "2/3/2026": [
-    {
-      "allDay": true,
-      "start": 1770076800000,
-      "end": 1770163200000,
-      "name": "Activity Period (Student Activities - Clubs)",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Activity Period"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1770076800000,
-      "end": 1770163200000,
-      "name": "CCC Presents: First-Generation Night #3",
-      "description": "For more information visit the  First-Generation Families web page.",
-      "location": "Stevenson High School & Virtual Meeting via Zoom",
-      "categories": [
-        "CCC"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1770076800000,
-      "end": 1770163200000,
-      "name": "Odyssey Activity Peiod: Frosh/Soph Play Preview",
-      "description": "Odyssey invites students to join Patriot Theatre Company for a preview of the Freshman-Sophomore Play, \"Too Much Light Makes the Baby Go Blind,\" on Tuesday, February 3rd, during Activity Period.\n\nEnjoy a selection of scenes from the longest-running play in Chicago! Students who complete the Sign Up Form will receive a hall pass in their 5Star app to attend the performance.\n\n 🎟️  Sign Up Form",
-      "location": "Stevenson High School | West Auditorium",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "2/5/2026": [
-    {
-      "allDay": true,
-      "start": 1770249600000,
-      "end": 1770336000000,
-      "name": "2026 Frosh/Soph Play: Too Much Light Makes the Baby Go Blind",
-      "description": "The year's Freshmen/Sophomore play is a high-energy, audience-involved experience. The company has prepared 30 short plays that they hope to perform in under 60 minutes. The audience chooses the order of the play by calling out numbers as a timer counts down the minutes. Having opened in 1988,  Too Much Light Makes the Baby Go Blind  is the longest-running show in Chicago history. Our 30 plays are from a collection written and chosen by the creator, Greg Allen.\n\nThe company chose the 30 plays in our production from a collection of 105 Neo-Futurist plays. Additionally, they participated in two days of workshops with a Neo-Futurist Ensemble Member to better understand and apply the Neo-Futurist tenets of presence and task.\n\n\n\n 🎟️   PURCHASE Tickets via GoFAN :  Feb. 5  |  Feb. 6  |  Feb. 7 \n📖  DOWNLOAD: Event Program",
-      "location": "Stevenson High School | West Auditorium",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "2/6/2026": [
-    {
-      "allDay": true,
-      "start": 1770336000000,
-      "end": 1770422400000,
-      "name": "2026 Frosh/Soph Play: Too Much Light Makes the Baby Go Blind",
-      "description": "The year's Freshmen/Sophomore play is a high-energy, audience-involved experience. The company has prepared 30 short plays that they hope to perform in under 60 minutes. The audience chooses the order of the play by calling out numbers as a timer counts down the minutes. Having opened in 1988,  Too Much Light Makes the Baby Go Blind  is the longest-running show in Chicago history. Our 30 plays are from a collection written and chosen by the creator, Greg Allen.\n\nThe company chose the 30 plays in our production from a collection of 105 Neo-Futurist plays. Additionally, they participated in two days of workshops with a Neo-Futurist Ensemble Member to better understand and apply the Neo-Futurist tenets of presence and task.\n\n\n\n 🎟️   PURCHASE Tickets via GoFAN :  Feb. 5  |  Feb. 6  |  Feb. 7 \n📖  DOWNLOAD: Event Program",
-      "location": "Stevenson High School | West Auditorium",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1770336000000,
-      "end": 1770422400000,
-      "name": "Competitive Cheer State Final Tournament",
-      "description": "IHSA Competitive Cheer State Final Tournament   \n\n Date : Friday - Saturday, Feb. 6 - 7, 2026\n Time : TBA\n Location :  Grossinger Motors Arena, Bloomington, IL ( Google Maps )\n Tickets :  via Ticketmaster \n  \n\n\n\n\n\n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
-      "location": "Grossinger Motors Arena | Bloomington, IL",
-      "categories": [
-        "Athletics"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1770404400000,
-      "end": 1770404400000,
-      "name": "Baroque Ensemble and Viol Concert",
-      "description": "An evening of historically informed performances by our Baroque Ensemble and Viol Consort. We will be performing works by well-known favorites such as Bach and Vivaldi, and lesser-known composers of the Renaissance period and beyond!\n *  Streaming via Vimeo \n*  DOWNLOAD: Event Program",
-      "location": "Stevenson High School | Recital Hall (Room 4100)",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "2/7/2026": [
-    {
-      "allDay": true,
-      "start": 1770422400000,
-      "end": 1770508800000,
-      "name": "2026 Frosh/Soph Play: Too Much Light Makes the Baby Go Blind",
-      "description": "The year's Freshmen/Sophomore play is a high-energy, audience-involved experience. The company has prepared 30 short plays that they hope to perform in under 60 minutes. The audience chooses the order of the play by calling out numbers as a timer counts down the minutes. Having opened in 1988,  Too Much Light Makes the Baby Go Blind  is the longest-running show in Chicago history. Our 30 plays are from a collection written and chosen by the creator, Greg Allen.\n\nThe company chose the 30 plays in our production from a collection of 105 Neo-Futurist plays. Additionally, they participated in two days of workshops with a Neo-Futurist Ensemble Member to better understand and apply the Neo-Futurist tenets of presence and task.\n\n\n\n 🎟️   PURCHASE Tickets via GoFAN :  Feb. 5  |  Feb. 6  |  Feb. 7 \n📖  DOWNLOAD: Event Program",
-      "location": "Stevenson High School | West Auditorium",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1770422400000,
-      "end": 1770508800000,
-      "name": "Competitive Cheer State Final Tournament",
-      "description": "IHSA Competitive Cheer State Final Tournament   \n\n Date : Friday - Saturday, Feb. 6 - 7, 2026\n Time : TBA\n Location :  Grossinger Motors Arena, Bloomington, IL ( Google Maps )\n Tickets :  via Ticketmaster \n  \n\n\n\n\n\n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
-      "location": "Grossinger Motors Arena | Bloomington, IL",
-      "categories": [
-        "Athletics"
-      ]
-    }
-  ],
-  "2/9/2026": [
-    {
-      "allDay": true,
-      "start": 1770595200000,
-      "end": 1770681600000,
-      "name": "CCC Presents: Community College Week",
-      "description": "Similar to college rep visits during the fall, interested students should  register in Naviance  (except for CLC) and connect with their teacher before the scheduled visit. \n\n\n *  Monday, Feb. 9  * 4th, 5th, 6th & 8th period -  College of Lake County  (in-district community college with guaranteed admission with dozens of four-year colleges)\n* no need to sign up, come during your lunch/free period\n\n\n* Seniors -- we will help you apply (bring your SAT/ACT login, a non-D125 email access, and your Social Security number, if applicable)\n \n*  Tuesday, Feb. 10  * 3th period -  Harper College  (Palatine - students receive in-district tuition rates by working within campus boundaies)\n \n*  Wednesday, Feb. 11  * 6th period -  Oakton Community College  (two campuses -- Des Plaines & Niles)",
-      "location": "Stevenson High School | College Career Center",
-      "categories": [
-        "CCC"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1770595200000,
-      "end": 1770681600000,
-      "name": "Odyssey Fine Arts Festival 2026",
-      "description": "For more information, please visit the  Odyssey Fine Arts Festival web page .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1770663600000,
-      "end": 1770663600000,
-      "name": "District 125 Board of Education Meeting",
-      "description": "Please visit the  Board of Education webpage  for additional information.",
-      "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
-      "categories": []
-    }
-  ],
-  "2/10/2026": [
-    {
-      "allDay": true,
-      "start": 1770681600000,
-      "end": 1770768000000,
-      "name": "CCC Presents: Community College Week",
-      "description": "Similar to college rep visits during the fall, interested students should  register in Naviance  (except for CLC) and connect with their teacher before the scheduled visit. \n\n\n *  Monday, Feb. 9  * 4th, 5th, 6th & 8th period -  College of Lake County  (in-district community college with guaranteed admission with dozens of four-year colleges)\n* no need to sign up, come during your lunch/free period\n\n\n* Seniors -- we will help you apply (bring your SAT/ACT login, a non-D125 email access, and your Social Security number, if applicable)\n \n*  Tuesday, Feb. 10  * 3th period -  Harper College  (Palatine - students receive in-district tuition rates by working within campus boundaies)\n \n*  Wednesday, Feb. 11  * 6th period -  Oakton Community College  (two campuses -- Des Plaines & Niles)",
-      "location": "Stevenson High School | College Career Center",
-      "categories": [
-        "CCC"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1770681600000,
-      "end": 1770768000000,
-      "name": "Odyssey Fine Arts Festival 2026",
-      "description": "For more information, please visit the  Odyssey Fine Arts Festival web page .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "2/11/2026": [
-    {
-      "allDay": true,
-      "start": 1770768000000,
-      "end": 1770854400000,
-      "name": "CCC Presents: Community College Week",
-      "description": "Similar to college rep visits during the fall, interested students should  register in Naviance  (except for CLC) and connect with their teacher before the scheduled visit. \n\n\n *  Monday, Feb. 9  * 4th, 5th, 6th & 8th period -  College of Lake County  (in-district community college with guaranteed admission with dozens of four-year colleges)\n* no need to sign up, come during your lunch/free period\n\n\n* Seniors -- we will help you apply (bring your SAT/ACT login, a non-D125 email access, and your Social Security number, if applicable)\n \n*  Tuesday, Feb. 10  * 3th period -  Harper College  (Palatine - students receive in-district tuition rates by working within campus boundaies)\n \n*  Wednesday, Feb. 11  * 6th period -  Oakton Community College  (two campuses -- Des Plaines & Niles)",
-      "location": "Stevenson High School | College Career Center",
-      "categories": [
-        "CCC"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1770768000000,
-      "end": 1770854400000,
-      "name": "Odyssey Fine Arts Festival 2026",
-      "description": "For more information, please visit the  Odyssey Fine Arts Festival web page .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1770768000000,
-      "end": 1770854400000,
-      "name": "PPA Bake Sale",
-      "description": "",
-      "location": "Glass Commons & Wood Commons",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
-  "2/12/2026": [
-    {
-      "allDay": true,
-      "start": 1770854400000,
-      "end": 1770940800000,
-      "name": "Late Arrival",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Late Arrival"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1770854400000,
-      "end": 1770940800000,
-      "name": "Odyssey Fine Arts Festival 2026",
-      "description": "For more information, please visit the  Odyssey Fine Arts Festival web page .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "2/13/2026": [
-    {
-      "allDay": true,
-      "start": 1770940800000,
-      "end": 1771027200000,
-      "name": "CCC Presents: Summer Job Fair",
-      "description": "Mark your calendars for Friday, February 13, for Stevenson's Summer Job Fair hosted by the College Career Center! This will be held during the lunch periods (4th, 5th, and 6th) in the PWC. During this time, students will have the chance to interact with representatives from local businesses and organizations to learn about the types of summer work opportunities available. Freshmen through seniors are able to attend this event.\n\n DOWNLOAD: Map of Visiting Employers",
-      "location": "Stevenson High School | PWC Multipurpose Rooms (5120-5128)",
-      "categories": [
-        "CCC"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1770940800000,
-      "end": 1771027200000,
-      "name": "Chess State Tournament",
-      "description": "IHSA Chess State Tournament   \n\n Date : Friday - Saturday, Feb. 13 - 14, 2026\n Time : TBA\n Location :  Peoria Civic Center, Peoria, IL ( Google Maps )\n  \n\n\n\n\n\n\n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
-      "location": "Peoria Civic Center | Peroria, IL",
-      "categories": [
-        "Clubs and Activities",
-        "Athletics"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1770940800000,
-      "end": 1771027200000,
-      "name": "Odyssey Fine Arts Festival 2026",
-      "description": "For more information, please visit the  Odyssey Fine Arts Festival web page .",
-      "location": "Stevenson High School",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "2/14/2026": [
-    {
-      "allDay": true,
-      "start": 1771027200000,
-      "end": 1771113600000,
-      "name": "Chess State Tournament",
-      "description": "IHSA Chess State Tournament   \n\n Date : Friday - Saturday, Feb. 13 - 14, 2026\n Time : TBA\n Location :  Peoria Civic Center, Peoria, IL ( Google Maps )\n  \n\n\n\n\n\n\n\n  \n\n  \n\n  \n\n-----------------\n\nFor more information, visit the  IHSA website .",
-      "location": "Peoria Civic Center | Peroria, IL",
-      "categories": [
-        "Clubs and Activities",
-        "Athletics"
-      ]
-    }
-  ],
-  "2/16/2026": [
-    {
-      "allDay": true,
-      "start": 1771200000000,
-      "end": 1771286400000,
-      "name": "President's Day (No School)",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Non-Attendance Days"
-      ]
-    }
-  ],
-  "2/18/2026": [
-    {
-      "allDay": false,
-      "start": 1771441200000,
-      "end": 1771441200000,
-      "name": "February Guitar Concert",
-      "description": "Our February guitar concert features small chamber groups of students performing. We have music ranging from rock songs played on electric guitars featuring The Beatles, Eric Clapton, and Europe to classical and pop music!  Those who cannot attend the event can stream via Vimeo .",
-      "location": "Performing Arts Center",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "2/19/2026": [
-    {
-      "allDay": false,
-      "start": 1771524000000,
-      "end": 1771524000000,
-      "name": "Orchestra Chamber Concert",
-      "description": "Our annual Orchestra Chamber Concert highlights the talents of our Patriot and Symphonic Orchestra musicians. This concert represents some of Stevenson's most enthusiastic and talented musicians.  Those who can't attend can stream the event via Vimeo .",
-      "location": "Recital Hall",
-      "categories": [
-        "Fine Arts"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1771529400000,
-      "end": 1771529400000,
-      "name": "Orchestra Chamber Concert",
-      "description": "Our annual Orchestra Chamber Concert highlights the talents of our Patriot and Symphonic Orchestra musicians. This concert represents some of Stevenson's most enthusiastic and talented musicians.  Those who can't attend can stream the event via Vimeo .",
-      "location": "Recital Hall",
-      "categories": [
-        "Fine Arts"
-      ]
-    }
-  ],
-  "2/20/2026": [
-    {
-      "allDay": true,
-      "start": 1771545600000,
-      "end": 1771632000000,
-      "name": "PPA Treat Day",
-      "description": "",
-      "location": "Glass Commons & Wood Commons",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": false,
-      "start": 1771598520000,
-      "end": 1771598520000,
-      "name": "PM Assembly",
-      "description": "",
-      "location": null,
-      "categories": [
-        "Early Dismissal"
-      ]
-    }
-  ],
-  "2/21/2026": [
-    {
-      "allDay": false,
-      "start": 1771700400000,
-      "end": 1771713000000,
-      "name": "Patriot Palooza 2026",
-      "description": "*  Ticket Price :  $20  starting  Jan. 20 through Feb. 20 . Tickets purchased on the  event day  will be  $30 .\n*   NOTE :  This is NOT a LOCK-IN event  --    Arrive and depart at your convenience, but please note that re-entry is not permitted.\n\n\n\n\n   LINKS \n\n  \n *  PURCHASE: Tickets via 5Star \n*  Patriot Palooza 2026 FAQ 's\n*  Non-Stevenson Guest Forms  --  Due Feb. 12 \n \n-----------------\n\nFor the band line-up and more, visit the  Patriot Palooza info hub !",
-      "location": "Stevenson High School",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    }
-  ],
   "2/24/2026": [
     {
       "allDay": true,
-      "start": 1771891200000,
-      "end": 1771977600000,
+      "start": 1771912800000,
+      "end": 1771999200000,
       "name": "Activity Period (Student Services)",
       "description": "",
       "location": null,
       "categories": [
         "Activity Period"
       ]
+    },
+    {
+      "allDay": true,
+      "start": 1771912800000,
+      "end": 1771999200000,
+      "name": "Operation Snowball Fundraiser",
+      "description": "Support Stevenson High School Operation Snowball! \n\nWhen you dine-in, drive through or carry out from Culver's of Lincolnshire on Tuesday, Feb. 24, Culver's will donate 25% of group sales to Operation Snowball.",
+      "location": "Culver's of Lincolnshire",
+      "categories": [
+        "Fundraisers"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1771981200000,
+      "end": 1771981200000,
+      "name": "Family Action Network: The Balancing Act: Creating Healthy Dependency and Connection Without Losing Yourself",
+      "description": "Join us for this Family Action Network event, held via Zoom, on Tuesday, Feb. 26 at 7 p.m. \n\nLicensed therapist Nedra Glover Tawwab has built a remarkable platform exploring relationships and self-care-two New York Times bestsellers, 1.8 million Instagram followers, a weekly podcast, and a widely-read newsletter. Her newest book, The Balancing Act: Creating Healthy Dependency and Connection Without Losing Yourself, extends her groundbreaking work by offering a roadmap to relationships that honor both dependency and individuality.\n\nWith signature clarity and honesty, Tawwab explores what it means to cultivate healthy dependency in contrast to the extremes of hyper-independence or codependency that many of us struggle with. The Balancing Act combines boundary-setting with building and maintaining relationships through genuine connection.\n Register for the event here:  www.bit.ly/TawwabFANSponsor",
+      "location": "via Zoom",
+      "categories": []
     }
   ],
   "2/25/2026": [
     {
       "allDay": false,
-      "start": 1772046000000,
-      "end": 1772046000000,
+      "start": 1772067600000,
+      "end": 1772067600000,
       "name": "Winter Choir Concert",
       "description": "Our Winter Choir Concert features all three of our amazing curricular choirs (Patriot Singers, Advanced Choir, Stevenson Singers), singing music from all over the world: Puerto Rico, Haiti, Greece, Japan and Venezuela. Our student performances will also highlight African American Spirituals and Gospel music for Black History Month.  Those who can't attend can stream the event via Vimeo .",
       "location": "Performing Arts Center",
@@ -538,8 +48,30 @@
   "2/27/2026": [
     {
       "allDay": true,
-      "start": 1772150400000,
-      "end": 1772236800000,
+      "start": 1772172000000,
+      "end": 1772258400000,
+      "name": "IHSA Boys Swim & Dive State Final Tournament",
+      "description": "The Stevenson boys' swimming and diving team are headed to the IHSA State Finals at the FMC Natatorium in Westmont, starting on Friday, Feb. 27, at 9 a.m. Tickets can be purchased at  GoFan  and the event will be streamed live on the  NFHS Network .",
+      "location": null,
+      "categories": [
+        "Athletics"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1772172000000,
+      "end": 1772258400000,
+      "name": "IHSA Girls Wrestling State Final Tournament",
+      "description": "IHSA Girls Wrestling State Final Tournament   \n\nLocation: Grossinger Motors Arena\n Tickets can be purchased here .\nFor more information, visit the  IHSA website .",
+      "location": null,
+      "categories": [
+        "Athletics"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1772172000000,
+      "end": 1772258400000,
       "name": "Institute Day (Non-Attendance)",
       "description": "",
       "location": null,
@@ -548,11 +80,35 @@
       ]
     }
   ],
+  "2/28/2026": [
+    {
+      "allDay": true,
+      "start": 1772258400000,
+      "end": 1772344800000,
+      "name": "IHSA Boys Swim & Dive State Final Tournament",
+      "description": "The Stevenson boys' swimming and diving team are headed to the IHSA State Finals at the FMC Natatorium in Westmont, starting on Friday, Feb. 27, at 9 a.m. Tickets can be purchased at  GoFan  and the event will be streamed live on the  NFHS Network .",
+      "location": null,
+      "categories": [
+        "Athletics"
+      ]
+    },
+    {
+      "allDay": true,
+      "start": 1772258400000,
+      "end": 1772344800000,
+      "name": "IHSA Girls Wrestling State Final Tournament",
+      "description": "IHSA Girls Wrestling State Final Tournament   \n\nLocation: Grossinger Motors Arena\n Tickets can be purchased here .\nFor more information, visit the  IHSA website .",
+      "location": null,
+      "categories": [
+        "Athletics"
+      ]
+    }
+  ],
   "3/2/2026": [
     {
       "allDay": true,
-      "start": 1772409600000,
-      "end": 1772496000000,
+      "start": 1772431200000,
+      "end": 1772517600000,
       "name": "Casimir Pulaski Day (No School)",
       "description": "",
       "location": null,
@@ -564,8 +120,8 @@
   "3/4/2026": [
     {
       "allDay": false,
-      "start": 1772650800000,
-      "end": 1772650800000,
+      "start": 1772672400000,
+      "end": 1772672400000,
       "name": "Winter Band Concert",
       "description": "Stevenson High School bands will be performing a concert of global music from top band composers. We will also have a guest Tabla player for a piece by an Indian composer and host the Zion Benton Band on Thursday, March 5.  Those who cannot attend in person can stream the event via Vimeo .",
       "location": "Performing Arts Center",
@@ -577,21 +133,19 @@
   "3/5/2026": [
     {
       "allDay": true,
-      "start": 1772668800000,
-      "end": 1772755200000,
-      "name": "Activity Period (Junior Core Curriculum)",
+      "start": 1772690400000,
+      "end": 1772776800000,
+      "name": "Counselor Period (Junior Core Curriculum)",
       "description": "",
       "location": null,
-      "categories": [
-        "Activity Period"
-      ]
+      "categories": []
     },
     {
       "allDay": false,
-      "start": 1772726400000,
-      "end": 1772733600000,
+      "start": 1772748000000,
+      "end": 1772755200000,
       "name": "CCC Presents: Career Ready, Trade & Military Expo",
-      "description": "",
+      "description": "This event will highlight careers that have limited (if any) educational requirements after high school. While the Expo will be available for students of any grade level to visit, it will be especially well-suited for seniors seeking information from local businesses regarding full-time career opportunities, apprenticeships and advancement options. Most of the opportunities will require either on-the-job training, certificate programs (12-24 months) or associate degrees (no bachelor's degree required).\n \n\n Some sample careers that will be represented on this night include real estate agent, traditional trades (plumbing, HVAC, electrical, etc.), aviation, cosmetology, manufacturing, pharmacy technician, dental assistant, auto body repair, police, fire and EMT. There will also be representatives from the College of Lake County to discuss how their programming can help prepare students for some of these types of careers.\n \n\n   You can check out out more information about our expo participants here  . Feel free to  contact the College Career Center  with any questions.",
       "location": null,
       "categories": [
         "CCC"
@@ -599,8 +153,8 @@
     },
     {
       "allDay": false,
-      "start": 1772737200000,
-      "end": 1772737200000,
+      "start": 1772758800000,
+      "end": 1772758800000,
       "name": "Winter Band Concert",
       "description": "Stevenson High School bands will be performing a concert of global music from top band composers. We will also have a guest Tabla player for a piece by an Indian composer and host the Zion Benton Band on Thursday, March 5.  Those who cannot attend in person can stream the event via Vimeo .",
       "location": "Performing Arts Center",
@@ -612,8 +166,8 @@
   "3/6/2026": [
     {
       "allDay": false,
-      "start": 1772823600000,
-      "end": 1772823600000,
+      "start": 1772845200000,
+      "end": 1772845200000,
       "name": "2026 Winter Play: Puffs, or Seven Increasingly Eventful Years at a Certain School of Magic and Magic",
       "description": "Get ready for a night of big laughs, surprising heart, and a whole lot of magic ✨\n\n\n\nPuffs is a fast-paced, hilarious, and surprisingly touching comedy that tells the story of the other students at a certain famous wizard school-the ones who weren't chosen as heroes, but showed up anyway. Full of clever humor, theatrical magic, and moments that genuinely hit home, this show celebrates friendship, perseverance, and finding your place, even when you feel overlooked.\n\nThis production is a true ensemble event, with over 30 students onstage and another 30 students behind the scenes working together to create an epic theatrical experience. From inventive staging to quick-fire comedy, it's a celebration of teamwork, creativity, and student talent at every level.\nThe show runs approximately 2 hours and 15 minutes and includes mature and atmospheric language. It is appropriate for most audiences and perfect for families, students, and anyone who loves comedy with heart.\n\nWhether you're a theatre fan, a fantasy lover, or just looking for a fun night out, Puffs promises laughs, surprises, and a whole lot of spirit. 🪄🎭  \n\n PURCHASE TICKETS HERE .\n\n Puffs is not authorized, sanctioned, licensed or endorsed by J.K Rowling, Warner Bros. or any person or company associated with the Harry Potter books, films or play. \n\n Content Warning: Mature Language and atmospherics and haze will be used.",
       "location": "Stevenson High School | PAC",
@@ -625,8 +179,8 @@
   "3/7/2026": [
     {
       "allDay": false,
-      "start": 1772892000000,
-      "end": 1772892000000,
+      "start": 1772913600000,
+      "end": 1772913600000,
       "name": "2026 Winter Play: Puffs, or Seven Increasingly Eventful Years at a Certain School of Magic and Magic",
       "description": "Get ready for a night of big laughs, surprising heart, and a whole lot of magic ✨\n\n\n\nPuffs is a fast-paced, hilarious, and surprisingly touching comedy that tells the story of the other students at a certain famous wizard school-the ones who weren't chosen as heroes, but showed up anyway. Full of clever humor, theatrical magic, and moments that genuinely hit home, this show celebrates friendship, perseverance, and finding your place, even when you feel overlooked.\n\nThis production is a true ensemble event, with over 30 students onstage and another 30 students behind the scenes working together to create an epic theatrical experience. From inventive staging to quick-fire comedy, it's a celebration of teamwork, creativity, and student talent at every level.\nThe show runs approximately 2 hours and 15 minutes and includes mature and atmospheric language. It is appropriate for most audiences and perfect for families, students, and anyone who loves comedy with heart.\n\nWhether you're a theatre fan, a fantasy lover, or just looking for a fun night out, Puffs promises laughs, surprises, and a whole lot of spirit. 🪄🎭  \n\n PURCHASE TICKETS HERE .\n\n Puffs is not authorized, sanctioned, licensed or endorsed by J.K Rowling, Warner Bros. or any person or company associated with the Harry Potter books, films or play. \n\n Content Warning: Mature Language and atmospherics and haze will be used.",
       "location": "Stevenson High School | PAC",
@@ -636,8 +190,8 @@
     },
     {
       "allDay": false,
-      "start": 1772910000000,
-      "end": 1772910000000,
+      "start": 1772931600000,
+      "end": 1772931600000,
       "name": "2026 Winter Play: Puffs, or Seven Increasingly Eventful Years at a Certain School of Magic and Magic",
       "description": "Get ready for a night of big laughs, surprising heart, and a whole lot of magic ✨\n\n\n\nPuffs is a fast-paced, hilarious, and surprisingly touching comedy that tells the story of the other students at a certain famous wizard school-the ones who weren't chosen as heroes, but showed up anyway. Full of clever humor, theatrical magic, and moments that genuinely hit home, this show celebrates friendship, perseverance, and finding your place, even when you feel overlooked.\n\nThis production is a true ensemble event, with over 30 students onstage and another 30 students behind the scenes working together to create an epic theatrical experience. From inventive staging to quick-fire comedy, it's a celebration of teamwork, creativity, and student talent at every level.\nThe show runs approximately 2 hours and 15 minutes and includes mature and atmospheric language. It is appropriate for most audiences and perfect for families, students, and anyone who loves comedy with heart.\n\nWhether you're a theatre fan, a fantasy lover, or just looking for a fun night out, Puffs promises laughs, surprises, and a whole lot of spirit. 🪄🎭  \n\n PURCHASE TICKETS HERE .\n\n Puffs is not authorized, sanctioned, licensed or endorsed by J.K Rowling, Warner Bros. or any person or company associated with the Harry Potter books, films or play. \n\n Content Warning: Mature Language and atmospherics and haze will be used.",
       "location": "Stevenson High School | PAC",
@@ -649,8 +203,8 @@
   "3/8/2026": [
     {
       "allDay": false,
-      "start": 1772978400000,
-      "end": 1772978400000,
+      "start": 1772996400000,
+      "end": 1772996400000,
       "name": "2026 Winter Play: Puffs, or Seven Increasingly Eventful Years at a Certain School of Magic and Magic",
       "description": "Get ready for a night of big laughs, surprising heart, and a whole lot of magic ✨\n\n\n\nPuffs is a fast-paced, hilarious, and surprisingly touching comedy that tells the story of the other students at a certain famous wizard school-the ones who weren't chosen as heroes, but showed up anyway. Full of clever humor, theatrical magic, and moments that genuinely hit home, this show celebrates friendship, perseverance, and finding your place, even when you feel overlooked.\n\nThis production is a true ensemble event, with over 30 students onstage and another 30 students behind the scenes working together to create an epic theatrical experience. From inventive staging to quick-fire comedy, it's a celebration of teamwork, creativity, and student talent at every level.\nThe show runs approximately 2 hours and 15 minutes and includes mature and atmospheric language. It is appropriate for most audiences and perfect for families, students, and anyone who loves comedy with heart.\n\nWhether you're a theatre fan, a fantasy lover, or just looking for a fun night out, Puffs promises laughs, surprises, and a whole lot of spirit. 🪄🎭  \n\n PURCHASE TICKETS HERE .\n\n Puffs is not authorized, sanctioned, licensed or endorsed by J.K Rowling, Warner Bros. or any person or company associated with the Harry Potter books, films or play. \n\n Content Warning: Mature Language and atmospherics and haze will be used.",
       "location": "Stevenson High School | PAC",
@@ -662,10 +216,10 @@
   "3/11/2026": [
     {
       "allDay": false,
-      "start": 1773255600000,
-      "end": 1773255600000,
+      "start": 1773273600000,
+      "end": 1773273600000,
       "name": "CCC Presents: College and Career Center Night for Sophomore Families",
-      "description": "More information coming soon!",
+      "description": "You are cordially invited to the College Career Center's annual night for sophomore families at 7 p.m. on Wednesday, March 11. The event will be in-person in the West Auditorium but  can also be streamed live via Zoom . During this event, Post-Secondary Counselors Sara Hanson and Dan Miller, along with Career Resource Specialist Linda Bloomfield, will discuss:\n * Post-secondary pathways including career exploration\n* What families can expect during their junior year as they embark on the college and career exploration process\n* Naviance, an online tool to assist Stevenson students with post-secondary planning\n  The slides and recording for this presentation will be available on  the CCC website  within one week of the event for families who are unable to attend.\n\n Zoom Link:   https://d125-org.zoom.us/j/99029583231#success",
       "location": "Stevenson High School | West Auditorium & Virtual Meeting via Zoom",
       "categories": [
         "CCC"
@@ -675,8 +229,8 @@
   "3/12/2026": [
     {
       "allDay": true,
-      "start": 1773273600000,
-      "end": 1773360000000,
+      "start": 1773291600000,
+      "end": 1773378000000,
       "name": "Late Arrival",
       "description": "",
       "location": null,
@@ -688,8 +242,8 @@
   "3/16/2026": [
     {
       "allDay": false,
-      "start": 1773687600000,
-      "end": 1773687600000,
+      "start": 1773705600000,
+      "end": 1773705600000,
       "name": "District 125 Board of Education Meeting",
       "description": "Please visit the  Board of Education webpage  for additional information.",
       "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
@@ -699,8 +253,8 @@
   "3/17/2026": [
     {
       "allDay": true,
-      "start": 1773705600000,
-      "end": 1773792000000,
+      "start": 1773723600000,
+      "end": 1773810000000,
       "name": "Activity Period (Student Activities - Clubs)",
       "description": "",
       "location": null,
@@ -709,12 +263,23 @@
       ]
     },
     {
-      "allDay": true,
-      "start": 1773705600000,
+      "allDay": false,
+      "start": 1773788400000,
+      "end": 1773788400000,
+      "name": "Spring Orchestra Concert",
+      "description": "This year's Spring Orchestra Concert will feature the sounds of spring. This concert will highlight the talent and diversity of music for large string ensembles. This concert features music by Asian, Black, English, German, Russian and South American composers.\n\nThose who can't attend in person can stream the event live via Vimeo:  vimeo.com/user84213691 .",
+      "location": "Performing Arts Center",
+      "categories": [
+        "Fine Arts"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1773792000000,
       "end": 1773792000000,
       "name": "Spring Orchestra Concert",
-      "description": "",
-      "location": null,
+      "description": "This year's Spring Orchestra Concert will feature the sounds of spring. This concert will highlight the talent and diversity of music for large string ensembles. This concert features music by Asian, Black, English, German, Russian and South American composers.\n\nThose who can't attend in person can stream the event live via Vimeo:  vimeo.com/user84213691 .",
+      "location": "Performing Arts Center",
       "categories": [
         "Fine Arts"
       ]
@@ -723,22 +288,22 @@
   "3/18/2026": [
     {
       "allDay": true,
-      "start": 1773792000000,
-      "end": 1773878400000,
-      "name": "Co-Curricular Fair",
+      "start": 1773810000000,
+      "end": 1773896400000,
+      "name": "PPA Bake Sale",
       "description": "",
-      "location": null,
+      "location": "Glass Commons & Wood Commons",
       "categories": [
         "Clubs and Activities"
       ]
     },
     {
-      "allDay": true,
-      "start": 1773792000000,
-      "end": 1773878400000,
-      "name": "PPA Bake Sale",
-      "description": "",
-      "location": "Glass Commons & Wood Commons",
+      "allDay": false,
+      "start": 1773876600000,
+      "end": 1773876600000,
+      "name": "Co-Curricular Fair",
+      "description": "We are excited to announce the details of our annual co-curricular fair for incoming freshman families on Wednesday, March 18. During the fair, 8th graders and their families will have the opportunity to learn about our vast co-curricular offerings across more than 150 clubs and 35 sports teams! Doors open to the co-curricular fair beginning at 6:30 p.m.\n * The fair will take place in our West Building, so you may enter campus through both Port Clinton or Half Day Road and park in either Lots B and E.",
+      "location": null,
       "categories": [
         "Clubs and Activities"
       ]
@@ -747,10 +312,10 @@
   "3/19/2026": [
     {
       "allDay": false,
-      "start": 1773946800000,
-      "end": 1773952200000,
+      "start": 1773964800000,
+      "end": 1773968400000,
       "name": "CCC Presents: College and Career Center Night for Junior Families",
-      "description": "For more information, please  visit the Junior Focus web page .",
+      "description": "All juniors and their parents/guardians are invited to the College Career Center Series for Junior Families. Our second night of the series is on Thursday, March 19, from 7 - 8 p.m. in the West Auditorium.   This event will also be streamed live via Zoom  .\n\nJuniors are highly encouraged to attend this program with their families. Post Secondary Counselors Sara Hanson and Dan Miller will discuss:\n * How colleges admit students\n* \"Holistic\" admission process\n* Letters of recommendation & essays\n* Admission plans\n* Application process & timeline\n \n\n\nThe slides and recording for this presentation will be available on the CCC website within one week of the event for families who are unable to attend.",
       "location": "Stevenson High School | West Auditorium & Virtual Meeting via Zoom",
       "categories": [
         "CCC"
@@ -760,8 +325,8 @@
   "3/20/2026": [
     {
       "allDay": false,
-      "start": 1773994800000,
-      "end": 1773994800000,
+      "start": 1774012800000,
+      "end": 1774012800000,
       "name": "CCC Presents: Harper College Campus Tour Field Trip",
       "description": "If you are interested in staying close to home for college, you may want to consider Harper College. The Harper College Campus Tour field trip is open to all interested juniors and seniors. Join us on Friday, March 20, 2026 to visit the Harper College campus. The field trip will depart at 8:20 AM.\n \n\n  Complete the permission slip form to participate . This form must be submitted by  March 13, 2026  for students to participate in this field trip.",
       "location": "Harper College | Palatine, IL",
@@ -773,8 +338,8 @@
   "3/23/2026": [
     {
       "allDay": true,
-      "start": 1774224000000,
-      "end": 1774310400000,
+      "start": 1774242000000,
+      "end": 1774328400000,
       "name": "Spring Break",
       "description": "",
       "location": null,
@@ -786,8 +351,8 @@
   "3/24/2026": [
     {
       "allDay": true,
-      "start": 1774310400000,
-      "end": 1774396800000,
+      "start": 1774328400000,
+      "end": 1774414800000,
       "name": "Spring Break",
       "description": "",
       "location": null,
@@ -799,8 +364,8 @@
   "3/25/2026": [
     {
       "allDay": true,
-      "start": 1774396800000,
-      "end": 1774483200000,
+      "start": 1774414800000,
+      "end": 1774501200000,
       "name": "Spring Break",
       "description": "",
       "location": null,
@@ -812,8 +377,8 @@
   "3/26/2026": [
     {
       "allDay": true,
-      "start": 1774483200000,
-      "end": 1774569600000,
+      "start": 1774501200000,
+      "end": 1774587600000,
       "name": "Spring Break",
       "description": "",
       "location": null,
@@ -825,8 +390,8 @@
   "3/27/2026": [
     {
       "allDay": true,
-      "start": 1774569600000,
-      "end": 1774656000000,
+      "start": 1774587600000,
+      "end": 1774674000000,
       "name": "Spring Break",
       "description": "",
       "location": null,
@@ -838,8 +403,8 @@
   "4/3/2026": [
     {
       "allDay": true,
-      "start": 1775174400000,
-      "end": 1775260800000,
+      "start": 1775192400000,
+      "end": 1775278800000,
       "name": "Non-Attendance Day",
       "description": "",
       "location": null,
@@ -851,8 +416,8 @@
   "4/7/2026": [
     {
       "allDay": true,
-      "start": 1775520000000,
-      "end": 1775606400000,
+      "start": 1775538000000,
+      "end": 1775624400000,
       "name": "Activity Period (Student Activities - Clubs)",
       "description": "",
       "location": null,
@@ -864,8 +429,8 @@
   "4/8/2026": [
     {
       "allDay": true,
-      "start": 1775606400000,
-      "end": 1775692800000,
+      "start": 1775624400000,
+      "end": 1775710800000,
       "name": "Testing Day for Freshmen and Juniors (Digital PreACT and School-Day ACT with Writing)",
       "description": "For more information, please visit the  ACT - PreACT - SAT Testing web page .\n\n\n\n *No classes for seniors and sophomores",
       "location": null,
@@ -877,10 +442,10 @@
   "4/9/2026": [
     {
       "allDay": false,
-      "start": 1775761200000,
-      "end": 1775761200000,
+      "start": 1775779200000,
+      "end": 1775779200000,
       "name": "CCC Presents: College and Career Center Night for Freshman Families",
-      "description": "More information coming soon!",
+      "description": "The College Career Center will hold its annual night for freshmen families at 7 p.m. on Thursday, April 9. The event will be in person in the Little Theater but can also be  streamed live via Zoom . The slides and recording for this presentation will be available on the College Career Center website within one week of the event for families unable to attend.\n \n\n\n  \n Stevenson staff will discuss what students can expect during the next three years as they journey toward post-high school opportunities. Students are strongly encouraged to attend with their parent(s) or guardian(s).",
       "location": "Stevenson High School | West Auditorium & Virtual Meeting via Zoom",
       "categories": [
         "CCC"
@@ -890,8 +455,8 @@
   "4/10/2026": [
     {
       "allDay": true,
-      "start": 1775779200000,
-      "end": 1775865600000,
+      "start": 1775797200000,
+      "end": 1775883600000,
       "name": "Day of Dance 2026",
       "description": "",
       "location": null,
@@ -901,11 +466,33 @@
     },
     {
       "allDay": true,
-      "start": 1775779200000,
+      "start": 1775797200000,
+      "end": 1775883600000,
+      "name": "Stevenson Band Fundraiser",
+      "description": "Support Stevenson High School band students! \n\nWhen you dine-in, drive through or carry out from Culver's of Lincolnshire on Friday, April 10, Culver's will donate 25% of group sales to Stevenson's band program.",
+      "location": "Culver's of Lincolnshire",
+      "categories": [
+        "Fundraisers"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1775822400000,
+      "end": 1775874600000,
+      "name": "SAGA Dance",
+      "description": "We welcome all to a magical evening in our Enchanted Forest!\n\nThe SAGA Dance, an all-inclusive event celebrating the LGBTQ+ community and their allies, is on Friday, April 10, from 7 to 9:30 p.m. in the Lower East Glass Commons. Tickets are $11 and can be purchased  here .",
+      "location": "Lower East Glass Commons",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
+      "allDay": false,
+      "start": 1775865600000,
       "end": 1775865600000,
       "name": "Evening of Jazz Concert",
-      "description": "",
-      "location": null,
+      "description": "Students from instrumental jazz and a cappella groups will be performing at this annual Evening of Jazz! This concert will feature Low Frequency, Nothing But Treble, Concert Jazz, Polyphonics and Jazz Ensemble",
+      "location": "West Auditorium",
       "categories": [
         "Fine Arts"
       ]
@@ -914,8 +501,8 @@
   "4/11/2026": [
     {
       "allDay": false,
-      "start": 1775932200000,
-      "end": 1775943000000,
+      "start": 1775950200000,
+      "end": 1775961000000,
       "name": "Kilometers for Africa Fundraiser",
       "description": "",
       "location": "Stevenson High School | Field House",
@@ -927,8 +514,8 @@
   "4/13/2026": [
     {
       "allDay": true,
-      "start": 1776038400000,
-      "end": 1776124800000,
+      "start": 1776056400000,
+      "end": 1776142800000,
       "name": "Jazz Combo Concert",
       "description": "Students from Jazz Combo and Workshop will perform all original compositions and arrangements for a night of student-created music.\n\n Links \n *  Streaming via Vimeo",
       "location": null,
@@ -940,8 +527,8 @@
   "4/14/2026": [
     {
       "allDay": true,
-      "start": 1776124800000,
-      "end": 1776211200000,
+      "start": 1776142800000,
+      "end": 1776229200000,
       "name": "Military Week",
       "description": "*  Military Presentations:  Representatives from various military branches will be available for student presentations. Sophomores through seniors can sign up for sessions of interest.  Sign-up form coming soon.\n\n \n*  ASVAB Testing:  The Armed Services Vocational Aptitude Battery (ASVAB) will be offered to interested sophomores through seniors. *  Date:  Thursday, April 16\n*    Location : Room 5124/5128 (PWC), East Entrance (Parking Lot D)\n*  Arrival : 8:30 a.m. with student ID\n*  Test Start : 9 a.m.\n*   Parent/Guardian Permission Form  (LINK):  Return to the College Career Center by Wednesday, April 15.    \n \n*  Questions:  Email  armedservices_liasons@d125.org .",
       "location": null,
@@ -951,8 +538,8 @@
     },
     {
       "allDay": true,
-      "start": 1776124800000,
-      "end": 1776211200000,
+      "start": 1776142800000,
+      "end": 1776229200000,
       "name": "The AP and Advanced Art Show",
       "description": "",
       "location": null,
@@ -964,8 +551,8 @@
   "4/15/2026": [
     {
       "allDay": true,
-      "start": 1776211200000,
-      "end": 1776297600000,
+      "start": 1776229200000,
+      "end": 1776315600000,
       "name": "Military Week",
       "description": "*  Military Presentations:  Representatives from various military branches will be available for student presentations. Sophomores through seniors can sign up for sessions of interest.  Sign-up form coming soon.\n\n \n*  ASVAB Testing:  The Armed Services Vocational Aptitude Battery (ASVAB) will be offered to interested sophomores through seniors. *  Date:  Thursday, April 16\n*    Location : Room 5124/5128 (PWC), East Entrance (Parking Lot D)\n*  Arrival : 8:30 a.m. with student ID\n*  Test Start : 9 a.m.\n*   Parent/Guardian Permission Form  (LINK):  Return to the College Career Center by Wednesday, April 15.    \n \n*  Questions:  Email  armedservices_liasons@d125.org .",
       "location": null,
@@ -975,8 +562,8 @@
     },
     {
       "allDay": true,
-      "start": 1776211200000,
-      "end": 1776297600000,
+      "start": 1776229200000,
+      "end": 1776315600000,
       "name": "PPA Bake Sale",
       "description": "",
       "location": "Glass Commons & Wood Commons",
@@ -986,8 +573,8 @@
     },
     {
       "allDay": true,
-      "start": 1776211200000,
-      "end": 1776297600000,
+      "start": 1776229200000,
+      "end": 1776315600000,
       "name": "The AP and Advanced Art Show",
       "description": "",
       "location": null,
@@ -999,8 +586,8 @@
   "4/16/2026": [
     {
       "allDay": true,
-      "start": 1776297600000,
-      "end": 1776384000000,
+      "start": 1776315600000,
+      "end": 1776402000000,
       "name": "Late Arrival",
       "description": "",
       "location": null,
@@ -1010,8 +597,8 @@
     },
     {
       "allDay": true,
-      "start": 1776297600000,
-      "end": 1776384000000,
+      "start": 1776315600000,
+      "end": 1776402000000,
       "name": "Military Week",
       "description": "*  Military Presentations:  Representatives from various military branches will be available for student presentations. Sophomores through seniors can sign up for sessions of interest.  Sign-up form coming soon.\n\n \n*  ASVAB Testing:  The Armed Services Vocational Aptitude Battery (ASVAB) will be offered to interested sophomores through seniors. *  Date:  Thursday, April 16\n*    Location : Room 5124/5128 (PWC), East Entrance (Parking Lot D)\n*  Arrival : 8:30 a.m. with student ID\n*  Test Start : 9 a.m.\n*   Parent/Guardian Permission Form  (LINK):  Return to the College Career Center by Wednesday, April 15.    \n \n*  Questions:  Email  armedservices_liasons@d125.org .",
       "location": null,
@@ -1023,8 +610,8 @@
   "4/17/2026": [
     {
       "allDay": true,
-      "start": 1776384000000,
-      "end": 1776470400000,
+      "start": 1776402000000,
+      "end": 1776488400000,
       "name": "Military Week",
       "description": "*  Military Presentations:  Representatives from various military branches will be available for student presentations. Sophomores through seniors can sign up for sessions of interest.  Sign-up form coming soon.\n\n \n*  ASVAB Testing:  The Armed Services Vocational Aptitude Battery (ASVAB) will be offered to interested sophomores through seniors. *  Date:  Thursday, April 16\n*    Location : Room 5124/5128 (PWC), East Entrance (Parking Lot D)\n*  Arrival : 8:30 a.m. with student ID\n*  Test Start : 9 a.m.\n*   Parent/Guardian Permission Form  (LINK):  Return to the College Career Center by Wednesday, April 15.    \n \n*  Questions:  Email  armedservices_liasons@d125.org .",
       "location": null,
@@ -1034,19 +621,8 @@
     },
     {
       "allDay": true,
-      "start": 1776384000000,
-      "end": 1776470400000,
-      "name": "NHS Spring Blood Drive",
-      "description": "",
-      "location": "Stevenson High School | TBA",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1776384000000,
-      "end": 1776470400000,
+      "start": 1776402000000,
+      "end": 1776488400000,
       "name": "Senior Showdown",
       "description": "",
       "location": "Stevenson High School | Performing Arts Center",
@@ -1055,12 +631,12 @@
       ]
     },
     {
-      "allDay": true,
-      "start": 1776384000000,
-      "end": 1776470400000,
-      "name": "Steven Styler Fashion Club Presents: 11th Annual Fashion Show",
-      "description": "",
-      "location": "Stevenson High School | Performing Arts Center",
+      "allDay": false,
+      "start": 1776441600000,
+      "end": 1776461400000,
+      "name": "NHS Spring Blood Drive",
+      "description": "Every donation saves 3 lives! National Honor Society is hosting their spring blood drive on Friday, April 17, in the Wrestling Room. Sign up spots are available to donate blood from period 4 through 4:30 pm. Students are encouraged to sign up to donate during their lunch period or after school. They can also sign up during a class period but must also complete a field trip form and receive permission from their teacher to attend.\n * Students must be 16 years of age to donate\n* All students participating must have a  signed consent form .\n* All students must complete a  field trip form  and receive permission from a teacher to attend. Students are to sign up to attend during their lunch/free period but need permission from the teacher after lunch/free period just in case the donation time runs over. (Example: I sign up to volunteer during my lunch 4th. I need a signature from my 5th hour teacher in case the donation runs into 5th.)",
+      "location": "Stevenson High School | Wrestling Room (2111)",
       "categories": [
         "Clubs and Activities"
       ]
@@ -1069,8 +645,8 @@
   "4/20/2026": [
     {
       "allDay": true,
-      "start": 1776643200000,
-      "end": 1776729600000,
+      "start": 1776661200000,
+      "end": 1776747600000,
       "name": "Percussion Ensemble Spring Concert",
       "description": "",
       "location": null,
@@ -1080,8 +656,8 @@
     },
     {
       "allDay": false,
-      "start": 1776711600000,
-      "end": 1776711600000,
+      "start": 1776729600000,
+      "end": 1776729600000,
       "name": "District 125 Board of Education Meeting",
       "description": "Please visit the  Board of Education webpage  for additional information.",
       "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
@@ -1091,8 +667,8 @@
   "4/21/2026": [
     {
       "allDay": true,
-      "start": 1776729600000,
-      "end": 1776816000000,
+      "start": 1776747600000,
+      "end": 1776834000000,
       "name": "CCC Presents: First-Generation Night #4",
       "description": "For more information visit the  First-Generation Families web page.",
       "location": "Stevenson High School & Virtual Meeting via Zoom",
@@ -1102,8 +678,8 @@
     },
     {
       "allDay": true,
-      "start": 1776729600000,
-      "end": 1776816000000,
+      "start": 1776747600000,
+      "end": 1776834000000,
       "name": "Testing Day for Sophomores (Digital PreACT)",
       "description": "For more information, please visit the  ACT - PreACT - SAT Testing web page .\n\n\n\n *No classes for seniors and juniors",
       "location": null,
@@ -1113,8 +689,8 @@
     },
     {
       "allDay": false,
-      "start": 1776760200000,
-      "end": 1776774600000,
+      "start": 1776778200000,
+      "end": 1776792600000,
       "name": "Freshmen Wellness Day",
       "description": "While all the sophomores are taking their Pre-ACTs, all freshmen will spend a fun-filled day with SHS staff to explore the theme of \"Live in Community!\" Through a variety of activities, freshmen will grow their skills to:\n * Build character and a sense of confidence while appreciating the similarities and differences of others.\n* Listen to others and communicate in ways that build empathy and respect.\n* Understand what it means to be an effective ally when people are treated with disrespect or injustice.\n* Establish and maintain supportive relationships in ways that foster learning.",
       "location": "Stevenson High School | Patriot Wellness Center",
@@ -1125,12 +701,12 @@
   ],
   "4/25/2026": [
     {
-      "allDay": true,
-      "start": 1777075200000,
-      "end": 1777161600000,
+      "allDay": false,
+      "start": 1777154400000,
+      "end": 1777176000000,
       "name": "Prom 2026",
-      "description": "",
-      "location": "TBA",
+      "description": "Click here for more information, including a link to tickets, important deadlines and the guest form.",
+      "location": "Hyatt Regency O'Hare Hotel",
       "categories": [
         "Clubs and Activities"
       ]
@@ -1139,8 +715,8 @@
   "4/30/2026": [
     {
       "allDay": false,
-      "start": 1777534200000,
-      "end": 1777537800000,
+      "start": 1777552200000,
+      "end": 1777555800000,
       "name": "Senior Sunrise",
       "description": "",
       "location": "Stevenson High School | The Stadium",
@@ -1152,8 +728,8 @@
   "5/1/2026": [
     {
       "allDay": true,
-      "start": 1777593600000,
-      "end": 1777680000000,
+      "start": 1777611600000,
+      "end": 1777698000000,
       "name": "2026 Spring Dance Concert",
       "description": "",
       "location": null,
@@ -1163,8 +739,8 @@
     },
     {
       "allDay": true,
-      "start": 1777593600000,
-      "end": 1777680000000,
+      "start": 1777611600000,
+      "end": 1777698000000,
       "name": "The One Acts",
       "description": "",
       "location": null,
@@ -1174,8 +750,8 @@
     },
     {
       "allDay": false,
-      "start": 1777658400000,
-      "end": 1777658400000,
+      "start": 1777676400000,
+      "end": 1777676400000,
       "name": "Polish Community Night 2026",
       "description": "The   Stevenson Polish Club   organizes Polish Community Night each year to celebrate the Polish heritage of students here at Stevenson, celebrating our Polish Constitution Day, when Poland became the second country in the world after the United States to make a constitution. At this event, everyone from all backgrounds is welcome to come and dance to authentic music, delight in a variety of Polish foods and desserts, and enjoy fun activities like face painting, Polish trivia, games, and more!\n\nFollow   @shspolishclub   on Instagram or read this   multilingual Google Doc     for more information!",
       "location": "Stevenson High School | Room 5120/5128 (Patriot Wellness Center)",
@@ -1187,8 +763,8 @@
   "5/2/2026": [
     {
       "allDay": true,
-      "start": 1777680000000,
-      "end": 1777766400000,
+      "start": 1777698000000,
+      "end": 1777784400000,
       "name": "2026 Spring Dance Concert",
       "description": "",
       "location": null,
@@ -1198,8 +774,8 @@
     },
     {
       "allDay": false,
-      "start": 1777730400000,
-      "end": 1777730400000,
+      "start": 1777748400000,
+      "end": 1777748400000,
       "name": "The One Acts",
       "description": "",
       "location": "Stevenson High School | West Auditorium",
@@ -1211,8 +787,8 @@
   "5/4/2026": [
     {
       "allDay": true,
-      "start": 1777852800000,
-      "end": 1777939200000,
+      "start": 1777870800000,
+      "end": 1777957200000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -1224,8 +800,8 @@
   "5/5/2026": [
     {
       "allDay": true,
-      "start": 1777939200000,
-      "end": 1778025600000,
+      "start": 1777957200000,
+      "end": 1778043600000,
       "name": "Spring Choir Concert",
       "description": "",
       "location": null,
@@ -1235,8 +811,8 @@
     },
     {
       "allDay": true,
-      "start": 1777939200000,
-      "end": 1778025600000,
+      "start": 1777957200000,
+      "end": 1778043600000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -1248,8 +824,8 @@
   "5/6/2026": [
     {
       "allDay": true,
-      "start": 1778025600000,
-      "end": 1778112000000,
+      "start": 1778043600000,
+      "end": 1778130000000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -1261,8 +837,8 @@
   "5/7/2026": [
     {
       "allDay": true,
-      "start": 1778112000000,
-      "end": 1778198400000,
+      "start": 1778130000000,
+      "end": 1778216400000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -1274,8 +850,8 @@
   "5/8/2026": [
     {
       "allDay": true,
-      "start": 1778198400000,
-      "end": 1778284800000,
+      "start": 1778216400000,
+      "end": 1778302800000,
       "name": "2026 Baroque Concert",
       "description": "",
       "location": null,
@@ -1285,19 +861,8 @@
     },
     {
       "allDay": true,
-      "start": 1778198400000,
-      "end": 1778284800000,
-      "name": "PPA Treat Day",
-      "description": "",
-      "location": "Glass Commons & Wood Commons",
-      "categories": [
-        "Clubs and Activities"
-      ]
-    },
-    {
-      "allDay": true,
-      "start": 1778198400000,
-      "end": 1778284800000,
+      "start": 1778216400000,
+      "end": 1778302800000,
       "name": "Spring Music Production Showcase",
       "description": "",
       "location": null,
@@ -1307,8 +872,8 @@
     },
     {
       "allDay": true,
-      "start": 1778198400000,
-      "end": 1778284800000,
+      "start": 1778216400000,
+      "end": 1778302800000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -1320,8 +885,8 @@
   "5/11/2026": [
     {
       "allDay": true,
-      "start": 1778457600000,
-      "end": 1778544000000,
+      "start": 1778475600000,
+      "end": 1778562000000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -1333,8 +898,8 @@
   "5/12/2026": [
     {
       "allDay": true,
-      "start": 1778544000000,
-      "end": 1778630400000,
+      "start": 1778562000000,
+      "end": 1778648400000,
       "name": "Spring Band Concert",
       "description": "",
       "location": null,
@@ -1344,8 +909,8 @@
     },
     {
       "allDay": true,
-      "start": 1778544000000,
-      "end": 1778630400000,
+      "start": 1778562000000,
+      "end": 1778648400000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -1357,8 +922,8 @@
   "5/13/2026": [
     {
       "allDay": true,
-      "start": 1778630400000,
-      "end": 1778716800000,
+      "start": 1778648400000,
+      "end": 1778734800000,
       "name": "May Guitar Concert",
       "description": "",
       "location": null,
@@ -1368,8 +933,8 @@
     },
     {
       "allDay": true,
-      "start": 1778630400000,
-      "end": 1778716800000,
+      "start": 1778648400000,
+      "end": 1778734800000,
       "name": "PPA Bake Sale",
       "description": "",
       "location": "Glass Commons & Wood Commons",
@@ -1379,8 +944,8 @@
     },
     {
       "allDay": true,
-      "start": 1778630400000,
-      "end": 1778716800000,
+      "start": 1778648400000,
+      "end": 1778734800000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -1392,8 +957,8 @@
   "5/14/2026": [
     {
       "allDay": true,
-      "start": 1778716800000,
-      "end": 1778803200000,
+      "start": 1778734800000,
+      "end": 1778821200000,
       "name": "Orchestra POPS Concert",
       "description": "*",
       "location": null,
@@ -1403,8 +968,8 @@
     },
     {
       "allDay": true,
-      "start": 1778716800000,
-      "end": 1778803200000,
+      "start": 1778734800000,
+      "end": 1778821200000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -1416,8 +981,8 @@
   "5/15/2026": [
     {
       "allDay": true,
-      "start": 1778803200000,
-      "end": 1778889600000,
+      "start": 1778821200000,
+      "end": 1778907600000,
       "name": "Testing Day (Advanced Placement Exams)",
       "description": "For more information, visit the  Advanced Placement web page .",
       "location": "Stevenson High School",
@@ -1427,8 +992,8 @@
     },
     {
       "allDay": false,
-      "start": 1778856120000,
-      "end": 1778856120000,
+      "start": 1778874120000,
+      "end": 1778874120000,
       "name": "PM Assembly",
       "description": "",
       "location": null,
@@ -1438,8 +1003,8 @@
     },
     {
       "allDay": false,
-      "start": 1778858700000,
-      "end": 1778858700000,
+      "start": 1778876700000,
+      "end": 1778876700000,
       "name": "Spring Fling 2026",
       "description": "",
       "location": "Stevenson High School | The Stadium",
@@ -1450,9 +1015,20 @@
   ],
   "5/18/2026": [
     {
+      "allDay": true,
+      "start": 1779080400000,
+      "end": 1779166800000,
+      "name": "PPA Treat Day",
+      "description": "",
+      "location": "Glass Commons & Wood Commons",
+      "categories": [
+        "Clubs and Activities"
+      ]
+    },
+    {
       "allDay": false,
-      "start": 1779130800000,
-      "end": 1779130800000,
+      "start": 1779148800000,
+      "end": 1779148800000,
       "name": "District 125 Board of Education Meeting (Tentative)",
       "description": "Please visit the  Board of Education webpage  for additional information.",
       "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
@@ -1462,8 +1038,8 @@
   "5/19/2026": [
     {
       "allDay": true,
-      "start": 1779148800000,
-      "end": 1779235200000,
+      "start": 1779166800000,
+      "end": 1779253200000,
       "name": "Consortium Art Festival & Reception",
       "description": "",
       "location": null,
@@ -1475,8 +1051,8 @@
   "5/21/2026": [
     {
       "allDay": true,
-      "start": 1779321600000,
-      "end": 1779408000000,
+      "start": 1779339600000,
+      "end": 1779426000000,
       "name": "Early Dismissal",
       "description": ".",
       "location": null,
@@ -1488,8 +1064,8 @@
   "5/22/2026": [
     {
       "allDay": true,
-      "start": 1779408000000,
-      "end": 1779494400000,
+      "start": 1779426000000,
+      "end": 1779512400000,
       "name": "Early Dismissal",
       "description": ".",
       "location": null,
@@ -1499,8 +1075,8 @@
     },
     {
       "allDay": false,
-      "start": 1779469200000,
-      "end": 1779469200000,
+      "start": 1779487200000,
+      "end": 1779487200000,
       "name": "Commencement Ceremony: Class of 2026",
       "description": "",
       "location": "NOW Arena | Hoffman Estates, IL",
@@ -1512,8 +1088,8 @@
   "6/2/2026": [
     {
       "allDay": false,
-      "start": 1780386300000,
-      "end": 1780404600000,
+      "start": 1780404300000,
+      "end": 1780422600000,
       "name": "Summer School - Session 1 Start",
       "description": "For more information, visit the  Summer School webpage.",
       "location": null,
@@ -1525,8 +1101,8 @@
   "6/15/2026": [
     {
       "allDay": false,
-      "start": 1781550000000,
-      "end": 1781550000000,
+      "start": 1781568000000,
+      "end": 1781568000000,
       "name": "District 125 Board of Education Meeting (Tentative)",
       "description": "Please visit the  Board of Education webpage  for additional information.",
       "location": "District 125 Administration Building, 2 Stevenson Drive, Lincolnshire, IL",
@@ -1536,8 +1112,8 @@
   "6/25/2026": [
     {
       "allDay": false,
-      "start": 1782373500000,
-      "end": 1782391800000,
+      "start": 1782391500000,
+      "end": 1782409800000,
       "name": "Summer School - Session 1 End",
       "description": "For more information, visit the  Summer School webpage.",
       "location": null,
@@ -1549,8 +1125,8 @@
   "6/29/2026": [
     {
       "allDay": false,
-      "start": 1782719100000,
-      "end": 1782737400000,
+      "start": 1782737100000,
+      "end": 1782755400000,
       "name": "Summer School - Session 2 Start",
       "description": "For more information, visit the  Summer School webpage.",
       "location": null,
@@ -1562,8 +1138,8 @@
   "7/23/2026": [
     {
       "allDay": false,
-      "start": 1784792700000,
-      "end": 1784811000000,
+      "start": 1784810700000,
+      "end": 1784829000000,
       "name": "Summer School - Session 2 End",
       "description": "For more information, visit the  Summer School webpage.",
       "location": null,

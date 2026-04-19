@@ -9,6 +9,8 @@ import {
 import useAuthenticationStore from "@/stores/authentication";
 
 const Home: RouteComponent = () => import("@/views/Home/Home.vue");
+const AP: RouteComponent = () => import("@/views/AP/AP.vue");
+const Clubs: RouteComponent = () => import("@/views/Clubs/Clubs.vue");
 const GpaCalculator: RouteComponent = () => import("@/views/GpaCalculator/GpaCalculator.vue");
 const BellSchedules: RouteComponent = () => import("@/views/Bell Schedules/BellSchedules.vue");
 const Calendar: RouteComponent = () => import("@/views/Calendar/Calendar.vue");
@@ -16,6 +18,8 @@ const Links: RouteComponent = () => import("@/views/Links/Links.vue");
 const Settings: RouteComponent = () => import("@/views/Settings/Settings.vue");
 const Tools: RouteComponent = () => import("@/views/Tools/Tools.vue");
 const Documents: RouteComponent = () => import("@/views/Documents/Documents.vue");
+const Nutrition: RouteComponent = () => import("@/views/Nutrition/Nutrition.vue");
+const NutritionMenu: RouteComponent = () => import("@/views/Nutrition/NutritionMenu.vue");
 const AddSchedule: RouteComponent = () => import("@/views/Settings/Add Schedule/AddSchedule.vue");
 const Login: RouteComponent = () => import("@/views/Login/Login.vue");
 const Code: RouteComponent = () => import("@/views/Code/Code.vue");
@@ -40,6 +44,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     component: Home,
+  },
+  {
+    name: "ap",
+    path: "/ap",
+    component: AP,
+  },
+  {
+    name: "clubs",
+    path: "/clubs",
+    component: Clubs,
+    meta: { requiresAuth: false },
   },
   {
     path: "/bellschedules",
@@ -86,6 +101,18 @@ const routes: Array<RouteRecordRaw> = [
     name: "documents",
     path: "/documents",
     component: Documents,
+    meta: { requiresAuth: false },
+  },
+  {
+    name: "nutrition",
+    path: "/nutrition",
+    component: Nutrition,
+    meta: { requiresAuth: false },
+  },
+  {
+    name: "nutritionMenu",
+    path: "/nutrition/menu",
+    component: NutritionMenu,
     meta: { requiresAuth: false },
   },
   {
