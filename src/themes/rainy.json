@@ -15,8 +15,9 @@
     },
     "particles": {
       "images": [
-        "assets://particles/rainy-particle1.png",
-        "assets://particles/rainy-particle2.png"
+        "assets://particles/rainy/raindrop.png",
+        "assets://particles/rainy/raindrop.png",
+        "assets://particles/rainy/lightning.png"
       ],
       "speed": 2,
       "count": 60,
