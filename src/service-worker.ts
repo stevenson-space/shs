@@ -6,6 +6,7 @@ import { registerRoute, NavigationRoute } from 'workbox-routing';
 import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategies';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
+import { RangeRequestsPlugin } from 'workbox-range-requests';
 
 declare const self: ServiceWorkerGlobalScope & {
   __WB_MANIFEST: Array<{ url: string; revision: string | null }>;
@@ -46,7 +47,8 @@ registerRoute(
   new CacheFirst({
     cacheName: 'jukebox-media',
     plugins: [
-      new CacheableResponsePlugin({ statuses: [0, 200, 206] }),
+      new CacheableResponsePlugin({ statuses: [0, 200] }),
+      new RangeRequestsPlugin(),
       new ExpirationPlugin({
         maxEntries: 60,
         maxAgeSeconds: 15 * 24 * 60 * 60,
