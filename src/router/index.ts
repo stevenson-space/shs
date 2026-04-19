@@ -160,7 +160,7 @@ const router = createRouter({
 // this is for pwa; because this is likely because a deploy invalidated the filename while the tab was open
 router.onError((error, to) => {
   const message = (error as Error)?.message || '';
-  const isChunkLoadError = /dynamically imported module|Loading chunk|Failed to fetch dynamically/i.test(message);
+  const isChunkLoadError = /Failed to (fetch dynamically|load module|dynamically import)|Importing a module script|Loading chunk/i.test(message);
   if (isChunkLoadError && to?.fullPath) {
     window.location.assign(to.fullPath);
   }
