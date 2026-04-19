@@ -6,7 +6,10 @@
   },
 
   "visibility": "show",
-  "recommended": "3/27/2026-4/27/2026",
+  "seasonalDates": "03/16-05/15",
+  "recommended": {
+    "timing": "season"
+  },
 
   "styling": {
     "base": "light",
