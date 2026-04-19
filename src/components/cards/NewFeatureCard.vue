@@ -3,7 +3,7 @@
     <div class="container">
       <div class="title"></div>
       <div class="message">
-        Stevenson Space now works <strong>offline</strong>! You can now access the whole site even if you have no connection.
+        Stevenson Space now works <strong>offline</strong>! You can access the whole site even if you have no connection.
         <br/>
       </div>
       <div class="chips">

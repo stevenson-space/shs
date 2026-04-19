@@ -20,8 +20,8 @@
               <li>Ensure <strong>Open as Web App</strong> is selected.</li>
             </ol>
             <p class="note">
-              Some iOS browsers, are unable to install web apps. If you don't have
-              the option or dont see the "Open as Web App" option, install SHS Space from Safari.
+              Some iOS browsers are unable to install web apps. If you don't have
+              the option or don't see the "Open as Web App" option, install SHS Space from Safari.
             </p>
           </section>
 
