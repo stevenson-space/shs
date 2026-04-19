@@ -44,18 +44,18 @@
 
         <icon-text-card :icon="icons.faDroplet" text="Switch Theme" @click="themeEditorOpen = !themeEditorOpen" />
 
-        <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
-
-        <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" />
-
-        <icon-text-card :icon="icons.faGear" text="Settings" link="settings" :invert="true" />
-
         <icon-text-card
           v-if="!isStandalone"
           :icon="icons.faDownload"
           text="Install"
           link="install"
         />
+
+        <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
+
+        <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" />
+
+        <icon-text-card :icon="icons.faGear" text="Settings" link="settings" :invert="true" />
     </card-container>
   </div>
 </template>
