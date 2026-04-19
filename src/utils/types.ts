@@ -2,6 +2,14 @@ export type NonEmptyArray<T> = { 0: T } & T[];
 
 export type ScheduleMode = string;
 
+export type UserQuickLink = {
+  id: string;
+  name: string;
+  url: string;
+  pinnedToHome: boolean;
+  order: number;
+};
+
 // A schedule can be multi-day (like Finals) or single-day (like pretty much every other schedule)
 
 export type BaseSchedule = {
