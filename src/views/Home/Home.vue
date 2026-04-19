@@ -49,6 +49,8 @@
         <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" />
 
         <icon-text-card :icon="icons.faGear" text="Settings" link="settings" :invert="true" />
+
+        <icon-text-card :icon="icons.faDownload" text="Install" link="install" />
     </card-container>
   </div>
 </template>
@@ -65,6 +67,7 @@ import {
   faHourglass,
   faQrcode,
   faRadio,
+  faDownload,
 } from "@fortawesome/free-solid-svg-icons";
 import { mapActions } from "pinia";
 import CardContainer from "@/components/CardContainer.vue";
@@ -119,7 +122,7 @@ export default {
         faHourglass,
         faQrcode,
         faRadio,
-
+        faDownload,
       },
       fullScreenMode: false,
       themeEditorOpen: false,

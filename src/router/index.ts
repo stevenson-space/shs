@@ -28,6 +28,7 @@ const SnowballRedirect: RouteComponent = () => import("@/views/Snowball/Snowball
 const TVSpace: RouteComponent = () => import("@/views/TVSpace/TVSpace.vue");
 const TestingCenterTV: RouteComponent = () => import("@/views/TVSpace/TestingCenterTV.vue");
 const RawCountdown: RouteComponent = () => import("@/views/Raw/Countdown.vue");
+const Install: RouteComponent = () => import("@/views/Install/Install.vue");
 
 type EditScheduleProps = {
   scheduleToEdit: string;
@@ -142,6 +143,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "RawCountdown",
     path: "/raw/countdown",
     component: RawCountdown,
+  },
+  {
+    name: "Install",
+    path: "/install",
+    component: Install,
   },
 ];
 
