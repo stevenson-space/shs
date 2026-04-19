@@ -1,15 +1,14 @@
 {
   "metadata": {
     "name": "Calm",
-    "author": "Florence L. ('22)",
-    "description": "Featuring a selfie of the Curiosity rover on Mount Sharp. Credit: NASA"
+    "author": "Florence L. ('22)"
   },
 
   "visibility": "show",
 
   "styling": {
     "base": "light",
-    "background": "##e7f0e7",
+    "background": "#e7f0e7",
     "secondaryBackground": "white",
     "accent": "#565e79",
 
