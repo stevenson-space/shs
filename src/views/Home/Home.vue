@@ -146,7 +146,7 @@ export default {
     // check if the app is launched as an installed PWA (standalone window) so we can hide the Install card
     const mql = window.matchMedia('(display-mode: standalone)');
     this.isStandalone = mql.matches || navigator.standalone === true;
-    const standaloneHandler = (e: MediaQueryListEvent) => { this.isStandalone = e.matches; };
+    const standaloneHandler = (e) => { this.isStandalone = e.matches; };
     if (mql.addEventListener) {
       mql.addEventListener('change', standaloneHandler);
     } else {
