@@ -15,7 +15,7 @@ const breakWindow = computed(() => {
 
   return {
     startTime: `December 15, ${year}`,
-    endTime: `January 3, ${year + 1}`,
+    endTime: `January 4, ${year + 1}`,
     message: 'Good luck on finals and have an amazing break! ❄️',
   };
 });
