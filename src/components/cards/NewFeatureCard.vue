@@ -13,8 +13,6 @@
           :icon="faDownload"
           background="var(--accent)"
           color="var(--iconCardsRegular)"
-          target="_blank"
-          rel="noopener noreferrer"
         />
       </div>
     </div>
