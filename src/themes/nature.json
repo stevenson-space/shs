@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "name": "Nature",
+    "author": "Ananya I. ('27)",
+    "description": "Cottage-inspired theme with flowers and leaves"
+  },
+
+  "visibility": "show",
+  "seasonalDates": "03/16-05/15",
+  "recommended": {
+    "timing": "season"
+  },
+
+  "styling": {
+    "base": "light",
+
+    "background": "#faf8f1",
+    "secondaryBackground": "white",
+
+    "accent": "#3f5239",
+
+    "header": {
+      "background": "var(--accent)",
+      "image": {
+        "full": "assets://header-images/nature-full.png",
+        "mobile": "assets://header-images/nature-full.png"
+      },
+      "scheduleBar": "white"
+    },
+
+    "particles": {
+      "images": [
+        "assets://particles/nature/flower-1.png",
+        "assets://particles/nature/flower-2.png",
+        "assets://particles/nature/leaf-1.png",
+        "assets://particles/nature/leaf-2.png"
+      ],
+      "speed": 1,
+      "count": 30,
+      "size": 15,
+      "opacity": 0.8,
+      "windPower": -1
+    }
+  }
+}
