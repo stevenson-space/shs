@@ -1,7 +1,9 @@
-https://www.flaticon.com/free-icon/gingerbread-man_9024459
+https://www.flaticon.com/free-icon/sun_10484062
 
-https://www.flaticon.com/free-icon/hot-chocolate_5125421
+https://www.flaticon.com/free-icon/popsicle_7983336
 
-https://www.flaticon.com/free-icon/winter-hat_615945
+https://www.flaticon.com/free-icon/crab_1009977
 
-https://www.flaticon.com/free-icon/candy-cane_3132705
+https://www.flaticon.com/free-icon/beach-ball_2918590
+
+https://www.flaticon.com/free-icon/flamingo_929114
