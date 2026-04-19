@@ -1,5 +1,8 @@
 import { z } from "zod";
 
+const WEEKS_COUNT: number = 4;
+const WEEKDAYS_COUNT: number = 5;
+
 export const DayMenu = z.object({
   comfort: z.string(),
   mindful: z.string(),
@@ -14,23 +17,24 @@ export const RotatingStation = z.enum([
   // for special, not sure what the rotating station in the west is called
 ]);
 
-const StationItems = z.union([
-  z.tuple([z.string()]),
-  z.tuple([z.string(), z.string()]),
+const WeeklyData = z.union([
+  z.array(z.string()).length(WEEKS_COUNT),
+  z.array(z.tuple([z.string(), z.string()])).length(WEEKS_COUNT),
 ]);
 
-export const WeekEntries = z.discriminatedUnion("cadence", [
-  // not sure if StationItems union is the best way to handle this
-  z.object({ cadence: z.literal("weekly"), data: StationItems }),
-  z.object({ cadence: z.literal("daily"), data: z.array(StationItems).length(5) }),
+const DailyData = z.union([
+  z.array(z.array(z.string()).length(WEEKDAYS_COUNT)).length(WEEKS_COUNT),
+  z.array(z.array(z.tuple([z.string(), z.string()])).length(WEEKDAYS_COUNT)).length(WEEKS_COUNT),
 ]);
 
-export const WeekStations = z.map(RotatingStation, WeekEntries);
+export const WeeklyEntries = z.discriminatedUnion("cadence", [
+  z.object({ cadence: z.literal("weekly"), data: WeeklyData }),
+  z.object({ cadence: z.literal("daily"), data: DailyData }),
+]);
 
-export const RotatingMenuMap = z.array(WeekStations).length(4);
+export const RotatingMenuMap = z.map(RotatingStation, WeeklyEntries);
 
 export type RotatingStation = z.infer<typeof RotatingStation>;
 export type DayMenu = z.infer<typeof DayMenu>;
-export type WeekEntries = z.infer<typeof WeekEntries>;
-export type WeekStations = z.infer<typeof WeekStations>;
+export type WeeklyEntries = z.infer<typeof WeeklyEntries>;
 export type RotatingMenuMap = z.infer<typeof RotatingMenuMap>;
