@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { ref, watch } from 'vue'
-import { fn, expect, within } from 'storybook/test'
-import ColorPicker from './ColorPicker.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { ref, watch } from 'vue';
+import { fn, expect, within } from 'storybook/test';
+import ColorPicker from './ColorPicker.vue';
 
 const meta = {
   title: 'Components/ColorPicker',
@@ -24,25 +24,25 @@ const meta = {
     label: '',
     'onUpdate:modelValue': fn(),
   },
-} satisfies Meta<typeof ColorPicker>
+} satisfies Meta<typeof ColorPicker>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 function makeRender(initialValue: string) {
   return (args: Parameters<NonNullable<Story['render']>>[0]) => ({
     components: { ColorPicker },
     setup() {
-      const value = ref(initialValue)
-      watch(() => args.modelValue, (val) => { value.value = val })
+      const value = ref(initialValue);
+      watch(() => args.modelValue, (val) => { value.value = val; });
       return {
         args,
         value,
         onUpdate: (val: string) => {
-          value.value = val
-          args['onUpdate:modelValue']?.(val)
+          value.value = val;
+          args['onUpdate:modelValue']?.(val);
         },
-      }
+      };
     },
     template: `
       <div style="padding: 24px; max-width: 300px;">
@@ -57,25 +57,25 @@ function makeRender(initialValue: string) {
         />
       </div>
     `,
-  })
+  });
 }
 
 export const Default: Story = {
   render: makeRender('#3b82f6'),
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const input = canvas.getByRole('textbox')
-    await expect(input).toBeVisible()
-    await expect(input).toHaveValue('#3b82f6')
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole('textbox');
+    await expect(input).toBeVisible();
+    await expect(input).toHaveValue('#3b82f6');
   },
-}
+};
 
 export const WithLabel: Story = {
   render: makeRender('#3b82f6'),
   args: {
     label: 'Accent Color',
   },
-}
+};
 
 export const InheritMode: Story = {
   render: makeRender(''),
@@ -83,7 +83,7 @@ export const InheritMode: Story = {
     modelValue: '',
     allowInherit: true,
   },
-}
+};
 
 export const InheritDisabled: Story = {
   render: makeRender('#e11d48'),
@@ -91,7 +91,7 @@ export const InheritDisabled: Story = {
     modelValue: '#e11d48',
     allowInherit: false,
   },
-}
+};
 
 export const InlineButtonDisabled: Story = {
   render: makeRender('#10b981'),
@@ -99,7 +99,7 @@ export const InlineButtonDisabled: Story = {
     modelValue: '#10b981',
     disableInlineButton: true,
   },
-}
+};
 
 export const WithPropertyPath: Story = {
   render: makeRender(''),
@@ -108,7 +108,7 @@ export const WithPropertyPath: Story = {
     propertyPath: 'text.primary',
     label: 'Primary Text',
   },
-}
+};
 
 export const VarInheritance: Story = {
   render: makeRender('var(--accent)'),
@@ -116,4 +116,4 @@ export const VarInheritance: Story = {
     modelValue: 'var(--accent)',
     label: 'Inheriting Accent',
   },
-}
+};

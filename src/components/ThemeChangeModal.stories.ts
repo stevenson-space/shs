@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { fn, expect, within, waitFor } from 'storybook/test'
-import ThemeChangeModal from './ThemeChangeModal.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { fn, expect, within, waitFor } from 'storybook/test';
+import ThemeChangeModal from './ThemeChangeModal.vue';
 
 const meta = {
   title: 'Components/ThemeChangeModal',
@@ -20,18 +20,18 @@ const meta = {
     onFalse: fn(),
     onClose: fn(),
   },
-} satisfies Meta<typeof ThemeChangeModal>
+} satisfies Meta<typeof ThemeChangeModal>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: (args) => ({
     components: { ThemeChangeModal },
     setup() {
-      return { args }
+      return { args };
     },
-    template: `<ThemeChangeModal :show-modal="args.showModal" :new-theme="args.newTheme" @true="args.onTrue" @false="args.onFalse" @close="args.onClose" />`,
+    template: '<ThemeChangeModal :show-modal="args.showModal" :new-theme="args.newTheme" @true="args.onTrue" @false="args.onFalse" @close="args.onClose" />',
   }),
   args: {
     showModal: true,
@@ -41,23 +41,23 @@ export const Default: Story = {
     },
   },
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const title = canvas.getByText('Color Conflict')
-    await waitFor(() => expect(title).toBeVisible())
-    const yesBtn = canvas.getByText('Yes')
-    await expect(yesBtn).toBeVisible()
-    const noBtn = canvas.getByText('No')
-    await expect(noBtn).toBeVisible()
+    const canvas = within(canvasElement);
+    const title = canvas.getByText('Color Conflict');
+    await waitFor(() => expect(title).toBeVisible());
+    const yesBtn = canvas.getByText('Yes');
+    await expect(yesBtn).toBeVisible();
+    const noBtn = canvas.getByText('No');
+    await expect(noBtn).toBeVisible();
   },
-}
+};
 
 export const Hidden: Story = {
   render: (args) => ({
     components: { ThemeChangeModal },
     setup() {
-      return { args }
+      return { args };
     },
-    template: `<ThemeChangeModal :show-modal="args.showModal" :new-theme="args.newTheme" @true="args.onTrue" @false="args.onFalse" @close="args.onClose" />`,
+    template: '<ThemeChangeModal :show-modal="args.showModal" :new-theme="args.newTheme" @true="args.onTrue" @false="args.onFalse" @close="args.onClose" />',
   }),
   args: {
     showModal: false,
@@ -66,15 +66,15 @@ export const Hidden: Story = {
       suggestedColor: '#3b82f6',
     },
   },
-}
+};
 
 export const DifferentTheme: Story = {
   render: (args) => ({
     components: { ThemeChangeModal },
     setup() {
-      return { args }
+      return { args };
     },
-    template: `<ThemeChangeModal :show-modal="args.showModal" :new-theme="args.newTheme" @true="args.onTrue" @false="args.onFalse" @close="args.onClose" />`,
+    template: '<ThemeChangeModal :show-modal="args.showModal" :new-theme="args.newTheme" @true="args.onTrue" @false="args.onFalse" @close="args.onClose" />',
   }),
   args: {
     showModal: true,
@@ -83,4 +83,4 @@ export const DifferentTheme: Story = {
       suggestedColor: '#ef4444',
     },
   },
-}
+};

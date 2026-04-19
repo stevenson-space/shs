@@ -12,7 +12,7 @@
       style="display:none"
       @load="onImageLoad"
     />
-    <canvas ref="canvas"></canvas>
+    <canvas ref="canvas" />
   </div>
 </template>
 
@@ -89,7 +89,7 @@ function onImageLoad(): void {
 
 function collectImages(): void {
   imageItems = Array.from(
-    wrap.value?.querySelectorAll('.particle_image') ?? []
+    wrap.value?.querySelectorAll('.particle_image') ?? [],
   );
   imageNum = imageItems.length;
 }
@@ -109,7 +109,7 @@ function init(): void {
         x: Math.random() * canvasNode.width,
         y: Math.random() * canvasNode.height,
       },
-      true
+      true,
     );
   }
 
@@ -121,10 +121,9 @@ function init(): void {
 
 function reset(particle: any, first = false): void {
   if (!first) {
-    particle.x =
-      windPower >= 0
-        ? Math.random() * canvasNode!.width * 0.8
-        : Math.random() * canvasNode!.width * 1.2;
+    particle.x = windPower >= 0
+      ? Math.random() * canvasNode!.width * 0.8
+      : Math.random() * canvasNode!.width * 1.2;
     particle.y = -30;
   }
 
@@ -146,7 +145,7 @@ function reset(particle: any, first = false): void {
 
   particle.opacity = Math.min(
     1,
-    Math.random() * 0.5 + opacity
+    Math.random() * 0.5 + opacity,
   );
 
   if (first) particles.push(particle);
@@ -167,10 +166,9 @@ function animate(): void {
     const windPush = wind * (1 + p.size / 10);
 
     // wobble reduced slightly when wind is strong
-    const wobbleX =
-      Math.sin(p.wobble) *
-      p.wobbleStrength *
-      (1 - Math.min(Math.abs(wind), 1));
+    const wobbleX = Math.sin(p.wobble)
+      * p.wobbleStrength
+      * (1 - Math.min(Math.abs(wind), 1));
 
     p.x += p.velX + windPush + wobbleX;
 
@@ -178,9 +176,9 @@ function animate(): void {
     p.y += p.velY + Math.abs(wind) * 0.1;
 
     if (
-      p.y > canvasNode!.height + 60 ||
-      p.x < -60 ||
-      p.x > canvasNode!.width + 60
+      p.y > canvasNode!.height + 60
+      || p.x < -60
+      || p.x > canvasNode!.width + 60
     ) {
       reset(p);
     }
@@ -227,7 +225,6 @@ function animate(): void {
   &.events-all canvas {
     pointer-events: auto;
   }
-
 
 }
 </style>

@@ -3,9 +3,9 @@
     <svg
       class="progress"
       v-if="
-        progress != 0 &&
-        !props.disableProgressBar &&
-        (actualPeriod.length == 1 || actualPeriod.length == 2)
+        progress != 0
+          && !props.disableProgressBar
+          && (actualPeriod.length == 1 || actualPeriod.length == 2)
       "
       :class="{ invert: props.invert }"
       width="40"
@@ -19,20 +19,20 @@
         stroke-linecap="round"
         :r="normalizedRadius"
         :style="{
-          strokeDashoffset: strokeDashoffset,
-          strokeDasharray: circumference + ' ' + circumference,
+          strokeDashoffset,
+          strokeDasharray: `${circumference} ${circumference}`,
         }"
         fill="var(--secondaryBackground)"
         :stroke-width="stroke"
       />
-    <text
-      x="20"
-      y="20"
-      text-anchor="middle"
-      dominant-baseline="middle"
-    >
-      {{ actualPeriod }}
-    </text>
+      <text
+        x="20"
+        y="20"
+        text-anchor="middle"
+        dominant-baseline="middle"
+      >
+        {{ actualPeriod }}
+      </text>
     </svg>
 
     <div
@@ -49,7 +49,7 @@
       <span class="dash"> – </span>
       <div class="time">{{ convertMilitaryTime(props.end) }}</div>
     </div>
-  <div :style="{ width: spacerWidth }"></div>
+    <div :style="{ width: spacerWidth }" />
   </div>
 </template>
 <script setup lang="ts">
@@ -76,24 +76,23 @@ const props = withDefaults(defineProps<{
 const clockStore = useClockStore();
 
 const radius = 22; // radius of the progress bar
-const stroke = 3;  // stroke of the progress bar
+const stroke = 3; // stroke of the progress bar
 
 const normalizedRadius = computed(() => radius - stroke * 2);
 const circumference = computed(() => normalizedRadius.value * 2 * Math.PI);
 
-const actualPeriod = computed(() => {
+const actualPeriod = computed(() =>
   // remove the ! mark in front of period names
-  return props.period[0] === '!' ? props.period.substring(1) : props.period;
-});
+  (props.period[0] === '!' ? props.period.substring(1) : props.period));
 
 const periodFontSize = computed(() => {
   if (!props.tvSpace) {
     return props.period.length > 10 ? '1em' : '1.3em';
   }
   // TV sizes - smaller for long names, bigger for short
-  if (props.period.length > 7) return '0.85em';  // Long names like "Activity"
-  if (props.period.length > 4) return '1.1em';   // Medium names
-  return '1.3em';                                  // Short names like "1", "2"
+  if (props.period.length > 7) return '0.85em'; // Long names like "Activity"
+  if (props.period.length > 4) return '1.1em'; // Medium names
+  return '1.3em'; // Short names like "1", "2"
 });
 
 const startSeconds = computed(() => periodToSeconds(props.start));
@@ -121,7 +120,7 @@ const spacerWidth = computed(() => {
     : (isLongPeriod ? '20px' : '40px');
 });
 
-const convertMilitaryTime = Bell.convertMilitaryTime;
+const { convertMilitaryTime } = Bell;
 </script>
 
 <style lang='sass' scoped>

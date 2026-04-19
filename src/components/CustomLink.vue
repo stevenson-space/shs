@@ -30,8 +30,8 @@ const linkType = computed((): string => {
   return 'none';
 });
 
-const target = computed(() => newTab ? '_blank' : '_self');
-const rel = computed(() => target.value === '_blank' ? 'noopener noreferrer' : undefined);
+const target = computed(() => (newTab ? '_blank' : '_self'));
+const rel = computed(() => (target.value === '_blank' ? 'noopener noreferrer' : undefined));
 </script>
 
 <style lang="sass" scoped>

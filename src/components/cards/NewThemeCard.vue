@@ -8,12 +8,12 @@
           :circular="false"
           @click="toggleTheme()"
         />
-        <div class="message">{{ newTheme.recommended?.message?.replace('[Try]','') || '' }}</div>
+        <div class="message">{{ newTheme.recommended?.message?.replace('[Try]', '') || '' }}</div>
       </div>
       <info-tooltip v-if="newTheme.metadata?.description" @click.stop>
         {{ newTheme.metadata.description }}
       </info-tooltip>
-      <button class="close-btn" @click="dismiss">&times;</button>
+      <button type="button" class="close-btn" @click="dismiss">&times;</button>
     </div>
   </card>
 </template>

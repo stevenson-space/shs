@@ -4,7 +4,7 @@
       <div
         class="header-content"
         @click="handleHeaderClick"
-        :class="{ disabled: disabled }"
+        :class="{ disabled }"
       >
         <span class="group-title">{{ title }}</span>
         <font-awesome-icon
@@ -46,7 +46,7 @@ const slots = useSlots();
 
 const icons = { faChevronRight };
 
-const isExpanded = computed(() => lockOpen ? true : modelValue.value);
+const isExpanded = computed(() => (lockOpen ? true : modelValue.value));
 const showChevron = computed(() => !disabled && !lockOpen);
 
 function handleHeaderClick() {

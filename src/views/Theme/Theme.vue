@@ -15,63 +15,63 @@
               <h3>Presets</h3>
             </div>
             <div class="themes-container">
-                <div class="theme-subsection">
-                  <h4 class="subsection-title">Recommended</h4>
+              <div class="theme-subsection">
+                <h4 class="subsection-title">Recommended</h4>
+                <div class="theme-grid">
+                  <theme-card
+                    v-for="(theme, index) in recommendedThemes"
+                    :key="`rec-${index}`"
+                    :theme="theme"
+                    @click="loadTheme(theme)"
+                  />
+                </div>
+              </div>
+
+              <div style="text-align: center;">
+                <rounded-button
+                  v-if="!otherThemesExpanded"
+                  class="theme-button"
+                  text="View More"
+                  @click="otherThemesExpanded = true"
+                />
+              </div>
+
+              <!-- Other Themes Section -->
+              <transition name="expand">
+                <div v-show="otherThemesExpanded" class="expanded-themes">
+                  <h4 class="subsection-title">Other</h4>
                   <div class="theme-grid">
                     <theme-card
-                      v-for="(theme, index) in recommendedThemes"
-                      :key="'rec-' + index"
+                      v-for="(theme, index) in otherThemes"
+                      :key="`other-${index}`"
                       :theme="theme"
                       @click="loadTheme(theme)"
                     />
                   </div>
-                </div>
 
-                <div style="text-align: center;">
-                  <rounded-button
-                    v-if="!otherThemesExpanded"
-                    class="theme-button"
-                    text="View More"
-                    @click="otherThemesExpanded = true"
-                  />
-                </div>
-
-                <!-- Other Themes Section -->
-                <transition name="expand">
-                  <div v-show="otherThemesExpanded" class="expanded-themes">
-                    <h4 class="subsection-title">Other</h4>
+                  <!-- Seasonal Section -->
+                  <div class="theme-subsection">
+                    <h4 class="subsection-title">Seasonal</h4>
                     <div class="theme-grid">
                       <theme-card
-                        v-for="(theme, index) in otherThemes"
-                        :key="'other-' + index"
+                        v-for="(theme, index) in seasonalThemes"
+                        :key="`seasonal-${index}`"
                         :theme="theme"
                         @click="loadTheme(theme)"
                       />
                     </div>
-
-                    <!-- Seasonal Section -->
-                    <div class="theme-subsection">
-                      <h4 class="subsection-title">Seasonal</h4>
-                      <div class="theme-grid">
-                        <theme-card
-                          v-for="(theme, index) in seasonalThemes"
-                          :key="'seasonal-' + index"
-                          :theme="theme"
-                          @click="loadTheme(theme)"
-                        />
-                      </div>
-                    </div>
-
-                    <!-- View Less Button -->
-                    <div style="text-align: center;">
-                      <rounded-button
-                        class="theme-button"
-                        text="View Less"
-                        @click="otherThemesExpanded = false"
-                      />
-                    </div>
                   </div>
-                </transition>
+
+                  <!-- View Less Button -->
+                  <div style="text-align: center;">
+                    <rounded-button
+                      class="theme-button"
+                      text="View Less"
+                      @click="otherThemesExpanded = false"
+                    />
+                  </div>
+                </div>
+              </transition>
             </div>
           </section>
 
@@ -118,7 +118,7 @@
                       </icon-button>
                     </template>
                     Save Theme
-                    <br/>
+                    <br />
                     (Not implemented)
                   </info-tooltip>
                   <info-tooltip>
@@ -128,7 +128,7 @@
                       </icon-button>
                     </template>
                     Export Theme
-                    <br/>
+                    <br />
                     (Images not included)
                   </info-tooltip>
                 </div>
@@ -153,7 +153,7 @@
                       <strong>Color Inheritance:</strong>
                       <span>
                         Some colors copy from other theme colors. To turn off inheritance and specify your own colors, click the link icon until you can edit the color.
-                        <br/><br/>
+                        <br /><br />
                         The base style button switches between "light" and "dark", which affects the default colors if no color is set for something.
                       </span>
                     </div>
@@ -169,136 +169,136 @@
                     </div>
                   </collapsible-section>
 
-              <!-- Text Colors -->
-              <collapsible-section title="Text" v-model="textExpanded">
-                <div class="field-compact">
-                  <color-picker label="Primary" v-model="customTheme.styling.text.primary" property-path="text.primary" @update:modelValue="applyTheme" />
-                </div>
-                <div class="field-compact">
-                  <color-picker label="Secondary" v-model="customTheme.styling.text.secondary" property-path="text.secondary" @update:modelValue="applyTheme" />
-                </div>
-                <div class="field-compact">
-                  <color-picker label="Tertiary" v-model="customTheme.styling.text.tertiary" property-path="text.tertiary" @update:modelValue="applyTheme" />
-                </div>
-              </collapsible-section>
+                  <!-- Text Colors -->
+                  <collapsible-section title="Text" v-model="textExpanded">
+                    <div class="field-compact">
+                      <color-picker label="Primary" v-model="customTheme.styling.text.primary" property-path="text.primary" @update:modelValue="applyTheme" />
+                    </div>
+                    <div class="field-compact">
+                      <color-picker label="Secondary" v-model="customTheme.styling.text.secondary" property-path="text.secondary" @update:modelValue="applyTheme" />
+                    </div>
+                    <div class="field-compact">
+                      <color-picker label="Tertiary" v-model="customTheme.styling.text.tertiary" property-path="text.tertiary" @update:modelValue="applyTheme" />
+                    </div>
+                  </collapsible-section>
 
-              <!-- Header -->
-              <collapsible-section title="Header" v-model="headerExpanded">
-                <div class="field-compact">
-                  <color-picker label="Background" v-model="customTheme.styling.header.background" property-path="header.background" @update:modelValue="applyTheme" />
-                </div>
-                <div class="field-compact">
-                  <color-picker label="Schedule Bar" v-model="customTheme.styling.header.scheduleBar" property-path="header.scheduleBar" @update:modelValue="applyTheme" />
-                </div>
-                <div class="image-uploads-row">
-                  <image-upload label="Full" v-model="headerImageFull" :min-aspect-ratio="1.5" @blur="applyTheme" />
-                  <image-upload label="Mobile" v-model="headerImageMobile" :min-aspect-ratio="1.5" @blur="applyTheme" />
-                </div>
-              </collapsible-section>
+                  <!-- Header -->
+                  <collapsible-section title="Header" v-model="headerExpanded">
+                    <div class="field-compact">
+                      <color-picker label="Background" v-model="customTheme.styling.header.background" property-path="header.background" @update:modelValue="applyTheme" />
+                    </div>
+                    <div class="field-compact">
+                      <color-picker label="Schedule Bar" v-model="customTheme.styling.header.scheduleBar" property-path="header.scheduleBar" @update:modelValue="applyTheme" />
+                    </div>
+                    <div class="image-uploads-row">
+                      <image-upload label="Full" v-model="headerImageFull" :min-aspect-ratio="1.5" @blur="applyTheme" />
+                      <image-upload label="Mobile" v-model="headerImageMobile" :min-aspect-ratio="1.5" @blur="applyTheme" />
+                    </div>
+                  </collapsible-section>
 
-              <!-- Icon Cards -->
-              <collapsible-section title="Icon Cards" v-model="iconCardsExpanded">
-                <div class="field-compact">
-                  <color-picker label="Regular" v-model="customTheme.styling.iconCards.regular" property-path="iconCards.regular" @update:modelValue="applyTheme" />
-                </div>
-                <div class="field-compact">
-                  <color-picker label="Invert" v-model="customTheme.styling.iconCards.invert" property-path="iconCards.invert" @update:modelValue="applyTheme" />
-                </div>
-              </collapsible-section>
+                  <!-- Icon Cards -->
+                  <collapsible-section title="Icon Cards" v-model="iconCardsExpanded">
+                    <div class="field-compact">
+                      <color-picker label="Regular" v-model="customTheme.styling.iconCards.regular" property-path="iconCards.regular" @update:modelValue="applyTheme" />
+                    </div>
+                    <div class="field-compact">
+                      <color-picker label="Invert" v-model="customTheme.styling.iconCards.invert" property-path="iconCards.invert" @update:modelValue="applyTheme" />
+                    </div>
+                  </collapsible-section>
 
-              <!-- Particles -->
-              <collapsible-section
-                title="Particles"
-                :model-value="true"
-                :lock-open="true"
-              >
-                <template #action>
-                  <checkbox v-model="particlesEnabled" />
-                </template>
-                <template v-if="particlesEnabled">
-                  <slider-input
-                    label="Speed"
-                    v-model="customTheme.styling.particles.speed"
-                    :min="0"
-                    :max="10"
-                    :step="0.1"
-                    @update:modelValue="applyTheme"
-                  />
-                  <slider-input
-                    label="Count"
-                    v-model="customTheme.styling.particles.count"
-                    :min="0"
-                    :max="200"
-                    :step="1"
-                    @update:modelValue="applyTheme"
-                  />
-                  <slider-input
-                    label="Size"
-                    v-model="customTheme.styling.particles.size"
-                    :min="0"
-                    :max="50"
-                    :step="1"
-                    @update:modelValue="applyTheme"
-                  />
-                  <slider-input
-                    label="Opacity"
-                    v-model="customTheme.styling.particles.opacity"
-                    :min="0"
-                    :max="1"
-                    :step="0.01"
-                    @update:modelValue="applyTheme"
-                  />
-                  <slider-input
-                    label="Wind"
-                    v-model="customTheme.styling.particles.windPower"
-                    :min="-5"
-                    :max="5"
-                    :step="0.1"
-                    @update:modelValue="applyTheme"
-                  />
+                  <!-- Particles -->
+                  <collapsible-section
+                    title="Particles"
+                    :model-value="true"
+                    :lock-open="true"
+                  >
+                    <template #action>
+                      <checkbox v-model="particlesEnabled" />
+                    </template>
+                    <template v-if="particlesEnabled">
+                      <slider-input
+                        label="Speed"
+                        v-model="customTheme.styling.particles.speed"
+                        :min="0"
+                        :max="10"
+                        :step="0.1"
+                        @update:modelValue="applyTheme"
+                      />
+                      <slider-input
+                        label="Count"
+                        v-model="customTheme.styling.particles.count"
+                        :min="0"
+                        :max="200"
+                        :step="1"
+                        @update:modelValue="applyTheme"
+                      />
+                      <slider-input
+                        label="Size"
+                        v-model="customTheme.styling.particles.size"
+                        :min="0"
+                        :max="50"
+                        :step="1"
+                        @update:modelValue="applyTheme"
+                      />
+                      <slider-input
+                        label="Opacity"
+                        v-model="customTheme.styling.particles.opacity"
+                        :min="0"
+                        :max="1"
+                        :step="0.01"
+                        @update:modelValue="applyTheme"
+                      />
+                      <slider-input
+                        label="Wind"
+                        v-model="customTheme.styling.particles.windPower"
+                        :min="-5"
+                        :max="5"
+                        :step="0.1"
+                        @update:modelValue="applyTheme"
+                      />
 
-                  <!-- Particle Images -->
-                  <div class="particle-images-section">
-                    <label class="section-label">Images</label>
-                    <div class="particle-images-list">
-                      <image-upload
-                        v-for="(image, index) in particleImages"
-                        :key="`particle-${index}-${image}`"
-                        :model-value="image"
-                        :asset-folder="'particles'"
-                        :min-aspect-ratio="0"
-                        @update:modelValue="updateParticleImage(index, $event)"
-                        @blur="applyTheme"
+                      <!-- Particle Images -->
+                      <div class="particle-images-section">
+                        <label class="section-label">Images</label>
+                        <div class="particle-images-list">
+                          <image-upload
+                            v-for="(image, index) in particleImages"
+                            :key="`particle-${index}-${image}`"
+                            :model-value="image"
+                            :asset-folder="'particles'"
+                            :min-aspect-ratio="0"
+                            @update:modelValue="updateParticleImage(index, $event)"
+                            @blur="applyTheme"
+                          />
+                        </div>
+                      </div>
+                    </template>
+                  </collapsible-section>
+
+                  <!-- Submit Theme Info -->
+                  <div class="inheritance-info">
+                    <font-awesome-icon :icon="icons.faCircleInfo" />
+                    <div>
+                      <strong>Share Your Theme:</strong>
+                      <span>
+                        Submit your theme to be considered for the theme presets!
+                      </span>
+                      <rounded-button
+                        class="submit-theme-button"
+                        text="Submit Your Theme"
+                        @click="openThemeForm"
                       />
                     </div>
                   </div>
-                </template>
-              </collapsible-section>
 
-              <!-- Submit Theme Info -->
-              <div class="inheritance-info">
-                <font-awesome-icon :icon="icons.faCircleInfo" />
-                <div>
-                  <strong>Share Your Theme:</strong>
-                  <span>
-                    Submit your theme to be considered for the theme presets!
-                  </span>
-                  <rounded-button
-                    class="submit-theme-button"
-                    text="Submit Your Theme"
-                    @click="openThemeForm"
-                  />
-                </div>
-              </div>
-
-              <!-- View Less Button -->
-              <div style="text-align: center; margin-top: 16px;">
-                <rounded-button
-                  class="theme-button"
-                  text="View Less"
-                  @click="advancedExpanded = false"
-                />
-              </div>
+                  <!-- View Less Button -->
+                  <div style="text-align: center; margin-top: 16px;">
+                    <rounded-button
+                      class="theme-button"
+                      text="View Less"
+                      @click="advancedExpanded = false"
+                    />
+                  </div>
                 </div>
               </transition>
             </div>
@@ -336,7 +336,7 @@ import useThemeStore from '@/stores/themes';
 import useClockStore from '@/stores/clock';
 import lightTheme from '@/themes/light.json';
 
-const cloneParticles = particles => (particles ? JSON.parse(JSON.stringify(particles)) : null);
+const cloneParticles = (particles) => (particles ? JSON.parse(JSON.stringify(particles)) : null);
 
 export default {
   components: {
@@ -404,7 +404,7 @@ export default {
     recommendedThemes() {
       const now = this.date;
 
-      const recommended = this.themes.filter(t => {
+      const recommended = this.themes.filter((t) => {
         const timing = t.recommended?.timing;
         if (timing !== undefined && timing !== null) {
           if (timing === 'never') return false;
@@ -449,17 +449,15 @@ export default {
     },
 
     otherThemes() {
-      const recommended = new Set(this.recommendedThemes.map(t => t.metadata.name));
-      return this.themes.filter(t => !recommended.has(t.metadata.name) && !t.seasonalDates);
+      const recommended = new Set(this.recommendedThemes.map((t) => t.metadata.name));
+      return this.themes.filter((t) => !recommended.has(t.metadata.name) && !t.seasonalDates);
     },
 
     seasonalThemes() {
       const activeSeasonalNames = new Set(
-        this.recommendedThemes.filter(t => t.seasonalDates).map(t => t.metadata.name)
+        this.recommendedThemes.filter((t) => t.seasonalDates).map((t) => t.metadata.name),
       );
-      const filtered = this.themes.filter(t => {
-        return t.seasonalDates && !activeSeasonalNames.has(t.metadata.name);
-      });
+      const filtered = this.themes.filter((t) => t.seasonalDates && !activeSeasonalNames.has(t.metadata.name));
 
       // Sort by start date (descending)
       return filtered.sort((a, b) => {
@@ -479,13 +477,13 @@ export default {
             this.customTheme.styling.particles = this.particlesBackup
               ? cloneParticles(this.particlesBackup)
               : {
-                  images: [],
-                  speed: 1,
-                  count: 20,
-                  size: 10,
-                  opacity: 0.8,
-                  windPower: 0,
-                };
+                images: [],
+                speed: 1,
+                count: 20,
+                size: 10,
+                opacity: 0.8,
+                windPower: 0,
+              };
           }
         } else {
           if (this.customTheme.styling.particles) {
@@ -567,8 +565,8 @@ export default {
             background: theme.styling?.header?.background,
             scheduleBar: theme.styling?.header?.scheduleBar,
             ...(theme.styling?.header?.image && {
-              image: { ...theme.styling.header.image }
-            })
+              image: { ...theme.styling.header.image },
+            }),
           },
           iconCards: {
             regular: theme.styling?.iconCards?.regular,
@@ -577,10 +575,10 @@ export default {
           ...(theme.styling?.particles && {
             particles: {
               ...theme.styling.particles,
-              images: [...(theme.styling.particles.images || [])]
-            }
-          })
-        }
+              images: [...(theme.styling.particles.images || [])],
+            },
+          }),
+        },
       };
       this.applyTheme();
       this.particlesBackup = cloneParticles(this.customTheme.styling.particles);
@@ -628,7 +626,7 @@ export default {
     cleanupEmptyParticleImages() {
       if (!this.customTheme.styling.particles?.images) return;
 
-      const images = this.customTheme.styling.particles.images;
+      const { images } = this.customTheme.styling.particles;
       const indicesToRemove = [];
 
       // Find all empty images
@@ -675,8 +673,8 @@ export default {
                 background: importedTheme.styling?.header?.background,
                 scheduleBar: importedTheme.styling?.header?.scheduleBar,
                 ...(importedTheme.styling?.header?.image && {
-                  image: { ...importedTheme.styling.header.image }
-                })
+                  image: { ...importedTheme.styling.header.image },
+                }),
               },
               iconCards: {
                 regular: importedTheme.styling?.iconCards?.regular,
@@ -685,9 +683,9 @@ export default {
               ...(importedTheme.styling?.particles && {
                 particles: {
                   ...importedTheme.styling.particles,
-                  images: [...(importedTheme.styling.particles.images || [])]
-                }
-              })
+                  images: [...(importedTheme.styling.particles.images || [])],
+                },
+              }),
             };
 
             this.applyTheme();
@@ -777,8 +775,6 @@ export default {
 <style lang="sass" scoped>
 @import '@/styles/style.sass'
 
-
-
 .customization-panel
   position: fixed
   top: 0
@@ -817,7 +813,7 @@ export default {
     font-size: 18px
     background: transparent
     color: white
-    
+
 .panel-content
   flex: 1
   overflow-y: auto
@@ -1008,7 +1004,6 @@ export default {
     &:focus
       outline: none
       border-color: var(--accent)
-
 
 .slide-enter-active,
 .slide-leave-active

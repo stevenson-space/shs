@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { within, expect } from 'storybook/test'
-import CalendarEvent from './CalendarEvent.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { within, expect } from 'storybook/test';
+import CalendarEvent from './CalendarEvent.vue';
 
 const meta = {
   title: 'Calendar/CalendarEvent',
@@ -14,18 +14,18 @@ const meta = {
     text: 'Late Arrival',
     invert: false,
   },
-} satisfies Meta<typeof CalendarEvent>
+} satisfies Meta<typeof CalendarEvent>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await expect(canvas.getByText('Late Arrival')).toBeInTheDocument()
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText('Late Arrival')).toBeInTheDocument();
   },
-}
+};
 
 export const Inverted: Story = {
   args: { invert: true },
-}
+};

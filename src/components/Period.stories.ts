@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { within, expect } from 'storybook/test'
-import Period from './Period.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { within, expect } from 'storybook/test';
+import Period from './Period.vue';
 
 const meta = {
   title: 'Components/Period',
@@ -24,9 +24,9 @@ const meta = {
     disableProgressBar: false,
     tvSpace: false,
   },
-} satisfies Meta<typeof Period>
+} satisfies Meta<typeof Period>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
@@ -36,11 +36,11 @@ export const Default: Story = {
     end: '7:30',
   },
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await expect(canvas.getByText('7:00')).toBeInTheDocument()
-    await expect(canvas.getByText('7:30')).toBeInTheDocument()
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText('7:00')).toBeInTheDocument();
+    await expect(canvas.getByText('7:30')).toBeInTheDocument();
   },
-}
+};
 
 export const Inverted: Story = {
   args: {
@@ -49,7 +49,7 @@ export const Inverted: Story = {
     end: '8:45',
     invert: true,
   },
-}
+};
 
 export const LunchPeriod: Story = {
   args: {
@@ -57,7 +57,7 @@ export const LunchPeriod: Story = {
     start: '11:30',
     end: '12:10',
   },
-}
+};
 
 export const ActivityPeriod: Story = {
   args: {
@@ -65,7 +65,7 @@ export const ActivityPeriod: Story = {
     start: '2:00',
     end: '2:30',
   },
-}
+};
 
 export const ForceMobileLayout: Story = {
   args: {
@@ -74,7 +74,7 @@ export const ForceMobileLayout: Story = {
     end: '9:45',
     forceMobileLayout: true,
   },
-}
+};
 
 export const ProgressBarDisabled: Story = {
   args: {
@@ -83,4 +83,4 @@ export const ProgressBarDisabled: Story = {
     end: '7:30',
     disableProgressBar: true,
   },
-}
+};

@@ -24,62 +24,62 @@
 </template>
 
 <script setup lang="ts">
-import { ref, nextTick, useTemplateRef } from 'vue'
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+import { ref, nextTick, useTemplateRef } from 'vue';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 const { icon = faInfoCircle } = defineProps<{
   icon?: object
-}>()
+}>();
 
-const isVisible = ref(false)
-const tooltipStyle = ref<Record<string, string>>({})
-const tooltip = useTemplateRef<HTMLDivElement>('tooltip')
+const isVisible = ref(false);
+const tooltipStyle = ref<Record<string, string>>({});
+const tooltip = useTemplateRef<HTMLDivElement>('tooltip');
 
 function showTooltip(event) {
-  isVisible.value = true
-  const target = event.currentTarget
+  isVisible.value = true;
+  const target = event.currentTarget;
   nextTick(() => {
-    const rect = target.getBoundingClientRect()
-    const tooltipEl = tooltip.value
+    const rect = target.getBoundingClientRect();
+    const tooltipEl = tooltip.value;
 
     if (tooltipEl) {
-      const tooltipWidth = tooltipEl.offsetWidth
-      const tooltipHeight = tooltipEl.offsetHeight
+      const tooltipWidth = tooltipEl.offsetWidth;
+      const tooltipHeight = tooltipEl.offsetHeight;
 
-      let left = rect.left + rect.width / 2 - tooltipWidth / 2
-      let top = rect.top - tooltipHeight - 8
+      let left = rect.left + rect.width / 2 - tooltipWidth / 2;
+      let top = rect.top - tooltipHeight - 8;
 
       // Keep within viewport
-      if (left < 10) left = 10
+      if (left < 10) left = 10;
       if (left + tooltipWidth > window.innerWidth - 10) {
-        left = window.innerWidth - tooltipWidth - 10
+        left = window.innerWidth - tooltipWidth - 10;
       }
-      if (top < 10) top = rect.bottom + 8 // flip to bottom if no room above
+      if (top < 10) top = rect.bottom + 8; // flip to bottom if no room above
 
       // Get current accent color from CSS variables
       const accentColor = getComputedStyle(document.documentElement)
         .getPropertyValue('--accent')
-        .trim()
+        .trim();
 
       tooltipStyle.value = {
         left: `${left}px`,
         top: `${top}px`,
         background: accentColor,
         borderColor: accentColor,
-      }
+      };
     }
-  })
+  });
 }
 
 function hideTooltip() {
-  isVisible.value = false
+  isVisible.value = false;
 }
 
 function toggleTooltip(event) {
   if (isVisible.value) {
-    hideTooltip()
+    hideTooltip();
   } else {
-    showTooltip(event)
+    showTooltip(event);
   }
 }
 </script>

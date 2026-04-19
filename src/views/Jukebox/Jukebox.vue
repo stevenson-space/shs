@@ -7,6 +7,27 @@
       <div class="inner-background">
         <h1 class="title"><font-awesome-icon class="icon" :icon="icons.faRadio" /> Meet Jukebox</h1>
         <p class="subtitle">Discover original music from Stevenson students.</p>
+        <div class="jukebox-toolbar">
+          <input
+            v-model="searchQuery"
+            class="search-input"
+            type="text"
+            placeholder="Search by song, artist, or year"
+          >
+          <div class="toolbar-meta">
+            <span>{{ filteredSongs.length }} tracks</span>
+            <label class="volume-control">
+              Volume
+              <input
+                v-model="volume"
+                type="range"
+                min="0"
+                max="100"
+                step="5"
+              >
+            </label>
+          </div>
+        </div>
         <div class="now-playing">
           <img
             class="album-art"
@@ -24,13 +45,14 @@
             </p>
           </div>
           <div class="controls">
-            <button @click="previousSong()" class="control-button">
+            <button type="button" @click="previousSong()" class="control-button">
               <font-awesome-icon :icon="icons.faStepBackward" />
             </button>
-            <button @click="playing ? pause() : play()" class="control-button play-button">
+            <button type="button" @click="playing ? pause() : play()" class="control-button play-button">
               <font-awesome-icon :icon="playing ? icons.faPause : icons.faPlay" />
             </button>
             <button
+              type="button"
               @click="
                 currentSongIndex + 1 < songs.length ? setSongOf(currentSongIndex + 1) : setSongOf(0)
               "
@@ -48,25 +70,33 @@
             <p class="progress-text">{{ formatTime(totalSongTime) }}</p>
           </div>
         </div>
-        <div class="song-list" v-for="(song, index) in songs" :key="index">
-          <button @click="setSongOf(index)" class="play-button">
-            <font-awesome-icon :icon="icons.faPlay" />
+        <div
+          v-for="song in filteredSongs"
+          :key="song.file"
+          class="song-list"
+          :class="{ active: songs[currentSongIndex]?.file === song.file }"
+        >
+          <button type="button" @click="setSongOfSong(song)" class="play-button">
+            <font-awesome-icon :icon="songs[currentSongIndex]?.file === song.file && playing ? icons.faPause : icons.faPlay" />
           </button>
-          <p @click="setSongOf(index)" class="song-title">{{ song.name }}</p>
+          <p @click="setSongOfSong(song)" class="song-title">{{ song.name }}</p>
           <p class="song-bullet">&bull;</p>
           <p class="song-artist">{{ song.artist ? song.artist : "Anonymous" }}, {{ song.year }}</p>
         </div>
         <div class="footer-group">
           <p class="footer">
             Have a song you'd like to publish on Jukebox?
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd33UAW_OQjYCfsAJsw_DQPhMAv2Td42MOV9GGZTpEbVgCdig/viewform?usp=dialog9" target="_blank" rel="noreferrer"
-              >Submit it here <font-awesome-icon :icon="icons.faArrowUpRightFromSquare"
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSd33UAW_OQjYCfsAJsw_DQPhMAv2Td42MOV9GGZTpEbVgCdig/viewform?usp=dialog9"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Submit it here <font-awesome-icon :icon="icons.faArrowUpRightFromSquare"
             /></a>
           </p>
           <p class="footer">
-            <a href="https://youtube.com/playlist?list=PLap5ZkjM9rSEGwfnayinyap-wGVZNdN8g&si=jkeY3i9zYnPJueEx" target="_blank" rel="noreferrer">
+            <a href="https://youtube.com/playlist?list=PLap5ZkjM9rSEGwfnayinyap-wGVZNdN8g&si=jkeY3i9zYnPJueEx" target="_blank" rel="noopener noreferrer">
               Listen to music by Music Production 2's activist songwriting project!
-              <font-awesome-icon :icon="icons.faArrowUpRightFromSquare"/>
+              <font-awesome-icon :icon="icons.faArrowUpRightFromSquare" />
             </a>
           </p>
           <p class="footer">Music is student-created and not endorsed by Stevenson High School</p>
@@ -77,8 +107,6 @@
 </template>
 
 <script>
-import HomeLink from "@/components/HomeLink.vue";
-import songs from "@/data/music.json";
 import {
   faRadio,
   faPlay,
@@ -86,9 +114,11 @@ import {
   faStepForward,
   faPause,
   faArrowUpRightFromSquare,
-} from "@fortawesome/free-solid-svg-icons";
-import { Howl } from "howler";
-import defaultAlbum from "@/assets/default-music-album.png";
+} from '@fortawesome/free-solid-svg-icons';
+import { Howl } from 'howler';
+import HomeLink from '@/components/HomeLink.vue';
+import songs from '@/data/music.json';
+import defaultAlbum from '@/assets/default-music-album.png';
 
 export default {
   components: { HomeLink },
@@ -107,18 +137,40 @@ export default {
       percentFinished: 0,
       currentTimePlaying: 0,
       totalSongTime: 0,
+      searchQuery: '',
+      volume: 50,
       defaultAlbum,
       songs,
     };
   },
+  computed: {
+    filteredSongs() {
+      const query = this.searchQuery.trim().toLowerCase();
+      if (!query) {
+        return this.songs;
+      }
+      return this.songs.filter((song) => [song.name, song.artist || 'Anonymous', song.year]
+        .join(' ')
+        .toLowerCase()
+        .includes(query));
+    },
+  },
+  watch: {
+    volume(value) {
+      this.songs.forEach((song) => {
+        if (song.howler) {
+          song.howler.volume(value / 100);
+        }
+      });
+    },
+  },
   mounted() {
-    const fileFormatRegex = /\.[0-9a-z]+$/i;
     for (const song of songs) {
       song.howler = new Howl({
         src: [`https://music-backend.stevenson-space.workers.dev/${song.file}`], // Cloudflare R2 instance URL
-        format: [".mp3"],
+        format: ['.mp3'],
         html5: true,
-        volume: 0.5,
+        volume: this.volume / 100,
         onend: () => {
           if (this.currentSongIndex + 1 <= songs.length) {
             this.setSongOf(this.currentSongIndex + 1);
@@ -128,8 +180,8 @@ export default {
       });
       song.id = 0;
     }
-    document.addEventListener("keyup", (e) => {
-      if (e.key === " ") {
+    document.addEventListener('keyup', (e) => {
+      if (e.key === ' ') {
         e.preventDefault();
         // eslint-disable-next-line no-unused-expressions
         this.playing ? this.pause() : this.play();
@@ -160,6 +212,16 @@ export default {
         this.playing = false;
       }
     },
+    setSongOfSong(song) {
+      const index = this.songs.findIndex((candidate) => candidate.file === song.file);
+      if (index === -1) return;
+      if (this.currentSongIndex === index && this.playing) {
+        this.pause();
+        return;
+      }
+      this.setSongOf(index);
+      this.play();
+    },
     play() {
       const currentSong = this.songs[this.currentSongIndex];
       if (currentSong.id === 0) {
@@ -167,7 +229,7 @@ export default {
       } else currentSong.howler.play(currentSong.id);
       this.songs[this.currentSongIndex].progressBar = setInterval(
         () => this.updateProgressBar(),
-        100
+        100,
       );
       currentSong.howler.fade(0, 0.5, 1);
       this.playing = true;
@@ -244,6 +306,37 @@ $medium: 900px
       text-align: left
       font-size: 1.5em
       margin: 10px 0 0 15px
+
+    .jukebox-toolbar
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      gap: 12px
+      margin: 18px 15px 0 15px
+
+      .search-input
+        flex: 1 1 280px
+        border: 1px solid rgba(128, 128, 128, 0.2)
+        border-radius: 999px
+        padding: 12px 16px
+        font-size: 0.95em
+        background: var(--secondaryBackground)
+        color: var(--primary)
+
+      .toolbar-meta
+        display: flex
+        align-items: center
+        gap: 16px
+        color: var(--secondary)
+        font-weight: bold
+
+      .volume-control
+        display: flex
+        align-items: center
+        gap: 8px
+
+        input
+          accent-color: var(--headerBackground)
 
     .home-link
       position: absolute
@@ -331,14 +424,20 @@ $medium: 900px
             box-shadow: 0 0 10px 0 var(--tertiary)
 
     .song-list
-      // TODO: reactivity
-      // @media screen and (max-width: $small) {
-        // display: block
-      // }
-      // @media screen and (max-width: $medium) {
       display: flex
       justify-content: center
-      // }
+      align-items: center
+      margin: 6px 18px
+      padding: 10px 14px
+      border-radius: 14px
+      transition: background-color 0.2s, transform 0.2s
+
+      &.active
+        background: rgba(31, 93, 57, 0.08)
+
+      &:hover
+        background: rgba(31, 93, 57, 0.05)
+
       .play-button
         border: 0
         background-color: transparent

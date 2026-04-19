@@ -2,9 +2,10 @@
   <card ref="card" class="card">
     <custom-link :href="link" v-bind="linkProps">
       <img class="image" alt="" :src="image" @load="setHeight">
-        <div class="text-group text">{{ text }}</div>
-        <div class="text-group desc">{{ desc }}</div>
+      <div class="text-group text">{{ text }}</div>
+      <div class="text-group desc">{{ desc }}</div>
     </custom-link>
+    <slot name="actions" />
   </card>
 </template>
 
@@ -19,9 +20,9 @@ const { image, text, desc, link, linkProps = {} } = defineProps<{
   desc?: string;
   link: string | Record<string, any>;
   linkProps?: Record<string, any>;
-}>()
+}>();
 
-const cardRef = useTemplateRef<{ setHeight: () => void }>('card')
+const cardRef = useTemplateRef<{ setHeight:() => void }>('card');
 
 function setHeight(): void {
   cardRef.value?.setHeight();

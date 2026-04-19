@@ -18,7 +18,7 @@
 <script>
 import { mapState } from 'pinia';
 import patriot from '@/assets/patriot.png';
-import useClockStore from '@/stores/clock'
+import useClockStore from '@/stores/clock';
 
 export default {
   props: {
@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      patriot
+      patriot,
     };
   },
 };

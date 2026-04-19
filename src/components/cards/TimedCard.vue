@@ -1,5 +1,5 @@
 <template>
-<!-- a template for making cards show up on custom time intervals -->
+  <!-- a template for making cards show up on custom time intervals -->
   <card v-show="showCard">
     <slot />
   </card>
@@ -12,7 +12,7 @@ import Card from '@/components/Card.vue';
 const { startTime, endTime } = defineProps<{
   startTime: string
   endTime: string
-}>()
+}>();
 
 const showCard = computed(() => {
   const [start, end] = [

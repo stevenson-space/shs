@@ -9,9 +9,9 @@
 <script setup lang="ts">
 import { useTemplateRef } from 'vue';
 
-const { submit = false } = defineProps<{ submit?: boolean }>()
+const { submit = false } = defineProps<{ submit?: boolean }>();
 
-const submitButton = useTemplateRef<HTMLInputElement>('submitButton')
+const submitButton = useTemplateRef<HTMLInputElement>('submitButton');
 
 function clicked(): void {
   // if this is the submit component, then click our simulated submit button

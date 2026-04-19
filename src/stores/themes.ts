@@ -1,10 +1,9 @@
-import {defineStore} from 'pinia';
-import {computed, readonly, ref} from 'vue';
-import lightTheme from '@/themes/light.json'
-import {Theme, ThemeStyling} from '@/utils/types';
+import { defineStore } from 'pinia';
+import { computed, readonly, ref } from 'vue';
+import lightTheme from '@/themes/light.json';
+import { Theme, ThemeStyling } from '@/utils/types';
 
 const DEFAULT_THEME: Theme = lightTheme as Theme;
-
 
 export default defineStore('themes', () => {
   const _styling = ref<ThemeStyling>(DEFAULT_THEME.styling);

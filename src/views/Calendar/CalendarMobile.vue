@@ -25,7 +25,7 @@
             @mousedown="selected = i"
           >
             <span>{{ date.date }}</span>
-            <div class="dot" :class="{ show: date.events.length > 0}" />
+            <div class="dot" :class="{ show: date.events.length > 0 }" />
           </div>
 
           <!-- when date is not an object, there should be a blank space (the value of date is an integer index) -->

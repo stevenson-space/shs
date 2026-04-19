@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { expect, waitFor } from 'storybook/test'
-import TimePicker from './TimePicker.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { expect, waitFor } from 'storybook/test';
+import TimePicker from './TimePicker.vue';
 
 const meta = {
   title: 'Settings/AddSchedule/TimePicker',
   component: TimePicker,
   tags: ['autodocs'],
-} satisfies Meta<typeof TimePicker>
+} satisfies Meta<typeof TimePicker>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
@@ -28,15 +28,15 @@ export const Default: Story = {
         { text: 'Period 8', time: '14:38', scheduleMode: 'Normal', name: '8' },
       ]
       // Pre-select 9:26 (Period 2 start) as the active time in the picker
-      ;(this.$refs.picker as any).pickTime(options, '9:26').catch(() => {})
+      ;(this.$refs.picker as any).pickTime(options, '9:26').catch(() => {});
     },
-    template: `<TimePicker ref="picker" />`,
+    template: '<TimePicker ref="picker" />',
   }),
   play: async ({ canvasElement }) => {
     // TimePicker renders inside a Popup (teleport) — check document body
     await waitFor(() => {
-      const picker = document.querySelector('.time-picker')
-      expect(picker).not.toBeNull()
-    })
+      const picker = document.querySelector('.time-picker');
+      expect(picker).not.toBeNull();
+    });
   },
-}
+};

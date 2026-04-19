@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { within, expect } from 'storybook/test'
-import SettingsSection from './SettingsSection.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { within, expect } from 'storybook/test';
+import SettingsSection from './SettingsSection.vue';
 
 const meta = {
   title: 'Settings/SettingsSection',
@@ -8,22 +8,22 @@ const meta = {
   tags: ['autodocs'],
   argTypes: { title: { control: 'text' } },
   args: { title: 'General' },
-} satisfies Meta<typeof SettingsSection>
+} satisfies Meta<typeof SettingsSection>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await expect(canvas.getByText('General')).toBeInTheDocument()
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText('General')).toBeInTheDocument();
   },
-}
+};
 
 export const WithContent: Story = {
   render: (args) => ({
     components: { SettingsSection },
-    setup() { return { args } },
+    setup() { return { args }; },
     template: `
       <SettingsSection :title="args.title">
         <p style="padding: 20px;">
@@ -34,12 +34,12 @@ export const WithContent: Story = {
     `,
   }),
   args: { title: 'Contact' },
-}
+};
 
 export const WithHeadingContent: Story = {
   render: (args) => ({
     components: { SettingsSection },
-    setup() { return { args } },
+    setup() { return { args }; },
     template: `
       <SettingsSection :title="args.title">
         <template #heading-content>
@@ -50,4 +50,4 @@ export const WithHeadingContent: Story = {
     `,
   }),
   args: { title: 'Schedules' },
-}
+};

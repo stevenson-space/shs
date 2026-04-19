@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { within, expect } from 'storybook/test'
-import SwitchByDevice from './SwitchByDevice.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { within, expect } from 'storybook/test';
+import SwitchByDevice from './SwitchByDevice.vue';
 
 const meta = {
   title: 'Components/SwitchByDevice',
   component: SwitchByDevice,
   tags: ['autodocs'],
-} satisfies Meta<typeof SwitchByDevice>
+} satisfies Meta<typeof SwitchByDevice>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
@@ -35,12 +35,12 @@ export const Default: Story = {
     `,
   }),
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await expect(canvas.getByText(/Mobile View/)).toBeInTheDocument()
-    await expect(canvas.getByText(/Tablet View/)).toBeInTheDocument()
-    await expect(canvas.getByText(/Desktop View/)).toBeInTheDocument()
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText(/Mobile View/)).toBeInTheDocument();
+    await expect(canvas.getByText(/Tablet View/)).toBeInTheDocument();
+    await expect(canvas.getByText(/Desktop View/)).toBeInTheDocument();
   },
-}
+};
 
 export const WithDefaultFallback: Story = {
   render: () => ({
@@ -58,7 +58,7 @@ export const WithDefaultFallback: Story = {
       </SwitchByDevice>
     `,
   }),
-}
+};
 
 export const MobileOnly: Story = {
   render: () => ({
@@ -73,7 +73,7 @@ export const MobileOnly: Story = {
       </SwitchByDevice>
     `,
   }),
-}
+};
 
 export const AllSlotsWithLabels: Story = {
   render: () => ({
@@ -103,4 +103,4 @@ export const AllSlotsWithLabels: Story = {
       </div>
     `,
   }),
-}
+};

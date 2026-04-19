@@ -8,7 +8,7 @@
         class="color-input"
         :disabled="isInheriting"
       />
-      <div class="color-swatch" :style="{ background: colorValue }"></div>
+      <div class="color-swatch" :style="{ background: colorValue }" />
     </div>
 
     <div class="input-column">
@@ -42,20 +42,21 @@
             <option value="iconCardsInvert">Inherit iconCardsInvert</option>
           </select>
           <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
+            <polyline points="6 9 12 15 18 9" />
           </svg>
         </div>
 
         <button
           v-if="allowInherit && !disableInlineButton"
+          type="button"
           @click="toggleInherit"
           class="inherit-btn"
           :class="{ active: isInheriting }"
           :title="isInheriting ? 'Use custom color' : 'Use inheritance'"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
           </svg>
         </button>
       </div>
@@ -85,9 +86,7 @@ const themeStore = useThemeStore();
 
 const inheritMode = ref('base');
 
-const isInheriting = computed(() => {
-  return !modelValue || modelValue === 'inherit' || modelValue.startsWith('var(--');
-});
+const isInheriting = computed(() => !modelValue || modelValue === 'inherit' || modelValue.startsWith('var(--'));
 
 const inheritedValue = computed(() => {
   if (modelValue && modelValue.startsWith('var(--')) {
@@ -225,16 +224,16 @@ function toggleInherit(): void {
 function getValueFromVarName(varName: string): string {
   // Map CSS variable names to styling paths (matching App.vue)
   const varMap: Record<string, string> = {
-    'accent': 'accent',
-    'background': 'background',
-    'secondaryBackground': 'secondaryBackground',
-    'headerBackground': 'header.background',
-    'headerScheduleBar': 'header.scheduleBar',
-    'primary': 'text.primary',
-    'secondary': 'text.secondary',
-    'tertiary': 'text.tertiary',
-    'iconCardsRegular': 'iconCards.regular',
-    'iconCardsInvert': 'iconCards.invert',
+    accent: 'accent',
+    background: 'background',
+    secondaryBackground: 'secondaryBackground',
+    headerBackground: 'header.background',
+    headerScheduleBar: 'header.scheduleBar',
+    primary: 'text.primary',
+    secondary: 'text.secondary',
+    tertiary: 'text.tertiary',
+    iconCardsRegular: 'iconCards.regular',
+    iconCardsInvert: 'iconCards.invert',
   };
 
   const path = varMap[varName];

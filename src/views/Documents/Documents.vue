@@ -9,7 +9,7 @@
         :class-name="name"
         :documents="list"
         class="document-card"
-        :style="{ 'animation-delay': index*.01 + 's'}"
+        :style="{ 'animation-delay': `${index * .01}s` }"
       />
       <!-- Request card -->
       <form-card :name="formName" title="Request">

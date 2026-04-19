@@ -1,21 +1,21 @@
-import type { Meta, StoryObj } from "@storybook/vue3";
-import { ref } from "vue";
-import { userEvent, within, expect } from "storybook/test";
-import StaggerAnimation from "./StaggerAnimation.vue";
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { ref } from 'vue';
+import { userEvent, within, expect } from 'storybook/test';
+import StaggerAnimation from './StaggerAnimation.vue';
 
 const meta = {
-  title: "Components/StaggerAnimation",
+  title: 'Components/StaggerAnimation',
   component: StaggerAnimation,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
-    align: { control: "select", options: ["left", "right", "center"] },
-    direction: { control: "select", options: ["up", "down"] },
-    numberOfSlots: { control: "number" },
-    isColorSelector: { control: "boolean" },
+    align: { control: 'select', options: ['left', 'right', 'center'] },
+    direction: { control: 'select', options: ['up', 'down'] },
+    numberOfSlots: { control: 'number' },
+    isColorSelector: { control: 'boolean' },
   },
   args: {
-    align: "right",
-    direction: "down",
+    align: 'right',
+    direction: 'down',
     numberOfSlots: 3,
     isColorSelector: false,
   },
@@ -25,26 +25,26 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const optionStyle = {
-  backgroundColor: "var(--background)",
-  borderRadius: "100px",
-  boxShadow: "0px 0px 10px -4px rgba(0,0,0,.6)",
-  padding: "5px 12px",
-  marginLeft: "8px",
-  whiteSpace: "nowrap",
-  cursor: "pointer",
-  userSelect: "none",
+  backgroundColor: 'var(--background)',
+  borderRadius: '100px',
+  boxShadow: '0px 0px 10px -4px rgba(0,0,0,.6)',
+  padding: '5px 12px',
+  marginLeft: '8px',
+  whiteSpace: 'nowrap',
+  cursor: 'pointer',
+  userSelect: 'none',
 };
 
 export const Default: Story = {
   args: {
-    align: "left",
+    align: 'left',
   },
 
   render: (args) => ({
     components: { StaggerAnimation },
     setup() {
       const open = ref(false);
-      const options = ["Monday", "Tuesday", "Wednesday"];
+      const options = ['Monday', 'Tuesday', 'Wednesday'];
       return { args, open, options, optionStyle };
     },
     template: `
@@ -73,9 +73,9 @@ export const Default: Story = {
 
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const toggle = canvas.getByRole("button");
+    const toggle = canvas.getByRole('button');
     await userEvent.click(toggle);
-    await expect(canvas.getByText("Monday")).toBeInTheDocument();
+    await expect(canvas.getByText('Monday')).toBeInTheDocument();
   },
 };
 

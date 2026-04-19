@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { within, expect } from 'storybook/test'
-import Card from './Card.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { within, expect } from 'storybook/test';
+import Card from './Card.vue';
 
 const meta = {
   title: 'Components/Card',
@@ -18,16 +18,16 @@ const meta = {
     wrapperStyle: {},
     ignoreStyleMutations: false,
   },
-} satisfies Meta<typeof Card>
+} satisfies Meta<typeof Card>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: (args) => ({
     components: { Card },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <Card
@@ -46,16 +46,16 @@ export const Default: Story = {
     `,
   }),
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await expect(canvas.getByText('Card Title')).toBeInTheDocument()
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText('Card Title')).toBeInTheDocument();
   },
-}
+};
 
 export const WithBorder: Story = {
   render: (args) => ({
     components: { Card },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <Card
@@ -74,13 +74,13 @@ export const WithBorder: Story = {
     `,
   }),
   args: { shadow: false, border: true },
-}
+};
 
 export const NoShadow: Story = {
   render: (args) => ({
     components: { Card },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <Card
@@ -99,13 +99,13 @@ export const NoShadow: Story = {
     `,
   }),
   args: { shadow: false, border: false },
-}
+};
 
 export const WithCustomWrapperStyle: Story = {
   render: (args) => ({
     components: { Card },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <Card
@@ -124,13 +124,13 @@ export const WithCustomWrapperStyle: Story = {
     `,
   }),
   args: { wrapperStyle: { background: 'rgba(128,128,255,0.08)', padding: '4px' } },
-}
+};
 
 export const RichContent: Story = {
   render: (args) => ({
     components: { Card },
     setup() {
-      return { args }
+      return { args };
     },
     template: `
       <Card
@@ -150,4 +150,4 @@ export const RichContent: Story = {
       </Card>
     `,
   }),
-}
+};

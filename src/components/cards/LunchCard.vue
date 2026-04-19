@@ -2,8 +2,8 @@
   <card v-show="clockStore.bell?.isSchoolDay && clockStore.bell?.type != 'Summer' && (lunch || noLunchData)">
     <div class="title">Lunch</div>
     <div v-if="noLunchData" class="no-data lunch">
-          No Lunch Data
-         <what-is-this>Stevenson.Space relies on quality data dispayed by Stevenson's lunch website. We will promptly restore lunch functionality once data is provided there.</what-is-this>
+      No Lunch Data
+      <what-is-this>Stevenson.Space relies on quality data dispayed by Stevenson's lunch website. We will promptly restore lunch functionality once data is provided there.</what-is-this>
     </div>
     <div v-else v-for="(items, name) in lunch" :key="name" class="lunch">
       <div class="lunch-content">
@@ -59,9 +59,8 @@ const noLunchData = computed(() => lunch.value === null);
     margin: auto
     margin-top: 5px
 
-
-.lunch element
-  .lunch:last-child .lunch-content
-  border-top: none
+.lunch:last-child
+  .lunch-content
+    border-top: none
 
 </style>

@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
-import { within, expect } from 'storybook/test'
-import CardContainer from './CardContainer.vue'
-import Card from './Card.vue'
+import type { Meta, StoryObj } from '@storybook/vue3';
+import { within, expect } from 'storybook/test';
+import CardContainer from './CardContainer.vue';
+import Card from './Card.vue';
 
 const meta = {
   title: 'Components/CardContainer',
   component: CardContainer,
   tags: ['autodocs'],
-} satisfies Meta<typeof CardContainer>
+} satisfies Meta<typeof CardContainer>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
@@ -56,12 +56,12 @@ export const Default: Story = {
     `,
   }),
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await expect(canvas.getByText('Announcements')).toBeInTheDocument()
-    await expect(canvas.getByText('Quick Links')).toBeInTheDocument()
-    await expect(canvas.getByText('Upcoming Events')).toBeInTheDocument()
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText('Announcements')).toBeInTheDocument();
+    await expect(canvas.getByText('Quick Links')).toBeInTheDocument();
+    await expect(canvas.getByText('Upcoming Events')).toBeInTheDocument();
   },
-}
+};
 
 export const SingleCard: Story = {
   render: () => ({
@@ -77,7 +77,7 @@ export const SingleCard: Story = {
       </CardContainer>
     `,
   }),
-}
+};
 
 export const ManyCards: Story = {
   render: () => ({
@@ -121,4 +121,4 @@ export const ManyCards: Story = {
       </CardContainer>
     `,
   }),
-}
+};

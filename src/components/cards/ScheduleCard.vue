@@ -29,7 +29,7 @@ const { schedule = null, title = 'Schedule', maxHeight = null } = defineProps<{
 
 const clockStore = useClockStore();
 
-const periodList = useTemplateRef<{ scrollToCurrentPeriod: () => void }>('periodList');
+const periodList = useTemplateRef<{ scrollToCurrentPeriod:() => void }>('periodList');
 
 function onHeightChange(): void {
   periodList.value?.scrollToCurrentPeriod();

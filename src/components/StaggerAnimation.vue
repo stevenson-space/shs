@@ -5,7 +5,7 @@
     @before-enter="onBeforeEnter"
     @enter="onEnter"
     @leave="onLeave"
-    :style="{ 'align-items': align == 'left' ? 'flex-start' : (align == 'right' ? 'flex-end' : (align == 'center' ? 'center': 'flex-start')) }"
+    :style="{ 'align-items': align == 'left' ? 'flex-start' : (align == 'right' ? 'flex-end' : (align == 'center' ? 'center' : 'flex-start')) }"
   >
     <slot />
   </TransitionGroup>
@@ -22,7 +22,7 @@ const {
 } = defineProps<{
   isColorSelector?: boolean // if it's coming the color selector component
   align?: 'left' | 'right' | 'center'
-  numberOfSlots?: number   // used if slots will be changed after initial render
+  numberOfSlots?: number // used if slots will be changed after initial render
   direction: 'up' | 'down'
 }>();
 

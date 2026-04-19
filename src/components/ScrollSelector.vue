@@ -1,7 +1,7 @@
 <template>
   <div ref="root" class="scroll-selector" :style="{ height: `${optionHeight * (2 * numOptionsAbove + 1)}px`, fontSize }">
     <!-- eslint-disable-next-line vue/require-v-for-key vue/no-unused-vars-->
-    <div v-for="_ in Array(Math.max(0, Math.floor(numOptionsAbove)))" :style="{ height: `${optionHeight}px`}" />
+    <div v-for="_ in Array(Math.max(0, Math.floor(numOptionsAbove)))" :style="{ height: `${optionHeight}px` }" />
     <div
       v-for="opt in options"
       ref="option"
@@ -14,7 +14,7 @@
     </div>
 
     <!-- eslint-disable-next-line vue/require-v-for-key vue/no-unused-vars-->
-    <div v-for="_ in Array(Math.max(0, Math.floor(numOptionsAbove)))" :style="{ height: `${optionHeight}px`}" />
+    <div v-for="_ in Array(Math.max(0, Math.floor(numOptionsAbove)))" :style="{ height: `${optionHeight}px` }" />
   </div>
 </template>
 

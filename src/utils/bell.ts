@@ -1,7 +1,7 @@
 import defaultSchedules from '@/data/schedules.json';
 import testDate from './dateparser';
 import { ScheduleCollection, Schedule, Period, SingleDaySchedule, SingleDayPeriods, MultiDaySchedule } from './types';
-import {deepCopy, is2DArray, periodToSeconds} from './util';
+import { deepCopy, is2DArray, periodToSeconds } from './util';
 
 // A type guard that states if `school` is true, then all the properties of bell (including `mode`,
 // `schedule`, and `period`) will have values specified

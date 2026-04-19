@@ -13,9 +13,9 @@
 </template>
 
 <script lang="ts">
+import { mapState } from 'pinia';
 import useClockStore from '@/stores/clock';
 import { intoCountdownString, schoolResumesString } from '@/utils/countdown';
-import { mapState } from 'pinia';
 import { dateToSeconds } from '@/utils/util';
 
 export default {
@@ -26,11 +26,11 @@ export default {
     },
     nextDayMessage(): string | null {
       return schoolResumesString(this.bell, this.date)?.replace(',', ',\n') ?? null;
-    }
+    },
   },
   methods: {
     intoCountdownString,
-  }
+  },
 };
 </script>
 

@@ -11,8 +11,8 @@
         class="header-image"
       />
       <div v-else class="color-split">
-        <div class="accent-half" :style="{ background: accent }"></div>
-        <div class="background-half" :style="{ background: background }"></div>
+        <div class="accent-half" :style="{ background: accent }" />
+        <div class="background-half" :style="{ background }" />
       </div>
 
       <div class="theme-info-overlay">
@@ -34,37 +34,33 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { faCalendar } from '@fortawesome/free-solid-svg-icons'
-import { formatDateRange, fallbackStyling } from '@/utils/themes'
-import { globalImageResolver } from '@/utils/imageResolver'
-import InfoTooltip from '@/components/InfoTooltip.vue'
+import { computed } from 'vue';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { formatDateRange, fallbackStyling } from '@/utils/themes';
+import { globalImageResolver } from '@/utils/imageResolver';
+import InfoTooltip from '@/components/InfoTooltip.vue';
 
 const { theme } = defineProps<{
   theme: Record<string, any>
-}>()
+}>();
 
 defineEmits<{
   click: [theme: Record<string, any>]
-}>()
+}>();
 
 const headerImage = computed(() => {
-  const fullImage = theme.styling?.header?.image?.full
-  return globalImageResolver.resolve(fullImage)
-})
+  const fullImage = theme.styling?.header?.image?.full;
+  return globalImageResolver.resolve(fullImage);
+});
 
-const accent = computed(() =>
-  theme.styling?.accent || fallbackStyling(theme.styling).accent
-)
+const accent = computed(() => theme.styling?.accent || fallbackStyling(theme.styling).accent);
 
-const background = computed(() =>
-  theme.styling?.background || fallbackStyling(theme.styling).background
-)
+const background = computed(() => theme.styling?.background || fallbackStyling(theme.styling).background);
 
 const seasonalDateRange = computed(() => {
-  if (!theme.seasonalDates) return ''
-  return formatDateRange(theme.seasonalDates)
-})
+  if (!theme.seasonalDates) return '';
+  return formatDateRange(theme.seasonalDates);
+});
 </script>
 
 <style lang="sass" scoped>

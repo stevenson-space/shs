@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { useId } from 'vue'
+import { useId } from 'vue';
 
 const { modelValue, label = '', ariaLabel = '', min = 0, max = 100, step = 1 } = defineProps<{
   modelValue: number
@@ -41,27 +41,27 @@ const { modelValue, label = '', ariaLabel = '', min = 0, max = 100, step = 1 } =
   min?: number
   max?: number
   step?: number
-}>()
+}>();
 
 const emit = defineEmits<{
   'update:modelValue': [value: number]
   blur: []
-}>()
+}>();
 
-const id = useId()
+const id = useId();
 
 function clampValue(val: string | number): number {
-  const num = Number(val)
-  if (Number.isNaN(num)) return min
-  return Math.min(max, Math.max(min, num))
+  const num = Number(val);
+  if (Number.isNaN(num)) return min;
+  return Math.min(max, Math.max(min, num));
 }
 
 function handleSliderInput(event: Event): void {
-  emit('update:modelValue', clampValue((event.target as HTMLInputElement).value))
+  emit('update:modelValue', clampValue((event.target as HTMLInputElement).value));
 }
 
 function handleNumberInput(event: Event): void {
-  emit('update:modelValue', clampValue((event.target as HTMLInputElement).value))
+  emit('update:modelValue', clampValue((event.target as HTMLInputElement).value));
 }
 </script>
 
