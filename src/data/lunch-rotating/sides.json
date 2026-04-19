@@ -1,0 +1,32 @@
+{
+  "cadence": "daily",
+  "data": [
+    [
+      ["Roasted Carrots", "Roasted Red Potatoes"],
+      ["Simple Green Salad", "Lemon Rice with Tzatziki Sauce"],
+      ["Roasted Carrots & Broccoli", "Mashed Potatoes"],
+      ["Azteca Corn", "Mexican Rice"],
+      ["Roasted Vegetables", "Fried Potato Wedges"]
+    ],
+    [
+      ["Roasted Brussels Sprouts", "Scalloped Potatoes"],
+      ["Roasted Carrots", "Cilantro Lime Rice"],
+      ["Roasted Zucchini", "Herbed Orzo"],
+      ["Broccoli & Carrots", "Mashed Potatoes"]
+    ],
+    [
+      ["Roasted Broccolini", "Pasta"],
+      ["Lemon Pepper Green Beans", "Yellow Rice"],
+      ["Cucumber Salad with Tzatiki Sauce", "Lemon Rice"],
+      ["Roasted Asparagus", "Scalloped Potatoes"],
+      ["Roasted Vegetables", "Maple Whipped Sweet Potatoes "]
+    ],
+    [
+      ["Lemon Pepper Green Beans", "Italian Roasted Red Potatoes"],
+      ["Roasted Zucchini", "Lime Cilantro Rice"],
+      ["Roasted Broccolini", "Rice Pilaf"],
+      ["Roasted Corn", "Cauliflower"],
+      ["Roasted Vegetables", "Roasted Potato Wedges"]
+    ]
+  ]
+}
