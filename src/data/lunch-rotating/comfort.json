@@ -1,0 +1,33 @@
+{
+  "cadence": "daily",
+  "data": [
+    [
+      "Cheese Tortellini",
+      "Chicken Shawarma with Pita",
+      "Beef Meatloaf",
+      "Baked Mostaccioli",
+      "BBQ Pulled Chicken Sandwich"
+    ],
+    [
+      "Blackened Tilapia",
+      "Veggie Chilaquiles",
+      "Chicken Tetrazini",
+      "Turkey Sloppy Joe",
+      "Roasted Italian Chicken Thigh"
+    ],
+    [
+      "Vegetable Paellla",
+      "Three Cheese Penne",
+      "Falafel Sandwich",
+      "Fried Chicken",
+      "Baked Turkey Meatloaf with Chipotle BBQ Sauce"
+    ],
+    [
+      "Spicy Whole Wheat Spaghetti",
+      "Swedish Meatballs with Egg Noodles",
+      "Cheese Enchilada Casserole",
+      "Adobo Roasted Turkey Breast",
+      "Baked Battered Cod"
+    ]
+  ]
+}
