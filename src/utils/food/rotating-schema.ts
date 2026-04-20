@@ -9,6 +9,7 @@ export const DayMenu = z.object({
   sides: z.tuple([z.string(), z.string()]),
   soup: z.tuple([z.string(), z.string()]),
   international: z.string(),
+  special: z.string(),
 });
 
 export const RotatingStation = z.enum([
@@ -31,6 +32,9 @@ export const WeeklyEntries = z.discriminatedUnion("cadence", [
   z.object({ cadence: z.literal("daily"), data: DailyData }),
 ]);
 
+export const SpecialStationEntries = z.array(z.array(z.string()).length(WEEKDAYS_COUNT)).length(2);
+
 export type RotatingStation = z.infer<typeof RotatingStation>;
 export type DayMenu = z.infer<typeof DayMenu>;
 export type WeeklyEntries = z.infer<typeof WeeklyEntries>;
+export type SpecialStationEntries = z.infer<typeof SpecialStationEntries>;
