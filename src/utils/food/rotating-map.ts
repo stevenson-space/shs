@@ -76,9 +76,9 @@ export class RotatingMenuMap {
 }
 
 export const rotatingMenuMap = new RotatingMenuMap(
-  new Date("2025-08-11"),
-  new Date("2026-05-22"),
-  new Date("2026-01-01"),
+  new Date(2025, 7, 11),
+  new Date(2026, 4, 22),
+  new Date(2026, 0, 1),
   0,
   { comfort, mindful, sides, soup, international },
   special,
