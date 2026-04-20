@@ -10,6 +10,7 @@ import special from "../../data/lunch-rotating/special.json";
 export class RotatingMenuMap {
   validFrom: Date
   validTo: Date
+  // what's a date beween first semester and second?
   semesterSwitch: Date
   // which week in the lunch menu does 'validFrom' correspond to?
   offset: number
