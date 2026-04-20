@@ -13,8 +13,7 @@ export const DayMenu = z.object({
 
 export const RotatingStation = z.enum([
   "comfort", "mindful", "sides",
-  "soup", "international", "special",
-  // for special, not sure what the rotating station in the west is called
+  "soup", "international",
 ]);
 
 const WeeklyData = z.union([
