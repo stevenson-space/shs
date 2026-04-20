@@ -51,12 +51,16 @@ export class RotatingMenuMap {
   }
 
   getMenuUnchecked(date: Date): DayMenu {
-    if (this.validFrom > date || date > this.validTo) {
-      throw new RangeError("date must be a valid date");
+    if (date < this.validFrom || date > this.validTo) {
+      throw new RangeError(`date ${date.toDateString()} is outside valid range`);
+    }
+
+    const day = (date.getDay() + 6) % 7; // mon = 0, fri = 4
+    if (day >= 5) {
+      throw new RangeError(`date ${date.toDateString()} is a weekend`);
     }
 
     const week = this.currentWeekIndex(date);
-    const day = (date.getDay() + 6) % 7; // mon = 0, fri = 4
 
     return {
       ...Object.fromEntries(
