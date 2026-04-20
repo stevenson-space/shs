@@ -21,10 +21,12 @@ import { rotatingMenuMap } from '@/utils/food/rotating-map';
 const clockStore = useClockStore();
 
 const lunch = computed(() => {
+  if (!clockStore.bell?.isSchoolDay || clockStore.bell?.type === 'Summer') return null;
+
   try {
     const menu = rotatingMenuMap.getMenuUnchecked(clockStore.date);
     const dayOfWeek = clockStore.date.toLocaleDateString('en-US', { weekday: 'long' });
-    
+
     return {
       'Comfort Food': [menu.comfort],
       'Mindful': [menu.mindful],
