@@ -31,9 +31,6 @@ export const WeeklyEntries = z.discriminatedUnion("cadence", [
   z.object({ cadence: z.literal("daily"), data: DailyData }),
 ]);
 
-export const RotatingMenuMap = z.map(RotatingStation, WeeklyEntries);
-
 export type RotatingStation = z.infer<typeof RotatingStation>;
 export type DayMenu = z.infer<typeof DayMenu>;
 export type WeeklyEntries = z.infer<typeof WeeklyEntries>;
-export type RotatingMenuMap = z.infer<typeof RotatingMenuMap>;
