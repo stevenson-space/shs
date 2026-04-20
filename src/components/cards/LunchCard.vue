@@ -1,11 +1,7 @@
 <template>
-  <card v-show="clockStore.bell?.isSchoolDay && clockStore.bell?.type != 'Summer' && (lunch || noLunchData)">
+  <card v-show="clockStore.bell?.isSchoolDay && clockStore.bell?.type != 'Summer' && lunch">
     <div class="title">Lunch</div>
-    <div v-if="noLunchData" class="no-data lunch">
-          No Lunch Data
-         <what-is-this>Stevenson.Space relies on quality data dispayed by Stevenson's lunch website. We will promptly restore lunch functionality once data is provided there.</what-is-this>
-    </div>
-    <div v-else v-for="(items, name) in lunch" :key="name" class="lunch">
+    <div v-for="(items, name) in lunch" :key="name" class="lunch">
       <div class="lunch-content">
         <div class="name">{{ name }}</div>
         <div v-for="item in items" :key="item" class="item">
@@ -18,16 +14,31 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import getLunch from '@/utils/lunch';
 import useClockStore from '@/stores/clock';
 import Card from '@/components/Card.vue';
-import WhatIsThis from '@/components/WhatIsThis.vue';
+import { rotatingMenuMap } from '@/utils/food/rotating-map';
 
 const clockStore = useClockStore();
 
-const lunch = computed(() => getLunch(clockStore.date));
+const lunch = computed(() => {
+  try {
+    const menu = rotatingMenuMap.getMenuUnchecked(clockStore.date);
+    const dayOfWeek = clockStore.date.toLocaleDateString('en-US', { weekday: 'long' });
+    
+    return {
+      'Comfort Food': [menu.comfort],
+      'Mindful': [menu.mindful],
+      'Sides': menu.sides,
+      'Soup': menu.soup,
+      'International': [menu.international],
+      'Special': [`${menu.special} ${dayOfWeek}`],
+    };
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+});
 
-const noLunchData = computed(() => lunch.value === null);
 </script>
 
 <style lang="sass" scoped>
