@@ -34,8 +34,11 @@ const lunch = computed(() => {
       'Special': [`${menu.special} ${dayOfWeek}`],
     };
   } catch (e) {
-    console.error(e);
-    return null;
+    if (e instanceof RangeError) {
+      console.error(e);
+      return null;
+    }
+    throw e;
   }
 });
 
