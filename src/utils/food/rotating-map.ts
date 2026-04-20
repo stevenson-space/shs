@@ -21,7 +21,7 @@ export class RotatingMenuMap {
       throw new RangeError("validFrom must be before validTo");
     }
 
-    if (validFrom > semesterSwitch || semesterSwitch > validFrom) {
+    if (validFrom > semesterSwitch || semesterSwitch > validTo) {
       throw new RangeError("semesterSwitch must be a valid date");
     }
 
@@ -50,7 +50,7 @@ export class RotatingMenuMap {
   }
 
   getMenuUnchecked(date: Date): DayMenu {
-    if (this.validFrom > date || date > this.validFrom) {
+    if (this.validFrom > date || date > this.validTo) {
       throw new RangeError("date must be a valid date");
     }
 
