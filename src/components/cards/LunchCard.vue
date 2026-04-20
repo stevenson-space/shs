@@ -1,5 +1,5 @@
 <template>
-  <card v-show="clockStore.bell?.isSchoolDay && clockStore.bell?.type != 'Summer' && lunch">
+  <card v-if="lunch">
     <div class="title">Lunch</div>
     <div v-for="(items, name) in lunch" :key="name" class="lunch">
       <div class="lunch-content">
