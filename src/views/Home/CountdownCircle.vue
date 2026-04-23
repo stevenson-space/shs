@@ -17,7 +17,7 @@
 
 <script>
 import { mapState } from 'pinia';
-import patriot from '@/assets/patriot.png';
+import patriot from '@/assets/patriots/patriot.png';
 import useClockStore from '@/stores/clock'
 
 export default {

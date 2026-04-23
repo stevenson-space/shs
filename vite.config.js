@@ -5,11 +5,29 @@ import path from 'path';
 import { fileURLToPath } from 'node:url';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
+import { VitePWA } from 'vite-plugin-pwa';
 const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [
     vue(),
+    VitePWA({
+      strategies: 'injectManifest',
+      srcDir: 'src',
+      filename: 'service-worker.ts',
+      injectRegister: false,
+      registerType: 'autoUpdate',
+      injectManifest: {
+        rollupFormat: 'iife',
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2,mp3}'],
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+      },
+      devOptions: {
+        enabled: false,
+        type: 'module',
+      },
+      manifest: false,
+    }),
   ],
   resolve: {
     alias: {

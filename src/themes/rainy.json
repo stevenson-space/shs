@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "name": "Rainy",
+    "author": "Jiya S. ('29)"
+  },
+  "styling": {
+    "base": "light",
+    "background": "#f2fcff",
+    "secondaryBackground": "white",
+    "accent": "#1a0a52",
+    "text": {
+      "primary": "var(--accent)",
+      "secondary": "var(--accent)",
+      "tertiary": "var(--accent)"
+    },
+    "particles": {
+      "images": [
+        "assets://particles/rainy/raindrop.png",
+        "assets://particles/rainy/raindrop.png",
+        "assets://particles/rainy/lightning.png"
+      ],
+      "speed": 2,
+      "count": 30,
+      "size": 8,
+      "opacity": 0.7,
+      "windPower": 0.7
+    },
+    "header": {},
+    "iconCards": {}
+  }
+}

@@ -28,6 +28,7 @@ const SnowballRedirect: RouteComponent = () => import("@/views/Snowball/Snowball
 const TVSpace: RouteComponent = () => import("@/views/TVSpace/TVSpace.vue");
 const TestingCenterTV: RouteComponent = () => import("@/views/TVSpace/TestingCenterTV.vue");
 const RawCountdown: RouteComponent = () => import("@/views/Raw/Countdown.vue");
+const Install: RouteComponent = () => import("@/views/Install/Install.vue");
 
 type EditScheduleProps = {
   scheduleToEdit: string;
@@ -143,6 +144,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/raw/countdown",
     component: RawCountdown,
   },
+  {
+    name: "Install",
+    path: "/install",
+    component: Install,
+  },
 ];
 
 const router = createRouter({
@@ -154,6 +160,20 @@ const router = createRouter({
     }
     return { top: 0, left: 0 };
   },
+});
+
+// when a lazy-loaded route chunk fails to load, hard-reload for current build
+// this is for pwa; because this is likely because a deploy invalidated the filename while the tab was open
+router.onError((error, to) => {
+  const message = (error as Error)?.message || '';
+  const isChunkLoadError = /Failed to (fetch dynamically|load module|dynamically import)|Importing a module script|Loading chunk/i.test(message);
+  if (isChunkLoadError && to?.fullPath) {
+    const flag = `__chunkReloaded:${to.fullPath}`;
+    if (!sessionStorage.getItem(flag)) {
+      sessionStorage.setItem(flag, '1');
+      window.location.replace(to.fullPath);
+    }
+  }
 });
 
 // ensure any page with requiresAuth set to true will redirect through the login proxy component

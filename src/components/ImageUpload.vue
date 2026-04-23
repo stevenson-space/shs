@@ -68,7 +68,9 @@
     <!-- Asset Browser Modal -->
     <asset-browser
       :is-open="assetBrowserOpen"
-      :folder="assetFolder"
+      :sources="assetSources"
+      :title="assetTitle"
+      :thumbnail-square="assetThumbnailSquare"
       @close="assetBrowserOpen = false"
       @select="handleAssetSelect"
     />
@@ -90,11 +92,20 @@ import AssetBrowser from '@/components/AssetBrowser.vue';
 import IconButton from '@/components/IconButton.vue';
 import InfoTooltip from '@/components/InfoTooltip.vue';
 
-const { modelValue, label = '', minAspectRatio = 2, assetFolder = 'header-images' } = defineProps<{
+const {
+  modelValue,
+  label = '',
+  minAspectRatio = 2,
+  assetSources,
+  assetTitle,
+  assetThumbnailSquare,
+} = defineProps<{
   modelValue?: string;
   label?: string;
   minAspectRatio?: number;
-  assetFolder?: string;
+  assetSources: string[];
+  assetTitle: string;
+  assetThumbnailSquare: boolean;
 }>();
 
 const emit = defineEmits<{

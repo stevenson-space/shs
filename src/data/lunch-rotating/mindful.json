@@ -1,0 +1,33 @@
+{
+  "cadence": "daily",
+  "data": [
+    [
+      "Lemon Garlic Baked Chicken",
+      "Gyro Sandwich with Pita",
+      "Roast Turkey Breast",
+      "Chicken Tinga",
+      "Southwest Beef Macaroni"
+    ],
+    [
+      "Jerk Chicken",
+      "Chicken Cordon Bleu",
+      "Tortilla Crusted Tilapia",
+      "Dijon Chicken",
+      "Baked Herb Cod"
+    ],
+    [
+      "Baked Chicken Parmesan",
+      "Biryani Chicken",
+      "Gyro Sandwich with Pita",
+      "Chopped Steak with Onion Gravy",
+      "Cajun Shrimp Pasta"
+    ],
+    [
+      "Chicken Marsala",
+      "Chicken Tikka Masala",
+      "Chipotle Orange Chicken",
+      "Vegetable Pot Pie Over Biscuit",
+      "Chicken Vesuvio"
+    ]
+  ]
+}

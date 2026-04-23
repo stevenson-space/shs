@@ -8,11 +8,13 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     isOpen: { control: 'boolean' },
-    folder: { control: 'select', options: ['header-images', 'particles'] },
+    thumbnailSquare: { control: 'boolean' },
   },
   args: {
     isOpen: true,
-    folder: 'header-images',
+    sources: ['header-images/'],
+    title: 'Browse Header Images',
+    thumbnailSquare: false,
     onClose: fn(),
     onSelect: fn(),
   },
@@ -27,11 +29,12 @@ export const Default: Story = {
     setup() {
       return { args }
     },
-    template: `<AssetBrowser :is-open="args.isOpen" :folder="args.folder" @close="args.onClose" @select="args.onSelect" />`,
+    template: `<AssetBrowser :is-open="args.isOpen" :sources="args.sources" :title="args.title" :thumbnail-square="args.thumbnailSquare" @close="args.onClose" @select="args.onSelect" />`,
   }),
   args: {
     isOpen: true,
-    folder: 'header-images',
+    sources: ['header-images/'],
+    title: 'Browse Header Images',
   },
   play: async () => {
     const title = await document.querySelector('.modal-header h3') as HTMLElement
@@ -46,10 +49,12 @@ export const ParticlesFolder: Story = {
     setup() {
       return { args }
     },
-    template: `<AssetBrowser :is-open="args.isOpen" :folder="args.folder" @close="args.onClose" @select="args.onSelect" />`,
+    template: `<AssetBrowser :is-open="args.isOpen" :sources="args.sources" :title="args.title" :thumbnail-square="args.thumbnailSquare" @close="args.onClose" @select="args.onSelect" />`,
   }),
   args: {
     isOpen: true,
-    folder: 'particles',
+    sources: ['particles/'],
+    title: 'Browse Particle Images',
+    thumbnailSquare: true,
   },
 }
