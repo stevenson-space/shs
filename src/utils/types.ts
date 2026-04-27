@@ -24,7 +24,7 @@ export type ScheduleType = string;
 export type ScheduleCollection = {
   name: ScheduleType;
   isSpecial: boolean;
-  dates: string[];
+  dates: string[] | null;
   modes: Schedule[];
   eventAliases?: string[];
 };
