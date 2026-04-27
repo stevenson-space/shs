@@ -84,7 +84,7 @@
         "eventAliases": ["PM Assembly Schedule"]
       },
     {
-      "name": "Early Dismissal Day",
+      "name": "Early Dismissal",
       "isSpecial": true,
       "dates": null,
       "modes": [
