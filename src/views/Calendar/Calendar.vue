@@ -22,7 +22,7 @@
       @previous-month="previousMonth"
       @event-click="displayedEvent = $event"
     />
-    <event-popup :event="displayedEvent" :show="!!displayedEvent.name" @close="displayedEvent = {}" />
+    <event-popup :event="displayedEvent" :show="!!displayedEvent.title" @close="displayedEvent = {}" />
   </div>
 </template>
 
@@ -34,6 +34,19 @@ import Bell from '@/utils/bell';
 import CalendarMain from './CalendarMain.vue';
 import CalendarMobile from './CalendarMobile.vue';
 import EventPopup from './EventPopup.vue';
+
+// TODO: refactor dates() to yield {year, month, day} objects so this map can use a nested [year][month][day] structure instead of a string key
+// Build lookup keyed by "M/D/YYYY"
+const allEvents = {};
+for (const event of rawEvents) {
+  const t = event.timing;
+  const date = t.allDay
+    ? (() => { const [y, m, d] = t.date.split('-').map(Number); return new Date(y, m - 1, d); })()
+    : new Date(t.start);
+  const key = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+  if (!allEvents[key]) allEvents[key] = [];
+  allEvents[key].push(event);
+}
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
   'September', 'October', 'November', 'December'];
@@ -123,23 +136,23 @@ export default {
             const scheduleIndicatingWords = [schedules[i].name].concat(schedules[i].eventAliases || []);
 
             // Sort it so that the longest strings come first in case the strings overlap
-            // for example, in ['PM Assembly', 'PM Assembly Schedule'] we would want 'PM Assembly Schedule' to be replaced in event.name
+            // for example, in ['PM Assembly', 'PM Assembly Schedule'] we would want 'PM Assembly Schedule' to be replaced in event.title
             scheduleIndicatingWords.sort((a, b) => b.length - a.length);
 
             // Remove any events that are exact duplicates of the schedule type or equivalent
-            events = events.filter((event) => !scheduleIndicatingWords.includes(event.name.trim()));
+            events = events.filter((event) => !scheduleIndicatingWords.includes(event.title.trim()));
 
             // If any of the removed events contain extra information in addition to the schedule type
             // then remove the schedule type, leaving just the extra information
             for (let j = events.length - 1; j >= 0; j--) {
               const event = events[j];
               for (const words of scheduleIndicatingWords) {
-                if (event.name.indexOf(words) > -1) {
+                if (event.title.indexOf(words) > -1) {
                   // Inefficiently, but cleanly remove schedule type
-                  event.name = event.name.split(words).join('');
+                  event.title = event.title.split(words).join('');
 
                   // Trim any non word characters on the sides (spaces, hyphens, ...)
-                  event.name = event.name.replace(/^[\W]+|[\W]+$/g, '');
+                  event.title = event.title.replace(/^[\W]+|[\W]+$/g, '');
 
                   // Check to make sure none of the other events contain the same information as the extra info in this event
                   const eventNames = events.map((e) => e.name);
@@ -147,7 +160,7 @@ export default {
 
                   let isInfoAlreadyPresent = false;
                   eventNames.forEach((name) => {
-                    if (name.indexOf(event.name) > -1) isInfoAlreadyPresent = true;
+                    if (name.indexOf(event.title) > -1) isInfoAlreadyPresent = true;
                   });
 
                   // If the same information as what's left in this event is present in another event, remove this event
@@ -162,7 +175,7 @@ export default {
             // that does not add any useful information, remove it
             const boringWords = ['schedule'];
             boringWords.forEach((word) => {
-              events = events.filter((event) => !event.name.match(new RegExp(`^${word}$`, 'i')));
+              events = events.filter((event) => !event.title.match(new RegExp(`^${word}$`, 'i')));
             });
           }
 

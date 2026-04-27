@@ -6,9 +6,9 @@
     <calendar-event v-if="schedule" :text="schedule.name" :invert="true" />
     <calendar-event
       v-for="event in events"
-      :key="event.name + event.start"
+      :key="event.title + (event.timing.allDay ? event.timing.date : String(event.timing.start))"
       class="event"
-      :text="event.name"
+      :text="event.title"
       @click="$emit('event-click', event)"
     />
   </div>
