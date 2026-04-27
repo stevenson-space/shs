@@ -119,8 +119,15 @@ export async function scrapeMonth(year: number, month: number): Promise<Calendar
 }
 
 export async function scrapeRange(from: string, to: string): Promise<CalendarEvent[]> {
+  const yyyyMm = /^\d{4}-(0[1-9]|1[0-2])$/;
+  if (!yyyyMm.test(from)) throw new Error(`Invalid 'from' date "${from}": expected YYYY-MM with month 01–12`);
+  if (!yyyyMm.test(to)) throw new Error(`Invalid 'to' date "${to}": expected YYYY-MM with month 01–12`);
+
   const [fromYear, fromMonth] = from.split('-').map(Number);
   const [toYear, toMonth] = to.split('-').map(Number);
+
+  if (toYear < fromYear || (toYear === fromYear && toMonth < fromMonth))
+    throw new Error(`'to' date "${to}" must not be before 'from' date "${from}"`);
 
   const total = (toYear - fromYear) * 12 + (toMonth - fromMonth) + 1;
   const results: CalendarEvent[] = [];
