@@ -44,11 +44,13 @@ import { faChevronDown, faChevronUp, faFlag } from '@fortawesome/free-solid-svg-
 import { useRoute } from 'vue-router';
 import Bell from '@/utils/bell';
 import useClockStore from '@/stores/clock';
+import useScheduleStore from '@/stores/schedules';
 import Card from '@/components/Card.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import EventChip from '@/components/EventChip.vue';
 
 const clockStore = useClockStore();
+const scheduleStore = useScheduleStore();
 const route = useRoute();
 
 function getNextEvent(startDate: Date) {
@@ -64,7 +66,7 @@ function getNextEvent(startDate: Date) {
   let event = null;
   // Go through dates starting from startDate until we find one with a special schedule and return that
   for (const date of dates(startDate)) {
-    const schedule = Bell.getScheduleType(date);
+    const schedule = Bell.getScheduleType(date, scheduleStore.schedules);
     if (schedule && schedule.isSpecial) {
       event = {
         key: `${schedule.name} ${date.getTime()}`, // unique key for each event used in v-for

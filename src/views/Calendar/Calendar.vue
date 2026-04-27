@@ -30,6 +30,7 @@
 import { mapState } from 'pinia';
 import rawEvents from '@/data/events.json';
 import useClockStore from '@/stores/clock';
+import useScheduleStore from '@/stores/schedules';
 import Bell from '@/utils/bell';
 import CalendarMain from './CalendarMain.vue';
 import CalendarMobile from './CalendarMobile.vue';
@@ -68,6 +69,7 @@ export default {
   },
   computed: {
     ...mapState(useClockStore, ['date']),
+    ...mapState(useScheduleStore, { storeSchedules: 'schedules' }),
     childProps() {
       const {
         today, month, year, dates, schedules, categories, filteredEvents,
@@ -115,7 +117,7 @@ export default {
       // Get the schedule for each date currently displayed on the calendar
       return this.dates.map((date) => {
         if (date) {
-          const schedule = Bell.getScheduleType(new Date(date));
+          const schedule = Bell.getScheduleType(new Date(date), this.storeSchedules);
 
           // We only care about the schedule if it is special ("Late Arrival", "No School", etc.)
           return (schedule && schedule.isSpecial) ? schedule : undefined;
