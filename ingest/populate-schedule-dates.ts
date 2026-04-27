@@ -30,10 +30,12 @@ for (let i = 0; i < args.length; i++) {
     fromDate = new Date(args[++i]);
   } else if (args[i] === '--to' && args[i + 1]) {
     toDate = new Date(args[++i]);
-  } else if (/^\d{2}$/.test(args[i]) || /^\d{4}$/.test(args[i])) {
-    const endYear = args[i].length === 2 ? 2000 + parseInt(args[i]) : parseInt(args[i]);
-    fromDate = new Date(endYear - 1, 7, 1);
-    toDate = new Date(endYear, 6, 31);
+  } else if (/^\d{4}$/.test(args[i]) || (/^\d{2}$/.test(args[i]) && parseInt(args[i]) >= 20)) {
+    if (fromDate === null && toDate === null) {
+      const endYear = args[i].length === 2 ? 2000 + parseInt(args[i]) : parseInt(args[i]);
+      fromDate = new Date(endYear - 1, 7, 1);
+      toDate = new Date(endYear, 6, 31);
+    }
   }
 }
 

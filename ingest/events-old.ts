@@ -6,13 +6,16 @@ import { scrapeRange } from './scrape-calendar';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const args = process.argv.slice(2);
-const from = args[args.indexOf('--from') + 1];
-const to = args[args.indexOf('--to') + 1];
+const fromIdx = args.indexOf('--from');
+const toIdx = args.indexOf('--to');
 
-if (!from || !to) {
+if (fromIdx === -1 || fromIdx + 1 >= args.length || toIdx === -1 || toIdx + 1 >= args.length) {
   console.error('Usage: events-old.ts --from YYYY-MM --to YYYY-MM');
   process.exit(1);
 }
+
+const from = args[fromIdx + 1];
+const to = args[toIdx + 1];
 
 const outPath = resolve(__dirname, '../src/data/events_old.json');
 const events = await scrapeRange(from, to);
