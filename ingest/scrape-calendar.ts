@@ -122,11 +122,17 @@ export async function scrapeRange(from: string, to: string): Promise<CalendarEve
   const [fromYear, fromMonth] = from.split('-').map(Number);
   const [toYear, toMonth] = to.split('-').map(Number);
 
+  const total = (toYear - fromYear) * 12 + (toMonth - fromMonth) + 1;
   const results: CalendarEvent[] = [];
-  let y = fromYear, m = fromMonth;
+  let y = fromYear, m = fromMonth, done = 0;
 
   while (y < toYear || (y === toYear && m <= toMonth)) {
-    results.push(...await scrapeMonth(y, m));
+    const monthStr = new Date(y, m - 1).toLocaleString('default', { month: 'long' });
+    process.stdout.write(`[${done + 1}/${total}] Fetching ${monthStr} ${y}...`);
+    const events = await scrapeMonth(y, m);
+    results.push(...events);
+    process.stdout.write(` ${events.length} events\n`);
+    done++;
     if (++m > 12) { m = 1; y++; }
   }
 
