@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "name": "Frank Gallagher",
+    "author": "Lucy F. ('29)",
+    "description": "Frank the tank"
+  },
+  "styling": {
+    "base": "light",
+    "background": "#FCD9E1",
+    "secondaryBackground": "#fde7ec",
+    "accent": "#f3a0b9",
+    "text": {},
+    "header": {},
+    "iconCards": {},
+    "particles": {
+      "images": [
+        "local://IMG_0320.png"
+      ],
+      "speed": 2.1,
+      "count": 30,
+      "size": 35,
+      "opacity": 0.15,
+      "windPower": 0.4
+    }
+  }
+}
