@@ -1,10 +1,19 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 import { RouteLocationNormalized } from 'vue-router';
-import officialSchedules from '@/data/schedules.json';
+import rawSchedules from '@/data/schedules.json';
+import scheduleDates from '@/data/schedule-dates.json';
 import { CustomSchedules, Schedule, ScheduleCollection } from '@/utils/types';
 import { tryParseJSON, getNameWithoutConflicts } from '@/utils/util';
-import Bell from '@/utils/bell';
+
+const officialSchedules: ScheduleCollection[] = rawSchedules.map((s) => {
+  if (s.dates === null) {
+    const dates = (scheduleDates as Record<string, string[]>)[s.name];
+    if (!dates) throw new Error(`Schedule "${s.name}" has null dates but no entry in schedule-dates.json`);
+    return { ...s, dates };
+  }
+  return s as ScheduleCollection;
+});
 
 export default defineStore('schedules', () => {
   const customSchedules = ref<CustomSchedules>({} as CustomSchedules);
@@ -39,7 +48,7 @@ export default defineStore('schedules', () => {
     }
   }
 
-  function addCustomScheduleMode({ scheduleType, scheduleToAdd, scheduleToReplace }: { scheduleType: string, scheduleToAdd: { start: string[], end: string[], name: string, periods: string }, scheduleToReplace: string }): void {
+  function addCustomScheduleMode({ scheduleType, scheduleToAdd, scheduleToReplace }: { scheduleType: string, scheduleToAdd: { start: string[], end: string[], name: string, periods: string[] }, scheduleToReplace: string }): void {
     // If scheduleToReplace is not defined, then we want to just add to end of scheduleModes list
     const scheduleModes = (customSchedules.value || {})[scheduleType] || [] as Schedule[];
     const replaceIndex = scheduleModes.map((mode: Schedule) => mode.name).indexOf(scheduleToReplace);
