@@ -59,6 +59,16 @@ function getEventDate(event: CalendarEvent): Date | null {
   return new Date(event.timing.start);
 }
 
+const knownCategories = new Set(MATCHERS.flatMap(({ categories }) => categories));
+
+const uniqueCategories = (() => {
+  const counts = new Map<string, number>();
+  for (const { categories } of MATCHERS) {
+    for (const c of categories) counts.set(c, (counts.get(c) ?? 0) + 1);
+  }
+  return new Set([...counts.entries()].filter(([, n]) => n === 1).map(([c]) => c));
+})();
+
 function matchSchedule(event: CalendarEvent): string | null {
   const titleLower = event.title.toLowerCase().trim();
   const catsLower = event.categories.map((c) => c.toLowerCase());
@@ -73,7 +83,7 @@ function matchSchedule(event: CalendarEvent): string | null {
     if (titleMatches(terms)) return scheduleName;
   }
   for (const { scheduleName, categories } of MATCHERS) {
-    if (categories.length > 0 && categoryMatches(categories)) return scheduleName;
+    if (categories.some((c) => uniqueCategories.has(c)) && categoryMatches(categories)) return scheduleName;
   }
 
   return null;
@@ -110,7 +120,7 @@ function compressDates(dates: Date[]): string[] {
 }
 
 const matched = new Map<string, Date[]>(MATCHERS.map(({ scheduleName }) => [scheduleName, []]));
-const unmatched: CalendarEvent[] = [];
+let warned = false;
 
 for (const event of events) {
   const date = getEventDate(event);
@@ -119,26 +129,15 @@ for (const event of events) {
   const scheduleName = matchSchedule(event);
   if (scheduleName) {
     matched.get(scheduleName)!.push(date);
-  } else {
-    unmatched.push(event);
-  }
-}
-
-let warned = false;
-
-for (const [name, dates] of matched) {
-  if (dates.length === 0) {
-    console.warn(`Warning: No events matched "${name}", may be missing from events file`);
+  } else if (event.categories.some((c) => knownCategories.has(c.toLowerCase()))) {
+    console.warn(`Warning: Unmatched event: "${event.title}" (categories: ${event.categories.join(', ')})`);
     warned = true;
   }
 }
 
-const allTerms = MATCHERS.flatMap(({ terms }) => terms);
-for (const event of unmatched) {
-  const titleLower = event.title.toLowerCase();
-  if (allTerms.some((t) => titleLower.includes(t))) {
-    const date = getEventDate(event);
-    console.warn(`Warning: Unmatched schedule-like event: "${event.title}" (${date?.toLocaleDateString() ?? '?'})`);
+for (const [name, dates] of matched) {
+  if (dates.length === 0) {
+    console.warn(`Warning: No events matched "${name}", may be missing from events file`);
     warned = true;
   }
 }
