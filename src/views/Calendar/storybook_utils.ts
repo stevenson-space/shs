@@ -1,4 +1,4 @@
-import allEvents from '@/data/events.json'
+import rawEvents from '@/data/events.json'
 import allSchedules from '@/data/schedules.json'
 
 const allEvents: Record<string, any[]> = {}
