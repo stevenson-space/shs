@@ -31,12 +31,16 @@ export async function scrapeIcal(url: string): Promise<CalendarEvent[]> {
     }
 
     const startDate: ICAL.Time = event.startDate;
-    const endDate: ICAL.Time = event.endDate;
+    const endDate: ICAL.Time | null = event.endDate;
+
+    const fmtDate = (t: ICAL.Time) =>
+      `${t.year}-${String(t.month).padStart(2, '0')}-${String(t.day).padStart(2, '0')}`;
 
     const timing: CalendarEvent['timing'] = startDate.isDate
       ? {
           allDay: true,
-          date: `${startDate.year}-${String(startDate.month).padStart(2, '0')}-${String(startDate.day).padStart(2, '0')}`,
+          date: fmtDate(startDate),
+          ...(endDate ? { dateEnd: fmtDate(endDate) } : {}),
         }
       : {
           allDay: false,

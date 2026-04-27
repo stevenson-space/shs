@@ -12,7 +12,7 @@ declare module 'ical.js' {
     description: string;
     location: string;
     startDate: Time;
-    endDate: Time;
+    endDate: Time | null;
   }
 
   class Time {

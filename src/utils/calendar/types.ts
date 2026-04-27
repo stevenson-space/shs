@@ -25,7 +25,7 @@ export const EventSource = z.discriminatedUnion("type", [
 ]);
 
 export const EventTiming = z.discriminatedUnion("allDay", [
-  z.object({ allDay: z.literal(true),  date: z.string().date() }),
+  z.object({ allDay: z.literal(true),  date: z.string().date(), dateEnd: z.string().date().optional() }),
   z.object({ allDay: z.literal(false), start: z.coerce.date(), end: z.coerce.date().nullable() })
     .refine(({ start, end }) => end === null || start <= end, {
       message: "start must be before or equal to end",
