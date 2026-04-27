@@ -7,7 +7,7 @@
     "dev": "vite",
     "music-dev": "cd music-backend && npm run dev",
     "serve": "vite serve",
-    "prebuild": "node ingest/events.js",
+    "prebuild": "npx tsx ingest/events.ts",
     "build": "vite build",
     "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore --fix src",
     "test": "vitest --run",
