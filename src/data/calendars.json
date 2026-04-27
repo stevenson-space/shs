@@ -1,0 +1,18 @@
+{
+  "all": "https://www.d125.org/cf_calendar/feed.cfm?type=ical&feedID=F185957257CD421AB6A7F080793679D4&isgmt=1",
+  "activityPeriod": "https://www.d125.org/calendar/calendar_365_gmt.ics",
+  "athletics": "https://www.d125.org/calendar/calendar_359_gmt.ics",
+  "collegeCareerCenter": "https://www.d125.org/calendar/calendar_364_gmt.ics",
+  "fineArts": "https://www.d125.org/calendar/calendar_349_gmt.ics",
+  "foundationEvents": "https://www.d125.org/calendar/calendar_354_gmt.ics",
+  "fundraisers": "https://www.d125.org/calendar/calendar_362_gmt.ics",
+  "lateArrivalEarlyDismissal": "https://www.d125.org/calendar/calendar_351_gmt.ics",
+  "master": "https://www.d125.org/calendar/calendar_358_gmt.ics",
+  "nonAttendance": "https://www.d125.org/calendar/calendar_350_gmt.ics",
+  "orientations": "https://www.d125.org/calendar/calendar_366_gmt.ics",
+  "parentCalendar": "https://www.d125.org/calendar/calendar_352_gmt.ics",
+  "studentActivitiesClubs": "https://www.d125.org/calendar/calendar_353_gmt.ics",
+  "studentCheckInDays": "https://www.d125.org/calendar/calendar_363_gmt.ics",
+  "summerSchool": "https://www.d125.org/calendar/calendar_357_gmt.ics",
+  "testingDay": "https://www.d125.org/calendar/calendar_356_gmt.ics"
+}
