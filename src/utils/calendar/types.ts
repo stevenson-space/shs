@@ -45,3 +45,11 @@ export type EventSource = z.infer<typeof EventSource>;
 export type EventCategory = z.infer<typeof EventCategory>;
 export type EventTiming = z.infer<typeof EventTiming>;
 export type CalendarEvent = z.infer<typeof CalendarEvent>;
+
+export function getEventDate(timing: EventTiming): Date {
+  if (timing.allDay) {
+    const [y, m, d] = timing.date.split('-').map(Number);
+    return new Date(y, m - 1, d);
+  }
+  return timing.start;
+}
