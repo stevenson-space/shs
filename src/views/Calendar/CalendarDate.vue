@@ -5,8 +5,8 @@
     </div>
     <calendar-event v-if="schedule" :text="schedule.name" :invert="true" />
     <calendar-event
-      v-for="event in events"
-      :key="event.title + (event.timing.allDay ? event.timing.date : String(event.timing.start))"
+      v-for="(event, index) in events"
+      :key="event.title + (event.timing.allDay ? event.timing.date : String(event.timing.start)) + (event.uid || index)"
       class="event"
       :text="event.title"
       @click="$emit('event-click', event)"
