@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "name": "Bloxd",
+    "author": "Anonymous",
+    "description": "The only limit is your imagination."
+  },
+  "styling": {
+    "base": "dark",
+    "background": "#144700",
+    "secondaryBackground": "#016300",
+    "accent": "#adad00",
+    "text": {
+      "primary": "#c3ffad",
+      "secondary": "#fffed4",
+      "tertiary": "#ffffff"
+    },
+    "header": {
+      "background": "#6e6700",
+      "scheduleBar": "#ffffff",
+      "image": {
+        "full": "local://IMG_0920.jpeg",
+        "mobile": "local://IMG_0933.jpeg"
+      }
+    },
+    "iconCards": {
+      "regular": "#ffff81",
+      "invert": "#aaffab"
+    },
+    "particles": {
+      "images": [
+        "local://IMG_0922.png",
+        "local://IMG_0928.png",
+        "local://IMG_0929.png",
+        "local://IMG_0931.png"
+      ],
+      "speed": 1,
+      "count": 49,
+      "size": 15,
+      "opacity": 0.5,
+      "windPower": 0.2
+    }
+  }
+}
