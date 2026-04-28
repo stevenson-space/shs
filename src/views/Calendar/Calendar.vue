@@ -157,12 +157,12 @@ export default {
                   event.title = event.title.replace(/^[\W]+|[\W]+$/g, '');
 
                   // Check to make sure none of the other events contain the same information as the extra info in this event
-                  const eventNames = events.map((e) => e.name);
+                  const eventNames = events.map((e) => e.title);
                   eventNames.splice(j, 1); // remove this event from the list of event names
 
                   let isInfoAlreadyPresent = false;
                   eventNames.forEach((name) => {
-                    if (name.indexOf(event.title) > -1) isInfoAlreadyPresent = true;
+                    if (name != null && name.indexOf(event.title) > -1) isInfoAlreadyPresent = true;
                   });
 
                   // If the same information as what's left in this event is present in another event, remove this event
