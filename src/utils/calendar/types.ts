@@ -46,10 +46,12 @@ export type EventCategory = z.infer<typeof EventCategory>;
 export type EventTiming = z.infer<typeof EventTiming>;
 export type CalendarEvent = z.infer<typeof CalendarEvent>;
 
+/** Returns the event's local-midnight Date for consistent grouping. */
 export function getEventDate(timing: EventTiming): Date {
   if (timing.allDay) {
     const [y, m, d] = timing.date.split('-').map(Number);
     return new Date(y, m - 1, d);
   }
-  return timing.start;
+  const s = timing.start;
+  return new Date(s.getFullYear(), s.getMonth(), s.getDate());
 }
