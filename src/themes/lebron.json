@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "name": "Lebron",
+    "author": "Michael O. ('28)"
+  },
+  "styling": {
+    "base": "light",
+    "background": "#ffffff",
+    "secondaryBackground": "#f2d726",
+    "accent": "#85059e",
+    "text": {
+      "primary": "#000000",
+      "secondary": "#000000",
+      "tertiary": "#d19d01"
+    },
+    "header": {},
+    "iconCards": {
+      "regular": "var(--secondaryBackground)"
+    },
+    "particles": {
+      "images": [
+        "local://Screenshot 2026-01-20 at 10.38.57?AM.png"
+      ],
+      "speed": 2.6,
+      "count": 160,
+      "size": 13,
+      "opacity": 0.8,
+      "windPower": 0.5
+    }
+  }
+}
