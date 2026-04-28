@@ -12,6 +12,8 @@ export function isBellOnSchoolDay(bell: Bell): bell is Required<Bell> {
 class Bell {
   // current active date? if not live, this is whatever date it's on
   date: Date;
+  // schedules list used to construct this Bell instance
+  schedules: ScheduleCollection[];
   // if there is school on the current day
   isSchoolDay: boolean;
   // "Standard Schedule", "Late Arrival", "No School", "No School (Weekend)"
@@ -41,14 +43,15 @@ class Bell {
     const schedule = Bell.getSchedule(scheduleType.modes, scheduleMode);
 
     this.date = date;
+    this.schedules = schedules;
     this.isSchoolDay = !!schedule;
     this.type = scheduleType.name; // "Standard Schedule", "Late Arrival", "No School", ...
     this.modes = scheduleType.modes;
-    this.dates = scheduleType.dates;
+    this.dates = scheduleType.dates!;
 
     if (schedule) { // if there is school today (schedule is undefined when no school)
       this.mode = schedule.name; // "Normal", "Half Periods", ...
-      this.schedule = Bell.processMultiDay(schedule, date, scheduleType.dates);
+      this.schedule = Bell.processMultiDay(schedule, date, scheduleType.dates!);
       this.period = Bell.getPeriod(this.schedule, date);
     }
 
@@ -115,7 +118,7 @@ class Bell {
         / 60
         / 24,
       );
-      nextBell = new Bell(nextSchoolDay);
+      nextBell = new Bell(nextSchoolDay, this.schedules);
     }
 
     // return the start time of the next first period + 24 hours for each day elapsed in between
@@ -136,7 +139,7 @@ class Bell {
     // notice that we're getting the last schedule that matches (in case multiple schedules match)
     let todaySchedule: ScheduleCollection | null = null;
     schedules.forEach((schedule) => {
-      if (testDate(date, schedule.dates)) {
+      if (testDate(date, schedule.dates!)) {
         todaySchedule = schedule;
       }
     });

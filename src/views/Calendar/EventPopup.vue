@@ -1,20 +1,20 @@
 <template>
   <popup :show="show" @close="$emit('close')">
     <div class="event-details">
-      <div class="date">{{ formatDate(event.start) }}</div>
+      <div class="date">{{ formatDate(event.timing) }}</div>
 
-      <div class="title">{{ event.name }}</div>
+      <div class="title">{{ event.title }}</div>
 
       <div class="time">
         <font-awesome-icon class="icon" :icon="icons.faClock" fixed-width />&nbsp;
 
-        <span v-if="event.allDay">All Day</span>
+        <span v-if="event.timing.allDay">All Day</span>
 
-        <span v-else-if="event.start && event.end && event.start !== event.end">
-          {{ formatTime(event.start) }}&nbsp; – &nbsp;{{ formatTime(event.end) }}
+        <span v-else-if="event.timing.end && event.timing.start !== event.timing.end">
+          {{ formatTime(event.timing.start) }}&nbsp; – &nbsp;{{ formatTime(event.timing.end) }}
         </span>
 
-        <span v-else>{{ formatTime(event.start) }}</span>
+        <span v-else>{{ formatTime(event.timing.start) }}</span>
       </div>
 
       <div v-show="event.location" class="location">
@@ -49,11 +49,14 @@ export default {
     };
   },
   methods: {
-    formatTime(ms) {
-      return (new Date(ms)).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    formatTime(dateOrStr) {
+      return new Date(dateOrStr).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
     },
-    formatDate(ms) {
-      return (new Date(ms)).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    formatDate(timing) {
+      const date = timing.allDay
+        ? (() => { const [y, m, d] = timing.date.split('-').map(Number); return new Date(y, m - 1, d); })()
+        : new Date(timing.start);
+      return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
     },
   },
 };
