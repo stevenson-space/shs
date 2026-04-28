@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "name": "Masquerade (Prom '26)",
+    "author": "shs-space"
+  },
+
+  "visibility": "show",
+  "recommended": {
+    "timing": "season",
+    "message": "[Try] The New Masquerade Theme 🎭"
+  },
+
+  "seasonalDates": "04/19/2026-04/26/2026",
+  "styling": {
+    "base": "light",
+    "background": "#700c0c",
+    "secondaryBackground": "#700c0c",
+    "accent": "#B8963B",
+    "text": {
+      "primary": "#e7decb",
+      "secondary": "var(--primary)",
+      "tertiary": "var(--primary)"
+    },
+    "header": {
+      "image": {
+        "full": "assets://header-images/masquerade-full.png",
+        "mobile": "assets://header-images/masquerade-full.png"
+      }
+    },
+    "iconCards": {
+      "regular": "#e7decb"
+    }
+  }
+}

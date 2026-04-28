@@ -7,7 +7,7 @@
   "visibility": "show",
   "recommended": {
     "timing": "season",
-    "message": "[Try] The Spooky Halloween Theme 🎃"
+    "message": "[Try] The Spooky Halloween Theme 🎃"
   },
 
   "seasonalDates": "10/20-11/01",
@@ -24,7 +24,7 @@
     "particles": {
       "images": [
         "assets://particles/halloween/pumpkin.png",
-        "assets://particles/halloween/candy-corn.png",
+        "assets://particles/halloween/candy_corn.png",
         "assets://particles/halloween/cauldron.png",
         "assets://particles/halloween/ghost.png",
         "assets://particles/halloween/candy.png"
