@@ -1,11 +1,19 @@
-import allEvents from '@/data/events.json'
+import rawEvents from '@/data/events.json'
 import allSchedules from '@/data/schedules.json'
 
-// Return the special schedule for a date (matching Calendar.vue logic), or null
+const allEvents: Record<string, any[]> = {}
+for (const event of rawEvents as any[]) {
+  const t = event.timing
+  const date: Date = t.allDay
+    ? (() => { const [y, m, d] = t.date.split('-').map(Number); return new Date(y, m - 1, d) })()
+    : new Date(t.start)
+  const key = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
+  if (!allEvents[key]) allEvents[key] = []
+  allEvents[key].push(event)
+}
+
 function getSpecialSchedule(year: number, month: number, day: number): object | null {
   const dateKey = `${month + 1}/${day}/${year}`
-  // Match the first special schedule whose dates array includes this date string
-  // (simplified: just check exact date string match for storybook purposes)
   for (const schedule of allSchedules) {
     if (!schedule.isSpecial) continue
     if ((schedule.dates as string[]).includes(dateKey)) {
@@ -22,14 +30,12 @@ export function makeDates(year: number, month: number, today: Date = new Date())
   for (let i = 0; i < firstDay; i++) dates.push(i)
   for (let d = 1; d <= daysInMonth; d++) {
     const dateObj = new Date(year, month, d)
-    // Use m/d/yyyy format — matches the real app (Calendar.vue)
     const dateString = `${month + 1}/${d}/${year}`
-    const rawEvents: any[] = (allEvents as Record<string, any[]>)[dateString] ?? []
     dates.push({
       dateString,
       date: d,
       schedule: getSpecialSchedule(year, month, d),
-      events: rawEvents,
+      events: allEvents[dateString] ?? [],
       isToday: dateObj.toDateString() === today.toDateString(),
     })
   }
