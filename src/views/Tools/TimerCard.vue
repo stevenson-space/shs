@@ -14,13 +14,13 @@
 
       <div class="container">
         <div class="time-selector">
-          <scroll-selector ref="scroll-selector-1" v-model="time.hours" :options="hours" :font-size="fontSize" />
+          <scroll-selector :infinite="true" ref="scroll-selector-1" v-model="time.hours" :options="hours" :font-size="fontSize" />
           <span class="letter">h</span>
           <span class="colon">:</span>
-          <scroll-selector ref="scroll-selector-2" v-model="time.minutes" :options="minutes" :font-size="fontSize" />
+          <scroll-selector :infinite="true" ref="scroll-selector-2" v-model="time.minutes" :options="minutes" :font-size="fontSize" />
           <span class="letter">m</span>
           <span class="colon">:</span>
-          <scroll-selector ref="scroll-selector-3" v-model="time.seconds" :options="minutes" :font-size="fontSize" />
+          <scroll-selector :infinite="true" ref="scroll-selector-3" v-model="time.seconds" :options="seconds" :font-size="fontSize" />
           <span class="letter">s</span>
         </div>
 
