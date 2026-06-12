@@ -4,9 +4,9 @@
     class="scroll-selector"
     :style="{ height: `${optionHeight * (2 * numOptionsAbove + 1)}px`, fontSize }"
   >
-    <!-- eslint-disable-next-line vue/require-v-for-key vue/no-unused-vars-->
     <div
-      v-for="_ in Array(Math.max(0, Math.floor(numOptionsAbove)))"
+      v-for="(_, i) in Array(Math.max(0, Math.floor(numOptionsAbove)))"
+      :key="`top-spacer-${i}`"
       :style="{ height: `${optionHeight}px` }"
     />
     <div
@@ -20,9 +20,9 @@
       {{ opt }}
     </div>
 
-    <!-- eslint-disable-next-line vue/require-v-for-key vue/no-unused-vars-->
     <div
-      v-for="_ in Array(Math.max(0, Math.floor(numOptionsAbove)))"
+      v-for="(_, i) in Array(Math.max(0, Math.floor(numOptionsAbove)))"
+      :key="`bottom-spacer-${i}`"
       :style="{ height: `${optionHeight}px` }"
     />
   </div>
@@ -40,7 +40,7 @@ const {
   infinite = false,
 } = defineProps<{
   options: unknown[];
-  modelValue: string;
+  modelValue: unknown;
   numOptionsAbove?: number;
   fontSize?: string;
   infinite?: boolean;
@@ -61,10 +61,13 @@ const root = useTemplateRef<HTMLElement>("root");
 const option = useTemplateRef<HTMLElement[]>("option");
 
 let scrollHandler: (() => void) | null = null;
+let isProgrammaticScroll = false;
+let isUserScrolling = false;
 
 watch(
   () => modelValue,
   () => {
+    if (isUserScrolling) return;
     scrollToSelected();
   },
 );
@@ -102,31 +105,50 @@ onMounted(() => {
   let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
   scrollHandler = () => {
     // wait until user is finished scrolling before selecting a choice (debounce)
-    if (!root.value) return;
+    if (!root.value || isProgrammaticScroll) return;
+    isUserScrolling = true;
+
+    if (optionHeight.value <= 0 || options.length === 0) return;
+
+    const rawIndex = Math.round(root.value.scrollTop / optionHeight.value);
+    if (infinite) {
+      const baseIndex = ((rawIndex % options.length) + options.length) % options.length;
+      const selectedValue = options[baseIndex];
+      if (selectedValue !== modelValue) emit("update:modelValue", selectedValue);
+    } else {
+      const selectedIndex = Math.min(Math.max(rawIndex, 0), options.length - 1);
+      const selectedValue = options[selectedIndex];
+      if (selectedValue !== modelValue) emit("update:modelValue", selectedValue);
+    }
+
     clearTimeout(scrollTimeout!);
     scrollTimeout = setTimeout(() => {
-      if (!root.value || optionHeight.value <= 0 || options.length === 0) return;
-      const rawIndex = Math.round(root.value.scrollTop / optionHeight.value);
-      if (infinite) {
-        const baseIndex = ((rawIndex % options.length) + options.length) % options.length;
-        emit("update:modelValue", options[baseIndex]);
+      isUserScrolling = false;
+      if (!root.value || optionHeight.value <= 0 || options.length === 0 || isProgrammaticScroll) return;
 
+      const settledRawIndex = Math.round(root.value.scrollTop / optionHeight.value);
+      if (infinite) {
         // rebalance scroll position to the middle copy when nearing ends
         const half = Math.floor(options.length / 2);
-        if (rawIndex < half) {
+        if (settledRawIndex < half) {
+          isProgrammaticScroll = true;
           root.value.scrollTop = root.value.scrollTop + options.length * optionHeight.value;
-        } else if (rawIndex >= options.length * 2 + half) {
+          nextTick(() => {
+            isProgrammaticScroll = false;
+          });
+        } else if (settledRawIndex >= options.length * 2 + half) {
+          isProgrammaticScroll = true;
           root.value.scrollTop = root.value.scrollTop - options.length * optionHeight.value;
+          nextTick(() => {
+            isProgrammaticScroll = false;
+          });
         }
-      } else {
-        const selectedIndex = Math.min(Math.max(rawIndex, 0), options.length - 1);
-        emit("update:modelValue", options[selectedIndex]);
       }
 
-      scrollToSelected();
+      scrollToSelected(false);
     }, 100);
   };
-  root.value?.addEventListener("scroll", scrollHandler);
+  root.value?.addEventListener("scroll", scrollHandler, { passive: true });
 });
 
 onBeforeUnmount(() => {
@@ -136,17 +158,21 @@ onBeforeUnmount(() => {
 function scrollToSelected(smooth = true): void {
   nextTick(() => {
     if (!root.value) return;
-    const index = (options as string[]).indexOf(modelValue);
+    const index = options.indexOf(modelValue);
     if (index > -1) {
       let targetIndex = index;
       if (infinite && options.length > 0) targetIndex = index + options.length; // use middle copy
       if (option.value?.[targetIndex]) {
         const top = option.value[targetIndex].offsetTop - optionHeight.value * numOptionsAbove;
+        isProgrammaticScroll = true;
         if (smooth) {
           root.value.scroll({ top, behavior: "smooth" });
         } else {
           root.value.scrollTop = top;
         }
+        nextTick(() => {
+          isProgrammaticScroll = false;
+        });
       }
     }
   });
