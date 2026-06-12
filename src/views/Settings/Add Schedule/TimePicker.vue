@@ -9,8 +9,8 @@
           font-size="1.5em"
         />
         <span class="colon">:</span>
-        <scroll-selector v-model="selectedTime.minute" :options="minutes" font-size="1.5em" />
-        <scroll-selector v-model="selectedTime.suffix" :options="suffixes" font-size="1.5em" />
+        <scroll-selector :infinite="true" v-model="selectedTime.minute" :options="minutes" font-size="1.5em" />
+        <scroll-selector :infinite="true" v-model="selectedTime.suffix" :options="suffixes" font-size="1.5em" />
       </div>
 
       <div class="separator">
