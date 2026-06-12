@@ -53,8 +53,9 @@ const emit = defineEmits<{
 const optionHeight = ref(0);
 
 const repeatedOptions = computed(() => {
-  if (!infinite) return options as unknown[];
-  return ([] as unknown[]).concat(options as unknown[], options as unknown[], options as unknown[]);
+  const base = options;
+  if (!infinite) return base;
+  return [...base, ...base, ...base];
 });
 
 const root = useTemplateRef<HTMLElement>("root");
@@ -62,12 +63,16 @@ const option = useTemplateRef<HTMLElement[]>("option");
 
 let scrollHandler: (() => void) | null = null;
 let isProgrammaticScroll = false;
-let isUserScrolling = false;
+let programmaticScrollToken = 0;
+let ignoreModelValueWatchCount = 0;
 
 watch(
   () => modelValue,
   () => {
-    if (isUserScrolling) return;
+    if (ignoreModelValueWatchCount > 0) {
+      ignoreModelValueWatchCount--;
+      return;
+    }
     scrollToSelected();
   },
 );
@@ -106,7 +111,6 @@ onMounted(() => {
   scrollHandler = () => {
     // wait until user is finished scrolling before selecting a choice (debounce)
     if (!root.value || isProgrammaticScroll) return;
-    isUserScrolling = true;
 
     if (optionHeight.value <= 0 || options.length === 0) return;
 
@@ -114,16 +118,21 @@ onMounted(() => {
     if (infinite) {
       const baseIndex = ((rawIndex % options.length) + options.length) % options.length;
       const selectedValue = options[baseIndex];
-      if (selectedValue !== modelValue) emit("update:modelValue", selectedValue);
+      if (selectedValue !== modelValue) {
+        ignoreModelValueWatchCount++;
+        emit("update:modelValue", selectedValue);
+      }
     } else {
       const selectedIndex = Math.min(Math.max(rawIndex, 0), options.length - 1);
       const selectedValue = options[selectedIndex];
-      if (selectedValue !== modelValue) emit("update:modelValue", selectedValue);
+      if (selectedValue !== modelValue) {
+        ignoreModelValueWatchCount++;
+        emit("update:modelValue", selectedValue);
+      }
     }
 
     clearTimeout(scrollTimeout!);
     scrollTimeout = setTimeout(() => {
-      isUserScrolling = false;
       if (!root.value || optionHeight.value <= 0 || options.length === 0 || isProgrammaticScroll) return;
 
       const settledRawIndex = Math.round(root.value.scrollTop / optionHeight.value);
@@ -131,17 +140,9 @@ onMounted(() => {
         // rebalance scroll position to the middle copy when nearing ends
         const half = Math.floor(options.length / 2);
         if (settledRawIndex < half) {
-          isProgrammaticScroll = true;
-          root.value.scrollTop = root.value.scrollTop + options.length * optionHeight.value;
-          nextTick(() => {
-            isProgrammaticScroll = false;
-          });
+          scrollToPosition(root.value.scrollTop + options.length * optionHeight.value, false);
         } else if (settledRawIndex >= options.length * 2 + half) {
-          isProgrammaticScroll = true;
-          root.value.scrollTop = root.value.scrollTop - options.length * optionHeight.value;
-          nextTick(() => {
-            isProgrammaticScroll = false;
-          });
+          scrollToPosition(root.value.scrollTop - options.length * optionHeight.value, false);
         }
       }
 
@@ -164,18 +165,60 @@ function scrollToSelected(smooth = true): void {
       if (infinite && options.length > 0) targetIndex = index + options.length; // use middle copy
       if (option.value?.[targetIndex]) {
         const top = option.value[targetIndex].offsetTop - optionHeight.value * numOptionsAbove;
-        isProgrammaticScroll = true;
-        if (smooth) {
-          root.value.scroll({ top, behavior: "smooth" });
-        } else {
-          root.value.scrollTop = top;
-        }
-        nextTick(() => {
-          isProgrammaticScroll = false;
-        });
+        scrollToPosition(top, smooth);
       }
     }
   });
+}
+
+function scrollToPosition(top: number, smooth: boolean): void {
+  if (!root.value) return;
+
+  const token = ++programmaticScrollToken;
+  isProgrammaticScroll = true;
+  const maxDurationMs = 1200;
+  const startedAt = Date.now();
+  let settleTimer = 0;
+
+  if (smooth) {
+    root.value.scroll({ top, behavior: "smooth" });
+  } else {
+    root.value.scrollTop = top;
+  }
+
+  const clearSettle = () => {
+    if (settleTimer) clearTimeout(settleTimer);
+    if (token === programmaticScrollToken) {
+      isProgrammaticScroll = false;
+    }
+  };
+
+  const settle = () => {
+    if (token !== programmaticScrollToken || !root.value) return;
+    if (Math.abs(root.value.scrollTop - top) <= 1) {
+      clearSettle();
+      return;
+    }
+    if (Date.now() - startedAt >= maxDurationMs) {
+      clearSettle();
+      return;
+    }
+    requestAnimationFrame(settle);
+  };
+
+  settleTimer = window.setTimeout(clearSettle, maxDurationMs + 100);
+  if (typeof root.value.addEventListener === 'function') {
+    const cleanup = () => {
+      clearSettle();
+      root.value?.removeEventListener('scrollend', cleanup);
+    };
+    try {
+      root.value.addEventListener('scrollend', cleanup, { once: true });
+    } catch {
+      // scrollend not supported, rely on RAF + timeout
+    }
+  }
+  requestAnimationFrame(settle);
 }
 
 function setOptionHeight(): void {
