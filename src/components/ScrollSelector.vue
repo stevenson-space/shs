@@ -64,13 +64,13 @@ const option = useTemplateRef<HTMLElement[]>("option");
 let scrollHandler: (() => void) | null = null;
 let isProgrammaticScroll = false;
 let programmaticScrollToken = 0;
-let ignoreModelValueWatchCount = 0;
+let lastEmittedValue: unknown = Symbol("uninitialized");
 
 watch(
   () => modelValue,
   () => {
-    if (ignoreModelValueWatchCount > 0) {
-      ignoreModelValueWatchCount--;
+    if (modelValue === lastEmittedValue) {
+      lastEmittedValue = Symbol("uninitialized");
       return;
     }
     scrollToSelected();
@@ -93,7 +93,10 @@ watch(
 
 onMounted(() => {
   setOptionHeight();
-  setTimeout(setOptionHeight, 100); // just in case
+  setTimeout(() => {
+    setOptionHeight();
+    scrollToSelected(false);
+  }, 100); // re-measure height and re-align if it changed
 
   // after height is measured, jump to middle copy in infinite mode to avoid blank edges
   nextTick(() => {
@@ -119,21 +122,22 @@ onMounted(() => {
       const baseIndex = ((rawIndex % options.length) + options.length) % options.length;
       const selectedValue = options[baseIndex];
       if (selectedValue !== modelValue) {
-        ignoreModelValueWatchCount++;
+        lastEmittedValue = selectedValue;
         emit("update:modelValue", selectedValue);
       }
     } else {
       const selectedIndex = Math.min(Math.max(rawIndex, 0), options.length - 1);
       const selectedValue = options[selectedIndex];
       if (selectedValue !== modelValue) {
-        ignoreModelValueWatchCount++;
+        lastEmittedValue = selectedValue;
         emit("update:modelValue", selectedValue);
       }
     }
 
     clearTimeout(scrollTimeout!);
     scrollTimeout = setTimeout(() => {
-      if (!root.value || optionHeight.value <= 0 || options.length === 0 || isProgrammaticScroll) return;
+      if (!root.value || optionHeight.value <= 0 || options.length === 0 || isProgrammaticScroll)
+        return;
 
       const settledRawIndex = Math.round(root.value.scrollTop / optionHeight.value);
       if (infinite) {
@@ -207,13 +211,13 @@ function scrollToPosition(top: number, smooth: boolean): void {
   };
 
   settleTimer = window.setTimeout(clearSettle, maxDurationMs + 100);
-  if (typeof root.value.addEventListener === 'function') {
+  if (typeof root.value.addEventListener === "function") {
     const cleanup = () => {
       clearSettle();
-      root.value?.removeEventListener('scrollend', cleanup);
+      root.value?.removeEventListener("scrollend", cleanup);
     };
     try {
-      root.value.addEventListener('scrollend', cleanup, { once: true });
+      root.value.addEventListener("scrollend", cleanup, { once: true });
     } catch {
       // scrollend not supported, rely on RAF + timeout
     }
