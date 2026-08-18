@@ -52,7 +52,9 @@
       "iCalUid": "355013@www.d125.org"
     },
     "title": "District 125 Board of Education Meeting",
-    "categories": [],
+    "categories": [
+      "Board Meetings"
+    ],
     "timing": {
       "allDay": false,
       "start": "2026-08-18T00:00:00.000Z",
@@ -112,7 +114,9 @@
       "iCalUid": "353998@www.d125.org"
     },
     "title": "Home Football Game",
-    "categories": [],
+    "categories": [ 
+      "Sporting Events"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-08-21",
@@ -339,7 +343,9 @@
       "iCalUid": "355014@www.d125.org"
     },
     "title": "District 125 Board of Education Meeting",
-    "categories": [],
+    "categories": [
+      "Board Meetings"
+  ],
     "timing": {
       "allDay": false,
       "start": "2026-09-15T00:00:00.000Z",
@@ -384,7 +390,9 @@
       "iCalUid": "354042@www.d125.org"
     },
     "title": "Home Football Game",
-    "categories": [],
+    "categories": [
+      "Sporting Events"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-09-25",
@@ -444,7 +452,9 @@
       "iCalUid": "354020@www.d125.org"
     },
     "title": "Fall Choir Concert",
-    "categories": [],
+    "categories": [
+      "Concerts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-01",
@@ -459,7 +469,9 @@
       "iCalUid": "354043@www.d125.org"
     },
     "title": "Home Football Game",
-    "categories": [],
+    "categories": [
+      "Sporting Events"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-02",
@@ -534,7 +546,9 @@
       "iCalUid": "354025@www.d125.org"
     },
     "title": "Fall Band Concert",
-    "categories": [],
+    "categories": [
+      "Concerts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-06",
@@ -564,7 +578,9 @@
       "iCalUid": "354095@www.d125.org"
     },
     "title": "Home Football Game",
-    "categories": [],
+    "categories": [
+      "Sporting Events"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-09",
@@ -654,7 +670,9 @@
       "iCalUid": "354034@www.d125.org"
     },
     "title": "Fall Orchestra Concert",
-    "categories": [],
+    "categories": [
+      "Concerts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-14",
@@ -699,7 +717,9 @@
       "iCalUid": "354039@www.d125.org"
     },
     "title": "Patriot Guitar Ensemble Concert",
-    "categories": [],
+    "categories": [
+      "Concerts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-15",
@@ -744,7 +764,9 @@
       "iCalUid": "354096@www.d125.org"
     },
     "title": "Home Football Game",
-    "categories": [],
+    "categories": [
+      "Sporting Events"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-16",
@@ -789,7 +811,9 @@
       "iCalUid": "355015@www.d125.org"
     },
     "title": "District 125 Board of Education Meeting",
-    "categories": [],
+    "categories": [
+      "Board Meetings"
+    ],
     "timing": {
       "allDay": false,
       "start": "2026-10-20T00:00:00.000Z",
@@ -954,7 +978,9 @@
       "iCalUid": "355016@www.d125.org"
     },
     "title": "District 125 Board of Education Meeting",
-    "categories": [],
+    "categories": [
+      "Board Meetings"
+    ],
     "timing": {
       "allDay": false,
       "start": "2026-11-17T01:00:00.000Z",
@@ -1044,7 +1070,9 @@
       "iCalUid": "354072@www.d125.org"
     },
     "title": "December Guitar Concert",
-    "categories": [],
+    "categories": [
+      "Concerts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-01",
@@ -1074,7 +1102,9 @@
       "iCalUid": "354062@www.d125.org"
     },
     "title": "Winter Dance Concert",
-    "categories": [],
+    "categories": [
+      "Concerts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-04",
@@ -1104,7 +1134,9 @@
       "iCalUid": "354063@www.d125.org"
     },
     "title": "Winter Dance Concert",
-    "categories": [],
+    "categories": [
+      "Concerts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-05",
@@ -1119,7 +1151,9 @@
       "iCalUid": "354066@www.d125.org"
     },
     "title": "Winter Band Concert",
-    "categories": [],
+    "categories": [
+      "Concerts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-07",
@@ -1164,7 +1198,9 @@
       "iCalUid": "354067@www.d125.org"
     },
     "title": "Winter Band Concert",
-    "categories": [],
+    "categories": [
+      "Concerts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-08",
@@ -1224,7 +1260,9 @@
       "iCalUid": "354074@www.d125.org"
     },
     "title": "December Choir Concert",
-    "categories": [],
+    "categories": [
+      "Concerts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-10",
@@ -1269,7 +1307,9 @@
       "iCalUid": "355017@www.d125.org"
     },
     "title": "District 125 Board of Education Meeting",
-    "categories": [],
+    "categories": [
+      "Board Meetings"
+    ],
     "timing": {
       "allDay": false,
       "start": "2026-12-15T01:00:00.000Z",
@@ -1284,7 +1324,9 @@
       "iCalUid": "354077@www.d125.org"
     },
     "title": "Winter Orchestra Concert",
-    "categories": [],
+    "categories": [
+      "Concerts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-15",
@@ -1494,7 +1536,9 @@
       "iCalUid": "355018@www.d125.org"
     },
     "title": "District 125 Board of Education Meeting",
-    "categories": [],
+    "categories": [
+      "Board Meetings"
+    ],
     "timing": {
       "allDay": false,
       "start": "2027-01-12T01:00:00.000Z",
@@ -1539,7 +1583,9 @@
       "iCalUid": "355019@www.d125.org"
     },
     "title": "District 125 Board of Education Meeting",
-    "categories": [],
+    "categories": [
+      "Board Meetings"
+    ],
     "timing": {
       "allDay": false,
       "start": "2027-02-09T01:00:00.000Z",
@@ -1629,7 +1675,9 @@
       "iCalUid": "355020@www.d125.org"
     },
     "title": "District 125 Board of Education Meeting",
-    "categories": [],
+    "categories": [
+      "Board Meetings"
+    ],
     "timing": {
       "allDay": false,
       "start": "2027-03-16T00:00:00.000Z",
@@ -1734,7 +1782,9 @@
       "iCalUid": "355021@www.d125.org"
     },
     "title": "District 125 Board of Education Meeting",
-    "categories": [],
+    "categories": [
+      "Board Meetings"
+    ],
     "timing": {
       "allDay": false,
       "start": "2027-04-20T00:00:00.000Z",
@@ -1764,7 +1814,9 @@
       "iCalUid": "355022@www.d125.org"
     },
     "title": "District 125 Board of Education Meeting",
-    "categories": [],
+    "categories": [
+      "Board Meetings"
+    ],
     "timing": {
       "allDay": false,
       "start": "2027-05-18T00:00:00.000Z",
@@ -1809,7 +1861,9 @@
       "iCalUid": "355023@www.d125.org"
     },
     "title": "District 125 Board of Education Meeting",
-    "categories": [],
+    "categories": [
+      "Board Meetings"
+    ],
     "timing": {
       "allDay": false,
       "start": "2027-06-22T00:00:00.000Z",
