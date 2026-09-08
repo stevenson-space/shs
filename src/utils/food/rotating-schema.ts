@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const WEEKS_COUNT: number = 4;
+const WEEKS_COUNT: number = 5;
 const WEEKDAYS_COUNT: number = 5;
 
 export const DayMenu = z.object({

@@ -14,10 +14,12 @@ export class RotatingMenuMap {
   semesterSwitch: Date
   // which week in the lunch menu does 'validFrom' correspond to?
   offset: number
+  // how many weeks before the menu loops back
+  cycle_period: number
   stations: Record<RotatingStation, WeeklyEntries>
   special: SpecialStationEntries
 
-  constructor(validFrom: Date, validTo: Date, semesterSwitch: Date, offset: number, stations: Record<RotatingStation, unknown>, special: unknown) {
+  constructor(validFrom: Date, validTo: Date, semesterSwitch: Date, offset: number, stations: Record<RotatingStation, unknown>, special: unknown, cycle_period: number = 5) {
     if (validFrom >= validTo) {
       throw new RangeError("validFrom must be before validTo");
     }
@@ -26,14 +28,19 @@ export class RotatingMenuMap {
       throw new RangeError("semesterSwitch must be a valid date");
     }
 
-    if (0 > offset || offset >= 4) {
-      throw new RangeError("offset must be in [0,4)");
+    if (0 > offset) {
+      throw new RangeError("cycle period must be positive");
+    }
+
+    if (0 > offset || offset >= cycle_period) {
+      throw new RangeError("offset must be in [0,cycle_period)");
     }
 
     this.validFrom = validFrom;
     this.validTo = validTo;
     this.semesterSwitch = semesterSwitch;
     this.offset = offset;
+    this.cycle_period = cycle_period
 
     this.stations = Object.fromEntries(
       RotatingStation.options.map(key => [key, WeeklyEntries.parse(stations[key])])
@@ -47,7 +54,7 @@ export class RotatingMenuMap {
   }
 
   private currentWeekIndex(date: Date) {
-    return (this.weeksSince(date) + this.offset) % 4;
+    return (this.weeksSince(date) + this.offset) % this.cycle_period;
   }
 
   getMenuUnchecked(date: Date): DayMenu {
