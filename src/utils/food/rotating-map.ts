@@ -1,5 +1,3 @@
-import assert from "node:assert";
-
 import { DayMenu, RotatingStation, WeeklyEntries, SpecialStationEntries, WEEKS_COUNT } from "./rotating-schema";
 
 import comfort from "../../data/lunch-rotating/comfort.json";
@@ -98,8 +96,8 @@ export const rotatingMenuMap = new RotatingMenuMap(
   special,
 );
 
-assert.strictEqual(
-  rotatingMenuMap.cycle_period, WEEKS_COUNT,
-  "cycle_period must match schema"
-);
+// can't use assert in client code; this is fine
+if (rotatingMenuMap.cycle_period !== WEEKS_COUNT) {
+  throw new Error("cycle_period must match WEEKS_COUNT in rotating-schema.ts");
+}
 
