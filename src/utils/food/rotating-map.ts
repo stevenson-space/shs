@@ -28,12 +28,12 @@ export class RotatingMenuMap {
       throw new RangeError("semesterSwitch must be a valid date");
     }
 
-    if (0 > offset) {
-      throw new RangeError("cycle period must be positive");
+    if (!Number.isInteger(offset) || 0 > cycle_period) {
+      throw new RangeError("cycle period must be positive integer");
     }
 
-    if (0 > offset || offset >= cycle_period) {
-      throw new RangeError("offset must be in [0,cycle_period)");
+    if (!Number.isInteger(cycle_period) || 0 > offset || offset >= cycle_period) {
+      throw new RangeError("offset must be integer in [0,cycle_period)");
     }
 
     this.validFrom = validFrom;
