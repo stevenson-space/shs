@@ -1,4 +1,6 @@
-import { DayMenu, RotatingStation, WeeklyEntries, SpecialStationEntries } from "./rotating-schema";
+import assert from "node:assert";
+
+import { DayMenu, RotatingStation, WeeklyEntries, SpecialStationEntries, WEEKS_COUNT } from "./rotating-schema";
 
 import comfort from "../../data/lunch-rotating/comfort.json";
 import mindful from "../../data/lunch-rotating/mindful.json";
@@ -95,3 +97,9 @@ export const rotatingMenuMap = new RotatingMenuMap(
   { comfort, mindful, sides, soup, international },
   special,
 );
+
+assert.strictEqual(
+  rotatingMenuMap.cycle_period, WEEKS_COUNT,
+  "cycle_period must match schema"
+);
+
