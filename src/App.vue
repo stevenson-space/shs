@@ -11,10 +11,19 @@ import { fallbackStyling } from '@/utils/themes.ts';
 import useScheduleStore from '@/stores/schedules';
 import useClockStore from '@/stores/clock';
 import useUserSettingsStore from '@/stores/user-settings';
+import { dateToSeconds } from '@/utils/util';
+import { intoCountdownString } from '@/utils/countdown';
 
 export default {
   computed: {
     ...mapState(useThemeStore, ['styling', 'color']),
+    ...mapState(useClockStore, ['date', 'bell']),
+    endTime() {
+      return this.bell.getSecondsUntilNextTarget();
+    },
+    totalSecondsLeft() {
+      return this.endTime - dateToSeconds(this.date);
+    },
   },
   methods: {
     ...mapActions(useScheduleStore, ['initializeSchedule']),
@@ -48,6 +57,12 @@ export default {
         this.applyThemeVars(newStyling);
       },
       deep: true,
+    },
+    totalSecondsLeft: {
+      handler(secondsLeft) {
+        document.title = `${intoCountdownString(secondsLeft)} - stevenson.space`;
+      },
+      immediate: true,
     },
     $route() {
       this.pageLoaded(this.$route);
