@@ -88,9 +88,7 @@ export class RotatingMenuMap {
 
 export const rotatingMenuMap = new RotatingMenuMap(
   // months here are zero indexed!
-  // Anchor to Monday so every school week uses the same rotation entry.
-  // September 14, 2026 is five weeks later and uses week 0 (Cheese Tortellini).
-  new Date(2026, 7, 10),
+  new Date(2026, 7, 10), // needs normalization, but for now, this date HAS to be a monday for it work properly
   new Date(2027, 4, 31),
   new Date(2027, 0, 1),
   0,
