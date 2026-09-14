@@ -88,7 +88,9 @@ export class RotatingMenuMap {
 
 export const rotatingMenuMap = new RotatingMenuMap(
   // months here are zero indexed!
-  new Date(2026, 7, 11),
+  // Anchor to Monday so every school week uses the same rotation entry.
+  // September 14, 2026 is five weeks later and uses week 0 (Cheese Tortellini).
+  new Date(2026, 7, 10),
   new Date(2027, 4, 31),
   new Date(2027, 0, 1),
   0,
@@ -100,4 +102,3 @@ export const rotatingMenuMap = new RotatingMenuMap(
 if (rotatingMenuMap.cycle_period !== WEEKS_COUNT) {
   throw new Error("cycle_period must match WEEKS_COUNT in rotating-schema.ts");
 }
-
