@@ -88,7 +88,7 @@ export class RotatingMenuMap {
 
 export const rotatingMenuMap = new RotatingMenuMap(
   // months here are zero indexed!
-  new Date(2026, 7, 11),
+  new Date(2026, 7, 10), // needs normalization, but for now, this date HAS to be a monday for it work properly
   new Date(2027, 4, 31),
   new Date(2027, 0, 1),
   0,
