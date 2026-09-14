@@ -100,4 +100,3 @@ export const rotatingMenuMap = new RotatingMenuMap(
 if (rotatingMenuMap.cycle_period !== WEEKS_COUNT) {
   throw new Error("cycle_period must match WEEKS_COUNT in rotating-schema.ts");
 }
-
