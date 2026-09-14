@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "name": "Starry Night",
+    "author": "Anonymous"
+  },
+  "styling": {
+    "base": "dark",
+    "accent": "#bba967",
+    "text": {
+      "primary": "#bba967",
+      "secondary": "#bba967",
+      "tertiary": "#edffff"
+    },
+    "header": {
+      "image": {
+        "full": "local://IMG_2530.jpeg",
+        "mobile": "local://IMG_2530.jpeg"
+      }
+    },
+    "iconCards": {
+      "regular": "#000335",
+      "invert": "#edffff"
+    },
+    "background": "#000335",
+    "secondaryBackground": "#2d3b55",
+    "particles": {
+      "images": [
+        "local://IMG_2531.png",
+        "local://IMG_2532.png"
+      ],
+      "speed": 1.6,
+      "count": 20,
+      "size": 5,
+      "opacity": 0.8,
+      "windPower": 0.7
+    }
+  }
+}
