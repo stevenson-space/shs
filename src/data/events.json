@@ -2,205 +2,6 @@
   {
     "source": {
       "type": "ical",
-      "iCalUid": "270021@www.d125.org"
-    },
-    "title": "Summer School - Session 2 End",
-    "categories": [
-      "Summer School"
-    ],
-    "timing": {
-      "allDay": false,
-      "start": "2026-07-23T12:45:00.000Z",
-      "end": "2026-07-23T17:50:00.000Z"
-    },
-    "location": null,
-    "description": "For more information, visit the  Summer School webpage."
-  },
-  {
-    "source": {
-      "type": "ical",
-      "iCalUid": "353868@www.d125.org"
-    },
-    "title": "Freshman Orientation Day",
-    "categories": [],
-    "timing": {
-      "allDay": true,
-      "date": "2026-08-12",
-      "dateEnd": "2026-08-13"
-    },
-    "location": null,
-    "description": null
-  },
-  {
-    "source": {
-      "type": "ical",
-      "iCalUid": "353985@www.d125.org"
-    },
-    "title": "First Day of School",
-    "categories": [],
-    "timing": {
-      "allDay": true,
-      "date": "2026-08-13",
-      "dateEnd": "2026-08-14"
-    },
-    "location": null,
-    "description": null
-  },
-  {
-    "source": {
-      "type": "ical",
-      "iCalUid": "355013@www.d125.org"
-    },
-    "title": "District 125 Board of Education Meeting",
-    "categories": [],
-    "timing": {
-      "allDay": false,
-      "start": "2026-08-18T00:00:00.000Z",
-      "end": "2026-08-18T00:00:00.000Z"
-    },
-    "location": "District Office",
-    "description": null
-  },
-  {
-    "source": {
-      "type": "ical",
-      "iCalUid": "353992@www.d125.org"
-    },
-    "title": "Activity Period",
-    "categories": [],
-    "timing": {
-      "allDay": true,
-      "date": "2026-08-18",
-      "dateEnd": "2026-08-19"
-    },
-    "location": null,
-    "description": null
-  },
-  {
-    "source": {
-      "type": "ical",
-      "iCalUid": "353995@www.d125.org"
-    },
-    "title": "Transfer Student Parent Event",
-    "categories": [],
-    "timing": {
-      "allDay": true,
-      "date": "2026-08-19",
-      "dateEnd": "2026-08-20"
-    },
-    "location": null,
-    "description": null
-  },
-  {
-    "source": {
-      "type": "ical",
-      "iCalUid": "353993@www.d125.org"
-    },
-    "title": "24 Hour Theater Project",
-    "categories": [],
-    "timing": {
-      "allDay": true,
-      "date": "2026-08-21",
-      "dateEnd": "2026-08-22"
-    },
-    "location": null,
-    "description": null
-  },
-  {
-    "source": {
-      "type": "ical",
-      "iCalUid": "353998@www.d125.org"
-    },
-    "title": "Home Football Game",
-    "categories": [],
-    "timing": {
-      "allDay": true,
-      "date": "2026-08-21",
-      "dateEnd": "2026-08-22"
-    },
-    "location": null,
-    "description": null
-  },
-  {
-    "source": {
-      "type": "ical",
-      "iCalUid": "353994@www.d125.org"
-    },
-    "title": "24 Hour Theater Project",
-    "categories": [],
-    "timing": {
-      "allDay": true,
-      "date": "2026-08-22",
-      "dateEnd": "2026-08-23"
-    },
-    "location": null,
-    "description": null
-  },
-  {
-    "source": {
-      "type": "ical",
-      "iCalUid": "353999@www.d125.org"
-    },
-    "title": "CCC - Senior Family Night",
-    "categories": [
-      "CCC"
-    ],
-    "timing": {
-      "allDay": false,
-      "start": "2026-08-25T00:00:00.000Z",
-      "end": "2026-08-25T00:00:00.000Z"
-    },
-    "location": "West Auditorium",
-    "description": "The College Career Center will hold its annual Senior Family Night from 7-8:30 p.m. on Monday, Aug. 24. The event will be in the West Auditorium (located by the Point Entrance) and  live-streamed through Zoom . It is open to all parents and guardians of seniors at Stevenson.\n \n\n During the presentation, Post Secondary Counselor Sara Hanson and Dan Miller will discuss how to apply to colleges. Topics to be covered include types of applications (Common App, for example), admission plans (including Early Decision), deadlines, obtaining a transcript, standardized test scores, letters of recommendation, essays and scholarships.\n \n\n The slides and the recording will be accessible on our website within a week of the event."
-  },
-  {
-    "source": {
-      "type": "ical",
-      "iCalUid": "354000@www.d125.org"
-    },
-    "title": "Activity Period",
-    "categories": [],
-    "timing": {
-      "allDay": true,
-      "date": "2026-08-25",
-      "dateEnd": "2026-08-26"
-    },
-    "location": null,
-    "description": null
-  },
-  {
-    "source": {
-      "type": "ical",
-      "iCalUid": "354001@www.d125.org"
-    },
-    "title": "Open House Night One",
-    "categories": [],
-    "timing": {
-      "allDay": true,
-      "date": "2026-08-26",
-      "dateEnd": "2026-08-27"
-    },
-    "location": null,
-    "description": null
-  },
-  {
-    "source": {
-      "type": "ical",
-      "iCalUid": "354002@www.d125.org"
-    },
-    "title": "PPA Bake Sale",
-    "categories": [],
-    "timing": {
-      "allDay": true,
-      "date": "2026-08-26",
-      "dateEnd": "2026-08-27"
-    },
-    "location": null,
-    "description": null
-  },
-  {
-    "source": {
-      "type": "ical",
       "iCalUid": "354005@www.d125.org"
     },
     "title": "Late Arrival",
@@ -219,14 +20,16 @@
       "iCalUid": "353869@www.d125.org"
     },
     "title": "Freshman Mixer",
-    "categories": [],
+    "categories": [
+      "Clubs and Activities"
+    ],
     "timing": {
-      "allDay": true,
-      "date": "2026-08-28",
-      "dateEnd": "2026-08-29"
+      "allDay": false,
+      "start": "2026-08-29T00:00:00.000Z",
+      "end": "2026-08-29T02:00:00.000Z"
     },
-    "location": null,
-    "description": null
+    "location": "Pool Patio",
+    "description": "This party is exclusively for our VIPs, the Class of 2030! We'll have DJs, lights, snacks and lots of fun. It is a lock-in event so once you are dropped off you can't leave, but you won't want to anyhow! Casual attire is fine! You need your digital ID to enter."
   },
   {
     "source": {
@@ -234,14 +37,16 @@
       "iCalUid": "354006@www.d125.org"
     },
     "title": "Open House Night Two",
-    "categories": [],
+    "categories": [
+      "Parent Calendar"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-09-03",
       "dateEnd": "2026-09-04"
     },
     "location": null,
-    "description": null
+    "description": "During the Open House evenings, you will have the opportunity to meet your student's teachers, learn about the curriculum in the courses your student is taking, and experience many of the resources we offer to students and families of Stevenson High School. \n \n\n\nOpen House is scheduled for two nights, one of which parents should attend based on their last name. If you have a calendar conflict with the designated Open House evening, please feel free to attend on the other date. There is no need to inform us of the change. We encourage all parents to attend one of the two nights.\n\n\n Thursday, September 3, from 7-9:30 p.m.: Last Names M - Z"
   },
   {
     "source": {
@@ -249,7 +54,9 @@
       "iCalUid": "354007@www.d125.org"
     },
     "title": "Late Arrival",
-    "categories": [],
+    "categories": [
+      "Late Arrival"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-09-04",
@@ -264,7 +71,9 @@
       "iCalUid": "354008@www.d125.org"
     },
     "title": "Non-attendance Day",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-09-07",
@@ -279,7 +88,9 @@
       "iCalUid": "354009@www.d125.org"
     },
     "title": "Activity Period",
-    "categories": [],
+    "categories": [
+      "Activity Period"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-09-09",
@@ -294,7 +105,9 @@
       "iCalUid": "354011@www.d125.org"
     },
     "title": "Key Club Service Fair",
-    "categories": [],
+    "categories": [
+      "Clubs and Activities"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-09-09",
@@ -309,7 +122,9 @@
       "iCalUid": "354010@www.d125.org"
     },
     "title": "PPA Bake Sale",
-    "categories": [],
+    "categories": [
+      "Parent Calendar"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-09-09",
@@ -324,14 +139,16 @@
       "iCalUid": "354012@www.d125.org"
     },
     "title": "Honors Senior Solo Recital",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
-      "allDay": true,
-      "date": "2026-09-10",
-      "dateEnd": "2026-09-11"
+      "allDay": false,
+      "start": "2026-09-10T23:00:00.000Z",
+      "end": "2026-09-10T23:00:00.000Z"
     },
-    "location": null,
-    "description": null
+    "location": "Recital Hall",
+    "description": "The  finest senior performers  in our music department will be performing major solo works! These musicians were selected from a panel of judges to perform for this event. Those who cannot attend the event can  stream the performance ."
   },
   {
     "source": {
@@ -351,10 +168,27 @@
   {
     "source": {
       "type": "ical",
+      "iCalUid": "401543@www.d125.org"
+    },
+    "title": "Family Engagement: The Opposite of Happiness",
+    "categories": [],
+    "timing": {
+      "allDay": false,
+      "start": "2026-09-17T00:00:00.000Z",
+      "end": "2026-09-17T00:00:00.000Z"
+    },
+    "location": "Zoom",
+    "description": "George Loewenstein, Ph.D., will be in conversation with Eli Finkel, Ph.D. (FAN '17), a professor at Northwestern University, about his new book: \"The Opposite of Happiness: How Bad Feelings Make and Break Us.\"  To register for this webinar, click here ."
+  },
+  {
+    "source": {
+      "type": "ical",
       "iCalUid": "354013@www.d125.org"
     },
     "title": "Late Arrival",
-    "categories": [],
+    "categories": [
+      "Late Arrival"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-09-17",
@@ -369,7 +203,9 @@
       "iCalUid": "354014@www.d125.org"
     },
     "title": "Non-attendance Day",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-09-21",
@@ -381,10 +217,27 @@
   {
     "source": {
       "type": "ical",
+      "iCalUid": "401541@www.d125.org"
+    },
+    "title": "Family Engagement: What To Expect When Your Teen Turns 18",
+    "categories": [],
+    "timing": {
+      "allDay": false,
+      "start": "2026-09-24T00:00:00.000Z",
+      "end": "2026-09-24T00:00:00.000Z"
+    },
+    "location": "Vernon Area Public Library",
+    "description": "Join us on Wednesday, Sept. 23 at 7 p.m. for this event, hosted by Stevenson High School and the Vernon Area Library. Professionals from the Shire Law Group will present what needs to be put in place to protect you and your young adult."
+  },
+  {
+    "source": {
+      "type": "ical",
       "iCalUid": "354042@www.d125.org"
     },
     "title": "Home Football Game",
-    "categories": [],
+    "categories": [
+      "Athletics"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-09-25",
@@ -399,14 +252,16 @@
       "iCalUid": "354016@www.d125.org"
     },
     "title": "Streetfest",
-    "categories": [],
+    "categories": [
+      "Clubs and Activities"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-09-26",
       "dateEnd": "2026-09-27"
     },
     "location": null,
-    "description": null
+    "description": "Enjoy student performances, participate in wellness activities lead by Stevenson club leaders, a fireworks show, inflatables, and food trucks. Proceeds from Streetfest ticket sales will benefit Shield 23, which serves firefighters in the Lake County area, focusing on financial and peer support for firefighters battling cancer.\n\n\n\nGeneral Admission is $10:  Ticketing link"
   },
   {
     "source": {
@@ -414,14 +269,16 @@
       "iCalUid": "354018@www.d125.org"
     },
     "title": "CCC - Financial Aid Night",
-    "categories": [],
+    "categories": [
+      "CCC"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-09-28",
       "dateEnd": "2026-09-29"
     },
     "location": null,
-    "description": null
+    "description": "The College Career Center will hold its annual Financial Aid Night at 7 p.m. on Monday, September 28th in the West Auditorium as well as live-streamed via Zoom ( d125-org.zoom.us/j/99298396029 ). This event will be recorded, and the slides and recording will be available on the College Career Center website within a week of the event.\n\nPost Secondary Counselors Ms. Sara Hanson and Mr. Dan Miller will partner with Ms. Maggie Bleeker, Assistant Director of Financial Aid at Northwestern University, to host a Financial Aid Program for families., for this presentation, which is meant primarily for families who have current juniors or seniors.\n\nDetails about applying for college financial assistance through the Free Application for Federal Student Aid (FAFSA) will be discussed, along with the types of financial aid available, and how eligibility for aid is determined. Families with seniors typically complete the 2027-28 FAFSA form in October."
   },
   {
     "source": {
@@ -429,14 +286,16 @@
       "iCalUid": "354019@www.d125.org"
     },
     "title": "CCC - First Generation Night One",
-    "categories": [],
+    "categories": [
+      "CCC"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-09-30",
       "dateEnd": "2026-10-01"
     },
     "location": null,
-    "description": null
+    "description": "Please join us for our First Generation to College in the U.S. program on Wednesday, Sept. 30! This information night will be held in-person and is geared toward students who are the first in their family to attend a four-year college or students whose parents have not been educated at the undergraduate level in the United States. While the content is especially helpful for first generation families, all students and families are welcome to attend. Families can select to visit presentations based on their personal needs. These 45-minute sessions are an introduction to topics that will be explained in more detail during future College Career Center events. Families will have an opportunity to ask questions during the live in-person sessions.\n\n Click here to view our schedule ."
   },
   {
     "source": {
@@ -444,14 +303,16 @@
       "iCalUid": "354020@www.d125.org"
     },
     "title": "Fall Choir Concert",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
-      "allDay": true,
-      "date": "2026-10-01",
-      "dateEnd": "2026-10-02"
+      "allDay": false,
+      "start": "2026-10-02T00:00:00.000Z",
+      "end": "2026-10-02T00:00:00.000Z"
     },
-    "location": null,
-    "description": null
+    "location": "Stevenson High School | Performing Arts Center",
+    "description": "The first choir concert of the year features all three of our curricular choirs, Patriot Singers, Advanced Choir and Stevenson Singers. This concert will feature music from across the world, including Nigeria, Argentina and Ireland, and will explore themes of resilience, love and empowerment. See you there!\n\n  \n Links \n *  Streaming via Vimeo \n*  Fall Choir Program"
   },
   {
     "source": {
@@ -459,7 +320,9 @@
       "iCalUid": "354043@www.d125.org"
     },
     "title": "Home Football Game",
-    "categories": [],
+    "categories": [
+      "Athletics"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-02",
@@ -474,7 +337,9 @@
       "iCalUid": "354021@www.d125.org"
     },
     "title": "Homecoming PM Assembly",
-    "categories": [],
+    "categories": [
+      "Clubs and Activities"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-02",
@@ -489,7 +354,9 @@
       "iCalUid": "354022@www.d125.org"
     },
     "title": "PPA Treat Day",
-    "categories": [],
+    "categories": [
+      "Parent Calendar"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-02",
@@ -504,14 +371,16 @@
       "iCalUid": "354023@www.d125.org"
     },
     "title": "Homecoming Dance",
-    "categories": [],
+    "categories": [
+      "Clubs and Activities"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-03",
       "dateEnd": "2026-10-04"
     },
     "location": null,
-    "description": null
+    "description": "Homecoming is back and better than ever this year, thanks to Student Council. Go ahead, and save the date for Oct. 3. Let the planning begin!\n\n  Guest forms and tickets are now open . If you want to bring a guest from another school, you must complete this form.\n \n\n  Everything else you need to know is right here . Bookmark this page, as Student Council continues to update and finalize things over the next few weeks!\n \n\n Get into your New York state of mind!"
   },
   {
     "source": {
@@ -519,7 +388,9 @@
       "iCalUid": "354024@www.d125.org"
     },
     "title": "Activity Period",
-    "categories": [],
+    "categories": [
+      "Activity Period"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-06",
@@ -534,7 +405,9 @@
       "iCalUid": "354025@www.d125.org"
     },
     "title": "Fall Band Concert",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-06",
@@ -548,15 +421,17 @@
       "type": "ical",
       "iCalUid": "354027@www.d125.org"
     },
-    "title": "Fall Play",
-    "categories": [],
+    "title": "Fall Play: The Sparrow",
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-09",
       "dateEnd": "2026-10-10"
     },
     "location": null,
-    "description": null
+    "description": "Ten years ago, Emily Book, the lone survivor of a horrible school bus accident, was sent away from the tiny town of Spring Farm. Now, in her senior year, Emily must return in order to graduate from high school. Guided by her biology teacher, Mr. Christopher, and befriended by head cheerleader, Jenny, Emily must learn to fit in with her classmates while yearning to stay out of the spotlight. Caught up in a dangerous stunt at a basketball game, Emily reveals her true powers in a stunning display of heroism. Thus, Spring Farm's own darling superhero, \"The Sparrow,\" is born. Can this strange girl with even stranger powers be the hero that her town is longing for, or will her dark secret destroy them all? The Sparrow taps into the fundamental aching of adolescence-fearing that we're somehow different while hoping that we're somehow special.\n\n    \n\n  Production Advisory: Patriot Theatre Company rates The Sparrow PG-13 for mature themes, including grief, bullying, a student-teacher boundary violation, and an instance of gun violence. This production utilizes atmospheric fog and flashing lights.    \n\n    \n\n\n\n  \n\n Oct. 9 @ 7 p.m. \n\n   Oct. 10 @ 2 p.m. \n\n   Oct. 10 @ 7 p.m. \n\n   Oct. 11 @ 2 p.m."
   },
   {
     "source": {
@@ -564,7 +439,9 @@
       "iCalUid": "354095@www.d125.org"
     },
     "title": "Home Football Game",
-    "categories": [],
+    "categories": [
+      "Athletics"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-09",
@@ -579,7 +456,9 @@
       "iCalUid": "354026@www.d125.org"
     },
     "title": "NHS Blood Drive",
-    "categories": [],
+    "categories": [
+      "Clubs and Activities"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-09",
@@ -593,30 +472,34 @@
       "type": "ical",
       "iCalUid": "354028@www.d125.org"
     },
-    "title": "Fall Play",
-    "categories": [],
+    "title": "Fall Play: The Sparrow",
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-10",
       "dateEnd": "2026-10-11"
     },
     "location": null,
-    "description": null
+    "description": "Ten years ago, Emily Book, the lone survivor of a horrible school bus accident, was sent away from the tiny town of Spring Farm. Now, in her senior year, Emily must return in order to graduate from high school. Guided by her biology teacher, Mr. Christopher, and befriended by head cheerleader, Jenny, Emily must learn to fit in with her classmates while yearning to stay out of the spotlight. Caught up in a dangerous stunt at a basketball game, Emily reveals her true powers in a stunning display of heroism. Thus, Spring Farm's own darling superhero, \"The Sparrow,\" is born. Can this strange girl with even stranger powers be the hero that her town is longing for, or will her dark secret destroy them all? The Sparrow taps into the fundamental aching of adolescence-fearing that we're somehow different while hoping that we're somehow special.\n\n    \n\n  Production Advisory: Patriot Theatre Company rates The Sparrow PG-13 for mature themes, including grief, bullying, a student-teacher boundary violation, and an instance of gun violence. This production utilizes atmospheric fog and flashing lights.    \n\n    \n\n Oct. 9 @ 7 p.m. \n Oct. 10 @ 2 p.m. \n Oct. 10 @ 7 p.m. \n\n   Oct. 11 @ 2 p.m."
   },
   {
     "source": {
       "type": "ical",
-      "iCalUid": "354029@www.d125.org"
+      "iCalUid": "401757@www.d125.org"
     },
-    "title": "Fall Play",
-    "categories": [],
+    "title": "Fall Play: The Sparrow",
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-11",
       "dateEnd": "2026-10-12"
     },
-    "location": null,
-    "description": null
+    "location": "Little Theater",
+    "description": "Ten years ago, Emily Book, the lone survivor of a horrible school bus accident, was sent away from the tiny town of Spring Farm. Now, in her senior year, Emily must return in order to graduate from high school. Guided by her biology teacher, Mr. Christopher, and befriended by head cheerleader, Jenny, Emily must learn to fit in with her classmates while yearning to stay out of the spotlight. Caught up in a dangerous stunt at a basketball game, Emily reveals her true powers in a stunning display of heroism. Thus, Spring Farm's own darling superhero, \"The Sparrow,\" is born. Can this strange girl with even stranger powers be the hero that her town is longing for, or will her dark secret destroy them all? The Sparrow taps into the fundamental aching of adolescence-fearing that we're somehow different while hoping that we're somehow special.\n\n    \n\n  Production Advisory: Patriot Theatre Company rates The Sparrow PG-13 for mature themes, including grief, bullying, a student-teacher boundary violation, and an instance of gun violence. This production utilizes atmospheric fog and flashing lights.    \n\n    \n\n Oct. 9 @ 7 p.m. \n Oct. 10 @ 2 p.m. \n Oct. 10 @ 7 p.m. \n\n   Oct. 11 @ 2 p.m."
   },
   {
     "source": {
@@ -624,7 +507,9 @@
       "iCalUid": "354030@www.d125.org"
     },
     "title": "Non-attendance Day",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-12",
@@ -639,7 +524,9 @@
       "iCalUid": "354032@www.d125.org"
     },
     "title": "FAFSA/Alternative Application for IL Financial Aid Workshop",
-    "categories": [],
+    "categories": [
+      "CCC"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-14",
@@ -654,7 +541,9 @@
       "iCalUid": "354034@www.d125.org"
     },
     "title": "Fall Orchestra Concert",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-14",
@@ -669,7 +558,9 @@
       "iCalUid": "354035@www.d125.org"
     },
     "title": "PPA Bake Sale",
-    "categories": [],
+    "categories": [
+      "Parent Calendar"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-14",
@@ -684,7 +575,9 @@
       "iCalUid": "354038@www.d125.org"
     },
     "title": "Late Arrival",
-    "categories": [],
+    "categories": [
+      "Late Arrival"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-15",
@@ -699,22 +592,9 @@
       "iCalUid": "354039@www.d125.org"
     },
     "title": "Patriot Guitar Ensemble Concert",
-    "categories": [],
-    "timing": {
-      "allDay": true,
-      "date": "2026-10-15",
-      "dateEnd": "2026-10-16"
-    },
-    "location": null,
-    "description": null
-  },
-  {
-    "source": {
-      "type": "ical",
-      "iCalUid": "354040@www.d125.org"
-    },
-    "title": "SPARK",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-15",
@@ -729,7 +609,9 @@
       "iCalUid": "354036@www.d125.org"
     },
     "title": "Yearbook Photo Makeup/Retake Day",
-    "categories": [],
+    "categories": [
+      "Clubs and Activities"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-15",
@@ -744,7 +626,9 @@
       "iCalUid": "354096@www.d125.org"
     },
     "title": "Home Football Game",
-    "categories": [],
+    "categories": [
+      "Athletics"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-16",
@@ -759,7 +643,9 @@
       "iCalUid": "354037@www.d125.org"
     },
     "title": "Yearbook Photo Makeup/Retake Day",
-    "categories": [],
+    "categories": [
+      "Clubs and Activities"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-16",
@@ -774,7 +660,9 @@
       "iCalUid": "354041@www.d125.org"
     },
     "title": "Night Market",
-    "categories": [],
+    "categories": [
+      "Clubs and Activities"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-17",
@@ -816,6 +704,21 @@
   {
     "source": {
       "type": "ical",
+      "iCalUid": "401542@www.d125.org"
+    },
+    "title": "Family Engagement: Book Talk with Angela Duckworth, Ph.D.",
+    "categories": [],
+    "timing": {
+      "allDay": false,
+      "start": "2026-10-23T00:00:00.000Z",
+      "end": "2026-10-23T00:00:00.000Z"
+    },
+    "location": "Performing Arts Center",
+    "description": "In partnership with the Family Action Network, Stevenson is proud to host Angela Duckworth, the author of Grit and Situated, on Oct. 22 in the PAC at 7 pm. For more information, please refer to  the Family Action Network website ."
+  },
+  {
+    "source": {
+      "type": "ical",
       "iCalUid": "354046@www.d125.org"
     },
     "title": "Academic Expo",
@@ -834,7 +737,9 @@
       "iCalUid": "354047@www.d125.org"
     },
     "title": "Activity Period",
-    "categories": [],
+    "categories": [
+      "Activity Period"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-27",
@@ -849,7 +754,9 @@
       "iCalUid": "354048@www.d125.org"
     },
     "title": "Math Carnival",
-    "categories": [],
+    "categories": [
+      "Clubs and Activities"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-27",
@@ -864,7 +771,9 @@
       "iCalUid": "354051@www.d125.org"
     },
     "title": "Trunk or Treat",
-    "categories": [],
+    "categories": [
+      "Clubs and Activities"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-10-30",
@@ -879,7 +788,9 @@
       "iCalUid": "354052@www.d125.org"
     },
     "title": "Non-attendance Day",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-11-03",
@@ -894,7 +805,9 @@
       "iCalUid": "354053@www.d125.org"
     },
     "title": "Late Arrival",
-    "categories": [],
+    "categories": [
+      "Late Arrival"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-11-05",
@@ -909,7 +822,9 @@
       "iCalUid": "354054@www.d125.org"
     },
     "title": "CCC - Junior Family Night One",
-    "categories": [],
+    "categories": [
+      "CCC"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-11-09",
@@ -924,7 +839,9 @@
       "iCalUid": "354055@www.d125.org"
     },
     "title": "Activity Period",
-    "categories": [],
+    "categories": [
+      "Activity Period"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-11-10",
@@ -939,7 +856,9 @@
       "iCalUid": "354056@www.d125.org"
     },
     "title": "PPA Bake Sale",
-    "categories": [],
+    "categories": [
+      "Parent Calendar"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-11-11",
@@ -969,7 +888,9 @@
       "iCalUid": "354057@www.d125.org"
     },
     "title": "CCC - First Generation Night Two",
-    "categories": [],
+    "categories": [
+      "CCC"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-11-19",
@@ -984,7 +905,9 @@
       "iCalUid": "354058@www.d125.org"
     },
     "title": "Thanksgiving Break (Non-attendance Day)",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-11-25",
@@ -999,7 +922,9 @@
       "iCalUid": "354059@www.d125.org"
     },
     "title": "Thanksgiving Break (Non-attendance Day)",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-11-26",
@@ -1014,7 +939,9 @@
       "iCalUid": "354060@www.d125.org"
     },
     "title": "Thanksgiving Break (Non-attendance Day)",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-11-27",
@@ -1029,7 +956,9 @@
       "iCalUid": "354061@www.d125.org"
     },
     "title": "Activity Period",
-    "categories": [],
+    "categories": [
+      "Activity Period"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-01",
@@ -1044,7 +973,9 @@
       "iCalUid": "354072@www.d125.org"
     },
     "title": "December Guitar Concert",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-01",
@@ -1059,7 +990,9 @@
       "iCalUid": "354064@www.d125.org"
     },
     "title": "PPA Treat Day",
-    "categories": [],
+    "categories": [
+      "Parent Calendar"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-04",
@@ -1074,7 +1007,9 @@
       "iCalUid": "354062@www.d125.org"
     },
     "title": "Winter Dance Concert",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-04",
@@ -1089,7 +1024,9 @@
       "iCalUid": "354065@www.d125.org"
     },
     "title": "Winter Music Production Showcase",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-04",
@@ -1104,7 +1041,9 @@
       "iCalUid": "354063@www.d125.org"
     },
     "title": "Winter Dance Concert",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-05",
@@ -1119,7 +1058,9 @@
       "iCalUid": "354066@www.d125.org"
     },
     "title": "Winter Band Concert",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-07",
@@ -1134,7 +1075,9 @@
       "iCalUid": "354068@www.d125.org"
     },
     "title": "Winter ArtFest",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-08",
@@ -1149,7 +1092,9 @@
       "iCalUid": "354070@www.d125.org"
     },
     "title": "Winter ArtFest Reception",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-08",
@@ -1164,7 +1109,9 @@
       "iCalUid": "354067@www.d125.org"
     },
     "title": "Winter Band Concert",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-08",
@@ -1179,7 +1126,9 @@
       "iCalUid": "354071@www.d125.org"
     },
     "title": "CCC - Preparing for Admission Decisions and the Next Steps",
-    "categories": [],
+    "categories": [
+      "CCC"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-09",
@@ -1194,7 +1143,9 @@
       "iCalUid": "354073@www.d125.org"
     },
     "title": "PPA Bake Sale",
-    "categories": [],
+    "categories": [
+      "Parent Calendar"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-09",
@@ -1209,7 +1160,9 @@
       "iCalUid": "354069@www.d125.org"
     },
     "title": "Winter ArtFest",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-09",
@@ -1224,7 +1177,9 @@
       "iCalUid": "354074@www.d125.org"
     },
     "title": "December Choir Concert",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-10",
@@ -1239,7 +1194,9 @@
       "iCalUid": "354075@www.d125.org"
     },
     "title": "Late Arrival",
-    "categories": [],
+    "categories": [
+      "Late Arrival"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-10",
@@ -1254,7 +1211,9 @@
       "iCalUid": "354076@www.d125.org"
     },
     "title": "Jazz Cafe",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-11",
@@ -1284,7 +1243,9 @@
       "iCalUid": "354077@www.d125.org"
     },
     "title": "Winter Orchestra Concert",
-    "categories": [],
+    "categories": [
+      "Fine Arts"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-15",
@@ -1299,7 +1260,9 @@
       "iCalUid": "354080@www.d125.org"
     },
     "title": "Winter Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-21",
@@ -1314,7 +1277,9 @@
       "iCalUid": "354081@www.d125.org"
     },
     "title": "Winter Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-22",
@@ -1329,7 +1294,9 @@
       "iCalUid": "354082@www.d125.org"
     },
     "title": "Winter Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-23",
@@ -1344,7 +1311,9 @@
       "iCalUid": "354083@www.d125.org"
     },
     "title": "Winter Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-24",
@@ -1359,7 +1328,9 @@
       "iCalUid": "354084@www.d125.org"
     },
     "title": "Winter Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-25",
@@ -1374,7 +1345,9 @@
       "iCalUid": "354085@www.d125.org"
     },
     "title": "Winter Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-28",
@@ -1389,7 +1362,9 @@
       "iCalUid": "354086@www.d125.org"
     },
     "title": "Winter Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-29",
@@ -1404,7 +1379,9 @@
       "iCalUid": "354087@www.d125.org"
     },
     "title": "Winter Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-30",
@@ -1419,7 +1396,9 @@
       "iCalUid": "354088@www.d125.org"
     },
     "title": "Winter Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2026-12-31",
@@ -1434,7 +1413,9 @@
       "iCalUid": "354089@www.d125.org"
     },
     "title": "Winter Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-01-01",
@@ -1449,7 +1430,9 @@
       "iCalUid": "354090@www.d125.org"
     },
     "title": "Winter Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-01-04",
@@ -1464,7 +1447,9 @@
       "iCalUid": "354091@www.d125.org"
     },
     "title": "Non-attendance Day",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-01-05",
@@ -1491,6 +1476,57 @@
   {
     "source": {
       "type": "ical",
+      "iCalUid": "401973@www.d125.org"
+    },
+    "title": "Incoming Freshman Orientation",
+    "categories": [
+      "Parent Calendar"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-01-06",
+      "dateEnd": "2027-01-07"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401974@www.d125.org"
+    },
+    "title": "Incoming Freshman Orientation",
+    "categories": [
+      "Parent Calendar"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-01-07",
+      "dateEnd": "2027-01-08"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401975@www.d125.org"
+    },
+    "title": "Consortium Orchestra Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-01-11",
+      "dateEnd": "2027-01-12"
+    },
+    "location": "Performing Arts Center",
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
       "iCalUid": "355018@www.d125.org"
     },
     "title": "District 125 Board of Education Meeting",
@@ -1506,10 +1542,97 @@
   {
     "source": {
       "type": "ical",
+      "iCalUid": "401976@www.d125.org"
+    },
+    "title": "Activity Period (Sophomore Core Curriculum)",
+    "categories": [
+      "Activity Period"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-01-12",
+      "dateEnd": "2027-01-13"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401977@www.d125.org"
+    },
+    "title": "Incoming Freshman Orientation",
+    "categories": [
+      "Parent Calendar"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-01-12",
+      "dateEnd": "2027-01-13"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401978@www.d125.org"
+    },
+    "title": "Consortium Choir Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-01-13",
+      "dateEnd": "2027-01-14"
+    },
+    "location": "Performing Arts Center",
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401979@www.d125.org"
+    },
+    "title": "PPA Bake Sale",
+    "categories": [
+      "Parent Calendar"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-01-13",
+      "dateEnd": "2027-01-14"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401980@www.d125.org"
+    },
+    "title": "Consortium Band Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-01-14",
+      "dateEnd": "2027-01-15"
+    },
+    "location": "Performing Arts Center",
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
       "iCalUid": "392186@www.d125.org"
     },
     "title": "Non-attendance Day",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-01-18",
@@ -1524,11 +1647,115 @@
       "iCalUid": "392201@www.d125.org"
     },
     "title": "Late Arrival",
-    "categories": [],
+    "categories": [
+      "Late Arrival"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-01-21",
       "dateEnd": "2027-01-22"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401981@www.d125.org"
+    },
+    "title": "World's Fair",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-01-23",
+      "dateEnd": "2027-01-24"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401982@www.d125.org"
+    },
+    "title": "World's Fair",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-01-24",
+      "dateEnd": "2027-01-25"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401983@www.d125.org"
+    },
+    "title": "Activity Period (Clubs)",
+    "categories": [
+      "Activity Period"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-02",
+      "dateEnd": "2027-02-03"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401985@www.d125.org"
+    },
+    "title": "Frosh/Soph Play",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-05",
+      "dateEnd": "2027-02-06"
+    },
+    "location": "Stevenson High School | West Auditorium",
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401986@www.d125.org"
+    },
+    "title": "Frosh/Soph Play",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-06",
+      "dateEnd": "2027-02-07"
+    },
+    "location": "Stevenson High School | West Auditorium",
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401987@www.d125.org"
+    },
+    "title": "CCC Presents: Community College Week",
+    "categories": [
+      "CCC"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-08",
+      "dateEnd": "2027-02-09"
     },
     "location": null,
     "description": null
@@ -1551,10 +1778,80 @@
   {
     "source": {
       "type": "ical",
-      "iCalUid": "392187@www.d125.org"
+      "iCalUid": "401992@www.d125.org"
     },
-    "title": "Late Arrival",
-    "categories": [],
+    "title": "CCC Presents: First Generation Night #2",
+    "categories": [
+      "CCC"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-09",
+      "dateEnd": "2027-02-10"
+    },
+    "location": "Zoom Only",
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401988@www.d125.org"
+    },
+    "title": "CCC Presents: Community College Week",
+    "categories": [
+      "CCC"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-09",
+      "dateEnd": "2027-02-10"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401989@www.d125.org"
+    },
+    "title": "CCC Presents: Community College Week",
+    "categories": [
+      "CCC"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-10",
+      "dateEnd": "2027-02-11"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401993@www.d125.org"
+    },
+    "title": "PPA Bake Sale",
+    "categories": [
+      "Parent Calendar"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-10",
+      "dateEnd": "2027-02-11"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401990@www.d125.org"
+    },
+    "title": "CCC Presents: Community College Week",
+    "categories": [
+      "CCC"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-02-11",
@@ -1566,10 +1863,63 @@
   {
     "source": {
       "type": "ical",
+      "iCalUid": "392187@www.d125.org"
+    },
+    "title": "Late Arrival",
+    "categories": [
+      "Late Arrival"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-11",
+      "dateEnd": "2027-02-12"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401991@www.d125.org"
+    },
+    "title": "CCC Presents: Community College Week",
+    "categories": [
+      "CCC"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-12",
+      "dateEnd": "2027-02-13"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401994@www.d125.org"
+    },
+    "title": "CCC Presents: Summer Job Fair",
+    "categories": [
+      "CCC"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-12",
+      "dateEnd": "2027-02-13"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
       "iCalUid": "392188@www.d125.org"
     },
     "title": "Non-attendance Day",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-02-15",
@@ -1581,10 +1931,131 @@
   {
     "source": {
       "type": "ical",
+      "iCalUid": "401995@www.d125.org"
+    },
+    "title": "February Guitar Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-17",
+      "dateEnd": "2027-02-18"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401996@www.d125.org"
+    },
+    "title": "Orchestra Chamber Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-18",
+      "dateEnd": "2027-02-19"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401997@www.d125.org"
+    },
+    "title": "PPA Treat Day",
+    "categories": [
+      "Parent Calendar"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-19",
+      "dateEnd": "2027-02-20"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401998@www.d125.org"
+    },
+    "title": "Patriotpalooza",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-20",
+      "dateEnd": "2027-02-21"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "401999@www.d125.org"
+    },
+    "title": "Activity Period",
+    "categories": [
+      "Activity Period"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-23",
+      "dateEnd": "2027-02-24"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402000@www.d125.org"
+    },
+    "title": "Winter Choir Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-24",
+      "dateEnd": "2027-02-25"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402001@www.d125.org"
+    },
+    "title": "Baroque Ensemble and Viol Consort",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-02-25",
+      "dateEnd": "2027-02-26"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
       "iCalUid": "392189@www.d125.org"
     },
     "title": "Non-attendance Day",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-02-26",
@@ -1599,7 +2070,9 @@
       "iCalUid": "392190@www.d125.org"
     },
     "title": "Non-attendance Day",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-03-01",
@@ -1611,10 +2084,97 @@
   {
     "source": {
       "type": "ical",
+      "iCalUid": "402002@www.d125.org"
+    },
+    "title": "Winter Sports Awards",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-03-02",
+      "dateEnd": "2027-03-03"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402005@www.d125.org"
+    },
+    "title": "CCC Presents: Career Ready, Trade & Military Expo",
+    "categories": [
+      "CCC"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-03-03",
+      "dateEnd": "2027-03-04"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402003@www.d125.org"
+    },
+    "title": "Winter Band Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-03-03",
+      "dateEnd": "2027-03-04"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402006@www.d125.org"
+    },
+    "title": "Activity Period (Junior Core Curriculum)",
+    "categories": [
+      "Activity Period"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-03-04",
+      "dateEnd": "2027-03-05"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402004@www.d125.org"
+    },
+    "title": "Winter Band Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-03-04",
+      "dateEnd": "2027-03-05"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
       "iCalUid": "392191@www.d125.org"
     },
     "title": "Late Arrival",
-    "categories": [],
+    "categories": [
+      "Late Arrival"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-03-11",
@@ -1644,7 +2204,9 @@
       "iCalUid": "392192@www.d125.org"
     },
     "title": "Non-attendance Day",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-03-19",
@@ -1659,7 +2221,9 @@
       "iCalUid": "392193@www.d125.org"
     },
     "title": "Spring Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-03-22",
@@ -1674,7 +2238,9 @@
       "iCalUid": "392194@www.d125.org"
     },
     "title": "Spring Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-03-23",
@@ -1689,7 +2255,9 @@
       "iCalUid": "392195@www.d125.org"
     },
     "title": "Spring Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-03-24",
@@ -1704,7 +2272,9 @@
       "iCalUid": "392196@www.d125.org"
     },
     "title": "Spring Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-03-25",
@@ -1719,11 +2289,268 @@
       "iCalUid": "392197@www.d125.org"
     },
     "title": "Spring Break",
-    "categories": [],
+    "categories": [
+      "Non-Attendance Days"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-03-26",
       "dateEnd": "2027-03-27"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402007@www.d125.org"
+    },
+    "title": "Activity Period (Clubs)",
+    "categories": [
+      "Activity Period"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-06",
+      "dateEnd": "2027-04-07"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402008@www.d125.org"
+    },
+    "title": "Freshman Wellness Day",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-07",
+      "dateEnd": "2027-04-08"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402009@www.d125.org"
+    },
+    "title": "Student Government Induction",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-07",
+      "dateEnd": "2027-04-08"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402010@www.d125.org"
+    },
+    "title": "CCC Presents: Freshman Family Night",
+    "categories": [
+      "CCC"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-08",
+      "dateEnd": "2027-04-09"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402011@www.d125.org"
+    },
+    "title": "Day of Dance",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-09",
+      "dateEnd": "2027-04-10"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402012@www.d125.org"
+    },
+    "title": "Evening of Jazz",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-09",
+      "dateEnd": "2027-04-10"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402014@www.d125.org"
+    },
+    "title": "SAGA Dance",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-09",
+      "dateEnd": "2027-04-10"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402015@www.d125.org"
+    },
+    "title": "Kilo for Africa",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-10",
+      "dateEnd": "2027-04-11"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402016@www.d125.org"
+    },
+    "title": "The AP and Advanced Art Show",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-13",
+      "dateEnd": "2027-04-14"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402018@www.d125.org"
+    },
+    "title": "PPA Bake Sale",
+    "categories": [
+      "Parent Calendar"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-14",
+      "dateEnd": "2027-04-15"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402019@www.d125.org"
+    },
+    "title": "Senior Awards Night",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-14",
+      "dateEnd": "2027-04-15"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402017@www.d125.org"
+    },
+    "title": "The AP and Advanced Art Show",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-14",
+      "dateEnd": "2027-04-15"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402020@www.d125.org"
+    },
+    "title": "Small Ensemble Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-15",
+      "dateEnd": "2027-04-16"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402021@www.d125.org"
+    },
+    "title": "NHS Blood Drive",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-16",
+      "dateEnd": "2027-04-17"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402022@www.d125.org"
+    },
+    "title": "Percussion Ensemble Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-19",
+      "dateEnd": "2027-04-20"
     },
     "location": null,
     "description": null
@@ -1746,14 +2573,509 @@
   {
     "source": {
       "type": "ical",
+      "iCalUid": "402024@www.d125.org"
+    },
+    "title": "CCC Presents: First Generation to Undergrad Admission College Night #3",
+    "categories": [
+      "CCC"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-20",
+      "dateEnd": "2027-04-21"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402023@www.d125.org"
+    },
+    "title": "NHS Induction",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-20",
+      "dateEnd": "2027-04-21"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
       "iCalUid": "392198@www.d125.org"
     },
     "title": "Late Arrival",
-    "categories": [],
+    "categories": [
+      "Late Arrival"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-04-22",
       "dateEnd": "2027-04-23"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402025@www.d125.org"
+    },
+    "title": "PPA Treat Day",
+    "categories": [
+      "Parent Calendar"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-23",
+      "dateEnd": "2027-04-24"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402026@www.d125.org"
+    },
+    "title": "Prom",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-24",
+      "dateEnd": "2027-04-25"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402030@www.d125.org"
+    },
+    "title": "Senior Sunrise",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-29",
+      "dateEnd": "2027-04-30"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402027@www.d125.org"
+    },
+    "title": "Spring Dance Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-29",
+      "dateEnd": "2027-04-30"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402031@www.d125.org"
+    },
+    "title": "One Act Plays",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-30",
+      "dateEnd": "2027-05-01"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402028@www.d125.org"
+    },
+    "title": "Spring Dance Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-04-30",
+      "dateEnd": "2027-05-01"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402032@www.d125.org"
+    },
+    "title": "One Act Plays",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-01",
+      "dateEnd": "2027-05-02"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402029@www.d125.org"
+    },
+    "title": "Spring Dance Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-01",
+      "dateEnd": "2027-05-02"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402040@www.d125.org"
+    },
+    "title": "Testing Day (Advanced Placement Exams)",
+    "categories": [
+      "Testing Day"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-03",
+      "dateEnd": "2027-05-04"
+    },
+    "location": "Stevenson High School",
+    "description": "Fore more information, visit the  Advanced Placement web page ."
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402033@www.d125.org"
+    },
+    "title": "Spring Choir Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-04",
+      "dateEnd": "2027-05-05"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402041@www.d125.org"
+    },
+    "title": "Testing Day (Advanced Placement Exams)",
+    "categories": [
+      "Testing Day"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-04",
+      "dateEnd": "2027-05-05"
+    },
+    "location": "Stevenson High School",
+    "description": "Fore more information, visit the  Advanced Placement web page ."
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402042@www.d125.org"
+    },
+    "title": "Testing Day (Advanced Placement Exams)",
+    "categories": [
+      "Testing Day"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-05",
+      "dateEnd": "2027-05-06"
+    },
+    "location": "Stevenson High School",
+    "description": "Fore more information, visit the  Advanced Placement web page ."
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402043@www.d125.org"
+    },
+    "title": "Testing Day (Advanced Placement Exams)",
+    "categories": [
+      "Testing Day"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-06",
+      "dateEnd": "2027-05-07"
+    },
+    "location": "Stevenson High School",
+    "description": "Fore more information, visit the  Advanced Placement web page ."
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402034@www.d125.org"
+    },
+    "title": "Baroque Ensemble and Viol Consort",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-07",
+      "dateEnd": "2027-05-08"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402035@www.d125.org"
+    },
+    "title": "Spring Music Production Showcase",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-07",
+      "dateEnd": "2027-05-08"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402044@www.d125.org"
+    },
+    "title": "Testing Day (Advanced Placement Exams)",
+    "categories": [
+      "Testing Day"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-07",
+      "dateEnd": "2027-05-08"
+    },
+    "location": "Stevenson High School",
+    "description": "Fore more information, visit the  Advanced Placement web page ."
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402045@www.d125.org"
+    },
+    "title": "Testing Day (Advanced Placement Exams)",
+    "categories": [
+      "Testing Day"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-10",
+      "dateEnd": "2027-05-11"
+    },
+    "location": "Stevenson High School",
+    "description": "Fore more information, visit the  Advanced Placement web page ."
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402036@www.d125.org"
+    },
+    "title": "Spring Band Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-11",
+      "dateEnd": "2027-05-12"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402046@www.d125.org"
+    },
+    "title": "Testing Day (Advanced Placement Exams)",
+    "categories": [
+      "Testing Day"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-11",
+      "dateEnd": "2027-05-12"
+    },
+    "location": "Stevenson High School",
+    "description": "Fore more information, visit the  Advanced Placement web page ."
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402037@www.d125.org"
+    },
+    "title": "May Guitar Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-12",
+      "dateEnd": "2027-05-13"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402038@www.d125.org"
+    },
+    "title": "PPA Bake Sale",
+    "categories": [
+      "Parent Calendar"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-12",
+      "dateEnd": "2027-05-13"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402047@www.d125.org"
+    },
+    "title": "Testing Day (Advanced Placement Exams)",
+    "categories": [
+      "Testing Day"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-12",
+      "dateEnd": "2027-05-13"
+    },
+    "location": "Stevenson High School",
+    "description": "Fore more information, visit the  Advanced Placement web page ."
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402039@www.d125.org"
+    },
+    "title": "Orchestra Pops Concert",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-13",
+      "dateEnd": "2027-05-14"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402048@www.d125.org"
+    },
+    "title": "Testing Day (Advanced Placement Exams)",
+    "categories": [
+      "Testing Day"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-13",
+      "dateEnd": "2027-05-14"
+    },
+    "location": "Stevenson High School",
+    "description": "Fore more information, visit the  Advanced Placement web page ."
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402049@www.d125.org"
+    },
+    "title": "Testing Day (Advanced Placement Exams)",
+    "categories": [
+      "Testing Day"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-14",
+      "dateEnd": "2027-05-15"
+    },
+    "location": "Stevenson High School",
+    "description": "Fore more information, visit the  Advanced Placement web page ."
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402050@www.d125.org"
+    },
+    "title": "Advanced Acting Showcase",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-17",
+      "dateEnd": "2027-05-18"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402051@www.d125.org"
+    },
+    "title": "Spring Sports Awards",
+    "categories": [
+      "Athletics"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-17",
+      "dateEnd": "2027-05-18"
     },
     "location": null,
     "description": null
@@ -1776,6 +3098,57 @@
   {
     "source": {
       "type": "ical",
+      "iCalUid": "402052@www.d125.org"
+    },
+    "title": "Consortium ArtFest and Reception",
+    "categories": [
+      "Fine Arts"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-18",
+      "dateEnd": "2027-05-19"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402054@www.d125.org"
+    },
+    "title": "Spring Fling",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-21",
+      "dateEnd": "2027-05-22"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402053@www.d125.org"
+    },
+    "title": "SSN Film Festival",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-21",
+      "dateEnd": "2027-05-22"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
       "iCalUid": "392199@www.d125.org"
     },
     "title": "Last Day of School",
@@ -1791,14 +3164,50 @@
   {
     "source": {
       "type": "ical",
-      "iCalUid": "392200@www.d125.org"
+      "iCalUid": "402055@www.d125.org"
     },
-    "title": "Graduation",
-    "categories": [],
+    "title": "Senior Class Party",
+    "categories": [
+      "Clubs and Activities"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-05-27",
+      "dateEnd": "2027-05-28"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402056@www.d125.org"
+    },
+    "title": "Commencement Ceremony: Class of 2027",
+    "categories": [
+      "Clubs and Activities"
+    ],
     "timing": {
       "allDay": true,
       "date": "2027-05-28",
       "dateEnd": "2027-05-29"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402057@www.d125.org"
+    },
+    "title": "Summer School - Session 1 Start",
+    "categories": [
+      "Summer School"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-06-08",
+      "dateEnd": "2027-06-09"
     },
     "location": null,
     "description": null
@@ -1816,6 +3225,57 @@
       "end": "2027-06-22T00:00:00.000Z"
     },
     "location": "District Office",
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402058@www.d125.org"
+    },
+    "title": "Summer School - Session 1 End",
+    "categories": [
+      "Summer School"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-06-30",
+      "dateEnd": "2027-07-01"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402059@www.d125.org"
+    },
+    "title": "Summer School - Session 2 Start",
+    "categories": [
+      "Summer School"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-07-06",
+      "dateEnd": "2027-07-07"
+    },
+    "location": null,
+    "description": null
+  },
+  {
+    "source": {
+      "type": "ical",
+      "iCalUid": "402060@www.d125.org"
+    },
+    "title": "Summer School - Session 2 End",
+    "categories": [
+      "Summer School"
+    ],
+    "timing": {
+      "allDay": true,
+      "date": "2027-07-28",
+      "dateEnd": "2027-07-29"
+    },
+    "location": null,
     "description": null
   }
 ]
