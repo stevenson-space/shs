@@ -53,7 +53,8 @@
 
         <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
 
-        <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" />
+        <!-- Documents card hidden after I removed all the documents that have copyright issues. If we ever want to bring this feature back, everything must be properly licensed. -->
+        <!-- <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" /> -->
 
         <icon-text-card :icon="icons.faGear" text="Settings" link="settings" :invert="true" />
     </card-container>

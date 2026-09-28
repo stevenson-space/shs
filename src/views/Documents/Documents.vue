@@ -3,14 +3,14 @@
     <plain-header title="Documents" />
     <card-container>
       <!-- Class cards -->
-      <documents-card
+      <!-- <documents-card
         v-for="(list, name, index) in documents"
         :key="name"
         :class-name="name"
         :documents="list"
         class="document-card"
         :style="{ 'animation-delay': index*.01 + 's'}"
-      />
+      /> -->
       <!-- Request card -->
       <form-card :name="formName" title="Request">
         <form-card-element style="margin-bottom:-5px">
