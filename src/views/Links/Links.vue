@@ -29,7 +29,7 @@ import Naviance from '@/assets/links/Naviance.png';
 import PeerTutors from '@/assets/links/Peer Tutors.png';
 import PatriotDollars from '@/assets/links/Patriot Dollars.png';
 import Canvas from '@/assets/links/Canvas.png';
-import SHSMaps from '@/assets/links/SHSMaps.png';
+// import SHSMaps from '@/assets/links/SHSMaps.png';
 // import GiveAThon from '@/assets/links/GiveAThon.png';
 import StevensonClubs from '@/assets/links/StevensonClubs.png';
 // import PatriotPalooza from '@/assets/links/PatriotPalooza.png';
@@ -48,7 +48,7 @@ export default {
         { name: 'IRC', desc: 'Must be logged in using school Google account', url: 'https://irc.d125.org/login', image: IRC },
         { name: 'Infinite Campus', url: 'https://infinitecampus.d125.org/campus/portal/aes.jsp', image: InfiniteCampus },
         { name: 'Naviance', url: 'https://student.naviance.com/aeshs', image: Naviance },
-        { name: 'SHSMaps', url: 'https://shsmaps.com', image: SHSMaps },
+        // { name: 'SHSMaps', url: 'https://shsmaps.com', image: SHSMaps },
         // { name: 'GiveAThon', url: 'https://shsgiveathon.com/', image: GiveAThon },
         { name: 'Peer Tutors', desc: 'Must be logged in using school Google account', url: 'https://sites.google.com/d125.org/peer-tutors/content-database', image: PeerTutors },
         { name: 'Patriot Dollars', url: 'https://get.cbord.com/d125/full/login.php', image: PatriotDollars },
