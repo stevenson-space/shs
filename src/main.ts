@@ -2,7 +2,6 @@ import { createApp } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { createPinia } from 'pinia';
 import * as Sentry from '@sentry/vue';
-import VueGtag from 'vue-gtag';
 import App from './App.vue';
 import router from './router';
 
@@ -28,11 +27,9 @@ if (navigator.serviceWorker) {
   });
 }
 
-const app = createApp(App).component('font-awesome-icon', FontAwesomeIcon)
+const app = createApp(App)
+  .component('font-awesome-icon', FontAwesomeIcon)
   .use(router)
-  .use(VueGtag, {
-    config: { id: import.meta.env.PROD ? 'G-0MXBH7W5L0' : '' }, // disable GA during development
-  })
   .use(createPinia());
 
 Sentry.init({
