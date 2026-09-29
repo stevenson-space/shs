@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "name": "Patriot",
+    "author": "Stevenson.space",
+    "description": "A premium dark theme inspired by Stevenson High School"
+  },
+
+  "visibility": "show",
+  "recommended": {
+    "timing": "always"
+  },
+
+  "styling": {
+    "base": "dark",
+    "background": "#101a2b",
+    "secondaryBackground": "#19263b",
+    "accent": "#f0717e",
+
+    "text": {
+      "primary": "#f4f6fa",
+      "secondary": "#c0cada",
+      "tertiary": "#96a4ba"
+    },
+
+    "header": {
+      "background": "#142138",
+      "scheduleBar": "#19263b"
+    },
+
+    "iconCards": {
+      "regular": "#f4f6fa",
+      "invert": "#f0717e"
+    }
+  }
+}
