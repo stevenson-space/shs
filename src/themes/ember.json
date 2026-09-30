@@ -1,8 +1,7 @@
 {
   "metadata": {
     "name": "Ember",
-    "author": "Atharva Singh",
-    "description": "A low-lit navy palette warmed by drifting ember glows"
+    "author": "Atharva S. ('27)"
   },
 
   "visibility": "show",
@@ -13,6 +12,7 @@
   "styling": {
     "base": "dark",
     "background": "#0b111b",
+    "backgroundImage": "radial-gradient(ellipse 65% 45% at 88% 10%, rgba(209, 122, 66, 0.12) 0%, rgba(209, 122, 66, 0.04) 42%, transparent 78%), radial-gradient(ellipse 80% 65% at 12% 80%, rgba(30, 53, 78, 0.45) 0%, transparent 75%), linear-gradient(145deg, #0d1724 0%, #0b111b 52%, #111d2a 100%)",
     "secondaryBackground": "#151f2d",
     "accent": "#d17a42",
 
@@ -34,11 +34,11 @@
 
     "particles": {
       "images": [
-        "assets://particles/ember/glow.svg"
+        "assets://particles/ember/glow.png"
       ],
       "speed": 0.8,
       "count": 14,
-      "size": 3,
+      "size": 6,
       "opacity": 0.38,
       "windPower": -0.15
     }

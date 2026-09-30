@@ -558,6 +558,7 @@ export default {
         styling: {
           base: theme.styling?.base || 'light',
           background: theme.styling?.background,
+          backgroundImage: theme.styling?.backgroundImage,
           secondaryBackground: theme.styling?.secondaryBackground,
           accent: theme.styling?.accent,
           text: {
@@ -666,6 +667,7 @@ export default {
             this.customTheme.styling = {
               base: importedTheme.styling?.base || 'light',
               background: importedTheme.styling?.background,
+              backgroundImage: importedTheme.styling?.backgroundImage,
               secondaryBackground: importedTheme.styling?.secondaryBackground,
               accent: importedTheme.styling?.accent,
               text: {

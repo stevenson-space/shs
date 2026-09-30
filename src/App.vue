@@ -39,7 +39,9 @@ export default {
 
       document.documentElement.style.color = s.text?.primary || fallback.text.primary;
 
-      document.body.style.background = s.background || fallback.background;
+      document.body.style.backgroundColor = s.background || fallback.background;
+      document.body.style.backgroundImage = s.backgroundImage || 'none';
+      document.body.style.backgroundAttachment = s.backgroundImage ? 'fixed' : '';
     },
   },
   watch: {

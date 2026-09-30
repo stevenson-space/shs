@@ -75,6 +75,7 @@ export type ThemeParticles = {
 export type ThemeStyling = {
   base?: "light" | "dark";
   background?: string;
+  backgroundImage?: string;
   secondaryBackground?: string;
   accent?: string;
   text?: ThemeTextColors;
