@@ -340,6 +340,23 @@ import lightTheme from '@/themes/light.json';
 
 const cloneParticles = particles => (particles ? JSON.parse(JSON.stringify(particles)) : null);
 
+function isSafeBackgroundImage(value) {
+  if (typeof value !== 'string') return false;
+
+  const backgroundImage = value.trim();
+  if (!backgroundImage || backgroundImage.includes('\\')) return false;
+
+  // Inline raster data is self-contained; other URL schemes and protocol-relative
+  // references can load resources outside the site and are not accepted.
+  const withoutInlineRasterData = backgroundImage.replace(
+    /data:image\/(?:png|jpe?g|gif|webp|avif);base64,[a-z\d+/]+={0,2}/gi,
+    ''
+  );
+  if (/\b[a-z][a-z\d+.-]*:|\/\//i.test(withoutInlineRasterData)) return false;
+
+  return typeof CSS !== 'undefined' && CSS.supports('background-image', backgroundImage);
+}
+
 export default {
   components: {
     ThemeCard,
@@ -667,7 +684,9 @@ export default {
             this.customTheme.styling = {
               base: importedTheme.styling?.base || 'light',
               background: importedTheme.styling?.background,
-              backgroundImage: importedTheme.styling?.backgroundImage,
+              backgroundImage: isSafeBackgroundImage(importedTheme.styling?.backgroundImage)
+                ? importedTheme.styling.backgroundImage
+                : undefined,
               secondaryBackground: importedTheme.styling?.secondaryBackground,
               accent: importedTheme.styling?.accent,
               text: {
