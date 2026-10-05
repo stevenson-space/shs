@@ -32,8 +32,9 @@ preview to check the clean URLs used by Cloudflare Pages.
 The privacy copy was adapted from the iOS repo's `docs/privacy-policy.md` and
 checked against its implementation. Maintain the published HTML when the
 released app's behavior changes; there is no build dependency on that repo.
-The developer confirmed `privacy@stevenson.space` is monitored for both support
-and privacy questions. Keep the address and correspondence policy current.
+Support uses `admin@stevenson.space`; privacy questions and deletion requests use
+`privacy@stevenson.space`. Keep both monitored addresses and the correspondence
+policy current.
 
 ## Apple guidance reviewed on October 4, 2026
 
