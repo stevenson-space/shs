@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects. Vite's local servers ignore this file.
+
+# The iOS app pages have no index; send the bare path to support.
+/app /app/support 302
+/app/ /app/support 302

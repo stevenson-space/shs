@@ -11,6 +11,18 @@ const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(file
 export default defineConfig({
   plugins: [
     vue(),
+    {
+      name: 'app-page-clean-urls',
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          // Match Cloudflare Pages' clean URLs before Vite's SPA fallback.
+          if (req.url) {
+            req.url = req.url.replace(/^\/app\/(privacy|support)(?=\?|$)/, '/app/$1.html');
+          }
+          next();
+        });
+      },
+    },
     VitePWA({
       strategies: 'injectManifest',
       srcDir: 'src',
@@ -20,6 +32,7 @@ export default defineConfig({
       injectManifest: {
         rollupFormat: 'iife',
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2,mp3}'],
+        globIgnores: ['app/**/*.html', 'app/pages.css'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
       },
       devOptions: {

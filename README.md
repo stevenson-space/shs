@@ -28,3 +28,10 @@ Duplicate the `.env-template` and rename the duplicate to `.env`. This will keep
 
 ## Contributing
 Interested in contributing? Check out the [documentation](https://github.com/stevenson-space/shs/wiki) (WIP)
+
+## iOS app privacy and support
+
+The Stevenson Space iOS app uses standalone pages at `/app/privacy` and
+`/app/support`. Their HTML and shared stylesheet are in `public/app/`.
+See [page maintenance and Apple guidance](docs/ios-app-pages.md) for preview
+instructions and the remaining app-submission steps.

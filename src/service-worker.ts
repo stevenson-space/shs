@@ -15,6 +15,26 @@ declare const self: ServiceWorkerGlobalScope & {
 precacheAndRoute(self.__WB_MANIFEST);
 cleanupOutdatedCaches();
 
+// Fetch current policy/support pages and styles, keeping visited copies available offline.
+registerRoute(
+  ({ request, url }) => url.origin === self.location.origin
+    && ((request.mode === 'navigate' && /^\/app\/(privacy|support)(\.html)?$/.test(url.pathname))
+      || url.pathname === '/app/pages.css'),
+  new NetworkFirst({
+    cacheName: 'ios-app-pages',
+    plugins: [
+      new CacheableResponsePlugin({ statuses: [200] }),
+      {
+        cacheKeyWillBeUsed: async ({ request }): Promise<string> => {
+          const url = new URL(request.url);
+          url.search = '';
+          return url.href;
+        },
+      },
+    ],
+  }),
+);
+
 // navigation goes NetworkFirst so users see content updates as soon as cloudflare pages pushes a new build.
 // if offline and the html-shell cache is empty, fall back to the precached index.html
 const navigationStrategy = new NetworkFirst({
@@ -30,7 +50,8 @@ const navigationStrategy = new NetworkFirst({
 
 registerRoute(
   new NavigationRoute(navigationStrategy, {
-    denylist: [/\.[a-zA-Z0-9]+$/, /^\/forms\.html/],
+    // Nothing under /app (the iOS app pages and their redirect) may fall back to the SPA shell.
+    denylist: [/\.[a-zA-Z0-9]+$/, /^\/forms\.html/, /^\/app(?:[/?]|$)/],
   }),
 );
 
