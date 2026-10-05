@@ -15,6 +15,17 @@ declare const self: ServiceWorkerGlobalScope & {
 precacheAndRoute(self.__WB_MANIFEST);
 cleanupOutdatedCaches();
 
+// Fetch current policy/support content, keeping visited pages available offline.
+registerRoute(
+  ({ request, url }) => request.mode === 'navigate'
+    && url.origin === self.location.origin
+    && /^\/app\/(privacy|support)(\.html)?$/.test(url.pathname),
+  new NetworkFirst({
+    cacheName: 'ios-app-pages',
+    plugins: [new CacheableResponsePlugin({ statuses: [200] })],
+  }),
+);
+
 // navigation goes NetworkFirst so users see content updates as soon as cloudflare pages pushes a new build.
 // if offline and the html-shell cache is empty, fall back to the precached index.html
 const navigationStrategy = new NetworkFirst({
