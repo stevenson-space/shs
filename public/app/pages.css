@@ -481,7 +481,9 @@ details > :last-child { margin-bottom: 1rem; }
     --surface: #fff;
     --text: #000;
     --muted: #333;
+    --line: #ccc;
     --link: #000;
+    --fill: #000;
   }
 
   body { font-size: 11pt; }
