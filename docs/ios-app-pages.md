@@ -8,21 +8,32 @@ The iOS app's public pages are standalone HTML, separate from the Vue web app:
 | Support | https://stevenson.space/app/support | `public/app/support.html` |
 
 Shared styles live in `public/app/pages.css`. Neither page needs JavaScript,
-authentication, external fonts, or the web app's analytics initialization.
+authentication, external fonts, or the web app's analytics initialization. The
+header reuses the crest from `public/favicon/`, the system font matches the iOS
+app, and the colors are CSS custom properties with a dark-mode override. Check
+any new color pair against WCAG AA in both color schemes.
+
 Cloudflare Pages serves the HTML files at the extensionless URLs above and
 redirects `.html` URLs to those canonical paths. Use normal HTML anchors to
 navigate to these pages from the Vue app; they are not Vue Router routes.
 
-The service worker excludes these routes from its generic navigation handler so
-a failed request does not display the unrelated Vue app shell. The public pages
-are intended to be reached online.
+Once a visitor's browser has the website's service worker, it precaches both
+pages and serves `/app/privacy` and `/app/support` from that cache (Workbox
+matches clean URLs to the `.html` files), including offline. The service worker
+also excludes these routes from its generic navigation handler, so a request it
+cannot answer, such as `/app/privacy/` while offline, fails instead of showing
+the unrelated Vue app shell. Because precached pages are served cache-first, a
+browser with an older worker shows the previous copy until the worker updates.
 
 ## Preview and maintenance
 
 Run `npm --ignore-scripts run build`, then `npx vite preview --host 127.0.0.1`.
 Check both `/app/privacy` and `/app/support`, including reloads, cross-links,
-mobile layout, and use with JavaScript disabled. This build command skips the
-unrelated prebuild calendar scraper and uses the repository's existing data.
+mobile layout, light and dark mode, and use with JavaScript disabled. If the
+browser has visited the website on that port, clear its service worker or use a
+fresh profile so the new build is not hidden by the precache. This build command
+skips the unrelated prebuild calendar scraper and uses the repository's existing
+data.
 The normal deployment build can continue using `npm run build`.
 
 Vite's development server serves the public HTML at the full
@@ -30,8 +41,11 @@ Vite's development server serves the public HTML at the full
 preview to check the clean URLs used by Cloudflare Pages.
 
 The privacy copy was adapted from the iOS repo's `docs/privacy-policy.md` and
-checked against its implementation. Maintain the published HTML when the
-released app's behavior changes; there is no build dependency on that repo.
+checked against its implementation. The published page adds an "At a glance"
+summary and a few clarifications that are not yet in that Markdown copy; update
+both together. Support instructions name controls exactly as the app shows them.
+Maintain the published HTML when the released app's behavior changes; there is
+no build dependency on that repo.
 Support uses `admin@stevenson.space`; privacy questions and deletion requests use
 `privacy@stevenson.space`. Keep both monitored addresses and the correspondence
 policy current.
@@ -47,7 +61,10 @@ policy current.
 - [App privacy metadata](https://developer.apple.com/help/app-store-connect/reference/app-information/app-privacy/):
   a publicly accessible Privacy Policy URL is required for every app.
 - [Platform version information](https://developer.apple.com/help/app-store-connect/reference/app-information/platform-version-information/):
-  the Support URL is required and must lead to actual contact information.
+  the Support URL is required and must lead to actual contact information
+  (legal address, email address, telephone number) as local law may require.
+  The support page lists an email address; confirm whether any storefront you
+  distribute in requires more.
 - [App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/):
   processing solely on-device is not collection for App Store privacy labels.
   Assess off-device data separately, including retained network metadata and
@@ -70,9 +87,23 @@ separate from this website change.
 
 ## Verification
 
-The production build and all eight existing unit tests passed. Both clean URLs
-returned their intended pages in the production preview at widths of 320, 390,
-768, and 1440 pixels, without horizontal overflow or automated WCAG A/AA
-violations. Reloads, cross-links, native help disclosures, and the keyboard skip
-link worked, including with JavaScript disabled. Desktop and phone screenshots
-were visually reviewed. The iOS repository was inspected without changes.
+Checked on October 4, 2026 against the production build and `vite preview`:
+
+- The production build and all eight existing unit tests passed.
+- Playwright (Chromium) loaded both clean URLs at 320, 390, 768, and 1440
+  pixels, in light and dark mode, with JavaScript on and off. Every combination
+  had the right page and stylesheet, no horizontal overflow, controls at least
+  24 by 24 pixels, working reloads, header and footer cross-links,
+  table-of-contents anchors, and native disclosures.
+- axe-core reported no WCAG 2.2 A/AA or best-practice violations. Its only
+  "needs review" items were the setup-step text, which sits on the page
+  background at 15:1 or more; the token contrast ratios were calculated
+  separately.
+- Keyboard: the first Tab shows the skip link, which moves to the content.
+  Focus then follows the visual order with a visible ring on each stop, and
+  Enter opens disclosures.
+- With the service worker installed, both clean URLs loaded online and offline,
+  and the trailing-slash variants never showed the Vue app shell.
+- iOS 27 Safari in the Simulator rendered both pages in light and dark mode,
+  including anchor links. Desktop and phone screenshots were reviewed visually.
+- The iOS repository was inspected without changes.
