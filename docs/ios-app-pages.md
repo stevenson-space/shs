@@ -22,12 +22,18 @@ Link to these pages from the Vue app with normal HTML anchors; they are not Vue
 Router routes. The local Vite servers show the blank Vue app shell for a
 trailing-slash URL such as `/app/privacy/`.
 
+`public/_redirects` tells Cloudflare Pages to send `/app` and `/app/` to
+`/app/support` with a temporary (302) redirect, so a later `/app` landing page
+would not be blocked by cached redirects. Vite's local servers ignore this file,
+so locally `/app` shows the blank Vue app shell.
+
 Once a visitor's browser has the website's service worker, it precaches both
 pages and serves `/app/privacy` and `/app/support` from that cache (Workbox
 matches clean URLs to the `.html` files), including offline. The service worker
-also excludes these routes from its generic navigation handler, so a request it
-cannot answer, such as `/app/privacy/` while offline, fails instead of showing
-the unrelated Vue app shell. Because precached pages are served cache-first, a
+also excludes everything under `/app` from its generic navigation handler, so a
+request it cannot answer, such as `/app` or `/app/privacy/` while offline, fails
+instead of showing the unrelated Vue app shell. Online, `/app` reaches the
+Cloudflare redirect. Because precached pages are served cache-first, a
 browser with an older worker shows the previous copy until the worker updates.
 
 ## Preview and maintenance
