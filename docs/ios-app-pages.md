@@ -63,8 +63,19 @@ policy current.
 - [Platform version information](https://developer.apple.com/help/app-store-connect/reference/app-information/platform-version-information/):
   the Support URL is required and must lead to actual contact information
   (legal address, email address, telephone number) as local law may require.
-  The support page lists an email address; confirm whether any storefront you
-  distribute in requires more.
+  The app is distributed only in the United States, where no law found
+  requires a free app's support page to list a postal address or phone number,
+  so the support email meets this requirement. COPPA would require the
+  operator's name, address, telephone number, and email address in the privacy
+  policy ([16 CFR 312.4(d)](https://www.law.cornell.edu/cfr/text/16/312.4)),
+  but only for an app [directed to children under 13 or that knowingly collects
+  their personal information](https://www.law.cornell.edu/cfr/text/16/312.3).
+  Revisit this before distributing outside the United States or to younger
+  children.
+- [EU Digital Services Act trader requirements](https://developer.apple.com/help/app-store-connect/manage-compliance-information/manage-european-union-digital-services-act-trader-requirements):
+  Apple publishes an address and phone number only on EU product pages, but
+  every developer must declare a trader status. An app distributed only outside
+  the EU is not acting as a trader on the App Store.
 - [App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/):
   processing solely on-device is not collection for App Store privacy labels.
   Assess off-device data separately, including retained network metadata and
@@ -82,8 +93,9 @@ policy current.
 
 Before submission, deploy the website and verify the public HTTPS URLs, add the
 privacy/support contact links inside the iOS app, and enter the URLs and accurate
-App Privacy answers in App Store Connect. Those app and submission changes are
-separate from this website change.
+App Privacy answers in App Store Connect. For United States-only distribution,
+declare that you are not a trader under the EU Digital Services Act. Those app
+and submission changes are separate from this website change.
 
 ## Verification
 
