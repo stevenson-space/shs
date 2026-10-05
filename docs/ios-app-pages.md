@@ -15,9 +15,9 @@ any new color pair against WCAG AA in both color schemes.
 
 Cloudflare Pages serves the HTML files at the extensionless URLs above and
 redirects `.html` URLs to those canonical paths. Use the extensionless URLs in
-App Store Connect and the canonical tags. Links between the pages point to
-`/app/privacy.html` and `/app/support.html` so they also work on the Vite
-development server; in production they redirect to the extensionless URLs.
+App Store Connect, the canonical tags, and links between the pages. A small
+Vite development middleware serves `/app/privacy` and `/app/support` from their
+HTML files without redirecting, including requests with query strings.
 Link to these pages from the Vue app with normal HTML anchors; they are not Vue
 Router routes. The local Vite servers show the blank Vue app shell for a
 trailing-slash URL such as `/app/privacy/`.
@@ -47,9 +47,8 @@ skips the unrelated prebuild calendar scraper and uses the repository's existing
 data.
 The normal deployment build can continue using `npm run build`.
 
-Vite's development server serves the pages only at `/app/privacy.html` and
-`/app/support.html`; the extensionless URLs show the blank Vue app shell there.
-Use the production preview to check the clean URLs used by Cloudflare Pages.
+Both `npm run dev` and the production preview support the clean URLs used by
+Cloudflare Pages. The `.html` files remain accessible locally.
 
 The privacy copy was adapted from the iOS repo's `docs/privacy-policy.md` and
 checked against its implementation. The published page adds an "At a glance"
