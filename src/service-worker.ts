@@ -30,7 +30,8 @@ const navigationStrategy = new NetworkFirst({
 
 registerRoute(
   new NavigationRoute(navigationStrategy, {
-    denylist: [/\.[a-zA-Z0-9]+$/, /^\/forms\.html/],
+    // Standalone iOS app pages must not fall back to the website's SPA shell.
+    denylist: [/\.[a-zA-Z0-9]+$/, /^\/forms\.html/, /^\/app\/(privacy|support)(\/|$)/],
   }),
 );
 

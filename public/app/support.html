@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#183b31">
+    <meta name="description" content="Support for the Stevenson Space iOS app. Contact the developer and get help importing a student ID, managing notifications, and updating schedules and lunch menus.">
+    <title>iOS App Support · Stevenson Space</title>
+    <link rel="canonical" href="https://stevenson.space/app/support">
+    <link rel="icon" href="/favicon/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="/app/pages.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/">stevenson.space</a>
+      <nav class="site-nav" aria-label="iOS app pages">
+        <a href="/app/privacy">Privacy</a>
+        <a href="/app/support" aria-current="page">Support</a>
+      </nav>
+    </header>
+    <main class="page" id="main" tabindex="-1">
+      <div class="hero">
+        <p class="eyebrow">Stevenson Space · iOS app</p>
+        <h1>App support</h1>
+        <p class="intro">Help with your student ID, reminders, and school schedule. Stevenson Space appears as <strong>SHS Space</strong> on your Home Screen.</p>
+      </div>
+      <div class="page-layout">
+        <nav class="contents" aria-label="On this page">
+          <p>On this page</p>
+          <ul>
+            <li><a href="#contact">Contact the developer</a></li>
+            <li><a href="#import-id">Import a student ID</a></li>
+            <li><a href="#notifications">Notifications</a></li>
+            <li><a href="#updates">Schedules &amp; menus</a></li>
+            <li><a href="#privacy">Privacy &amp; removal</a></li>
+          </ul>
+        </nav>
+        <div class="article">
+          <section class="contact-card" id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact the developer</h2>
+            <p>For iOS app help, feedback, feature requests, or privacy questions, email this monitored inbox:</p>
+            <p><a class="contact-email" href="mailto:privacy@stevenson.space?subject=Stevenson%20Space%20iOS%20support">privacy@stevenson.space</a></p>
+            <p>Include your app version (in <strong>Settings → About</strong>), iOS version, what you expected, what happened, and the steps to reproduce it. For a schedule or menu issue, include the date and period or menu station.</p>
+            <p>Please do not send your student ID screenshot, student number, barcode, password, or other sensitive student information. Redact these details from any screenshots you share.</p>
+          </section>
+
+          <section id="import-id" aria-labelledby="import-title">
+            <h2 id="import-title">Import a student ID</h2>
+            <ol>
+              <li>Open Infinite Campus and take a screenshot of your own Student Profile page, including your student details and the entire barcode near the bottom.</li>
+              <li>Open Stevenson Space, go to <strong>ID</strong>, and tap <strong>Choose Screenshot</strong>.</li>
+              <li>Select the screenshot in Apple’s photo picker. Review the extracted card, then tap <strong>Save</strong>.</li>
+              <li>To scan your saved ID, tap the card or <strong>Show for Scanning</strong>.</li>
+            </ol>
+            <p>Only import your own ID. The screenshot is processed on your device; you do not enter your Infinite Campus credentials in Stevenson Space. ID import is optional, and schedules and menus work without it.</p>
+            <details>
+              <summary>The screenshot could not be read</summary>
+              <p>Take a fresh, clear screenshot of the whole Student Profile page. Keep the barcode and printed student number fully visible, and avoid cropping or editing the image. Tap <strong>Try Another Screenshot</strong> or <strong>Choose a Different Screenshot</strong> to retry. If the image is in iCloud Photos, connect to the internet so Apple can download it.</p>
+              <p>If the barcode and printed number do not match, capture a fresh screenshot from your current profile. The app reads ID details from the image; they cannot be typed in manually.</p>
+            </details>
+            <details>
+              <summary>My name or photo is missing, or my ID is out of date</summary>
+              <p>Capture the whole Student Profile page so the name and photo are included. A missing photo produces a silhouette. To import a new image, open <strong>ID → ID options</strong> (the three-dot menu) and choose <strong>Replace Screenshot</strong>, then review and save the new card.</p>
+            </details>
+            <details>
+              <summary>The barcode will not scan</summary>
+              <p>Tap <strong>Show for Scanning</strong> to display the barcode full screen and hold it steady for the scanner. If your school ID has changed, use <strong>Replace Screenshot</strong> to import a fresh image. If it still fails, email the developer with the scanner location and what happened, without sending your barcode or student number.</p>
+            </details>
+          </section>
+
+          <section id="notifications" aria-labelledby="notifications-title">
+            <h2 id="notifications-title">Manage notifications</h2>
+            <ol>
+              <li>In the app’s <strong>Settings</strong>, turn on <strong>End-of-period heads-up</strong> and/or <strong>Morning alert on special days</strong>.</li>
+              <li>Allow notifications when iOS asks. If you previously declined, open iPhone <strong>Settings → Notifications → SHS Space</strong> and enable <strong>Allow Notifications</strong>, then reopen the app and turn on the reminders you want.</li>
+              <li>Choose your end-of-period lead time (0–15 minutes) and the time for the morning alert. A lead time of zero alerts at the bell.</li>
+            </ol>
+            <p>Morning alerts are for special schedule days. Reminders use the school’s Central Time schedule and are scheduled locally on your device.</p>
+            <details>
+              <summary>A reminder did not arrive</summary>
+              <p>Check both the app’s reminder toggles and iOS notification permission. Focus modes, notification delivery settings, or Scheduled Summary may silence or delay an alert. Reopen the app periodically to refresh upcoming reminders, especially after changing your schedule or notification settings.</p>
+              <p>For iOS delivery controls, see <a href="https://support.apple.com/guide/iphone/change-notification-settings-iph7c3d96bab/ios">Apple’s notification settings guide</a>. To stop reminders, turn them off in the app or revoke notification permission in iOS Settings.</p>
+            </details>
+          </section>
+
+          <section id="updates" aria-labelledby="updates-title">
+            <h2 id="updates-title">Update schedules &amp; lunch menus</h2>
+            <p>The app checks for public schedule-date and lunch-menu updates when it opens or returns to the foreground, normally at most once an hour. Connect to the internet and reopen the app to let it check. Previously saved content stays available when a download fails.</p>
+            <p>After five days without a successful update check, the relevant <strong>Home</strong> or <strong>Lunch</strong> screen shows a reminder with <strong>Check for Updates</strong>. Tap it to retry immediately. This button appears with the reminder; it is not a permanent Settings control.</p>
+            <p>Bell times and supported school-year boundaries ship with the app. Keep the app updated through the App Store (or TestFlight for a beta) to receive changes to those.</p>
+            <details>
+              <summary>The school day or my class details look wrong</summary>
+              <p>Check which date is selected on <strong>Home</strong>. In <strong>Settings → My Schedule</strong>, review your class names, rooms, lunch, and advisory assignments. A manual day override takes priority over downloaded schedule dates; review <strong>Schedule Override</strong> in Settings and delete an override if it is no longer needed.</p>
+              <p>To set a day manually, use <strong>Settings → Set a Day’s Schedule</strong>. If the published schedule still appears incorrect, email the date, expected schedule, and app version. Follow the school’s announcements for last-minute changes.</p>
+            </details>
+            <details>
+              <summary>The lunch menu is missing or seems outdated</summary>
+              <p>Check the selected date in <strong>Lunch</strong>, then reconnect and reopen the app. Use <strong>Check for Updates</strong> if the reminder is visible. Menu downloads keep the last successful copy if any station fails to update. A date outside the app’s supported menu range may have no menu; check for an app update and contact the developer if needed.</p>
+            </details>
+          </section>
+
+          <section id="privacy" aria-labelledby="privacy-title">
+            <h2 id="privacy-title">Remove an ID &amp; manage privacy</h2>
+            <p>Open <strong>ID → ID options → Remove ID</strong> to remove saved ID details and the cropped photo from the app. If removal fails, unlock your device and try again. <strong>Hide ID Photo</strong> only changes visibility; it does not delete the photo.</p>
+            <div class="note">
+              <p>Remove ID does not delete your original screenshot in Photos or copies in existing device backups. Remove your ID before deleting the app; deleting or offloading the app should not be used as a substitute for Remove ID.</p>
+            </div>
+            <p>Read the <a href="/app/privacy">iOS app privacy policy</a> for details about local processing, backups, public downloads, and email correspondence. Privacy and deletion requests for information you have emailed to the developer can go to <a href="mailto:privacy@stevenson.space">privacy@stevenson.space</a>.</p>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>Stevenson Space for iOS</p>
+      <nav aria-label="Footer">
+        <a href="/app/privacy">App privacy policy</a>
+        <a href="/">Stevenson Space website</a>
+      </nav>
+    </footer>
+  </body>
+</html>
