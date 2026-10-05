@@ -1,19 +1,9 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 import { RouteLocationNormalized } from 'vue-router';
-import rawSchedules from '@/data/schedules.json';
-import scheduleDates from '@/data/schedule-dates.json';
+import officialSchedules from '@/utils/official-schedules';
 import { CustomSchedules, Schedule, ScheduleCollection } from '@/utils/types';
 import { tryParseJSON, getNameWithoutConflicts } from '@/utils/util';
-
-const officialSchedules: ScheduleCollection[] = rawSchedules.map((s) => {
-  if (s.dates === null) {
-    const dates = (scheduleDates as Record<string, string[]>)[s.name];
-    if (!dates) throw new Error(`Schedule "${s.name}" has null dates but no entry in schedule-dates.json`);
-    return { ...s, dates };
-  }
-  return s as ScheduleCollection;
-});
 
 export default defineStore('schedules', () => {
   const customSchedules = ref<CustomSchedules>({} as CustomSchedules);

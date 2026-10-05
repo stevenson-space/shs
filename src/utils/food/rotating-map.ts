@@ -7,6 +7,9 @@ import soup from "../../data/lunch-rotating/soup.json";
 import international from "../../data/lunch-rotating/international.json";
 import special from "../../data/lunch-rotating/special.json";
 
+/** A date's local calendar day as a UTC timestamp, which has no DST shifts. */
+const utcDay = (date: Date) => Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+
 export class RotatingMenuMap {
   validFrom: Date
   validTo: Date
@@ -49,8 +52,11 @@ export class RotatingMenuMap {
     this.special = SpecialStationEntries.parse(special);
   }
 
+  // counts calendar days rather than elapsed time, so a DST change between validFrom and
+  // date can't leave a Monday an hour short of the next week
   private weeksSince(date: Date) {
-    return Math.floor((date.getTime() - this.validFrom.getTime()) / (7 * 24 * 60 * 60 * 1000));
+    const days = (utcDay(date) - utcDay(this.validFrom)) / (24 * 60 * 60 * 1000);
+    return Math.floor(days / 7);
   }
 
   private currentWeekIndex(date: Date) {

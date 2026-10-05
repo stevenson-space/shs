@@ -1,4 +1,4 @@
-import defaultSchedules from '@/data/schedules.json';
+import defaultSchedules from '@/utils/official-schedules';
 import testDate from './dateparser';
 import { ScheduleCollection, Schedule, Period, SingleDaySchedule, SingleDayPeriods, MultiDaySchedule } from './types';
 import {deepCopy, is2DArray, periodToSeconds} from './util';
