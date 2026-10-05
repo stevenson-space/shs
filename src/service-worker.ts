@@ -22,7 +22,16 @@ registerRoute(
     && /^\/app\/(privacy|support)(\.html)?$/.test(url.pathname),
   new NetworkFirst({
     cacheName: 'ios-app-pages',
-    plugins: [new CacheableResponsePlugin({ statuses: [200] })],
+    plugins: [
+      new CacheableResponsePlugin({ statuses: [200] }),
+      {
+        cacheKeyWillBeUsed: async ({ request }): Promise<string> => {
+          const url = new URL(request.url);
+          url.search = '';
+          return url.href;
+        },
+      },
+    ],
   }),
 );
 
