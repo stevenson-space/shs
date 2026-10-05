@@ -31,7 +31,7 @@ const navigationStrategy = new NetworkFirst({
 registerRoute(
   new NavigationRoute(navigationStrategy, {
     // Nothing under /app (the iOS app pages and their redirect) may fall back to the SPA shell.
-    denylist: [/\.[a-zA-Z0-9]+$/, /^\/forms\.html/, /^\/app(\/|$)/],
+    denylist: [/\.[a-zA-Z0-9]+$/, /^\/forms\.html/, /^\/app(?:[/?]|$)/],
   }),
 );
 
