@@ -15,11 +15,11 @@ declare const self: ServiceWorkerGlobalScope & {
 precacheAndRoute(self.__WB_MANIFEST);
 cleanupOutdatedCaches();
 
-// Fetch current policy/support content, keeping visited pages available offline.
+// Fetch current policy/support pages and styles, keeping visited copies available offline.
 registerRoute(
-  ({ request, url }) => request.mode === 'navigate'
-    && url.origin === self.location.origin
-    && /^\/app\/(privacy|support)(\.html)?$/.test(url.pathname),
+  ({ request, url }) => url.origin === self.location.origin
+    && ((request.mode === 'navigate' && /^\/app\/(privacy|support)(\.html)?$/.test(url.pathname))
+      || url.pathname === '/app/pages.css'),
   new NetworkFirst({
     cacheName: 'ios-app-pages',
     plugins: [

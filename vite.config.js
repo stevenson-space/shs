@@ -32,7 +32,7 @@ export default defineConfig({
       injectManifest: {
         rollupFormat: 'iife',
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2,mp3}'],
-        globIgnores: ['app/**/*.html'],
+        globIgnores: ['app/**/*.html', 'app/pages.css'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
       },
       devOptions: {

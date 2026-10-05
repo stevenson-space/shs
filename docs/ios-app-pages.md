@@ -29,10 +29,11 @@ so locally `/app` shows the blank Vue app shell.
 
 Once a visitor's browser has the website's service worker, `/app/privacy` and
 `/app/support` (including their `.html` aliases and query strings) use a dedicated
-network-first cache. The HTML is excluded from precaching so online visits fetch
-current content; offline visits can use a copy previously loaded at that path.
+network-first cache. The shared stylesheet uses the same strategy. Both HTML
+and the stylesheet are excluded from precaching so online visits fetch current
+content; offline visits can use a copy previously loaded at that path.
 Query strings share the same cached copy and do not create additional entries.
-The shared stylesheet and crest remain precached. The service worker also
+The crest remains precached. The service worker also
 excludes everything under `/app` from its generic navigation handler, so a
 request it cannot answer, such as `/app?ref=appstore` or `/app/privacy/` while
 offline, fails instead of showing the unrelated Vue app shell. Online, `/app`
