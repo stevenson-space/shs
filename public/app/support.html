@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#183b31">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#1f5d39">
     <meta name="description" content="Support for the Stevenson Space iOS app. Contact the developer and get help importing a student ID, managing notifications, and updating schedules and lunch menus.">
     <title>iOS App Support · Stevenson Space</title>
     <link rel="canonical" href="https://stevenson.space/app/support">
@@ -13,41 +14,54 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <a class="brand" href="/">stevenson.space</a>
-      <nav class="site-nav" aria-label="iOS app pages">
-        <a href="/app/privacy">Privacy</a>
-        <a href="/app/support" aria-current="page">Support</a>
-      </nav>
-    </header>
-    <main class="page" id="main" tabindex="-1">
-      <div class="hero">
-        <p class="eyebrow">Stevenson Space · iOS app</p>
-        <h1>App support</h1>
-        <p class="intro">Help with your student ID, reminders, and school schedule. Stevenson Space appears as <strong>SHS Space</strong> on your Home Screen.</p>
+      <div class="wrap header-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark"><img src="/favicon/favicon-96x96.png" alt="" width="24" height="24"></span>
+          Stevenson Space
+        </a>
+        <span class="platform">iOS app</span>
+        <nav class="app-nav" aria-label="iOS app pages">
+          <a href="/app/privacy">Privacy</a>
+          <a href="/app/support" aria-current="page">Support</a>
+        </nav>
       </div>
-      <div class="page-layout">
-        <nav class="contents" aria-label="On this page">
-          <p>On this page</p>
-          <ul>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="hero">
+        <div class="wrap">
+          <p class="eyebrow">Stevenson Space iOS app</p>
+          <h1>App support</h1>
+          <p class="lede">Help with your student ID, reminders, and school schedule. Stevenson Space appears as <strong>SHS Space</strong> on your Home Screen.</p>
+        </div>
+      </div>
+      <div class="wrap layout">
+        <nav class="toc" aria-labelledby="toc-title">
+          <p class="toc-title" id="toc-title">On this page</p>
+          <ul role="list">
             <li><a href="#contact">Contact the developer</a></li>
             <li><a href="#import-id">Import a student ID</a></li>
             <li><a href="#notifications">Notifications</a></li>
             <li><a href="#updates">Schedules &amp; menus</a></li>
-            <li><a href="#privacy">Privacy &amp; removal</a></li>
+            <li><a href="#privacy">Remove ID &amp; privacy</a></li>
           </ul>
         </nav>
         <div class="article">
-          <section class="contact-card" id="contact" aria-labelledby="contact-title">
-            <h2 id="contact-title">Contact the developer</h2>
+          <section id="contact" class="card">
+            <h2>Contact the developer</h2>
             <p>For iOS app help, feedback, or feature requests, email this monitored inbox:</p>
-            <p><a class="contact-email" href="mailto:admin@stevenson.space?subject=Stevenson%20Space%20iOS%20support">admin@stevenson.space</a></p>
+            <p>
+              <a class="email-button" href="mailto:admin@stevenson.space?subject=Stevenson%20Space%20iOS%20support">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                admin@stevenson.space
+              </a>
+            </p>
             <p>Include your app version (in <strong>Settings → About</strong>), iOS version, what you expected, what happened, and the steps to reproduce it. For a schedule or menu issue, include the date and period or menu station.</p>
             <p>Please do not send your student ID screenshot, student number, barcode, password, or other sensitive student information. Redact these details from any screenshots you share.</p>
           </section>
 
-          <section id="import-id" aria-labelledby="import-title">
-            <h2 id="import-title">Import a student ID</h2>
-            <ol>
+          <section id="import-id">
+            <h2>Import a student ID</h2>
+            <ol class="steps" role="list">
               <li>Open Infinite Campus and take a screenshot of your own Student Profile page, including your student details and the entire barcode near the bottom.</li>
               <li>Open Stevenson Space, go to <strong>ID</strong>, and tap <strong>Choose Screenshot</strong>.</li>
               <li>Select the screenshot in Apple’s photo picker. Review the extracted card, then tap <strong>Save</strong>.</li>
@@ -69,9 +83,9 @@
             </details>
           </section>
 
-          <section id="notifications" aria-labelledby="notifications-title">
-            <h2 id="notifications-title">Manage notifications</h2>
-            <ol>
+          <section id="notifications">
+            <h2>Manage notifications</h2>
+            <ol class="steps" role="list">
               <li>In the app’s <strong>Settings</strong>, turn on <strong>End-of-period heads-up</strong> and/or <strong>Morning alert on special days</strong>.</li>
               <li>Allow notifications when iOS asks. If you previously declined, open iPhone <strong>Settings → Notifications → SHS Space</strong> and enable <strong>Allow Notifications</strong>, then reopen the app and turn on the reminders you want.</li>
               <li>Choose your end-of-period lead time (0–15 minutes) and the time for the morning alert. A lead time of zero alerts at the bell.</li>
@@ -84,8 +98,8 @@
             </details>
           </section>
 
-          <section id="updates" aria-labelledby="updates-title">
-            <h2 id="updates-title">Update schedules &amp; lunch menus</h2>
+          <section id="updates">
+            <h2>Update schedules &amp; lunch menus</h2>
             <p>The app checks for public schedule-date and lunch-menu updates when it opens or returns to the foreground, normally at most once an hour. Connect to the internet and reopen the app to let it check. Previously saved content stays available when a download fails.</p>
             <p>After five days without a successful update check, the relevant <strong>Home</strong> or <strong>Lunch</strong> screen shows a reminder with <strong>Check for Updates</strong>. Tap it to retry immediately. This button appears with the reminder; it is not a permanent Settings control.</p>
             <p>Bell times and supported school-year boundaries ship with the app. Keep the app updated through the App Store (or TestFlight for a beta) to receive changes to those.</p>
@@ -100,8 +114,8 @@
             </details>
           </section>
 
-          <section id="privacy" aria-labelledby="privacy-title">
-            <h2 id="privacy-title">Remove an ID &amp; manage privacy</h2>
+          <section id="privacy">
+            <h2>Remove an ID &amp; manage privacy</h2>
             <p>Open <strong>ID → ID options → Remove ID</strong> to remove saved ID details and the cropped photo from the app. If removal fails, unlock your device and try again. <strong>Hide ID Photo</strong> only changes visibility; it does not delete the photo.</p>
             <div class="note">
               <p>Remove ID does not delete your original screenshot in Photos or copies in existing device backups. Remove your ID before deleting the app; deleting or offloading the app should not be used as a substitute for Remove ID.</p>
@@ -112,11 +126,16 @@
       </div>
     </main>
     <footer class="site-footer">
-      <p>Stevenson Space for iOS</p>
-      <nav aria-label="Footer">
-        <a href="/app/privacy">App privacy policy</a>
-        <a href="/">Stevenson Space website</a>
-      </nav>
+      <div class="wrap footer-inner">
+        <p>Stevenson Space for iOS</p>
+        <nav aria-label="Footer">
+          <ul role="list">
+            <li><a href="/app/privacy">Privacy policy</a></li>
+            <li><a href="mailto:admin@stevenson.space">admin@stevenson.space</a></li>
+            <li><a href="/">stevenson.space</a></li>
+          </ul>
+        </nav>
+      </div>
     </footer>
   </body>
 </html>
