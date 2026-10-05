@@ -53,17 +53,29 @@
           </ul>
         </nav>
         <div class="article">
+          <section id="summary" class="card">
+            <h2>At a glance</h2>
+            <ul>
+              <li>Your ID screenshot is read on your device. The app saves the extracted details and a cropped photo, not the original screenshot, and does not upload them to us.</li>
+              <li>Device backups may contain information saved in the app. <strong>Remove ID</strong> does not erase existing backups or the original screenshot in Photos.</li>
+              <li>Public schedule and lunch menu updates are downloaded from GitHub, which receives standard connection information such as your IP address.</li>
+              <li>The app has no account, advertising, or third-party analytics or tracking SDKs.</li>
+              <li>Send privacy questions and deletion requests to <a href="mailto:privacy@stevenson.space">privacy@stevenson.space</a>.</li>
+            </ul>
+          </section>
+
           <section id="about-this-policy">
             <h2>About this policy</h2>
-            <p>This policy describes how the Stevenson Space iOS app and its widgets handle information. “We” and “us” refer to Shankar Krishnamurthy, the app’s developer. The app provides school schedules, lunch menus, reminders, and an optional student ID display. You can use schedules and lunch menus without importing an ID or creating an account. This policy covers the iOS app and its widgets. The Stevenson Space web app has a separate <a href="https://www.iubenda.com/privacy-policy/40291148">website privacy policy</a>.</p>
+            <p>This policy describes how the Stevenson Space iOS app and its widgets handle information. The app appears as SHS Space on your Home Screen. “We” and “us” refer to Shankar Krishnamurthy, the app’s developer.</p>
+            <p>The app provides school schedules, lunch menus, reminders, and an optional student ID display. You can use schedules and lunch menus without importing an ID or creating an account. The stevenson.space website has a separate <a href="https://www.iubenda.com/privacy-policy/40291148">website privacy policy</a>.</p>
           </section>
 
           <section id="information-used-by-the-app">
             <h2>Information used by the app</h2>
             <p>The app uses information you choose to provide to deliver its features:</p>
             <ul>
-              <li><strong>Student ID:</strong> the selected screenshot, extracted name, student number, barcode information, grade, school year, cropped photo, and import date.</li>
-              <li><strong>Schedule:</strong> class names, room numbers, period assignments, lunch and advisory assignments, free periods, and day-specific schedule changes you enter.</li>
+              <li><strong>Student ID:</strong> the screenshot you select, which is read during import, and the details saved from it: your name, student number, barcode information, grade, school year, cropped photo, and import date.</li>
+              <li><strong>Schedule:</strong> class names, emoji, room numbers, period assignments, lunch and advisory assignments, free periods, and day-specific schedule changes you enter.</li>
               <li><strong>Preferences:</strong> appearance, time format, reminder settings, and whether to hide your ID photo.</li>
               <li><strong>Downloaded content:</strong> school schedule and lunch menu data, with locally cached copies and update information so the app can work between downloads.</li>
             </ul>
@@ -72,7 +84,7 @@
 
           <section id="student-id">
             <h2>Student ID</h2>
-            <p>Your ID is processed on this device and isn’t uploaded to us. When you import a screenshot, Stevenson Space reads the barcode and student details and crops the ID photo on your device. The app saves the extracted details and cropped photo, not a copy of the original screenshot. Any original screenshot in your photo library remains under your control and is subject to your Photos and iCloud settings.</p>
+            <p>Your ID is processed on your device and isn’t uploaded to us. When you import a screenshot, Stevenson Space reads the barcode and student details and crops the ID photo on your device. The app saves the extracted details and cropped photo, not a copy of the original screenshot. Any original screenshot in your photo library remains under your control and is subject to your Photos and iCloud settings.</p>
             <p>The extracted ID details are stored in the device’s Keychain with device-only protection. The cropped photo is stored in the app’s local storage with iOS file protection.</p>
             <p>Importing an ID is optional. The app uses Apple’s photo picker to access the image you select; it does not request unrestricted access to your photo library. If the selected image is stored in iCloud Photos, Apple may download it to your device to make it available for import. The app processes the image to create a card you can review before saving. It does not send the image to a remote OCR or AI service or use the photo to identify you through facial recognition.</p>
             <p>Showing your card or barcode to someone, including a school scanner, lets them read the displayed information. How the school or another recipient uses that information is governed by their own practices.</p>
@@ -81,12 +93,13 @@
           <section id="widgets-siri-shortcuts-and-notifications">
             <h2>Widgets, Siri, Shortcuts, and notifications</h2>
             <p>The app makes saved schedule information and cached lunch menus available to its widgets through storage shared locally with the app. Widgets can display class names, rooms, and times on your Home Screen or Lock Screen. Student ID details and photos are not provided to the widgets.</p>
-            <p>When you use the app’s Siri or Shortcuts actions, the app provides the requested schedule information, including saved class names, rooms, and times, to those Apple features. A shortcut you create can pass its results to other actions or apps. Apple’s handling of Siri requests depends on your Apple settings and <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>.</p>
+            <p>When you use the app’s Siri or Shortcuts actions, the app provides the requested schedule or lunch menu information, including saved class names, rooms, and times, to those Apple features. A shortcut you create can pass its results to other actions or apps. The <strong>Show Student ID</strong> action requires an unlocked device and opens your ID in the app; it does not return your ID details to Siri or Shortcuts. Apple’s handling of Siri requests depends on your Apple settings and <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>.</p>
             <p>Reminders are scheduled locally on your device with your notification permission. They do not require an app-operated push notification server. You can change reminder options in the app and revoke notification permission in iOS Settings. Notification previews and widgets may be visible to others using or looking at your device; you control their placement and visibility through iOS.</p>
           </section>
 
           <section id="device-backups">
             <h2>Device backups</h2>
+            <p>Device backups may contain information saved in the app, including your schedule customizations, preferences, and ID information, depending on your backup settings.</p>
             <p>The saved ID photo may be included in Apple device backups, including iCloud Backup or backups made to a Mac or PC, depending on your backup settings. Local storage and iOS file protection do not exclude the photo from backups. These backups are separate from Stevenson Space; the app does not upload your ID to us, and we do not receive or have access to your device backups.</p>
             <p>The extracted ID details use device-only Keychain protection. These items can be restored from a backup to the same device, but do not migrate when a backup is restored to a different device. “Device-only” does not mean excluded from all backups.</p>
             <p>You control backups through Apple’s device and backup settings. See <a href="https://support.apple.com/en-us/108922">Apple’s guide to managing iCloud storage</a> for instructions on choosing which apps to back up and managing existing backups. Removing your ID in the app removes its saved details and photo from the app’s local storage; it does not directly delete copies in existing backups or your original screenshot in Photos.</p>
@@ -95,7 +108,7 @@
 
           <section id="network-requests-and-other-services">
             <h2>Network requests and other services</h2>
-            <p>Your schedule customizations and app preferences are stored locally and may be included in device backups. The app downloads school schedule and lunch menu updates from GitHub. These requests do not include your student ID or photo; GitHub receives the connection information needed to serve the requests, such as your IP address, under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s privacy statement</a>.</p>
+            <p>The app downloads school schedule and lunch menu updates from GitHub. These requests do not include your student ID or photo; GitHub receives the connection information needed to serve the requests, such as your IP address, under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s privacy statement</a>.</p>
             <p>The app uses HTTPS for these downloads. GitHub controls retention and deletion of its service logs; we do not set their retention period. We do not send GitHub your saved class names, room numbers, or other schedule customizations.</p>
             <p>Apple separately operates the App Store, device backups, iCloud Photos, and Siri. Apple may also provide developers with app usage statistics or diagnostic reports through its platform services, depending on your settings. These services are governed by Apple’s privacy policy and controls. The app does not include a separate analytics or crash-reporting service.</p>
             <p>If you install a beta through TestFlight, Apple automatically collects crash logs and usage information, such as session and crash counts, install date, and installed version, and shares them with us. You cannot opt out of this collection. If you were invited by email, we can also see your name and email address; if you joined through a public link, we cannot. Feedback and screenshots you submit through TestFlight are also shared with us. We use this information only to troubleshoot and improve the app and do not share it with third parties. Apple retains feedback for one year and may retain crash and usage data until the related bugs are resolved. See <a href="https://www.apple.com/legal/privacy/data/en/test-flight/">Apple’s TestFlight privacy information</a>.</p>
@@ -105,10 +118,10 @@
             <h2>Retention, deletion, and your choices</h2>
             <p>Saved ID information stays on your device until you replace or remove it. Saved schedule customizations and preferences remain until you change or remove them; they do not have an automatic expiration period. Downloaded school content is cached and replaced as updates become available.</p>
             <ul>
-              <li><strong>Remove an ID:</strong> open the ID tab, open <strong>ID options</strong>, and choose <strong>Remove ID</strong>. This removes the saved ID details and cropped photo from the app. If the app reports that removal failed, unlock the device and try again.</li>
+              <li><strong>Remove an ID:</strong> open the ID tab, tap <strong>ID options</strong> (the ••• button), and choose <strong>Remove ID</strong>. This removes the saved ID details and cropped photo from the app. If the app reports that removal failed, unlock the device and try again.</li>
               <li><strong>Correct an ID:</strong> choose <strong>Replace Screenshot</strong>, review the new card, and save it. ID details are read from the screenshot rather than edited manually.</li>
               <li><strong>Hide the photo:</strong> <strong>Hide ID Photo</strong> changes its visibility; it does not delete the saved photo or exclude it from backups.</li>
-              <li><strong>Change your schedule:</strong> edit class details and assignments under <strong>Settings → My Schedule</strong>, and remove day overrides in Settings.</li>
+              <li><strong>Change your schedule:</strong> edit class details and assignments under <strong>Settings → My Schedule</strong>, and remove day overrides under <strong>Settings → Schedule Override</strong>.</li>
               <li><strong>Stop optional features:</strong> turn reminders off, remove widgets, or stop using Siri and Shortcuts actions. Removing an ID does not disable schedule features.</li>
               <li><strong>Remove the app:</strong> remove your ID first. Deleting an app should not be relied on to clear its Keychain entries. Offloading the app preserves its documents and data for a later installation.</li>
             </ul>
@@ -127,7 +140,14 @@
 
           <section id="contact-and-privacy-requests">
             <h2>Contact and privacy requests</h2>
-            <p>Contact the Stevenson Space developer at <a href="mailto:privacy@stevenson.space">privacy@stevenson.space</a> with privacy questions or requests concerning information you have sent to us. If you email us, we receive your email address and the contents of your message. We use that information to respond and handle your request; our email service processes it to deliver and store the correspondence.</p>
+            <p>Email privacy questions and deletion requests to the Stevenson Space developer:</p>
+            <p>
+              <a class="email-button" href="mailto:privacy@stevenson.space?subject=Stevenson%20Space%20iOS%20privacy">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                privacy@stevenson.space
+              </a>
+            </p>
+            <p>If you email us, we receive your email address and the contents of your message. We use that information to respond and handle your request; our email service processes it to deliver and store the correspondence.</p>
             <p>We retain correspondence for as long as needed to resolve the request and any related follow-up, or to meet applicable legal obligations. You can request deletion of correspondence at the same address. This contact route does not give us access to your device: use the controls described above to remove information stored only in the app, and Apple’s controls to manage backups.</p>
           </section>
 
