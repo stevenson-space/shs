@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "name": "Ember",
+    "author": "Atharva S. ('27)"
+  },
+
+  "visibility": "show",
+  "recommended": {
+    "timing": "always"
+  },
+
+  "styling": {
+    "base": "dark",
+    "background": "#0b111b",
+    "secondaryBackground": "#151f2d",
+    "accent": "#d17a42",
+
+    "text": {
+      "primary": "#f3f4f5",
+      "secondary": "#c2cbd4",
+      "tertiary": "#94a1af"
+    },
+
+    "header": {
+      "background": "#101a28",
+      "scheduleBar": "#1a2737"
+    },
+
+    "iconCards": {
+      "regular": "#17202b",
+      "invert": "#d17a42"
+    },
+
+    "particles": {
+      "images": [
+        "assets://particles/ember/glow.png"
+      ],
+      "speed": 0.8,
+      "count": 14,
+      "size": 6,
+      "opacity": 0.38,
+      "windPower": -0.15
+    }
+  }
+}
