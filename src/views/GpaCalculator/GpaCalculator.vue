@@ -1,36 +1,40 @@
 ﻿<template>
-  <div>
+  <div class="gpa-page">
     <plain-header title="GPA Calculator" />
 
-    <card class="top-card">
-      <div class="top-card-inner">
-        <div class="gpa-title-row">
-          <div class="gpa-col">
-            <p class="weight-title"><b>Un</b>weighted</p>
-            <h1 class="overall-gpa">{{ averageUnweightedGpa.toFixed(2) }}</h1>
-          </div>
+    <!-- Once this marker scrolls off screen, the summary below shrinks into a slim sticky bar. -->
+    <div ref="sentinel" class="sentinel" aria-hidden="true" />
 
-          <div class="gpa-col">
-            <p class="weight-title">Weighted</p>
-            <h1 class="overall-gpa">{{ averageWeightedGpa.toFixed(2) }}</h1>
-          </div>
-        </div>
+    <div class="summary" :class="{ compact }">
+      <div class="stat">
+        <span class="stat-label"><b>Un</b>weighted</span>
+        <span class="stat-value">{{ averageUnweightedGpa.toFixed(2) }}</span>
+      </div>
 
-        <div class="total-credits-row">
-          <span class="total-credits-label">Total Credits</span>
-          <span class="total-credits-value">{{ totalCredits.toFixed(2) }}</span>
-        </div>
+      <div class="stat">
+        <span class="stat-label">Weighted</span>
+        <span class="stat-value">{{ averageWeightedGpa.toFixed(2) }}</span>
+      </div>
 
-        <div class="action-row">
+      <div class="stat">
+        <span class="stat-label">Credits</span>
+        <span class="stat-value">{{ totalCredits.toFixed(2) }}</span>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="toolbar-row">
+        <div class="select-wrap">
           <select
             class="add-select"
+            aria-label="Add a school year"
             :disabled="remainingYearLabels.length === 0"
             :value="''"
             @change="onAddYearSelect"
             @keydown="onActionSelectKeydown"
           >
             <option value="" disabled>
-              {{ remainingYearLabels.length ? '+ Add School Year…' : 'All Years Added' }}
+              {{ remainingYearLabels.length ? '+ Add School Year' : 'All Years Added' }}
             </option>
             <option
               v-for="label in remainingYearLabels"
@@ -40,16 +44,20 @@
               {{ label }}
             </option>
           </select>
+          <font-awesome-icon class="select-chevron" :icon="icons.faChevronDown" />
+        </div>
 
+        <div class="select-wrap">
           <select
             class="add-select"
+            aria-label="Add a summer"
             :disabled="remainingSummerLabels.length === 0"
             :value="''"
             @change="onAddSummerSelect"
             @keydown="onActionSelectKeydown"
           >
             <option value="" disabled>
-              {{ remainingSummerLabels.length ? '+ Add Summer…' : 'All Summers Added' }}
+              {{ remainingSummerLabels.length ? '+ Add Summer' : 'All Summers Added' }}
             </option>
             <option
               v-for="label in remainingSummerLabels"
@@ -59,77 +67,125 @@
               {{ label }}
             </option>
           </select>
+          <font-awesome-icon class="select-chevron" :icon="icons.faChevronDown" />
         </div>
 
-        <div class="action-row">
+        <div class="custom-group">
           <input
             v-model="customGroupName"
             class="custom-group-input"
             type="text"
             maxlength="40"
             placeholder="Custom group name"
+            aria-label="Custom group name"
             @keyup.enter="addCustomGroup"
           />
 
-          <rounded-button
-            class="action-button"
-            :icon="icons.faPlus"
-            text="Add Group"
-            invert
+          <button
+            class="custom-group-btn"
+            type="button"
+            :disabled="!customGroupName.trim()"
             @click="addCustomGroup"
-          />
-        </div>
-
-        <div class="edit-note">
-          Course names are editable and can automatically set credit level from the name.
-          Full-year courses are linked across semesters.
-          Linked courses can be unsynced if needed.
-          Courses dropped into the Ungrouped section don't need a year or group.
+          >
+            <font-awesome-icon :icon="icons.faPlus" />
+            Add Group
+          </button>
         </div>
       </div>
-    </card>
 
-    <div class="planner-container">
-      <div
+      <p class="edit-note">
+        Course names are editable and can automatically set credit level from the name.
+        Full-year courses are linked across semesters.
+        Linked courses can be unsynced if needed.
+        Courses dropped into the Ungrouped section don't need a year or group.
+      </p>
+    </div>
+
+    <div v-if="!hasUserGroups" class="empty-state">
+      <div class="empty-title">Start with a school year</div>
+      <div class="empty-chips">
+        <button
+          v-for="label in remainingYearLabels"
+          :key="label"
+          class="empty-chip"
+          type="button"
+          @click="addYear(label)"
+        >
+          <font-awesome-icon :icon="icons.faPlus" />
+          {{ label }}
+        </button>
+      </div>
+    </div>
+
+    <div class="planner">
+      <section
         v-for="(group, gIdx) in groups"
         :key="group.id"
-        class="year-block animated-fade-up"
-        :class="{
-          'summer-theme': group.type === 'summer',
-          'custom-theme': group.type === 'custom',
-          'ungrouped-theme': group.type === 'ungrouped',
-        }"
-        :style="{ animationDelay: gIdx * 0.08 + 's' }"
+        class="group animated-fade-up"
+        :class="'type-' + group.type"
+        :style="{ animationDelay: Math.min(gIdx, 6) * 0.06 + 's' }"
       >
-        <div class="year-banner">
-          <input
-            v-if="group.type === 'custom'"
-            class="banner-input"
-            type="text"
-            maxlength="40"
-            :value="group.label"
-            @input="onGroupLabelInput(group, $event)"
-          />
-          <span v-else>{{ group.label }}</span>
+        <header class="group-head">
+          <span class="group-dot" aria-hidden="true" />
 
-          <font-awesome-icon
-            v-if="group.type !== 'ungrouped'"
-            class="year-close"
-            :icon="icons.faXmark"
-            @click.stop="removeGroup(gIdx)"
-          />
-        </div>
+          <span v-if="group.type === 'custom'" class="group-name-wrap">
+            <input
+              class="group-name-input"
+              type="text"
+              maxlength="40"
+              :value="group.label"
+              :size="Math.max((group.label || '').length, 10)"
+              placeholder="Group name"
+              aria-label="Group name"
+              @input="onGroupLabelInput(group, $event)"
+            />
+            <font-awesome-icon
+              class="edit-pencil"
+              :icon="icons.faPencil"
+              title="Edit name"
+              @click.stop="focusField($event)"
+            />
+          </span>
+          <h2 v-else class="group-name">{{ group.label }}</h2>
 
-        <div
-          class="semester-grid"
-          :class="{ 'single-col': group.semesters.length === 1 }"
-        >
           <div
+            v-if="group.semesters.length === 2 && group.stats"
+            class="group-stats"
+            :title="groupGpaLabel(group)"
+          >
+            <span class="group-stats-label">{{ groupGpaLabel(group) }}</span>
+            <span class="gpa-stat">W&nbsp;<b>{{ group.stats.w.toFixed(2) }}</b></span>
+            <span class="gpa-stat">UW&nbsp;<b>{{ group.stats.uw.toFixed(2) }}</b></span>
+            <span class="gpa-stat"><b>{{ group.stats.units.toFixed(2) }}</b>&nbsp;cr</span>
+          </div>
+
+          <button
+            v-if="group.type !== 'ungrouped'"
+            class="icon-btn group-close"
+            type="button"
+            :title="'Remove ' + (group.label || 'group')"
+            :aria-label="'Remove ' + (group.label || 'group')"
+            @click.stop="removeGroup(gIdx)"
+          >
+            <font-awesome-icon :icon="icons.faXmark" />
+          </button>
+        </header>
+
+        <!--
+          Two-semester groups lay out column by column on a shared set of
+          rows, so the two halves of a full-year course always sit on the
+          same row no matter how tall either card gets.
+        -->
+        <div
+          class="sem-grid"
+          :class="{ 'single-col': group.semesters.length === 1 }"
+          :style="{ '--rows': gridRows(group) }"
+        >
+          <template
             v-for="(semester, sIdx) in group.semesters"
             :key="group.id + '-sem-' + sIdx"
-            class="sem-column"
           >
-            <div v-if="group.semesters.length === 2" class="sem-header">
+            <div v-if="group.semesters.length === 2" class="sem-head">
               {{ group.type === 'summer' ? 'Summer Session ' + (sIdx + 1) : 'Semester ' + (sIdx + 1) }}
             </div>
 
@@ -137,19 +193,54 @@
               v-for="(course, cIdx) in semester.courses"
               :key="course.instanceId"
             >
-              <div v-if="course.isPlaceholder" class="placeholder-card">
-                <span class="placeholder-text">Open slot</span>
-                <button class="mini-btn" @click="fillPlaceholder(gIdx, sIdx, cIdx)">
-                  Add course here
-                </button>
+              <div
+                v-if="course.isPlaceholder && isPlaceholderDismissed(gIdx, sIdx, cIdx)"
+                class="slot-spacer"
+                aria-hidden="true"
+              />
+
+              <div
+                v-else-if="course.isPlaceholder"
+                class="slot"
+                :data-semester="sIdx"
+                :data-course-index="cIdx"
+              >
+                <div class="slot-head">
+                  <span class="slot-text">Open slot</span>
+                  <button
+                    class="icon-btn slot-close"
+                    type="button"
+                    title="Remove open slot"
+                    aria-label="Remove open slot"
+                    @click="removePlaceholder(gIdx, sIdx, cIdx)"
+                  >
+                    <font-awesome-icon :icon="icons.faXmark" />
+                  </button>
+                </div>
+                <div class="slot-actions">
+                  <button
+                    v-if="placeholderPartner(gIdx, sIdx, cIdx)"
+                    class="pill-btn"
+                    type="button"
+                    @click="addLinkedFromPlaceholder(gIdx, sIdx, cIdx)"
+                  >
+                    <font-awesome-icon :icon="icons.faLink" />
+                    Add linked with "{{ placeholderPartner(gIdx, sIdx, cIdx)?.name || ('Course ' + (cIdx + 1)) }}"
+                  </button>
+                  <button class="pill-btn" type="button" @click="fillPlaceholder(gIdx, sIdx, cIdx)">
+                    Add unlinked course
+                  </button>
+                </div>
               </div>
 
-              <card
+              <div
                 v-else
-                class="course-card"
-                :wrapperStyle="{ overflow: 'visible' }"
+                class="course"
+                :data-semester="sIdx"
+                :data-course-index="cIdx"
+                :class="{ open: !!openCourses[course.instanceId], pass: course.finalGrade === 'P' }"
               >
-                <div class="course-header-row">
+                <span class="name-wrap">
                   <font-awesome-icon
                     v-if="course.linkedId"
                     class="linked-icon"
@@ -157,25 +248,102 @@
                     :icon="course.syncEnabled ? icons.faLink : icons.faLinkSlash"
                     :title="course.syncEnabled ? 'Synced full-year course' : 'Unsynced full-year course'"
                   />
-
                   <input
                     class="name-input"
                     type="text"
                     maxlength="32"
                     :value="course.name"
                     :placeholder="'Course ' + (cIdx + 1)"
+                    aria-label="Course name"
                     @input="onCourseNameInput(course, $event)"
                   />
-
                   <font-awesome-icon
-                    class="close"
-                    :icon="icons.faXmark"
-                    @click="removeCourse(gIdx, sIdx, course)"
+                    class="edit-pencil"
+                    :icon="icons.faPencil"
+                    title="Edit name"
+                    @click.stop="focusField($event)"
                   />
+                </span>
+
+                <span class="points">
+                  <template v-if="course.finalGrade === 'P'">Not in GPA</template>
+                  <template v-else>
+                    UW&nbsp;<b>{{ course.unweightedGPA.toFixed(2) }}</b>
+                    <span class="points-sep">·</span>
+                    W&nbsp;<b>{{ course.weightedGPA.toFixed(2) }}</b>
+                  </template>
+                </span>
+
+                <button
+                  class="icon-btn more-btn"
+                  type="button"
+                  title="More options"
+                  aria-label="More options"
+                  :aria-expanded="!!openCourses[course.instanceId]"
+                  @click="toggleMore(course)"
+                >
+                  <font-awesome-icon :icon="icons.faEllipsis" />
+                </button>
+
+                <button
+                  class="icon-btn close"
+                  type="button"
+                  title="Remove course"
+                  aria-label="Remove course"
+                  @click="removeCourse(gIdx, sIdx, course)"
+                >
+                  <font-awesome-icon :icon="icons.faXmark" />
+                </button>
+
+                <div class="controls">
+                  <div class="seg" role="radiogroup" aria-label="Course level">
+                    <button
+                      v-for="(label, i) in courseLevelsShort"
+                      :key="label"
+                      class="seg-btn"
+                      type="button"
+                      role="radio"
+                      :class="{ on: course.level === i }"
+                      :aria-checked="course.level === i"
+                      :title="courseLevels[i]"
+                      @click="setLvl(course, i)"
+                    >
+                      {{ label }}
+                    </button>
+                  </div>
+
+                  <div class="seg grades" role="radiogroup" aria-label="Grade">
+                    <button
+                      v-for="(label, i) in gradeLabels"
+                      :key="label"
+                      class="seg-btn"
+                      type="button"
+                      role="radio"
+                      :class="{ on: course.grade === i }"
+                      :aria-checked="course.grade === i"
+                      :title="label === 'P' ? 'Pass (not counted in GPA)' : 'Grade ' + label"
+                      @click="setGrd(course, i)"
+                    >
+                      {{ label }}
+                    </button>
+                  </div>
+
+                  <button
+                    class="sci-toggle"
+                    type="button"
+                    title="1.5 Weight Science Class"
+                    aria-label="1.5 Weight Science Class"
+                    :class="{ on: course.weight === 1.5 }"
+                    :aria-pressed="course.weight === 1.5"
+                    @click="setSci(course, course.weight !== 1.5)"
+                  >
+                    <font-awesome-icon :icon="icons.faFlask" />
+                    1.5×
+                  </button>
                 </div>
 
-                <div v-if="course.linkedId" class="sync-row">
-                  <label>
+                <div v-if="openCourses[course.instanceId]" class="more">
+                  <label v-if="course.linkedId" class="sync-row">
                     <input
                       type="checkbox"
                       :checked="course.syncEnabled"
@@ -183,145 +351,105 @@
                     />
                     Sync with other semester
                   </label>
-                </div>
 
-                <div class="course-settings-row">
-                  <dropdown
-                    style="flex: 1"
-                    :options="courseLevels"
-                    :modelValue="course.level"
-                    align="left"
-                    @update:modelValue="setLvl(course, $event)"
-                  />
-
-                  <dropdown
-                    style="flex: 1"
-                    :options="gradeLabels"
-                    :modelValue="course.grade"
-                    align="left"
-                    @update:modelValue="setGrd(course, $event)"
-                  />
-                </div>
-
-                <p class="grade-label">
-                  {{ course.finalGrade }}
-                </p>
-
-                <div class="gpa-title-row inner-gpa-row">
-                  <div class="gpa-col">
-                    <p class="weight-title"><b>Un</b>weighted</p>
-                    <div class="final-gpa">
-                      {{ course.unweightedGPA.toFixed(2) }}
-                    </div>
-                  </div>
-
-                  <div class="gpa-col">
-                    <p class="weight-title">Weighted</p>
-                    <div class="final-gpa">
-                      {{ course.weightedGPA.toFixed(2) }}
-                    </div>
-                  </div>
-                </div>
-
-                <checkbox
-                  :modelValue="course.weight === 1.5"
-                  @update:modelValue="setSci(course, $event)"
-                >
-                  1.5 Weight Science Class
-                </checkbox>
-
-                <div class="move-row">
-                  <button
-                    class="icon-btn"
-                    title="Move up"
-                    :disabled="isFirstReal(semester, course)"
-                    @click="moveCourse(gIdx, sIdx, course, -1)"
-                  >
-                    <font-awesome-icon :icon="icons.faArrowUp" />
-                  </button>
-
-                  <button
-                    class="icon-btn"
-                    title="Move down"
-                    :disabled="isLastReal(semester, course)"
-                    @click="moveCourse(gIdx, sIdx, course, 1)"
-                  >
-                    <font-awesome-icon :icon="icons.faArrowDown" />
-                  </button>
-
-                  <select
-                    class="group-select"
-                    :value="''"
-                    @change="onChangeGroup(gIdx, sIdx, course, $event)"
-                    @keydown="onActionSelectKeydown"
-                  >
-                    <option value="" disabled>Change group…</option>
-                    <option
-                      v-for="(target, ti) in moveTargets(gIdx, sIdx)"
-                      :key="ti"
-                      :value="String(ti)"
+                  <div class="more-row">
+                    <button
+                      class="icon-btn outlined"
+                      type="button"
+                      title="Move up"
+                      aria-label="Move up"
+                      :disabled="isFirstReal(semester, course)"
+                      @click="moveCourse(gIdx, sIdx, course, -1)"
                     >
-                      {{ target.label }}
-                    </option>
-                  </select>
-                </div>
+                      <font-awesome-icon :icon="icons.faArrowUp" />
+                    </button>
 
-                <div
-                  v-if="group.semesters.length === 2 && !course.linkedId"
-                  class="link-row"
-                >
-                  <button
-                    class="mini-btn link-btn"
-                    @click="addLinkedClass(gIdx, sIdx, course)"
-                  >
-                    <font-awesome-icon :icon="icons.faLink" />
-                    Add Linked Class
-                  </button>
+                    <button
+                      class="icon-btn outlined"
+                      type="button"
+                      title="Move down"
+                      aria-label="Move down"
+                      :disabled="isLastReal(semester, course)"
+                      @click="moveCourse(gIdx, sIdx, course, 1)"
+                    >
+                      <font-awesome-icon :icon="icons.faArrowDown" />
+                    </button>
+
+                    <div class="select-wrap group-select-wrap">
+                      <select
+                        class="group-select"
+                        aria-label="Change group"
+                        :value="''"
+                        @change="onChangeGroup(gIdx, sIdx, course, $event)"
+                        @keydown="onActionSelectKeydown"
+                      >
+                        <option value="" disabled>Change group</option>
+                        <option
+                          v-for="(target, ti) in moveTargets(gIdx, sIdx)"
+                          :key="ti"
+                          :value="String(ti)"
+                        >
+                          {{ target.label }}
+                        </option>
+                      </select>
+                      <font-awesome-icon class="select-chevron" :icon="icons.faChevronDown" />
+                    </div>
+
+                    <button
+                      v-if="group.semesters.length === 2 && !course.linkedId"
+                      class="pill-btn"
+                      type="button"
+                      @click="addLinkedClass(gIdx, sIdx, course)"
+                    >
+                      <font-awesome-icon :icon="icons.faLink" />
+                      Add Linked Class
+                    </button>
+                  </div>
                 </div>
-              </card>
+              </div>
             </template>
 
-            <div
-              v-if="group.type === 'year' && semester.stats"
-              class="sem-gpa-row"
-            >
-              <span class="sem-gpa-label">Semester GPA</span>
-              <span class="sem-gpa-stats">
-                <span class="gpa-stat">Weighted&nbsp;<b>{{ semester.stats.w.toFixed(2) }}</b></span>
-                <span class="gpa-stat">Unweighted&nbsp;<b>{{ semester.stats.uw.toFixed(2) }}</b></span>
-                <span class="gpa-stat"><b>{{ semester.stats.units.toFixed(2) }}</b>&nbsp;credits</span>
-              </span>
+            <div class="sem-gpa-row" :class="{ empty: !semester.stats }">
+              <template v-if="semester.stats">
+                <span class="sem-gpa-label">{{ columnGpaLabel(group) }}</span>
+                <span class="sem-gpa-stats">
+                  <span class="gpa-stat">Weighted&nbsp;<b>{{ semester.stats.w.toFixed(2) }}</b></span>
+                  <span class="gpa-stat">Unweighted&nbsp;<b>{{ semester.stats.uw.toFixed(2) }}</b></span>
+                  <span class="gpa-stat"><b>{{ semester.stats.units.toFixed(2) }}</b>&nbsp;credits</span>
+                </span>
+              </template>
             </div>
 
             <div class="footer-actions">
-              <button class="sketch-btn" @click="addCourse(gIdx, sIdx)">
+              <button class="add-btn" type="button" @click="addCourse(gIdx, sIdx)">
+                <font-awesome-icon :icon="icons.faPlus" />
                 Add course
               </button>
 
               <button
                 v-if="group.semesters.length === 2"
-                class="sketch-btn"
+                class="add-btn"
+                type="button"
                 @click="addFullYear(gIdx)"
               >
+                <font-awesome-icon :icon="icons.faPlus" />
                 Add full-year course
               </button>
             </div>
-          </div>
+          </template>
         </div>
-
-        <div
-          v-if="group.type !== 'year' && group.stats"
-          class="group-gpa-bar"
-        >
-          <span class="sem-gpa-label">
-            {{ group.type === 'summer' ? 'Summer GPA' : 'Group GPA' }}
-          </span>
-          <span class="gpa-stat">Weighted&nbsp;<b>{{ group.stats.w.toFixed(2) }}</b></span>
-          <span class="gpa-stat">Unweighted&nbsp;<b>{{ group.stats.uw.toFixed(2) }}</b></span>
-          <span class="gpa-stat"><b>{{ group.stats.units.toFixed(2) }}</b>&nbsp;credits</span>
-        </div>
-      </div>
+      </section>
     </div>
+
+    <transition name="toast">
+      <div v-if="undoState" class="undo-toast" role="status">
+        <span class="undo-text">{{ undoState.message }}</span>
+        <button class="undo-btn" type="button" @click="undo">
+          <font-awesome-icon :icon="icons.faRotateLeft" />
+          Undo
+        </button>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -334,18 +462,20 @@ import {
   faLinkSlash,
   faArrowUp,
   faArrowDown,
+  faPencil,
+  faChevronDown,
+  faEllipsis,
+  faFlask,
+  faRotateLeft,
 } from '@fortawesome/free-solid-svg-icons';
-import Checkbox from '@/components/Checkbox.vue';
-import RoundedButton from '@/components/RoundedButton.vue';
-import Card from '@/components/Card.vue';
 import PlainHeader from '@/components/PlainHeader.vue';
-import Dropdown from '@/components/Dropdown.vue';
 
 class Course {
   instanceId: string;
   linkedId: string | null;
   syncEnabled: boolean;
   isPlaceholder: boolean;
+  hideOpenSlot: boolean;
   name: string;
   grade: number;
   level: number;
@@ -359,6 +489,7 @@ class Course {
     this.linkedId = linkedId;
     this.syncEnabled = !!linkedId;
     this.isPlaceholder = false;
+    this.hideOpenSlot = false;
     this.name = name;
     this.grade = 0;
     this.level = 0;
@@ -396,6 +527,11 @@ type MoveTarget = {
   sIdx: number;
 };
 
+type UndoState = {
+  message: string;
+  snapshot: string;
+};
+
 const STORAGE_KEY = 'SHS_PLANNER_DATA';
 
 const GROUP_TYPES: GroupType[] = ['year', 'summer', 'custom', 'ungrouped'];
@@ -415,41 +551,64 @@ const SUMMER_LABELS = [
   'Post-Senior Summer',
 ];
 
+// A grade that shows on the transcript but never counts toward GPA
+// (Pass/Fail classes such as a PE waiver or Driver Ed).
+const PASS_GRADE = 'P';
+
+// How long the "Undo" toast stays on screen after a delete.
+const UNDO_TIMEOUT_MS = 7000;
+
 export default defineComponent({
   name: 'GpaCalculator',
 
   components: {
-    RoundedButton,
-    Card,
     PlainHeader,
-    Dropdown,
-    Checkbox,
   },
 
   data() {
     return {
-      icons: { faPlus, faXmark, faLink, faLinkSlash, faArrowUp, faArrowDown },
+      icons: {
+        faPlus,
+        faXmark,
+        faLink,
+        faLinkSlash,
+        faArrowUp,
+        faArrowDown,
+        faPencil,
+        faChevronDown,
+        faEllipsis,
+        faFlask,
+        faRotateLeft,
+      },
       groups: [] as Group[],
       customGroupName: '',
       averageUnweightedGpa: 0,
       averageWeightedGpa: 0,
       totalCredits: 0,
       courseLevels: ['Regular', 'Accelerated', 'Honors/AP'],
-      gradeLabels: ['A', 'B', 'C', 'D', 'F'],
+      courseLevelsShort: ['Regular', 'Accel', 'Honors/AP'],
+      gradeLabels: ['A', 'B', 'C', 'D', 'F', PASS_GRADE],
+      // UI-only state (never saved)
+      openCourses: {} as Record<string, boolean>,
+      undoState: null as UndoState | null,
+      undoTimer: 0,
+      compact: false,
+      observer: null as IntersectionObserver | null,
+      slotObserver: null as ResizeObserver | null,
     };
   },
 
   computed: {
     usedYearLabels(): string[] {
       return this.groups
-        .filter((group) => group.type === 'year')
-        .map((group) => group.label);
+        .filter((group: Group) => group.type === 'year')
+        .map((group: Group) => group.label);
     },
 
     usedSummerLabels(): string[] {
       return this.groups
-        .filter((group) => group.type === 'summer')
-        .map((group) => group.label);
+        .filter((group: Group) => group.type === 'summer')
+        .map((group: Group) => group.label);
     },
 
     remainingYearLabels(): string[] {
@@ -459,12 +618,36 @@ export default defineComponent({
     remainingSummerLabels(): string[] {
       return SUMMER_LABELS.filter((label) => !this.usedSummerLabels.includes(label));
     },
+
+    // True once the student has added anything besides the pinned
+    // Ungrouped section; drives the "Start with a school year" prompt.
+    hasUserGroups(): boolean {
+      return this.groups.some(
+        (group: Group) => group.type !== 'ungrouped'
+          || group.semesters.some((semester: Semester) => semester.courses.length > 0),
+      );
+    },
   },
 
   mounted() {
     this.loadSavedData();
     this.ensureUngrouped();
     this.refresh();
+    this.watchSummary();
+  },
+
+  beforeUnmount() {
+    window.clearTimeout(this.undoTimer);
+
+    if (this.observer) {
+      this.observer.disconnect();
+      this.observer = null;
+    }
+
+    if (this.slotObserver) {
+      this.slotObserver.disconnect();
+      this.slotObserver = null;
+    }
   },
 
   methods: {
@@ -477,7 +660,128 @@ export default defineComponent({
     },
 
     sanitizeText(value: string): string {
-      return value.replace(/\uFFFD/g, '').replace(/�/g, '');
+      // Strip the Unicode replacement character that shows up when a name
+      // is pasted in with a broken encoding.
+      return value.replace(/�/g, '');
+    },
+
+    // Focus the editable input sitting immediately before a pencil icon.
+    focusField(event: Event) {
+      const el = event.currentTarget as HTMLElement | null;
+      const input = el?.previousElementSibling as HTMLInputElement | null;
+
+      if (input && input.tagName === 'INPUT') {
+        input.focus();
+        input.select?.();
+      }
+    },
+
+    // Label for the per-column GPA summary, so every group type reads the
+    // same way (summary above the Add-course buttons).
+    columnGpaLabel(group: Group): string {
+      switch (group.type) {
+        case 'summer':
+          return 'Session GPA';
+        case 'custom':
+          return 'Group GPA';
+        case 'ungrouped':
+          return 'Ungrouped GPA';
+        default:
+          return 'Semester GPA';
+      }
+    },
+
+    // Label for the combined GPA shown in a two-column group's header.
+    groupGpaLabel(group: Group): string {
+      return group.type === 'summer' ? 'Summer GPA' : 'Year GPA';
+    },
+
+    // Number of grid rows a two-column group needs: the semester heading,
+    // one row per course slot, the GPA summary, and the add buttons.
+    gridRows(group: Group): number {
+      const longest = Math.max(
+        0,
+        ...group.semesters.map((semester: Semester) => semester.courses.length),
+      );
+
+      return longest + 3;
+    },
+
+    toggleMore(course: Course) {
+      if (this.openCourses[course.instanceId]) {
+        delete this.openCourses[course.instanceId];
+      } else {
+        this.openCourses[course.instanceId] = true;
+      }
+
+      this.$nextTick(() => this.resizeSlots());
+    },
+
+    // Use the actual card below a slot as its size reference. When a
+    // semester has no card below it, use its last card or the opposite one.
+    resizeSlots() {
+      const root = this.$el as HTMLElement | undefined;
+
+      if (!root?.querySelectorAll) {
+        return;
+      }
+
+      root.querySelectorAll<HTMLElement>('.sem-grid').forEach((grid) => {
+        const cards = Array.from(grid.querySelectorAll<HTMLElement>('.course'));
+
+        grid.querySelectorAll<HTMLElement>('.slot').forEach((slot) => {
+          const row = Number(slot.dataset.courseIndex);
+          const sameSemester = cards.filter(
+            (card) => card.dataset.semester === slot.dataset.semester,
+          );
+          const reference = sameSemester.find(
+            (card) => Number(card.dataset.courseIndex) > row,
+          ) || sameSemester[sameSemester.length - 1]
+            || cards.find((card) => Number(card.dataset.courseIndex) === row);
+
+          if (reference) {
+            slot.style.setProperty(
+              '--slot-card-height',
+              `${reference.getBoundingClientRect().height}px`,
+            );
+          }
+        });
+      });
+    },
+
+    watchSlotSizes() {
+      this.resizeSlots();
+      this.slotObserver?.disconnect();
+
+      const root = this.$el as HTMLElement | undefined;
+      if (!root?.querySelectorAll || typeof ResizeObserver === 'undefined') {
+        return;
+      }
+
+      if (!this.slotObserver) {
+        this.slotObserver = new ResizeObserver(() => this.resizeSlots());
+      }
+
+      root.querySelectorAll<HTMLElement>('.course').forEach((card) => {
+        this.slotObserver?.observe(card);
+      });
+    },
+
+    // Shrinks the GPA summary into a slim bar once it sticks to the top of
+    // the screen, so it stays visible without covering the planner.
+    watchSummary() {
+      const sentinel = this.$refs.sentinel as HTMLElement | undefined;
+
+      if (!sentinel || typeof IntersectionObserver === 'undefined') {
+        return;
+      }
+
+      this.observer = new IntersectionObserver((entries) => {
+        const entry = entries[entries.length - 1];
+        this.compact = !!entry && !entry.isIntersecting;
+      });
+
+      this.observer.observe(sentinel);
     },
 
     createCourse(name = '', linkedId: string | null = null): Course {
@@ -532,12 +836,12 @@ export default defineComponent({
     },
 
     realCourses(semester: Semester): Course[] {
-      return semester.courses.filter((course) => !course.isPlaceholder);
+      return semester.courses.filter((course: Course) => !course.isPlaceholder);
     },
 
     realIndex(semester: Semester, course: Course): number {
       return this.realCourses(semester).findIndex(
-        (c) => c.instanceId === course.instanceId
+        (c: Course) => c.instanceId === course.instanceId,
       );
     },
 
@@ -547,7 +851,7 @@ export default defineComponent({
 
     isLastReal(semester: Semester, course: Course): boolean {
       const real = this.realCourses(semester);
-      return real.findIndex((c) => c.instanceId === course.instanceId) === real.length - 1;
+      return real.findIndex((c: Course) => c.instanceId === course.instanceId) === real.length - 1;
     },
 
     findPartner(group: Group, course: Course): Course | null {
@@ -558,9 +862,9 @@ export default defineComponent({
       for (const semester of group.semesters) {
         for (const candidate of semester.courses) {
           if (
-            !candidate.isPlaceholder &&
-            candidate.instanceId !== course.instanceId &&
-            candidate.linkedId === course.linkedId
+            !candidate.isPlaceholder
+            && candidate.instanceId !== course.instanceId
+            && candidate.linkedId === course.linkedId
           ) {
             return candidate;
           }
@@ -570,25 +874,137 @@ export default defineComponent({
       return null;
     },
 
+    // A slot's opposite course has a stable ID and survives regeneration,
+    // so it also stores whether the student dismissed that empty slot.
+    placeholderOpposite(gIdx: number, sIdx: number, cIdx: number): Course | null {
+      const group = this.groups[gIdx];
+
+      if (!group || group.semesters.length !== 2) {
+        return null;
+      }
+
+      const other = group.semesters[sIdx === 0 ? 1 : 0];
+      const candidate = other?.courses[cIdx];
+
+      if (candidate && !candidate.isPlaceholder) {
+        return candidate;
+      }
+
+      return null;
+    },
+
+    // Only an unlinked course can become a new full-year pair.
+    placeholderPartner(gIdx: number, sIdx: number, cIdx: number): Course | null {
+      const candidate = this.placeholderOpposite(gIdx, sIdx, cIdx);
+      return candidate && !candidate.linkedId ? candidate : null;
+    },
+
+    isPlaceholderDismissed(gIdx: number, sIdx: number, cIdx: number): boolean {
+      return !!this.placeholderOpposite(gIdx, sIdx, cIdx)?.hideOpenSlot;
+    },
+
     /* ------------------------------------------------------------------ */
     /* Persistence                                                         */
     /* ------------------------------------------------------------------ */
 
+    // The plain-object form of the planner that gets written to
+    // localStorage (placeholders are never saved).
+    serializeGroups() {
+      return this.groups.map((group: Group) => ({
+        id: group.id,
+        label: group.label,
+        type: group.type,
+        semesters: group.semesters.map((semester: Semester) => ({
+          courses: this.realCourses(semester),
+        })),
+      }));
+    },
+
     saveData() {
       try {
-        const serializable = this.groups.map((group) => ({
-          id: group.id,
-          label: group.label,
-          type: group.type,
-          semesters: group.semesters.map((semester) => ({
-            courses: this.realCourses(semester),
-          })),
-        }));
-
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(serializable));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(this.serializeGroups()));
       } catch (error) {
         console.error('Failed to save GPA planner data:', error);
       }
+    },
+
+    // Rebuilds clean Group objects from saved (or undo-snapshot) data,
+    // repairing anything missing or malformed along the way.
+    parseGroups(parsed: unknown): Group[] {
+      if (!Array.isArray(parsed)) {
+        throw new Error('Saved data is not an array');
+      }
+
+      return parsed.map((rawGroup: any) => {
+        // Migrate the old { isSummer } format to the new { type } format.
+        const type: GroupType = GROUP_TYPES.includes(rawGroup.type)
+          ? rawGroup.type
+          : rawGroup.isSummer
+            ? 'summer'
+            : 'year';
+
+        const columnCount = type === 'year' || type === 'summer' ? 2 : 1;
+
+        const semesters: Semester[] = Array.isArray(rawGroup.semesters)
+          ? rawGroup.semesters.slice(0, columnCount).map((rawSemester: any) => ({
+            courses: Array.isArray(rawSemester?.courses)
+              ? rawSemester.courses
+                .filter((rawCourse: any) => rawCourse && !rawCourse.isPlaceholder)
+                .map((rawCourse: any) => {
+                  const restored = this.createCourse(
+                    typeof rawCourse.name === 'string'
+                      ? this.sanitizeText(rawCourse.name)
+                      : '',
+                    typeof rawCourse.linkedId === 'string'
+                      ? rawCourse.linkedId
+                      : null,
+                  );
+
+                  restored.instanceId = typeof rawCourse.instanceId === 'string'
+                    ? rawCourse.instanceId
+                    : this.createId();
+
+                  restored.syncEnabled = typeof rawCourse.syncEnabled === 'boolean'
+                    ? rawCourse.syncEnabled
+                    : !!restored.linkedId;
+
+                  restored.hideOpenSlot = rawCourse.hideOpenSlot === true;
+
+                  restored.grade = this.normalizeGrade(rawCourse.grade);
+                  restored.level = this.normalizeLevel(rawCourse.level);
+
+                  restored.weight = rawCourse.weight === 1.5 || rawCourse.weight === 1.0
+                    ? rawCourse.weight
+                    : 1.0;
+
+                  return restored;
+                })
+              : [],
+          }))
+          : [];
+
+        while (semesters.length < columnCount) {
+          semesters.push({ courses: [] });
+        }
+
+        const fallbackLabel = type === 'summer'
+          ? 'Summer'
+          : type === 'custom'
+            ? 'Custom Group'
+            : type === 'ungrouped'
+              ? 'Ungrouped'
+              : 'School Year';
+
+        return {
+          id: typeof rawGroup.id === 'string' ? rawGroup.id : this.createId(),
+          label:
+            typeof rawGroup.label === 'string'
+              ? this.sanitizeText(rawGroup.label)
+              : fallbackLabel,
+          type,
+          semesters,
+        } as Group;
+      });
     },
 
     loadSavedData() {
@@ -599,84 +1015,7 @@ export default defineComponent({
           return;
         }
 
-        const parsed = JSON.parse(saved);
-
-        if (!Array.isArray(parsed)) {
-          throw new Error('Saved data is not an array');
-        }
-
-        this.groups = parsed.map((rawGroup: any) => {
-          // Migrate the old { isSummer } format to the new { type } format.
-          const type: GroupType = GROUP_TYPES.includes(rawGroup.type)
-            ? rawGroup.type
-            : rawGroup.isSummer
-              ? 'summer'
-              : 'year';
-
-          const columnCount = type === 'year' || type === 'summer' ? 2 : 1;
-
-          const semesters: Semester[] = Array.isArray(rawGroup.semesters)
-            ? rawGroup.semesters.slice(0, columnCount).map((rawSemester: any) => ({
-                courses: Array.isArray(rawSemester.courses)
-                  ? rawSemester.courses
-                      .filter((rawCourse: any) => !rawCourse?.isPlaceholder)
-                      .map((rawCourse: any) => {
-                        const restored = this.createCourse(
-                          typeof rawCourse.name === 'string'
-                            ? this.sanitizeText(rawCourse.name)
-                            : '',
-                          typeof rawCourse.linkedId === 'string'
-                            ? rawCourse.linkedId
-                            : null
-                        );
-
-                        restored.instanceId =
-                          typeof rawCourse.instanceId === 'string'
-                            ? rawCourse.instanceId
-                            : this.createId();
-
-                        restored.syncEnabled =
-                          typeof rawCourse.syncEnabled === 'boolean'
-                            ? rawCourse.syncEnabled
-                            : !!restored.linkedId;
-
-                        restored.grade = this.normalizeGrade(rawCourse.grade);
-                        restored.level = this.normalizeLevel(rawCourse.level);
-
-                        restored.weight =
-                          rawCourse.weight === 1.5 || rawCourse.weight === 1.0
-                            ? rawCourse.weight
-                            : 1.0;
-
-                        return restored;
-                      })
-                  : [],
-              }))
-            : [];
-
-          while (semesters.length < columnCount) {
-            semesters.push({ courses: [] });
-          }
-
-          const fallbackLabel =
-            type === 'summer'
-              ? 'Summer'
-              : type === 'custom'
-                ? 'Custom Group'
-                : type === 'ungrouped'
-                  ? 'Ungrouped'
-                  : 'School Year';
-
-          return {
-            id: typeof rawGroup.id === 'string' ? rawGroup.id : this.createId(),
-            label:
-              typeof rawGroup.label === 'string'
-                ? this.sanitizeText(rawGroup.label)
-                : fallbackLabel,
-            type,
-            semesters,
-          } as Group;
-        });
+        this.groups = this.parseGroups(JSON.parse(saved));
       } catch (error) {
         console.error('Failed to load saved GPA data:', error);
         localStorage.removeItem(STORAGE_KEY);
@@ -685,17 +1024,55 @@ export default defineComponent({
     },
 
     /* ------------------------------------------------------------------ */
+    /* Undo (for deletes)                                                  */
+    /* ------------------------------------------------------------------ */
+
+    offerUndo(message: string, snapshot: string) {
+      window.clearTimeout(this.undoTimer);
+      this.undoState = { message, snapshot };
+      this.undoTimer = window.setTimeout(() => {
+        this.undoState = null;
+      }, UNDO_TIMEOUT_MS);
+    },
+
+    undo() {
+      const state = this.undoState;
+
+      window.clearTimeout(this.undoTimer);
+      this.undoState = null;
+
+      if (!state) {
+        return;
+      }
+
+      try {
+        this.groups = this.parseGroups(JSON.parse(state.snapshot));
+      } catch (error) {
+        console.error('Failed to undo:', error);
+        return;
+      }
+
+      this.ensureUngrouped();
+      this.refresh();
+    },
+
+    /* ------------------------------------------------------------------ */
     /* Normalization (grades, levels, names)                               */
     /* ------------------------------------------------------------------ */
 
     normalizeGrade(value: unknown): number {
-      if (typeof value === 'number' && value >= 0 && value < this.gradeLabels.length) {
+      if (
+        typeof value === 'number'
+        && Number.isInteger(value)
+        && value >= 0
+        && value < this.gradeLabels.length
+      ) {
         return value;
       }
 
       if (typeof value === 'string') {
         const cleaned = value.trim().toUpperCase();
-        const idx = this.gradeLabels.findIndex((grade) => grade === cleaned);
+        const idx = this.gradeLabels.findIndex((grade: string) => grade === cleaned);
         return idx >= 0 ? idx : 0;
       }
 
@@ -703,7 +1080,7 @@ export default defineComponent({
     },
 
     normalizeLevel(value: unknown): number {
-      if (typeof value === 'number' && value >= 0 && value <= 2) {
+      if (typeof value === 'number' && Number.isInteger(value) && value >= 0 && value <= 2) {
         return value;
       }
 
@@ -747,7 +1124,7 @@ export default defineComponent({
     /* ------------------------------------------------------------------ */
 
     ensureUngrouped() {
-      const idx = this.groups.findIndex((group) => group.type === 'ungrouped');
+      const idx = this.groups.findIndex((group: Group) => group.type === 'ungrouped');
 
       if (idx === -1) {
         this.groups.push(this.createUngrouped());
@@ -762,13 +1139,22 @@ export default defineComponent({
     },
 
     insertGroup(group: Group) {
-      const ungroupedIdx = this.groups.findIndex((g) => g.type === 'ungrouped');
+      const ungroupedIdx = this.groups.findIndex((g: Group) => g.type === 'ungrouped');
 
       if (ungroupedIdx === -1) {
         this.groups.push(group);
       } else {
         this.groups.splice(ungroupedIdx, 0, group);
       }
+    },
+
+    addYear(label: string) {
+      if (!label || this.usedYearLabels.includes(label) || !YEAR_LABELS.includes(label)) {
+        return;
+      }
+
+      this.insertGroup(this.createRegularYear(label));
+      this.refresh();
     },
 
     onAddYearSelect(event: Event) {
@@ -780,12 +1166,7 @@ export default defineComponent({
         target.blur();
       }
 
-      if (!label || this.usedYearLabels.includes(label) || !YEAR_LABELS.includes(label)) {
-        return;
-      }
-
-      this.insertGroup(this.createRegularYear(label));
-      this.refresh();
+      this.addYear(label);
     },
 
     onAddSummerSelect(event: Event) {
@@ -869,8 +1250,11 @@ export default defineComponent({
         return;
       }
 
+      const snapshot = JSON.stringify(this.serializeGroups());
+
       this.groups.splice(idx, 1);
       this.refresh();
+      this.offerUndo(`Removed ${group.label || 'group'}`, snapshot);
     },
 
     /* ------------------------------------------------------------------ */
@@ -885,12 +1269,12 @@ export default defineComponent({
       }
 
       const newCourse = this.createCourse(
-        `Course ${this.realCourses(semester).length + 1}`
+        `Course ${this.realCourses(semester).length + 1}`,
       );
 
       // If this semester has a placeholder (an open slot opposite an
       // unmatched course), the new course fills that slot first.
-      const placeholderIdx = semester.courses.findIndex((c) => c.isPlaceholder);
+      const placeholderIdx = semester.courses.findIndex((c: Course) => c.isPlaceholder);
 
       if (placeholderIdx !== -1) {
         semester.courses.splice(placeholderIdx, 1, newCourse);
@@ -899,6 +1283,20 @@ export default defineComponent({
       }
 
       this.refresh();
+    },
+
+    removePlaceholder(gIdx: number, sIdx: number, cIdx: number) {
+      const placeholder = this.groups[gIdx]?.semesters[sIdx]?.courses[cIdx];
+      const opposite = this.placeholderOpposite(gIdx, sIdx, cIdx);
+
+      if (!placeholder?.isPlaceholder || !opposite || opposite.hideOpenSlot) {
+        return;
+      }
+
+      const snapshot = JSON.stringify(this.serializeGroups());
+      opposite.hideOpenSlot = true;
+      this.refresh();
+      this.offerUndo('Removed open slot', snapshot);
     },
 
     fillPlaceholder(gIdx: number, sIdx: number, cIdx: number) {
@@ -912,10 +1310,23 @@ export default defineComponent({
       semester.courses.splice(
         cIdx,
         1,
-        this.createCourse(`Course ${this.realCourses(semester).length + 1}`)
+        this.createCourse(`Course ${this.realCourses(semester).length + 1}`),
       );
 
       this.refresh();
+    },
+
+    // Fill an open slot by linking to the real course opposite it, turning
+    // that course into a synced full-year pair.
+    addLinkedFromPlaceholder(gIdx: number, sIdx: number, cIdx: number) {
+      const partner = this.placeholderPartner(gIdx, sIdx, cIdx);
+
+      if (!partner) {
+        return;
+      }
+
+      const otherSIdx = sIdx === 0 ? 1 : 0;
+      this.addLinkedClass(gIdx, otherSIdx, partner);
     },
 
     addFullYear(gIdx: number) {
@@ -929,7 +1340,7 @@ export default defineComponent({
       const linkedId = this.createId();
       const count = Math.max(
         this.realCourses(first).length,
-        this.realCourses(second).length
+        this.realCourses(second).length,
       );
       const name = `Course ${count + 1}`;
 
@@ -959,7 +1370,7 @@ export default defineComponent({
       const otherReal = this.realCourses(otherSemester);
       const insertIdx = Math.min(
         Math.max(this.realIndex(group.semesters[sIdx], course), 0),
-        otherReal.length
+        otherReal.length,
       );
 
       otherReal.splice(insertIdx, 0, partner);
@@ -976,6 +1387,16 @@ export default defineComponent({
         return;
       }
 
+      const index = semester.courses.findIndex(
+        (c: Course) => c.instanceId === course.instanceId,
+      );
+
+      if (index === -1) {
+        return;
+      }
+
+      const snapshot = JSON.stringify(this.serializeGroups());
+
       // When a linked course is deleted, the surviving course loses its
       // link entirely (icon and sync checkbox disappear), whether or not
       // syncing was active.
@@ -986,16 +1407,10 @@ export default defineComponent({
         partner.syncEnabled = false;
       }
 
-      const index = semester.courses.findIndex(
-        (c) => c.instanceId === course.instanceId
-      );
-
-      if (index === -1) {
-        return;
-      }
-
       semester.courses.splice(index, 1);
+      delete this.openCourses[course.instanceId];
       this.refresh();
+      this.offerUndo(`Removed ${course.name || 'course'}`, snapshot);
     },
 
     moveCourse(gIdx: number, sIdx: number, course: Course, direction: number) {
@@ -1007,7 +1422,7 @@ export default defineComponent({
       }
 
       const real = this.realCourses(semester);
-      const idx = real.findIndex((c) => c.instanceId === course.instanceId);
+      const idx = real.findIndex((c: Course) => c.instanceId === course.instanceId);
       const targetIdx = idx + direction;
 
       if (idx === -1 || targetIdx < 0 || targetIdx >= real.length) {
@@ -1022,14 +1437,14 @@ export default defineComponent({
         const otherSemester = group.semesters[sIdx === 0 ? 1 : 0];
         const otherReal = this.realCourses(otherSemester);
         const partnerIdx = otherReal.findIndex(
-          (c) => c.linkedId === course.linkedId
+          (c: Course) => c.linkedId === course.linkedId,
         );
         const partnerTarget = partnerIdx + direction;
 
         if (
-          partnerIdx !== -1 &&
-          partnerTarget >= 0 &&
-          partnerTarget < otherReal.length
+          partnerIdx !== -1
+          && partnerTarget >= 0
+          && partnerTarget < otherReal.length
         ) {
           [otherReal[partnerIdx], otherReal[partnerTarget]] = [
             otherReal[partnerTarget],
@@ -1045,17 +1460,17 @@ export default defineComponent({
     moveTargets(gIdx: number, sIdx: number): MoveTarget[] {
       const targets: MoveTarget[] = [];
 
-      this.groups.forEach((group, gi) => {
-        group.semesters.forEach((semester, si) => {
+      this.groups.forEach((group: Group, gi: number) => {
+        group.semesters.forEach((semester: Semester, si: number) => {
           if (gi === gIdx && si === sIdx) {
             return;
           }
 
-          let label = group.label;
+          let { label } = group;
 
           if (group.semesters.length === 2) {
-            label +=
-              group.type === 'summer'
+            label
+              += group.type === 'summer'
                 ? ` · Session ${si + 1}`
                 : ` · Sem ${si + 1}`;
           }
@@ -1084,6 +1499,14 @@ export default defineComponent({
         return;
       }
 
+      const index = semester.courses.findIndex(
+        (c: Course) => c.instanceId === course.instanceId,
+      );
+
+      if (index === -1) {
+        return;
+      }
+
       // Moving a linked course out of its pair breaks the link on both
       // sides, mirroring delete behavior.
       const partner = this.findPartner(group, course);
@@ -1095,19 +1518,12 @@ export default defineComponent({
 
       course.linkedId = null;
       course.syncEnabled = false;
-
-      const index = semester.courses.findIndex(
-        (c) => c.instanceId === course.instanceId
-      );
-
-      if (index === -1) {
-        return;
-      }
+      course.hideOpenSlot = false;
 
       semester.courses.splice(index, 1);
 
       const destSemester = this.groups[destination.gIdx].semesters[destination.sIdx];
-      const placeholderIdx = destSemester.courses.findIndex((c) => c.isPlaceholder);
+      const placeholderIdx = destSemester.courses.findIndex((c: Course) => c.isPlaceholder);
 
       if (placeholderIdx !== -1) {
         destSemester.courses.splice(placeholderIdx, 1, course);
@@ -1127,14 +1543,14 @@ export default defineComponent({
         return;
       }
 
-      this.groups.forEach((group) => {
-        group.semesters.forEach((semester) => {
-          semester.courses.forEach((course) => {
+      this.groups.forEach((group: Group) => {
+        group.semesters.forEach((semester: Semester) => {
+          semester.courses.forEach((course: Course) => {
             if (
-              !course.isPlaceholder &&
-              course.instanceId !== source.instanceId &&
-              course.linkedId === source.linkedId &&
-              course.syncEnabled
+              !course.isPlaceholder
+              && course.instanceId !== source.instanceId
+              && course.linkedId === source.linkedId
+              && course.syncEnabled
             ) {
               course.name = source.name;
               course.level = source.level;
@@ -1204,16 +1620,17 @@ export default defineComponent({
 
     normalizeGroup(group: Group) {
       // Strip stale placeholders everywhere; they're regenerated below.
-      group.semesters.forEach((semester) => {
+      group.semesters.forEach((semester: Semester) => {
         semester.courses = this.realCourses(semester);
       });
 
       // Single-column groups (custom / ungrouped) never carry links.
       if (group.semesters.length !== 2) {
-        group.semesters.forEach((semester) => {
-          semester.courses.forEach((course) => {
+        group.semesters.forEach((semester: Semester) => {
+          semester.courses.forEach((course: Course) => {
             course.linkedId = null;
             course.syncEnabled = false;
+            course.hideOpenSlot = false;
           });
         });
         return;
@@ -1226,13 +1643,13 @@ export default defineComponent({
       // (icon + sync checkbox) disappears too.
       const linkCounts = new Map<string, number>();
 
-      all.forEach((course) => {
+      all.forEach((course: Course) => {
         if (course.linkedId) {
           linkCounts.set(course.linkedId, (linkCounts.get(course.linkedId) ?? 0) + 1);
         }
       });
 
-      all.forEach((course) => {
+      all.forEach((course: Course) => {
         if (course.linkedId && linkCounts.get(course.linkedId) !== 2) {
           course.linkedId = null;
           course.syncEnabled = false;
@@ -1283,7 +1700,6 @@ export default defineComponent({
             i += 1;
           }
         } else if (courseA) {
-          // Trailing courses don't need padding below them.
           resultA.push(courseA);
           i += 1;
         } else if (courseB) {
@@ -1291,6 +1707,27 @@ export default defineComponent({
           j += 1;
         }
       }
+
+      // Pad the shorter column with open slots so both columns have the
+      // same number of rows and the Add-course buttons line up -- even
+      // when only a single slot is needed to balance them.
+      while (resultA.length < resultB.length) {
+        resultA.push(this.createPlaceholder());
+      }
+
+      while (resultB.length < resultA.length) {
+        resultB.push(this.createPlaceholder());
+      }
+
+      // Once both sides contain a course, the old empty slot no longer
+      // exists. A later deletion should create a fresh, visible slot.
+      resultA.forEach((courseA: Course, index: number) => {
+        const courseB = resultB[index];
+        if (!courseA.isPlaceholder && courseB && !courseB.isPlaceholder) {
+          courseA.hideOpenSlot = false;
+          courseB.hideOpenSlot = false;
+        }
+      });
 
       semA.courses = resultA;
       semB.courses = resultB;
@@ -1301,10 +1738,11 @@ export default defineComponent({
     /* ------------------------------------------------------------------ */
 
     refresh() {
-      this.groups.forEach((group) => this.normalizeGroup(group));
+      this.groups.forEach((group: Group) => this.normalizeGroup(group));
       this.ensureUngrouped();
       this.calculateAll();
       this.saveData();
+      this.$nextTick(() => this.watchSlotSizes());
     },
 
     calculateAll() {
@@ -1312,17 +1750,17 @@ export default defineComponent({
       let totalWPoints = 0;
       let totalUnits = 0;
 
-      this.groups.forEach((group) => {
+      this.groups.forEach((group: Group) => {
         let groupUWPoints = 0;
         let groupWPoints = 0;
         let groupUnits = 0;
 
-        group.semesters.forEach((semester) => {
+        group.semesters.forEach((semester: Semester) => {
           let semUWPoints = 0;
           let semWPoints = 0;
           let semUnits = 0;
 
-          semester.courses.forEach((course) => {
+          semester.courses.forEach((course: Course) => {
             if (course.isPlaceholder) {
               return;
             }
@@ -1330,6 +1768,19 @@ export default defineComponent({
             course.name = this.sanitizeText(course.name);
 
             const grade = this.gradeLabels[this.normalizeGrade(course.grade)] ?? 'A';
+            const normalizedLevel = this.normalizeLevel(course.level);
+
+            course.grade = this.normalizeGrade(course.grade);
+            course.level = normalizedLevel;
+            course.finalGrade = grade;
+
+            // Pass/Fail classes appear in the planner but are left out
+            // of every GPA and credit total.
+            if (grade === PASS_GRADE) {
+              course.unweightedGPA = 0;
+              course.weightedGPA = 0;
+              return;
+            }
 
             let base = 0;
 
@@ -1346,7 +1797,6 @@ export default defineComponent({
             }
 
             let bump = 0;
-            const normalizedLevel = this.normalizeLevel(course.level);
 
             if (normalizedLevel === 1) {
               bump = 0.5;
@@ -1354,9 +1804,6 @@ export default defineComponent({
               bump = 1.0;
             }
 
-            course.grade = this.normalizeGrade(course.grade);
-            course.level = normalizedLevel;
-            course.finalGrade = grade;
             course.unweightedGPA = grade === 'F' ? 0 : base;
             course.weightedGPA = grade === 'F' ? 0 : base + bump;
 
@@ -1365,31 +1812,30 @@ export default defineComponent({
             semUnits += course.weight;
           });
 
-          // Per-semester GPA (shown under each semester in school years).
-          semester.stats =
-            semUnits > 0
-              ? {
-                  units: semUnits,
-                  uw: semUWPoints / semUnits,
-                  w: semWPoints / semUnits,
-                }
-              : null;
+          // Per-semester GPA (shown above the Add-course buttons in every
+          // group type).
+          semester.stats = semUnits > 0
+            ? {
+              units: semUnits,
+              uw: semUWPoints / semUnits,
+              w: semWPoints / semUnits,
+            }
+            : null;
 
           groupUWPoints += semUWPoints;
           groupWPoints += semWPoints;
           groupUnits += semUnits;
         });
 
-        // Group-level GPA: both summer sessions added together, and the
-        // single column of custom / ungrouped sections.
-        group.stats =
-          groupUnits > 0
-            ? {
-                units: groupUnits,
-                uw: groupUWPoints / groupUnits,
-                w: groupWPoints / groupUnits,
-              }
-            : null;
+        // Group-level GPA: both semesters (or summer sessions) added
+        // together, shown in the header of two-column groups.
+        group.stats = groupUnits > 0
+          ? {
+            units: groupUnits,
+            uw: groupUWPoints / groupUnits,
+            w: groupWPoints / groupUnits,
+          }
+          : null;
 
         totalUWPoints += groupUWPoints;
         totalWPoints += groupWPoints;
@@ -1404,477 +1850,1205 @@ export default defineComponent({
 });
 </script>
 
-<style lang="sass" scoped>
-@import '@/styles/style.sass'
-
-.top-card
-  max-width: 985px
-  margin: 0 auto 18px auto !important
-
-.top-card-inner
-  text-align: center
-
-.gpa-title-row
-  display: flex
-  justify-content: center
-  gap: 25px
-
-.gpa-col
-  min-width: 120px
-
-.weight-title
-  text-align: center
-  margin-bottom: 0
-
-.overall-gpa
-  margin: 4px
-  font-size: 3.5em
-  font-weight: 500
-
-.total-credits-row
-  display: flex
-  justify-content: center
-  align-items: baseline
-  gap: 8px
-  margin-top: 2px
-
-.total-credits-label
-  font-size: 1em
-  font-weight: 600
-  color: var(--subtext)
-  text-transform: uppercase
-  letter-spacing: 0.05em
-
-.total-credits-value
-  font-size: 1.5em
-  font-weight: 600
-  color: var(--accent)
-
-.action-row
-  display: flex
-  justify-content: center
-  align-items: center
-  gap: 10px
-  flex-wrap: wrap
-  margin-top: 10px
-
-.add-select
-  border: 2px solid var(--accent)
-  border-radius: 24px
-  background: white
-  color: var(--accent)
-  font-weight: 700
-  font-size: 0.95em
-  padding: 8px 14px
-  cursor: pointer
-  outline: none
-
-  &:hover
-    opacity: 0.9
-
-  &:disabled
-    opacity: 0.45
-    cursor: not-allowed
-
-.custom-group-input
-  border: 2px solid var(--accent)
-  border-radius: 24px
-  padding: 8px 14px
-  font-size: 0.95em
-  outline: none
-  min-width: 220px
-
-.edit-note
-  padding: 12px 32px
-  font-size: 0.98em
-  color: var(--subtext)
-
-.planner-container
-  width: 100%
-  max-width: 1050px
-  margin: 0 auto 40px auto
-  display: flex
-  flex-direction: column
-  gap: 22px
-
-.animated-fade-up
-  animation: fadeUp 0.45s ease backwards
-
-@keyframes fadeUp
-  from
-    opacity: 0
-    transform: translateY(20px)
-
-  to
-    opacity: 1
-    transform: translateY(0)
-
-.year-block
-  width: 100%
-  border: 2px solid var(--accent)
-  border-radius: 12px
-  background: white
-  overflow: hidden
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05)
-
-.year-banner
-  width: 100%
-  background-color: var(--accent)
-  color: white
-  text-align: center
-  font-size: 1.75em
-  font-weight: 700
-  padding: 12px 18px
-  position: relative
-  display: flex
-  justify-content: center
-  align-items: center
-
-.banner-input
-  background: transparent
-  border: none
-  border-bottom: 2px dashed rgba(255, 255, 255, 0.6)
-  color: white
-  font-size: 1em
-  font-weight: 700
-  text-align: center
-  outline: none
-  max-width: 60%
-
-  &::placeholder
-    color: rgba(255, 255, 255, 0.85)
-
-.year-close
-  position: absolute
-  right: 39px
-  top: 50%
-  transform: translateY(-50%)
-  width: 42px
-  height: 42px
-  display: flex
-  align-items: center
-  justify-content: center
-  cursor: pointer
-  color: var(--background)
-  font-size: 1.45rem
-  line-height: 1
-  z-index: 20
-
-  &:hover
-    opacity: 0.8
-
-.summer-theme
-  border-color: #f39c12 !important
-
-.summer-theme .year-banner
-  background-color: #f39c12 !important
-
-.custom-theme
-  border-color: #6c5ce7 !important
-
-.custom-theme .year-banner
-  background-color: #6c5ce7 !important
-
-.ungrouped-theme
-  border-color: #7f8c8d !important
-
-.ungrouped-theme .year-banner
-  background-color: #7f8c8d !important
-
-.semester-grid
-  width: 100%
-  display: grid
-  grid-template-columns: 1fr 1fr
-  align-items: start
-
-  +mobile
-    grid-template-columns: 1fr
-
-.single-col
-  grid-template-columns: 1fr !important
-
-.sem-column
-  padding: 16px
-  border-right: 1px solid #e7e7e7
-  min-width: 0
-
-  &:last-child
-    border-right: none
-
-.sem-header
-  text-align: center
-  font-size: 1.35em
-  font-weight: 700
-  color: var(--accent)
-  margin-bottom: 14px
-
-.course-card
-  display: block
-  width: 100%
-  overflow: visible
-  margin: 0 0 14px 0
-  padding-bottom: 12px
-  background-color: white
-  border-radius: 10px
-
-.placeholder-card
-  min-height: 380px
-  border: 2px dashed #c9c9c9
-  border-radius: 10px
-  margin: 0 0 14px 0
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: center
-  gap: 12px
-  color: var(--subtext)
-
-  +mobile
-    min-height: 120px
-
-.placeholder-text
-  font-size: 0.9em
-  font-weight: 600
-  text-transform: uppercase
-  letter-spacing: 0.08em
-  opacity: 0.7
-
-.course-header-row
-  display: flex
-  background-color: var(--accent)
-  color: white
-  border-top-right-radius: 10px
-  border-top-left-radius: 10px
-  position: relative
-  align-items: center
-
-.linked-icon
-  position: absolute
-  left: 10px
-  top: 50%
-  transform: translateY(-50%)
-  font-size: 0.85rem
-  z-index: 2
-  opacity: 0.9
-
-.unsynced
-  opacity: 0.6
-
-.name-input
-  width: 100%
-  outline: none
-  border: none
-  text-align: center
-  font-size: 1.45em
-  flex: 1
-  margin: 0 36px 0 36px
-  padding: 8px 0 6px 0
-  background-color: transparent
-  color: white
-
-.name-input::placeholder
-  color: rgba(255, 255, 255, 0.85)
-
-.close
-  position: absolute
-  right: 10px
-  top: 50%
-  transform: translateY(-50%)
-  width: 24px
-  height: 24px
-  display: flex
-  align-items: center
-  justify-content: center
-  cursor: pointer
-  color: white
-  line-height: 1
-
-.sync-row
-  padding: 8px 12px 0 12px
-  font-size: 0.85em
-  color: var(--subtext)
-  display: flex
-  justify-content: center
-
-.course-settings-row
-  margin: 0 5px
-  display: flex
-  gap: 8px
-  padding: 12px 4px 0 4px
-
-.grade-label
-  padding: 10px 0 4px 0
-  margin: 0 auto
-  text-align: center
-  font-size: 3em
-  font-weight: 600
-  color: var(--text)
-
-.inner-gpa-row
-  margin-top: 4px
-  margin-bottom: 10px
-
-.final-gpa
-  color: var(--accent)
-  font-size: 2em
-  text-align: center
-  font-weight: 600
-
-.move-row
-  display: flex
-  align-items: stretch
-  gap: 8px
-  padding: 12px 10px 2px 10px
-
-.icon-btn
-  width: 42px
-  border: 1px solid var(--accent)
-  border-radius: 16px
-  background: white
-  color: var(--accent)
-  padding: 6px 0
-  font-size: 0.85em
-  cursor: pointer
-
-  &:hover
-    opacity: 0.9
-
-  &:disabled
-    opacity: 0.45
-    cursor: not-allowed
-
-.group-select
-  flex: 1
-  min-width: 0
-  border: 1px solid var(--accent)
-  border-radius: 16px
-  background: white
-  color: var(--accent)
-  padding: 6px 8px
-  font-size: 0.8em
-  font-weight: 700
-  cursor: pointer
-  outline: none
-
-  &:hover
-    opacity: 0.9
-
-.link-row
-  display: flex
-  padding: 8px 10px 2px 10px
-
-.link-btn
-  display: flex
-  align-items: center
-  justify-content: center
-  gap: 6px
-
-.mini-btn
-  flex: 1
-  border: 1px solid var(--accent)
-  border-radius: 16px
-  background: white
-  color: var(--accent)
-  padding: 6px 8px
-  font-size: 0.8em
-  font-weight: 700
-  cursor: pointer
-
-  &:hover
-    opacity: 0.9
-
-  &:disabled
-    opacity: 0.45
-    cursor: not-allowed
-
-.footer-actions
-  display: flex
-  gap: 12px
-  margin-top: 10px
-
-.sem-gpa-row
-  box-sizing: border-box
-  margin: 2px 0 12px 0
-  padding: 8px 12px 9px 12px
-  border: 1px solid #e7e7e7
-  border-radius: 10px
-  background: #fafafa
-  text-align: center
-  font-size: 0.98em
-  line-height: 1.45
-  color: var(--text)
-  overflow-wrap: break-word
-
-.sem-gpa-label
-  display: block
-  margin-bottom: 3px
-  font-weight: 700
-  color: var(--accent)
-  text-transform: uppercase
-  letter-spacing: 0.04em
-  font-size: 0.82em
-
-.gpa-stat
-  display: inline-block
-  white-space: nowrap
-  margin: 0 7px
-
-.sem-gpa-stats
-  display: block
-  text-align: center
-
-.sem-gpa-stats .gpa-stat
-  margin: 0 6px
-
-.group-gpa-bar
-  box-sizing: border-box
-  border-top: 1px solid #e7e7e7
-  padding: 10px 16px 12px 16px
-  background: #fafafa
-  text-align: center
-  font-size: 1.02em
-  line-height: 1.5
-  color: var(--text)
-  overflow-wrap: break-word
-
-.group-gpa-bar .sem-gpa-label
-  display: inline-block
-  margin: 0 10px 0 0
-
-.summer-theme .sem-gpa-label
-  color: #f39c12
-
-.custom-theme .sem-gpa-label
-  color: #6c5ce7
-
-.ungrouped-theme .sem-gpa-label
-  color: #7f8c8d
-
-.sketch-btn
-  flex: 1
-  border: 2px solid var(--accent)
-  border-radius: 24px
-  background: white
-  color: var(--accent)
-  padding: 8px 12px
-  font-weight: 700
-  cursor: pointer
-  transition: 0.18s
-
-  &:hover
-    opacity: 0.9
-    transform: scale(1.02)
-
-  &:disabled
-    opacity: 0.45
-    cursor: not-allowed
-    transform: none
-
-:deep(.course-card .card)
-  width: 100% !important
-  overflow: visible !important
-
-:deep(.course-card .card-wrapper)
-  width: 100% !important
-  overflow: visible !important
+<style scoped>
+/*
+  Every color here comes from the site's theme variables, so the planner
+  follows whatever theme is active (including dark ones). The two derived
+  tones below are just the theme's text color at low opacity.
+*/
+.gpa-page {
+  --line: rgba(127, 127, 127, 0.24);
+  --soft: rgba(127, 127, 127, 0.1);
+  --on-accent: var(--iconCardsRegular, #fff);
+  --muted: var(--tertiary);
+  padding: 0 12px 96px;
+}
+
+@supports (color: color-mix(in srgb, red 10%, blue)) {
+  .gpa-page {
+    --line: color-mix(in srgb, var(--primary) 14%, transparent);
+    --soft: color-mix(in srgb, var(--primary) 6%, transparent);
+  }
+}
+
+.gpa-page button,
+.gpa-page input,
+.gpa-page select {
+  font-family: inherit;
+}
+
+.gpa-page button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gpa-page button:focus-visible,
+.gpa-page select:focus-visible,
+.gpa-page input[type='checkbox']:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Summary                                                                 */
+/* ---------------------------------------------------------------------- */
+
+.sentinel {
+  height: 1px;
+}
+
+.summary {
+  position: sticky;
+  top: 8px;
+  z-index: 40;
+  box-sizing: border-box;
+  max-width: 985px;
+  margin: 0 auto 14px;
+  padding: 18px 12px 16px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background: var(--secondaryBackground);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 6px 18px -10px rgba(0, 0, 0, 0.25);
+  transition: padding 0.2s ease, border-radius 0.2s ease, max-width 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 0 8px;
+}
+
+.stat + .stat {
+  border-left: 1px solid var(--line);
+}
+
+.stat-label {
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.stat-label b {
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.stat-value {
+  font-size: 3.1em;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+  transition: font-size 0.2s ease;
+}
+
+.summary.compact {
+  max-width: 560px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 12px 28px -12px rgba(0, 0, 0, 0.45);
+}
+
+.summary.compact .stat {
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+}
+
+.summary.compact .stat-label {
+  font-size: 0.68em;
+}
+
+.summary.compact .stat-value {
+  font-size: 1.35em;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Toolbar                                                                 */
+/* ---------------------------------------------------------------------- */
+
+.toolbar {
+  max-width: 985px;
+  margin: 0 auto 18px;
+}
+
+.toolbar-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.select-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+}
+
+.select-chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 0.7em;
+  color: var(--accent);
+}
+
+.add-select,
+.group-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: border-box;
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+  background: var(--secondaryBackground);
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+.add-select {
+  height: 40px;
+  font-size: 0.92em;
+  padding: 0 36px 0 16px;
+}
+
+.add-select:hover:not(:disabled),
+.group-select:hover {
+  background: var(--soft);
+}
+
+.add-select:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.add-select option,
+.group-select option {
+  color: var(--primary);
+  background: var(--secondaryBackground);
+  font-weight: 400;
+}
+
+.custom-group {
+  display: inline-flex;
+  align-items: stretch;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+  background: var(--secondaryBackground);
+  overflow: hidden;
+}
+
+.custom-group:focus-within {
+  box-shadow: 0 0 0 3px var(--soft);
+}
+
+.custom-group-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--primary);
+  font-size: 0.92em;
+  padding: 0 6px 0 16px;
+  min-width: 0;
+  width: 180px;
+}
+
+.custom-group-input::placeholder {
+  color: var(--muted);
+  opacity: 0.75;
+}
+
+.custom-group-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 0.88em;
+  font-weight: 700;
+  padding: 0 16px 0 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+}
+
+.custom-group-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.edit-note {
+  max-width: 760px;
+  margin: 12px auto 0;
+  padding: 0 32px;
+  text-align: center;
+  font-size: 0.85em;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Empty state                                                             */
+/* ---------------------------------------------------------------------- */
+
+.empty-state {
+  max-width: 985px;
+  box-sizing: border-box;
+  margin: 0 auto 22px;
+  padding: 26px 16px;
+  text-align: center;
+  border: 1.5px dashed var(--line);
+  border-radius: 18px;
+}
+
+.empty-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.empty-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.empty-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 38px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 0.9em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.empty-chip:hover {
+  transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Groups                                                                  */
+/* ---------------------------------------------------------------------- */
+
+.planner {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.animated-fade-up {
+  animation: gpaFadeUp 0.4s ease backwards;
+}
+
+@keyframes gpaFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.group {
+  --group-color: var(--accent);
+  box-sizing: border-box;
+  background: var(--secondaryBackground);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 22px -16px rgba(0, 0, 0, 0.3);
+  /* the colored strip along the top marks the group type */
+  border-top: 4px solid var(--group-color);
+  min-width: 0;
+}
+
+.group.type-summer {
+  --group-color: #f39c12;
+}
+
+.group.type-custom {
+  --group-color: #6c5ce7;
+}
+
+.group.type-ungrouped {
+  --group-color: #7f8c8d;
+}
+
+.group-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px 10px 18px;
+  min-height: 34px;
+}
+
+.group-dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--group-color);
+}
+
+.group-name {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.group-name-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.group-name-input {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  border: none;
+  border-bottom: 1.5px dashed var(--line);
+  outline: none;
+  background: transparent;
+  color: var(--primary);
+  font-size: 1.3em;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 1px 2px;
+  border-radius: 0;
+}
+
+.group-name-input:focus {
+  border-bottom-color: var(--group-color);
+  border-bottom-style: solid;
+}
+
+.group-stats {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 2px 12px;
+  font-size: 0.86em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.group-stats-label {
+  font-size: 0.82em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--group-color);
+}
+
+.gpa-stat {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.gpa-stat b {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.group-close {
+  flex: none;
+}
+
+/* push the close button right when there is no stats block before it */
+.group-head > .group-name + .group-close,
+.group-head > .group-name-wrap + .group-close {
+  margin-left: auto;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Semester grid                                                           */
+/* ---------------------------------------------------------------------- */
+
+.sem-grid {
+  --course-card-min-height: 84px;
+  display: grid;
+  align-content: start;
+  grid-auto-flow: column;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: repeat(var(--rows, 3), auto);
+  column-gap: 18px;
+  row-gap: 8px;
+  padding: 2px 14px 14px;
+}
+
+.sem-grid.single-col {
+  grid-auto-flow: row;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: none;
+}
+
+.sem-head {
+  align-self: end;
+  padding: 2px 4px 2px;
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Course card                                                             */
+/* ---------------------------------------------------------------------- */
+
+.course {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: var(--course-card-min-height, 84px);
+  align-self: start;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  grid-template-areas:
+    'name points more close'
+    'controls controls controls controls'
+    'drawer drawer drawer drawer';
+  align-items: center;
+  /* when the card beside it is taller, keep this one's rows packed at the top */
+  align-content: start;
+  column-gap: 4px;
+  row-gap: 8px;
+  padding: 9px 8px 10px 12px;
+  background: var(--background);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.course:hover,
+.course:focus-within,
+.course.open {
+  border-color: var(--group-color);
+}
+
+.course:focus-within {
+  box-shadow: 0 0 0 3px var(--soft);
+}
+
+.name-wrap {
+  grid-area: name;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.linked-icon {
+  flex: none;
+  font-size: 0.78em;
+  color: var(--accent);
+}
+
+.linked-icon.unsynced {
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.name-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1.5px solid transparent;
+  outline: none;
+  background: transparent;
+  color: var(--primary);
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.3;
+  padding: 2px 0;
+  text-overflow: ellipsis;
+}
+
+.name-input::placeholder {
+  color: var(--muted);
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.name-input:hover {
+  border-bottom-color: var(--line);
+}
+
+.name-input:focus {
+  border-bottom-color: var(--accent);
+}
+
+.edit-pencil {
+  flex: none;
+  font-size: 0.68em;
+  color: var(--muted);
+  opacity: 0.45;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.edit-pencil:hover {
+  opacity: 0.95;
+}
+
+.points {
+  grid-area: points;
+  padding: 0 4px 0 6px;
+  font-size: 0.78em;
+  color: var(--muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.points b {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.points-sep {
+  margin: 0 4px 0 5px;
+  opacity: 0.6;
+}
+
+.icon-btn {
+  flex: none;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+
+.icon-btn:hover:not(:disabled) {
+  background: var(--soft);
+  color: var(--primary);
+}
+
+.icon-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.icon-btn.outlined {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 0.75em;
+}
+
+.icon-btn.outlined:hover:not(:disabled) {
+  color: var(--accent);
+}
+
+.more-btn {
+  grid-area: more;
+}
+
+.course.open .more-btn {
+  background: var(--soft);
+  color: var(--primary);
+}
+
+.close {
+  grid-area: close;
+}
+
+.close:hover:not(:disabled),
+.slot-close:hover:not(:disabled),
+.group-close:hover:not(:disabled) {
+  background: rgba(214, 48, 49, 0.12);
+  color: #d63031;
+}
+
+.controls {
+  grid-area: controls;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+}
+
+/* segmented controls: level and grade */
+.seg {
+  display: inline-flex;
+  padding: 2px;
+  border-radius: 10px;
+  background: var(--soft);
+}
+
+.seg-btn {
+  box-sizing: border-box;
+  height: 28px;
+  padding: 0 9px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--secondary);
+  font-size: 0.78em;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.seg.grades .seg-btn {
+  width: 29px;
+  padding: 0;
+  font-size: 0.85em;
+  font-weight: 700;
+}
+
+.seg-btn:hover:not(.on) {
+  background: var(--soft);
+}
+
+.seg-btn.on {
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+}
+
+.sci-toggle {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.78em;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+.sci-toggle:hover:not(.on) {
+  background: var(--soft);
+}
+
+.sci-toggle.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+/* the "more options" drawer */
+.more {
+  grid-area: drawer;
+  min-width: 0;
+  padding-top: 9px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sync-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.82em;
+  color: var(--secondary);
+  cursor: pointer;
+  width: fit-content;
+}
+
+.sync-row input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.more-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.group-select-wrap {
+  flex: 1 1 140px;
+  min-width: 0;
+}
+
+.group-select {
+  width: 100%;
+  min-width: 0;
+  height: 30px;
+  border-width: 1px;
+  padding: 0 30px 0 12px;
+  font-size: 0.78em;
+}
+
+.pill-btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 4px 13px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--secondaryBackground);
+  color: var(--accent);
+  font-size: 0.78em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.pill-btn:hover {
+  background: var(--soft);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Open slot (keeps full-year pairs on the same row)                       */
+/* ---------------------------------------------------------------------- */
+
+.slot {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: var(--slot-card-height, var(--course-card-min-height, 84px));
+  /* A placeholder must not stretch when the opposite course expands. */
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 9px 8px 10px 12px;
+  border: 1.5px dashed var(--line);
+  border-radius: 13px;
+  color: var(--muted);
+}
+
+.slot-head {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  gap: 8px;
+  min-height: 30px;
+}
+
+.slot-spacer {
+  /* Keep the grid cell for linked-pair alignment, without a visible box. */
+  min-width: 0;
+  min-height: 0;
+  align-self: start;
+}
+
+.slot-text {
+  flex: 1;
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.slot-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.slot .pill-btn {
+  max-width: 100%;
+  background: transparent;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Semester summary + add buttons                                          */
+/* ---------------------------------------------------------------------- */
+
+.sem-gpa-row {
+  box-sizing: border-box;
+  min-width: 0;
+  margin-top: 2px;
+  padding: 8px 12px;
+  border-radius: 11px;
+  background: var(--soft);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2px 12px;
+  font-size: 0.86em;
+  line-height: 1.45;
+  color: var(--secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.sem-gpa-row.empty {
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+.sem-gpa-label {
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--group-color);
+  white-space: nowrap;
+}
+
+.sem-gpa-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 2px 12px;
+}
+
+.footer-actions {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.add-btn {
+  flex: 1 1 130px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1.5px dashed var(--line);
+  border-radius: 11px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.84em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.add-btn:hover {
+  background: var(--soft);
+  border-color: var(--accent);
+  border-style: solid;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Undo toast                                                              */
+/* ---------------------------------------------------------------------- */
+
+.undo-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  z-index: 80;
+  box-sizing: border-box;
+  max-width: calc(100vw - 24px);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 9px 9px 9px 18px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--background);
+  font-size: 0.9em;
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.5);
+}
+
+.undo-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.undo-btn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 999px;
+  background: var(--background);
+  color: var(--primary);
+  font-size: 0.92em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.toast-enter-active,
+.toast-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.toast-enter-from,
+.toast-leave-to {
+  opacity: 0;
+  transform: translate(-50%, 12px);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Phones                                                                  */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 767.9px) {
+  .gpa-page {
+    padding: 0 8px 96px;
+  }
+
+  /* keep the page title on one line instead of two 120px-tall ones */
+  .gpa-page :deep(.plain-header .title) {
+    display: block;
+    margin: 0;
+    padding: 22px 52px 12px;
+    font-size: 2.2em;
+    line-height: 1.2;
+  }
+
+  .summary {
+    padding: 14px 6px 12px;
+  }
+
+  .stat-value {
+    font-size: 2.3em;
+  }
+
+  .stat-label {
+    font-size: 0.7em;
+  }
+
+  .summary.compact {
+    padding: 7px 6px;
+  }
+
+  .summary.compact .stat {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .summary.compact .stat-label {
+    font-size: 0.6em;
+  }
+
+  .summary.compact .stat-value {
+    font-size: 1.15em;
+  }
+
+  .toolbar-row .select-wrap {
+    flex: 1 1 150px;
+  }
+
+  .add-select {
+    width: 100%;
+  }
+
+  .custom-group {
+    flex: 1 1 100%;
+  }
+
+  .custom-group-input {
+    flex: 1 1 auto;
+    width: auto;
+  }
+
+  .edit-note {
+    padding: 0 16px;
+  }
+
+  .group-head {
+    flex-wrap: wrap;
+    padding: 12px 8px 8px 14px;
+  }
+
+  .group-name,
+  .group-name-wrap {
+    flex: 1 1 0;
+  }
+
+  /* stats drop to their own line under the title */
+  .group-stats {
+    order: 3;
+    flex: 1 1 100%;
+    margin-left: 20px;
+    justify-content: flex-start;
+  }
+
+  .group-head > .group-close {
+    margin-left: auto;
+  }
+
+  /* one column: Semester 1 in full, then Semester 2 */
+  .sem-grid,
+  .sem-grid.single-col {
+    grid-auto-flow: row;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    padding: 2px 8px 10px;
+  }
+
+  .slot,
+  .slot-spacer {
+    display: none;
+  }
+
+  .sem-head {
+    margin-top: 6px;
+  }
+
+  .sem-gpa-row.empty {
+    display: none;
+  }
+
+  .footer-actions {
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 519.9px) {
+  /*
+    On phones the card becomes a wrapping row: name + buttons, then the
+    level picker with the grade points beside it, then grades + 1.5x.
+  */
+  .course {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 6px;
+    padding: 9px 6px 10px 10px;
+  }
+
+  .name-wrap {
+    order: 1;
+    flex: 1 1 calc(100% - 80px);
+  }
+
+  .more-btn {
+    order: 2;
+  }
+
+  .close {
+    order: 3;
+  }
+
+  .controls {
+    display: contents;
+  }
+
+  .controls > .seg:first-child {
+    order: 4;
+  }
+
+  .controls > .seg:first-child .seg-btn {
+    padding: 0 7px;
+  }
+
+  .points {
+    order: 5;
+    margin-left: auto;
+    padding: 0 2px 0 0;
+    font-size: 0.74em;
+  }
+
+  .points-sep {
+    margin: 0 2px 0 3px;
+  }
+
+  .controls > .seg.grades,
+  .controls > .sci-toggle {
+    order: 6;
+  }
+
+  .more {
+    order: 7;
+    flex: 1 1 100%;
+  }
+
+  .add-select {
+    font-size: 0.85em;
+    padding: 0 30px 0 13px;
+  }
+
+  .select-chevron {
+    right: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-fade-up {
+    animation: none;
+  }
+
+  .summary,
+  .stat-value {
+    transition: none;
+  }
+}
 </style>
