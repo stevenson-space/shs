@@ -1,159 +1,78 @@
 <template>
-  <div :class="{ 'no-overflow': fullScreenMode }">
+  <!-- the old home page, for anyone who switched back to it -->
+  <classic-home v-if="homeStyle === 'classic'" />
+
+  <!-- .hero-left turns on the side panel layout (see side-hero in style.sass) -->
+  <div v-else :class="{ 'hero-left': heroPosition === 'left' }">
+  <div class="home" :class="{ 'no-overflow': fullScreenMode }">
     <schedule-header
+      class="hero"
       :full-screen-mode="fullScreenMode"
       @toggle-fullscreen="fullScreenMode = !fullScreenMode"
     />
+
+    <main class="home-main">
+      <home-notices />
+      <widget-grid @open-themes="themeEditorOpen = true">
+        <template #foot>
+          <button class="old-version" type="button" @click="switchToClassic">
+            <History :size="15" :stroke-width="2.4" aria-hidden="true" />
+            Switch to the old version
+          </button>
+        </template>
+      </widget-grid>
+    </main>
+
     <theme-editor :open="themeEditorOpen" @close="themeEditorOpen = false" />
-
-    <card-container class="card-container">
-        <end-of-year-card />
-        <countdown-card
-          untilDate="May 23, 2025"
-          message="🌴 Summer Countdown 🐬"
-        />
-        <new-feature-card @open-theme-editor="themeEditorOpen = true" />
-        <new-theme-card />
-        <contribute-card />
-        <april-fools-card />
-        <shs-hacks-card/>
-        <holiday-card />
-        <schedule-card max-height="270px"/>
-        <weather-card />
-        <pwc-card/>
-        <lunch-card />
-        <upcoming-events-card />
-
-        <icon-text-card :icon="icons.faBell"
-                        text="Bell Schedules"
-                        link="bellschedules"
-                        :invert="false" />
-
-        <icon-text-card :icon="icons.faLink" text="Links" link="links" :invert="true" />
-
-        <icon-text-card :icon="icons.faCalendarDays" text="Calendar" link="calendar" :invert="true" />
-        <icon-text-card :icon="icons.faQrcode" text="QR Codes" link="qr" />
-
-
-        <icon-text-card :icon="icons.faCalculator"
-                        text="GPA Calculator"
-                        link="gpaCalculator"
-                        :link-props="{ type: 'a' }"
-                        :invert="true" />
-
-        <icon-text-card :icon="icons.faDroplet" text="Switch Theme" @click="themeEditorOpen = !themeEditorOpen" />
-
-        <icon-text-card
-          v-if="!isStandalone"
-          :icon="icons.faDownload"
-          text="Install"
-          link="install"
-        />
-
-        <icon-text-card :icon="icons.faHourglass" text="Timer" link="tools" :invert="true" />
-
-        <icon-text-card :icon="icons.faRadio" text="Jukebox" link="jukebox" />
-
-        <!-- Documents card hidden after I removed all the documents that have copyright issues. If we ever want to bring this feature back, everything must be properly licensed. -->
-        <!-- <icon-text-card :icon="icons.faFileLines" text="Documents" link="documents" /> -->
-
-        <icon-text-card :icon="icons.faGear" text="Settings" link="settings" :invert="true" />
-    </card-container>
+  </div>
   </div>
 </template>
 
 <script>
-import {
-  faBell,
-  faLink,
-  faFileLines,
-  faCalendarDays,
-  faDroplet,
-  faCalculator,
-  faGear,
-  faHourglass,
-  faQrcode,
-  faRadio,
-  faDownload,
-} from "@fortawesome/free-solid-svg-icons";
-import { mapActions } from "pinia";
-import CardContainer from "@/components/CardContainer.vue";
-import UpcomingEventsCard from "@/components/cards/UpcomingEventsCard.vue";
-import IconTextCard from "@/components/cards/IconTextCard.vue";
-import WeatherCard from "@/components/cards/WeatherCard.vue";
-import PwcCard from "@/components/cards/PwcCard.vue";
-import ScheduleCard from "@/components/cards/ScheduleCard.vue";
-import HolidayCard from "@/components/cards/HolidayCard.vue";
-import ContributeCard from "@/components/cards/ContributeCard.vue";
-import LunchCard from "@/components/cards/LunchCard.vue";
-import NewThemeCard from "@/components/cards/NewThemeCard.vue";
-import ShsHacksCard from '@/components/cards/ShsHacksCard.vue';
-import AprilFoolsCard from '@/components/cards/AprilFoolsCard.vue';
-import NewFeatureCard from "@/components/cards/NewFeatureCard.vue";
-import EndOfYearCard from "@/components/cards/EndOfYearCard.vue";
-import CountdownCard from "@/components/cards/CountdownCard.vue";
-import useClockStore from "@/stores/clock";
-import ScheduleHeader from "./Header.vue";
-import ThemeEditor from "@/views/Theme/Theme.vue";
+import { mapActions, mapState } from 'pinia';
+import { History } from 'lucide-vue-next';
+import '@/styles/home.css';
+import useClockStore from '@/stores/clock';
+import useUserSettingsStore from '@/stores/user-settings';
+import HomeNotices from '@/components/home/HomeNotices.vue';
+import WidgetGrid from '@/components/home/WidgetGrid.vue';
+import ThemeEditor from '@/views/Theme/Theme.vue';
+import ScheduleHeader from './Header.vue';
+import ClassicHome from './ClassicHome.vue';
 
 export default {
   components: {
+    ClassicHome,
+    History,
     ScheduleHeader,
-    CardContainer,
-    UpcomingEventsCard,
-    LunchCard,
-    IconTextCard,
-    ScheduleCard,
-    WeatherCard,
-    PwcCard,
-    HolidayCard,
-    ContributeCard,
-    NewThemeCard,
-    ShsHacksCard,
-    AprilFoolsCard,
-    NewFeatureCard,
-    EndOfYearCard,
-    CountdownCard,
     ThemeEditor,
+    HomeNotices,
+    WidgetGrid,
   },
   data() {
     return {
-      icons: {
-        faBell,
-        faLink,
-        faFileLines,
-        faCalendarDays,
-        faDroplet,
-        faCalculator,
-        faGear,
-        faHourglass,
-        faQrcode,
-        faRadio,
-        faDownload,
-      },
       fullScreenMode: false,
       themeEditorOpen: false,
-      isStandalone: false,
     };
   },
+  computed: {
+    ...mapState(useUserSettingsStore, ['heroPosition', 'homeStyle']),
+  },
   methods: {
-    ...mapActions(useClockStore, ["startClock"]),
+    ...mapActions(useClockStore, ['startClock']),
+    ...mapActions(useUserSettingsStore, ['setHomeStyle']),
+    switchToClassic() {
+      this.setHomeStyle('classic');
+      window.scrollTo(0, 0);
+    },
   },
   created() {
     // Sometimes the interval used in Header.vue stops when the tab leaves focus
     // so updating the date when focus returns is necessary
-    window.addEventListener("focus", () => {
-      this.startClock();
-    });
-    // check if the app is launched as an installed PWA (standalone window) so we can hide the Install card
-    const mql = window.matchMedia('(display-mode: standalone)');
-    this.isStandalone = mql.matches || navigator.standalone === true;
-    const standaloneHandler = (e) => { this.isStandalone = e.matches; };
-    if (mql.addEventListener) {
-      mql.addEventListener('change', standaloneHandler);
-    } else {
-      mql.addListener(standaloneHandler);
-    }
+    window.addEventListener('focus', this.startClock);
+  },
+  beforeUnmount() {
+    window.removeEventListener('focus', this.startClock);
   },
 };
 </script>
@@ -161,10 +80,67 @@ export default {
 <style lang="sass" scoped>
 @import '@/styles/style.sass'
 
-.card-container
-  margin-top: 10px
+.home
+  // width of the countdown panel when it is docked on the left (0 when it is on top)
+  --hero-width: 0px
+
+.home-main
+  min-width: 0
+
+// under the widgets, next to "Edit home screen"
+.old-version
+  display: inline-flex
+  align-items: center
+  gap: 8px
+  height: 38px
+  padding: 0 16px
+  border: 1px solid var(--w-line)
+  border-radius: 999px
+  background: transparent
+  color: var(--w-muted)
+  font: inherit
+  font-size: 13.5px
+  font-weight: 700
+  cursor: pointer
+  transition: color .15s ease, border-color .15s ease
+
+  &:hover
+    color: var(--primary)
+    border-color: var(--w-line-strong)
+
+  &:focus-visible
+    outline: 2px solid var(--accent)
+    outline-offset: 2px
 
 .no-overflow
   height: 100vh
   overflow: hidden
+
+// iPad (landscape) and laptop: countdown on the left, widgets on the right
++side-hero
+  .home
+    --hero-width: clamp(310px, 24vw, 360px)
+    --hero-zoom: 1
+    display: grid
+    grid-template-columns: var(--hero-width) minmax(0, 1fr)
+    align-items: start
+
+  .hero
+    grid-column: 1
+    grid-row: 1
+
+  .home-main
+    grid-column: 2
+    grid-row: 1
+
+  // big monitors: the panel and everything in it grow with the widgets
+  @media (min-width: 1700px) and (min-height: 860px)
+    .home
+      --hero-width: 440px
+      --hero-zoom: 1.25
+
+  @media (min-width: 2300px) and (min-height: 1150px)
+    .home
+      --hero-width: 540px
+      --hero-zoom: 1.55
 </style>

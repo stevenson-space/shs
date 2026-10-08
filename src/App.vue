@@ -20,7 +20,7 @@ export default {
     ...mapActions(useScheduleStore, ['initializeSchedule']),
     ...mapActions(useClockStore, ['pageLoaded']),
     ...mapActions(useThemeStore, ['initializeTheme']),
-    ...mapActions(useUserSettingsStore, ['initializeGrade', 'initializeShowPWCSchedule']),
+    ...mapActions(useUserSettingsStore, ['initializeGrade', 'initializeShowPWCSchedule', 'initializeHeroPosition', 'initializeHomeStyle']),
     applyThemeVars(styling) {
       const fallback = fallbackStyling(styling);
       const s = styling || {};
@@ -61,6 +61,8 @@ export default {
     this.initializeTheme();
     this.initializeGrade();
     this.initializeShowPWCSchedule();
+    this.initializeHeroPosition();
+    this.initializeHomeStyle();
     this.pageLoaded(this.$route);
     this.applyThemeVars(this.styling);
   },

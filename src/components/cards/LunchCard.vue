@@ -16,33 +16,11 @@
 import { computed } from 'vue';
 import useClockStore from '@/stores/clock';
 import Card from '@/components/Card.vue';
-import { rotatingMenuMap } from '@/utils/food/rotating-map';
+import { getLunchMenu } from '@/utils/food/lunch-menu';
 
 const clockStore = useClockStore();
 
-const lunch = computed(() => {
-  if (!clockStore.bell?.isSchoolDay || clockStore.bell?.type === 'Summer') return null;
-
-  try {
-    const menu = rotatingMenuMap.getMenuUnchecked(clockStore.date);
-    const dayOfWeek = clockStore.date.toLocaleDateString('en-US', { weekday: 'long' });
-
-    return {
-      'Comfort Food': [menu.comfort],
-      'Mindful': [menu.mindful],
-      'Sides': menu.sides,
-      'Soup': menu.soup,
-      'International': [menu.international],
-      'Special': [`${menu.special} ${dayOfWeek}`],
-    };
-  } catch (e) {
-    if (e instanceof RangeError) {
-      console.error(e);
-      return null;
-    }
-    throw e;
-  }
-});
+const lunch = computed(() => getLunchMenu(clockStore.date, clockStore.bell));
 
 </script>
 

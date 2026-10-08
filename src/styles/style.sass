@@ -25,6 +25,17 @@ $content-width: 1000px
   @media (min-width: #{$desktop-width})
     @content
 
+// Landscape tablets and laptops (what most people open the site on).
+// On these the home page docks the countdown in a panel on the left and
+// gives the rest of the screen to the widgets, so everything is visible
+// without scrolling past a tall header. Portrait screens and phones keep
+// the header on top, and so does anyone who picks "Top" (Settings, or the
+// home screen's edit bar): the home page only sets .hero-left otherwise.
+@mixin side-hero
+  @media (min-width: #{$desktop-width}) and (orientation: landscape)
+    .hero-left
+      @content
+
 =shadow
   box-shadow: 0px 0px 10px -4px rgba(0,0,0,.6)
   

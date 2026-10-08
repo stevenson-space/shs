@@ -118,4 +118,21 @@ export default {
       +shadow
       text-decoration: none
       display: inline-block
+
+// docked in the side panel: a rounded card under the date instead of a full-width bar
++side-hero
+  .schedule:not(.full-screen)
+    zoom: var(--hero-zoom, 1)
+    margin-top: 0 !important
+
+    .container
+      top: 0
+      flex-direction: column
+      align-items: center
+      gap: 8px
+      padding: 11px 12px
+      border-radius: 16px
+
+    .schedule-select.hidden
+      display: none
 </style>
