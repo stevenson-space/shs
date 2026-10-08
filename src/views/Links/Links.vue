@@ -1,6 +1,8 @@
 <template>
   <div>
     <plain-header title="Links" />
+    <my-links-section />
+    <h2 class="school-title">School links</h2>
     <card-container class="container">
       <image-text-card
         v-for="(link, index) in links"
@@ -20,6 +22,7 @@
 import CardContainer from '@/components/CardContainer.vue';
 import ImageTextCard from '@/components/cards/ImageTextCard.vue';
 import PlainHeader from '@/components/PlainHeader.vue';
+import MyLinksSection from '@/components/home/MyLinksSection.vue';
 
 // I've spent way too much time on trying to dynamically import images, this will have to work for the time being
 import D125 from '@/assets/links/D125.png';
@@ -39,6 +42,7 @@ export default {
     CardContainer,
     ImageTextCard,
     PlainHeader,
+    MyLinksSection,
   },
   data() {
     return {
@@ -58,3 +62,15 @@ export default {
   },
 };
 </script>
+
+<style lang="sass" scoped>
+// a heading over the school's own links, so they read apart from "My links" above
+.school-title
+  box-sizing: border-box
+  max-width: 986px
+  margin: 22px auto 0
+  padding: 0 4px
+  font-size: 18px
+  font-weight: 700
+  color: var(--primary)
+</style>

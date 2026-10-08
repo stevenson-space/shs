@@ -126,4 +126,27 @@ export default {
       font-size: 4vh
       margin-top: 6vh
 
+// docked in the side panel: as large as the panel and the screen height allow
++side-hero
+  .circle:not(.full-screen)
+    --circle-diameter: min(290px, calc(var(--hero-width, 320px) - 44px), calc(100vh - 300px))
+    margin: 0 auto
+
+    // short screens (a small Chromebook, a split-screen window) get the compact sizes
+    @media (max-height: 580px)
+      --logo-width: 70px
+
+      .countdown
+        font-size: 3em
+
+      .range
+        font-size: 2em
+
+      .type
+        font-size: 1em
+
+      .next-day
+        font-size: .8em
+        height: 65px
+
 </style>

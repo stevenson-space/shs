@@ -80,7 +80,7 @@
 
     <header-schedule
       :in-school="bell.inSchool"
-      :period="bell.getPeriodName()"
+      :period="periodLabel"
       :range="bell.getRange()"
       :schedule-type="bell.type"
       :schedule-modes="scheduleModes"
@@ -126,6 +126,7 @@ import useThemeStore from '@/stores/themes';
 
 import Bell from '@/utils/bell';
 import { dateToSeconds, formatDate } from '@/utils/util';
+import { usePeriodNames } from '@/components/home/periodNames';
 import CountdownCircle from './CountdownCircle.vue';
 import HeaderSchedule from './HeaderSchedule.vue';
 import Announcements from './Announcements.vue';
@@ -166,6 +167,13 @@ export default {
     // this automatically gets the following properties from the store and adds them as computed properties
     ...mapState(useThemeStore, ['styling', 'theme']),
     ...mapState(useClockStore, ['clockMode', 'date', 'bell']),
+    // "AP Biology · 2123" when the student has added their classes, otherwise "Period 3"
+    periodLabel() {
+      const { period } = this.bell;
+      const fallback = this.bell.getPeriodName();
+      if (!this.bell.inSchool || !period?.name) return fallback;
+      return usePeriodNames().labelFor(period.name) || fallback;
+    },
     colors() {
       const showColor = this.colored || !this.fullScreenMode;
       const styling = this.styling;
@@ -476,4 +484,78 @@ export default {
       .full-screen-mode
         position: fixed
         right: 25px
+
+// iPad (landscape) and laptop: the header becomes a full-height panel on the
+// left that stays put while the widgets scroll. Same pieces, stacked:
+// countdown circle, then the day arrows around the date, then the period.
++side-hero
+  .header:not(.full-screen)
+    position: sticky
+    top: 0
+    box-sizing: border-box
+    height: 100vh
+    height: 100dvh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 14px
+    padding: 58px 16px 22px
+
+    // themes ship a tall crop of their header image for phones; it suits this panel too
+    &[style*="--has-header-image"]
+      background: var(--header-image-mobile, var(--header-color)) center center no-repeat
+      background-size: cover
+
+    .main
+      zoom: var(--hero-zoom, 1)
+      position: static
+      height: auto
+      max-width: none
+      margin: 0
+      display: grid
+      grid-template-columns: 44px minmax(0, 1fr) 44px
+      grid-template-areas: "circle circle circle" "prev date next"
+      align-items: center
+      justify-items: center
+      row-gap: 14px
+
+      // the unnamed wrapper around the circle and the date steps aside so both can be placed on the grid
+      > div:not([class])
+        display: contents
+
+      .circle
+        grid-area: circle
+
+      .date
+        grid-area: date
+        box-sizing: border-box
+        width: 100%
+        margin-top: 0
+        padding: 7px 10px
+
+      .switch-day
+        grid-area: prev
+        width: 44px
+        height: 44px
+        margin: 0
+        display: flex
+        align-items: center
+        justify-content: center
+
+        ~ .switch-day
+          grid-area: next
+
+        .arrow-icon
+          font-size: 1.6em
+          margin: 0
+
+      .icon
+        top: 8px
+        font-size: 1.35em
+
+      .virtual-bell-toggle
+        right: 54px
+
+      .full-screen-mode
+        right: 8px
 </style>

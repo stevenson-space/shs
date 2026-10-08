@@ -10,6 +10,26 @@
     </div>
 
     <div class="dropdown-row">
+      <span class="title">Home Page:</span>
+      <dropdown
+        class="dropdown-select"
+        :options="['New', 'Old']"
+        :modelValue="homeStyle === 'classic' ? 1 : 0"
+        @update:modelValue="setHomeStyle($event === 1 ? 'classic' : 'new')"
+      />
+    </div>
+
+    <div class="dropdown-row">
+      <span class="title">Countdown Position:</span>
+      <dropdown
+        class="dropdown-select"
+        :options="['Left side', 'Top']"
+        :modelValue="heroPosition === 'top' ? 1 : 0"
+        @update:modelValue="setHeroPosition($event === 1 ? 'top' : 'left')"
+      />
+    </div>
+
+    <div class="dropdown-row">
       <span class="title">Grade:</span>
       <dropdown
         class="dropdown-select"
@@ -39,6 +59,8 @@ type ScheduleStoreTypes = {
 type UserSettingStoreTypes = {
   grade: string;
   showPWCSchedule: boolean;
+  heroPosition: 'left' | 'top';
+  homeStyle: 'new' | 'classic';
 }
 
 type GradeLevels = 'None'| 'Freshman' |'Sophomore'| 'Junior'| 'Senior';
@@ -52,7 +74,7 @@ export default defineComponent({
   },
   computed: {
     ...(mapState(useScheduleStore, ['defaultScheduleMode', 'schedules']) as MapStateToComputed<ScheduleStoreTypes>),
-    ...(mapState(useUserSettingsStore, ['grade', 'showPWCSchedule']) as MapStateToComputed<UserSettingStoreTypes>),
+    ...(mapState(useUserSettingsStore, ['grade', 'showPWCSchedule', 'heroPosition', 'homeStyle']) as MapStateToComputed<UserSettingStoreTypes>),
 
     allModes(): string[] {
       return this.schedules.reduce((arr: string[], schedule: ScheduleCollection) => {
@@ -73,7 +95,7 @@ export default defineComponent({
   },
   methods: {
     ...mapActions(useScheduleStore, ['setDefaultScheduleMode']),
-    ...mapActions(useUserSettingsStore, ['setGrade', 'setShowPWCSchedule']),
+    ...mapActions(useUserSettingsStore, ['setGrade', 'setShowPWCSchedule', 'setHeroPosition', 'setHomeStyle']),
 
     updateDefaultScheduleMode(scheduleIndex: number):void {
       this.setDefaultScheduleMode(this.allModes[scheduleIndex]);
