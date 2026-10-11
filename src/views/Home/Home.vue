@@ -59,6 +59,13 @@
 
         <icon-text-card :icon="icons.faGear" text="Settings" link="settings" :invert="true" />
     </card-container>
+
+    <footer class="site-disclaimer">
+      <p>
+        Stevenson Space is an independent website. It is not affiliated with or
+        endorsed by Adlai E. Stevenson High School.
+      </p>
+    </footer>
   </div>
 </template>
 
@@ -163,6 +170,18 @@ export default {
 
 .card-container
   margin-top: 10px
+
+.site-disclaimer
+  max-width: $content-width
+  margin: 24px auto
+  padding: 0 20px
+  color: var(--secondary)
+  font-size: .875rem
+  line-height: 1.5
+  text-align: center
+
+  p
+    margin: 0
 
 .no-overflow
   height: 100vh
