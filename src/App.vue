@@ -11,10 +11,19 @@ import { fallbackStyling } from '@/utils/themes.ts';
 import useScheduleStore from '@/stores/schedules';
 import useClockStore from '@/stores/clock';
 import useUserSettingsStore from '@/stores/user-settings';
+import { dateToSeconds } from '@/utils/util';
+import { intoCountdownString } from '@/utils/countdown';
 
 export default {
   computed: {
     ...mapState(useThemeStore, ['styling', 'color']),
+    ...mapState(useClockStore, ['date', 'bell']),
+    endTime() {
+      return this.bell.getSecondsUntilNextTarget();
+    },
+    totalSecondsLeft() {
+      return this.endTime - dateToSeconds(this.date);
+    },
   },
   methods: {
     ...mapActions(useScheduleStore, ['initializeSchedule']),
@@ -41,6 +50,20 @@ export default {
 
       document.body.style.background = s.background || fallback.background;
     },
+    titleCountdown(secondsLeft) {
+      if (secondsLeft >= 0 && secondsLeft <= 60 * 60 * 24) {
+        const hours = Math.floor(secondsLeft / 60 / 60);
+        if (hours >= 10) {
+          return `${hours}h`;
+        }
+        if (hours > 1) {
+          const minutes = Math.floor(secondsLeft / 60) % 60;
+          const mm = `${minutes < 10 ? '0' : ''}${minutes}`;
+          return `${hours}:${mm}`;
+        }
+      }
+      return intoCountdownString(secondsLeft);
+    },
   },
   watch: {
     styling: {
@@ -48,6 +71,12 @@ export default {
         this.applyThemeVars(newStyling);
       },
       deep: true,
+    },
+    totalSecondsLeft: {
+      handler(secondsLeft) {
+        document.title = `${this.titleCountdown(secondsLeft)} - stevenson.space`;
+      },
+      immediate: true,
     },
     $route() {
       this.pageLoaded(this.$route);
