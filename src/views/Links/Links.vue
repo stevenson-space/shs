@@ -30,7 +30,7 @@ import PeerTutors from '@/assets/links/Peer Tutors.png';
 import PatriotDollars from '@/assets/links/Patriot Dollars.png';
 import Canvas from '@/assets/links/Canvas.png';
 // import SHSMaps from '@/assets/links/SHSMaps.png';
-// import GiveAThon from '@/assets/links/GiveAThon.png';
+import GiveAThon from '@/assets/links/GiveAThon.png';
 import StevensonClubs from '@/assets/links/StevensonClubs.png';
 // import PatriotPalooza from '@/assets/links/PatriotPalooza.png';
 
