@@ -28,15 +28,20 @@ jobs:
         with:
           script: |
             const run = context.payload.workflow_run;
-            // Fork runs can have an empty workflow_run.pull_requests array.
+            // Fork runs can lack both payload PRs and commit-to-PR associations.
             const prs = await github.paginate(
-              github.rest.repos.listPullRequestsAssociatedWithCommit,
-              { ...context.repo, commit_sha: run.head_sha }
+              github.rest.pulls.list,
+              {
+                ...context.repo,
+                state: 'open',
+                head: `${run.head_repository.owner.login}:${run.head_branch}`,
+              }
             );
             const matches = prs.filter(pr =>
               pr.state === 'open' &&
               pr.base.repo.full_name === `${context.repo.owner}/${context.repo.repo}` &&
               pr.head.repo && pr.head.repo.full_name !== pr.base.repo.full_name &&
+              pr.head.repo.full_name === run.head_repository.full_name &&
               pr.head.sha === run.head_sha
             );
             if (matches.length !== 1) {
