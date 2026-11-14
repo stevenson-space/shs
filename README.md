@@ -18,6 +18,22 @@ npm run dev
 npm run build
 ```
 
+### Cloudflare Pages fork previews
+
+Fork PRs run `Build Cloudflare Pages Preview` with a read-only GitHub token and no
+repository secrets. The build uses the Node version in `.nvmrc` and uploads `dist`
+as an artifact. `Deploy Cloudflare Pages Preview` then runs from the default branch,
+checks that the build still matches an open fork PR, and deploys the static files
+to the `pr-<number>` branch of the `shs` Pages project using `CF_API_TOKEN`.
+The deployment job does not check out PR code or run its scripts; Pages Functions,
+`_worker.js`, and symbolic links are rejected from preview artifacts.
+
+Both workflows must be merged into the default branch before the deployment
+workflow can run. After merging workflow changes, push to or reopen an existing
+fork PR to trigger the new build. Re-running an old `pull_request_target` failure
+still uses the old workflow. First-time contributors may need a maintainer to
+approve the build under the repository's GitHub Actions policy.
+
 ### Lints and fixes files
 ```
 npm run lint
