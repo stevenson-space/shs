@@ -1,6 +1,19 @@
 import { describe, expect, it } from "vitest";
 import { rotatingMenuMap } from "../src/utils/food/rotating-map";
 
+describe("November 2026 lunch calendar", () => {
+  it("serves the published November 16 menu", () => {
+    expect(rotatingMenuMap.getMenuUnchecked(new Date(2026, 10, 16))).toEqual({
+      comfort: "Honey Garlic Chicken Thighs",
+      mindful: "Butternut Squash Ravioli with Sage & Browned Butter",
+      sides: ["Chinese Broccoli", "Steamed White Rice"],
+      soup: ["Garden Vegetable Soup", "New England Clam Chowder"],
+      international: "Mediterranean",
+      special: "Sushi",
+    });
+  });
+});
+
 describe("September 2026 lunch calendar", () => {
   it("serves the published September 14 menu", () => {
     expect(rotatingMenuMap.getMenuUnchecked(new Date(2026, 8, 14))).toEqual({
