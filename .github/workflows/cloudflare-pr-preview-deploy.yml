@@ -1,0 +1,111 @@
+name: Deploy Cloudflare Pages Preview
+
+on:
+  workflow_run:
+    workflows: [Build Cloudflare Pages Preview]
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: cloudflare-preview-deploy-${{ github.event.workflow_run.head_repository.full_name }}-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-preview:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      # Never check out or execute PR code in this workflow: it can access secrets.
+      - name: Find the current fork PR
+        id: pr
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const run = context.payload.workflow_run;
+            // Fork runs can lack both payload PRs and commit-to-PR associations.
+            const prs = await github.paginate(
+              github.rest.pulls.list,
+              {
+                ...context.repo,
+                state: 'open',
+                head: `${run.head_repository.owner.login}:${run.head_branch}`,
+              }
+            );
+            const matches = prs.filter(pr =>
+              pr.state === 'open' &&
+              pr.base.repo.full_name === `${context.repo.owner}/${context.repo.repo}` &&
+              pr.head.repo && pr.head.repo.full_name !== pr.base.repo.full_name &&
+              pr.head.repo.full_name === run.head_repository.full_name &&
+              pr.head.sha === run.head_sha
+            );
+            if (matches.length !== 1) {
+              core.info('No unique current fork PR; skipping preview deployment.');
+              return;
+            }
+            core.setOutput('number', matches[0].number);
+            core.setOutput('sha', run.head_sha);
+
+      - name: Setup Node.js
+        if: steps.pr.outputs.number != ''
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+
+      - name: Download the build output
+        if: steps.pr.outputs.number != ''
+        uses: actions/download-artifact@v8
+        with:
+          name: cloudflare-preview
+          path: ${{ runner.temp }}/cloudflare-preview
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Validate static preview
+        if: steps.pr.outputs.number != ''
+        env:
+          PREVIEW_DIR: ${{ runner.temp }}/cloudflare-preview
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const path = require('node:path');
+          const root = process.env.PREVIEW_DIR;
+
+          // Pages would execute _worker.js (a file or directory) on Cloudflare.
+          for (const name of ['_worker.js', 'functions']) {
+            if (fs.existsSync(path.join(root, name))) {
+              throw new Error(`Fork previews must be static; found ${name}`);
+            }
+          }
+          function validate(directory) {
+            for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+              const filename = path.join(directory, entry.name);
+              if (entry.isDirectory()) validate(filename);
+              else if (!entry.isFile()) throw new Error(`Not a regular file: ${filename}`);
+            }
+          }
+          validate(root);
+          if (!fs.statSync(path.join(root, 'index.html')).isFile()) {
+            throw new Error('Missing preview index.html');
+          }
+          NODE
+
+      # Run Wrangler from the empty workspace, outside the untrusted artifact.
+      # This keeps PR package scripts, dependencies, and Wrangler config out of CI.
+      - name: Deploy to Cloudflare Pages
+        if: steps.pr.outputs.number != ''
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: eb09a67d16effcedf18472e3926ce09d
+          command: >-
+            pages deploy ${{ runner.temp }}/cloudflare-preview
+            --project-name=shs
+            --branch=pr-${{ steps.pr.outputs.number }}
+            --commit-hash=${{ steps.pr.outputs.sha }}
