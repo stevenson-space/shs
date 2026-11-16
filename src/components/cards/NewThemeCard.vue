@@ -67,6 +67,7 @@ const isDismissed = computed(() => {
 function toggleTheme(): void {
   if (!newTheme.value) return;
   themeStore.setStyling(newTheme.value.styling);
+  dismiss();
 }
 
 function dismiss(): void {
