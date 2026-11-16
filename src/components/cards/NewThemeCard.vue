@@ -19,61 +19,39 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, reactive } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import useClockStore from '@/stores/clock';
 import useThemeStore from '@/stores/themes';
 import RoundedButton from '@/components/RoundedButton.vue';
 import Card from '@/components/Card.vue';
 import InfoTooltip from '@/components/InfoTooltip.vue';
-import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
+import { isThemeBannerEligible, loadAllThemes } from '@/utils/themes';
 
 const themeStore = useThemeStore();
 const clockStore = useClockStore();
 
 const themes = ref<any[]>([]);
-function parseDismissed(): Record<string, number> {
-  try {
-    const parsed = JSON.parse(localStorage.getItem('dismissedThemeCards') || '{}');
-    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) return {};
-    if (Object.values(parsed).some((v) => typeof v !== 'number')) return {};
-    return parsed as Record<string, number>;
-  } catch {
-    return {};
-  }
-}
-const dismissedThemesRef = reactive<Record<string, number>>(parseDismissed());
 
-const newTheme = computed(() => {
-  // finds a seasonal theme that is within the current date range
-  const now = clockStore.date;
-
-  for (const theme of themes.value) {
-    if (!theme.seasonalDates) continue;
-
-    const [start, end] = parseDateRange(theme.seasonalDates, now);
-    if (isDateInRange(now, start, end) && theme.recommended?.message) {
-      return theme;
-    }
-  }
-  return null;
-});
+const newTheme = computed(
+  () => themes.value.find((theme) => isThemeBannerEligible(theme, clockStore.date)) ?? null,
+);
 
 const isDismissed = computed(() => {
   if (!newTheme.value) return false;
   const currentYear = clockStore.date.getFullYear();
-  return dismissedThemesRef[newTheme.value.metadata.name] === currentYear;
+  return themeStore.dismissedThemeCards[newTheme.value.metadata.name] === currentYear;
 });
 
 function toggleTheme(): void {
   if (!newTheme.value) return;
   themeStore.setStyling(newTheme.value.styling);
+  dismiss();
 }
 
 function dismiss(): void {
   if (!newTheme.value) return;
   const currentYear = clockStore.date.getFullYear();
-  dismissedThemesRef[newTheme.value.metadata.name] = currentYear;
-  localStorage.setItem('dismissedThemeCards', JSON.stringify(dismissedThemesRef));
+  themeStore.dismissThemeRecommendation(newTheme.value.metadata.name, currentYear);
 }
 
 onMounted(async () => {

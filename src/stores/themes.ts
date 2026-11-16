@@ -5,10 +5,26 @@ import {Theme, ThemeStyling} from '@/utils/types';
 
 const DEFAULT_THEME: Theme = lightTheme as Theme;
 
+function parseDismissed(): Record<string, number> {
+  try {
+    const parsed = JSON.parse(localStorage.getItem('dismissedThemeCards') || '{}');
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) return {};
+    if (Object.values(parsed).some((v) => typeof v !== 'number')) return {};
+    return parsed as Record<string, number>;
+  } catch {
+    return {};
+  }
+}
 
 export default defineStore('themes', () => {
   const _styling = ref<ThemeStyling>(DEFAULT_THEME.styling);
   const resolvedAssets = ref(new Map<string, string>());
+  const dismissedThemeCards = ref(parseDismissed());
+
+  function dismissThemeRecommendation(name: string, year: number): void {
+    dismissedThemeCards.value[name] = year;
+    localStorage.setItem('dismissedThemeCards', JSON.stringify(dismissedThemeCards.value));
+  }
 
   // TODO(theme)
   const theme = computed((): Theme => ({
@@ -38,5 +54,14 @@ export default defineStore('themes', () => {
     localStorage.themeStyling = JSON.stringify(_styling.value);
   }
 
-  return { styling: readonly(_styling), resolvedAssets, theme, initializeTheme, setColor, setStyling };
+  return {
+    styling: readonly(_styling),
+    resolvedAssets,
+    theme,
+    initializeTheme,
+    setColor,
+    setStyling,
+    dismissedThemeCards: readonly(dismissedThemeCards),
+    dismissThemeRecommendation,
+  };
 });

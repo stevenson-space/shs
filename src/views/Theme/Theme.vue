@@ -323,7 +323,7 @@ import {
   faFloppyDisk,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
-import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
+import { parseDateRange, isDateInRange, isThemeBannerEligible, loadAllThemes } from '@/utils/themes';
 import { cleanupOrphanedImages } from '@/utils/imageStorage';
 import ThemeCard from '@/components/ThemeCard.vue';
 import ColorPicker from '@/components/ColorPicker.vue';
@@ -537,7 +537,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(useThemeStore, ['setStyling']),
+    ...mapActions(useThemeStore, ['setStyling', 'dismissThemeRecommendation']),
 
     closePanel() {
       this.panelOpen = false;
@@ -585,6 +585,9 @@ export default {
         }
       };
       this.applyTheme();
+      if (isThemeBannerEligible(theme, this.date)) {
+        this.dismissThemeRecommendation(theme.metadata.name, this.date.getFullYear());
+      }
       this.particlesBackup = cloneParticles(this.customTheme.styling.particles);
 
       // Clean up images not referenced in the new theme
