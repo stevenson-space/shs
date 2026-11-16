@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, reactive } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import useClockStore from '@/stores/clock';
 import useThemeStore from '@/stores/themes';
 import RoundedButton from '@/components/RoundedButton.vue';
@@ -31,17 +31,6 @@ const themeStore = useThemeStore();
 const clockStore = useClockStore();
 
 const themes = ref<any[]>([]);
-function parseDismissed(): Record<string, number> {
-  try {
-    const parsed = JSON.parse(localStorage.getItem('dismissedThemeCards') || '{}');
-    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) return {};
-    if (Object.values(parsed).some((v) => typeof v !== 'number')) return {};
-    return parsed as Record<string, number>;
-  } catch {
-    return {};
-  }
-}
-const dismissedThemesRef = reactive<Record<string, number>>(parseDismissed());
 
 const newTheme = computed(() => {
   // finds a seasonal theme that is within the current date range
@@ -61,7 +50,7 @@ const newTheme = computed(() => {
 const isDismissed = computed(() => {
   if (!newTheme.value) return false;
   const currentYear = clockStore.date.getFullYear();
-  return dismissedThemesRef[newTheme.value.metadata.name] === currentYear;
+  return themeStore.dismissedThemeCards[newTheme.value.metadata.name] === currentYear;
 });
 
 function toggleTheme(): void {
@@ -73,8 +62,7 @@ function toggleTheme(): void {
 function dismiss(): void {
   if (!newTheme.value) return;
   const currentYear = clockStore.date.getFullYear();
-  dismissedThemesRef[newTheme.value.metadata.name] = currentYear;
-  localStorage.setItem('dismissedThemeCards', JSON.stringify(dismissedThemesRef));
+  themeStore.dismissThemeRecommendation(newTheme.value.metadata.name, currentYear);
 }
 
 onMounted(async () => {

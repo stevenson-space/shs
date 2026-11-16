@@ -537,7 +537,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(useThemeStore, ['setStyling']),
+    ...mapActions(useThemeStore, ['setStyling', 'dismissThemeRecommendation']),
 
     closePanel() {
       this.panelOpen = false;
@@ -585,6 +585,9 @@ export default {
         }
       };
       this.applyTheme();
+      if (theme.seasonalDates && theme.recommended?.message) {
+        this.dismissThemeRecommendation(theme.metadata.name, this.date.getFullYear());
+      }
       this.particlesBackup = cloneParticles(this.customTheme.styling.particles);
 
       // Clean up images not referenced in the new theme
