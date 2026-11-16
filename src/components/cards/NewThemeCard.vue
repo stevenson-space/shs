@@ -25,27 +25,16 @@ import useThemeStore from '@/stores/themes';
 import RoundedButton from '@/components/RoundedButton.vue';
 import Card from '@/components/Card.vue';
 import InfoTooltip from '@/components/InfoTooltip.vue';
-import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
+import { isThemeBannerEligible, loadAllThemes } from '@/utils/themes';
 
 const themeStore = useThemeStore();
 const clockStore = useClockStore();
 
 const themes = ref<any[]>([]);
 
-const newTheme = computed(() => {
-  // finds a seasonal theme that is within the current date range
-  const now = clockStore.date;
-
-  for (const theme of themes.value) {
-    if (!theme.seasonalDates) continue;
-
-    const [start, end] = parseDateRange(theme.seasonalDates, now);
-    if (isDateInRange(now, start, end) && theme.recommended?.message) {
-      return theme;
-    }
-  }
-  return null;
-});
+const newTheme = computed(
+  () => themes.value.find((theme) => isThemeBannerEligible(theme, clockStore.date)) ?? null,
+);
 
 const isDismissed = computed(() => {
   if (!newTheme.value) return false;

@@ -323,7 +323,7 @@ import {
   faFloppyDisk,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
-import { parseDateRange, isDateInRange, loadAllThemes } from '@/utils/themes';
+import { parseDateRange, isDateInRange, isThemeBannerEligible, loadAllThemes } from '@/utils/themes';
 import { cleanupOrphanedImages } from '@/utils/imageStorage';
 import ThemeCard from '@/components/ThemeCard.vue';
 import ColorPicker from '@/components/ColorPicker.vue';
@@ -585,11 +585,8 @@ export default {
         }
       };
       this.applyTheme();
-      if (theme.seasonalDates && theme.recommended?.message) {
-        const [start, end] = parseDateRange(theme.seasonalDates, this.date);
-        if (isDateInRange(this.date, start, end)) {
-          this.dismissThemeRecommendation(theme.metadata.name, this.date.getFullYear());
-        }
+      if (isThemeBannerEligible(theme, this.date)) {
+        this.dismissThemeRecommendation(theme.metadata.name, this.date.getFullYear());
       }
       this.particlesBackup = cloneParticles(this.customTheme.styling.particles);
 
