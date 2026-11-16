@@ -586,7 +586,10 @@ export default {
       };
       this.applyTheme();
       if (theme.seasonalDates && theme.recommended?.message) {
-        this.dismissThemeRecommendation(theme.metadata.name, this.date.getFullYear());
+        const [start, end] = parseDateRange(theme.seasonalDates, this.date);
+        if (isDateInRange(this.date, start, end)) {
+          this.dismissThemeRecommendation(theme.metadata.name, this.date.getFullYear());
+        }
       }
       this.particlesBackup = cloneParticles(this.customTheme.styling.particles);
 
