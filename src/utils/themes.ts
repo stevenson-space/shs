@@ -59,6 +59,18 @@ export function isDateInRange(date: Date, start: Date, end: Date): boolean {
 }
 
 /**
+ * Checks if a theme should be advertised by the new theme banner on a given date
+ * @param theme - Theme to check
+ * @param date - Date to check
+ * @returns True if the theme has a banner message and its season includes the date
+ */
+export function isThemeBannerEligible(theme: Theme, date: Date): boolean {
+  if (!theme.seasonalDates || !theme.recommended?.message) return false;
+  const [start, end] = parseDateRange(theme.seasonalDates, date);
+  return isDateInRange(date, start, end);
+}
+
+/**
  * Formats a date range for display
  * @param dateRange - Date range string in format "MM/DD-MM/DD" or "MM/DD/YYYY-MM/DD/YYYY"
  * @returns Formatted string like "Jan 1 - Feb 14" or "Jan 1 2025 - Feb 14 2025"
