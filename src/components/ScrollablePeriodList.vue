@@ -82,7 +82,15 @@ const periodsComputed = computed(() => {
   return [];
 });
 
-watch(() => clockStore.bell, () => {
+// The clock store creates a new Bell every second, so only re-scroll when the
+// current period actually changes; otherwise users can't scroll to other periods
+const currentPeriodKey = computed(() => {
+  const { period } = clockStore.bell;
+  if (!period || !('name' in period)) return null;
+  return `${period.name}|${period.start}|${period.end}`;
+});
+
+watch(currentPeriodKey, () => {
   // wait until periods rerender before scrolling
   nextTick(() => {
     scrollToCurrentPeriod();
