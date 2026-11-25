@@ -43,7 +43,7 @@
     "@storybook/addon-a11y": "^10.2.13",
     "@storybook/addon-docs": "^10.2.13",
     "@storybook/addon-onboarding": "^10.2.13",
-    "@storybook/addon-vitest": "^10.2.13",
+    "@storybook/addon-vitest": "^10.6.2",
     "@storybook/vue3-vite": "^10.4.6",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
