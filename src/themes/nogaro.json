@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "name": "Nogaro",
+    "author": "Ridaan I. ('29)",
+    "description": "Vorsprung Durch Technik!"
+  },
+  "styling": {
+    "base": "light",
+    "accent": "#165193",
+    "text": {
+      "primary": "#165193",
+      "secondary": "#165193",
+      "tertiary": "#165193"
+    },
+    "header": {
+      "scheduleBar": "",
+      "background": "var(--accent)",
+      "image": {
+        "full": "local://IMG_0351.jpeg",
+        "mobile": "local://IMG_0351.jpeg"
+      }
+    },
+    "iconCards": {
+      "regular": "",
+      "invert": "var(--accent)"
+    },
+    "background": "",
+    "secondaryBackground": "",
+    "particles": {
+      "images": [
+        "local://IMG_0349.png",
+        "local://IMG_0346.png"
+      ],
+      "speed": 1,
+      "count": 19,
+      "size": 21,
+      "opacity": 0.8,
+      "windPower": 0.2
+    }
+  }
+}
